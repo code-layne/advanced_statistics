@@ -7,6 +7,11 @@ target
 **/*.aux
 **/*.log
 **/*.pdf
+# Binder covers are committed artifacts, not build output: the make rule that
+# draws them has no prerequisites, so a fresh clone must carry the reviewed
+# cover rather than redraw one. `make -C unitXX clean_unit_cover` redraws.
+!**/binder_cover/main.pdf
 **/*.fls
 **/*.fdb_latexmk
+**/__pycache__
 .agents

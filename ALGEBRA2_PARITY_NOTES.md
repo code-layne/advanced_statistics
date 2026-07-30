@@ -193,7 +193,107 @@ in `DEFAULT_COMPONENTS` now that the deck feeds a product.
 
 ---
 
-## Part 3 — Next: binder covers
+## Part 3 — Done: binder covers
+
+Shipped 2026-07-30. All nine units generate; `binder_cover/main.pdf` is committed.
+Two decisions taken with Layne before coding: the art is **figure-led** (statistics
+displays carry the page, equations support), and covers are **committed artifacts**
+as in algebra_2.
+
+### What the reconnaissance got wrong
+
+The inventory in "Reconnaissance done" below counted **prose mentions, not figures**.
+Corrected, by actually drawn TikZ:
+
+| Claimed | Actual |
+| --- | --- |
+| regression/LSRL 121, scatterplots 83, histograms 69, dotplots 58, boxplots 43 | ~40 drawn figures in the whole course, most of them the navy banner on cover sheets; only unit01 L8/L10 and unit02 L4/L7 hold real plots |
+
+So scanning TikZ would have yielded almost nothing either. **The discoverable
+primitive in this course is the dataset**, not the equation and not the figure:
+88 numeric table rows plus 21 comma lists. `discover()` reads the numbers and the
+builders draw the display. Three things had to be true before that worked:
+
+- the tables are **`tabularx`**, not `tabular` — matching only the latter found one
+  table in unit02 and zero pairs, so the two-variable unit drew no scatterplot;
+- a tabular yielding exactly two equal-length numeric rows is **bivariate** — that
+  is how the course lays paired data out, one variable per row;
+- adjacent pairs are the notes' worked example and the homework's echo of it, so the
+  two scatters are taken from **opposite ends** of the unit or they draw as the same
+  picture.
+
+### Two units the notes did not anticipate
+
+**Unit 3 has no mathematics at all.** Its student components contain five distinct
+inline math fragments, all of them typographic (`$\to$`, `$\times$`, `$\ldots$`).
+It is a study-design unit. `cover.py` now sets the title block on a clean sheet and
+says so on stderr rather than failing the build — a unit with nothing to draw is not
+an error, and inventing statistics it never taught would violate the file's own rule
+that nothing is invented. **Unit 3 wants a hand-tuned `spec.py`**, and the art it
+needs (sampling frames, random assignment to treatment groups) is builders that do
+not exist yet.
+
+**Units 5 and 9 are thin** (4 and 2 elements). Not a scanner bug: this course states
+its formulas *with blanks in them* — it is a workbook — and `_HOLE` correctly rejects
+those. There is no display-math reservoir to fall back on; `\[…\]` is essentially
+unused. They also want hand-tuned specs.
+
+### Bugs found and fixed on the way
+
+- `\def\UnitNumberName` — as predicted. Regex widened to accept both forms **and**
+  unit01's ten plans normalised to `\newcommand`. Both, as the notes asked.
+- **`"quiz scores"` matched `z\s*-?\s*score`**, so unit03 — which never mentions the
+  normal model — was getting a normal curve. Needed `\b` before the `z`.
+- The equation path let through three junk classes the notes only half-named: a
+  leading `=`, a trailing `=`, and `symbol = number` scenario settings. Added a
+  fourth filter the notes did not anticipate — **shape dedupe**, which collapses
+  `H_0: p = 0.30 / 0.40 / 0.45 / 0.60` to one. Unit 9 was otherwise six `t^* = …`.
+
+### The navy question — resolved, no
+
+`cover.py`'s palette is eight neutral grays; there is no forest-green accent to swap.
+Introducing `#1F3A5F` would put colored ink on a page whose whole premise is
+grayscale line work. Kept gray.
+
+### Ink coverage
+
+Measured on the 150 dpi raster, not on paper — **a real print check is still owed**.
+Every cover is lighter than the algebra_2 covers already in use: 2.3–4.0% of pixels
+inked against their 6.0–6.2%, mean gray ~251 against ~250.
+
+### Open question: does the binder cover get a page number?
+
+It currently does. The cover leads both packet lists, so the pagination pass numbers
+its two sheets 1 and 2, and the unit overview becomes page 3 — every page number in
+the course shifts by two. Arguably right (it is a sheet of the packet) and arguably
+wrong (it goes in a binder sleeve and is not part of the reading sequence). Making it
+unnumbered means teaching `paginate.sh`/`paginate.tex` to hold an unnumbered head
+before restarting the count — perhaps 15 lines across the two files, but it changes
+pagination semantics for lesson packets too. **Not decided; left as-is.**
+
+### What landed
+
+| File | State |
+| --- | --- |
+| `shared/cover.py` | new — ported; `COURSE`, widened unit-name regex, 5 statistics builders, dataset discovery, 4 equation filters, empty-unit fallback |
+| `shared/unit.mk` | `binder_cover` as a generated prefab, leading **both** packet lists; `clean_unit_cover` |
+| `.gitignore` | `!**/binder_cover/main.pdf` negates the blanket `**/*.pdf`; `**/__pycache__` added |
+| `unit01/lesson*/main.tex` | ten plans normalised `\def` → `\newcommand` |
+| `unit0*/binder_cover/main.pdf` | nine committed covers |
+
+Verified: unit05 builds a 114-page student packet and a 114-page key, page for page,
+with the cover leading both; `clean_unit_cover` redraws and a second `make` does not.
+
+### Backlog
+
+- Hand-tuned `spec.py` for units **3, 5, 9**; unit 3 additionally needs design-diagram
+  builders.
+- The page-number question above.
+- A real printed proof before these go to a class set.
+
+---
+
+## Part 3 — original plan (superseded by the section above)
 
 **Goal.** Per-unit binder cover sheets, as in algebra_2's `shared/cover.py`.
 
