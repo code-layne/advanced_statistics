@@ -1,0 +1,83 @@
+% shared/paginate.tex — packet-wide pagination + recto starts.
+%
+% Every component of a lesson is compiled as its own document, so each one
+% numbers its pages from 1. After pdfunite merges them, the student packet
+% would read 1 / 1 / 1 2 3 4 5 / 1 2 3 / … instead of 1 … 14.
+%
+% This pass rebuilds an already-merged packet so that:
+%   1. page numbers run across the WHOLE document, and
+%   2. every component starts on an ODD (right-hand) page — a blank verso is
+%      inserted after any component that would otherwise leave the next one on
+%      a verso.
+% Each source page is placed at full size on a same-size sheet; a white band
+% inside the bottom margin covers the component-local number, and the
+% packet-wide number is printed in exactly its place.
+%
+% The pass is idempotent by construction: the band covers whatever number is
+% already there, so running it again simply renumbers. That is what lets
+% shared/unit.mk re-paginate a unit packet built from already-paginated lesson
+% packets without the two numbering schemes fighting.
+%
+% Inserted blanks ARE numbered: the blank verso is a real page of the packet,
+% so its number is printed like any other — a student flipping through sees an
+% unbroken run and can tell nothing is missing.
+%
+% Invoked by shared/paginate.sh as:
+%   xelatex -jobname=paginated '\def\PacketSource{/abs/in.pdf}%
+%     \def\PacketPages{1-1,{},2-2,{},3-7,{}}\input{paginate}'
+% where \PacketPages is a pdfpages page list over the MERGED pdf, `{}` marking
+% an inserted blank.
+%
+% Geometry note: the band and the baseline below are matched to the article
+% preamble in apstats-article.sty (bottom margin 0.75in = 54pt, default
+% \footskip = 30pt, so the footer baseline sits 24pt above the page edge).
+% Measured 2026-07-30 on unit01/lesson01/notes: the footer digit's em box runs
+% 22.2pt–32.1pt above the bottom edge, well inside the 10pt–42pt band, and the
+% band's top stays 12pt clear of the body. If the page geometry there changes,
+% re-measure with:
+%   pdftotext -f <p> -l <p> -bbox packet.pdf out.html   # bbox of the footer digit
+
+\documentclass[10pt]{article}
+\usepackage[letterpaper, margin=0pt]{geometry}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{eso-pic}
+
+\providecommand{\PacketSource}{}
+\providecommand{\PacketPages}{-}
+
+\setlength{\unitlength}{1pt}
+
+% Bottom-margin band (pt above the page's bottom edge) and the baseline the
+% packet-wide number sits on — the same baseline the article class uses.
+\newcommand{\PgBandBottom}{10}
+\newcommand{\PgBandHeight}{32pt}
+\newcommand{\PgBaseline}{24.2}
+
+\makeatletter
+
+% Every page gets the same treatment, inserted blanks included. The white band
+% is a no-op on a blank page; on a real one it hides the component's own number.
+\newcommand{\packetnumber}{%
+  \AddToShipoutPictureFG*{%
+    \AtPageLowerLeft{%
+      \put(0,\PgBandBottom){\textcolor{white}{\rule{\paperwidth}{\PgBandHeight}}}%
+      \put(0,\PgBaseline){\makebox[\paperwidth]{\normalsize\thepage}}%
+    }%
+  }%
+}
+
+% fitpaper + noautoscale keep every source page at exactly its original size:
+% no re-scaling of the component's layout, only the footer overlay is added.
+\newcommand{\packetinclude}[1]{%
+  \includepdf[pages={#1}, fitpaper=true, noautoscale=true,
+              pagecommand=\packetnumber]{\PacketSource}}
+\edef\PacketPageList{\PacketPages}
+
+\makeatother
+
+\pagestyle{empty}
+
+\begin{document}
+\expandafter\packetinclude\expandafter{\PacketPageList}
+\end{document}

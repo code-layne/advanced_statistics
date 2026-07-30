@@ -36,11 +36,13 @@ A lesson lives in `unitXX/lessonYY/` and consists of:
   (`cover` has no key.)
 
 `shared/lesson.mk` discovers a component if it has a `main.tex` **or** a `main.pdf`, compiles
-the `main.tex` ones with `latexmk -xelatex`, and merges all of them with `pdfunite` in
-pedagogical order into `lessonYY_student.pdf` (cover + blank components) and `lessonYY_full.pdf`
-(cover + keyed versions, plus the lesson plan and slides). A prefab `main.pdf` is fed straight
-to `pdfunite` from the source tree with no compile step — so dropping in a ready-made PDF is all
-that's needed (Step 4).
+the `main.tex` ones with `latexmk -xelatex`, and builds **five work products**:
+`lessonYY_plan.pdf` (the lesson plan), `lessonYY_slides.pdf` (the deck printed 3-up with a note
+column) and `lessonYY_slides.pptx` (the same deck full-page, for projecting),
+`lessonYY_student.pdf` (cover + blank components), and `lessonYY_key.pdf` (the same packet
+answered, page for page with the student one). There is no `full` packet — the plan and the deck
+stand on their own. A prefab `main.pdf` is fed straight to `pdfunite` from the source tree with no
+compile step — so dropping in a ready-made PDF is all that's needed (Step 4).
 
 ## Multi-lesson dispatch — REQUIRED when generating more than one lesson
 
@@ -103,6 +105,11 @@ Same check for their keys.
 Every component must come out the **same number of pages** as its `_key`. The student packet and
 the key packet are paginated against each other, so a key that runs one page long costs the
 student packet a blank page.
+
+The pagination pass **pads the mismatch rather than reporting it** — it gives the component a
+slot of `max(blank, key)` pages in both packets and fills the short one with a blank verso. The
+packets stay aligned either way, which means a violation is silent. Check the component page
+counts; don't wait for a build to complain.
 
 Two mechanisms enforce it — use them while authoring, not as a cleanup pass:
 
@@ -321,24 +328,35 @@ project's Makefile still only globs `main.tex`, update it first; see `references
 Build from the lesson directory (or the unit/root for wider packets):
 
 ```bash
-make -C unit02/lesson03 student   # cover + blank student components → lessonYY_student.pdf
-make -C unit02/lesson03 full      # lesson plan + slides + keyed versions → lessonYY_full.pdf
-make -C unit02/lesson03 all       # both
+make -C unit02/lesson03 all       # all five products
+make -C unit02/lesson03 plan      # the lesson plan            → lessonYY_plan.pdf
+make -C unit02/lesson03 slides    # the deck, both forms       → lessonYY_slides.pdf + .pptx
+make -C unit02/lesson03 student   # cover + blank components   → lessonYY_student.pdf
+make -C unit02/lesson03 key       # the same packet, answered  → lessonYY_key.pdf
 ```
 
-`make -C unit02 student|full` merges a unit; `make student|full` at the root merges the whole
+`make -C unit02 student|key` merges a unit; `make student|key` at the root merges the whole
 curriculum. Output lands in `target/`. The build needs XeLaTeX, `latexmk`, and `pdfunite`;
 if a compile fails, surface the `.log` and fix the offending `.tex` rather than editing the
 build system. Details and troubleshooting in `references/build.md`.
 
-**Unit packets come from a TeX wrapper, not `pdfunite`.** If a unit provides `unitXX_student.tex`
-and `unitXX_full.tex`, `shared/unit.mk` compiles those wrappers instead of merging PDFs, which
-gives the packet one continuous page-number sequence. The student wrapper source-includes each
-lesson's blank components (`docmute` + `import`); the full wrapper source-includes each lesson
-*plan* and the keyed components, plus a 3-up slide handout that appears in the teacher packet
-only. Never insert a lesson plan as a PDF, never put slides in the student packet, and never fall
-back to `pdfunite` for a unit that has wrappers. Full pattern in `references/build.md` and
-`UNIT_PACKET_REFACTOR_NOTES.md` at the project root.
+**There is no `make full`** — it fails loudly and tells you what replaced it. `key` is the
+successor to the old `full` packet; the lesson plan and the deck it used to swallow are now
+standalone products. The deck ships in two forms — `lessonYY_slides.pdf` (3-up, printable) and
+`lessonYY_slides.pptx` (full-page, projectable) — both built by `make slides` from the one
+Beamer deck. Never edit either; edit `slides/main.tex`.
+
+**Pagination is owned by one layer.** After `pdfunite` merges the components,
+`shared/paginate.sh` renumbers the packet lesson-wide, forces every component onto a recto, and
+lays the student and key packets against each other so page N of one is page N of the other.
+`shared/unit.mk` re-runs the same pass over the merged unit packet for unit-wide numbering — the
+pass is idempotent, so nothing is numbered twice. **Never add a wrapper `.tex`** (the old
+`unitXX_student.tex` / `unitXX_full.tex` pattern is retired), never put slides in the student
+packet, and never insert a lesson plan into a packet. Full detail in `references/build.md`.
+
+Because slots are sized against the counterpart, `student` and `key` each *compile* every
+component of both packets — but each emits only its own packet. **Use `make all` when you want
+both PDFs.** Building them separately is safe: the slots come out identical either way.
 
 ### Step 6 — Compile QA before any PR
 
@@ -375,17 +393,27 @@ build and report. Each has a fix and, where it is mechanical, a script:
 | **vocabpar** | `\par` around `\termblanklong`/`\ansline` in a `vocabbox` | Hand fix per lesson |
 | **work rule** | A component is the same length blank and keyed | `work` blocks authored identically in both files; `steptable`/`\step` for printed solutions; `\writelines{n}` to match a wrapped `\ansline` |
 | **teachernotes** | Teacher prose in the lesson plan, one titled note per component | `python3 .claude/skills/lesson-planning/scripts/movenotes.py unitNN/lessonMM` (`--check` to preview) |
+| **deck** | Every lesson has a `slides/` Beamer deck | If `slides/main.tex` is absent, author one from `assets/skeletons/slides.tex` — see below |
 
 Full spec for each: `references/conventions.md`.
 
+**A lesson with no deck is incomplete.** The deck feeds two of the five work products
+(`lessonYY_slides.pdf` and `lessonYY_slides.pptx`), so a lesson without `slides/main.tex` builds
+only three. Most of this course's lessons predate that rule. **When you review or retrofit a
+lesson that has no deck, author one** — it is part of the review, not a separate request. Build
+it into the existing lesson (its own `slides/` subdirectory); `slides` has no `_key`.
+
 **Always finish a retrofit with the evidence**, per lesson: `make -C unitXX/lessonYY all` exits 0,
-and every component's page count equals its `_key`'s (Hard constraint 1b). Report any component
-that still differs and why.
+and every component's page count equals its `_key`'s (Hard constraint 1b). Compare the compiled
+components under `target/unitXX/lessonYY/<comp>/main.pdf` — comparing `lessonYY_student.pdf`
+against `lessonYY_key.pdf` proves nothing, since the pagination pass pads them to equal length no
+matter what. Report any component that still differs and why.
 
 **Scope note for this course.** Nothing is retrofitted yet: ~136 `_key` files still carry teacher
-notes, and `\namedateperiod` appears on every component rather than the cover alone. Retrofit
-lesson by lesson (or unit by unit) as you review, and rebuild the unit packet each time — do not
-attempt the whole course in one pass.
+notes, `\namedateperiod` appears on every component rather than the cover alone, and **57 of 80
+lessons have no deck**. Retrofit lesson by lesson (or unit by unit) as you review, authoring the
+missing deck as you go, and rebuild the unit packet each time — do not attempt the whole course
+in one pass.
 
 ## Reference files
 
