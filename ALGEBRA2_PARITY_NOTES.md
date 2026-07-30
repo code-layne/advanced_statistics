@@ -90,73 +90,106 @@ each time. Do not attempt the whole course in one pass.
 
 ---
 
-## Part 2 — Next: four work products per lesson
+## Part 2 — Done: five work products per lesson
 
-**Goal.** Replace the current `student` + `full` pair with **four** per-lesson products:
+The `student` + `full` pair is replaced by **five** per-lesson products in
+`target/compiled/unitXX/` — full parity with algebra_2:
 
 | File | What it is |
 | --- | --- |
 | `lessonYY_plan.pdf` | the lesson plan — the lesson-root `main.tex`, compiled |
-| `lessonYY_slides.pdf` | the deck, one slide per page (display + Google Slides import) |
+| `lessonYY_slides.pdf` | the deck **printed**: 3 slides per page, ruled note column beside each |
+| `lessonYY_slides.pptx` | the deck **projected**: one full-bleed page image per slide |
 | `lessonYY_student.pdf` | cover + blank components, paginated packet-wide |
 | `lessonYY_key.pdf` | the same packet answered, **page for page** with the student one |
 
-`full` disappears. The plan and the deck become standalone deliverables instead of being
-buried in a teacher packet.
+`full` is gone at all three levels and **fails loudly** with a message naming its
+replacement. The plan and the deck are standalone deliverables instead of being buried in
+a teacher packet.
 
-**Explicitly NOT ported:** algebra_2's fifth product, `lessonYY_slides.pptx`, and its
-`shared/pdf2pptx.py`. `UNIT_PACKET_REFACTOR_NOTES.md` already rules out a PowerPoint
-generation step for this workflow.
+### Slides policy (set 2026-07-30)
 
-### The open design question — resolve this before writing any Makefile
+**Every lesson ships its deck in both forms — pptx to project, 3-up PDF to print.** Layne
+had previously prohibited PowerPoint generation in this project and **explicitly
+rescinded that**, so `shared/pdf2pptx.py` came over after all. Earlier drafts of this file
+listed the pptx as "explicitly NOT ported"; that is no longer true.
 
-The two courses solved continuous pagination **differently**, and they are not
-compatible:
+The raw one-slide-per-page PDF is **not** a product any more — Google Slides imports
+`.pptx` natively, so the pptx covers the import path it used to serve. It remains the
+source of truth at `target/unitXX/lessonYY/slides/main.pdf`. `make slides` builds both
+forms; `make pptx` builds just the pptx.
 
-- **algebra_2** merges component PDFs with `pdfunite`, then re-runs the merged PDF
-  through `shared/paginate.tex`, which overlays packet-wide page numbers (a white band
-  inside the bottom margin hides each component's own number) and forces every component
-  to start on a **recto**, inserting numbered blank versos.
-- **this course** compiles a unit wrapper `.tex` (`unitXX_student.tex` /
-  `unitXX_full.tex`) that source-includes each component with `docmute` + `import`, so
-  pagination is continuous by construction — there is no overlay pass.
+`shared/pdf2pptx.py` is **stdlib + poppler only** — it rasterizes with `pdftoppm` and
+writes the OOXML package with `zipfile`. No LibreOffice, no `python-pptx`, no install
+step. The ban on a *Node* step, from `UNIT_PACKET_REFACTOR_NOTES.md`, still stands.
 
-Decide which layer owns pagination before mirroring anything. Mixing them means a packet
-numbered twice. The wrapper approach is already working here for units; the algebra_2
-approach numbers at the *lesson* level, which is what makes a standalone
-`lessonYY_student.pdf` paginate on its own.
+**Consequence: every lesson now owes a deck.** `slides` is in `new_lesson.py`'s defaults,
+and the skill's Retrofit section treats a missing deck as something to fix during review.
 
-Also note: algebra_2 forces recto starts and inserts blank versos. This course currently
-does not. That is a **pedagogical/print decision**, not a technical one — confirm it
-before adopting.
+### The design question — resolved
 
-### What to mirror from algebra_2
+**Pagination is owned by the lesson level, via the overlay.** The wrapper `.tex` approach
+is retired.
 
-- `shared/lesson.mk` — targets `all plan slides student key` (drop `pptx`). Relevant
-  variables: `PLAN_OUT`, `SLIDES_OUT`, `STUDENT_OUT`, `KEY_OUT`, `STUDENT_ORDER`,
-  `KEYED_PAIRS`, `ALIGN_STAMPS`.
-- `shared/handout.tex` — the 3-up printed form of a deck: three slide thumbnails down a
-  left column, a ruled `Notes` area beside each. Invoked with `\def\DeckSource{...}` and
-  `\def\DeckPages{n}` (the Makefile gets the count from `pdfinfo`; LaTeX cannot count an
-  external PDF's pages). **Change the `\usepackage{algebra2-colors}` line to
-  `apstats-colors`.**
-- `shared/paginate.tex` — only if the lesson-level pagination approach wins above. Its
-  band geometry is measured against `algebra2-article.sty`'s bottom margin (0.75in);
-  `apstats-article.sty` uses the same, but **re-measure** with
-  `pdftotext -f <p> -l <p> -bbox` before trusting it.
-- `shared/unit.mk` / root `Makefile` — units aggregate only `student` and `key`; the plan
-  and the deck stay per-lesson.
+Rationale: the overlay works from discovered component PDFs, so it needs no per-lesson or
+per-unit source file across 80 lessons; it handles prefab PDFs identically; and it is the
+only one of the two that can enforce student/key page-for-page alignment, which is the
+defining property of the key product. The wrappers also only ever covered unit01 — units
+02–09 silently fell back to `pdfunite`, so the course was numbering its packets two
+different ways.
 
-### Knock-on changes
+**Unit packets re-run the same pass** over the merged unit packet. The overlay is
+idempotent — the white band covers whatever number is already on the page — so a unit
+packet built from already-paginated lesson packets renumbers cleanly, unit-wide, with no
+double numbering. This gives all nine units the continuous numbering that only unit01 had.
 
-- The unit wrappers `unitXX_student.tex` / `unitXX_full.tex` need renaming/reworking —
-  `unitXX_full.tex` becomes `unitXX_key.tex` and loses the lesson plans and the slide
-  handout, since both become standalone products.
-- `make full` must fail loudly rather than silently doing nothing.
-- The skill's `references/build.md`, SKILL.md Step 5, and `UNIT_PACKET_REFACTOR_NOTES.md`
-  all describe `student`/`full` and will be wrong.
-- Every lesson then owes a deck (`slides` feeds a product), so it stops being optional in
-  `new_lesson.py`'s defaults.
+**Recto starts: adopted** (user decision). Every component opens on a right-hand page;
+blank versos are inserted and numbered. The slot rule is
+`ceil_even(max(blank pages, key pages))` — the `max` gives student/key alignment, the
+`ceil_even` gives the recto start. The unit pass pairs
+`[unit_cover, lesson*_student, sample_test]` against
+`[unit_cover, lesson*_key, sample_test_key]`, so unit packets are recto-correct and
+page-for-page end to end, which algebra_2's are not.
+
+### What landed
+
+| File | State |
+| --- | --- |
+| `shared/paginate.tex` | new — ported; band geometry re-measured against `apstats-article.sty` |
+| `shared/paginate.sh` | new — the slot arithmetic, factored out so `lesson.mk` and `unit.mk` share it |
+| `shared/handout.tex` | new — ported, `algebra2-colors` → `apstats-colors` |
+| `shared/pdf2pptx.py` | new — ported verbatim bar one metadata string (`algebra2 build` → `apstats build`) |
+| `shared/lesson.mk` | rewritten — `all plan slides pptx student key`, `full` errors |
+| `shared/unit.mk` | rewritten — `student key`, unit-wide paginate pass, `full` errors |
+| `Makefile` | rewritten — `student key`, `full` errors |
+
+Deleted: `unit01/unit01_student.tex`, `unit01/unit01_full.tex`, and the unreferenced
+`unit01/lesson01/lesson01_{student,full}.tex` (bare `\input` lists, no preamble, no
+Makefile ever read them).
+
+Docs updated: the skill's `references/build.md` and SKILL.md Steps 5 / 1b / Retrofit,
+`UNIT_PACKET_REFACTOR_NOTES.md` (now marked superseded), and `new_lesson.py` — `slides` is
+in `DEFAULT_COMPONENTS` now that the deck feeds a product.
+
+### Two things to know when authoring
+
+- **A lesson's `student` and `key` each compile every component of both packets** (slots are
+  sized against the counterpart) **but each emits only its own packet.** `make student` on a
+  clean lesson gives no `lessonYY_key.pdf` — use `make all`. Verified that building them
+  separately still yields identical page counts, so alignment does not depend on build order.
+  At the *unit* level both targets do build both lesson packets, since the unit pass needs
+  the real PDFs on both sides.
+- **The pass pads a page-count mismatch instead of reporting it.** A key that runs one page
+  longer than its blank still yields two equal-length packets — the student one just gains
+  a blank verso. So the work rule is *silently* violated. Check the compiled components
+  under `target/unitXX/lessonYY/<comp>/main.pdf`, never the packets.
+
+### Backlog
+
+- **57 of 80 lessons have no `slides/main.tex`**, so they build three products, not five.
+  `make slides` prints `(no slides in …)` and moves on. Per Layne (2026-07-30), those decks
+  **get authored during the lesson review pass**, alongside the convention retrofits — not
+  as a bulk sweep. The skill's Retrofit section carries this as a named `deck` convention.
 
 ---
 
@@ -185,33 +218,68 @@ python3 shared/cover.py --check-fonts
 make -C unit01 clean_unit_cover         # throw it away and redraw
 ```
 
-### Wiring
+### Wiring, now that Part 2 has landed
 
 `binder_cover/` is a prefab-PDF component like `sample_test/`, with one difference: its
-`main.pdf` is *generated*. In `shared/unit.mk` the rule has **no prerequisites on
-purpose** — once generated the cover is a stable artifact, because a regenerated cover is
-byte-different every time (jitter) and would otherwise churn on every build. `make -C
-unitXX clean_unit_cover` is the explicit "redraw it" escape hatch.
+`main.pdf` is *generated*.
 
-### What needs adapting for AP Statistics
+Add `binder_cover` to `shared/unit.mk` as a generated prefab, then put it at the **head of
+both packet lists** — in the `unit_lesson_lists` variable, ahead of `$(UNIT_COVER_PDF)` in
+`student_list` and `key_list` alike. It must appear in both so the alignment pass keeps
+them paired; it is the same two-page sheet in each, so it takes a slot of 2 and nothing
+downstream shifts.
 
-- **Ink budget is a hard constraint** — these print on a school printer. White
-  background, no solid fills, line work in grays `#5f5f5f`–`#c9c9c9`, `#ffffff` fills for
-  occlusion only. Keep this.
-- **Auto-discovery is tuned for algebra**: plotted functions, solved equations, display
-  math. AP Stats lesson sources hold dotplots, boxplots, normal curves, scatterplots with
-  LSRL, and formula displays (`\bar{x}`, `SE`, test statistics). The scanner and the
-  element renderers will need statistics-appropriate types, or every unit falls back to a
-  thin cover.
-- **Fonts.** Four OTFs must be installed where the OS font service can see them:
-  `lmroman10-regular`, `lmroman10-italic`, `latinmodern-math`, `texgyretermes-regular`,
-  `texgyrechorus-mediumitalic`. Verify with `--check-fonts` before assuming a failure is
-  a code bug.
-- Colors: algebra_2's cover is forest-green-derived where it uses accent; this course is
-  navy (`#1F3A5F`). Check whether the palette constants at the top of `cover.py` need a
-  course-specific swap.
+Mirror algebra_2's rule shape: `$(BINDER_COVER_SRC)` has **no prerequisites on purpose**
+(jitter makes a redraw byte-different every time, so dependency-tracking it would churn
+the repo on every build), with `make -C unitXX clean_unit_cover` as the explicit redraw
+escape hatch.
 
-### Suggested order
+### Reconnaissance done 2026-07-30 — read this before starting
 
-Do Part 2 before Part 3 — the cover is a unit-level prefab component, and Part 2 changes
-how unit packets are assembled. Building the cover first means wiring it twice.
+**Environment is clear.** `python3 shared/cover.py --check-fonts` against algebra_2's copy
+reports `all cover fonts present` and `cairosvg present` on this machine. Font installation
+is *not* a task; if a run fails, it is a code bug.
+
+**One hard blocker, and it fails silently.** `cover.py`'s `_UNIT_NAME_RE` matches only
+`\newcommand{\UnitNumberName}{...}`. Units 02–09 use exactly that. **Unit 1 uses
+`\def\UnitNumberName{...}` in all ten of its lesson plans**, so `unit_metadata()` finds
+nothing and falls back to `title or unit_dir.name` — unit01's cover would be titled
+"unit01" rather than "Exploring One-Variable Data", with no error. Fix by widening the
+regex to accept both forms (more robust) *and* normalising unit01 to `\newcommand` (more
+consistent). Do both. The `\quad` suffix and the `Unit N:` prefix are already stripped by
+`unit_metadata`, so those need no work.
+
+**Auto-discovery will produce near-empty covers as written.** Measured against this
+course's sources:
+
+| `cover.py` looks for | This course has |
+| --- | --- |
+| `f(x) = …` / `y = …` definitions → `graph` | essentially none — **0 graphs discovered** |
+| `\begin{work}` blocks → `slab` | **0 files** use `work` yet (Part 1 backlog) |
+| `\numline` or `\draw[<->` → `numberline` | 52 files have axis-ish TikZ, but stats number lines are not solution sets |
+| inline `$…$` containing `=` → `equation` | plentiful, but heavily polluted: `$Q_1 = $`, `$\bar{x} = \dfrac{…}{5} = \blank{2cm}$`, `$= \blank{2cm}$` |
+
+So every unit falls through to a pile of low-quality loose equations. `_HOLE` already drops
+anything containing `\blank`, which removes many of them and leaves the page thin.
+
+**What the course actually has to draw from**, by file count across all nine units:
+regression/LSRL 121, scatterplots 83, histograms 69, dotplots 58, boxplots 43, normal
+curves 9. That is the real inventory — the work is new `BUILDERS` entries for those forms
+plus a scanner that recognises them, not tuning the existing algebra builders.
+
+Keep unchanged: the **ink budget** (white background, no solid fills, line work in
+`#5f5f5f`–`#c9c9c9`, `#ffffff` fills for occlusion only) — these print on a school printer.
+Also check whether the accent constants need a navy (`#1F3A5F`) swap; algebra_2's are
+forest-green-derived.
+
+### Suggested sequencing
+
+1. Port `cover.py`, fix the `\def` regex, normalise unit01, and confirm a unit with good
+   metadata (say unit05) renders *something* end to end. Prove the pipeline before
+   touching discovery.
+2. Add statistics `BUILDERS` — dotplot and boxplot first (simplest geometry, 101 files
+   between them), then histogram, scatter+LSRL, normal curve.
+3. Extend `discover()` to recognise those TikZ idioms and to reject the `\blank`/trailing-`=`
+   fragments the current equation path lets through.
+4. Wire into `unit.mk`, generate all nine, and check ink coverage on a real printer before
+   committing the PDFs.

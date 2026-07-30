@@ -1,5 +1,22 @@
 # shared/unit.mk — included by every unit-level Makefile.
 # Auto-detects PROJECT_ROOT and UNIT from CURDIR.
+#
+# A unit aggregates only the two products that concatenate meaningfully:
+#
+#   unitXX_student.pdf   unit cover + every lesson's student packet (+ sample test)
+#   unitXX_key.pdf       the same, keyed, page for page with the student one
+#
+# The other two lesson products (the plan and the deck) stay per-lesson in
+# target/compiled/unitXX/ — they are teacher artifacts, not something to hand
+# out as one bound document. That is why unitXX_full.tex is gone.
+#
+# Pagination: each lesson packet arrives already numbered 1..n and already
+# recto-correct, so the unit pass re-runs shared/paginate.sh over the merged
+# unit packet. The white band in paginate.tex covers whatever number is already
+# on the page and reprints it unit-wide, so the pass is idempotent and the two
+# numbering schemes never fight. This replaced the unitXX_student.tex /
+# unitXX_full.tex docmute wrappers, which achieved continuous numbering for the
+# one unit that had them at the cost of a hand-maintained file per unit.
 
 PROJECT_ROOT := $(abspath ..)
 UNIT         := $(notdir $(CURDIR))
@@ -12,6 +29,9 @@ LATEXFLAGS   = -xelatex \
                -halt-on-error \
                -file-line-error
 
+PAGINATE_SH  := $(PROJECT_ROOT)/shared/paginate.sh
+PAGINATE_DIR := $(PROJECT_ROOT)/target/$(UNIT)/.paginate
+
 # Auto-discover lessons that have a Makefile, in sorted order.
 LESSONS := $(patsubst %/Makefile,%,$(sort $(wildcard lesson*/Makefile)))
 
@@ -19,14 +39,21 @@ LESSONS := $(patsubst %/Makefile,%,$(sort $(wildcard lesson*/Makefile)))
 HAS_UNIT_COVER      := $(wildcard unit_cover/main.tex)
 HAS_SAMPLE_TEST     := $(wildcard sample_test/main.pdf)
 HAS_SAMPLE_TEST_KEY := $(wildcard sample_test_key/main.pdf)
-HAS_UNIT_STUDENT_TEX := $(wildcard $(UNIT)_student.tex)
-HAS_UNIT_FULL_TEX    := $(wildcard $(UNIT)_full.tex)
 
 UNIT_COVER_PDF      := $(if $(HAS_UNIT_COVER),$(COMPILED_DIR)/$(UNIT)/unit_cover.pdf)
 SAMPLE_TEST_PDF     := $(if $(HAS_SAMPLE_TEST),$(COMPILED_DIR)/$(UNIT)/sample_test.pdf)
 SAMPLE_TEST_KEY_PDF := $(if $(HAS_SAMPLE_TEST_KEY),$(COMPILED_DIR)/$(UNIT)/sample_test_key.pdf)
 
-.PHONY: all student full clean $(LESSONS) _unit_cover _sample_test _sample_test_key
+# The bookends the two packets pair off against each other. The cover is the
+# same sheet in both. The sample test pairs with its key, or with itself when
+# there is no key — either way the lists stay 1:1, which is what the alignment
+# pass needs. (A sample_test_key with no sample_test is a malformed unit: the
+# key packet would then carry one tail entry the student packet has not got.
+# It sits at the very end, so everything ahead of it still aligns.)
+STUDENT_TAIL := $(SAMPLE_TEST_PDF)
+KEY_TAIL     := $(or $(SAMPLE_TEST_KEY_PDF),$(SAMPLE_TEST_PDF))
+
+.PHONY: all student key full clean $(LESSONS) _unit_cover _sample_test _sample_test_key
 
 all: $(LESSONS)
 
@@ -59,48 +86,67 @@ ifdef HAS_SAMPLE_TEST_KEY
 	@echo "✓  Sample test key   → target/compiled/$(UNIT)/sample_test_key.pdf"
 endif
 
-# ── student / full targets ────────────────────────────────────────────────────
+# ── student / key packets ─────────────────────────────────────────────────────
+#
+# Both targets build BOTH packets of every lesson, because each one's slot sizes
+# are computed against the other's. That is the price of page-for-page
+# alignment, and it is why `make -C unitXX student` compiles the keys too.
+#
+# The paired lists are assembled from $(LESSONS) rather than by globbing, so
+# they stay 1:1 and in the same order; a lesson missing either packet is
+# skipped from both.
+#
+# Plain `=` rather than `define`: make collapses each backslash-newline in a
+# variable assignment to one space, so this expands to a single shell line and
+# can be dropped into either recipe.
+unit_lesson_lists = sl=''; kl=''; \
+  for l in $(LESSONS); do \
+    s=$(COMPILED_DIR)/$(UNIT)/$$l"_student.pdf"; \
+    k=$(COMPILED_DIR)/$(UNIT)/$$l"_key.pdf"; \
+    if [ -f "$$s" ] && [ -f "$$k" ]; then sl="$$sl $$s"; kl="$$kl $$k"; fi; \
+  done; \
+  student_list="$(UNIT_COVER_PDF) $$sl $(STUDENT_TAIL)"; \
+  key_list="$(UNIT_COVER_PDF) $$kl $(KEY_TAIL)"
 
-student: _unit_cover $(LESSONS) _sample_test
-	@for l in $(LESSONS); do $(MAKE) -C $$l student || exit 1; done
+student: _unit_cover _sample_test
+	@for l in $(LESSONS); do $(MAKE) -C $$l student key || exit 1; done
 	@mkdir -p $(COMPILED_DIR)/$(UNIT) $(COMPILED_DIR)
-ifdef HAS_UNIT_STUDENT_TEX
-	TEXINPUTS="$(TEXINPUTS)" $(LATEXMK) $(LATEXFLAGS) \
-		-outdir="$(COMPILED_DIR)" $(UNIT)_student.tex
-	@echo "✓  Unit student packet → target/compiled/$(UNIT)_student.pdf"
-else
-	@lesson_pdfs=$$(ls $(COMPILED_DIR)/$(UNIT)/lesson*_student.pdf 2>/dev/null | sort); \
-	all_pdfs="$(UNIT_COVER_PDF) $$lesson_pdfs $(SAMPLE_TEST_PDF)"; \
-	all_pdfs=$$(echo $$all_pdfs | tr ' ' '\n' | grep -v '^$$'); \
-	if [ -n "$$all_pdfs" ]; then \
-	  pdfunite $$all_pdfs $(COMPILED_DIR)/$(UNIT)_student.pdf; \
-	  echo "✓  Unit student packet → target/compiled/$(UNIT)_student.pdf"; \
+	@set -e; \
+	$(unit_lesson_lists); \
+	if [ -n "$$(echo $$student_list)" ]; then \
+	  pdfunite $$student_list $(COMPILED_DIR)/$(UNIT)_student.pdf; \
+	  TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(COMPILED_DIR)/$(UNIT)_student.pdf \
+	      $(PAGINATE_DIR) $$student_list -- $$key_list; \
+	  echo "✓  Unit student packet → target/compiled/$(UNIT)_student.pdf (paginated $(UNIT)-wide)"; \
 	else \
 	  echo "  (no student PDFs found for $(UNIT))"; \
 	fi
-endif
 
-full: _unit_cover $(LESSONS) _sample_test _sample_test_key
-	@for l in $(LESSONS); do $(MAKE) -C $$l full || exit 1; done
+key: _unit_cover _sample_test _sample_test_key
+	@for l in $(LESSONS); do $(MAKE) -C $$l student key || exit 1; done
 	@mkdir -p $(COMPILED_DIR)/$(UNIT) $(COMPILED_DIR)
-ifdef HAS_UNIT_FULL_TEX
-	TEXINPUTS="$(TEXINPUTS)" $(LATEXMK) $(LATEXFLAGS) \
-		-outdir="$(COMPILED_DIR)" $(UNIT)_full.tex
-	@echo "✓  Unit full packet    → target/compiled/$(UNIT)_full.pdf"
-else
-	@lesson_pdfs=$$(ls $(COMPILED_DIR)/$(UNIT)/lesson*_full.pdf 2>/dev/null | sort); \
-	all_pdfs="$(UNIT_COVER_PDF) $$lesson_pdfs $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)"; \
-	all_pdfs=$$(echo $$all_pdfs | tr ' ' '\n' | grep -v '^$$'); \
-	if [ -n "$$all_pdfs" ]; then \
-	  pdfunite $$all_pdfs $(COMPILED_DIR)/$(UNIT)_full.pdf; \
-	  echo "✓  Unit full packet    → target/compiled/$(UNIT)_full.pdf"; \
+	@set -e; \
+	$(unit_lesson_lists); \
+	if [ -n "$$(echo $$key_list)" ]; then \
+	  pdfunite $$key_list $(COMPILED_DIR)/$(UNIT)_key.pdf; \
+	  TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(COMPILED_DIR)/$(UNIT)_key.pdf \
+	      $(PAGINATE_DIR) $$key_list -- $$student_list; \
+	  echo "✓  Unit key packet     → target/compiled/$(UNIT)_key.pdf (page-for-page with the student packet)"; \
 	else \
-	  echo "  (no full PDFs found for $(UNIT))"; \
+	  echo "  (no key PDFs found for $(UNIT))"; \
 	fi
-endif
+
+full:
+	@echo "!  \`make full\` was removed — a unit now builds two packets:" >&2
+	@echo "     make student  → $(UNIT)_student.pdf" >&2
+	@echo "     make key      → $(UNIT)_key.pdf      (replaces \`full\`)" >&2
+	@echo "   The lesson plans and decks it used to swallow are now standalone" >&2
+	@echo "   per-lesson products: target/compiled/$(UNIT)/lessonYY_{plan,slides}.pdf" >&2
+	@exit 1
 
 clean:
 	@for l in $(LESSONS); do $(MAKE) -C $$l clean; done
-	rm -rf $(PROJECT_ROOT)/target/$(UNIT)/unit_cover
+	rm -rf $(PROJECT_ROOT)/target/$(UNIT)/unit_cover $(PAGINATE_DIR)
 	rm -f $(UNIT_COVER_PDF) $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)
-	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_full.pdf
+	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_key.pdf \
+	      $(COMPILED_DIR)/$(UNIT)_full.pdf

@@ -23,7 +23,11 @@ SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 KEYED = ["warmup", "notes", "activity", "exit_ticket", "homework"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
-DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket", "homework"]
+# `slides` is in the defaults because the deck now feeds a work product of its
+# own (lessonYY_slides.pdf) — every lesson owes one. Drop it explicitly via
+# --components if a particular lesson genuinely has no deck.
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket",
+                      "homework", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",

@@ -1,130 +1,74 @@
-# Unit Packet Refactor Notes
+# Unit Packet Refactor Notes — SUPERSEDED
 
-Context saved after the Unit 1 refactor. Use this when applying the same change
-to other units.
+**Status: retired 2026-07-30 by Part 2 of `ALGEBRA2_PARITY_NOTES.md`.**
 
-## Goal
+This file recorded the `unitXX_student.tex` / `unitXX_full.tex` wrapper approach: a per-unit
+`.tex` that source-included every component with `docmute` + `import`, so the merged unit packet
+carried one continuous page-number sequence. It is kept for the history, not as instructions —
+**do not implement anything below.**
 
-Build unit-level packets from TeX wrapper files instead of `pdfunite` whenever a
-unit provides:
+## What replaced it
 
-- `unitXX_student.tex`
-- `unitXX_full.tex`
+Pagination is now an overlay pass owned by one layer, applied at the lesson level and re-applied
+at the unit level:
 
-This gives the combined packet one continuous page-number sequence.
+- `shared/paginate.tex` — places each merged page at full size on a same-size sheet, covers the
+  component-local page number with a white band inside the bottom margin, and prints the
+  packet-wide number in its place. Also forces recto starts and numbers inserted blank versos.
+- `shared/paginate.sh` — computes the page slots and drives that pass. A component's slot is
+  `ceil_even(max(blank pages, key pages))`, so the student and key packets come out page for
+  page.
 
-## Current Architecture
+The pass is idempotent — the band covers whatever number is already there — which is what lets
+`shared/unit.mk` re-run it over a unit packet merged from already-paginated lesson packets.
 
-- `shared/unit.mk` detects the optional unit wrapper files.
-- If a wrapper exists, the unit target compiles the wrapper with `latexmk`.
-- If no wrapper exists, the unit target falls back to the old `pdfunite` merge.
-- Lesson-level builds still produce the component PDFs needed by the wrappers.
+## Why the wrappers went
 
-## Student Packet Pattern
+- They achieved continuous numbering for the **one** unit that had them (unit01). Units 02–09
+  silently fell back to `pdfunite`, so the course numbered its packets two different ways.
+- Each wrapper hard-coded every lesson's slide page count by hand.
+- Source-inclusion is fragile: lesson plans needed per-file adjustments (metadata after
+  `\begin{document}`, no preamble-only code) before they would source-include at all.
+- They could not align the student and key packets against each other, which is now the defining
+  property of the key product.
 
-For each unit, create `unitXX_student.tex` that source-includes:
+The overlay needs no per-unit or per-lesson file, works identically for prefab PDFs, and gets
+slide page counts from `pdfinfo`.
 
-1. `unit_cover`
-2. each lesson's student-facing components in order:
-   - `cover`
-   - `warmup`
-   - `notes`
-   - `activity`
-   - `exit_ticket`
-   - `homework`
-3. `sample_test/main.pdf`, if present
+## What carried over unchanged
 
-Use `docmute` and `import` to include component `main.tex` files from source.
-Use `pdfpages` only for prefab PDFs such as sample tests.
+- `unitXX/lessonYY/slides/main.pdf` stays **one slide per page** and remains the source of truth
+  for the deck. It is no longer a work product itself; two products derive from it.
+- The 3-up printed slide handout survives as `shared/handout.tex`, now the `lessonYY_slides.pdf`
+  product instead of being inlined in the teacher packet. Its page count comes from `pdfinfo`,
+  not from a hand-written number.
+- Still true: no slides in the student packet, and no lesson plan inserted into a packet.
 
-## Full Teacher Packet Pattern
+## Rescinded: the PowerPoint prohibition
 
-For each unit, create `unitXX_full.tex` that source-includes:
+This file used to say "**Do not add a Node or PowerPoint generation step for this workflow.**"
+**Layne explicitly rescinded the PowerPoint half on 2026-07-30.** Current project policy:
 
-1. `unit_cover`
-2. each lesson plan from source, not as an inserted PDF
-3. a 3-up slide handout, only in the full packet
-4. each lesson's keyed components in order:
-   - `cover`
-   - `warmup_key`
-   - `notes_key`
-   - `activity_key`
-   - `exit_ticket_key`
-   - `homework_key`
-5. `sample_test/main.pdf`, if present
-6. `sample_test_key/main.pdf`, if present
+> **Every lesson ships its deck in both forms — `lessonYY_slides.pptx` (projected) and
+> `lessonYY_slides.pdf` (3 slides per page with a note column, printed).**
 
-Do not insert the lesson plan as a PDF. Use `\subimport{lessonYY/}{main.tex}`
-so the lesson plan participates in the full packet page numbering.
+`lessonYY_slides.pptx` is built by `shared/pdf2pptx.py`, which uses only the Python standard
+library and the poppler tools the build already requires — no LibreOffice, no `python-pptx`, no
+install step. Google Slides imports `.pptx` natively, so it also covers the import path the raw
+one-slide-per-page PDF used to serve.
 
-## Slides
+**The ban on a Node step still stands.**
 
-Keep the normal lesson slide artifact as:
+Every lesson therefore owes a deck. 57 of 80 do not have one yet; those get authored during the
+lesson review pass, not in a bulk sweep.
 
-- `unitXX/lessonYY/slides/main.pdf`
+## Deleted by the refactor
 
-That PDF remains one slide per page and can be imported into Google Slides.
+```
+unit01/unit01_student.tex
+unit01/unit01_full.tex
+unit01/lesson01/lesson01_student.tex   # bare \input lists, no preamble, unreferenced
+unit01/lesson01/lesson01_full.tex
+```
 
-In the full teacher packet only, include those slide PDFs as printable handouts:
-
-- portrait letter page
-- 3 slides per page
-- slide thumbnails in a left column
-- matching `Notes:` area for each slide in a right column
-
-Do not generate or require PowerPoint files for this workflow.
-
-The current Unit 1 wrapper hard-codes each lesson's slide page count:
-
-- lesson01: 9
-- lesson02: 16
-- lesson03: 12
-- lesson04: 13
-- lesson05: 11
-- lesson06: 12
-- lesson07: 13
-- lesson08: 11
-- lesson09: 11
-- lesson10: 13
-
-For other units, get page counts from the compiled lesson slide PDFs with
-`pdfinfo`.
-
-## Lesson Plan Source-Inclusion
-
-Lesson plans may need small adjustments before they can be source-included:
-
-- metadata definitions such as `\UnitNumberName` and `\LessonNumberName` should
-  live after `\begin{document}` when needed
-- avoid preamble-only code that assumes the lesson plan is always compiled as a
-  root document
-- use local grouping around `\subimport` calls in the unit wrapper
-- if a lesson needs tighter margins, pass a custom option to the lesson-plan
-  include macro, as Unit 1 Lesson 1 does
-
-## Build And QA
-
-After adding wrappers for a unit:
-
-1. Delete stale stamps for that unit if source files changed.
-2. Run `make -C unitXX student`.
-3. Run `make -C unitXX full`.
-4. Check page count and page size with `pdfinfo target/compiled/unitXX_full.pdf`.
-5. Render at least:
-   - the first slide handout page
-   - the last slide handout page for a lesson with a non-multiple-of-3 slide count
-6. Visually confirm slide thumbnails and notes areas do not overlap or clip.
-
-Unit 1 reference result after this refactor:
-
-- `target/compiled/unit01_student.pdf`: 111 pages
-- `target/compiled/unit01_full.pdf`: 175 letter-size pages
-
-## Do Not Reintroduce
-
-- Do not use `pdfunite` for units that have wrapper TeX files.
-- Do not insert lesson plans into the full packet as PDFs.
-- Do not include slides in the student packet.
-- Do not add a Node or PowerPoint generation step for this workflow.
-- Do not remove the one-slide-per-page `slides/main.pdf`; it is the display and
-  Google Slides import artifact.
+Current build documentation lives in `.claude/skills/lesson-planning/references/build.md`.

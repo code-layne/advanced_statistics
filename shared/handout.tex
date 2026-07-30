@@ -1,0 +1,81 @@
+% shared/handout.tex — the printed form of a lesson's Beamer deck.
+%
+% Places THREE slides per letter page in two columns: the slide thumbnails run
+% down the left column, and each one gets a ruled note area beside it on the
+% right. The Beamer deck is the source of truth; this pass only re-frames its
+% pages, so figures and math render exactly as they do on the projector.
+%
+% This replaces the \includeslidehandout macros that used to live inline in
+% unitXX_full.tex, which hard-coded each lesson's slide count by hand. The count
+% now comes from pdfinfo.
+%
+% Note that lessonYY_slides.pdf — a work product — is the RAW deck, one slide
+% per page, because that is what projects and what Google Slides imports. This
+% 3-up form is the optional `handout` target on top of it.
+%
+% Invoked by shared/lesson.mk as:
+%   xelatex -jobname=handout '\def\DeckSource{/abs/deck.pdf}%
+%     \def\DeckPages{23}\input{handout}'
+% where \DeckPages is the deck's page count (the Makefile already has it from
+% pdfinfo — LaTeX cannot count the pages of an external PDF on its own).
+
+\documentclass[10pt]{article}
+\usepackage[letterpaper, top=0.5in, bottom=0.5in, left=0.55in, right=0.55in]{geometry}
+\usepackage{graphicx}
+\usepackage{pgffor}
+\usepackage{apstats-colors}
+
+\providecommand{\DeckSource}{}
+\providecommand{\DeckPages}{1}
+
+% ── Column geometry ───────────────────────────────────────────────────────────
+% The slide column is sized so three thumbnails plus their gaps fill the text
+% block; the note column takes what is left. The note area is measured against
+% the slide it sits beside, so the two columns end on the same line whatever
+% the deck's aspect ratio.
+\newlength{\slidewidth}   \setlength{\slidewidth}{4.35in}
+\newlength{\colgap}       \setlength{\colgap}{0.25in}
+\newlength{\noteswidth}
+\setlength{\noteswidth}{\dimexpr\textwidth-\slidewidth-\colgap\relax}
+
+\newcommand{\NoteLines}{6}          % ruled lines beside each slide
+
+\newsavebox{\slidebox}
+\newlength{\rowheight}
+
+\pagestyle{empty}
+
+% ── One slide + its note area ─────────────────────────────────────────────────
+\newcommand{\slidenoterow}[1]{%
+  \fboxsep=0pt \fboxrule=0.6pt
+  \sbox{\slidebox}{%
+    \fcolorbox{linegray}{white}{%
+      \includegraphics[width=\dimexpr\slidewidth-2\fboxrule\relax,
+                       page=#1]{\DeckSource}}}%
+  \setlength{\rowheight}{\dimexpr\ht\slidebox+\dp\slidebox\relax}%
+  \noindent
+  \begin{minipage}[t]{\slidewidth}%
+    \vspace{0pt}\usebox{\slidebox}%
+  \end{minipage}%
+  \hspace{\colgap}%
+  \begin{minipage}[t][\rowheight][s]{\noteswidth}%
+    {\footnotesize\bfseries\color{slate}Notes}%
+    \foreach \n in {1,...,\NoteLines}{%
+      \par\vfill\noindent\textcolor{linegray}{\rule{\noteswidth}{0.4pt}}}%
+  \end{minipage}\par
+}
+
+\begin{document}
+
+\newcount\slideno \slideno=0
+\loop\ifnum\slideno<\DeckPages
+  \advance\slideno by 1
+  \slidenoterow{\the\slideno}%
+  \ifnum\numexpr\slideno-3*(\slideno/3)\relax=0
+    \clearpage
+  \else
+    \ifnum\slideno<\DeckPages \vfill \fi
+  \fi
+\repeat
+
+\end{document}
