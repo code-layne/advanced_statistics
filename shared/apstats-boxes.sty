@@ -5,7 +5,104 @@
 % lesson-plan documents can set their own geometry independently.
 \RequirePackage{apstats-colors}
 \RequirePackage[most]{tcolorbox}
+\RequirePackage{needspace}
 \tcbuselibrary{breakable, skins}
+
+% ── \boxguard — the page-break guard ──────────────────────────────────────────
+% THE BOXGUARD RULE: never let a box break leaving a ~1in sliver — a title plus
+% a line or two — at the top or bottom of a page. If that little would print,
+% push the WHOLE box to the next page. Breaking is fine only when each side of
+% the break gets a substantial chunk.
+%
+% Put \boxguard on its own line immediately BEFORE \begin{...} of any breakable
+% box. If fewer than 16 lines remain on the page, the box starts on the next one.
+%
+%   \boxguard
+%   \begin{notesbox}{2. ...}
+%
+% Raise the count when a box OPENS with something unbreakable — a TikZ figure,
+% an \fbox, or a tabularx never splits, so the default guard can still strand a
+% stub:
+%
+%   \boxguard[30]
+%   \begin{notesbox}{3. ...}
+%
+% Inside a long box, guard a bold lead-in that introduces a table so the heading
+% never orphans from its table: \boxguard[14] before the lead-in paragraph.
+%
+% Prefer \boxguard over a hard \newpage — it self-adjusts when content above it
+% changes. Reserve \newpage for "this box must start a page" instructions.
+% Apply every guard to the blank AND its _key file; they stay in lockstep.
+\newcommand{\boxguard}[1][16]{\Needspace{#1\baselineskip}}
+
+% ── \begin{work} … \end{work} — worked steps, one statement per line ──────────
+% THE WORK RULE: a worked solution takes the SAME vertical space in the blank as
+% it does in the key. The block below is authored ONCE and appears byte-identical
+% in both files; the package swap decides only whether it is shipped.
+%
+%   apstats-boxes (blank) → builds the box, ships a \vphantom of it, so the
+%                           student gets exactly the room the answer needs and
+%                           the PDF contains nothing (no ink, no text layer).
+%   apstats-key   (key)   → builds the same box and ships it, in keyred.
+%
+% Both branches build the box through the same code with the same formatting, so
+% the metrics cannot drift. That is what retires the blank/key page mismatch —
+% components stay the same length without anyone counting lines.
+%
+% Format rules:
+%   * ONE STATEMENT PER LINE. Never two steps on one row.
+%   * The `&` goes immediately BEFORE the relation, so every relation in the
+%     block lands in the same column.
+%   * COMPUTING — the first row is the formula, the relation, and the
+%     substitution; each later row starts at the `&=` and aligns to the one
+%     above:
+%         \begin{work}
+%           SE_{\bar{x}} &= \dfrac{s}{\sqrt{n}} \\
+%                        &= \dfrac{4.2}{\sqrt{25}} \\
+%                        &= 0.84
+%         \end{work}
+%   * TEST STATISTICS — one row per step, every row aligned on its relation
+%     sign (=, <, >, \le, \ge, \approx):
+%         \begin{work}
+%           t &= \dfrac{\bar{x}-\mu_0}{SE} \\
+%             &= \dfrac{12.4-11.0}{0.84}   \\
+%             &\approx 1.67
+%         \end{work}
+%
+% Put the block where the student would work — after the prompt, before the next
+% item. Do not wrap it in \[ \] or an align: it supplies its own display.
+\newsavebox{\aps@work@box}
+\newif\ifaps@workvisible \aps@workvisiblefalse
+% Indent of the block from the left margin. Worked steps are set flush left, not
+% centered like a display: the key should read as a column of work, and it is
+% where the student writes theirs in the blank.
+\newlength{\aps@workindent} \setlength{\aps@workindent}{2em}
+% Extra leading between rows, on top of amsmath's \jot. 0pt sets the rows at
+% typeset spacing — the key is compact and the blank reserves exactly that. Raise
+% it (8–12pt) if students need handwriting room; it moves the blank and the key
+% together, so the two can never drift apart.
+\newlength{\workrowsep} \setlength{\workrowsep}{0pt}
+
+\newenvironment{work}
+  {\par\addvspace{\abovedisplayskip}%
+   \begin{lrbox}{\aps@work@box}%
+   \begin{minipage}{\linewidth}%
+   \addtolength{\jot}{\workrowsep}%
+   \color{keyred}\boldmath\bfseries
+   \noindent\hspace*{\aps@workindent}%
+   $\displaystyle\begin{aligned}}
+  {\end{aligned}$%
+   \end{minipage}%
+   \end{lrbox}%
+   \noindent
+   \ifaps@workvisible
+     \usebox{\aps@work@box}%
+   \else
+     % \vphantom ships an empty \null box carrying only the height and depth —
+     % the content itself never reaches the page or the text layer.
+     \vphantom{\usebox{\aps@work@box}}%
+   \fi
+   \par\addvspace{\belowdisplayskip}}
 
 % ── Lesson-plan box ───────────────────────────────────────────────────────────
 % Usage: \begin{skillbox}[Title]{background-color} ... \end{skillbox}
@@ -140,6 +237,85 @@
     boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm},
     breakable
 }
+
+% ── steptable / \step — a printed solution, aligned on its relation ───────────
+% The other half of the work rule. `work` is for steps the STUDENT writes (blank
+% reserves, key prints). This is for steps that are PRINTED IN BOTH — the
+% "justify every line" tables, where the computation is given and the student
+% names the reason beside it (which condition this line checks, which quantity
+% this line is estimating).
+%
+% The alignment requirement is the same either way: one statement per line, all
+% lines aligned on the relation. A plain single-column table cannot do that —
+% $z=(x-\mu)/\sigma$ over $z=(74-70)/2.5$ puts the two `=` signs in different
+% places — so the step is split into a right-aligned left side and a
+% left-aligned relation+right side, which lines the relations up in one column.
+%
+%   \begin{steptable}[Why this step]        % or bare for the default heading
+%     \step{z}{=\dfrac{x-\mu}{\sigma}}{Standardizing formula}
+%     \step{}{=\dfrac{74-70}{2.5}}{\blank{6.0cm}}
+%     \step{}{=1.6}{\blank{6.0cm}}
+%   \end{steptable}
+%
+% Argument 2 starts with the relation (=, <, >, \le, \ge, \approx) and is set
+% with a leading {} so TeX spaces it as a relation rather than as a leading
+% symbol. Identical in the blank and the key except for column 3, so it cannot
+% drift. The body is captured with `+b` rather than split across begin/end code:
+% tabularx rescans its body to solve the X column, so it must see a complete
+% one. Splitting \begin{tabularx} and \end{tabularx} across an environment
+% definition fails with "Missing } inserted" at the \end.
+\NewDocumentEnvironment{steptable}{O{Reason for this step} +b}
+  {\begin{center}%
+   \renewcommand{\arraystretch}{1.6}%
+   \begin{tabularx}{\linewidth}{@{}r@{}l X@{}}
+   \hline
+   \multicolumn{2}{@{}l}{\textbf{Step}} & \textbf{#1} \\
+   \hline
+   #2
+   \hline
+   \end{tabularx}%
+   \end{center}}
+  {}
+
+\newcommand{\step}[3]{$#1$ & ${}#2$ & #3 \\}
+
+% \steprel — same row, but the RELATION ITSELF is what the student supplies, so
+% the middle cell is arbitrary text rather than math. Use it when the direction
+% of the comparison is the point (a one-sided alternative, a p-value against
+% alpha). It still lands in the relation column, lined up with every \step above
+% and below it.
+%   \steprel{p\text{-value}}{\blank{0.9cm} $\alpha$}{\blank{6.0cm}}
+%   \steprel{p\text{-value}}{\ans{$<$} $\alpha$}{\ans{Reject $H_0$}}
+\newcommand{\steprel}[3]{$#1$ & #2 & #3 \\}
+
+% ── Teacher notes ─────────────────────────────────────────────────────────────
+% TEACHER NOTES LIVE IN THE LESSON PLAN, one per component, titled for it:
+%
+%   \begin{teachernote}[Warm-Up] ... \end{teachernote}   → "Teacher Note: Warm-Up"
+%   \begin{teachernote}          ... \end{teachernote}   → "Teacher Note"
+%
+% They used to be appended to each _key, which made the key longer than its
+% blank for no student-facing reason — the one block with no counterpart in the
+% blank, and after the work rule the main thing still costing a packet blank
+% pages. The lesson plan is teacher-facing already and sits outside the
+% page-matched packet, so that is where the prose belongs.
+%
+% Defined here rather than in apstats-key because the lesson plan loads -boxes
+% only. The optional argument keeps every pre-existing bare \begin{teachernote}
+% in an un-migrated key compiling unchanged.
+\tcbset{teachernotestyle/.style={
+    enhanced,
+    colback=redbg, colframe=redacc, boxrule=0.7pt, arc=1.5mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
+    fonttitle=\bfseries\scriptsize\color{white},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=redacc, colframe=redacc, arc=1mm},
+    breakable
+}}
+\NewDocumentEnvironment{teachernote}{o}
+  {\begin{tcolorbox}[teachernotestyle,
+      title={Teacher Note\IfValueT{#1}{: #1}}]}
+  {\end{tcolorbox}}
 
 % ── Cover page boxes ──────────────────────────────────────────────────────────
 \newtcolorbox{tocbox}{
