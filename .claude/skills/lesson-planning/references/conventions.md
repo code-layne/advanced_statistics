@@ -10,8 +10,8 @@ with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
 | --- | --- | --- |
 | `<prefix>-colors` | Color palette (loads `xcolor`) | everything |
 | `<prefix>-article` | Article preamble: geometry, lists, fill-in helpers, page header, name rows | student components |
-| `<prefix>-boxes` | All `tcolorbox` environments | components + lesson plan |
-| `<prefix>-key` | Answer macros + teacher note; requires `-boxes` | answer keys |
+| `<prefix>-boxes` | All `tcolorbox` environments, plus `\boxguard`, `work`, `steptable`, `teachernote` | components + lesson plan |
+| `<prefix>-key` | Answer macros (`\ans`, `\ansline`); flips `work` visible; requires `-boxes` | answer keys |
 | `<prefix>-beamer` | Slide theme | `slides/` |
 
 ## Per-document-type preambles
@@ -54,9 +54,48 @@ The `\TallMath` helper used for tall inline math is defined per-document where n
 | `\writelines{n}` | `n` stacked write-lines |
 | `\termblank{Term}` | Bold navy term + inline blank, then a write-line |
 | `\termblanklong{Term}` | Bold navy term on its own line + two write-lines (vocab style) |
-| `\namedateperiod` | Name / Date / Period row |
-| `\namepartnerperiod` | Name / Partner / Period row (group activities) |
+| `\namedateperiod` | Name / Date / Period row — **cover only** (Namestrip) |
+| `\namepartnerperiod` | Name / Partner / Period row — **not used**; superseded by Namestrip |
 | `\pageheader{Unit X, Lesson Y.Z}{Document Type}` | Full-width navy banner header |
+
+### Namestrip — the name row belongs on the cover, nowhere else
+
+The packet is stapled behind its cover, and since unit packets are built from a
+`unitXX_student.tex` wrapper the whole unit is one continuously-paginated document — so a
+name/date/period row on every component costs vertical space at the top of each page for
+something the student wrote once on page 1.
+
+In this course the keys mostly *dropped* the row while the blanks kept it, so the row is also a
+live source of blank/key drift. Strip it from every component except `cover/`:
+
+```bash
+python3 .claude/skills/lesson-planning/scripts/namestrip.py --project . --unit 01 --lesson 02 --check
+python3 .claude/skills/lesson-planning/scripts/namestrip.py --project . --unit 01 --lesson 02
+```
+
+`--check` reports without writing (exit 1 if anything would change). It touches both the blank
+and its `_key`, so the two stay in lockstep. Never strip `cover/`.
+
+### `\noindent` trap — the vocabpar fix
+
+`\termblanklong` opens with `\noindent`, which is a **no-op mid-paragraph**, and `\ansline` ends
+with `\dotfill` without ending the paragraph. Unfixed, the intro sentence and the first term
+collide in the blank, and in the key every term label after the first is dragged onto the previous
+answer's dotted line. So put a `\par` on both sides inside a `vocabbox`:
+
+```latex
+% notes/main.tex
+Fill in each term as we build it together.
+\par\vspace{2pt}                 % \par is REQUIRED here
+\termblanklong{First term}
+
+% notes_key/main.tex — \par on BOTH ends
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]\ansline{#2}\par}
+```
+
+Fix it per-lesson, **not** in `shared/` — a shared-package change re-flows every already-verified
+unit at once.
 
 ## Box environments (from `-boxes`)
 
@@ -92,6 +131,118 @@ Reusable component-identification table (AP Stats):
 - `\componenttable` — blank version (student), four rows: Individual / Population / Sample / Variable(s).
 - `\componenttablekey{ind}{pop}{samp}{vars}` — filled version (key), defined in `-key`.
 
+## `\boxguard` — the page-break guard (from `-boxes`)
+
+**Never let a box break leaving a ~1in sliver** — a title plus a line or two — at the top or
+bottom of a page. If that little would print, push the whole box to the next page. Breaking is
+fine only when each side of the break gets a substantial chunk.
+
+```latex
+\boxguard                 % 16 lines must remain, or the box starts a new page
+\begin{notesbox}{2. Checking the conditions}
+
+\boxguard[30]             % raise it when the box OPENS with something unbreakable
+\begin{notesbox}{3. ...}  % a TikZ figure, an \fbox, or a tabularx never splits
+```
+
+Inside a long box, guard a bold lead-in that introduces a table so the heading never orphans from
+its table: `\boxguard[14]` before the lead-in paragraph.
+
+Prefer `\boxguard` over a hard `\newpage` — it self-adjusts when content above it changes. Reserve
+`\newpage` for "this box must start a page." **Apply every guard to the blank AND its `_key`**;
+they stay in lockstep.
+
+## The work rule — `\begin{work}` (from `-boxes`, visible under `-key`)
+
+**Any worked solution goes in a `work` block, and that block is byte-identical in the blank and
+the key.** The package swap decides only whether it is shipped: under `-boxes` the blank builds
+the box and emits a `\vphantom` of it (exact height, nothing on the page and nothing in the PDF's
+text layer); under `-key` the same box is printed in `keyred`. The two therefore *cannot* drift —
+which is what keeps a component the same length on both sides.
+
+```latex
+% notes/main.tex AND notes_key/main.tex — the same lines in both files
+\begin{work}
+  t &= \dfrac{\bar{x}-\mu_0}{s/\sqrt{n}} \\
+    &= \dfrac{12.4-11.0}{4.2/\sqrt{25}}  \\
+    &\approx 1.67
+\end{work}
+```
+
+Format, non-negotiable:
+
+- **One statement per line.** Never two steps on one row, and never an inline
+  `a=b \Rightarrow c=d` chain — that is the idiom this rule replaces.
+- **The `&` goes immediately before the relation**, so every relation in the block lands in one
+  column. Works for `=`, `<`, `>`, `\le`, `\ge`, `\approx`.
+- **Computing:** row 1 is the formula, the relation, and the substitution; every later row starts
+  at the `&=` and aligns to the one above.
+- **Multi-step (a test statistic, a margin of error, an interval):** one row per step, each
+  aligned on its relation.
+
+Do not wrap a `work` block in `\[ \]`, `align`, or `equation` — it supplies its own display. It is
+set flush left (2em indent), not centered.
+
+**When it applies:** a task that asks for multi-step work. A table cell holding a single final
+answer is already the same size in both files — leave those as `\blank{}`/`\ans{}`. `work` blocks
+do not go inside table cells; if a table asks for real work, pull the items out of the table.
+
+`\workrowsep` (default `0pt`) adds leading between rows. It moves the blank and the key together,
+so raising it for handwriting room can never break the match.
+
+### `steptable` / `\step` — a *printed* solution, aligned on its relation
+
+`work` is for steps the **student** writes. Its counterpart is for steps **printed in both files**
+— the "name the reason for each line" tables, where the computation is given and the student says
+what each line does (which condition it checks, which quantity it estimates). Same alignment
+requirement, different mechanism: a plain one-column table cannot align relations, so the step is
+split into a right-aligned left side and a left-aligned relation + right side.
+
+```latex
+\begin{steptable}[Why this step]        % bare → "Reason for this step"
+  \step{z}{=\dfrac{x-\mu}{\sigma}}{Standardizing formula}
+  \step{}{=\dfrac{74-70}{2.5}}{\blank{6.0cm}}
+  \step{}{=1.6}{\blank{6.0cm}}
+\end{steptable}
+```
+
+Argument 2 begins with the relation. Use `\steprel{lhs}{cell}{reason}` when the *relation itself*
+is what the student supplies — comparing a p-value to $\alpha$, where the direction is the point:
+`\steprel{p\text{-value}}{\blank{0.9cm} $\alpha$}{\blank{6.0cm}}`.
+
+Only column 3 differs between the blank and the key, so the two cannot drift. It is a **chain**
+rule: a table of independent statements to classify is a list, not a solution, and stays a plain
+table.
+
+## Teacher notes — in the lesson plan, one per component
+
+**Teacher-only prose goes in the lesson plan, never in a `_key`.** A `teachernote` is the one block
+in a key with no counterpart in the blank, so it makes the key run longer than its blank for no
+student-facing reason — the last thing costing a packet blank pages once the work rule is in.
+
+The lesson plan closes with one note per component, in packet order, each titled for it:
+
+```latex
+\begin{teachernote}[Warm-Up]        ... \end{teachernote}   % → "Teacher Note: Warm-Up"
+\begin{teachernote}[Guided Notes]   ... \end{teachernote}
+\begin{teachernote}[Group Activity] ... \end{teachernote}
+\begin{teachernote}[Exit Ticket]    ... \end{teachernote}
+\begin{teachernote}[Homework]       ... \end{teachernote}
+```
+
+The environment is defined in **`-boxes`** (the lesson plan does not load `-key`) and the argument
+is **optional** — a bare `\begin{teachernote}` still renders plain "Teacher Note", so the ~136
+keys not yet migrated keep compiling. To migrate one lesson:
+
+```bash
+python3 .claude/skills/lesson-planning/scripts/movenotes.py unit01/lesson02 --check   # report only
+python3 .claude/skills/lesson-planning/scripts/movenotes.py unit01/lesson02
+```
+
+It lifts the note out of each `_key`, appends it to the plan with the right title, and refuses to
+run twice on the same lesson. Rebuild afterward and confirm every component matches its key page
+for page.
+
 ## Answer-key macros (from `-key`)
 
 | Macro / env | Effect |
@@ -99,7 +250,23 @@ Reusable component-identification table (AP Stats):
 | `\ans{text}` | Inline answer in bold `keyred`; use in place of a blank |
 | `\ansline{text}` | Bold `keyred` answer that fills a write-line with a dotted trail |
 | `\componenttablekey{..}{..}{..}{..}` | Filled component-ID table |
-| `teachernote` (env) | Red "Teacher Note" callout for teacher-only guidance |
+| `work` (env) | Worked steps — **defined in `-boxes`**, authored identically in both files; see "The work rule" |
+
+**`teachernote` is no longer a key macro.** It lives in `-boxes` and belongs in the **lesson
+plan** — see "Teacher notes" above.
+
+**`\ansline` is the other place lengths drift.** A `\writeline` in the blank is exactly one line;
+an `\ansline` whose prose wraps to four is three lines longer. When a key's prose answer runs long,
+give the blank `\writelines{n}` for the same n — the same principle as the work rule, applied by
+hand because prose cannot be measured from a shared body.
+
+**`\writelines{n}` occupies n+1 line slots** — it ends in `\\`, so `\writelines{3}` takes four
+lines' worth of room. Raising one is *not* free: it can overflow a 2pp blank to 3pp against a 2pp
+key. Set n from the key's true wrapped length, then rebuild and re-measure the **blank**.
+
+**Reach for `work` before `\writelines`.** If the answer is a multi-step computation rather than
+prose, a `work` block fixes the drift correctly and cannot come apart; a lengthened write-line only
+papers over it.
 
 **Key-authoring rule:** copy the blank component verbatim, then replace each blank/`\writeline`
 with `\ans{…}`/`\ansline{…}` and mark correct multiple-choice options, e.g.

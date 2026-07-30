@@ -32,7 +32,12 @@ DOC_TITLE = {
     "exit_ticket": "Exit Ticket",
     "homework": "Homework",
 }
-NAME_ROW = {"activity": r"\namepartnerperiod"}  # default: \namedateperiod
+# Namestrip: the name/date/period row belongs on the cover and nowhere else. The
+# packet is stapled behind its cover, and unit packets are one continuously
+# paginated document, so a row on every component costs a line at the top of
+# each page for something the student wrote once on page 1. cover.tex carries
+# the only \namedateperiod; every other component skeleton gets none.
+NAME_ROW: dict[str, str] = {}
 
 
 def fail(msg: str) -> "NoReturn":  # type: ignore[name-defined]
@@ -165,7 +170,7 @@ def main() -> None:
               args.force)
 
     for comp in components:
-        name_row = NAME_ROW.get(comp, r"\namedateperiod")
+        name_row = NAME_ROW.get(comp, "")  # Namestrip: cover only
         if comp in prefab:
             prefab_dir(dest / comp)
         elif comp == "cover":

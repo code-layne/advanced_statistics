@@ -45,12 +45,16 @@ AP tags and list review topics):
     MC, with a note on collecting and using results.
 12. **Reinforcement & Extension** — `skillbox{goldbox}`: homework overview, an extension, and a
     preview of the next lesson.
+13. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order
+    (Warm-Up, Guided Notes, Group Activity, Exit Ticket, Homework), closing the plan. This is
+    where *all* teacher-only prose lives; a `teachernote` never goes in a `_key`, because it is
+    the one block with no counterpart in the blank and it makes the key run long.
 
 ## Cover
 
 `cover/main.tex` — student-facing front page of the packet. No key. Structure:
 - Full-bleed navy banner (tikz) with `\LARGE` course name, unit, and `Lesson <id>  <title>`.
-- `\namedateperiod`.
+- `\namedateperiod` — **the only component that carries it** (Namestrip).
 - `learningtargetbox` — an "I can…" list, **one target per Learning Objective**.
 - `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score blank)
   with a Total row. Keep the rows aligned with the components you actually scaffolded.
@@ -62,16 +66,17 @@ AP tags and list review topics):
 thumbnail shown on the lesson plan. Frequently a **prefab PDF**: if so, just drop it in as
 `warmup/main.pdf` (and `warmup_key/main.pdf`) — `lesson.mk` merges it directly, and the lesson
 plan can embed its thumbnail via `\includegraphics{warmup/main}`. If authored: 3–5 quick
-problems with work space (`\vspace`), `\namedateperiod`, and the spiral review stays text-only
-in the plan. Key mirrors with `\ans`.
+problems with work space (`\vspace`), **no name row**, and the spiral review stays text-only
+in the plan. Key mirrors with `\ans`; multi-step solutions go in `work` blocks.
 
 ## Guided notes
 
 `notes/` (+ `notes_key/`) — the student's fill-in notes. Structure:
-- `\pageheader{Unit X, Lesson Y.Z}{Guided Notes}` + `\namedateperiod`.
+- `\pageheader{Unit X, Lesson Y.Z}{Guided Notes}` (no name row — Namestrip).
 - `objectivebox` — "By the end of this lesson, I will be able to…" with `\writeline`s for
   students to fill (the key uses `\ansline{...}`, one per Learning Objective).
 - `vocabbox` — `\termblanklong{Term}` per key term (key replaces each with `\ans{definition}`).
+  Wrap these in `\par` on both sides — the vocabpar fix; see `conventions.md`.
 - `hookbox` — the same hook as the plan, with write-lines for student responses.
 - Direct-instruction sections in `notesbox{Title}` with blanks (`\blank`, `\writeline`) at the
   points where students record steps/definitions/results.
@@ -80,7 +85,7 @@ in the plan. Key mirrors with `\ans`.
 ## Activity
 
 `activity/` (+ `activity_key/`) — differentiated group practice.
-- `\pageheader{Unit X, Lesson Y.Z}{Group Activity}` + `\namepartnerperiod`.
+- `\pageheader{Unit X, Lesson Y.Z}{Group Activity}` (no name row — Namestrip).
 - Three `tcolorbox`es titled **Tier R — Remediate**, **Tier A — Approaching Proficiency**,
   **Tier E — Extension** (`colframe=black!40`), each with problems and generous `\vspace` work
   room. Tiers escalate in difficulty and align to the same skills.
@@ -90,14 +95,14 @@ in the plan. Key mirrors with `\ans`.
 ## Exit ticket
 
 `exit_ticket/` (+ `exit_ticket_key/`) — a short independent check (2–3 items), no notes.
-`\pageheader{...}{Exit Ticket}` + `\namedateperiod`; a tight `enumerate` with a little work
+`\pageheader{...}{Exit Ticket}` (no name row); a tight `enumerate` with a little work
 space. Key fills with `\ans`. Graded for completion in the example courses ("mistakes happen,
 blanks don't").
 
 ## Homework
 
 `homework/` (+ `homework_key/`) — independent practice + stretch.
-`\pageheader{...}{Homework}` + `\namedateperiod`; a numbered practice set, an `extensionbox`
+`\pageheader{...}{Homework}` (no name row); a numbered practice set, an `extensionbox`
 ("Extension — optional"), and a short preview of the next lesson. Key fills with `\ans` and
 shows worked steps for the harder items.
 
@@ -119,9 +124,12 @@ There is no key toggle — every key is a separate file under `<comp>_key/`:
 - For multiple choice, keep all options and tag the correct one
   (`\textcolor{keyred}{\textbf{$\leftarrow$ correct}}`), then show the reasoning in a short
   `itemize`.
-- Use the `teachernote` environment for teacher-only guidance (pacing, common errors).
-- Because the key matches the blank line-for-line, the two paginate identically — verify by
-  building both and comparing.
+- **No `teachernote` in a key.** Teacher-only guidance goes in the lesson plan, one
+  `\begin{teachernote}[Component]` per component (see the lesson-plan spec above).
+- Carry over every `\boxguard` and every `\begin{work}` block **unchanged** — a `work` block is
+  authored byte-identically in both files, so it cannot drift.
+- Because the key matches the blank line-for-line, the two paginate identically — **verify** it:
+  every component's page count must equal its key's.
 
 ## Unit cover
 

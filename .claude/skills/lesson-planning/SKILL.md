@@ -11,6 +11,9 @@ description: >-
   from a lesson title, description, and a list of standards. Trigger this even when the
   user just says "make lesson 2.3" or "I need a warm-up and key for tomorrow," and even
   if they don't say the words "skill" or "LaTeX."
+  Also use it to RETROFIT an already-authored lesson to a named convention — boxguard,
+  namestrip, vocabpar, the work rule, teachernotes — as in "apply boxguard namestrip
+  retrofit to 1.1 and 1.3." See the Retrofit section.
 ---
 
 # Lesson Planning
@@ -94,6 +97,44 @@ pdftoppm -r 72 target/unitXX/lessonYY/exit_ticket/main.pdf /tmp/et \
 ```
 If either prints > 1: cut a question, rebuild, re-check. Do not continue until both return 1.
 Same check for their keys.
+
+### 1b. Page-for-page: a component is the same length blank and keyed
+
+Every component must come out the **same number of pages** as its `_key`. The student packet and
+the key packet are paginated against each other, so a key that runs one page long costs the
+student packet a blank page.
+
+Two mechanisms enforce it — use them while authoring, not as a cleanup pass:
+
+- **`work` blocks** for every multi-step solution, authored **byte-identically in the blank and
+  the key**. The blank reserves the block's exact height and prints nothing; the key prints it in
+  `keyred`. They cannot drift.
+- **Teacher notes in the lesson plan, never in a `_key`** — a note is the one block in a key with
+  no counterpart in the blank.
+
+Verify after building:
+```bash
+for c in warmup notes activity exit_ticket homework; do
+  b=$(pdfinfo target/unitXX/lessonYY/$c/main.pdf      | awk '/^Pages/{print $2}')
+  k=$(pdfinfo target/unitXX/lessonYY/${c}_key/main.pdf | awk '/^Pages/{print $2}')
+  [ "$b" = "$k" ] && echo "OK   $c $b" || echo "DRIFT $c blank=$b key=$k"
+done
+```
+Full spec — `work`, `steptable`, the `\ansline`/`\writelines` trap — in `references/conventions.md`.
+
+### 1c. `\boxguard` before every breakable box
+
+Never let a box break leaving a ~1in sliver — a title plus a line or two — at a page edge. Put
+`\boxguard` on its own line immediately before the `\begin{...}`, in the blank **and** the key:
+
+```latex
+\boxguard                 % 16 lines must remain, else the box starts a new page
+\begin{notesbox}{2. Checking the conditions}
+
+\boxguard[30]             % raise it when the box opens with an unbreakable TikZ figure or table
+```
+
+Prefer it to a hard `\newpage` — it self-adjusts when content above it changes.
 
 ### 2. No "sketch the…" questions
 
@@ -225,6 +266,11 @@ to create that component as an empty drop-in directory instead, where you place 
 
 ### Step 3 — Author the lesson plan and components
 
+**Before writing any component, do a full `Read` on each scaffolded `main.tex` skeleton you are
+about to replace.** Use the `Read` tool on the actual file — a `cat`/`bash` dump does **not**
+register the file with the editor and the first write will fail ("file has not been read yet").
+Read every skeleton you intend to author (each component and its `_key`) up front, then write them.
+
 Author each file following `references/components.md`, which gives the required section
 structure and a worked skeleton for every component and its key. Hold to these invariants:
 
@@ -232,12 +278,26 @@ structure and a worked skeleton for every component and its key. Hold to these i
   `\usepackage{<prefix>-article}` + `\usepackage{<prefix>-boxes}`.
 - **Answer keys** are *separate files* that swap `-boxes` for `\usepackage{<prefix>-key}`
   and wrap every answer in `\ans{...}` (inline) or `\ansline{...}` (fills a write-line).
-  Mirror the blank document exactly, then fill the blanks with `\ans`. Use `teachernote`
-  for teacher-only guidance. There is **no** answer-key toggle — never try to build one.
+  Mirror the blank document exactly, then fill the blanks with `\ans`. There is **no**
+  answer-key toggle — never try to build one.
+- **Teacher notes go in the lesson plan, not in a key** — one `teachernote` per component, in
+  packet order, titled for it: `\begin{teachernote}[Exit Ticket]` → "Teacher Note: Exit Ticket".
+  A note in a key is the one block with no counterpart in the blank, so it makes the key run
+  longer and costs the student packet a blank page.
+- **The work rule: a component must be the same number of pages blank and keyed.** Put every
+  worked solution in a `work` block — one statement per line, `&` before the relation so the whole
+  block aligns on it — authored **byte-identically in the blank and the key**. The blank reserves
+  the block's exact height and prints nothing; the key prints it. Never cram steps into one line
+  as `$a=b \Rightarrow c=d$`. Full spec in `references/conventions.md`.
+- **`\boxguard` before every breakable box**, in the blank and the key both (see Hard constraint 1c).
+- **Namestrip: `\namedateperiod` on the cover only.** No name row on warmup, notes, activity,
+  exit ticket, or homework — the packet is stapled behind its cover.
 - Use the project's box vocabulary (`skillbox`, `objectivebox`, `learningtargetbox`,
   `vocabbox`, `hookbox`, `notesbox`, `practicebox`, `scenariobox`, `tocbox`, etc.) and
-  fill-in helpers (`\blank`, `\writeline`, `\termblanklong`, `\namedateperiod`) rather than
-  reinventing layout. The full catalog is in `references/conventions.md`.
+  fill-in helpers (`\blank`, `\writeline`, `\termblanklong`) rather than reinventing layout.
+  The full catalog is in `references/conventions.md`.
+- **`\par` around `\termblanklong`/`\ansline` inside a `vocabbox`** (the vocabpar fix) — without
+  it the intro sentence collides with the first term, and key answers drag onto the wrong line.
 - If the warm-up is a **prefab** PDF (`warmup/main.pdf` in the source tree), the lesson plan may
   embed its thumbnail via `\includegraphics[page=1]{warmup/main}`. **Authored** warm-ups compile
   to `target/` and have no source PDF to embed, so keep the spiral review text-only (as AP Stats
@@ -271,6 +331,62 @@ curriculum. Output lands in `target/`. The build needs XeLaTeX, `latexmk`, and `
 if a compile fails, surface the `.log` and fix the offending `.tex` rather than editing the
 build system. Details and troubleshooting in `references/build.md`.
 
+**Unit packets come from a TeX wrapper, not `pdfunite`.** If a unit provides `unitXX_student.tex`
+and `unitXX_full.tex`, `shared/unit.mk` compiles those wrappers instead of merging PDFs, which
+gives the packet one continuous page-number sequence. The student wrapper source-includes each
+lesson's blank components (`docmute` + `import`); the full wrapper source-includes each lesson
+*plan* and the keyed components, plus a 3-up slide handout that appears in the teacher packet
+only. Never insert a lesson plan as a PDF, never put slides in the student packet, and never fall
+back to `pdfunite` for a unit that has wrappers. Full pattern in `references/build.md` and
+`UNIT_PACKET_REFACTOR_NOTES.md` at the project root.
+
+### Step 6 — Compile QA before any PR
+
+`make` stops at the first error, so scan every document first. Compile **out of tree** —
+an in-place `xelatex` overwrites tracked `main.pdf` files in the source directories:
+
+```bash
+ROOT=$(pwd); mkdir -p /tmp/scan
+find unitXX -name main.tex | while read f; do
+  d=$(dirname "$f"); o=/tmp/scan/$(echo "$d" | tr / _); mkdir -p "$o"
+  (cd "$d" && TEXINPUTS="$ROOT/shared//:" xelatex -halt-on-error -interaction=nonstopmode \
+     -output-directory="$o" main.tex > "$o/scan.log" 2>&1) \
+    && echo "OK: $f" || { echo "FAIL: $f"; grep -m3 "^!" "$o/scan.log"; }
+done
+```
+
+Collect ALL failures, fix them, re-scan to confirm zero, then delete stale stamps
+(`find .stamps/unitXX -name '*.stamp' -delete`) and run `make`.
+
+## Retrofit — apply a named convention to a lesson already authored
+
+Conventions land after lessons are written, so an existing lesson can be behind on one. The user
+invokes this by name:
+
+> `/lesson-planning apply boxguard namestrip retrofit to 1.1 and 1.3`
+
+Apply **only the conventions named** (all of them if none are named), to the lessons named, then
+build and report. Each has a fix and, where it is mechanical, a script:
+
+| Name | The rule | How to apply |
+| --- | --- | --- |
+| **boxguard** | No box stranded as a ~1in sliver across a page break | `\boxguard` (or `\boxguard[n]`) on its own line before the `\begin{...}` — blank **and** key |
+| **namestrip** | Name/date/period row on the cover only | `python3 .claude/skills/lesson-planning/scripts/namestrip.py --project . --unit NN --lesson MM` (`--check` to preview) |
+| **vocabpar** | `\par` around `\termblanklong`/`\ansline` in a `vocabbox` | Hand fix per lesson |
+| **work rule** | A component is the same length blank and keyed | `work` blocks authored identically in both files; `steptable`/`\step` for printed solutions; `\writelines{n}` to match a wrapped `\ansline` |
+| **teachernotes** | Teacher prose in the lesson plan, one titled note per component | `python3 .claude/skills/lesson-planning/scripts/movenotes.py unitNN/lessonMM` (`--check` to preview) |
+
+Full spec for each: `references/conventions.md`.
+
+**Always finish a retrofit with the evidence**, per lesson: `make -C unitXX/lessonYY all` exits 0,
+and every component's page count equals its `_key`'s (Hard constraint 1b). Report any component
+that still differs and why.
+
+**Scope note for this course.** Nothing is retrofitted yet: ~136 `_key` files still carry teacher
+notes, and `\namedateperiod` appears on every component rather than the cover alone. Retrofit
+lesson by lesson (or unit by unit) as you review, and rebuild the unit packet each time — do not
+attempt the whole course in one pass.
+
 ## Reference files
 
 - `references/conventions.md` — the style packages, every box environment, the fill-in and
@@ -280,16 +396,35 @@ build system. Details and troubleshooting in `references/build.md`.
 - `references/ap-workflow.md` — reading an AP CED and mapping Big Idea / Skill / LO / EK into
   the lesson.
 - `references/standards-workflow.md` — the title + description + standards path.
-- `references/build.md` — the Makefile hierarchy, scaffolding, prefab PDFs, build commands,
-  and troubleshooting.
+- `references/build.md` — the Makefile hierarchy, unit packet wrappers, scaffolding, prefab PDFs,
+  build commands, and troubleshooting.
+
+## Scripts
+
+- `scripts/new_lesson.py` — scaffold a lesson directory (Step 2). Emits namestrip-compliant
+  components and a lesson plan pre-stubbed with one `teachernote` per component.
+- `scripts/namestrip.py` — retrofit: remove the name row from every component but `cover`.
+- `scripts/movenotes.py` — retrofit: lift each `_key`'s teacher note into the lesson plan, titled
+  for its component.
+
+Both retrofit scripts take `--check` to preview without writing.
 
 ## Guardrails
 
 - Detect, don't assume: prefix, course macros, and the AP-vs-standards path all come from
   inspecting the project (Step 0).
+- **Full `Read` each skeleton before writing it** (Step 3). A `bash`/`cat` dump does not register
+  the file with the editor, so the write fails; always use the `Read` tool first.
 - Mirror an existing built lesson for tone and preamble; the live project overrides this doc.
-- Keep blank and key documents in lockstep — the key is the blank with answers filled in.
+- Keep blank and key documents in lockstep — the key is the blank with answers filled in, and it
+  must come out the **same number of pages**. Worked solutions live in shared `work` blocks (the
+  work rule); teacher prose lives in the lesson plan; a key that runs long costs the student
+  packet blank padding.
 - Don't modify `shared/` or the Makefiles to make a lesson build; fix the lesson's `.tex`.
 - **Multi-lesson requests → parallel subagents.** See "Multi-lesson dispatch" above.
 - **One-page warmup and exit ticket** — verify with `pdftoppm` after every build. See "Hard constraints" above.
 - **`\ans{}` in text mode only; `skillbox` not `fixedskillbox`** — grep-check every file before building. See "Hard constraints" above.
+- **Compile QA out of tree** — `-output-directory` to a temp dir; an in-place `xelatex` clobbers
+  tracked `main.pdf` files in the source directories.
+- **Retrofit requests are a first-class mode**, not authoring — apply only the named conventions,
+  then prove it with build + page-count evidence.

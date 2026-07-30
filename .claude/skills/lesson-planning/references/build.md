@@ -9,7 +9,11 @@ The project compiles with **XeLaTeX** (via `latexmk`) and merges PDFs with **`pd
 - **Root `Makefile`** — discovers `unit*/Makefile`, delegates, and merges unit PDFs into
   `target/compiled/curriculum_{student,full}.pdf`.
 - **`shared/unit.mk`** (included by each `unitXX/Makefile`) — discovers `lesson*/Makefile`,
-  delegates, and merges lesson PDFs into `target/compiled/unitXX_{student,full}.pdf`.
+  delegates, and produces `target/compiled/unitXX_{student,full}.pdf`. **Two modes:** if the unit
+  provides `unitXX_student.tex` / `unitXX_full.tex`, it compiles that wrapper with `latexmk`;
+  otherwise it falls back to a `pdfunite` merge of the lesson PDFs. It also picks up the optional
+  unit bookends `unit_cover/main.tex`, `sample_test/main.pdf`, and `sample_test_key/main.pdf`
+  (the sample-test key goes into the **full** packet only).
 - **`shared/lesson.mk`** (included by each `lessonYY/Makefile`, which is just
   `include ../../shared/lesson.mk`) — the engine. It:
   - **Discovers a component if it has `main.tex` or `main.pdf`.** Authored components
@@ -59,6 +63,49 @@ It detects the prefix from `shared/*-colors.sty`, detects whether `\CourseName` 
 the lesson plan, and each authored component + key skeleton. Pass `--prefab <dirs>` to create
 empty drop-in directories instead (where you place each `main.pdf`). Then author the skeletons
 (`references/components.md`).
+
+## Unit packets from a TeX wrapper (preferred)
+
+A `pdfunite` merge restarts page numbers at every component. Building the unit packet from a
+wrapper `.tex` instead gives the whole unit **one continuous page-number sequence**, and lets the
+student and key packets be paginated page-for-page against each other. `shared/unit.mk` uses the
+wrapper automatically when it exists.
+
+**`unitXX_student.tex`** source-includes, in order:
+1. `unit_cover`
+2. each lesson's blank components: `cover`, `warmup`, `notes`, `activity`, `exit_ticket`, `homework`
+3. `sample_test/main.pdf`, if present
+
+**`unitXX_full.tex`** (teacher packet) source-includes:
+1. `unit_cover`
+2. each lesson plan **from source** — `\subimport{lessonYY/}{main.tex}`, never as an inserted PDF,
+   so the plan participates in the packet's page numbering
+3. a **3-up slide handout** — portrait letter, 3 slide thumbnails in a left column with a matching
+   `Notes:` area in a right column. Full packet only.
+4. each lesson's keyed components: `cover`, `warmup_key`, `notes_key`, `activity_key`,
+   `exit_ticket_key`, `homework_key`
+5. `sample_test/main.pdf` and `sample_test_key/main.pdf`, if present
+
+Use `docmute` + `import` to pull in component `main.tex` files from source; use `pdfpages` only
+for genuine prefab PDFs (sample tests, slide handouts). Wrap `\subimport` calls in a local group.
+
+Lesson plans sometimes need small adjustments to be source-includable: put metadata definitions
+such as `\UnitNumberName` / `\LessonNumberName` **after** `\begin{document}`, and avoid
+preamble-only code that assumes the plan is always a root document.
+
+**Slides.** `unitXX/lessonYY/slides/main.pdf` stays one slide per page — that is the display and
+Google Slides import artifact, and it is never included in the student packet. The 3-up handout is
+derived from it for the teacher packet only. The Unit 1 wrapper hard-codes each lesson's slide page
+count; get the numbers for another unit from the compiled decks with `pdfinfo`.
+
+**Do not reintroduce:** `pdfunite` for a unit that has wrappers; lesson plans inserted as PDFs;
+slides in the student packet; any Node or PowerPoint generation step.
+
+After adding wrappers for a unit: delete stale stamps, `make -C unitXX student`,
+`make -C unitXX full`, then check `pdfinfo target/compiled/unitXX_full.pdf` for page count and
+page size, and render the first and last slide-handout page for a lesson with a
+non-multiple-of-3 slide count to confirm thumbnails and notes areas don't overlap or clip.
+`UNIT_PACKET_REFACTOR_NOTES.md` at the project root has the Unit 1 reference numbers.
 
 ## Prefab PDFs
 

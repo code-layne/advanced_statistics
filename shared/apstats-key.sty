@@ -22,12 +22,16 @@
     Variable(s): & \ans{#4} \\
     \end{tabularx}}
 
+% ── The work rule — show what the blank reserved ──────────────────────────────
+% `work` is defined in apstats-boxes and authored byte-identically in the blank
+% and the key. The blank ships a \vphantom of the block (its exact height, no
+% ink); loading this package flips the same block visible, in keyred. That is
+% what keeps every component the same number of pages blank and keyed — see the
+% commentary in apstats-boxes.sty.
+\aps@workvisibletrue
+
 % ── Teacher note box ──────────────────────────────────────────────────────────
-\newtcolorbox{teachernote}{
-    enhanced,
-    colback=redbg, colframe=redacc, boxrule=0.7pt, arc=1.5mm,
-    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
-    fonttitle=\bfseries\scriptsize\color{white}, title={Teacher Note},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=redacc, colframe=redacc, arc=1mm}
-}
+% `teachernote` now lives in apstats-boxes (it takes an optional component
+% title) because teacher prose belongs in the LESSON PLAN, which loads -boxes
+% only. Keys still inherit it through the \RequirePackage above, so any key not
+% yet migrated keeps compiling — but new notes go in the plan, not the key.
