@@ -218,41 +218,68 @@ python3 shared/cover.py --check-fonts
 make -C unit01 clean_unit_cover         # throw it away and redraw
 ```
 
-### Wiring
-
-`binder_cover/` is a prefab-PDF component like `sample_test/`, with one difference: its
-`main.pdf` is *generated*. In `shared/unit.mk` the rule has **no prerequisites on
-purpose** — once generated the cover is a stable artifact, because a regenerated cover is
-byte-different every time (jitter) and would otherwise churn on every build. `make -C
-unitXX clean_unit_cover` is the explicit "redraw it" escape hatch.
-
-### What needs adapting for AP Statistics
-
-- **Ink budget is a hard constraint** — these print on a school printer. White
-  background, no solid fills, line work in grays `#5f5f5f`–`#c9c9c9`, `#ffffff` fills for
-  occlusion only. Keep this.
-- **Auto-discovery is tuned for algebra**: plotted functions, solved equations, display
-  math. AP Stats lesson sources hold dotplots, boxplots, normal curves, scatterplots with
-  LSRL, and formula displays (`\bar{x}`, `SE`, test statistics). The scanner and the
-  element renderers will need statistics-appropriate types, or every unit falls back to a
-  thin cover.
-- **Fonts.** Four OTFs must be installed where the OS font service can see them:
-  `lmroman10-regular`, `lmroman10-italic`, `latinmodern-math`, `texgyretermes-regular`,
-  `texgyrechorus-mediumitalic`. Verify with `--check-fonts` before assuming a failure is
-  a code bug.
-- Colors: algebra_2's cover is forest-green-derived where it uses accent; this course is
-  navy (`#1F3A5F`). Check whether the palette constants at the top of `cover.py` need a
-  course-specific swap.
-
 ### Wiring, now that Part 2 has landed
 
-Part 2 is done, so the unit packet assembly the cover has to slot into is settled. In the
-current `shared/unit.mk`, add `binder_cover` ahead of `unit_cover` in **both**
-`STUDENT_TAIL`'s sibling position at the head of the list — that is, in the
-`unit_lesson_lists` variable, where `student_list` and `key_list` are built. It must appear
-in both lists so the alignment pass keeps them paired; since it is the same two-page sheet
-in each, it costs one slot of 2 and nothing shifts.
+`binder_cover/` is a prefab-PDF component like `sample_test/`, with one difference: its
+`main.pdf` is *generated*.
 
-Keep algebra_2's "no prerequisites" rule for the generation rule itself: a regenerated
-cover is byte-different every time (jitter), so dependency-tracking it would churn the repo
-on every build. `make -C unitXX clean_unit_cover` stays the explicit redraw escape hatch.
+Add `binder_cover` to `shared/unit.mk` as a generated prefab, then put it at the **head of
+both packet lists** — in the `unit_lesson_lists` variable, ahead of `$(UNIT_COVER_PDF)` in
+`student_list` and `key_list` alike. It must appear in both so the alignment pass keeps
+them paired; it is the same two-page sheet in each, so it takes a slot of 2 and nothing
+downstream shifts.
+
+Mirror algebra_2's rule shape: `$(BINDER_COVER_SRC)` has **no prerequisites on purpose**
+(jitter makes a redraw byte-different every time, so dependency-tracking it would churn
+the repo on every build), with `make -C unitXX clean_unit_cover` as the explicit redraw
+escape hatch.
+
+### Reconnaissance done 2026-07-30 — read this before starting
+
+**Environment is clear.** `python3 shared/cover.py --check-fonts` against algebra_2's copy
+reports `all cover fonts present` and `cairosvg present` on this machine. Font installation
+is *not* a task; if a run fails, it is a code bug.
+
+**One hard blocker, and it fails silently.** `cover.py`'s `_UNIT_NAME_RE` matches only
+`\newcommand{\UnitNumberName}{...}`. Units 02–09 use exactly that. **Unit 1 uses
+`\def\UnitNumberName{...}` in all ten of its lesson plans**, so `unit_metadata()` finds
+nothing and falls back to `title or unit_dir.name` — unit01's cover would be titled
+"unit01" rather than "Exploring One-Variable Data", with no error. Fix by widening the
+regex to accept both forms (more robust) *and* normalising unit01 to `\newcommand` (more
+consistent). Do both. The `\quad` suffix and the `Unit N:` prefix are already stripped by
+`unit_metadata`, so those need no work.
+
+**Auto-discovery will produce near-empty covers as written.** Measured against this
+course's sources:
+
+| `cover.py` looks for | This course has |
+| --- | --- |
+| `f(x) = …` / `y = …` definitions → `graph` | essentially none — **0 graphs discovered** |
+| `\begin{work}` blocks → `slab` | **0 files** use `work` yet (Part 1 backlog) |
+| `\numline` or `\draw[<->` → `numberline` | 52 files have axis-ish TikZ, but stats number lines are not solution sets |
+| inline `$…$` containing `=` → `equation` | plentiful, but heavily polluted: `$Q_1 = $`, `$\bar{x} = \dfrac{…}{5} = \blank{2cm}$`, `$= \blank{2cm}$` |
+
+So every unit falls through to a pile of low-quality loose equations. `_HOLE` already drops
+anything containing `\blank`, which removes many of them and leaves the page thin.
+
+**What the course actually has to draw from**, by file count across all nine units:
+regression/LSRL 121, scatterplots 83, histograms 69, dotplots 58, boxplots 43, normal
+curves 9. That is the real inventory — the work is new `BUILDERS` entries for those forms
+plus a scanner that recognises them, not tuning the existing algebra builders.
+
+Keep unchanged: the **ink budget** (white background, no solid fills, line work in
+`#5f5f5f`–`#c9c9c9`, `#ffffff` fills for occlusion only) — these print on a school printer.
+Also check whether the accent constants need a navy (`#1F3A5F`) swap; algebra_2's are
+forest-green-derived.
+
+### Suggested sequencing
+
+1. Port `cover.py`, fix the `\def` regex, normalise unit01, and confirm a unit with good
+   metadata (say unit05) renders *something* end to end. Prove the pipeline before
+   touching discovery.
+2. Add statistics `BUILDERS` — dotplot and boxplot first (simplest geometry, 101 files
+   between them), then histogram, scatter+LSRL, normal curve.
+3. Extend `discover()` to recognise those TikZ idioms and to reject the `\blank`/trailing-`=`
+   fragments the current equation path lets through.
+4. Wire into `unit.mk`, generate all nine, and check ink coverage on a real printer before
+   committing the PDFs.
