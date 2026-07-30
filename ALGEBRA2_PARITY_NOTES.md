@@ -284,12 +284,55 @@ pagination semantics for lesson packets too. **Not decided; left as-is.**
 Verified: unit05 builds a 114-page student packet and a 114-page key, page for page,
 with the cover leading both; `clean_unit_cover` redraws and a second `make` does not.
 
+### Part 3a — context scenes (2026-07-30, Layne's request)
+
+The covers now also draw **the situations the unit's problems are set in**. A dataset
+is always about something, and a student recognises "sleep vs. reaction time" long
+before they recognise a scatterplot. A `scene` element is a sheet of graph paper
+carrying line art of the situation as a watermark, with the display for that dataset
+drawn on top and the variable named underneath. **Ink budget suspended for these**
+per Layne.
+
+- 21 scenes, keyed to the contexts the course actually uses: sleep, commuting,
+  reaction/wait time, study time, free throws, archery, plant growth, prices,
+  battery life, rainfall, weights, vitamin C, salmon, clinical trials, temperature,
+  social media, voter turnout, test scores, chance, caffeine, quality control.
+- Displays are now **captioned with the row label** that sits on the data —
+  "Sleep (hr) vs. RT (ms)", "Distance vs. Rent" — via `_row_label`.
+- A unit that names a context but tabulates no numbers for it gets the scene alone.
+  **This is what finally gave Unit 3 a cover**: 4 scenes where it had nothing.
+
+**Keyword matching needs word boundaries, and the failure is always silent.** Two
+more of the same bug class as `quiz scores`/`z score`:
+
+| Pattern | Fired on | Hits |
+| --- | --- | --- |
+| `arch(?:er|ery)` | **rese*arch*er** | 214 → 8 after `\b` |
+| `degrees` | **degrees of freedom** | 25, all wrong — dropped |
+
+`shared/`-adjacent probe scripts print every matched substring with its count; run
+that before trusting a new keyword. Also added: contingency tables and probability
+distributions are skipped (they announce themselves with a `Total` margin or a
+`P(X = x)` row) — Unit 4 was dotplotting "Sports"/"Arts/Music"/"Neither" as if the
+category counts were a sample.
+
+`auto_place` no longer falls back to random placement when it cannot fit an element;
+it **drops it**. The old fallback stacked panels precisely when the page was full,
+which is how two scene captions ended up overprinted.
+
+Ink, measured as before: 10.4–21.7% of pixels inked, up from 2.3–4.0%. But **% dark
+is unchanged** (1.25–1.75 against 1.24–1.74) and mean gray moved 251 → 249 — the
+paper tint is `#f4f7fb` and its rules `#cfdcea`, so almost every new "inked" pixel is
+nearly white. Real toner cost should be close to flat, but that is still a raster
+measurement, not a print.
+
 ### Backlog
 
-- Hand-tuned `spec.py` for units **3, 5, 9**; unit 3 additionally needs design-diagram
-  builders.
+- Hand-tuned `spec.py` for units **5 and 9**, still thin (7 and 5 elements). Unit 3
+  is now carried by scenes.
 - The page-number question above.
-- A real printed proof before these go to a class set.
+- A real printed proof before these go to a class set — more relevant now that the
+  covers carry a tinted panel.
 
 ---
 

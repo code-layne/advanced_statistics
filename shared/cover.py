@@ -681,7 +681,13 @@ def _caption(g: list[str], w: float, h: float, el: dict) -> tuple[str, float, fl
     text = el.get("caption")
     if not text:
         return "".join(g), w, h
-    b = math_box(text, el.get("csize", 13), AXIS)
+    size = el.get("csize", 13)
+    # "Sleep (hr)" is prose and sets upright; "\bar{x}" is mathematics and goes
+    # through the math typesetter, which would otherwise italicise every word.
+    if not re.search(r"[\\^_$]", text):
+        g.append(label(w / 2, h + size + 3, text, size, AXIS))
+        return "".join(g), w, h + size + 6
+    b = math_box(text, size, AXIS)
     g.append(b.draw((w - b.w) / 2, h + b.asc + 4))
     return "".join(g), w, h + b.asc + b.desc + 4
 
@@ -901,7 +907,264 @@ def build_normal(el: dict) -> tuple[str, float, float]:
     return _caption(g, w, base + 22, el)
 
 
+# ── Contexts ─────────────────────────────────────────────────────────────────
+# A statistics dataset is always about something. The numbers on this cover are
+# sleep hours, commute times, rainfall, free throws — and a cover that draws the
+# thing beside the numbers says what the unit is about far faster than a caption
+# does. Each scene is line art in a 100x100 box, scaled and dropped behind its
+# display like a watermark, on graph paper.
+#
+# These are drawn heavier than the rest of the sheet on purpose: the ink budget
+# is suspended for them (Layne, 2026-07-30).
+
+PAPER_BG   = "#f4f7fb"   # graph paper stock
+PAPER_RULE = "#cfdcea"   # its printed grid
+PAPER_EDGE = "#9fb3c8"   # the sheet's own edge
+SCENE_INK  = "#8fa3b8"   # the watermark drawing
+
+
+def _sp(d, width=2.4, stroke=None, fill="none") -> str:
+    return path(d, stroke=stroke or SCENE_INK, width=width, fill=fill,
+                cap="round")
+
+
+def _sr(x, y, w, h, r=0, width=2.4, fill="none") -> str:
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" '
+            f'fill="{fill}" stroke="{SCENE_INK}" stroke-width="{width}"/>')
+
+
+def _sc(cx, cy, r, width=2.4, fill="none") -> str:
+    return (f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{fill}" '
+            f'stroke="{SCENE_INK}" stroke-width="{width}"/>')
+
+
+def _scene_bed():          # sleep, rest
+    return [_sp("M8 74V40"), _sp("M8 46H30"), _sr(8, 56, 84, 18, 4),
+            _sr(30, 46, 22, 10, 3), _sp("M14 74V84"), _sp("M86 74V84")]
+
+
+def _scene_stopwatch():    # reaction time, wait time, commute
+    return [_sc(50, 58, 30), _sp("M44 22H56"), _sp("M50 22V28"),
+            _sp("M50 58V38"), _sp("M50 58L66 66"), _sp("M78 34L86 26")]
+
+
+def _scene_book():         # study hours, reading
+    return [_sp("M50 32C40 24 24 24 12 28V76C24 72 40 72 50 80"),
+            _sp("M50 32C60 24 76 24 88 28V76C76 72 60 72 50 80"),
+            _sp("M50 32V80", width=1.8)]
+
+
+def _scene_hoop():         # basketball, free throws
+    return [_sp("M78 14V72"), _sr(56, 20, 22, 18, 2),
+            _sp("M60 38H74"), _sp("M61 38L64 48"), _sp("M73 38L70 48"),
+            _sp("M64 48H70"), _sc(28, 58, 15)]
+
+
+def _scene_target():       # archery, hitting a target
+    return [_sc(44, 54, 28), _sc(44, 54, 17), _sc(44, 54, 7, fill=SCENE_INK),
+            _sp("M62 36L90 12"), _sp("M84 12H90V18")]
+
+
+def _scene_plant():        # plant growth, gardening
+    return [_sp("M34 66H66L62 88H38Z"), _sp("M50 66V34"),
+            _sp("M50 46C38 46 32 38 32 28C44 28 50 36 50 46"),
+            _sp("M50 52C62 52 68 44 68 34C56 34 50 42 50 52")]
+
+
+def _scene_car():          # commute, distance, mileage
+    return [_sp("M12 62H88"), _sp("M20 62L28 42H72L80 62"),
+            _sc(32, 66, 8), _sc(68, 66, 8), _sp("M48 42V62")]
+
+
+def _scene_money():        # rent, price, ATM, salary
+    return [_sr(10, 30, 80, 44, 4), _sc(50, 52, 13),
+            _sp("M50 42V62"), _sp("M55 46C55 43 45 43 45 48C45 53 55 51 55 56"
+                                  "C55 61 45 61 45 58")]
+
+
+def _scene_battery():      # battery lifetime
+    return [_sr(12, 36, 68, 32, 4), _sr(80, 46, 8, 12, 2),
+            _sp("M22 44V60", width=5), _sp("M34 44V60", width=5),
+            _sp("M46 44V60", width=5)]
+
+
+def _scene_rain():         # rainfall
+    return [_sp("M28 52C18 52 14 44 20 38C20 26 38 22 44 32"
+                "C54 24 70 30 68 42C78 42 80 54 68 54H28Z"),
+            _sp("M32 62L28 74"), _sp("M48 62L44 74"), _sp("M64 62L60 74")]
+
+
+def _scene_scale():        # weights — packages, babies, granola bars
+    return [_sp("M50 24V64"), _sp("M22 32H78"), _sp("M38 76H62"),
+            _sp("M50 64V76"), _sp("M10 32L22 52H38Z"), _sp("M62 32L78 52H90Z"),
+            _sc(50, 22, 5)]
+
+
+def _scene_orange():       # vitamin C, oranges, fruit
+    return [_sc(48, 56, 28), _sp("M48 28C52 18 62 14 70 16C68 24 60 30 48 30"),
+            _sp("M48 56L30 40"), _sp("M48 56L66 40"), _sp("M48 56V32")]
+
+
+def _scene_fish():         # salmon length
+    return [_sp("M18 56C34 34 66 34 80 56C66 78 34 78 18 56Z"),
+            _sp("M80 56L92 44V68Z"), _sc(32, 50, 3, fill=SCENE_INK),
+            _sp("M52 40V72", width=1.8)]
+
+
+def _scene_syringe():      # vaccination, clinical trial, flu shot
+    return [_sp("M24 72L44 52"), _sr(44, 30, 34, 22, 3),
+            _sp("M52 26V38"), _sp("M62 26V38"), _sp("M78 34L90 22"),
+            _sp("M20 76L28 68")]
+
+
+def _scene_thermometer():  # temperature
+    return [_sp("M42 20A8 8 0 0 1 58 20V58"), _sp("M42 20V58"),
+            _sc(50, 68, 13), _sp("M50 62V40"), _sp("M62 32H70"),
+            _sp("M62 42H70")]
+
+
+def _scene_phone():        # social media, screen time
+    return [_sr(30, 14, 40, 72, 6), _sp("M44 22H56"),
+            _sp("M38 38H62"), _sp("M38 48H62"), _sp("M38 58H52"),
+            _sc(50, 76, 3)]
+
+
+def _scene_ballot():       # voter turnout, elections
+    return [_sr(16, 44, 68, 40, 3), _sp("M38 44H62"),
+            _sp("M40 44V22H72V40"), _sp("M48 30H64"), _sp("M48 36H60")]
+
+
+def _scene_quiz():         # test scores, quizzes, guessing
+    return [_sr(22, 14, 56, 72, 3), _sp("M32 32H56"), _sp("M32 46H60"),
+            _sp("M32 60H50"), _sp("M60 56L66 64L80 46")]
+
+
+def _scene_dice():         # probability, random chance
+    return [_sr(16, 34, 44, 44, 6), _sc(28, 46, 3.4, fill=SCENE_INK),
+            _sc(48, 66, 3.4, fill=SCENE_INK), _sc(38, 56, 3.4, fill=SCENE_INK),
+            _sr(60, 20, 30, 30, 5), _sc(70, 30, 2.8, fill=SCENE_INK),
+            _sc(80, 40, 2.8, fill=SCENE_INK)]
+
+
+def _scene_coffee():       # caffeine, drinks
+    return [_sp("M20 36H72V60A18 18 0 0 1 36 60V36Z"),
+            _sp("M72 42H84A9 9 0 0 1 84 58H72"), _sp("M18 84H74"),
+            _sp("M34 26C34 20 40 20 40 14"), _sp("M50 26C50 20 56 20 56 14")]
+
+
+def _scene_factory():      # defective products, quality control
+    return [_sp("M14 78V44L34 56V44L54 56V44L74 56V78Z"),
+            _sp("M74 56V26H86V78"), _sp("M28 66H36"), _sp("M48 66H56"),
+            _sp("M64 66H70")]
+
+
+# Keyword → scene. First match in the unit's prose wins, so the order here is
+# the order a tie is broken in: the more specific phrase must come first.
+_CONTEXT_SCENES: list[tuple[str, str, str]] = [
+    (r"reaction time|\bRT\b\s*\(ms\)", "stopwatch", "reaction time"),
+    (r"\bcommut(?:e|es|ing)\b|\btraffic\b|\bmileage\b|\bdriv(?:e|es|ing|er)\b",
+     "car", "commuting"),
+    (r"wait(?:ing)? time|\bqueue\b|checkout", "stopwatch", "wait times"),
+    (r"\bsleep", "bed", "sleep"),
+    (r"stud(?:y|ying) (?:time|hours|hr)|homework hours|reading fluency",
+     "book", "study time"),
+    (r"free throw|basketball", "hoop", "free throws"),
+    # \b on both sides, or this fires on every "researcher" in the course —
+    # 211 of them, against 3 real bullseyes.
+    (r"\barcher(?:s|y)?\b|bullseye|target practice", "target", "archery"),
+    (r"plant growth|seedling|fertilizer|\bgarden", "plant", "plant growth"),
+    (r"\brent\b|\bprices?\b|salary|withdrawal|\bATM\b|income|\bcosts?\b",
+     "money", "prices"),
+    (r"batter(?:y|ies) (?:life|lifetime)|charge lasts", "battery",
+     "battery life"),
+    (r"rainfall|precipitation|\brain\b", "rain", "rainfall"),
+    (r"\bweights?\b|\bmass\b|granola|package weight|baby weight", "scale",
+     "weights"),
+    (r"vitamin c|\borange|fruit juice", "orange", "vitamin C"),
+    (r"\bsalmon\b|\bfish\b|\btrout\b", "fish", "salmon length"),
+    (r"\bvaccin|flu shot|clinical trial|placebo|treatment group", "syringe",
+     "clinical trials"),
+    # NOT "degrees": this course says "degrees of freedom" constantly, and it
+    # has nothing to do with temperature.
+    (r"temperature|\btemps?\b|thermometer|degrees F|°F", "thermometer",
+     "temperature"),
+    (r"social media|screen time|smartphone|\bapps?\b", "phone", "social media"),
+    (r"voter turnout|\bvot(?:e|es|ing|ers?)\b|\belections?\b|"
+     r"\bpoll(?:s|ed|ing|ster)?\b", "ballot", "voter turnout"),
+    (r"\bquiz|test score|exam score|multiple choice|guess(?:es|ing)?\b",
+     "quiz", "test scores"),
+    (r"\bdice\b|\bdie\b|coin flip|rolling a|\bspinner\b", "dice", "chance"),
+    (r"caffeine|coffee|\bsodas?\b|beverage", "coffee", "caffeine"),
+    (r"\bdefect|quality control|assembly line|manufactur", "factory",
+     "quality control"),
+]
+
+_SCENES = {
+    "bed": _scene_bed, "stopwatch": _scene_stopwatch, "book": _scene_book,
+    "hoop": _scene_hoop, "target": _scene_target, "plant": _scene_plant,
+    "car": _scene_car, "money": _scene_money, "battery": _scene_battery,
+    "rain": _scene_rain, "scale": _scene_scale, "orange": _scene_orange,
+    "fish": _scene_fish, "syringe": _scene_syringe,
+    "thermometer": _scene_thermometer, "phone": _scene_phone,
+    "ballot": _scene_ballot, "quiz": _scene_quiz, "dice": _scene_dice,
+    "coffee": _scene_coffee, "factory": _scene_factory,
+}
+
+
+def build_scene(el: dict) -> tuple[str, float, float]:
+    """A sheet of graph paper carrying the situation a dataset came from, with
+    the display for that dataset drawn on top of it.
+
+    `inner` is a complete element dict — any of the display builders — so a
+    scene is a wrapper, not a new kind of plot. Without one the scene is just
+    the situation, which is what a unit that names a context but tabulates no
+    numbers for it gets.
+    """
+    pad = el.get("pad", 15)
+    inner = el.get("inner")
+    if inner:
+        body, iw, ih = BUILDERS[inner["type"]](inner)
+    else:
+        body, iw, ih = "", el.get("w", 210), el.get("h", 150)
+    w, h = iw + 2 * pad, ih + 2 * pad
+    # A dotplot is a wide, short strip. Wrapped tightly it gives a letterbox of
+    # a sheet, and the watermark — sized to the short side — shrinks to nothing.
+    # Open the sheet out vertically instead, and centre the plot in it.
+    top = pad
+    if h < w * 0.5:
+        grow = w * 0.5 - h
+        top += grow / 2
+        h += grow
+
+    g = [f'<rect x="0" y="0" width="{w:.1f}" height="{h:.1f}" fill="{PAPER_BG}" '
+         f'stroke="{PAPER_EDGE}" stroke-width="1.3"/>']
+    step = el.get("grid", 12)
+    d = []
+    x = step
+    while x < w:
+        d.append(f"M{x:.1f} 0V{h:.1f}")
+        x += step
+    y = step
+    while y < h:
+        d.append(f"M0 {y:.1f}H{w:.1f}")
+        y += step
+    g.append(path("".join(d), stroke=PAPER_RULE, width=0.6))
+
+    art = _SCENES.get(el.get("scene", ""))
+    if art:
+        # Centre the drawing on the sheet and size it to the smaller dimension,
+        # so it reads as a watermark behind the plot rather than beside it.
+        s = min(w, h) * el.get("art_scale", 0.82) / 100.0
+        g.append(f'<g transform="translate({(w - 100 * s) / 2:.1f},'
+                 f'{(h - 100 * s) / 2:.1f}) scale({s:.3f})">'
+                 + "".join(art()) + "</g>")
+    if body:
+        g.append(f'<g transform="translate({pad},{top:.1f})">{body}</g>')
+    return _caption(g, w, h, el)
+
+
 BUILDERS = {
+    "scene": build_scene,
     "equation": build_equation,
     "slab": build_slab,
     "graph": build_graph,
@@ -962,7 +1225,7 @@ def auto_place(elements: list[dict], seed: int = 7) -> list[dict]:
         el = dict(el)
         if "tilt" not in el and "skew" not in el:
             if el["type"] in ("graph", "slab", "sets", "dotplot", "boxplot",
-                              "histogram", "scatter", "normal"):
+                              "histogram", "scatter", "normal", "scene"):
                 el["skew"] = SKEWS[i % len(SKEWS)]
             else:
                 el["tilt"] = TILTS[i % len(TILTS)]
@@ -971,18 +1234,25 @@ def auto_place(elements: list[dict], seed: int = 7) -> list[dict]:
             taken.append((*el["at"], *BUILDERS[el["type"]](el)[1:]))
             continue
         _, w, h = BUILDERS[el["type"]](el)
+        # A tilt or skew rotates the box about its centre, so the footprint on
+        # the page is larger than the box the builder reported. Reserve the
+        # difference or neighbours collide at the corners.
+        gw, gh = w * 1.08 + 6, h * 1.08 + 6
         best = None
-        for _ in range(400):
-            x = rng.uniform(40, max(41, W - 40 - w))
-            y = rng.uniform(46, max(47, H - 46 - h))
-            r = (x, y, w, h)
+        for _ in range(800):
+            x = rng.uniform(40, max(41, W - 40 - gw))
+            y = rng.uniform(46, max(47, H - 46 - gh))
+            r = (x, y, gw, gh)
             if any(_overlaps(r, s) for s in taken):
                 continue
             best = r
             break
+        # Nowhere to put it: drop it. A cover that leaves one scene out reads
+        # fine; one that stacks two panels on top of each other does not, and
+        # the old fallback placed them at random precisely when the page was
+        # already full.
         if best is None:
-            best = (rng.uniform(40, max(41, W - 40 - w)),
-                    rng.uniform(46, max(47, H - 46 - h)), w, h)
+            continue
         el["at"] = (round(best[0], 1), round(best[1], 1))
         taken.append(best)
         out.append(el)
@@ -1223,50 +1493,83 @@ def _usable(v: list[float], lo=5, hi=40) -> bool:
     return lo <= len(v) <= hi and max(v) > min(v) and not _is_scale(v)
 
 
-def _datasets(src: str) -> tuple[list[list[float]], list[tuple[list, list]]]:
+# The label cell that a data row leads with, once the column spec, the rules
+# and the row colouring are out of the way. "\textbf{Sleep (hr)}" -> "Sleep (hr)".
+_ROW_LABEL = re.compile(r"\\(?:textbf|textit|emph)\{([^{}]+)\}")
+_SPEC_JUNK = re.compile(
+    r"\\begin\{tabular[xy]?\}|\\(?:hline|toprule|midrule|bottomrule|rowcolor|"
+    r"linewidth|arraystretch|multicolumn|small|footnotesize)\b|\{[^{}]*\}|[{}@*]")
+
+
+def _row_label(head: str) -> str:
+    """The variable this row is measuring, or "" when the row is unlabelled."""
+    m = _ROW_LABEL.search(head)
+    text = m.group(1) if m else _SPEC_JUNK.sub(" ", head)
+    text = re.sub(r"\s+", " ", text).strip(" &:")
+    # A label is a name, not a formula and not a leftover fragment of markup.
+    if not re.fullmatch(r"[A-Za-z][A-Za-z /.'-]*(?:\([^()]{1,8}\))?", text or ""):
+        return ""
+    return text if 2 <= len(text) <= 26 else ""
+
+
+def _datasets(src: str) -> tuple[list[dict], list[dict]]:
     """Univariate datasets and bivariate pairs, in document order.
 
     A tabular that yields exactly two equal-length numeric rows is bivariate —
     that is how this course lays out paired data, one variable per row — and
     becomes a scatterplot. Everything else is univariate.
-    """
-    uni: list[list[float]] = []
-    pairs: list[tuple[list, list]] = []
-    seen: set[tuple] = set()
 
-    def take(v):
-        key = tuple(v)
-        if key in seen or not _usable(v):
-            return False
-        seen.add(key)
-        return True
+    Each record carries the row's own label and the prose that introduced it,
+    so a display can be captioned with the variable it measures and matched to
+    the situation the problem is set in.
+    """
+    uni: list[dict] = []
+    pairs: list[dict] = []
+    seen: set[tuple] = set()
 
     # tabularx is the workhorse here; plain tabular is the exception.
     for m in re.finditer(r"\\begin\{tabular[xy]?\}(.+?)\\end\{tabular[xy]?\}",
                          src, re.S):
+        block = m.group(1)
+        # A contingency table's rows are category counts and a probability
+        # distribution's are masses; neither is a sample to plot. Both announce
+        # themselves — a Total margin, or a P(X = x) row.
+        if re.search(r"\bTotals?\b|P\(X\s*=|\bProbability\b|\bExpected\b",
+                     block):
+            continue
+        near = src[max(0, m.start() - 600):m.start()]
         rows = []
-        for row in m.group(1).split(r"\\"):
+        for row in block.split(r"\\"):
             row = re.sub(r"\\(?:hline|toprule|midrule|bottomrule)", " ", row)
             if "&" not in row:
                 continue
-            v = _cells_to_numbers(row.split("&"))
+            cells = row.split("&")
+            v = _cells_to_numbers(cells)
             if _usable(v):
-                rows.append(v)
-        if len(rows) == 2 and len(rows[0]) == len(rows[1]) and \
-                tuple(rows[0]) not in seen and tuple(rows[1]) not in seen:
-            seen.add(tuple(rows[0]))
-            seen.add(tuple(rows[1]))
-            pairs.append((rows[0], rows[1]))
+                head = " ".join(cells[:len(cells) - len(v)])
+                rows.append((v, _row_label(head)))
+        if len(rows) == 2 and len(rows[0][0]) == len(rows[1][0]) and \
+                tuple(rows[0][0]) not in seen and tuple(rows[1][0]) not in seen:
+            seen.add(tuple(rows[0][0]))
+            seen.add(tuple(rows[1][0]))
+            pairs.append({"x": rows[0][0], "y": rows[1][0],
+                          "xlabel": rows[0][1], "ylabel": rows[1][1],
+                          "near": near})
         else:
-            for v in rows:
-                if take(v):
-                    uni.append(v)
+            for v, lab in rows:
+                if tuple(v) in seen:
+                    continue
+                seen.add(tuple(v))
+                uni.append({"v": v, "label": lab, "near": near})
 
     # Loose comma-separated lists, the other way this course states a dataset.
     for m in re.finditer(r"(?:\d+(?:\.\d+)?\s*,\s*){4,}\d+(?:\.\d+)?", src):
         v = [float(t) for t in _NUMBER_RE.findall(m.group(0))]
-        if take(v):
-            uni.append(v)
+        if tuple(v) in seen or not _usable(v):
+            continue
+        seen.add(tuple(v))
+        uni.append({"v": v, "label": "",
+                    "near": src[max(0, m.start() - 600):m.start()]})
     return uni, pairs
 
 
@@ -1290,6 +1593,36 @@ def _build_display(kind: str, v: list[float]) -> dict:
     if kind == "histogram":
         return {"type": "histogram", "data": v, "w": 244, "h": 148}
     return {"type": kind, "data": v, "w": 244}
+
+
+@lru_cache(maxsize=None)
+def _scene_patterns() -> tuple:
+    return tuple((re.compile(pat, re.I), scene, name)
+                 for pat, scene, name in _CONTEXT_SCENES)
+
+
+def _context_of(text: str) -> tuple[str | None, str]:
+    """The situation a passage is set in — the scene to draw and what to call
+    it. Whichever context is named *latest* in the passage wins, because the
+    passage runs up to the table and the sentence nearest it is the one that
+    introduces the data."""
+    best = (-1, None, "")
+    for rx, scene, name in _scene_patterns():
+        pos = max((m.start() for m in rx.finditer(text)), default=-1)
+        if pos > best[0]:
+            best = (pos, scene, name)
+    return best[1], best[2]
+
+
+def _contexts_in(src: str) -> list[tuple[str, str]]:
+    """Every situation the unit names, in the order it first names them."""
+    hits = []
+    for rx, scene, name in _scene_patterns():
+        m = rx.search(src)
+        if m:
+            hits.append((m.start(), scene, name))
+    hits.sort()
+    return [(scene, name) for _, scene, name in hits]
 
 
 def discover(unit_dir: Path, want: int = 13) -> list[dict]:
@@ -1329,13 +1662,28 @@ def discover(unit_dir: Path, want: int = 13) -> list[dict]:
     # ── Data displays: the unit's own datasets, drawn the way it draws them ──
     elements: list[dict] = []
     uni, pairs = _datasets(src)
+    used_scenes: set[str] = set()
+
+    def dress(el: dict, rec: dict, caption: str) -> dict:
+        """Caption a display with the variable it measures, and stand it on a
+        sheet of graph paper drawn with the situation it came from."""
+        if caption:
+            el["caption"] = caption
+        scene, name = _context_of(rec["near"])
+        if scene is None or scene in used_scenes:
+            return el
+        used_scenes.add(scene)
+        return {"type": "scene", "inner": el, "scene": scene,
+                "caption": el.pop("caption", None) or name}
+
     # Take the two scatters from opposite ends of the unit. Adjacent pairs are
     # usually the notes' worked example and the homework's echo of it —
     # different numbers, but they draw as the same picture.
     picks = [pairs[0], pairs[len(pairs) // 2]] if len(pairs) >= 2 else pairs[:1]
-    for xs, ys in picks:
-        elements.append({"type": "scatter", "x": xs, "y": ys,
-                         "w": 244, "h": 174})
+    for rec in picks:
+        cap = " vs. ".join(t for t in (rec["xlabel"], rec["ylabel"]) if t)
+        elements.append(dress({"type": "scatter", "x": rec["x"], "y": rec["y"],
+                               "w": 244, "h": 174}, rec, cap))
     # Deal the datasets out across the display types, one type at a time, so a
     # unit whose tables are all the same size still gets a varied page instead
     # of five identical strips.
@@ -1343,14 +1691,31 @@ def discover(unit_dir: Path, want: int = 13) -> list[dict]:
     while len(elements) < 5 and spare:
         progress = False
         for kind in ("dotplot", "boxplot", "histogram"):
-            pick = next((v for v in spare if kind in _admits(v)), None)
-            if pick is None or len(elements) >= 5:
+            rec = next((r for r in spare if kind in _admits(r["v"])), None)
+            if rec is None or len(elements) >= 5:
                 continue
-            spare.remove(pick)
-            elements.append(_build_display(kind, pick))
+            spare.remove(rec)
+            elements.append(dress(_build_display(kind, rec["v"]), rec,
+                                  rec["label"]))
             progress = True
         if not progress:
             break
+
+    # ── Situations the unit names but tabulates no numbers for ──────────────
+    # Drawn on their own sheet of graph paper. A unit talks about far more
+    # contexts than it hands you data for, and they are the part of the course
+    # a student actually recognises.
+    # A unit that tabulates nothing — Unit 3 is entirely study design — leans on
+    # its situations for the whole page, so it gets more of them.
+    loose_cap = 6 if len(elements) <= 1 else 3
+    loose = 0
+    for scene, name in _contexts_in(src):
+        if loose >= loose_cap or scene in used_scenes:
+            continue
+        used_scenes.add(scene)
+        loose += 1
+        elements.append({"type": "scene", "scene": scene, "caption": name,
+                         "w": 150, "h": 118})
 
     # ── A normal curve, if the unit works with one ──────────────────────────
     # \b before the z matters: without it "quiz scores" reads as "z score" and
