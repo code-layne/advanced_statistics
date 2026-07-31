@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.12in}
 
@@ -22,26 +27,19 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
 \small
-\noindent\textbf{\textcolor{navy}{Bar chart (bar graph):}}\\
-\ans{A graph with separated bars whose heights represent the frequency or relative frequency of each category of a categorical variable}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Relative frequency bar chart:}}\\
-\ans{A bar chart with relative frequency (proportion or percent) on the vertical axis; preferred when comparing groups of different sizes}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Pie chart:}}\\
-\ans{A circle divided into sectors, each representing one category; sector sizes are proportional to relative frequencies}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Segmented bar chart:}}\\
-\ans{A bar chart with bars divided into colored segments to show the composition of each group; useful for comparing distributions across groups}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Misleading graph:}}\\
-\ans{A visual display that distorts or exaggerates differences through a non-zero y-axis, 3-D effects, inconsistent scale, or other deceptive design choices}\\[6pt]
+\vocabans{Bar chart (bar graph)}{A graph with separated bars whose heights represent the frequency or relative frequency of each category of a categorical variable}
+\vocabans{Relative frequency bar chart}{A bar chart with relative frequency (proportion or percent) on the vertical axis; preferred when comparing groups of different sizes}
+\vocabans{Pie chart}{A circle divided into sectors, each representing one category; sector sizes are proportional to relative frequencies}
+\vocabans{Segmented bar chart}{A bar chart with bars divided into colored segments to show the composition of each group; useful for comparing distributions across groups}
+\vocabans{Misleading graph}{A visual display that distorts or exaggerates differences through a non-zero y-axis, 3-D effects, inconsistent scale, or other deceptive design choices}
 \end{vocabbox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
 \small\textbf{What's Wrong With These Graphs?}
 
@@ -51,12 +49,6 @@ Name:\;\ans{Key} & Date:\; & Period:\;
         3\% relative to the y-axis midpoint. Because the axis starts at 950, the
         bar for Product Y looks roughly twice as tall as Product X, which
         exaggerates the difference dramatically.}
-
-  \begin{teachernote}
-  Prompt: ``If the axis started at 0, would the bars look so different?'' Have
-  students sketch both versions mentally. Product X: 970/1000 bar height vs.\
-  Product Y: 1000/1000 --- barely distinguishable.
-  \end{teachernote}
 
   \item \ans{Start the y-axis at 0 so bar heights accurately reflect the data
         values. Add a clear axis label with units.}
@@ -69,6 +61,7 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Constructing a Bar Chart --- Four Requirements}
 \small
 
@@ -103,35 +96,24 @@ Use when: \ans{one group} & Use when: \ans{comparing} \\
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Worked Example --- Pet Ownership Bar Chart ($n = 40$)}
 \small
 
 \noindent Data: Dog~30\%, Cat~20\%, Fish~15\%, Bird~10\%, None~25\%.
 
 \vspace{6pt}
-\begin{teachernote}
-Correct bar chart: 5 separated bars labeled Dog, Cat, Fish, Bird, None on x-axis.
-Y-axis labeled ``Relative Frequency'' (or ``Proportion''), scale 0 to 0.35
-(or 0 to 35\%), tick marks at 0, 0.05 (5\%), 0.10, etc.
-Title: e.g., ``Distribution of Pet Type for 40 Households.''
-Bars: Dog 0.30, Cat 0.20, Fish 0.15, Bird 0.10, None 0.25.
-Bars must NOT touch.
-\end{teachernote}
 
 \vspace{8pt}
 \textbf{AP-style sentence:}\\[4pt]
 \ans{Of the 40 households surveyed, dog was the most common pet type (30\%),
 followed by ``none'' (25\%), cat (20\%), fish (15\%), and bird (10\% --- the
 least common).}
-
-\begin{teachernote}
-Require: total $n$, variable in context, most common and least common categories
-with relative frequencies. Deduct if student writes only counts.
-\end{teachernote}
 \end{notesbox}
 
 \newpage
 
+\boxguard
 \begin{notesbox}{Constructing a Pie Chart}
 \small
 \begin{multicols}{2}
@@ -179,6 +161,7 @@ Bar charts are generally preferred because they are easier to \ans{compare} and 
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Misleading Graphs --- Three Common Tricks}
 \small
 
@@ -208,6 +191,7 @@ appear [larger/smaller] than it actually is. To fix it, [specific correction].''
 
 \vspace{0.1in}
 
+\boxguard
 \begin{practicebox}
 \small
 \textbf{TV Genre Survey ($n = 80$):}
@@ -232,11 +216,6 @@ Other   & 12 & \ans{0.15 (15\%)} & \ans{54}  \\
 \vspace{10pt}
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
   \item \textit{[Sketch --- see Teacher Note.]}
-  \begin{teachernote}
-  Correct bar chart: 4 bars for News (tallest, 40\%), Sports (25\%), Reality (20\%),
-  Other (shortest, 15\%). Y-axis labeled ``Relative Frequency'' from 0 to at least
-  0.40. Bars do not touch. Title present. Accept either decimal or percent axis.
-  \end{teachernote}
 
   \item \ans{Of the 80 adults surveyed, news was the most preferred TV genre
         (40\%), followed by sports (25\%), reality TV (20\%), and other (15\%).}

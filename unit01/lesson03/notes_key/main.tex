@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.12in}
 
@@ -22,30 +27,19 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
 \small
-\noindent\textbf{\textcolor{navy}{Frequency:}}\\
-\ans{The count of individuals in a particular category}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Relative frequency:}}\\
-\ans{The frequency divided by the total number of individuals; expressed as a proportion
-(decimal) or percent}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Frequency table:}}\\
-\ans{A table listing each category of a categorical variable and the count of individuals
-in that category}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Relative frequency table:}}\\
-\ans{A table listing each category and the proportion (or percent) of individuals in that
-category}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Distribution (of a categorical variable):}}\\
-\ans{Describes all possible values a categorical variable takes and how often each value
-occurs (given as relative frequencies)}\\[6pt]
+\vocabans{Frequency}{The count of individuals in a particular category}
+\vocabans{Relative frequency}{The frequency divided by the total number of individuals; expressed as a proportion (decimal) or percent}
+\vocabans{Frequency table}{A table listing each category of a categorical variable and the count of individuals in that category}
+\vocabans{Relative frequency table}{A table listing each category and the proportion (or percent) of individuals in that category}
+\vocabans{Distribution (of a categorical variable)}{Describes all possible values a categorical variable takes and how often each value occurs (given as relative frequencies)}
 \end{vocabbox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
 \small\textbf{Which school has more walkers?}
 
@@ -71,15 +65,11 @@ Which school has more walkers proportionally?\quad
 What does this tell you?\quad
 \ans{Counts alone are misleading when groups have different sizes.
 School A has more walkers by count (40 vs.\ 30) but far fewer by proportion.}
-
-\begin{teachernote}
-Emphasize: School A has 40 walkers but 240 total; School B has 120 walkers out of 200.
-This is the core motivation for relative frequency.
-\end{teachernote}
 \end{hookbox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Building a Frequency and Relative Frequency Table}
 \small
 \begin{multicols}{2}
@@ -111,6 +101,7 @@ Sum of all relative frequencies $=$ \ans{100}\%
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Worked Example --- Pet Ownership Survey ($n = 40$)}
 \small
 
@@ -135,15 +126,11 @@ None   & \small||||||||||  & 10 & \ans{0.25 (25\%)} \\
 \textbf{AP-style sentence:}\\[4pt]
 \ans{Of the 40 households surveyed, the most common pet type was dog, owned by
 30\% of households. The least common was bird, owned by only 10\% of households.}
-
-\begin{teachernote}
-Accept any grammatically correct sentence that includes the total ($n = 40$),
-the variable (pet type), the category, and the relative frequency as a percent.
-\end{teachernote}
 \end{notesbox}
 
 \newpage
 
+\boxguard
 \begin{notesbox}{Describing a Distribution --- AP Language}
 \small
 \begin{multicols}{2}
@@ -175,6 +162,7 @@ and bird (10\% --- the least common).}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{practicebox}
 \small
 \textbf{Transportation survey ($n = 25$):}
@@ -229,5 +217,13 @@ are valid.}
 
 \end{multicols}
 \end{spiralbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Additional Notes}
+\vspace{0pt}
+\writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline
+\end{notesbox}
 
 \end{document}

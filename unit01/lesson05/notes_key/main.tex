@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.12in}
 
@@ -22,31 +27,22 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
 \small
-\noindent\textbf{\textcolor{navy}{Dotplot:}}\\
-\ans{A graph in which each data value is shown as a dot above its position on a
-number line. Reveals every individual value; best for small datasets.}\\[5pt]
-
-\noindent\textbf{\textcolor{navy}{Stemplot (stem-and-leaf plot):}}\\
-\ans{A display that separates each data value into a stem (leading digit(s)) and a
-leaf (trailing digit). Preserves actual data values and sorts them automatically.}\\[5pt]
-
-\noindent\textbf{\textcolor{navy}{Histogram:}}\\
-\ans{A graph that groups quantitative data into equal-width intervals (bins) and
-displays frequency or relative frequency as bar height. Bars touch.}\\[5pt]
-
-\noindent\textbf{\textcolor{navy}{Bin (class interval):}}\\
-\ans{An equal-width grouping of values on the horizontal axis of a histogram.
-e.g., $[20, 40)$ means all values from 20 up to (but not including) 40.}\\[5pt]
-
-\noindent\textbf{\textcolor{navy}{Gap / Cluster:}}\\
-\ans{A gap is a range of values with no observations. A cluster is a concentration
-of many observations in a narrow range.}\\[5pt]
+\begin{multicols}{2}
+\vocabans{Dotplot}{Each data value is a dot above its position on a number line. Reveals every individual value; best for small datasets.}
+\vocabans{Stemplot (stem-and-leaf plot)}{Separates each value into a stem (leading digits) and a leaf (trailing digit). Preserves actual values and sorts them.}
+\columnbreak
+\vocabans{Histogram}{Groups quantitative data into equal-width bins; bar height is frequency or relative frequency. Bars touch.}
+\vocabans{Bin (class interval)}{An equal-width grouping on the horizontal axis. e.g., $[20,40)$ means 20 up to but not including 40.}
+\vocabans{Gap / Cluster}{A gap is a range with no observations. A cluster is a concentration of observations in a narrow range.}
+\end{multicols}
 \end{vocabbox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
 \small\textbf{Three displays, one dataset.}\\[6pt]
 \ans{The dotplot and stemplot make it easy to see every individual value (e.g., that
@@ -58,6 +54,7 @@ mode is exactly 10. Each trade-off matters depending on the question.}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Display 1 --- Dotplots (Key)}
 \small
 \begin{multicols}{2}
@@ -88,6 +85,7 @@ Impractical when $n$ is \ans{large} --- dots pile up and overlap.
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Display 2 --- Stemplots (Key)}
 \small
 \begin{multicols}{2}
@@ -135,6 +133,7 @@ Difficult with very large data values or non-integer data.
 
 \newpage
 
+\boxguard
 \begin{notesbox}{Display 3 --- Histograms (Key)}
 \small
 \begin{multicols}{2}
@@ -177,6 +176,7 @@ Large datasets ($n > $ \ans{50}) where individual values matter less than overal
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Worked Example --- Key}
 \small
 
@@ -208,6 +208,7 @@ $[80, 100)$ & 3  & \ans{0.075} \\
 
 \vspace{0.1in}
 
+\boxguard
 \begin{practicebox}
 \small\textbf{Choosing the Right Display --- Key}
 

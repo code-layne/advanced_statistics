@@ -1,29 +1,25 @@
 %! AP Statistics — Unit 1, Lesson 9
 \documentclass[10pt]{article}
 \usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
+% Load the shared box/colour package rather than re-declaring skillbox and the
+% palette locally: teachernote (used by the migrated teacher notes below) is
+% defined in apstats-boxes, and a local copy of the palette silently diverges
+% from shared/apstats-colors.sty.
+\usepackage{apstats-boxes}
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{amsmath,amssymb}
 \usepackage{array}
 \usepackage{tabularx}
-\tcbuselibrary{breakable}
-
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{redbox}{HTML}{FCECEC}
-\definecolor{greenbox}{HTML}{EDF8F0}
-\definecolor{goldbox}{HTML}{FFF7E6}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
 \setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
 \setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Teacher notes quote expected answers, so the plan needs \ans. Defining it
+% here rather than loading apstats-key, which would also flip every `work`
+% block visible.
+\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
 
 \begin{document}
 \def\CourseName{AP Statistics}
@@ -45,6 +41,7 @@
     center and spread (Big Idea: UNC; AP Skills 2 \& 3).
 \end{tcolorbox}
 
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP Skills 2 \& 3 --- Data Analysis \& Using Probability and Simulation}
@@ -65,6 +62,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
@@ -83,6 +81,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Quick Review (3 min)}\\
@@ -99,6 +98,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Hook \& Lesson]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Hook (5 min)}\\
@@ -116,6 +116,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Direct Instruction (10 min)}
@@ -136,6 +137,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Group Activity (8--10 min)}\\
@@ -157,6 +159,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Exit Ticket (5 min)}\\
@@ -170,6 +173,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Homework / Practice}
@@ -187,5 +191,65 @@
     \end{itemize}
 \end{minipage}
 \end{skillbox}
+
+
+% ── Teacher notes (migrated from the component keys) ──
+% One per component, titled for it. They live here rather than in the _key
+% files so that every component is the same length blank and keyed.
+
+\boxguard
+\begin{teachernote}[Warm-Up]
+\textbf{Grading notes (4 pts total):}
+\begin{itemize}[itemsep=2pt]
+  \item Q1: 1 pt --- both medians correct (22, 27) AND names Test Prep as higher.
+  \item Q2: 1 pt --- all four quartile values correct and IQRs = 6; correct spread conclusion.
+  \item Q3: 1 pt --- identifies overlap AND gives approximate shared range (any reasonable range from 20--29).
+  \item Q4: 1 pt --- uses comparative language with both group names AND includes context (ACT scores).
+\end{itemize}
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Guided Notes]
+\textbf{Key teaching moments:}
+\begin{itemize}[itemsep=2pt]
+  \item Notes table: No Prep range $= 29 - 15 = 14$; Test Prep range $= 35 - 20 = 15$.
+  \item Quick Check: IQRs are equal (both 6), so the ``more spread'' answer addresses range or overall shift. Accept either if well-reasoned.
+  \item Back-to-back: No Prep median is the 4th of 8 values $= (22+23)/2 = 22.5$. In the stemplot count: 17, 18 in stem 1; then 20, 22, 23 in stem 2 left side $\to$ median between 22 and 23 = 22.5. The notes say ``23'' as approximation from counting leaves; accept 22 or 23 if students explain.
+  \item Test Prep $n=9$: median is the 5th value = 27.
+\end{itemize}
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity]
+\textbf{Grading notes:}
+\begin{itemize}[itemsep=2pt]
+  \item Part 1 (Q1--Q3): 6 pts. Q1: 1 pt (8th, 7). Q2: 2 pts (all 10 values). Q3: 3 pts (IQR both groups, fence, outlier id, last non-outlier).
+  \item Part 2 (Q4--Q7): 4 pts (1 each). Q6: any direction word + 1 hr difference.
+  \item Part 3 (Q8): SOCS = 4 pts, 1 per component. Each must use comparative language, name both groups, include context. Shape: 1 pt for noting skew in non-athletes due to outlier. Outlier: must give fence calc. Center: comparative, both medians named. Spread: IQR comparison required.
+\end{itemize}
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Exit Ticket]
+\textbf{Grading notes (8 pts total):}
+\begin{itemize}[itemsep=2pt]
+  \item Q1: 2 pts --- all 10 five-number values correct (1 pt each city) + both IQRs (part of Q1 row).
+  \item Q2: 2 pts --- fence shown (1 pt) + correct outlier conclusion (1 pt).
+  \item Q3: 1 pt --- states City A higher, names both cities, gives difference (4 in).
+  \item Q4: 1 pt --- compares IQRs with direction word; references context (monthly rainfall).
+  \item AP-Style: 2 pts --- 1 pt for center comparison (both cities, comparative word, values);
+        1 pt for spread comparison (IQRs, both named, context). Shape/outlier addressed = bonus.
+\end{itemize}
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework]
+\textbf{Grading notes:}
+\begin{itemize}[itemsep=2pt]
+  \item Part A: 6 pts. Q1: all 10 values + IQRs correct (2 pts). Q2: center comparison (2 pts: comparative word + both values + context). Q3: spread comparison (1 pt). Q4: overlap + interpretation (1 pt).
+  \item Part B: 5 pts. Q5 stemplot (2 pts: all leaves correct). Q6 five-number summaries (2 pts: both rows). Q7 comparison (1 pt: center comparison required; spread credited as bonus).
+  \item Part C: 3 pts (1 each for: shape/outlier addressed, center compared with both values, spread compared with both IQRs). All must use comparative language naming both classes.
+\end{itemize}
+\end{teachernote}
 
 \end{document}

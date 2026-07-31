@@ -7,84 +7,116 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Group Activity --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.10in}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small\textbf{Dataset:} Sorted lap times (sec) for 15 swimmers:\;
-62, 64, 65, 67, 68, 69, 70, 71, 72, 73, 74, 75, 77, 80, 95
+\small
+\textbf{Part 1} (group, 8 min): Calculate summary statistics for a swim team dataset.\\
+\textbf{Part 2} (group, 7 min): Detect and discuss an outlier; choose appropriate statistics.\\
+\textbf{Part 3} (individual, 5 min): Interpret a second dataset and make a recommendation.
 \end{tcolorbox}
 
 \vspace{0.10in}
 
+% ── PART 1 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 1 \quad Calculate Summary Statistics}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+\vspace{0.10in}
 
-  \item \textbf{Mean.}\\[3pt]
-        \ans{Sum $= 62+64+65+67+68+69+70+71+72+73+74+75+77+80+95 = 1082$\\
-        $\bar{x} = 1082 \div 15 \approx \mathbf{72.1}$ seconds}
+\noindent\small A swim team coach recorded the lap times (seconds) for 15 swimmers
+during practice. The sorted data are:
 
-  \item \textbf{Median.}\\[3pt]
-        \ans{$n = 15$ (odd); the median is the 8th value: \textbf{71} seconds.}
+\vspace{0.08in}
+\begin{center}
+\small
+62,\enspace 64,\enspace 65,\enspace 67,\enspace 68,\enspace 69,\enspace 70,\enspace
+71,\enspace 72,\enspace 73,\enspace 74,\enspace 75,\enspace 77,\enspace 80,\enspace 95
+\end{center}
 
-  \item \textbf{$Q_1$, $Q_3$, IQR.}\\[3pt]
-        \ans{Lower half (positions 1--7): 62, 64, 65, 67, 68, 69, 70.
-        $Q_1 = \mathbf{67}$\\
-        Upper half (positions 9--15): 72, 73, 74, 75, 77, 80, 95.
-        $Q_3 = \mathbf{75}$\\
-        $\text{IQR} = 75 - 67 = \mathbf{8}$ seconds}
+\vspace{0.12in}
 
-  \item \textbf{Range.}\\[3pt]
-        \ans{Range $= 95 - 62 = \mathbf{33}$ seconds}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item Find the \textbf{mean}. Show the sum and division.\\[5pt]
+        Sum $= \ans{1082}$ \qquad $\bar{x} = \ans{$1082/15 \approx 72.1$ s}$
+
+  \item Find the \textbf{median}. Which position holds the median?\\[5pt]
+        Position: \ans{8th} \qquad Median $= \ans{71}$ seconds
+
+  \item Find $Q_1$ and $Q_3$ by finding the median of each half.\\[5pt]
+        Lower half (7 values): \ans{62, 64, 65, 67, 68, 69, 70}\\[4pt]
+        $Q_1 = \ans{67}$ \hfill
+        Upper half (7 values): \ans{72, 73, 74, 75, 77, 80, 95}\\[4pt]
+        $Q_3 = \ans{75}$ \hfill
+        $\text{IQR} = Q_3 - Q_1 = \ans{8}$ seconds
+
+  \item Find the \textbf{range}.\\[5pt]
+        Range $= \ans{95} - \ans{62} = \ans{33}$ seconds
 
 \end{enumerate}
 
-\vspace{0.10in}
+\vspace{0.12in}
 
+% ── PART 2 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 2 \quad Outlier Detection \& Choosing Statistics}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, resume]
+\vspace{0.10in}
 
-  \item \textbf{Fences.}\\[3pt]
-        \ans{Lower fence $= 67 - 1.5(8) = 67 - 12 = \mathbf{55}$\\
-        Upper fence $= 75 + 1.5(8) = 75 + 12 = \mathbf{87}$}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, resume]
 
-  \item \textbf{Is 95 an outlier?}\\[3pt]
-        \ans{Yes. Since $95 > 87$ (upper fence), the value 95 seconds \textbf{is an
-        outlier} by the $1.5\times\text{IQR}$ rule.}
+  \item Calculate the lower and upper fences using the $1.5 \times \text{IQR}$ rule.\\[5pt]
+        Lower fence $= Q_1 - 1.5(\text{IQR}) = \ans{$67-1.5(8)=55$}$\\[4pt]
+        Upper fence $= Q_3 + 1.5(\text{IQR}) = \ans{$75+1.5(8)=87$}$
 
-  \item \textbf{Mean vs.\ Median; shape.}\\[3pt]
-        \ans{Mean $(72.1) >$ Median $(71)$ $\Rightarrow$ the distribution is slightly
-        \textbf{skewed right}. The outlier at 95 pulls the mean upward while the median
-        stays near the center.}
+  \item Is the value 95 an outlier? Justify your answer.\\[5pt]
+        \ansline{Yes. Since $95 > 87$ (the upper fence), 95 seconds is an}\\[1pt]
+        \ansline{outlier by the $1.5\times\text{IQR}$ rule.}
 
-  \item \textbf{Which pair?}\\[3pt]
-        \ans{The coach should report \textbf{Median + IQR} because the distribution is
-        skewed right and contains an outlier; both statistics are resistant to the
-        extreme value of 95 seconds and give a more accurate picture of typical
-        performance. The median of 71 seconds and IQR of 8 seconds are preferred.}
+  \item Compare the mean and median you calculated.  Which is larger?
+        What does this tell you about the shape of the distribution?\\[5pt]
+        \ansline{Mean $(72.1) >$ median $(71)$, so the distribution is slightly}\\[1pt]
+        \ansline{\textbf{skewed right}; the outlier at 95 pulls the mean upward.}
+
+  \item Based on the shape and the outlier, which pair of statistics should the
+        coach use to describe the typical lap time and its variability?
+        Circle your choice and write one sentence justifying it.
+
+        \vspace{8pt}
+        \hspace{2em}\textbf{Mean + Standard Deviation}
+        \hspace{4em}\textbf{Median + IQR}
+        \hspace{1em}\ans{$\leftarrow$ correct}
+
+        \vspace{8pt}
+        \ansline{The distribution is skewed right and contains an outlier (95),}\\[1pt]
+        \ansline{so median (71 s) + IQR (8 s) are resistant and more accurate.}
 
 \end{enumerate}
 
-\vspace{0.10in}
+\vspace{0.12in}
 
+% ── PART 3 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 3 \quad Individual Interpretation}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, resume]
+\vspace{0.10in}
 
-  \item \textbf{Mean $<$ Median implies\dots}\\[3pt]
-        \ans{When mean $<$ median, the distribution is likely \textbf{skewed left} ---
-        a few unusually low values pull the mean below the median.}
+\noindent\small A different coach reports: ``The mean number of freestyle laps
+completed per week for my 20 swimmers is 42, and the median is 44. The IQR is 8
+and the standard deviation is 12.''
 
-  \item \textbf{Which number for parents?}\\[3pt]
-        \ans{The coach should report the \textbf{median (44 laps)} because the
-        distribution is skewed left; the median is more resistant and better
-        represents a typical swimmer's weekly performance.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, resume]
+
+  \item What does the fact that mean $<$ median suggest about the shape of this
+        distribution? Explain.\\[5pt]
+        \ansline{Mean $<$ median suggests the distribution is \textbf{skewed left} ---}\\[1pt]
+        \ansline{a few unusually low values pull the mean below the median.}
+
+  \item The coach wants to tell parents ``how many laps a typical swimmer
+        completes per week.'' Which single number should the coach report,
+        and why?\\[5pt]
+        \ansline{The \textbf{median (44 laps)}, because the distribution is skewed}\\[1pt]
+        \ansline{left and the median resists those low values.}
 
 \end{enumerate}
 

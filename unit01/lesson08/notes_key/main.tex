@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.8}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.10in}
 
@@ -22,26 +27,23 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.10in}
 
+\boxguard
 \begin{vocabbox}
+\small
 \begin{multicols}{2}
-\termblanklong{Boxplot (box-and-whisker plot)}
-\ans{A display of the five-number summary: a box from $Q_1$ to $Q_3$ with a median line, and whiskers extending to the min and max (or last non-outlier).}
-\termblanklong{Five-number summary}
-\ans{$\min,\; Q_1,\; M,\; Q_3,\; \max$ — the five values that define a boxplot.}
-\termblanklong{Box (IQR box)}
-\ans{The rectangle from $Q_1$ to $Q_3$; spans the middle 50\% of data.}
+\vocabans{Boxplot (box-and-whisker plot)}{A display of the five-number summary: a box from $Q_1$ to $Q_3$ with a median line, and whiskers to the min and max.}
+\vocabans{Five-number summary}{$\min,\; Q_1,\; M,\; Q_3,\; \max$ --- the five values that define a boxplot.}
+\vocabans{Box (IQR box)}{The rectangle from $Q_1$ to $Q_3$; spans the middle 50\% of the data.}
 \columnbreak
-\termblanklong{Whisker}
-\ans{The line from the box edge to the min or max (or last non-outlier in a modified boxplot).}
-\termblanklong{Modified boxplot}
-\ans{A boxplot where whiskers end at the last non-outlier and outliers are plotted individually as dots ($\bullet$).}
-\termblanklong{Fence (lower / upper)}
-\ans{The boundaries for outlier detection: lower $= Q_1 - 1.5\,\text{IQR}$; upper $= Q_3 + 1.5\,\text{IQR}$.}
+\vocabans{Whisker}{The line from the box edge to the min or max (or last non-outlier in a modified boxplot).}
+\vocabans{Modified boxplot}{Whiskers end at the last non-outlier; outliers are plotted individually as dots ($\bullet$).}
+\vocabans{Fence (lower / upper)}{Outlier boundaries: lower $= Q_1 - 1.5\,\text{IQR}$; upper $= Q_3 + 1.5\,\text{IQR}$.}
 \end{multicols}
 \end{vocabbox}
 
 \vspace{0.10in}
 
+\boxguard
 \begin{hookbox}
 \small\textbf{Five numbers $\to$ one picture}
 
@@ -71,6 +73,7 @@ The five-number summary is: $\min = 12$,\ $Q_1 = 20$,\ $M = 27$,\ $Q_3 = 35$,\ $
 
 \vspace{0.08in}
 
+\boxguard
 \begin{notesbox}{Anatomy of a Boxplot}
 \small
 \begin{multicols}{2}
@@ -114,6 +117,7 @@ the distribution is skewed \ans{right}.
 
 \vspace{0.08in}
 
+\boxguard
 \begin{notesbox}{Modified Boxplot \& the Outlier Rule}
 \small
 \begin{multicols}{2}
@@ -166,6 +170,7 @@ Last non-outlier $= $ \ans{48} (whisker ends here).
 
 \vspace{0.08in}
 
+\boxguard
 \begin{notesbox}{Boxplot vs.\ Histogram}
 \small
 \begin{multicols}{2}
@@ -206,14 +211,5 @@ Upper fence $= 60 + 1.5(20) = $ \ans{90}. \quad
 Is 95 above the fence? \ans{Yes, $95 > 90$.} \quad
 Range $= 95 - 30 = $ \ans{65}.
 \end{tcolorbox}
-
-\begin{teachernote}
-\textbf{Key teaching moments:}
-\begin{itemize}[itemsep=2pt]
-  \item Quick Check: range uses the outlier dot (95) as the max, not the whisker end (78). Range $= 95 - 30 = 65$.
-  \item Confirm IQR $= 60 - 40 = 20$ and upper fence $= 60 + 30 = 90$. Since $95 > 90$, it IS an outlier — consistent with the dot.
-  \item Common error: students sometimes compute range as whisker-to-whisker ($78 - 30 = 48$). Emphasize that outlier dots are still part of the dataset.
-\end{itemize}
-\end{teachernote}
 
 \end{document}

@@ -1,29 +1,25 @@
 %! AP Statistics — Unit 1, Lesson 4
 \documentclass[10pt]{article}
 \usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
+% Load the shared box/colour package rather than re-declaring skillbox and the
+% palette locally: teachernote (used by the migrated teacher notes below) is
+% defined in apstats-boxes, and a local copy of the palette silently diverges
+% from shared/apstats-colors.sty.
+\usepackage{apstats-boxes}
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{amsmath,amssymb}
 \usepackage{array}
 \usepackage{tabularx}
-\tcbuselibrary{breakable}
-
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{redbox}{HTML}{FCECEC}
-\definecolor{greenbox}{HTML}{EDF8F0}
-\definecolor{goldbox}{HTML}{FFF7E6}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
 \setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
 \setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Teacher notes quote expected answers, so the plan needs \ans. Defining it
+% here rather than loading apstats-key, which would also flip every `work`
+% block visible.
+\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
 
 \begin{document}
 \def\CourseName{AP Statistics}
@@ -44,6 +40,7 @@
     and misleading features, and will explain when each graph type is most appropriate (Big Idea: UNC).
 \end{tcolorbox}
 
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP Skill 2 --- Data Analysis}
@@ -64,6 +61,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
@@ -82,6 +80,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Quick Review (3 min)}\\
@@ -98,6 +97,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Hook \& Lesson]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Hook (5 min)}\\
@@ -115,6 +115,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Direct Instruction (10 min)}
@@ -135,6 +136,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Group Activity (8--10 min)}\\
@@ -157,6 +159,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Exit Ticket (5 min)}\\
@@ -170,6 +173,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Homework / Practice}
@@ -187,5 +191,140 @@
     \end{itemize}
 \end{minipage}
 \end{skillbox}
+
+
+% ── Teacher notes (migrated from the component keys) ──
+% One per component, titled for it. They live here rather than in the _key
+% files so that every component is the same length blank and keyed.
+
+\boxguard
+\begin{teachernote}[Warm-Up]
+The goal here is to surface students' prior knowledge (middle-school bar
+charts) and activate thinking before formal instruction. Do not evaluate
+the sketch quality --- just look for intent to compare categories visually.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Guided Notes (1)]
+Prompt: ``If the axis started at 0, would the bars look so different?'' Have
+students sketch both versions mentally. Product X: 970/1000 bar height vs.\
+Product Y: 1000/1000 --- barely distinguishable.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Guided Notes (2)]
+Correct bar chart: 5 separated bars labeled Dog, Cat, Fish, Bird, None on x-axis.
+Y-axis labeled ``Relative Frequency'' (or ``Proportion''), scale 0 to 0.35
+(or 0 to 35\%), tick marks at 0, 0.05 (5\%), 0.10, etc.
+Title: e.g., ``Distribution of Pet Type for 40 Households.''
+Bars: Dog 0.30, Cat 0.20, Fish 0.15, Bird 0.10, None 0.25.
+Bars must NOT touch.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Guided Notes (3)]
+Require: total $n$, variable in context, most common and least common categories
+with relative frequencies. Deduct if student writes only counts.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Guided Notes (4)]
+Correct bar chart: 4 bars for News (tallest, 40\%), Sports (25\%), Reality (20\%),
+Other (shortest, 15\%). Y-axis labeled ``Relative Frequency'' from 0 to at least
+0.40. Bars do not touch. Title present. Accept either decimal or percent axis.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity (1)]
+Angles: Netflix $= 0.42 \times 360 = 151.2^\circ$; Disney+ $= 72^\circ$;
+Hulu $= 64.8^\circ$; HBO Max $= 43.2^\circ$; Other $= 28.8^\circ$.
+Sum $= 360^\circ$. Accept reasonable rounding.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity (2)]
+\textbf{Correct bar chart:} 5 separated bars labeled Netflix (tallest, 42\%),
+Disney+ (20\%), Hulu (18\%), HBO Max (12\%), Other (shortest, 8\%).
+Y-axis: ``Relative Frequency'' or ``Proportion'', scale 0 to at least 0.45
+(or 0 to 45\%). Bars do NOT touch. Title present (e.g., ``Preferred Streaming
+Service for 50 AP Statistics Students'').
+
+\textbf{Common errors:} bars touching; y-axis not starting at 0; missing title
+or axis labels; bars arranged in an order other than the table (accept any order,
+but consistent is best).
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity (3)]
+Require: $n = 50$, variable in context (streaming service), most and least
+common with relative frequencies. Deduct for raw counts only.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity (4)]
+Students may describe a slightly different scenario (e.g., starting at 5\% or
+10\%). The key reasoning is the same: the y-axis cutoff makes the differences
+look larger than they are. Accept any reasonable specific example.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity (5)]
+Accept any of the three misleading tricks (non-zero axis, 3-D, inconsistent
+scale), but the non-zero axis is the most commonly tested on AP exams.
+Full credit requires: naming the feature, explaining the effect, and connecting
+to a specific example.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Exit Ticket (1)]
+Require: $n = 80$, variable in context, most and least common category with
+relative frequencies. Deduct for missing context or for giving only counts.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Exit Ticket (2)]
+Accept any of the three tricks. The response must (1) name the specific
+misleading feature and (2) state the incorrect conclusion a reader would draw.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Exit Ticket (3)]
+AP rubric would award credit for: (1) correctly identifying the incompatibility
+of the two y-axes, (2) explaining why counts and relative frequencies cannot be
+compared directly, (3) suggesting a fix. A response that only says ``they use
+different y-axes'' without explaining the implication earns partial credit.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework (1)]
+\textbf{Correct bar chart:} 4 separated bars. X-axis: Walk, Car, Bus, Bike (any
+order). Y-axis: ``Relative Frequency'' 0 to at least 0.40 (or 0 to 40\%).
+Bars: Walk 0.40 (tallest), Car and Bus equal at 0.25, Bike 0.10 (shortest).
+Bars do NOT touch. Title present.
+
+Note: Car and Bus have the same height --- students should draw them identically.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework (2)]
+Students may be surprised that the headline percentage is technically correct
+while still being paired with a misleading graph. This is a key AP Statistics
+insight: correct statistics can accompany deceptive visuals.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework (3)]
+Full credit: $n$ stated; variable in context; most and least common categories
+named with relative frequencies; at least one additional observation (e.g.,
+combined frequencies, comparison).
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework (4)]
+Also accept ``White and Black'' ($126 + 90 = 216^\circ$, which is 60\% of
+the circle, not half). The closest pair to exactly half the circle is Silver
++ Red + Other ($72 + 36 + 36 = 144^\circ$, 40\%) or Black + Silver ($162^\circ$,
+45\%). Accept any reasonable reading of ``almost exactly half.''
+\end{teachernote}
 
 \end{document}
