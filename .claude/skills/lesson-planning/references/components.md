@@ -23,7 +23,9 @@ General rules:
 order (same skeleton for review and primary-content lessons; review lessons simply carry no
 AP tags and list review topics):
 
-1. **Title block** — `\CourseName: \SchoolYear` + `\UnitNumberName \LessonNumberName`.
+1. **Title block** — `\CourseName` + `\UnitNumberName \LessonNumberName`. **Course name only:**
+   never put the school year (`\SchoolYear`) or the meeting length (`\MeetingLength`) in the
+   title, so a plan does not go stale when either changes.
 2. **Primary Objective** — a `tcolorbox` (sky/navy). One or two sentences. For AP courses,
    end with the governing big idea, e.g. `(Big Idea: VAR)`.
 3. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
@@ -45,7 +47,9 @@ AP tags and list review topics):
     MC, with a note on collecting and using results.
 12. **Reinforcement & Extension** — `skillbox{goldbox}`: homework overview, an extension, and a
     preview of the next lesson.
-13. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order
+13. **Teacher notes** — set at the plan's body size: never open a note with `\scriptsize`,
+    `\footnotesize`, or `\small`, so every note reads the same as the rest of the plan. One
+    `\begin{teachernote}[Component]` per component, in packet order
     (Warm-Up, Guided Notes, Group Activity, Exit Ticket, Homework), closing the plan. This is
     where *all* teacher-only prose lives; a `teachernote` never goes in a `_key`, because it is
     the one block with no counterpart in the blank and it makes the key run long.
