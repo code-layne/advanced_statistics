@@ -7,16 +7,29 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Group Activity --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Partner:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.1in}
 
-% ── PART 1 KEY ───────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\textbf{Part 1} (group, 8 min): Read and analyze a dotplot.\\
+\textbf{Part 2} (group, 8 min): Complete a back-to-back stemplot and compare two groups.\\
+\textbf{Part 3} (group, 5 min): Interpret a histogram from a frequency table.\\
+\textbf{Part 4} (individual, 3 min): Reflection.
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+% ── PART 1 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 1 \quad Read a Dotplot}
 
 \vspace{0.1in}
+
+\noindent\small The dotplot below shows the heights (cm) of 15 seedlings measured
+two weeks after planting.
+
+\vspace{0.12in}
 
 \begin{center}
 \begin{tikzpicture}[scale=1.05]
@@ -26,6 +39,7 @@ Name:\;\ans{Key} & Partner:\; & Period:\;
     \node[below, font=\small] at (\x,-0.12) {\lbl};
   }
   \node[below, font=\small\itshape] at (6.5,-0.52) {Height (cm)};
+  % freq: 4→1, 5→3, 6→4, 7→4, 8→2, 9→1
   \filldraw[navy] (4, 0.38) circle (0.14);
   \foreach \k in {1,...,3} \filldraw[navy] (5, \k*0.38) circle (0.14);
   \foreach \k in {1,...,4} \filldraw[navy] (6, \k*0.38) circle (0.14);
@@ -35,91 +49,110 @@ Name:\;\ans{Key} & Partner:\; & Period:\;
 \end{tikzpicture}
 \end{center}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item \ans{$4 + 4 = 8$ seedlings.}
-        \ans{$8/15 \approx 0.533 = 53.3\%$.}
+  \item How many seedlings have a height of exactly 6 cm or 7 cm?
+        \ans{$4+4=8$}
+        What percentage of all seedlings does this represent?
+        Show your work.\quad\ans{$8/15 \approx 53.3\%$}
 
-  \item \ans{Range $= 9 - 4 = 5$ cm.}
-        \ansline{There are no gaps. There is a cluster in the 6--7 cm range
-        (8 of the 15 seedlings), with fewer observations toward the extremes.}
+  \item What is the range of heights? \ans{$9-4=5$ cm}
+        Are there any gaps or clusters? Describe what you see.\\[5pt]
+        \ansline{No gaps. There is a cluster at 6--7 cm holding 8 of the 15}\\[1pt]
+        \ansline{seedlings, with fewer observations toward either extreme.}
 
-  \item \ansline{Yes, the distribution is roughly symmetric. The dotplot has a
-        peak at 6 and 7 (4 dots each), with 3 dots at 5 and 2 at 8 on either
-        side, and 1 dot at each extreme (4 and 9).}
+  \item A student says: ``The distribution looks roughly symmetric.''
+        Do you agree? Use evidence from the dotplot.\\[5pt]
+        \ansline{Yes --- the peak sits at 6 and 7 (4 dots each), with 3 at 5 and 2}\\[1pt]
+        \ansline{at 8, and a single dot at each extreme (4 and 9).}
 
-  \item \ansline{Yes, a dotplot is reasonable for $n = 15$ because it preserves
-        every individual height. With 200 seedlings, dots would stack so high
-        that the graph would be unwieldy and hard to read --- a histogram would
-        be a better choice.}
+  \item For this dataset ($n = 15$), is a dotplot a reasonable choice of display?
+        What is one limitation it would have if there were 200 seedlings instead?\\[5pt]
+        \ansline{Yes, at $n=15$ it preserves every individual height. At $n=200$ the}\\[1pt]
+        \ansline{dots would stack unreadably --- a histogram would be better.}
 
 \end{enumerate}
 
+\vspace{0.12in}
+
+% ── PART 2 ───────────────────────────────────────────────────────────────────
+{\large\bfseries\color{navy} Part 2 \quad Complete a Back-to-Back Stemplot}
+
 \vspace{0.1in}
 
-% ── PART 2 KEY ───────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 2 \quad Back-to-Back Stemplot --- Key}
+\noindent\small Two AP Statistics classes took the same unit test (100 points). Their scores
+are listed below. Complete the back-to-back stemplot and then compare the two distributions.
 
-\vspace{0.08in}
+\vspace{0.1in}
 
 \begin{center}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabular}{r c l}
-\textbf{Period 1} & \textbf{Stem} & \textbf{Period 2} \\
-\hline
-\ans{8} & 6 & \ans{5\; 9} \\
-\ans{9\; 6\; 2\; 1} & 7 & \ans{2\; 5\; 7\; 8} \\
-\ans{8\; 5\; 3} & 8 & \ans{2\; 4\; 8} \\
-\ans{4\; 1} & 9 & \ans{1} \\
+\small
+\begin{tabular}{p{0.42\linewidth} p{0.42\linewidth}}
+\textbf{Period 1 ($n = 10$):} & \textbf{Period 2 ($n = 10$):} \\
+68, 71, 72, 76, 79, 83, 85, 88, 91, 94 & 65, 69, 72, 75, 77, 78, 82, 84, 88, 91 \\
 \end{tabular}
 \end{center}
 
-\begin{teachernote}
-Period 1 leaves are written right-to-left (closest to stem first).
-Period 2 leaves are written left-to-right. Both sets must be in ascending order
-(reading outward from the stem).
-\end{teachernote}
+\vspace{0.1in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-
-  \item \ans{Period 1 ($n = 10$): median $=$ average of 5th and 6th values
-        $= (79 + 83)/2 = 81$.}\\
-        \ans{Period 2 ($n = 10$): median $=$ average of 5th and 6th values
-        $= (77 + 78)/2 = 77.5$.}
-
-  \item \ansline{Period 1 has a higher median (81 vs.\ 77.5). Period 2 has more
-        spread: its range is $91 - 65 = 26$, compared to $94 - 68 = 26$ for Period 1
-        --- the ranges are equal, but Period 2 has more scores in the 60s, pulling
-        it lower.}
-
-  \begin{teachernote}
-  Range is 26 for both classes; accept this observation. Students might also
-  note that Period 2 has 2 values in the 60s while Period 1 has only 1, giving
-  more lower-tail spread. Require specific numerical evidence.
-  \end{teachernote}
-
-  \item \ansline{Period 1 has 5 scores at or above 80 (83, 85, 88, 91, 94),
-        which is 50\% of its class. Period 2 also has 4 scores at or above 80
-        (82, 84, 88, 91), which is 40\%. So Period 1 does have a slight edge in
-        high scores, making the claim partially correct --- but Period 1's median
-        (81) is only modestly higher than Period 2's (77.5), so the difference is
-        not dramatic.}
-
-\end{enumerate}
+\noindent Complete the stemplot below. Leaves for Period 1 go on the \textit{left}
+(written right-to-left), leaves for Period 2 go on the \textit{right}.
 
 \vspace{0.1in}
 
-% ── PART 3 KEY ───────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 3 \quad Histogram Interpretation --- Key}
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{r c l}
+\textbf{Period 1} & \textbf{Stem} & \textbf{Period 2} \\
+\hline
+\ans{8}             & 6 & \ans{5\; 9}       \\
+\ans{9\; 6\; 2\; 1} & 7 & \ans{2\; 5\; 7\; 8} \\
+\ans{8\; 5\; 3}     & 8 & \ans{2\; 4\; 8}   \\
+\ans{4\; 1}         & 9 & \ans{1}           \\
+\end{tabular}
+\hspace{1cm} Key: \textbf{7 $|$ 6} = 76
+\end{center}
 
-\vspace{0.08in}
+\vspace{0.1in}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item What is the median score for each class?
+        Show how you found each median.\\[5pt]
+        Period 1 median: \ans{$(79+83)/2 = 81$} \quad Period 2 median: \ans{$(77+78)/2 = 77.5$}
+
+  \item Which class had a higher median? Which class had more spread in scores?
+        Support your answer with values from the stemplot.\\[5pt]
+        \ansline{Period 1 has the higher median (81 vs.\ 77.5). Spread is the same:}\\[1pt]
+        \ansline{both ranges are 26 ($94-68$ and $91-65$); Period 2 just sits lower.}
+
+  \item A student says: ``Period 1 is doing better because it has more students with
+        scores in the 80s and 90s.'' Use the back-to-back stemplot to evaluate
+        this claim with specific evidence.\\[5pt]
+        \ansline{Partly right. Period 1 has 5 scores at or above 80 (83, 85, 88, 91, 94)}\\[1pt]
+        \ansline{$=50\%$; Period 2 has 4 (82, 84, 88, 91) $=40\%$. But the medians differ}\\[1pt]
+        \ansline{by only 3.5 points, so ``doing better'' overstates a modest gap.}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+% ── PART 3 ───────────────────────────────────────────────────────────────────
+{\large\bfseries\color{navy} Part 3 \quad Interpret a Histogram (from a Frequency Table)}
+
+\vspace{0.1in}
+
+\noindent\small The table below shows the distribution of heights (cm) for a random
+sample of 50 adults.
+
+\vspace{0.1in}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{tabularx}{\linewidth}{@{} C{0.22\linewidth} C{0.18\linewidth} C{0.22\linewidth} C{0.26\linewidth} @{}}
 \rowcolor{sky}
-\textbf{Bin} & \textbf{Freq.} & \textbf{Rel.\ Freq.} & \textbf{Cum.\ Freq.} \\
+\textbf{Bin} & \textbf{Frequency} & \textbf{Rel.\ Freq.} & \textbf{Cumulative Freq.} \\
 \midrule
 $[150, 160)$ & 3  & \ans{0.06} & \ans{3}  \\
 $[160, 165)$ & 8  & \ans{0.16} & \ans{11} \\
@@ -133,42 +166,41 @@ $[180, 190)$ & 3  & \ans{0.06} & \ans{50} \\
 
 \vspace{0.1in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item (Answers above.)
+  \item Complete the relative frequency and cumulative frequency columns above.
 
-  \item \ans{The $[165, 170)$ bin has the greatest frequency (15 adults, or 30\%).}
+  \item Which bin has the greatest frequency? What percentage of adults fall in
+        this bin?\\[5pt]
+        \ansline{$[165,170)$, with 15 adults --- 30\% of the sample.}
 
-  \item \ansline{Because the bins are different widths, a taller bar does not
-        necessarily mean a higher density of observations per unit of measurement.
-        The $[150,160)$ bar spans 10 cm but the $[160,165)$ bar spans only 5 cm,
-        so comparing their heights directly is misleading --- the wider bar appears
-        taller even if fewer observations fall per centimeter.}
+  \item Notice that the bins are \textit{not} equal width: $[150,160)$ is 10 cm wide
+        while $[160,165)$ is only 5 cm wide. Why might this be a problem when
+        comparing bar heights in a histogram?\\[5pt]
+        \ansline{Unequal widths break the height-to-density link: a 10 cm bin collects}\\[1pt]
+        \ansline{observations over twice the span, so its bar exaggerates its share.}
 
-  \begin{teachernote}
-  This is a preview of density histograms (optional). The key point is that equal
-  bin widths are required for the bar height to represent frequency fairly.
-  \end{teachernote}
-
-  \item \ans{$(14 + 7 + 3)/50 = 24/50 = 0.48 = 48\%$ of adults are at least 170 cm tall.}
+  \item What percentage of adults are at least 170 cm tall?
+        Show your calculation.\\[5pt]
+        \ansline{$(14+7+3)/50 = 24/50 = 0.48 = \textbf{48\%}$.}
 
 \end{enumerate}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-% ── PART 4 KEY ───────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 4 \quad Reflection --- Key}
+% ── PART 4 ───────────────────────────────────────────────────────────────────
+{\large\bfseries\color{navy} Part 4 \quad Individual Reflection}
 
 \vspace{0.08in}
 
 \begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small\textbf{Sample response:}\\[6pt]
-\ans{The most important trade-off is dataset size vs.\ preserving individual values.
-For the Part 1 seedling data ($n=15$), a dotplot was ideal because we could see
-each height. For the Part 3 adult heights ($n=50$), a histogram grouped data into
-bins and sacrificed individual values --- but it made the overall shape clearer and
-would scale to 500 observations without becoming unreadable.}
+\small\textbf{In your own words:} A dotplot, stemplot, and histogram can all display
+the same quantitative dataset. What is the most important trade-off to consider
+when choosing between them? Give a specific example from today's activity.\\[6pt]
+\ansline{Dataset size against keeping individual values. Part 1's 15 seedlings suited}\\[1pt]
+\ansline{a dotplot --- every height visible. Part 3's 50 adults suited a histogram:}\\[1pt]
+\ansline{binning hid individual heights but made the shape clear and would scale.}
 \end{tcolorbox}
 
 \end{document}

@@ -3,11 +3,19 @@
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
+% \\ rather than \par, so chained terms share one paragraph and labels collide
+% with the preceding answer. Give each term its own paragraph on both ends.
+% Mirrored by \vocabans in notes_key/main.tex.
+\newcommand{\vocabterm}[1]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.9}{Guided Notes}
-\namedateperiod
 
 \vspace{0.10in}
 
@@ -22,21 +30,24 @@
 \vspace{0.10in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
+\small
 \begin{multicols}{2}
-\termblanklong{Parallel (side-by-side) boxplots}
-\termblanklong{Back-to-back stemplot}
-\termblanklong{Comparative statement}
+\vocabterm{Parallel (side-by-side) boxplots}
+\vocabterm{Back-to-back stemplot}
+\vocabterm{Comparative statement}
 \columnbreak
-\termblanklong{Overlapping distributions}
-\termblanklong{Explicit comparative language}
-\termblanklong{Context (in a comparison)}
+\vocabterm{Overlapping distributions}
+\vocabterm{Explicit comparative language}
+\vocabterm{Context (in a comparison)}
 \end{multicols}
 \end{vocabbox}
 
 \vspace{0.10in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Same data, same scale --- now we can compare}
 
@@ -78,6 +89,7 @@ What conclusions can you see at a glance? What still requires calculation?
 \vspace{0.08in}
 
 % ── SECTION 1: READING PARALLEL BOXPLOTS ─────────────────────────────────────
+\boxguard
 \begin{notesbox}{Reading Parallel Boxplots}
 \small
 \begin{multicols}{2}
@@ -132,6 +144,7 @@ comparison \blank{2cm}.
 \vspace{0.08in}
 
 % ── SECTION 2: AP COMPARATIVE LANGUAGE ───────────────────────────────────────
+\boxguard
 \begin{notesbox}{Writing AP Comparative Statements}
 \small
 \begin{multicols}{2}
@@ -187,6 +200,7 @@ the \blank{2cm} for [Group B]
 \vspace{0.08in}
 
 % ── SECTION 3: BACK-TO-BACK STEMPLOTS ────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Back-to-Back Stemplots}
 \small
 \begin{multicols}{2}

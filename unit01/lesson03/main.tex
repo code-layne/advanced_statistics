@@ -17,6 +17,11 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3pt}
 
+% Teacher notes quote expected answers, so the plan needs \ans. Defining it
+% here rather than loading apstats-key, which would also flip every `work`
+% block visible.
+\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+
 \begin{document}
 \def\CourseName{AP Statistics}
 \def\SchoolYear{2026--2027}
@@ -40,6 +45,7 @@
 
 \vspace{4pt}
 
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP Skill 2 --- Data Analysis}
@@ -64,6 +70,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
@@ -88,6 +95,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Warm-Up Worksheet (5 min)}\\
@@ -117,6 +125,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Hook \& Lesson]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Hook (4--5 min)}\\
@@ -154,6 +163,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Direct Instruction (10 min)}
@@ -180,6 +190,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Group Activity (8--10 min)}\\
@@ -208,6 +219,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Exit Ticket (5 min)}\\
@@ -226,6 +238,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Homework / Practice}
@@ -248,5 +261,59 @@
     \end{itemize}
 \end{minipage}
 \end{skillbox}
+
+
+% ── Teacher notes (migrated from the component keys) ──
+% One per component, titled for it. They live here rather than in the _key
+% files so that every component is the same length blank and keyed.
+
+\boxguard
+\begin{teachernote}[Guided Notes (1)]
+Emphasize: School A has 40 walkers but 240 total; School B has 120 walkers out of 200.
+This is the core motivation for relative frequency.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Guided Notes (2)]
+Accept any grammatically correct sentence that includes the total ($n = 40$),
+the variable (pet type), the category, and the relative frequency as a percent.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity]
+Verify students' raw data tallies match the given list. The data in the activity
+was designed so the counts above are correct. Accept rounding to 3 decimal places.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Exit Ticket (1)]
+Must include: total ($n=50$), the variable or context (study location), the
+category (home), and the relative frequency (44\% or 0.44). Deduct for
+missing context or for writing the raw count instead of a proportion/percent.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Exit Ticket (2)]
+For (A): accept $0.60$ or $60\%$; must show the addition.\\
+For (B): require at least the most common category with its relative frequency
+and context. Full credit requires a description that covers the full distribution.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework (1)]
+Class A winter = 5/30 $\approx$ 16.7\%; Class B winter = 2/40 = 5.0\%. This is the
+key point: same absolute count (or even Class A having more) can mean very
+different proportions.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework (2)]
+For (1): require $n = 120$, the variable, all three categories with relative
+frequencies, and the most/least common identified. Full AP credit requires
+contextual interpretation, not just reading the numbers.\\
+For (2): any reasonable comparison (athletes vs.\ non-athletes, different sports,
+different genders) earns credit. The key insight is that the table alone doesn't
+tell you whether 80\% right-handed is unusual or typical.
+\end{teachernote}
 
 \end{document}

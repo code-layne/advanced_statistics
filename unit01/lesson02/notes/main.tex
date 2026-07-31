@@ -3,11 +3,19 @@
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
+% \\ rather than \par, so chained terms share one paragraph and labels collide
+% with the preceding answer. Give each term its own paragraph on both ends.
+% Mirrored by \vocabans in notes_key/main.tex.
+\newcommand{\vocabterm}[1]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.2}{Guided Notes}
-\namedateperiod
 
 \vspace{0.12in}
 
@@ -22,18 +30,21 @@
 \vspace{0.1in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
-\termblanklong{Variable}
-\termblanklong{Categorical variable}
-\termblanklong{Quantitative variable}
-\termblanklong{Discrete quantitative variable}
-\termblanklong{Continuous quantitative variable}
-\termblanklong{Distribution of a variable}
+\small
+\vocabterm{Variable}
+\vocabterm{Categorical variable}
+\vocabterm{Quantitative variable}
+\vocabterm{Discrete quantitative variable}
+\vocabterm{Continuous quantitative variable}
+\vocabterm{Distribution of a variable}
 \end{vocabbox}
 
 \vspace{0.1in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Student Data Table --- sort these 5 variables into two groups.
 Do NOT look at the group names yet.}
@@ -74,6 +85,7 @@ Sofia   & 11 & 3.5 & Purple & 7.0 \\
 \vspace{0.1in}
 
 % ── DIRECT INSTRUCTION ───────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Classifying Variables}
 \small
 \begin{multicols}{2}
@@ -120,6 +132,7 @@ Takes numerical values for which \blank{2.5cm} makes sense.\\[6pt]
 \vspace{0.1in}
 
 % ── DISCRETE VS CONTINUOUS ───────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Discrete vs.\ Continuous Quantitative Variables}
 \small
 \begin{multicols}{2}
@@ -164,6 +177,7 @@ Possible values: \blank{3.5cm}\\[4pt]
 \newpage
 
 % ── DECISION FLOWCHART ───────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Decision Flowchart --- Copy \& Memorize}
 \small\centering
 \vspace{4pt}
@@ -196,6 +210,7 @@ Possible values: \blank{3.5cm}\\[4pt]
 \vspace{0.1in}
 
 % ── GUIDED PRACTICE ──────────────────────────────────────────────────────────
+\boxguard
 \begin{practicebox}
 \small\textbf{Classify each variable.} Write C, QD, or QC and give a one-phrase justification.
 
@@ -240,6 +255,7 @@ Possible values: \blank{3.5cm}\\[4pt]
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Additional Notes}
 \vspace{0pt}
 \writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline

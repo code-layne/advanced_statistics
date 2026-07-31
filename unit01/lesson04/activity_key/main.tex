@@ -7,18 +7,28 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Group Activity --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Partner:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\textbf{Part 1} (group, 8 min): Complete the table and construct a relative
+frequency bar chart. Then write an interpretation.\\[4pt]
+\textbf{Part 2} (group, 5 min): Identify and describe a misleading version.
+Optional: compute sector angles for a pie chart.\\[4pt]
+\textbf{Part 3} (individual, 3 min): Reflection question.
+\end{tcolorbox}
+
+\vspace{0.14in}
 
 % ── PART 1 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 1 \quad Construct the Bar Chart}
 
 \vspace{0.1in}
 
-\small\noindent Streaming service survey, $n = 50$.
+\noindent\small A survey of \textbf{50 AP Statistics students} asks: ``Which streaming
+service do you use most?'' Results are below.
 
 \vspace{0.1in}
 
@@ -39,105 +49,99 @@ Other    & 4  & \ans{0.08 (8\%)}  & \ans{28.8}  \\
 \rowcolor{sky}\textbf{Total} & \ans{50} & \ans{1.00} & \ans{360} \\
 \end{tabularx}
 
-\begin{teachernote}
-Angles: Netflix $= 0.42 \times 360 = 151.2^\circ$; Disney+ $= 72^\circ$;
-Hulu $= 64.8^\circ$; HBO Max $= 43.2^\circ$; Other $= 28.8^\circ$.
-Sum $= 360^\circ$. Accept reasonable rounding.
-\end{teachernote}
+\vspace{0.14in}
 
-\vspace{0.1in}
+\noindent\textbf{Construct a relative frequency bar chart below.}\\[2pt]
+\small Include: (1) a title, (2) a labeled x-axis with categories, (3) a labeled
+y-axis starting at 0, (4) gaps between bars.
 
-\begin{teachernote}
-\textbf{Correct bar chart:} 5 separated bars labeled Netflix (tallest, 42\%),
-Disney+ (20\%), Hulu (18\%), HBO Max (12\%), Other (shortest, 8\%).
-Y-axis: ``Relative Frequency'' or ``Proportion'', scale 0 to at least 0.45
-(or 0 to 45\%). Bars do NOT touch. Title present (e.g., ``Preferred Streaming
-Service for 50 AP Statistics Students'').
-
-\textbf{Common errors:} bars touching; y-axis not starting at 0; missing title
-or axis labels; bars arranged in an order other than the table (accept any order,
-but consistent is best).
-\end{teachernote}
-
-\vspace{0.1in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Sum $= 1$? \ans{Yes (allow small rounding error, e.g., 0.999 or 1.001).}
-
-  \item \ans{Of the 50 AP Statistics students surveyed, Netflix was by far the
-        most popular streaming service (42\%), while Other was the least popular
-        (8\%).}
-
-  \begin{teachernote}
-  Require: $n = 50$, variable in context (streaming service), most and least
-  common with relative frequencies. Deduct for raw counts only.
-  \end{teachernote}
-
-  \item \ans{The distribution is skewed toward Netflix, with no other service
-        reaching even half of Netflix's share. Disney+ and Hulu are fairly close
-        at 20\% and 18\%, while HBO Max and Other together account for only 20\%.}
-
-\end{enumerate}
+\vspace{8pt}
+\begin{tcolorbox}[colback=white, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, height=2.8in]
+\centering
+{\color{keyred}\bfseries\small Preferred Streaming Service, $n=50$}\\[2pt]
+\begin{tikzpicture}[scale=1.0]
+  % y-axis 0 to 0.45, 1 unit = 10cm  →  0.45 = 4.5cm
+  \draw[thick] (0,0) -- (0,4.7);
+  \foreach \p/\lbl in {0/0, 1/0.10, 2/0.20, 3/0.30, 4/0.40} {
+    \draw (-0.1,\p) -- (0.1,\p);
+    \node[left, font=\scriptsize] at (-0.12,\p) {\lbl};
+  }
+  \node[rotate=90, font=\scriptsize, color=keyred] at (-1.05,2.3) {Relative frequency};
+  \draw[thick] (0,0) -- (8.2,0);
+  % bars: value*10 cm tall, width 1.0, gap 0.6
+  \foreach \i/\v/\lbl in {0/4.2/Netflix, 1/2.0/Disney+, 2/1.8/Hulu,
+                          3/1.2/{HBO Max}, 4/0.8/Other} {
+    \fill[keyred!75] ({0.6+\i*1.5},0) rectangle ({1.6+\i*1.5},\v);
+    \draw[keyred]    ({0.6+\i*1.5},0) rectangle ({1.6+\i*1.5},\v);
+    \node[below, font=\scriptsize, color=keyred] at ({1.1+\i*1.5},-0.08) {\lbl};
+  }
+  \node[below, font=\scriptsize\itshape, color=keyred] at (4.1,-0.55) {Streaming service};
+\end{tikzpicture}
+\end{tcolorbox}
 
 \vspace{0.12in}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Does your relative frequency column sum to 1? \ans{Yes}
+        If not, find and fix the rounding error.
+
+  \item Write a complete sentence identifying the most popular and least popular
+        streaming service, including relative frequencies and context.\\[5pt]
+        \ansline{Of the 50 AP Statistics students surveyed, Netflix was the most}\\[1pt]
+        \ansline{popular service (42\%) and ``Other'' the least popular (8\%).}
+
+  \item Write a second sentence describing the overall pattern of the distribution
+        (e.g., is one service much more popular than the others?).\\[5pt]
+        \ansline{The distribution is dominated by Netflix --- no other service reaches}\\[1pt]
+        \ansline{half its share; Disney+ (20\%) and Hulu (18\%) are close behind.}
+\end{enumerate}
+
+\vspace{0.14in}
 
 % ── PART 2 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 2 \quad Misleading Graphs}
+{\large\bfseries\color{navy} Part 2 \quad Misleading Graphs \& Pie Chart (Optional)}
 
 \vspace{0.1in}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item \ans{Starting the y-axis at 30\% (0.30) instead of 0 means the bars for
-        Disney+ (20\%) and Hulu (18\%) would not even appear --- they fall below
-        the axis cutoff. Netflix's bar would look dramatically taller than the
-        others. The graph would mislead a reader into thinking Netflix is used
-        almost exclusively, when in fact Disney+, Hulu, and others account for
-        58\% of responses combined.}
+  \item Suppose someone redraws your bar chart with the y-axis starting at 30\%
+        instead of 0\%. Describe how this changes what a reader sees. Which service
+        would appear most dramatically more popular?\\[5pt]
+        \ansline{Only Netflix (42\%) would clear the 30\% cutoff --- every other bar}\\[1pt]
+        \ansline{vanishes below the axis. Netflix would look near-exclusive, when in}\\[1pt]
+        \ansline{fact the other services account for 58\% of responses combined.}
 
-  \begin{teachernote}
-  Students may describe a slightly different scenario (e.g., starting at 5\% or
-  10\%). The key reasoning is the same: the y-axis cutoff makes the differences
-  look larger than they are. Accept any reasonable specific example.
-  \end{teachernote}
+  \item A student presents a 3-D pie chart of this data with the Netflix slice
+        tilted toward the viewer. Explain why this display might be misleading
+        even though the data are correct.\\[5pt]
+        \ansline{Perspective enlarges the near slice, so readers overestimate Netflix's}\\[1pt]
+        \ansline{42\% share. The data are right but the presentation inflates it.}
 
-  \item \ans{A 3-D pie chart tilts the Netflix slice toward the viewer, making
-        it appear even larger than its true 42\% share. Readers judge area or
-        angle visually, and perspective distortion causes them to overestimate
-        the size of near slices. The underlying data are correct, but the
-        presentation inflates the apparent popularity of Netflix.}
-
-  \item \ans{Bar chart: Netflix (42\%) is clearly the largest, followed by
-        Disney+ (20\%), Hulu (18\%), HBO Max (12\%), Other (8\%). With 5
-        categories, the bar chart is easier to compare than a pie chart because
-        readers can compare bar heights directly rather than estimating sector
-        angles. With only 5 categories, either chart is acceptable, but bar
-        charts are generally preferred for comparison tasks.}
+  \item \textbf{Optional --- Pie Chart:} Using the angles you computed in the table,
+        describe the largest and smallest sectors. Is a bar chart or pie chart more
+        effective for this dataset? Why?\\[5pt]
+        \ansline{Largest: Netflix, $151.2^\circ$. Smallest: Other, $28.8^\circ$.}\\[1pt]
+        \ansline{The bar chart wins --- comparing heights beats estimating angles.}
 
 \end{enumerate}
 
-\vspace{0.12in}
+\vspace{0.14in}
 
 % ── PART 3 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 3 \quad Reflection}
+{\large\bfseries\color{navy} Part 3 \quad Individual Reflection}
 
 \vspace{0.1in}
 
 \begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-\ans{The most important thing to check is whether the y-axis starts at 0.
-If it starts above 0, the differences between bars are visually exaggerated.
-For example, in this activity, starting the axis at 30\% would make Netflix
-look dominant when Disney+ and Hulu are also significant. A graph that starts
-at 0 gives an honest picture of the data.}
-
-\begin{teachernote}
-Accept any of the three misleading tricks (non-zero axis, 3-D, inconsistent
-scale), but the non-zero axis is the most commonly tested on AP exams.
-Full credit requires: naming the feature, explaining the effect, and connecting
-to a specific example.
-\end{teachernote}
+\small\textbf{In your own words:} What is the single most important thing to check
+when you look at a bar chart made by someone else? Why does it matter?
+Give a specific example from today's activity.\\[6pt]
+\ansline{Check that the y-axis starts at 0. If it starts higher, differences between}\\[1pt]
+\ansline{bars are visually exaggerated --- starting at 30\% here would make Netflix}\\[1pt]
+\ansline{look dominant while hiding that Disney+ and Hulu are substantial.}
 \end{tcolorbox}
 
 \end{document}

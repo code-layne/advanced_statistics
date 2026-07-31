@@ -3,11 +3,19 @@
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
+% \\ rather than \par, so chained terms share one paragraph and labels collide
+% with the preceding answer. Give each term its own paragraph on both ends.
+% Mirrored by \vocabans in notes_key/main.tex.
+\newcommand{\vocabterm}[1]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Guided Notes}
-\namedateperiod
 
 \vspace{0.12in}
 
@@ -22,17 +30,20 @@
 \vspace{0.1in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
-\termblanklong{Bar chart (bar graph)}
-\termblanklong{Relative frequency bar chart}
-\termblanklong{Pie chart}
-\termblanklong{Segmented bar chart}
-\termblanklong{Misleading graph}
+\small
+\vocabterm{Bar chart (bar graph)}
+\vocabterm{Relative frequency bar chart}
+\vocabterm{Pie chart}
+\vocabterm{Segmented bar chart}
+\vocabterm{Misleading graph}
 \end{vocabbox}
 
 \vspace{0.1in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{What's Wrong With These Graphs? --- Discuss with a partner.}
 
@@ -58,6 +69,7 @@ A reader glances at the graph and says ``Product Y sells twice as much!''
 \vspace{0.1in}
 
 % ── BAR CHART ────────────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Constructing a Bar Chart --- Four Requirements}
 \small
 
@@ -93,6 +105,7 @@ Use when: \blank{1.5cm} & Use when: \blank{1.5cm} \\
 \vspace{0.1in}
 
 % ── WORKED EXAMPLE — BAR CHART ───────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Worked Example --- Pet Ownership Bar Chart ($n = 40$)}
 \small
 
@@ -116,6 +129,7 @@ Construct a \textbf{relative frequency bar chart} in the space below.
 \newpage
 
 % ── PIE CHART ────────────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Constructing a Pie Chart}
 \small
 \begin{multicols}{2}
@@ -162,6 +176,7 @@ Bar charts are generally preferred because they are easier to \blank{2.5cm} and 
 \vspace{0.1in}
 
 % ── MISLEADING GRAPHS ────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Misleading Graphs --- Three Common Tricks}
 \small
 
@@ -193,6 +208,7 @@ Always identify \textit{what} is wrong and \textit{how} it distorts the reader's
 \vspace{0.1in}
 
 % ── GUIDED PRACTICE ──────────────────────────────────────────────────────────
+\boxguard
 \begin{practicebox}
 \small
 \textbf{A survey of 80 adults asks: ``What is your favorite TV genre?''}\\
@@ -260,6 +276,7 @@ Other   & 12 & \blank{2.5cm} & \blank{2cm} \\
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Additional Notes}
 \vspace{0pt}
 \writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline

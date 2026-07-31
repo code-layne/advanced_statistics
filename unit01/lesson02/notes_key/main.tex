@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.2}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.12in}
 
@@ -22,29 +27,20 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
 \small
-\noindent\textbf{\textcolor{navy}{Variable:}}\\
-\ans{A characteristic that can take different values for different individuals}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Categorical variable:}}\\
-\ans{Places an individual into one of several groups or categories; no meaningful arithmetic on the values}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Quantitative variable:}}\\
-\ans{Takes numerical values for which arithmetic (average, difference) makes sense}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Discrete quantitative variable:}}\\
-\ans{Countable values with gaps between them (e.g., number of siblings: 0, 1, 2, \ldots)}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Continuous quantitative variable:}}\\
-\ans{Can take any value in an interval; measured, not counted (e.g., height, time)}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Distribution of a variable:}}\\
-\ans{Describes what values the variable takes and how often each value occurs}\\[6pt]
+\vocabans{Variable}{A characteristic that can take different values for different individuals}
+\vocabans{Categorical variable}{Places an individual into one of several groups or categories; no meaningful arithmetic on the values}
+\vocabans{Quantitative variable}{Takes numerical values for which arithmetic (average, difference) makes sense}
+\vocabans{Discrete quantitative variable}{Countable values with gaps between them (e.g., number of siblings: 0, 1, 2, \ldots)}
+\vocabans{Continuous quantitative variable}{Can take any value in an interval; measured, not counted (e.g., height, time)}
+\vocabans{Distribution of a variable}{Describes what values the variable takes and how often each value occurs}
 \end{vocabbox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
 \small\textbf{Student Data Table}
 
@@ -78,16 +74,11 @@ Sofia   & 11 & 3.5 & Purple & 7.0 \\
 \vspace{8pt}
 \textbf{Sorting rule:}\quad
 \ans{Group A values are words/labels; Group B values are numbers you can average meaningfully.}
-
-\begin{teachernote}
-Grade level is quantitative (discrete) --- you can average it even if it's rarely useful to do so.
-Favorite Color is clearly categorical. Name is a label, not a variable of interest for analysis.
-Accept students grouping Name with categorical.
-\end{teachernote}
 \end{hookbox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Classifying Variables}
 \small
 \begin{multicols}{2}
@@ -133,6 +124,7 @@ Takes numerical values for which \ans{arithmetic} makes sense.\\[6pt]
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Discrete vs.\ Continuous Quantitative Variables}
 \small
 \begin{multicols}{2}
@@ -174,8 +166,43 @@ Possible values: \ans{any positive real number}\\[4pt]
 \end{tabularx}
 \end{notesbox}
 
-\newpage
+\vspace{0.1in}
 
+% ── DECISION FLOWCHART — printed identically in the blank; the key must carry it
+% too or the key runs a page short against the blank.
+\boxguard[30]
+\begin{notesbox}{Decision Flowchart --- Copy \& Memorize}
+\small\centering
+\vspace{4pt}
+\begin{tabular}{@{} c @{}}
+\colorbox{navy}{\color{white}\textbf{\small Is the variable a word, label, or category?}}\\[4pt]
+\end{tabular}
+
+\vspace{2pt}
+\begin{tabular}{@{} p{0.42\linewidth} @{\hspace{0.1\linewidth}} p{0.42\linewidth} @{}}
+\centering\textbf{YES} $\Downarrow$ & \centering\textbf{NO} $\Downarrow$ \tabularnewline
+\centering\colorbox{greenbg}{\textbf{Categorical}} &
+\centering\textit{Does averaging give a meaningful result?} \tabularnewline
+& \\
+& \begin{tabular}{@{} p{0.45\linewidth} @{\hspace{0.05\linewidth}} p{0.45\linewidth} @{}}
+  \textbf{YES} $\Downarrow$ & \textbf{NO} $\Downarrow$ \tabularnewline
+  \textit{Can you count the values (are there gaps)?} & \colorbox{greenbg}{\textbf{Categorical}} \tabularnewline
+  & \tabularnewline
+  \end{tabular} \\
+\end{tabular}
+
+\vspace{4pt}
+\begin{tabular}{@{} p{0.42\linewidth} @{\hspace{0.1\linewidth}} p{0.42\linewidth} @{}}
+& \begin{tabular}{@{} p{0.45\linewidth} @{\hspace{0.05\linewidth}} p{0.45\linewidth} @{}}
+  \textbf{YES} $\Downarrow$ & \textbf{NO} $\Downarrow$ \tabularnewline
+  \colorbox{redbg}{\textbf{Quant.\ Discrete}} & \colorbox{redbg}{\textbf{Quant.\ Continuous}} \tabularnewline
+  \end{tabular}
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
 \begin{practicebox}
 \small\textbf{Classify each variable.}
 
@@ -218,5 +245,13 @@ in data analysis.}
 
 \end{multicols}
 \end{spiralbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Additional Notes}
+\vspace{0pt}
+\writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline
+\end{notesbox}
 
 \end{document}

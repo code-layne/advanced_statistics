@@ -7,7 +7,6 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.10}{Homework: The Normal Distribution}
-\namedateperiod
 
 \vspace{0.10in}
 
@@ -22,6 +21,7 @@ Use Table A or technology; indicate which you used.
 % ════════════════════════════════════════════════════════════════════════════
 % PART A — Empirical Rule
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part A \quad The Empirical Rule]{navylight}
 \small
 
@@ -68,6 +68,7 @@ mean $\mu = 100$ and standard deviation $\sigma = 15$. Use the
 % ════════════════════════════════════════════════════════════════════════════
 % PART B — z-scores and Normal table
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part B \quad $z$-Scores and the Normal Table]{greenacc}
 \small
 
@@ -104,6 +105,7 @@ Customer wait times at a coffee shop are approximately $N(4.5,\,1.2)$ minutes
 % ════════════════════════════════════════════════════════════════════════════
 % PART C — AP-Style Free Response
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
 \small
 
@@ -115,15 +117,29 @@ distributed with mean $\mu = 500$ and standard deviation $\sigma = 100$.
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
   \item What proportion of test-takers scored \textbf{above 650}?
-        Show your $z$-score calculation, use Table A, and interpret the result.\\[5pt]
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
+        Show your $z$-score calculation, use Table A, and interpret the result.
+\begin{work}
+  z &= \dfrac{650-500}{100} = 1.50 \\
+  P(Z<1.50) &= 0.9332 \\
+  P(X>650)  &= 1-0.9332 = 0.0668
+\end{work}
+        \writeline
 
-  \item What proportion scored \textbf{below 400}?\\[5pt]
-        \writeline\\[1pt]\writeline
+  \item What proportion scored \textbf{below 400}?
+\begin{work}
+  z &= \dfrac{400-500}{100} = -1.00 \\
+  P(X<400) &= P(Z<-1.00) = 0.1587
+\end{work}
+        \writeline
 
   \item What score separates the \textbf{top 5\%} of test-takers from the rest?
-        ($z^* \approx 1.645$ for the 95th percentile.) Show your work.\\[5pt]
-        \writeline\\[1pt]\writeline
+        ($z^* \approx 1.645$ for the 95th percentile.) Show your work.
+\begin{work}
+  x &= \mu + z^*\sigma \\
+    &= 500 + 1.645(100) \\
+    &= 664.5 \approx 665
+\end{work}
+        \writeline
 
   \item A graduate program requires a score of at least 650 for admission.
         Based on your answer to (a), comment on how selective this requirement is.\\[5pt]

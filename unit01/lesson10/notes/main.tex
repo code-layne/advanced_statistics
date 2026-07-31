@@ -3,11 +3,19 @@
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
+% \\ rather than \par, so chained terms share one paragraph and labels collide
+% with the preceding answer. Give each term its own paragraph on both ends.
+% Mirrored by \vocabans in notes_key/main.tex.
+\newcommand{\vocabterm}[1]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.10}{Guided Notes}
-\namedateperiod
 
 \vspace{0.10in}
 
@@ -22,21 +30,24 @@
 \vspace{0.10in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
+\small
 \begin{multicols}{2}
-\termblanklong{Normal distribution}
-\termblanklong{68--95--99.7 Rule (Empirical Rule)}
-\termblanklong{$z$-score (standardized value)}
+\vocabterm{Normal distribution}
+\vocabterm{68--95--99.7 Rule (Empirical Rule)}
+\vocabterm{$z$-score (standardized value)}
 \columnbreak
-\termblanklong{Standard Normal distribution $N(0,1)$}
-\termblanklong{Normal table (Table A)}
-\termblanklong{Normal probability plot (NPP)}
+\vocabterm{Standard Normal distribution $N(0,1)$}
+\vocabterm{Normal table (Table A)}
+\vocabterm{Normal probability plot (NPP)}
 \end{multicols}
 \end{vocabbox}
 
 \vspace{0.10in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Why does the Normal model matter?}
 
@@ -53,6 +64,7 @@ Today's question: if we know a distribution is approximately Normal,
 \vspace{0.08in}
 
 % ── SECTION 1: SHAPE AND PARAMETERS ──────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Shape and Parameters of the Normal Distribution}
 \small
 \begin{multicols}{2}
@@ -110,6 +122,7 @@ and falls symmetrically on both sides.
 \vspace{0.08in}
 
 % ── SECTION 2: EMPIRICAL RULE ─────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{The 68--95--99.7 (Empirical) Rule}
 \small
 \begin{multicols}{2}
@@ -182,6 +195,7 @@ $P(\text{height} > 76) = \dfrac{100\% - 95\%}{2} = \blank{2cm}$
 \vspace{0.08in}
 
 % ── SECTION 3: z-SCORES AND NORMAL TABLE ──────────────────────────────────────
+\boxguard
 \begin{notesbox}{$z$-Scores and the Normal Table}
 \small
 \begin{multicols}{2}
@@ -233,6 +247,7 @@ $x = \mu + z^* \cdot \sigma$
 \vspace{0.08in}
 
 % ── SECTION 4: ASSESSING NORMALITY ───────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Assessing Normality}
 \small
 \begin{multicols}{2}

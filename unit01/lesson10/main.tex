@@ -1,29 +1,25 @@
 %! AP Statistics — Unit 1, Lesson 10
 \documentclass[10pt]{article}
 \usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
+% Load the shared box/colour package rather than re-declaring skillbox and the
+% palette locally: teachernote (used by the migrated teacher notes below) is
+% defined in apstats-boxes, and a local copy of the palette silently diverges
+% from shared/apstats-colors.sty.
+\usepackage{apstats-boxes}
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{amsmath,amssymb}
 \usepackage{array}
 \usepackage{tabularx}
-\tcbuselibrary{breakable}
-
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{redbox}{HTML}{FCECEC}
-\definecolor{greenbox}{HTML}{EDF8F0}
-\definecolor{goldbox}{HTML}{FFF7E6}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
 \setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
 \setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Teacher notes quote expected answers, so the plan needs \ans. Defining it
+% here rather than loading apstats-key, which would also flip every `work`
+% block visible.
+\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
 
 \begin{document}
 \def\CourseName{AP Statistics}
@@ -45,6 +41,7 @@
     whether a dataset is approximately Normal (Big Idea: VAR; AP Skills 2 \& 3).
 \end{tcolorbox}
 
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP Skills 2 \& 3 --- Data Analysis \& Using Probability and Simulation}
@@ -67,6 +64,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
@@ -87,6 +85,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Quick Review (3 min)}\\
@@ -103,6 +102,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Hook \& Lesson]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Hook (5 min)}\\
@@ -121,6 +121,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Direct Instruction (10 min)}
@@ -141,6 +142,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Group Activity (8--10 min)}\\
@@ -163,6 +165,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Exit Ticket (5 min)}\\
@@ -176,6 +179,7 @@
 \end{minipage}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Homework / Practice}
@@ -193,5 +197,42 @@
     \end{itemize}
 \end{minipage}
 \end{skillbox}
+
+
+% ── Teacher notes (migrated from the component keys) ──
+% One per component, titled for it. They live here rather than in the _key
+% files so that every component is the same length blank and keyed.
+
+\boxguard
+\begin{teachernote}[Warm-Up]
+Q3 is a diagnostic: students who answer close to 68\% have prior knowledge of the Empirical Rule or have seen bell curves before. Q4 previews the z-score concept without the formula.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Guided Notes]
+Section 3 blank answers: ``standard deviations'' / ``mean'' / ``Standard'' / $N(0,1)$.
+For the Empirical Rule, remind students that 68/95/99.7 are approximations — Table A gives slightly different values (e.g., $P(|Z|<1) = 0.6827$).
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Group Activity]
+Part 1 Q4 (84th percentile): this is a key AP conceptual link — $\mu + 1\sigma$ is the 84th percentile of any Normal distribution. Reinforce this as a shortcut.\\
+Part 2: $z(-0.82) = 0.2061$ from Table A row $-0.8$, column $.02$. $z(1.74) = 0.9591$ from row $1.7$, col $.04$.\\
+Part 3 Q11: $P(Z > 2.26) = 1 - 0.9881 = 0.0119 \approx 1.2\%$.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Exit Ticket]
+Q3: $z^* = -0.67$ is given to scaffold. Without the hint, \texttt{invNorm}(0.25, 65, 2.5) $= 63.31$ in.\\
+Q4: $P(Z > 3) = 1 - 0.9987 = 0.0013$; Empirical Rule gives $\approx 0.15\%$ on one tail.\\
+AP-style rubric: award credit for (1) correct $z$-scores, (2) correct table use, (3) probability stated, (4) interpreted in context.
+\end{teachernote}
+
+\boxguard
+\begin{teachernote}[Homework]
+Part A Q4: $P(Z > 3) = 1 - 0.9987 = 0.0013$; one tail is $\approx 0.0013/2 \approx 0.00065 \approx 0.065\%$. The Empirical Rule gives 0.15\% for one tail beyond 3$\sigma$ — close enough.\\
+Part B Q4: \texttt{invNorm}(0.10, 4.5, 1.2) $= 2.962$. Accept 2.96 or 3.0 min.\\
+Part C Q1: Table A, row 1.5, col .00 $= 0.9332$. Q3: $z^* = 1.645$ is between $z=1.64$ (0.9495) and $z=1.65$ (0.9505).
+\end{teachernote}
 
 \end{document}

@@ -3,11 +3,19 @@
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
+% \\ rather than \par, so chained terms share one paragraph and labels collide
+% with the preceding answer. Give each term its own paragraph on both ends.
+% Mirrored by \vocabans in notes_key/main.tex.
+\newcommand{\vocabterm}[1]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Guided Notes}
-\namedateperiod
 
 \vspace{0.12in}
 
@@ -22,19 +30,25 @@
 \vspace{0.1in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
-\termblanklong{SOCS}
-\termblanklong{Shape}
-\termblanklong{Skewed right (positive skew)}
-\termblanklong{Skewed left (negative skew)}
-\termblanklong{Symmetric}
-\termblanklong{Unimodal / Bimodal / Uniform}
-\termblanklong{Outlier}
+\small
+\begin{multicols}{2}
+\vocabterm{SOCS}
+\vocabterm{Shape}
+\vocabterm{Skewed right (positive skew)}
+\vocabterm{Skewed left (negative skew)}
+\columnbreak
+\vocabterm{Symmetric}
+\vocabterm{Unimodal / Bimodal / Uniform}
+\vocabterm{Outlier}
+\end{multicols}
 \end{vocabbox}
 
 \vspace{0.1in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Two Histograms --- Describe What You See}
 
@@ -64,6 +78,7 @@ symmetric, bell-shaped mound centered near 64 inches; no extreme outliers.
 \vspace{0.1in}
 
 % ── SOCS FRAMEWORK ───────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{The SOCS Framework --- Describing Any Quantitative Distribution}
 \small
 
@@ -114,6 +129,7 @@ Example: ``The distribution of \underline{\hspace{3cm}} for these
 \vspace{0.1in}
 
 % ── SHAPE GUIDE ──────────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Shape Vocabulary --- Recognizing Common Patterns}
 \small
 
@@ -142,6 +158,7 @@ direction = the direction the \blank{1.5cm} points.
 \newpage
 
 % ── WORKED EXAMPLE ───────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Worked Example --- SAT Math Scores for 200 Students}
 \small
 
@@ -181,6 +198,7 @@ a typical score for these students. [~\blank{0.5cm}~] The spread is roughly
 \vspace{0.1in}
 
 % ── GUIDED PRACTICE ──────────────────────────────────────────────────────────
+\boxguard
 \begin{practicebox}
 \small
 \textbf{A survey records the number of text messages sent per day by
@@ -237,6 +255,7 @@ What else does the AP grader need to see?}\\[2pt]
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Additional Notes}
 \vspace{0pt}
 \writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline

@@ -7,26 +7,39 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.10}{Group Activity — Key}
-\begin{tabularx}{\linewidth}{X X X}
-  Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.10in}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small SAT scores: $\mu = 1060$, $\sigma = 195$. Notation: \ans{$N(1060, 195)$}
+\small
+\textbf{Part 1} (8 min): Apply the 68--95--99.7 Rule.\\
+\textbf{Part 2} (8 min): Compute $z$-scores and use the Normal table.\\
+\textbf{Part 3} (6 min): Find a percentile and assess an unusual value.
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+% ── CONTEXT ──────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.7pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\textbf{Context:} SAT scores for a large population of college-bound students are
+approximately Normally distributed with mean $\mu = 1060$ and standard deviation
+$\sigma = 195$. Write this distribution using notation: \ans{$N(1060,\,195)$}
 \end{tcolorbox}
 
 \vspace{0.12in}
 
+% ── PART 1 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 1 \quad Applying the 68--95--99.7 Rule}
 
 \vspace{0.10in}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item \renewcommand{\arraystretch}{1.5}
+  \item Fill in the boundaries for each Empirical Rule region.\\[6pt]
+        \renewcommand{\arraystretch}{1.5}
         \begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
         \rowcolor{sky}
         Region & Lower bound & Upper bound & \% of scores \\
@@ -36,59 +49,75 @@
         $\mu \pm 3\sigma$ & \ans{475} & \ans{1645} & \ans{99.7}\% \\
         \end{tabularx}
 
-  \item \ansline{1255 is $\mu + 1\sigma$. By Empirical Rule, 68\% are between 865 and 1255. Above 1255: $(100\% - 68\%) / 2 = 16\%$.}
+  \item What percentage of students scored \textbf{above} 1255?
+        Show your reasoning using the Empirical Rule.\\[5pt]
+        \ansline{$1255 = \mu+1\sigma$, and 68\% lie between 865 and 1255, so above}\\[1pt]
+        \ansline{1255 is $(100\%-68\%)/2 = 16\%$.}
 
-  \item \ansline{670 is $\mu - 2\sigma$. Below 670: $(100\% - 95\%) / 2 = 2.5\%$.}
+  \item What percentage of students scored \textbf{below} 670?\\[5pt]
+        \ansline{$670 = \mu-2\sigma$, and 95\% lie between 670 and 1450, so below}\\[1pt]
+        \ansline{670 is $(100\%-95\%)/2 = 2.5\%$.}
 
-  \item \ansline{84th percentile $= \mu + 1\sigma = 1060 + 195 = 1255$.
-  (50\% below mean + 34\% within top half of 68\% region.)}
+  \item What SAT score is at the \textbf{84th percentile}?
+        (\textit{Hint}: 84\% $=$ 50\% below the mean $+$ half of the 68\% region.)\\[5pt]
+        \ansline{$\mu+1\sigma = 1060+195 = 1255$.}
 
 \end{enumerate}
 
-\vspace{0.10in}
+\vspace{0.12in}
 
+% ── PART 2 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 2 \quad $z$-Scores and the Normal Table}
 
 \vspace{0.10in}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt, resume]
 
-  \item $z = (900 - 1060)/195 = -160/195 \approx \ans{-0.82}$\\[4pt]
-        Interpretation: \ansline{A score of 900 is 0.82 standard deviations below the mean SAT score.}
+  \item Calculate the $z$-score for a student who scored \textbf{900}.
+        Show work and interpret in context.\\[5pt]
+        $z = \dfrac{x - \mu}{\sigma} = \dfrac{\ans{900} - \ans{1060}}{\ans{195}} = \ans{$-0.82$}$\\[6pt]
+        Interpretation: \ansline{900 is 0.82 SD below the mean SAT score.}
 
-  \item $P(Z < \ans{-0.82}) = \ans{0.2061}$\\[4pt]
-        Approximately \ans{20.6}\% of students scored below 900.
+  \item Use the Normal table (Table A) to find $P(\text{SAT} < 900)$.\\[5pt]
+        $P(Z < \ans{$-0.82$}) = \ans{0.2061}$\\[4pt]
+        In context: approximately \ans{20.6}\% of students scored below 900.
 
-  \item $z = 340/195 \approx \ans{1.74}$\\[4pt]
-        $P(Z > \ans{1.74}) = 1 - P(Z < 1.74) = 1 - \ans{0.9591} = \ans{0.0409}$
+  \item Find $P(\text{SAT} > 1400)$.
+        First compute the $z$-score, then use Table A.\\[5pt]
+        $z = \dfrac{1400 - 1060}{195} = \ans{1.74}$\\[4pt]
+        $P(Z > \ans{1.74}) = 1 - P(Z < \ans{1.74}) = 1 - \ans{0.9591} = \ans{0.0409}$
 
-  \item $P(900 < \text{SAT} < 1400) = P(Z < \ans{1.74}) - P(Z < \ans{-0.82}) = \ans{0.9591} - \ans{0.2061} = \ans{0.7530}$
+  \item Find $P(900 < \text{SAT} < 1400)$.\\[5pt]
+        $P(900 < \text{SAT} < 1400) = P(Z < \ans{1.74}) - P(Z < \ans{$-0.82$}) = \ans{0.9591} - \ans{0.2061} = \ans{0.7530}$
 
 \end{enumerate}
 
-\vspace{0.10in}
+\vspace{0.12in}
 
+% ── PART 3 ───────────────────────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 3 \quad Percentiles and Unusual Values}
 
 \vspace{0.10in}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt, resume]
 
-  \item $z^* \approx \ans{1.28}$\\[4pt]
-        $x = 1060 + \ans{1.28} \times 195 = 1060 + 249.6 \approx \ans{1310}$\\[4pt]
-        Interpretation: \ansline{A student would need approximately 1310 to be in the top 10\%.}
+  \item Find the SAT score at the \textbf{90th percentile} using the inverse Normal.\\[5pt]
+        Step 1: Find $z^*$ such that $P(Z < z^*) = 0.90$. From Table A: $z^* \approx \ans{1.28}$\\[4pt]
+        Step 2: $x = \mu + z^* \cdot \sigma = 1060 + \ans{1.28} \times 195 = \ans{1310}$\\[4pt]
+        Interpretation: A student would need approximately \ans{1310} to be in the top 10\%.
 
-  \item $z = 440/195 \approx \ans{2.26}$\\[4pt]
-        \ansline{Yes, 1500 is unusually high. A $z$-score of 2.26 means only about 1.2\% of students score above 1500 ($P(Z>2.26) \approx 0.012$). Values with $|z|>2$ are generally considered unusual.}
+  \item A student claims to have scored \textbf{1500} on the SAT.
+        Is this score unusually high? Justify with a $z$-score.\\[5pt]
+        $z = \dfrac{1500 - 1060}{195} = \ans{2.26}$\\[5pt]
+        \ansline{Yes. $z = 2.26$ means only about 1.2\% of students score above}\\[1pt]
+        \ansline{1500, and $|z| > 2$ is generally considered unusual.}
 
-  \item \ansline{No. A right-skewed distribution with an outlier is not approximately Normal. Applying the Normal model would produce inaccurate probabilities. We should use only the five-number summary and a boxplot for that dataset.}
+  \item \textbf{Discuss with your group:} Would it be appropriate to use the Normal model
+        for a class of 20 students if you saw that the histogram was right-skewed with one
+        very high outlier? Explain.\\[5pt]
+        \ansline{No --- a right-skewed distribution with an outlier is not}\\[1pt]
+        \ansline{approximately Normal, so the model would give wrong probabilities.}
 
 \end{enumerate}
-
-\begin{teachernote}
-Part 1 Q4 (84th percentile): this is a key AP conceptual link — $\mu + 1\sigma$ is the 84th percentile of any Normal distribution. Reinforce this as a shortcut.\\
-Part 2: $z(-0.82) = 0.2061$ from Table A row $-0.8$, column $.02$. $z(1.74) = 0.9591$ from row $1.7$, col $.04$.\\
-Part 3 Q11: $P(Z > 2.26) = 1 - 0.9881 = 0.0119 \approx 1.2\%$.
-\end{teachernote}
 
 \end{document}

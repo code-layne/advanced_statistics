@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Guided Notes — Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit{(any)}\;}
-\end{tabularx}
 
 \vspace{0.12in}
 
@@ -24,38 +29,23 @@ Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit
 \vspace{0.1in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
 \small
-
-\noindent\textbf{\textcolor{navy}{Statistics:}}\quad
-\ans{the science of collecting, analyzing, and drawing conclusions from data}\\[4pt]
-
-\noindent\textbf{\textcolor{navy}{Individual:}}\quad
-\ans{a single person, object, or event in a dataset}\\[4pt]
-
-\noindent\textbf{\textcolor{navy}{Population:}}\quad
-\ans{the entire group of individuals of interest}\\[4pt]
-
-\noindent\textbf{\textcolor{navy}{Sample:}}\quad
-\ans{a subset of the population from which data are collected}\\[4pt]
-
-\noindent\textbf{\textcolor{navy}{Census:}}\quad
-\ans{data collected from EVERY individual in the population}\\[4pt]
-
-\noindent\textbf{\textcolor{navy}{Variability / Variation:}}\\
-\ans{natural differences in values across individuals — the reason statistics exists}\\[4pt]
-
-\noindent\textbf{\textcolor{navy}{Data:}}\quad
-\ans{recorded values for individuals; can be categorical or quantitative}\\[4pt]
-
-\noindent\textbf{\textcolor{navy}{Anecdotal evidence:}}\\
-\ans{data from a few unrepresentative cases; not reliable for drawing conclusions}\\[4pt]
-
+\vocabans{Statistics}{the science of collecting, analyzing, and drawing conclusions from data}
+\vocabans{Individual}{a single person, object, or event in a dataset}
+\vocabans{Population}{the entire group of individuals of interest}
+\vocabans{Sample}{a subset of the population from which data are collected}
+\vocabans{Census}{data collected from EVERY individual in the population}
+\vocabans{Variability / Variation}{natural differences in values across individuals --- the reason statistics exists}
+\vocabans{Data}{recorded values for individuals; can be categorical or quantitative}
+\vocabans{Anecdotal evidence}{data from a few unrepresentative cases; not reliable for drawing conclusions}
 \end{vocabbox}
 
 \vspace{0.1in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Headline:}\quad
 \textit{``Students who sleep more score higher on tests.''}
@@ -81,6 +71,7 @@ Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit
 \vspace{0.1in}
 
 % ── DIRECT INSTRUCTION: 4-STEP PROCESS ───────────────────────────────────────
+\boxguard
 \begin{notesbox}{The Statistical Problem-Solving Process}
 \small Fill in each step and what it involves.
 \vspace{4pt}
@@ -108,6 +99,7 @@ Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit
 \vspace{0.1in}
 
 % ── CONCEPT NOTES ─────────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Key Concepts}
 \small
 \begin{multicols}{2}
@@ -156,6 +148,7 @@ need statistics, because there would be \ans{nothing}
 \vspace{0.1in}
 
 % ── GUIDED PRACTICE ──────────────────────────────────────────────────────────
+\boxguard
 \begin{practicebox}
 \small\textbf{Scenario Analysis} \hfill \textcolor{slate}{\scriptsize Sample: Hospital knee-surgery study}
 
@@ -209,6 +202,7 @@ account for the natural variation in data.}
 \vspace{0.1in}
 
 % ── EXTRA NOTES ──────────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Additional Notes}
 \vspace{2pt}
 \ans{\small\textit{Key reminders for grading / discussion:}}\\[2pt]

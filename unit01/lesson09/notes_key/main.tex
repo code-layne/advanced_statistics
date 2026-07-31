@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.9}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.10in}
 
@@ -22,26 +27,23 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.10in}
 
+\boxguard
 \begin{vocabbox}
+\small
 \begin{multicols}{2}
-\termblanklong{Parallel (side-by-side) boxplots}
-\ans{Two or more boxplots drawn on the \textit{same} number line scale, one per group; used to compare center, spread, and shape across groups.}
-\termblanklong{Back-to-back stemplot}
-\ans{A stemplot with a shared stem column; one group's leaves extend left, the other's extend right; used for small datasets ($n < 30$).}
-\termblanklong{Comparative statement}
-\ans{A sentence that explicitly names both groups, uses a comparison word (higher, lower, more, similar), and includes context.}
+\vocabans{Parallel (side-by-side) boxplots}{Two or more boxplots on the \textit{same} number line scale, one per group; compares center, spread, and shape.}
+\vocabans{Back-to-back stemplot}{A shared stem column; one group's leaves extend left, the other's right. For small datasets ($n < 30$).}
+\vocabans{Comparative statement}{A sentence naming both groups, using a comparison word (higher, lower, more, similar), with context.}
 \columnbreak
-\termblanklong{Overlapping distributions}
-\ans{When the ranges or IQR boxes of two groups share common values; large overlap suggests the groups are similar; small overlap suggests a real difference.}
-\termblanklong{Explicit comparative language}
-\ans{Words such as \textit{higher, lower, more spread, less variable, similar} --- required by AP scoring; describing each group separately does not count.}
-\termblanklong{Context (in a comparison)}
-\ans{Every comparative statement must reference what the variable measures and what the groups are --- not just numbers.}
+\vocabans{Overlapping distributions}{When two groups share common values; large overlap suggests similarity, small overlap a real difference.}
+\vocabans{Explicit comparative language}{Words such as \textit{higher, lower, more spread, less variable} --- required by AP scoring.}
+\vocabans{Context (in a comparison)}{Every comparison must reference what the variable measures and what the groups are --- not just numbers.}
 \end{multicols}
 \end{vocabbox}
 
 \vspace{0.10in}
 
+\boxguard
 \begin{hookbox}
 \small\textbf{Same data, same scale --- now we can compare}
 
@@ -75,6 +77,7 @@ Name:\;\ans{Key} & Date:\; & Period:\;
 
 \vspace{0.08in}
 
+\boxguard
 \begin{notesbox}{Reading Parallel Boxplots}
 \small
 \begin{multicols}{2}
@@ -128,6 +131,7 @@ comparison \ans{invalid / misleading}.
 
 \vspace{0.08in}
 
+\boxguard
 \begin{notesbox}{Writing AP Comparative Statements}
 \small
 \begin{multicols}{2}
@@ -182,6 +186,7 @@ the \ans{median} for [Group B]
 
 \vspace{0.08in}
 
+\boxguard
 \begin{notesbox}{Back-to-Back Stemplots}
 \small
 \begin{multicols}{2}
@@ -251,15 +256,5 @@ the IQR for the No Prep group (6 points), indicating that the middle 50\% of
 scores were equally spread in both groups. However, the Test Prep group's scores
 were shifted higher overall, with a median 5 points above the No Prep median.}
 \end{tcolorbox}
-
-\begin{teachernote}
-\textbf{Key teaching moments:}
-\begin{itemize}[itemsep=2pt]
-  \item Notes table: No Prep range $= 29 - 15 = 14$; Test Prep range $= 35 - 20 = 15$.
-  \item Quick Check: IQRs are equal (both 6), so the ``more spread'' answer addresses range or overall shift. Accept either if well-reasoned.
-  \item Back-to-back: No Prep median is the 4th of 8 values $= (22+23)/2 = 22.5$. In the stemplot count: 17, 18 in stem 1; then 20, 22, 23 in stem 2 left side $\to$ median between 22 and 23 = 22.5. The notes say ``23'' as approximation from counting leaves; accept 22 or 23 if students explain.
-  \item Test Prep $n=9$: median is the 5th value = 27.
-\end{itemize}
-\end{teachernote}
 
 \end{document}

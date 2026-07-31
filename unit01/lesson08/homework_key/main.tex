@@ -7,9 +7,6 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.8}{Homework --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.10in}
 
@@ -22,31 +19,34 @@ sentences for AP-style questions.
 \vspace{0.12in}
 
 % ════════════════════════════════════════════════════════════════════════════
-% PART A
+% PART A — Five-number summary and outlier check
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part A \quad Five-Number Summary \& Outlier Detection]{navylight}
 \small
 
-Data (sorted, $n=12$):\quad
-8, 12, 15, 18, 20, 22, 25, 28, 30, 33, 36, 61
+A physical education teacher recorded the number of push-ups completed by
+12 students in one minute. The sorted data are:
+\[8,\quad 12,\quad 15,\quad 18,\quad 20,\quad 22,\quad 25,\quad 28,\quad 30,\quad 33,\quad 36,\quad 61\]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+\vspace{0.10in}
 
-  \item Lower half (6 values): \ans{8, 12, 15, 18, 20, 22}\\[4pt]
-        $Q_1 = (15+18)/2 = $ \ans{16.5} \quad
-        Median $= (22+25)/2 = $ \ans{23.5} \quad
-        $Q_3 = (30+33)/2 = $ \ans{31.5}\\[4pt]
-        $\min = $ \ans{8} \quad $\max = $ \ans{61} \quad
-        IQR $= 31.5 - 16.5 = $ \ans{15}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item Lower fence $= 16.5 - 1.5(15) = 16.5 - 22.5 = $ \ans{$-6$}\\[4pt]
-        Upper fence $= 31.5 + 1.5(15) = 31.5 + 22.5 = $ \ans{54}\\[4pt]
+  \item Find the five-number summary. Show your work for $Q_1$ and $Q_3$.\\[5pt]
+        Lower half (6 values): \ans{8, 12, 15, 18, 20, 22}\\[4pt]
+        $Q_1 = \ans{16.5}$ \quad Median $= \ans{23.5}$ \quad $Q_3 = \ans{31.5}$\\[4pt]
+        $\min = \ans{8}$ \quad $\max = \ans{61}$ \quad
+        IQR $= Q_3 - Q_1 = \ans{15}$
+
+  \item Apply the $1.5 \times \text{IQR}$ fence rule. Is 61 an outlier?\\[5pt]
+        Lower fence: \ans{$16.5-1.5(15)=-6$}\\[4pt]
+        Upper fence: \ans{$31.5+1.5(15)=54$}\\[4pt]
         Is 61 an outlier? \ans{Yes} \quad Justify: \ans{$61 > 54$ (upper fence)}
 
-  \item Right whisker ends at \ans{36} push-ups (last value $\leq 54$).\\[4pt]
-        The outlier dot represents \ans{the student who completed 61 push-ups in
-        one minute --- a value that exceeds the upper fence of 54 and is plotted
-        separately on the modified boxplot}.
+  \item If this were displayed as a \textbf{modified boxplot}, where would the
+        right whisker end? \ans{36} push-ups. \\[4pt]
+        What would the outlier dot represent? \ans{the student at 61 push-ups}
 
 \end{enumerate}
 
@@ -55,13 +55,19 @@ Data (sorted, $n=12$):\quad
 \vspace{0.12in}
 
 % ════════════════════════════════════════════════════════════════════════════
-% PART B
+% PART B — Read and interpret a boxplot
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part B \quad Read and Interpret a Boxplot]{greenacc}
 \small
 
+The modified boxplot below displays the heights (cm) of seedlings in a greenhouse
+after two weeks of growth.
+
+\vspace{0.08in}
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
+  % Axis: 0–50, scale v*0.16; ticks every 5
   \draw[thick] (0.3,0) -- (8.5,0);
   \foreach \v/\lbl in {0/0, 0.80/5, 1.60/10, 2.40/15, 3.20/20,
                         4.00/25, 4.80/30, 5.60/35, 6.40/40, 7.20/45, 8.00/50} {
@@ -69,6 +75,11 @@ Data (sorted, $n=12$):\quad
     \node[below, font=\small] at (\v,-0.12) {\lbl};
   }
   \node[below, font=\small\itshape] at (4.0,-0.56) {Seedling height (cm)};
+
+  % scale: v*0.16
+  % min=8 (x=1.28), Q1=12 (x=1.92), M=18 (x=2.88),
+  % Q3=24 (x=3.84), last non-outlier=36 (x=5.76), outlier=46 (x=7.36)
+  % IQR=12, upper fence=24+18=42; 46>42 so outlier confirmed
   \draw[thick, navy] (1.28, 0.38) -- (1.92, 0.38);
   \draw[thick, navy] (1.92, 0.10) rectangle (3.84, 0.66);
   \draw[thick, navy] (2.88, 0.10) -- (2.88, 0.66);
@@ -79,20 +90,26 @@ Data (sorted, $n=12$):\quad
 \end{tikzpicture}
 \end{center}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+\vspace{0.08in}
 
-  \item $\min = $ \ans{8} cm \quad $Q_1 = $ \ans{12} cm \quad $M = $ \ans{18} cm
-        \quad $Q_3 = $ \ans{24} cm \quad right whisker end $= $ \ans{36} cm\\[4pt]
-        Outlier dot at $\approx$ \ans{46} cm. \quad
-        IQR $= 24 - 12 = $ \ans{12} cm
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item Upper fence $= 24 + 1.5(12) = 24 + 18 = $ \ans{42 cm}\\[4pt]
-        Is 46 cm an outlier? \ans{Yes} \quad Justify: \ans{$46 > 42$ (upper fence)}
+  \item Read the five-number summary from the boxplot.\\[5pt]
+        $\min = \ans{8}$ cm \quad $Q_1 = \ans{12}$ cm \quad
+        $M = \ans{18}$ cm \quad $Q_3 = \ans{24}$ cm \quad
+        right whisker end $= \ans{36}$ cm\\[4pt]
+        The outlier dot is at approximately \ans{46} cm.\\[4pt]
+        IQR $= Q_3 - Q_1 = \ans{12}$ cm
 
-  \item \ans{The distribution is slightly \textbf{right-skewed}. The right whisker
-        ($36 - 24 = 12$ cm) is longer than the left whisker ($12 - 8 = 4$ cm),
-        and the median (18 cm) is closer to $Q_1$ (12 cm) than to $Q_3$ (24 cm).
-        There is also a high outlier at 46 cm that extends the right tail.}
+  \item Verify that the outlier dot (46 cm) exceeds the upper fence.
+        Show your work.\\[5pt]
+        Upper fence $= Q_3 + 1.5(\text{IQR}) = \ans{$24+1.5(12)=42$ cm}$\\[4pt]
+        Is 46 cm an outlier? \ans{Yes} \quad Justify: \ans{$46 > 42$}
+
+  \item Is the distribution skewed left, symmetric, or skewed right?
+        Justify your answer using the boxplot.\\[5pt]
+        \ansline{Slightly \textbf{skewed right}: the right whisker (12 cm) is longer}\\[1pt]
+        \ansline{than the left (4 cm), and the median sits nearer $Q_1$ than $Q_3$.}
 
 \end{enumerate}
 
@@ -101,28 +118,24 @@ Data (sorted, $n=12$):\quad
 \vspace{0.12in}
 
 % ════════════════════════════════════════════════════════════════════════════
-% PART C
+% PART C — AP-Style
 % ════════════════════════════════════════════════════════════════════════════
-\begin{blurbbox}[Part C \quad AP-Style Free Response --- Model Response]{redacc}
+\boxguard
+\begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
 \small
 
-\ans{The distribution of seedling heights after two weeks of growth is slightly
-right-skewed, with one high outlier at 46 cm. The outlier exceeds the upper fence
-of 42 cm ($= 24 + 1.5 \times 12$) and is plotted separately on the modified
-boxplot. The median seedling height is 18 cm, meaning half of the seedlings grew
-to fewer than 18 cm and half grew to more than 18 cm in two weeks. The middle 50\%
-of seedlings ranged from 12 cm to 24 cm ($\text{IQR} = 12$ cm). Excluding the
-outlier, the range of heights is $36 - 8 = 28$ cm.}
+Using the seedling boxplot from Part B, write a complete description of the
+distribution. Address \textbf{all four SOCS components} in context.
+Use correct statistical vocabulary.
+
+\vspace{0.08in}
+\ansline{\textbf{Shape:} the distribution of seedling heights is slightly right-skewed.}\\[1pt]
+\ansline{\textbf{Outliers:} one high outlier at 46 cm, above the upper fence of 42 cm}\\[1pt]
+\ansline{($=24 + 1.5\times12$), plotted separately on the modified boxplot.}\\[1pt]
+\ansline{\textbf{Center:} the median height is 18 cm --- half the seedlings grew less}\\[1pt]
+\ansline{than 18 cm in two weeks. \textbf{Spread:} the middle 50\% ran 12--24 cm}\\[1pt]
+\ansline{($\text{IQR}=12$ cm); excluding the outlier the range is $36-8=28$ cm.}
 
 \end{blurbbox}
-
-\begin{teachernote}
-\textbf{Grading notes:}
-\begin{itemize}[itemsep=2pt]
-  \item Part A: 5 pts — Q1 correct (2 pts: quartiles + median); Q2 fences + conclusion (2 pts); Q3 whisker end + dot explanation (1 pt).
-  \item Part B: 5 pts — Q4 all values correct (2 pts, allow ±1 for visual reading); Q5 fence calc + conclusion (2 pts); Q6 skewness + evidence (1 pt).
-  \item Part C: 4 pts — SOCS: 1 pt each component. Shape must reference whisker asymmetry. Outlier must give fence. Center must state median + interpret. Spread must give IQR in context.
-\end{itemize}
-\end{teachernote}
 
 \end{document}

@@ -3,11 +3,19 @@
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
+% \\ rather than \par, so chained terms share one paragraph and labels collide
+% with the preceding answer. Give each term its own paragraph on both ends.
+% Mirrored by \vocabans in notes_key/main.tex.
+\newcommand{\vocabterm}[1]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Guided Notes}
-\namedateperiod
 
 \vspace{0.10in}
 
@@ -22,22 +30,25 @@
 \vspace{0.10in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
+\small
 \begin{multicols}{2}
-\termblanklong{Mean ($\bar{x}$)}
-\termblanklong{Median ($M$)}
-\termblanklong{Range}
+\vocabterm{Mean ($\bar{x}$)}
+\vocabterm{Median ($M$)}
+\vocabterm{Range}
 \columnbreak
-\termblanklong{Quartiles ($Q_1$, $Q_3$)}
-\termblanklong{IQR (Interquartile Range)}
-\termblanklong{Resistant statistic}
-\termblanklong{Outlier fence rule}
+\vocabterm{Quartiles ($Q_1$, $Q_3$)}
+\vocabterm{IQR (Interquartile Range)}
+\vocabterm{Resistant statistic}
+\vocabterm{Outlier fence rule}
 \end{multicols}
 \end{vocabbox}
 
 \vspace{0.10in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Which salary best represents ``typical''?}
 
@@ -62,6 +73,7 @@ Which is more representative? \blank{6cm} Why? \blank{5cm}
 \vspace{0.08in}
 
 % ── SECTION 1: MEASURES OF CENTER ────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Measures of Center}
 \small
 \begin{multicols}{2}
@@ -89,6 +101,7 @@ Which is more representative? \blank{6cm} Why? \blank{5cm}
 \vspace{0.08in}
 
 % ── SECTION 2: MEASURES OF SPREAD ────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Measures of Spread}
 \small
 \begin{multicols}{2}
@@ -126,6 +139,7 @@ Which is more representative? \blank{6cm} Why? \blank{5cm}
 \vspace{0.08in}
 
 % ── SECTION 3: OUTLIER RULE + DECISION ───────────────────────────────────────
+\boxguard
 \begin{notesbox}{Outlier Rule \& Choosing Statistics}
 \small
 \begin{multicols}{2}

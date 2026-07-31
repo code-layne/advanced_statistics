@@ -3,11 +3,19 @@
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
+% \\ rather than \par, so chained terms share one paragraph and labels collide
+% with the preceding answer. Give each term its own paragraph on both ends.
+% Mirrored by \vocabans in notes_key/main.tex.
+\newcommand{\vocabterm}[1]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Guided Notes}
-\namedateperiod
 
 \vspace{0.12in}
 
@@ -22,17 +30,20 @@
 \vspace{0.1in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
-\termblanklong{Frequency}
-\termblanklong{Relative frequency}
-\termblanklong{Frequency table}
-\termblanklong{Relative frequency table}
-\termblanklong{Distribution (of a categorical variable)}
+\small
+\vocabterm{Frequency}
+\vocabterm{Relative frequency}
+\vocabterm{Frequency table}
+\vocabterm{Relative frequency table}
+\vocabterm{Distribution (of a categorical variable)}
 \end{vocabbox}
 
 \vspace{0.1in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Which school has more walkers? --- Fill in the missing column.}
 
@@ -62,6 +73,7 @@ What does this tell you about using counts alone for comparison?\\[6pt]
 \vspace{0.1in}
 
 % ── DIRECT INSTRUCTION ───────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Building a Frequency and Relative Frequency Table}
 \small
 \begin{multicols}{2}
@@ -94,6 +106,7 @@ Sum of all relative frequencies $= $ \blank{1.5cm}\%
 \vspace{0.1in}
 
 % ── WORKED EXAMPLE ───────────────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Worked Example --- Pet Ownership Survey ($n = 40$)}
 \small
 
@@ -127,6 +140,7 @@ None   & \small||||||||||  & 10 & \blank{2.5cm} \\
 \newpage
 
 % ── INTERPRETING IN CONTEXT ──────────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Describing a Distribution --- AP Language}
 \small
 \begin{multicols}{2}
@@ -159,6 +173,7 @@ description of the distribution of pet type.\\[6pt]
 \vspace{0.1in}
 
 % ── GUIDED PRACTICE ──────────────────────────────────────────────────────────
+\boxguard
 \begin{practicebox}
 \small
 \textbf{Complete the relative frequency table. Then answer the questions.}
@@ -221,6 +236,7 @@ two groups of different sizes?}\\[2pt]
 
 \vspace{0.1in}
 
+\boxguard
 \begin{notesbox}{Additional Notes}
 \vspace{0pt}
 \writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline

@@ -7,7 +7,6 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Homework: Summary Statistics}
-\namedateperiod
 
 \vspace{0.10in}
 
@@ -22,6 +21,7 @@ and use complete sentences for AP-style questions.
 % ════════════════════════════════════════════════════════════════════════════
 % PART A
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part A \quad Calculate Summary Statistics]{navylight}
 \small
 
@@ -33,11 +33,19 @@ The sorted responses are:
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item Find the \textbf{mean}. Show your calculation.\\[5pt]
-        \writeline
+  \item Find the \textbf{mean}. Show your calculation.
+\begin{work}
+  \bar{x} &= \dfrac{3+5+7+8+9+10+12+14+16+22}{10} \\
+          &= \dfrac{106}{10} \\
+          &= 10.6 \text{ hours}
+\end{work}
 
-  \item Find the \textbf{median}. Which two values did you average?\\[5pt]
-        \writeline
+  \item Find the \textbf{median}. Which two values did you average?
+\begin{work}
+  n &= 10 \text{ (even), so average the 5th and 6th values} \\
+  M &= \dfrac{9+10}{2} \\
+    &= 9.5 \text{ hours}
+\end{work}
 
   \item Find $Q_1$, $Q_3$, and the \textbf{IQR}.\\[5pt]
         $Q_1 = \blank{2cm}$ \quad $Q_3 = \blank{2cm}$ \quad IQR $= \blank{2cm}$
@@ -48,7 +56,7 @@ The sorted responses are:
 
   \item Is the mean or median a better description of the ``typical'' hours of
         phone use? Write one complete sentence with your reasoning.\\[5pt]
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\\[1pt]\writeline
 
 \end{enumerate}
 
@@ -59,6 +67,7 @@ The sorted responses are:
 % ════════════════════════════════════════════════════════════════════════════
 % PART B
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part B \quad Identify an Outlier \& Choose Statistics]{greenacc}
 \small
 
@@ -67,11 +76,20 @@ A class of 12 students took a test. The sorted scores are:
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-  \item Find the median, $Q_1$, $Q_3$, and IQR. Show your work.\\[5pt]
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
+  \item Find the median, $Q_1$, $Q_3$, and IQR. Show your work.
+\begin{work}
+  M   &= \dfrac{72+74}{2} = 73 \\
+  Q_1 &= \dfrac{65+68}{2} = 66.5 \\
+  Q_3 &= \dfrac{77+80}{2} = 78.5 \\
+  \text{IQR} &= 78.5 - 66.5 = 12
+\end{work}
 
-  \item Use the fence rule to check whether 45 is an outlier.\\[5pt]
-        Lower fence: \blank{5cm}\\[4pt]
+  \item Use the fence rule to check whether 45 is an outlier.
+\begin{work}
+  \text{lower fence} &= Q_1 - 1.5(\text{IQR}) \\
+                     &= 66.5 - 1.5(12) \\
+                     &= 48.5
+\end{work}
         Is 45 an outlier? \blank{3cm}
 
   \item The mean of this dataset is 71.5 and the median is 73.
@@ -91,6 +109,7 @@ A class of 12 students took a test. The sorted scores are:
 % ════════════════════════════════════════════════════════════════════════════
 % PART C — AP-STYLE
 % ════════════════════════════════════════════════════════════════════════════
+\boxguard
 \begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
 \small
 
@@ -106,6 +125,7 @@ A dataset has mean 82 and median 91.
   \item Which measure of center --- mean or median --- is more appropriate for
         describing a typical value in this distribution? Justify your answer.\\[5pt]
         \writeline\\[1pt]\writeline
+        % 2 write-lines ↔ 2 \ansline in the key
 
 \end{enumerate}
 

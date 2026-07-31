@@ -7,77 +7,148 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.10}{Homework — Key}
-\begin{tabularx}{\linewidth}{X X X}
-  Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.10in}
 
-\begin{blurbbox}[Part A \quad The Empirical Rule — Key]{navylight}
-\small IQ scores: $N(100, 15)$.
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
+\small Show all $z$-score calculations. Interpret every probability in context.
+Use Table A or technology; indicate which you used.
+\end{tcolorbox}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+\vspace{0.12in}
 
-  \item Axis values (left to right): \ans{55, 70, 85, 100, 115, 130, 145}.
+% ════════════════════════════════════════════════════════════════════════════
+% PART A — Empirical Rule
+% ════════════════════════════════════════════════════════════════════════════
+\boxguard
+\begin{blurbbox}[Part A \quad The Empirical Rule]{navylight}
+\small
 
-  \item Between 85 and 115 ($\mu \pm 1\sigma$): \ans{68\%}\quad
-        Between 70 and 130 ($\mu \pm 2\sigma$): \ans{95\%}
+IQ scores on a widely used test are approximately Normally distributed with
+mean $\mu = 100$ and standard deviation $\sigma = 15$. Use the
+68--95--99.7 Rule for all questions in this part (do not use Table A).
 
-  \item Above 130 is above $\mu + 2\sigma$: \ansline{$(100\%-95\%)/2 = 2.5\%$. About 2.5\% of people score above 130.}
+\vspace{0.10in}
 
-  \item $145 = \mu + 3\sigma$: \ansline{By the Empirical Rule, 99.7\% of scores fall between 55 and 145, so only about 0.15\% of people score above 145. A score of 145 is extremely unusual.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item Fill in the IQ values at each labeled point on the axis below.\\[6pt]
+        \begin{center}
+        \begin{tikzpicture}[scale=1.0]
+          \draw[thick, navy]
+            plot[domain=-3.5:3.5, samples=80] (\x, {2.2*exp(-\x*\x/2)});
+          \draw[thick] (-3.8, 0) -- (3.8, 0);
+          \foreach \z/\iq in {-3/55,-2/70,-1/85,0/100,1/115,2/130,3/145} {
+            \draw (\z, -0.12) -- (\z, 0.12);
+            \node[below, font=\small] at (\z, -0.15) {\ans{\iq}};
+          }
+          \node[below, font=\small\itshape] at (0, -0.55) {IQ score};
+          \node[above, font=\small\bfseries\color{navy}] at (0, 2.22) {$\mu = 100$};
+        \end{tikzpicture}
+        \end{center}
+
+  \item What percentage of people have IQ scores between 85 and 115?
+        Between 70 and 130? Show reasoning.\\[5pt]
+        Between 85 and 115: \ans{68}\% \quad Between 70 and 130: \ans{95}\%
+
+  \item What percentage of people have IQ scores \textbf{above} 130?\\[5pt]
+        \ansline{Above $\mu+2\sigma$: $(100\%-95\%)/2 = 2.5\%$ of people.}
+
+  \item A person's IQ is reported as 145. Using the Empirical Rule, comment on how
+        unusual this score is.\\[5pt]
+        \ansline{$145 = \mu+3\sigma$. Since 99.7\% fall between 55 and 145, only about}\\[1pt]
+        \ansline{0.15\% score above 145 --- an extremely unusual score.}
 
 \end{enumerate}
+
 \end{blurbbox}
+
+\vspace{0.12in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% PART B — z-scores and Normal table
+% ════════════════════════════════════════════════════════════════════════════
+\boxguard
+\begin{blurbbox}[Part B \quad $z$-Scores and the Normal Table]{greenacc}
+\small
+
+Customer wait times at a coffee shop are approximately $N(4.5,\,1.2)$ minutes
+(mean 4.5 min, SD 1.2 min).
 
 \vspace{0.10in}
 
-\begin{blurbbox}[Part B \quad $z$-Scores and the Normal Table — Key]{greenacc}
-\small Wait times: $N(4.5, 1.2)$ min.
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item A customer waited 6 minutes. Calculate the $z$-score and interpret it.\\[5pt]
+        $z = \ans{$(6-4.5)/1.2$} = \ans{$+1.25$}$\quad
+        Interpretation: \ansline{6 min is 1.25 SD above the mean wait.}
 
-  \item $z = (6 - 4.5)/1.2 = 1.5/1.2 = \ans{+1.25}$\quad
-        Interpretation: \ansline{A wait of 6 minutes is 1.25 standard deviations above the mean wait time.}
+  \item Use Table A to find the proportion of customers who wait \textbf{more than}
+        6 minutes. Show all steps.\\[5pt]
+        $P(\text{wait} > 6) = 1 - P(Z < \ans{1.25}) = 1 - \ans{0.8944} = \ans{0.1056}$
 
-  \item $P(\text{wait}>6) = 1 - P(Z<\ans{1.25}) = 1 - \ans{0.8944} = \ans{0.1056}$\\
-        About 10.6\% of customers wait more than 6 minutes.
+  \item Find the proportion of customers who wait \textbf{between 3 and 6 minutes}.\\[5pt]
+        $z(3) = \ans{$(3-4.5)/1.2$} = \ans{$-1.25$}$\quad
+        $z(6) = \ans{$(6-4.5)/1.2$} = \ans{$+1.25$}$\\[4pt]
+        $P(3 < \text{wait} < 6) = P(Z < \ans{1.25}) - P(Z < \ans{-1.25}) = \ans{0.8944} - \ans{0.1056} = \ans{0.7888}$
 
-  \item $z(3) = (3-4.5)/1.2 = -1.5/1.2 = \ans{-1.25}$\quad
-        $z(6) = \ans{+1.25}$ (from above)\\[3pt]
-        $P(3<\text{wait}<6) = P(Z<\ans{1.25}) - P(Z<\ans{-1.25}) = \ans{0.8944} - \ans{0.1056} = \ans{0.7888}$
-
-  \item $x = 4.5 + (-1.28)(1.2) = 4.5 - 1.536 = \ans{2.96}$ minutes (approximately 3.0 min).
+  \item Find the wait time at the \textbf{10th percentile}.
+        ($z^* \approx -1.28$ for the 10th percentile.)\\[5pt]
+        $x = \mu + z^* \cdot \sigma = \ans{$4.5 + (-1.28)(1.2)$} = \ans{2.96}$ minutes
 
 \end{enumerate}
+
 \end{blurbbox}
 
-\vspace{0.10in}
+\vspace{0.12in}
 
-\begin{blurbbox}[Part C \quad AP-Style Free Response — Key]{redacc}
-\small Graduate exam scores: $N(500, 100)$.
+% ════════════════════════════════════════════════════════════════════════════
+% PART C — AP-Style Free Response
+% ════════════════════════════════════════════════════════════════════════════
+\boxguard
+\begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
+\small
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+Scores on a standardized graduate school entrance exam are approximately Normally
+distributed with mean $\mu = 500$ and standard deviation $\sigma = 100$.
 
-  \item $z = (650-500)/100 = \ans{+1.50}$. $P(Z < 1.50) = 0.9332$.\\
-        $P(\text{score}>650) = 1 - 0.9332 = \ans{0.0668}$.\\
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item What proportion of test-takers scored \textbf{above 650}?
+        Show your $z$-score calculation, use Table A, and interpret the result.
+\begin{work}
+  z &= \dfrac{650-500}{100} = 1.50 \\
+  P(Z<1.50) &= 0.9332 \\
+  P(X>650)  &= 1-0.9332 = 0.0668
+\end{work}
         \ansline{About 6.7\% of test-takers scored above 650.}
 
-  \item $z = (400-500)/100 = \ans{-1.00}$. $P(Z < -1.00) = \ans{0.1587}$.\\
+  \item What proportion scored \textbf{below 400}?
+\begin{work}
+  z &= \dfrac{400-500}{100} = -1.00 \\
+  P(X<400) &= P(Z<-1.00) = 0.1587
+\end{work}
         \ansline{About 15.9\% of test-takers scored below 400.}
 
-  \item $z^* = 1.645$. $x = 500 + 1.645(100) = 500 + 164.5 = \ans{664.5} \approx 665$.\\
-        \ansline{A score of approximately 665 separates the top 5\% from the rest.}
+  \item What score separates the \textbf{top 5\%} of test-takers from the rest?
+        ($z^* \approx 1.645$ for the 95th percentile.) Show your work.
+\begin{work}
+  x &= \mu + z^*\sigma \\
+    &= 500 + 1.645(100) \\
+    &= 664.5 \approx 665
+\end{work}
+        \ansline{A score of about 665 separates the top 5\% from the rest.}
 
-  \item \ansline{The requirement of 650 is quite selective. Only about 6.7\% of test-takers score at or above 650 (from part a). This means roughly 93\% of applicants would be excluded by this cutoff alone.}
+  \item A graduate program requires a score of at least 650 for admission.
+        Based on your answer to (a), comment on how selective this requirement is.\\[5pt]
+        \ansline{Very selective: only about 6.7\% of test-takers score at or above}\\[1pt]
+        \ansline{650, so roughly 93\% of applicants fail this cutoff alone.}
 
 \end{enumerate}
-\end{blurbbox}
 
-\begin{teachernote}
-Part A Q4: $P(Z > 3) = 1 - 0.9987 = 0.0013$; one tail is $\approx 0.0013/2 \approx 0.00065 \approx 0.065\%$. The Empirical Rule gives 0.15\% for one tail beyond 3$\sigma$ — close enough.\\
-Part B Q4: \texttt{invNorm}(0.10, 4.5, 1.2) $= 2.962$. Accept 2.96 or 3.0 min.\\
-Part C Q1: Table A, row 1.5, col .00 $= 0.9332$. Q3: $z^* = 1.645$ is between $z=1.64$ (0.9495) and $z=1.65$ (0.9505).
-\end{teachernote}
+\end{blurbbox}
 
 \end{document}

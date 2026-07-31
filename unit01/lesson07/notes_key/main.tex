@@ -3,13 +3,18 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 
+% ── vocabpar ────────────────────────────────────────────────────────────────
+% \ansline ends with \dotfill and never closes the paragraph, so without a
+% \par the following term label is dragged onto the previous answer's dotted
+% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
+\newcommand{\vocabans}[2]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\par\vspace{3pt}}
+
 %=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
 
 \vspace{0.10in}
 
@@ -25,33 +30,25 @@ quantitative dataset and interpret each statistic in context.}\\
 \vspace{0.10in}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard
 \begin{vocabbox}
 \small
-\noindent\textbf{\textcolor{navy}{Mean ($\bar{x}$):}}\\
-\ans{The arithmetic average: sum of all values divided by $n$. Not resistant to outliers.}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Median ($M$):}}\\
-\ans{The middle value of a sorted dataset; average of the two middle values when $n$ is even. Resistant to outliers.}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Range:}}\\
-\ans{max $-$ min; simple but not resistant since it uses only the two extreme values.}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Quartiles ($Q_1$, $Q_3$):}}\\
-\ans{$Q_1$ = median of the lower half of the data (25th percentile); $Q_3$ = median of the upper half (75th percentile).}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{IQR (Interquartile Range):}}\\
-\ans{$Q_3 - Q_1$; the spread of the middle 50\% of data. Resistant to outliers. Pair with median.}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Resistant statistic:}}\\
-\ans{A statistic not strongly affected by extreme values; the median and IQR are resistant, the mean and standard deviation are not.}\\[6pt]
-
-\noindent\textbf{\textcolor{navy}{Outlier fence rule:}}\\
-\ans{A value is an outlier if it falls below $Q_1 - 1.5\cdot\text{IQR}$ (lower fence) or above $Q_3 + 1.5\cdot\text{IQR}$ (upper fence).}
+\begin{multicols}{2}
+\vocabans{Mean ($\bar{x}$)}{The arithmetic average: sum of all values divided by $n$. Not resistant to outliers.}
+\vocabans{Median ($M$)}{Middle value of a sorted dataset; average of the two middle values when $n$ is even. Resistant.}
+\vocabans{Range}{max $-$ min; simple but not resistant, since it uses only the two extreme values.}
+\columnbreak
+\vocabans{Quartiles ($Q_1$, $Q_3$)}{$Q_1$ = median of the lower half (25th percentile); $Q_3$ = median of the upper half (75th).}
+\vocabans{IQR (Interquartile Range)}{$Q_3 - Q_1$; spread of the middle 50\% of data. Resistant; pair with the median.}
+\vocabans{Resistant statistic}{Not strongly affected by extreme values; median and IQR are, mean and $s_x$ are not.}
+\vocabans{Outlier fence rule}{An outlier falls below $Q_1 - 1.5\cdot\text{IQR}$ or above $Q_3 + 1.5\cdot\text{IQR}$.}
+\end{multicols}
 \end{vocabbox}
 
 \vspace{0.10in}
 
 % ── HOOK ─────────────────────────────────────────────────────────────────────
+\boxguard
 \begin{hookbox}
 \small\textbf{Which salary best represents ``typical''?}
 
@@ -76,6 +73,7 @@ Why? \ans{Mean is distorted by the extreme value of \$200k.}
 \vspace{0.08in}
 
 % ── SECTION 1: MEASURES OF CENTER ────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Measures of Center}
 \small
 \begin{multicols}{2}
@@ -103,6 +101,7 @@ Why? \ans{Mean is distorted by the extreme value of \$200k.}
 \vspace{0.08in}
 
 % ── SECTION 2: MEASURES OF SPREAD ────────────────────────────────────────────
+\boxguard
 \begin{notesbox}{Measures of Spread}
 \small
 \begin{multicols}{2}
@@ -140,6 +139,7 @@ Why? \ans{Mean is distorted by the extreme value of \$200k.}
 \vspace{0.08in}
 
 % ── SECTION 3: OUTLIER RULE + DECISION ───────────────────────────────────────
+\boxguard
 \begin{notesbox}{Outlier Rule \& Choosing Statistics}
 \small
 \begin{multicols}{2}
