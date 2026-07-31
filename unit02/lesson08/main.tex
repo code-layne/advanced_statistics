@@ -102,7 +102,13 @@
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \vspace{0pt}
-    \includegraphics[page=1,width=\linewidth]{warmup/main}
+    % The warm-up is authored, so it compiles to target/ and there is no source PDF
+    % here to embed — keep this side text-only rather than \includegraphics{warmup/main}.
+    \textbf{Warm-Up Preview}
+    \begin{itemize}
+        \item Compute a residual from an observed and a predicted value, in that order.
+        \item Read $r$, $s_x$, and $s_y$ off a summary and assemble $b = r\,\frac{s_y}{s_x}$.
+    \end{itemize}
 \end{minipage}
 \end{skillbox}
 
@@ -195,6 +201,18 @@
         \item \textit{Preview}: Lesson 2.9 --- not every relationship is linear. When a residual plot shows a curved pattern, we can use data transformations (logarithm, power) to straighten the relationship before applying regression.
     \end{itemize}
 \end{minipage}
+\end{skillbox}
+
+% ── Teacher notes (migrated from the component keys) ──
+% One per component, titled for it. They live here rather than in the _key files
+% so that every component is the same length blank and keyed. This plan is
+% self-contained (it does not load apstats-boxes), so the note uses the file's
+% own skillbox rather than the shared teachernote environment.
+
+\begin{skillbox}[Teacher Note: Warm-Up]{redbox}
+Common error in 1b: students subtract in the wrong order ($\hat{y} - y$) and get $-60$.
+Reinforce: residual $= \text{observed} - \text{predicted}$, positive means above the line.
+In 3b, watch for $b = 0.60 \times 0.5 = 0.30$ (inverted ratio). Make sure $s_y$ is in the numerator.
 \end{skillbox}
 
 \end{document}

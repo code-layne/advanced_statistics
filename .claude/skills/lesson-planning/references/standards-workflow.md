@@ -34,8 +34,8 @@ The document structure is identical to the AP path (`references/components.md`);
 1. Confirm the title, description, and standards with the user; clarify scope if a standard is
    broad enough to span multiple lessons.
 2. Scaffold the lesson (`scripts/new_lesson.py`) with the components you need — note Algebra 2
-   uses inline course macros, so pass `--course` (and `--year` if it differs) so the generated
-   lesson plan defines `\CourseName` correctly.
+   uses inline course macros, so pass `--course` so the generated lesson plan defines
+   `\CourseName` correctly.
 3. Author the lesson plan and components per `references/components.md`, keeping the objective
    and learning targets traceable to the standards.
 4. Mirror Algebra 2's existing assessment conventions where they apply — e.g. an "SOL-Style

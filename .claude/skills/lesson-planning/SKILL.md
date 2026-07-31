@@ -226,6 +226,8 @@ Never assume the prefix or conventions. Inspect the project:
    (e.g. `algebra2`, `apstats`). All `\usepackage{<prefix>-article}` etc. must use it.
 2. **Learn course-level macros.** Grep the shared styles and an existing lesson plan for
    `\CourseName`, `\SchoolYear`, `\MeetingLength`, `\UnitNumberName`, `\LessonNumberName`.
+   The lesson-plan title block prints `\CourseName` plus the unit/lesson line and **nothing
+   else** — no school year, no meeting length.
    Some courses define course-level macros inside the style package (apstats); others define
    them per lesson plan (algebra2). Define in the new files only what isn't already provided.
 3. **Choose the input path.** Look for College Board CED files in a `spec/` directory, named

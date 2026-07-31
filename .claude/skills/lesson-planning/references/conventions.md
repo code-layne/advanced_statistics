@@ -35,7 +35,9 @@ with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
 implicitly through it) and defines the course/unit/lesson macros it needs. Note the two
 observed styles — detect which the course uses:
 - `apstats` defines `\CourseName`, `\SchoolYear`, `\MeetingLength` in its style package, so
-  the lesson plan only sets `\UnitNumberName` and `\LessonNumberName`.
+  the lesson plan only sets `\UnitNumberName` and `\LessonNumberName`. The title block prints
+  `\CourseName` alone — `\SchoolYear` and `\MeetingLength` stay out of it (see
+  `components.md` → "Lesson plan").
 - `algebra2` defines all of them inline in the lesson plan preamble and loads a richer set of
   packages directly (`pdfpages`, `graphicx` with `\graphicspath{{images/}}`, `tabularx`,
   `unicode-math`, `multicol`).
