@@ -1,6 +1,25 @@
-%! AP Statistics — Unit 1, Lesson 1.3 — Slides (Beamer)
+%! Statistics — Unit 1, Lesson 1.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}
+
+% ── Deck-local layout ────────────────────────────────────────────────────────
+% One left edge for the whole deck: the body text block and the header-bar
+% title both start 0.9cm from the page edge, so nothing hangs out of line.
+\setbeamersize{text margin left=0.9cm, text margin right=0.9cm}
+
+% \slideheader{bar color}{Title} — same geometry as \navyheader (1.35cm bar,
+% title on its vertical centre) but with the title inset matched to the text
+% margin above. Used on every content slide so the header sits identically on
+% each one, whatever the accent color.
+\newcommand{\slideheader}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[#1] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.9cm, inner ysep=0pt]
+      at ([yshift=-0.68cm]current page.north west) {#2};
+  \end{tikzpicture}%
+  \vspace{1.15cm}\par}
 
 %=============================================================================
 \begin{document}
@@ -16,12 +35,11 @@
       rectangle ([yshift=-1.35cm]current page.north east);
   \end{tikzpicture}
   \vspace{2.8cm}
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \begin{minipage}[t]{\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.3}\\[0.5cm]
     {\color{white}\bfseries\LARGE Representing a Categorical Variable\\[0.25cm]
       with Tables}\\[1.4cm]
-    {\color{skymid}\small AP Statistics~$\cdot$~Unit 1: Exploring One-Variable Data}
+    {\color{skymid}\small Statistics~$\cdot$~Unit 1: Exploring One-Variable Data}
   \end{minipage}
 \end{frame}
 }
@@ -32,10 +50,8 @@
 {
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
-  \navyheader{Warm-Up}
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    \vspace{0.3em}
+  \slideheader{navy}{Warm-Up}
+  \begin{minipage}[t]{\textwidth}
     \small
 
     \begin{enumerate}
@@ -49,7 +65,7 @@
       \item What question do you think today's lesson will answer?
     \end{enumerate}
 
-    \vspace{0.5cm}
+    \vspace{0.6cm}
     {\color{navy}\itshape\small
       We'll revisit your frequency table at the end of the lesson to add
       one more column.}
@@ -68,8 +84,7 @@
       rectangle ([yshift=-0.25cm]current page.north east);
   \end{tikzpicture}
   \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \begin{minipage}[t]{\textwidth}
 
     \sectionlabel{Primary Objective}
 
@@ -101,30 +116,19 @@
 {
 \setbeamercolor{background canvas}{bg=hookbg}
 \begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[goldacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm, inner ysep=0pt]
-      at ([yshift=-0.68cm]current page.north west)
-      {Hook --- Which School Has More Walkers?};
-  \end{tikzpicture}
-  \vspace{1.2cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    \vspace{0.2cm}
+  \slideheader{goldacc}{Hook --- Which School Is More of a Walking School?}
+  \begin{minipage}[t]{\textwidth}
     \small
     {\color{white}\bfseries
-      Two schools survey students about how they get to school.
-      Which school has more walkers?}
+      Two schools survey their students about how they get to school.}
 
-    \vspace{0.45cm}
+    \vspace{0.4cm}
 
     \setlength{\tabcolsep}{10pt}
-    \renewcommand{\arraystretch}{1.6}
-    \begin{tabular}{@{} >{\bfseries\color{white}}p{0.16\textwidth}
-                        >{\centering\arraybackslash}p{0.18\textwidth}
-                        >{\centering\arraybackslash}p{0.18\textwidth} @{}}
+    \renewcommand{\arraystretch}{1.35}
+    \hspace*{\tabcolsep}\begin{tabular}{@{} >{\bfseries\color{white}}p{0.20\textwidth}
+                        >{\centering\arraybackslash}p{0.20\textwidth}
+                        >{\centering\arraybackslash}p{0.20\textwidth} @{}}
       \rowcolor{navy}
       {\color{skymid}Mode} &
       {\color{skymid}School A} &
@@ -141,9 +145,10 @@
       {\color{skymid}\textbf{200}} \\
     \end{tabular}
 
-    \vspace{0.5cm}
+    \vspace{0.45cm}
     {\color{white}\small
-      Discuss with your partner: Is it fair to compare the ``Walk'' counts directly?}
+      Discuss with your partner: do the two Walk counts, 40 and 120, answer
+      that question on their own?}
   \end{minipage}
 \end{frame}
 }
@@ -154,26 +159,17 @@
 {
 \setbeamercolor{background canvas}{bg=hookbg}
 \begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[goldacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm, inner ysep=0pt]
-      at ([yshift=-0.68cm]current page.north west)
-      {Hook --- The Answer Changes with Relative Frequency};
-  \end{tikzpicture}
-  \vspace{1.2cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{goldacc}{Hook --- Counts Say ``How Many,'' Shares Say ``How Common''}
+  \begin{minipage}[t]{\textwidth}
     \small
 
     \setlength{\tabcolsep}{8pt}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{@{} >{\bfseries\color{white}}p{0.14\textwidth}
-                        >{\centering\arraybackslash}p{0.12\textwidth}
-                        >{\centering\arraybackslash}p{0.16\textwidth}
-                        >{\centering\arraybackslash}p{0.12\textwidth}
-                        >{\centering\arraybackslash}p{0.16\textwidth} @{}}
+    \renewcommand{\arraystretch}{1.4}
+    \hspace*{\tabcolsep}\begin{tabular}{@{} >{\bfseries\color{white}}p{0.14\textwidth}
+                        >{\centering\arraybackslash}p{0.13\textwidth}
+                        >{\centering\arraybackslash}p{0.17\textwidth}
+                        >{\centering\arraybackslash}p{0.13\textwidth}
+                        >{\centering\arraybackslash}p{0.17\textwidth} @{}}
       \rowcolor{navy}
       {\color{skymid}Mode} &
       {\color{skymid}Sch.\ A} & {\color{skymid}Rel.\ Freq.\ A} &
@@ -184,17 +180,19 @@
       \rowcolor{white!8!hookbg}
       {\color{white}Car}  & {\color{white}80}  & {\color{white}33\%} &
         {\color{white}50}  & {\color{white}25\%} \\
-      \rowcolor{white!15!hookbg}
+      \rowcolor{navy}
       {\color{white}\textbf{Walk}} &
-        {\color{white}40}  & {\color{white}\textbf{17\%}} &
+        {\color{white}40}  & {\color{goldacc}\textbf{17\%}} &
         {\color{white}120} & {\color{goldacc}\textbf{60\%}} \\
     \end{tabular}
 
-    \vspace{0.5cm}
+    \vspace{0.45cm}
     {\color{white}\small
-      School A has more walkers by \textit{count} (40 vs.\ 30).\\
-      School B has far more walkers by \textit{proportion} (60\% vs.\ 17\%).\\[8pt]
-      \textbf{Lesson:} Use relative frequency to make fair comparisons.}
+      The counts, 40 and 120, come out of different-sized schools ($n = 240$
+      and $n = 200$), so they do not answer the question on their own.\\[6pt]
+      The shares do: \textbf{60\%} of School B walks, against \textbf{17\%} of
+      School A.\\[6pt]
+      \textbf{Lesson:} divide by the total before you compare two groups.}
   \end{minipage}
 \end{frame}
 }
@@ -204,25 +202,27 @@
 % ─────────────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=greenbg}
+\setbeamercolor{itemize item}{fg=greenacc}
 \begin{frame}[t, plain]
-  \navyheader{Vocabulary}
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{navy}{Vocabulary}
+  \begin{minipage}[t]{\textwidth}
     \small
-    \begin{description}[leftmargin=0em, itemsep=0.45em, font=\bfseries\color{navy}]
-      \item[Frequency] The count of individuals in a particular category.
-      \item[Relative frequency] Frequency $\div$ total; expressed as a proportion
-            (decimal) or percent.
-      \item[Frequency table] A table listing each category of a categorical variable
-            and its count.
-      \item[Relative frequency table] A table listing each category and its relative
-            frequency.
-      \item[Distribution (categorical)] The set of possible values and their associated
-            relative frequencies.
-    \end{description}
+    \begin{itemize}
+      \setlength{\itemsep}{0.5em}\setlength{\topsep}{0em}
+      \item {\color{navy}\bfseries Frequency} --- the count of individuals in a
+            particular category.
+      \item {\color{navy}\bfseries Relative frequency} --- frequency $\div$ total;
+            expressed as a proportion (decimal) or a percent.
+      \item {\color{navy}\bfseries Frequency table} --- a table listing each category
+            of a categorical variable and its count.
+      \item {\color{navy}\bfseries Relative frequency table} --- a table listing each
+            category and its relative frequency.
+      \item {\color{navy}\bfseries Distribution (categorical)} --- the set of possible
+            values and their associated relative frequencies.
+    \end{itemize}
 
-    \vspace{0.4cm}
-    {\color{navy}\small\textit{Key check: Relative frequencies must sum to 1 (or 100\%).}}
+    \vspace{0.55cm}
+    {\color{navy}\small\textit{Key check: relative frequencies must sum to 1 (or 100\%).}}
   \end{minipage}
 \end{frame}
 }
@@ -233,13 +233,12 @@
 {
 \setbeamercolor{background canvas}{bg=white}
 \begin{frame}[t, plain]
-  \navyheader{Building a Relative Frequency Table --- Four Steps}
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{navy}{Building a Relative Frequency Table --- Four Steps}
+  \begin{minipage}[t]{\textwidth}
     \small
 
     \begin{enumerate}
-      \setlength{\itemsep}{0.55em}
+      \setlength{\itemsep}{0.55em}\setlength{\topsep}{0em}
       \item \textbf{List all categories} in the first column.
       \item \textbf{Tally} the raw data and record the \textbf{frequency} (count).
       \item \textbf{Divide} each count by $n$ (the total) to get the
@@ -247,14 +246,14 @@
       \item \textbf{Check:} all relative frequencies must sum to exactly 1.
     \end{enumerate}
 
-    \vspace{0.5cm}
+    \vspace{0.4cm}
     \[
       \text{Relative frequency} = \frac{\text{frequency}}{n}
     \]
 
-    \vspace{0.3cm}
+    \vspace{0.4cm}
     {\color{navy}\small
-      Express as a decimal \textit{or} a percent --- both are correct on the AP exam.}
+      Express as a decimal \textit{or} a percent --- both are correct.}
   \end{minipage}
 \end{frame}
 }
@@ -265,66 +264,63 @@
 {
 \setbeamercolor{background canvas}{bg=white}
 \begin{frame}[t, plain]
-  \navyheader{Worked Example --- Pet Ownership ($n = 40$)}
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{navy}{Worked Example --- Pet Ownership ($n = 40$)}
+  \begin{minipage}[t]{\textwidth}
     \small
 
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{@{} >{\bfseries}p{0.20\textwidth}
-                        >{\centering\arraybackslash}p{0.14\textwidth}
-                        >{\centering\arraybackslash}p{0.22\textwidth} @{}}
-      \rowcolor{sky}
-      \textbf{Pet type} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-      \midrule
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1.4}
+    \hspace*{\tabcolsep}\begin{tabular}{@{} >{\bfseries}p{0.22\textwidth}
+                        >{\centering\arraybackslash}p{0.16\textwidth}
+                        >{\centering\arraybackslash}p{0.24\textwidth} @{}}
+      \rowcolor{navy}
+      {\color{white}Pet type} & {\color{white}Frequency} &
+        {\color{white}Rel.\ frequency} \\
       Dog   & 12 & $12/40 = 0.30$ \\
       Cat   & 8  & $8/40  = 0.20$ \\
       Fish  & 6  & $6/40  = 0.15$ \\
       Bird  & 4  & $4/40  = 0.10$ \\
       None  & 10 & $10/40 = 0.25$ \\
-      \midrule
-      \rowcolor{sky}\textbf{Total} & 40 & 1.00 \\
+      \rowcolor{sky} Total & 40 & 1.00 \\
     \end{tabular}
 
     \vspace{0.5cm}
-    {\color{navy}\bfseries\small AP-style interpretation:}\\[4pt]
-    \small\textit{``Of the 40 households surveyed, the most common pet type was
+    {\color{navy}\bfseries\small Model interpretation:}\\[4pt]
+    {\small\itshape ``Of the 40 households surveyed, the most common pet type was
     dog, owned by 30\% of households. The least common was bird, owned by 10\%.''}
   \end{minipage}
 \end{frame}
 }
 
 % ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 9 — AP LANGUAGE
+% SLIDE 9 — WRITING THE DESCRIPTION
 % ─────────────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
-  \navyheader{Describing a Distribution --- AP Language}
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{navy}{Describing a Distribution --- Saying It Precisely}
+  \begin{minipage}[t]{\textwidth}
     \small
 
     \textbf{\color{navy}Every description must include:}
     \begin{itemize}
-      \setlength{\itemsep}{0.4em}
+      \setlength{\itemsep}{0.35em}\setlength{\topsep}{0.2em}
       \item The \textbf{total $n$} (``of the 40 households surveyed\ldots'')
       \item The \textbf{variable} in context (``pet type'')
       \item The \textbf{most} and \textbf{least} common categories
       \item The \textbf{relative frequency} for at least the key categories
     \end{itemize}
 
-    \vspace{0.5cm}
+    \vspace{0.45cm}
     {\color{navy}\bfseries\small Model sentence frame:}\\[6pt]
-    \small\textit{``Of the \underline{\hspace{1cm}} [individuals] surveyed, the most
+    {\small\itshape ``Of the \underline{\hspace{1cm}} [individuals] surveyed, the most
     common [variable] was \underline{\hspace{1.5cm}}, with \underline{\hspace{1cm}}\%
     of responses. The least common was \underline{\hspace{1.5cm}} with
     \underline{\hspace{1cm}}\%.''}
 
-    \vspace{0.4cm}
+    \vspace{0.45cm}
     {\color{slate}\footnotesize
-      On the AP exam, writing ``30\%'' without context earns \textbf{no credit}.
-      Always anchor your numbers.}
+      A bare ``30\%'' with no context earns no credit. Always anchor your numbers.}
   \end{minipage}
 \end{frame}
 }
@@ -334,32 +330,24 @@
 % ─────────────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=redbg}
+\setbeamercolor{enumerate item}{fg=redacc}
 \begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[redacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm, inner ysep=0pt]
-      at ([yshift=-0.68cm]current page.north west)
-      {Group Activity --- Favorite Sport Survey};
-  \end{tikzpicture}
-  \vspace{1.2cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{redacc}{Group Activity --- Favorite Sport Survey}
+  \begin{minipage}[t]{\textwidth}
     \small
 
     \textbf{Part 1 (8 min):} Raw data for 30 middle school students.
     \begin{enumerate}
-      \setlength{\itemsep}{0.3em}
+      \setlength{\itemsep}{0.3em}\setlength{\topsep}{0.25em}
       \item Tally the data and build a complete frequency and relative frequency table.
-      \item Verify: total = 30, sum of relative frequencies = 1.
+      \item Verify: total $= 30$, sum of relative frequencies $= 1$.
       \item Write 2--3 sentences describing the distribution.
     \end{enumerate}
 
-    \vspace{0.5cm}
-    \textbf{Part 2 (5 min):} A second dataset has $n = 50$.
+    \vspace{0.55cm}
+    \textbf{Part 2 (5 min):} A second survey of 50 high school students.
     \begin{enumerate}
-      \setlength{\itemsep}{0.3em}
+      \setlength{\itemsep}{0.3em}\setlength{\topsep}{0.25em}
       \item Complete the relative frequency column for the high school data.
       \item Compare the two groups. Which sport is more popular proportionally?
       \item Can you compare using counts alone? Why or why not?
@@ -374,31 +362,30 @@
 {
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
-  \navyheader{Exit Ticket --- 5 Minutes}
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{navy}{Exit Ticket --- 5 Minutes}
+  \begin{minipage}[t]{\textwidth}
     \small
 
     A survey of \textbf{50 students} asks: ``Where do you prefer to study?''
 
     \vspace{0.35cm}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{@{} >{\bfseries}p{0.22\textwidth}
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1.35}
+    \hspace*{\tabcolsep}\begin{tabular}{@{} >{\bfseries}p{0.24\textwidth}
                         >{\centering\arraybackslash}p{0.18\textwidth}
                         >{\centering\arraybackslash}p{0.22\textwidth} @{}}
       \rowcolor{navy}
-      {\color{white}Location} & {\color{white}Count} & {\color{white}Rel.\ Freq.} \\
-      \midrule
+      {\color{white}Location} & {\color{white}Count} & {\color{white}Rel.\ freq.} \\
       Library  & 18 & ? \\
       Home     & 22 & ? \\
       Caf\'{e} & 6  & ? \\
       Other    & 4  & ? \\
-      \rowcolor{sky}\textbf{Total} & 50 & ? \\
+      \rowcolor{skymid} Total & 50 & ? \\
     \end{tabular}
 
-    \vspace{0.5cm}
+    \vspace{0.45cm}
     \begin{enumerate}
-      \setlength{\itemsep}{0.4em}
+      \setlength{\itemsep}{0.35em}\setlength{\topsep}{0em}
       \item Complete the relative frequency column.
       \item Write one sentence describing the most common location \textit{in context}.
       \item What percentage of students study somewhere other than home?
@@ -412,18 +399,10 @@
 % ─────────────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{itemize item}{fg=goldacc}
 \begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navylight] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm, inner ysep=0pt]
-      at ([yshift=-0.68cm]current page.north west)
-      {Big Ideas \& Preview};
-  \end{tikzpicture}
-  \vspace{1.2cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
+  \slideheader{navylight}{Big Ideas \& Preview}
+  \begin{minipage}[t]{\textwidth}
     \small
 
     {\color{goldacc}\bfseries Today's core takeaway:}\\[6pt]
@@ -434,15 +413,15 @@
     \vspace{0.55cm}
     {\color{skymid}\bfseries Connections:}
     \begin{itemize}
-      \setlength{\itemsep}{0.35em}
+      \setlength{\itemsep}{0.35em}\setlength{\topsep}{0.25em}
       \item {\color{white}
-            \textbf{Lesson 1.4:} The same distributions shown as bar charts and
+            \textbf{Lesson 1.4:} the same distributions shown as bar charts and
             pie charts --- tables vs.\ graphs, trade-offs.}
       \item {\color{white}
-            \textbf{Unit 2:} Two-way tables extend today's one-way tables to
+            \textbf{Unit 2:} two-way tables extend today's one-way tables to
             two categorical variables.}
       \item {\color{white}
-            \textbf{Unit 4:} Relative frequency $=$ experimental probability ---
+            \textbf{Unit 4:} relative frequency $=$ experimental probability ---
             the arithmetic is identical.}
     \end{itemize}
 
