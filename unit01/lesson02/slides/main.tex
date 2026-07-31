@@ -319,26 +319,25 @@
     \vspace{0.6em}
 
     \setlength{\tabcolsep}{8pt}
-    \renewcommand{\arraystretch}{1.7}
-    \begin{tabular}{@{} >{\bfseries\color{navy}}p{0.22\textwidth}
-                        p{0.36\textwidth}
-                        p{0.32\textwidth} @{}}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{} >{\bfseries\leavevmode\color{navy}}p{0.20\textwidth}
+                        p{0.30\textwidth}
+                        p{0.38\textwidth} @{}}
       \rowcolor{sky}
       Variable & Why it looks quantitative & Why it is categorical \\
       \midrule
-      ZIP code       & It's a 5-digit number  & Labels a geographic area; average ZIP = nonsense \\
-      Jersey number  & It's a number on a uniform & Identifies a player; no meaningful arithmetic \\
-      Student ID     & It's a numeric code    & A unique identifier; averaging IDs means nothing \\
-      Phone area code & It's a 3-digit number & Labels a calling region; not a measured amount \\
-      Likert rating (1--5) & Looks like a scale & Equal spacing not guaranteed; context-dependent \\
+      ZIP code       & A 5-digit number      & Labels a place, not an amount \\
+      Jersey number  & A number on a uniform & Identifies a player \\
+      Student ID     & A numeric code        & A unique tag for one person \\
+      Area code      & A 3-digit number      & Labels a calling region \\
+      Likert rating  & Looks like a scale    & Spacing between levels not equal \\
     \end{tabular}
 
-    \vspace{0.5em}
+    \vspace{0.4em}
     \footnotesize\color{slate}
     \textit{The same \textbf{question} can yield different variable types.
-    ``How do students rate the cafeteria?''
-    can be recorded as a 1--5 scale \textbf{or} as ``satisfied / unsatisfied'' ---
-    your choice of measurement determines the variable type.}
+    ``Rate the cafeteria'' can be recorded as a 1--5 scale \textbf{or} as
+    ``satisfied / unsatisfied.''}
   \end{minipage}
 \end{frame}
 }
@@ -360,21 +359,21 @@
 
     \vspace{0.5em}
     \setlength{\tabcolsep}{7pt}
-    \renewcommand{\arraystretch}{1.65}
-    \begin{tabular}{@{} c >{\raggedright\arraybackslash}p{0.38\textwidth}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} c >{\raggedright\arraybackslash}p{0.36\textwidth}
                         >{\centering\arraybackslash}p{0.08\textwidth}
-                        p{0.35\textwidth} @{}}
+                        p{0.37\textwidth} @{}}
       \rowcolor{sky}
       \# & Variable & Type & Reason \\
       \midrule
-      1 & Eye color                        & C   & Labels a category; no arithmetic \\
-      2 & Number of siblings               & QD  & Countable; gaps between values \\
-      3 & Body temperature (\textdegree F) & QC  & Measured; can be any decimal \\
-      4 & Area code                        & C   & Numeric label; averaging meaningless \\
-      5 & Number of words in an essay      & QD  & Count of whole words \\
-      6 & Time to run a mile (min)         & QC  & Measured time; any positive value \\
-      7 & Blood type (A, B, AB, O)         & C   & Places individual into a category \\
-      8 & Annual salary (\$)               & QC  & Measured amount; treated as continuous \\
+      1 & Eye color                        & C   & Labels a category \\
+      2 & Number of siblings               & QD  & Countable whole numbers \\
+      3 & Body temperature (\textdegree F) & QC  & Measured; any decimal \\
+      4 & Area code                        & C   & A label, not an amount \\
+      5 & Number of words in an essay      & QD  & A count of whole words \\
+      6 & Time to run a mile (min)         & QC  & Measured; any positive value \\
+      7 & Blood type (A, B, AB, O)         & C   & Sorts into categories \\
+      8 & Annual salary (\$)               & QC  & Measured amount \\
     \end{tabular}
   \end{minipage}
 \end{frame}
@@ -550,7 +549,7 @@
 
     \vspace{0.6cm}
 
-    \begin{tabular}{@{} >{\bfseries\color{navy}}p{0.12\textwidth}
+    \begin{tabular}{@{} >{\bfseries\leavevmode\color{navy}}p{0.12\textwidth}
                         p{0.80\textwidth} @{}}
       Tip 1: & Use the average test first --- does averaging give a meaningful result? \\[4pt]
       Tip 2: & If quantitative, ask ``Can I count it?'' to decide discrete vs.\ continuous. \\[4pt]
@@ -587,11 +586,12 @@
     \begin{enumerate}
       \setlength{\itemsep}{0.5em}\setlength{\topsep}{0em}
       \item Open your activity worksheet to \textbf{Part 2}.
-      \item Sort the variable cards into three columns on the worksheet:\\[4pt]
-        \hspace{0.8cm}
-        \textbf{\color{greenacc}Categorical} \hspace{1.2cm}
-        \textbf{\color{navy}Quantitative Discrete} \hspace{1.2cm}
-        \textbf{\color{redacc}Quantitative Continuous}
+      \item Sort the variable cards into three columns on the worksheet:\\[6pt]
+        \begin{tabular}{@{}l@{\hspace{0.7cm}}l@{\hspace{0.7cm}}l@{}}
+          \textbf{\color{greenacc}Categorical} &
+          \textbf{\color{navy}Quantitative Discrete} &
+          \textbf{\color{redacc}Quantitative Continuous}
+        \end{tabular}
       \item When your group finishes, compare your sort with a neighboring group.
             Resolve any disagreements before debriefing.
       \item Be ready to defend the cards your group found most contested.
