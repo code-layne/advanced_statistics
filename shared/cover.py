@@ -46,7 +46,7 @@ from pathlib import Path
 # 850x1100 user units at 8.5in x 11in — 100 units to the inch.
 W, H = 850, 1100
 
-COURSE = "AP Statistics"
+COURSE = "Statistics"
 
 GRID  = "#c9c9c9"   # faint grid lines
 EDGE  = "#9a9a9a"   # solid geometry edges
@@ -205,6 +205,7 @@ SYMBOLS = {
     "in": "\u2009\u2208\u2009", "subset": "\u2009\u2282\u2009",
     "subseteq": "\u2009\u2286\u2009",
     "pi": "\u03c0", "theta": "\u03b8", "Delta": "\u0394", "alpha": "\u03b1",
+    "mu": "\u03bc", "sigma": "\u03c3",
     "R": "\u211d", "Q": "\u211a", "Z": "\u2124", "N": "\u2115",
     "quad": "\u2003", "qquad": "\u2003\u2003",
 }
@@ -907,6 +908,137 @@ def build_normal(el: dict) -> tuple[str, float, float]:
     return _caption(g, w, base + 22, el)
 
 
+def build_tally(el: dict) -> tuple[str, float, float]:
+    """A frequency table mid-count: category labels down the left, tally marks
+    in groups of five on the right — the four uprights and the diagonal that
+    closes the gate. This is Topic 1.3's table exactly as the notes draw it."""
+    rows = el["rows"]                       # [(label, count), ...]
+    w = el.get("w", 215)
+    col = el.get("col", 72)                 # label column width
+    rh = el.get("rh", 29)
+    hh = 26                                 # header band
+    h = hh + rh * len(rows)
+
+    g = [f'<rect x="0" y="0" width="{w}" height="{h}" fill="#ffffff" '
+         f'stroke="{EDGE}" stroke-width="1.3"/>',
+         path(f"M0 {hh}H{w}", stroke=EDGE, width=1.1),
+         path(f"M{col} 0V{h}", stroke=EDGE, width=1.1),
+         label(col / 2, 17, el.get("h1", "Pet"), 12),
+         label(col + (w - col) / 2, 17, el.get("h2", "Tally"), 12)]
+
+    y = hh
+    for name, count in rows:
+        cy = y + rh / 2
+        g.append(label(col / 2, cy + 4, name, 12, fill=TXT2))
+        x = col + 12
+        left = count
+        while left > 0:
+            k = min(5, left)
+            left -= k
+            n_up = 4 if k == 5 else k
+            for i in range(n_up):
+                g.append(path(f"M{x + i * 5.5:.1f} {cy - 7:.1f}V{cy + 7:.1f}",
+                              stroke=CURVE, width=1.5, cap="round"))
+            if k == 5:
+                g.append(path(f"M{x - 3:.1f} {cy + 6:.1f}"
+                              f"L{x + 3 * 5.5 + 3:.1f} {cy - 6:.1f}",
+                              stroke=CURVE, width=1.5, cap="round"))
+            x += n_up * 5.5 + 10
+        y += rh
+        if y < h - 1:
+            g.append(path(f"M0 {y}H{w}", stroke=GRID, width=0.8))
+    return _caption(g, w, h, el)
+
+
+def build_split(el: dict) -> tuple[str, float, float]:
+    """Discrete vs. continuous, side by side: a lollipop plot against a smooth
+    curve — Topic 1.2's distinction drawn rather than defined."""
+    w, h = el.get("w", 300), el.get("h", 116)
+    half = (w - 26) / 2
+    base = h - 22
+    amp = base - 12
+    g = []
+
+    # Left: discrete — stems with dots, a roughly mound-shaped count.
+    heights = el.get("bars", [0.14, 0.34, 0.62, 0.86, 1.0, 0.78, 0.52, 0.28, 0.12])
+    g.append(path(f"M0 {base}H{half:.1f}", stroke=AXIS, width=1.2))
+    for i, f in enumerate(heights):
+        x = half * (i + 0.5) / len(heights)
+        top = base - amp * f
+        g.append(path(f"M{x:.1f} {base}V{top:.1f}", stroke=CURVE, width=1.6))
+        g.append(f'<circle cx="{x:.1f}" cy="{top:.1f}" r="2.6" fill="{CURVE}"/>')
+    g.append(label(half / 2, base + 15, "discrete", 12))
+
+    # Right: continuous — the same mound with the gaps closed.
+    x1 = half + 26
+    g.append(path(f"M{x1:.1f} {base}H{w:.1f}", stroke=AXIS, width=1.2))
+    pts = []
+    for i in range(97):
+        z = -2.9 + 5.8 * i / 96
+        pts.append((x1 + half * i / 96, base - amp * math.exp(-z * z / 2)))
+    g.append(polyline(pts, stroke=CURVE, width=2.0))
+    g.append(label(x1 + half / 2, base + 15, "continuous", 12))
+    return _caption(g, w, h, el)
+
+
+def build_meme(el: dict) -> tuple[str, float, float]:
+    """The normal/paranormal distribution joke: a normal curve with a ghost
+    haunting the right half. Drawn in the sheet's own line weight, white-filled
+    only where the ghost occludes the curve."""
+    w = el.get("w", 250)
+    bh = el.get("h", 104)                   # curve area height
+    amp = bh - 12
+    g = []
+
+    # The curve, on a ticked base line.
+    pts = []
+    for i in range(121):
+        z = -3.2 + 6.4 * i / 120
+        pts.append((w * i / 120, bh - amp * math.exp(-z * z / 2)))
+    g.append(polyline(pts, stroke=CURVE, width=2.0))
+    g.append(path(f"M0 {bh}H{w}", stroke=AXIS, width=1.2))
+    for i in range(1, 12):
+        x = w * i / 12
+        g.append(path(f"M{x:.1f} {bh - 3:.1f}V{bh + 3:.1f}", stroke=AXIS, width=1))
+
+    # The ghost, centred under the peak, looking to its half of the page.
+    # Small enough that the curve's peak clears its dome — white-filled, it
+    # would otherwise swallow the very shape it is haunting.
+    gx, r = w / 2, 17
+    yt = bh - amp + 34                      # top of the dome, under the curve
+    yb = bh - 4
+    scallop = 2 * r / 3
+    d = (f"M{gx - r:.1f} {yt + r:.1f}"
+         f"A{r} {r} 0 0 1 {gx + r:.1f} {yt + r:.1f}"
+         f"L{gx + r:.1f} {yb:.1f}")
+    for i in range(3):                      # wavy hem, right to left
+        x0 = gx + r - scallop * i
+        d += (f"Q{x0 - scallop / 2:.1f} {yb - 9:.1f} "
+              f"{x0 - scallop:.1f} {yb:.1f}")
+    d += "Z"
+    g.append(path(d, stroke=CURVE, width=2.0, fill="#ffffff"))
+    # A hand on the curve, as if peeking over it.
+    g.append(path(f"M{gx + r - 2:.1f} {yt + r + 8:.1f}"
+                  f"Q{gx + r + 10:.1f} {yt + r + 3:.1f} "
+                  f"{gx + r + 8:.1f} {yt + r + 13:.1f}",
+                  stroke=CURVE, width=1.8, cap="round"))
+    # Side-eye to the right, and a small worried mouth.
+    for ex in (gx - 3, gx + 6):
+        g.append(f'<ellipse cx="{ex:.1f}" cy="{yt + r * 0.75:.1f}" rx="2.1" '
+                 f'ry="3.3" fill="{CURVE}"/>')
+    g.append(f'<ellipse cx="{gx + 2.5:.1f}" cy="{yt + r * 1.35:.1f}" rx="2.8" '
+             f'ry="3.8" fill="none" stroke="{CURVE}" stroke-width="1.5"/>')
+
+    # The caption halves, then the punchline.
+    g.append(label(w * 0.25, bh + 16, "normal", 12, fill=TXT2))
+    g.append(label(w * 0.75, bh + 16, "paranormal", 12, fill=TXT2))
+    fam, _, _ = FONTS["serif"]
+    g.append(f'<text x="{w / 2:.1f}" y="{bh + 44:.1f}" font-family="{fam}" '
+             f'font-size="23" letter-spacing="3" fill="{TXT}" '
+             f'text-anchor="middle">DISTRIBUTION</text>')
+    return "".join(g), w, bh + 52
+
+
 # ── Contexts ─────────────────────────────────────────────────────────────────
 # A statistics dataset is always about something. The numbers on this cover are
 # sleep hours, commute times, rainfall, free throws — and a cover that draws the
@@ -1177,6 +1309,9 @@ BUILDERS = {
     "histogram": build_histogram,
     "scatter": build_scatter,
     "normal": build_normal,
+    "tally": build_tally,
+    "split": build_split,
+    "meme": build_meme,
 }
 
 
@@ -1225,7 +1360,8 @@ def auto_place(elements: list[dict], seed: int = 7) -> list[dict]:
         el = dict(el)
         if "tilt" not in el and "skew" not in el:
             if el["type"] in ("graph", "slab", "sets", "dotplot", "boxplot",
-                              "histogram", "scatter", "normal", "scene"):
+                              "histogram", "scatter", "normal", "scene",
+                              "tally", "split"):
                 el["skew"] = SKEWS[i % len(SKEWS)]
             else:
                 el["tilt"] = TILTS[i % len(TILTS)]
