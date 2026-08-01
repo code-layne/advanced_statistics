@@ -18,7 +18,11 @@
 #   TEXINPUTS=... paginate.sh MERGED WORKDIR SELF... -- OTHER...
 #
 # MERGED   the merged packet, rewritten in place
-# WORKDIR  scratch directory for the xelatex run and its log
+# WORKDIR  scratch directory for the xelatex run and its log. The run always
+#          writes paginated.pdf/.aux/.log here, so every concurrent invocation
+#          needs a WORKDIR of its own — the student and key packets of one
+#          lesson are separate make targets and do run at the same time under
+#          -j. Sharing one directory makes them delete each other's output.
 # SELF     the piece PDFs that were merged, in merge order
 # OTHER    the counterpart packet's pieces, same order, 1:1 with SELF
 #

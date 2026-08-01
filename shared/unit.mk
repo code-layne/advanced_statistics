@@ -29,8 +29,12 @@ LATEXFLAGS   = -xelatex \
                -halt-on-error \
                -file-line-error
 
-PAGINATE_SH  := $(PROJECT_ROOT)/shared/paginate.sh
-PAGINATE_DIR := $(PROJECT_ROOT)/target/$(UNIT)/.paginate
+# One scratch dir per packet — see the same note in shared/lesson.mk. paginate.sh
+# writes a fixed paginated.pdf/.aux/.log into the directory it is handed, so two
+# concurrent invocations must never share one.
+PAGINATE_SH          := $(PROJECT_ROOT)/shared/paginate.sh
+PAGINATE_STUDENT_DIR := $(PROJECT_ROOT)/target/$(UNIT)/.paginate-student
+PAGINATE_KEY_DIR     := $(PROJECT_ROOT)/target/$(UNIT)/.paginate-key
 
 # Auto-discover lessons that have a Makefile, in sorted order.
 LESSONS := $(patsubst %/Makefile,%,$(sort $(wildcard lesson*/Makefile)))
@@ -163,7 +167,7 @@ student: _binder_cover _unit_cover _sample_test
 	if [ -n "$$(echo $$student_list)" ]; then \
 	  pdfunite $$student_list $(COMPILED_DIR)/$(UNIT)_student.pdf; \
 	  TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(COMPILED_DIR)/$(UNIT)_student.pdf \
-	      $(PAGINATE_DIR) $$student_list -- $$key_list; \
+	      $(PAGINATE_STUDENT_DIR) $$student_list -- $$key_list; \
 	  echo "✓  Unit student packet → target/compiled/$(UNIT)_student.pdf (paginated $(UNIT)-wide)"; \
 	else \
 	  echo "  (no student PDFs found for $(UNIT))"; \
@@ -177,7 +181,7 @@ key: _binder_cover _unit_cover _sample_test _sample_test_key
 	if [ -n "$$(echo $$key_list)" ]; then \
 	  pdfunite $$key_list $(COMPILED_DIR)/$(UNIT)_key.pdf; \
 	  TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(COMPILED_DIR)/$(UNIT)_key.pdf \
-	      $(PAGINATE_DIR) $$key_list -- $$student_list; \
+	      $(PAGINATE_KEY_DIR) $$key_list -- $$student_list; \
 	  echo "✓  Unit key packet     → target/compiled/$(UNIT)_key.pdf (page-for-page with the student packet)"; \
 	else \
 	  echo "  (no key PDFs found for $(UNIT))"; \
@@ -193,7 +197,8 @@ full:
 
 clean:
 	@for l in $(LESSONS); do $(MAKE) -C $$l clean; done
-	rm -rf $(PROJECT_ROOT)/target/$(UNIT)/unit_cover $(PAGINATE_DIR)
+	rm -rf $(PROJECT_ROOT)/target/$(UNIT)/unit_cover \
+	       $(PAGINATE_STUDENT_DIR) $(PAGINATE_KEY_DIR)
 	rm -f $(BINDER_COVER_PDF) $(UNIT_COVER_PDF) $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)
 	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_key.pdf \
 	      $(COMPILED_DIR)/$(UNIT)_full.pdf
