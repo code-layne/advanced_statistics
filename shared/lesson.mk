@@ -113,8 +113,15 @@ PYTHON       ?= python3
 PPTX_DPI     ?= 300
 
 # Packet-wide pagination + recto starts + student/key alignment.
-PAGINATE_SH  := $(PROJECT_ROOT)/shared/paginate.sh
-PAGINATE_DIR := $(PDF_DIR)/.paginate
+#
+# One scratch dir per packet, never one shared between them. `student` and `key`
+# are independent targets that run concurrently under -j, and paginate.sh writes
+# a fixed paginated.pdf/.aux/.log into whatever directory it is handed — sharing
+# one meant each packet clobbered the other's output mid-run and the loser died
+# on `mv: .../paginated.pdf: No such file or directory`.
+PAGINATE_SH          := $(PROJECT_ROOT)/shared/paginate.sh
+PAGINATE_STUDENT_DIR := $(PDF_DIR)/.paginate-student
+PAGINATE_KEY_DIR     := $(PDF_DIR)/.paginate-key
 
 # ── Targets ───────────────────────────────────────────────────────────────────
 # `slides` and `pptx` are .PHONY, so the slides/ directory never shadows them.
@@ -180,7 +187,7 @@ student: $(ALIGN_STAMPS)
 ifneq ($(strip $(STUDENT_PDFS)),)
 	@mkdir -p $(COMPILED_DIR)
 	pdfunite $(STUDENT_PDFS) $(STUDENT_OUT)
-	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(STUDENT_OUT) $(PAGINATE_DIR) \
+	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(STUDENT_OUT) $(PAGINATE_STUDENT_DIR) \
 	    $(STUDENT_PDFS) -- $(KEY_PDFS)
 	@echo "✓  Student packet → target/compiled/$(UNIT)/$(LESSON)_student.pdf (paginated $(LESSON)-wide, components start recto)"
 else
@@ -191,7 +198,7 @@ key: $(ALIGN_STAMPS)
 ifneq ($(strip $(KEY_PDFS)),)
 	@mkdir -p $(COMPILED_DIR)
 	pdfunite $(KEY_PDFS) $(KEY_OUT)
-	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(KEY_OUT) $(PAGINATE_DIR) \
+	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(KEY_OUT) $(PAGINATE_KEY_DIR) \
 	    $(KEY_PDFS) -- $(STUDENT_PDFS)
 	@echo "✓  Key packet     → target/compiled/$(UNIT)/$(LESSON)_key.pdf (page-for-page with the student packet)"
 else
