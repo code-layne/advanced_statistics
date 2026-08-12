@@ -2,22 +2,167 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+% Vocab row — the vocabpar fix. \par on BOTH ends so a term label is never dragged
+% onto the previous answer's dotted line. Same arity and same geometry as the blank's
+% \vocabterm: two answer lines here where the blank reserves two write-lines, so the
+% call sites below are byte-identical with the blank and cannot drift in height.
+\newcommand{\vocabterm}[3]{%
+  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \ansline{#2}\\[1pt]\ansline{#3}\\[3pt]\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Guided Notes --- Answer Key}
 
-
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Guided Notes].
+\boxguard[20]
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\par\vspace{2pt}
+\vocabterm{Statistics}
+  {The science of collecting, organizing, analyzing, and drawing conclusions}
+  {from data --- the whole process, not just the arithmetic.}
+\vocabterm{Data}
+  {Recorded values together with the context that gives them meaning.}
+  {Values with no context are just numbers, not data.}
+\vocabterm{Individual}
+  {The person, animal, or object described by one row of a data set.}
+  {Ask: ``who or what is one of these?''}
+\vocabterm{Variable}
+  {A characteristic recorded for each individual, which takes different}
+  {values for different individuals. It is a column heading, not a value.}
+\end{vocabbox}
+
+\vspace{0.14in}
+
 \boxguard
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{1. A Number Alone Tells You Nothing}
+\small
+The number \textbf{68} could be a test score, a temperature, a heart rate, or a height.
+Until we say what it measures, it carries \ans{no} information.
+
+\vspace{6pt}
+\textbf{Essential Knowledge (VAR-1.A.1):} Numbers may convey meaningful information
+\emph{when placed in} \ans{context}.
+
+\vspace{8pt}
+Before a number becomes data, we answer the \textbf{W questions}:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}l X @{}}
+\hline
+Who?   & \ans{Seven students in this class.} \\
+What?  & \ans{Their height.} \\
+Units? & \ans{Inches.} \\
+When \& Where? & \ans{Today, in this classroom.} \\
+\hline
+\end{tabularx}
+
+\vspace{6pt}
+Now reread the warm-up numbers as \emph{heights, in inches, of seven students in this
+class.} The same seven numbers now answer a question.
 \end{notesbox}
+
+\vspace{0.14in}
+
+\boxguard[30]
+\begin{notesbox}{2. Individuals and Variables}
+\small
+A shelter records these facts about the dogs currently available:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Adopted?} \\
+\hline
+Biscuit & Beagle    & 3 & 24 & Yes \\
+Momo    & Terrier   & 1 & 15 & No  \\
+Ranger  & Shepherd  & 5 & 61 & Yes \\
+Pepper  & Retriever & 2 & 55 & No  \\
+\hline
+\end{tabularx}
+
+\vspace{10pt}
+Each \textbf{row} is one \ans{individual}. \qquad
+Each \textbf{column} is one \ans{variable}.
+
+\vspace{8pt}
+How many individuals are shown? \ans{4} \qquad
+How many variables are recorded? \ans{5}
+
+\vspace{8pt}
+\textbf{Careful --- a variable is not a value.}\\[2pt]
+``Beagle'' is a \ans{value} of the variable \ans{Breed}.
+
+\vspace{8pt}
+\textbf{Why does any of this matter?} If every dog weighed exactly the same, we would
+need only one dog to know everything about weight. Because the values
+\ans{differ}, we need data. That fact has a name:
+
+\vspace{4pt}
+\hspace*{1.2em}\textbf{\textcolor{navy}{Variability:}}\\[1pt]
+\ansline{Values of a variable differ from one individual to the next.}
+\end{notesbox}
+
+\vspace{0.14in}
+
+\boxguard[24]
+\begin{notesbox}{3. What Makes a Question Statistical?}
+\small
+A \textbf{statistical question} passes \emph{both} checks:
+
+\vspace{6pt}
+\hspace*{1.2em}\textbf{Check 1.} Will the answers \ans{differ} across individuals?\\[4pt]
+\hspace*{1.2em}\textbf{Check 2.} Would I have to \ans{collect data} to answer it?
+
+\vspace{10pt}
+Mark each question \textbf{S} (statistical) or \textbf{N} (not statistical).
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} X C{2.4cm} @{}}
+\hline
+\textbf{Question} & \textbf{S or N} \\
+\hline
+How many minutes did I sleep last night?          & \ans{N} \\
+How many minutes do students at our school sleep? & \ans{S} \\
+What is the weight of Ranger, the shepherd?       & \ans{N} \\
+How do the weights of shelter dogs vary?          & \ans{S} \\
+\hline
+\end{tabularx}
+
+\vspace{8pt}
+Choose one question you marked \textbf{N}. What single change would make it
+statistical?\\[4pt]
+\ansline{``What is the weight of Ranger?'' asks about one dog, so it has one answer.}\\[1pt]\ansline{Change it to ``How do the weights of the shelter's dogs vary?'' --- now they differ.}
+\end{notesbox}
+
+\vspace{0.14in}
+
+\boxguard[15]
+\begin{practicebox}
+\small
+A gym records the resting heart rate, in beats per minute, of each of its 120 members
+on the morning they join.
+
+\vspace{8pt}
+\textbf{(a)} The individuals are \ans{the 120 gym members}.
+
+\vspace{6pt}
+\textbf{(b)} The variable is \ans{resting heart rate}, measured in \ans{beats per minute}.
+
+\vspace{6pt}
+\textbf{(c)} Write one statistical question this data set could answer.\\[4pt]
+\ansline{``How do the resting heart rates of the gym's members vary?'' The answers}\\[1pt]\ansline{differ from member to member, and data must be collected to find them.}
+
+\vspace{6pt}
+\textbf{(d)} Write one question about these members that is \emph{not} statistical.\\[4pt]
+\ansline{``What is member \#7's resting heart rate?'' --- one member, one answer.}
+\end{practicebox}
 
 \end{document}

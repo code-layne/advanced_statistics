@@ -2,24 +2,120 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Homework}
 
-
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
-% when the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
-% the _key: the blank reserves its exact height, the key prints it. That is what keeps
-% this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\boxguard[30]
+\begin{scenariobox}[The Shelter Data Set]{navy}
+\small
+A county animal shelter posts this table of the dogs currently available for adoption.
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Days at shelter} \\
+\hline
+Biscuit & Beagle    & 3 & 24 & 12 \\
+Momo    & Terrier   & 1 & 15 & 44 \\
+Ranger  & Shepherd  & 5 & 61 &  6 \\
+Pepper  & Retriever & 2 & 55 & 21 \\
+Sage    & Beagle    & 7 & 27 & 59 \\
+Tuck    & Mixed     & 4 & 38 &  9 \\
+Willow  & Terrier   & 2 & 17 & 33 \\
+Zeke    & Shepherd  & 6 & 70 & 15 \\
+\hline
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.18in]
+
+  \item \textbf{Individuals and variables.}
+        \vspace{4pt}
+
+        \textbf{(a)} One individual in this data set is \blank{6cm}.
+
+        \vspace{6pt}
+        \textbf{(b)} There are \blank{1.6cm} individuals and \blank{1.6cm} variables.
+
+        \vspace{6pt}
+        \textbf{(c)} ``Shepherd'' is a \blank{3cm} of the variable \blank{3cm}.
+
+        \vspace{6pt}
+        \textbf{(d)} Name one characteristic of these dogs that is \emph{not} recorded
+        here but could have been.\\[4pt]
+        \writeline
+
+  \item \textbf{Statistical or not?} Mark each \textbf{S} or \textbf{N}.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.75}
+        \begin{tabularx}{\linewidth}{@{} X C{2.2cm} @{}}
+        \hline
+        \textbf{Question} & \textbf{S or N} \\
+        \hline
+        How much does Zeke weigh?                              & \blank{1.3cm} \\
+        How do the weights of the shelter's dogs vary?         & \blank{1.3cm} \\
+        How many dogs are listed in the table?                 & \blank{1.3cm} \\
+        How long do dogs typically wait to be adopted?         & \blank{1.3cm} \\
+        Is Momo a terrier?                                     & \blank{1.3cm} \\
+        Do heavier dogs tend to wait longer than lighter ones? & \blank{1.3cm} \\
+        \hline
+        \end{tabularx}
+
+        \vspace{8pt}
+        Pick one question you marked \textbf{N} and rewrite it so that it becomes
+        statistical.\\[4pt]
+        \writeline\\[1pt]\writeline
+
+  \item \textbf{A claim with no context.} A flyer on the shelter door reads:
+
+        \vspace{6pt}
+        \begin{center}
+        {\large\bfseries\color{navy} ``Our dogs go home in 25 days.''}
+        \end{center}
+
+        \vspace{6pt}
+        \textbf{(a)} List \textbf{three} W questions the flyer fails to answer.\\[4pt]
+        \writeline\\[1pt]\writeline\\[1pt]\writeline
+
+        \vspace{6pt}
+        \textbf{(b)} Using the table above, give one specific reason a visitor should
+        not expect \emph{their} dog to go home in 25 days.\\[4pt]
+        \writeline\\[1pt]\writeline
+
+  \item \textbf{Write your own.} Write one statistical question about the shelter data
+        set, and say exactly what varies in it.\\[4pt]
+        \writeline\\[1pt]\writeline
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[14]
+\begin{reflectionbox}
+\small
+Statistics exists because values differ. Suppose they did not --- suppose every dog at
+the shelter had the same weight, the same age, and the same wait. What would be left for
+a statistician to do, and why?\\[4pt]
+\writeline\\[1pt]\writeline\\[1pt]\writeline
+\end{reflectionbox}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Find a number reported in a news headline this week. Write down the headline, then list
+every piece of context it leaves out. Finish by writing the statistical question the
+study behind it must have asked.\\[4pt]
+\writeline\\[1pt]\writeline
+\end{extensionbox}
 
 \end{document}

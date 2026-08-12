@@ -2,22 +2,120 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Homework --- Answer Key}
 
-
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\boxguard[30]
+\begin{scenariobox}[The Shelter Data Set]{navy}
+\small
+A county animal shelter posts this table of the dogs currently available for adoption.
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Days at shelter} \\
+\hline
+Biscuit & Beagle    & 3 & 24 & 12 \\
+Momo    & Terrier   & 1 & 15 & 44 \\
+Ranger  & Shepherd  & 5 & 61 &  6 \\
+Pepper  & Retriever & 2 & 55 & 21 \\
+Sage    & Beagle    & 7 & 27 & 59 \\
+Tuck    & Mixed     & 4 & 38 &  9 \\
+Willow  & Terrier   & 2 & 17 & 33 \\
+Zeke    & Shepherd  & 6 & 70 & 15 \\
+\hline
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.18in]
+
+  \item \textbf{Individuals and variables.}
+        \vspace{4pt}
+
+        \textbf{(a)} One individual in this data set is \ans{one dog, e.g.\ Sage}.
+
+        \vspace{6pt}
+        \textbf{(b)} There are \ans{8} individuals and \ans{5} variables.
+
+        \vspace{6pt}
+        \textbf{(c)} ``Shepherd'' is a \ans{value} of the variable \ans{Breed}.
+
+        \vspace{6pt}
+        \textbf{(d)} Name one characteristic of these dogs that is \emph{not} recorded
+        here but could have been.\\[4pt]
+        \ansline{Sex, color, height, or whether the dog is house-trained. (Any reasonable one.)}
+
+  \item \textbf{Statistical or not?} Mark each \textbf{S} or \textbf{N}.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.75}
+        \begin{tabularx}{\linewidth}{@{} X C{2.2cm} @{}}
+        \hline
+        \textbf{Question} & \textbf{S or N} \\
+        \hline
+        How much does Zeke weigh?                              & \ans{N} \\
+        How do the weights of the shelter's dogs vary?         & \ans{S} \\
+        How many dogs are listed in the table?                 & \ans{N} \\
+        How long do dogs typically wait to be adopted?         & \ans{S} \\
+        Is Momo a terrier?                                     & \ans{N} \\
+        Do heavier dogs tend to wait longer than lighter ones? & \ans{S} \\
+        \hline
+        \end{tabularx}
+
+        \vspace{8pt}
+        Pick one question you marked \textbf{N} and rewrite it so that it becomes
+        statistical.\\[4pt]
+        \ansline{``How much does Zeke weigh?'' names one dog, so it has one answer. Rewrite:}\\[1pt]\ansline{``How do the weights of the shelter's dogs vary?'' --- now the answers differ.}
+
+  \item \textbf{A claim with no context.} A flyer on the shelter door reads:
+
+        \vspace{6pt}
+        \begin{center}
+        {\large\bfseries\color{navy} ``Our dogs go home in 25 days.''}
+        \end{center}
+
+        \vspace{6pt}
+        \textbf{(a)} List \textbf{three} W questions the flyer fails to answer.\\[4pt]
+        \ansline{1. WHO --- which dogs, and how many of them went into this figure?}\\[1pt]\ansline{2. WHAT --- is 25 an average, a typical wait, or the longest anyone waited?}\\[1pt]\ansline{3. WHEN --- over what period was this measured? Adoption rates change.}
+
+        \vspace{6pt}
+        \textbf{(b)} Using the table above, give one specific reason a visitor should
+        not expect \emph{their} dog to go home in 25 days.\\[4pt]
+        \ansline{The waits in the table run from 6 days to 59 days --- they vary widely.}\\[1pt]\ansline{A single summary number describes the group, not any one dog.}
+
+  \item \textbf{Write your own.} Write one statistical question about the shelter data
+        set, and say exactly what varies in it.\\[4pt]
+        \ansline{``How do the ages of the shelter's dogs vary?'' What varies is the age,}\\[1pt]\ansline{in years, from one dog to the next --- it ranges from 1 to 7 in this table.}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[14]
+\begin{reflectionbox}
+\small
+Statistics exists because values differ. Suppose they did not --- suppose every dog at
+the shelter had the same weight, the same age, and the same wait. What would be left for
+a statistician to do, and why?\\[4pt]
+\ansline{Almost nothing. If every dog were identical, measuring one dog would tell you}\\[1pt]\ansline{everything about all of them --- no summary, graph, or sample would be needed.}\\[1pt]\ansline{Statistics is the study of variability, so with no variability there is no work.}
+\end{reflectionbox}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Find a number reported in a news headline this week. Write down the headline, then list
+every piece of context it leaves out. Finish by writing the statistical question the
+study behind it must have asked.\\[4pt]
+\ansline{Answers vary. Look for: the individuals named, the variable and its units,}\\[1pt]\ansline{and a question whose answers differ across individuals rather than one value.}
+\end{extensionbox}
 
 \end{document}
