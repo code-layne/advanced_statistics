@@ -1,330 +1,93 @@
-%! AP Statistics — Unit 1, Lesson 4
+%! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Lesson Plan
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-% Load the shared box/colour package rather than re-declaring skillbox and the
-% palette locally: teachernote (used by the migrated teacher notes below) is
-% defined in apstats-boxes, and a local copy of the palette silently diverges
-% from shared/apstats-colors.sty.
+\usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-% Teacher notes quote expected answers, so the plan needs \ans. Defining it
-% here rather than loading apstats-key, which would also flip every `work`
-% block visible.
-\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.4: Describing the Distribution of a Quantitative Variable}
 
 \begin{document}
-\def\CourseName{Statistics}
-\def\SchoolYear{2026--2027}
-\def\MeetingLength{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.4: Representing a Categorical Variable with Graphs}
-
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct and interpret bar charts and pie charts
-    for categorical variables. Students will evaluate graphs for accuracy, appropriate labeling,
-    and misleading features, and will explain when each graph type is most appropriate (Big Idea: UNC).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\boxguard
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 2 --- Data Analysis}
-    \begin{itemize}
-        \item Construct a correctly labeled bar chart (with frequency or relative frequency on the vertical axis).
-        \item Interpret bar charts and pie charts in context, describing what the display reveals about the distribution.
-        \item Identify misleading features of a graph (e.g., non-zero axis, 3-D distortion, inconsistent scale).
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
-    \begin{itemize}
-        \item Bar charts are versatile and easy to compare; pie charts show part-to-whole relationships.
-        \item The vertical axis of a bar chart should start at 0; otherwise the display is misleading.
-        \item Unlike histograms (Lesson 1.5), bars in a bar chart do \textit{not} touch --- categories have no inherent order.
-    \end{itemize}
-\end{minipage}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Bar chart (bar graph)} --- bars whose heights represent frequencies or relative frequencies for each category; bars do not touch
-        \item \textbf{Pie chart} --- a circle divided into sectors proportional to relative frequencies
-        \item \textbf{Segmented bar chart} --- bars divided into segments to show the composition of each group (useful for comparison)
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Frequency bar chart} --- vertical axis shows counts
-        \item \textbf{Relative frequency bar chart} --- vertical axis shows proportions or percentages (preferred for comparison)
-        \item \textbf{Misleading graph} --- a visual that distorts or exaggerates differences through scale manipulation, 3-D effects, or inappropriate graph type
-    \end{itemize}
-\end{minipage}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Display the relative frequency table from Lesson 1.3. Ask: ``If I want to \textit{see} the distribution quickly, what shape would I draw?'' Accept student suggestions. Today we formalize two of them.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
-    \begin{itemize}
-        \item Relative frequencies from Lesson 1.3 become bar heights or pie-slice sizes.
-        \item Segmented bar charts resurface in Unit 2 for comparing two categorical variables.
-        \item AP exam free-response often asks students to construct \textit{and} interpret a graph --- both skills matter.
-    \end{itemize}
-\end{minipage}
+    \begin{minipage}[t]{0.48\linewidth}
+        % TODO: prior knowledge bullets (Units/lessons reviewed)
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+            % TODO: spiral-review thumbnail. Authored warm-ups compile to
+            % target/, so leave this text-only (as in AP Stats) unless you
+            % keep a source PDF in the warmup/ directory to embed.
+        % TODO: connections forward (upcoming lessons)
+    \end{minipage}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Display two ``bad'' graphs from real media (e.g., a bar chart with a non-zero y-axis, or a 3-D pie chart). Ask: ``What's wrong here? Does this graph make one option look more popular than it really is?'' Discuss that graphs can \textit{lie} even with correct data.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item Model constructing a bar chart by hand from a frequency table (title, labeled axes, correct scale starting at 0, bars not touching).
-        \item Show both frequency and relative frequency versions of the same data.
-        \item Demonstrate a pie chart: compute degree measures ($\text{relative frequency} \times 360^\circ$); label each sector.
-        \item Compare: when is each graph type preferred?
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Emphasize the AP grading standard: a graph must have a title, labeled axes (with units), and a scale.
-        \item Contrast bar chart vs.\ histogram: ``today's bars don't touch because categories are separate; next lesson, histogram bars touch because the data are continuous.''
-        \item Walk through interpreting a bar chart: identify the modal category, notice large vs.\ small bars, and write a description.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item As students sketch graphs in guided practice, check: Is the y-axis labeled? Does it start at 0? Are bars separated?
-        \item Common error: making the bars touch (histogram instinct). Reinforce: categories $\to$ no touching.
-        \item Ask: ``Is your graph truthful? Would it mislead a reader?''
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\boxguard
+\begin{skillbox}[Active Monitoring]{redbox}
+    % TODO: what to circulate and check for; cold-call prompts.
+\end{skillbox}
+
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Groups receive a relative frequency table (preferred streaming service, 5 categories). Each group:
-    \begin{enumerate}
-        \item Constructs a relative frequency bar chart.
-        \item Writes a 2-sentence interpretation.
-        \item Identifies one change that would make the graph misleading.
-        \item (Optional) Sketches a pie chart and computes sector angles.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide a pre-drawn axis template; students only fill in bars and labels.
-        \item \textit{Extension}: Students find and critique a real published graph (from news or social media) and rewrite the description as an AP-quality response.
-        \item \textit{Technology}: If available, students create the graph in a spreadsheet app and compare to their hand-drawn version.
-    \end{itemize}
-\end{minipage}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    A survey of 80 adults found: 32 watch news, 20 watch sports, 16 watch reality TV, 12 watch other. Students: (1) construct a relative frequency bar chart (sketch), (2) describe the distribution in one sentence, (3) identify one way someone could redraw the graph to be misleading.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``Describe what the bar chart reveals about the preferred TV genre for these adults. Use the graph and relevant statistics in your response.''}\\[4pt]
-    Assess: does the student \textit{refer to the graph}, include proportions, and use context?
-\end{minipage}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Construct a bar chart from a provided frequency table and write a complete description.
-        \item Critique one of the ``bad graph'' examples shown in class: explain what is misleading and how to fix it.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Research ``lying with statistics'' or ``misleading graphs'' and bring one example to class.
-        \item \textit{Preview}: Lesson 1.5 moves to \textit{quantitative} variables --- the displays look similar but have important differences (touching bars, meaningful order). Notice: what changes when data are numerical?
-    \end{itemize}
-\end{minipage}
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
-
-% ── Teacher notes (migrated from the component keys) ──
-% One per component, titled for it. They live here rather than in the _key
-% files so that every component is the same length blank and keyed.
-
-\boxguard
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
+% no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-The goal here is to surface students' prior knowledge (middle-school bar
-charts) and activate thinking before formal instruction. Do not evaluate
-the sketch quality --- just look for intent to compare categories visually.
+    % TODO: pacing, what to look for, common errors.
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Guided Notes (1)]
-Prompt: ``If the axis started at 0, would the bars look so different?'' Have
-students sketch both versions mentally. Product X: 970/1000 bar height vs.\
-Product Y: 1000/1000 --- barely distinguishable.
+\begin{teachernote}[Guided Notes]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Guided Notes (2)]
-Correct bar chart: 5 separated bars labeled Dog, Cat, Fish, Bird, None on x-axis.
-Y-axis labeled ``Relative Frequency'' (or ``Proportion''), scale 0 to 0.35
-(or 0 to 35\%), tick marks at 0, 0.05 (5\%), 0.10, etc.
-Title: e.g., ``Distribution of Pet Type for 40 Households.''
-Bars: Dog 0.30, Cat 0.20, Fish 0.15, Bird 0.10, None 0.25.
-Bars must NOT touch.
+\begin{teachernote}[Group Activity]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Guided Notes (3)]
-Require: total $n$, variable in context, most common and least common categories
-with relative frequencies. Deduct if student writes only counts.
+\begin{teachernote}[Exit Ticket]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Guided Notes (4)]
-Correct bar chart: 4 bars for News (tallest, 40\%), Sports (25\%), Reality (20\%),
-Other (shortest, 15\%). Y-axis labeled ``Relative Frequency'' from 0 to at least
-0.40. Bars do not touch. Title present. Accept either decimal or percent axis.
+\begin{teachernote}[Homework]
+    % TODO
 \end{teachernote}
-
-\boxguard
-\begin{teachernote}[Group Activity (1)]
-Angles: Netflix $= 0.42 \times 360 = 151.2^\circ$; Disney+ $= 72^\circ$;
-Hulu $= 64.8^\circ$; HBO Max $= 43.2^\circ$; Other $= 28.8^\circ$.
-Sum $= 360^\circ$. Accept reasonable rounding.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Group Activity (2)]
-\textbf{Correct bar chart:} 5 separated bars labeled Netflix (tallest, 42\%),
-Disney+ (20\%), Hulu (18\%), HBO Max (12\%), Other (shortest, 8\%).
-Y-axis: ``Relative Frequency'' or ``Proportion'', scale 0 to at least 0.45
-(or 0 to 45\%). Bars do NOT touch. Title present (e.g., ``Preferred Streaming
-Service for 50 Statistics Students'').
-
-\textbf{Common errors:} bars touching; y-axis not starting at 0; missing title
-or axis labels; bars arranged in an order other than the table (accept any order,
-but consistent is best).
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Group Activity (3)]
-Require: $n = 50$, variable in context (streaming service), most and least
-common with relative frequencies. Deduct for raw counts only.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Group Activity (4)]
-Students may describe a slightly different scenario (e.g., starting at 5\% or
-10\%). The key reasoning is the same: the y-axis cutoff makes the differences
-look larger than they are. Accept any reasonable specific example.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Group Activity (5)]
-Accept any of the three misleading tricks (non-zero axis, 3-D, inconsistent
-scale), but the non-zero axis is the most commonly tested on AP exams.
-Full credit requires: naming the feature, explaining the effect, and connecting
-to a specific example.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (1)]
-Require: $n = 80$, variable in context, most and least common category with
-relative frequencies. Deduct for missing context or for giving only counts.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (2)]
-Accept any of the three tricks. The response must (1) name the specific
-misleading feature and (2) state the incorrect conclusion a reader would draw.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (3)]
-AP rubric would award credit for: (1) correctly identifying the incompatibility
-of the two y-axes, (2) explaining why counts and relative frequencies cannot be
-compared directly, (3) suggesting a fix. A response that only says ``they use
-different y-axes'' without explaining the implication earns partial credit.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (1)]
-\textbf{Correct bar chart:} 4 separated bars. X-axis: Walk, Car, Bus, Bike (any
-order). Y-axis: ``Relative Frequency'' 0 to at least 0.40 (or 0 to 40\%).
-Bars: Walk 0.40 (tallest), Car and Bus equal at 0.25, Bike 0.10 (shortest).
-Bars do NOT touch. Title present.
-
-Note: Car and Bus have the same height --- students should draw them identically.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (2)]
-Students may be surprised that the headline percentage is technically correct
-while still being paired with a misleading graph. This is a key AP Statistics
-insight: correct statistics can accompany deceptive visuals.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (3)]
-Full credit: $n$ stated; variable in context; most and least common categories
-named with relative frequencies; at least one additional observation (e.g.,
-combined frequencies, comparison).
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (4)]
-Also accept ``White and Black'' ($126 + 90 = 216^\circ$, which is 60\% of
-the circle, not half). The closest pair to exactly half the circle is Silver
-+ Red + Other ($72 + 36 + 36 = 144^\circ$, 40\%) or Black + Silver ($162^\circ$,
-45\%). Accept any reasonable reading of ``almost exactly half.''
-\end{teachernote}
-
 \end{document}

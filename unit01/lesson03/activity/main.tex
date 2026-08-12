@@ -1,143 +1,25 @@
-%! AP Statistics — Unit 1, Lesson 1.3 — Group Activity
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.3}{Group Activity: Frequency Tables \& Fair Comparisons}
+\pageheader{Unit 1, Lesson 1.3}{Group Activity}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-\textbf{Part 1} (group, 8 min): Use the raw data below to build a frequency and
-relative frequency table. Then write a description of the distribution.\\[4pt]
-\textbf{Part 2} (group, 5 min): A second dataset of different size is provided.
-Compare the two distributions using relative frequency.\\[4pt]
-\textbf{Part 3} (individual, 3 min): Reflection question.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-% ── PART 1 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 1 \quad Build the Table}
-
-\vspace{0.1in}
-
-\noindent\small A survey of \textbf{30 middle school students} asks: ``What is your
-favorite sport?'' Results are listed below.
-
-\vspace{0.08in}
-\begin{center}
-\small
-\begin{tabular}{*{6}{p{1.4cm}}}
-Soccer   & Basketball & Baseball  & Soccer     & Swimming & Tennis \\
-Baseball & Soccer     & Swimming  & Basketball & Soccer   & Soccer \\
-Tennis   & Basketball & Soccer    & Swimming   & Baseball & Basketball \\
-Soccer   & Tennis     & Basketball& Soccer     & Swimming & Baseball \\
-Basketball& Soccer    & Tennis    & Basketball & Soccer   & Baseball \\
-\end{tabular}
-\end{center}
-
-\vspace{0.14in}
-
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth}
-                                    C{0.18\linewidth}
-                                    C{0.2\linewidth}
-                                    C{0.24\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Sport} & \textbf{Tally} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-Baseball   & & & \\
-Basketball & & & \\
-Soccer     & & & \\
-Swimming   & & & \\
-Tennis     & & & \\
-\midrule
-\rowcolor{sky}\textbf{Total} & & \blank{2cm} & \blank{2.5cm} \\
-\end{tabularx}
-
-\vspace{0.12in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Does your total equal 30? \blank{1cm}
-        Does your relative frequency column sum to 1? \blank{1cm}
-
-  \item What is the most popular sport and what percentage of students chose it?\\[5pt]
-        \writeline
-
-  \item Write a complete sentence describing the distribution of favorite sport
-        for these 30 students. Include the most and least common categories.\\[5pt]
-        \writeline\\[1pt]\writeline
-\end{enumerate}
-
-\vspace{0.14in}
-
-% ── PART 2 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 2 \quad Compare Two Groups}
-
-\vspace{0.1in}
-
-\noindent\small A separate survey of \textbf{50 high school students} asks the same
-question. The frequency table is partially completed. Fill in the relative frequency
-column and then answer the comparison questions.
-
-\vspace{0.1in}
-
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth}
-                                    C{0.18\linewidth}
-                                    C{0.2\linewidth}
-                                    C{0.24\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Sport} & \textbf{Frequency} & \multicolumn{2}{c}{\textbf{Rel.\ Frequency}} \\
-\midrule
-Baseball   & 8  & \multicolumn{2}{c}{\blank{3cm}} \\
-Basketball & 15 & \multicolumn{2}{c}{\blank{3cm}} \\
-Soccer     & 14 & \multicolumn{2}{c}{\blank{3cm}} \\
-Swimming   & 7  & \multicolumn{2}{c}{\blank{3cm}} \\
-Tennis     & 6  & \multicolumn{2}{c}{\blank{3cm}} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & 50 & \multicolumn{2}{c}{\blank{3cm}} \\
-\end{tabularx}
-
-\vspace{0.12in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item A student says: ``Soccer is the most popular sport in both groups because
-        both tables show soccer near the top.'' Is this a valid comparison?
-        Why or why not?\\[5pt]
-        \writeline\\[1pt]\writeline
-
-  \item \textbf{Using relative frequencies}, which group --- middle school or high
-        school --- shows a stronger preference for basketball? Show your evidence.\\[5pt]
-        \writeline\\[1pt]\writeline
-
-  \item Suppose a third school has 200 students and 60 choose soccer. Is soccer
-        more popular there than in the middle school group? Explain using relative
-        frequency.\\[5pt]
-        \writeline\\[1pt]\writeline
-
-\end{enumerate}
-
-\vspace{0.14in}
-
-% ── PART 3 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 3 \quad Individual Reflection}
-
-\vspace{0.1in}
-
-\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small\textbf{In your own words:} Why is a relative frequency table more useful than
-a frequency table when comparing two groups? Give a specific example from today's
-activity to support your answer.\\[6pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
-\end{tcolorbox}
+% TODO: author the Group Activity. See references/components.md for the expected structure.
+% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
+% when the box opens with an unbreakable TikZ figure or tabularx.
+% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
+% the _key: the blank reserves its exact height, the key prints it. That is what keeps
+% this component the same number of pages as its key.
+\boxguard
+\begin{notesbox}{Group Activity}
+\writelines{4}
+\end{notesbox}
 
 \end{document}

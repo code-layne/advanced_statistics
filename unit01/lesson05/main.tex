@@ -1,285 +1,93 @@
-%! AP Statistics — Unit 1, Lesson 5
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Lesson Plan
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-% Load the shared box/colour package rather than re-declaring skillbox and the
-% palette locally: teachernote (used by the migrated teacher notes below) is
-% defined in apstats-boxes, and a local copy of the palette silently diverges
-% from shared/apstats-colors.sty.
+\usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-% Teacher notes quote expected answers, so the plan needs \ans. Defining it
-% here rather than loading apstats-key, which would also flip every `work`
-% block visible.
-\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.5: Summary Statistics for a Quantitative Variable}
 
 \begin{document}
-\def\CourseName{Statistics}
-\def\SchoolYear{2026--2027}
-\def\MeetingLength{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.5: Representing a Quantitative Variable with Graphs}
-
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct and interpret dotplots, stemplots, and
-    histograms for quantitative data. Students will recognize that the shape of a distribution
-    (visible in these displays) is the foundation for describing and comparing data in subsequent
-    lessons (Big Idea: UNC).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\boxguard
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 2 --- Data Analysis}
-    \begin{itemize}
-        \item Choose an appropriate graph type for a given quantitative dataset.
-        \item Construct a correctly labeled dotplot, stemplot, and histogram from raw data.
-        \item Interpret a graph: identify approximate center, spread, and shape (formal description comes in Lesson 1.6).
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
-    \begin{itemize}
-        \item Histogram bars \textit{touch} because quantitative data are continuous (or ordered); categories have a gap.
-        \item Dotplots preserve every value; histograms group data into intervals --- each trade-off matters.
-        \item Stem-and-leaf plots show the actual data values while giving a visual shape.
-    \end{itemize}
-\end{minipage}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Dotplot} --- each data value represented by a dot above a number line; reveals every value and clusters
-        \item \textbf{Stemplot (stem-and-leaf plot)} --- stems are leading digit(s); leaves are trailing digits; preserves individual values; back-to-back for comparison
-        \item \textbf{Histogram} --- data grouped into equal-width intervals (bins); bar height = frequency or relative frequency; bars touch
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Bin (class interval)} --- the equal-width grouping used in a histogram
-        \item \textbf{Shape} --- the overall pattern of the distribution (symmetric, skewed left/right, unimodal, bimodal, uniform) --- formal description in Lesson 1.6
-        \item \textbf{Gap} --- a range of values with no observations; \textbf{cluster} --- a group of values that appear together
-    \end{itemize}
-\end{minipage}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Review: what makes a variable quantitative? Why do bar chart bars NOT touch? Bridge: when data are quantitative (continuous or ordered), the bars \textit{do} touch because adjacent bins share a boundary.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
-    \begin{itemize}
-        \item Lesson 1.6: use these graphs to describe shape, center, spread, and outliers (SOCS).
-        \item Lesson 1.8: boxplots are another quantitative display --- compare them to histograms.
-        \item Unit 4: histogram shape connects to probability distributions.
-    \end{itemize}
-\end{minipage}
+    \begin{minipage}[t]{0.48\linewidth}
+        % TODO: prior knowledge bullets (Units/lessons reviewed)
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+            % TODO: spiral-review thumbnail. Authored warm-ups compile to
+            % target/, so leave this text-only (as in AP Stats) unless you
+            % keep a source PDF in the warmup/ directory to embed.
+        % TODO: connections forward (upcoming lessons)
+    \end{minipage}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (4--5 min)}\\
-    Collect class data: ``How many minutes did you sleep last night?'' Record on the board. Ask: ``Without calculating anything, what do you notice about this list of numbers?'' Students observe variability, a rough center, and possible extremes. Today's graphs make those observations precise.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item Build a dotplot of the sleep data together.
-        \item Rearrange the same data into a stemplot; compare what's visible.
-        \item Group the data into bins and construct a histogram; choose bin width together.
-        \item Discuss trade-offs: dotplot (all values, small $n$), stemplot (sorted values), histogram (large $n$, grouped).
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Histogram construction rules: equal bin widths, bins start where the last ends, label axes with variable and scale, add a title.
-        \item Demonstrate how changing bin width changes the histogram's appearance --- discuss the judgment involved.
-        \item Stemplot rule: split stems if needed; back-to-back stemplot preview for Lesson 1.9.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Circulate as students construct graphs; watch for: bars with gaps in histograms, unlabeled axes, unequal bin widths.
-        \item Ask students: ``If you doubled the bin width, what would happen to the shape of your histogram?''
-        \item Probe: ``Which graph would you use if you only had 10 data values? 200?''
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\boxguard
+\begin{skillbox}[Active Monitoring]{redbox}
+    % TODO: what to circulate and check for; cold-call prompts.
+\end{skillbox}
+
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Groups receive a dataset of 25 test scores (0--100). Each group constructs:
-    \begin{enumerate}
-        \item A dotplot
-        \item A stemplot (stems: tens digit; leaves: units digit)
-        \item A histogram with bins of width 10
-    \end{enumerate}
-    Then groups compare: ``Which graph is most useful for a teacher? Justify.''
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide a dotplot template with a pre-drawn number line; stemplot with stems pre-filled.
-        \item \textit{Extension}: Students experiment with bin widths of 5, 10, and 20 for the histogram. Write: how does bin width affect the story told by the graph?
-        \item \textit{Technology}: Use a graphing calculator or Desmos to verify their hand-drawn histogram.
-    \end{itemize}
-\end{minipage}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Given: 12 data values (e.g., number of books read last year: 3, 7, 1, 5, 2, 8, 4, 6, 3, 10, 2, 5). Students sketch a dotplot and a histogram (bins: 0--3, 4--7, 8--11). They label both graphs completely.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``A histogram of daily high temperatures is shown. Describe what the histogram tells you about the distribution of temperatures.''} \\[4pt]
-    Students should mention: approximate center, spread (range of values visible), and overall shape --- this primes Lesson 1.6 SOCS framework.
-\end{minipage}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Construct a dotplot, stemplot, and histogram from a provided dataset of 20 values.
-        \item Answer: ``Which display would you choose to present to an audience unfamiliar with statistics? Why?''
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Collect real data (e.g., prices of 20 items at a grocery store) and create all three displays.
-        \item \textit{Preview}: Lesson 1.6 teaches how to \textit{describe} a distribution using SOCS --- Shape, Outliers, Center, Spread. Review the graphs you made today and try to describe each one in words before next class.
-    \end{itemize}
-\end{minipage}
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
-
-% ── Teacher notes (migrated from the component keys) ──
-% One per component, titled for it. They live here rather than in the _key
-% files so that every component is the same length blank and keyed.
-
-\boxguard
-\begin{teachernote}[Warm-Up (1)]
-Common error: students may say 3 (there are 6 dots above 3, which is close).
-Have students count each stack carefully.
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
+% no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Delete any note whose component this lesson doesn't have.
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, what to look for, common errors.
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Warm-Up (2)]
-Accept any one of: (1) the axis has a meaningful numerical scale; (2) order matters
-in a dotplot but not in a bar chart; (3) dotplot bars (stacks) would touch because
-adjacent values are consecutive on the number line. Do not require the student to
-mention histograms specifically --- that comes later in today's lesson.
+\begin{teachernote}[Guided Notes]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Group Activity (1)]
-Period 1 leaves are written right-to-left (closest to stem first).
-Period 2 leaves are written left-to-right. Both sets must be in ascending order
-(reading outward from the stem).
+\begin{teachernote}[Group Activity]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Group Activity (2)]
-Range is 26 for both classes; accept this observation. Students might also
-note that Period 2 has 2 values in the 60s while Period 1 has only 1, giving
-more lower-tail spread. Require specific numerical evidence.
+\begin{teachernote}[Exit Ticket]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Group Activity (3)]
-This is a preview of density histograms (optional). The key point is that equal
-bin widths are required for the bar height to represent frequency fairly.
+\begin{teachernote}[Homework]
+    % TODO
 \end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (1)]
-Count leaves in the 7-stem row: 0,2,2,4,5,6,8 — that is 7 values.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (2)]
-Some students may count 6 and 7 from the stemplot directly without listing
-all values. Both approaches are valid; require that the position (6th and 7th)
-is identified.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (3)]
-The single 80 and the cluster in the 70s, with the spread-out 60s values, create
-a leftward tail. Some students may argue approximately symmetric; this is marginally
-defensible but skewed left is the better answer with $n=12$.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (4)]
-Require: (1) a shape description (skewed left or approximately symmetric with
-justification); (2) a center value stated in context with units; (3) a spread
-measure (range, or min to max) with units. Deduct for missing units (bpm) or
-missing context.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (1)]
-Full credit requires: shape (symmetric), center (7 or 8 minutes), spread (range
-or interval), and context (students, problem set). Deduct for missing context
-or citing raw count instead of a center measure.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (2)]
-For $n=15$: Q1 = median of {52,55,58,61,63,65,67} = 61;
-Q3 = median of {70,72,73,74,76,78,82} = 74. IQR = 13.
-Accept answers using either the exclusive or inclusive quartile method if
-work is shown consistently.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (3)]
-Require: shape (skewed right or unimodal), a measure of center stated in context,
-a measure of spread with units, and use of context (students, homework time).
-Deduct if the student does not mention the direction of skew or gives a center
-without units.
-\end{teachernote}
-
 \end{document}

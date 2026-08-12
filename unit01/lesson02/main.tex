@@ -1,330 +1,93 @@
-%! AP Statistics — Unit 1, Lesson 1.2 — Lesson Plan
+%! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Lesson Plan
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
+\usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-
-% Teacher notes quote expected answers, so the plan needs \ans. Defining it
-% here rather than loading apstats-key, which would also flip every `work`
-% block visible.
-\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.2: Representing a Categorical Variable}
 
 \begin{document}
-\def\CourseName{Statistics}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.2: The Language of Variation --- Variables}
-
 \begin{center}
-    {\Large\bfseries \CourseName \\[4pt]
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will classify variables as \textit{categorical} or
-    \textit{quantitative}, and further distinguish quantitative variables as \textit{discrete} or
-    \textit{continuous}. Students will articulate why variable type determines which statistical
-    methods are appropriate (Big Idea: VAR).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\vspace{4pt}
-
-\boxguard
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 2 --- Data Analysis}
-    \begin{itemize}
-        \item Correctly identify whether a variable is categorical or quantitative in context.
-        \item Recognize that categorical data produce counts/proportions; quantitative data
-              produce numerical summaries.
-        \item Identify variable type before choosing a display or summary statistic.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
-    \begin{itemize}
-        \item A number is not automatically quantitative (ZIP code, jersey number).
-        \item The \textit{average test}: ``Does averaging these values give a meaningful
-              result?'' separates categorical from quantitative.
-        \item Discrete vs.\ continuous matters for probability models in Unit 4.
-    \end{itemize}
-\end{minipage}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Variable} --- a characteristic that can take different values
-              for different individuals
-        \item \textbf{Categorical variable} --- places an individual into one of
-              several groups or categories; no meaningful arithmetic
-        \item \textbf{Quantitative variable} --- takes numerical values for which
-              arithmetic makes sense
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Discrete quantitative variable} --- countable values with
-              gaps (e.g., number of siblings)
-        \item \textbf{Continuous quantitative variable} --- can take any value in
-              an interval; measured, not counted (e.g., height, time)
-        \item \textbf{Distribution of a variable} --- what values a variable takes
-              and how often; developed fully in Lessons 1.3--1.10
-    \end{itemize}
-\end{minipage}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Warm-Up Worksheet (5 min)}\\
-    Students examine a small dataset from Lesson 1.1 (commute times study) and
-    answer: ``Which columns record words or labels? Which record numbers?
-    Can you average the mode of transport? Can you average the commute time?''
-    Use responses to motivate today's classification.\\[6pt]
-    \textbf{Topics Connected}
-    \begin{itemize}[label=\rule{0.7cm}{0.4pt}, leftmargin=1cm]
-        \item Variable types introduced in Lesson 1.1
-        \item What ``individual'' and ``variable'' mean
-        \item Preview: choosing appropriate displays (L1.3--1.9)
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections to Current Learning}
-    \begin{itemize}
-        \item Lessons 1.3--1.4 display \textit{categorical} variables with bar
-              charts and two-way tables.
-        \item Lessons 1.5--1.9 display and summarize \textit{quantitative}
-              variables with dotplots, histograms, and boxplots.
-        \item Knowing variable type now prevents method-mismatch errors
-              all year.
-    \end{itemize}
-\end{minipage}
+    \begin{minipage}[t]{0.48\linewidth}
+        % TODO: prior knowledge bullets (Units/lessons reviewed)
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+            % TODO: spiral-review thumbnail. Authored warm-ups compile to
+            % target/, so leave this text-only (as in AP Stats) unless you
+            % keep a source PDF in the warmup/ directory to embed.
+        % TODO: connections forward (upcoming lessons)
+    \end{minipage}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (4--5 min)}\\
-    Project a data table with 5 variables about students: name, grade level, GPA,
-    favorite color, hours of sleep. Ask students to sort the variables into two
-    groups \textit{without} being told the group names. Debrief: What was the
-    sorting rule? Use their language to introduce \textit{categorical}
-    vs.\ \textit{quantitative}.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item Define categorical and quantitative; demonstrate the ``average test.''
-        \item Work through 8 examples as a class, including traps:
-              ZIP code, jersey number, 1--5 Likert rating.
-        \item Introduce discrete vs.\ continuous with concrete anchors:
-              \textit{number of pets} (count, gaps) vs.\
-              \textit{weight of a pet} (measured, any value).
-        \item Students propose one variable of each type from their own lives;
-              share out briefly.
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Stress trap variables: area code, student ID, Likert scale.
-              Key question: ``Does averaging jersey numbers give a meaningful result?''
-        \item Show that the same \textit{question} can yield different variable
-              types: ``How do students rate the cafeteria?'' as a 1--5 scale
-              \textit{or} as ``satisfied / unsatisfied.''
-        \item Decision flowchart on board: Is it a word/label?
-              $\to$ Categorical. Is it a count?
-              $\to$ Discrete. Otherwise $\to$ Continuous.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring --- Mini-Whiteboard Round}
-    \begin{itemize}
-        \item Display a variable; students hold up \textbf{C} (categorical),
-              \textbf{QD} (quantitative discrete), or \textbf{QC}
-              (quantitative continuous).
-        \item Watch for: ordinal ratings marked QD without justification.
-        \item Prompt: ``Can you find the average? Does that average
-              \textit{mean} something in context?''
-        \item Use activity worksheet Part 1 (Problems 1--6) as the
-              whiteboard-round prompts before the group card sort.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\boxguard
+\begin{skillbox}[Active Monitoring]{redbox}
+    % TODO: what to circulate and check for; cold-call prompts.
+\end{skillbox}
+
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Card Sort Activity (8--10 min)}\\
-    Groups receive the activity worksheet with 12 variable cards and sort
-    them into three columns: \textbf{Categorical} /
-    \textbf{Quantitative Discrete} / \textbf{Quantitative Continuous}.
-    After sorting, groups compare with neighbors and resolve disagreements.
-    Debrief 2--3 contested cards whole-class (jersey number, star rating,
-    Likert scale).
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Reference the decision flowchart on the
-              activity sheet while sorting.
-        \item \textit{Extension}: For each categorical variable on the card sort,
-              propose a re-design that would make it quantitative instead
-              (and vice versa).
-        \item \textit{Discussion}: Debrief ``number of stars in a review'' ---
-              is it categorical or quantitative? What does context tell us?
-    \end{itemize}
-\end{minipage}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Five music-themed variables --- students classify each and justify:
-    \begin{enumerate}
-        \item Favorite music genre
-        \item Number of songs on a playlist
-        \item Duration of the longest song (in minutes)
-        \item Country of birth of the artist
-        \item Temperature at the outdoor concert venue at noon
-    \end{enumerate}
-    \textcolor{slate}{\small Completeness graded; justification required.}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``A survey records annual income (in dollars) and job type
-    (teacher, engineer, other) for each respondent. Which statement is
-    correct?''}
-    \begin{enumerate}[label=(\Alph*),itemsep=2pt]
-        \item Annual income is categorical.
-        \item Job type is quantitative.
-        \item Annual income is quantitative; job type is categorical.
-        \item Both variables are categorical.
-    \end{enumerate}
-    \textcolor{slate}{\small Answer: C. Grade on classification + justification.}
-\end{minipage}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Given an NBA player dataset (name, team, points per game, position,
-              games played, jersey number): classify all 6 variables with
-              justification.
-        \item Three AP-style multiple-choice problems on variable identification,
-              including at least one trap variable.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Look up a dataset on the CDC or Census website;
-              identify 3 categorical and 3 quantitative variables and note which
-              are discrete vs.\ continuous.
-        \item \textit{Preview}: Lesson 1.3 --- once we know a variable is
-              categorical, how do we summarize and display it? Think about
-              frequency and relative frequency.
-    \end{itemize}
-\end{minipage}
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
-
-% ── Teacher notes (migrated from the component keys) ──
-% One per component, titled for it. They live here rather than in the _key
-% files so that every component is the same length blank and keyed.
-
-\boxguard
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
+% no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-Satisfaction is intentionally ambiguous --- accept either column as long as the student gives a reason.
-If most students place it in ``number'' without comment, use that as the hook to open the lesson.
+    % TODO: pacing, what to look for, common errors.
 \end{teachernote}
 
-\boxguard
 \begin{teachernote}[Guided Notes]
-Grade level is quantitative (discrete) --- you can average it even if it's rarely useful to do so.
-Favorite Color is clearly categorical. Name is a label, not a variable of interest for analysis.
-Accept students grouping Name with categorical.
+    % TODO
 \end{teachernote}
 
-\boxguard
 \begin{teachernote}[Group Activity]
-\textbf{Card I (star rating):} Accept Categorical or QD if the student provides reasoning.
-Most AP Statistics resources treat ordinal ratings (1--5 stars) as categorical because
-equal spacing between levels cannot be assumed. However, many analysts treat them as
-quantitative for convenience. The key teaching point is that \emph{context and judgment
-matter} --- the classification is not always automatic.\\[4pt]
-\textbf{Card H (hours of sleep):} Some students will say discrete because they think of
-sleep in whole hours. Clarify that sleep is a measured duration --- it can be 6.5 hours,
-7.25 hours, etc. --- so it is continuous.\\[4pt]
-\textbf{Card F (annual salary):} Technically discrete (paid in whole cents), but so many
-possible values that it is treated as continuous in practice. Accept either with justification.
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (1)]
-\textbf{Scoring (completeness):} Award credit for any sincere attempt with a reason.
-Full credit requires both a correct type \emph{and} a justification that references
-the average test or the countable/measured distinction.\\[4pt]
-\textbf{Common errors to flag for re-teaching:}
-\begin{itemize}[itemsep=3pt]
-  \item \#3 marked QD: Students confuse ``minutes'' with ``whole minutes.'' Clarify that
-        song duration can be measured to fractions of a second.
-  \item \#2 marked QC: Students think ``number of'' could be fractional. Remind them
-        you cannot have 3.7 songs on a playlist.
-  \item \#1 or \#4 marked quantitative: Students see words but still hesitate. Ask:
-        ``What would it mean to average genres?''
-\end{itemize}
+\begin{teachernote}[Exit Ticket]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (2)]
-\textbf{Most common wrong answer: B.} Students who choose B are applying the right framework
-(recognizing income is quantitative) but mis-classifying it as discrete because they associate
-dollars with whole numbers. Prompt: ``Can income be \$47,382.50?'' This usually resolves it.\\[3pt]
-If more than a third of the class chooses D, the categorical/quantitative distinction needs
-another pass at the start of Lesson 1.3.
+\begin{teachernote}[Homework]
+    % TODO
 \end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (1)]
-Pts/game: a small number of students may say QD because scoring is tracked in
-half-points in some contexts. Award credit for QC (the standard classification) and
-accept QD with a specific justification about how points are recorded in the source data.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (2)]
-Choice B is the most common wrong answer. Students see whole numbers and default to QD.
-The key question: ``Does the average of these values mean something?'' An average grade
-level of 10.3 does not correspond to a real grade level. Push students to articulate why.
-\end{teachernote}
-
 \end{document}

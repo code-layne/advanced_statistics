@@ -1,82 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.7 — Warm-Up ANSWER KEY
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Warm-Up --- Answer Key}
 
-\vspace{0.16in}
 
-\noindent In Lesson 1.6 you described distributions using SOCS --- including
-an \textit{informal} estimate of center. Today you will give those estimates
-precise numerical values. Use the dotplot below.
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.0]
-  \draw[thick] (0.5,0) -- (6.2,0);
-  \foreach \x/\lbl in {0.60/5, 1.20/10, 1.80/15, 2.40/20, 3.00/25,
-                        3.60/30, 4.20/35, 4.80/40, 5.40/45} {
-    \draw (\x,-0.12) -- (\x,0.12);
-    \node[below, font=\small] at (\x,-0.12) {\lbl};
-  }
-  \node[below, font=\small\itshape] at (3.0,-0.56)
-        {One-way commute time (minutes)};
-  \filldraw[navy] (0.96, 0.38) circle (0.13);
-  \filldraw[navy] (1.44, 0.38) circle (0.13);
-  \filldraw[navy] (1.80, 0.38) circle (0.13);
-  \filldraw[navy] (1.80, 0.76) circle (0.13);
-  \filldraw[navy] (2.16, 0.38) circle (0.13);
-  \filldraw[navy] (2.40, 0.38) circle (0.13);
-  \filldraw[navy] (2.64, 0.38) circle (0.13);
-  \filldraw[navy] (3.00, 0.38) circle (0.13);
-  \filldraw[navy] (3.36, 0.38) circle (0.13);
-  \filldraw[navy] (5.40, 0.38) circle (0.13);
-\end{tikzpicture}
-\end{center}
-
-\vspace{0.16in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item How many students are represented in this dotplot? What is the
-        variable being measured?\\[4pt]
-        \ans{$n = 10$ students. The variable is one-way commute time, measured
-        in minutes. It is quantitative.}
-
-  \item What is the \textbf{range} of commute times? Show your calculation.\\[4pt]
-        \ans{Range $= 45 - 8 = \mathbf{37}$ minutes.}
-
-  \item List the data values in order from least to greatest. Then identify
-        the \textbf{middle value} (or middle two values) of the sorted list.\\[4pt]
-        \ans{Sorted: 8, 12, 15, 15, 18, 20, 22, 25, 28, 45.
-        $n = 10$ (even), so the two middle values are the 5th and 6th: \textbf{18 and 20}.
-        The median $= (18+20)/2 = \mathbf{19}$ minutes.}
-
-  \item One commute time appears to be much larger than the rest. Which value
-        is it, and how does it stand out in the dotplot?\\[4pt]
-        \ans{The value 45 minutes stands out --- it is isolated far to the right
-        of the other nine values, which cluster between 8 and 28 minutes. There
-        is a large gap between 28 and 45.}
-
-\end{enumerate}
-
-\vspace{0.14in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-\small
-\begin{itemize}[leftmargin=1.3em, itemsep=5pt]
-  \item The \textbf{median} is exactly that middle value you identified above ---
-        the precise measure of center that resists extreme values.
-  \item Today we also calculate the \textbf{mean}, \textbf{IQR}, and
-        \textbf{standard deviation}, and learn when each is the right choice.
-  \item The large value at 45 minutes will motivate the \textbf{outlier rule}.
-\end{itemize}
-\end{tcolorbox}
+% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
+\boxguard
+\begin{notesbox}{Warm-Up --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

@@ -1,189 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.6 — Homework ANSWER KEY
+%! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Homework --- Answer Key}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For all written descriptions: use the SOCS framework; include context
-(variable name and population) in every sentence; use complete sentences.
-AP free-response graders look for all four components and context throughout.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART A
-% ════════════════════════════════════════════════════════════════════════════
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
 \boxguard
-\begin{blurbbox}[Part A \quad Identify the Shape]{navylight}
-\small
-
-For each distribution described below, identify the most likely shape from
-this list: \textit{symmetric, skewed right, skewed left, bimodal, uniform}.
-Give one piece of evidence from the description that supports your answer.
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=14pt]
-
-  \item The prices of homes sold in a county last year. Most homes sold for
-        \$180{,}000--\$350{,}000, but a small number of luxury estates sold
-        for over \$2 million.\\[4pt]
-        Shape: \ans{Skewed right} \quad Evidence: \ans{long right tail}\\[1pt]
-        \ansline{Most homes sell in the \$180k--\$350k bulk; estates above \$2M pull the tail right.}
-
-  \item Scores on a very easy quiz (out of 10) for a class of 30 students.
-        The distribution shows most students scored 9 or 10, with only a few
-        scoring below 7.\\[4pt]
-        Shape: \ans{Skewed left} \quad Evidence: \ans{tail toward low scores}\\[1pt]
-        \ansline{Most students scored 9--10 (right bulk); a few below 7 form a left tail.}
-
-  \item The number of hours of sleep per night for 60 adults, with a peak
-        near 7 hours and roughly equal drop-off on both sides.\\[4pt]
-        Shape: \ans{Symmetric, unimodal} \quad Evidence: \ans{equal drop-off}\\[1pt]
-        \ansline{The peak near 7 hours falls off about equally on both sides --- a bell shape.}
-
-  \item Survey responses on a 5-point scale where all responses (1, 2, 3, 4,
-        and 5) were chosen by nearly equal numbers of respondents.\\[4pt]
-        Shape: \ans{Uniform} \quad Evidence: \ans{bars all equal}\\[1pt]
-        \ansline{All five options drew nearly equal counts, so every bar is the same height.}
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART B
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part B \quad Write a Complete SOCS Description]{greenacc}
-\small
-
-A researcher records the \textbf{number of minutes per day} that 45 middle
-school students spend on physical activity. Key features from the histogram:
-
-\begin{itemize}[itemsep=3pt]
-  \item Shape: skewed right; most students are active 20--60 minutes per day.
-  \item A long tail extends to the right: a few students report 90--120 minutes.
-  \item One student reported 150 minutes --- far above the rest of the group.
-  \item The center of the distribution is approximately 38 minutes.
-  \item Values range from 5 to 150 minutes.
-\end{itemize}
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-
-  \item Write a complete SOCS description of the distribution of daily physical
-        activity time for these 45 middle school students. Use complete sentences
-        with context in every sentence. Label each sentence S, O, C, or S in
-        the margin.\\[6pt]
-        \ansline{[S] The distribution of daily physical activity time for these 45 middle}\\[1pt]
-        \ansline{school students is skewed right, with most active 20--60 minutes a day.}\\[1pt]
-        \ansline{[O] One student reported 150 minutes, a potential outlier far above the rest.}\\[1pt]
-        \ansline{[C] The center is about 38 minutes per day --- a typical activity level for}\\[1pt]
-        \ansline{a middle school student in this sample.}\\[1pt]
-        \ansline{[S] Times range from 5 to 150 minutes, a spread of 145 minutes.}
-
-  \item If the one student reporting 150 minutes is removed, predict how (if
-        at all) the shape, center, and spread of the distribution would change.
-        Explain your reasoning.\\[6pt]
-        \ansline{\textit{Shape:} still skewed right but less so --- the long tail shortens.}\\[1pt]
-        \ansline{\textit{Center:} drops slightly; the mean falls more than the median.}\\[1pt]
-        \ansline{\textit{Spread:} drops noticeably --- the max falls from 150 to roughly 90--120.}
-
-  \item Based on the shape of this distribution, would you expect the mean
-        daily activity time to be greater than, equal to, or less than the
-        median? Explain why.\\[6pt]
-        \ansline{\textbf{Greater than the median.} In a right-skewed distribution the few}\\[1pt]
-        \ansline{large values pull the mean upward more than they move the median, so the}\\[1pt]
-        \ansline{mean exceeds the approximate median of 38 minutes.}
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART C
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
-\small
-
-The following summary describes the distribution of \textbf{fuel efficiency
-(miles per gallon)} for a random sample of 60 cars tested by a consumer group.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.72\linewidth}{@{} >{\bfseries}p{0.30\linewidth}
-                                      X @{}}
-\rowcolor{sky}
-\textbf{Feature} & \textbf{Value / Description} \\
-\midrule
-Shape & Roughly symmetric, unimodal \\
-Minimum & 18 mpg \\
-Maximum & 47 mpg \\
-Approximate center & 32 mpg \\
-Outliers & One car at 47 mpg; no low-end outliers \\
-\end{tabularx}
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-
-  \item Describe the distribution of fuel efficiency for these 60 cars using
-        the SOCS framework. Write in complete sentences and include context in
-        every sentence.\\[6pt]
-        \ansline{[S] Fuel efficiency for these 60 cars is roughly symmetric and unimodal.}\\[1pt]
-        \ansline{[O] One car at 47 mpg is a potential high outlier; none at the low end.}\\[1pt]
-        \ansline{[C] The center is about 32 mpg --- typical efficiency for a car in this sample.}\\[1pt]
-        \ansline{[S] Values run from 18 to 47 mpg, a spread of 29 mpg.}
-
-  \item The consumer group adds 5 more cars to the sample; all 5 have fuel
-        efficiency of 14 mpg. Describe how each SOCS component would change.\\[6pt]
-        \ansline{\textit{Shape:} shifts toward skewed left --- the new cars build a low tail.}\\[1pt]
-        \ansline{\textit{Outliers:} the five 14-mpg cars become low outliers, below the old min.}\\[1pt]
-        \ansline{\textit{Center:} decreases; the mean falls more than the median.}\\[1pt]
-        \ansline{\textit{Spread:} increases --- the minimum drops from 18 to 14 mpg.}
-
-  \item A classmate says that for a symmetric distribution the mean and median
-        should be about the same. Is the classmate correct? Explain.\\[6pt]
-        \ansline{Yes, for a roughly symmetric distribution. Values on either side of}\\[1pt]
-        \ansline{center offset one another, so the mean is not pulled either way. The}\\[1pt]
-        \ansline{47-mpg outlier lifts the mean slightly, but the gap stays small.}
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.12in}
-
-\boxguard
-\begin{extensionbox}
-\small
-\textbf{Optional Extension --- Real Data SOCS Description}\\[4pt]
-Find a real histogram, dotplot, or stemplot in a news article, textbook, or
-data website (e.g., census.gov, gapminder.org). Write a complete SOCS
-description of the distribution. Then explain: what does the shape of this
-distribution suggest about the real-world process that generated it?
-
-\vspace{8pt}
-\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\vspace{4pt}
-\textcolor{slate}{\scriptsize Source / URL:\;\blank{11cm}}
-\end{extensionbox}
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

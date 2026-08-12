@@ -1,158 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.1 — Homework KEY
+%! The Language of Variation — Unit 1, Lesson 1.1 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.1}{Homework — Answer Key}
+\pageheader{Unit 1, Lesson 1.1}{Homework --- Answer Key}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For each news blurb, identify the \textbf{individual}, \textbf{population},
-\textbf{sample}, and \textbf{variable(s)}. Write in complete phrases, not single words.
-If no sample size is stated, write \textit{not given}.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% BLURB 1 KEY
-% ════════════════════════════════════════════════════════════════════════════
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
 \boxguard
-\begin{blurbbox}[Study 1]{navylight}
-\begin{headlinebox}{sky}
-\small\textit{``Researchers surveyed 1{,}800 teenagers across 12 countries and
-found that 67\% felt social media had a negative effect on their self-image.''}
-\end{headlinebox}
-
-\vspace{8pt}
-\componenttablekey
-  {A teenager (any adolescent in one of the 12 countries studied)}
-  {All teenagers (accept: all teenagers in the 12 countries represented)}
-  {The 1{,}800 teenagers surveyed}
-  {Perception of social media's effect on self-image (categorical: positive / negative / neutral)}
-
-\vspace{6pt}
-\end{blurbbox}
-
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% BLURB 2 KEY
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Study 2]{greenacc}
-\begin{headlinebox}{greenbg}
-\small\textit{``A study of 250 WNBA players found that athletes who practiced
-yoga at least twice a week reported significantly fewer injuries during the season
-compared to those who did not.''}
-\end{headlinebox}
-
-\vspace{8pt}
-\componenttablekey
-  {A WNBA player}
-  {All WNBA players}
-  {The 250 WNBA players in the study}
-  {Yoga practice frequency (quantitative: sessions per week); number of injuries during the season (quantitative)}
-
-\vspace{6pt}
-\end{blurbbox}
-
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% BLURB 3 KEY
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Study 3]{redacc}
-\begin{headlinebox}{redbg}
-\small\textit{``Scientists collected soil samples from 45 farms in Iowa and
-found that fields using cover crops contained 30\% more earthworms per square
-meter than fields without cover crops.''}
-\end{headlinebox}
-
-\vspace{8pt}
-\componenttablekey
-  {A farm field (a specific plot of land) --- not a scientist, not a farmer}
-  {All farm fields in Iowa (accept: all Midwestern / U.S.\ farm fields)}
-  {The 45 farms examined}
-  {Number of earthworms per square meter (quantitative); whether cover crops are used (categorical)}
-
-\vspace{6pt}
-\end{blurbbox}
-
-\vspace{0.12in}
-
-% ── REFLECTION KEY ────────────────────────────────────────────────────────────
-\boxguard
-\begin{reflectionbox}
-\small Choose \textbf{one} of the three studies above and answer:
-\textit{Why might the results of this study not apply to everyone?}
-What would make you more --- or less --- confident in the findings?
-
-\vspace{8pt}
-\ans{\textbf{Study 1 (model):} The study covered only 12 countries, so results may not
-reflect teenagers in countries with different social media cultures or access levels.
-Confidence increases if the 12 countries were chosen to represent a broad range of
-regions and incomes; it decreases if they were all similar wealthy democracies.}
-
-\vspace{6pt}
-\ans{\textbf{Study 2 (model):} Results apply only to elite professional basketball players —
-not recreational athletes or players in other sports. Confidence increases if players were
-randomly assigned to yoga vs.\ no yoga (an experiment); it decreases if players self-selected
-(those who do yoga may already take better care of their bodies).}
-
-\vspace{6pt}
-\ans{\textbf{Study 3 (model):} Iowa farms may differ from farms in other states in soil
-type, climate, and farming practices, so results may not generalize nationally. Confidence
-increases with a larger, more geographically diverse sample.}
-\end{reflectionbox}
-
-\vspace{0.12in}
-
-% ── EXTENSION KEY ────────────────────────────────────────────────────────────
-\boxguard
-\begin{extensionbox}
-\small
-
-\textbf{Part A --- U.S.\ Census}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-  \item \textbf{Cost and time:}\\
-        \ans{The 2020 U.S.\ Census cost approximately \$14.2 billion and took several years
-        to plan, conduct, and process. It employed hundreds of thousands of temporary workers
-        to contact households that did not respond online or by mail.}
-
-  \item \textbf{Hard-to-count group:}\\
-        \ans{Examples: people experiencing homelessness (no fixed address), undocumented
-        immigrants (may fear government contact), people in rural areas (fewer mailings
-        reach them), college students (counted at home or at school?). Accept any group
-        with a clear explanation.}
-
-  \item \textbf{Why not just use a sample?}\\
-        \ans{Census data are used to allocate Congressional seats and federal funding to
-        states and counties. A sample would introduce uncertainty into these high-stakes
-        decisions. Some applications genuinely require counts of every individual, not estimates.}
-\end{enumerate}
-
-\vspace{8pt}
-\textbf{Part B --- Preview: Categorical vs.\ Quantitative}
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.08\linewidth}
-                                    >{\raggedright\arraybackslash}p{0.44\linewidth}
-                                    X @{}}
-& \textbf{Variable} & \textbf{Number or category?} \\
-\hline
-S1 & \ans{Perception of social media's effect on self-image} & \ans{Category} \\
-S2 & \ans{Yoga sessions per week; number of injuries}        & \ans{Number (both)} \\
-S3 & \ans{Earthworms per sq.\ meter; cover crop use}         & \ans{Number; Category} \\
-\end{tabularx}
-\end{extensionbox}
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

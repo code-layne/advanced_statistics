@@ -1,190 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.7 — Guided Notes ANSWER KEY
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-% ── vocabpar ────────────────────────────────────────────────────────────────
-% \ansline ends with \dotfill and never closes the paragraph, so without a
-% \par the following term label is dragged onto the previous answer's dotted
-% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
-\newcommand{\vocabans}[2]{%
-  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
-  \ansline{#2}\par\vspace{3pt}}
-
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Guided Notes --- Answer Key}
 
-\vspace{0.10in}
 
-% ── OBJECTIVE ────────────────────────────────────────────────────────────────
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ansline{Calculate mean, median, range, IQR, and standard deviation for a
-quantitative dataset and interpret each statistic in context.}\\
-\ansline{Apply the $1.5\times$IQR fence rule to identify outliers.}\\
-\ansline{Choose median + IQR vs.\ mean + $s_x$ based on the shape of the distribution.}
-\end{objectivebox}
+\vspace{0.15in}
 
-\vspace{0.10in}
-
-% ── VOCABULARY ───────────────────────────────────────────────────────────────
+% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Guided Notes].
 \boxguard
-\begin{vocabbox}
-\small
-\begin{multicols}{2}
-\vocabans{Mean ($\bar{x}$)}{The arithmetic average: sum of all values divided by $n$. Not resistant to outliers.}
-\vocabans{Median ($M$)}{Middle value of a sorted dataset; average of the two middle values when $n$ is even. Resistant.}
-\vocabans{Range}{max $-$ min; simple but not resistant, since it uses only the two extreme values.}
-\columnbreak
-\vocabans{Quartiles ($Q_1$, $Q_3$)}{$Q_1$ = median of the lower half (25th percentile); $Q_3$ = median of the upper half (75th).}
-\vocabans{IQR (Interquartile Range)}{$Q_3 - Q_1$; spread of the middle 50\% of data. Resistant; pair with the median.}
-\vocabans{Resistant statistic}{Not strongly affected by extreme values; median and IQR are, mean and $s_x$ are not.}
-\vocabans{Outlier fence rule}{An outlier falls below $Q_1 - 1.5\cdot\text{IQR}$ or above $Q_3 + 1.5\cdot\text{IQR}$.}
-\end{multicols}
-\end{vocabbox}
-
-\vspace{0.10in}
-
-% ── HOOK ─────────────────────────────────────────────────────────────────────
-\boxguard
-\begin{hookbox}
-\small\textbf{Which salary best represents ``typical''?}
-
-\vspace{5pt}
-Salaries (thousands): \$30, \$32, \$35, \$38, \$200
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.20\linewidth} X X @{}}
-\rowcolor{sky}
-\textbf{Statistic} & \textbf{Calculation} & \textbf{Interpretation} \\
-\midrule
-Mean   & \ans{$335/5 = \$67$k} & \ans{pulled up by the \$200k outlier} \\[8pt]
-Median & \ans{\$35k (middle value)} & \ans{resistant; typical worker's salary} \\
-\end{tabularx}
-
-\vspace{6pt}
-Which is more representative? \ans{Median (\$35k).}
-Why? \ans{Mean is distorted by the extreme value of \$200k.}
-\end{hookbox}
-
-\vspace{0.08in}
-
-% ── SECTION 1: MEASURES OF CENTER ────────────────────────────────────────────
-\boxguard
-\begin{notesbox}{Measures of Center}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{Mean} ($\bar{x}$):}
-\[\bar{x} = \frac{\sum x_i}{n}\]
-\begin{itemize}[itemsep=3pt]
-  \item Uses \ans{all} data values.
-  \item \ans{Not} resistant to outliers.
-  \item Pulled toward the \ans{tail} of a skewed distribution.
-\end{itemize}
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Median} ($M$):}
-\begin{itemize}[itemsep=3pt]
-  \item Sort data; take the \ans{middle} value.
-  \item If $n$ is even, average the \ans{two} middle values.
-  \item \ans{Is} resistant to outliers.
-  \item Stays near the \ans{center} of the distribution.
-\end{itemize}
-\end{multicols}
+\begin{notesbox}{Guided Notes --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
-
-\vspace{0.08in}
-
-% ── SECTION 2: MEASURES OF SPREAD ────────────────────────────────────────────
-\boxguard
-\begin{notesbox}{Measures of Spread}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{Range:}}
-\[\text{Range} = \max - \min\]
-\begin{itemize}[itemsep=3pt]
-  \item Simple but \ans{not} resistant.
-  \item Only uses the two \ans{extreme} values.
-\end{itemize}
-
-\vspace{6pt}
-\textbf{\textcolor{navy}{Quartiles \& IQR:}}
-\begin{itemize}[itemsep=3pt]
-  \item $Q_1 = $ median of the \ans{lower} half.
-  \item $Q_3 = $ median of the \ans{upper} half.
-  \item $\text{IQR} = Q_3 - Q_1$
-  \item Contains the middle \ans{50}\% of data.
-  \item \ans{Is} resistant to outliers.
-\end{itemize}
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Standard Deviation} ($s_x$):}
-\[s_x = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n-1}}\]
-\begin{itemize}[itemsep=3pt]
-  \item Typical \ans{distance} from the mean.
-  \item Always $\geq$ \ans{0}; units = units of data.
-  \item \ans{Not} resistant to outliers.
-  \item Use with \ans{mean} when distribution is symmetric.
-\end{itemize}
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.08in}
-
-% ── SECTION 3: OUTLIER RULE + DECISION ───────────────────────────────────────
-\boxguard
-\begin{notesbox}{Outlier Rule \& Choosing Statistics}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{$1.5 \times$ IQR Fence Rule:}}
-\begin{itemize}[itemsep=4pt]
-  \item Lower fence: $Q_1 - 1.5(\text{IQR})$
-  \item Upper fence: $Q_3 + 1.5(\text{IQR})$
-  \item A value is an outlier if it is \ans{below} \\
-        the lower fence or \ans{above} the upper fence.
-\end{itemize}
-
-\vspace{4pt}
-\textbf{Example:} $Q_1 = 19$, $Q_3 = 31$, IQR~$= 12$\\
-Lower fence $= \ans{1}$\quad Upper fence $= \ans{49}$
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Choosing the Right Pair:}}
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\columnwidth}{@{} >{\bfseries}p{0.42\columnwidth} X @{}}
-\rowcolor{sky}
-\textbf{If shape is\dots} & \textbf{Report\dots} \\
-\midrule
-Skewed \textit{or} has outliers & \ans{Median + IQR} \\
-Approximately symmetric         & \ans{Mean + $s_x$} \\
-\end{tabularx}
-
-\vspace{6pt}
-\textit{Key:} Mean is pulled toward the \ans{tail}. \\
-Median \ans{resists} toward extremes.
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.08in}
-
-% ── REFLECTION ───────────────────────────────────────────────────────────────
-\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=2mm, bottom=2mm]
-\small\textbf{Quick Check:} A dataset has mean 85 and median 72.\\[4pt]
-Shape is likely \ans{skewed right}. \quad
-Better center: \ans{median}. \quad
-Better spread: \ans{IQR}.
-\end{tcolorbox}
 
 \end{document}

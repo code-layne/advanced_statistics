@@ -1,186 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.6 — Guided Notes ANSWER KEY
+%! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-% ── vocabpar ────────────────────────────────────────────────────────────────
-% \ansline ends with \dotfill and never closes the paragraph, so without a
-% \par the following term label is dragged onto the previous answer's dotted
-% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
-\newcommand{\vocabans}[2]{%
-  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
-  \ansline{#2}\par\vspace{3pt}}
-
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Guided Notes --- Answer Key}
 
-\vspace{0.12in}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ansline{identify the shape of a distribution and describe it using SOCS.}\\[1pt]
-\ansline{write a complete SOCS description with context in every sentence.}\\[1pt]
-\ansline{explain the role of outliers and their effect on center and spread.}
-\end{objectivebox}
+\vspace{0.15in}
 
-\vspace{0.1in}
-
+% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Guided Notes].
 \boxguard
-\begin{vocabbox}
-\small
-\begin{multicols}{2}
-\vocabans{SOCS}{The AP framework for describing quantitative distributions: Shape, Outliers, Center, Spread.}
-\vocabans{Shape}{The overall pattern: symmetric, skewed right/left, unimodal, bimodal, uniform.}
-\vocabans{Skewed right (positive skew)}{Long tail toward higher values; bulk of data at lower values. Mean $>$ median.}
-\vocabans{Skewed left (negative skew)}{Long tail toward lower values; bulk of data at higher values. Mean $<$ median.}
-\columnbreak
-\vocabans{Symmetric}{Roughly mirror-image about the center; mean $\approx$ median.}
-\vocabans{Unimodal / Bimodal / Uniform}{One peak / Two peaks / All bars roughly equal height.}
-\vocabans{Outlier}{A value that falls far from the overall pattern; investigate, do not automatically remove.}
-\end{multicols}
-\end{vocabbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{hookbox}
-\small\textbf{Two Histograms}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-  \item \ans{Skewed right / right-skewed / ``bunched at the low end.''
-        Household incomes have a few extremely high earners pulling the tail
-        to the right.}
-
-  \item \ans{Symmetric / bell-shaped / unimodal. Heights cluster near the center
-        (around 64 inches) with similar drop-off on both sides.}
-
-  \item \ans{The shape matters because it affects which summary statistics are
-        most appropriate. For a skewed distribution, the median is a better
-        center than the mean; for symmetric data, both work. Shape also suggests
-        what real-world process generated the data.}
-\end{enumerate}
-\end{hookbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{The SOCS Framework}
-\small
-
-\textbf{\textcolor{navy}{S --- Shape}} \quad
-Overall pattern: \ans{symmetric}, skewed right, skewed left.
-Number of peaks: \ans{unimodal} or \ans{bimodal}.
-Special case: \ans{uniform}.
-
-\vspace{4pt}
-\textbf{\textcolor{navy}{O --- Outliers}} \quad
-Values that fall \ans{far from the overall pattern}.
-Note their approximate \ans{value} and how far they are from the bulk.
-Always \ans{investigate} outliers.
-
-\vspace{4pt}
-\textbf{\textcolor{navy}{C --- Center}} \quad
-Informal estimate of a \ans{typical} value.
-For now: use the \ans{median} or approximate balance point.
-Lesson 1.7: \ans{mean} and \ans{median}.
-
-\vspace{4pt}
-\textbf{\textcolor{navy}{S --- Spread}} \quad
-How \ans{wide} or \ans{narrow} the distribution is.
-For now: describe the \ans{range} (min to max).
-
-\vspace{4pt}
-\textbf{AP Context Rule:} Every sentence must name the \ans{variable} and the \ans{population}.
-
+\begin{notesbox}{Guided Notes --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
-
-\newpage
-
-\boxguard
-\begin{notesbox}{Shape Vocabulary}
-\small
-
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth}
-                                   p{0.38\linewidth}
-                                   X @{}}
-\rowcolor{sky}
-\textbf{Shape} & \textbf{What it looks like} & \textbf{Real-world example} \\
-\midrule
-Symmetric      & Mirror image on each side & \ans{Heights, IQ scores, many measurement errors} \\
-Skewed right   & Long tail toward \ans{higher} values & \ans{Incomes, house prices, wait times} \\
-Skewed left    & Long tail toward \ans{lower} values & \ans{Age at retirement, test scores on easy tests} \\
-Unimodal       & \ans{One} clear peak & \ans{Heights, weights} \\
-Bimodal        & \ans{Two} clear peaks & \ans{Ages at a concert with two audience groups} \\
-Uniform        & All bars roughly \ans{equal} height & \ans{Rolling a fair die, random number tables} \\
-\end{tabularx}
-
-\vspace{6pt}
-\textbf{Common error:} The skew direction = direction the \ans{tail} points.
-
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{Worked Example --- SAT Math Scores}
-\small
-
-Model SOCS sentence labels: S, O, C, S (in order of the sample response).
-
-\vspace{6pt}
-Strong AP response elements:
-\begin{enumerate}[itemsep=3pt]
-  \item Context in the \ans{first} sentence (and throughout).
-  \item All \ans{four} SOCS components present.
-  \item Outliers \ans{hedged} (``appear to be'').
-  \item Center and spread include \ans{units} (``points'').
-\end{enumerate}
-
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{practicebox}
-\small\textbf{Daily text messages --- 40 students}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-
-  \item \ans{Roughly bimodal or skewed right. Main cluster at 20--60 messages;
-        a secondary cluster at 100--140 suggests a second group. The long tail
-        to the right supports a skewed right interpretation. Either answer is
-        acceptable with justification.}
-
-  \item \ans{The student at 180 messages is a clear outlier --- far above the
-        next highest values (100--140 range). The 100--140 cluster may also
-        warrant investigation depending on how it is defined.}
-
-  \item \ans{Center: approximately 45 messages per day (near the median of the
-        main cluster). Spread: 5 to 180 messages per day, a range of 175 messages.}
-
-  \item \ans{The distribution of daily text messages for these 40 students is
-        roughly bimodal and skewed right, with a large cluster between 20 and
-        60 messages and a smaller cluster between 100 and 140 messages. [S]
-        One student sent 180 messages per day, a potential outlier that falls
-        well above the rest of the group. [O] The center of the distribution
-        is approximately 45 messages per day, representing a typical student
-        in this group. [C] The spread is large, ranging from 5 to 180 messages
-        per day, a range of 175 messages. [S]}
-
-\end{enumerate}
-\end{practicebox}
-
-\vspace{0.1in}
-
-\begin{spiralbox}
-\small
-\textbf{Big Idea:} \ans{Saying ``skewed right'' alone is insufficient for AP
-credit. Graders also require: outliers addressed (even if none), center estimated
-with units and context, spread described (at minimum as a range), and context in
-every sentence. Missing any one component costs points on the AP exam.}
-\end{spiralbox}
 
 \end{document}

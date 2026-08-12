@@ -1,87 +1,25 @@
-%! AP Statistics — Unit 1, Lesson 1.5 — Warm-Up
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Warm-Up
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Warm-Up}
 
-\vspace{0.16in}
 
-\noindent The dotplot below shows the number of books read over the summer by
-each of 20 students.
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.0]
-  % Axis
-  \draw[thick] (0,0) -- (5.2,0);
-  \foreach \x/\lbl in {0.8/1, 1.8/2, 2.8/3, 3.8/4, 4.8/5} {
-    \draw (\x,-0.12) -- (\x,0.12);
-    \node[below, font=\small] at (\x,-0.12) {\lbl};
-  }
-  \node[below, font=\small\itshape] at (2.8,-0.52) {Number of books read};
-  % Dots above 1 (freq 4)
-  \foreach \k in {1,...,4} \filldraw[navy] (0.8, \k*0.38) circle (0.14);
-  % Dots above 2 (freq 7)
-  \foreach \k in {1,...,7} \filldraw[navy] (1.8, \k*0.38) circle (0.14);
-  % Dots above 3 (freq 6)
-  \foreach \k in {1,...,6} \filldraw[navy] (2.8, \k*0.38) circle (0.14);
-  % Dots above 4 (freq 2)
-  \foreach \k in {1,...,2} \filldraw[navy] (3.8, \k*0.38) circle (0.14);
-  % Dots above 5 (freq 1)
-  \filldraw[navy] (4.8, 0.38) circle (0.14);
-\end{tikzpicture}
-\end{center}
-
-\vspace{0.18in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-
-  \item What is the variable being measured? Is it quantitative or categorical?
-        Explain how you know.\\[6pt]
-        \writeline\\[1pt]\writeline
-
-  \item What value occurs most often in this distribution?
-        How many students chose that value?\\[6pt]
-        \writeline
-
-  \item What is the \textbf{range} of values shown in the dotplot?
-        (Recall: range $=$ maximum $-$ minimum.)\\[6pt]
-        \writeline
-
-  \item A classmate claims: ``A dotplot is basically the same as a bar chart for
-        categorical data --- they both stack symbols above labels.''
-        Name \textit{one key difference} between a dotplot for quantitative data
-        and a bar chart for categorical data.\\[6pt]
-        \writeline\\[1pt]\writeline
-
-\end{enumerate}
-
-\vspace{0.16in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-\small
-\begin{itemize}[leftmargin=1.3em, itemsep=5pt]
-  \item A \textbf{dotplot} places a dot above a number line for each data value ---
-        it shows every individual value and reveals the overall \textit{shape} of
-        the distribution.
-  \item Today we add two more displays for quantitative data:
-        \textbf{stemplots} and \textbf{histograms}.
-  \item Each display has trade-offs: some preserve every value; others group data
-        into intervals. Choosing the right display depends on the dataset size and
-        the question you want to answer.
-\end{itemize}
-\end{tcolorbox}
-
-\vspace{0.14in}
-
-\noindent\textcolor{slate}{\small One question you have going into today's lesson,
-or something you're not sure about yet:}\\[8pt]
-\writeline
+% TODO: author the Warm-Up. See references/components.md for the expected structure.
+% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
+% when the box opens with an unbreakable TikZ figure or tabularx.
+% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
+% the _key: the blank reserves its exact height, the key prints it. That is what keeps
+% this component the same number of pages as its key.
+\boxguard
+\begin{notesbox}{Warm-Up}
+\writelines{4}
+\end{notesbox}
 
 \end{document}

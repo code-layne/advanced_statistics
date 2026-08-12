@@ -1,12 +1,13 @@
-%! AP Statistics — Unit 1, Lesson 1.7 — Student Packet Cover Sheet
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Student Packet Cover Sheet
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
 
-%=============================================================================
 \begin{document}
 
-% ── Full-bleed navy banner ────────────────────────────────────────────────────
+% Full-bleed navy banner
 \begin{tikzpicture}[remember picture, overlay]
   \fill[navy] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
@@ -15,35 +16,24 @@
 
 \begin{center}
   {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1: Exploring One-Variable Data}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.7 \quad Summary Statistics for a Quantitative Variable}}
+  {\color{skymid}\large\textbf{Unit 1}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 1.7 \quad The Normal Distribution and z-Scores}}
 \end{center}
 
 \vspace{0.22in}
-
 \namedateperiod
-
 \vspace{0.18in}
 
-% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} calculate the \textit{mean} and \textit{median} for a quantitative
-        dataset and interpret each statistic in context.
-  \item \ldots{} compute the \textit{range}, \textit{quartiles} ($Q_1$, $Q_3$),
-        and \textit{interquartile range} (IQR) for a dataset.
-  \item \ldots{} apply the \textbf{$1.5 \times \text{IQR}$ fence rule} to identify
-        outliers, and explain why a value is or is not an outlier.
-  \item \ldots{} choose the \textit{appropriate} measure of center and spread
-        (median + IQR vs.\ mean + standard deviation) based on the shape of the
-        distribution and the presence of outliers.
+  \item \ldots{} TODO: learning target 1 (restate a Learning Objective as "I can ...").
+  \item \ldots{} TODO: learning target 2.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
-% ── TABLE OF CONTENTS ────────────────────────────────────────────────────────
 \begin{tocbox}
 \small
 \renewcommand{\arraystretch}{1.5}
@@ -51,44 +41,13 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Interpret a dotplot; estimate center and spread         & \blank{1.2cm} \\
-2 & Guided Notes   & Mean, median, IQR, standard deviation, outlier rule     & \blank{1.2cm} \\
-3 & Group Activity & Calculate and compare statistics; identify outliers      & \blank{1.2cm} \\
-4 & Exit Ticket    & Compute summary statistics; apply the outlier rule       & \blank{1.2cm} \\
-5 & Homework       & Multi-part practice: calculate, interpret, AP-style      & \blank{1.2cm} \\
+1 & Warm-Up      & TODO & \blank{1.2cm} \\
+2 & Group Activity & TODO & \blank{1.2cm} \\
+3 & Exit Ticket  & TODO & \blank{1.2cm} \\
+4 & Homework     & TODO & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
-
-\vspace{0.14in}
-
-% ── KEEP IN MIND ─────────────────────────────────────────────────────────────
-\begin{remindbox}
-\small
-The statistics in this lesson make the SOCS framework from Lesson 1.6 precise.
-``Center is approximately 25 minutes'' becomes ``The median is 25 minutes.''
-
-\vspace{6pt}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
-                                    X @{}}
-\textbf{\large!} &
-\textbf{Mean is pulled toward the tail; median resists.}\enspace
-In a skewed distribution, the mean follows extreme values. The median stays near
-the typical center because it depends only on position, not magnitude. \\[6pt]
-\textbf{\large!} &
-\textbf{Always pair the right center with the right spread.}\enspace
-If you choose median (resistant), pair it with IQR (also resistant).
-If you choose mean, pair it with standard deviation. Never mix. \\[6pt]
-\textbf{\large!} &
-\textbf{The $1.5 \times \text{IQR}$ rule is mechanical, not absolute.}\enspace
-A value flagged as an outlier should be \textit{investigated}, not automatically removed.
-Check for data entry errors first; if the value is real, report it and explain. \\[6pt]
-\textbf{\large!} &
-\textbf{Standard deviation is always $\geq 0$.}\enspace
-$s_x = 0$ only when every data value is identical. The units of $s_x$ match the
-units of the original data --- it is a typical distance from the mean. \\
-\end{tabularx}
-\end{remindbox}
 
 \end{document}

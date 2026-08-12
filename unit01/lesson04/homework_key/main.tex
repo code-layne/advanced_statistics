@@ -1,216 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.4 — Homework ANSWER KEY
+%! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Homework --- Answer Key}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For all problems: include a title and labeled axes on every graph; always
-start the y-axis at 0; use complete sentences for written responses with context
-included. AP free-response requires all of these --- build the habit now.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART A
-% ════════════════════════════════════════════════════════════════════════════
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
 \boxguard
-\begin{blurbbox}[Part A \quad Construct a Bar Chart from a Frequency Table]{navylight}
-\small
-
-A survey of \textbf{40 middle school students} asks: ``How do you get to school?''
-The results are below.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{0.75\linewidth}{@{} >{\bfseries}p{0.22\linewidth}
-                                        C{0.18\linewidth}
-                                        C{0.26\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Mode} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-Walk   & 16 & \ans{0.40 (40\%)} \\
-Car    & 10 & \ans{0.25 (25\%)} \\
-Bus    & 10 & \ans{0.25 (25\%)} \\
-Bike   & 4  & \ans{0.10 (10\%)} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & \ans{40} & \ans{1.00} \\
-\end{tabularx}
-
-\vspace{12pt}
-
-\noindent\textbf{Construct a relative frequency bar chart} in the space below.
-
-\vspace{8pt}
-\begin{tcolorbox}[colback=white, colframe=slate, boxrule=0.5pt, arc=2mm,
-    left=2mm, right=2mm, top=2mm, bottom=2mm, height=2.4in]
-\centering
-{\color{keyred}\bfseries\small How 40 Middle School Students Get to School}\\[2pt]
-\begin{tikzpicture}[scale=0.92]
-  % y-axis 0 to 0.45; 1 unit = 10cm
-  \draw[thick] (0,0) -- (0,4.6);
-  \foreach \p/\lbl in {0/0, 1/0.10, 2/0.20, 3/0.30, 4/0.40} {
-    \draw (-0.1,\p) -- (0.1,\p);
-    \node[left, font=\scriptsize] at (-0.12,\p) {\lbl};
-  }
-  \node[rotate=90, font=\scriptsize, color=keyred] at (-1.05,2.3) {Relative frequency};
-  \draw[thick] (0,0) -- (7.0,0);
-  \foreach \i/\v/\lbl in {0/4.0/Walk, 1/2.5/Car, 2/2.5/Bus, 3/1.0/Bike} {
-    \fill[keyred!75] ({0.7+\i*1.6},0) rectangle ({1.7+\i*1.6},\v);
-    \draw[keyred]    ({0.7+\i*1.6},0) rectangle ({1.7+\i*1.6},\v);
-    \node[below, font=\scriptsize, color=keyred] at ({1.2+\i*1.6},-0.08) {\lbl};
-  }
-  \node[below, font=\scriptsize\itshape, color=keyred] at (3.5,-0.55) {Mode of transportation};
-\end{tikzpicture}
-\end{tcolorbox}
-
-\vspace{12pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Write 2--3 complete sentences describing the distribution of
-        transportation mode for these 40 students. Include the most and least
-        common categories and their relative frequencies.\\[8pt]
-        \ansline{Of the 40 middle school students surveyed, walking was the most}\\[1pt]
-        \ansline{common mode (40\%). Car and bus tied at 25\% each. Biking was}\\[1pt]
-        \ansline{least common, at only 10\%.}
-
-  \item What percentage of students do not walk to school? Show your work.\\[8pt]
-        \ansline{$100\% - 40\% = \textbf{60\%}$}\\[1pt]
-        \ansline{(equivalently $(10+10+4)/40 = 24/40 = 0.60$).}
-
-  \item Would a pie chart or bar chart be more appropriate here? Explain your
-        reasoning.\\[6pt]
-        \ansline{A bar chart --- comparing heights makes the Car/Bus tie at 25\%}\\[1pt]
-        \ansline{obvious, where equal pie slices are hard to tell apart.}
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART B
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part B \quad Critique a Misleading Graph]{greenacc}
-\small
-
-A local newspaper publishes a bar chart showing the number of students enrolled
-in each of four elective classes. The chart has the following properties:
-\begin{itemize}[itemsep=3pt]
-  \item The y-axis starts at 40 (not 0).
-  \item The bar for Art class reaches 60; the bar for Music reaches 50.
-  \item The headline reads: ``Art Has 20\% More Students Than Music!''
-\end{itemize}
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Explain why the newspaper's bar chart is misleading. What does a reader
-        incorrectly perceive?\\[6pt]
-        \ansline{The y-axis starts at 40, so the visible bars are $60-40=20$ against}\\[1pt]
-        \ansline{$50-40=10$ --- Art looks twice Music. A reader perceives a 100\%}\\[1pt]
-        \ansline{gap when the real difference is only 20\%.}
-
-  \item Calculate the \textit{actual} percentage by which Art exceeds Music,
-        relative to the true enrollment numbers. Is the headline accurate?\\[8pt]
-        \ansline{$(60-50)/50 \times 100\% = \textbf{20\%}$. The headline is numerically}\\[1pt]
-        \ansline{correct, but the graph makes 20\% look far larger than it is.}
-
-  \item Describe exactly how you would fix the graph so it accurately represents
-        the data.\\[6pt]
-        \ansline{Redraw with the y-axis starting at 0 and label it with units.}\\[1pt]
-        \ansline{Both bars then read near-equal, with Art modestly taller.}
-
-  \item If the school has 300 total students enrolled in electives, and you
-        know Art = 60 and Music = 50, what are their relative frequencies?
-        Which class has the larger share of total enrollment?\\[6pt]
-        \ansline{Art $= 60/300 = 0.200$ (20\%); Music $= 50/300 \approx 0.167$ (16.7\%).}\\[1pt]
-        \ansline{Art has the larger share; the other 190 students take other electives.}
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART C
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
-\small
-
-The table below shows the distribution of color preference for a sample of
-120 car buyers.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{0.72\linewidth}{@{} >{\bfseries}p{0.28\linewidth}
-                                      C{0.22\linewidth}
-                                      C{0.26\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Color} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-White   & 42 & 0.350 \\
-Black   & 30 & 0.250 \\
-Silver  & 24 & 0.200 \\
-Red     & 12 & 0.100 \\
-Other   & 12 & 0.100 \\
-\midrule
-\rowcolor{sky}\textbf{Total} & 120 & 1.000 \\
-\end{tabularx}
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item Describe the distribution of car color preference for these 120 buyers.
-        Use the information in the table in your response.\\[6pt]
-        \ansline{Of the 120 car buyers, white was most preferred (35\%), then black}\\[1pt]
-        \ansline{(25\%) and silver (20\%); red and other tied last at 10\% each.}\\[1pt]
-        \ansline{White and black together account for 60\% of all preferences.}
-
-  \item Compute the sector angle (in degrees) for each color in a pie chart.
-        Which two colors together would form almost exactly half the circle?\\[8pt]
-        \ansline{White $126^\circ$, Black $90^\circ$, Silver $72^\circ$, Red $36^\circ$, Other $36^\circ$.}\\[1pt]
-        \ansline{Black $+$ Silver $= 90 + 72 = 162^\circ$, nearly half the $360^\circ$ circle}\\[1pt]
-        \ansline{(together 45\% of preferences).}
-
-  \item A car dealership wants to display this data on a poster. Should they
-        use a bar chart or pie chart? Justify your choice in one or two sentences.\\[6pt]
-        \ansline{A bar chart --- with 5 categories, heights compare more easily than}\\[1pt]
-        \ansline{angles, and the equal Red/Other slices would be hard to tell apart.}
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% EXTENSION
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{extensionbox}
-\small
-\textbf{Optional Extension --- Find a Misleading Graph in the Wild}\\[4pt]
-Find a real bar chart or pie chart from a news article, social media, or a
-company report that you believe is misleading. Write a 3--5 sentence analysis:
-(1) identify the source and what data the graph displays, (2) explain specifically
-why the graph is misleading, (3) describe how to correct the display, and (4) state
-what a reader would wrongly conclude from the original graph.
-
-\vspace{8pt}
-\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\vspace{4pt}
-\textcolor{slate}{\scriptsize Source / URL:\;\blank{11cm}}
-\end{extensionbox}
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

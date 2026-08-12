@@ -1,190 +1,25 @@
-%! AP Statistics — Unit 1, Lesson 1.7 — Guided Notes
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-% ── vocabpar ────────────────────────────────────────────────────────────────
-% \termblanklong opens with \noindent (a no-op mid-paragraph) and closes with
-% \\ rather than \par, so chained terms share one paragraph and labels collide
-% with the preceding answer. Give each term its own paragraph on both ends.
-% Mirrored by \vocabans in notes_key/main.tex.
-\newcommand{\vocabterm}[1]{%
-  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
-  \writeline\\[1pt]\writeline\par\vspace{3pt}}
-
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Guided Notes}
 
-\vspace{0.10in}
 
-% ── OBJECTIVE ────────────────────────────────────────────────────────────────
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
+\vspace{0.15in}
 
-\vspace{0.10in}
-
-% ── VOCABULARY ───────────────────────────────────────────────────────────────
+% TODO: author the Guided Notes. See references/components.md for the expected structure.
+% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
+% when the box opens with an unbreakable TikZ figure or tabularx.
+% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
+% the _key: the blank reserves its exact height, the key prints it. That is what keeps
+% this component the same number of pages as its key.
 \boxguard
-\begin{vocabbox}
-\small
-\begin{multicols}{2}
-\vocabterm{Mean ($\bar{x}$)}
-\vocabterm{Median ($M$)}
-\vocabterm{Range}
-\columnbreak
-\vocabterm{Quartiles ($Q_1$, $Q_3$)}
-\vocabterm{IQR (Interquartile Range)}
-\vocabterm{Resistant statistic}
-\vocabterm{Outlier fence rule}
-\end{multicols}
-\end{vocabbox}
-
-\vspace{0.10in}
-
-% ── HOOK ─────────────────────────────────────────────────────────────────────
-\boxguard
-\begin{hookbox}
-\small\textbf{Which salary best represents ``typical''?}
-
-\vspace{5pt}
-Five friends report their annual salaries (thousands of dollars):
-\[\$30,\quad \$32,\quad \$35,\quad \$38,\quad \$200\]
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.20\linewidth} X X @{}}
-\rowcolor{sky}
-\textbf{Statistic} & \textbf{Calculation} & \textbf{Interpretation} \\
-\midrule
-Mean   & $\bar{x} = \dfrac{30+32+35+38+200}{5} = \blank{2cm}$ & \blank{4cm} \\[8pt]
-Median & Middle value of sorted list $= \blank{2cm}$            & \blank{4cm} \\
-\end{tabularx}
-
-\vspace{6pt}
-Which is more representative? \blank{6cm} Why? \blank{5cm}
-\end{hookbox}
-
-\vspace{0.08in}
-
-% ── SECTION 1: MEASURES OF CENTER ────────────────────────────────────────────
-\boxguard
-\begin{notesbox}{Measures of Center}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{Mean} ($\bar{x}$):}
-\[\bar{x} = \frac{\sum x_i}{n} = \frac{\blank{2cm}}{\blank{1cm}}\]
-\begin{itemize}[itemsep=3pt]
-  \item Uses \blank{2.5cm} data values.
-  \item \blank{2cm} resistant to outliers.
-  \item Pulled toward the \blank{1.5cm} of a skewed distribution.
-\end{itemize}
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Median} ($M$):}
-\begin{itemize}[itemsep=3pt]
-  \item Sort data; take the \blank{2cm} value.
-  \item If $n$ is even, average the \blank{2.5cm} two middle values.
-  \item \blank{2.2cm} resistant to outliers.
-  \item Stays near the \blank{2cm} of the distribution.
-\end{itemize}
-\end{multicols}
+\begin{notesbox}{Guided Notes}
+\writelines{4}
 \end{notesbox}
-
-\vspace{0.08in}
-
-% ── SECTION 2: MEASURES OF SPREAD ────────────────────────────────────────────
-\boxguard
-\begin{notesbox}{Measures of Spread}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{Range:}}
-\[\text{Range} = \blank{2cm} - \blank{2cm}\]
-\begin{itemize}[itemsep=3pt]
-  \item Simple but \blank{2cm} resistant.
-  \item Only uses the two \blank{2.5cm} values.
-\end{itemize}
-
-\vspace{6pt}
-\textbf{\textcolor{navy}{Quartiles \& IQR:}}
-\begin{itemize}[itemsep=3pt]
-  \item $Q_1 = $ median of the \blank{2.5cm} half.
-  \item $Q_3 = $ median of the \blank{2.5cm} half.
-  \item $\text{IQR} = Q_3 - Q_1 = $ \blank{2cm}
-  \item Contains the middle \blank{1cm}\% of data.
-  \item \blank{2cm} resistant to outliers.
-\end{itemize}
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Standard Deviation} ($s_x$):}
-\[s_x = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n-1}}\]
-\begin{itemize}[itemsep=3pt]
-  \item Typical \blank{2cm} from the mean.
-  \item Always $\geq$ \blank{1cm}; units = units of data.
-  \item \blank{2cm} resistant to outliers.
-  \item Use with \blank{2cm} when distribution is symmetric.
-\end{itemize}
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.08in}
-
-% ── SECTION 3: OUTLIER RULE + DECISION ───────────────────────────────────────
-\boxguard
-\begin{notesbox}{Outlier Rule \& Choosing Statistics}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{$1.5 \times$ IQR Fence Rule:}}
-\begin{itemize}[itemsep=4pt]
-  \item Lower fence: $Q_1 - 1.5(\text{IQR})$
-  \item Upper fence: $Q_3 + 1.5(\text{IQR})$
-  \item A value is an outlier if it is \blank{3cm} \\ the lower fence or
-        \blank{3cm} the upper fence.
-\end{itemize}
-
-\vspace{4pt}
-\textbf{Example:} $Q_1 = 19$, $Q_3 = 31$, IQR~$= 12$\\
-Lower fence $= \blank{3cm}$\quad Upper fence $= \blank{3cm}$
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Choosing the Right Pair:}}
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\columnwidth}{@{} >{\bfseries}p{0.42\columnwidth} X @{}}
-\rowcolor{sky}
-\textbf{If shape is\dots} & \textbf{Report\dots} \\
-\midrule
-Skewed \textit{or} has outliers & \blank{3.5cm} \\
-Approximately symmetric & \blank{3.5cm} \\
-\end{tabularx}
-
-\vspace{6pt}
-\textit{Key:} Mean is pulled toward the \blank{1.5cm}. \\
-Median \blank{2.5cm} toward extremes.
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.08in}
-
-% ── REFLECTION ───────────────────────────────────────────────────────────────
-\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=2mm, bottom=2mm]
-\small\textbf{Quick Check:} A dataset has mean 85 and median 72. \\[4pt]
-Shape is likely \blank{4cm}. \quad
-Better center to report: \blank{3cm}. \quad
-Better spread to report: \blank{3cm}.
-\end{tcolorbox}
 
 \end{document}
