@@ -1,56 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.5 — Warm-Up ANSWER KEY
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Warm-Up --- Answer Key}
 
-\vspace{0.16in}
 
-\noindent The dotplot below shows the number of books read over the summer by
-each of 20 students.
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.0]
-  \draw[thick] (0,0) -- (5.2,0);
-  \foreach \x/\lbl in {0.8/1, 1.8/2, 2.8/3, 3.8/4, 4.8/5} {
-    \draw (\x,-0.12) -- (\x,0.12);
-    \node[below, font=\small] at (\x,-0.12) {\lbl};
-  }
-  \node[below, font=\small\itshape] at (2.8,-0.52) {Number of books read};
-  \foreach \k in {1,...,4} \filldraw[navy] (0.8, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,7} \filldraw[navy] (1.8, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,6} \filldraw[navy] (2.8, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,2} \filldraw[navy] (3.8, \k*0.38) circle (0.14);
-  \filldraw[navy] (4.8, 0.38) circle (0.14);
-\end{tikzpicture}
-\end{center}
-
-\vspace{0.18in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-
-  \item \ansline{The variable is ``number of books read over the summer.'' It is
-        \textbf{quantitative} because the values are counts (numbers on a meaningful
-        scale) --- you can add, subtract, and compute averages.}
-
-  \item \ansline{The value \textbf{2} occurs most often. \textbf{7} students chose
-        that value (7 dots stacked above the 2).}
-
-  \item \ansline{Range $= 5 - 1 = \mathbf{4}$ books.}
-
-  \item \ansline{In a dotplot, the number line has a meaningful numerical order and
-        equal spacing --- the distance between 1 and 2 equals the distance between
-        4 and 5. In a bar chart for categorical data, the order of bars is arbitrary
-        and there is no numerical scale. Also, histogram bars (for quantitative data)
-        \textit{touch} because adjacent bins share a boundary, whereas bar chart bars
-        do not touch.}
-
-\end{enumerate}
+% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
+\boxguard
+\begin{notesbox}{Warm-Up --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

@@ -1,215 +1,93 @@
-%! AP Statistics — Unit 1, Lesson 7
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Lesson Plan
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-% Load the shared box/colour package rather than re-declaring skillbox and the
-% palette locally: teachernote (used by the migrated teacher notes below) is
-% defined in apstats-boxes, and a local copy of the palette silently diverges
-% from shared/apstats-colors.sty.
+\usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-% Teacher notes quote expected answers, so the plan needs \ans. Defining it
-% here rather than loading apstats-key, which would also flip every `work`
-% block visible.
-\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.7: The Normal Distribution and z-Scores}
 
 \begin{document}
-\def\CourseName{Statistics}
-\def\SchoolYear{2026--2027}
-\def\MeetingLength{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.7: Summary Statistics for a Quantitative Variable}
-
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will calculate and interpret the mean, median, range,
-    interquartile range (IQR), and standard deviation for a quantitative variable. Students will
-    select the appropriate measure of center and spread based on the shape of the distribution,
-    and will identify outliers using the $1.5 \times \text{IQR}$ rule (Big Idea: UNC; AP Skills 2 \& 4).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\boxguard
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skills 2 \& 4 --- Data Analysis \& Statistical Argumentation}
-    \begin{itemize}
-        \item Calculate mean, median, range, IQR, and standard deviation by hand and with technology.
-        \item Choose median + IQR for skewed or outlier-affected distributions; mean + standard deviation for symmetric distributions.
-        \item Apply the $1.5 \times \text{IQR}$ fence rule to identify outliers.
-        \item Interpret statistics in context (e.g., ``The median commute time was 28 minutes'').
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
-    \begin{itemize}
-        \item Mean is pulled toward the tail in skewed distributions; median is resistant.
-        \item Standard deviation measures typical distance from the mean --- it is always $\geq 0$.
-        \item IQR captures the middle 50\% of data; it is resistant to outliers.
-        \item The choice of summary statistics should match the shape of the distribution.
-    \end{itemize}
-\end{minipage}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Mean} ($\bar{x}$): $\bar{x} = \dfrac{\sum x_i}{n}$; the arithmetic average; not resistant to outliers
-        \item \textbf{Median} ($M$): middle value when sorted; resistant to outliers
-        \item \textbf{Range}: $\max - \min$; simple but not resistant
-        \item \textbf{Quartiles} ($Q_1$, $Q_2$, $Q_3$): values at the 25th, 50th, 75th percentiles
-        \item \textbf{IQR}: $Q_3 - Q_1$; resistant measure of spread; contains middle 50\% of data
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Standard deviation} ($s_x$): $s_x = \sqrt{\dfrac{\sum(x_i - \bar{x})^2}{n-1}}$; typical distance from the mean; not resistant
-        \item \textbf{Variance} ($s_x^2$): square of the standard deviation
-        \item \textbf{Outlier rule}: a value is an outlier if it is below $Q_1 - 1.5\,\text{IQR}$ or above $Q_3 + 1.5\,\text{IQR}$
-        \item \textbf{Resistant statistic}: not strongly affected by extreme values (median, IQR)
-    \end{itemize}
-\end{minipage}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Revisit the SOCS framework from Lesson 1.6. Ask: ``When I said `center is approximately 8 hours,' how could I be more precise?'' Students recall mean and median from prior coursework. Today we formalize and extend.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
-    \begin{itemize}
-        \item Lesson 1.8: five-number summary ($\min, Q_1, M, Q_3, \max$) is displayed in a boxplot.
-        \item Lesson 1.9: comparing distributions uses mean/median and standard deviation/IQR.
-        \item Unit 5--9: standard deviation plays a central role in all inference procedures.
-    \end{itemize}
-\end{minipage}
+    \begin{minipage}[t]{0.48\linewidth}
+        % TODO: prior knowledge bullets (Units/lessons reviewed)
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+            % TODO: spiral-review thumbnail. Authored warm-ups compile to
+            % target/, so leave this text-only (as in AP Stats) unless you
+            % keep a source PDF in the warmup/ directory to embed.
+        % TODO: connections forward (upcoming lessons)
+    \end{minipage}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Scenario: 5 friends' salaries are \$30k, \$32k, \$35k, \$38k, \$200k. Ask: ``What is the typical salary?'' Compute the mean (\$67k) and the median (\$35k). Discuss: ``Which is more representative?'' --- introduces the resistance concept immediately.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (18 min)}
-    \begin{enumerate}
-        \item Calculate mean and median for two datasets: one symmetric, one skewed.
-        \item Show algebraically why skewness pulls mean toward the tail.
-        \item Compute $Q_1$, $Q_3$, IQR; apply the outlier fence rule.
-        \item Calculate standard deviation step-by-step for a small dataset; connect to the idea of ``average spread.''
-        \item Summarize the decision rule: skewed/outliers $\to$ median + IQR; symmetric $\to$ mean + $s_x$.
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Walk through the standard deviation formula slowly; emphasize: squaring deviations makes all positive, square root returns units.
-        \item Demonstrate with technology (calculator or software) after the by-hand calculation.
-        \item Outlier fence: lower = $Q_1 - 1.5(Q_3-Q_1)$; upper = $Q_3 + 1.5(Q_3-Q_1)$.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Check: Are students using $n-1$ (sample standard deviation $s_x$) rather than $n$?
-        \item Common error: confusing the median finding rule for even vs.\ odd $n$.
-        \item Ask: ``If I add a very large value to this dataset, which statistic changes more --- the mean or the median? The IQR or the standard deviation?''
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\boxguard
+\begin{skillbox}[Active Monitoring]{redbox}
+    % TODO: what to circulate and check for; cold-call prompts.
+\end{skillbox}
+
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Groups receive a dataset (e.g., 12 recorded lap times). Each group:
-    \begin{enumerate}
-        \item Calculates mean, median, range, IQR.
-        \item Checks for outliers using the fence rule.
-        \item Determines which pair (mean+SD or median+IQR) is more appropriate.
-        \item Writes one sentence choosing and justifying their statistic.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide a step-by-step computation sheet for standard deviation; allow calculator use for all calculations after doing one by hand.
-        \item \textit{Extension}: Explore how adding a constant to every value, or multiplying every value by a constant, affects each statistic. (Leads to linear transformation rules in Lesson 1.10.)
-        \item \textit{Connections}: Discuss why insurance companies, economists, and scientists might prefer different statistics.
-    \end{itemize}
-\end{minipage}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Dataset: 4, 7, 7, 9, 10, 13, 15, 30. Find: (1) mean, (2) median, (3) IQR, (4) check if 30 is an outlier using the fence rule, (5) state which measure of center is more appropriate and why.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``The mean and median of a distribution are 45 and 32, respectively. What does this suggest about the shape of the distribution? Explain.''}\\[4pt]
-    Assess: student connects mean $>$ median $\to$ skewed right, with explanation.
-\end{minipage}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Compute all five summary statistics for two datasets; identify outliers; state appropriate pair of statistics for each.
-        \item AP textbook: multiple-choice and free-response on summary statistics.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Investigate how the standard deviation changes when one outlier is added or removed from a dataset.
-        \item \textit{Preview}: Lesson 1.8 --- the five-number summary ($\min, Q_1, M, Q_3, \max$) is visualized in a \textit{boxplot}. Think about what information a boxplot would show that a histogram does not.
-    \end{itemize}
-\end{minipage}
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
-
-% ── Teacher notes (migrated from the component keys) ──
-% One per component, titled for it. They live here rather than in the _key
-% files so that every component is the same length blank and keyed.
-
-\boxguard
-\begin{teachernote}[Exit Ticket]
-Award full credit for responses that: (1) identify mean or median by name,
-(2) cite skewness or the outlier as justification, and (3) state the value in
-context. Do not penalize for ``skewed right'' vs.\ ``has an outlier'' --- either
-reason is sufficient.
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
+% no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Delete any note whose component this lesson doesn't have.
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, what to look for, common errors.
 \end{teachernote}
 
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+    % TODO
+\end{teachernote}
 \end{document}

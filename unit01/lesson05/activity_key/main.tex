@@ -1,206 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.5 — Group Activity ANSWER KEY
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Group Activity --- Answer Key}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-\textbf{Part 1} (group, 8 min): Read and analyze a dotplot.\\
-\textbf{Part 2} (group, 8 min): Complete a back-to-back stemplot and compare two groups.\\
-\textbf{Part 3} (group, 5 min): Interpret a histogram from a frequency table.\\
-\textbf{Part 4} (individual, 3 min): Reflection.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.12in}
-
-% ── PART 1 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 1 \quad Read a Dotplot}
-
-\vspace{0.1in}
-
-\noindent\small The dotplot below shows the heights (cm) of 15 seedlings measured
-two weeks after planting.
-
-\vspace{0.12in}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.05]
-  \draw[thick] (3.2,0) -- (9.8,0);
-  \foreach \x/\lbl in {4/4, 5/5, 6/6, 7/7, 8/8, 9/9} {
-    \draw (\x,-0.12) -- (\x,0.12);
-    \node[below, font=\small] at (\x,-0.12) {\lbl};
-  }
-  \node[below, font=\small\itshape] at (6.5,-0.52) {Height (cm)};
-  % freq: 4→1, 5→3, 6→4, 7→4, 8→2, 9→1
-  \filldraw[navy] (4, 0.38) circle (0.14);
-  \foreach \k in {1,...,3} \filldraw[navy] (5, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,4} \filldraw[navy] (6, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,4} \filldraw[navy] (7, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,2} \filldraw[navy] (8, \k*0.38) circle (0.14);
-  \filldraw[navy] (9, 0.38) circle (0.14);
-\end{tikzpicture}
-\end{center}
-
-\vspace{0.12in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item How many seedlings have a height of exactly 6 cm or 7 cm?
-        \ans{$4+4=8$}
-        What percentage of all seedlings does this represent?
-        Show your work.\quad\ans{$8/15 \approx 53.3\%$}
-
-  \item What is the range of heights? \ans{$9-4=5$ cm}
-        Are there any gaps or clusters? Describe what you see.\\[5pt]
-        \ansline{No gaps. There is a cluster at 6--7 cm holding 8 of the 15}\\[1pt]
-        \ansline{seedlings, with fewer observations toward either extreme.}
-
-  \item A student says: ``The distribution looks roughly symmetric.''
-        Do you agree? Use evidence from the dotplot.\\[5pt]
-        \ansline{Yes --- the peak sits at 6 and 7 (4 dots each), with 3 at 5 and 2}\\[1pt]
-        \ansline{at 8, and a single dot at each extreme (4 and 9).}
-
-  \item For this dataset ($n = 15$), is a dotplot a reasonable choice of display?
-        What is one limitation it would have if there were 200 seedlings instead?\\[5pt]
-        \ansline{Yes, at $n=15$ it preserves every individual height. At $n=200$ the}\\[1pt]
-        \ansline{dots would stack unreadably --- a histogram would be better.}
-
-\end{enumerate}
-
-\vspace{0.12in}
-
-% ── PART 2 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 2 \quad Complete a Back-to-Back Stemplot}
-
-\vspace{0.1in}
-
-\noindent\small Two Statistics classes took the same unit test (100 points). Their scores
-are listed below. Complete the back-to-back stemplot and then compare the two distributions.
-
-\vspace{0.1in}
-
-\begin{center}
-\small
-\begin{tabular}{p{0.42\linewidth} p{0.42\linewidth}}
-\textbf{Period 1 ($n = 10$):} & \textbf{Period 2 ($n = 10$):} \\
-68, 71, 72, 76, 79, 83, 85, 88, 91, 94 & 65, 69, 72, 75, 77, 78, 82, 84, 88, 91 \\
-\end{tabular}
-\end{center}
-
-\vspace{0.1in}
-
-\noindent Complete the stemplot below. Leaves for Period 1 go on the \textit{left}
-(written right-to-left), leaves for Period 2 go on the \textit{right}.
-
-\vspace{0.1in}
-
-\begin{center}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabular}{r c l}
-\textbf{Period 1} & \textbf{Stem} & \textbf{Period 2} \\
-\hline
-\ans{8}             & 6 & \ans{5\; 9}       \\
-\ans{9\; 6\; 2\; 1} & 7 & \ans{2\; 5\; 7\; 8} \\
-\ans{8\; 5\; 3}     & 8 & \ans{2\; 4\; 8}   \\
-\ans{4\; 1}         & 9 & \ans{1}           \\
-\end{tabular}
-\hspace{1cm} Key: \textbf{7 $|$ 6} = 76
-\end{center}
-
-\vspace{0.1in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item What is the median score for each class?
-        Show how you found each median.\\[5pt]
-        Period 1 median: \ans{$(79+83)/2 = 81$} \quad Period 2 median: \ans{$(77+78)/2 = 77.5$}
-
-  \item Which class had a higher median? Which class had more spread in scores?
-        Support your answer with values from the stemplot.\\[5pt]
-        \ansline{Period 1 has the higher median (81 vs.\ 77.5). Spread is the same:}\\[1pt]
-        \ansline{both ranges are 26 ($94-68$ and $91-65$); Period 2 just sits lower.}
-
-  \item A student says: ``Period 1 is doing better because it has more students with
-        scores in the 80s and 90s.'' Use the back-to-back stemplot to evaluate
-        this claim with specific evidence.\\[5pt]
-        \ansline{Partly right. Period 1 has 5 scores at or above 80 (83, 85, 88, 91, 94)}\\[1pt]
-        \ansline{$=50\%$; Period 2 has 4 (82, 84, 88, 91) $=40\%$. But the medians differ}\\[1pt]
-        \ansline{by only 3.5 points, so ``doing better'' overstates a modest gap.}
-
-\end{enumerate}
-
-\vspace{0.12in}
-
-% ── PART 3 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 3 \quad Interpret a Histogram (from a Frequency Table)}
-
-\vspace{0.1in}
-
-\noindent\small The table below shows the distribution of heights (cm) for a random
-sample of 50 adults.
-
-\vspace{0.1in}
-
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} C{0.22\linewidth} C{0.18\linewidth} C{0.22\linewidth} C{0.26\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Bin} & \textbf{Frequency} & \textbf{Rel.\ Freq.} & \textbf{Cumulative Freq.} \\
-\midrule
-$[150, 160)$ & 3  & \ans{0.06} & \ans{3}  \\
-$[160, 165)$ & 8  & \ans{0.16} & \ans{11} \\
-$[165, 170)$ & 15 & \ans{0.30} & \ans{26} \\
-$[170, 175)$ & 14 & \ans{0.28} & \ans{40} \\
-$[175, 180)$ & 7  & \ans{0.14} & \ans{47} \\
-$[180, 190)$ & 3  & \ans{0.06} & \ans{50} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & 50 & \ans{1.00} & \ans{50} \\
-\end{tabularx}
-
-\vspace{0.1in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item Complete the relative frequency and cumulative frequency columns above.
-
-  \item Which bin has the greatest frequency? What percentage of adults fall in
-        this bin?\\[5pt]
-        \ansline{$[165,170)$, with 15 adults --- 30\% of the sample.}
-
-  \item Notice that the bins are \textit{not} equal width: $[150,160)$ is 10 cm wide
-        while $[160,165)$ is only 5 cm wide. Why might this be a problem when
-        comparing bar heights in a histogram?\\[5pt]
-        \ansline{Unequal widths break the height-to-density link: a 10 cm bin collects}\\[1pt]
-        \ansline{observations over twice the span, so its bar exaggerates its share.}
-
-  \item What percentage of adults are at least 170 cm tall?
-        Show your calculation.\\[5pt]
-        \ansline{$(14+7+3)/50 = 24/50 = 0.48 = \textbf{48\%}$.}
-
-\end{enumerate}
-
-\vspace{0.12in}
-
-% ── PART 4 ───────────────────────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 4 \quad Individual Reflection}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small\textbf{In your own words:} A dotplot, stemplot, and histogram can all display
-the same quantitative dataset. What is the most important trade-off to consider
-when choosing between them? Give a specific example from today's activity.\\[6pt]
-\ansline{Dataset size against keeping individual values. Part 1's 15 seedlings suited}\\[1pt]
-\ansline{a dotplot --- every height visible. Part 3's 50 adults suited a histogram:}\\[1pt]
-\ansline{binning hid individual heights but made the shape clear and would scale.}
-\end{tcolorbox}
+% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Group Activity].
+\boxguard
+\begin{notesbox}{Group Activity --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

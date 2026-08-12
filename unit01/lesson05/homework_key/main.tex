@@ -1,205 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.5 — Homework ANSWER KEY
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Homework --- Answer Key}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For all problems: show calculations, state context in written responses,
-and use complete sentences for AP-style questions.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART A
-% ════════════════════════════════════════════════════════════════════════════
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
 \boxguard
-\begin{blurbbox}[Part A \quad Interpret a Dotplot]{navylight}
-\small
-
-The dotplot below shows the time (minutes) it took each of 20 students to
-complete an in-class problem set.
-
-\vspace{0.12in}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.05]
-  \draw[thick] (4.2,0) -- (11.8,0);
-  \foreach \x/\lbl in {5/5, 6/6, 7/7, 8/8, 9/9, 10/10, 11/11} {
-    \draw (\x,-0.12) -- (\x,0.12);
-    \node[below, font=\small] at (\x,-0.12) {\lbl};
-  }
-  \node[below, font=\small\itshape] at (8,-0.52) {Time (minutes)};
-  % freq: 5→1, 6→3, 7→5, 8→5, 9→3, 10→2, 11→1
-  \filldraw[navy] (5, 0.38) circle (0.14);
-  \foreach \k in {1,...,3} \filldraw[navy] (6, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,5} \filldraw[navy] (7, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,5} \filldraw[navy] (8, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,3} \filldraw[navy] (9, \k*0.38) circle (0.14);
-  \foreach \k in {1,...,2} \filldraw[navy] (10, \k*0.38) circle (0.14);
-  \filldraw[navy] (11, 0.38) circle (0.14);
-\end{tikzpicture}
-\end{center}
-
-\vspace{0.12in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item What is the range of completion times? \ans{$11-5=6$ min}
-        How many students finished in 8 minutes or less?
-        \ans{$1{+}3{+}5{+}5=14$}
-
-  \item Describe the shape of this distribution. Is it symmetric, skewed left,
-        or skewed right? Explain your reasoning.\\[6pt]
-        \ansline{Approximately symmetric: the peak sits at 7 and 8 minutes (5 each),}\\[1pt]
-        \ansline{with 3 on each side (6 and 9) and 1--2 at the extremes.}
-
-  \item What percentage of students took longer than 9 minutes to finish?
-        Show your calculation.\\[6pt]
-        \ansline{$2+1 = 3$ students; $3/20 = 0.15 = \textbf{15\%}$.}
-
-  \item Write 2--3 complete sentences describing the distribution of completion
-        times for these 20 students. Include shape, a typical value, and spread.\\[6pt]
-        \ansline{Completion times for these 20 students are approximately symmetric,}\\[1pt]
-        \ansline{centred on 7--8 minutes (the two most common times, 5 students each).}\\[1pt]
-        \ansline{Times run from 5 to 11 minutes, a spread of 6 minutes.}
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART B
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part B \quad Complete a Stemplot]{greenacc}
-\small
-
-Daily high temperatures ($^\circ$F) were recorded for 15 days in October:
-\[52,\;55,\;58,\;61,\;63,\;65,\;67,\;68,\;70,\;72,\;73,\;74,\;76,\;78,\;82\]
-
-The stems have been provided below. Complete the stemplot by filling in the leaves
-for each stem. Then answer the questions.
-
-\vspace{0.1in}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{r | l}
-\textbf{Stem} & \textbf{Leaf} \\
-\hline
-5 & \ans{2\; 5\; 8} \\
-6 & \ans{1\; 3\; 5\; 7\; 8} \\
-7 & \ans{0\; 2\; 3\; 4\; 6\; 8} \\
-8 & \ans{2} \\
-\end{tabular}
-\hspace{1.2cm} Key: \textbf{7 $|$ 0} = 70$^\circ$F
-\end{center}
-
-\vspace{0.1in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item What is the median temperature? Show how you used the stemplot to find it.\\[6pt]
-        \ansline{$n=15$, so the median is the 8th leaf counted in order from the top.}\\[1pt]
-        \ansline{That is \textbf{68$^\circ$F}.}
-
-  \item Describe the shape of the distribution. Does it appear skewed or symmetric?
-        What does that tell you about temperatures in October for this location?\\[6pt]
-        \ansline{Roughly symmetric, very slightly skewed right --- most days sit in the}\\[1pt]
-        \ansline{60s--70s with one 82$^\circ$F day. October was mild with occasional warm days.}
-
-  \item What is the interquartile range (IQR)? (Hint: find Q1 and Q3 first.)
-        Show your work.\\[6pt]
-        \ansline{Lower half (positions 1--7): $Q_1 = $ 4th value $= 61^\circ$F.}\\[1pt]
-        \ansline{Upper half (positions 9--15): $Q_3 = $ 12th value $= 74^\circ$F. IQR $= \mathbf{13}^\circ$F.}
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART C
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part C \quad AP-Style: Interpret a Histogram]{redacc}
-\small
-
-The frequency table below shows the distribution of the number of minutes 40 high
-school students spent on homework on a given night.
-
-\vspace{0.1in}
-
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{0.75\linewidth}{@{} C{0.26\linewidth} C{0.22\linewidth} C{0.26\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Time (min)} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-$[0, 10)$   & 2  & \ans{0.050} \\
-$[10, 20)$  & 8  & \ans{0.200} \\
-$[20, 30)$  & 14 & \ans{0.350} \\
-$[30, 40)$  & 11 & \ans{0.275} \\
-$[40, 50)$  & 5  & \ans{0.125} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & 40 & \ans{1.000} \\
-\end{tabularx}
-
-\vspace{0.12in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-
-  \item Complete the relative frequency column. Verify that the relative
-        frequencies sum to 1.
-
-  \item Which bin contains the most students? What percentage of students
-        fall in this bin?\\[6pt]
-        \ansline{$[20,30)$ with 14 students --- 35\% of the class.}
-
-  \item What percentage of students spent at least 30 minutes on homework?
-        Show your work.\\[6pt]
-        \ansline{$(11+5)/40 = 16/40 = 0.40 = \textbf{40\%}$.}
-
-  \item Write a complete AP-style description of the distribution of homework
-        time for these students. Address shape, center, and spread.\\[6pt]
-        \ansline{Homework time for these 40 students is unimodal and skewed right,}\\[1pt]
-        \ansline{peaking in the 20--30 minute bin (35\%). A typical student spent}\\[1pt]
-        \ansline{20--30 minutes; times span under 10 to nearly 50 minutes.}
-
-  \item A classmate says: ``A stemplot would have been a better choice for this
-        data.'' Do you agree? Justify your answer.\\[6pt]
-        \ansline{No --- with $n=40$ spanning 0--50 minutes, the stems would carry too}\\[1pt]
-        \ansline{many leaves. A histogram shows the shape more clearly at this size.}
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.12in}
-
-\boxguard
-\begin{extensionbox}
-\small
-\textbf{Optional Extension --- Compare Two Displays}\\[4pt]
-Find a real dataset online with at least 20 quantitative values (e.g., from
-\texttt{data.census.gov} or a sports statistics site). Determine the best
-display (dotplot, stemplot, or histogram) for your dataset and explain your
-reasoning in 3--5 sentences. What does your chosen display reveal that the
-other two would not?\\[8pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline
-\vspace{4pt}
-\textcolor{slate}{\scriptsize Source / URL:\;\blank{11cm}}
-\end{extensionbox}
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

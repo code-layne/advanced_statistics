@@ -1,319 +1,93 @@
-%! AP Statistics — Unit 1, Lesson 1.3 — Lesson Plan
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Lesson Plan
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
+\usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{colortbl}
-
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-
-% Teacher notes quote expected answers, so the plan needs \ans. Defining it
-% here rather than loading apstats-key, which would also flip every `work`
-% block visible.
-\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.3: Representing a Quantitative Variable with Graphs}
 
 \begin{document}
-\def\CourseName{Statistics}
-\def\SchoolYear{2026--2027}
-\def\MeetingLength{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.3: Representing a Categorical Variable with Tables}
-
 \begin{center}
-    {\Large\bfseries \CourseName \\[4pt]
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct and interpret frequency and
-    relative frequency tables for a categorical variable. Students will recognize that
-    relative frequency (not raw count) is necessary when comparing groups of different
-    sizes, and will use tables to describe the distribution of a categorical variable
-    in context (Big Idea: UNC).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\vspace{4pt}
-
-\boxguard
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 2 --- Data Analysis}
-    \begin{itemize}
-        \item Construct a frequency table and a relative frequency table from raw
-              categorical data.
-        \item Interpret relative frequencies in context
-              (e.g., ``32\% of students prefer\ldots'').
-        \item Explain why relative frequency is used to compare groups of different sizes.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
-    \begin{itemize}
-        \item Raw counts are misleading when total group sizes differ.
-        \item Relative frequencies must sum to 1 (or 100\%) --- this is a built-in
-              error check.
-        \item A frequency table is an alternative to a bar chart for displaying the
-              distribution of a categorical variable; use one when precision matters.
-    \end{itemize}
-\end{minipage}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Frequency} --- the count of individuals in a category
-        \item \textbf{Relative frequency} --- frequency $\div$ total; expressed as a
-              proportion or percentage
-        \item \textbf{Frequency table} --- lists each category with its count
-        \item \textbf{Relative frequency table} --- lists each category with its
-              relative frequency
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Distribution (categorical)} --- the set of possible values and
-              their associated relative frequencies
-        \item \textbf{Proportion} --- a relative frequency expressed as a decimal
-        \item \textbf{Percent} --- a relative frequency expressed per 100
-        \item \textbf{Mode} --- the category with the highest frequency (note: rarely
-              the focus on AP exams)
-    \end{itemize}
-\end{minipage}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Warm-Up Worksheet (5 min)}\\
-    Students receive a list of 20 students' favorite school subjects (categorical
-    data). Tasks: tally each category; ask ``Can we tell which subject is most
-    popular just by scanning the list?'' Motivates today's tables as an
-    organizational tool.\\[6pt]
-    \textbf{Topics Connected}
-    \begin{itemize}[label=\rule{0.7cm}{0.4pt}, leftmargin=1cm]
-        \item Categorical variable (Lesson 1.2)
-        \item Distribution of a variable (Lesson 1.2 preview)
-        \item Preview: displaying data with bar charts (Lesson 1.4)
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections to Current Learning}
-    \begin{itemize}
-        \item Lesson 1.4 displays the same categorical distributions \textit{visually}
-              (bar charts, pie charts). Tables and graphs answer the same question
-              differently.
-        \item Relative frequency now is the same operation as computing a probability
-              in Unit 4.
-        \item Two-way frequency tables (Unit 2) are a direct extension of today's
-              one-way tables.
-    \end{itemize}
-\end{minipage}
+    \begin{minipage}[t]{0.48\linewidth}
+        % TODO: prior knowledge bullets (Units/lessons reviewed)
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+            % TODO: spiral-review thumbnail. Authored warm-ups compile to
+            % target/, so leave this text-only (as in AP Stats) unless you
+            % keep a source PDF in the warmup/ directory to embed.
+        % TODO: connections forward (upcoming lessons)
+    \end{minipage}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (4--5 min)}\\
-    Display counts for two schools' survey results on commute mode:
-    \begin{center}
-    \small\renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{lcc}
-    \hline
-    Mode & School A & School B \\ \hline
-    Bus  & 120 & 30 \\
-    Car  & 80  & 50 \\
-    Walk & 40  & 120 \\ \hline
-    \textbf{Total} & \textbf{240} & \textbf{200} \\
-    \hline
-    \end{tabular}
-    \end{center}
-    Ask: ``Which school has more walkers?'' Let students debate. Reveal: School B
-    has \textit{fewer} walkers by count but \textit{more} by proportion. Transition
-    to why we need relative frequency.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item From raw class data (birth month), build a tally, then a frequency
-              table together.
-        \item Add the relative frequency column: divide each count by $n$; verify
-              sum $= 1$.
-        \item Revisit the hook: compute relative frequencies for both schools and
-              resolve the debate.
-        \item Model AP-style interpretation:
-              \textit{``About 60\% of School B students walk to school, compared
-              to only 17\% of School A students.''}
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Model the four-step table build: \textbf{(1)} list categories,
-              \textbf{(2)} tally, \textbf{(3)} count, \textbf{(4)} divide by $n$.
-        \item Common errors: forgetting to divide (reporting counts as ``relative
-              frequency''), rounding that makes sum $\neq 1$.
-        \item AP language: always state the context and the total
-              (\textit{``of the 200 students surveyed\ldots''}).
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Circulate as students complete guided notes practice.
-        \item Check: relative frequencies expressed as decimals \textit{and} as
-              percentages (AP uses both; students should convert fluently).
-        \item Prompt cold-calls: ``Does your sum equal 1? If not, where did the
-              rounding error occur?''
-        \item Use the notes guided-practice table as the monitoring anchor.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\boxguard
+\begin{skillbox}[Active Monitoring]{redbox}
+    % TODO: what to circulate and check for; cold-call prompts.
+\end{skillbox}
+
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Groups receive a raw dataset of 30 students' favorite sport (6 categories).
-    Each group:
-    \begin{enumerate}
-        \item Tallies the data and builds a complete frequency table.
-        \item Adds a relative frequency column; verifies the sum.
-        \item Writes two sentences interpreting the distribution.
-        \item A second dataset (different $n$) prompts comparison using relative
-              frequency.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Pre-labeled table template with categories already
-              listed; student only fills counts and relative frequencies.
-        \item \textit{Extension}: Two datasets of different sizes; compare
-              distributions and write a short conclusion paragraph.
-        \item \textit{AP Connection}: Discuss how an AP free-response item asks to
-              ``describe the distribution'' --- complete sentences, context, and
-              relative frequency are required.
-    \end{itemize}
-\end{minipage}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    A survey of 50 students on preferred study location (library 18, home 22,
-    caf\'{e} 6, other 4). Students complete the relative frequency column and write
-    one sentence describing the most common preference in context.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    Free-response prompt: \textit{``A table shows the distribution of eye color for
-    200 people. What proportion have brown or hazel eyes? Describe what the table
-    tells you about the distribution of eye color in this sample.''}\\[4pt]
-    Assess: correct proportion calculation, complete contextual sentence,
-    identification of the most and least common category.
-\end{minipage}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Given a raw list of 25 categorical values, construct a frequency and
-              relative frequency table; describe the distribution in 2--3 sentences.
-        \item Three AP-style problems: one table-build, one interpretation, one
-              compare-two-groups using relative frequency.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Find a published frequency table (U.S.\ Census,
-              Pew Research) and write a description of the distribution.
-        \item \textit{Preview}: Lesson 1.4 --- the same distributions displayed as
-              bar charts and pie charts. Think: what does a table show that a bar
-              chart doesn't (and vice versa)?
-    \end{itemize}
-\end{minipage}
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
-
-% ── Teacher notes (migrated from the component keys) ──
-% One per component, titled for it. They live here rather than in the _key
-% files so that every component is the same length blank and keyed.
-
-\boxguard
-\begin{teachernote}[Guided Notes (1)]
-Emphasize: School A has 40 walkers but 240 total; School B has 120 walkers out of 200.
-This is the core motivation for relative frequency.
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
+% no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Delete any note whose component this lesson doesn't have.
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, what to look for, common errors.
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Guided Notes (2)]
-Accept any grammatically correct sentence that includes the total ($n = 40$),
-the variable (pet type), the category, and the relative frequency as a percent.
+\begin{teachernote}[Guided Notes]
+    % TODO
 \end{teachernote}
 
-\boxguard
 \begin{teachernote}[Group Activity]
-Verify students' raw data tallies match the given list. The data in the activity
-was designed so the counts above are correct. Accept rounding to 3 decimal places.
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (1)]
-Must include: total ($n=50$), the variable or context (study location), the
-category (home), and the relative frequency (44\% or 0.44). Deduct for
-missing context or for writing the raw count instead of a proportion/percent.
+\begin{teachernote}[Exit Ticket]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (2)]
-For (A): accept $0.60$ or $60\%$; must show the addition.\\
-For (B): require at least the most common category with its relative frequency
-and context. Full credit requires a description that covers the full distribution.
+\begin{teachernote}[Homework]
+    % TODO
 \end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (1)]
-Class A winter = 5/30 $\approx$ 16.7\%; Class B winter = 2/40 = 5.0\%. This is the
-key point: same absolute count (or even Class A having more) can mean very
-different proportions.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (2)]
-For (1): require $n = 120$, the variable, all three categories with relative
-frequencies, and the most/least common identified. Full AP credit requires
-contextual interpretation, not just reading the numbers.\\
-For (2): any reasonable comparison (athletes vs.\ non-athletes, different sports,
-different genders) earns credit. The key insight is that the table alone doesn't
-tell you whether 80\% right-handed is unusual or typical.
-\end{teachernote}
-
 \end{document}

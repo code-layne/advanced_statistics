@@ -1,215 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.1 — Guided Notes ANSWER KEY
+%! The Language of Variation — Unit 1, Lesson 1.1 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-% ── vocabpar ────────────────────────────────────────────────────────────────
-% \ansline ends with \dotfill and never closes the paragraph, so without a
-% \par the following term label is dragged onto the previous answer's dotted
-% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
-\newcommand{\vocabans}[2]{%
-  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
-  \ansline{#2}\par\vspace{3pt}}
-
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.1}{Guided Notes — Answer Key}
+\pageheader{Unit 1, Lesson 1.1}{Guided Notes --- Answer Key}
 
-\vspace{0.12in}
 
-% ── OBJECTIVE ────────────────────────────────────────────────────────────────
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ansline{identify individuals, populations, samples, and variables in a statistical context.}\\
-\ansline{explain why statistics is needed — because individuals vary, and data captures that variation.}\\
-\ansline{describe the four-step statistical problem-solving process.}
-\end{objectivebox}
+\vspace{0.15in}
 
-\vspace{0.1in}
-
-% ── VOCABULARY ───────────────────────────────────────────────────────────────
+% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Guided Notes].
 \boxguard
-\begin{vocabbox}
-\small
-\vocabans{Statistics}{the science of collecting, analyzing, and drawing conclusions from data}
-\vocabans{Individual}{a single person, object, or event in a dataset}
-\vocabans{Population}{the entire group of individuals of interest}
-\vocabans{Sample}{a subset of the population from which data are collected}
-\vocabans{Census}{data collected from EVERY individual in the population}
-\vocabans{Variability / Variation}{natural differences in values across individuals --- the reason statistics exists}
-\vocabans{Data}{recorded values for individuals; can be categorical or quantitative}
-\vocabans{Anecdotal evidence}{data from a few unrepresentative cases; not reliable for drawing conclusions}
-\end{vocabbox}
-
-\vspace{0.1in}
-
-% ── HOOK ─────────────────────────────────────────────────────────────────────
-\boxguard
-\begin{hookbox}
-\small\textbf{Headline:}\quad
-\textit{``Students who sleep more score higher on tests.''}
-\hfill\textcolor{slate}{\small(national education study, $n = 12{,}000$)}
-
-\vspace{6pt}
-\textbf{Discussion questions — write your thoughts:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item How do researchers know this? Did they study every student in the world?\\
-        \ans{No — they used a sample of 12,000 students and applied statistical
-        methods to draw conclusions about a larger population.}
-
-  \item Could this finding be wrong? What would make you doubt it?\\
-        \ans{Yes — the sample might not be representative; other factors (e.g., overall
-        health, study habits) could explain both sleep and test performance.}
-
-  \item What information would you want before trusting this headline?\\
-        \ans{Who was sampled, how sleep was measured, whether other variables
-        (confounders) were controlled for, whether the study was an experiment.}
-\end{enumerate}
-\end{hookbox}
-
-\vspace{0.1in}
-
-% ── DIRECT INSTRUCTION: 4-STEP PROCESS ───────────────────────────────────────
-\boxguard
-\begin{notesbox}{The Statistical Problem-Solving Process}
-\small Fill in each step and what it involves.
-\vspace{4pt}
-
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{navy}}p{0.18\linewidth} @{\quad$\longrightarrow$\quad} X @{}}
-\textcolor{white}{\textbf{Step 1}} &
-  \textbf{Ask a \ans{question}} \quad
-  \textcolor{slate}{\scriptsize Pose a clear question about a \ans{population} of interest.}\\
-
-\textcolor{white}{\textbf{Step 2}} &
-  \textbf{Collect \ans{data}} \quad
-  \textcolor{slate}{\scriptsize Select a \ans{sample} and measure \ans{variables} on each individual.}\\
-
-\textcolor{white}{\textbf{Step 3}} &
-  \textbf{Analyze the \ans{data}} \quad
-  \textcolor{slate}{\scriptsize \ans{Summarize} and \ans{display} what you found.}\\
-
-\textcolor{white}{\textbf{Step 4}} &
-  \textbf{Interpret \ans{results}} \quad
-  \textcolor{slate}{\scriptsize Draw \ans{conclusions}; acknowledge what the data \ans{cannot tell us}.}\\
-\end{tabularx}
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── CONCEPT NOTES ─────────────────────────────────────────────────────────────
-\boxguard
-\begin{notesbox}{Key Concepts}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{Population vs. Sample}}\\
-\textit{Example:} A researcher surveys 200 adults about exercise habits.
-\begin{itemize}[itemsep=2pt]
-  \item Individual: \ans{an adult}
-  \item Population: \ans{all adults (e.g., in the U.S.)}
-  \item Sample: \ans{the 200 randomly chosen adults}
-  \item Variable: \ans{exercise habits / days per week}
-\end{itemize}
-
-\vspace{4pt}
-\textbf{Why use a sample instead of a census?}\\
-\ans{A census is too costly, time-consuming, or impossible for large populations.
-A well-chosen sample can give reliable estimates.}
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Why Statistics Needs Variation}}\\[3pt]
-Complete the statement:\\[4pt]
-\textit{``If every individual were identical, we would \ans{NOT}
-need statistics, because there would be \ans{nothing}
-\ans{different} to explain or measure.''}
-
-\vspace{6pt}
-\textbf{What does ``variation'' look like in data?}\\
-\textit{Example from class — sleep minutes:}\\[4pt]
-\begin{center}
-{\color{keyred}\textbf{\textit{(record actual class data here)}}}\\[2pt]
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textcolor{keyred}{\scriptsize varies} & \textcolor{keyred}{\scriptsize varies} &
-\textcolor{keyred}{\scriptsize varies} & \textcolor{keyred}{\scriptsize varies} &
-\textcolor{keyred}{\scriptsize varies} \\
-\hline
-\end{tabular}
-\end{center}
-\vspace{2pt}
-\textit{Min:\;\ans{low}\quad Max:\;\ans{high}\quad ``Typical'':\;\ans{middle value}}
-
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── GUIDED PRACTICE ──────────────────────────────────────────────────────────
-\boxguard
-\begin{practicebox}
-\small\textbf{Scenario Analysis} \hfill \textcolor{slate}{\scriptsize Sample: Hospital knee-surgery study}
-
-\vspace{5pt}
-\textit{Scenario:} \ans{A hospital tracks recovery times for 50 patients after knee surgery.}
-
-\vspace{4pt}
-\begin{tabularx}{\linewidth}{@{} l X @{}}
-\textbf{Individual:}   & \ans{a single patient who had knee surgery} \\[6pt]
-\textbf{Population:}   & \ans{all patients who have knee surgery (at this hospital / in general)} \\[6pt]
-\textbf{Sample:}       & \ans{the 50 patients whose recovery times were tracked} \\[6pt]
-\textbf{Variable(s):}  & \ans{recovery time (quantitative); could also include pain level, age, etc.} \\[6pt]
-\end{tabularx}
-
-\vspace{4pt}
-\textbf{Is a census feasible? Why or why not?}\\
-\ans{No — tracking every knee-surgery patient would be prohibitively expensive and
-time-consuming. The 50-patient sample can still yield useful information.}
-
-\vspace{4pt}
-\textbf{Record one key insight from another group's scenario:}\\
-\ans{(Answers will vary — students should capture a specific example of how
-identifying the population vs. sample changes how we interpret results.)}
-\end{practicebox}
-
-\vspace{0.1in}
-
-% ── SPIRAL / BIG IDEAS ────────────────────────────────────────────────────────
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-
-\textbf{This lesson connects forward to\dots}
-\begin{itemize}[itemsep=2pt]
-  \item \textbf{Lesson 1.2:} Types of variables (categorical vs.\ quantitative)
-  \item \textbf{Units 6--9:} Using samples to make \emph{inferences} about populations
-  \item \textbf{Unit 3:} How we \emph{collect} samples matters for conclusions
-\end{itemize}
-
-\columnbreak
-
-\textbf{Big Idea — Write it in your own words:}\\
-\textit{What is the point of statistics?}\\[4pt]
-\ans{Statistics gives us tools to learn about a large
-population using a smaller sample, and to
-account for the natural variation in data.}
-
-\end{multicols}
-\end{spiralbox}
-
-\vspace{0.1in}
-
-% ── EXTRA NOTES ──────────────────────────────────────────────────────────────
-\boxguard
-\begin{notesbox}{Additional Notes}
-\vspace{2pt}
-\ans{\small\textit{Key reminders for grading / discussion:}}\\[2pt]
-\ans{\small $\bullet$\ \textbf{Association $\neq$ causation} — sleeping more may not directly cause higher scores; other variables may be involved.}\\[2pt]
-\ans{\small $\bullet$\ A \textbf{sample} is a group of individuals; \textbf{data} are the values recorded — these are different things.}\\[2pt]
-\ans{\small $\bullet$\ Variation is \textit{expected} and \textit{informative} — it is not a flaw in the data collection.}\\[2pt]
-\ans{\small $\bullet$\ The 4-step process will spiral throughout the entire course; students should internalize it now.}
+\begin{notesbox}{Guided Notes --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
 
 \end{document}

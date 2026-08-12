@@ -1,229 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.3 — Guided Notes ANSWER KEY
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-% ── vocabpar ────────────────────────────────────────────────────────────────
-% \ansline ends with \dotfill and never closes the paragraph, so without a
-% \par the following term label is dragged onto the previous answer's dotted
-% line. \par on BOTH ends. Mirrors \vocabterm in notes/main.tex.
-\newcommand{\vocabans}[2]{%
-  \par\noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
-  \ansline{#2}\par\vspace{3pt}}
-
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Guided Notes --- Answer Key}
 
-\vspace{0.12in}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ansline{construct a frequency and relative frequency table from raw categorical data.}\\
-\ansline{interpret relative frequencies in context using complete sentences.}\\
-\ansline{explain why relative frequency is required to compare groups of different sizes.}
-\end{objectivebox}
+\vspace{0.15in}
 
-\vspace{0.1in}
-
+% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Guided Notes].
 \boxguard
-\begin{vocabbox}
-\small
-\vocabans{Frequency}{The count of individuals in a particular category}
-\vocabans{Relative frequency}{The frequency divided by the total number of individuals; expressed as a proportion (decimal) or percent}
-\vocabans{Frequency table}{A table listing each category of a categorical variable and the count of individuals in that category}
-\vocabans{Relative frequency table}{A table listing each category and the proportion (or percent) of individuals in that category}
-\vocabans{Distribution (of a categorical variable)}{Describes all possible values a categorical variable takes and how often each value occurs (given as relative frequencies)}
-\end{vocabbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{hookbox}
-\small\textbf{Which school has more walkers?}
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.15\linewidth}
-    C{0.12\linewidth} C{0.2\linewidth}
-    C{0.12\linewidth} C{0.2\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Mode} & \textbf{School A} & \textbf{Rel.\ Freq.\ A}
-              & \textbf{School B} & \textbf{Rel.\ Freq.\ B} \\
-\midrule
-Bus  & 120 & \ans{0.50 (50\%)} & 30  & \ans{0.15 (15\%)} \\
-Car  & 80  & \ans{0.33 (33\%)} & 50  & \ans{0.25 (25\%)} \\
-Walk & 40  & \ans{0.17 (17\%)} & 120 & \ans{0.60 (60\%)} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & 240 & \ans{1.00} & 200 & \ans{1.00} \\
-\end{tabularx}
-
-\vspace{10pt}
-Which school has more walkers proportionally?\quad
-\ans{School B (60\% vs.\ 17\%)}\\[6pt]
-What does this tell you?\quad
-\ans{Counts alone are misleading when groups have different sizes.
-School A has more walkers by count (40 vs.\ 30) but far fewer by proportion.}
-\end{hookbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{Building a Frequency and Relative Frequency Table}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{Step-by-Step Process}}\\[4pt]
-\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-  \item List all \ans{categories} in the first column.
-  \item \ans{Tally} the data.
-  \item Record the \ans{frequency} (count).
-  \item Divide each count by \ans{$n$ (total)} to get relative frequency.
-  \item \textbf{Check:} relative frequencies must sum to \ans{1}.
-\end{enumerate}
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Formula}}\\[4pt]
-\[
-  \text{Relative frequency} = \frac{\text{frequency}}{\ans{n \text{ (total)}}}
-\]
-\vspace{4pt}
-Can be expressed as a \ans{proportion} (decimal)\\
-or a \ans{percent} (multiply by 100).\\[8pt]
-\textbf{\textcolor{navy}{Quick error check:}}\\
-Sum of all relative frequencies $=$ \ans{1}\\
-Sum of all relative frequencies $=$ \ans{100}\%
-
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{Worked Example --- Pet Ownership Survey ($n = 40$)}
-\small
-
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth}
-                                    C{0.16\linewidth}
-                                    C{0.22\linewidth}
-                                    C{0.22\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Pet type} & \textbf{Tally} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-Dog    & \small|||||\,|||||\,|| & 12 & \ans{0.30 (30\%)} \\
-Cat    & \small|||||\,|||       & 8  & \ans{0.20 (20\%)} \\
-Fish   & \small|||||\,|         & 6  & \ans{0.15 (15\%)} \\
-Bird   & \small||||             & 4  & \ans{0.10 (10\%)} \\
-None   & \small|||||\,|||||     & 10 & \ans{0.25 (25\%)} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & & \ans{40} & \ans{1.00} \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{AP-style sentence:}\\[4pt]
-\ans{Of the 40 households surveyed, the most common pet type was dog, owned by
-30\% of households. The least common was bird, owned by only 10\% of households.}
-\end{notesbox}
-
-\newpage
-
-\boxguard
-\begin{notesbox}{Describing a Distribution --- AP Language}
-\small
-\begin{multicols}{2}
-
-\textbf{\textcolor{navy}{What to include:}}
-\begin{itemize}[itemsep=3pt]
-  \item The \ans{category} with the highest relative frequency.
-  \item The \ans{category} with the lowest relative frequency.
-  \item The \ans{total $n$} of the sample.
-  \item \ans{Context} --- always include this.
-\end{itemize}
-
-\columnbreak
-
-\textbf{\textcolor{navy}{Model sentence:}}\\[4pt]
-\textit{``Of the \ans{40} households surveyed, the most common
-pet was \ans{dog} with \ans{30}\% of responses.
-The least common was \ans{bird} with \ans{10}\%.''}
-
-\end{multicols}
-
-\vspace{6pt}
-\textbf{Distribution description (pet example):}\\[4pt]
-\ans{Of the 40 households surveyed, dog was the most common pet type (30\%).
-The second most common was ``none'' (25\%), followed by cat (20\%), fish (15\%),
-and bird (10\% --- the least common).}
-
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{practicebox}
-\small
-\textbf{Transportation survey ($n = 25$):}
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth}
-                                    C{0.18\linewidth}
-                                    C{0.22\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Mode} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-Car  & 10 & \ans{0.40 (40\%)} \\
-Bus  & 8  & \ans{0.32 (32\%)} \\
-Walk & 4  & \ans{0.16 (16\%)} \\
-Bike & 3  & \ans{0.12 (12\%)} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & \ans{25} & \ans{1.00} \\
-\end{tabularx}
-
-\vspace{10pt}
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-  \item Proportion who walk: \ans{$4/25 = 0.16$}
-  \item Percentage \textit{not} by bus: \ans{$1 - 0.32 = 0.68 = 68\%$}
-        (or $(10+4+3)/25 = 17/25$)
-  \item \ans{Of the 25 Statistics students surveyed, the most common mode of
-        transportation was car, used by 40\% of students.}
-\end{enumerate}
-
-\end{practicebox}
-
-\vspace{0.1in}
-
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-
-\textbf{This lesson connects forward to\dots}
-\begin{itemize}[itemsep=2pt]
-  \item \textbf{Lesson 1.4:} Bar charts and pie charts display the same distributions visually.
-  \item \textbf{Unit 2:} Two-way tables extend this to two categorical variables.
-  \item \textbf{Unit 4:} Relative frequency $\approx$ probability.
-\end{itemize}
-
-\columnbreak
-
-\textbf{Big Idea:}\\[4pt]
-\ans{When two groups have different total sizes, comparing raw counts is unfair ---
-a group with 40 out of 50 walkers is very different from 40 out of 400. Relative
-frequency puts both groups on the same scale (out of 1 or 100\%) so comparisons
-are valid.}
-
-\end{multicols}
-\end{spiralbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{Additional Notes}
-\vspace{0pt}
-\writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline
+\begin{notesbox}{Guided Notes --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
 
 \end{document}

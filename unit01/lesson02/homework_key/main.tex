@@ -1,122 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.2 — Homework KEY
+%! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.2}{Homework --- Answer Key}
 
-\vspace{0.1in}
 
-% ════════════════════════════════════════════════════════════════════════════
-% PART A
-% ════════════════════════════════════════════════════════════════════════════
+\vspace{0.15in}
+
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
 \boxguard
-\begin{blurbbox}[Part A \quad NBA Player Dataset]{navylight}
-\small
-
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.16\linewidth}
-                                    C{0.13\linewidth} C{0.13\linewidth}
-                                    C{0.16\linewidth} C{0.13\linewidth}
-                                    C{0.14\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Name} & \textbf{Team} & \textbf{Pts/game} &
-\textbf{Position} & \textbf{Games} & \textbf{Jersey \#} \\
-\midrule
-Player A & Lakers  & 27.4 & Forward & 68 & 23 \\
-Player B & Celtics & 19.8 & Guard   & 72 & 11 \\
-Player C & Warriors& 31.2 & Guard   & 65 & 30 \\
-Player D & Heat    & 14.5 & Center  & 79 & 3  \\
-Player E & Bucks   & 23.7 & Forward & 71 & 34 \\
-\end{tabularx}
-
-\vspace{10pt}
-
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.2\linewidth}
-                                    C{0.14\linewidth} X @{}}
-\rowcolor{sky}
-\textbf{Variable} & \textbf{Type} & \textbf{Justification} \\
-\midrule
-Name         & \ans{C}  & \ans{A label identifying the individual; no arithmetic applies} \\
-Team         & \ans{C}  & \ans{Places player into a named category; averaging team names is meaningless} \\
-Pts/game     & \ans{QC} & \ans{Measured scoring rate; can take any non-negative decimal value} \\
-Position     & \ans{C}  & \ans{Labels a role category (Guard, Forward, Center)} \\
-Games played & \ans{QD} & \ans{Count of whole games; gaps between values (can't play 68.5 games)} \\
-Jersey \#    & \ans{C}  & \ans{Numeric label; averaging jersey numbers gives no meaningful result} \\
-\end{tabularx}
-
-\vspace{8pt}
-\textbf{Which variable is most likely to cause confusion?}\\[4pt]
-\ans{Jersey number --- it looks quantitative because it is a number, but it is a label.
-Averaging jersey numbers (e.g., mean jersey = 20.2) produces a value that means nothing
-about the players. This is the key ``trap'' variable of this lesson.}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART B
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part B \quad AP-Style Multiple Choice]{greenacc}
-\small
-
-\textbf{Question 1.}\enspace Grade level (9, 10, 11, 12).\\[6pt]
-\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2em, itemsep=3pt]
-  \item Grade level is quantitative continuous.
-  \item Grade level is quantitative discrete.
-  \item \textbf{\textcolor{keyred}{Grade level is categorical.}} \textcolor{keyred}{$\leftarrow$ \textbf{correct}}
-  \item Cannot be classified.
-\end{enumerate}
-\ans{Explanation: Grade level uses numbers to label groups (freshmen = 9, sophomore = 10, etc.).
-Averaging grade levels (e.g., mean grade = 10.4) tells us nothing meaningful about student
-membership in a class year. The numbers are identifiers, not measured amounts.}\\[4pt]
-
-\vspace{10pt}
-\textbf{Question 2.}\enspace Type of precipitation + total amount (inches).\\[6pt]
-\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2em, itemsep=3pt]
-  \item Both categorical.
-  \item \textbf{\textcolor{keyred}{Type = categorical; amount = quantitative continuous.}}
-        \textcolor{keyred}{$\leftarrow$ \textbf{correct}}
-  \item Type = QD; amount = QC.
-  \item Both quantitative.
-\end{enumerate}
-\ans{Explanation: Type of precipitation (rain, snow, sleet, none) places each day into a
-named category --- no arithmetic applies. Total precipitation is a measured amount in inches
-that can take any non-negative real value, making it quantitative continuous.}
-
-\vspace{10pt}
-\textbf{Question 3.}\enspace Pain level (0--10) + days since surgery.\\[6pt]
-\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2em, itemsep=3pt]
-  \item Both QD.
-  \item Pain = categorical; days = QD.
-  \item \textbf{\textcolor{keyred}{Pain = debatable (C or QD); days = QD.}}
-        \textcolor{keyred}{$\leftarrow$ \textbf{best answer}}
-  \item Both continuous.
-\end{enumerate}
-\ans{Explanation: Days since surgery is a count of whole days --- clearly QD. Pain level is
-an ordinal rating scale; whether equal spacing can be assumed is debatable. Most AP Statistics
-resources treat 0--10 pain scales as categorical (ordinal), but some analysts treat them as
-QD. The classmate is partially correct about days since surgery but oversimplifies pain level.}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-\boxguard
-\begin{extensionbox}
-\small
-\textbf{Optional Extension:}\\[4pt]
-\ans{Answers vary by dataset chosen. Award credit for any six variables correctly classified with
-justification. Look for: (1) at least one non-obvious categorical variable (e.g., FIPS code, race
-category), (2) correct identification of discrete vs.\ continuous among quantitative variables
-(e.g., count of deaths = discrete; age in years as reported = debatable; percent = continuous).}\\[4pt]
-\textcolor{slate}{\scriptsize Source: student-chosen from CDC or Census website.}
-\end{extensionbox}
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

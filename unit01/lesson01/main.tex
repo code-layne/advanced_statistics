@@ -1,17 +1,14 @@
-%! AP Statistics — Unit 1, Lesson 1 — Lesson Plan
+%! The Language of Variation — Unit 1, Lesson 1.1 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-
-% Teacher notes quote expected answers, so the plan needs \ans. Defining it
-% here rather than loading apstats-key, which would also flip every `work`
-% block visible.
-\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.1: The Language of Variation}
 
 \begin{document}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.1: Introducing Statistics --- What Can We Learn from Data?}
-
 \begin{center}
     {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
@@ -19,247 +16,78 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will understand that statistics is the science of
-    collecting, analyzing, and drawing conclusions from data. Students will distinguish between
-    populations and samples, identify individuals and variables in a dataset, and recognize why
-    variation in data is central to statistical thinking (Big Idea: VAR).
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
-\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 1 --- Selecting Statistical Methods}
-    \begin{itemize}
-        \item Identify the population of interest and the sample in a given scenario.
-        \item Explain why a sample is used instead of a census.
-        \item Recognize that statistics answers questions using data collected with variability.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
-    \begin{itemize}
-        \item Statistics $\neq$ a single number; it is a process of inquiry.
-        \item Variation is natural and expected; statistical methods quantify it.
-        \item The same question can yield different answers in different samples --- and that is informative, not a mistake.
-    \end{itemize}
-\end{minipage}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Statistics} --- science of collecting, analyzing, and drawing conclusions from data
-        \item \textbf{Individual} --- a single person, animal, object, or event in a dataset
-        \item \textbf{Population} --- the entire group of individuals of interest
-        \item \textbf{Sample} --- a subset of the population from which data are actually collected
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Census} --- data collected from every individual in a population
-        \item \textbf{Variability / Variation} --- natural differences in values across individuals
-        \item \textbf{Data} --- recorded values for individuals; can be categorical or quantitative
-        \item \textbf{Anecdotal evidence} --- data from a few unrepresentative cases; not reliable for inference
-    \end{itemize}
-\end{minipage}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Prior Knowledge Check (3--4 min)}
-    \begin{itemize}
-        \item Ask: \textit{``When you hear the word `average,' what does that tell you? What doesn't it tell you?''}
-        \item Have students share one question they think data could answer about their school (e.g., ``How long do students sleep?'').
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections to Future Units}
-    \begin{itemize}
-        \item The idea of a \textit{sample} vs.\ \textit{population} is foundational for all inference in Units 6--9.
-        \item Variability in data motivates the need for summary statistics (Lessons 1.6--1.7) and probability (Unit 4).
-    \end{itemize}
-\end{minipage}
+    \begin{minipage}[t]{0.48\linewidth}
+        % TODO: prior knowledge bullets (Units/lessons reviewed)
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+            % TODO: spiral-review thumbnail. Authored warm-ups compile to
+            % target/, so leave this text-only (as in AP Stats) unless you
+            % keep a source PDF in the warmup/ directory to embed.
+        % TODO: connections forward (upcoming lessons)
+    \end{minipage}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5--7 min)}\\
-    Display a headline with a surprising statistic (e.g., ``Students who sleep more score higher on tests''). Ask:
-    \begin{itemize}
-        \item How do you think they know this?
-        \item Did they study every student in the world?
-        \item Could this be wrong?
-    \end{itemize}
-    Transition: \textit{``These are exactly the questions statistics is designed to answer.''}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15--18 min)}
-    \begin{enumerate}
-        \item Introduce the \textit{statistical problem-solving process}: Ask a question $\to$ collect data $\to$ analyze $\to$ interpret.
-        \item Use a class example: ``What is a typical commute time for adults in our city?'' --- identify the individual, population, and sample.
-        \item Show a small dataset (5--6 rows); identify individuals, variables, and values.
-        \item Discuss: Why can't we always do a census? (Cost, time, impossibility.)
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Walk through 2--3 real contexts (sports, medicine, social media), each time asking students to identify: individual, population, sample, and at least one variable.
-        \item Emphasize: variation is the \textit{reason} statistics is interesting --- if everyone were identical, we would not need statistics.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Circulate while students attempt a quick identification task (see Group Work).
-        \item Listen for common misconception: confusing \textit{sample} with \textit{data} (a sample is the set of individuals; the data are the recorded values).
-        \item Cold-call 2--3 students to share their reasoning.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\boxguard
+\begin{skillbox}[Active Monitoring]{redbox}
+    % TODO: what to circulate and check for; cold-call prompts.
+\end{skillbox}
+
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Partner Activity (8--10 min)}\\
-    Provide 3 statistical scenarios (e.g., a poll of 500 voters, a study of 30 mice, a school survey). For each, groups identify and record:
-    \begin{itemize}
-        \item The research question
-        \item The individual
-        \item The population
-        \item The sample (if applicable)
-        \item One variable that was likely measured
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide a sentence frame: ``The individuals are \underline{\hspace{1cm}}. The population is \underline{\hspace{1cm}}.''
-        \item \textit{Extension}: Ask students to write their \textit{own} statistical question about the class, identify all components, and explain why a census is or is not feasible.
-        \item \textit{ELL}: Pair vocabulary list with visual icons (e.g., one person = individual; crowd = population).
-    \end{itemize}
-\end{minipage}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Present one new scenario (e.g., a hospital tracks recovery times for 50 patients after surgery). Students independently write:
-    \begin{enumerate}
-        \item The individual
-        \item The population
-        \item The sample
-        \item One variable and whether it varies
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{Multiple-choice practice:} ``A researcher surveys 200 randomly chosen adults about their exercise habits. The population is\ldots'' \\[4pt]
-    Use student responses to gauge readiness for Lesson 1.2 (types of variables). Collect exit tickets to identify gaps.
-\end{minipage}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Read 3 short news blurbs with statistics; for each, identify the individual, population, sample (if stated), and one variable.
-        \item Reflect: \textit{``Why might the results of this study not apply to everyone?''}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Research the U.S.\ Census --- what are the costs and challenges of conducting one every 10 years?
-        \item \textit{Preview}: Lesson 1.2 will classify variables as \textit{categorical} or \textit{quantitative} --- start noticing what type of answer each variable you identified today would produce.
-    \end{itemize}
-\end{minipage}
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
-
-% ── Teacher notes (migrated from the component keys) ──
-% One per component, titled for it. They live here rather than in the _key
-% files so that every component is the same length blank and keyed.
-
-\boxguard
-\begin{teachernote}[Group Activity (1)]
-Students may define the population too narrowly (``students in this study'') or too broadly
-(``all children in the world''). Push them to use the headline's scope --- ``national study''
-implies U.S.\ students. Also worth noting: two variables are present; students who identify
-only one are partially correct --- ask them what else was measured.
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
+% no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Delete any note whose component this lesson doesn't have.
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, what to look for, common errors.
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Group Activity (2)]
-The most common error here is writing ``a scientist'' or ``the ocean'' as the individual.
-Emphasize: the individual is whatever the researchers recorded data \emph{about} --- here,
-each measurement belongs to a reef site. This is a high-value AP misconception to address early.
-Population boundary is also genuinely ambiguous (Pacific only? all oceans?); accept either
-as long as students justify their choice.
+\begin{teachernote}[Guided Notes]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (1)]
-\textbf{Scoring (completeness, not correctness):} Award credit for any reasonable, good-faith
-attempt at each component. Common gaps to note for re-teaching:\\[3pt]
-\textbf{Individual vs.\ Population confusion:} Students who write ``all patients'' as the
-individual haven't internalized that the individual is the \emph{unit of observation},
-not the group. Ask: ``What does each row in the data table represent?''\\[3pt]
-\textbf{Sample vs.\ Population:} Some students write the same thing for both. Push them:
-``Did the hospital study \emph{every} patient who has ever had this surgery?''\\[3pt]
-\textbf{Variable:} Accept ``recovery time'' without units. Flag answers that list the
-\emph{individual} again (e.g., ``the patients'') — this indicates the student doesn't yet
-distinguish between a person and a measurement.
+\begin{teachernote}[Group Activity]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (2)]
-\textbf{Most common wrong answer: A.} Students who choose A are confusing the
-sample (who was studied) with the population (who we want to know about).
-This is the single most important conceptual distinction to nail in Lesson 1.1.
-If more than a third of the class chooses A, revisit the population vs.\ sample
-distinction explicitly at the start of Lesson 1.2.
+\begin{teachernote}[Exit Ticket]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Homework (1)]
-Students may write ``all teenagers in the world'' — accept with a note that the study's
-actual scope is the 12 countries sampled. This is a productive ambiguity: the population
-the researchers \emph{want} to generalize to may be broader than what their sample
-actually represents. Revisit in Unit 3 (sampling methods).
+\begin{teachernote}[Homework]
+    % TODO
 \end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (2)]
-The WNBA has roughly 140 active roster spots per season — so 250 players likely represents
-more than one season or includes players no longer active. Students who notice this are
-thinking carefully about feasibility. Worth acknowledging: a near-census of active WNBA
-players would actually be achievable, unlike most populations.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (3)]
-Common errors: writing ``a scientist'' or ``an Iowa farmer'' as the individual.
-The individual is whatever each data row describes — here, each row is a field with
-a worm count and a cover-crop status. Reinforce: ask ``what did they measure \emph{one of}?''
-\end{teachernote}
-
 \end{document}

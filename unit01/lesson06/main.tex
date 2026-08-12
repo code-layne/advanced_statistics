@@ -1,249 +1,93 @@
-%! AP Statistics — Unit 1, Lesson 6
+%! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Lesson Plan
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-% Load the shared box/colour package rather than re-declaring skillbox and the
-% palette locally: teachernote (used by the migrated teacher notes below) is
-% defined in apstats-boxes, and a local copy of the palette silently diverges
-% from shared/apstats-colors.sty.
+\usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-% Teacher notes quote expected answers, so the plan needs \ans. Defining it
-% here rather than loading apstats-key, which would also flip every `work`
-% block visible.
-\providecommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.6: Boxplots and Comparing Distributions}
 
 \begin{document}
-\def\CourseName{Statistics}
-\def\SchoolYear{2026--2027}
-\def\MeetingLength{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.6: Describing the Distribution of a Quantitative Variable}
-
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe the distribution of a quantitative
-    variable using the SOCS framework: \textbf{S}hape, \textbf{O}utliers, \textbf{C}enter, and
-    \textbf{S}pread. Students will recognize common shapes (symmetric, skewed left, skewed right,
-    unimodal, bimodal) and relate shape to real-world contexts (Big Idea: UNC; AP Skills 2 \& 4).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\boxguard
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skills 2 \& 4 --- Data Analysis \& Statistical Argumentation}
-    \begin{itemize}
-        \item Describe a distribution completely using SOCS with context in every sentence.
-        \item Identify and justify potential outliers by visual inspection (formal rule in Lesson 1.7).
-        \item Use appropriate vocabulary to describe shape: symmetric, skewed right/left, unimodal, bimodal, uniform.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
-    \begin{itemize}
-        \item A complete AP description always includes all four SOCS components \textit{with context}.
-        \item Skewed right $=$ tail on the right (a few very high values); skewed left $=$ tail on the left.
-        \item ``Center'' here is informal (approximate); exact measures come in Lesson 1.7.
-        \item Outliers affect center and spread --- always mention them.
-    \end{itemize}
-\end{minipage}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Shape} --- overall pattern: symmetric, skewed right (positive skew), skewed left (negative skew), unimodal, bimodal, uniform
-        \item \textbf{Skewed right} --- long tail toward higher values; most data cluster at low values
-        \item \textbf{Skewed left} --- long tail toward lower values; most data cluster at high values
-        \item \textbf{Symmetric} --- roughly mirror-image about the center
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Outlier} --- an individual value that falls far from the overall pattern; investigate, do not automatically remove
-        \item \textbf{Center} --- informal measure of a typical value; roughly where the distribution is ``balanced''
-        \item \textbf{Spread} --- the variability; how wide or narrow the distribution is
-        \item \textbf{SOCS} --- the AP framework for describing distributions: Shape, Outliers, Center, Spread
-    \end{itemize}
-\end{minipage}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Display the histogram of sleep times from Lesson 1.5. Ask: ``What story does this graph tell?'' Accept informal descriptions, then introduce SOCS as a structured way to make sure the description is complete.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
-    \begin{itemize}
-        \item Lesson 1.7: SOCS center becomes mean or median; spread becomes range, IQR, or standard deviation.
-        \item Lesson 1.9: compare two distributions using SOCS --- same framework, two groups.
-        \item Skewness connects to mean vs.\ median relationship in Lesson 1.7.
-    \end{itemize}
-\end{minipage}
+    \begin{minipage}[t]{0.48\linewidth}
+        % TODO: prior knowledge bullets (Units/lessons reviewed)
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+            % TODO: spiral-review thumbnail. Authored warm-ups compile to
+            % target/, so leave this text-only (as in AP Stats) unless you
+            % keep a source PDF in the warmup/ directory to embed.
+        % TODO: connections forward (upcoming lessons)
+    \end{minipage}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Show two histograms: (1) household incomes in the U.S., (2) heights of adult women. Ask: ``Describe each in one word.'' Students notice one is ``bunched left'' and one is ``bell-shaped.'' Connect: these shapes have names and consequences for which statistics we use.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item Introduce SOCS acronym; explain each component briefly.
-        \item Model a full SOCS description of the income histogram (skewed right, possible high-income outliers, center around \$60k, spread from near \$0 to over \$200k).
-        \item Guide students through a SOCS description of the height histogram together.
-        \item Introduce the key shapes with sketches: symmetric bell, skewed right, skewed left, bimodal, uniform.
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Write a model SOCS response on the board. Label each sentence with S, O, C, or S.
-        \item Teach the AP ``context rule'': every sentence must name the variable and population (e.g., ``The distribution of SAT scores for these 200 students is\ldots'').
-        \item Emphasize: skewed right \textit{does not} mean ``the peak is on the right'' --- the tail is on the right.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Circulate during guided practice; check for context in every sentence.
-        \item Prompt: ``Which direction is the tail pointing? That is the direction of skew.''
-        \item Red flag: students who write only shape and center and omit spread or outliers. Remind: all four components needed for full credit on AP.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\boxguard
+\begin{skillbox}[Active Monitoring]{redbox}
+    % TODO: what to circulate and check for; cold-call prompts.
+\end{skillbox}
+
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Each group receives a different histogram (e.g., ages at a concert, wait times at a store, test scores). Groups write a complete SOCS description, then share with the class. Class checks each description for missing components and context.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide a SOCS sentence-starter sheet (``The shape of the distribution is\ldots; There appear to be outliers\ldots; The center is approximately\ldots; The spread ranges from\ldots'').
-        \item \textit{Extension}: Students predict the real-world context from a histogram's shape only (e.g., bimodal $\to$ two subgroups; skewed right $\to$ income, prices, or time data).
-    \end{itemize}
-\end{minipage}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Display a dotplot of commute times (minutes) for 20 workers. Students write a complete SOCS description in 4--6 sentences. Collect and use a quick rubric (1 point each: shape correct, outliers mentioned, center estimated, spread described, context in every sentence).
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{Free-response: ``The histogram shows the distribution of the number of hours per week students spend on social media. Describe the distribution.''}\\[4pt]
-    Model response: Shape (skewed right), Outliers (one student at 50+ hours), Center (approximately 8--10 hours), Spread (0 to about 55 hours), all with context.
-\end{minipage}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Write SOCS descriptions for 2--3 provided graphs (histogram, dotplot, stemplot).
-        \item Self-check: Does every sentence include context? Are all four SOCS components present?
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Find a histogram online; write a SOCS description and explain what the shape implies about the data-generating process.
-        \item \textit{Preview}: Lesson 1.7 gives us precise numerical tools for center (mean, median) and spread (range, IQR, standard deviation) --- so our SOCS descriptions become quantitatively specific.
-    \end{itemize}
-\end{minipage}
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
-
-% ── Teacher notes (migrated from the component keys) ──
-% One per component, titled for it. They live here rather than in the _key
-% files so that every component is the same length blank and keyed.
-
-\boxguard
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
+% no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-The goal is to activate shape vocabulary before formal instruction. Accept
-``skewed right'' if students note the longer right tail. The key is that they
-support their answer with a feature of the display.
+    % TODO: pacing, what to look for, common errors.
 \end{teachernote}
 
-\boxguard
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
 \begin{teachernote}[Group Activity]
-Part 1 debrief: Poll students on which SOCS component was hardest. Typically:
-(1) students omit spread or give only the max without the min; (2) context
-drops out after the first sentence. Use the class-share to build a consensus
-``strong'' response on the board before moving to Part 2.
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (1)]
-AP rubric: 1 pt each for (S) skewed right with justification, (O) outliers
-identified with approximate value, (C) center with units and context,
-(S) spread described as a range with units. Deduct for missing context in
-any sentence. Accept minor variation in center/spread estimates.
+\begin{teachernote}[Exit Ticket]
+    % TODO
 \end{teachernote}
 
-\boxguard
-\begin{teachernote}[Exit Ticket (2)]
-A common error: students confuse which measure is larger. Skewed right
-$\Rightarrow$ mean $>$ median because the mean is pulled in the direction
-of skew. Skewed left $\Rightarrow$ mean $<$ median.
+\begin{teachernote}[Homework]
+    % TODO
 \end{teachernote}
-
-\boxguard
-\begin{teachernote}[Exit Ticket (3)]
-Key teaching moment: when a distribution is bimodal, the center is less
-meaningful as a single summary. Strong responses will acknowledge this.
-Award full credit for SOCS with context; bonus credit for noting the
-reduced usefulness of a single center value.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (1)]
-Part A is a shape identification exercise. Award credit for the correct shape
-\textit{and} a reasonable piece of evidence from the description. Reject answers
-that name the shape without any justification.
-\end{teachernote}
-
-\boxguard
-\begin{teachernote}[Homework (2)]
-Rubric: 1 pt each for S (skewed right, evidence), O (outlier identified with
-approximate value), C (center with units and context), S (range with units).
-Deduct for missing context in any sentence.
-\end{teachernote}
-
 \end{document}

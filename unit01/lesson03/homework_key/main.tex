@@ -1,197 +1,23 @@
-%! AP Statistics — Unit 1, Lesson 1.3 — Homework ANSWER KEY
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Homework --- Answer Key}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For all problems: show your calculations, include context in written responses,
-and verify that your relative frequencies sum to 1. AP free-response requires complete
-sentences --- practice that habit here.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART A
-% ════════════════════════════════════════════════════════════════════════════
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, so this key cannot drift longer than its blank.
+% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
 \boxguard
-\begin{blurbbox}[Part A \quad Build a Frequency Table from Raw Data]{navylight}
-\small
-
-A survey asked 25 students to name their preferred type of music.
-The responses are listed below.
-
-\vspace{8pt}
-\begin{center}
-\begin{tabular}{*{5}{p{1.6cm}}}
-Pop  & Hip-Hop & Rock   & Pop     & Classical \\
-Rock & Pop     & Hip-Hop& Rock    & Pop \\
-Hip-Hop & Pop  & Classical & Hip-Hop & Rock \\
-Pop  & Rock    & Pop    & Hip-Hop & Classical \\
-Hip-Hop & Rock & Pop    & Classical & Hip-Hop \\
-\end{tabular}
-\end{center}
-
-\vspace{12pt}
-
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth}
-                                    C{0.16\linewidth}
-                                    C{0.2\linewidth}
-                                    C{0.22\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Music type} & \textbf{Tally} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-Classical  & \ans{\small{||||}}     & \ans{4} & \ans{0.16 (16\%)} \\
-Hip-Hop    & \ans{\small{||||||}}   & \ans{6} & \ans{0.24 (24\%)} \\
-Pop        & \ans{\small{||||||||}} & \ans{8} & \ans{0.32 (32\%)} \\
-Rock       & \ans{\small{|||||||}}  & \ans{7} & \ans{0.28 (28\%)} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & & \ans{25} & \ans{1.00} \\
-\end{tabularx}
-
-\vspace{12pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Write 2--3 complete sentences describing the distribution of preferred music
-        type for these 25 students. Include the most common and least common categories
-        and their relative frequencies.\\[8pt]
-        \ansline{Of the 25 students surveyed, pop was the most preferred music type,}\\[1pt]
-        \ansline{chosen by 32\%. Classical was least popular at 16\%. Hip-hop (24\%)}\\[1pt]
-        \ansline{and rock (28\%) fell in between.}
-
-  \item What percent of students prefer rock or pop? Show your work.\\[8pt]
-        \ansline{Pop or rock $= 0.32 + 0.28 = 0.60 = \textbf{60\%}$}\\[1pt]
-        \ansline{(equivalently $(8+7)/25 = 15/25 = 0.60$).}
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART B
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part B \quad Compare Two Groups Using Relative Frequency]{greenacc}
-\small
-
-Two different classes were surveyed about their favorite season.
-The counts are shown below.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.18\linewidth}
-                                    C{0.14\linewidth} C{0.2\linewidth}
-                                    C{0.14\linewidth} C{0.2\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Season} & \textbf{Class A} & \textbf{Rel.\ Freq.\ A}
-                & \textbf{Class B} & \textbf{Rel.\ Freq.\ B} \\
-\midrule
-Spring & 6  & \ans{0.200} & 12 & \ans{0.300} \\
-Summer & 14 & \ans{0.467} & 16 & \ans{0.400} \\
-Fall   & 5  & \ans{0.167} & 10 & \ans{0.250} \\
-Winter & 5  & \ans{0.167} & 2  & \ans{0.050} \\
-\midrule
-\rowcolor{sky}\textbf{Total} & 30 & \ans{1.001*} & 40 & \ans{1.000} \\
-\end{tabularx}
-\textcolor{slate}{\scriptsize *Rounding; accept 1.00 or 100\%.}
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Which season is the most popular in Class A? In Class B?
-        Use relative frequencies to support your answer.\\[6pt]
-        \ansline{Summer in both. Class A: 46.7\%; Class B: 40.0\%.}\\[1pt]
-        \ansline{Summer leads every other season in each class.}
-
-  \item A student claims that summer is more popular in Class B because
-        Class B has 16 students who prefer it vs.\ 14 in Class A.
-        Is this reasoning correct? Why or why not?\\[6pt]
-        \ansline{No --- Class B is larger (40 vs.\ 30), so raw counts mislead.}\\[1pt]
-        \ansline{By proportion, summer is more popular in Class A (46.7\% vs.\ 40.0\%).}
-
-  \item Which class shows a stronger preference for winter? Support your
-        answer with relative frequencies.\\[6pt]
-        \ansline{Class A --- 16.7\% (5/30) against Class B's 5.0\% (2/40).}\\[1pt]
-        \ansline{The counts are close (5 vs.\ 2) but the proportions are not.}
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART C
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
-\small
-
-The table below shows the distribution of dominant hand for a sample of
-120 college athletes.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{0.7\linewidth}{@{} >{\bfseries}p{0.32\linewidth}
-                                      C{0.22\linewidth}
-                                      C{0.26\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Dominant hand} & \textbf{Frequency} & \textbf{Rel.\ Frequency} \\
-\midrule
-Right    & 96  & 0.800 \\
-Left     & 18  & 0.150 \\
-Ambidextrous & 6 & 0.050 \\
-\midrule
-\rowcolor{sky}\textbf{Total} & 120 & 1.000 \\
-\end{tabularx}
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item Describe the distribution of dominant hand for these athletes using
-        the information in the table.\\[6pt]
-        \ansline{Of the 120 college athletes sampled, the vast majority were}\\[1pt]
-        \ansline{right-handed (80\%). Left-handed athletes made up 15\% of the}\\[1pt]
-        \ansline{sample, and only 5\% were ambidextrous.}
-
-  \item A classmate says: ``Most athletes are right-handed, so there's nothing
-        interesting here.'' What additional comparison might make this table
-        more informative?\\[6pt]
-        \ansline{Compare against the general population ($\approx$10\% left-handed).}\\[1pt]
-        \ansline{That would show whether left-handedness is over-represented in sport.}
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% EXTENSION
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{extensionbox}
-\small
-\textbf{Optional Extension --- Find a Real Frequency Table}\\[4pt]
-Find a published frequency or relative frequency table from a real source
-(e.g., \texttt{data.census.gov}, \texttt{pewresearch.org}, a news article).
-Write a 3--5 sentence description of the distribution it shows. Include:
-(1) the source and total sample size, (2) the most and least common categories,
-(3) one comparison or observation that is \textit{not} obvious from a quick glance.
-
-\vspace{8pt}
-\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\vspace{4pt}
-\textcolor{slate}{\scriptsize Source / URL:\;\blank{11cm}}
-\end{extensionbox}
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

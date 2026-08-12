@@ -1,134 +1,25 @@
-%! AP Statistics — Unit 1, Lesson 1.7 — Homework
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.7}{Homework: Summary Statistics}
+\pageheader{Unit 1, Lesson 1.7}{Homework}
 
-\vspace{0.10in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For all problems: show calculations, interpret statistics in context,
-and use complete sentences for AP-style questions.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART A
-% ════════════════════════════════════════════════════════════════════════════
+% TODO: author the Homework. See references/components.md for the expected structure.
+% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
+% when the box opens with an unbreakable TikZ figure or tabularx.
+% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
+% the _key: the blank reserves its exact height, the key prints it. That is what keeps
+% this component the same number of pages as its key.
 \boxguard
-\begin{blurbbox}[Part A \quad Calculate Summary Statistics]{navylight}
-\small
-
-A survey asked 10 students: ``How many hours did you use your phone last week?''
-The sorted responses are:
-\[3,\quad 5,\quad 7,\quad 8,\quad 9,\quad 10,\quad 12,\quad 14,\quad 16,\quad 22\]
-
-\vspace{0.10in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item Find the \textbf{mean}. Show your calculation.
-\begin{work}
-  \bar{x} &= \dfrac{3+5+7+8+9+10+12+14+16+22}{10} \\
-          &= \dfrac{106}{10} \\
-          &= 10.6 \text{ hours}
-\end{work}
-
-  \item Find the \textbf{median}. Which two values did you average?
-\begin{work}
-  n &= 10 \text{ (even), so average the 5th and 6th values} \\
-  M &= \dfrac{9+10}{2} \\
-    &= 9.5 \text{ hours}
-\end{work}
-
-  \item Find $Q_1$, $Q_3$, and the \textbf{IQR}.\\[5pt]
-        $Q_1 = \blank{2cm}$ \quad $Q_3 = \blank{2cm}$ \quad IQR $= \blank{2cm}$
-
-  \item Use the fence rule to check whether 22 is an outlier. Show both fences.\\[5pt]
-        Lower fence: \blank{5cm} \quad Upper fence: \blank{5cm}\\[4pt]
-        Is 22 an outlier? \blank{3cm}
-
-  \item Is the mean or median a better description of the ``typical'' hours of
-        phone use? Write one complete sentence with your reasoning.\\[5pt]
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART B
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part B \quad Identify an Outlier \& Choose Statistics]{greenacc}
-\small
-
-A class of 12 students took a test. The sorted scores are:
-\[45,\quad 62,\quad 65,\quad 68,\quad 70,\quad 72,\quad 74,\quad 75,\quad 77,\quad 80,\quad 82,\quad 88\]
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item Find the median, $Q_1$, $Q_3$, and IQR. Show your work.
-\begin{work}
-  M   &= \dfrac{72+74}{2} = 73 \\
-  Q_1 &= \dfrac{65+68}{2} = 66.5 \\
-  Q_3 &= \dfrac{77+80}{2} = 78.5 \\
-  \text{IQR} &= 78.5 - 66.5 = 12
-\end{work}
-
-  \item Use the fence rule to check whether 45 is an outlier.
-\begin{work}
-  \text{lower fence} &= Q_1 - 1.5(\text{IQR}) \\
-                     &= 66.5 - 1.5(12) \\
-                     &= 48.5
-\end{work}
-        Is 45 an outlier? \blank{3cm}
-
-  \item The mean of this dataset is 71.5 and the median is 73.
-        What does mean $<$ median suggest about the shape?\\[5pt]
-        \writeline\\[1pt]\writeline
-
-  \item Which pair of statistics should be reported to describe this class's
-        test performance? Name the pair and explain why.\\[5pt]
-        \writeline\\[1pt]\writeline
-
-\end{enumerate}
-
-\end{blurbbox}
-
-\vspace{0.12in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART C — AP-STYLE
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part C \quad AP-Style Free Response]{redacc}
-\small
-
-A dataset has mean 82 and median 91.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-
-  \item What does the relationship between the mean and median suggest about
-        the shape of this distribution? Explain your reasoning in one or two
-        complete sentences.\\[5pt]
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
-
-  \item Which measure of center --- mean or median --- is more appropriate for
-        describing a typical value in this distribution? Justify your answer.\\[5pt]
-        \writeline\\[1pt]\writeline
-        % 2 write-lines ↔ 2 \ansline in the key
-
-\end{enumerate}
-
-\end{blurbbox}
+\begin{notesbox}{Homework}
+\writelines{4}
+\end{notesbox}
 
 \end{document}

@@ -1,161 +1,25 @@
-%! AP Statistics — Unit 1, Lesson 1.2 — Homework
+%! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.2}{Homework: The Language of Variation --- Variables}
+\pageheader{Unit 1, Lesson 1.2}{Homework}
 
-\vspace{0.1in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For each problem, classify the variable(s) and justify your reasoning.
-A correct type with no justification earns partial credit only ---
-AP free-response always requires explanation.
-\end{tcolorbox}
+\vspace{0.15in}
 
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART A: NBA DATASET
-% ════════════════════════════════════════════════════════════════════════════
+% TODO: author the Homework. See references/components.md for the expected structure.
+% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
+% when the box opens with an unbreakable TikZ figure or tabularx.
+% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
+% the _key: the blank reserves its exact height, the key prints it. That is what keeps
+% this component the same number of pages as its key.
 \boxguard
-\begin{blurbbox}[Part A \quad NBA Player Dataset]{navylight}
-
-\small The table below shows data for five NBA players from a recent season.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.16\linewidth}
-                                    C{0.13\linewidth} C{0.13\linewidth}
-                                    C{0.16\linewidth} C{0.13\linewidth}
-                                    C{0.14\linewidth} @{}}
-\rowcolor{sky}
-\textbf{Name} & \textbf{Team} & \textbf{Pts/game} &
-\textbf{Position} & \textbf{Games} & \textbf{Jersey \#} \\
-\midrule
-Player A & Lakers  & 27.4 & Forward & 68 & 23 \\
-Player B & Celtics & 19.8 & Guard   & 72 & 11 \\
-Player C & Warriors& 31.2 & Guard   & 65 & 30 \\
-Player D & Heat    & 14.5 & Center  & 79 & 3  \\
-Player E & Bucks   & 23.7 & Forward & 71 & 34 \\
-\end{tabularx}
-
-\vspace{12pt}
-
-Classify each of the six variables (Name, Team, Pts/game, Position, Games played,
-Jersey \#). For each, write the type \textbf{and} a one-phrase justification.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{2.2}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.2\linewidth}
-                                    C{0.14\linewidth} X @{}}
-\rowcolor{sky}
-\textbf{Variable} & \textbf{Type} & \textbf{Justification} \\
-\midrule
-Name        & \blank{2cm} & \blank{8.5cm} \\
-Team        & \blank{2cm} & \blank{8.5cm} \\
-Pts/game    & \blank{2cm} & \blank{8.5cm} \\
-Position    & \blank{2cm} & \blank{8.5cm} \\
-Games played& \blank{2cm} & \blank{8.5cm} \\
-Jersey \#   & \blank{2cm} & \blank{8.5cm} \\
-\end{tabularx}
-
-\vspace{6pt}
-\textbf{Which variable is most likely to cause confusion? Explain why.}\\[4pt]
-\writeline\\[1pt]\writeline
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PART B: AP-STYLE MULTIPLE CHOICE
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{blurbbox}[Part B \quad AP-Style Multiple Choice]{greenacc}
-\small Circle the letter of the best answer. Write one sentence explaining your choice.
-
-\vspace{10pt}
-\textbf{Question 1.}\enspace
-A school survey records each student's grade level (9, 10, 11, or 12).
-Which of the following is correct?
-
-\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2em, itemsep=4pt]
-  \item Grade level is quantitative continuous because it is recorded as a number.
-  \item Grade level is quantitative discrete because grades are countable whole numbers.
-  \item Grade level is categorical because the numbers label groups, not measured amounts.
-  \item Grade level cannot be classified without more information.
-\end{enumerate}
-\textcolor{slate}{\scriptsize Explanation:}\;\writeline
-
-\vspace{12pt}
-\textbf{Question 2.}\enspace
-A meteorologist records the \textit{type of precipitation} (rain, snow, sleet, none) and
-the \textit{total precipitation amount} (in inches) for each day in January.
-Which statement correctly classifies both variables?
-
-\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2em, itemsep=4pt]
-  \item Both variables are categorical.
-  \item Type of precipitation is categorical; total amount is quantitative continuous.
-  \item Type of precipitation is quantitative discrete; total amount is quantitative continuous.
-  \item Both variables are quantitative.
-\end{enumerate}
-\textcolor{slate}{\scriptsize Explanation:}\;\writeline
-
-\vspace{12pt}
-\textbf{Question 3.}\enspace
-A doctor records a patient's \textit{pain level} on a scale of 0--10 and the
-\textit{number of days since surgery}. A classmate says both are quantitative discrete.
-Is the classmate correct?
-
-\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2em, itemsep=4pt]
-  \item Yes --- both are whole numbers, so both are quantitative discrete.
-  \item No --- pain level is categorical (ordinal); days since surgery is quantitative discrete.
-  \item No --- pain level is debatable (categorical or QD); days since surgery is quantitative discrete.
-  \item No --- both are quantitative continuous because they are measured.
-\end{enumerate}
-\textcolor{slate}{\scriptsize Explanation:}\;\writeline
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% EXTENSION
-% ════════════════════════════════════════════════════════════════════════════
-\boxguard
-\begin{extensionbox}
-\small
-\textbf{Optional Extension --- Real Data from the CDC}\\[4pt]
-Go to \texttt{wonder.cdc.gov} or \texttt{data.census.gov} and find any publicly available dataset.
-Identify \textbf{three categorical} and \textbf{three quantitative} variables.
-For the quantitative variables, note whether each is discrete or continuous.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth}
-                                    >{\raggedright\arraybackslash}p{0.36\linewidth}
-                                    X @{}}
-\rowcolor{sky}
-& \textbf{Variable name} & \textbf{Notes / justification} \\
-\midrule
-Cat. 1 & \blank{7.5cm} & \blank{3.5cm} \\
-Cat. 2 & \blank{7.5cm} & \blank{3.5cm} \\
-Cat. 3 & \blank{7.5cm} & \blank{3.5cm} \\
-Quant. 1 & \blank{7.5cm} & \blank{3.5cm} \\
-Quant. 2 & \blank{7.5cm} & \blank{3.5cm} \\
-Quant. 3 & \blank{7.5cm} & \blank{3.5cm} \\
-\end{tabularx}
-
-\vspace{6pt}
-\textcolor{slate}{\scriptsize Source / URL:\;\blank{11cm}}
-
-\vspace{4pt}
-\textcolor{slate}{\scriptsize We will return to categorical variables in Lesson 1.3 and quantitative variables in Lesson 1.5.}
-\end{extensionbox}
+\begin{notesbox}{Homework}
+\writelines{4}
+\end{notesbox}
 
 \end{document}
