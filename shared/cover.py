@@ -1049,10 +1049,10 @@ def build_meme(el: dict) -> tuple[str, float, float]:
 # These are drawn heavier than the rest of the sheet on purpose: the ink budget
 # is suspended for them (Layne, 2026-07-30).
 
-PAPER_BG   = "#f4f7fb"   # graph paper stock
-PAPER_RULE = "#cfdcea"   # its printed grid
-PAPER_EDGE = "#9fb3c8"   # the sheet's own edge
-SCENE_INK  = "#8fa3b8"   # the watermark drawing
+PAPER_BG   = "#f8f7ec"   # graph paper stock
+PAPER_RULE = "#e0dcbe"   # its printed grid
+PAPER_EDGE = "#bcb489"   # the sheet's own edge
+SCENE_INK  = "#a8a06e"   # the watermark drawing
 
 
 def _sp(d, width=2.4, stroke=None, fill="none") -> str:

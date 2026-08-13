@@ -1,26 +1,41 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{apstats-colors}[2026/06/01 AP Statistics shared color palette]
+\ProvidesPackage{apstats-colors}[2026/08/12 Statistics shared color palette]
 
 \RequirePackage{xcolor}
 
 % ── Primary palette ───────────────────────────────────────────────────────────
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{navylight}{HTML}{2E5490}
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{skymid}{HTML}{C5DFF5}
-\definecolor{goldacc}{HTML}{D4820A}
-\definecolor{goldbg}{HTML}{FEF3E2}
-\definecolor{hookbg}{HTML}{FEF3E2}
-\definecolor{greenbg}{HTML}{EDF8F0}
-\definecolor{greenacc}{HTML}{2D7A4F}
-\definecolor{redbg}{HTML}{FCECEC}
-\definecolor{redacc}{HTML}{C0392B}
-\definecolor{charcoal}{HTML}{2C3E50}
-\definecolor{slate}{HTML}{64748B}
-\definecolor{linegray}{HTML}{AAAAAA}
-\definecolor{keyred}{HTML}{CC0000}
+% Earthy yellow — deep olive and mustard. The names are historical (navy, sky,
+% gold, green, red) and are kept because every lesson .tex references them; what
+% each name *means* is its role, not its hue:
+%
+%   navy / navylight   primary dark — page header bar, box frames, boxed titles
+%   sky / skymid       primary tint — box fills, subtitle text on the dark bar
+%   goldacc / goldbg   accent — the hook box and callouts
+%   greenacc/greenbg   affirmative — vocabulary
+%   redacc / redbg     emphasis — guided practice
+%   keyred             answer ink, and answer ink only; must stay unmistakable
+%
+% The load-bearing rule: yellow is an ACCENT, never a fill. Large filled areas
+% (the header bar, boxed titles) are dark olive; the paper is a pale sage cream;
+% mustard appears only in thin frames and small title chips. A mid-tone
+% yellow-brown over a large area goes muddy — do not reintroduce one.
+\definecolor{navy}{HTML}{3A3D28}
+\definecolor{navylight}{HTML}{6E7340}
+\definecolor{sky}{HTML}{F8F8EE}
+\definecolor{skymid}{HTML}{DCD08A}
+\definecolor{goldacc}{HTML}{C39A1F}
+\definecolor{goldbg}{HTML}{FBF5E0}
+\definecolor{hookbg}{HTML}{FBF5E0}
+\definecolor{greenbg}{HTML}{F0F4E6}
+\definecolor{greenacc}{HTML}{55703A}
+\definecolor{redbg}{HTML}{FAEFE7}
+\definecolor{redacc}{HTML}{9E5B33}
+\definecolor{charcoal}{HTML}{2F312A}
+\definecolor{slate}{HTML}{78796A}
+\definecolor{linegray}{HTML}{B8B7A6}
+\definecolor{keyred}{HTML}{BF3A1C}
 
 % ── Lesson-plan background aliases ────────────────────────────────────────────
-\definecolor{goldbox}{HTML}{FFF7E6}
+\definecolor{goldbox}{HTML}{FCF8E9}
 \colorlet{greenbox}{greenbg}
 \colorlet{redbox}{redbg}
