@@ -59,8 +59,13 @@ comp-stamp   = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp)
 comp-dep     = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp,$(wildcard $1/main.pdf))
 
 # ── Component discovery (in pedagogical order) ────────────────────────────────
-STUDENT_ORDER := cover warmup notes activity exit_ticket homework
-KEYED_PAIRS   := warmup notes activity exit_ticket homework
+# EFFL — experience first, formalize later: the activity comes BEFORE the notes.
+# Students meet an unfamiliar situation with the tools they already own, and the
+# class debrief then attaches vocabulary and notation to what they found. Formal
+# notes are the product of the lesson, not its starting point, so the packet must
+# not hand them out first.
+STUDENT_ORDER := cover warmup activity notes exit_ticket homework
+KEYED_PAIRS   := warmup activity notes exit_ticket homework
 
 STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(call comp-present,$(c)))
 
