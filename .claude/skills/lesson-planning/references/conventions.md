@@ -16,13 +16,36 @@ with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
 
 ## Per-document-type preambles
 
-**Student component** (warmup, notes, activity, exit_ticket, homework, cover):
+**Student component** (warmup, homework, cover — and the legacy notes/activity/exit_ticket):
 ```latex
 \documentclass[10pt]{article}
 \usepackage{<prefix>-article}
 \usepackage{<prefix>-boxes}
 % cover and some components also: \usepackage{ltablex}\keepXColumns
 ```
+
+**Experience & Formalize component** (directory `experience/` — the EFFL Activity + QuickNotes +
+Application + Check Your Understanding document) uses **12pt** (Math Medic sizing) and defines the
+open-answer-space macro in its preamble, byte-identical in the blank and the key:
+```latex
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}   % key: apstats-key instead
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+```
+It is **four parts on a page budget** — Activity ≤2pp · QuickNotes ½pp · Application ½–1pp ·
+Check Your Understanding 1–2pp (unscored) — see `components.md` → "Experience & Formalize".
+
+`\answerspace{2.0cm}{}` in the blank reserves exactly 2.0cm of open space glued to its prompt; the
+key passes the answer as the second argument, occupying the identical height. **That is what keeps
+the two files page-for-page without write-lines** — verified: filling every slot in a 2-page blank
+left the key at exactly 2 pages. Sizing guide: 1.4cm ≈ 2 handwritten lines, 2.0cm ≈ 3, 2.6–2.8cm ≈ 4.
+
+Two 12pt cautions: **`\boxguard` counts are baseline-relative** — a value tuned at 10pt is ~40%
+oversized at 12pt, so use ~14–16 in `experience/` where a 10pt component would use 24–30. And **a
+key `\ans{}` wider than the blank it replaces can wrap an extra line and shift a page break** —
+keep answers terse.
 
 **Answer key** (the matching `_key` directory):
 ```latex
@@ -59,6 +82,7 @@ The `\TallMath` helper used for tall inline math is defined per-document where n
 | `\namedateperiod` | Name / Date / Period row — **cover only** (Namestrip) |
 | `\namepartnerperiod` | Name / Partner / Period row — **not used**; superseded by Namestrip |
 | `\pageheader{Unit X, Lesson Y.Z}{Document Type}` | Full-width navy banner header |
+| `\answerspace{H}{answer}` | **Not from `-article`** — defined per-document in `experience/`; reserves H of open space in the blank, prints the answer in the key. See the preamble above. |
 
 ### Namestrip — the name row belongs on the cover, nowhere else
 
@@ -277,15 +301,33 @@ identical so they paginate the same way.
 
 ## Color palette (from `-colors`)
 
-Primary: `navy` (#1F3A5F), `navylight`, `sky` (pale blue bg), `skymid`, `goldacc`, `goldbg`,
-`greenbg`/`greenacc`, `redbg`/`redacc`, `charcoal`, `slate`, `linegray`, `keyred` (#CC0000).
-Lesson-plan background aliases: `goldbox`, `greenbox`, `redbox`.
+The course was recolored to an earthy-yellow palette, so the names no longer describe their
+hues — `navy` is a dark olive and `sky` is a pale cream. **Use the names, not the hues.**
 
-## Lesson-plan section order (canonical)
+Primary: `navy` (#3A3D28, dark olive — the frame/banner color), `navylight` (#6E7340),
+`sky` (#F8F8EE, the pale background), `skymid` (#DCD08A, the banner subtitle), `goldacc` (#C39A1F),
+`goldbg`, `hookbg`, `greenbg`/`greenacc`, `redbg`/`redacc`, `charcoal`, `slate`, `linegray`,
+`keyred` (#BF3A1C — every answer). Lesson-plan background aliases: `goldbox`, `greenbox`, `redbox`.
 
-Primary Objective → Priority Ideas & Skills → Vocabulary, Concepts & Theorems → Activate
-Prior Knowledge & Spiral Review (embeds the warm-up thumbnail) → Hook → Lesson (and
-"Lesson (cont.)") → Explicit Instruction (one box per technique) → Active Monitoring →
-Group Work & Differentiation (Tiers R / A / E) → Individual Work & Assessment (Exit Ticket +
-SOL/AP-style MC) → Reinforcement & Extension (Homework + Extension + Preview). For AP courses,
-tag the objective and skills with the Big Idea and AP Skill (see `ap-workflow.md`).
+Algebra 2's `forest` family (`forest`, `forestbg`, `forestmid`, `forestlight`) is **not defined
+here**. When porting anything from that course, map `forest`→`navy`, `forestbg`→`sky`,
+`forestmid`→`skymid`, `forestlight`→`navylight`.
+
+## Lesson-plan section order (canonical, EFFL)
+
+Primary Objective / CED alignment / Lesson model → Learning Targets & Key Understandings →
+Vocabulary, Concepts & Theorems → Lesson at a Glance (55-min phase table: **5/20/12/6/8/4**) →
+Warm-Up (the seeds) → Experience & Formalize: the Activity (what students do | what the teacher
+does — questions, cues, prompts) → Debrief: Formalize (the red-ink moves + QuickNotes walkthrough)
+→ **Application** (the worked-together problem) → **Check Your Understanding — in-class practice,
+*not scored*** → **Homework — AP-style practice, assigned and scored** → Watch For →
+Close & Preview → Teacher Notes (`[Warm-Up]`, `[Experience \& Formalize]`, `[Homework]`).
+
+Tag the objective with the CED Topic, Big Idea, AP Skill, LO, and EK (see `ap-workflow.md`).
+
+**There is no `fixedskillbox` in this course** — every lesson-plan box is `skillbox` (breakable).
+Where Algebra 2 uses `fixedskillbox` to keep a phase table intact, use `skillbox` preceded by a
+raised `\boxguard[30]`; a `tabularx` never splits on its own, so the guard is what protects it.
+
+*(Legacy plans — the ~78 lessons authored before the 2026-08 EFFL redesign — use the old
+Hook / Explicit Instruction / Tiers / Exit Ticket order. Leave them alone unless regenerating.)*

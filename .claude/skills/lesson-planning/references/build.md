@@ -44,8 +44,15 @@ what replaced it.
     `latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error`,
     sending output to `target/UNIT/LESSON/<comp>/` and a stamp to `.stamps/`.
   - Builds two merged packets:
-    - **student** = `cover warmup notes activity exit_ticket homework` (blank versions present),
-      in that pedagogical order → `lessonYY_student.pdf`.
+    - **student** = `cover warmup experience notes activity exit_ticket homework` (blank
+      versions present), in that pedagogical order → `lessonYY_student.pdf`.
+
+      `experience` is the EFFL centrepiece — the directory name is a **build identifier**, one of
+      these two lists in `shared/lesson.mk`; students and teachers read the component as
+      "Experience & Formalize". `notes`, `activity`, and `exit_ticket` are pre-EFFL names kept in
+      the list so the ~78 legacy lessons still build; a new lesson is
+      `cover warmup experience homework` (+ `slides`). Renaming `experience` would mean editing
+      the build system — don't.
     - **key** = the *same list*, with each component swapped for its `_key` sibling where one
       exists (the cover has none, so it appears unchanged in both) → `lessonYY_key.pdf`.
       Deriving the key list from the student list is what makes the two packets pair up 1:1.
@@ -91,15 +98,41 @@ in the source tree), which resolves regardless of order.
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 02 --lesson 03 \
   --title "..." --unit-title "..." \
-  --components cover,warmup,notes,activity,exit_ticket,homework[,slides] \
-  [--prefab warmup,warmup_key] [--course "Algebra 2: Shepherd"] [--lesson-id 2.3]
+  [--components cover,warmup,experience,homework,slides] \
+  [--prefab warmup,warmup_key] [--lesson-id 2.3] [--tests | --no-tests]
 ```
 
+`--components` defaults to `cover,warmup,experience,homework,slides` — the EFFL set — so it can be
+omitted entirely. The legacy names `notes`, `activity`, and `exit_ticket` are still accepted for
+patching a pre-EFFL lesson, but are not defaults.
+
 It detects the prefix from `shared/*-colors.sty`, detects whether `\CourseName` is defined in
-`shared/` (omitting it from the plan if so, inlining it if not), writes the one-line `Makefile`,
-the lesson plan, and each authored component + key skeleton. Pass `--prefab <dirs>` to create
-empty drop-in directories instead (where you place each `main.pdf`). Then author the skeletons
+`shared/` (this course defines it, so the plan omits it), writes the one-line `Makefile`, the
+lesson plan, and each authored component + key skeleton. Pass `--prefab <dirs>` to create empty
+drop-in directories instead (where you place each `main.pdf`). Then author the skeletons
 (`references/components.md`).
+
+**Unit assessments scaffold automatically** when the run creates a *new* unit: `tests/`,
+`test_keys/`, `sample_test/`, and `sample_test_key/`. `--tests` (re)scaffolds them for a unit that
+already exists (idempotent — `ensure()` never clobbers authored tests); `--no-tests` skips them.
+
+## Unit assessments (tests)
+
+```bash
+make -C unitXX/tests all        # compiles practice_test + actual_test, publishes the practice
+                                #   copy to unitXX/sample_test/main.pdf
+make -C unitXX/test_keys all    # the same for the keys → unitXX/sample_test_key/main.pdf
+make -C unitXX/tests clean
+```
+
+`shared/tests.mk` and `shared/test_keys.mk` each compile **every subdirectory holding a
+`main.tex`** into `target/unitXX/{tests,test_keys}/<name>/main.pdf`, then run a `drop` target that
+copies the **practice** test/key into the unit's `sample_test/` / `sample_test_key/` prefab dirs.
+`unit.mk` merges those at the tail of the unit packets. **The actual test and its key are never
+published into any packet.**
+
+The practice test and its key must come out the same number of pages — the unit pagination pass
+pairs them the way it pairs a component against its key. See `components.md` → "Unit tests".
 
 ## Pagination: how a packet gets its page numbers
 

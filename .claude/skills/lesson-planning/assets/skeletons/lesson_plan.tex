@@ -1,4 +1,9 @@
 %! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely.
+% NOTE: this course has no `fixedskillbox`. Every lesson-plan box is `skillbox`, which is
+% breakable; put \boxguard (raised, e.g. \boxguard[30], ahead of a tabularx that cannot
+% split) before each one instead.
 \documentclass[10pt]{article}
 \usepackage{@@PREFIX@@-article}
 \usepackage{@@PREFIX@@-boxes}
@@ -16,76 +21,164 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} TODO --- what students can do/interpret/justify by the end.
+    \\[2pt]
+    \textbf{CED alignment:} Topic TODO \quad$\cdot$\quad Big Idea: TODO (VAR / UNC / DAT / PROB)
+    \quad$\cdot$\quad Skill TODO \quad$\cdot$\quad LO TODO \quad$\cdot$\quad EK TODO
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity in
+    small groups using only prior knowledge; the teacher circulates with questions, cues, and prompts
+    (not answers); the debrief attaches the formal vocabulary to what the groups already found; the
+    application and practice apply it to new contexts. No separate direct-instruction block.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
+% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item TODO: ``I can \dots'' target, traceable to the CED Learning Objective.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item TODO: the why (paraphrase the Essential Knowledge) --- and state the lesson's
+        \textbf{target misconception} explicitly.
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+    % TODO: key terms + definitions for this lesson (the debrief attaches these; they must
+    % NOT appear on the cover or in the pre-activity slides).
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
+Experience \& Formalize: Activity & 20 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
+Debrief: Formalize & 12 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
+Application & 6 & TODO application title, worked together & Lead it; students hold the pen, you hold the questions \\
+Check Your Understanding & 8 & TODO $\sim$5 exercises, pairs $\to$ solo (\emph{not scored}) & Circulate; spot-check the formative item, do not collect for a grade \\
+Close \& Assign & 4 & Record the homework; preview next lesson & Sort formative responses to decide tomorrow's opener \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+    % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
+    % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
 @@SPIRALWARMUP@@
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{sky}
+\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
+charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
+it in the data.''}
+
+\begin{multicols}{2}
+\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
+scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item TODO: item ref: ``TODO prompt.''
+\end{itemize}
+While circulating, pick the group work to display in the debrief.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order, and \textbf{attach each formal name to something a
+group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
+the groups discovered, not a new lecture.
+
+\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
+the activity does not carry).
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 6 min)]{sky}
+TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used}.
+State the question in context, do the computation in the packet's \texttt{work} block, interpret
+the result \emph{in context}, then the ``what if we change a number?'' part and the concept it
+really tests.
+\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
+questions you ask.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Check Your Understanding --- in-class practice, \emph{not scored}]{redbox}
+These $\sim$5 exercises are the \emph{in-class} practice and span the lesson's CED topic:
+TODO itemize them. Pairs for the first half, solo for the rest. \textbf{They carry no point value}
+(the cover's score column reads \textbf{NA}), so do not collect them for a grade.
+\textbf{Item~N is the formative check:} spot-check it on the way out and sort responses into TODO
+categories to decide how the next lesson opens. Eight minutes will not cover all of them for every
+student --- name the priority items and the early-finisher bank. The graded practice is the
+homework, below.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[Homework --- AP-style practice (assigned, scored)]{goldbox}
+TODO: the assignment --- AP-style multiple-choice plus one free-response part, in context, on
+this lesson's topic and spiraling one earlier topic. This is the lesson's \emph{graded} practice
+(the cover's score column carries a blank for it). TODO: how it is scored and when it is due.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item TODO: misconception, keyed to an item number.
+\end{itemize}
+Cold-call prompts: TODO.
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Assign the homework} and name what changed today rather than closing on the assignment
+alone. \textbf{Preview:} TODO next lesson.
+\end{skillbox}
+
+% ── Teacher notes — one per component, in packet order ──
+% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
+% with no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+TODO: pacing + what each item seeds; what to cut if it runs long.
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity.} TODO: pacing split across the two scenarios; the early-finisher move.
+\textbf{Debrief.} TODO: the must-land moments; what to cut if time is short.
+\textbf{Application.} TODO: the questions to ask while the students hold the pen.
+\textbf{Check Your Understanding.} TODO: where the \texttt{work} blocks are; which item is the
+formative check; which items are the priority in 8 minutes and which are the early-finisher bank.
+\textbf{Not scored} --- spot-check rather than collecting the page.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+TODO: the AP-style items and what each targets; the scoring approach (AP rubric language where
+it applies); which item to go over at the start of the next lesson.
 \end{teachernote}
+
 \end{document}

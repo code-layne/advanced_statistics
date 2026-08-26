@@ -1,0 +1,31 @@
+%! Unit @@UNITINT@@: @@UNITTITLE@@ — Summative Assessment — @@TESTKIND@@ (KEY)
+\documentclass[10pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-key}   % pulls in -boxes; do NOT also load -boxes
+
+% Part-divider strip (headlinebox takes one arg: the background color)
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{navy}\color{white}\bfseries #1\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit @@UNITINT@@: @@UNITTITLE@@}{@@TESTKIND@@ --- Answer Key}
+\namedateperiod
+
+% Mirror the blank test EXACTLY, filling each answer with \ans{...} (inline) or
+% \ansline{...} (on a write-line), and carrying every \begin{work} block over unchanged.
+% The key must come out the SAME number of pages as the blank — the unit pagination pass
+% pairs sample_test against sample_test_key the way it pairs a component against its key.
+% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
+% ======================================================================
+\parthead{Section I --- Multiple Choice}
+% TODO: mark correct options, e.g. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+
+\parthead{Section II --- Free Response}
+% TODO: worked answers via \ans{...} and \begin{work} blocks, with AP-rubric scoring notes.
+% Scoring guidance goes in the LESSON PLAN or a unit-level doc, not here, if it would make
+% this key run longer than the blank.
+
+\end{document}
