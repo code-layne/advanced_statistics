@@ -1,4 +1,7 @@
 %! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -14,298 +17,306 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will explain that a number carries meaning only
-    when placed in context, identify the individuals and variables in a data set, and
-    distinguish a statistical question --- one that anticipates variability and is answered
-    by collecting data --- from a question with a single definite answer (Big Idea: VAR).
+    \textbf{Primary Objective:} Students will explain that a number carries meaning only when
+    placed in context, identify the individuals and variables in a data set, and distinguish a
+    statistical question --- one that anticipates variability and is answered by collecting
+    data --- from a question with a single definite answer.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 1.1 \quad$\cdot$\quad Big Idea: VAR (Variation \& Distribution)
+    \quad$\cdot$\quad Skill 1.A \quad$\cdot$\quad LO VAR-1.A \quad$\cdot$\quad EK VAR-1.A.1
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found; the application and practice apply it to new contexts. No separate direct-instruction
+    block, and \textbf{no vocabulary before the debrief.}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.4}
 \boxguard
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can explain why a bare number tells me nothing, and name the context it needs.
+  \item I can identify the individuals and the variables in a data set, and tell a variable
+        apart from one of its values.
+  \item I can decide whether a question is statistical, and justify it by pointing to what varies.
+  \item I can write a statistical question of my own about a given data set.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item Numbers convey meaningful information only when placed in context (EK VAR-1.A.1).
+  \item Variability is the reason statistics exists: if every individual gave the same value,
+        one measurement would answer everything.
+  \item \textbf{Target misconception:} that any question with a numerical answer, or any
+        question needing the whole table, is statistical. \emph{``How many dogs are on the
+        board?''} needs every row and returns a number --- and is \textbf{not} statistical,
+        because its answer does not differ from one dog to the next. The discriminator is
+        \emph{variation across individuals}, not arithmetic.
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 1 --- Selecting Statistical Methods}
     \begin{itemize}
-        \item Identify the question to be answered or the problem to be solved
-              (Skill 1.A).
-        \item Identify questions that can be answered from variation in one-variable
-              data (VAR-1.A).
-        \item Attach context to a bare number: who was measured, what was measured,
-              and in what units (VAR-1.A.1).
+        \item \textbf{Statistics} --- the science of collecting, organizing, analyzing, and
+              drawing conclusions from data
+        \item \textbf{Data} --- recorded values, together with the context that gives them meaning
+        \item \textbf{Context} --- who/what was measured, when, where, and in what units
+              (EK VAR-1.A.1)
+        \item \textbf{Individual} --- the person, animal, or object described by one row
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item Numbers convey meaningful information only when placed in context
-              (EK VAR-1.A.1).
-        \item Data are measurements taken on \emph{individuals}; a \emph{variable} is a
-              characteristic that changes from one individual to the next.
-        \item Variability is the reason statistics exists --- if every individual gave
-              the same value, one measurement would answer everything.
-        \item A statistical question \emph{anticipates} variability in its answers;
-              a non-statistical question has one definite answer.
+        \item \textbf{Variable} --- a characteristic recorded for each individual; a column
+              heading, never one of the entries beneath it
+        \item \textbf{Value} --- one entry under a variable
+        \item \textbf{Variability} --- values differ across individuals; why one measurement
+              is not enough
+        \item \textbf{Statistical question} --- anticipates variability and is answered by
+              collecting data
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Seven bare numbers; three questions, alone then with a neighbor & Circulate; debrief item~3 aloud and leave it on the board all period \\
+Experience \& Formalize: Activity & 20 & \emph{The Adoption Board}, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose group work to display \\
+Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color; fill QuickNotes together \\
+Application & 6 & \emph{The Gym Sign-Up}, worked together & Lead it; students hold the pen, you hold the questions \\
+Check Your Understanding & 8 & 5 exercises, pairs $\to$ solo (\emph{not scored}) & Circulate; spot-check item~5, do not collect for a grade \\
+Close \& Assign & 4 & Record the homework; hear the preview & Sort item-5 responses to decide how Lesson~1.1 opens \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Seven numbers, no context: \emph{``What do these tell you?''} The
+              intended answer is \emph{``I can't tell.''} \textbf{Seeds:} context / EK VAR-1.A.1.
+        \item \textbf{2.} ``Three things you'd need to know.'' \textbf{Seeds:} the W questions ---
+              their own list becomes the QuickNotes bullet.
+        \item \textbf{3.} ``How tall is Maria?'' vs.\ ``How tall are the students in this class?''
+              \textbf{Seeds:} the statistical-question test.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Resist rescuing them on item~1.} The discomfort is the lesson. Three
+              minutes, then ask only \emph{``what would you need to know?''}
+        \item \textbf{Name nothing.} Do not say \emph{context}, \emph{variable}, or
+              \emph{statistical question} in the warm-up debrief --- those arrive after the
+              activity. Write their own phrasings on the board and leave them there.
+        \item Debrief item~3 aloud; it reappears as the crux in scenario~2.
+        \item \emph{This is the course's first lesson --- there is no prior unit to spiral.}
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Statistics} --- the science of collecting, organizing, analyzing,
-              and drawing conclusions from data
-        \item \textbf{Data} --- recorded values, together with the context that gives
-              them meaning
-        \item \textbf{Context} --- who/what was measured, when, where, why, and in what
-              units (EK VAR-1.A.1)
-        \item \textbf{Individual} --- the person, animal, or object described by a row
-              of the data set
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \begin{itemize}
-        \item \textbf{Variable} --- a characteristic recorded for each individual; it
-              takes different values for different individuals
-        \item \textbf{Variability} --- the fact that values differ across individuals;
-              the reason a single measurement is not enough
-        \item \textbf{Statistical question} --- a question that anticipates variability
-              and is answered by collecting and analyzing data
-        \item \textbf{Data analysis process} --- ask a question $\to$ collect data $\to$
-              analyze $\to$ interpret in context
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{The Adoption Board}]{sky}
+\textbf{Launch (2 min).} Project the board. \emph{``This is one shelter's adoption board. Visitors
+read it, and so does the director --- but not for the same things. Work the two problems with
+your group using only what you already know. For every answer, be ready to show me
+\textbf{where on the board} you see it.''} Groups of 3--4. Do not preview any vocabulary.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Scenario 1} builds the whole toolkit on one table: what a row
+stands for, counting rows and columns, heading-vs-entry (1b), the look-it-up / read-the-column
+contrast (1c), and why a column of identical entries would be worthless (1d --- variability,
+unnamed).
+
+\emph{Scenario 2} is the contrast case. Item 2a sorts four director's questions into ``one spot''
+or ``many rows.'' \textbf{2b is the crux:} two questions both need many rows, but only one has an
+answer that changes from dog to dog. Items 2c--2d turn the flyer claim into the
+summary-does-not-predict-an-individual idea.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1b:} ``Point at where you see the word `Breed.' Now point at `Beagle.' Are those
+        the same kind of thing?''
+  \item \textbf{1d:} ``Cover the Days column with your hand. What did you just lose?''
+  \item \textbf{2b (the crux):} ``Write down the answer to (B). Now write the answer to (C) ---
+        for Sage, then for Ranger. How many answers did each question have?''
+  \item \textbf{2d:} ``Find the shortest wait on the board. Now the longest. Is 25 either one?''
+\end{itemize}
+While circulating, pick the group work to display: one board with 1c underlined well, and one
+group's 2b answer that is \emph{almost} right (many-rows = statistical) to open the debrief with.
+\end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Prior Knowledge Check (3--4 min)}
-    \begin{itemize}
-        \item \textit{``In math so far, how many answers has a question usually had?''}
-              (one) --- today we meet questions whose answers vary.
-        \item \textit{``What does the word `average' mean to you?''} Collect informal
-              language; do not correct it yet.
-        \item Transition: \textit{``If I tell you the number is 68, do you know anything?
-              What would you need to know?''}
-    \end{itemize}
-    \textit{(This is the course's first lesson --- there is no prior unit to spiral.
-    The warm-up serves as the entry point rather than a review.)}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections Forward}
-    \begin{itemize}
-        \item Lesson 1.1: the language of variation --- classifying variables as
-              categorical or quantitative
-        \item Lessons 1.2--1.5: representing and describing the variability we name today
-        \item Unit 3: where the data come from --- sampling and study design formalize
-              \emph{population} and \emph{sample}
-        \item Units 6--9: inference quantifies how much of the variability is random
-              (EU VAR-1: conclusions are uncertain)
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to something
+a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item Warm-up list of ``things you'd need to know'' $\to$ \emph{context}, and the
+        \emph{W questions}. Circle their own words, then write the term beside them.
+  \item ``One row is one dog'' $\to$ \emph{individual}. ``Column heading'' $\to$ \emph{variable};
+        ``what's written underneath'' $\to$ \emph{value}. Trace a row and a column with a finger
+        on the projected board.
+  \item 1d, ``the column would be worthless'' $\to$ \emph{variability} --- and say plainly:
+        \textbf{this is why the course exists}.
+  \item 2b $\to$ the two checks. Write them as the students said them: \emph{do the answers
+        differ from one individual to the next?} and \emph{must I collect data?}
+  \item Name \emph{statistics} and \emph{data} last, once every part of the definition is
+        already on the board.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. The mini table on the left is the same board
+in miniature --- point at it while naming variable / value / individual. The right-hand bullets
+are their sentences, tightened. \textbf{It is a summary of what they found, not a new lecture};
+if you are talking for more than 90 seconds without pointing at student work, stop.
+
+\textbf{Why this order.} Context first (they already felt its absence in the warm-up), structure
+second, variability third, and the statistical-question test last --- because the test
+\emph{depends} on variability. Naming the test first would make it a rule to memorize instead of
+a consequence.
+
+\textbf{Pose cold:} \emph{``Is `What is the most common breed on this board?' statistical?''}
+Breed is not a number, and the answer is one word --- but it varies across dogs and needs the
+data. This is the special case the activity does not carry, and it sets up the Application.
+\end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Write a single number on the board: \textbf{68}. Say nothing else. Ask:
-    \textit{``What does this tell you?''}\\[4pt]
-    Let students guess --- a test score, a temperature, a heart rate, a height in inches.
-    Reveal that all of these are plausible, which is the point: \textbf{a number with no
-    context carries no information}. Then add the context one piece at a time (``inches''
-    $\to$ ``height'' $\to$ ``a student in this class'') and let them watch the number
-    become meaningful.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (18--20 min)}
-    \begin{enumerate}
-        \item Define \emph{statistics}, \emph{data}, and \emph{context}; name the
-              W questions (who, what, when, where, why, how).
-        \item Show a small data table (8 shelter dogs). Identify the \emph{individuals}
-              (rows) and the \emph{variables} (columns).
-        \item Ask ``how tall is Maria?'' vs.\ ``how tall are students in this class?'' ---
-              the first has one answer, the second has many. Name the difference:
-              \textbf{variability}.
-        \item Build the test for a statistical question: \emph{does it anticipate
-              variability, and is it answered by collecting data?}
-        \item Close with the data analysis process as the arc of the whole course:
-              ask $\to$ collect $\to$ analyze $\to$ interpret.
-    \end{enumerate}
-\end{minipage}
+\begin{skillbox}[Application --- \emph{The Gym Sign-Up} (worked together, 6 min)]{sky}
+The first place the just-named vocabulary is \emph{used}. Part (a) is the identification move on
+a fresh context; part (b) asks for a statistical question \emph{plus} what varies --- insist on
+the second half, because it is the AP habit. \textbf{Part (c) is the real test:} ZIP code is a
+label, not a number, and students who have quietly decided ``statistical = numeric'' will say no.
+Run both checks aloud on it.
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``Who is one individual here ---
+the gym, or a member?''} \quad \emph{``Say your question again, but tell me what differs from
+member to member.''} \quad \emph{``Does check~1 say the answers have to be numbers, or just that
+they have to differ?''}
+
+\emph{No \texttt{work} block in this lesson:} Topic 1.1 has no computation. The blank and the key
+stay page-for-page through \texttt{\textbackslash answerspace} instead.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Emphasize EK VAR-1.A.1 in the students' own words: \textit{numbers mean
-              nothing until you say what they measure and who they came from.}
-        \item Individuals are \emph{rows}, variables are \emph{columns} --- draw the
-              arrows on the projected table so the layout becomes automatic.
-        \item A variable must actually \emph{vary}. If every row shows the same value,
-              it is a constant of the data set, not a variable worth studying.
-        \item The statistical-question test, stated as two checks: (1)~will the answers
-              differ across individuals? (2)~would I have to collect data to answer it?
-              Both yes $\to$ statistical.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Common error: naming a \emph{value} (``golden retriever'') when asked for
-              the \emph{variable} (``breed''). Probe: \textit{``Is that the category, or
-              the heading of the column?''}
-        \item Common error: calling any question with a number in it statistical.
-              Probe: \textit{``How many answers does that question have? If it's one,
-              it isn't statistical.''}
-        \item Common error: treating ``How many students are in this class?'' as
-              statistical --- it is a single count, not a distribution.
-        \item Cold-call: \textit{``Give me the individual and one variable from your row
-              of the table.''} Rotate so every group answers once.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Check Your Understanding --- in-class practice, \emph{not scored}]{redbox}
+Five exercises spanning Topic 1.1, in new contexts: \textbf{1} identification (turtles);
+\textbf{2} write-your-own with what-varies; \textbf{3} the \emph{deliberate contrast pair} --- same
+pond, one statistical question and one not; \textbf{4} the bare-claim context critique;
+\textbf{5} the AP-style multiple-choice item. Pairs for 1--3, solo for 4--5.
+
+\textbf{They carry no point value} --- the cover's score column reads \textbf{NA}. Do not collect
+them for a grade. \textbf{Item~5 is the formative check:} spot-check it on the way out and sort
+into three piles --- chose (C) with a variation-based reason (ready); chose (C) with a vague
+reason (ready, needs the language); chose (A) or (B) (the misconception survived). If more than a
+third land in the last pile, reopen the two checks at the start of Lesson~1.1 rather than moving
+on. Eight minutes will not cover five items for everyone: \textbf{priority is 1, 3, and 5};
+items~2 and~4 are the early-finisher bank. The graded practice is the homework, below.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (10--12 min)}\\
-    Three differentiated tiers (activity sheet):
-    \begin{itemize}
-        \item \textit{Tier R}: Given a completed data table, name the individuals and
-              variables, then choose the statistical question from three options and
-              say why the other two fail.
-        \item \textit{Tier A}: Given a context with no table, write two statistical
-              questions and explain what varies in each.
-        \item \textit{Tier E}: Given a headline that reports a bare number, list the
-              context the headline omits and write the statistical question the study
-              behind it must have asked.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide the two-check test on a sentence strip taped to
-              the desk; students apply it aloud before writing.
-        \item \textit{Extension}: Ask Tier E groups what data they would have to collect
-              to check the headline's claim --- a first look at study design (Unit 3).
-        \item \textit{Technology}: Project a live class data set (heights, reaction
-              times) collected in the first two minutes; use it as the running example.
-        \item \textit{ELL}: Pair the vocabulary cards (individual / variable / value)
-              with the projected table so each word points at a physical part of it.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Homework --- AP-style practice (assigned, scored)]{goldbox}
+Four AP-style multiple-choice items (five options each, in context) on the adoption board and a
+new veterinary context, then one multi-part free-response set on a school-newspaper survey:
+identify individuals and variables, write a statistical question with what varies, critique a
+bare claim, and explain why a group summary does not predict one individual. The optional
+extension is the headline hunt. \textbf{No spiral item --- this is the course's first lesson.}
+
+\textbf{Scoring:} the multiple choice is right/wrong; score the free response the way the AP exam
+does --- \emph{in context or it does not count}. A part (b) that names a question but not what
+varies is incomplete; a part (d) that restates the claim without mentioning that hours differ
+across seniors does not earn the point. Due at the start of Lesson~1.1.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}
-    \begin{enumerate}
-        \item Choose the statistical question from four options.
-        \item Given the bare claim ``the average is 12,'' name two pieces of missing
-              context.
-        \item Given a short scenario, identify the individual and one variable, then
-              write a statistical question about it.
-    \end{enumerate}
-    Items 1 and 3 are the readiness check for Lesson 1.1.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``A veterinarian records the weight, breed, and age of each of 40 dogs seen
-    in one week. Which of the following is a statistical question about this data set?''}
-    \begin{enumerate}[label=(\Alph*)]
-        \item How many dogs did the veterinarian see this week?
-        \item What is the breed of the third dog on the list?
-        \item How do the weights of the 40 dogs vary?
-        \item Is the veterinarian's office open on Sunday?
-    \end{enumerate}
-    \textit{Answer: (C) --- the only option whose answer differs across individuals.}
-\end{minipage}
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{Value named where a variable belongs} (1b, CYU~1, HW~1): ``Beagle'' for ``Breed.''
+        Probe: \emph{``Is that the heading, or something written under it?''}
+  \item \textbf{``Many rows'' equated with ``statistical''} (2b --- the crux, HW~2): counting the
+        dogs needs the whole board and is still not statistical. Probe: \emph{``How many different
+        answers does that question have?''}
+  \item \textbf{``Has a number in it'' equated with ``statistical''} (CYU~5 distractor B).
+        Probe: \emph{``Whose hours? One person's, or many people's?''}
+  \item \textbf{``Statistical'' equated with ``numeric''} (Application~c). Probe: \emph{``Run
+        check~1. Do members live in different ZIP codes?''}
+  \item \textbf{Summary read as a prediction} (2d, HW~d): ``25 days'' taken as a promise.
+        Probe: \emph{``Show me a dog on the board that waited 25 days.''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me one individual and one variable from your board.''} \quad
+\emph{``Say a question that is NOT statistical, and tell me which check it fails.''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item A shelter data set (8 dogs, 5 variables): identify individuals and
-              variables, count them, and name a value versus a variable.
-        \item Sort six questions as statistical or not, each with a one-line reason.
-        \item Critique a claim reported with no context; supply the missing W questions.
-        \item Reflect: \textit{``Why does statistics exist at all --- what would be true
-              of the world if nothing varied?''}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Find a number reported in a news headline. List every
-              piece of context the headline leaves out, then write the statistical
-              question the underlying study had to ask.
-        \item \textit{Preview}: Lesson 1.1 splits variables into \emph{categorical} and
-              \emph{quantitative} --- the first decision that determines every graph and
-              summary we use for the rest of the course.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Assign the homework} (due next class), then close on what changed rather than on the
+assignment: \emph{``This morning seven numbers meant nothing to you. You now know exactly what
+you were missing, and you have a two-question test that tells you whether a question is even
+worth collecting data for.''} \textbf{Preview:} Lesson~1.1, \emph{The Language of Variation} ---
+we split variables into categorical and quantitative, the first decision that determines every
+graph and summary for the rest of the course. Note that \emph{population} and \emph{sample} are
+deliberately \textbf{not} introduced today; they belong to Unit~3, and naming them now competes
+with the individual/variable distinction this lesson is built on.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 \begin{teachernote}[Warm-Up]
-Deliberately unanswerable at first glance. Item~1 gives seven numbers and no context, and
-the intended student response is \emph{``I can't tell.''} Resist rescuing them --- the
-discomfort is the lesson. Give 3~minutes, then debrief by asking what they would need to
-know; their list becomes the W questions you formalize in the notes. Expect some students
-to guess ``test scores'' and defend it; validate the reasoning while pointing out that a
-guess is not information. Item~3 is the first appearance of the statistical-question test,
-so leave it on the board through the whole period.
+Deliberately unanswerable at first glance. Give three minutes and resist rescuing --- the
+discomfort is the lesson. Expect some students to guess ``test scores'' and defend it; validate
+the reasoning while pointing out that a guess is not information. Debrief only item~3 aloud and
+leave it on the board all period; it is the same discrimination the activity's crux tests. If it
+runs long, cut item~2 and pick the ``what would you need to know'' list up during the debrief
+instead --- but never cut item~1, which is the whole seed.
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-Pace the vocabulary block quickly --- the terms are intuitive and the work is in applying
-them. Spend the saved time on the individuals-and-variables table: project it and physically
-trace a row (one individual) and a column (one variable) with your finger. Note that
-\emph{population} and \emph{sample} are deliberately \textbf{not} introduced here --- they
-belong to Unit~3, and naming them today competes with the individual/variable distinction
-this lesson is built on. In the guided practice, the recurring error is naming a value where
-a variable belongs --- have students point at the column heading before writing.
-\end{teachernote}
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 8 minutes on scenario~1, 12 on scenario~2 --- scenario~2
+carries the crux and needs the time. Groups that finish scenario~1 early should be pushed to
+justify 1d out loud rather than moving on. \textbf{The single discipline that makes this lesson
+work: do not name anything while circulating.} If you say ``variable'' at a table, that table
+stops discovering. Ask where they see it instead.
 
-\begin{teachernote}[Group Activity]
-Assign tiers by the warm-up, not by prior grades --- this is day one and you have no other
-signal. Tier~R groups need the two-check test read aloud before they start. Circulate for the
-Tier~A groups' explanation of \emph{what varies}; a question can look statistical and still
-be about a single individual. Tier~E is the richest debrief: the missing context in a headline
-is usually the sample, which sets up Unit~3. Reserve the last three minutes so one group from
-each tier reports a single question to the class.
-\end{teachernote}
+\textbf{Debrief (12 min).} The must-land moments are (2) heading-vs-entry and (4) the two checks;
+everything else can be compressed. Open on the \emph{almost}-right 2b answer you collected --- the
+group that decided many-rows means statistical --- because correcting it in public, gently, is
+what makes the crux stick. If time is short, cut the cold-call breed question and pick it up as
+the Application's part (c), which tests the same thing.
 
-\begin{teachernote}[Exit Ticket]
-Item~1's distractor (B) draws students who equate ``has a number in it'' with ``statistical.''
-If more than a third choose it, reteach the two-check test at the start of Lesson~1.1 rather
-than moving on. Item~2 is scored on naming any two of who / what / units / when --- accept
-student phrasing. Item~3 is the readiness signal: a student who writes a question with one
-definite answer has not yet got variability, and should be seated near a Tier~E partner
-tomorrow.
+\textbf{Application (6 min).} Part (c) is the point of the whole box; if you only get through
+(a) and (c), that is the right trade. Students hold the pen.
+
+\textbf{Check Your Understanding (8 min).} Not scored --- spot-check rather than collecting the
+page. Priority items are 1, 3, and 5; 2 and 4 are the early-finisher bank. Item~3 is the
+deliberate contrast pair and item~5 is the formative check that decides how Lesson~1.1 opens.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-The shelter table is small on purpose so that counting variables is quick and the thinking
-stays on the individual/variable distinction. Question~4 (the context critique) is the one
-worth grading closely --- it is EK VAR-1.A.1 in its most transferable form and it recurs on
-the AP exam as ``interpret in context.'' The reflection has no wrong answer; look for any
-recognition that statistics exists \emph{because} values differ. Extension is optional and
-pairs well with a bulletin-board display of headlines students bring in.
+The adoption board is reused on purpose --- the context is already loaded, so the thinking stays
+on the distinctions rather than on re-reading a table. MC item~1 targets variable-vs-value, item~2
+the crux, item~3 identification in a fresh context, and item~4 variability as the reason the
+subject exists. \textbf{Item~4 is the one worth reading closely}: it is EK VAR-1.A.1 in its most
+transferable form and recurs on the AP exam as ``interpret in context.'' On the free response,
+hold the line on context from day one --- part (d) is where students first learn that an answer
+without the situation in it earns nothing. The extension pairs well with a bulletin-board display
+of headlines students bring in.
 \end{teachernote}
 \end{document}

@@ -1,0 +1,207 @@
+%! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Experience & Formalize
+%! (Activity · QuickNotes · Application · Check Your Understanding)
+%! Directory stays `experience/` (a build identifier in shared/lesson.mk); the label
+%! students and teachers read is "Experience & Formalize".
+% EFFL component, Math Medic sizing: 12pt body, OPEN white space after every question.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro
+% byte-identical in the blank and the key. \boxguard counts here are 12pt-relative (~14-16).
+% Page budget: Activity <=2pp · QuickNotes 1/2pp · Application 1/2-1pp · CYU 1-2pp.
+%
+% SPOILER RULE: the Activity never names statistics / data / individual / variable / value /
+% variability / statistical question. Students answer in their own words ("row", "column
+% heading", "look it up", "read the whole column"); the debrief attaches the formal terms in
+% QuickNotes. Nothing above the QuickNotes box may use the vocabulary.
+%
+% This lesson has no computation, so it carries no \begin{work} block — page lockstep here
+% rests entirely on \answerspace. (CED Topic 1.1 / VAR-1.A: identifying questions, not computing.)
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.0}{Experience \& Formalize: The Adoption Board}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.06in}
+
+% ── Part 1: the Activity ─────────────────────────────────────────────────────
+% Scenario 1 builds the toolkit on one pre-drawn table. Scenario 2 is the contrast case and
+% carries the CRUX: "How many dogs are on the board?" needs the whole table AND has a number,
+% but is NOT statistical, because the answer does not differ from one dog to the next. That
+% single discriminator — do the answers vary across individuals? — is the lesson.
+\begin{headlinebox}{sky}
+\textbf{The Adoption Board.} A county animal shelter posts one board in its lobby listing every
+dog currently up for adoption. Visitors read it, and so does the shelter director --- but they
+are not looking for the same things. With your group, work through the two problems below using
+only what you already know, and be ready to explain \emph{how you know} each answer
+\textbf{from the board itself}.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{scenariobox}[1. Reading the Board]{navy}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Days on board} \\
+\hline
+Biscuit & Beagle    & 3 & 24 & 12 \\
+Momo    & Terrier   & 1 & 15 & 44 \\
+Ranger  & Shepherd  & 5 & 61 &  6 \\
+Pepper  & Retriever & 2 & 55 & 21 \\
+Sage    & Beagle    & 7 & 27 & 59 \\
+Tuck    & Mixed     & 4 & 38 &  9 \\
+Willow  & Terrier   & 2 & 17 & 33 \\
+Zeke    & Shepherd  & 6 & 70 & 15 \\
+\hline
+\end{tabularx}
+
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=8pt]
+  \item One \textbf{row} of this board describes \blank{5.2cm}.
+
+        The board has \blank{1.4cm} rows and \blank{1.4cm} columns of recorded facts
+        (not counting the Name column).
+  \item ``Beagle'' appears on the board. Is it a \textbf{column heading}, or something
+        \textbf{written underneath} one? Circle your answer, then say which column heading it
+        belongs to. \hfill \textbf{heading} \qquad \textbf{written underneath}
+        \answerspace{1.4cm}{}
+  \item \textbf{Underline} the part of the board you would read to answer each question.
+        One needs a single spot; the other needs a whole column.
+
+        \emph{How much does Zeke weigh?} \qquad \emph{How much do these dogs weigh?}
+        \answerspace{1.6cm}{}
+  \item Sage has been on the board for 59 days and Ranger for 6. If \emph{every} dog had been
+        on the board the same number of days, would the ``Days'' column still be worth posting?
+        Explain.
+        \answerspace{2.0cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\boxguard[16]
+\begin{scenariobox}[2. Four Questions the Director Might Ask]{navy}
+The shelter director looks at the same board and asks these four questions.
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=8pt]
+  \item For each one, decide whether you could answer it by reading \textbf{one spot} on the
+        board, or whether you would have to read \textbf{many rows}. Write \emph{one spot} or
+        \emph{many rows} in the blank.
+
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=5pt]
+          \item Is Momo a terrier? \hfill \blank{3.2cm}
+          \item How many dogs are on the board? \hfill \blank{3.2cm}
+          \item How long do dogs on this board tend to wait? \hfill \blank{3.2cm}
+          \item Do heavier dogs tend to wait longer than lighter ones? \hfill \blank{3.2cm}
+        \end{enumerate}
+  \item Two of those needed many rows. But only \emph{one} of the two has an answer that
+        \textbf{changes from one dog to the next}. Which one is which, and how can you tell?
+        \answerspace{2.6cm}{}
+  \item A flyer taped under the board reads: \textbf{``Our dogs go home in 25 days.''}
+        Name \textbf{two} things the flyer does not tell you that you would want to know
+        before believing it.
+        \answerspace{2.0cm}{}
+  \item A visitor reads the flyer and says, ``Good --- so I'll have my dog home in 25 days.''
+        Using the board, give one specific reason that is the wrong way to read the number.
+        \answerspace{2.0cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Part 2: QuickNotes (the debrief fills this) — target: half a page ────────
+\boxguard[14]
+\begin{tcolorbox}[enhanced, colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm, breakable,
+    fonttitle=\bfseries\small\color{white}, title={QuickNotes: Data, Variables, and Statistical Questions},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}]
+\small
+\begin{minipage}[t]{0.36\linewidth}
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}l l@{}}
+\multicolumn{2}{@{}l}{\footnotesize\textbf{\color{navy}Breed} \quad \textbf{\color{navy}Weight}}\\
+\hline
+Beagle    & 24 \\
+Terrier   & 15 \\
+Shepherd  & 61 \\
+\hline
+\end{tabular}\\[3pt]
+{\footnotesize Headings are \textbf{variables}.\\
+What is written under them\\
+are \textbf{values}. Each row is\\
+one \textbf{individual}.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.60\linewidth}
+\vspace{-4pt}
+\begin{itemize}[leftmargin=1.1em, itemsep=5pt]
+  \item \textbf{Data} are recorded values \emph{plus} the \blank{2.4cm} that gives them meaning.
+        A number alone answers nothing.
+  \item Before a number is data, answer the \textbf{W questions}: who, \blank{1.6cm},
+        in what \blank{1.8cm}, when and where.
+  \item An \textbf{individual} is what one \blank{1.6cm} describes. A \textbf{variable} is a
+        \blank{2.0cm} heading --- never one of the entries under it.
+  \item \textbf{Variability:} values \blank{2.4cm} from one individual to the next.
+        \emph{This is why statistics exists.}
+  \item A \textbf{statistical question} passes \textbf{both} checks:\\[2pt]
+        \textbf{1.} Do the answers \blank{2.2cm} across individuals?\\[2pt]
+        \textbf{2.} Must I \blank{2.6cm} data to answer it?
+\end{itemize}
+\end{minipage}
+\end{tcolorbox}
+
+% ── Part 3: the Application (worked together, ~6 min) ────────────────────────
+% No \begin{work} block: this topic has no computation. Page lockstep rests on \answerspace.
+\boxguard[14]
+\begin{notesbox}{Application: The Gym Sign-Up}
+We will do this one together. A gym records the \textbf{resting heart rate}, in beats per
+minute, of each of its 120 members on the morning they join. It also records each member's
+\textbf{home ZIP code}.
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item The individuals are \blank{6.4cm}, and two variables recorded are
+        \blank{4.0cm} and \blank{4.0cm}.
+  \item Write one statistical question this gym could answer, and say exactly what varies in it.
+        \answerspace{1.8cm}{}
+  \item \textbf{What if we change the variable?} ``What is the most common ZIP code among the
+        members?'' --- is that a statistical question? Run both checks before you answer.
+        \answerspace{2.2cm}{}
+\end{enumerate}
+\end{notesbox}
+
+% ── Part 4: Check Your Understanding — practice, NOT scored ──────────────────
+\boxguard[14]
+\begin{notesbox}{Check Your Understanding}
+Work with your partner, then finish on your own. \emph{These are for practice --- they are not
+scored.}
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt]
+  \item A biologist weighs each of the 30 turtles in a pond and records the weight in kilograms.
+
+        The individuals are \blank{5.4cm}; the variable is \blank{3.6cm},
+        measured in \blank{3.0cm}.
+  \item Write one statistical question about those turtles, then name what varies in it.
+        \answerspace{1.8cm}{}
+  \item \textbf{Same pond, two questions.} Explain why exactly one of these is statistical.
+
+        \emph{(i)} How much does the heaviest turtle weigh? \quad
+        \emph{(ii)} How do the turtles' weights vary?
+        \answerspace{2.0cm}{}
+  \item A report states only: \textbf{``The average is 12.''} Name \textbf{two} pieces of
+        context you would need before this number means anything.
+        \answerspace{1.8cm}{}
+  \item \textbf{Formative check.} Circle the statistical question, then justify it in one
+        sentence by pointing to what varies.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=4pt]
+          \item How many students are enrolled at this school?
+          \item How many hours did Jordan work last week?
+          \item How do the hours worked each week vary among students who have jobs?
+          \item What time does the library close on Friday?
+        \end{enumerate}
+        \answerspace{1.6cm}{}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

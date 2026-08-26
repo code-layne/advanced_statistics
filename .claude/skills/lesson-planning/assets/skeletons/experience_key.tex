@@ -1,0 +1,28 @@
+%! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Experience & Formalize
+%! (Activity · QuickNotes · Application · Check Your Understanding) (Answer Key)
+% Copy the blank Experience & Formalize component VERBATIM, then: swap -boxes for -key,
+% retitle the pageheader, fill each \answerspace{H}{} second argument with the answer,
+% replace \blank{} with \ans{}, fill the \begin{work} blocks, and tag the correct MC option.
+% The \answerspace macro and every \begin{work} block stay BYTE-IDENTICAL to the blank's —
+% that identity is what keeps the key page-for-page with the blank.
+% Keep \ans{} texts short enough not to wrap wider than the blank they replace.
+% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
+\documentclass[12pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit @@UNITINT@@, Lesson @@LESSONID@@}{Experience \& Formalize: TODO Activity Title --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.06in}
+
+% TODO: mirror the blank component exactly; example answered item:
+% \item TODO: the crux question (surfaces the target misconception):
+%       \answerspace{2.6cm}{TODO: the answer, printed in the identical reserved space.}
+% NO teachernote here — teacher prose goes in the lesson plan.
+
+\end{document}

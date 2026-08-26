@@ -1,0 +1,30 @@
+%! Unit @@UNITINT@@: @@UNITTITLE@@ — Summative Assessment — @@TESTKIND@@ (blank)
+\documentclass[10pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-boxes}
+
+% Part-divider strip (headlinebox takes one arg: the background color)
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{navy}\color{white}\bfseries #1\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+% The unit test is taken in a testing setting, so it DOES carry the name row —
+% it is the one exception to the namestrip rule besides the packet cover.
+\pageheader{Unit @@UNITINT@@: @@UNITTITLE@@}{@@TESTKIND@@}
+\namedateperiod
+@@TESTINTRO@@
+% ======================================================================
+% Mirror the AP exam's shape: Section I multiple choice, Section II free response.
+% The practice test and the actual test must be the same length as their keys —
+% put every worked solution in a \begin{work} block authored identically in both.
+\parthead{Section I --- Multiple Choice}
+% TODO: AP-style multiple-choice items in context, five options each.
+
+\parthead{Section II --- Free Response}
+% TODO: 2--3 multi-part FRQs. Leave \vspace work room (or a \begin{work} block) after each
+% part, and end at least one with an interpret/justify-in-context part.
+
+\end{document}

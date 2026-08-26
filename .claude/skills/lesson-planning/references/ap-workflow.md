@@ -79,8 +79,33 @@ Produces, in the lesson plan:
   \begin{itemize}\item Identify the question to be answered from a context (Skill 1.A).\end{itemize}
 \end{skillbox}
 ```
-and, on the cover: a learning target "I can identify a statistical question and explain what
-the data can tell us." Standards addressed: `VAR-1.A`, `VAR-1.A.1`.
+Standards addressed: `VAR-1.A`, `VAR-1.A.1`.
+
+**On the cover, that target must be de-spoilered.** "I can identify a *statistical question*" names
+the term the debrief is meant to attach, so the cover gets the plain-language version instead —
+"I can tell which questions data can actually answer, and which it can't." The formal LO stays in
+the lesson plan. See the spoiler rule in `components.md`.
+
+## EFFL: where CED content lands in the lesson
+
+One CED **Topic** still maps to one lesson, but the pieces land in EFFL order — the vocabulary
+arrives *after* the activity, not before it:
+
+| CED piece | Where it goes |
+| --- | --- |
+| Topic, Big Idea, Skill, LO, EK codes | the lesson plan's objective box (the audit trail) |
+| LO, as an "I can…" statement | plan: Learning Targets · cover: **de-spoilered** version |
+| EK, as the "why" | plan: Key Understandings — with the target misconception named |
+| The formal terms and notation the EK introduces | plan: Vocabulary box · packet: the
+  **QuickNotes** box, filled during the debrief — **never** the activity, cover, or early slides |
+| The reasoning the LO asks for | the Activity: students reach it from prior knowledge, in their
+  own words, before it has a name |
+| AP-style application of the topic | the Application, then Check Your Understanding |
+| AP-style MC/FRQ reps on the topic | the **homework** (the graded practice) |
+
+The practical consequence: read the EK to decide **what the groups must discover**, then design
+two scenarios that get them there with only prior knowledge — and put the EK's own wording in
+QuickNotes, where the debrief attaches it.
 
 For the rest of the document structure, follow `references/components.md`; for macros and boxes,
 `references/conventions.md`.

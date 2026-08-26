@@ -59,8 +59,21 @@ comp-stamp   = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp)
 comp-dep     = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp,$(wildcard $1/main.pdf))
 
 # ── Component discovery (in pedagogical order) ────────────────────────────────
-STUDENT_ORDER := cover warmup notes activity exit_ticket homework
-KEYED_PAIRS   := warmup notes activity exit_ticket homework
+#
+# `experience` is the EFFL centrepiece (Math Medic "experience first, formalize
+# later"): one document carrying the group Activity, the QuickNotes the debrief
+# fills, the Application, and Check Your Understanding. Students and teachers
+# read it as "Experience & Formalize"; the DIRECTORY name stays `experience`
+# because it is a build identifier — these two lists — and renaming it would
+# mean editing the build system.
+#
+# It sits after `warmup` and before the legacy names. `notes`, `activity`, and
+# `exit_ticket` are pre-EFFL components kept here so the ~78 lessons authored
+# before the redesign still build unchanged; new lessons do not use them.
+# `homework` is NOT legacy in this course — AP Statistics keeps it for AP-style
+# multiple-choice and free-response practice, so it stays a default component.
+STUDENT_ORDER := cover warmup experience notes activity exit_ticket homework
+KEYED_PAIRS   := warmup experience notes activity exit_ticket homework
 
 STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(call comp-present,$(c)))
 
