@@ -1,10 +1,11 @@
 %! The Language of Variation — Unit 1, Lesson 1.1 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
 \newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 1.1: The Language of Variation}
 
@@ -16,78 +17,332 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify the variables recorded in a data set and
+    classify each as categorical or quantitative --- judging by whether the values record a
+    measured or counted amount rather than by whether they are written in digits.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 1.2 \quad$\cdot$\quad Big Idea: VAR (Variation \& Distribution)
+    \quad$\cdot$\quad Skill 2.A \quad$\cdot$\quad LO VAR-1.B, VAR-1.C \quad$\cdot$\quad
+    EK VAR-1.B.1, VAR-1.C.1, VAR-1.C.2
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found; the application and practice apply it to new contexts. No separate direct-instruction
+    block, and \textbf{no vocabulary before the debrief.}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can sort the columns of a data set into two kinds that behave differently.
+  \item I can explain why averaging one column is useful and averaging another is nonsense.
+  \item I can say what a column really records even when every entry is written in digits.
+  \item I can say what happens to a variable when its amounts are replaced by group names.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item A variable is a characteristic that changes from one individual to another
+        (EK VAR-1.B.1). Categorical values are category names or group labels
+        (EK VAR-1.C.1); quantitative values are numerical, for a measured or counted quantity
+        (EK VAR-1.C.2).
+  \item \textbf{Target misconception:} that a column written in digits is quantitative.
+        \emph{Permit \#}, \emph{Home ZIP}, and \emph{Parking spot} are all digits and all
+        categorical. The discriminator is whether the value records an \emph{amount}, which is
+        exactly why arithmetic on it is or is not meaningful.
+  \item \textbf{Second misconception (the reverse trap):} that a variable summarized by a
+        number is quantitative. Counting a categorical column \emph{always} yields counts and
+        percents; the summary is numeric, the variable is not.
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Variable} --- a characteristic that changes from one individual to
+              another (EK VAR-1.B.1)
+        \item \textbf{Categorical variable} --- takes on values that are category names or
+              group labels (EK VAR-1.C.1)
+        \item \textbf{Quantitative variable} --- takes on numerical values for a measured or
+              counted quantity (EK VAR-1.C.2)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{The amount test} --- ask whether the value records how much or how many,
+              not whether it is written in digits
+        \item \textbf{Grouping (binning)} --- replacing measured amounts with group labels;
+              turns a quantitative variable into a categorical one, and the mean cannot be
+              recovered
+        \item \textbf{Carried forward from Lesson 1.0} --- individual, value, statistical
+              question
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & A rental sheet, then four lists --- which can you add up? & Circulate; debrief item~2 aloud and leave the board list up all period \\
+Experience \& Formalize: Activity & 20 & \emph{The Trailhead Register}, problems 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; collect a pile-naming to display \\
+Debrief: Formalize & 12 & Share pile names; fill QuickNotes as each term lands & Name each idea on the groups' own piles, in a second color; fill QuickNotes together \\
+Application & 6 & \emph{The Season Pass}, worked together & Lead it; students hold the pen, you hold the questions \\
+Check Your Understanding & 8 & 5 exercises, pairs $\to$ solo (\emph{not scored}) & Circulate; spot-check item~5, do not collect for a grade \\
+Close \& Assign & 4 & Record the homework; hear the preview & Sort item-5 responses to decide how Lesson~1.2 opens \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Individuals, one variable, one value on a rental sheet.
+              \textbf{Spirals} Lesson 1.0 and puts a table in front of them before the
+              activity's table arrives.
+        \item \textbf{2.} Which lists can you add up? Prices and ages yes; jersey numbers and
+              house numbers no. \textbf{Seeds:} the amount test / EK VAR-1.C.2.
+        \item \textbf{3.} ``Is your school ID number measuring anything about you?''
+              \textbf{Seeds:} digits-as-label, in a context every student owns.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Name nothing.} Do not say \emph{categorical} or \emph{quantitative} in
+              the warm-up debrief --- those arrive after the activity. Write their own
+              phrasings on the board (``it's an amount,'' ``it's just a name'') and leave them
+              up; the debrief will circle them.
+        \item Debrief item~2 aloud and take the ``what do they have in common'' answer from
+              two different groups before moving on. That sentence is the whole lesson in
+              student language.
+        \item Item~3 usually lands instantly --- that instinct is the lever you pull in the
+              debrief when a group insists Permit \# is a number.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{The Trailhead Register}]{sky}
+\textbf{Launch (2 min).} Project the register. \emph{``Every party that hikes here signs in and
+signs out, and the ranger keeps the sheet all season. Sort the columns with your group. I am not
+giving you the piles --- you make them, and you name them.''} Groups of 3--4. Do not preview any
+vocabulary.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Problem 1} makes them invent the sort themselves: 1b is the
+sort, 1c makes them articulate the rule, 1d tests it with averaging (and forces the nonsense out
+loud on \emph{Weather}), 1e seeds counting as the alternative summary --- which is Lesson 1.2.
+
+\emph{Problem 2} breaks whatever rule they wrote. All four new columns are digits; only
+\emph{Water bottles} is an amount. \textbf{2b is the crux:} the permit average computes cleanly
+to 4179.5 and means nothing, while the bottle average means something. 2c makes them repair the
+rule. 2d is the reverse trap --- a percent drawn out of a Yes/No column.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1b:} ``You put those three together. Say out loud what they have in common ---
+        don't point, say it.''
+  \item \textbf{1d:} ``Add the Weather column for me. Go ahead. What's Sunny plus Rain?''
+  \item \textbf{2b (the crux):} ``Your calculator gave you 4179.5. Point at the party that
+        had 4179.5. Now do the same for the 4 bottles.''
+  \item \textbf{2d:} ``Read me the entries in the Dog column. Any numbers in there? Where did
+        the 62 come from, then?''
+\end{itemize}
+While circulating, pick the work to display: one group's pile-naming sentence from 1c, and one
+group that put \emph{Permit \#} in the amount pile in 2a --- open the debrief on that.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item Their pile names from 1c $\to$ \emph{categorical} and \emph{quantitative}. Circle their
+        own words first, then write the term beside them. Read the CED wording once: category
+        names or group labels; numerical values for a measured or counted quantity.
+  \item Restate \emph{variable} as the CED does --- a characteristic that \emph{changes} from
+        one individual to another. This is the 1.0 definition sharpened, not a new one.
+  \item 1d and 2b together $\to$ \textbf{the amount test}. Write it as the students said it:
+        \emph{is this an amount of something, or the name of a group?} Say plainly that
+        ``has digits'' is the wrong test and 4179.5 is the proof.
+  \item 2d $\to$ the reverse trap. Summary numeric, variable categorical.
+  \item Only then name what each kind is summarized \emph{with} --- counts and percents vs.
+        averages and spread. That is the bridge to Lesson 1.2.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. The mini table on the left is the register in
+miniature --- point at the Trail column and the Time column while naming the two kinds. The
+right-hand bullets are their sentences, tightened. \textbf{It is a summary of what they found,
+not a new lecture}; if you are talking for more than 90 seconds without pointing at student
+work, stop.
+
+\textbf{Why this order.} The two kinds first (they built them), the sharpened definition of
+variable second, the amount test third --- because the test is what \emph{separates} the two
+kinds, so it only means something once both exist. Naming the test first would make it a rule to
+memorize instead of a consequence.
+
+\textbf{Pose cold:} \emph{``A satisfaction survey records a rating from 1 to 5. Which kind?''}
+Let them argue --- it is genuinely contested, and hearing both sides proves they are using the
+amount test rather than counting digits. Land it as \emph{categorical for our purposes}: the
+1--5 are ordered labels, and the gap between 1 and 2 is not a measured amount.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Application --- \emph{The Season Pass} (worked together, 6 min)]{sky}
+The first place the just-named vocabulary is \emph{used}. Part (a) is the classification move on
+a fresh context and carries two digit-labels (pass number, locker number) to catch anyone who
+kept the old rule. \textbf{Part (b) is the real work:} binning age into age groups converts a
+quantitative variable to a categorical one with no change to the underlying people. Insist that
+someone name what is \emph{lost} --- the mean age. Part (c) is the crux restated in one line.
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``Is a locker number an amount of
+anything?''} \quad \emph{``Same 3,400 people, same ages --- so what actually changed in
+(b)?''} \quad \emph{``Can you get the average age back out of the four bands? Try it.''}
+
+\emph{The \texttt{work} block lives in the activity (2b), not here:} the two averages are the
+lesson's evidence, so they are computed where the discovery happens. The blank and the key stay
+page-for-page through that block plus \texttt{\textbackslash answerspace}.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[Check Your Understanding --- in-class practice, \emph{not scored}]{redbox}
+Five exercises spanning Topic 1.2, in new contexts: \textbf{1} classification on a coffee-shop
+log (with a loyalty card number as the digit-label); \textbf{2} the \emph{deliberate contrast
+pair} --- number of pets vs.\ type of pet, plus how each is summarized; \textbf{3} the binning
+question in a medical context; \textbf{4} produce-your-own digit-label; \textbf{5} the AP-style
+multiple-choice item. Pairs for 1--3, solo for 4--5.
+
+\textbf{They carry no point value} --- the cover's score column reads \textbf{NA}. Do not collect
+them for a grade. \textbf{Item~5 is the formative check:} four of the five options are digits, so
+a student still counting digits has nothing to grab. Spot-check it on the way out and sort into
+three piles --- chose (C) and justified it with ``minutes are an amount'' (ready); chose (C) with
+a vague reason (ready, needs the language); chose any other option (the misconception survived).
+If more than a third land in the last pile, reopen the amount test at the start of Lesson~1.2
+rather than moving on. Eight minutes will not cover five items for everyone: \textbf{priority is
+1, 3, and 5}; items~2 and~4 are the early-finisher bank. The graded practice is the DeltaMath
+homework, below.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+Four AP-style multiple-choice items (five options each, in context) on the trailhead register
+with the ranger's new columns merged in, then one multi-part free-response set on a city
+library: classify four variables, refute a meaningless average, explain what binning costs, and
+write a statistical question about a categorical variable. \textbf{Part (d) is the spiral} --- it
+sends students back to Lesson 1.0's two checks and makes them run those checks on a categorical
+variable, which is where students most often assume ``statistical'' means ``numeric.'' The
+optional extension is the classify-any-table hunt.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~1.2 and hold the AP standard out loud: \emph{in context or it does not
+count}. A part (a) that writes ``C, Q, C, Q'' without naming the variables is incomplete; a part
+(c) that says ``it becomes categorical'' without naming the lost mean does not earn the point.
+Students keep this page --- it is their AP-format rep, not a grade.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``It has digits, so it's a number''} (2a, Application~a, CYU~1, HW~2 --- the
+        target misconception): \emph{Permit \#}, \emph{Home ZIP}, \emph{Parking spot},
+        \emph{Loyalty card \#}. Probe: \emph{``Is that an amount of something? Point at the
+        party that had 4179.5 of it.''}
+  \item \textbf{Summary mistaken for the variable} (2d, HW~3 --- the reverse trap): the 62\%
+        makes \emph{Dog along} look quantitative. Probe: \emph{``Read me what is actually
+        written in that column.''}
+  \item \textbf{Binning not recognized as a change of kind} (Application~b, CYU~3, HW~4):
+        students say ``it's the same information, so it's still quantitative.'' Probe:
+        \emph{``Get me the mean age out of those four bands.''}
+  \item \textbf{Counting confused with categorizing} (1e, CYU~2): ``number of pets'' is
+        quantitative, ``type of pet'' is not, even though both get counted somewhere. Probe:
+        \emph{``What is written in each cell --- a count, or a name?''}
+  \item \textbf{Currency and time doubted} (CYU~1, warm-up~2): some students hesitate on
+        \emph{Price paid} because of the dollar sign. Probe: \emph{``Does \$4.50 plus \$3.25
+        mean something?''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me one categorical and one quantitative variable about the
+people in this room.''} \quad \emph{``Name a variable written in digits that is categorical, and
+say what the digits are doing.''}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Point students to DeltaMath} for the graded homework (due next class) and remind them the
+AP Practice page in the packet is theirs to work and bring to review, then close on what changed
+rather than on the assignment: \emph{``You walked in able to tell a word from a number. You walk
+out able to tell an amount from a name --- and that is the decision that picks every graph and
+every statistic we use for the rest of the year.''} \textbf{Preview:} Lesson~1.2,
+\emph{Representing a Categorical Variable} --- we take the pile you cannot average and count it
+properly, with frequency and relative frequency tables. Note that \emph{discrete} vs.\
+\emph{continuous} is deliberately \textbf{not} introduced today; the CED does not require it at
+Topic 1.2, and a second split competes with the one distinction this lesson is built on.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+Item~2 is the seed and item~3 is the lever. Give four minutes total and do not let item~1 eat
+the clock --- it is a spiral, not the point. Expect an argument on \textbf{(D) house numbers}:
+some students will say house numbers ``go up as you walk down the street,'' which is true and
+still does not make their total mean anything. Validate the ordering observation and ask what
+the sum would be measuring --- that exchange is worth more than the right answer. Write their
+``it's an amount'' / ``it's just a name'' phrasings on the board and leave them there; you will
+circle them in the debrief. \textbf{Do not say \emph{categorical} or \emph{quantitative} here.}
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 8 minutes on problem~1, 12 on problem~2 --- problem~2 carries
+the crux and needs the time. Most groups sort problem~1 correctly in three minutes; the work is
+1c, making them \emph{say} the rule. Push for a sentence, not a gesture. \textbf{The single
+discipline that makes this lesson work: do not name anything while circulating.} If you say
+``categorical'' at a table, that table stops discovering. Make sure every group actually computes
+both averages in 2b --- a group that reasons about the permit average without computing it misses
+the whole force of the moment, which is that the arithmetic \emph{works} and the answer is still
+meaningless.
+
+\textbf{Debrief (12 min).} The must-land moments are (1) their pile names becoming the two terms
+and (3) the amount test; everything else can be compressed. Open on the group that filed
+\emph{Permit \#} as an amount --- correcting it in public, gently, is what makes the crux stick.
+If time is short, cut the 1--5 rating cold-call; it is genuinely contested and can swallow four
+minutes.
+
+\textbf{Application (6 min).} Part (b) is the point of the whole box; if you only get through (a)
+and (b), that is the right trade. Students hold the pen.
+
+\textbf{Check Your Understanding (8 min).} Not scored --- spot-check rather than collecting the
+page. Priority items are 1, 3, and 5; 2 and 4 are the early-finisher bank. Item~2 is the
+deliberate contrast pair and item~5 is the formative check that decides how Lesson~1.2 opens.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Homework]
-    % TODO
+\begin{teachernote}[AP Practice]
+\textbf{This page is not scored} --- the graded homework for this lesson is the DeltaMath
+assignment. Work it as AP-format reps and go over it at the start of Lesson~1.2. The trailhead
+register is reused on purpose --- the context is already loaded, so the thinking stays on the
+classification rather than on re-reading a table. MC item~1 is the baseline check, item~2 the
+target misconception stated as a student's argument, item~3 the reverse trap, and item~4 binning.
+\textbf{Item~3 is the one worth reading closely}: distractors (A) and (B) are both the ``it
+produced a number'' error, and a student who picks either has not separated the summary from the
+variable. On the free response, hold the line on context --- part (c) is where students first
+learn that naming the change is only half the answer and naming the cost is the other half. The
+extension pairs well with a five-minute share-out at the start of Lesson~1.2.
 \end{teachernote}
 \end{document}

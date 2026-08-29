@@ -1,23 +1,64 @@
 %! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items.
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Warm-Up --- Answer Key}
 
-
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
-\boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.19in]
+
+  \item \textbf{From last lesson.} A theater sold 60 tickets on Friday and 240 on Saturday.
+        On Friday 15 were student tickets; on Saturday 48 were.
+
+        \vspace{5pt}
+        Student share Friday: \ans{25\%} \qquad Saturday: \ans{20\%}
+        \vspace{5pt}
+
+        Which night had the larger \emph{share} of student tickets? \ans{Friday}
+
+  \item Here are 12 numbers. Tally how many fall in each block.
+
+        \vspace{4pt}
+        \begin{center}
+        21 \quad 34 \quad 27 \quad 45 \quad 38 \quad 22 \quad 49 \quad 31 \quad 26 \quad
+        43 \quad 20 \quad 36
+        \end{center}
+        \vspace{4pt}
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Block} & 20--29 & 30--39 & 40--49 & \textbf{Total} \\
+        \hline
+        \textbf{How many} & \ans{5} & \ans{4} & \ans{3} & \ans{12} \\
+        \end{tabularx}
+
+  \item Which of these could sensibly come out to \textbf{7.5}? \textbf{Circle} every one
+        that could.
+        \vspace{6pt}
+
+        \hspace{1.0em}\textbf{(A)} the number of siblings a student has
+        \hfill
+        \ans{\textbf{(B)} a person's height in inches}
+        \hspace{1.0em}
+        \vspace{5pt}
+
+        \hspace{1.0em}\textbf{(C)} the number of cars in a parking lot
+        \hfill
+        \ans{\textbf{(D)} the time to run one mile, in minutes}
+        \hspace{1.0em}
+        \vspace{7pt}
+
+        What do the ones you circled have in common?\\[4pt]
+        \ansline{B and D are measured, so a value can fall anywhere between two others.}\\[1pt]\ansline{A and C are counted --- you get whole numbers and nothing in between.}
+
+\end{enumerate}
 
 \end{document}

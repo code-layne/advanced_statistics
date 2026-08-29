@@ -1,10 +1,11 @@
 %! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
 \newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 1.3: Representing a Quantitative Variable with Graphs}
 
@@ -16,78 +17,329 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will classify a quantitative variable as discrete or
+    continuous, read dotplots, stem plots, and histograms, and explain how changing the interval
+    width of a histogram changes its appearance without changing a single data value.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 1.5 \quad$\cdot$\quad Big Idea: UNC (Uncertainty)
+    \quad$\cdot$\quad Skills 2.A, 2.B \quad$\cdot$\quad LO UNC-1.F, UNC-1.G \quad$\cdot$\quad
+    EK UNC-1.F.1, 1.F.2, 1.G.1--1.G.5
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found. \textbf{No vocabulary before the debrief.}
+    \\[2pt]
+    \textbf{Note on the ``no sketch'' rule:} every display in this lesson is \textbf{given}.
+    Students construct only by filling in an interval table. Do not add a ``now draw your own
+    histogram'' step --- the AP exam asks students to \emph{read} and \emph{choose} displays,
+    and drawing axes by hand consumes the period without teaching the objective.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can read values off a plot and group them into blocks.
+  \item I can say which measurements can land between two whole numbers and which cannot.
+  \item I can explain what grouping data gains and what it throws away.
+  \item I can explain how two correct pictures of the same numbers can disagree.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item Discrete variables take a countable set of values; continuous variables take
+        infinitely many, with another value always available between any two
+        (EK UNC-1.F.1, 1.F.2).
+  \item Dotplots and stem plots preserve every individual value; a histogram trades those
+        values for interval counts (EK UNC-1.G.1--1.G.3).
+  \item \textbf{Target misconception:} that a histogram reports a fact about the data. It
+        reports a fact about the data \emph{and the interval width chosen}. The width-5 picture
+        shows two clumps and a gap; the width-20 picture of the identical 24 values shows two
+        equal bars and no structure at all (EK UNC-1.G.1).
+  \item \textbf{Second misconception:} that ``the values are whole numbers'' makes a variable
+        discrete. Rounded measurements are still continuous --- ask about the variable, not the
+        recorded digits.
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Discrete variable} --- a countable number of values (EK UNC-1.F.1)
+        \item \textbf{Continuous variable} --- infinitely many values; another always lies
+              between any two (EK UNC-1.F.2)
+        \item \textbf{Dotplot} --- one dot per observation, stacked (EK UNC-1.G.3)
+        \item \textbf{Stem plot} --- value split into stem (leading digits) and leaf (last
+              digit) (EK UNC-1.G.2)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Histogram} --- bar height is the count in an interval; bars touch
+              (EK UNC-1.G.1)
+        \item \textbf{Interval width} --- the choice that controls what the histogram shows
+        \item \textbf{Cumulative graph} --- how many observations are at or below a value
+              (EK UNC-1.G.4)
+        \item \textbf{Carried forward} --- categorical vs.\ quantitative (1.1); bar graphs
+              and their gaps (1.2)
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Shares, a tally, and four things that might be 7.5 & Circulate; debrief item~3 aloud and leave it on the board all period \\
+Experience \& Formalize: Activity & 20 & \emph{Twenty-Four Finishing Times}, problems 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; collect a ``one of them must be wrong'' answer \\
+Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color \\
+Application & 6 & \emph{The Bus Stop}, worked together & Lead it; students hold the pen \\
+Check Your Understanding & 8 & 5 exercises, pairs $\to$ solo (\emph{not scored}) & Circulate; spot-check item~5, do not collect for a grade \\
+Close \& Assign & 4 & Record the homework; hear the preview & Sort item-5 responses to decide how Lesson~1.4 opens \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Two nights of ticket sales as shares. \textbf{Spirals} Lesson 1.2 ---
+              and quietly confirms that today's variable is the other kind.
+        \item \textbf{2.} Tally twelve numbers into three blocks. \textbf{Seeds:} the exact move
+              the activity's 1c asks for, done once with easy numbers first.
+        \item \textbf{3.} Which of these could be 7.5? \textbf{Seeds:} discrete vs.\ continuous,
+              in language students already own.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Name nothing.} Do not say \emph{discrete}, \emph{continuous}, or
+              \emph{histogram} in the warm-up debrief. Write their own phrasing on the board
+              (``you can't have half a car'') and leave it up.
+        \item Item~2 is mechanical --- if the room is quick, take 90 seconds and move on. It
+              exists so that grouping is not the obstacle inside the activity.
+        \item Debrief item~3 aloud. Expect an argument about time: \emph{``a clock only shows
+              whole seconds.''} That argument is exactly the second misconception, and it is
+              better raised here than in the activity.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{Twenty-Four Finishing Times}]{sky}
+\textbf{Launch (2 min).} \emph{``One 50-minute quiz, 24 students, and how long each took. The
+same 24 numbers are drawn three different ways on these pages. When two of them disagree, do not
+pick a favourite --- work out what was changed.''} Groups of 3--4. Do not preview any vocabulary.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Problem 1} is the reading toolkit on the stem plot: 1a is
+counting and extremes, \textbf{1b plants discrete vs.\ continuous} (15.3 minutes yes, 15.3
+questions no), 1c is the interval table, and 1d asks what the table lost --- which is the
+histogram's whole trade-off, met before the histogram is named.
+
+\emph{Problem 2} is the crux. The width-5 picture shows two clumps and an empty stretch; the
+width-20 picture of the same 24 values shows two equal bars and nothing else. 2a forces the
+count check (both total 24, so neither dropped data), 2b makes them describe both, and
+\textbf{2c makes them name the single change and choose one for a stated purpose}. 2d extends
+to width 1 --- the noise end of the same trade-off.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1b:} ``Read me a time off the plot. Could the stopwatch have stopped a tenth of
+        a second later? Now try that with the number of questions.''
+  \item \textbf{1d:} ``Cover the plot. From your table alone, tell me the two times in the 30s.''
+  \item \textbf{2c (the crux):} ``Add both pictures up. Same total? Then nothing was thrown
+        away --- so what \emph{did} change?''
+  \item \textbf{2d:} ``How many of the 24 times repeat? So how tall would most one-minute bars
+        be?''
+\end{itemize}
+While circulating, pick the work to display: one group's 1d sentence, and one group that decided
+\emph{one of the two pictures must be wrong} --- open the debrief on that.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item 1b and warm-up 3 $\to$ \emph{discrete} and \emph{continuous}. Give the CED wording once
+        and stress that the question is about the \textbf{variable}, not the digits recorded:
+        rainfall rounded to whole millimetres is still continuous.
+  \item The class record $\to$ \emph{stem plot}; show the \emph{dotplot} beside it. Both keep
+        every individual value --- point at the two 36s.
+  \item Their interval table $\to$ \emph{histogram}. The table \emph{is} the histogram; the bars
+        are just its counts drawn to scale. \textbf{Bars touch}, and connect that straight back
+        to Lesson 1.2: bar-graph bars had gaps because categories are not a number line.
+  \item 2c $\to$ the crux, stated as EK UNC-1.G.1: altering the interval width changes the
+        appearance. Write both pictures' totals (24 and 24) on the board first, so nobody thinks
+        data went missing.
+  \item Name the \emph{cumulative graph} last, in one line (EK UNC-1.G.4). It is on the CED and
+        returns in 1.6; it does not need a block today.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. \textbf{It is a summary of what they found,
+not a new lecture}; if you are talking for more than 90 seconds without pointing at student
+work, stop.
+
+\textbf{Why this order.} Variable types first (they are what pick the display), value-preserving
+displays second, the histogram third \emph{as a grouped version of the table they already
+built}, and the width effect last --- because it only lands once students accept that the
+histogram is built from a choice they made in 1c.
+
+\textbf{The sentence to land:} \emph{a histogram is a choice, not a fact.} Say it, write it,
+and point at the two pictures while you do. Everything else in this lesson is machinery for
+that one idea.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Application --- \emph{The Bus Stop} (worked together, 6 min)]{sky}
+The first place the vocabulary is \emph{used}, on a dotplot rather than a histogram so students
+see the third display in a working context. Part (a) is reading; part (b) is the discrete /
+continuous judgment on a fresh variable; \textbf{part (c) is the crux transferred} --- regrouping
+into 5-minute blocks puts the two far-out riders (11 and 12 minutes) into one bar and, more
+importantly, \emph{fills in} the empty stretch from 6 to 11 that made them look unusual.
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``What makes those two riders look
+strange --- where they are, or what is next to them?''} \quad \emph{``Draw the 5--10 block. Is it
+empty?''}
+
+\emph{No \texttt{work} block in this lesson:} Topic 1.5 has no computation beyond counting.
+Page lockstep between the blank and the key rests entirely on \texttt{\textbackslash answerspace}.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[Check Your Understanding --- in-class practice, \emph{not scored}]{redbox}
+Five exercises spanning Topic 1.5: \textbf{1} discrete/continuous on four variables;
+\textbf{2} the crux restated --- two histograms of 60 test scores, and \emph{neither} is wrong;
+\textbf{3} the bars-touch/bars-gap contrast, which is the link back to Lesson 1.2;
+\textbf{4} reading a stem plot row and saying why a histogram cannot return those values;
+\textbf{5} the AP-style multiple-choice item. Pairs for 1--3, solo for 4--5.
+
+\textbf{They carry no point value} --- the cover's score column reads \textbf{NA}. Do not collect
+them for a grade. \textbf{Item~2 is where the misconception shows}: students who answer ``the
+10-point one is wrong'' have heard ``wide hides things'' and turned it into a rule. The answer is
+\emph{neither}. \textbf{Item~5 is the formative check:} distractor (E) is the same over-correction
+in AP clothing. Spot-check on the way out and sort into three piles --- chose (B) and justified it
+by the 200 values (ready); chose (B) vaguely (ready, needs the language); chose (A) or (E) (the
+misconception survived). If more than a third land in the last pile, reopen the two pictures at
+the start of Lesson~1.4. Eight minutes will not cover five items: \textbf{priority is 1, 2, and
+5}; items 3 and 4 are the early-finisher bank.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+Four AP-style multiple-choice items on a 20-day rainfall stem plot --- a counting item, the
+discrete/continuous judgment with the ``values are whole numbers'' distractor, the
+regroup-to-a-histogram item, and the crux as a both-are-correct item --- then one multi-part free
+response on the same record: classify, group into 10\,mm blocks, state what grouping costs, and
+reject a bar graph. \textbf{Parts (a) and (d) are the spiral} --- (a) reaches back to Lesson 1.1
+(categorical vs.\ quantitative) and (d) to Lesson 1.2 (bar graphs are for categories). Reusing one
+display for both sections is deliberate: the context is already loaded, so the thinking stays on
+the choices.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~1.4 and hold the AP standard out loud: \emph{in context or it does not
+count}. A part (c) that says ``the table loses information'' without naming \emph{which}
+information is incomplete; the answer must point at something concrete, such as the two days that
+both recorded 13\,mm.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``One of these pictures must be wrong''} (2c --- the target misconception).
+        Probe: \emph{``Add both up. Same 24? Then which one lied?''}
+  \item \textbf{Whole numbers read as discrete} (1b, CYU~1, HW~2). Rainfall recorded as 13\,mm
+        is still continuous. Probe: \emph{``Could it have rained 13.4 mm? Would the gauge have
+        cared?''}
+  \item \textbf{Over-correction to ``narrow is always better''} (2d, CYU~2, HW~4): the mirror
+        error, and the one the AP exam actually tests. Probe: \emph{``How many of the 24 times
+        repeat? Draw me the one-minute picture.''}
+  \item \textbf{Histogram bars drawn or read with gaps} (CYU~3): a leftover from Lesson 1.2.
+        Probe: \emph{``What is on the horizontal axis here --- names, or numbers?''}
+  \item \textbf{Values invented back out of a histogram} (1d, CYU~4, HW~c): students report ``a
+        student finished in 37 minutes'' from a 35--39 bar. Probe: \emph{``Point at the 37.''}
+  \item \textbf{Stem plot misread} as 3 and 4 rather than 34. Probe: \emph{``Read me the whole
+        number, not the two digits.''}
+\end{itemize}
+Cold-call prompts: \emph{``Name a variable that is quantitative and discrete.''} \quad
+\emph{``What would I have to change to make this histogram show two peaks?''}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Point students to DeltaMath} for the graded homework (due next class) and remind them the
+AP Practice page is theirs to work and bring to review, then close on what changed: \emph{``You
+walked in thinking a graph shows you the data. You walk out knowing a histogram shows you the
+data \emph{and} the choice somebody made about it --- and that you have to check that choice
+before you believe the shape.''} \textbf{Preview:} Lesson~1.4, \emph{Describing the Distribution
+of a Quantitative Variable} --- now that you can read these displays, we put words to them:
+shape, centre, spread, and unusual values, in context, every time. Note that \emph{cumulative
+graphs} (EK UNC-1.G.4) are named today but not worked; they return in Lesson~1.6 alongside
+percentiles, where they carry their weight.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+Item~3 is the seed and item~2 is the drill. Give four minutes total. Expect the time argument on
+item~3 --- \emph{``a stopwatch only shows hundredths, so time is countable''} --- and do not
+settle it yet; write both positions on the board and tell them the activity will decide it. That
+suspense is worth more than a correct answer here, and 1b resolves it cleanly. Item~1 is a
+30-second spiral; do not let it expand. \textbf{Do not say \emph{discrete}, \emph{continuous}, or
+\emph{histogram} in this debrief.}
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 9 minutes on problem~1, 11 on problem~2. Problem~1 looks easy
+and is not: 1d is where students first articulate the trade-off that the rest of the lesson
+formalizes, so do not let groups answer it in three words. Push for one concrete thing lost and
+one concrete thing gained.
+
+\textbf{Make every group do the count check in 2a before they argue about 2c.} Groups that skip
+it spend five minutes suspecting the data was tampered with. Once both totals read 24, the only
+remaining explanation is the width --- which is the discovery.
+
+\textbf{The single discipline that makes this lesson work: do not name anything while
+circulating.} A group that hears ``histogram'' stops discovering.
+
+\textbf{Debrief (12 min).} Must-land: their interval table becoming the histogram (step 3) and
+2c becoming EK UNC-1.G.1 (step 4). Open on the group that decided one picture must be wrong.
+If time is short, cut the cumulative-graph mention entirely --- it returns in 1.6.
+
+\textbf{Application (6 min).} Part (c) is the crux transferred; if you only get through (a) and
+(c), that is the right trade.
+
+\textbf{Check Your Understanding (8 min).} Not scored --- spot-check rather than collecting.
+Priority items are 1, 2, and 5; 3 and 4 are the early-finisher bank.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Homework]
-    % TODO
+\begin{teachernote}[AP Practice]
+\textbf{This page is not scored} --- the graded homework is the DeltaMath assignment. Work it as
+AP-format reps and go over it at the start of Lesson~1.4. \textbf{MC item~2 is the one worth
+reading closely}: distractor (B) says ``discrete, because the recorded values are whole
+numbers,'' which is the exact reasoning half the class used in the warm-up. If more than a
+handful pick it, spend three minutes on measured-versus-counted before starting 1.4, because
+that confusion resurfaces in Unit~4 with random variables. On the free response, part (d) is the
+highest-value part --- it forces students to justify a display \emph{choice} from the variable
+type, which is Skill 2.B in the form the exam actually asks it.
 \end{teachernote}
 \end{document}

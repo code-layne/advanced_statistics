@@ -1,10 +1,11 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
 \newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 1.2: Representing a Categorical Variable}
 
@@ -16,78 +17,321 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will build frequency and relative frequency tables for
+    a categorical variable, read a bar graph of either one, and explain why two groups of
+    different sizes can only be compared with relative frequencies.
+    \\[2pt]
+    \textbf{CED alignment:} Topics 1.3 \emph{and} 1.4 \quad$\cdot$\quad Big Idea: UNC
+    (Uncertainty) \quad$\cdot$\quad Skills 2.A, 2.B, 2.D \quad$\cdot$\quad
+    LO UNC-1.A--UNC-1.E \quad$\cdot$\quad EK UNC-1.A.1, 1.B.1, 1.B.2, 1.C.1--3, 1.D.1, 1.E.1
+    \\[2pt]
+    \textbf{Scope note:} this lesson absorbs \emph{two} CED topics (tables and graphs), per
+    \texttt{COURSE\_RESTRUCTURE.md}. That is a lot for 55 minutes. The activity is built around
+    the one idea both topics share --- \textbf{counts versus rates} --- and the bar-graph
+    mechanics ride along on a single pre-drawn chart rather than getting their own block. If the
+    period runs short, protect problem 2; problem 1 can be finished as homework.
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found. \textbf{No vocabulary before the debrief.}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can turn a table of counts into a table of shares, and say what each column must
+        add to.
+  \item I can read a bar graph and say which number each bar shows.
+  \item I can explain why comparing different-sized groups by counts is unfair.
+  \item I can decide whether a ``most people'' claim is supported by the numbers.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item A frequency table gives counts; a relative frequency table gives proportions
+        (EK UNC-1.A.1). Percents, proportions, and rates carry identical information
+        (EK UNC-1.B.1).
+  \item \textbf{Target misconception:} that the group with the larger count is ``more'' on that
+        category. South has \emph{more walkers} (150 vs.\ 80) and a \emph{lower walking rate}
+        (15\% vs.\ 20\%). Both are true; the bigger group wins on counts before anyone counts
+        anything (EK UNC-1.E.1).
+  \item \textbf{Second misconception:} that the largest category is a majority. Bus is 45\% ---
+        a plurality, not ``most.''
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Frequency table} --- the number of cases in each category (EK UNC-1.A.1)
+        \item \textbf{Relative frequency table} --- the proportion in each category; entries
+              always sum to 1
+        \item \textbf{Proportion / percent / rate} --- three presentations of one number
+              (EK UNC-1.B.1)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Bar graph} --- bar height is the count or the relative frequency for a
+              category; bars are separated by gaps (EK UNC-1.C.1, UNC-1.C.2)
+        \item \textbf{Plurality vs.\ majority} --- largest share vs.\ more than half
+        \item \textbf{Carried forward from Lesson 1.1} --- categorical vs.\ quantitative
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Percents, and two teams with different game counts & Circulate; debrief item~3 aloud and leave it on the board all period \\
+Experience \& Formalize: Activity & 20 & \emph{Getting to School}, problems 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; collect a wrong 2a to open on \\
+Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color \\
+Application & 6 & \emph{Two Shifts}, worked together & Lead it; students hold the pen \\
+Check Your Understanding & 8 & 5 exercises, pairs $\to$ solo (\emph{not scored}) & Circulate; spot-check item~5, do not collect for a grade \\
+Close \& Assign & 4 & Record the homework; hear the preview & Sort item-5 responses to decide how Lesson~1.3 opens \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Classify species and weight. \textbf{Spirals} Lesson 1.1 and
+              establishes that today's variable is the categorical one.
+        \item \textbf{2.} $80/400$ and $150/1000$ as percents. \textbf{Seeds:} the exact
+              arithmetic the crux needs, done before the crux so it is not the obstacle.
+        \item \textbf{3.} Two teams, different numbers of games. \textbf{This is the whole
+              lesson in prior-knowledge terms} --- every student already knows you compare
+              records by rate.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Name nothing.} Do not say \emph{relative frequency} or \emph{bar graph}
+              in the warm-up debrief. Write their own phrasings on the board (``out of,''
+              ``share,'' ``per game'') and leave them up.
+        \item Debrief item~3 aloud and press the second half: \emph{why} the raw win totals did
+              not decide it. That sentence is what you will circle in the debrief.
+        \item Item~3 is the lever for any group that stalls on 2c --- send them back to it
+              rather than explaining.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{Getting to School}]{sky}
+\textbf{Launch (2 min).} \emph{``One district, two high schools, one question. Work the two
+problems with your group. For every answer, be ready to tell me which number you used.''}
+Groups of 3--4. Do not preview any vocabulary.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Problem 1} is the table toolkit on one school: 1a is the
+percent column, 1b forces them to notice the two totals are different promises (400 vs.\ 100\%),
+and \textbf{1d is the plurality trap} --- 45\% is the biggest group and is not ``most.''
+
+\emph{Problem 2} is the contrast case. The district's side-by-side chart of raw counts sits
+right above the questions, so students meet the misleading display before they are asked about
+it. \textbf{2c is the crux:} South has more walkers and North has the higher rate, and students
+must hold both, choose one for a stated purpose, and name the fix for the chart.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1b:} ``Add your percent column. What did you get? Would that still be the
+        answer at South?''
+  \item \textbf{1d:} ``How many students is 45\%? How many students is everyone else?''
+  \item \textbf{2c (the crux):} ``Go back to the warm-up. Team B won more games. Did that make
+        Team B better?''
+  \item \textbf{2c, chart half:} ``Cover the Bike bars. Is there any category where South
+        \emph{could} have lost?''
+\end{itemize}
+While circulating, pick the work to display: one group's 1b sentence, and one group that
+answered 2a with a single school --- open the debrief on that.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item Their two columns $\to$ \emph{frequency table} and \emph{relative frequency table}.
+        Their 1b sentence is EK UNC-1.A.1 in student words --- circle it, then write the terms.
+  \item Write $80/400 = 0.20 = 20\% =$ ``1 in 5'' on one line and name it once: proportion,
+        percent, and rate are the same number (EK UNC-1.B.1).
+  \item Now the bar graph. Point at the posted chart: each bar is a category, the height is the
+        count \emph{or} the proportion depending on the axis, and the gaps are there because
+        categories are not a number line. This is the only direct instruction in the lesson ---
+        keep it under two minutes.
+  \item 2c $\to$ the crux. Write both true statements side by side, then the rule: comparing
+        different-sized groups requires relative frequencies (EK UNC-1.E.1).
+  \item 1d $\to$ \emph{plurality} vs.\ \emph{majority}. Land it as a reading habit, not a
+        vocabulary item.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. \textbf{It is a summary of what they found,
+not a new lecture}; if you are talking for more than 90 seconds without pointing at student
+work, stop.
+
+\textbf{Why this order.} Tables first (they built them), the three-names-for-one-number line
+second so the crux has vocabulary to use, graphs third, and the comparison rule last --- because
+the rule is what the graph made visible. Naming the rule first would turn the chart into an
+illustration instead of the evidence.
+
+\textbf{Pose cold:} \emph{``Which shift is busier?''} from the Application. It is the one place
+in this lesson where the \emph{count} is the right answer. Students who over-learn ``always use
+rates'' need this, and it prevents the rule from becoming a reflex.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Application --- \emph{Two Shifts} (worked together, 6 min)]{sky}
+The first place the vocabulary is \emph{used}. Part (a) is the crux in a new context, and the
+numbers are built to reverse: morning sells more large drinks (84 vs.\ 32) while evening sells
+them at the higher rate (40\% vs.\ 35\%). Part (b) demands a sentence with the number named.
+\textbf{Part (c) is the counterweight:} ``which shift is busier'' is answered by the total ---
+a count. Say plainly that the lesson is not ``rates are always right''; it is ``say which number
+you used and why.''
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``Which shift sold more? Which
+sells them more often? Are those the same question?''} \quad \emph{``Busier --- is that about
+how many, or about what share?''}
+
+\emph{The \texttt{work} block lives in the activity (2b):} the two walking rates are the
+lesson's evidence, so they are computed where the discovery happens.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[Check Your Understanding --- in-class practice, \emph{not scored}]{redbox}
+Five exercises spanning Topics 1.3--1.4: \textbf{1} percent plus the ``most'' check;
+\textbf{2} the \emph{crux again} in a medical context, with both rates required;
+\textbf{3} the same data plotted as counts and as proportions --- what changed and what did not
+(EK UNC-1.C.1); \textbf{4} four percents adding to 95\%, a structural check; \textbf{5} the
+AP-style multiple-choice item. Pairs for 1--3, solo for 4--5.
+
+\textbf{They carry no point value} --- the cover's score column reads \textbf{NA}. Do not collect
+them for a grade. \textbf{Item~5 is the formative check:} the distractors are the two halves of
+the crux stated separately, so a student who has only half the idea will pick (A) or (B). Spot
+check on the way out and sort into three piles --- chose (C) with both rates computed (ready);
+chose (C) by elimination (ready, needs the arithmetic); chose (A) or (B) (the misconception
+survived). If more than a third land in the last pile, reopen the two-schools table at the start
+of Lesson~1.3. Eight minutes will not cover five items: \textbf{priority is 2, 4, and 5}; items
+1 and 3 are the early-finisher bank.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+Four AP-style multiple-choice items on a city recycling audit --- a rate computation, the crux
+stated as four competing claims, the structural must-sum-to-1 fact, and a display-choice item
+(EK UNC-1.E.1) --- then one multi-part free-response set on a 9th-versus-12th-grade activity
+survey: identify and classify, build a relative frequency table with the arithmetic shown,
+correct a newspaper's count-based comparison, and describe the largest difference in context.
+\textbf{Part (a) is the spiral} --- it sends students back to Lesson 1.1 to classify the variable
+before they are allowed to summarize it, which is the habit that keeps them from averaging a
+categorical column later.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~1.3 and hold the AP standard out loud: \emph{in context or it does not
+count}. A part (b) with three decimals and no context earns nothing; a part (d) that says
+``study hall is different'' without the two percents is incomplete.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{Counts compared across different-sized groups} (2c, CYU~2, HW~2 --- the target
+        misconception). Probe: \emph{``Team B won more games. Was Team B better?''}
+  \item \textbf{Plurality read as majority} (1d, CYU~1). Probe: \emph{``45\% chose the bus. What
+        did the other 55\% do?''}
+  \item \textbf{Percent taken of the wrong total} --- dividing by 750 (both neighborhoods) or by
+        the category rather than the group. Probe: \emph{``Percent \emph{of what}? Point at the
+        number you divided by.''}
+  \item \textbf{Relative frequencies not summing to 1} (CYU~4, HW~3): students treat the column
+        as four unrelated numbers. Probe: \emph{``Add your column. What should it come to, and
+        why must it?''}
+  \item \textbf{Rate applied where a count is wanted} (Application~c): over-correction after the
+        crux lands. Probe: \emph{``Busier --- how many, or what share?''}
+  \item \textbf{Answers with no context:} ``20\%'' alone. Probe: \emph{``20\% of whom, doing
+        what?''} Hold this from day one; it is the AP scoring line.
+\end{itemize}
+Cold-call prompts: \emph{``Give me one number from this table that is a count and one that is a
+rate.''} \quad \emph{``What would make this chart a fair comparison?''}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Point students to DeltaMath} for the graded homework (due next class) and remind them the
+AP Practice page is theirs to work and bring to review, then close on what changed: \emph{``You
+walked in able to read a table. You walk out able to catch a chart that is technically accurate
+and still misleading --- which is most of the charts you will ever be shown.''}
+\textbf{Preview:} Lesson~1.3, \emph{Representing a Quantitative Variable with Graphs} ---
+counting worked today because there were four category names. When the values are numbers that
+barely repeat, counting stops working and we need different displays. Note that
+\emph{segmented bar charts} and \emph{pie charts} are named in the CED (EK UNC-1.C.3) but are
+deliberately \textbf{not} built here; they return in Unit 2 with two-way tables, where they
+actually earn their place.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+Item~3 is the one that matters --- it is the entire lesson in language every student already
+has. Give four minutes and make sure the second half gets answered out loud: \emph{why} Team B's
+larger win total did not decide it. Write that sentence on the board verbatim and leave it up;
+you will point at it during the debrief and again at any table stuck on 2c. Item~2 exists so the
+arithmetic is not the obstacle later --- if students are slow on percents, spend the extra
+minute here rather than inside the activity. \textbf{Do not say \emph{relative frequency} or
+\emph{bar graph} in this debrief.}
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 7 minutes on problem~1, 13 on problem~2. Problem~1 goes
+fast; the trap is 1d, and groups that blow past it will repeat the error in CYU~1, so make them
+say the percent out loud. \textbf{The single discipline that makes this lesson work: do not name
+anything while circulating.} A group that hears ``relative frequency'' stops discovering. Send
+them to the warm-up instead.
+
+\textbf{This lesson covers two CED topics, so the debrief is the tightest of the unit.} The
+bar-graph block (debrief step 3) is the only stretch of direct instruction in the lesson --- keep
+it under two minutes and keep pointing at the posted chart. If you are running long, cut the
+plurality/majority naming and pick it up in CYU~1 review.
+
+\textbf{Debrief (12 min).} Must-land: their two columns becoming the two table names, and 2c
+becoming the comparison rule. Open on the group that answered 2a with only one school ---
+correcting it gently in public is what makes the crux stick.
+
+\textbf{Application (6 min).} Part (c) is the counterweight and is easy to skip when time is
+short. Do not skip it: without it students leave with ``always use rates,'' which is wrong.
+
+\textbf{Check Your Understanding (8 min).} Not scored --- spot-check rather than collecting.
+Priority items are 2, 4, and 5; 1 and 3 are the early-finisher bank.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Homework]
-    % TODO
+\begin{teachernote}[AP Practice]
+\textbf{This page is not scored} --- the graded homework is the DeltaMath assignment. Work it as
+AP-format reps and go over it at the start of Lesson~1.3. \textbf{MC item~2 is the one worth
+reading closely}: options (A) and (B) are each half of the truth, and students who pick either
+have not held both facts at once. On the free response, part (b) is where students first have to
+\emph{show} relative frequency arithmetic rather than state a result --- hold the line on
+writing the division, since the AP exam awards the setup. Part (c) is the highest-value part:
+it asks them to correct someone else's statistic, which is the form this idea takes on the exam
+and in every news story they will read.
 \end{teachernote}
 \end{document}

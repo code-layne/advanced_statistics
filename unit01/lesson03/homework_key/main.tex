@@ -1,23 +1,172 @@
-%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Homework (Answer Key)
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — AP Practice (Answer Key)
+% EFFL: unscored AP-format practice. The graded practice is the DeltaMath assignment announced
+% on the cover; this page and Check Your Understanding both carry NA in the cover's score column.
+% Free-response (a) spirals to Lesson 1.1 (classify the variable) and (d) to Lesson 1.2 (a bar
+% graph is for categories) — the two lessons this one is built on top of.
+% GENERATED FROM homework/main.tex. Each \writelines{n} in the blank is answered by an
+% \ansline{} terse enough not to wrap past n lines — that keeps the page counts equal.
+% NO teachernote here — scoring guidance lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.3}{Homework --- Answer Key}
-
+\pageheader{Unit 1, Lesson 1.3}{AP Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not scored} --- your graded homework is in \textbf{DeltaMath}. Work this
+if you are having trouble, and bring it to office hours or study hall for assistance.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[24]
+\begin{scenariobox}[The Rainfall Record]{navy}
+\small
+A weather station recorded the total rainfall, in millimetres, on each of 20 rainy days. The
+stem is the tens digit and each leaf is a ones digit, so the row \textbf{2} stands for
+20, 22, 25, and 29.
+
+\vspace{8pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{} r | l @{}}
+\textbf{0} & 2 \quad 4 \quad 5 \quad 8 \quad 9 \\
+\textbf{1} & 1 \quad 3 \quad 3 \quad 6 \quad 7 \quad 8 \\
+\textbf{2} & 0 \quad 2 \quad 5 \quad 9 \\
+\textbf{3} & 1 \quad 4 \quad 8 \\
+\textbf{4} & 2 \quad 7 \\
+\end{tabular}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \item On how many of these days did more than 30 mm of rain fall?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 2
+          \item 3
+          \item \ans{5}
+          \item 7
+          \item 9
+        \end{enumerate}
+
+  \item Rainfall in millimetres is best described as
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item a categorical variable, because each day is placed in a row.
+          \item a discrete quantitative variable, because the recorded values are whole numbers.
+          \item \ans{a continuous quantitative variable, because between any two rainfall amounts
+                another amount is possible.}
+          \item a continuous categorical variable.
+          \item neither discrete nor continuous, because it was rounded when recorded.
+        \end{enumerate}
+
+  \item Suppose these 20 values are redrawn as a histogram with blocks 10 mm wide. Which
+        statement is \textbf{true}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{The histogram will show five bars of heights 5, 6, 4, 3, and 2.}
+          \item The histogram will show 20 bars, one for each day.
+          \item The histogram will let a reader recover that two days recorded exactly 13 mm.
+          \item The histogram's bars must be drawn with gaps, as in a bar graph.
+          \item The histogram cannot be drawn, because rainfall is continuous.
+        \end{enumerate}
+
+  \item A researcher redraws the same 20 values with blocks 2 mm wide and gets a jagged picture
+        with many bars of height 0 or 1. The best conclusion is that
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item the 2 mm version is wrong, because a histogram may not have empty blocks.
+          \item the 10 mm version is wrong, because it hides individual values.
+          \item \ans{both are correct; the interval width controls how much detail and how much
+                overall shape the picture shows.}
+          \item the data must have been recorded incorrectly.
+          \item narrower blocks are always better, because they preserve more information.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \item Use the rainfall record above.
+
+        \vspace{6pt}
+        \textbf{(a)} Classify rainfall as categorical or quantitative, and then as discrete or
+        continuous. Justify from the variable itself, not from the display.\\[4pt]
+        \ansline{Quantitative --- rainfall records a measured amount, not a category. It is}\\[1pt]
+        \ansline{continuous: between 12 mm and 13 mm, 12.4 mm is perfectly possible.}
+
+        \vspace{6pt}
+        \textbf{(b)} Complete a frequency table for these 20 days using blocks 10 mm wide
+        (0--9, 10--19, 20--29, 30--39, 40--49). Give the count for each block.\\[4pt]
+        \ansline{0--9: 5 \quad 10--19: 6 \quad 20--29: 4 \quad 30--39: 3 \quad 40--49: 2.}\\[1pt]
+        \ansline{The five counts add to 20, the number of rainy days recorded.}
+
+        \vspace{6pt}
+        \textbf{(c)} State one thing the stem plot shows that your table in part (b) does not,
+        and one thing the table makes easier to see.\\[4pt]
+        \ansline{The stem plot gives back every individual amount --- you can still read that}\\[1pt]
+        \ansline{two days had exactly 13 mm. The table only says ``6 days between 10 and 19.''}\\[1pt]
+        \ansline{The table makes it easier to see that light-rain days were the most common.}
+
+        \vspace{6pt}
+        \textbf{(d)} A colleague suggests displaying these 20 rainfall amounts as a bar graph
+        with one bar per day. Explain why that is a poor choice here.\\[4pt]
+        \ansline{Bar graphs display categories, and the days are not categories --- rainfall is}\\[1pt]
+        \ansline{a quantitative variable on a number line. Twenty separate bars would show no}\\[1pt]
+        \ansline{pattern in how much rain fell; grouping the amounts is what reveals the shape.}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Find a histogram published in a news article or a report. Write down its interval width, then
+say what the picture would probably hide if the width were doubled, and what it would probably
+show if the width were halved.\\[4pt]
+\ansline{Answers vary. Doubling the width typically hides a second peak or a gap;}\\[1pt]
+\ansline{halving it typically exposes noise --- many bars of height 0 or 1.}
+\end{extensionbox}
+
+\vspace{0.12in}
+
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: Describing the Distribution of a Quantitative Variable.} You can now build
+and read these displays. Next time we put words to what they show --- where the values pile up,
+how spread out they are, whether the picture leans one way, and which values sit far from the
+rest --- and you will learn the four things every AP answer about a display has to mention.
+\end{spiralbox}
 
 \end{document}
