@@ -1,6 +1,12 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usetikzlibrary{positioning}  % -beamer loads tikz but not this library
+
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
@@ -17,10 +23,258 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% The deck follows the EFFL flow: targets (SPOILER-FREE) → hook → activity launch →
+% debrief divider (formalize) → QuickNotes arc → application → practice → homework.
+% Nothing before the divider may say frequency table, relative frequency, or bar graph.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS (spoiler-free) ─────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today: experience first, formalize later}
+  \sectionlabel{Learning targets}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item turn a table of counts into a table of shares.
+    \item read a posted chart and say which number each bar shows.
+    \item explain why comparing two very different-sized groups by counts is unfair.
+    \item decide whether ``most people chose this'' is actually supported.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{two schools' survey results} with your group $\to$ we name what you
+    found $\to$ practice. You will figure it out \emph{before} I give you the words.
+  \end{block}
 \end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.3cm}
+  \begin{center}
+    {\color{skymid}\bfseries\small WHICH SCHOOL WALKS MORE?}\\[0.8cm]
+    {\color{white}\bfseries\Large North: 80 walkers \qquad South: 150 walkers}\\[0.9cm]
+    {\color{goldacc}\small Careful. Both answers to that question are defensible,
+    and they disagree.}
+  \end{center}
+\end{frame}
+}
+
+% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Experience \& Formalize: Getting to School}
+  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
+  One district, two high schools, one question: \emph{how do you usually get to school?}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Problem 1} --- North High alone. Fill in the last column.
+    \item \textbf{Problem 2} --- both schools, and the chart the district posted.
+  \end{itemize}
+  \begin{block}{Your job}
+    Use only what you already know. For \emph{every} answer, be ready to tell me
+    \textbf{which number} you used --- and why that one.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF DIVIDER ──────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
+    {\color{white}\bfseries\Large You already built both tables and caught the unfair chart.
+    We are only giving them the words.}\\[0.9cm]
+    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+  \end{minipage}
+\end{frame}
+}
+
+\begin{frame}[t, plain]
+  \navyheader{Two tables, same data}
+  \sectionlabel{frequency and relative frequency}
+  \vspace{2pt}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{\textwidth}{@{} l Y Y @{}}
+    \rowcolor{sky}
+    \textbf{How they get to school} & \textbf{Frequency} & \textbf{Relative frequency} \\
+    \hline
+    Bus  & 180 & 0.45 \quad (45\%) \\
+    Car  & 120 & 0.30 \quad (30\%) \\
+    Walk &  80 & 0.20 \quad (20\%) \\
+    Bike &  20 & 0.05 \quad (5\%)  \\
+    \hline
+    \textbf{Total} & \textbf{400} & \textbf{1.00} \quad (100\%) \\
+  \end{tabularx}
+  \vspace{10pt}
+  \begin{block}{The two totals are different promises}
+    Frequencies add to the \textbf{group size}. Relative frequencies add to \textbf{1},
+    always --- because every individual lands in exactly one category.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \navyheader{Proportion, percent, rate}
+  \sectionlabel{three names for one number}
+  \vspace{10pt}
+  \begin{center}
+    {\Large $\dfrac{80}{400} \;=\; 0.20 \;=\; 20\% \;=\;$ 1 in 5}
+  \end{center}
+  \vspace{14pt}
+  \begin{block}{Essential Knowledge (UNC-1.B.1)}
+    Percentages, relative frequencies, and rates all provide the \textbf{same information}
+    as proportions.
+  \end{block}
+  \vspace{6pt}
+  {\small Use whichever your reader will understand fastest. On the AP exam, always attach
+  the context: \emph{20\% \redink{of North students} walk}.}
+\end{frame}
+
+% ── BAR GRAPH ANATOMY ────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Bar graphs}
+  \sectionlabel{height = count, or height = proportion}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.78]
+        \draw[linegray, very thin] (0,1) -- (5.4,1);
+        \draw[linegray, very thin] (0,2) -- (5.4,2);
+        \draw[linegray, very thin] (0,3) -- (5.4,3);
+        \draw[->, thick] (0,0) -- (0,4.1);
+        \draw[->, thick] (0,0) -- (5.6,0);
+        \foreach \y/\lab in {1/50, 2/100, 3/150} {
+          \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+        \foreach \x/\h/\lab in {0.5/3.6/Bus, 1.8/2.4/Car, 3.1/1.6/Walk, 4.4/0.4/Bike} {
+          \fill[navy] (\x,0) rectangle ++(0.8,\h);
+          \node[below, font=\tiny] at (\x+0.4,-0.05) {\lab};}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Each bar is one \textbf{category}.
+        \item Its height is the \textbf{count} --- or the \textbf{proportion}, if you
+              relabel the axis.
+        \item \redink{Gaps between bars.} The categories are separate groups, not points
+              on a number line.
+        \item The order of the bars carries no meaning.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── THE CRUX ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Why the district's chart was unfair}
+  \sectionlabel{the error this lesson exists to kill}
+  \vspace{4pt}
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabularx}{\textwidth}{@{} l C{2.6cm} C{2.6cm} X @{}}
+    \hline
+    & \textbf{Walkers} & \textbf{Surveyed} & \textbf{Walking rate} \\
+    \hline
+    North &  80 &   400 & \redink{20\%} \\
+    South & 150 & 1,000 & 15\% \\
+    \hline
+  \end{tabularx}
+  \vspace{12pt}
+  \begin{block}{Comparing groups of different sizes}
+    South is 2.5$\times$ bigger, so it wins on \emph{every} raw count before anyone counts
+    anything. Comparing groups of different sizes requires \redink{relative frequencies}.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \navyheader{``Most'' is a promise about half}
+  \sectionlabel{the second trap}
+  \vspace{8pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Largest share}
+        Bus, at 45\% --- bigger than any other single category.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{A majority}
+        Would need more than 50\%. Bus does not have it.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{16pt}
+  \begin{center}
+    {\large ``Most North students take the bus'' is \redink{not supported.}}\\[8pt]
+    {\small\color{slate} 55\% of North students get to school some other way.}
+  \end{center}
+\end{frame}
+
+% ── APPLICATION ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Application: Two Shifts}
+  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
+  A coffee shop records drink size. Morning: \textbf{240} orders. Evening: \textbf{80}.
+  \vspace{4pt}
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{@{} l Y Y Y Y @{}}
+    \rowcolor{sky}
+    \textbf{Shift} & \textbf{Small} & \textbf{Medium} & \textbf{Large} & \textbf{Total} \\
+    \hline
+    Morning & 48 & 108 & 84 & 240 \\
+    Evening & 18 &  30 & 32 &  80 \\
+    \hline
+  \end{tabularx}
+  \vspace{6pt}
+  \begin{block}{Which shift sells more large drinks --- and which sells them at a higher rate?}
+    Then: ``which shift is \emph{busier}?'' \redink{That one wants a count.} Knowing when a
+    count is the right number matters as much as knowing when it is not.
+  \end{block}
+\end{frame}
+
+% ── PRACTICE ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Check Your Understanding}
+  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item A club of 50 picks a service project --- and a ``most'' claim to check.
+    \item Two hospitals, two flu counts, two very different sizes.
+    \item Two bar graphs of the same data: what changed, what did not?
+    \item Four percents that add to 95\%. What went wrong?
+    \item One multiple-choice item, with a one-sentence justification.
+  \end{itemize}
+  \begin{block}{This is practice, not a quiz}
+    These are \textbf{not scored}. Start with 2, 4, and 5. I will look over your shoulder
+    at 5 on the way out.
+  \end{block}
+\end{frame}
+
+% ── HOMEWORK ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{AP Practice, homework \& what's next}
+  \sectionlabel[goldacc]{AP Practice --- practice, not a grade}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four multiple-choice items on a city recycling audit.
+    \item One free-response set: 9th versus 12th graders on activity period.
+    \item Optional: find a news story comparing two groups by raw counts.
+  \end{itemize}
+  \begin{block}{Your homework is in DeltaMath}
+    The \redink{graded} assignment is posted in \textbf{DeltaMath} --- log in and complete it
+    before next class. The AP Practice page is not scored: work it, and bring what you get
+    stuck on to study hall or office hours.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large When two groups are different sizes, counts answer
+    ``how many.'' Only rates answer ``how common.''}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 1.3 --- the values stop repeating, so counting stops
+    working. Dotplots, stemplots, and histograms.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

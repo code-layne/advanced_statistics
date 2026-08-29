@@ -1,23 +1,69 @@
 %! The Language of Variation — Unit 1, Lesson 1.1 — Warm-Up (Answer Key)
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the filled
+% answers. ONE PAGE, like the blank. NO teachernote here — teacher prose lives in the plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Warm-Up --- Answer Key}
 
-
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
-\boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\boxguard[24]
+\begin{hookbox}
+\small
+A music teacher keeps this sheet on every student who rents an instrument.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{} l l c c @{}}
+\rowcolor{sky}
+\textbf{Student} & \textbf{Instrument} & \textbf{Weeks rented} & \textbf{Locker \#} \\
+\hline
+Ibarra & Clarinet & 14 & 208 \\
+Okafor & Trumpet  &  6 & 145 \\
+Petrov & Clarinet & 22 & 331 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{2pt}
+\end{hookbox}
+
+\vspace{0.14in}
+
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.15in]
+
+  \item In this table, the \textbf{individuals} are \ans{the students renting instruments}.
+
+        Name one \textbf{variable} \ans{Instrument} and one of its \textbf{values}
+        \ans{Clarinet}.
+
+  \item Which of these lists could you add up and get something meaningful out of the
+        total? \textbf{Circle} every one that works.
+        \vspace{6pt}
+
+        \hspace{1.0em}\ans{\textbf{(A)} the prices of five books in a cart}
+        \hfill
+        \textbf{(B)} the numbers on five players' jerseys
+        \hspace{1.0em}
+        \vspace{5pt}
+
+        \hspace{1.0em}\ans{\textbf{(C)} the ages of five people in a waiting room}
+        \hfill
+        \textbf{(D)} the house numbers of five homes on one street
+        \hspace{1.0em}
+        \vspace{8pt}
+
+        What do the ones you circled have in common that the others do not?\\[4pt]
+        \ansline{A and C record an amount of something --- how many dollars, how many years.}\\[1pt]\ansline{B and D are just names written in digits, so a total means nothing.}
+
+  \item Your school ID card has a number printed on it. Is that number \emph{measuring}
+        anything about you? If not, say what it is doing instead.\\[4pt]
+        \ansline{No. It measures nothing --- two students with nearby ID numbers are not}\\[1pt]\ansline{alike in any way. The number identifies me; it is a name made of digits.}
+
+\end{enumerate}
 
 \end{document}

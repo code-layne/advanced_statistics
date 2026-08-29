@@ -1,6 +1,12 @@
 %! The Language of Variation — Unit 1, Lesson 1.1 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usetikzlibrary{positioning}  % -beamer loads tikz but not this library
+
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
@@ -17,10 +23,308 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% The deck follows the EFFL flow: targets (SPOILER-FREE) → warm-up → activity launch →
+% debrief frames (formalize in "red ink") → QuickNotes arc → application → practice →
+% homework. Everything before the debrief divider stays vocabulary-free: the words
+% `categorical' and `quantitative' may not appear until after the divider.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS (spoiler-free: no `categorical', no `quantitative') ─────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today: experience first, formalize later}
+  \sectionlabel{Learning targets}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item sort the columns of a table into two kinds that behave differently.
+    \item explain why adding up one column is useful and adding up another is nonsense.
+    \item say what a column really records, even when every entry is written in digits.
+    \item say what happens to a column when amounts get replaced by group names.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{the trailhead register} with your group $\to$ we name what you
+    found $\to$ practice. You will figure it out \emph{before} I give you the words.
+  \end{block}
 \end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.4cm}
+  \begin{center}
+    {\color{skymid}\bfseries\small TWO JERSEY NUMBERS: 12 AND 88}\\[0.9cm]
+    {\color{white}\bfseries\fontsize{60}{60}\selectfont 50}\\[0.8cm]
+    {\color{goldacc}\small That is their average. What did we just learn about those
+    two players?}
+  \end{center}
+\end{frame}
+}
+
+% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Experience \& Formalize: The Trailhead Register}
+  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
+  Every party that hikes at Ross Hollow signs in and signs out. The ranger keeps the sheet
+  all season.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Problem 1} --- sort the columns into two piles \emph{of your own}, and
+          name them yourselves.
+    \item \textbf{Problem 2} --- four more columns, every one written in digits.
+  \end{itemize}
+  \begin{block}{Your job}
+    Use only what you already know. For \emph{every} answer, be ready to show me
+    \textbf{where in the register} you see it.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF DIVIDER — everything after this point may name the vocabulary ─────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
+    {\color{white}\bfseries\Large You already built the two piles. We are only giving them
+    the names statisticians use.}\\[0.9cm]
+    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+  \end{minipage}
+\end{frame}
+}
+
+\begin{frame}[t, plain]
+  \navyheader{Two kinds of variable}
+  \sectionlabel{your two piles, named}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Categorical variable}
+        Values are \textbf{category names} or \textbf{group labels}.
+      \end{block}
+      \vspace{4pt}
+      {\small Trail $\cdot$ Dog along $\cdot$ Weather\\[3pt]
+      \emph{Which group is this party in?}}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Quantitative variable}
+        Values are \textbf{numerical}, for a \textbf{measured or counted} quantity.
+      \end{block}
+      \vspace{4pt}
+      {\small Group size $\cdot$ Time out (min)\\[3pt]
+      \emph{How much? How many?}}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\small\color{slate} A \textbf{variable} is a characteristic that changes from one
+    individual to another. Every variable is one kind or the other.}
+  \end{center}
+\end{frame}
+
+% ── THE CRUX ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Digits are not the test}
+  \sectionlabel{the error this lesson exists to kill}
+  \vspace{4pt}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{} l C{3.6cm} X @{}}
+    \hline
+    \textbf{Column} & \textbf{Average of 2041 \& 6318} & \textbf{What it means} \\
+    \hline
+    Permit \#      & 4179.5 & \redink{Nothing.} Nobody had ``4179.5 of permit.'' \\
+    Water bottles  & 4      & Between them, 4 bottles each. A real amount. \\
+    \hline
+  \end{tabularx}
+  \vspace{14pt}
+  \begin{block}{The test}
+    Not \emph{``does it have digits?''} but \emph{``is the value an \redink{amount} of
+    something?''} If adding or averaging is meaningful, it is quantitative.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \navyheader{Written in digits, still categorical}
+  \sectionlabel{the whole family}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item ZIP code
+        \item Jersey number
+        \item Student ID number
+        \item Parking spot number
+        \item Phone number
+        \item Permit number
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Essential Knowledge (VAR-1.C.1)}
+        A categorical variable takes on values that are \textbf{category names or group
+        labels}.
+      \end{block}
+      \vspace{6pt}
+      {\small Each of these is a \textbf{name that happens to be made of digits}. Sorting
+      them works; averaging them does not.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── THE REVERSE TRAP ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{``62\% of parties hiked with a dog''}
+  \sectionlabel{a number --- but from which kind of column?}
+  \vspace{8pt}
+  \begin{itemize}\setlength{\itemsep}{9pt}
+    \item Every entry in the \emph{Dog along} column is \textbf{Yes} or \textbf{No}.
+    \item Nobody wrote a number in it. The 62\% is something \emph{we built} by counting.
+    \item So \emph{Dog along} is still \redink{categorical}.
+  \end{itemize}
+  \vspace{10pt}
+  \begin{block}{Remember this one}
+    Counting a categorical variable \textbf{always} produces numbers. The \textbf{summary}
+    is numeric; the \textbf{variable} is not.
+  \end{block}
+\end{frame}
+
+% ── HOW EACH KIND IS SUMMARIZED ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{What you are allowed to do with each}
+  \sectionlabel{this decides every graph for the rest of the course}
+  \vspace{18pt}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.6cm, every node/.style={font=\small\bfseries}]
+    \node[fill=navy, text=white, rounded corners=2mm, minimum height=1.1cm,
+          minimum width=3.4cm] (v) {A variable};
+    \node[fill=skymid, text=charcoal, rounded corners=2mm, minimum height=1.1cm,
+          minimum width=3.4cm, above right=0.35cm and 1.6cm of v] (c) {Categorical};
+    \node[fill=goldacc, text=charcoal, rounded corners=2mm, minimum height=1.1cm,
+          minimum width=3.4cm, below right=0.35cm and 1.6cm of v] (q) {Quantitative};
+    \node[fill=greenacc, text=white, rounded corners=2mm, minimum height=1.1cm,
+          minimum width=4.6cm, right=of c] (cs) {Count $\to$ percents};
+    \node[fill=greenacc, text=white, rounded corners=2mm, minimum height=1.1cm,
+          minimum width=4.6cm, right=of q] (qs) {Average, spread};
+    \draw[->, thick, navy] (v) -- (c);
+    \draw[->, thick, navy] (v) -- (q);
+    \draw[->, thick, navy] (c) -- (cs);
+    \draw[->, thick, navy] (q) -- (qs);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{14pt}
+  \begin{center}
+    {\small Pick the wrong branch and every graph and statistic after it is wrong too.}
+  \end{center}
+\end{frame}
+
+% ── BINNING ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{One variable can be recorded either way}
+  \sectionlabel{and the choice costs you something}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Age: 14, 27, 41, 63}
+        Quantitative. You can average it, and you know 41 is 14 years older than 27.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Age band: teen, adult, senior}
+        Categorical. You can count each band --- and that is all.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{center}
+    {\large Same people. Same information. \redink{Different kind of variable.}}\\[8pt]
+    {\small\color{slate} Grouping amounts into labels is a one-way door: you cannot
+    get the mean back out.}
+  \end{center}
+\end{frame}
+
+% ── C or Q? ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{C or Q?}
+  \sectionlabel{call it out}
+  \vspace{4pt}
+  \renewcommand{\arraystretch}{1.7}
+  \begin{tabularx}{\textwidth}{@{} X C{3.2cm} @{}}
+    \hline
+    \textbf{Variable} & \textbf{C or Q} \\
+    \hline
+    Number of siblings a student has & \\
+    The student's home ZIP code      & \\
+    Shirt size (S / M / L)           & \\
+    Time to run 400 m, in seconds    & \\
+    \hline
+  \end{tabularx}
+  \vspace{10pt}
+  \begin{center}
+    {\small\color{slate} For every one you call \textbf{Q}: what would its average
+    actually mean?}
+  \end{center}
+\end{frame}
+
+% ── APPLICATION ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Application: The Season Pass}
+  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
+  A ski area records, for each of 3{,}400 season-pass holders: \textbf{pass number},
+  \textbf{age}, \textbf{pass tier} (Gold / Silver / Bronze), \textbf{miles traveled}, and
+  \textbf{locker number}.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Label all five: C or Q.
+    \item Age in years becomes \emph{age group}. Which kind now --- and what did we lose?
+    \item ``The average pass number is 5{,}120.'' Why does that tell us nothing?
+  \end{itemize}
+  \begin{block}{Ask it every time}
+    Is this value an \redink{amount of something}, or is it the \redink{name of a group}?
+  \end{block}
+\end{frame}
+
+% ── PRACTICE (in class, not scored) ──────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Check Your Understanding}
+  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item A coffee shop's order log: classify four columns.
+    \item Number of pets vs.\ type of pet --- and how each is summarized.
+    \item Body temperature vs.\ Normal/Fever: where did the second column come from?
+    \item Name a variable in digits that is not quantitative.
+    \item One multiple-choice item, with a one-sentence justification.
+  \end{itemize}
+  \begin{block}{This is practice, not a quiz}
+    These are \textbf{not scored}. Start with 1, 3, and 5. I will look over your shoulder
+    at 5 on the way out.
+  \end{block}
+\end{frame}
+
+% ── HOMEWORK ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{AP Practice, homework \& what's next}
+  \sectionlabel[goldacc]{AP Practice --- practice, not a grade}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four multiple-choice items on the trailhead register.
+    \item One free-response set: a city library's 900 cardholders.
+    \item Optional: bring in any data table and classify every column.
+  \end{itemize}
+  \begin{block}{Your homework is in DeltaMath}
+    The \redink{graded} assignment is posted in \textbf{DeltaMath} --- log in and complete it
+    before next class. The AP Practice page is not scored: work it, and bring what you get
+    stuck on to study hall or office hours.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Digits do not make a variable quantitative. Ask whether
+    the value is an amount of something.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 1.2 --- we take a categorical column and count it
+    properly, with frequency and relative frequency tables.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

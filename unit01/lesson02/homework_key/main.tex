@@ -1,23 +1,176 @@
-%! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Homework (Answer Key)
+%! Representing a Categorical Variable — Unit 1, Lesson 1.2 — AP Practice (Answer Key)
+% EFFL: unscored AP-format practice. The graded practice is the DeltaMath assignment announced
+% on the cover; this page and Check Your Understanding both carry NA in the cover's score column.
+% Part (a) of the free response is the spiral item — it reaches back to Lesson 1.1 and makes
+% students classify the variable before they are allowed to summarize it.
+% GENERATED FROM homework/main.tex. Each \writelines{n} in the blank is answered by an
+% \ansline{} terse enough not to wrap past n lines — that is what keeps the page counts equal.
+% NO teachernote here — scoring guidance lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.2}{Homework --- Answer Key}
-
+\pageheader{Unit 1, Lesson 1.2}{AP Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not scored} --- your graded homework is in \textbf{DeltaMath}. Work this
+if you are having trouble, and bring it to office hours or study hall for assistance.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[26]
+\begin{scenariobox}[The Recycling Audit]{navy}
+\small
+A city inspected recycling bins in two neighborhoods and recorded what each bin mainly
+contained. Riverside had \textbf{250} bins inspected; Hillcrest had \textbf{500}.
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Neighborhood} & \textbf{Paper} & \textbf{Plastic} & \textbf{Glass} &
+\textbf{Contaminated} & \textbf{Total} \\
+\hline
+Riverside & 100 &  75 &  50 & 25 & 250 \\
+Hillcrest & 190 & 160 & 110 & 40 & 500 \\
+\hline
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \item What percent of the Riverside bins inspected were contaminated?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 2.5\%
+          \item 8\%
+          \item \ans{10\%}
+          \item 25\%
+          \item 40\%
+        \end{enumerate}
+
+  \item Which statement about contamination in the two neighborhoods is \textbf{correct}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Hillcrest is worse, because it had more contaminated bins.
+          \item Riverside is worse, because it had more contaminated bins.
+          \item \ans{Hillcrest had more contaminated bins, but Riverside had the higher
+                contamination rate.}
+          \item Riverside had more contaminated bins, but Hillcrest had the higher
+                contamination rate.
+          \item The neighborhoods cannot be compared, because different numbers of bins
+                were inspected.
+        \end{enumerate}
+
+  \item A relative frequency table is built for Riverside's four categories. Which must
+        be true?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The four entries add to 250.
+          \item \ans{The four entries add to 1, or equivalently 100\%.}
+          \item The four entries add to 750, the total bins inspected in the city.
+          \item Each entry must be larger than the matching entry for Hillcrest.
+          \item The entries cannot be compared to Hillcrest's under any circumstances.
+        \end{enumerate}
+
+  \item The city wants one graph showing whether the two neighborhoods sort their recycling
+        differently. Which display best supports that comparison?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Side-by-side bars of the raw counts, because counts are the actual data.
+          \item \ans{Side-by-side bars of the relative frequencies, because the neighborhoods had
+                different numbers of bins.}
+          \item A single bar for each neighborhood's total.
+          \item Bars of the raw counts with Hillcrest's halved to match Riverside's total.
+          \item No graph can compare two neighborhoods.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \item A school surveyed its 9th graders and its 12th graders about how they would prefer to
+        spend an activity period. Among \textbf{300} ninth graders: Sports 150, Clubs 90,
+        Study hall 60. Among \textbf{120} twelfth graders: Sports 42, Clubs 30, Study hall 48.
+
+        \vspace{6pt}
+        \textbf{(a)} Identify the individuals and the variable, and classify the variable as
+        categorical or quantitative.\\[4pt]
+        \ansline{Individuals: the 300 ninth graders and 120 twelfth graders surveyed. The}\\[1pt]
+        \ansline{variable is preferred use of an activity period, and it is categorical.}
+
+        \vspace{6pt}
+        \textbf{(b)} Build the relative frequency table for the twelfth graders. Show each
+        calculation.\\[4pt]
+        \ansline{Sports $42/120 = 0.35 = 35\%$; Clubs $30/120 = 0.25 = 25\%$;}\\[1pt]
+        \ansline{Study hall $48/120 = 0.40 = 40\%$. The three add to $1.00$, as they must,}\\[1pt]
+        \ansline{since every senior surveyed picked exactly one option.}
+
+        \vspace{6pt}
+        \textbf{(c)} A student newspaper writes: \textbf{``Ninth graders like sports far more
+        than seniors do --- 150 of them chose it, versus only 42 seniors.''} Explain what is
+        wrong with this comparison, and give the corrected version.\\[4pt]
+        \ansline{The grades are different sizes --- 300 ninth graders against 120 seniors ---}\\[1pt]
+        \ansline{so raw counts are not comparable. Corrected: 50\% of ninth graders chose}\\[1pt]
+        \ansline{sports versus 35\% of seniors, a real but far smaller gap than 150 to 42.}
+
+        \vspace{6pt}
+        \textbf{(d)} Identify one preference where the two grades differ most, and describe
+        that difference in context using relative frequencies.\\[4pt]
+        \ansline{Study hall differs most: 20\% of ninth graders chose it against 40\% of}\\[1pt]
+        \ansline{seniors --- seniors picked study hall at twice the rate of ninth graders.}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Find a news story that compares two groups using raw counts --- two cities, two countries, two
+schools. Write down the counts, then look up the sizes of the two groups and redo the
+comparison as rates. Say whether the story's point survives.\\[4pt]
+\ansline{Answers vary. Look for a story where the larger group leads on counts;}\\[1pt]
+\ansline{converting to rates often reverses or erases the reported gap.}
+\end{extensionbox}
+
+\vspace{0.12in}
+
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: Representing a Quantitative Variable with Graphs.} Counting worked here
+because every value was one of a few category names. Next time the values are numbers that
+barely repeat --- you cannot count how many students scored exactly 73.4 --- so we need a
+different set of displays, and the one you choose changes what you see.
+\end{spiralbox}
 
 \end{document}

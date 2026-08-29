@@ -1,0 +1,233 @@
+%! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Experience & Formalize
+%! (Activity · QuickNotes · Application · Check Your Understanding)
+% EFFL component, Math Medic sizing: 12pt body, OPEN white space after every question.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction.
+% Page budget: Activity <=2pp · QuickNotes 1/2pp · Application 1/2-1pp · CYU 1-2pp.
+%
+% SPOILER RULE: the Activity never says frequency table, relative frequency, proportion, or
+% bar graph. Column heads say "Percent"; the pre-drawn displays are called "the chart the
+% principal posted". `Categorical'/`quantitative' WERE formalized in Lesson 1.1, so they are
+% prior knowledge here, not spoilers.
+%
+% NO SKETCH QUESTIONS (hard constraint): every display is pre-drawn in TikZ and read or
+% critiqued. Students "construct" only by filling in a table, never by drawing an axis.
+%
+% The \begin{work} block in scenario 2b is authored BYTE-IDENTICALLY here and in
+% experience_key/ — that block plus \answerspace is what keeps the two page-for-page.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.2}{Experience \& Formalize: Getting to School}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.02in}
+
+% ── Part 1: the Activity ─────────────────────────────────────────────────────
+% Scenario 1 builds the table toolkit on ONE school and plants the plurality-vs-majority
+% trap in 1d. Scenario 2 carries the CRUX: South has more walkers AND a lower walking rate,
+% so "which school walks more" has two defensible answers depending on the number you use.
+\begin{headlinebox}{sky}
+\textbf{Getting to School.} A district asked every student at two of its high schools one
+question: \emph{how do you usually get to school?} The results are below. Work through the two
+problems with your group using only what you already know, and be ready to say \emph{which
+number} you used for each answer.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{scenariobox}[1. One School]{navy}
+North High surveyed all \textbf{400} of its students.
+
+\vspace{5pt}
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=6pt]
+  \item Complete the last column.
+
+        \vspace{3pt}
+        \renewcommand{\arraystretch}{1.35}
+        \begin{tabularx}{\linewidth}{@{} l Y Y @{}}
+        \rowcolor{sky}
+        \textbf{How they get to school} & \textbf{Number of students} &
+        \textbf{Percent of all 400} \\
+        \hline
+        Bus  & 180 & \blank{2.4cm} \\
+        Car  & 120 & \blank{2.4cm} \\
+        Walk &  80 & \blank{2.4cm} \\
+        Bike &  20 & \blank{2.4cm} \\
+        \hline
+        \textbf{Total} & \blank{2.0cm} & \blank{2.4cm} \\
+        \end{tabularx}
+  \item The two totals at the bottom are not the same kind of thing. Say what each one has to
+        come out to, and why it has to.
+        \answerspace{1.6cm}{}
+  \item A student council flyer says \textbf{``Most North students take the bus.''} Use your
+        table to decide whether that is a fair thing to print, and say what ``most'' would
+        require.
+        \answerspace{1.8cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\boxguard[16]
+\begin{scenariobox}[2. Two Schools]{navy}
+South High is bigger: it surveyed all \textbf{1{,}000} of its students.
+
+\vspace{5pt}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{School} & \textbf{Bus} & \textbf{Car} & \textbf{Walk} & \textbf{Bike} &
+\textbf{Total surveyed} \\
+\hline
+North & 180 & 120 &  80 & 20 &   400 \\
+South & 500 & 330 & 150 & 20 & 1{,}000 \\
+\hline
+\end{tabularx}
+
+\normalsize
+\vspace{4pt}
+The district posted this chart to compare the two schools.
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \draw[linegray, very thin] (0,1) -- (6.6,1);
+  \draw[linegray, very thin] (0,2) -- (6.6,2);
+  \draw[linegray, very thin] (0,3) -- (6.6,3);
+  \draw[->, thick] (0,0) -- (0,3.8);
+  \draw[->, thick] (0,0) -- (6.8,0);
+  \foreach \y/\lab in {1/200, 2/400, 3/600} {
+    \draw (-0.08,\y) -- (0.08,\y) node[left, font=\scriptsize, xshift=-3pt] {\lab};}
+  \foreach \x/\hn/\hs/\lab in {0.4/0.9/2.5/Bus, 2.0/0.6/1.65/Car, 3.6/0.4/0.75/Walk,
+                               5.2/0.1/0.1/Bike} {
+    \fill[navy]   (\x,0)     rectangle ++(0.55,\hn);
+    \fill[goldacc](\x+0.6,0) rectangle ++(0.55,\hs);
+    \node[below, font=\footnotesize] at (\x+0.57,-0.05) {\lab};}
+  \node[rotate=90, font=\scriptsize] at (-0.85,1.9) {Students};
+  \fill[navy] (5.9,3.3) rectangle ++(0.28,0.28);
+  \node[right, font=\scriptsize] at (6.2,3.44) {North};
+  \fill[goldacc] (5.9,2.9) rectangle ++(0.28,0.28);
+  \node[right, font=\scriptsize] at (6.2,3.04) {South};
+\end{tikzpicture}
+\end{center}
+\vspace{4pt}
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=6pt]
+  \item Which school has \textbf{more walkers}? \blank{3.0cm} \quad Now work out what
+        \emph{percent} of each school walks.
+        \begin{work}
+        \text{North} &= \frac{80}{400} = 0.20 = 20\% \\[4pt]
+        \text{South} &= \frac{150}{1000} = 0.15 = 15\%
+        \end{work}
+        Which school has the \textbf{higher walking rate}? \blank{3.2cm}
+  \item \textbf{Those are two different answers to ``which school walks more.''} Explain how
+        both can be true at once. Then look again at the chart: South's bar is taller in
+        \emph{every} category, which was guaranteed before anyone counted. Name the one change
+        that would make that chart a fair comparison.
+        \answerspace{2.8cm}{}
+  \item Complete South's percentages, then find every category where the chart's ranking
+        \textbf{reverses} once you use percents instead of counts.
+
+        \vspace{2pt}
+        \textbf{Bus} \blank{1.7cm} \quad \textbf{Car} \blank{1.7cm} \quad
+        \textbf{Walk} \blank{1.7cm} \quad \textbf{Bike} \blank{1.7cm}
+        \answerspace{1.8cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Part 2: QuickNotes (the debrief fills this) — target: half a page ────────
+\boxguard[14]
+\begin{tcolorbox}[enhanced, colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm, breakable,
+    fonttitle=\bfseries\small\color{white}, title={QuickNotes: Tables and Graphs for a Categorical Variable},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}]
+\small
+\begin{itemize}[leftmargin=1.1em, itemsep=4pt]
+  \item A \textbf{frequency table} gives the \blank{2.0cm} of cases in each category. A
+        \textbf{relative frequency table} gives the \blank{2.4cm} in each category.
+  \item Frequencies add to the \blank{2.6cm}; relative frequencies always add to
+        \blank{1.4cm} (or 100\%).
+  \item Percents, proportions, and rates all carry the \blank{2.0cm} information --- pick
+        whichever is easiest to read.
+  \item In a \textbf{bar graph}, the height of each bar is the \blank{1.8cm} or the
+        \blank{2.4cm} for that category. Bars are drawn with \blank{2.0cm} between them,
+        because the categories are separate groups and not a number line.
+  \item \textbf{Comparing two groups of different sizes: always use \blank{3.4cm}, never raw
+        counts.} The bigger group wins on counts before anyone counts anything.
+  \item ``Most'' means more than \blank{1.6cm} of the total. The biggest category is only the
+        \emph{largest share} --- it need not be a majority.
+\end{itemize}
+\end{tcolorbox}
+
+% ── Part 3: the Application (worked together, ~6 min) ────────────────────────
+\boxguard[14]
+\begin{notesbox}{Application: Two Shifts}
+We will do this one together. A coffee shop records the size of every drink it sells. The
+morning shift filled \textbf{240} orders; the evening shift filled \textbf{80}.
+
+\vspace{4pt}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Shift} & \textbf{Small} & \textbf{Medium} & \textbf{Large} & \textbf{Total} \\
+\hline
+Morning &  48 & 108 & 84 & 240 \\
+Evening &  18 &  30 & 32 &  80 \\
+\hline
+\end{tabularx}
+
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=6pt]
+  \item Which shift sold more large drinks? \blank{2.6cm} \quad
+        Which shift sells large drinks at the higher rate? \blank{2.6cm}
+  \item The owner wants one sentence for the staff newsletter comparing what the two shifts
+        sell. Write it, and say which kind of number you used and why.
+        \answerspace{1.6cm}{}
+  \item \textbf{What if we change the question?} The owner now asks, ``Which shift is busier?''
+        Which column of this table answers that --- and is it a rate or a count?
+        \answerspace{1.4cm}{}
+\end{enumerate}
+\end{notesbox}
+
+% ── Part 4: Check Your Understanding — practice, NOT scored ──────────────────
+\boxguard[14]
+\begin{notesbox}{Check Your Understanding}
+Work with your partner, then finish on your own. \emph{These are for practice --- they are not
+scored.}
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+  \item A club of 50 members chose a service project: Park cleanup 22, Food bank 15,
+        Tutoring 13. Park cleanup is \blank{1.8cm}\% of the club, and the three percents must
+        add to \blank{1.4cm}. Is ``most members chose the park cleanup'' a fair thing to say?
+        \answerspace{1.4cm}{}
+  \item Two hospitals report flu cases: City General had 340 of its 8{,}500 patients, and
+        Ridgeview had 60 of its 1{,}000. Which hospital had more cases, and which had the
+        higher rate? Show the two rates.
+        \answerspace{1.8cm}{}
+  \item A bar graph of a school's club memberships has bars of height 40, 25, 20, and 15.
+        A second graph of the same data has bars of height 0.40, 0.25, 0.20, and 0.15.
+        Explain what changed and what did not.
+        \answerspace{1.6cm}{}
+  \item A survey of 200 people reports these percents: 34\%, 28\%, 22\%, and 11\%. Explain how
+        you can tell, without any other information, that something is wrong.
+        \answerspace{1.4cm}{}
+  \item \textbf{Formative check.} Two towns report how residents commute. Brookfield: 900 of
+        3{,}000 residents bike. Ashton: 240 of 600 residents bike. Which statement is
+        \textbf{correct}? Circle one, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Brookfield has both more bikers and the higher biking rate.
+          \item Ashton has both more bikers and the higher biking rate.
+          \item Brookfield has more bikers, but Ashton has the higher biking rate.
+          \item Ashton has more bikers, but Brookfield has the higher biking rate.
+          \item The two towns cannot be compared, because they are different sizes.
+        \end{enumerate}
+        \answerspace{1.4cm}{}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}
