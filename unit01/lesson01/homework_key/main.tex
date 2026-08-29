@@ -1,16 +1,24 @@
-%! The Language of Variation — Unit 1, Lesson 1.1 — AP Practice (Answer Key)
-% Mirrors the blank byte-for-byte apart from the package swap, the pageheader, and the answers.
-% Each \writelines{n} in the blank is answered by an \ansline{} terse enough not to wrap past
-% n lines — that is what keeps this key the same number of pages as the blank.
-% NO teachernote here — scoring guidance lives in the lesson plan's \begin{teachernote}[AP Practice].
+%! The Language of Variation — Unit 1, Lesson 1.1 — Homework (Answer Key)
+% EFFL, AP Statistics variant: this is the lesson's SCORED practice and the LAST component in
+% the packet. These items were the in-class Check Your Understanding set; they are now the
+% graded homework, started in the closing minutes of the period and finished at home. The
+% AP Practice component that precedes it stays assigned-but-unscored.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.%
+% GENERATED FROM homework/main.tex — this file is the blank with answers filled in, so the
+% \answerspace heights and every \boxguard are identical to it.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.1}{AP Practice --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+\pageheader{Unit 1, Lesson 1.1}{Homework --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
 \vspace{0.15in}
 
@@ -19,154 +27,66 @@
 \boxguard[8]
 \begin{remindbox}
 \small
-This page is \textbf{not scored} --- your graded homework is in \textbf{DeltaMath}. Work this
-if you are having trouble, and bring it to office hours or study hall for assistance.
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
 \end{remindbox}
 
 \vspace{0.12in}
 
-\boxguard[30]
-\begin{scenariobox}[The Trailhead Register, Revisited]{navy}
-\small
-The same Ross Hollow register you worked with in class, with the ranger's four new columns
-merged in:
+% ── The scored practice (formerly this lesson's Check Your Understanding) ────
+\boxguard[14]
+\begin{notesbox}{Classifying Variables in a New Context}
+Show the arithmetic wherever a question asks for a number, and write every explanation
+\emph{in the context of the problem} --- that is what earns credit on the AP exam, and it is the
+standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=7pt]
+  \item A coffee shop logs every order it fills. Label each variable \textbf{C} or \textbf{Q}.
 
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y @{}}
-\rowcolor{sky}
-\textbf{Party} & \textbf{Trail} & \textbf{Group size} & \textbf{Time out (min)} &
-\textbf{Dog along} & \textbf{Permit \#} & \textbf{Home ZIP} \\
-\hline
-Alvarez  & Ridge Loop   & 4 &  95 & Yes & 2041 & 80211 \\
-Boone    & Cedar Falls  & 2 & 140 & No  & 6318 & 80304 \\
-Chen     & Ridge Loop   & 6 &  80 & Yes & 4772 & 81657 \\
-Delgado  & Summit Trail & 3 & 215 & No  & 1150 & 80211 \\
-Egan     & Cedar Falls  & 2 & 155 & Yes & 3907 & 80304 \\
-Fontaine & Summit Trail & 5 & 190 & No  & 5284 & 80211 \\
-\hline
-\end{tabularx}
-\end{scenariobox}
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y @{}}
+        \textbf{Drink size (S/M/L)} & \textbf{Number of shots} & \textbf{Price paid (\$)} &
+        \textbf{Loyalty card \#} \\
+        \ans{C} & \ans{Q} & \ans{Q} & \ans{C} \\
+        \end{tabularx}
 
-\vspace{0.14in}
-
-\boxguard[16]
-\begin{headlinebox}{goldbg}
-\small
-\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
-about the context, not just the arithmetic --- read them all before choosing.
-\end{headlinebox}
-
-\vspace{0.10in}
-
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.14in]
-
-  \item Which column of the register above records a \textbf{quantitative} variable?
+        The individuals here are \ans{the orders the shop filled}.
+  \item \textbf{Same survey, two columns.} A pet survey records \emph{Number of pets owned} and
+        \emph{Type of pet owned}. Classify each, then say what a summary of each column would
+        look like.
+        \answerspace{3.4cm}{Number of pets owned is quantitative (a count) --- summarize it with
+        an average, such as 1.8 pets per household. Type of pet owned is categorical ---
+        summarize it with counts or percents, such as 46\% dogs, 31\% cats.}
+  \item A hospital records each patient's exact body temperature in $^\circ$C. It then adds a
+        second column marking each patient \emph{Normal} or \emph{Fever}. Classify both
+        columns, and explain where the second column came from.
+        \answerspace{3.4cm}{Temperature is quantitative --- a measured amount. Normal/Fever is
+        categorical --- a group label. The second column was built from the first by grouping the
+        measurements at a cutoff, which trades amounts for labels and loses how far above the
+        cutoff each patient was.}
+  \item Name one variable that is written entirely in digits and is \textbf{not} quantitative,
+        and say what its digits are doing instead of measuring.
+        \answerspace{2.7cm}{A home ZIP code (also: jersey number, phone number, student ID). The
+        digits identify which group a person belongs to rather than recording an amount, so
+        averaging them is meaningless.}
+  \item \textbf{AP-style multiple choice.} A survey of high school students records the five variables
+        below. Circle the one that is \textbf{quantitative}, then justify it in one sentence.
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item Trail
-          \item Dog along
-          \item \ans{Time out (min)}
-          \item Permit \#
-          \item Home ZIP
+          \item The number on the student's team jersey
+          \item The number of the bus route the student rides
+          \item \ans{The number of minutes the student spent on homework last night}
+          \item The student's home ZIP code
+          \item The student's cafeteria PIN
         \end{enumerate}
-
-  \item A new ranger argues that \emph{Home ZIP} must be quantitative ``because every entry is
-        a five-digit number.'' The best response is that
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item ZIP codes are quantitative, so the ranger is correct.
-          \item \ans{ZIP codes are categorical, because their digits identify an area rather than
-                record an amount.}
-          \item ZIP codes are categorical, because five digits is too many to average.
-          \item ZIP codes are quantitative, because they can be sorted from smallest to largest.
-          \item the classification depends on how many parties signed the register.
-        \end{enumerate}
-
-  \item The ranger's report states, ``Half the parties in this register hiked with a dog.''
-        This statement is
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item evidence that \emph{Dog along} is a quantitative variable, because it produced
-                a number.
-          \item evidence that \emph{Dog along} is quantitative, because percents are numerical.
-          \item \ans{a numerical summary of a categorical variable, which remains categorical.}
-          \item impossible, because a categorical variable cannot be summarized.
-          \item a numerical summary of a quantitative variable.
-        \end{enumerate}
-
-  \item Suppose the ranger stops recording \emph{Time out} in minutes and instead records each
-        hike as \emph{Short}, \emph{Medium}, or \emph{Long}. Which statement is \textbf{true}?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item The variable stays quantitative, because the categories came from minutes.
-          \item \ans{The variable becomes categorical, and the mean time on the trail can no longer
-                be computed from it.}
-          \item The variable becomes categorical, but the mean time can still be computed from
-                the labels.
-          \item Neither version of the variable is quantitative.
-          \item The change affects the individuals rather than the variable.
-        \end{enumerate}
-
+        \answerspace{2.7cm}{(C). Minutes are a measured amount, so 90 minutes really is twice
+        45. The other four are labels written in digits.}
 \end{enumerate}
-
-\vspace{0.14in}
-
-\boxguard[16]
-\begin{headlinebox}{goldbg}
-\small
-\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
-\emph{in the context of the problem} --- that is what earns credit on the AP exam.
-\end{headlinebox}
-
-\vspace{0.10in}
-
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
-
-  \item A city library records four things about each of its 900 cardholders: the
-        \textbf{card number}, the \textbf{number of items} checked out last year, the
-        \textbf{branch} used most often, and the cardholder's \textbf{age} in years.
-
-        \vspace{6pt}
-        \textbf{(a)} Identify the individuals, then classify each of the four variables as
-        categorical or quantitative.\\[4pt]
-        \ansline{Individuals: the 900 library cardholders. Card number: categorical.}\\[1pt]
-        \ansline{Number of items checked out: quantitative. Branch used most often:}\\[1pt]
-        \ansline{categorical. Age in years: quantitative.}
-
-        \vspace{6pt}
-        \textbf{(b)} A staff member reports that the average card number is 44{,}318 and calls
-        it ``a useful summary of our cardholders.'' Explain why it is not.\\[4pt]
-        \ansline{Card numbers identify cardholders; they do not record an amount of}\\[1pt]
-        \ansline{anything, so their average measures nothing about the 900 patrons.}
-
-        \vspace{6pt}
-        \textbf{(c)} The library replaces \emph{age in years} with \emph{age band}
-        (child / teen / adult / senior). Explain how this changes the kind of variable, and
-        name one thing the library can no longer compute.\\[4pt]
-        \ansline{Age band is categorical: each cardholder now carries a group label}\\[1pt]
-        \ansline{instead of a measured amount. The library can still count how many fall}\\[1pt]
-        \ansline{in each band, but it can no longer compute the mean age of its patrons.}
-
-        \vspace{6pt}
-        \textbf{(d)} Write one statistical question the library could answer using a
-        \textbf{categorical} variable from this data set, and state what varies in it.\\[4pt]
-        \ansline{``Which branch do cardholders use most often?'' The branch used varies}\\[1pt]
-        \ansline{from one cardholder to the next, and the library must read every record.}
-
-\end{enumerate}
+\end{notesbox}
 
 \vspace{0.12in}
 
-\boxguard[12]
-\begin{extensionbox}
-\small
-Find any data table --- a sports box score, a nutrition label, a product comparison. Write down
-its column headings and classify each one. Then find a column written entirely in digits that
-is \emph{not} quantitative, and explain what its digits are doing instead.\\[4pt]
-\ansline{Answers vary. A box score works well: points and rebounds are quantitative,}\\[1pt]
-\ansline{while jersey number and position are categorical.}
-
-\end{extensionbox}
-
-\vspace{0.12in}
-
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
 \boxguard[10]
 \begin{spiralbox}
 \small
