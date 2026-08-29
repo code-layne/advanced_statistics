@@ -1,0 +1,202 @@
+%! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — AP Practice (Answer Key)
+% EFFL, AP Statistics variant: AP-format practice, assigned but NOT scored — the cover's score
+% column reads NA for this component. The graded practice is the `homework` component that
+% follows it at the back of the packet.
+% The four MC items cover the four ways this topic is tested: 1 is the width-means-count
+% distractor, 2 is a five-number-summary/IQR reading item, 3 is mean-vs-median position under
+% right skew (EK UNC-1.M.2), and 4 is the item whose correct answer is that the display CANNOT
+% answer the question asked. Free-response (d) spirals to Lessons 1.3 and 1.4 (which display
+% would show a second peak).
+% GENERATED FROM ap_practice/main.tex. Each \writelines{n} in the blank is answered by an
+% \ansline{} terse enough not to wrap past n lines — that keeps the page counts equal.
+% NO teachernote here — scoring guidance lives in the lesson plan.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+% \bxp{y-center}{half-height}{min}{Q1}{median}{Q3}{max} — the display is PRE-DRAWN.
+% Authored byte-identically in the blank and the key.
+\newcommand{\bxp}[7]{%
+  \draw[thick, navy] (#3,#1) -- (#4,#1);
+  \draw[thick, navy] (#6,#1) -- (#7,#1);
+  \draw[thick, navy] (#3,{#1-#2}) -- (#3,{#1+#2});
+  \draw[thick, navy] (#7,{#1-#2}) -- (#7,{#1+#2});
+  \draw[thick, navy, fill=skymid] (#4,{#1-#2}) rectangle (#6,{#1+#2});
+  \draw[very thick, navy] (#5,{#1-#2}) -- (#5,{#1+#2});}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.6}{AP Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.15in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. These are AP-format reps: work them for the practice, and bring what you get
+stuck on to office hours or study hall.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[26]
+\begin{scenariobox}[Weekday and Weekend Tips]{navy}
+\small
+A restaurant recorded one server's total tips, in dollars, on every weekday shift and every
+weekend shift over three months. The two sets are shown below on a shared axis, with the
+five-number summaries beneath.
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \foreach \x in {0,1.4,2.8,4.2,5.6,7.0,8.4} {
+    \draw[linegray, very thin] (\x,-0.15) -- (\x,2.05);}
+  \bxp{1.5}{0.32}{0.14}{1.05}{1.54}{2.10}{3.08}
+  \bxp{0.5}{0.32}{1.40}{2.66}{3.36}{4.62}{6.30}
+  \fill[navy] (8.26,0.5) circle (0.085);
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,1.5) {Weekday};
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,0.5) {Weekend};
+  \draw[->, thick] (-0.20,-0.15) -- (9.0,-0.15);
+  \foreach \x/\lab in {0/40, 1.4/60, 2.8/80, 4.2/100, 5.6/120, 7.0/140, 8.4/160} {
+    \draw (\x,-0.23) -- (\x,-0.07); \node[below, font=\scriptsize] at (\x,-0.27) {\lab};}
+  \node[font=\scriptsize] at (4.2,-0.82) {Total tips for the shift (dollars)};
+\end{tikzpicture}
+\end{center}
+\vspace{4pt}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{center}
+\begin{tabularx}{0.88\linewidth}{@{} l Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Shift} & \textbf{Min} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} &
+\textbf{Max} \\
+\hline
+\textbf{Weekday} & \$42 & \$55 & \$62 & \$70 & \$84 \\
+\textbf{Weekend} & \$60 & \$78 & \$88 & \$106 & \$158 \\
+\end{tabularx}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \item Which statement about the \textbf{weekend} shifts is best supported by the display?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item More weekend shifts brought in between \$106 and \$130 than between \$78 and
+                \$88, because that stretch of the display is much wider.
+          \item Half of the weekend shifts brought in between \$78 and \$88.
+          \item \ans{The same number of weekend shifts fall between \$88 and \$106 as fall between
+                \$78 and \$88.}
+          \item Weekend tips are spread evenly across the whole range from \$60 to \$158.
+          \item Most weekend shifts brought in more than \$106.
+        \end{enumerate}
+
+  \item For the \textbf{weekday} shifts, the interquartile range of the daily tip totals is
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \$7
+          \item \ans{\$15}
+          \item \$28
+          \item \$42
+          \item \$62
+        \end{enumerate}
+
+  \item The weekend distribution is skewed to the right and has one unusually high value. Which
+        statement about the \textbf{weekend} tip totals is most likely correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The mean is less than the median, because the long tail pulls the whisker out.
+          \item The mean is approximately equal to the median, because the median is resistant.
+          \item \ans{The mean is greater than the median, because the long right tail and the high
+                value pull the mean upward.}
+          \item The mean is exactly \$88, the value marked inside the box.
+          \item Nothing whatever can be said about the mean from these data.
+        \end{enumerate}
+
+  \item The manager asks whether weekend tip totals cluster around \emph{two} separate amounts
+        --- a modest group of nights and a high group. What is the best response?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Yes; the wide right side of the weekend display shows the second cluster.
+          \item No; the display shows a single peak near \$88.
+          \item Yes; the point plotted on its own is the second cluster.
+          \item \ans{This display cannot answer the question --- it reports only five summary
+                numbers, so clusters, gaps, and a second peak are invisible in it.}
+          \item No; tip data of this kind is always skewed right with one peak.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \item Use the tip records above.
+
+        \vspace{6pt}
+        \textbf{(a)} Report the five-number summary for the \textbf{weekday} shifts, and say what
+        each of the five numbers marks on the weekday display.\\[4pt]
+        \ansline{Min \$42, $Q_1$ \$55, median \$62, $Q_3$ \$70, max \$84. The two whisker ends}\\[1pt]
+        \ansline{are \$42 and \$84, the box edges are \$55 and \$70, the inside line is \$62.}
+
+        \vspace{6pt}
+        \textbf{(b)} For the \textbf{weekend} shifts, $Q_1 = \$78$ and $Q_3 = \$106$. Compute the
+        interquartile range and use the $1.5 \times \text{IQR}$ rule to decide whether the \$158
+        shift is an outlier. Show the arithmetic.\\[4pt]
+        \ansline{IQR $= 106 - 78 = \$28$, so $1.5 \times \text{IQR} = \$42$.}\\[1pt]
+        \ansline{Upper boundary $= Q_3 + 42 = 106 + 42 = \$148$.}\\[1pt]
+        \ansline{Since $158 > 148$, the \$158 weekend shift is an outlier.}
+
+        \vspace{6pt}
+        \textbf{(c)} Compare the weekday and weekend tip totals. Address center, variability, and
+        unusual features, in context.\\[4pt]
+        \ansline{Weekend tips were typically higher than weekday tips --- a median of \$88}\\[1pt]
+        \ansline{against \$62. Weekend tips were also far more variable: an IQR of \$28 against}\\[1pt]
+        \ansline{\$15, and a much wider overall span. The weekend shifts are skewed right and}\\[1pt]
+        \ansline{include one outlier at \$158; the weekday shifts have no outliers.}
+
+        \vspace{6pt}
+        \textbf{(d)} The manager wants to know whether there are two distinct kinds of weekend
+        night. Name a display you would ask for instead, and say what it could show that this one
+        cannot.\\[4pt]
+        \ansline{Ask for a dotplot or a histogram of the weekend totals. A boxplot reports only}\\[1pt]
+        \ansline{five numbers, so a gap between two groups of nights, or a second peak, is}\\[1pt]
+        \ansline{hidden inside the box. A dotplot would show every night individually.}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Find a pair of side-by-side boxplots published in a news article, a sports page, or a report.
+Write one sentence comparing the two groups that uses a comparative word and names the variable
+and its units --- then write the sentence the article actually used, and say which is stronger.\\[4pt]
+\ansline{Answers vary. Published sentences usually name only which group is ``higher'';}\\[1pt]
+\ansline{a strong one also compares variability and says so in the units of the variable.}
+\end{extensionbox}
+
+\vspace{0.12in}
+
+
+\end{document}

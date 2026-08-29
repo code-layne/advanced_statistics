@@ -1,10 +1,14 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no tier boxes and no other skill-box variant.
+% THIS LESSON MERGES TWO CED TOPICS (1.8 and 1.9) into one period. The page budget is tight:
+% the activity holds only two problems, and the comparison work is carried by the Application
+% and the homework rather than by a third activity problem.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
 \newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 1.6: Boxplots and Comparing Distributions}
 
@@ -16,78 +20,381 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will assemble the five-number summary for a quantitative
+    variable, read a boxplot as four sections each holding a quarter of the data, and compare two
+    or more groups on center, variability, and unusual features --- in context, with explicit
+    comparative language.
+    \\[2pt]
+    \textbf{CED alignment:} Topics 1.8 and 1.9 \quad$\cdot$\quad Big Idea: UNC (Uncertainty)
+    \quad$\cdot$\quad Skills 2.A, 2.B, 2.D \quad$\cdot$\quad LO UNC-1.L, UNC-1.M, UNC-1.N,
+    UNC-1.O \quad$\cdot$\quad EK UNC-1.L.1, 1.L.2, 1.M.1, 1.M.2, 1.N.1, 1.O.1
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found. \textbf{No vocabulary before the debrief.}
+    \\[2pt]
+    \textbf{Note on the ``no sketch'' rule:} \textbf{students never draw a boxplot in this
+    lesson.} Every display is pre-drawn. Where a question says ``construct,'' the construction is
+    filling in a table of five numbers --- never plotting an axis. Drawing boxplots by hand eats
+    the period; the exam asks students to \emph{read} and \emph{compare} them.
+    \\[2pt]
+    \textbf{Note on the merge:} this period carries Topic 1.8 (build and read one boxplot) and
+    Topic 1.9 (compare two or more) together. Protect the activity's 20 minutes and let the
+    comparison reps live in the Application and the homework --- do not add a third activity
+    problem.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can pull five key numbers out of a data set and find them in a picture built from them.
+  \item I can say what a wide part of that picture does and does not tell me.
+  \item I can decide whether one value sits far enough from the rest to be set apart.
+  \item I can compare two groups on where they sit, how spread out they are, and what is
+        unusual --- in the setting of the problem.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item The minimum, $Q_1$, the median, $Q_3$, and the maximum are the \textbf{five-number
+        summary}; a boxplot is that summary drawn to scale (EK UNC-1.L.1, 1.L.2).
+  \item \textbf{Target misconception:} that a wide section of a boxplot holds more
+        observations. \textbf{Every section holds the same quarter of the data.} Width reports
+        spread, not count --- and this is the single most common boxplot error on the exam.
+  \item \textbf{Second misconception:} that comparing two groups means saying which median is
+        higher. The CED wants center, variability, \emph{and} unusual features, each with a
+        comparative word and each in context (EK UNC-1.N.1, 1.O.1).
+  \item Skew moves the mean off the median: right-skew pulls the mean right of it, left-skew
+        pulls it left (EK UNC-1.M.2).
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Five-number summary} --- minimum, $Q_1$, median, $Q_3$, maximum
+              (EK UNC-1.L.1)
+        \item \textbf{Boxplot} --- the five-number summary drawn to scale (EK UNC-1.L.2)
+        \item \textbf{Box} --- spans $Q_1$ to $Q_3$: the middle 50\% of the data, with a line at
+              the median (EK UNC-1.L.2)
+        \item \textbf{Whisker} --- reaches from a quartile to the most extreme value that is
+              \emph{not} an outlier (EK UNC-1.L.2)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Modified boxplot} --- outliers plotted with their own symbol beyond the
+              whisker (EK UNC-1.L.2)
+        \item \textbf{Parallel (side-by-side) boxplots} --- one plot per group on a shared axis
+              (EK UNC-1.N.1)
+        \item \textbf{Mean vs.\ median position} --- symmetric: close; right-skewed: mean to the
+              right; left-skewed: mean to the left (EK UNC-1.M.2)
+        \item \textbf{Carried forward} --- median, $Q_1$, $Q_3$, IQR, range, resistance, and the
+              $1.5\times$IQR rule (1.5); shape and unusual features (1.4); dotplots and
+              histograms (1.3)
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Five numbers off an ordered list, a counting drill, and one $1.5\times$IQR check & Circulate; put item~3's arithmetic on the board and leave it up all period \\
+Experience \& Formalize: Activity & 20 & \emph{Twenty Free Throws} and \emph{Two Bus Routes}, problems 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; collect a group's 1b count row \\
+Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color \\
+Application & 6 & \emph{Two Science Sections}, worked together & Lead it; students hold the pen; hold the comparative-language standard \\
+Homework: Start in Class & 8 & Begin the \emph{graded} homework, pairs $\to$ solo & Circulate; answer questions now rather than after they leave \\
+Close \& Assign & 4 & Pack the homework; hear the preview & Name the due date; say plainly that AP Practice is optional and unscored \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Nine ordered values; report the least, $Q_1$, the median, $Q_3$, the
+              greatest, and the IQR. \textbf{Spirals} Lesson 1.5 --- and it is exactly the table
+              the activity's 1a asks them to fill, done once with easy numbers.
+        \item \textbf{2.} Count twelve values into three stated stretches. \textbf{Seeds:} the
+              counting move the crux in 1b depends on, made mechanical first.
+        \item \textbf{3.} One $1.5\times$IQR check with the arithmetic shown. \textbf{Seeds:}
+              problem~2c, where the rule has to be \emph{recovered} rather than recited.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Name nothing.} Do not say \emph{five-number summary}, \emph{boxplot},
+              \emph{box}, \emph{whisker}, or \emph{parallel boxplots} in the warm-up debrief.
+              Item~1 produces five numbers; call them ``these five numbers.''
+        \item Item~2 is a drill --- 60 seconds. It exists so that counting is not the obstacle
+              inside the activity, where the count is the whole discovery.
+        \item \textbf{Leave item~3's arithmetic on the board for the rest of the period.}
+              Problem~2c needs it, and a group that can look up rather than re-derive spends its
+              time on the interesting part.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{Twenty Free Throws} and \emph{Two Bus Routes}]{sky}
+\textbf{Launch (2 min).} \emph{``Twenty players, twenty numbers, and somebody drew a summary
+picture from them. Your job in problem~1 is to work out what that picture is made of --- and then
+to count. Problem~2 hands you two of those pictures and one commuter who has to decide.''}
+Groups of 3--4. Do not preview any vocabulary.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Problem 1} is the discovery. 1a is a table fill straight out of
+Lesson 1.5 --- least, $Q_1$, median, $Q_3$, greatest --- followed by locating each of those five
+numbers in the picture below the dotplot. \textbf{1b is the crux:} they count the 20 dots falling
+into each of the picture's four sections and get \textbf{5, 5, 5, 5}, even though the right-hand
+section is more than five times as wide as the left-hand one. 1c makes them answer a classmate
+who reads width as count. 1d names what the picture threw away.
+
+\emph{Problem 2} carries Topic 1.9. Two pictures on a shared axis with the five numbers given;
+2a computes the middle-half width for each route (5 minutes and 12 minutes), 2b makes the
+comparison, \textbf{2c recovers the $1.5\times$IQR convention} from the lone dot at 58 minutes,
+and 2d demands one recommendation defended from both pictures.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1a:} ``You wrote 34.5. Put your finger on 34.5 on the axis. Now slide it down.
+        What is there?''
+  \item \textbf{1b (the crux):} ``Do not estimate --- count. Read me the four numbers.''
+        Then: ``Twenty dots, four sections, and you got 5, 5, 5, 5. Was that luck?''
+  \item \textbf{1c:} ``How many players are in the wide section? How many in the narrow one? So
+        what \emph{is} the wide one telling you?''
+  \item \textbf{2c:} ``How wide is Route B's middle half? Now how far past the box is the lone
+        rider? How many middle-half widths is that?''
+  \item \textbf{2d:} ``You said Route A. A commuter can read `A is better' on a poster. What can
+        they read \emph{only} from these two pictures?''
+\end{itemize}
+While circulating, pick the work to display: one group's 1b count row, and one group's 1c
+sentence --- open the debrief on those two.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item Their 1a table $\to$ the \emph{five-number summary} (EK UNC-1.L.1). Five numbers they
+        already knew how to find; today they get a collective name.
+  \item Their 1a locating answers $\to$ the \emph{boxplot} (EK UNC-1.L.2). Name the parts on the
+        picture they were just pointing at: the \emph{box} runs $Q_1$ to $Q_3$, the line inside
+        is the \emph{median}, the \emph{whiskers} reach out to the extremes.
+  \item \textbf{Their 1b count row $\to$ the crux.} Write \textbf{5 \quad 5 \quad 5 \quad 5} on
+        the board and above it \textbf{25\% \quad 25\% \quad 25\% \quad 25\%}. Then the rule:
+        \emph{width shows spread, never count}. This is the step the rest of the year leans on.
+  \item Problem~2's lone dot $\to$ \emph{outlier symbol} and the \emph{modified boxplot}
+        (EK UNC-1.L.2): the whisker stops at the most extreme value that is \emph{not} an
+        outlier. Point at their 2c arithmetic: $32 + 1.5(12) = 50$, and $58 > 50$.
+  \item Problem~2's shared axis $\to$ \emph{parallel (side-by-side) boxplots}, and the
+        \emph{comparison checklist} (EK UNC-1.N.1, 1.O.1): center, variability, unusual features,
+        each with a comparative word, each in context.
+  \item Last, in one line: \emph{mean vs.\ median position} (EK UNC-1.M.2). Point at problem~1's
+        right-skewed picture --- the mean of those 20 sits above the median of 39.5.
+  \item Close the box by naming its \textbf{cost}: gaps, clusters, and a second peak all
+        disappear inside it. That is their own 1d answer, given its formal weight.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. \textbf{It is a summary of what they found,
+not a new lecture}; if you are talking for more than 90 seconds without pointing at student
+work, stop.
+
+\textbf{Why this order.} The five numbers first (they already own them), the picture second
+\emph{as a drawing of those numbers}, the crux third --- because it only lands once students
+accept the picture is nothing but five numbers placed on a line. Outliers and comparison come
+after, because both are moves made \emph{on} a boxplot rather than facts about one. The
+mean/median rule is a one-liner and goes late; it belongs to the shape work of 1.4 and only needs
+attaching here.
+
+\textbf{The sentence to land:} \emph{``Every section of a boxplot holds the same quarter of the
+data. Width tells you how stretched out those values are --- it never tells you how many there
+are.''} Say it, write it, and point at the 5 \quad 5 \quad 5 \quad 5 while you do.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Application --- \emph{Two Science Sections} (worked together, 6 min)]{sky}
+The first place the comparison vocabulary is \emph{used}. Two parallel boxplots of test scores
+for two sections of the same course, five-number summaries given. Part (a) reads and compares
+the centers and the middle-half widths (Period 2: median 80, IQR 12; Period 5: median 72,
+IQR 16). Part (b) is EK UNC-1.M.2 read off the picture --- Period~2 is skewed left (a long lower
+whisker), Period~5 skewed right --- and asks how the picture tells you.
+\textbf{Part (c) is the AP-scored form:} one paragraph comparing the two sections, in context,
+with explicit comparative language.
+
+\textbf{Hold the standard out loud.} A paragraph that describes Period 2 and then describes
+Period 5 \textbf{earns nothing} on an AP comparison item, no matter how accurate each half is.
+The words that earn the point are \emph{higher than}, \emph{more variable than}, \emph{more
+spread out than} --- and every one of them must name the variable (test score) and the groups
+(the two sections).
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``You wrote `Period 5 has an IQR of
+16.' Compared with what?''} \quad \emph{``Which side of Period 2's box is longer? So which way
+does it trail off?''}
+
+\emph{The \texttt{work} block in this lesson lives in the homework} (item~3, the $1.5\times$IQR
+arithmetic), authored byte-identically in the blank and the key. Page lockstep everywhere else
+rests on \texttt{\textbackslash answerspace}.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+Four AP-style multiple-choice items on parallel boxplots of daily tips for weekday and weekend
+shifts, then one multi-part free response on the same display. The four MC items are chosen to
+cover the four ways this topic is tested: \textbf{1} is the width-means-count distractor with a
+fully plausible wrong option; \textbf{2} is a five-number-summary reading and IQR item;
+\textbf{3} is mean-versus-median position under right skew (EK UNC-1.M.2); and \textbf{4} is the
+item whose correct answer is that \textbf{the boxplot cannot answer the question} --- whether
+the weekend distribution is bimodal. That last one is a real AP item type and the honest limit of
+the display; students who have internalized ``the boxplot shows the shape'' pick a wrong option
+confidently.
+
+Free response: report the weekday five-number summary, compute the weekend IQR and apply the
+$1.5\times$IQR rule to \$158, compare the two shifts in context, and \textbf{part (d) is the
+spiral} --- name the display you would ask for instead and say what it would show, which reaches
+back to Lessons 1.3 and 1.4.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~1.7 and hold the AP standard out loud: \emph{in context, and comparative, or
+it does not count}.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[Homework --- the graded practice, started in class]{redbox}
+Five exercises spanning both merged topics: \textbf{1} build the five-number summary from an
+ordered list and match it to one of three pre-drawn boxplots --- the cheapest diagnostic in the
+set, because a student who cannot place the median cannot do anything else today;
+\textbf{2} the crux head-on, a student claiming the long right whisker means most values are
+large; \textbf{3} the $1.5\times$IQR rule with the arithmetic in a \texttt{work} block;
+\textbf{4} a full two-group comparison in context from parallel boxplots; \textbf{5} the AP-style
+multiple-choice item with a one-sentence justification. Pairs for 1--3, solo for 4--5.
+
+\textbf{This is the lesson's scored work} --- the cover's score column carries a blank for it and
+it is collected next class. Students begin it in the last eight minutes of the period so that the
+questions get asked while you are still in the room; they finish it at home.
+
+\textbf{Eight minutes will not finish five items --- that is by design.} Point them at 1, 2,
+and~3 in class, where a wrong start is cheap to catch; 4 and~5 travel home cleanly.
+\textbf{Item~2 is where the misconception shows.} \textbf{Item~4 is where the comparison standard
+shows} --- when you score it, separate ``wrote two descriptions'' from ``wrote a comparison,'' and
+give no credit for the first even when both descriptions are right. If more than a third of the
+class lands in the first pile, reopen the Application's paragraph in the Lesson~1.7 warm-up
+debrief rather than letting it ride into inference.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``Most of the players are in the wide part''} (1b/1c --- the target
+        misconception). Probe: \emph{``Count them. How many dots? Now count the narrow section.
+        Say that out loud.''}
+  \item \textbf{Estimating the counts instead of counting} (1b, HW~2). The discovery only lands
+        if the four numbers come out exactly 5, 5, 5, 5. Probe: \emph{``Point at each dot as you
+        say the number.''}
+  \item \textbf{Reading the box as ``where the data is'' and the whiskers as empty} (1c, AP~1).
+        Probe: \emph{``How many of the twenty are past the right edge of the box?''}
+  \item \textbf{Two descriptions parked side by side} (2b, 2d, Application c, HW~4 --- the second
+        misconception). Probe: \emph{``I read your sentence about Route A. Now cross out every
+        word that is not comparing.''}
+  \item \textbf{Comparison with no context} (2d, HW~4): ``the median is higher'' with no variable
+        and no groups. Probe: \emph{``Higher what? Higher than what?''}
+  \item \textbf{The lone dot read as an error in the data} (2c). It is a real rider with a real
+        time. Probe: \emph{``Did somebody mistype it, or did somebody have a bad morning?''}
+  \item \textbf{Shape claimed from a boxplot} (AP~4, HW~2): a boxplot cannot show a second peak.
+        Probe: \emph{``Where inside that box would a second hump be drawn?''}
+\end{itemize}
+Cold-call prompts: \emph{``What fraction of the data is in the left whisker?''} \quad
+\emph{``Give me a comparison sentence with a comparative word and a unit in it.''}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Name the due date for the homework} at the back of the packet --- the pages they have just
+started are the graded work --- and say plainly that the AP Practice page before it is optional
+and unscored. Then close on what changed: \emph{``You walked in able to read a picture by how big
+its parts look. You walk out knowing that in this one, the parts are all the same size no matter
+how they look --- every section holds the same quarter of the data, and the width is telling you
+about spread, not about how many.''} \textbf{Preview:} Lesson~1.7, \emph{The Normal Distribution
+and $z$-Scores} --- next time we take on scores from two completely different tests and work out
+a fair way to say which one was better. Note that everything today was descriptive: a boxplot
+describes the sample in front of you and claims nothing about anyone else.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+Four minutes total, and item~1 is the one that must be right --- if a student cannot produce
+$Q_1$ and $Q_3$ from nine ordered values, problem~1a will stall the whole group. Circulate during
+item~1 specifically and fix quartile technique on the spot. Item~2 is a 60-second drill; do not
+let it expand. \textbf{Put item~3's four lines of arithmetic on the board and leave them there
+for the whole period} --- problem~2c is meant to \emph{recover} that rule, and having it visible
+turns 2c from a memory test into a reasoning task, which is the point. \textbf{Do not say
+\emph{five-number summary}, \emph{boxplot}, \emph{box}, or \emph{whisker} in this debrief.}
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 11 minutes on problem~1, 9 on problem~2. This period merges
+two CED topics, so the clock is real: at the 11-minute mark, move every group to problem~2 even
+if 1d is unfinished --- 1d is recoverable in the debrief, and problem~2 is where Topic 1.9 lives.
+
+\textbf{Make every group actually count in 1b.} Groups that estimate get ``about 4, about 7'' and
+the discovery evaporates. The four exact fives are the entire lesson. If a group is stuck on
+where the boundaries fall, send them back to their own 1a table rather than telling them.
+
+\textbf{The single discipline that makes this lesson work: do not name anything while
+circulating.} A group that hears ``whisker'' stops discovering.
+
+\textbf{Debrief (12 min).} Must-land: step~3 (the crux, on their own count row) and step~5 (the
+comparison checklist). If time runs short, compress steps~6 and~7 into two spoken sentences ---
+the mean/median rule returns in 1.7 and the boxplot's cost returns in the homework.
+
+\textbf{Application (6 min).} Part (c) is the AP-scored form. If you only get through (a) and
+(c), that is the right trade --- (b) is recoverable from HW~2.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded homework is the section behind it
+at the back of the packet. Work it as AP-format reps and go over it at the start of Lesson~1.7.
+\textbf{MC item~1 is the one worth reading closely}: option (A) says more weekend shifts fall in
+the widest stretch of the display, which is the target misconception dressed as an AP answer
+choice. \textbf{MC item~4 is the second one to read}: its correct answer is that the display
+cannot tell you whether the weekend tips are bimodal, and students who have decided a boxplot
+``shows the shape'' will not even consider it. If either item goes badly for more than a handful,
+spend three minutes on the counting picture from problem~1 before starting 1.7. On the free
+response, part (c) is the highest-value part --- it is Skill 2.D in the exact form the exam asks
+it, and it is scored on comparative language, not on arithmetic.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+\textbf{This is the graded page} --- collect it next class and score it. The eight minutes at the
+end of the period are a \emph{start}, not a completion: put them on 1, 2, and~3 and let 4 and~5
+go home. Item~1 is the diagnostic --- a student who matches the wrong plot has a quartile problem,
+not a boxplot problem, and needs Lesson 1.5 retaught in two minutes rather than this lesson
+repeated. Item~3's arithmetic is in a \texttt{work} block authored byte-identically in the blank
+and the key; require the boundary to be written out, not just the verdict. \textbf{Score item~4
+against the comparison standard}: no comparative word, no credit, however accurate the two
+descriptions are. Item~5's justification sentence is where you find out whether the crux
+survived the drive home.
 \end{teachernote}
 \end{document}

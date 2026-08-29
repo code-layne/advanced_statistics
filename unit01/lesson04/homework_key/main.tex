@@ -1,23 +1,177 @@
 %! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Homework (Answer Key)
+% EFFL, AP Statistics variant: this is the lesson's SCORED practice and the LAST component in
+% the packet. These items were the in-class Check Your Understanding set; they are now the
+% graded homework, started in the closing minutes of the period and finished at home. The
+% AP Practice component that precedes it stays assigned-but-unscored.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
+%
+% Exercises 2 and 3 reuse displays B and D from exercise 1 on purpose: the context is already
+% loaded, and it keeps this component to two pages.
+% Exercise 2 IS the target misconception, head-on.
+% THE DISPLAYS
+%   A symmetric, unimodal:      1 3 6 8 6 3 1
+%   B skewed right (pile left): 9 7 4 2 1 1 1
+%   C skewed left  (pile right):1 1 2 4 7 9
+%   D bimodal with a gap:       2 6 3 0 0 3 6 2
+%   Exercise 4 dotplot, sugar (g) in 24 cereals: 2,3,3,4,4,4,5,5,5,5,6,6,6,7,7,8,8,9,10,11,
+%   12,13,20,21  -> median 6 g, right tail, two cereals stranded at 20 and 21 g.
+% GENERATED FROM homework/main.tex — this file is the blank with answers filled in, so the
+% \answerspace heights and every \boxguard are identical to it.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Homework --- Answer Key}
-
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
+\end{remindbox}
+
+\vspace{0.12in}
+
+% ── The scored practice (formerly this lesson's Check Your Understanding) ────
+\boxguard[14]
+\begin{notesbox}{Describing a Quantitative Distribution}
+Write every description \emph{in the context of the problem}, naming the variable and its
+units --- that is what earns credit on the AP exam, and it is the standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+  \item \textbf{Match each display to its description.} Write the letter of the display on the
+        line beside the description that fits it.
+
+        \vspace{4pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.85]
+          % A — symmetric, unimodal
+          \foreach \i/\c in {0/1, 1/3, 2/6, 3/8, 4/6, 5/3, 6/1} {
+            \fill[navy] ({\i*0.4},0) rectangle ({(\i+1)*0.4},{\c*0.15});
+            \draw[white, very thin] ({\i*0.4},0) rectangle ({(\i+1)*0.4},{\c*0.15});}
+          \draw[->, thick] (0,0) -- (0,1.8);
+          \draw[->, thick] (0,0) -- (3.1,0);
+          \node[font=\bfseries\small] at (1.4,-0.55) {A};
+          % B — skewed right (pile on the left)
+          \begin{scope}[xshift=3.8cm]
+            \foreach \i/\c in {0/9, 1/7, 2/4, 3/2, 4/1, 5/1, 6/1} {
+              \fill[goldacc] ({\i*0.4},0) rectangle ({(\i+1)*0.4},{\c*0.15});
+              \draw[white, very thin] ({\i*0.4},0) rectangle ({(\i+1)*0.4},{\c*0.15});}
+            \draw[->, thick] (0,0) -- (0,1.8);
+            \draw[->, thick] (0,0) -- (3.1,0);
+            \node[font=\bfseries\small] at (1.4,-0.55) {B};
+          \end{scope}
+          % C — skewed left (pile on the right)
+          \begin{scope}[xshift=7.6cm]
+            \foreach \i/\c in {0/1, 1/1, 2/2, 3/4, 4/7, 5/9} {
+              \fill[navy] ({\i*0.45},0) rectangle ({(\i+1)*0.45},{\c*0.15});
+              \draw[white, very thin] ({\i*0.45},0) rectangle ({(\i+1)*0.45},{\c*0.15});}
+            \draw[->, thick] (0,0) -- (0,1.8);
+            \draw[->, thick] (0,0) -- (3.1,0);
+            \node[font=\bfseries\small] at (1.4,-0.55) {C};
+          \end{scope}
+          % D — bimodal with a gap
+          \begin{scope}[xshift=11.4cm]
+            \foreach \i/\c in {0/2, 1/6, 2/3, 3/0, 4/0, 5/3, 6/6, 7/2} {
+              \fill[goldacc] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.15});
+              \draw[white, very thin] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.15});}
+            \draw[->, thick] (0,0) -- (0,1.8);
+            \draw[->, thick] (0,0) -- (3.1,0);
+            \node[font=\bfseries\small] at (1.4,-0.55) {D};
+          \end{scope}
+        \end{tikzpicture}
+        \end{center}
+        \vspace{4pt}
+
+        \begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=2.4em, itemsep=3pt]
+          \item Roughly symmetric, with a single peak in the middle. \ans{A}
+          \item Skewed to the right: most values are small, and a few are much larger.
+                \ans{B}
+          \item Skewed to the left: most values are large, and a few are much smaller.
+                \ans{C}
+          \item Bimodal: two clear peaks with a gap between them. \ans{D}
+        \end{enumerate}
+
+  \item A student looked at \textbf{Display B} and wrote: \emph{``This distribution is skewed to
+        the left, because almost all of the data is piled up on the left side.''} The student has
+        the direction backwards. Correct the statement, and explain what actually decides the
+        name.
+        \answerspace{3.1cm}{Display B is skewed to the \emph{right}. The name of a skew comes
+        from the side the \emph{tail} runs out on, not the side the pile sits on. In Display B
+        the values bunch at the low end and a few stragglers stretch far out to the high end, so
+        the right tail is the long one --- skewed right. The student named the picture by where
+        the data is instead of by where the data runs out.}
+  \item \textbf{Display D} shows the ages, in years, of the 22 people at one community swim
+        session. Name the unusual feature this display shows, and give one plausible reason the
+        group splits the way it does.
+        \answerspace{2.8cm}{Display D is bimodal: two clear peaks separated by a gap, so the
+        ages form two clusters with no one observed in between. A plausible reason is that the
+        session drew young children together with the adults who brought them, and almost no
+        teenagers or young adults came.}
+  \item The dotplot below shows the grams of sugar per serving in each of 24 breakfast cereals.
+
+        \vspace{3pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.95]
+          \draw[->, thick] (-0.2,0) -- (5.9,0);
+          \foreach \x/\lab in {0/0, 1/4, 2/8, 3/12, 4/16, 5/20} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+          \foreach \x/\n in {0.5/1, 0.75/2, 1.0/3, 1.25/4, 1.5/3, 1.75/2, 2.0/2, 2.25/1,
+                             2.5/1, 2.75/1, 3.0/1, 3.25/1, 5.0/1, 5.25/1} {
+            \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.18*\k}) circle (0.06); }}
+          \node[font=\scriptsize] at (2.8,-0.6) {Sugar per serving (grams)};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{2pt}
+
+        Write a complete description of this distribution: all four parts, in context, with the
+        variable and its units named.
+        \answerspace{3.4cm}{The sugar content of these 24 breakfast cereals is unimodal and
+        skewed to the right. The center is about 6 grams of sugar per serving, and the values
+        run from 2 grams to 21 grams, with most cereals between 3 and 9 grams. Two cereals sit
+        far above the rest at 20 and 21 grams, separated from the others by an empty stretch
+        from 13 to 20 grams. This describes only these 24 cereals --- it is not a claim about
+        every cereal on the shelf.}
+  \item \textbf{AP-style multiple choice.} A histogram of the salaries of all 250 employees at
+        one company is strongly skewed to the right, with three salaries far above the rest.
+        Which statement is best supported? Circle one, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The distribution is skewed to the left, because most of the salaries are on the
+                left side of the graph.
+          \item \ans{Most of these 250 employees earn near the lower end, while a few earn much more.}
+          \item Salaries at every company in this industry are skewed to the right.
+          \item The three highest salaries should be deleted before the distribution is
+                described.
+          \item The histogram must be wrong, because a distribution cannot have a long tail.
+        \end{enumerate}
+        \answerspace{2.4cm}{(B). A right tail means the pile of salaries is at the low end with
+        a few much larger ones stretching out --- and the display describes only these 250
+        employees, not every company in the industry.}
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.12in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: Summary Statistics for a Quantitative Variable.} Today you said ``about
+4 minutes'' and ``most of them between 3 and 9.'' Next time we stop saying \emph{about} and put
+actual numbers on the middle of a distribution and on how spread out it is --- and we find out
+which of those numbers one strange value can drag around, and which one barely notices it.
+\end{spiralbox}
 
 \end{document}

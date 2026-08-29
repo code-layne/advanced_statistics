@@ -1,0 +1,172 @@
+%! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — AP Practice
+% EFFL, AP Statistics variant: AP-format practice, assigned but NOT scored — the cover's score
+% column reads NA for this component. The graded practice is the `homework` component that
+% follows it at the back of the packet.
+% MC 2 carries the target misconception as distractor (B) ("skewed left because the pile is on
+% the left"); MC 3 carries the EK UNC-1.H.7 over-claim. Free-response (a) spirals to Lesson 1.1
+% (classify the variable first) and (d) to Lesson 1.3 (check the interval width before you
+% believe the shape).
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching a terse
+% \ansline{} in the key — keep key answers short enough not to wrap past the reserved lines.
+% The next-lesson preview is NOT here: it closes the packet, in ../homework/.
+%
+% THE DISPLAY: 40 commute times, 10-minute intervals from 0: 5 12 10 6 4 2 0 0 1 = 40.
+% Right-skewed, with one employee stranded in the 80-90 interval behind a two-interval gap.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.4}{AP Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.15in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. These are AP-format reps: work them for the practice, and bring what you get
+stuck on to office hours or study hall.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[24]
+\begin{scenariobox}[The Commute Record]{navy}
+\small
+A company recorded the one-way commute time, in minutes, of each of its 40 employees. The
+histogram below groups those 40 commute times into intervals 10 minutes wide.
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+  \foreach \i/\c in {0/5, 1/12, 2/10, 3/6, 4/4, 5/2, 6/0, 7/0, 8/1} {
+    \fill[navy] ({\i*0.6},0) rectangle ({(\i+1)*0.6},{\c*0.18});
+    \draw[white, very thin] ({\i*0.6},0) rectangle ({(\i+1)*0.6},{\c*0.18});}
+  \draw[->, thick] (0,0) -- (0,2.7);
+  \draw[->, thick] (0,0) -- (5.9,0);
+  \foreach \y/\lab in {0/0, 0.9/5, 1.8/10} {
+    \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\scriptsize, xshift=-1pt] at (-0.07,\y) {\lab};}
+  \foreach \x/\lab in {0/0, 1.2/20, 2.4/40, 3.6/60, 4.8/80} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+  \node[font=\scriptsize] at (2.7,-0.62) {One-way commute time (minutes)};
+  \node[font=\scriptsize, rotate=90] at (-0.62,1.2) {Employees};
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \item How many of these 40 employees have a one-way commute of 30 minutes or more?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 6
+          \item 10
+          \item 13
+          \item 17
+          \item 27
+        \end{enumerate}
+
+  \item Which statement best describes the shape of this distribution?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Approximately symmetric and unimodal.
+          \item Skewed to the left, because most of the commutes lie on the left side of the
+                graph.
+          \item Skewed to the right, because the tail of longer commutes stretches out to the
+                right.
+          \item Approximately uniform, because every interval contains at least a few employees.
+          \item Bimodal, because two bars are taller than the rest.
+        \end{enumerate}
+
+  \item Which conclusion is \textbf{supported} by this display?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Employees at this company commute longer than employees at other companies.
+          \item Commute times for all workers in this city are skewed to the right.
+          \item Among these 40 employees, most commute less than 30 minutes, and one commutes
+                more than 80 minutes.
+          \item The employee with the longest commute should be removed before the distribution
+                is described.
+          \item Half of these employees commute more than 40 minutes.
+        \end{enumerate}
+
+  \item Before concluding that this distribution is skewed to the right, a careful reader should
+        first check
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item whether commute time is a categorical variable.
+          \item the interval width used, because a different width can change the appearance of
+                the histogram.
+          \item whether the bars have gaps between them, as in a bar graph.
+          \item whether any employee was counted twice.
+          \item nothing --- a histogram reports the shape of the data as a fact.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \item Use the commute record above.
+
+        \vspace{6pt}
+        \textbf{(a)} Classify commute time as categorical or quantitative, and then as discrete
+        or continuous. Justify from the variable itself, not from the display.\\[4pt]
+        \writelines{2}
+
+        \vspace{6pt}
+        \textbf{(b)} Describe the shape of this distribution and identify any unusual features,
+        in context.\\[4pt]
+        \writelines{3}
+
+        \vspace{6pt}
+        \textbf{(c)} A manager writes: \emph{``The average commute here is about 25 minutes, so
+        our employees are fine.''} Explain what that single number leaves out, and state what
+        these data can and cannot tell you about employees at other companies.\\[4pt]
+        \writelines{4}
+
+        \vspace{6pt}
+        \textbf{(d)} The same 40 commute times are redrawn using intervals 30 minutes wide.
+        Explain what happens to the employee who commutes more than 80 minutes, and why the
+        interval width has to be checked before the shape is believed.\\[4pt]
+        \writelines{3}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Find a graph in a news article that reports one number as ``the average'' or ``the typical''
+value. Say which of the four parts of a description that number leaves out, and what a reader
+could be misled into believing because of it.\\[4pt]
+\writelines{2}
+\end{extensionbox}
+
+\vspace{0.12in}
+
+
+\end{document}

@@ -1,6 +1,12 @@
 %! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usetikzlibrary{positioning}  % -beamer loads tikz but not this library
+
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
@@ -17,10 +23,266 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% EFFL flow: targets (SPOILER-FREE) → hook → activity launch → debrief divider → QuickNotes
+% arc → the crux → application → homework (started in class) → AP Practice → close.
+% Nothing before the divider may say parameter, mu, sigma, normal, approximately normal,
+% empirical rule, 68-95-99.7, standardized score, or z-score.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS (spoiler-free) ─────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today: experience first, formalize later}
+  \sectionlabel{Learning targets}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item say why the bigger number is not always the better result.
+    \item measure how far a value sits from its own group's average, counted in that group's own
+          typical spread.
+    \item use that measurement to compare results from two completely different settings.
+    \item read the same three percentages off any mound-shaped pile of data.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{one scholarship and two athletes} with your group $\to$ we name what
+    you found $\to$ practice. You will figure it out \emph{before} I give you the words.
+  \end{block}
 \end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.4cm}
+  \begin{center}
+    {\color{skymid}\bfseries\small ONE SCHOLARSHIP. TWO ATHLETES.}\\[0.9cm]
+    {\color{white}\bfseries\Large Maya threw \textbf{12.0}. \quad Dev ran \textbf{12.3}.\\[0.4cm]
+    Dev's number is bigger. Dev did not win.}\\[0.9cm]
+    {\color{goldacc}\small Metres and seconds. Two scales that will not sit on the same page ---
+    until you find the right ruler.}
+  \end{center}
+\end{frame}
+}
+
+% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Experience \& Formalize: Two Tryouts}
+  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
+  The athletic department has one scholarship left and two candidates from two different events.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Problem 1} --- the shot put field, the 100 m field, and one decision to defend.
+    \item \textbf{Problem 2} --- 500 loaves of bread and 400 body temperatures.
+  \end{itemize}
+  \begin{block}{Your job}
+    Use only what you already know. Problem 1: when the two numbers refuse to compare, do not
+    guess --- work out \textbf{what you would have to divide by} to make them comparable.
+    Problem 2: write your prediction down \emph{before} you compute the second set.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF DIVIDER ──────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
+    {\color{white}\bfseries\Large You already built the ruler, and you already found the three
+    percentages. We are only giving them names.}\\[0.9cm]
+    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── PARAMETER VS STATISTIC ───────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Parameter or statistic?}
+  \sectionlabel{everybody, or just some of them}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Parameter}
+        A numerical summary of a \textbf{population} --- everybody (EK VAR-2.A.1).
+      \end{block}
+      \vspace{4pt}
+      {\small Population mean $\mu$ \quad$\cdot$\quad population standard deviation $\sigma$
+      \\[3pt]
+      \emph{All 500 loaves the bakery weighed.}}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Statistic}
+        A numerical summary of a \textbf{sample} --- some of them (Lesson 1.5).
+      \end{block}
+      \vspace{4pt}
+      {\small Sample mean $\bar x$ \quad$\cdot$\quad sample standard deviation $s_x$\\[3pt]
+      \emph{The 40 loaves the inspector weighed.}}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\small\color{slate} Same idea, different object. Ask \textbf{who got measured} --- everyone,
+    or a handful? The symbol you write depends on the answer.}
+  \end{center}
+\end{frame}
+
+% ── THE NORMAL DISTRIBUTION + EMPIRICAL RULE ────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{The normal distribution}
+  \sectionlabel{mound-shaped, symmetric, and fixed by two numbers}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.72]
+        \draw[navy, very thick] plot[smooth] coordinates
+          {(-3.5,0.01) (-3,0.03) (-2.5,0.11) (-2,0.34) (-1.5,0.81) (-1,1.52) (-0.5,2.21)
+           (0,2.50) (0.5,2.21) (1,1.52) (1.5,0.81) (2,0.34) (2.5,0.11) (3,0.03) (3.5,0.01)};
+        \foreach \x/\h in {-3/0.03, -2/0.34, -1/1.52, 0/2.50, 1/1.52, 2/0.34, 3/0.03} {
+          \draw[linegray, thin, dashed] (\x,0) -- (\x,\h);}
+        \draw[->, thick] (-4.0,0) -- (4.0,0);
+        \foreach \x/\lab in {-3/$-3$, -2/$-2$, -1/$-1$, 0/$\mu$, 1/$+1$, 2/$+2$, 3/$+3$} {
+          \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+        \node[font=\scriptsize] at (0,-0.68) {standard deviations from the mean};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \textbf{Mound-shaped and symmetric}, and completely fixed by $\mu$ and $\sigma$
+              (EK VAR-2.A.2).
+        \item Real data is never exactly this. We say \redink{approximately} normal
+              (EK VAR-2.A.4).
+        \item \textbf{The empirical rule} (EK VAR-2.A.3): about \redink{68\%} within 1 standard
+              deviation, \redink{95\%} within 2, \redink{99.7\%} within 3.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    {\small\color{slate} Your bread: 68.2, 95.2, 99.8. \quad Your thermometers: 68.25, 95.25,
+    99.75. \quad Same shape, same numbers.}
+  \end{center}
+\end{frame}
+
+% ── Z-SCORE ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{The z-score}
+  \sectionlabel{stop counting points, start counting standard deviations}
+  \vspace{6pt}
+  \begin{center}
+    {\Large $z = \dfrac{x_i - \mu}{\sigma}$}
+  \end{center}
+  \vspace{8pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      {\small
+      % \redink is text-mode (\bfseries) — inside math, colour with \mathbf instead.
+      \textbf{Maya:} $\dfrac{12.0 - 9.0}{1.5} = {\color{redacc}\mathbf{2.0}}$\\[8pt]
+      \textbf{Dev:} $\dfrac{12.3 - 13.2}{0.6} = {\color{redacc}\mathbf{-1.5}}$}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item Metres over metres, seconds over seconds --- the \redink{units cancel}
+              (EK VAR-2.B.1, 2.B.2).
+        \item $z < 0$: below the mean. $z = 0$: exactly at it.
+        \item Say it in context: \emph{``1.5 standard deviations below the mean 100 m time''} ---
+              which in a race is \textbf{good}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{center}
+    {\small\color{slate} A calculator or a normal table turns a $z$ into an exact proportion
+    (EK VAR-2.B.3, 2.B.4). That is Unit 5. Today the empirical rule is enough.}
+  \end{center}
+\end{frame}
+
+% ── THE CRUX ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Why 12.3 lost to 12.0}
+  \sectionlabel{the whole point of today}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item A raw number means nothing on its own. It only means something \redink{next to the
+          distribution it came from}.
+    \item Subtracting the mean was not enough --- $+3.0$ metres and $-0.9$ seconds are still two
+          different units.
+    \item Dividing by that distribution's \textbf{own} standard deviation cancels the units and
+          leaves a pure count. Now grams, seconds, points, and degrees are all on one scale
+          (EK VAR-2.C.1).
+  \end{itemize}
+  \vspace{8pt}
+  \begin{block}{And the shape does the rest}
+    Any distribution that is mound-shaped and symmetric hands you the \textbf{same three
+    percentages}, whatever it is measuring --- bread, body temperature, birth weight.
+    \redink{68, 95, 99.7.}
+  \end{block}
+\end{frame}
+
+% ── APPLICATION ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Application: The Bread Loaf}
+  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
+  Back to the bakery: loaf weights are approximately normal, $\mu = 800$ g, $\sigma = 20$ g.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item A loaf weighs 834 g. Find its $z$-score --- then say what it \emph{means}, in grams and
+          in context.
+    \item Roughly what percent of loaves weigh more than 840 g? (Look at where 840 lands first.)
+    \item A customer calls a 754 g loaf ``way underweight.'' Is the complaint fair?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    Part (c) asks you to \redink{judge}, not just compute --- and to name one honest limit of the
+    model you used to judge with.
+  \end{block}
+\end{frame}
+
+% ── HOMEWORK (started in class, scored) ─────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four summaries: parameter or statistic?
+    \item Three heart rates, three $z$-scores --- and what the negative one means.
+    \item Ana scored 82, Ben scored 88. Who did better?
+    \item A bus route's travel times, and one tail to find.
+    \item One multiple-choice item, with a one-sentence justification.
+  \end{itemize}
+  \begin{block}{This one is graded}
+    This is your \redink{scored} homework, due next class. Start with 1, 2, and 3 while I am
+    still here to answer questions --- finish the rest at home.
+  \end{block}
+\end{frame}
+
+% ── AP PRACTICE & PREVIEW (optional, unscored) ──────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{AP Practice \& what's next}
+  \sectionlabel[goldacc]{AP Practice --- optional, not scored}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four multiple-choice items on newborn birth weights --- including one where the right
+          answer is that the empirical rule \textbf{does not apply}.
+    \item One free-response set: compute, interpret, compare across two hospitals, and judge
+          whether the model fits at all.
+    \item Optional: the SAT and the ACT, put on the same scale.
+  \end{itemize}
+  \begin{block}{Optional --- but this is what the exam looks like}
+    The AP Practice page is \textbf{not required and not graded}. Work it for the reps, and bring
+    what you get stuck on to study hall or office hours. The \redink{graded} homework is the
+    section behind it.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.2cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.6cm]
+    {\color{white}\bfseries\Large Points, seconds, grams, and degrees cannot be compared.
+    Standard deviations can. Once you count in standard deviations, every distribution speaks the
+    same language --- and if it is mound-shaped, it always says 68, 95, and 99.7.}\\[0.8cm]
+    {\color{skymid}\small Next: the \textbf{Unit 1 test}, then Unit 2 --- Exploring Two-Variable
+    Data. One variable at a time is over; now we ask whether two of them move together.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

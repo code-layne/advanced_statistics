@@ -1,23 +1,182 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Homework (Answer Key)
+% EFFL, AP Statistics variant: this is the lesson's SCORED practice and the LAST component in
+% the packet. These items were the in-class Check Your Understanding set; they are now the
+% graded homework, started in the closing minutes of the period and finished at home. The
+% AP Practice component that precedes it stays assigned-but-unscored.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro, the \bxp
+% macro, the \begin{work} block in item 3, and every \boxguard byte-identical in the blank and
+% the key.
+% NO SKETCH QUESTIONS: item 1 "constructs" by filling in a table of five numbers and then
+% MATCHING one of three pre-drawn plots — students never draw a boxplot.
+% GENERATED FROM homework/main.tex — this file is the blank with answers filled in, so the
+% \answerspace heights, the \begin{work} block, and every \boxguard are identical to it.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+% \bxp{y-center}{half-height}{min}{Q1}{median}{Q3}{max} — every display is PRE-DRAWN with it.
+\newcommand{\bxp}[7]{%
+  \draw[thick, navy] (#3,#1) -- (#4,#1);
+  \draw[thick, navy] (#6,#1) -- (#7,#1);
+  \draw[thick, navy] (#3,{#1-#2}) -- (#3,{#1+#2});
+  \draw[thick, navy] (#7,{#1-#2}) -- (#7,{#1+#2});
+  \draw[thick, navy, fill=skymid] (#4,{#1-#2}) rectangle (#6,{#1+#2});
+  \draw[very thick, navy] (#5,{#1-#2}) -- (#5,{#1+#2});}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Homework --- Answer Key}
-
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
+\end{remindbox}
+
+\vspace{0.12in}
+
+% ── The scored practice (formerly this lesson's Check Your Understanding) ────
+\boxguard[14]
+\begin{notesbox}{Reading, Correcting, and Comparing Boxplots}
+Show the arithmetic wherever a question asks for a number, and write every explanation
+\emph{in the context of the problem} --- that is what earns credit on the AP exam, and it is the
+standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+
+  \item Eleven students reported how many minutes they spent reading last night. The values are
+        already in order.
+
+        \vspace{3pt}
+        \begin{center}
+        4 \quad 6 \quad 7 \quad 9 \quad 12 \quad 15 \quad 16 \quad 18 \quad 19 \quad 26 \quad 34
+        \end{center}
+        \vspace{3pt}
+
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Minimum} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} &
+        \textbf{Maximum} \\
+        \hline
+        \ans{4} & \ans{7} & \ans{15} & \ans{19} & \ans{34} \\
+        \end{tabularx}
+
+        \vspace{6pt}
+        Exactly one of these three boxplots was built from your five numbers. Which one?
+
+        \vspace{4pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+          \foreach \x in {0,0.95,1.9,2.85,3.8,4.75,5.7,6.65} {
+            \draw[linegray, very thin] (\x,-0.30) -- (\x,2.85);}
+          \bxp{2.4}{0.28}{0.76}{1.33}{2.09}{3.61}{6.46}
+          \bxp{1.4}{0.28}{0.76}{1.33}{2.85}{3.61}{6.46}
+          \bxp{0.4}{0.28}{0.76}{2.28}{2.85}{4.94}{6.46}
+          \node[font=\bfseries\scriptsize, anchor=east] at (-0.20,2.4) {Plot A};
+          \node[font=\bfseries\scriptsize, anchor=east] at (-0.20,1.4) {Plot B};
+          \node[font=\bfseries\scriptsize, anchor=east] at (-0.20,0.4) {Plot C};
+          \draw[->, thick] (-0.15,-0.30) -- (7.10,-0.30);
+          \foreach \x/\lab in {0/0, 0.95/5, 1.9/10, 2.85/15, 3.8/20, 4.75/25, 5.7/30,
+                               6.65/35} {
+            \draw (\x,-0.38) -- (\x,-0.22); \node[below, font=\scriptsize] at (\x,-0.42) {\lab};}
+          \node[font=\scriptsize] at (3.3,-0.98) {Minutes spent reading};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{2pt}
+
+        Plot: \ans{B} \quad What is wrong with each of the other two?
+        \answerspace{2.2cm}{Plot A puts the inside line near 11 instead of 15. Plot C runs its box
+        from about 12 to 26 instead of 7 to 19, so both quartiles are wrong.}
+
+  \item A company made a boxplot of the commute times of its 100 employees. The left whisker is
+        very short and the right whisker is very long. A student writes: \emph{``the long right
+        whisker means most of the commute times are large.''} Correct that student.
+        \answerspace{2.4cm}{The right whisker holds one quarter of the employees --- 25 of the 100
+        --- exactly as many as the short left whisker. Its length shows those 25 times are spread
+        far apart, not that there are more of them. Half of all 100 are below the median line.}
+
+  \item A city recorded how many minutes each of 40 late buses was delayed. For those 40 delays,
+        $Q_1 = 18$ minutes and $Q_3 = 30$ minutes. One bus was delayed \textbf{52} minutes. Use
+        the $1.5 \times \text{IQR}$ rule to decide whether that delay is an outlier.
+
+        \begin{work}
+        \text{IQR} &= 30 - 18 = 12 \\
+        1.5 \times \text{IQR} &= 1.5 \times 12 = 18 \\
+        \text{upper boundary} &= Q_3 + 18 = 30 + 18 = 48 \\
+        52 &> 48 \quad \Longrightarrow \quad \text{yes, 52 minutes is an outlier}
+        \end{work}
+
+        On a boxplot of these delays, how would the 52-minute bus be drawn, and where would the
+        right whisker stop?
+        \answerspace{2.2cm}{As its own point at 52 minutes, past the end of the whisker. The
+        whisker stops at the longest delay that is 48 minutes or less --- the most extreme delay
+        that is not an outlier.}
+
+  \item Two pizza shops recorded their delivery times over one month.
+
+        \vspace{4pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+          \foreach \x in {0,0.95,1.9,2.85,3.8,4.75,5.7,6.65} {
+            \draw[linegray, very thin] (\x,-0.30) -- (\x,1.85);}
+          \bxp{1.3}{0.30}{0.76}{1.71}{2.28}{2.85}{3.99}
+          \bxp{0.4}{0.30}{0.38}{1.33}{3.04}{4.56}{6.46}
+          \node[font=\bfseries\scriptsize, anchor=east] at (-0.20,1.3) {Shop A};
+          \node[font=\bfseries\scriptsize, anchor=east] at (-0.20,0.4) {Shop B};
+          \draw[->, thick] (-0.15,-0.30) -- (7.10,-0.30);
+          \foreach \x/\lab in {0/10, 0.95/15, 1.9/20, 2.85/25, 3.8/30, 4.75/35, 5.7/40,
+                               6.65/45} {
+            \draw (\x,-0.38) -- (\x,-0.22); \node[below, font=\scriptsize] at (\x,-0.42) {\lab};}
+          \node[font=\scriptsize] at (3.3,-0.98) {Delivery time (minutes)};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{2pt}
+
+        Compare the two shops' delivery times in one paragraph. Cover center, variability, and
+        unusual features, in context, using comparative language --- then say which shop you
+        would order from when you are in a hurry.
+        \answerspace{2.6cm}{Shop A's delivery times were typically shorter than Shop B's --- median
+        22 minutes against 26 --- and far more consistent: its middle half spans 6 minutes
+        against 17, and its range is 17 against 32. Neither shows an outlier, though Shop B
+        trails right. In a hurry, order from Shop A.}
+
+  \item \textbf{AP-style multiple choice.} A boxplot summarizes the commute times, in minutes,
+        of 200 employees. The five-number summary is 8, 21, 27, 46, and 95 minutes. Which
+        statement \textbf{must} be true? Circle one, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Most of the commute times are between 46 and 95 minutes, because that is the
+                widest section of the plot.
+          \item \ans{About 50 of the 200 commute times are between 27 and 46 minutes.}
+          \item The commute times have two peaks, one near 21 minutes and one near 46 minutes.
+          \item The mean commute time is 27 minutes.
+          \item No employee commuted for longer than 46 minutes.
+        \end{enumerate}
+        \answerspace{2.2cm}{(B). The stretch from the median to $Q_3$ holds one quarter of the 200
+        commutes, which is 50 --- and every section holds a quarter, however wide it looks.}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.12in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: The Normal Distribution and $z$-Scores.} You can now summarize a group with
+five numbers and set two groups side by side. Next time we take on scores from two completely
+different tests --- different questions, different totals, different classes --- and work out a
+fair way to say which one was actually the better performance.
+\end{spiralbox}
 
 \end{document}

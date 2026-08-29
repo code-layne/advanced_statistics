@@ -1,23 +1,64 @@
 %! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items.
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Warm-Up --- Answer Key}
 
-
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
-\boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.19in]
+
+  \item \textbf{From last lesson.} One class's 40 quiz scores were drawn twice. With blocks of
+        5 points the picture showed two separate peaks; with blocks of 20 points the very same
+        40 scores showed one single hump.
+
+        \vspace{5pt}
+        Which of the two pictures is \emph{wrong}? \ans{Neither --- both are correct}
+
+        \vspace{5pt}
+        What should you check before you believe what any histogram looks like?
+        \ans{the width of the blocks}
+
+  \item Nine customers were timed at a coffee counter. Their waiting times, in minutes, are
+        already written in order from shortest to longest.
+
+        \vspace{4pt}
+        \begin{center}
+        1 \quad 2 \quad 2 \quad 3 \quad 4 \quad 4 \quad 5 \quad 7 \quad 12
+        \end{center}
+        \vspace{4pt}
+
+        How many waits are listed? \ans{9} \qquad
+        Counting in from both ends, which value lands exactly in the middle? \ans{4 min}
+
+  \item Fifteen students were timed waiting for a ride home after school.
+
+        \vspace{2pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+          \draw[->, thick] (-0.2,0) -- (8.6,0);
+          \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10, 6/12, 7/14, 8/16} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+          \foreach \x/\n in {1/2, 1.5/3, 2/4, 2.5/2, 3/2, 3.5/1, 7.5/1} {
+            \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.22*\k}) circle (0.075); }}
+          \node[font=\scriptsize] at (4.2,-0.6) {Minutes waited for a ride};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{2pt}
+
+        Most of the waits sit between \ans{2} and \ans{7} minutes. \quad
+        One wait sits far away from all the others: \ans{15} minutes.
+
+        \vspace{6pt}
+        In one sentence, describe where the other fourteen waits are compared with that one.\\[4pt]
+        \ansline{The other fourteen are bunched down at the low end, between 2 and 7 minutes,}\\[1pt]\ansline{and then nothing at all happens until that single student out at 15 minutes.}
+
+\end{enumerate}
 
 \end{document}

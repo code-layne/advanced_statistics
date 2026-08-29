@@ -1,0 +1,268 @@
+%! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Experience & Formalize
+%! (Activity · QuickNotes · Application) (Answer Key)
+% EFFL component, Math Medic sizing: 12pt body, OPEN white space after every question.
+% Page budget: THREE pages. Activity <=2pp · QuickNotes 1/2pp · Application 1/2-1pp.
+% Check Your Understanding is NOT in this component: those items were moved to the end of
+% the packet and are now the lesson's SCORED homework (see ../homework/).
+%
+% PAGE BUDGET NOTE: an earlier draft ran to 4pp with the Application stranded alone on p.4.
+% The page was recovered from QUESTION PROSE and STRUCTURAL SPACING, never from write space:
+% every \answerspace is at its usable floor (1.4-2.6cm) and must not be shaved further.
+% What was cut: merged lead-in paragraphs, one line of throat-clearing per sub-question stem,
+% the doubled header row on the 1b table, \arraystretch 1.3 -> 1.2, itemsep 6pt -> 4pt,
+% tighter TikZ vertical extents and scales, and connective prose in QuickNotes (every
+% fill-in blank was kept). Any of that re-expanding pushes the Application back onto p.4.
+%
+% THIS LESSON MERGES CED TOPICS 1.8 AND 1.9, so the activity holds only TWO problems. The
+% comparison reps (Topic 1.9) are carried by the Application and the homework.
+%
+% SPOILER RULE: the Activity never says five-number summary, boxplot, box, whisker, modified
+% boxplot, or parallel boxplots. The displays are called "a summary picture", "the rectangle",
+% and "the lines". Median, Q1, Q3, IQR, range, and the 1.5 x IQR rule WERE formalized in
+% Lesson 1.5 and are prior knowledge here; shape and outlier came from Lesson 1.4.
+%
+% NO SKETCH QUESTIONS (hard constraint): every display is pre-drawn. Students "construct" only
+% by filling in the five-number table in 1a, never by drawing an axis or a box.
+%
+% THE DATA (problem 1: free throws made out of 100, twenty players):
+%   30 31 31 32 33 | 36 36 37 38 38 | 41 43 45 47 49 | 52 56 60 66 74
+%   min 30 · Q1 34.5 · median 39.5 · Q3 50.5 · max 74
+%   Section widths: 4.5, 5.0, 11.0, 23.5 — the right section is over five times the left —
+%   yet each holds exactly FIVE of the twenty. That count is the discovery (EK UNC-1.L.2).
+%   Every boundary falls inside a gap in the data (33|36, 38|41, 49|52), so the counting in
+%   1b is unambiguous: 5, 5, 5, 5. PROTECTED — do not soften the width contrast.
+%
+% THE DATA (problem 2, travel minutes): Route A 18/21/23/26/31 (IQR 5, no outliers);
+%   Route B 16/20/25/32/58 (IQR 12; upper cut-off 32 + 1.5(12) = 50, so 58 is set apart and
+%   the line stops at 40, the most extreme value that is NOT unusually far).
+% GENERATED FROM experience/main.tex — the blank with answers filled in, so every
+% \answerspace height, every \boxguard, every scale=, every \vspace, every itemsep and the
+% \bxp macro are identical to it. NO teachernote here — that lives in the lesson plan.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+% \bxp{y-center}{half-height}{min}{Q1}{median}{Q3}{max} — every display in this lesson is
+% PRE-DRAWN with it. Authored byte-identically in the blank and the key.
+\newcommand{\bxp}[7]{%
+  \draw[thick, navy] (#3,#1) -- (#4,#1);
+  \draw[thick, navy] (#6,#1) -- (#7,#1);
+  \draw[thick, navy] (#3,{#1-#2}) -- (#3,{#1+#2});
+  \draw[thick, navy] (#7,{#1-#2}) -- (#7,{#1+#2});
+  \draw[thick, navy, fill=skymid] (#4,{#1-#2}) rectangle (#6,{#1+#2});
+  \draw[very thick, navy] (#5,{#1-#2}) -- (#5,{#1+#2});}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.6}{Experience \& Formalize: Twenty Free Throws --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.02in}
+
+% ── Part 1: the Activity ─────────────────────────────────────────────────────
+\begin{headlinebox}{sky}
+\textbf{Twenty Free Throws.} A coach recorded how many free throws each of the twenty players
+on the squad made out of 100 attempts this week. Work both problems with your group using only
+what you already know --- and in problem~1, \textbf{count} before you conclude.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{scenariobox}[1. The Same Twenty, Twice]{navy}
+Every player is one dot above the axis. Below the axis is a summary picture somebody drew from
+those same twenty numbers.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \foreach \x in {0,1,2,3,4,5,6,7,8,9} {
+    \draw[linegray, very thin] (\x,0.02) -- (\x,0.55);
+    \draw[linegray, very thin] (\x,-1.70) -- (\x,-0.85);}
+  \foreach \x/\n in {0/1, 0.2/2, 0.4/1, 0.6/1, 1.2/2, 1.4/1, 1.6/2, 2.2/1, 2.6/1, 3.0/1,
+                     3.4/1, 3.8/1, 4.4/1, 5.2/1, 6.0/1, 7.2/1, 8.8/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.075); }}
+  \draw[->, thick] (-0.35,0) -- (9.4,0);
+  \foreach \x/\lab in {0/30, 1/35, 2/40, 3/45, 4/50, 5/55, 6/60, 7/65, 8/70, 9/75} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.12) {\lab};}
+  \node[font=\scriptsize] at (4.5,-0.55) {Free throws made (out of 100)};
+  \bxp{-1.25}{0.36}{0}{0.9}{1.9}{4.1}{8.8}
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item Read the twenty values off the top picture and fill in these five numbers.
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Least} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} & \textbf{Greatest} \\
+        \hline
+        \ans{30} & \ans{34.5} & \ans{39.5} & \ans{50.5} & \ans{74} \\
+        \end{tabularx}
+
+        \vspace{4pt}
+        Where does each of those five show up in the summary picture?
+        \answerspace{1.4cm}{30 and 74 are the far ends of the two lines, 34.5 and 50.5 are the
+        edges of the rectangle, and 39.5 is the line inside it.}
+  \item Those five cut the picture into four sections. \textbf{Count} the dots in each.
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Range} & 30 to 34.5 & 34.5 to 39.5 & 39.5 to 50.5 & 50.5 to 74 \\
+        \hline
+        \textbf{Players} & \ans{5} & \ans{5} & \ans{5} & \ans{5} \\
+        \end{tabularx}
+
+        \vspace{4pt}
+        The right section is over five times as wide as the left. In one sentence, what do your
+        counts say about it?
+        \answerspace{1.6cm}{The same number --- five each. The wide section's five are spread
+        from 52 to 74; the narrow section's five are packed into 30 to 33.}
+  \item A classmate says, \emph{``the wide part is where most of the shots landed.''} Use your
+        counts to say what is wrong --- and what the width really tells you.
+        \answerspace{1.6cm}{It holds five players, the same as every other section. Its width
+        says those five totals are far apart, not that most shots landed there.}
+  \item Name one thing the top picture shows that the summary picture cannot.
+        \answerspace{1.4cm}{The individual values --- it cannot give back that two players made
+        31, or show the tight clump from 30 to 38.}
+\end{enumerate}
+\end{scenariobox}
+
+\boxguard[16]
+\begin{scenariobox}[2. Two Bus Routes]{navy}
+A commuter timed the same morning trip on two bus routes. The five numbers for each are given
+below the pictures.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \foreach \x in {0,0.8,1.6,2.4,3.2,4.0,4.8,5.6,6.4,7.2} {
+    \draw[linegray, very thin] (\x,-0.10) -- (\x,1.80);}
+  \bxp{1.40}{0.30}{0.48}{0.96}{1.28}{1.76}{2.56}
+  \bxp{0.50}{0.30}{0.16}{0.80}{1.60}{2.72}{4.00}
+  \fill[navy] (6.88,0.50) circle (0.085);
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,1.40) {Route A};
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,0.50) {Route B};
+  \draw[->, thick] (-0.20,-0.10) -- (7.75,-0.10);
+  \foreach \x/\lab in {0/15, 0.8/20, 1.6/25, 2.4/30, 3.2/35, 4.0/40, 4.8/45, 5.6/50, 6.4/55,
+                       7.2/60} {
+    \draw (\x,-0.18) -- (\x,-0.02); \node[below, font=\scriptsize] at (\x,-0.22) {\lab};}
+  \node[font=\scriptsize] at (3.6,-0.72) {Travel time (minutes)};
+\end{tikzpicture}
+\end{center}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{center}
+\begin{tabularx}{0.92\linewidth}{@{} l Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Route} & \textbf{Least} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} &
+\textbf{Greatest} \\
+\hline
+\textbf{A} & 18 & 21 & 23 & 26 & 31 \\
+\textbf{B} & 16 & 20 & 25 & 32 & 58 \\
+\end{tabularx}
+\end{center}
+\vspace{3pt}
+
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item How wide is the middle half of each route's times? \quad Route A: \ans{$26-21=5$ min} \quad
+        Route B: \ans{$32-20=12$ min}
+  \item Which route is typically faster? Which is less predictable? How can you tell?
+        \answerspace{1.6cm}{Route A is faster --- median 23 minutes against 25. Route B is far
+        less predictable: its middle half is 12 minutes wide against Route A's 5.}
+  \item One Route B rider is drawn as a lone dot. Using the middle-half width from (a), work out
+        how far past the rectangle he sits --- then say why whoever drew this set him apart
+        instead of stretching the line out to reach him.
+        \answerspace{2.0cm}{Route B's middle half is 12 minutes wide, and he sits $58-32=26$
+        minutes past the right edge --- over two of those widths. The cut-off is
+        $32 + 1.5(12) = 50$, and $58 > 50$, so he is set apart.}
+  \item What would you tell a commuter who must not be late? Defend it from \emph{both} pictures.
+        \answerspace{1.4cm}{Route A. Its slowest trip here, 31 min, beats Route B's $Q_3$ of 32
+        --- a quarter of B's mornings are worse than all of A's.}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Part 2: QuickNotes (the debrief fills this) — target: half a page ────────
+% Every fill-in blank from the original draft was kept (18 of them); only the connective
+% prose around them was compressed. Do not re-expand the sentences.
+\boxguard[14]
+\begin{tcolorbox}[enhanced, colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm, breakable,
+    fonttitle=\bfseries\small\color{white}, title={QuickNotes: Boxplots and Comparing Distributions},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}]
+\small
+\begin{itemize}[leftmargin=1.1em, itemsep=3pt]
+  \item \textbf{Five-number summary:} minimum, \ans{$Q_1$}, median, \ans{$Q_3$}, maximum.
+  \item \textbf{Boxplot:} those five drawn to scale. \textbf{Box} $= Q_1$ to $Q_3$, the middle
+        \ans{50}\%; the line inside is the \ans{median}. \textbf{Whiskers} reach the most
+        extreme value that is \ans{not} an outlier; an outlier gets its own \ans{symbol}
+        (a \textbf{modified boxplot}).
+  \item \textbf{THE RULE:} each section holds \ans{25}\% of the data. Width shows
+        \ans{spread} --- never \ans{count}.
+  \item \textbf{Parallel (side-by-side) boxplots:} one plot per group on a shared \ans{axis}.
+  \item \textbf{Comparing:} \ans{center}, \ans{variability}, unusual features --- with a comparative
+        word (\emph{higher than}) and always \ans{in context}.
+  \item \textbf{Mean vs.\ median:} symmetric, close; skewed right, mean to the \ans{right};
+        skewed left, to the \ans{left}.
+  \item \textbf{A boxplot cannot show} \ans{gaps}, \ans{clusters}, or a second \ans{peak}.
+\end{itemize}
+\end{tcolorbox}
+
+% ── Part 3: the Application (worked together, ~6 min) ────────────────────────
+\boxguard[14]
+\begin{notesbox}{Application: Two Science Sections}
+We do this one together. Two sections of the same course, one test.
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \foreach \x in {0,1.4,2.8,4.2,5.6,7.0} {
+    \draw[linegray, very thin] (\x,-0.15) -- (\x,1.75);}
+  \bxp{1.35}{0.30}{1.12}{3.36}{4.20}{5.04}{6.16}
+  \bxp{0.50}{0.30}{1.40}{2.52}{3.08}{4.76}{6.72}
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,1.35) {Period 2};
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,0.50) {Period 5};
+  \draw[->, thick] (-0.20,-0.15) -- (7.55,-0.15);
+  \foreach \x/\lab in {0/50, 1.4/60, 2.8/70, 4.2/80, 5.6/90, 7.0/100} {
+    \draw (\x,-0.23) -- (\x,-0.07); \node[below, font=\scriptsize] at (\x,-0.27) {\lab};}
+  \node[font=\scriptsize] at (3.5,-0.78) {Test score (points)};
+\end{tikzpicture}
+\end{center}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{center}
+\begin{tabularx}{0.92\linewidth}{@{} l Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Section} & \textbf{Min} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} &
+\textbf{Max} \\
+\hline
+\textbf{Period 2} & 58 & 74 & 80 & 86 & 94 \\
+\textbf{Period 5} & 60 & 68 & 72 & 84 & 98 \\
+\end{tabularx}
+\end{center}
+\vspace{3pt}
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item Median: Period 2 \ans{80} \quad Period 5 \ans{72} \qquad
+        IQR: Period 2 \ans{12} \quad Period 5 \ans{16}
+  \item Which section is skewed, and which way? How does the picture tell you?
+        \answerspace{1.6cm}{Period 2 is skewed left --- its lower whisker is long and its upper
+        half short. Period 5 is skewed right, with its upper half stretched.}
+  \item \textbf{One paragraph}, in context: center, variability, unusual features --- with
+        comparative language.
+        \answerspace{2.6cm}{Period 2's scores were typically higher than Period 5's --- median 80
+        points against 72. Period 5's were more variable: a middle half 16 points wide against
+        12, and a wider span. Period 2 trails toward low scores, Period 5 toward high; neither
+        shows an outlier.}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

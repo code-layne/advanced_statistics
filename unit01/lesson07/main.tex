@@ -1,10 +1,12 @@
 %! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
+% This is the LAST content lesson of Unit 1 — the Close previews the unit test and Unit 2.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
 \newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 1.7: The Normal Distribution and z-Scores}
 
@@ -16,78 +18,390 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will distinguish a parameter from a statistic, compute
+    and interpret a $z$-score in context, use the empirical rule to find approximate proportions
+    under a normal model, and compare the relative positions of values drawn from two different
+    distributions.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 1.10 \quad$\cdot$\quad Big Idea: VAR (Variation and
+    Distribution) \quad$\cdot$\quad Skills 2.D, 3.A \quad$\cdot$\quad LO VAR-2.A, VAR-2.B,
+    VAR-2.C \quad$\cdot$\quad EK VAR-2.A.1--2.A.4, 2.B.1--2.B.4, 2.C.1
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found. \textbf{No vocabulary before the debrief.}
+    \\[2pt]
+    \textbf{Note on the ``no sketch'' rule:} every dotplot, histogram, and normal curve in this
+    lesson is \textbf{given}. Students read, annotate, and compute from them. Do not add a ``draw
+    the normal curve'' step --- the exam asks students to \emph{use} the model, and hand-drawing
+    a bell shape teaches nothing about $\mu$, $\sigma$, or the empirical rule.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can say why the bigger raw number is not always the better result.
+  \item I can measure how far a value sits from its own group's average, counted in that
+        group's own typical spread.
+  \item I can use that measurement to compare results from two completely different settings.
+  \item I can read the same three percentages off any mound-shaped pile of data.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item A \textbf{parameter} summarizes a population ($\mu$, $\sigma$); a \textbf{statistic}
+        summarizes a sample ($\bar x$, $s_x$). Same idea, different object (EK VAR-2.A.1).
+  \item A normal curve is mound-shaped and symmetric and is fixed entirely by $\mu$ and $\sigma$
+        (EK VAR-2.A.2, 2.A.4).
+  \item $z = (x_i - \mu)/\sigma$ counts standard deviations, which is a \emph{unitless} count ---
+        that is exactly why it can compare grams to seconds (EK VAR-2.B.1, 2.B.2, 2.C.1).
+  \item \textbf{Target misconception:} that the higher raw score is the better performance.
+        Students reach for the bigger number in 1a and then stall, because 12.0 metres and
+        12.3 seconds are not on the same scale. \textbf{That stall is the lesson.}
+  \item \textbf{Second misconception:} that 68--95--99.7 applies to any data set. It applies to a
+        \emph{mound-shaped, symmetric} one; a skewed display voids it (EK VAR-2.A.3).
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Parameter} --- a numerical summary of a \emph{population} (EK VAR-2.A.1)
+        \item \textbf{$\mu$, $\sigma$} --- the population mean and population standard
+              deviation; contrast with $\bar x$ and $s_x$ from Lesson 1.5
+        \item \textbf{Normal distribution / normal curve} --- mound-shaped and symmetric, fixed
+              by $\mu$ and $\sigma$ (EK VAR-2.A.2)
+        \item \textbf{Approximately normal} --- the honest phrase; real data is never exactly
+              normal (EK VAR-2.A.4)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Empirical rule (68--95--99.7)} --- approximate proportions within 1, 2, and
+              3 standard deviations of $\mu$ (EK VAR-2.A.3)
+        \item \textbf{Standardized score / $z$-score} --- $z = (x_i - \mu)/\sigma$
+              (EK VAR-2.B.1, 2.B.2)
+        \item \textbf{Relative position} --- $z$-scores and percentiles compare points within or
+              between data sets (EK VAR-2.C.1)
+        \item \textbf{Carried forward} --- mean and standard deviation (1.5); percentile and the
+              five-number summary (1.6); shape, centre, spread (1.4)
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Two five-number summaries, counting steps away from a mean, and a percent split between two ends & Circulate; debrief item~3 aloud and leave the ``split it evenly'' line on the board all period \\
+Experience \& Formalize: Activity & 20 & \emph{Two Tryouts}, problems 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; collect a group stuck on 1a and a group that got 2c \\
+Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color \\
+Application & 6 & \emph{The Bread Loaf}, worked together & Lead it; students hold the pen \\
+Homework: Start in Class & 8 & Begin the \emph{graded} homework, pairs $\to$ solo & Circulate; answer questions now rather than after they leave \\
+Close \& Assign & 4 & Pack the homework; hear the unit-test and Unit~2 preview & Name the due date and the unit-test date; say plainly that AP Practice is optional and unscored \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Two five-number summaries, two IQRs. \textbf{Spirals} Lesson 1.6 ---
+              and quietly re-establishes that ``more spread out'' is a measurable thing.
+        \item \textbf{2.} A mean of 20 and a standard deviation of 3; how many 3-point steps
+              from the mean is 26? is 17? \textbf{Seeds:} the exact arithmetic 1c asks for,
+              done once with numbers that divide evenly.
+        \item \textbf{3.} 360 of 400 inside a range; what percent is outside, and what percent
+              past the high end? \textbf{Seeds:} the halving-the-tail move that 2d and the
+              Application both need.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Name nothing.} Do not say \emph{z-score}, \emph{standardized},
+              \emph{normal}, \emph{parameter}, or \emph{empirical rule}. Item~2 is arithmetic
+              on prior knowledge, and that is all it is today.
+        \item Item~2 uses numbers that divide evenly on purpose. If a student asks ``what does
+              2 steps \emph{mean}?'', say ``hold that,'' write the question on the board, and
+              point at it in the debrief.
+        \item Debrief item~3 aloud and leave \emph{``symmetric, so split the leftovers evenly''}
+              on the board for the whole period. Problem 2d and Application (b) both live on it.
+        \item The percentages in item~3 are 90 / 10 / 5 \textbf{on purpose} --- not 95 and 2.5.
+              Using the real numbers here would hand away the discovery in Problem~2.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{Two Tryouts}]{sky}
+\textbf{Launch (2 min).} \emph{``One scholarship, two athletes, two different events. Maya threw
+12.0 metres. Dev ran 12.3 seconds. Decide who had the better day --- and be ready to defend it to
+the athlete who loses.''} Groups of 3--4. Do not preview any vocabulary, and do not rescue 1a.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Problem 1} runs the misconception on purpose. \textbf{1a} asks
+whose number is bigger and whether that settles it --- almost every group says Dev, then reads
+the units and stalls. \textbf{1b} gets them to subtract each result from its own event's average:
+$+3.0$ metres and $-0.9$ seconds. Better --- and still not comparable. \textbf{1c is the crux}:
+divide each difference by that event's own typical spread. Maya is 2.0 spreads above her event's
+average; Dev is 1.5 spreads below his, and \emph{below is better} in a sprint. \textbf{1d}
+introduces an athlete sitting exactly at the average (the answer is 0) and asks what a negative
+value means.
+
+\emph{Problem 2} is the second discovery. Two given frequency tables --- 500 bread loaves and 400
+body temperatures --- already sorted into bands. \textbf{2a} is arithmetic: $341/500$, $476/500$,
+$499/500$. \textbf{2b} asks for a prediction \emph{before} computing the temperature percentages,
+then computes them: $273/400$, $381/400$, $399/400$. \textbf{2c} asks what two unrelated data sets
+could possibly share that produces the same three numbers, and what would break it. \textbf{2d} is
+the halving move from warm-up~3.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1a:} ``Write the units next to each number. Now read your sentence out loud.''
+  \item \textbf{1b:} ``You have $+3.0$ and $-0.9$. Three what? Nine-tenths of what?''
+  \item \textbf{1c (the crux):} ``The table gives you the typical spread for each event. How many
+        of \emph{Maya's} typical spreads is 3.0 metres? How many of \emph{Dev's} is 0.9 seconds?''
+        Then: ``In the sprint, which direction is the good direction?''
+  \item \textbf{1d:} ``Do the same arithmetic with a difference of zero. What comes out?''
+  \item \textbf{2b:} ``Commit to a prediction in pen before you touch the second table.''
+  \item \textbf{2c:} ``Cover the axis labels on both pictures. Now what is different about them?''
+\end{itemize}
+While circulating, pick the work to display: one group's 1a stall, one group's 1c comparison, and
+one group's written prediction from 2b.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item Problem 2's tables described \emph{every} loaf and \emph{every} reading $\to$
+        \emph{parameter} (EK VAR-2.A.1), and the notation contrast: \textbf{$\mu$ and $\sigma$
+        describe a population; $\bar x$ and $s_x$ from Lesson 1.5 describe a sample.} Write all
+        four symbols on the board in two columns and leave them up --- this contrast pays off in
+        every remaining unit of the course.
+  \item The two mound-shaped histograms in Problem 2 $\to$ \emph{normal distribution} /
+        \emph{normal curve}: mound-shaped and symmetric, fixed entirely by $\mu$ and $\sigma$
+        (EK VAR-2.A.2). Say \emph{approximately} normal every time (EK VAR-2.A.4).
+  \item Their 2a and 2b percentages $\to$ the \emph{empirical rule}, 68--95--99.7
+        (EK VAR-2.A.3). Write their own numbers first --- 68.2, 95.2, 99.8 and 68.25, 95.25,
+        99.75 --- \emph{then} round them into the rule. The rule must arrive as a summary of
+        their arithmetic, not as an announcement.
+  \item Their 1c division $\to$ \emph{standardized score}, then \emph{$z$-score}, with the formula
+        $z = (x_i - \mu)/\sigma$ written directly beside their own $3.0 \div 1.5$
+        (EK VAR-2.B.1, 2.B.2). Then 1d: $z = 0$ at the mean, $z < 0$ below it.
+  \item 1c as a whole $\to$ \emph{comparing relative position} (EK VAR-2.C.1): $z$-scores and
+        percentiles put two different data sets on the same footing. Name percentile here so
+        Lesson 1.6 gets tied in.
+  \item One closing line only (EK VAR-2.B.3, 2.B.4): technology --- a calculator or a standard
+        normal table --- converts a $z$-score into an exact proportion. \textbf{We do not do that
+        today.} It returns in Unit~5.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. \textbf{It is a summary of what they found,
+not a new lecture}; if you are talking for more than 90 seconds without pointing at student
+work, stop.
+
+\textbf{Why this order.} Parameter first, because $\mu$ and $\sigma$ are the symbols every other
+line uses. The curve second, because the empirical rule is a fact \emph{about that shape} and
+students must see the shape requirement attached before they hear the percentages. The
+percentages third, from their own arithmetic. The $z$-score fourth --- it is the more powerful
+idea, but it lands harder when the room has already accepted that a distribution's own spread is
+the natural ruler. Comparison last, because it is what the whole activity was for.
+
+\textbf{The sentence to land:} \emph{Points, seconds, grams, and degrees cannot be compared.
+Standard deviations can. Once you count in standard deviations, every distribution speaks the
+same language --- and if it is mound-shaped, it always says 68, 95, and 99.7.} Say it, write it,
+and point at Maya's 2.0 and Dev's $-1.5$ while you do.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Application --- \emph{The Bread Loaf} (worked together, 6 min)]{sky}
+Deliberately the \emph{same} bakery as Problem 2, so no new context has to be loaded in six
+minutes. $\mu = 800$ g, $\sigma = 20$ g. Part (a) is a $z$-score in a \texttt{work} block plus the
+one-sentence interpretation the exam scores. \textbf{Part (b) is the empirical rule alone}: 840 g
+is exactly $\mu + 2\sigma$, so $(100 - 95)/2 \approx 2.5\%$ --- warm-up~3 in the real numbers.
+\textbf{Part (c) is the judgment part}, and it is the one to protect time for: a customer calls a
+754 g loaf ``way underweight,'' $z = -2.3$, and the honest answer is that the complaint has merit
+\emph{and} that the normal model is only approximate.
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``What are the units on 1.7?''}
+\quad \emph{``840 is how many spreads above 800? So what does the rule already tell you?''}
+\quad \emph{``Is $-2.3$ unusual, or just below average? Which word does the evidence support?''}
+
+\emph{Two \texttt{work} blocks in this lesson's Application:} both are authored byte-identically
+in the blank and the key, so pagination cannot drift. Do not edit one without the other.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+Four AP-style multiple-choice items on newborn birth weights ($\mu = 3{,}300$ g,
+$\sigma = 500$ g, approximately normal, with the curve given and its band boundaries marked) ---
+a straight $z$-score computation, an empirical-rule proportion that requires \emph{halving} a
+tail, a comparison across two different distributions (the lesson's crux in AP clothing), and
+\textbf{one item whose correct answer is that the empirical rule does not apply}, because the
+given length-of-stay histogram is strongly right-skewed. That last one is a real AP item type and
+the honest limit of the model. Then one multi-part free response on the same birth-weight record:
+compute and interpret a $z$-score, use the empirical rule, compare relative position against a
+second hospital's distribution, and \textbf{part (d) spirals to Lessons 1.4 and 1.6} --- judge
+from a display whether a normal model is reasonable at all, naming the shape features that decide
+it.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it in
+the unit-test review and hold the AP standard out loud: \emph{in context or it does not count}.
+``$z = -1.5$'' earns nothing on its own; ``this newborn weighs 1.5 standard deviations less than
+the mean birth weight of 3,300 g'' is the answer.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[Homework --- the graded practice, started in class]{redbox}
+Five exercises spanning Topic 1.10: \textbf{1} parameter or statistic, on four given summaries;
+\textbf{2} three $z$-scores from one distribution, including $z = 0$ and a negative one, with the
+negative one interpreted in a sentence; \textbf{3} the crux head-on --- two students, two tests,
+different means and standard deviations, higher raw score loses; \textbf{4} the empirical rule off
+a given normal curve, including a tail proportion; \textbf{5} the AP-style multiple-choice item
+with a one-sentence justification. Pairs for 1--3, solo for 4--5.
+
+\textbf{This is the lesson's scored work} --- the cover's score column carries a blank for it and
+it is collected next class. Students begin it in the last eight minutes of the period so that the
+questions get asked while you are still in the room; they finish it at home.
+
+\textbf{Eight minutes will not finish five items --- that is by design.} Point them at 1, 2,
+and~3 in class, where a wrong start is cheap to catch; 4 and~5 travel home cleanly.
+\textbf{Item~3 is where the misconception shows}: a student who answers ``Ben, he scored 88'' has
+not made the turn this lesson exists to make. \textbf{Item~5 carries the check:} it is item~3 with
+the direction reversed, in a race where a \emph{lower} time is better, and distractor (C) reaches
+the right athlete by the wrong reasoning. When you score the page, sort item~5 into three piles ---
+chose (B) and justified it with both $z$-scores (ready); chose (B) but justified it with the raw
+times (ready, needs the language); chose (A), (C), or (E) (the misconception survived). If more
+than a third land in the last pile, reopen Maya and Dev in the unit-test review.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``Dev, because 12.3 is bigger''} (1a --- the target misconception). Do not
+        correct it; make it collide with the units. Probe: \emph{``Bigger what? Write the unit
+        after each number and read it back to me.''}
+  \item \textbf{Stopping at the difference} (1b, HW~3): $+3.0$ versus $-0.9$ feels decisive.
+        Probe: \emph{``Is 3.0 metres a lot in the shot put? Look at the dotplot before you
+        answer.''}
+  \item \textbf{Sign thrown away} (1c, 1d, HW~2, HW~5, AP~3): students report Dev as ``1.5'' and
+        lose the whole sprint insight. Probe: \emph{``Faster or slower than average? So which
+        side of the mean?''}
+  \item \textbf{Lower-is-better inverted} (1c, HW~5): having learned that negative means below,
+        students conclude Dev did badly. Probe: \emph{``Would you rather be above or below
+        average in a 100-metre time?''}
+  \item \textbf{68--95--99.7 applied to anything} (2c, AP~4): the second misconception, and the
+        one the exam tests. Probe: \emph{``What did the two pictures in Problem~2 have in common?
+        Does this one have it?''}
+  \item \textbf{The whole tail instead of half} (2d, Application b, HW~4c, AP~2): students answer
+        5\% where 2.5\% is wanted. Probe: \emph{``Five percent is outside on \emph{both} ends.
+        How much is on the end you were asked about?''}
+  \item \textbf{$\mu$ and $\bar x$ used interchangeably} (HW~1, debrief step 1). Probe:
+        \emph{``Did somebody measure every loaf, or a handful of loaves?''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me a value with a $z$-score of zero.''} \quad \emph{``Name a
+variable where a negative $z$-score is good news.''}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Name the due date for the homework} at the back of the packet --- the pages they have just
+started are the graded work --- and say plainly that the AP Practice page before it is optional and
+unscored. \textbf{Then name the unit-test date}, because this is the last content lesson of
+Unit~1. Close on what changed: \emph{``You walked in believing the bigger number wins. You walk
+out knowing that a number means nothing until you know what it is being compared to --- and that
+once you count in standard deviations, grams and seconds finally sit on the same page.''}
+\textbf{Preview:} the \emph{Unit~1 test} --- categorical and quantitative variables and their
+displays, describing a distribution in context, mean, median, standard deviation, IQR and
+resistance, the five-number summary and boxplots, comparing two distributions, and today's normal
+model. Then \emph{Unit~2: Exploring Two-Variable Data} --- every question so far has been about
+one variable at a time; next unit we put two measurements on the same individual and ask whether
+they move together.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+Four minutes, five at the outside. Item~1 is a 45-second spiral --- do not let the boxplot
+conversation reopen. Item~2 is mechanical and exists so that dividing by the spread is not the
+obstacle inside 1c; if the room is quick, take 60 seconds and move on. \textbf{Item~3 is the one
+to debrief aloud}, and the sentence you want on the board in the students' own words is
+\emph{``it is even on both sides, so split the leftover in half.''} Leave it there all period ---
+Problem 2d, the Application, the homework, and the AP practice all reach back for it.
+\textbf{Do not say \emph{z-score}, \emph{standardized}, \emph{normal}, \emph{parameter}, or
+\emph{empirical rule} in this debrief.}
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 10 minutes on problem~1, 10 on problem~2. \textbf{Protect the
+stall in 1a.} A group that is confused at 1a is exactly on schedule; a teacher who resolves it
+has spent the lesson's only real leverage. Let them write ``Dev,'' let them read the units, and
+let them cross it out themselves.
+
+\textbf{Make every group finish 1b before they reach 1c.} The two differences, $+3.0$ metres and
+$-0.9$ seconds, are the step that proves subtraction is not enough --- groups that skip straight
+to 1c divide without understanding why division is the fix.
+
+\textbf{Problem 2b's prediction must be written before the second table is touched.} The moment
+matters more than the arithmetic: a student who predicted ``totally different'' and then computed
+68.25\% has had the experience this lesson is built on. Circulate specifically to enforce that
+order.
+
+\textbf{The single discipline that makes this lesson work: do not name anything while
+circulating.} A group that hears ``z-score'' stops discovering.
+
+\textbf{Debrief (12 min).} Must-land: the $\mu$/$\sigma$ versus $\bar x$/$s_x$ contrast (step 1),
+the empirical rule built from their own six percentages (step 3), and the $z$-score formula
+written beside their own $3.0 \div 1.5$ (step 4). If time is short, cut step 6 to one sentence ---
+technology returns in Unit~5 and needs nothing today.
+
+\textbf{Application (6 min).} Part (c) is the judgment part; if you only get through (a) and (c),
+that is the right trade.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded homework is the section behind it
+at the back of the packet. Work it as AP-format reps and go over it in the unit-test review.
+\textbf{MC item~4 is the one worth reading closely}: its correct answer is that the empirical rule
+\emph{does not apply}, because the length-of-stay histogram is strongly right-skewed. Students who
+have just spent a period being handed 68--95--99.7 will apply it to anything with an axis, and the
+exam knows that. If more than a handful miss it, put the two Problem~2 histograms back on the
+screen beside the skewed one and ask what is missing. On the free response, part (d) is the
+highest-value part --- it asks whether the model is appropriate at all, which is Skill 2.D in the
+form the exam actually asks it, and it is the part students most often skip.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+\textbf{This is the graded page} --- collect it next class and score it. The eight minutes at the
+end of the period are a \emph{start}, not a completion: put them on 1, 2, and~3 and let 4 and~5 go
+home. Item~3 is the one to read first when scoring; ``Ben, he scored 88'' means the lesson did not
+land for that student, and it is worth two minutes with them individually before the unit test.
+Item~2's third value is the diagnostic: a student who writes ``1.5'' instead of ``$-1.5$'' has
+dropped the sign, and the sign is half the idea. Hold the context line while scoring --- an
+interpretation that says ``$z = -1.5$'' without naming heart rate, the mean of 74, and the
+direction is incomplete, exactly as it would be on the exam. \textbf{Because this is the last
+content lesson of the unit}, the homework's preview box points at the unit test and Unit~2; say
+the test date out loud when you assign it, since the box alone will not do it.
 \end{teachernote}
 \end{document}

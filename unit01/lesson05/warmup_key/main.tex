@@ -1,23 +1,65 @@
 %! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items.
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Warm-Up --- Answer Key}
 
+\vspace{0.10in}
 
-\vspace{0.15in}
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.17in]
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
-\boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+  \item \textbf{From last lesson.} Twelve students reported how many hours of television they
+        watched last week.
+
+        \vspace{2pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.95]
+          \draw[->, thick] (-0.2,0) -- (7.1,0);
+          \foreach \x/\lab in {0/0, 0.9/2, 1.8/4, 2.7/6, 3.6/8, 4.5/10, 5.4/12, 6.3/14} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+          \foreach \x/\n in {0.45/2, 0.9/3, 1.35/2, 1.8/2, 2.25/1, 2.7/1, 6.3/1} {
+            \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.075); }}
+          \node[font=\scriptsize] at (3.4,-0.55) {Hours of television};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{2pt}
+
+        Describe the \textbf{shape} of this distribution, and name any value that stands apart
+        from the rest.\\[4pt]
+        \ansline{Unimodal and skewed to the right: most students watched 1--4 hours and the}\\[1pt]
+        \ansline{tail stretches to the high end. The student with 14 hours stands well apart.}
+
+  \item Here are six numbers: \quad 4 \quad 9 \quad 6 \quad 12 \quad 7 \quad 10
+
+        \vspace{5pt}
+        Their \textbf{average}: \ans{8} \qquad
+        Put them in order and give the value in the \textbf{middle}: \ans{8 (between 7 and 9)}
+
+  \item Here are seven numbers, already in order.
+
+        \vspace{4pt}
+        \begin{center}
+        3 \qquad 5 \qquad 8 \qquad 9 \qquad 12 \qquad 15 \qquad 20
+        \end{center}
+        \vspace{4pt}
+
+        \textbf{(i)} Which one is in the middle? \ans{9} \quad
+        How many are below it? \ans{3} \quad Above it? \ans{3}
+        \vspace{5pt}
+
+        \textbf{(ii)} Now look only at the numbers \emph{below} the middle one. Which of
+        \emph{those} is in the middle? \ans{5}
+        \vspace{5pt}
+
+        \textbf{(iii)} And looking only at the numbers \emph{above} the middle one, which of
+        those is in the middle? \ans{15}
+
+\end{enumerate}
 
 \end{document}

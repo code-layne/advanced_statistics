@@ -1,0 +1,268 @@
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Experience & Formalize
+%! (Activity · QuickNotes · Application)
+% EFFL component, Math Medic sizing: 12pt body, OPEN white space after every question.
+% Page budget: Activity <=2pp · QuickNotes 1/2pp · Application 1/2-1pp — THREE pages total.
+% Check Your Understanding is NOT in this component: those items were moved to the end of
+% the packet and are now the lesson's SCORED homework (see ../homework/).
+%
+% WRITE-SPACE BUDGET IS FIXED — DO NOT SHAVE IT. Activity = 11.2cm across 7 sub-questions:
+%   1a 1.4 · 1b 1.4 · 1c 2.2 · 1d 1.2 · 2b 1.2 · 2c 2.2 · 2d 1.6
+% Application = 5.0cm: (a) 1.4 · (b) 1.4 · (c) 2.2.  1.2-2.2cm is the usable floor at 12pt.
+%
+% HOW PROBLEM 2 IS BUILT, AND WHY (this shape is what got the file from 4pp to 3pp; prose
+% compression was exhausted before it):
+%   * ONE merged results table, rows = the three bands, columns = BOTH contexts side by side.
+%     This is pedagogy first and compression second: "the same three numbers, twice" is only
+%     visible if 68.2 sits next to 68.25 on the page instead of across a page turn.
+%   * ONE band-count strip, three rows (band label / loaves / readings). The per-context weight
+%     and temperature RANGE rows were removed — the ranges survive where they are actually
+%     used: on the histogram's axis for the bread, and in 2d's "more than 840 g".
+%   * ONE histogram (the bread). The clinic is table-only ON PURPOSE — students infer its shape
+%     from its counts, which reinforces that the empirical rule is about the shape of the data
+%     and not about having a picture. The bread histogram keeps its band-boundary ticks and its
+%     dashed mean line; those are doing work.
+%   * 2b's predict-before-you-look step survives the merge: the table shows the clinic's raw
+%     COUNTS, never its percentages, so the prediction cannot be answered by reading across —
+%     and the stem says "do not compute yet" explicitly.
+% \boxguard values on the last three boxes are 12/12/10 rather than 14: at 14 the Application
+% would not start at the foot of p.3 and was thrown whole onto p.4.
+%
+% SPOILER RULE: the Activity never says parameter, mu, sigma, normal, normal curve,
+% approximately normal, empirical rule, 68-95-99.7, standardized score, or z-score. It says
+% "the average of the field", "the spread", "how many spreads away". Mean, standard deviation,
+% percentile, IQR and the five-number summary WERE formalized in Lessons 1.4-1.6 and are prior
+% knowledge here, so `standard deviation' is used freely.
+%
+% NO SKETCH QUESTIONS (hard constraint): every dotplot and histogram is pre-drawn. Students
+% "construct" only by filling in counts and percents, never by drawing an axis or a curve.
+%
+% THE NUMBERS
+%   Problem 1 — shot put field (20 throws, m): 6.0 7.0 7.0 7.5 8.0 8.0 8.0 8.5 8.5 9.0 9.0 9.0
+%     9.5 9.5 10.0 10.0 10.5 11.0 11.5 12.0  -> mean 8.975 ~ 9.0, s ~ 1.53 ~ 1.5. Maya = 12.0.
+%   100 m field (20 times, s): 12.3 12.5 12.6 12.7 12.8 12.8 12.9 13.0 13.1 13.2 13.2 13.3
+%     13.4 13.5 13.6 13.6 13.7 13.9 14.1 14.5 -> mean 13.235 ~ 13.2, s ~ 0.56 ~ 0.6. Dev = 12.3.
+%     Maya: (12.0-9.0)/1.5 = +2.0.   Dev: (12.3-13.2)/0.6 = -1.5, and LOWER IS BETTER.
+%   Problem 2 — bread, 500 loaves, mean 800 g, spread 20 g. Bands 11/68/170/171/67/12 (+1
+%     outside): within 1 = 341 (68.2%), within 2 = 476 (95.2%), within 3 = 499 (99.8%).
+%   Temperature, 400 readings, mean 98.2 F, spread 0.7 F. Bands 9/54/137/136/54/9 (+1 outside):
+%     within 1 = 273 (68.25%), within 2 = 381 (95.25%), within 3 = 399 (99.75%).
+%   The two sets of percentages agreeing is the second discovery (EK VAR-2.A.3).
+%
+% Every \begin{work} block is authored BYTE-IDENTICALLY here and in experience_key/ — under
+% -boxes each ships as a \vphantom of exact height, under -key it prints. They cannot drift.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.7}{Experience \& Formalize: Two Tryouts}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.02in}
+
+% ── Part 1: the Activity ─────────────────────────────────────────────────────
+\begin{headlinebox}{sky}
+\textbf{Two Tryouts.} One scholarship, two candidates, two different events --- and somebody has
+to defend the decision to the athlete who loses.
+\end{headlinebox}
+
+\vspace{0.03in}
+
+\begin{scenariobox}[1. Who Had the Better Day?]{navy}
+\small
+Maya throws the shot put; Dev runs the 100 m dash. Every athlete in each event at Saturday's
+meet, with a summary of each field:
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.70]
+  % ── left: shot put field, one dot per throw ──
+  \draw[->, thick] (-0.25,0) -- (6.3,0);
+  \foreach \v in {6,7,8,9,10,11,12} {
+    \draw ({(\v-5.5)*0.85},-0.08) -- ({(\v-5.5)*0.85},0.08);
+    \node[below, font=\scriptsize] at ({(\v-5.5)*0.85},-0.12) {\v};}
+  \foreach \v/\n in {6.0/1, 7.0/2, 7.5/1, 8.0/3, 8.5/2, 9.0/3, 9.5/2, 10.0/2, 10.5/1, 11.0/1,
+    11.5/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] ({(\v-5.5)*0.85},{0.2*\k}) circle (0.075); }}
+  \fill[goldacc] ({(12.0-5.5)*0.85},0.2) circle (0.1);
+  \node[font=\scriptsize\bfseries, text=goldacc] at ({(12.0-5.5)*0.85},0.6) {Maya};
+  \node[font=\scriptsize] at (2.9,-0.55) {Distance thrown (metres)};
+  \node[font=\bfseries\small] at (2.9,1.15) {Shot put: 20 throwers};
+  % ── right: 100 m field, one dot per runner ──
+  \begin{scope}[xshift=8.0cm]
+    \draw[->, thick] (-0.25,0) -- (6.2,0);
+    \foreach \v/\lab in {12.5/12.5, 13.0/13.0, 13.5/13.5, 14.0/14.0, 14.5/14.5} {
+      \draw ({(\v-12.2)*2.4},-0.08) -- ({(\v-12.2)*2.4},0.08);
+      \node[below, font=\scriptsize] at ({(\v-12.2)*2.4},-0.12) {\lab};}
+    \foreach \v/\n in {12.5/1, 12.6/1, 12.7/1, 12.8/2, 12.9/1, 13.0/1, 13.1/1, 13.2/2, 13.3/1,
+      13.4/1, 13.5/1, 13.6/2, 13.7/1, 13.9/1, 14.1/1, 14.5/1} {
+      \foreach \k in {1,...,\n} { \fill[navy] ({(\v-12.2)*2.4},{0.2*\k}) circle (0.075); }}
+    \fill[goldacc] ({(12.3-12.2)*2.4},0.2) circle (0.1);
+    \node[font=\scriptsize\bfseries, text=goldacc] at ({(12.3-12.2)*2.4},0.6) {Dev};
+    \node[font=\scriptsize] at (2.9,-0.55) {Finishing time (seconds)};
+    \node[font=\bfseries\small] at (2.9,1.15) {100 m dash: 20 runners};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Event} & \textbf{Field average} & \textbf{Field standard deviation} &
+\textbf{Our athlete} \\
+\hline
+Shot put (metres) & 9.0 m & 1.5 m & Maya: 12.0 m \\
+100 m dash (seconds) & 13.2 s & 0.6 s & Dev: 12.3 s \\
+\end{tabularx}
+
+\vspace{2pt}
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item Maya's result is 12.0, Dev's is 12.3. Whose \emph{number} is bigger? \blank{2.6cm}
+        Does that settle it? Say why not.
+        \answerspace{1.4cm}{}
+  \item How far is each result from that athlete's \emph{own} event average?
+        \begin{work}
+        \text{Maya} &= 12.0 - 9.0 = +3.0 \text{ m} \qquad
+        \text{Dev} = 12.3 - 13.2 = -0.9 \text{ s}
+        \end{work}
+        Does \emph{that} settle it? \blank{2.0cm} Say why it still does not.
+        \answerspace{1.4cm}{}
+  \item \textbf{Now use each event's own standard deviation from the table.} How many of their
+        own event's standard deviations does each result sit from that event's average?
+        \begin{work}
+        \text{Maya} &= \frac{3.0 \text{ m}}{1.5 \text{ m}} = 2.0 \qquad
+        \text{Dev} = \frac{-0.9 \text{ s}}{0.6 \text{ s}} = -1.5
+        \end{work}
+        Whose result is more unusual \emph{for their own event}? In a sprint, is \emph{below}
+        average good or bad --- does that change how you read Dev's number?
+        \answerspace{2.2cm}{}
+  \item Jordan cleared exactly the average height for the high-jump field. What does part (c)'s
+        method give for Jordan? \blank{2.0cm} What would a \emph{negative} result mean?
+        \answerspace{1.2cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\boxguard[12]
+\begin{scenariobox}[2. The Same Three Numbers, Twice]{navy}
+\small
+Two unrelated records: a bakery's \textbf{500} loaves and a clinic's \textbf{400} body
+temperatures, each sorted into bands one standard deviation wide from its own average. (One loaf
+and one reading fell outside.) The loaves are pictured; the clinic's counts are in the table.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.70]
+  \foreach \i/\c in {0/3, 1/8, 2/24, 3/44, 4/74, 5/96, 6/96, 7/75, 8/43, 9/24, 10/8, 11/4} {
+    \fill[navy] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.019});
+    \draw[white, very thin] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.019});}
+  \draw[->, thick] (0,0) -- (0,2.3);
+  \draw[->, thick] (0,0) -- (6.4,0);
+  \foreach \y/\lab in {0/0, 0.95/50, 1.90/100} {
+    \draw (-0.08,\y) -- (0.08,\y); \node[left, font=\tiny] at (-0.1,\y) {\lab};}
+  \foreach \x/\lab in {0/740, 1/760, 2/780, 3/800, 4/820, 5/840, 6/860} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \draw[redacc, dashed, thin] (3,0) -- (3,2.0);
+  \node[font=\tiny, text=redacc] at (3,2.18) {average 800 g};
+  \node[font=\scriptsize] at (3,-0.55) {Weight of a loaf (grams)};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Spreads from average} & $-3$ to $-2$ & $-2$ to $-1$ & $-1$ to 0 & 0 to $+1$ &
+  $+1$ to $+2$ & $+2$ to $+3$ \\
+\hline
+\textbf{Loaves} (500 total) & 11 & 68 & 170 & 171 & 67 & 12 \\
+\textbf{Readings} (400 total) & 9 & 54 & 137 & 136 & 54 & 9 \\
+\end{tabularx}
+
+\vspace{4pt}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Within \ldots{} of the average} & \textbf{Loaves} & \textbf{Percent of 500} &
+\textbf{Readings} & \textbf{Percent of 400} \\
+\hline
+1 standard deviation & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} \\
+2 standard deviations & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} \\
+3 standard deviations & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} \\
+\end{tabularx}
+
+\vspace{2pt}
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item \textbf{The bread.} Add the counts from the strip above and fill in the \emph{Loaves} and
+        \emph{Percent of 500} columns.
+  \item \textbf{Predict first --- do not compute yet.} Cover the clinic's row. What do you think
+        its three percentages will be? Write them here, then fill in the last two columns.
+        \answerspace{1.2cm}{}
+  \item \textbf{The two sets of percentages agree to within a fraction of a percent}, in two
+        records with nothing in common. What do the two distributions share that explains it ---
+        and what would make a data set \emph{not} come out this way?
+        \answerspace{2.2cm}{}
+  \item Using \emph{only} your part (a) percentages: roughly what fraction of the loaves weigh
+        more than 840 g, two spreads above average? Explain the arithmetic.
+        \answerspace{1.6cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Part 2: QuickNotes (the debrief fills this) — target: half a page ────────
+\boxguard[12]
+\begin{tcolorbox}[enhanced, colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm, breakable,
+    fonttitle=\bfseries\small\color{white}, title={QuickNotes: The Normal Distribution and z-Scores},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}]
+\small
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt]
+  \item \textbf{Parameter:} a numerical summary of a \blank{2.4cm}. \textbf{Statistic:} a
+        numerical summary of a \blank{2.0cm}. The parameters \blank{1.2cm} and \blank{1.2cm}
+        describe a population; $\bar x$ and $s_x$ (Lesson 1.5) describe a sample.
+  \item \textbf{Normal distribution:} a curve that is \blank{2.8cm} and \blank{2.4cm}, fixed
+        entirely by $\mu$ and $\sigma$. Real data is never exact, so we say \blank{3.0cm} normal.
+  \item \textbf{Empirical rule.} Approximately normal $\Rightarrow$ about \blank{1.7cm} of
+        observations within 1 standard deviation of the mean, \blank{1.7cm} within 2,
+        \blank{1.7cm} within 3.
+  \item \textbf{Standardized score ($z$-score).} $z = (x_i - \mu)/\sigma$ counts how many
+        \blank{4.0cm} the value sits from the mean. In context: ``a 830 g loaf has $z = 1.5$, so
+        it is \blank{4.9cm} above the mean weight of 800 g.''
+  \item $z < 0$: the value is \blank{2.0cm} the mean. $z = 0$: \blank{2.6cm} it. Carrying no
+        units, $z$-scores and \blank{2.4cm} report \emph{relative position}, so they compare two
+        different data sets.
+  \item Technology (calculator or normal table) turns a $z$-score into an exact \blank{2.4cm}.
+        That is Unit~5.
+\end{itemize}
+\end{tcolorbox}
+
+% ── Part 3: the Application (worked together, ~6 min) ────────────────────────
+\boxguard[10]
+\begin{notesbox}{Application: The Bread Loaf}
+Together. Back to the bakery: loaf weights are approximately normal, $\mu = 800$ g,
+$\sigma = 20$ g.
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=3pt]
+  \item A loaf weighs \textbf{834 g}. Find its $z$-score, then interpret it in one sentence, in
+        context.
+        \begin{work}
+        z &= \frac{x_i - \mu}{\sigma} = \frac{834 - 800}{20} = \frac{34}{20} = 1.7
+        \end{work}
+        \answerspace{1.2cm}{}
+  \item By the empirical rule, about what percent of loaves weigh \emph{more than} 840 g?
+        \blank{2.2cm} Explain how.
+        \answerspace{1.2cm}{}
+  \item A customer returns a \textbf{754 g} loaf, calling it ``way underweight.''
+        \begin{work}
+        z &= \frac{754 - 800}{20} = \frac{-46}{20} = -2.3
+        \end{work}
+        Is that fair? Judge it in context, and name one limit of the model you used.
+        \answerspace{2.0cm}{}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

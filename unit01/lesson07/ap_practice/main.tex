@@ -1,0 +1,204 @@
+%! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — AP Practice
+% EFFL, AP Statistics variant: AP-format practice, assigned but NOT scored — the cover's score
+% column reads NA for this component. The graded practice is the `homework` component that
+% follows it at the back of the packet.
+% MC 4 and free-response (d) are the honest limit of the model: the empirical rule requires a
+% mound-shaped, symmetric distribution, and the length-of-stay histogram is strongly skewed.
+% Part (d) is also the spiral — it reaches back to Lesson 1.4 (shape, centre, spread) and 1.6
+% (comparing distributions) for the language that decides whether a normal model is reasonable.
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching a terse
+% \ansline{} in the key — keep key answers short enough not to wrap past the reserved lines —
+% and on the \begin{work} block in 5(a), authored BYTE-IDENTICALLY in both files.
+% The next-lesson preview is NOT here: it closes the packet, in ../homework/.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.7}{AP Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.15in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. These are AP-format reps: work them for the practice, and bring what you get
+stuck on to office hours or study hall.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[26]
+\begin{scenariobox}[Record A --- Newborn Birth Weights]{navy}
+\small
+At one hospital, the birth weights of newborns are approximately normal with mean
+$\mu = 3{,}300$ grams and standard deviation $\sigma = 500$ grams. The curve below is marked at
+the mean and at one, two, and three standard deviations either side of it.
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[navy, very thick] plot[smooth] coordinates
+    {(-3.5,0.01) (-3,0.03) (-2.5,0.11) (-2,0.34) (-1.5,0.81) (-1,1.52) (-0.5,2.21) (0,2.50)
+     (0.5,2.21) (1,1.52) (1.5,0.81) (2,0.34) (2.5,0.11) (3,0.03) (3.5,0.01)};
+  \foreach \x/\h in {-3/0.03, -2/0.34, -1/1.52, 0/2.50, 1/1.52, 2/0.34, 3/0.03} {
+    \draw[linegray, thin, dashed] (\x,0) -- (\x,\h);}
+  \draw[->, thick] (-4.0,0) -- (4.0,0);
+  \foreach \x/\lab in {-3/1800, -2/2300, -1/2800, 0/3300, 1/3800, 2/4300, 3/4800} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+  \node[font=\scriptsize] at (0,-0.62) {Birth weight (grams)};
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.12in}
+
+\boxguard[26]
+\begin{scenariobox}[Record B --- Length of Stay]{navy}
+\small
+The same hospital also recorded each newborn's \emph{length of stay}, in hours, for 300 births.
+The mean stay is 46 hours and the standard deviation is 14 hours.
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \foreach \i/\c in {0/12, 1/48, 2/76, 3/64, 4/45, 5/30, 6/20, 7/13, 8/8, 9/5, 10/3, 11/2} {
+    \fill[goldacc] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.036});
+    \draw[white, very thin] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.036});}
+  \draw[->, thick] (0,0) -- (0,3.2);
+  \draw[->, thick] (0,0) -- (6.4,0);
+  \foreach \y/\lab in {0/0, 1.44/40, 2.88/80} {
+    \draw (-0.08,\y) -- (0.08,\y); \node[left, font=\tiny] at (-0.1,\y) {\lab};}
+  \foreach \x/\lab in {0/24, 1/36, 2/48, 3/60, 4/72, 5/84, 6/96} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+  \node[font=\scriptsize] at (3,-0.62) {Length of stay (hours)};
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \item A newborn in Record A weighs 4,050 grams. What is this newborn's standardized score?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item $-1.5$
+          \item $0.75$
+          \item $1.5$
+          \item $2.5$
+          \item $750$
+        \end{enumerate}
+
+  \item Using the empirical rule with Record A, approximately what percent of newborns weigh
+        \textbf{less than} 2,300 grams?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 2.5\%
+          \item 5\%
+          \item 16\%
+          \item 32\%
+          \item 95\%
+        \end{enumerate}
+
+  \item Newborn \emph{length} at the same hospital is approximately normal with mean 50.0 cm and
+        standard deviation 2.0 cm. Baby A weighs 4,050 grams; Baby B is 52.0 cm long. Which baby
+        is farther from average \emph{relative to its own distribution}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Baby A, because 4,050 is a far larger number than 52.0.
+          \item Baby A, because its standardized score of 1.5 is larger than Baby B's 1.0.
+          \item Baby B, because its standardized score of 2.0 is larger than Baby A's 1.5.
+          \item Baby B, because 52.0 cm is 2.0 cm above its mean, and 2.0 is larger than 1.5.
+          \item Neither, because weight and length are measured in different units and cannot be
+                compared at all.
+        \end{enumerate}
+
+  \item A nurse looks at Record B and claims that about 68\% of stays fall between 32 and 60
+        hours, ``by the empirical rule.'' The best response is that
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item the nurse is correct; the empirical rule applies to any distribution that has a
+                mean and a standard deviation.
+          \item the nurse is correct, because 32 and 60 are one standard deviation either side
+                of the mean of 46.
+          \item the empirical rule should not be used here, because the distribution of stays is
+                strongly skewed to the right rather than mound-shaped and symmetric.
+          \item the empirical rule should not be used here, because 300 stays is too small a
+                record to summarize.
+          \item the empirical rule should not be used here, because length of stay was recorded
+                in whole hours.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \item Use Record A, and Record B in part (d).
+
+        \vspace{6pt}
+        \textbf{(a)} A newborn weighs 2,550 grams. Find this newborn's standardized score, then
+        interpret it in one sentence in context.
+        \begin{work}
+        z &= \frac{x_i - \mu}{\sigma} \\[3pt]
+          &= \frac{2550 - 3300}{500} = \frac{-750}{500} = -1.5
+        \end{work}
+        \writelines{2}
+
+        \vspace{6pt}
+        \textbf{(b)} Use the empirical rule. Approximately what percent of newborns weigh between
+        2,300 and 4,300 grams? Approximately what percent weigh more than 4,300 grams? Show how
+        you got the second one.\\[4pt]
+        \writelines{3}
+
+        \vspace{6pt}
+        \textbf{(c)} At a second hospital, birth weights are approximately normal with
+        $\mu = 3{,}150$ grams and $\sigma = 400$ grams, and one newborn there weighs 3,750 grams.
+        Compare that newborn's position within its own distribution to the 4,050 gram newborn's
+        position within Record A.\\[4pt]
+        \writelines{3}
+
+        \vspace{6pt}
+        \textbf{(d)} Look again at Record B. Is a normal model reasonable for length of stay?
+        Name the features of the display that decide it, and say what your answer means for using
+        the empirical rule on that variable.\\[4pt]
+        \writelines{3}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Standardized scores are how the SAT and the ACT are compared. Look up the mean and standard
+deviation of each test's total score, then find the ACT score that sits at the same relative
+position as an SAT score of 1300.\\[4pt]
+\writelines{2}
+\end{extensionbox}
+
+\vspace{0.12in}
+
+
+\end{document}
