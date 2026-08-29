@@ -1,17 +1,20 @@
-%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — AP Practice
-% EFFL: unscored AP-format practice. The graded practice is the DeltaMath assignment announced
-% on the cover; this page and Check Your Understanding both carry NA in the cover's score column.
-% Free-response (a) spirals to Lesson 1.1 (classify the variable) and (d) to Lesson 1.2 (a bar
-% graph is for categories) — the two lessons this one is built on top of.
-% Page lockstep with homework_key rests on \writelines{n} in the blank matching a terse
-% \ansline{} in the key — keep key answers short enough not to wrap past the reserved lines.
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Homework
+% EFFL, AP Statistics variant: this is the lesson's SCORED practice and the LAST component in
+% the packet. These items were the in-class Check Your Understanding set; they are now the
+% graded homework, started in the closing minutes of the period and finished at home. The
+% AP Practice component that precedes it stays assigned-but-unscored.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.3}{AP Practice}
+\pageheader{Unit 1, Lesson 1.3}{Homework}
 % NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
 \vspace{0.15in}
@@ -21,137 +24,59 @@
 \boxguard[8]
 \begin{remindbox}
 \small
-This page is \textbf{not scored} --- your graded homework is in \textbf{DeltaMath}. Work this
-if you are having trouble, and bring it to office hours or study hall for assistance.
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
 \end{remindbox}
 
 \vspace{0.12in}
 
-\boxguard[24]
-\begin{scenariobox}[The Rainfall Record]{navy}
-\small
-A weather station recorded the total rainfall, in millimetres, on each of 20 rainy days. The
-stem is the tens digit and each leaf is a ones digit, so the row \textbf{2} stands for
-20, 22, 25, and 29.
+% ── The scored practice (formerly this lesson's Check Your Understanding) ────
+\boxguard[14]
+\begin{notesbox}{Reading and Choosing a Quantitative Display}
+Show the arithmetic wherever a question asks for a number, and write every explanation
+\emph{in the context of the problem} --- that is what earns credit on the AP exam, and it is the
+standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+  \item Label each variable \textbf{discrete} or \textbf{continuous}.
 
-\vspace{8pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{@{} r | l @{}}
-\textbf{0} & 2 \quad 4 \quad 5 \quad 8 \quad 9 \\
-\textbf{1} & 1 \quad 3 \quad 3 \quad 6 \quad 7 \quad 8 \\
-\textbf{2} & 0 \quad 2 \quad 5 \quad 9 \\
-\textbf{3} & 1 \quad 4 \quad 8 \\
-\textbf{4} & 2 \quad 7 \\
-\end{tabular}
-\end{center}
-\end{scenariobox}
+        \vspace{3pt}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y @{}}
+        \textbf{Cars in a lot} & \textbf{Height (cm)} & \textbf{Goals scored} &
+        \textbf{Time to run 400 m} \\
+        \blank{1.9cm} & \blank{1.9cm} & \blank{1.9cm} & \blank{1.9cm} \\
+        \end{tabularx}
+  \item A histogram of 60 test scores uses blocks of 10 points and shows one tall middle bar.
+        Redrawn with blocks of 2 points, it shows two separate peaks. Which version is
+        \emph{wrong}? Explain.
+        \answerspace{3.1cm}{}
+  \item In a histogram the bars touch; in the bar graph you drew last lesson they did not.
+        Explain what that difference is telling you about the horizontal axis.
+        \answerspace{3.1cm}{}
+  \item A stemplot has stem \textbf{7} with leaves \textbf{2 4 4 9}. Write out the four values
+        those represent. \blank{6.0cm}
 
-\vspace{0.14in}
-
-\boxguard[16]
-\begin{headlinebox}{goldbg}
-\small
-\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
-about the context, not just the arithmetic --- read them all before choosing.
-\end{headlinebox}
-
-\vspace{0.10in}
-
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
-
-  \item On how many of these days did more than 30 mm of rain fall?
+        Why can a histogram of the same data not give you those four numbers back?
+        \answerspace{2.4cm}{}
+  \item \textbf{AP-style multiple choice.} A researcher has 200 reaction times measured to the nearest
+        thousandth of a second and wants a display that shows the overall shape. Which
+        statement is \textbf{correct}? Circle one, then justify it in a sentence.
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item 2
-          \item 3
-          \item 5
-          \item 7
-          \item 9
+          \item A stemplot is best, because it keeps every individual value.
+          \item A histogram is reasonable, because with 200 values the shape matters more than
+                the individual numbers.
+          \item A bar graph is best, because reaction time is measured numerically.
+          \item No display works, because the values are continuous.
+          \item A histogram is wrong, because it changes appearance with the interval width.
         \end{enumerate}
-
-  \item Rainfall in millimetres is best described as
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item a categorical variable, because each day is placed in a row.
-          \item a discrete quantitative variable, because the recorded values are whole numbers.
-          \item a continuous quantitative variable, because between any two rainfall amounts
-                another amount is possible.
-          \item a continuous categorical variable.
-          \item neither discrete nor continuous, because it was rounded when recorded.
-        \end{enumerate}
-
-  \item Suppose these 20 values are redrawn as a histogram with blocks 10 mm wide. Which
-        statement is \textbf{true}?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item The histogram will show five bars of heights 5, 6, 4, 3, and 2.
-          \item The histogram will show 20 bars, one for each day.
-          \item The histogram will let a reader recover that two days recorded exactly 13 mm.
-          \item The histogram's bars must be drawn with gaps, as in a bar graph.
-          \item The histogram cannot be drawn, because rainfall is continuous.
-        \end{enumerate}
-
-  \item A researcher redraws the same 20 values with blocks 2 mm wide and gets a jagged picture
-        with many bars of height 0 or 1. The best conclusion is that
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item the 2 mm version is wrong, because a histogram may not have empty blocks.
-          \item the 10 mm version is wrong, because it hides individual values.
-          \item both are correct; the interval width controls how much detail and how much
-                overall shape the picture shows.
-          \item the data must have been recorded incorrectly.
-          \item narrower blocks are always better, because they preserve more information.
-        \end{enumerate}
-
+        \answerspace{2.4cm}{}
 \end{enumerate}
-
-\vspace{0.14in}
-
-\boxguard[16]
-\begin{headlinebox}{goldbg}
-\small
-\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
-\emph{in the context of the problem} --- that is what earns credit on the AP exam.
-\end{headlinebox}
-
-\vspace{0.10in}
-
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
-
-  \item Use the rainfall record above.
-
-        \vspace{6pt}
-        \textbf{(a)} Classify rainfall as categorical or quantitative, and then as discrete or
-        continuous. Justify from the variable itself, not from the display.\\[4pt]
-        \writelines{2}
-
-        \vspace{6pt}
-        \textbf{(b)} Complete a frequency table for these 20 days using blocks 10 mm wide
-        (0--9, 10--19, 20--29, 30--39, 40--49). Give the count for each block.\\[4pt]
-        \writelines{2}
-
-        \vspace{6pt}
-        \textbf{(c)} State one thing the stem plot shows that your table in part (b) does not,
-        and one thing the table makes easier to see.\\[4pt]
-        \writelines{3}
-
-        \vspace{6pt}
-        \textbf{(d)} A colleague suggests displaying these 20 rainfall amounts as a bar graph
-        with one bar per day. Explain why that is a poor choice here.\\[4pt]
-        \writelines{3}
-
-\end{enumerate}
+\end{notesbox}
 
 \vspace{0.12in}
 
-\boxguard[12]
-\begin{extensionbox}
-\small
-Find a histogram published in a news article or a report. Write down its interval width, then
-say what the picture would probably hide if the width were doubled, and what it would probably
-show if the width were halved.\\[4pt]
-\writelines{2}
-\end{extensionbox}
-
-\vspace{0.12in}
-
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
 \boxguard[10]
 \begin{spiralbox}
 \small
