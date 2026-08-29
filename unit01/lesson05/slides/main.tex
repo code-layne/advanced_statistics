@@ -1,6 +1,12 @@
 %! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usetikzlibrary{positioning}  % -beamer loads tikz but not this library
+
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
@@ -17,10 +23,245 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% EFFL flow: targets (SPOILER-FREE) → hook → activity launch → debrief divider → formalization
+% frames → the crux → application → homework (started in class) → AP Practice → close.
+% Nothing before the divider may say statistic, quartile, Q1, Q3, interquartile range, IQR,
+% percentile, range (as one number), standard deviation, variance, resistant, or nonresistant.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS (spoiler-free) ─────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today: experience first, formalize later}
+  \sectionlabel{Learning targets}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item find the average of a set of values and the value sitting in the middle of it.
+    \item show how one unusual value drags one of those summaries a long way while the other
+          does not move at all.
+    \item put a single number on how spread out a set of values is --- and say what that number
+          can be fooled by.
+    \item decide which summary to report, and defend the decision from the shape.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{nine paychecks and three delivery routes} with your group $\to$ we name
+    what you found $\to$ practice. You will figure it out \emph{before} I give you the words.
+  \end{block}
 \end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}
+  \begin{center}
+    {\color{skymid}\bfseries\small NINE PEOPLE. ONE PAYROLL. TWO ANSWERS.}\\[0.9cm]
+    {\color{white}\bfseries\Large One summary says the typical worker here takes home
+    \$1{,}000 a week.\\[0.4cm]
+    The other says \$750.}\\[0.9cm]
+    {\color{goldacc}\small Both are correct. Nobody in the building earns \$1{,}000.}
+  \end{center}
+\end{frame}
+}
+
+% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Experience \& Formalize: Nine Paychecks}
+  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
+  A landscaping company with eight crew members and one owner. Then a courier company with
+  three delivery routes.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Problem 1} --- nine paychecks. Two honest summaries, \$250 apart.
+    \item \textbf{Problem 2} --- two routes with the \emph{same} centre that are obviously not
+          the same. Then a third route that breaks your fix.
+  \end{itemize}
+  \begin{block}{Your job}
+    Use only what you already know. When two correct numbers disagree, do not pick a favourite
+    --- work out \textbf{which one is doing the disagreeing, and why}.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF DIVIDER ──────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
+    {\color{white}\bfseries\Large You already found which summary moves and which one refuses
+    to. We are only giving them names.}\\[0.9cm]
+    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── CENTRE: MEAN AND MEDIAN ──────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Two measures of centre}
+  \sectionlabel{a statistic is a numerical summary of sample data}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Mean $\bar x$}
+        Add every value; divide by the number of values (EK UNC-1.I.2).
+      \end{block}
+      \vspace{4pt}
+      {\small Uses \textbf{all nine} paychecks.\\[3pt]
+      \emph{\$9{,}000 $\div$ 9 $=$ \$1{,}000}}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Median}
+        The middle value of the \textbf{ordered} data; with an even count, average the two
+        middle values (EK UNC-1.I.3).
+      \end{block}
+      \vspace{4pt}
+      {\small Uses \textbf{one position}, not nine values.\\[3pt]
+      \emph{the 5th paycheck $=$ \$750}}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\small\color{slate} Both are \textbf{statistics} --- numerical summaries of sample data
+    (EK UNC-1.I.1). Neither is the ``real'' one.}
+  \end{center}
+\end{frame}
+
+% ── POSITION: PERCENTILES AND QUARTILES ─────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Measures of position}
+  \sectionlabel{where does a value sit in the pack?}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item The \textbf{$p$th percentile} is the value with $p\%$ of the data
+          \textbf{at or below} it (EK UNC-1.I.5).
+    \item \textbf{$Q_1$} is the median of the lower half; \textbf{$Q_3$} is the median of the
+          upper half (EK UNC-1.I.4). They are the 25th and 75th percentiles.
+    \item Between $Q_1$ and $Q_3$ sits the \redink{middle 50\%} of the data.
+  \end{itemize}
+  \vspace{8pt}
+  \begin{block}{You already did this}
+    Warm-up 3: \; 3 \; 5 \; \textbf{8} \; \textbf{9} \; \textbf{12} \; 15 \; 20. \;
+    You circled 9 (median), then 5 and 15. Those were $Q_1$ and $Q_3$.
+  \end{block}
+\end{frame}
+
+% ── SPREAD ───────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Three measures of variability}
+  \sectionlabel{spread, as a single number}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item \textbf{Range} $=$ maximum $-$ minimum. One number, \redink{not} an interval
+          (EK UNC-1.J.2). Route A: $33-27=6$ min. Route B: $42-18=24$ min.
+    \item \textbf{IQR} $= Q_3 - Q_1$ --- the width of the middle half. This is your problem 2d:
+          ignore the ends, measure the middle.
+    \item \textbf{Standard deviation} $s_x$ --- roughly the typical distance of a value from
+          the mean (EK UNC-1.J.3). Its square $s_x^2$ is the \textbf{variance}.
+  \end{itemize}
+  \vspace{6pt}
+  \begin{center}
+    $\displaystyle s_x = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar x)^2}$
+  \end{center}
+  \vspace{4pt}
+  {\small\color{slate} We read $s_x$ off technology in this course. Change the units and
+  \emph{every} one of these is multiplied by the same factor (EK UNC-1.J.4).}
+\end{frame}
+
+% ── THE CRUX ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Why your two answers were \$250 apart}
+  \sectionlabel{the whole point of today}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Resistant}
+        \textbf{Median} \quad\textbf{IQR}\\[3pt]
+        An outlier does not greatly affect them.
+      \end{block}
+      \vspace{4pt}
+      {\small \$750 $\to$ \redink{\$750}}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Nonresistant}
+        \textbf{Mean} \quad\textbf{Standard deviation} \quad\textbf{Range}\\[3pt]
+        They are influenced by outliers (EK UNC-1.K.2).
+      \end{block}
+      \vspace{4pt}
+      {\small \$1{,}000 $\to$ \redink{\$750}}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{block}{Two outlier rules in this course (EK UNC-1.K.1)}
+    More than $1.5 \times \text{IQR}$ above $Q_3$ or below $Q_1$; \quad or 2 or more standard
+    deviations from the mean. The first one goes to work \textbf{next lesson}.
+  \end{block}
+\end{frame}
+
+% ── APPLICATION ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Application: The Quiz Scores}
+  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
+  Eleven scores on a 20-point quiz: \; 12 \; 13 \; 14 \; 15 \; 15 \; 16 \; 17 \; 18 \; 18 \;
+  19 \; 19.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Fill the five-number summary: minimum, $Q_1$, median, $Q_3$, maximum.
+    \item Compute the range and the IQR.
+    \item Then the lowest score turns out to be a \textbf{1}, not a 12. Which of \emph{mean,
+          median, range, IQR} move?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    Which \redink{position} in the ordered list did we change --- and is that position anywhere
+    near the middle?
+  \end{block}
+\end{frame}
+
+% ── HOMEWORK (started in class, scored) ─────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Seven commutes: mean, median, and which one represents the office.
+    \item Five values, one changed to 32: what moved and what did not.
+    \item Twelve homework times: $Q_1$, $Q_3$, IQR.
+    \item A percentile of birth weight, interpreted in one sentence.
+    \item One multiple-choice item, with a one-sentence justification.
+  \end{itemize}
+  \begin{block}{This one is graded}
+    This is your \redink{scored} homework, due next class. Start with 1, 2, and 5 while
+    I am still here to answer questions --- finish the rest at home.
+  \end{block}
+\end{frame}
+
+% ── AP PRACTICE & PREVIEW (optional, unscored) ──────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{AP Practice \& what's next}
+  \sectionlabel[goldacc]{AP Practice --- optional, not scored}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four multiple-choice items on 15 households' daily water use.
+    \item One free-response set: name the shape, then \emph{justify} which centre and which
+          spread you report.
+    \item Optional: apply both outlier rules to the 620-gallon home and see whether they agree.
+  \end{itemize}
+  \begin{block}{Optional --- but this is what the exam looks like}
+    The AP Practice page is \textbf{not required and not graded}. Work it for the reps,
+    and bring what you get stuck on to study hall or office hours. The \redink{graded}
+    homework is the section behind it.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.4cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Mean and median are both correct. The shape of the
+    distribution --- and whether one strange value is sitting in it --- is what decides which
+    one you are allowed to quote.}\\[0.8cm]
+    {\color{skymid}\small Next: Lesson 1.6 --- \emph{Boxplots and Comparing Distributions}.
+    Those five numbers become a picture, and the picture lets us compare two groups at once.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

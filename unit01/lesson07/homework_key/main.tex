@@ -1,23 +1,164 @@
 %! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Homework (Answer Key)
+% EFFL, AP Statistics variant: this is the lesson's SCORED practice and the LAST component in
+% the packet. These items were the in-class Check Your Understanding set; they are now the
+% graded homework, started in the closing minutes of the period and finished at home. The
+% AP Practice component that precedes it stays assigned-but-unscored.
+% This is the LAST content lesson of Unit 1, so the closing spiralbox previews the UNIT TEST
+% and Unit 2 rather than a next lesson.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
+% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
+% same bytes in both files, shipped as a \vphantom under -boxes and printed under -key.
+% GENERATED FROM homework/main.tex — this file is the blank with answers filled in, so the
+% \answerspace heights and every \boxguard are identical to it.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Homework --- Answer Key}
-
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
+\end{remindbox}
+
+\vspace{0.12in}
+
+% ── The scored practice (formerly this lesson's Check Your Understanding) ────
+\boxguard[14]
+\begin{notesbox}{Standardized Scores and the Normal Model}
+Show the arithmetic wherever a question asks for a number, and write every explanation
+\emph{in the context of the problem} --- that is what earns credit on the AP exam, and it is the
+standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+  \item Label each summary a \textbf{parameter} or a \textbf{statistic}.
+        \begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=2.3em, itemsep=4pt]
+          \item The mean weight of all 4,200 loaves a bakery baked last year is 799 g.
+                \ans{parameter}
+          \item A health inspector weighs 40 of those loaves and finds a mean weight of 803 g.
+                \ans{statistic}
+          \item The standard deviation of the heights of all 1,150 students enrolled at a school
+                is 8.4 cm. \ans{parameter}
+          \item Of the school's 400 statistics students, a teacher samples 25 and finds their
+                median quiz score is 18 points. \ans{statistic}
+        \end{enumerate}
+
+  \item Resting heart rate for adult women is approximately normal with $\mu = 74$ beats per
+        minute and $\sigma = 8$ beats per minute. Find the $z$-score of each value.
+        \begin{work}
+        z_{90} &= \frac{90 - 74}{8} = \frac{16}{8} = 2.0 \\[3pt]
+        z_{74} &= \frac{74 - 74}{8} = \frac{0}{8} = 0 \\[3pt]
+        z_{62} &= \frac{62 - 74}{8} = \frac{-12}{8} = -1.5
+        \end{work}
+        Interpret the \emph{negative} one in a sentence, in context.
+        \answerspace{2.4cm}{A resting heart rate of 62 beats per minute is 1.5 standard
+        deviations \emph{below} the mean resting rate of 74 beats per minute for adult women ---
+        a slower resting heart rate than most.}
+
+  \item Ana scored \textbf{82} on a chemistry test where the class mean was 74 points with a
+        standard deviation of 4 points. Ben scored \textbf{88} on a history test where the class
+        mean was 79 points with a standard deviation of 6 points.
+        \begin{work}
+        z_{\text{Ana}} &= \frac{82 - 74}{4} = \frac{8}{4} = 2.0 \\[3pt]
+        z_{\text{Ben}} &= \frac{88 - 79}{6} = \frac{9}{6} = 1.5
+        \end{work}
+        Ben's raw score is higher. Who did better \emph{relative to their own class}? Justify
+        your answer, and say in one sentence why the raw scores alone cannot settle it.
+        \answerspace{3.0cm}{Ana. She scored 2.0 standard deviations above her chemistry class's
+        mean, while Ben scored 1.5 standard deviations above his history class's mean, so Ana
+        stands further above her own class than Ben does above his. The raw scores cannot settle
+        it because 82 and 88 come from two different tests with different means and different
+        spreads --- 88 on an easier, more tightly bunched test is not the same achievement as 82
+        on a harder, wider-spread one.}
+
+  \item A school bus route's travel time is approximately normal with $\mu = 32$ minutes and
+        $\sigma = 3$ minutes. The curve is marked at the mean and at one, two, and three standard
+        deviations either side of it.
+
+        \vspace{4pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+          \draw[navy, very thick] plot[smooth] coordinates
+            {(-3.5,0.01) (-3,0.03) (-2.5,0.11) (-2,0.34) (-1.5,0.81) (-1,1.52) (-0.5,2.21)
+             (0,2.50) (0.5,2.21) (1,1.52) (1.5,0.81) (2,0.34) (2.5,0.11) (3,0.03) (3.5,0.01)};
+          \foreach \x/\h in {-3/0.03, -2/0.34, -1/1.52, 0/2.50, 1/1.52, 2/0.34, 3/0.03} {
+            \draw[linegray, thin, dashed] (\x,0) -- (\x,\h);}
+          \draw[->, thick] (-4.0,0) -- (4.0,0);
+          \foreach \x/\lab in {-3/23, -2/26, -1/29, 0/32, 1/35, 2/38, 3/41} {
+            \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+          \node[font=\scriptsize] at (0,-0.62) {Travel time (minutes)};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{2pt}
+
+        \textbf{(i)} About what percent of trips take between 29 and 35 minutes? \ans{About 68\%}
+
+        \vspace{4pt}
+        \textbf{(ii)} About what percent take between 26 and 38 minutes? \ans{About 95\%}
+
+        \vspace{4pt}
+        \textbf{(iii)} About what percent take \emph{longer than} 38 minutes? \ans{About 2.5\%}
+        \quad Explain how you got it.
+        \answerspace{2.4cm}{38 minutes is two standard deviations above the mean of 32. About
+        95\% of trips fall within two standard deviations, leaving about 5\% outside; the curve
+        is symmetric, so half of that 5\% --- about 2.5\% --- is on the long side, past 38
+        minutes.}
+
+  \item \textbf{AP-style multiple choice.} In Race X, finishing times are approximately normal
+        with mean 21.0 minutes and standard deviation 1.5 minutes; runner P finished in
+        18.0 minutes. In Race Y, times are approximately normal with mean 25.0 minutes and
+        standard deviation 2.0 minutes; runner Q finished in 22.0 minutes. Which statement is
+        \textbf{correct}? Circle one, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Runner Q, because a standardized score of $-1.5$ is greater than $-2.0$.
+          \item \ans{Runner P, because a standardized score of $-2.0$ puts P further below the mean of
+                P's own race, and in a race a lower time is better.}
+          \item Runner P, because 18.0 minutes is the smaller raw finishing time.
+          \item Runner Q, because Race Y had the larger standard deviation.
+          \item Neither, because the two races had different means and cannot be compared.
+        \end{enumerate}
+        \answerspace{2.6cm}{(B). Runner P's $z = (18.0 - 21.0)/1.5 = -2.0$ and runner Q's
+        $z = (22.0 - 25.0)/2.0 = -1.5$; in a race a lower time is better, so being 2.0 standard
+        deviations below your own race's mean is the stronger performance. (C) reaches the same
+        runner by the wrong reasoning --- the two raw times come from different races.}
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.12in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+% Lesson 1.7 is the LAST content lesson of Unit 1, so this looks ahead to the unit test and
+% to Unit 2 — in plain, spoiler-free language.
+\boxguard[12]
+\begin{spiralbox}
+\small
+\textbf{Next: the Unit 1 test, then Unit 2 --- Exploring Two-Variable Data.} The test covers
+everything in this packet's unit: telling categorical variables from quantitative ones and
+choosing a display for each; describing a distribution's shape, centre, spread, and unusual
+values \emph{in context}; mean, median, standard deviation, range, IQR, and which of those a
+single extreme value can move; the five-number summary, boxplots, and comparing two groups; and
+today's normal model, standardized scores, and the empirical rule.
+
+\vspace{3pt}
+Then everything changes shape. Every question so far has been about \emph{one} measurement at a
+time. In Unit 2 we record \emph{two} measurements on the same individual --- a student's study
+hours and that same student's test score --- and ask a new kind of question: when one of them
+goes up, does the other tend to go up too? And if it does, how strongly, and can you use one to
+predict the other?
+\end{spiralbox}
 
 \end{document}

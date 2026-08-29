@@ -1,23 +1,66 @@
 %! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items.
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Warm-Up --- Answer Key}
 
-
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
-\boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.19in]
+
+  \item \textbf{From last lesson.} Here are five-number summaries for the daily commute times,
+        in minutes, of two groups of workers.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Group} & \textbf{Min} & \textbf{Q1} & \textbf{Med} & \textbf{Q3} & \textbf{Max} \\
+        \hline
+        \textbf{Downtown} & 8 & 14 & 19 & 26 & 41 \\
+        \textbf{Suburban} & 15 & 22 & 25 & 30 & 38 \\
+        \end{tabularx}
+        \vspace{5pt}
+
+        IQR for Downtown: \ans{12 min} \qquad IQR for Suburban: \ans{8 min}
+
+        \vspace{4pt}
+        Whose \emph{middle half} of commute times is more spread out? \ans{Downtown (12 vs.\ 8)}
+
+  \item A set of quiz scores has a mean of \textbf{20} points and a standard deviation of
+        \textbf{3} points.
+
+        \vspace{5pt}
+        \hspace{1.0em}\textbf{(a)} How many points \emph{above} the mean is a score of 26?
+        \ans{6 points}
+        \vspace{5pt}
+
+        \hspace{1.0em}\textbf{(b)} That many points is how many 3-point steps? \ans{2 steps}
+        \vspace{5pt}
+
+        \hspace{1.0em}\textbf{(c)} A score of 17 is how many 3-point steps from the mean, and on
+        which side? \ans{1 step, below the mean}
+
+  \item In a set of \textbf{400} measurements, \textbf{360} of them fall inside a certain range
+        of values.
+
+        \vspace{5pt}
+        \hspace{1.0em}\textbf{(a)} What percent of the measurements is that? \ans{90\%}
+        \vspace{5pt}
+
+        \hspace{1.0em}\textbf{(b)} What percent fall \emph{outside} that range? \ans{10\%}
+        \vspace{5pt}
+
+        \hspace{1.0em}\textbf{(c)} The measurements pile up evenly on both sides of the middle,
+        so the leftovers split evenly between the low end and the high end. What percent fall
+        past the \emph{high} end? \ans{5\%}
+
+\end{enumerate}
 
 \end{document}

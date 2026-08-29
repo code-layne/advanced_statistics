@@ -1,0 +1,263 @@
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Experience & Formalize
+%! (Activity · QuickNotes · Application) (Answer Key)
+% EFFL component, Math Medic sizing: 12pt body, OPEN white space after every question.
+% Page budget: 3pp total — Activity <=2pp · QuickNotes 1/2pp · Application 1/2-1pp.
+% ANSWERSPACE BUDGET: 11.4cm across 7 sub-questions (1.4 + 2.0 + 1.6 + 1.4 + 1.8 + 1.8 + 1.6),
+% in line with the model lesson (unit01/lesson03, 10.8cm across 8). Every key answer is written
+% to FIT its reserved height at ~70 characters per line — do not raise a height without
+% shortening the answer, and never raise one in only one of the two files.
+% Check Your Understanding is NOT in this component: those items were moved to the end of
+% the packet and are now the lesson's SCORED homework (see ../homework/).
+%
+% SPOILER RULE: the Activity never says statistic, quartile, Q1, Q3, interquartile range, IQR,
+% percentile, range (as one number), standard deviation, variance, resistant, or nonresistant.
+% It says "the average", "the value in the middle", "one number for how spread out". Shape,
+% skew, centre, spread, and outlier WERE formalized in Lesson 1.4 and are prior knowledge.
+% Everything from the QuickNotes box onward is post-debrief, so the Application uses the full
+% AP vocabulary deliberately.
+%
+% NO SKETCH QUESTIONS (hard constraint): every dotplot is pre-drawn. Students "construct" only
+% by filling the five-number-summary table in the Application, never by drawing an axis.
+%
+% THE DATA
+%   Problem 1 — nine weekly paychecks:  650 700 700 750 750 800 800 850 3000
+%     sum 9000 -> mean $1,000 ; median (5th of 9) $750.
+%     Replace the 3000 by 750: sum 6750 -> mean $750 (a $250 fall); median STILL $750.
+%     That is the crux (EK UNC-1.K.2: mean nonresistant, median resistant).
+%   Problem 2 — twelve delivery times per route, all three routes:
+%     A: 27 28 28 29 29 30 30 31 31 32 32 33   sum 360, mean 30, median 30, max-min = 6
+%     B: 18 20 22 24 26 29 31 34 36 38 40 42   sum 360, mean 30, median 30, max-min = 24
+%     C: 27 28 28 29 29 30 30 31 31 32 32 51   median 30, max-min = 24  <- same as B, from ONE
+%     value. That collapse is the seed for the IQR (EK UNC-1.J.2).
+% GENERATED FROM experience/main.tex — the blank with answers filled in, so every \answerspace
+% height and \boxguard is identical to it. NO teachernote here — that lives in the lesson plan.
+% \ans{} IS TEXT MODE: never inside $...$; a filled slot inside a formula is written
+% {\color{keyred}\mathbf{...}} instead — see the standard-deviation line in the QuickNotes.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.5}{Experience \& Formalize: Nine Paychecks --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.02in}
+
+% ── Part 1: the Activity ─────────────────────────────────────────────────────
+\begin{headlinebox}{sky}
+\textbf{Nine Paychecks.} A small landscaping company has nine people on the payroll --- eight
+crew members and the owner. Below is last week's take-home pay, and after it, delivery times
+from a courier company. Work both problems with your group using only what you already know.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{scenariobox}[1. Nine Paychecks]{navy}
+Last week's take-home pay, in dollars, for all nine people at the company:
+
+\vspace{3pt}
+\begin{center}
+800 \quad 3000 \quad 650 \quad 750 \quad 700 \quad 850 \quad 700 \quad 800 \quad 750
+\end{center}
+\vspace{2pt}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \draw[->, thick] (-0.3,0) -- (13.8,0);
+  \foreach \x/\lab in {0/600, 2.16/1000, 4.32/1400, 6.48/1800, 8.64/2200, 10.8/2600, 12.96/3000} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.11) {\lab};}
+  \foreach \x/\n in {0.27/1, 0.54/2, 0.81/2, 1.08/2, 1.35/1, 12.96/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.07); }}
+  \node[font=\scriptsize] at (6.5,-0.60) {Weekly take-home pay (dollars)};
+\end{tikzpicture}
+\end{center}
+\vspace{1pt}
+
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item Find the \textbf{average} of the nine paychecks. \ans{\$1{,}000}
+
+        Now put the nine in order and give the value in the \textbf{middle}. \ans{\$750 (the 5th)}
+  \item A crew member says, \emph{``The typical weekly pay here is a thousand dollars.''} Is she
+        quoting a number that is actually in this list? How many of the nine earn that much?
+        \answerspace{1.4cm}{No --- nobody here is paid \$1{,}000. Only the owner takes home that
+        much; the other eight all earn under \$900.}
+  \item \textbf{Cross out the owner's \$3{,}000} and replace it with \textbf{\$750}. Recompute
+        both answers from part (a). Say which one barely moved, by how much each moved, and
+        \emph{why the arithmetic makes that happen}.
+        \answerspace{2.0cm}{New average \$750 (\$6{,}750 over 9) --- a fall of \$250. The middle
+        value is still \$750. The average adds all nine numbers, so one huge paycheck lifts the
+        total; the middle value only asks which paycheck is fifth.}
+  \item Which of your two numbers would you put in a \textbf{job advertisement}, and which in a
+        \textbf{union negotiation}? Defend both choices.
+        \answerspace{1.6cm}{The advertisement: \$1{,}000, the bigger number and honestly
+        computed. The negotiation: \$750, because eight of the nine earn near it and nobody
+        earns \$1{,}000. Both are correct --- different questions.}
+\end{enumerate}
+\end{scenariobox}
+
+\boxguard[16]
+\begin{scenariobox}[2. Two Delivery Routes]{navy}
+A courier company times how long each of twelve packages takes to reach its door, on two
+different routes. Each dot is one package.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  % ── left: Route A ──
+  \draw[->, thick] (-0.2,0) -- (6.9,0);
+  \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.11) {\lab};}
+  \foreach \x/\n in {1.92/1, 2.08/2, 2.24/2, 2.40/2, 2.56/2, 2.72/2, 2.88/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.18*\k}) circle (0.065); }}
+  \node[font=\scriptsize] at (3.2,-0.56) {Delivery time (minutes)};
+  \node[font=\bfseries\small] at (3.2,1.0) {Route A};
+  % ── right: Route B ──
+  \begin{scope}[xshift=7.6cm]
+    \draw[->, thick] (-0.2,0) -- (6.9,0);
+    \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
+      \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.11) {\lab};}
+    \foreach \x/\n in {0.48/1, 0.80/1, 1.12/1, 1.44/1, 1.76/1, 2.24/1, 2.56/1, 3.04/1,
+                       3.36/1, 3.68/1, 4.00/1, 4.32/1} {
+      \foreach \k in {1,...,\n} { \fill[goldacc] (\x,{0.18*\k}) circle (0.065); }}
+    \node[font=\scriptsize] at (3.2,-0.56) {Delivery time (minutes)};
+    \node[font=\bfseries\small] at (3.2,1.0) {Route B};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\vspace{1pt}
+
+\normalsize
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item \textbf{Each route's twelve times add to 360 minutes.} With twelve values none sits
+        alone in the middle, so take the value halfway between the sixth and the seventh.
+
+        \vspace{3pt}
+        Route A --- average: \ans{30 min} \quad middle: \ans{30 min}
+
+        Route B --- average: \ans{30 min} \quad middle: \ans{30 min}
+
+        \vspace{3pt}
+        Do the two routes have the same centre? \ans{Yes --- both}
+  \item Those summaries cannot tell these routes apart, and anybody can see they are not the
+        same. \textbf{Invent a number that would.} Say how to compute it and give both values.
+        \answerspace{1.4cm}{Largest minus smallest. Route A: $33-27=6$ min. Route B:
+        $42-18=24$ min. One number, and it separates them at once.}
+  \item Here is a \textbf{third} route from the same company.
+
+        \vspace{2pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.7]
+          \draw[->, thick] (-0.2,0) -- (6.9,0);
+          \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
+            \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.11) {\lab};}
+          \foreach \x/\n in {1.92/1, 2.08/2, 2.24/2, 2.40/2, 2.56/2, 2.72/2, 5.76/1} {
+            \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.18*\k}) circle (0.065); }}
+          \node[font=\scriptsize] at (3.2,-0.56) {Delivery time (minutes)};
+          \node[font=\bfseries\small] at (3.2,1.0) {Route C};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{1pt}
+
+        Work out your number from part (b) for Route C and compare it with Route B's. Then say
+        what your number is claiming about Route C that simply is not true.
+        \answerspace{1.8cm}{Route C: $51-27=24$ min --- Route B's number exactly. It claims C is
+        as unpredictable as B, but eleven of C's twelve packages arrived between 27 and 32.
+        Largest-minus-smallest sees only the two ends.}
+  \item \textbf{Fix it.} Describe a way of measuring how spread out a set of times is that the
+        one late package \emph{cannot} hijack --- clearly enough that someone else could carry
+        it out.
+        \answerspace{1.8cm}{Ignore the far ends; measure the middle. Order the times, take the
+        value a quarter of the way up and the value three quarters up, and subtract. One late
+        package cannot touch that middle stretch.}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Part 2: QuickNotes (the debrief fills this) — target: half a page ────────
+\boxguard[14]
+\begin{tcolorbox}[enhanced, colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm, breakable,
+    fonttitle=\bfseries\small\color{white}, title={QuickNotes: Summarizing a Quantitative Variable},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}]
+\small
+% Display skips are tightened so the standard-deviation formula does not cost half a page.
+\setlength{\abovedisplayskip}{3pt}\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{3pt}\setlength{\belowdisplayshortskip}{3pt}
+\begin{itemize}[leftmargin=1.1em, itemsep=3pt]
+  \item A \textbf{statistic} is a numerical summary of \ans{sample} data.
+        \textbf{Mean} ($\bar x$): add every value and divide by \ans{the number of values}.
+        \textbf{Median}: the \ans{middle} value of the \emph{ordered} data --- with an even
+        count, the \ans{average} of the two middle values.
+  \item The \textbf{$p$th percentile} is the value with $p\%$ of the data
+        \ans{less than or equal to} it.
+        \textbf{$Q_1$} and \textbf{$Q_3$} are the medians of the lower and upper halves;
+        between them sits the middle \ans{50}\% of the data.
+  \item \textbf{Range} $=$ \ans{maximum} $-$ \ans{minimum}. \quad
+        \textbf{IQR} $=$ \ans{$Q_3$} $-$ \ans{$Q_1$}. \quad Each is \emph{one number}, not
+        an interval.
+  \item \textbf{Standard deviation} ($s_x$): roughly the \ans{typical} distance of a value from
+        the mean. We get it from \ans{technology}; its square $s_x^2$ is the \ans{variance}.
+        \[ s_x \;=\; \sqrt{\frac{1}{n-{\color{keyred}\mathbf{1}}}\sum_{i=1}^{n}\left(x_i-\bar x\right)^2} \]
+  \item \textbf{Resistant} (one extreme value barely moves it): \ans{median} and
+        \ans{IQR}. \quad \textbf{Nonresistant} (one extreme value drags it):
+        \ans{mean}, \ans{standard deviation}, and \ans{range}.
+  \item \textbf{Two outlier rules in this course:} more than $1.5\times\text{IQR}$ above $Q_3$
+        or below $Q_1$, or 2 or more standard deviations from the mean. The
+        $1.5\times\text{IQR}$ rule goes to work \ans{next} lesson.
+\end{itemize}
+\end{tcolorbox}
+
+% ── Part 3: the Application (worked together, ~6 min) ────────────────────────
+\boxguard[14]
+\begin{notesbox}{Application: The Quiz Scores}
+We will do this one together. Eleven students took a 20-point quiz. Their scores, in order:
+
+\vspace{2pt}
+\begin{center}
+12 \quad 13 \quad 14 \quad 15 \quad 15 \quad 16 \quad 17 \quad 18 \quad 18 \quad 19 \quad 19
+\end{center}
+\vspace{1pt}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[->, thick] (-0.2,0) -- (7.5,0);
+  \foreach \x/\lab in {0/10, 1.4/12, 2.8/14, 4.2/16, 5.6/18, 7.0/20} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.11) {\lab};}
+  \foreach \x/\n in {1.4/1, 2.1/1, 2.8/1, 3.5/2, 4.2/1, 4.9/1, 5.6/2, 6.3/2} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.22*\k}) circle (0.075); }}
+  \node[font=\scriptsize] at (3.6,-0.60) {Quiz score (points out of 20)};
+\end{tikzpicture}
+\end{center}
+\vspace{1pt}
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=4pt]
+  \item Find the median, then split the ordered list at it --- five scores below, five above.
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Minimum} & $\mathbf{Q_1}$ & \textbf{Median} & $\mathbf{Q_3}$ & \textbf{Maximum} \\
+        \hline
+        \ans{12} & \ans{14} & \ans{16} & \ans{18} & \ans{19} \\
+        \end{tabularx}
+  \item Compute the \textbf{range} and the \textbf{IQR} for these eleven scores.
+
+        \begin{work}
+        \text{range} &= \text{maximum} - \text{minimum} = 19 - 12 = 7 \text{ points} \\
+        \text{IQR} &= Q_3 - Q_1 = 18 - 14 = 4 \text{ points}
+        \end{work}
+  \item \textbf{One value changes.} The lowest score was entered wrong: the \textbf{12 was
+        really a 1}. Of \emph{mean, median, range, IQR}, which change and which do not? State
+        the rule that decides it.
+        \answerspace{1.6cm}{Mean $16\to15$ and range $7\to18$ change; median stays 16 and IQR
+        stays 4. Mean and range are built from the extreme values (nonresistant); median and
+        IQR use only middle positions (resistant).}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

@@ -1,10 +1,11 @@
 %! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
 \newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 1.4: Describing the Distribution of a Quantitative Variable}
 
@@ -16,78 +17,361 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will describe the distribution of a quantitative
+    variable by naming its shape, center, and variability, together with any unusual features
+    --- outliers, gaps, clusters, or multiple peaks --- and will state every one of those
+    four things in the context of the data.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 1.6 \quad$\cdot$\quad Big Idea: UNC (Uncertainty)
+    \quad$\cdot$\quad Skill 2.A \quad$\cdot$\quad LO UNC-1.H \quad$\cdot$\quad
+    EK UNC-1.H.1--1.H.7
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found. \textbf{No vocabulary before the debrief.}
+    \\[2pt]
+    \textbf{Note on the ``no sketch'' rule:} every display in this lesson is \textbf{given}.
+    Students read, compare, and describe --- they never draw an axis. Describing is the skill
+    the exam scores (Skill 2.A); drawing is not, and it eats the period.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can say why the typical value alone does not describe a set of data.
+  \item I can name the shape of a distribution, including which way it leans.
+  \item I can point out values that sit apart, empty stretches, and separate groups.
+  \item I can write a complete description of a display, in context.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item A description of quantitative data needs \textbf{shape, center, variability, and
+        unusual features} --- all four, all in context (EK UNC-1.H.1).
+  \item Skew is named for the \textbf{tail}, not the pile: right tail longer $\to$ skewed
+        right (EK UNC-1.H.3).
+  \item \textbf{Target misconception:} a picture whose values are bunched on the left gets
+        called ``skewed left'' because students name the picture by where the data \emph{is}.
+        The convention names it by where the \emph{stragglers go} (EK UNC-1.H.3).
+  \item \textbf{Second misconception:} that describing these data describes a population.
+        It does not --- it can only suggest a conjecture to test later (EK UNC-1.H.7).
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Shape} --- symmetric, skewed left (negative), skewed right (positive)
+              (EK UNC-1.H.3)
+        \item \textbf{Unimodal / bimodal / uniform} --- one main peak, two prominent peaks,
+              or bars of roughly equal height (EK UNC-1.H.4)
+        \item \textbf{Center} --- the typical or middle value of the distribution
+              (EK UNC-1.H.1)
+        \item \textbf{Variability (spread)} --- how far the values reach from one another
+              (EK UNC-1.H.1)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Outlier} --- a value unusually small or large relative to the rest
+              (EK UNC-1.H.2)
+        \item \textbf{Gap} --- a stretch between two values where nothing was observed
+              (EK UNC-1.H.5)
+        \item \textbf{Cluster} --- a concentration of values, usually set off by gaps
+              (EK UNC-1.H.6)
+        \item \textbf{SOCS} --- shape, outliers/unusual features, center, spread; the
+              four-part description, always in context (EK UNC-1.H.1)
+        \item \textbf{Carried forward} --- quantitative variables and distribution (1.1);
+              dotplots and histograms, and the interval-width warning (1.3)
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Two histograms revisited, a middle value counted, one lone dot described & Circulate; debrief item~3 aloud and leave their wording on the board all period \\
+Experience \& Formalize: Activity & 20 & \emph{Two Checkout Lines}, problems 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; collect a group's 1c sentence and a group's 2c sentence \\
+Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color \\
+Application & 6 & \emph{The Sleep Survey}, worked together & Lead it; students hold the pen and write all four parts \\
+Homework: Start in Class & 8 & Begin the \emph{graded} homework, pairs $\to$ solo & Circulate; answer questions now rather than after they leave \\
+Close \& Assign & 4 & Pack the homework; hear the preview & Name the due date; say plainly that AP Practice is optional and unscored \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Two histograms of the same 40 quiz scores. \textbf{Spirals} Lesson 1.3
+              --- and installs the habit of checking the interval width before believing a
+              shape, which AP Practice item~4 and the free response return to.
+        \item \textbf{2.} Nine waits, already in order; count to the middle.
+              \textbf{Seeds:} the exact move problem~1a asks for, done once with easy numbers.
+        \item \textbf{3.} One pre-drawn plot with a lone dot far out. \textbf{Seeds:} tail
+              language --- ``where the rest of them are'' --- in words students already own.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Name nothing.} Do not say \emph{shape}, \emph{skewed}, \emph{center},
+              \emph{spread}, \emph{outlier}, \emph{gap}, or \emph{cluster} in the warm-up
+              debrief. Write their own phrasing on the board (``one guy way out there,''
+              ``they're all bunched up'') and leave it up --- you will relabel it in the
+              debrief.
+        \item Item~2 is mechanical. Ninety seconds. It exists so that finding the middle is
+              never the obstacle inside the activity.
+        \item Debrief item~3 aloud and \textbf{write the students' own sentence verbatim}. In
+              the debrief you will point at that sentence and say ``that is what the word
+              \emph{skewed} names.'' It is far more convincing in their handwriting.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{Two Checkout Lines}]{sky}
+\textbf{Launch (2 min).} \emph{``Two checkout lines, twenty customers timed in each. Both lines
+have the same middle wait. Your job is to decide which line you would stand in --- and then to
+say what the manager's one number failed to tell you.''} Groups of 3--4. Do not preview any
+vocabulary.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Problem 1} is where center collapses as a summary. 1a is
+counting and counting to the middle (both medians are 4 minutes), \textbf{1b is the discovery}
+--- the same typical wait, two completely different experiences --- 1c forces them to say what
+the manager's sentence hides, and 1d asks whether the customers out at 11 and 13 minutes are
+errors or real, and whether they should be removed.
+
+\emph{Problem 2} is the crux. Three displays: home prices with a long right tail, an easy quiz
+with a long left tail, and a volleyball club that is symmetric with two humps and an empty
+stretch between them. 2a makes them say \emph{where the pile is and which way the stragglers
+run}, 2b makes them articulate the difference between the two leaning pictures --- which is
+exactly the naming convention, arrived at before the name --- and \textbf{2c is the crux}: a
+single typical height of about 67 inches belongs to nobody in that club. 2d demands one
+trustworthy sentence, and that sentence becomes the QuickNotes structure.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1b:} ``You both said 4 minutes. Now cover the number and look at the picture.
+        Which line has a customer having a bad day?''
+  \item \textbf{1d:} ``What would have to be true for 13 minutes to be a typo? What would have
+        to be true for it to be a real person? Which is easier to believe here?''
+  \item \textbf{2a:} ``Put your finger on the tallest bar. Now walk your finger away from it in
+        both directions --- which way do you get further before you run out of data?''
+  \item \textbf{2c (the crux):} ``Point at the club member who is 67 inches tall.''
+\end{itemize}
+While circulating, pick the work to display: one group's 1c sentence, and one group's 2b
+sentence describing how the two leaning pictures differ --- open the debrief on that one.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item 1b and 1c $\to$ \emph{center is not enough}. Both lines: middle wait 4 minutes. Write
+        both numbers on the board, then write beside them what the two lines actually felt
+        like. That contrast is the reason the rest of the vocabulary exists.
+  \item Their 2b sentence $\to$ \emph{skewed right} and \emph{skewed left} (EK UNC-1.H.3).
+        \textbf{Say the rule out loud and write it: the name follows the tail, not the pile.}
+        Then \emph{symmetric} on the volleyball picture, and \emph{unimodal / bimodal /
+        uniform} (EK UNC-1.H.4) on all three at once.
+  \item 1d $\to$ \emph{outlier} (EK UNC-1.H.2). Take the CED wording exactly: unusually small
+        or large \emph{relative to the rest of the data}. Settle the removal question here ---
+        you do not delete a value because it is inconvenient.
+  \item 2c $\to$ \emph{gap} (EK UNC-1.H.5) and \emph{cluster} (EK UNC-1.H.6). Point at the
+        empty stretch between 66 and 70 inches while you say both words.
+  \item 2d $\to$ the four-part description and \textbf{SOCS} (EK UNC-1.H.1). Build it out of
+        their own trustworthy sentence: whatever they wrote, ask which of the four it is
+        missing.
+  \item One line, last: EK UNC-1.H.7. Describing these 40 homes is not a claim about every
+        town. It can only \emph{suggest} something worth testing.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. \textbf{It is a summary of what they found,
+not a new lecture}; if you are talking for more than 90 seconds without pointing at student
+work, stop.
+
+\textbf{Why this order.} Center dies first (otherwise students never feel the need for the rest);
+shape second, because that is the naming convention and the target misconception; unusual
+features third, on the two displays that already bothered them; and the four-part structure last,
+assembled out of a sentence a group already wrote rather than handed down as a list.
+
+\textbf{The sentence to land:} \emph{``Four things or nothing: shape, center, spread, unusual
+features --- and every one of them in context. A picture that leans is named for where its tail
+goes, not where its pile sits.''} Say it, write it, and point at the two leaning pictures while
+you do.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Application --- \emph{The Sleep Survey} (worked together, 6 min)]{sky}
+The first place the four-part description is \emph{used}, on a fresh dotplot of the hours of
+sleep 30 students reported on a school night. Part (a) is reading --- 30 students, and one lone
+student at 4 hours. Part (b) names the shape and, more importantly, \textbf{says what the tail
+means about these students} rather than about the picture. \textbf{Part (c) is the AP standard
+enforced}: one paragraph, all four parts, in context. It is the first time all four are said
+together.
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``Which side runs longer --- so
+which way is it skewed?''} \quad \emph{``You said `left-skewed.' Say it again, but tell me about
+students, not about the graph.''} \quad \emph{``Read me your paragraph and count the four on your
+fingers as you go.''}
+
+\emph{No \texttt{work} block in this lesson:} Topic 1.6 asks for description, not computation ---
+the numbers arrive in Lesson 1.5. Page lockstep between the blank and the key rests entirely on
+\texttt{\textbackslash answerspace}.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+Four AP-style multiple-choice items on one commute-time histogram for 40 employees ---
+right-skewed with a single employee stranded past 80 minutes --- then one multi-part free
+response on the same display. \textbf{The distractors are the lesson:} MC~2 offers ``skewed
+left, because most of the data lies on the left of the graph,'' which is the target
+misconception in AP clothing, and MC~3 offers a conclusion about employees everywhere, which
+EK UNC-1.H.7 forbids. \textbf{Parts (a) and (d) are the spiral} --- (a) reaches back to Lesson
+1.1 (classify the variable before describing it) and (d) to Lesson 1.3 (check the interval width
+before you believe the shape). Reusing one display for both sections is deliberate: the context
+is already loaded, so the thinking stays on the description.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~1.5 and hold the AP standard out loud: \emph{in context or it does not
+count}. ``Skewed right with an outlier'' earns nothing; ``skewed right, so most employees have
+short commutes while a few travel much longer, and one employee commutes over 80 minutes''
+earns everything.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[Homework --- the graded practice, started in class]{redbox}
+Five exercises spanning Topic 1.6: \textbf{1} match four displays to four shape descriptions;
+\textbf{2} the misconception head-on --- a pile on the left with a tail to the right, and a
+student who called it skewed left; \textbf{3} name the unusual feature in the bimodal display and
+give a plausible reason two groups exist; \textbf{4} a full four-part description, in context, of
+a cereal-sugar dotplot; \textbf{5} the AP-style multiple-choice item with a one-sentence
+justification. Pairs for 1--3, solo for 4--5.
+
+\textbf{This is the lesson's scored work} --- the cover's score column carries a blank for it and
+it is collected next class. Students begin it in the last eight minutes of the period so that the
+questions get asked while you are still in the room; they finish it at home.
+
+\textbf{Eight minutes will not finish five items --- that is by design.} Point them at 1, 2,
+and~5 in class, where you can catch a wrong start; 3 and~4 travel home cleanly.
+\textbf{Item~2 is the diagnostic}: a student who cannot correct ``skewed left'' here will lose
+the point every time this shape appears for the rest of the year. \textbf{Item~5 carries the
+second check:} distractor (C) generalizes to every company in the industry, which is exactly
+EK UNC-1.H.7. When you score the page, sort item~4 into piles by \emph{how many of the four}
+appeared --- most students who lose credit lose it by writing three, not by writing a wrong one.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``It leans left, so it's skewed left''} (2a, HW~2, AP~2 --- the target
+        misconception). Probe: \emph{``Which side runs out of data first? The name follows the
+        long side.''}
+  \item \textbf{The typical value taken as the whole answer} (1b, 1c, AP FRQ~c). Probe:
+        \emph{``Both lines say 4 minutes. Are you telling me they are the same line?''}
+  \item \textbf{Deleting the far-out value} (1d, AP~3). Students want to erase 13 minutes.
+        Probe: \emph{``Is it wrong, or is it just inconvenient? What would make it wrong?''}
+  \item \textbf{One ``center'' reported for a two-humped display} (2c, HW~3). Probe:
+        \emph{``Point at the club member who is 67 inches tall.''}
+  \item \textbf{Description with no context} (2d, Application~c, HW~4). ``Skewed right, center
+        about 6, spread 2 to 21'' names no variable and no units. Probe: \emph{``Six what? Of
+        what?''}
+  \item \textbf{Over-claiming} (AP~3, HW~5, EK UNC-1.H.7): describing these 40 employees and
+        concluding something about all employees. Probe: \emph{``Who exactly did we measure?''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me a variable whose distribution should be skewed right, and say
+why.''} \quad \emph{``Name a display where a single typical value would mislead somebody.''}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Name the due date for the homework} at the back of the packet --- the pages they have just
+started are the graded work --- and say plainly that the AP Practice page before it is optional
+and unscored. Then close on what changed: \emph{``You walked in able to read a picture. You walk
+out able to describe one --- four things or nothing: shape, center, spread, unusual features, and
+every one of them in context. And a picture that leans is named for where its tail goes, not
+where its pile sits.''} \textbf{Preview:} Lesson~1.5, \emph{Summary Statistics for a Quantitative
+Variable} --- next time we stop saying ``about 4 minutes'' and put actual numbers on center and
+spread, and find out which of those numbers a single strange value can drag around.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+Item~3 is the seed; item~2 is the drill; item~1 is a 30-second spiral that also protects AP
+Practice item~4 --- do not let it expand. The whole warm-up is four minutes. \textbf{Capture item
+3's sentence in a student's own words on the board and do not erase it.} You will point at it
+twice in the debrief: once to name \emph{skewed}, once to name \emph{outlier}. \textbf{Do not say
+\emph{shape}, \emph{skewed}, \emph{center}, \emph{spread}, \emph{outlier}, \emph{gap}, or
+\emph{cluster} in this debrief.}
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 8 minutes on problem~1, 12 on problem~2. Problem~1 looks
+trivial and is not: the point of 1a is only to establish that \emph{both middles are 4}, so if a
+group is slow there, give them the number and move them to 1b, which is the discovery. Do not
+let any group leave 1c with ``it hides the spread'' --- push until they name a customer:
+\emph{``it hides that somebody waited 13 minutes.''}
+
+\textbf{Problem 2c is the one to protect the time for.} Groups will answer 2a and 2b quickly and
+then get stuck on 2c, because ``a typical height that belongs to nobody'' is genuinely strange
+the first time. Let them sit in it. If a group is truly stalled, ask only: \emph{``Point at the
+club member who is 67 inches tall.''}
+
+\textbf{The single discipline that makes this lesson work: do not name anything while
+circulating.} A group that hears ``skewed right'' stops discovering, and the naming convention is
+precisely what they were about to derive.
+
+\textbf{Debrief (12 min).} Must-land: step~2 (skew is named for the tail) and step~5 (the
+four-part description, assembled from their own 2d sentence). If time is short, compress step~4
+--- gap and cluster are quick on a display they have already argued about --- but never compress
+step~2.
+
+\textbf{Application (6 min).} Part (c) is the AP standard. If you only get through (a) and (c),
+that is the right trade.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded homework is the section behind it
+at the back of the packet. Work it as AP-format reps and go over it at the start of Lesson~1.5.
+\textbf{MC item~2 is the one worth reading closely}: distractor (B) says ``skewed left, because
+most of the commutes are on the left side of the graph,'' which is the exact reasoning the
+activity was built to overturn. If more than a handful pick it, put the volleyball and home-price
+pictures back up for three minutes before starting 1.5 --- this misconception does not fade on
+its own, and it costs a point on every describe-the-distribution item for the rest of the year.
+On the free response, part (c) is the highest-value part: it forces students to say what a single
+average conceals, which is Skill 2.A in the form the exam actually asks it.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+\textbf{This is the graded page} --- collect it next class and score it. The eight minutes at the
+end of the period are a \emph{start}, not a completion: put them on 1, 2, and~5 and let 3 and~4 go
+home. Item~2 is the one to read first when scoring, and the correction must include the reason
+(the tail, not the pile), not just the word ``right.'' Item~4 is the cheapest diagnostic in the
+set: count how many of the four parts appear, and require the units --- ``center about 6'' is not
+an answer; ``about 6 grams of sugar per serving'' is. Hold the context line while scoring, and on
+item~5 accept only justifications that stay with \emph{these} 250 employees.
 \end{teachernote}
 \end{document}

@@ -1,0 +1,181 @@
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — AP Practice
+% EFFL, AP Statistics variant: AP-format practice, assigned but NOT scored — the cover's score
+% column reads NA for this component. The graded practice is the `homework` component that
+% follows it at the back of the packet.
+% Free-response (a) is the spiral to Lesson 1.4 (name the shape from the display) and (b) is
+% Skill 4.B in the form the exam asks it — the CHOICE of summary must be justified by the shape.
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching a terse
+% \ansline{} in the key — keep key answers short enough not to wrap past the reserved lines.
+% The next-lesson preview is NOT here: it closes the packet, in ../homework/.
+%
+% THE DATA (15 households, gallons per day):
+%   110 120 130 140 150 160 180 | 200 | 220 240 270 310 350 400 620
+%   sum 3600 -> mean 240 ; median 200 ; Q1 140 ; Q3 310 ; IQR 170 ; range 510 ; s_x ~ 136.6
+%   Right-skewed with one large value at 620. Both outlier rules flag the 620:
+%   Q3 + 1.5(IQR) = 310 + 255 = 565 < 620, and mean + 2s = 240 + 273.2 = 513.2 < 620.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.5}{AP Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.15in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. These are AP-format reps: work them for the practice, and bring what you get
+stuck on to office hours or study hall.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[30]
+\begin{scenariobox}[Household Water Use]{navy}
+\small
+A water utility recorded the average daily water use, in gallons, for each of 15 homes on one
+street. The stem is the \emph{hundreds} digit and each leaf is the \emph{tens} digit, so the row
+\textbf{3} stands for 310 and 350 gallons per day.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} r | l @{}}
+\textbf{1} & 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 8 \\
+\textbf{2} & 0 \quad 2 \quad 4 \quad 7 \\
+\textbf{3} & 1 \quad 5 \\
+\textbf{4} & 0 \\
+\textbf{5} & \\
+\textbf{6} & 2 \\
+\end{tabular}
+\end{center}
+\vspace{6pt}
+
+The utility's software reports the following summary of the same 15 values.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{$n$} & \textbf{Mean} & \textbf{SD} & \textbf{Min} & \textbf{$Q_1$} & \textbf{Median} &
+\textbf{$Q_3$} & \textbf{Max} \\
+\hline
+15 & 240.0 & 136.6 & 110 & 140 & 200 & 310 & 620 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \item What is the interquartile range of the daily water use for these 15 homes?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 100 gallons
+          \item 170 gallons
+          \item 200 gallons
+          \item 240 gallons
+          \item 510 gallons
+        \end{enumerate}
+
+  \item Suppose the home that used 620 gallons per day is re-metered and the correct figure
+        turns out to be 1{,}240 gallons per day --- double the recorded value. All other homes
+        are unchanged. Which summary statistic changes \textbf{by the most}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The median
+          \item The interquartile range
+          \item The mean
+          \item The range
+          \item None of them change, because only one home was corrected.
+        \end{enumerate}
+
+  \item The utility re-expresses every one of the 15 values in litres by multiplying it by 3.8.
+        Which of the following is true of the summary statistics for the new list?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Only the mean is multiplied by 3.8; the others are unchanged.
+          \item The mean and the median are multiplied by 3.8, but the standard deviation is
+                unchanged, because it measures spread rather than size.
+          \item The mean is multiplied by 3.8 and the standard deviation by $3.8^2$.
+          \item None of them change, because a change of units does not affect a statistic.
+          \item The mean, median, range, IQR, and standard deviation are all multiplied by 3.8.
+        \end{enumerate}
+
+  \item A city-wide report states that a household using 350 gallons per day is at the
+        \textbf{90th percentile} of daily water use for the city. This means that
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 90\% of the city's households use more than 350 gallons per day.
+          \item the household uses 90\% of the water in its neighbourhood.
+          \item the household uses 90 gallons per day more than the city average.
+          \item about 90\% of the city's households use 350 gallons per day or less.
+          \item 350 gallons is 90\% of the largest amount used by any household in the city.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \item Use the water-use record above.
+
+        \vspace{6pt}
+        \textbf{(a)} Describe the shape of this distribution of daily water use, and identify any
+        value that stands apart from the rest.\\[4pt]
+        \writelines{2}
+
+        \vspace{6pt}
+        \textbf{(b)} Report \emph{one} measure of center and \emph{one} measure of variability
+        for these 15 homes. Justify your choice of pair using the shape of the distribution.\\[4pt]
+        \writelines{4}
+
+        \vspace{6pt}
+        \textbf{(c)} Interpret the value $Q_1 = 140$ gallons per day in the context of this
+        street.\\[4pt]
+        \writelines{2}
+
+        \vspace{6pt}
+        \textbf{(d)} A resident reads the output and tells a neighbour, ``A typical home on this
+        street uses 240 gallons a day.'' Explain why that statement overstates typical use here,
+        referring to a specific feature of the distribution.\\[4pt]
+        \writelines{3}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\boxguard[12]
+\begin{extensionbox}
+\small
+Apply \textbf{both} of this course's outlier rules to the home that used 620 gallons per day:
+the $1.5\times\text{IQR}$ rule and the ``2 or more standard deviations from the mean'' rule.
+Do the two rules agree?\\[4pt]
+\writelines{2}
+\end{extensionbox}
+
+\vspace{0.12in}
+
+
+\end{document}

@@ -1,23 +1,72 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items.
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% The \begin{work} block in item 3 is BYTE-IDENTICAL to the blank's — that is what keeps the
+% two files the same height. NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Warm-Up --- Answer Key}
 
-
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Warm-Up].
-\boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.19in]
+
+  \item \textbf{From last lesson.} Here are the ages, in years, of nine trees in a city park,
+        already put in order.
+
+        \vspace{4pt}
+        \begin{center}
+        12 \quad 14 \quad 15 \quad 18 \quad 20 \quad 23 \quad 27 \quad 28 \quad 35
+        \end{center}
+        \vspace{4pt}
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Least} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} & \textbf{Greatest} \\
+        \hline
+        \ans{12} & \ans{14.5} & \ans{20} & \ans{27.5} & \ans{35} \\
+        \end{tabularx}
+
+        \vspace{5pt}
+        IQR: \ans{13 years} \qquad Range: \ans{23 years}
+
+  \item Here are twelve measurements. \textbf{Count} how many fall in each stretch.
+
+        \vspace{4pt}
+        \begin{center}
+        3 \quad 5 \quad 6 \quad 8 \quad 9 \quad 12 \quad 14 \quad 15 \quad 19 \quad 26 \quad
+        33 \quad 55
+        \end{center}
+        \vspace{4pt}
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Stretch} & between 2 and 10 & between 10 and 20 & between 20 and 60 \\
+        \hline
+        \textbf{How many} & \ans{5} & \ans{4} & \ans{3} \\
+        \end{tabularx}
+
+  \item \textbf{From last lesson.} We named a rule for flagging a value that sits unusually far
+        from the rest: it is unusual if it lies more than $1.5 \times \text{IQR}$ below $Q_1$ or
+        more than $1.5 \times \text{IQR}$ above $Q_3$.
+
+        \vspace{4pt}
+        A data set has $Q_1 = 20$ and $Q_3 = 32$. Is the value \textbf{55} unusually far from the
+        rest? Show the arithmetic.
+
+        \begin{work}
+        \text{IQR} &= 32 - 20 = 12 \\
+        1.5 \times \text{IQR} &= 1.5 \times 12 = 18 \\
+        \text{upper boundary} &= Q_3 + 18 = 32 + 18 = 50 \\
+        55 &> 50 \quad \Longrightarrow \quad \text{yes, 55 is unusually far}
+        \end{work}
+
+\end{enumerate}
 
 \end{document}

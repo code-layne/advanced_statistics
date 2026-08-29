@@ -1,6 +1,12 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usetikzlibrary{positioning}  % -beamer loads tikz but not this library
+
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
@@ -17,10 +23,287 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% EFFL flow: targets (SPOILER-FREE) → hook → activity launch → debrief divider → QuickNotes
+% arc → the crux → application → homework (started in class) → AP Practice → close.
+% Nothing before the divider may say five-number summary, boxplot, box, whisker, modified
+% boxplot, or parallel boxplots.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+% \bxp{y-center}{half-height}{min}{Q1}{median}{Q3}{max} — every display is pre-drawn.
+\newcommand{\bxp}[7]{%
+  \draw[thick, navy] (#3,#1) -- (#4,#1);
+  \draw[thick, navy] (#6,#1) -- (#7,#1);
+  \draw[thick, navy] (#3,{#1-#2}) -- (#3,{#1+#2});
+  \draw[thick, navy] (#7,{#1-#2}) -- (#7,{#1+#2});
+  \draw[thick, navy, fill=skymid] (#4,{#1-#2}) rectangle (#6,{#1+#2});
+  \draw[very thick, navy] (#5,{#1-#2}) -- (#5,{#1+#2});}
+
+% ── LEARNING TARGETS (spoiler-free) ─────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today: experience first, formalize later}
+  \sectionlabel{Learning targets}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item pull five key numbers out of a data set and find each one in a picture built from them.
+    \item say what a wide part of that picture does --- and does not --- tell me.
+    \item decide whether one value sits far enough from the rest to be set apart.
+    \item compare two groups on where they sit, how spread out they are, and what is unusual.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{twenty players and a summary picture} with your group $\to$ we name
+    what you found $\to$ practice. You will figure it out \emph{before} I give you the words.
+  \end{block}
 \end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}
+  \begin{center}
+    {\color{skymid}\bfseries\small ONE PICTURE. FOUR SECTIONS. TWENTY PLAYERS.}\\[0.9cm]
+    {\color{white}\bfseries\Large One section is more than five times as wide as
+    another.\\[0.4cm] So how many players are in each?}\\[0.9cm]
+    {\color{goldacc}\small Do not guess. Count.}
+  \end{center}
+\end{frame}
+}
+
+% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Experience \& Formalize: Twenty Free Throws \& Two Bus Routes}
+  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
+  Twenty players, twenty numbers, and a summary picture somebody drew from them.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Problem 1} --- work out what that picture is made of, then \textbf{count}.
+    \item \textbf{Problem 2} --- two of those pictures, two bus routes, one commuter who has to
+          decide.
+  \end{itemize}
+  \begin{block}{Your job}
+    Use only what you already know. In problem 1, \textbf{count the dots in each section before
+    you say anything about which section is fuller}. Watch the clock: about 11 minutes on
+    problem 1, then move.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF DIVIDER ──────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
+    {\color{white}\bfseries\Large You already counted five, five, five, and five. We are only
+    giving that picture and its parts their names.}\\[0.9cm]
+    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── FIVE-NUMBER SUMMARY AND THE BOXPLOT ─────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Five numbers, drawn to scale}
+  \sectionlabel{five-number summary $\cdot$ boxplot}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.9]
+        \bxp{0.9}{0.42}{0}{0.9}{1.9}{4.1}{8.0}
+        \draw[->, thick] (-0.2,0) -- (8.6,0);
+        \foreach \x/\lab in {0/min, 0.9/$Q_1$, 1.9/med, 4.1/$Q_3$, 8.0/max} {
+          \draw[linegray, very thin] (\x,0.05) -- (\x,1.32);
+          \draw (\x,-0.08) -- (\x,0.08);
+          \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item The \textbf{five-number summary}: minimum, $Q_1$, median, $Q_3$, maximum
+              (EK UNC-1.L.1).
+        \item The \textbf{box} runs $Q_1$ to $Q_3$ --- the \textbf{middle 50\%}. The line inside
+              is the \textbf{median}.
+        \item The \textbf{whiskers} reach the most extreme value that is \redink{not} an
+              outlier (EK UNC-1.L.2).
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    {\small\color{slate} A boxplot is nothing but those five numbers placed on a number line.}
+  \end{center}
+\end{frame}
+
+% ── OUTLIERS AND THE MODIFIED BOXPLOT ───────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{The rider who was set apart}
+  \sectionlabel{modified boxplot}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.9]
+        \bxp{0.9}{0.42}{0.2}{0.9}{1.9}{3.4}{5.0}
+        \fill[navy] (7.6,0.9) circle (0.10);
+        \draw[->, thick] (-0.2,0) -- (8.6,0);
+        \node[font=\tiny, above] at (7.6,1.08) {58 min};
+        \node[font=\tiny, above] at (5.0,1.08) {40 min};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Route B: $Q_1 = 20$, $Q_3 = 32$, so IQR $= 12$.
+        \item Cut-off: $32 + 1.5(12) = \mathbf{50}$. And $58 > 50$.
+        \item So 58 gets \textbf{its own symbol}, and the whisker stops at \textbf{40} --- the
+              most extreme value that is not an outlier.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    {\small\color{slate} That is a \textbf{modified boxplot}. It is the version the AP exam
+    draws.}
+  \end{center}
+\end{frame}
+
+% ── COMPARING GROUPS ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Comparing two groups}
+  \sectionlabel{parallel (side-by-side) boxplots}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{The checklist (EK UNC-1.N.1, 1.O.1)}
+        \textbf{Center} $\cdot$ \textbf{Variability} $\cdot$ \textbf{Unusual features} --- all
+        three, every time.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{And two non-negotiables}
+        A \textbf{comparative word} --- \emph{higher than}, \emph{more variable than} --- and
+        the \textbf{context}: name the variable, its units, and both groups.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\large Describing group 1, then describing group 2, is \redink{not} a comparison ---
+    and earns nothing.}
+  \end{center}
+\end{frame}
+
+% ── MEAN VS MEDIAN, AND WHAT THE BOX HIDES ──────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Two footnotes worth keeping}
+  \sectionlabel{skew and the boxplot's blind spot}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Mean vs.\ median (EK UNC-1.M.2)}
+        Symmetric: the two sit close together.\\[3pt]
+        Skewed \textbf{right}: the mean is to the \textbf{right} of the median.\\[3pt]
+        Skewed \textbf{left}: to the \textbf{left}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{What a boxplot cannot show}
+        \textbf{Gaps}, \textbf{clusters}, and a \textbf{second peak} all vanish inside the box.
+        If somebody asks whether there are two kinds of night, ask for a \redink{dotplot or
+        histogram} instead.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{center}
+    {\small\color{slate} Five numbers buy you a clean comparison. What they cost you is
+    everything between them.}
+  \end{center}
+\end{frame}
+
+% ── THE CRUX ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Why the wide section is not the full one}
+  \sectionlabel{the whole point of today}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Twenty players. Four sections. Your counts: \textbf{5 \quad 5 \quad 5 \quad 5}.
+    \item That is \textbf{25\% \quad 25\% \quad 25\% \quad 25\%} --- and it is always true, in
+          every boxplot ever drawn.
+    \item The right section was more than five times as wide. It held the \redink{same five
+          players}, just spread from 52 to 74 instead of packed into 30 to 33.
+  \end{itemize}
+  \vspace{10pt}
+  \begin{block}{Essential Knowledge (UNC-1.L.2)}
+    \textbf{Each section of a boxplot holds one quarter of the data.} Width reports how far
+    apart those values are --- \textbf{spread}, never \textbf{count}.
+  \end{block}
+\end{frame}
+
+% ── APPLICATION ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Application: Two Science Sections}
+  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
+  Two sections of the same course, one test, two boxplots on one axis.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Read both medians and both middle-half widths.
+    \item Which section is skewed, and which way? How does the picture tell you?
+    \item Write the comparison as \textbf{one paragraph}, in context.
+  \end{itemize}
+  \begin{block}{The standard, out loud}
+    A paragraph that describes Period 2 and then describes Period 5 earns \redink{nothing}.
+    The words that earn the point are \emph{higher than} and \emph{more variable than} --- with
+    the variable and both sections named.
+  \end{block}
+\end{frame}
+
+% ── HOMEWORK (started in class, scored) ─────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Five numbers from a list --- then which of three plots is it?
+    \item ``The long right whisker means most values are large.'' Correct that.
+    \item One $1.5 \times$ IQR check, arithmetic shown.
+    \item Two pizza shops: the full comparison, in context.
+    \item One multiple-choice item, with a one-sentence justification.
+  \end{itemize}
+  \begin{block}{This one is graded}
+    This is your \redink{scored} homework, due next class. Start with 1, 2, and 3 while I am
+    still here to answer questions --- finish the rest at home.
+  \end{block}
+\end{frame}
+
+% ── AP PRACTICE & PREVIEW (optional, unscored) ──────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{AP Practice \& what's next}
+  \sectionlabel[goldacc]{AP Practice --- optional, not scored}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four multiple-choice items on weekday versus weekend tips.
+    \item One free-response set: report, test an outlier, compare, and choose a better display.
+    \item Optional: find published side-by-side boxplots and rewrite their comparison sentence.
+  \end{itemize}
+  \begin{block}{Optional --- but this is what the exam looks like}
+    The AP Practice page is \textbf{not required and not graded}. Work it for the reps, and
+    bring what you get stuck on to study hall or office hours. The \redink{graded} homework is
+    the section behind it.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Every section of a boxplot holds the same quarter of the data.
+    Width tells you how stretched out those values are --- it never tells you how many there
+    are.}\\[0.8cm]
+    {\color{skymid}\small Next: Lesson 1.7 --- scores from two completely different tests, and
+    a fair way to say which one was better.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

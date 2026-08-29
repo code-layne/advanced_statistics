@@ -1,10 +1,11 @@
 %! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
+% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
 \newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 1.5: Summary Statistics for a Quantitative Variable}
 
@@ -16,78 +17,392 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will calculate measures of center (mean, median),
+    position (quartiles, percentiles), and variability (range, IQR, standard deviation) for a
+    quantitative variable, and will \emph{justify} which pair of summaries to report from the
+    shape of the distribution and the presence of an outlier.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 1.7 \quad$\cdot$\quad Big Idea: UNC (Uncertainty)
+    \quad$\cdot$\quad Skills 2.C, 4.B \quad$\cdot$\quad LO UNC-1.I, UNC-1.J, UNC-1.K
+    \quad$\cdot$\quad EK UNC-1.I.1--1.I.5, 1.J.1--1.J.4, 1.K.1--1.K.2
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found. \textbf{No vocabulary before the debrief.}
+    \\[2pt]
+    \textbf{Note on arithmetic:} every data set in this lesson is built to divide cleanly, and
+    every display is \textbf{pre-drawn}. Students never sketch a plot; the only ``construction''
+    is filling a five-number-summary table. Do not hand out calculators for the activity --- the
+    numbers are chosen so that a pencil is faster, and a calculator turns a 20-minute discovery
+    into a 20-minute button hunt. The \emph{standard deviation} is the one statistic we compute
+    with technology, and the QuickNotes says so in plain words.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can compute the average of a set of values and find the value in the middle.
+  \item I can show how one unusual value drags one summary a long way and leaves the other
+        where it was.
+  \item I can put a single number on how spread out a set of values is --- and say what that
+        number can be fooled by.
+  \item I can choose which summary to report and defend the choice from the shape.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item A \textbf{statistic} is a numerical summary of \emph{sample} data (EK UNC-1.I.1). The
+        mean sums every value; the median only asks which value sits in the middle
+        (EK UNC-1.I.2, 1.I.3).
+  \item \textbf{Mean, standard deviation, and range are nonresistant}; \textbf{median and IQR
+        are resistant} (EK UNC-1.K.2). That single fact is what makes the choice of summary a
+        defensible decision rather than a preference.
+  \item \textbf{Target misconception:} that the mean is simply ``the right answer'' for center
+        and the median is a shortcut. The AP framing is the reverse --- both are correct, and
+        the \emph{shape} picks between them (Skill 4.B).
+  \item \textbf{Second misconception:} that range is an \emph{interval} (``from 27 to 51'').
+        Range is one number, $\text{max} - \text{min}$ (EK UNC-1.J.2).
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Statistic} --- a numerical summary of sample data (EK UNC-1.I.1)
+        \item \textbf{Mean} $\bar x$ --- sum of the values over the number of values
+              (EK UNC-1.I.2)
+        \item \textbf{Median} --- the middle of the ordered data; average the two middle values
+              when the count is even (EK UNC-1.I.3)
+        \item \textbf{Q1, Q3} --- medians of the lower and upper halves; they bound the middle
+              50\% (EK UNC-1.I.4)
+        \item \textbf{$p$th percentile} --- the value with $p\%$ of the data at or below it
+              (EK UNC-1.I.5)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Range} --- $\text{maximum} - \text{minimum}$, a single number
+              (EK UNC-1.J.2)
+        \item \textbf{Interquartile range (IQR)} --- $Q_3 - Q_1$ (EK UNC-1.J.2)
+        \item \textbf{Standard deviation} $s_x$, and its square the \textbf{variance} $s_x^2$
+              (EK UNC-1.J.3); units matter (EK UNC-1.J.4)
+        \item \textbf{Resistant / nonresistant} --- median and IQR vs.\ mean, standard
+              deviation, and range (EK UNC-1.K.2); the two outlier rules (EK UNC-1.K.1)
+        \item \textbf{Carried forward} --- shape, center, spread, unusual features, skew, and
+              outlier (1.4); dotplots (1.3)
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & A shape from a plot, an average, and one ordered list split into halves & Circulate; debrief item~3 aloud and leave the split list on the board all period \\
+Experience \& Formalize: Activity & 20 & \emph{Nine Paychecks}, problems 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; collect a group's 1c arithmetic \\
+Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color \\
+Application & 6 & \emph{The Quiz Scores}, worked together & Lead it; students hold the pen \\
+Homework: Start in Class & 8 & Begin the \emph{graded} homework, pairs $\to$ solo & Circulate; answer questions now rather than after they leave \\
+Close \& Assign & 4 & Pack the homework; hear the preview & Name the due date; say plainly that AP Practice is optional and unscored \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}
+        \item \textbf{1.} Describe a right-skewed dotplot. \textbf{Spirals} Lesson 1.4 --- and
+              puts one far-out value in front of them 40 seconds before the activity needs it.
+        \item \textbf{2.} Average six numbers; order them and find the middle. \textbf{Seeds:}
+              the exact arithmetic of problem~1a, done once on easy numbers where the average
+              and the middle happen to agree.
+        \item \textbf{3.} Split an ordered list of seven, then split each half again.
+              \textbf{Seeds:} the quartile move --- students do it before it has a name, and
+              the same list is what problem 2d and the Application both reach for.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
+    \begin{itemize}
+        \item \textbf{Name nothing.} Do not say \emph{mean}, \emph{median}, \emph{quartile},
+              \emph{range}, \emph{IQR}, \emph{resistant}, or \emph{standard deviation} in the
+              warm-up debrief. ``Average'' and ``the middle one'' are the students' own words
+              and are the right words for now.
+        \item Item~2 is deliberately a set where the average \emph{equals} the middle value.
+              Nobody should notice --- the activity is what makes that fact interesting.
+        \item Debrief item~3 on the board and \textbf{leave it there}. Write the seven numbers
+              with three vertical strokes through them (below-half $|$ middle $|$ above-half),
+              circle 5, 9, and 15. That picture is what you point at in debrief step~4.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{Nine Paychecks}]{sky}
+\textbf{Launch (2 min).} \emph{``Nine people work at a landscaping company. Here is what each of
+them took home last week. Two summaries of that one list are going to disagree with each other
+by two hundred and fifty dollars, and neither of them is wrong. Your job is to work out who is
+doing the disagreeing --- and then to decide which number you would be willing to print.''}
+Groups of 3--4. Do not preview any vocabulary.
+
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Problem 1} is the center crux. 1a is prior-knowledge
+arithmetic (mean $=\$1{,}000$, middle value $=\$750$). 1b makes the gap between them concrete:
+\textbf{nobody at this company is paid \$1{,}000}, and only the owner clears it. \textbf{1c is
+the discovery} --- swap the owner's \$3{,}000 for \$750 and recompute: the average falls
+\$250 to \$750 while the middle value \emph{does not move at all}. 1d (advertisement vs.\
+negotiation) is Skill~4.B in prior-knowledge clothing.
+
+\emph{Problem 2} takes center as settled and breaks it. Routes A and B have the \textbf{same}
+average and the \textbf{same} middle value and are obviously different distributions, so 2b
+forces the groups to invent a spread measure. Nearly every group invents $\text{max} -
+\text{min}$. 2c then hands them Route C, whose $\text{max}-\text{min}$ equals Route B's on the
+strength of one late package, and 2d asks them to fix it. \textbf{The honest, discoverable fix
+is ``ignore the far ends and measure the middle''} --- which is the IQR, and which is exactly
+what they did by hand in warm-up~3.
+
+\columnbreak
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1b:} ``Point at the person earning \$1{,}000. Can't? Then who is the average
+        describing?''
+  \item \textbf{1c (the crux):} ``You changed one number out of nine. Read me both new answers.
+        Now tell me why one of them didn't care.''
+  \item \textbf{2a:} ``Both lists add to 360. Do the arithmetic and then look at the two plots
+        again --- are you comfortable calling those two routes the same?''
+  \item \textbf{2b:} ``Not a sentence. A \emph{number}. What would you subtract from what?''
+  \item \textbf{2c:} ``Route C's number is 24 and Route B's number is 24. Which of Route C's
+        twelve packages produced that 24? How many of the other eleven had any say?''
+\end{itemize}
+While circulating, pick the work to display: one group's 1c arithmetic, and one group whose 2d
+says something like \emph{``chop the ends off''} --- open the debrief on the first and close it
+on the second.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\boxguard
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item Their 1a answers $\to$ \emph{statistic} (EK UNC-1.I.1), then \emph{mean} with the
+        notation $\bar x$ (EK UNC-1.I.2) and \emph{median} (EK UNC-1.I.3). Give the even-count
+        rule here, pointing at problem~2 where they already averaged 29 and 31.
+  \item Their 1c arithmetic $\to$ \emph{resistant} and \emph{nonresistant} (EK UNC-1.K.2).
+        Write \textbf{\$1{,}000 $\to$ \$750} and \textbf{\$750 $\to$ \$750} side by side. The
+        mean adds every value, so one huge number lifts the total; the median asks only which
+        value is fifth from the bottom.
+  \item Their 2b invention $\to$ \emph{range} (EK UNC-1.J.2), and say at once that it is
+        \textbf{one number, not an interval}. Their 2c finding $\to$ range is
+        \emph{nonresistant}, for the same reason as the mean.
+  \item Their 2d fix $\to$ \emph{Q1}, \emph{Q3} (EK UNC-1.I.4) and \emph{IQR} (EK UNC-1.J.2).
+        Point at the warm-up~3 board work: they already computed Q1 and Q3 by hand and did not
+        know it. Then \emph{percentile} (EK UNC-1.I.5) in one line: Q1 and Q3 are just the 25th
+        and 75th.
+  \item \emph{Standard deviation} (EK UNC-1.J.3) last: the typical distance of a value from the
+        mean. Show the formula once, say we get it from technology, name the \emph{variance},
+        and note that it too is nonresistant --- it is built out of the mean. Then the
+        \textbf{two outlier rules} (EK UNC-1.K.1) in one line, with $1.5\times\text{IQR}$
+        flagged for Lesson~1.6.
+\end{enumerate}
+\columnbreak
+\textbf{QuickNotes.} Half a page, filled together. \textbf{It is a summary of what they found,
+not a new lecture}; if you are talking for more than 90 seconds without pointing at student
+work, stop.
+
+\textbf{Why this order.} Center first, because 1c is the sharpest thing in the packet and it
+lands while the arithmetic is still on their desks. Resistance second, as the \emph{explanation}
+of 1c rather than a new fact. Spread third --- range, then its failure, then the repair --- so
+that IQR arrives as a fix for a problem they hit themselves. Standard deviation last, once
+``typical distance from the mean'' has something to attach to.
+
+\textbf{The sentence to land:} \emph{``Mean and median are both correct. The shape of the
+distribution --- and whether one strange value is sitting in it --- is what decides which one
+you are allowed to quote.''} Say it, write it, and point at the nine paychecks while you do.
+Everything else in this lesson is machinery for that one idea.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\boxguard
+\begin{skillbox}[Application --- \emph{The Quiz Scores} (worked together, 6 min)]{sky}
+Eleven scores, so the median is a single value and each half holds exactly five --- the cleanest
+possible first five-number summary. Part (a) is the table; part (b) is the two subtractions in a
+\texttt{work} block; \textbf{part (c) is the crux transferred} --- the lowest score is corrected
+from 12 to 1, and students report which of \emph{mean, median, range, IQR} moved.
+
+\textbf{Students hold the pen, you hold the questions:} \emph{``Which position in the list did
+you change? Is that position anywhere near the middle?''} \quad \emph{``The IQR only looks at
+two numbers. Did either of them change?''}
+
+\textbf{Answers:} min 12, $Q_1=14$, median 16, $Q_3=18$, max 19; range 7, IQR 4. After the
+correction the mean falls from 16 to 15 and the range jumps from 7 to 18, while the median stays
+16 and the IQR stays 4. Require the \emph{rule} in part (c), not just the four verdicts.
+
+\emph{The \texttt{work} block in part (b) is authored byte-identically in the blank and the key}
+--- the blank ships it as a \texttt{vphantom} of exactly its height, so the two files paginate in
+lockstep. Do not edit one without the other.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard
+\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+Fifteen households' daily water use, right-skewed with one home at 620 gallons, given as a
+stemplot \emph{and} as computer output --- because that pairing is what the exam actually hands
+students. Four multiple-choice items: an IQR computation; a resistance judgment (double the
+largest value and ask which summary moves most); \textbf{the units item (EK UNC-1.J.4)}, where
+converting gallons to litres multiplies mean, median, range, IQR, \emph{and} standard deviation
+alike; and a percentile interpretation. Then one free response: name the shape, choose a
+center--spread pair and \emph{justify the choice from the shape}, interpret $Q_1$ in context, and
+rebut a neighbour who quotes the mean as ``typical''.
+
+\textbf{Part (a) is the spiral} --- it reaches straight back to Lesson 1.4, and part (b) is
+Skill~4.B in the exact form the exam asks it: the choice earns the point, and the choice must be
+justified by the skew and the one large value.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~1.6 and hold the AP standard out loud: \emph{in context or it does not
+count}. ``The median is better'' earns nothing; ``the median, 200 gallons, because the
+distribution is skewed right and the home using 620 gallons pulls the mean up to 240'' earns
+everything. The extension applies both outlier rules to the 620 and finds that they agree.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\boxguard
+\begin{skillbox}[Homework --- the graded practice, started in class]{redbox}
+Five exercises spanning Topic 1.7: \textbf{1} mean and median for seven commutes, and which one
+represents the group, \emph{given its shape}; \textbf{2} the resistance crux restated --- one
+value changed, report what moved; \textbf{3} $Q_1$, $Q_3$, and IQR from an ordered list of
+twelve, which forces the even-count rule twice; \textbf{4} a percentile interpreted in one
+sentence; \textbf{5} the AP-style multiple-choice item with a one-sentence justification.
+Pairs for 1--3, solo for 4--5.
+
+\textbf{This is the lesson's scored work} --- the cover's score column carries a blank for it and
+it is collected next class. Students begin it in the last eight minutes of the period so that the
+questions get asked while you are still in the room; they finish it at home.
+
+\textbf{Eight minutes will not finish five items --- that is by design.} Point them at 1, 2,
+and~5 in class, where you can catch a wrong start; 3 and~4 travel home cleanly.
+\textbf{Item~2 is where the misconception shows}: a student who reports that the median changed
+has re-sorted the list carelessly, and a student who reports that nothing but the mean changed
+has forgotten the range. \textbf{Item~5 carries the check:} the mean salary \$95{,}000 against a
+median of \$58{,}000 is problem~1 of the activity in a suit. Sort item~5 into three piles when
+you score --- chose (B) and named the skew (ready); chose (B) and said only ``because of
+outliers'' (ready, needs the language); chose (A) or (C) (the misconception survived). If more
+than a third land in the last pile, reopen the nine paychecks in the Lesson~1.6 warm-up debrief.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``The mean is the real answer; the median is a shortcut''} (1d, HW~1, AP~b ---
+        the target misconception). Probe: \emph{``Name the person who earns the mean. Now name
+        the person who earns the median.''}
+  \item \textbf{Median found without ordering the list} (1a, HW~3). The paycheck list is printed
+        out of order on purpose. Probe: \emph{``Read me your list from smallest to largest
+        first.''}
+  \item \textbf{Range reported as an interval} --- ``the range is 27 to 51'' (2b, App~b).
+        Probe: \emph{``I asked for one number. Which subtraction gives it?''}
+  \item \textbf{Even-count median taken as one of the two middle values} (2a, HW~3): with twelve
+        times they must average. Probe: \emph{``Six below and six above --- so which single one
+        is in the middle? Neither. What now?''}
+  \item \textbf{IQR computed as $Q_1$ to $Q_3$, or the halves split wrongly} (2d, App~a, HW~3).
+        Probe: \emph{``Go back to the warm-up on the board. How many numbers were in each
+        half?''}
+  \item \textbf{Standard deviation assumed resistant} (AP~2, HW~5): it is built from the mean,
+        so it is not. Probe: \emph{``What is inside the formula? Then how could it survive a
+        \$3{,}000 paycheck?''}
+  \item \textbf{Units ignored} (AP~3): a summary statistic carries the units of the variable.
+        Probe: \emph{``Seven what?''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me a data set where the mean and the median are far apart.''}
+\quad \emph{``Which summary would you hide if you were the boss?''}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Name the due date for the homework} at the back of the packet --- the pages they have just
+started are the graded work --- and say plainly that the AP Practice page before it is optional
+and unscored. Then close on what changed: \emph{``You walked in thinking there was one right
+number for `typical'. You walk out knowing there are two, that they can be \$250 apart, and that
+the shape of the picture is what tells you which one you are allowed to quote.''}
+\textbf{Preview:} Lesson~1.6, \emph{Boxplots and Comparing Distributions} --- the five numbers
+they just computed become a picture, and that picture is what lets us compare two groups side by
+side. Note that the $1.5\times\text{IQR}$ rule is named today but not worked; it does its job next
+lesson, on the boxplot, where the whiskers stop.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher prose lives HERE, never in a _key: a note is the one block in a key with
-% no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page. Delete any note whose component this lesson doesn't have.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, what to look for, common errors.
+Four minutes, five at the outside. Item~1 is a 45-second spiral; do not let a shape debate
+expand. Item~2 is mechanical and its punchline is invisible on purpose --- the average and the
+middle value both come out to 8, which is exactly the situation problem~1 is about to break.
+\textbf{Item~3 is the one to debrief aloud, and its board work stays up all period}: seven
+numbers, the middle circled, then each half's middle circled. You will point at that board twice
+--- once in debrief step~4 and once during the Application. \textbf{Do not say \emph{mean},
+\emph{median}, \emph{quartile}, \emph{range}, or \emph{standard deviation} in this debrief.}
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    % TODO
+\begin{teachernote}[Experience \& Formalize]
+\textbf{Activity (20 min).} Roughly 9 minutes on problem~1, 11 on problem~2. Problem~1 looks
+trivial and is not: 1a is arithmetic, but 1b is where students first feel that a correct
+statistic can describe nobody in the room. Hold them on 1b until someone says out loud that no
+employee earns \$1{,}000.
+
+\textbf{Make every group finish 1c before they touch problem~2.} A group that has not seen
+\$1{,}000 fall to \$750 while \$750 stays put has nothing for the debrief to attach to. If a
+group is slow, cut 1d rather than 1c.
+
+\textbf{Problem 2 fails productively.} Groups will invent $\text{max}-\text{min}$ in 2b and feel
+clever, and Route C is built to take that away from them in 2c. Do not soften it. 2d is where
+the room reinvents the IQR --- accept \emph{any} phrasing of ``ignore the ends, measure the
+middle'', including vague ones; the debrief supplies the precision.
+
+\textbf{The single discipline that makes this lesson work: do not name anything while
+circulating.} A group that hears ``median'' or ``IQR'' stops discovering.
+
+\textbf{Debrief (12 min).} Must-land: step~2 (resistance, on their own 1c arithmetic) and step~4
+(IQR, on their own 2d wording and the warm-up board). If time is short, compress step~5 --- the
+standard deviation needs only its sentence and its formula today, because nothing in this packet
+asks students to compute one by hand.
+
+\textbf{Application (6 min).} If you only get through (a) and (c), that is the right trade.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    % TODO
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded homework is the section behind
+it at the back of the packet. Work it as AP-format reps and go over it at the start of
+Lesson~1.6. \textbf{MC item~3 is the one worth reading closely}: converting gallons to litres
+multiplies \emph{every} one of these statistics by the conversion factor, and distractor (B)
+--- ``the standard deviation is unchanged'' --- is the intuition that a spread measure is somehow
+unit-free. It is not (EK UNC-1.J.4), and the same confusion returns in Unit~4 with linear
+transformations of random variables, so it is worth three minutes now. On the free response,
+part (b) is the highest-value part: it forces students to justify a \emph{choice} of summary from
+the shape, which is Skill~4.B in the form the exam actually asks it, and an unjustified ``median
+and IQR'' earns nothing.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+\textbf{This is the graded page} --- collect it next class and score it. The eight minutes at the
+end of the period are a \emph{start}, not a completion: put them on 1, 2, and~5 and let 3 and~4
+go home. Item~2 is the first one to read when scoring, because it is the crux stripped of
+context: mean $10\to14$, range $4\to24$, median unchanged at 10. Item~3 is the cheapest
+diagnostic in the set --- a student who reports $Q_1=30$ or $Q_3=85$ has taken one of the two
+middle values instead of averaging them, and that error will wreck every boxplot in Lesson~1.6.
+Hold the context line while scoring: item~4 must name newborn girls and grams, not merely
+``90\%\ are below''.
 \end{teachernote}
 \end{document}
