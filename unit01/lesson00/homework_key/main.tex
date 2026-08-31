@@ -1,176 +1,149 @@
-%! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — AP Practice (Answer Key)
-% Mirrors the blank homework exactly: same boxes, same \boxguard values, same item text.
-% Each \writelines{n} in the blank is answered by an \ansline{} terse enough not to wrap past
-% n lines — that is what keeps this key the same number of pages as the blank.
-% NO teachernote here — scoring guidance lives in the lesson plan's \begin{teachernote}[AP Practice].
+%! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Homework (Answer Key)
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Every lesson gets a generated homework; when DeltaMath carries the topic instead, this page
+% is simply not assigned and the cover's score cell is struck through.
+% Started in the closing minutes of the period and finished at home.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro, every
+% \answerspace height, and every \boxguard byte-identical in the blank and the key.
+% The next-lesson preview closes the packet, so it lives here rather than in ../ap_practice/.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.0}{AP Practice --- Answer Key}
+\pageheader{Unit 1, Lesson 1.0}{Homework --- Answer Key}
 % NAMESTRIP: no \namedateperiod here — mirrors the blank.
+% NO teachernote here — scoring guidance lives in the lesson plan.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
 % Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
 % blank and the key the same number of pages.
 \boxguard[8]
 \begin{remindbox}
 \small
-This page is \textbf{not scored} --- your graded homework is in \textbf{DeltaMath}. Work this
-if you are having trouble, and bring it to office hours or study hall for assistance.
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own. Write every explanation \emph{in the context of the problem} --- that is the
+standard here, and it is what earns credit on the AP exam.
 \end{remindbox}
 
-\vspace{0.12in}
+\vspace{0.10in}
 
-\boxguard[30]
-\begin{scenariobox}[The Adoption Board, Revisited]{navy}
+\boxguard[24]
+\begin{scenariobox}[The Food Truck Lot]{navy}
 \small
-The same county shelter board you worked with in class:
+A city keeps a record of every food truck licensed to park in one downtown lot.
 
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.3}
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
 \rowcolor{sky}
-\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Days on board} \\
+\textbf{Truck} & \textbf{Cuisine} & \textbf{Menu items} & \textbf{Avg.\ wait (min)} & \textbf{Cash only?} \\
 \hline
-Biscuit & Beagle    & 3 & 24 & 12 \\
-Momo    & Terrier   & 1 & 15 & 44 \\
-Ranger  & Shepherd  & 5 & 61 &  6 \\
-Pepper  & Retriever & 2 & 55 & 21 \\
-Sage    & Beagle    & 7 & 27 & 59 \\
-Tuck    & Mixed     & 4 & 38 &  9 \\
-Willow  & Terrier   & 2 & 17 & 33 \\
-Zeke    & Shepherd  & 6 & 70 & 15 \\
+Bao Down     & Chinese & 14 & 11 & No  \\
+Curry Cart   & Indian  &  9 &  7 & Yes \\
+El Farolito  & Mexican & 22 & 15 & No  \\
+Gyro Hero    & Greek   &  6 &  4 & Yes \\
+Nonna's      & Italian & 18 & 19 & No  \\
+Pho Sure     & Vietnamese & 11 & 6 & No \\
 \hline
 \end{tabularx}
 \end{scenariobox}
 
-\vspace{0.14in}
+\vspace{0.10in}
 
-\boxguard[16]
-\begin{headlinebox}{goldbg}
+\boxguard[18]
+\begin{notesbox}{Part A --- Reading the Record}
 \small
-\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
-about the context, not just the arithmetic --- read them all before choosing.
-\end{headlinebox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item The individuals are \ans{the food trucks}. There are \ans{6} of them, and
+        \ans{4} variables are recorded about each.
+  \item ``Greek'' is a \ans{value} of the variable \ans{Cuisine}, and
+        ``19'' is a \ans{value} of the variable \ans{Avg.\ wait (min)}.
+  \item Write one \textbf{statistical question} the city could answer with this record, and
+        state exactly what varies in it.
+        \answerspace{1.6cm}{Answers vary. For example: ``How do the average waits at the trucks
+        in this lot vary?'' What varies is the average wait time, which differs from one truck
+        to the next (4 minutes at Gyro Hero, 19 at Nonna's). Any question naming a characteristic
+        that differs across the trucks and requires reading the record earns credit.}
+\end{enumerate}
+\end{notesbox}
 
 \vspace{0.10in}
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.14in]
-
-  \item In the adoption board above, which of the following is a \textbf{variable}?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item Ranger
-          \item Shepherd
-          \item 61
-          \item Weight (lb) \quad \ans{$\leftarrow$ correct --- a column heading}
-          \item The eight dogs listed
-        \end{enumerate}
-
-  \item Which question about the dogs on this board is a \textbf{statistical question}?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item How many dogs are listed on the board?
-          \item How old is Willow?
-          \item How do the ages of the dogs on this board vary?
-                \quad \ans{$\leftarrow$ correct --- the answer differs by dog}
-          \item Is Tuck a mixed breed?
-          \item How many columns does the board have?
-        \end{enumerate}
-
-  \item A veterinary clinic records the body temperature, in degrees Celsius, of every dog it
-        treats in March. Which statement is \textbf{true}?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item The individuals are the temperatures.
-          \item The variable is the month of March.
-          \item The individuals are the dogs treated in March, and the variable is body temperature.
-                \quad \ans{$\leftarrow$ correct}
-          \item Body temperature cannot be a variable because it is a measurement.
-          \item There is no variable, because only one characteristic was recorded.
-        \end{enumerate}
-
-  \item A shelter volunteer says, ``Statistics would be pointless here if every dog were the
-        same age, the same weight, and had waited the same number of days.'' The volunteer's
-        reasoning depends most directly on the idea that
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
-          \item averages are easier to compute when values differ.
-          \item statistics studies characteristics whose values vary across individuals.
-                \quad \ans{$\leftarrow$ correct --- variability}
-          \item a data set must contain at least two variables.
-          \item every variable must be measured in units.
-          \item counting is not a statistical activity.
-        \end{enumerate}
-
-\end{enumerate}
-
-\vspace{0.14in}
-
-\boxguard[16]
-\begin{headlinebox}{goldbg}
+\boxguard[18]
+\begin{notesbox}{Part B --- Statistical or Not?}
 \small
-\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
-\emph{in the context of the problem} --- that is what earns credit on the AP exam.
-\end{headlinebox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item \textbf{Same lot, two questions.} Exactly one is statistical. Circle it, then name the
+        check the other one fails and explain why it fails.
+
+        \vspace{4pt}
+        \hspace{1.0em}\emph{(i)} How many trucks are licensed for this lot?
+        \hfill
+        \emph{(ii)} How do the average waits at these trucks vary?
+        \ans{$\leftarrow$ circle (ii)}
+        \answerspace{1.8cm}{(ii) is statistical. (i) fails \textbf{check 1}: the number of
+        licensed trucks is one fixed count --- 6 --- and that answer does not differ from one
+        truck to the next. Needing to read the whole record is not the test; variation across
+        individuals is.}
+  \item A classmate says, ``A question can only be statistical if the answer is a number.''
+        Give one question about this lot that shows the classmate is wrong, and explain how
+        it passes both checks.
+        \answerspace{1.8cm}{Answers vary. For example: ``What kind of cuisine do the trucks in
+        this lot serve?'' Check 1: cuisine differs from truck to truck --- Chinese, Indian,
+        Mexican, Greek. Check 2: you must read the record to answer. Both checks pass, and the
+        answer is a set of category names rather than a number.}
+\end{enumerate}
+\end{notesbox}
 
 \vspace{0.10in}
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
-
-  \item A school newspaper surveys every student in the senior class. For each senior it records
-        the number of hours worked at a paying job last week, and whether the student drives to
-        school.
-
-        \vspace{6pt}
-        \textbf{(a)} Identify the individuals and both variables in this data set.\\[4pt]
-        \ansline{Individuals: the seniors surveyed. Variables: hours worked last week,}
-        \ansline{and whether the student drives to school.}
-
-        \vspace{6pt}
-        \textbf{(b)} Write one statistical question the newspaper could answer with this data,
-        and state precisely what varies in it.\\[4pt]
-        \ansline{``How do the hours worked last week vary among seniors?'' What varies is}
-        \ansline{the number of hours worked, from one senior to the next.}
-
-        \vspace{6pt}
-        \textbf{(c)} The paper prints only the sentence \textbf{``Seniors work 11 hours a week.''}
-        Identify \textbf{two} pieces of context a reader would need before this number means
-        anything.\\[4pt]
-        \ansline{Any two of: which seniors and how many; when the hours were counted;}
-        \ansline{what 11 summarizes (typical? most?); whether non-working seniors count.}
-
-        \vspace{6pt}
-        \textbf{(d)} A senior reads that sentence and concludes, ``So I should expect to work
-        about 11 hours next week.'' Explain why a number that summarizes a whole group does not
-        tell you what to expect for one individual in it.\\[4pt]
-        \ansline{The 11 describes the class as a whole, but hours worked vary from senior}
-        \ansline{to senior --- some work none and some work far more. A summary hides that}
-        \ansline{spread, so it cannot predict any single student's hours.}
-
-\end{enumerate}
-
-\vspace{0.12in}
-
-\boxguard[12]
-\begin{extensionbox}
+\boxguard[18]
+\begin{notesbox}{Part C --- Context and the AP Standard}
 \small
-Find a number reported in a news headline this week. Write down the headline, then list every
-piece of context it leaves out. Finish by writing the statistical question the study behind it
-must have asked.\\[4pt]
-\ansline{Answers vary. Look for: who was measured, what was measured, in what units,}
-\ansline{when/where, and a question whose answer differs across individuals.}
-\end{extensionbox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item A sign at the entrance to the lot reads only: \textbf{``Average wait: 10 minutes.''}
+        Name \textbf{two} pieces of context a customer would need before that number means
+        anything, and then explain why the sign does not tell one customer how long
+        \emph{they} will wait.
+        \answerspace{2.2cm}{Two of: which trucks the average covers (all six, or only some);
+        what time of day or day of week it was measured; how many customers were timed; whether
+        it is a mean or a typical wait. The sign does not predict one customer's wait because it
+        summarizes the whole lot --- actual waits range from about 4 minutes to about 19, and no
+        single customer is guaranteed the group's average.}
+  \item \textbf{AP-style multiple choice.} A researcher records, for each of 500 hospital
+        patients, the patient's length of stay in days. Which of the following is a
+        \textbf{statistical question} about this data set?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
+          \item How many patients were included in the study?
+          \item How many days did patient \#307 stay?
+          \item How do the lengths of stay vary among these patients?
+          \item How many variables were recorded?
+          \item On what date did the study begin?
+        \end{enumerate}
+        Justify your choice in one sentence by naming what varies.
+        \answerspace{1.4cm}{\textbf{(C).} Length of stay differs from one patient to the next,
+        so the answer varies across individuals and the data must be collected to find it.}
+\end{enumerate}
+\end{notesbox}
 
-\vspace{0.12in}
+\vspace{0.10in}
 
+% The next-lesson preview closes the packet.
 \boxguard[10]
 \begin{spiralbox}
 \small
-\textbf{Next lesson: The Language of Variation.} You have now seen that a variable is a column
+\textbf{Next lesson: The Language of Variation.} You now know that a variable is a column
 heading and that its values differ from individual to individual. Next time we sort variables
 into two kinds --- the ones that record a \emph{category} and the ones that record an
-\emph{amount} --- and see why the difference decides everything we are allowed to do with them.
+\emph{amount} --- and see why that difference decides every graph and every summary we are
+allowed to use for the rest of the course.
 \end{spiralbox}
 
 \end{document}

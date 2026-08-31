@@ -1,0 +1,233 @@
+%! The Language of Variation — Unit 1, Lesson 1.1 — Guided Notes & Practice
+% GRADUAL RELEASE component (I do -> we do -> you do), 22 minutes.
+%   I DO   : the objective box, the vocabulary box, and notes sections 1-4.
+%   WE DO  : the practicebox ("Guided Practice") — The Season Pass, worked together.
+%   YOU DO : the "Independent Practice" notesbox — students work alone, teacher circulates.
+% Vocabulary is GIVEN here, not discovered: the group activity that follows applies it.
+% Section 3 is the trap that decides the lesson — a column written entirely in digits is not
+% automatically quantitative. Permit numbers and ZIP codes average cleanly and mean nothing.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, and every
+% \writelines{n} becomes exactly n \ansline{} calls. Blank widths are sized close to the answers
+% so the two files wrap identically. The \begin{work} block in section 3 is authored
+% BYTE-IDENTICALLY in both files: the blank reserves its exact height and prints nothing.
+% VOCABPAR: \par brackets each \termblank inside the vocabbox.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.1}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.12in}
+
+\boxguard[14]
+\begin{objectivebox}
+\small
+By the end of these notes I will be able to:
+\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
+  \item classify a variable as \textbf{categorical} or \textbf{quantitative} using the amount
+        test, not the ``does it have digits'' test;
+  \item explain why averaging a ZIP code or a permit number is meaningless;
+  \item explain what changes --- and what is lost --- when measured amounts are replaced by
+        group labels.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Categorical variable}
+\par
+\termblank{Quantitative variable}
+\par
+\termblank{The amount test}
+\par
+\termblank{Grouping (binning)}
+\par
+\end{vocabbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+\boxguard[24]
+\begin{notesbox}{1. Every Variable Is One of Two Kinds}
+\small
+Last lesson a \textbf{variable} was any characteristic recorded for each individual. Today we
+split them in two --- and this single decision determines every graph and every summary you are
+allowed to use for the rest of the course.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.28\linewidth} X @{}}
+\hline
+Categorical & Values are category \blank{2.0cm} or group labels. \\
+Quantitative & Values are \blank{2.2cm} for a measured or counted amount. \\
+\hline
+\end{tabularx}
+
+\vspace{8pt}
+The same five hikers, two different kinds of column:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l l c @{}}
+\rowcolor{sky}
+\textbf{Party} & \textbf{Trail} & \textbf{Time out (min)} \\
+\hline
+Alvarez & Ridge Loop   &  95 \\
+Boone   & Cedar Falls  & 140 \\
+Delgado & Summit Trail & 215 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+\emph{Trail} is \blank{2.6cm}: its values name which trail, and there is no sense in which
+Summit Trail is ``more'' than Ridge Loop. \emph{Time out} is \blank{2.6cm}: 215 minutes
+really is more than 95, and the difference, 120 minutes, means something.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 2 ──────────────────────────────────────────────────────────
+\boxguard[16]
+\begin{notesbox}{2. The Amount Test}
+\small
+Do not ask ``does it have digits.'' Ask:
+
+\vspace{6pt}
+\begin{center}
+\fcolorbox{navy}{sky}{\parbox{0.92\linewidth}{\centering\small
+\textbf{Is the value an \emph{amount} of something --- how much, or how many?}\\[3pt]
+If yes, the variable is \blank{2.8cm}. If the value only \emph{identifies} or
+\emph{labels}, it is \blank{2.6cm}.}}
+\end{center}
+
+\vspace{6pt}
+A second way to run the same test: \textbf{does adding or averaging the values produce something
+real?} If the average is meaningful, the variable is quantitative. If the average is
+\blank{2.4cm}, it is categorical no matter how it is written.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 3 — the trap ───────────────────────────────────────────────
+\boxguard[26]
+\begin{notesbox}{3. Written in Digits, and Still Categorical}
+\small
+Two hiking parties: permit numbers 2041 and 6318, carrying 6 and 2 water bottles. Both columns
+are written entirely in digits. Both averages compute without complaint.
+
+\begin{work}
+\text{average permit \#} &= \frac{2041 + 6318}{2} = 4179.5 \\[4pt]
+\text{average water bottles} &= \frac{6 + 2}{2} = 4
+\end{work}
+
+Four water bottles is a real amount --- it is what each party would have carried if the load were
+shared evenly. Permit 4179.5 is \blank{3.2cm}: it does not identify a party, and no party
+carries ``half a permit.'' The digits in a permit number are a \blank{2.4cm}, not a
+measurement.
+
+\vspace{6pt}
+\textbf{Classify each. Write C or Q.}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+\textbf{Permit \#} & \textbf{Parking spot} & \textbf{Home ZIP} & \textbf{Water bottles} &
+\textbf{Group size} \\
+\blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Counting a categorical variable produces numbers.} ``62\% of parties hiked with a dog''
+is a numerical \blank{2.2cm} of a categorical variable. The \emph{summary} is numeric; the
+\emph{variable} is still \blank{2.4cm}.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 4 ──────────────────────────────────────────────────────────
+\boxguard[16]
+\begin{notesbox}{4. Grouping Turns Q into C --- and Loses Something}
+\small
+A ranger stops recording \emph{Time out} in minutes and records \emph{Short} / \emph{Medium} /
+\emph{Long} instead. Same hikes, same afternoon.
+
+\vspace{6pt}
+The variable is now \blank{2.6cm}. This is called \textbf{grouping} or
+\textbf{binning}.
+
+\vspace{6pt}
+\textbf{What is lost:} once 95, 140, and 215 become labels, the mean time on the trail can no
+longer be \blank{2.6cm} from the column. Grouping runs \blank{2.2cm} way only ---
+you can always bin amounts into labels, but you can never recover the amounts from the labels.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── WE DO: guided practice ───────────────────────────────────────────────────
+\boxguard[20]
+\begin{practicebox}
+\small
+\textbf{The Season Pass --- we work this one together.} A ski area records five things about each
+of its 3{,}400 season-pass holders: \textbf{pass number}, \textbf{age} (years), \textbf{pass
+tier} (Gold / Silver / Bronze), \textbf{miles traveled} to the mountain, and \textbf{locker
+number}.
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item The individuals are \blank{3.6cm}. Label each variable \textbf{C} or \textbf{Q}.
+
+        \vspace{3pt}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+        \textbf{Pass \#} & \textbf{Age} & \textbf{Pass tier} & \textbf{Miles traveled} &
+        \textbf{Locker \#} \\
+        \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
+        \end{tabularx}
+  \item The resort stops recording age in years and records \textbf{age group} instead
+        (Under 18 / 18--34 / 35--54 / 55+). Same people, same afternoon --- which kind is the
+        variable now, and what can the resort no longer compute?\\[3pt]
+        \writelines{2}
+  \item A report states: \textbf{``The average pass number is 5{,}120.''} Say in one sentence
+        why that number tells you nothing about the pass holders.\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.10in}
+
+% ── YOU DO: independent practice ─────────────────────────────────────────────
+\boxguard[20]
+\begin{notesbox}{Independent Practice --- You Try}
+\small
+Work these on your own. I will circulate.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item A coffee shop logs every order it fills. Label each variable \textbf{C} or \textbf{Q}.
+
+        \vspace{3pt}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y @{}}
+        \textbf{Drink size (S/M/L)} & \textbf{Number of shots} & \textbf{Price paid (\$)} &
+        \textbf{Loyalty card \#} \\
+        \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
+        \end{tabularx}
+  \item Name one variable written entirely in digits that is \textbf{not} quantitative, and say
+        what its digits are doing instead of measuring.\\[3pt]
+        \writelines{2}
+  \item A survey records \emph{Number of pets owned} and \emph{Type of pet owned}. Classify each,
+        then say what a summary of each column would look like.\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

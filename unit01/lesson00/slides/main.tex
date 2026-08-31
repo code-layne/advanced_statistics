@@ -1,4 +1,7 @@
 %! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Slides (Beamer)
+% GRADUAL RELEASE deck: title → targets → warm-up hook → I DO (notes frames) → WE DO (guided
+% practice) → YOU DO (independent practice) → group activity launch → debrief → close & assign.
+% Vocabulary is given up front here, not withheld: the notes frames ARE the direct instruction.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 \usetikzlibrary{positioning}  % -beamer loads tikz but not this library
@@ -7,6 +10,8 @@
 % load — redeclare them here rather than pulling in the article preamble.
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -23,29 +28,26 @@
 \end{frame}
 }
 
-% The deck follows the EFFL flow: targets (SPOILER-FREE) → warm-up → activity launch →
-% debrief frames (formalize in "red ink") → QuickNotes arc → application → practice →
-% homework. Everything before the debrief divider stays vocabulary-free.
-\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
-
-% ── LEARNING TARGETS (spoiler-free: no `data', `variable', `statistical question') ──
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 1.0}
   By the end of today, I can\ldots
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item explain why a number on its own tells you nothing.
-    \item read a table and say what one row stands for and what each column keeps track of.
-    \item tell apart questions you look up and questions that need a whole group.
-    \item write a question of my own that recorded information could answer.
+    \item explain why a number carries no information until it has \textbf{context}.
+    \item identify the \textbf{individuals}, \textbf{variables}, and \textbf{values} in a
+          data set.
+    \item explain what \textbf{variability} is and why it is the reason statistics exists.
+    \item decide whether a question is a \textbf{statistical question} --- and write one.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{the adoption board} with your group $\to$ we name what you found
-    $\to$ practice. You will figure it out \emph{before} I give you the words.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    \textbf{three you work alone} $\to$ \textbf{the adoption board with your group} $\to$
+    debrief.
   \end{block}
 \end{frame}
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── WARM-UP HOOK ─────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
@@ -58,31 +60,17 @@
 \end{frame}
 }
 
-% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Experience \& Formalize: The Adoption Board}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
-  One shelter board. Visitors read it; so does the director --- not for the same things.
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item \textbf{Problem 1} --- read the board.
-    \item \textbf{Problem 2} --- four questions the director might ask.
-  \end{itemize}
-  \begin{block}{Your job}
-    Use only what you already know. For \emph{every} answer, be ready to show me
-    \textbf{where on the board} you see it.
-  \end{block}
-\end{frame}
-
-% ── DEBRIEF DIVIDER — everything after this point may name the vocabulary ─────
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
-    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
-    {\color{white}\bfseries\Large Everything on the next slides, you already found.
-    We are only giving it the words statisticians use.}\\[0.9cm]
-    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Five words go in the vocabulary box today. Write each one the moment
+    we use it.}
   \end{minipage}
 \end{frame}
 }
@@ -111,7 +99,6 @@
   \end{columns}
 \end{frame}
 
-% ── DEFINITIONS ──────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Statistics}
   \sectionlabel{the definition we will use all year}
@@ -152,16 +139,17 @@
 % ── INDIVIDUALS AND VARIABLES ────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Individuals and variables}
+  \sectionlabel{notes, section 2}
   \vspace{2pt}
   \renewcommand{\arraystretch}{1.3}
-  \begin{tabularx}{\textwidth}{@{} l Y Y Y Y @{}}
+  \begin{tabularx}{\textwidth}{@{} l Y Y Y @{}}
     \rowcolor{sky}
-    \textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Adopted?} \\
+    \textbf{Student} & \textbf{Grade level} & \textbf{Hours of sleep} & \textbf{Rides the bus?} \\
     \hline
-    Biscuit & Beagle    & 3 & 24 & Yes \\
-    Momo    & Terrier   & 1 & 15 & No  \\
-    Ranger  & Shepherd  & 5 & 61 & Yes \\
-    Pepper  & Retriever & 2 & 55 & No  \\
+    Alvarez & 10 & 7.5 & Yes \\
+    Boone   & 11 & 6.0 & No  \\
+    Chen    & 10 & 8.5 & Yes \\
+    Delgado & 12 & 5.5 & No  \\
     \hline
   \end{tabularx}
   \vspace{12pt}
@@ -184,18 +172,18 @@
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
       \begin{block}{Variable}
-        \textbf{Breed} --- the column heading. The characteristic being recorded.
+        \textbf{Rides the bus?} --- the column heading. The characteristic being recorded.
       \end{block}
     \end{column}
     \begin{column}{0.46\textwidth}
       \begin{block}{Value}
-        \textbf{Beagle} --- what one individual happens to be. An entry in the column.
+        \textbf{Yes} --- what one individual happens to be. An entry in the column.
       \end{block}
     \end{column}
   \end{columns}
   \vspace{14pt}
   \begin{center}
-    {\large ``Beagle'' is a \textbf{value} of the variable \textbf{Breed}.}\\[8pt]
+    {\large ``8.5'' is a \textbf{value} of the variable \textbf{Hours of sleep}.}\\[8pt]
     {\small\color{slate} Point at the column heading before you answer.}
   \end{center}
 \end{frame}
@@ -206,11 +194,11 @@
   \sectionlabel{the reason for the entire course}
   \vspace{6pt}
   \begin{itemize}\setlength{\itemsep}{10pt}
-    \item If every dog weighed exactly the same, one dog would tell you everything
-          about weight.
+    \item If every student slept exactly 7.0 hours, one student would tell you everything
+          about sleep.
     \item You would not need a sample, a graph, or an average. You would need
           one measurement.
-    \item But the values \textbf{differ} --- 24, 15, 61, 55 --- so one measurement
+    \item But the values \textbf{differ} --- 7.5, 6.0, 8.5, 5.5 --- so one measurement
           is not enough.
   \end{itemize}
   \vspace{10pt}
@@ -240,32 +228,33 @@
   \vspace{16pt}
   \begin{center}
     {\large Both yes $\Rightarrow$ \textbf{\color{navy}statistical question.}}\\[8pt]
-    {\small One definite answer $\Rightarrow$ not statistical.}
+    {\small The test is \redink{variation across individuals} --- not whether the answer is
+    a number, and not how much of the table you must read.}
   \end{center}
 \end{frame}
 
 \begin{frame}[t, plain]
   \navyheader{S or N?}
-  \sectionlabel{call it out}
+  \sectionlabel{notes, section 4 --- call it out}
   \vspace{4pt}
   \renewcommand{\arraystretch}{1.7}
   \begin{tabularx}{\textwidth}{@{} X C{3.2cm} @{}}
     \hline
     \textbf{Question} & \textbf{S or N} \\
     \hline
-    How many minutes did I sleep last night?          & \\
-    How many minutes do students at our school sleep? & \\
-    What is the weight of Ranger, the shepherd?       & \\
-    How do the weights of shelter dogs vary?          & \\
+    How many students are in this table?          & \\
+    How many hours did Chen sleep?                & \\
+    How do the hours of sleep vary in this class? & \\
+    What grade levels are represented here?       & \\
     \hline
   \end{tabularx}
   \vspace{10pt}
   \begin{center}
-    {\small\color{slate} For every \textbf{N}: what one change would make it statistical?}
+    {\small\color{slate} Watch the last row: the answer is not a number, and it is still
+    statistical.}
   \end{center}
 \end{frame}
 
-% ── THE ARC ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{The data analysis process}
   \sectionlabel{this is the shape of the whole course}
@@ -292,10 +281,10 @@
   \end{center}
 \end{frame}
 
-% ── APPLICATION ──────────────────────────────────────────────────────────────
+% ── WE DO ────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Application: The Gym Sign-Up}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
+  \navyheader{Guided Practice: The Gym Sign-Up}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
   A gym records the \textbf{resting heart rate} (bpm) of each of its 120 members on the
   morning they join, and each member's \textbf{home ZIP code}.
   \begin{itemize}\setlength{\itemsep}{5pt}
@@ -309,40 +298,90 @@
   \end{block}
 \end{frame}
 
-% ── PRACTICE (in class, not scored) ──────────────────────────────────────────
+% ── YOU DO ───────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Check Your Understanding}
-  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
-  \begin{itemize}\setlength{\itemsep}{5pt}
+  \navyheader{Independent Practice}
+  \sectionlabel{You do $\cdot$ 3 items $\cdot$ on your own}
+  \begin{itemize}\setlength{\itemsep}{7pt}
     \item Turtles in a pond: individuals, variable, units.
-    \item Write your own statistical question --- and name what varies.
-    \item Same pond, two questions: which one is statistical, and why?
-    \item ``The average is 12.'' What are you missing?
-    \item One multiple-choice item, with a one-sentence justification.
+    \item Same pond, two questions --- circle the statistical one and name the check the
+          other fails.
+    \item ``The average is 12.'' What context are you missing?
   \end{itemize}
-  \begin{block}{This is practice, not a quiz}
-    These are \textbf{not scored}. Start with 1, 3, and 5. I will look over your shoulder
-    at 5 on the way out.
+  \begin{block}{Silent and alone}
+    I am circulating. Item 2 is the one I am reading over your shoulder --- if you cannot name
+    the failing \emph{check}, flag me before we move on.
   \end{block}
 \end{frame}
 
-% ── HOMEWORK ─────────────────────────────────────────────────────────────────
+% ── GROUP ACTIVITY LAUNCH ────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GROUP ACTIVITY \ \textbullet\ \ 16 MINUTES}\\[0.7cm]
+    {\color{white}\bfseries\Large The Adoption Board}\\[0.9cm]
+    {\color{skymid}\small Groups of 3--4. Use today's vocabulary. For every answer, be ready to
+    show me \textbf{where on the board} you see it.}
+  \end{minipage}
+\end{frame}
+}
+
 \begin{frame}[t, plain]
-  \navyheader{AP Practice, homework \& what's next}
-  \sectionlabel[goldacc]{AP Practice --- practice, not a grade}
+  \navyheader{Group Activity: The Adoption Board}
+  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 16 minutes}
+  One shelter board. Visitors read it; so does the director --- not for the same things.
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item Four multiple-choice items on the adoption board and a vet clinic.
-    \item One free-response set: a school-newspaper survey of the senior class.
+    \item \textbf{Problem 1} --- read the board: individuals, variables, values, variability.
+    \item \textbf{Problem 2} --- four questions the director might ask. \redink{2b is the
+          one that will get you.}
+  \end{itemize}
+  \begin{block}{Ground rule}
+    Nobody in the group writes an answer until somebody can point at the board and say
+    \emph{how} they know.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief}
+  \sectionlabel{8 minutes $\cdot$ we fill this in together}
+  \vspace{4pt}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{@{} l X C{3.4cm} @{}}
+    \hline
+    & \textbf{Director's question} & \textbf{How many answers?} \\
+    \hline
+    (B) & How many dogs are on the board?              & \\
+    (C) & How long do dogs on this board tend to wait? & \\
+    (D) & Do heavier dogs wait longer?                 & \\
+    \hline
+  \end{tabularx}
+  \vspace{10pt}
+  \begin{block}{The crux}
+    All three need many rows. Only (B) has an answer that does \redink{not} differ from one dog
+    to the next --- so only (B) fails check 1. \textbf{Reading the whole table is not the test.}
+  \end{block}
+\end{frame}
+
+% ── CLOSE & ASSIGN ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework \& what's next}
+  \sectionlabel[goldacc]{Start it now --- I am still in the room}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Homework --- \redink{scored, due next class}:} \emph{The Food Truck Lot}.
+          Identification, the contrast pair, a context critique, one AP-style item.
+    \item \textbf{AP Practice --- not scored:} four multiple-choice items and one
+          free-response set. Work it for the reps; bring what stalls you to office hours.
     \item Optional: bring in a headline with a number and strip it for context.
   \end{itemize}
-  \begin{block}{Your homework is in DeltaMath}
-    The \redink{graded} assignment is posted in \textbf{DeltaMath} --- log in and complete it
-    before next class. The AP Practice page is not scored: work it, and bring what you get
-    stuck on to study hall or office hours.
+  \begin{block}{The standard, starting today}
+    Every explanation is written \textbf{in the context of the problem}. An answer without the
+    situation in it earns nothing on the AP exam --- and nothing here.
   \end{block}
 \end{frame}
 
-% ── CLOSE ────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]

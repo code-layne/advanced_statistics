@@ -1,0 +1,34 @@
+%! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Guided Notes & Practice (Answer Key)
+% Copy the blank component VERBATIM, then: swap -boxes for -key, retitle the pageheader,
+% replace each \blank{} with a short \ans{}, each \writelines{n} with exactly n \ansline{}
+% calls, and each \termblank{T} with \termans{T}{line 1}{line 2} (defined below — it
+% reproduces \termblank's exact two-line geometry).
+% Every \begin{work} block and every \boxguard stays BYTE-IDENTICAL to the blank's.
+% Keep \ans{} texts short enough not to wrap wider than the blank they replace, and keep
+% each \ansline{} short enough not to wrap past the line it fills — that is what keeps the
+% key page-for-page with the blank.
+% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
+% NO teachernote here — teacher prose goes in the lesson plan.
+\documentclass[10pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-key}   % pulls in -boxes; do NOT also load -boxes
+
+% Key-side counterpart of \termblank: term + inline answer on line 1, \ansline on line 2.
+\newcommand{\termans}[3]{%
+  \noindent\textbf{\textcolor{navy}{#1:}}\quad\ans{#2}\\[1pt]%
+  \ansline{#3}\\[2pt]}
+
+\begin{document}
+
+\pageheader{Unit @@UNITINT@@, Lesson @@LESSONID@@}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.12in}
+
+% TODO: mirror the blank component exactly. Examples:
+%   \termblank{Variable}  ->  \termans{Variable}{a characteristic recorded}{for every individual; a column heading, never an entry under it.}
+%   \blank{2.4cm}         ->  \ans{context}
+%   \writelines{2}        ->  \ansline{first line of the answer}
+%                             \ansline{second line of the answer}
+
+\end{document}

@@ -81,31 +81,34 @@ Produces, in the lesson plan:
 ```
 Standards addressed: `VAR-1.A`, `VAR-1.A.1`.
 
-**On the cover, that target must be de-spoilered.** "I can identify a *statistical question*" names
-the term the debrief is meant to attach, so the cover gets the plain-language version instead —
-"I can tell which questions data can actually answer, and which it can't." The formal LO stays in
-the lesson plan. See the spoiler rule in `components.md`.
+**The cover names the term too.** Under gradual release the vocabulary is taught directly in the
+guided notes, so the cover's target reads "I can decide whether a question is a **statistical
+question**, and write one of my own" — bold the formal term. Only the LO/EK *codes* stay in the
+teacher-facing plan.
 
-## EFFL: where CED content lands in the lesson
+## Where CED content lands in the lesson
 
-One CED **Topic** still maps to one lesson, but the pieces land in EFFL order — the vocabulary
-arrives *after* the activity, not before it:
+One CED **Topic** maps to one lesson. The pieces land in gradual-release order — the vocabulary
+arrives first, in the notes, and the activity is where students transfer it:
 
 | CED piece | Where it goes |
 | --- | --- |
 | Topic, Big Idea, Skill, LO, EK codes | the lesson plan's objective box (the audit trail) |
-| LO, as an "I can…" statement | plan: Learning Targets · cover: **de-spoilered** version |
+| LO, as an "I can…" statement | plan: Learning Targets · cover: the same target, naming the term |
 | EK, as the "why" | plan: Key Understandings — with the target misconception named |
-| The formal terms and notation the EK introduces | plan: Vocabulary box · packet: the
-  **QuickNotes** box, filled during the debrief — **never** the activity, cover, or early slides |
-| The reasoning the LO asks for | the Activity: students reach it from prior knowledge, in their
-  own words, before it has a name |
-| AP-style application of the topic | the Application, then Check Your Understanding |
-| AP-style MC/FRQ reps on the topic | the **homework** (the graded practice) |
+| The formal terms and notation the EK introduces | plan: Vocabulary box · packet: the notes'
+  `vocabbox` and numbered notes sections, filled **as each term is named** |
+| The reasoning the LO asks for | the notes' worked example (**I do**), then the Guided Practice
+  box (**we do**), then Independent Practice (**you do**) |
+| Transfer of that reasoning to an unseen context | the **Group Activity** — scenario 2 carries the
+  crux, the item that surfaces the target misconception |
+| AP-style MC/FRQ reps on the topic | **AP Practice** (assigned, unscored) |
+| The graded practice, in a third context | the **homework** (scored, or replaced by DeltaMath) |
 
-The practical consequence: read the EK to decide **what the groups must discover**, then design
-two scenarios that get them there with only prior knowledge — and put the EK's own wording in
-QuickNotes, where the debrief attaches it.
+The practical consequence: read the EK to decide **what the notes must teach**, then read it again
+to decide **what the activity must make students transfer** — and design scenario 2's crux
+backward from the misconception the EK implies. Use a different data context in the notes, the
+activity, and the homework; recall is not the skill being built.
 
 For the rest of the document structure, follow `references/components.md`; for macros and boxes,
 `references/conventions.md`.

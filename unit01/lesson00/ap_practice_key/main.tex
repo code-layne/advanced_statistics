@@ -1,0 +1,155 @@
+%! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — AP Practice (Answer Key)
+% Mirrors ap_practice/main.tex exactly: same boxes, same \boxguard values, same item text.
+% Each \writelines{n} in the blank is answered by an \ansline{} terse enough not to wrap past
+% n lines — that is what keeps this key the same number of pages as the blank.
+% NO teachernote here — scoring guidance lives in the lesson plan's \begin{teachernote}[AP Practice].
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.0}{AP Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.15in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored}. These are AP-format reps: work them for the
+practice, and bring whatever stalls you to office hours or study hall. Your \textbf{graded
+homework is the last section of this packet}.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[30]
+\begin{scenariobox}[The Adoption Board, Revisited]{navy}
+\small
+The same county shelter board you worked with in class:
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Days on board} \\
+\hline
+Biscuit & Beagle    & 3 & 24 & 12 \\
+Momo    & Terrier   & 1 & 15 & 44 \\
+Ranger  & Shepherd  & 5 & 61 &  6 \\
+Pepper  & Retriever & 2 & 55 & 21 \\
+Sage    & Beagle    & 7 & 27 & 59 \\
+Tuck    & Mixed     & 4 & 38 &  9 \\
+Willow  & Terrier   & 2 & 17 & 33 \\
+Zeke    & Shepherd  & 6 & 70 & 15 \\
+\hline
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.14in]
+
+  \item In the adoption board above, which of the following is a \textbf{variable}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
+          \item Ranger
+          \item Shepherd
+          \item 61
+          \item Weight (lb) \quad \ans{$\leftarrow$ correct --- a column heading}
+          \item The eight dogs listed
+        \end{enumerate}
+
+  \item Which question about the dogs on this board is a \textbf{statistical question}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
+          \item How many dogs are listed on the board?
+          \item How old is Willow?
+          \item How do the ages of the dogs on this board vary?
+                \quad \ans{$\leftarrow$ correct --- the answer differs by dog}
+          \item Is Tuck a mixed breed?
+          \item How many columns does the board have?
+        \end{enumerate}
+
+  \item A veterinary clinic records the body temperature, in degrees Celsius, of every dog it
+        treats in March. Which statement is \textbf{true}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
+          \item The individuals are the temperatures.
+          \item The variable is the month of March.
+          \item The individuals are the dogs treated in March, and the variable is body temperature.
+                \quad \ans{$\leftarrow$ correct}
+          \item Body temperature cannot be a variable because it is a measurement.
+          \item There is no variable, because only one characteristic was recorded.
+        \end{enumerate}
+
+  \item A shelter volunteer says, ``Statistics would be pointless here if every dog were the
+        same age, the same weight, and had waited the same number of days.'' The volunteer's
+        reasoning depends most directly on the idea that
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
+          \item averages are easier to compute when values differ.
+          \item statistics studies characteristics whose values vary across individuals.
+                \quad \ans{$\leftarrow$ correct --- variability}
+          \item a data set must contain at least two variables.
+          \item every variable must be measured in units.
+          \item counting is not a statistical activity.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \item A school newspaper surveys every student in the senior class. For each senior it records
+        the number of hours worked at a paying job last week, and whether the student drives to
+        school.
+
+        \vspace{6pt}
+        \textbf{(a)} Identify the individuals and both variables in this data set.\\[4pt]
+        \ansline{Individuals: the seniors surveyed. Variables: hours worked last week,}
+        \ansline{and whether the student drives to school.}
+
+        \vspace{6pt}
+        \textbf{(b)} Write one statistical question the newspaper could answer with this data,
+        and state precisely what varies in it.\\[4pt]
+        \ansline{``How do the hours worked last week vary among seniors?'' What varies is}
+        \ansline{the number of hours worked, from one senior to the next.}
+
+        \vspace{6pt}
+        \textbf{(c)} The paper prints only the sentence \textbf{``Seniors work 11 hours a week.''}
+        Identify \textbf{two} pieces of context a reader would need before this number means
+        anything.\\[4pt]
+        \ansline{Any two of: which seniors and how many; when the hours were counted;}
+        \ansline{what 11 summarizes (typical? most?); whether non-working seniors count.}
+
+        \vspace{6pt}
+        \textbf{(d)} A senior reads that sentence and concludes, ``So I should expect to work
+        about 11 hours next week.'' Explain why a number that summarizes a whole group does not
+        tell you what to expect for one individual in it.\\[4pt]
+        \ansline{The 11 describes the class as a whole, but hours worked vary from senior}
+        \ansline{to senior --- some work none and some work far more. A summary hides that}
+        \ansline{spread, so it cannot predict any single student's hours.}
+
+\end{enumerate}
+
+
+\end{document}
