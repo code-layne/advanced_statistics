@@ -1,0 +1,149 @@
+%! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Guided Notes & Practice
+% GRADUAL RELEASE component (I do -> we do -> you do), 22 minutes.
+%   I DO   : the objective box, the vocabulary box, and the numbered notes sections. The
+%            teacher presents; students fill the blanks as each idea is named.
+%   WE DO  : the practicebox ("Guided Practice") — worked together, students hold the pen.
+%   YOU DO : the "Independent Practice" notesbox — students work alone, teacher circulates.
+% Vocabulary is GIVEN here, not discovered: the group activity that follows applies it.
+% The LAST item of Independent Practice is the FORMATIVE CHECK — the plan tells the teacher
+% what to do with what they see. There is no exit ticket.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, and every
+% \writelines{n} becomes exactly n \ansline{} calls. SIZE EACH \blank{} CLOSE TO ITS ANSWER —
+% a 4.4cm blank replaced by a 2cm answer rewraps the paragraph and costs a page. Every
+% \begin{work} block is authored BYTE-IDENTICALLY in both files.
+% VOCABPAR: \par brackets each \termblank/\termblanklong inside the vocabbox.
+\documentclass[10pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-boxes}
+
+\begin{document}
+
+\pageheader{Unit @@UNITINT@@, Lesson @@LESSONID@@}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.12in}
+
+\boxguard[14]
+\begin{objectivebox}
+\small
+By the end of these notes I will be able to:
+\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
+  \item TODO: target 1, in student language, naming the formal term;
+  \item TODO: target 2;
+  \item TODO: target 3.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+% ── VOCABULARY (I do — students fill each term AS IT IS NAMED, never in advance) ──
+\boxguard[20]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{TODO Term 1}
+\par
+\termblank{TODO Term 2}
+\par
+\termblank{TODO Term 3}
+\par
+\end{vocabbox}
+
+\vspace{0.10in}
+
+% ── I DO: the numbered notes sections (3-4 of them, ~12 minutes total) ────────
+% Each section: a short piece of exposition, a PRE-DRAWN display or table, and \blank{} fills
+% that students complete as the idea is named. Never "sketch a graph" — every dotplot,
+% histogram, boxplot, scatterplot, and computer output is GIVEN.
+\boxguard[16]
+\begin{notesbox}{1. TODO Section Title}
+\small
+TODO: exposition, 2--3 sentences, in a real context.
+
+\vspace{6pt}
+\textbf{TODO Formal term} is \blank{2.4cm} --- TODO definition with fills sized close to
+their answers.
+\end{notesbox}
+
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{notesbox}{2. TODO Section Title}
+\small
+TODO: a pre-drawn table or display, then fills that read it.
+
+\vspace{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l Y Y @{}}
+\rowcolor{sky}
+\textbf{TODO} & \textbf{TODO} & \textbf{TODO} \\
+\hline
+TODO & TODO & TODO \\
+\hline
+\end{tabularx}
+
+\vspace{6pt}
+\begin{center}
+\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
+\textbf{TODO: the target misconception, called out by name.} TODO: the probe that breaks it.}}
+\end{center}
+\end{notesbox}
+
+\vspace{0.10in}
+
+% The \begin{work} block takes NO argument and its body is math (an amsmath aligned):
+% one statement per line, & immediately before the relation. Author it BYTE-IDENTICALLY in
+% the key — the blank reserves its exact height and prints nothing.
+\boxguard[20]
+\begin{notesbox}{3. TODO Worked Example}
+\small
+TODO: the computation, modelled by the teacher.
+\begin{work}
+  \text{TODO statistic} &= \text{TODO formula} \\
+                        &= \text{TODO substitution} \\
+                        &\approx \text{TODO value}
+\end{work}
+Interpreted in context, this says \blank{6.0cm}.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── WE DO: guided practice (~6 min) — students hold the pen, teacher holds the questions ──
+% practicebox takes NO argument; its title is fixed as "Guided Practice".
+\boxguard[20]
+\begin{practicebox}
+\small
+\textbf{TODO Title --- we work this one together.} TODO: one problem in a fresh context.
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item TODO: the identification / setup move. \blank{4.0cm}
+  \item TODO: the computation or interpretation.\\[3pt]
+        \writelines{2}
+  \item \textbf{TODO: the part that is the point of the box} --- the one that tests the
+        misconception on new ground.\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.10in}
+
+% ── YOU DO: independent practice (~4 min) — silent, alone; the LAST item is the
+%    formative check the lesson plan tells the teacher to read over shoulders.
+\boxguard[20]
+\begin{notesbox}{Independent Practice --- You Try}
+\small
+Work these on your own. I will circulate.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item TODO: identification in a new context. \blank{4.0cm}
+  \item TODO: the contrast pair, or the computation.\\[3pt]
+        \writelines{2}
+  \item \textbf{TODO: the formative check.} TODO: the item that decides how the next lesson
+        opens.\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

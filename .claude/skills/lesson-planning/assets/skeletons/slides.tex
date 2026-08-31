@@ -17,23 +17,25 @@
 \end{frame}
 }
 
-% The deck follows the EFFL flow (~10 frames):
-%   learning targets (SPOILER-FREE) → warm-up → activity launch → 3-4 debrief frames
-%   (formalize in "red ink") → QuickNotes summary → application → practice → homework.
-% Everything before the debrief frames stays vocabulary-free (the spoiler rule).
+% GRADUAL-RELEASE deck (~12 frames):
+%   learning targets → warm-up → I-DO divider → 3-5 direct-instruction frames →
+%   WE-DO guided practice → YOU-DO independent practice → group-activity divider + launch →
+%   debrief → homework & close.
+% Vocabulary is given up front here, not withheld: the instruction frames ARE the direct
+% instruction the guided notes follow.
 \newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
-% LEARNING TARGETS (spoiler-free)
+% LEARNING TARGETS
 \begin{frame}[t, plain]
-  \navyheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson @@LESSONID@@}
   By the end of today, I can\ldots
   \begin{itemize}\setlength{\itemsep}{6pt}
-    \item TODO: plain-language target (no formal vocabulary).
+    \item TODO: target naming the \textbf{formal term}.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{TODO activity} with your group $\to$ we name what you found $\to$
-    Check Your Understanding $\to$ homework.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    \textbf{three you work alone} $\to$ \textbf{TODO activity with your group} $\to$ debrief.
   \end{block}
 \end{frame}
 
@@ -44,52 +46,92 @@
   % TODO: the warm-up items.
 \end{frame}
 
-% ACTIVITY LAUNCH
+% I DO — direct instruction begins
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small TODO: how many words go in the vocabulary box today.}
+  \end{minipage}
+\end{frame}
+}
+
+% DIRECT INSTRUCTION (repeat this frame 3-5 times, one per notes section)
 \begin{frame}[t, plain]
-  \navyheader{Experience \& Formalize: TODO Activity Title}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
-  % TODO: the data context + scenarios, and a block:
-  \begin{block}{Your job}
-    Use what you already know. For \emph{every} answer, be ready to show me
-    \textbf{where you see it in the data}.
+  \navyheader{TODO: notes section title}
+  \sectionlabel{TODO: the one-line idea}
+  % TODO: the definition, the PRE-DRAWN display, or the worked example. Put the target
+  % misconception in \redink{} on the frame where it is broken.
+\end{frame}
+
+% WE DO
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: TODO title}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  % TODO: the problem, and the interpret-in-context question that closes it.
+  \begin{block}{TODO: the question you ask every time}
+    TODO.
   \end{block}
 \end{frame}
 
-% DEBRIEF (repeat this frame 3-4 times; formal terms in \redink{})
+% YOU DO
 \begin{frame}[t, plain]
-  \navyheader{Debrief: naming what you found}
-  \sectionlabel[redacc]{TODO}
-  % TODO: ``student phrase'' $\to$ \redink{formal term} moves.
+  \navyheader{Independent Practice}
+  \sectionlabel{You do $\cdot$ 3 items $\cdot$ on your own}
+  % TODO: the three items.
+  \begin{block}{Silent and alone}
+    I am circulating. TODO: name the formative-check item and what students should flag.
+  \end{block}
 \end{frame}
 
-% QUICKNOTES SUMMARY
+% GROUP ACTIVITY LAUNCH
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GROUP ACTIVITY \ \textbullet\ \ 16 MINUTES}\\[0.7cm]
+    {\color{white}\bfseries\Large TODO Activity Title}\\[0.9cm]
+    {\color{skymid}\small Groups of 3--4. TODO: the ground rule.}
+  \end{minipage}
+\end{frame}
+}
+
 \begin{frame}[t, plain]
-  \navyheader{QuickNotes: TODO topic}
-  \sectionlabel{Fill the box in your packet}
-  % TODO: the worked example the QuickNotes box records.
+  \navyheader{Group Activity: TODO Activity Title}
+  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 16 minutes}
+  % TODO: the data context + what each scenario asks; flag the crux in \redink{}.
+  \begin{block}{Ground rule}
+    Nobody writes an answer until somebody can point at the data and say \emph{how} they know.
+  \end{block}
 \end{frame}
 
-% APPLICATION
+% DEBRIEF
 \begin{frame}[t, plain]
-  \navyheader{Application: TODO title}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  % TODO: the problem, and the interpret-in-context question that closes it.
-\end{frame}
-
-% PRACTICE (in class, not scored)
-\begin{frame}[t, plain]
-  \navyheader{Check Your Understanding}
-  \sectionlabel{$\sim$5 exercises, \emph{not scored} $\cdot$ pairs first, then on your own}
-  % TODO: the practice items; name the formative-check item. Say plainly that these are
-  % practice, not a quiz, and carry no points.
+  \navyheader{Debrief: TODO}
+  \sectionlabel{8 minutes $\cdot$ we fill this in together}
+  % TODO: the crux, staged side by side (a small tabularx works well), then:
+  \begin{block}{The crux}
+    TODO: the one sentence the whole activity was built to produce, with the key phrase in
+    \redink{}.
+  \end{block}
 \end{frame}
 
 % HOMEWORK + PREVIEW
 \begin{frame}[t, plain]
   \navyheader{Homework \& what's next}
-  \sectionlabel[goldacc]{AP-style practice --- this one is scored}
-  % TODO: name the assignment, when it is due, and how it is scored; close with a one-line
-  % preview of the next lesson.
+  \sectionlabel[goldacc]{Start it now --- I am still in the room}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Homework --- \redink{scored, due next class}:} TODO.
+    \item \textbf{AP Practice --- not scored:} TODO. Work it for the reps.
+  \end{itemize}
+  \begin{block}{TODO: the standard or the closing line}
+    TODO, then a one-line preview of the next lesson.
+  \end{block}
 \end{frame}
 
 \end{document}

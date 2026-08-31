@@ -10,7 +10,7 @@ creates the root Makefile and the unit Makefile if they don't exist yet.
 Example:
     python new_lesson.py --project . --unit 01 --lesson 01 \
         --title "Vectors" --unit-title "Vectors as Data" \
-        --components cover,warmup,experience,slides
+        --components cover,warmup,notes,activity,ap_practice,homework,slides
 """
 from __future__ import annotations
 
@@ -21,30 +21,33 @@ from pathlib import Path
 
 SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 
-# EFFL component set (Math Medic "experience first, formalize later", 2026-08 redesign):
-# a lesson is cover / warmup / experience / homework / slides. The `experience` directory name
-# is a build identifier (shared/lesson.mk STUDENT_ORDER/KEYED_PAIRS); the component is
-# *labelled* "Experience & Formalize" everywhere a student or teacher reads it.
+# GRADUAL-RELEASE component set (warm-up / guided notes and practice / group activity and
+# debrief / AP practice / homework, 2026-08 redesign). A lesson is
+# cover / warmup / notes / activity / ap_practice / homework / slides. Every directory name
+# here is a build identifier in shared/lesson.mk (STUDENT_ORDER/KEYED_PAIRS) — never rename one.
 #
-# Unlike Algebra 2, this course KEEPS homework: AP Statistics needs AP-style multiple-choice
-# and free-response reps, and the Experience & Formalize component's Check Your Understanding
-# is unscored in-class practice rather than the graded set. `notes`, `activity`, and
-# `exit_ticket` are pre-EFFL components, still scaffoldable by name so the ~78 lessons authored
-# before the redesign can be regenerated or patched, but they are NOT defaults.
-KEYED = ["warmup", "experience", "homework", "notes", "activity", "exit_ticket"]
+# There is NO exit ticket (the formative check is the last Independent Practice item in the
+# notes) and NO tiered instruction (one group activity for the whole class).
+# `ap_practice` is assigned but unscored; `homework` is the lesson's GRADED practice and is
+# generated for every lesson, so the teacher can substitute a DeltaMath assignment when
+# DeltaMath happens to cover the topic.
+# `experience` and `exit_ticket` are pre-redesign components, still scaffoldable by name so
+# lessons authored before the redesign can be regenerated or patched, but they are NOT defaults.
+KEYED = ["warmup", "notes", "activity", "ap_practice", "homework", "experience", "exit_ticket"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
 # slides is a default: every lesson owes a deck, since lessonYY_slides.pdf and
 # lessonYY_slides.pptx are two of the five work products the build produces.
-DEFAULT_COMPONENTS = ["cover", "warmup", "experience", "homework", "slides"]
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "ap_practice", "homework", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",
-    "experience": "Experience \\& Formalize",
-    # legacy (pre-EFFL) components:
-    "homework": "Homework",
-    "notes": "Guided Notes",
+    "notes": "Guided Notes \\& Practice",
     "activity": "Group Activity",
+    "ap_practice": "AP Practice",
+    "homework": "Homework",
+    # pre-redesign components:
+    "experience": "Experience \\& Formalize",
     "exit_ticket": "Exit Ticket",
 }
 # NAMESTRIP: worksheet components carry NO name/date/period row —
@@ -269,11 +272,11 @@ def main() -> None:
             write(dest / "cover" / "main.tex", render("cover.tex", base), args.force)
         elif comp == "slides":
             write(dest / "slides" / "main.tex", render("slides.tex", base), args.force)
-        elif comp == "experience":
-            # The EFFL centerpiece — labelled "Experience & Formalize" — gets its own 12pt
-            # skeleton (activity + QuickNotes + application + CYU, \answerspace macro)
-            # rather than the generic worksheet.
-            write(dest / "experience" / "main.tex", render("experience.tex", base), args.force)
+        elif comp in ("notes", "activity"):
+            # The two in-class centrepieces get purpose-built skeletons rather than the
+            # generic worksheet: notes.tex carries the I-do / we-do / you-do arc, and
+            # activity.tex carries the two scenarios plus the whole-class Debrief box.
+            write(dest / comp / "main.tex", render(f"{comp}.tex", base), args.force)
         else:  # authored worksheet component
             subs = {**base, "DOCTITLE": DOC_TITLE[comp]}
             write(dest / comp / "main.tex", render("worksheet.tex", subs), args.force)
@@ -282,8 +285,8 @@ def main() -> None:
             key = f"{comp}_key"
             if key in prefab:
                 prefab_dir(dest / key)
-            elif comp == "experience":
-                write(dest / key / "main.tex", render("experience_key.tex", base), args.force)
+            elif comp in ("notes", "activity"):
+                write(dest / key / "main.tex", render(f"{comp}_key.tex", base), args.force)
             else:
                 subs = {**base, "DOCTITLE": DOC_TITLE[comp]}
                 write(dest / key / "main.tex", render("worksheet_key.tex", subs), args.force)

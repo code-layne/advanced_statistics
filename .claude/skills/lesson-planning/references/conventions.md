@@ -16,7 +16,8 @@ with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
 
 ## Per-document-type preambles
 
-**Student component** (warmup, homework, cover — and the legacy notes/activity/exit_ticket):
+**Every student component** (cover, warmup, notes, activity, ap_practice, homework — and the
+legacy experience/exit_ticket) is **10pt**:
 ```latex
 \documentclass[10pt]{article}
 \usepackage{<prefix>-article}
@@ -24,28 +25,23 @@ with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
 % cover and some components also: \usepackage{ltablex}\keepXColumns
 ```
 
-**Experience & Formalize component** (directory `experience/` — the EFFL Activity + QuickNotes +
-Application + Check Your Understanding document) uses **12pt** (Math Medic sizing) and defines the
-open-answer-space macro in its preamble, byte-identical in the blank and the key:
+**`activity/` and `homework/`** additionally define the open-answer-space macro in their
+preamble, byte-identical in the blank and the key:
 ```latex
-\documentclass[12pt]{article}
-\usepackage{apstats-article}
-\usepackage{apstats-boxes}   % key: apstats-key instead
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 ```
-It is **four parts on a page budget** — Activity ≤2pp · QuickNotes ½pp · Application ½–1pp ·
-Check Your Understanding 1–2pp (unscored) — see `components.md` → "Experience & Formalize".
-
-`\answerspace{2.0cm}{}` in the blank reserves exactly 2.0cm of open space glued to its prompt; the
+`\answerspace{1.5cm}{}` in the blank reserves exactly 1.5cm of open space glued to its prompt; the
 key passes the answer as the second argument, occupying the identical height. **That is what keeps
-the two files page-for-page without write-lines** — verified: filling every slot in a 2-page blank
-left the key at exactly 2 pages. Sizing guide: 1.4cm ≈ 2 handwritten lines, 2.0cm ≈ 3, 2.6–2.8cm ≈ 4.
+the two files page-for-page without write-lines.** Sizing guide at 10pt: **1.0cm ≈ 2 handwritten
+lines, 1.5cm ≈ 3, 2.0cm ≈ 4**; a key answer set in `\small` runs roughly **2.4 rendered lines per
+centimetre**, so keep it inside the height you gave it (a key answer that overflows its minipage
+does not warn — it just spills).
 
-Two 12pt cautions: **`\boxguard` counts are baseline-relative** — a value tuned at 10pt is ~40%
-oversized at 12pt, so use ~14–16 in `experience/` where a 10pt component would use 24–30. And **a
-key `\ans{}` wider than the blank it replaces can wrap an extra line and shift a page break** —
-keep answers terse.
+Two cautions that cost pages: **a key `\ans{}` narrower than the blank it replaces rewraps the
+paragraph shorter and shifts a page break** — so size each `\blank{W}` close to its answer plus a
+little writing room, rather than picking a round width. And **`\boxguard` counts are
+baseline-relative**, so a value tuned in one document is not portable to another point size.
 
 **Answer key** (the matching `_key` directory):
 ```latex
@@ -82,7 +78,8 @@ The `\TallMath` helper used for tall inline math is defined per-document where n
 | `\namedateperiod` | Name / Date / Period row — **cover only** (Namestrip) |
 | `\namepartnerperiod` | Name / Partner / Period row — **not used**; superseded by Namestrip |
 | `\pageheader{Unit X, Lesson Y.Z}{Document Type}` | Full-width navy banner header |
-| `\answerspace{H}{answer}` | **Not from `-article`** — defined per-document in `experience/`; reserves H of open space in the blank, prints the answer in the key. See the preamble above. |
+| `\answerspace{H}{answer}` | **Not from `-article`** — defined per-document in `activity/` and `homework/`; reserves H of open space in the blank, prints the answer in the key. See the preamble above. |
+| `\termans{Term}{line 1}{line 2}` | **Key-side only, defined per-document** — the counterpart of `\termblank`, reproducing its exact two-line geometry. Never mirror a `\termblank` with `\termblanklong` plus an `\ansline`: that runs a line long every time. |
 
 ### Namestrip — the name row belongs on the cover, nowhere else
 
@@ -313,15 +310,18 @@ Algebra 2's `forest` family (`forest`, `forestbg`, `forestmid`, `forestlight`) i
 here**. When porting anything from that course, map `forest`→`navy`, `forestbg`→`sky`,
 `forestmid`→`skymid`, `forestlight`→`navylight`.
 
-## Lesson-plan section order (canonical, EFFL)
+## Lesson-plan section order (canonical, gradual release)
 
 Primary Objective / CED alignment / Lesson model → Learning Targets & Key Understandings →
-Vocabulary, Concepts & Theorems → Lesson at a Glance (55-min phase table: **5/20/12/6/8/4**) →
-Warm-Up (the seeds) → Experience & Formalize: the Activity (what students do | what the teacher
-does — questions, cues, prompts) → Debrief: Formalize (the red-ink moves + QuickNotes walkthrough)
-→ **Application** (the worked-together problem) → **Check Your Understanding — in-class practice,
-*not scored*** → **Homework — AP-style practice, assigned and scored** → Watch For →
-Close & Preview → Teacher Notes (`[Warm-Up]`, `[Experience \& Formalize]`, `[Homework]`).
+Vocabulary, Concepts & Theorems → Lesson at a Glance (55-min phase table: **5/22/16/8/4**) →
+Warm-Up (the seeds) → **Guided Notes & Practice — I do, we do, you do** (pacing 12/6/4; the
+must-land section; the questions asked while students hold the pen; the formative-check item and
+its reteach trigger) → **Group Activity** ("one activity for the whole class — there is no tiered
+version"; launch + ground rule, then what students do | what the teacher does) → **Debrief —
+whole class** (open on the *almost*-right crux answer; the Debrief-box walkthrough) →
+**AP Practice — assigned, not scored** → **Homework — scored, due next class** (with the
+DeltaMath override) → Watch For → Close & Assign → Teacher Notes (`[Warm-Up]`,
+`[Guided Notes \& Practice]`, `[Group Activity]`, `[AP Practice]`, `[Homework]`).
 
 Tag the objective with the CED Topic, Big Idea, AP Skill, LO, and EK (see `ap-workflow.md`).
 
@@ -329,5 +329,5 @@ Tag the objective with the CED Topic, Big Idea, AP Skill, LO, and EK (see `ap-wo
 Where Algebra 2 uses `fixedskillbox` to keep a phase table intact, use `skillbox` preceded by a
 raised `\boxguard[30]`; a `tabularx` never splits on its own, so the guard is what protects it.
 
-*(Legacy plans — the ~78 lessons authored before the 2026-08 EFFL redesign — use the old
-Hook / Explicit Instruction / Tiers / Exit Ticket order. Leave them alone unless regenerating.)*
+*(Legacy plans use either the pre-EFFL Hook / Explicit Instruction / Tiers / Exit Ticket order or
+the EFFL Activity / Debrief / Application / CYU order. Leave them alone unless regenerating.)*

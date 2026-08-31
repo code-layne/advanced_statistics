@@ -27,7 +27,7 @@ The document structure is identical to the AP path (`references/components.md`);
 | **Vocabulary, Concepts & Theorems** | the terms and formulas the lesson introduces or relies on |
 | **Learning Targets** (cover, "I can…") | one target per standard (or per major skill), reworded as "I can …" |
 | Standards line | the supplied standard codes, recorded in the lesson plan (and a coverage log if the project keeps one) |
-| Guided notes / activity / exit ticket / homework | practice that exercises each standard; scale the activity tiers (R/A/E) across the difficulty range the standards imply |
+| Guided notes / group activity / AP practice / homework | practice that exercises each standard; the notes teach it, the activity transfers it to an unseen context, and the homework re-transfers it to a third |
 
 ## Steps
 

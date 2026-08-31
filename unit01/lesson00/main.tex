@@ -1,7 +1,7 @@
 %! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal AP vocabulary freely. Every box is `skillbox` (breakable) with a
-% \boxguard ahead of it; this course has no `fixedskillbox` and no tier boxes.
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / group activity / debrief /
+% close and assign). Teacher-facing. Every box is `skillbox` (breakable) with a \boxguard
+% ahead of it; this course has no `fixedskillbox`, no tier boxes, and no exit ticket.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -25,11 +25,10 @@
     \textbf{CED alignment:} Topic 1.1 \quad$\cdot$\quad Big Idea: VAR (Variation \& Distribution)
     \quad$\cdot$\quad Skill 1.A \quad$\cdot$\quad LO VAR-1.A \quad$\cdot$\quad EK VAR-1.A.1
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application and practice apply it to new contexts. No separate direct-instruction
-    block, and \textbf{no vocabulary before the debrief.}
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do.} The guided notes
+    deliver the vocabulary and the two checks directly; the guided practice is worked together
+    with students holding the pen; the independent practice and the group activity are where
+    students carry it alone and then with peers. The debrief closes the loop as a whole class.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
@@ -43,8 +42,9 @@
   \item I can explain why a bare number tells me nothing, and name the context it needs.
   \item I can identify the individuals and the variables in a data set, and tell a variable
         apart from one of its values.
-  \item I can decide whether a question is statistical, and justify it by pointing to what varies.
-  \item I can write a statistical question of my own about a given data set.
+  \item I can explain what variability is and why it is the reason statistics exists.
+  \item I can decide whether a question is statistical, justify it by pointing to what varies,
+        and write one of my own.
 \end{itemize}
 &
 \vspace{-6pt}
@@ -62,7 +62,7 @@
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- attached in the debrief, not before}]{greenbox}
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
         \item \textbf{Statistics} --- the science of collecting, organizing, analyzing, and
@@ -95,151 +95,140 @@
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
 Warm-Up & 5 & Seven bare numbers; three questions, alone then with a neighbor & Circulate; debrief item~3 aloud and leave it on the board all period \\
-Experience \& Formalize: Activity & 20 & \emph{The Adoption Board}, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose group work to display \\
-Debrief: Formalize & 12 & Share findings; fill QuickNotes as each name lands & Name each idea on the groups' own work, in a second color; fill QuickNotes together \\
-Application & 6 & \emph{The Gym Sign-Up}, worked together & Lead it; students hold the pen, you hold the questions \\
-Check Your Understanding & 8 & 5 exercises, pairs $\to$ solo (\emph{not scored}) & Circulate; spot-check item~5, do not collect for a grade \\
-Close \& Assign & 4 & Record the homework; hear the preview & Sort item-5 responses to decide how Lesson~1.1 opens \\
+Guided Notes \& Practice & 22 & Fill the vocabulary box and notes 1--4; then the Gym Sign-Up together; then three items alone & \textbf{I do} notes 1--4 $\to$ \textbf{we do} the Guided Practice box $\to$ \textbf{you do} Independent Practice while you circulate \\
+Group Activity & 16 & \emph{The Adoption Board}, scenarios 1--2, groups of 3--4 & Circulate; press for evidence from the board; choose group work to display in the debrief \\
+Debrief & 8 & Groups report out; fill the Debrief box together & Take 2b public: correct the ``many rows = statistical'' answer gently and in front of everyone \\
+Close \& Assign & 4 & Start the homework; hear the preview & Announce the homework (or the DeltaMath substitute) and preview Lesson~1.1 \\
 \end{tabularx}
 \end{skillbox}
 
 \boxguard[20]
-\begin{skillbox}[Warm-Up --- Activate Prior Knowledge]{sky}
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{The three items and what each seeds}
     \begin{itemize}
         \item \textbf{1.} Seven numbers, no context: \emph{``What do these tell you?''} The
               intended answer is \emph{``I can't tell.''} \textbf{Seeds:} context / EK VAR-1.A.1.
         \item \textbf{2.} ``Three things you'd need to know.'' \textbf{Seeds:} the W questions ---
-              their own list becomes the QuickNotes bullet.
+              their own list becomes the notes' W-question table.
         \item \textbf{3.} ``How tall is Maria?'' vs.\ ``How tall are the students in this class?''
-              \textbf{Seeds:} the statistical-question test.
+              \textbf{Seeds:} the statistical-question test in notes section~4.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Resist rescuing them on item~1.} The discomfort is the lesson. Three
-              minutes, then ask only \emph{``what would you need to know?''}
-        \item \textbf{Name nothing.} Do not say \emph{context}, \emph{variable}, or
-              \emph{statistical question} in the warm-up debrief --- those arrive after the
-              activity. Write their own phrasings on the board and leave them there.
-        \item Debrief item~3 aloud; it reappears as the crux in scenario~2.
+        \item \textbf{Resist rescuing them on item~1.} The discomfort is what makes the
+              definition of \emph{data} land three minutes later. Give three minutes, then ask
+              only \emph{``what would you need to know?''}
+        \item Write their own phrasings on the board and leave them there --- you will circle
+              them and write \emph{context} and \emph{W questions} beside them during the notes.
+        \item Debrief item~3 aloud; it is the same discrimination the activity's crux tests.
         \item \emph{This is the course's first lesson --- there is no prior unit to spiral.}
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{The Adoption Board}]{sky}
-\textbf{Launch (2 min).} Project the board. \emph{``This is one shelter's adoption board. Visitors
-read it, and so does the director --- but not for the same things. Work the two problems with
-your group using only what you already know. For every answer, be ready to show me
-\textbf{where on the board} you see it.''} Groups of 3--4. Do not preview any vocabulary.
+\begin{skillbox}[Guided Notes \& Practice --- I do, we do, you do (22 min)]{sky}
+\begin{multicols}{2}
+\textbf{I do (about 12 min).} Present notes sections 1--4 in order and have students fill the
+blanks as each idea is named. Fill the vocabulary box \emph{as you go}, not in advance --- a term
+is written the moment it is used.
+
+\emph{Section 1} lands on the warm-up numbers: put the W-question table on the board and let
+their own list from item~2 populate it. \emph{Section 2} is the identification move; trace a row
+and then a column with your finger on the projected table before students write.
+\textbf{The red caution box is the day-one error} --- ``Yes'' is not a variable, \emph{Rides the
+bus?} is. \emph{Section 3} is short and is the sentence students should leave with:
+\textbf{variability is why statistics exists}. \emph{Section 4} gives the two checks, then the
+S/N table. Work the first row aloud, then release rows 2--4.
+
+\columnbreak
+\textbf{We do (about 6 min).} The Guided Practice box, \emph{The Gym Sign-Up}. Students hold the
+pen; you hold the questions: \emph{``Who is one individual here --- the gym, or a member?''}
+\quad \emph{``Say your question again, but tell me what differs from member to member.''}
+\quad \textbf{Part (c) is the point of the box:} ZIP code is a label, not a measurement, and
+students who have quietly decided ``statistical = numeric'' will say no. Run both checks aloud
+on it: \emph{``Does check~1 say the answers have to be numbers, or just that they have to
+differ?''}
+
+\textbf{You do (about 4 min).} Independent Practice, three items, silent and alone. Circulate.
+\textbf{Item~2 is the formative check} --- glance at it on every desk. If more than a third
+choose (i) or cannot name the failing check, reteach the two checks before releasing the
+activity, and cut activity scenario~1 to items (a)--(b) to buy the time.
+\end{multicols}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Group Activity --- \emph{The Adoption Board} (16 min)]{sky}
+\textbf{One activity for the whole class --- there is no tiered version.} Groups of 3--4.
+\textbf{Launch (1 min).} Project the board. \emph{``This is one shelter's adoption board.
+Visitors read it, and so does the director --- but not for the same things. Use today's
+vocabulary, and for every answer be ready to show me \textbf{where on the board} you see it.''}
 
 \begin{multicols}{2}
-\textbf{What students do.} \emph{Scenario 1} builds the whole toolkit on one table: what a row
-stands for, counting rows and columns, heading-vs-entry (1b), the look-it-up / read-the-column
-contrast (1c), and why a column of identical entries would be worthless (1d --- variability,
-unnamed).
+\textbf{What students do.} \emph{Scenario 1} (about 6 min) applies the notes to a table they
+have not seen: individual and count, variable-vs-value on ``Beagle'' (1b), a single value versus
+an entire variable (1c), and variability as the reason a column is worth posting (1d).
 
-\emph{Scenario 2} is the contrast case. Item 2a sorts four director's questions into ``one spot''
-or ``many rows.'' \textbf{2b is the crux:} two questions both need many rows, but only one has an
-answer that changes from dog to dog. Items 2c--2d turn the flyer claim into the
+\emph{Scenario 2} (about 10 min) is the contrast case. Item 2a sorts four director's questions
+into ``one spot'' or ``many rows.'' \textbf{2b is the crux:} three of the four need many rows and
+only one of those three is \emph{not} statistical. Items 2c--2d turn the flyer claim into the
 summary-does-not-predict-an-individual idea.
 
 \columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
+\textbf{What the teacher does.} Circulate and press for evidence from the board rather than
+supplying answers:
 \begin{itemize}[leftmargin=1.1em, nosep]
-  \item \textbf{1b:} ``Point at where you see the word `Breed.' Now point at `Beagle.' Are those
-        the same kind of thing?''
+  \item \textbf{1b:} ``Point at where you see the word `Breed.' Now point at `Beagle.' Which one
+        is the heading?''
   \item \textbf{1d:} ``Cover the Days column with your hand. What did you just lose?''
-  \item \textbf{2b (the crux):} ``Write down the answer to (B). Now write the answer to (C) ---
-        for Sage, then for Ranger. How many answers did each question have?''
+  \item \textbf{2b (the crux):} ``Write the answer to (B). Now write the answer to (C) --- for
+        Sage, then for Ranger. How many answers did each question have?''
   \item \textbf{2d:} ``Find the shortest wait on the board. Now the longest. Is 25 either one?''
 \end{itemize}
-While circulating, pick the group work to display: one board with 1c underlined well, and one
-group's 2b answer that is \emph{almost} right (many-rows = statistical) to open the debrief with.
+While circulating, pick the work to display: one board with 1c underlined well, and one group's
+2b answer that is \emph{almost} right (many-rows $=$ statistical) to open the debrief with.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{sky}
-Work through the displayed student work in order and \textbf{attach each formal name to something
-a group already wrote}. Students fill their QuickNotes line by line as you go.
+\begin{skillbox}[Debrief --- whole class (8 min)]{sky}
+Groups report out, then fill the Debrief box at the end of the activity together.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item Warm-up list of ``things you'd need to know'' $\to$ \emph{context}, and the
-        \emph{W questions}. Circle their own words, then write the term beside them.
-  \item ``One row is one dog'' $\to$ \emph{individual}. ``Column heading'' $\to$ \emph{variable};
-        ``what's written underneath'' $\to$ \emph{value}. Trace a row and a column with a finger
-        on the projected board.
-  \item 1d, ``the column would be worthless'' $\to$ \emph{variability} --- and say plainly:
-        \textbf{this is why the course exists}.
-  \item 2b $\to$ the two checks. Write them as the students said them: \emph{do the answers
-        differ from one individual to the next?} and \emph{must I collect data?}
-  \item Name \emph{statistics} and \emph{data} last, once every part of the definition is
-        already on the board.
+  \item \textbf{Open on the \emph{almost}-right 2b answer} you collected --- the group that
+        decided many-rows means statistical. Correcting it in public, gently, is what makes the
+        crux stick. Put (B), (C), and (D) side by side on the board and count answers for each.
+  \item Take 1b from a group that got it: circle \emph{Breed} on the projected board, then
+        circle \emph{Beagle}, and write \textbf{variable} and \textbf{value} beside them.
+  \item Take 1d and say plainly: \textbf{this is why the course exists}. If the column did not
+        vary, there would be nothing to post.
+  \item Take 2d last. Ask for the shortest and longest wait out loud before anyone explains.
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} Half a page, filled together. The mini table on the left is the same board
-in miniature --- point at it while naming variable / value / individual. The right-hand bullets
-are their sentences, tightened. \textbf{It is a summary of what they found, not a new lecture};
-if you are talking for more than 90 seconds without pointing at student work, stop.
+\textbf{The Debrief box.} Three questions, filled together as the report-out lands. Item~1 is
+the sentence you want on every desk; item~2 forces a self-generated counterexample; item~3 is
+the ``why this course exists'' line in their own words.
 
-\textbf{Why this order.} Context first (they already felt its absence in the warm-up), structure
-second, variability third, and the statistical-question test last --- because the test
-\emph{depends} on variability. Naming the test first would make it a rule to memorize instead of
-a consequence.
+\textbf{Pose cold, if time allows:} \emph{``Is `What is the most common breed on this board?'
+statistical?''} Breed is not a number and the answer is one word --- but it varies across dogs
+and needs the data. It is the same special case as the Guided Practice's part (c), and asking it
+twice in one period is what dislodges ``statistical $=$ numeric.''
 
-\textbf{Pose cold:} \emph{``Is `What is the most common breed on this board?' statistical?''}
-Breed is not a number, and the answer is one word --- but it varies across dogs and needs the
-data. This is the special case the activity does not carry, and it sets up the Application.
+\textbf{If the debrief runs short}, cut the cold-call and go straight to the homework launch ---
+Debrief item~1 is the only one that cannot be cut.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{The Gym Sign-Up} (worked together, 6 min)]{sky}
-The first place the just-named vocabulary is \emph{used}. Part (a) is the identification move on
-a fresh context; part (b) asks for a statistical question \emph{plus} what varies --- insist on
-the second half, because it is the AP habit. \textbf{Part (c) is the real test:} ZIP code is a
-label, not a number, and students who have quietly decided ``statistical = numeric'' will say no.
-Run both checks aloud on it.
-
-\textbf{Students hold the pen, you hold the questions:} \emph{``Who is one individual here ---
-the gym, or a member?''} \quad \emph{``Say your question again, but tell me what differs from
-member to member.''} \quad \emph{``Does check~1 say the answers have to be numbers, or just that
-they have to differ?''}
-
-\emph{No \texttt{work} block in this lesson:} Topic 1.1 has no computation. The blank and the key
-stay page-for-page through \texttt{\textbackslash answerspace} instead.
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Check Your Understanding --- in-class practice, \emph{not scored}]{redbox}
-Five exercises spanning Topic 1.1, in new contexts: \textbf{1} identification (turtles);
-\textbf{2} write-your-own with what-varies; \textbf{3} the \emph{deliberate contrast pair} --- same
-pond, one statistical question and one not; \textbf{4} the bare-claim context critique;
-\textbf{5} the AP-style multiple-choice item. Pairs for 1--3, solo for 4--5.
-
-\textbf{They carry no point value} --- the cover's score column reads \textbf{NA}. Do not collect
-them for a grade. \textbf{Item~5 is the formative check:} spot-check it on the way out and sort
-into three piles --- chose (C) with a variation-based reason (ready); chose (C) with a vague
-reason (ready, needs the language); chose (A) or (B) (the misconception survived). If more than a
-third land in the last pile, reopen the two checks at the start of Lesson~1.1 rather than moving
-on. Eight minutes will not cover five items for everyone: \textbf{priority is 1, 3, and 5};
-items~2 and~4 are the early-finisher bank. The graded practice is the DeltaMath homework, below.
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[AP Practice --- AP-style practice (assigned, not scored)]{goldbox}
+\begin{skillbox}[AP Practice --- assigned, not scored]{goldbox}
 Four AP-style multiple-choice items (five options each, in context) on the adoption board and a
 new veterinary context, then one multi-part free-response set on a school-newspaper survey:
 identify individuals and variables, write a statistical question with what varies, critique a
-bare claim, and explain why a group summary does not predict one individual. The optional
-extension is the headline hunt. \textbf{No spiral item --- this is the course's first lesson.}
+bare claim, and explain why a group summary does not predict one individual. \textbf{No spiral item --- this is the course's first lesson.}
 
 \textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
 the start of Lesson~1.1 and hold the AP standard out loud: \emph{in context or it does not
@@ -249,78 +238,129 @@ Students keep this page --- it is their AP-format rep, not a grade.
 \end{skillbox}
 
 \boxguard
+\begin{skillbox}[Homework --- scored, due next class]{goldbox}
+\emph{The Food Truck Lot}, a record students have not seen. Part~A is identification and one
+student-written statistical question; Part~B is the contrast pair plus a prompt that forces a
+\emph{non-numeric} statistical question; Part~C is the context critique and one AP-style
+multiple-choice item with a required justification. The packet closes with the Lesson~1.1
+preview.
+
+\textbf{Start it in the last four minutes of the period} so students hit item~1 while you are
+still in the room. \textbf{Scoring:} 10 points --- 2 for A1--A2 combined, 2 for A3
+(the question must name what varies), 2 for B1, 2 for B2, 2 for C1--C2. \textbf{B2 is the
+one to read closely}: a student who cannot produce a non-numeric statistical question has not
+separated \emph{varies} from \emph{numeric}, and that is the misconception that follows them
+into Lesson~1.1.
+
+\textbf{DeltaMath override:} when DeltaMath carries this topic, assign it in place of this page,
+strike through the score cell on the cover, and leave this page in the packet as extra practice.
+\end{skillbox}
+
+\boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item \textbf{Value named where a variable belongs} (1b, CYU~1, HW~1): ``Beagle'' for ``Breed.''
-        Probe: \emph{``Is that the heading, or something written under it?''}
-  \item \textbf{``Many rows'' equated with ``statistical''} (2b --- the crux, HW~2): counting the
-        dogs needs the whole board and is still not statistical. Probe: \emph{``How many different
-        answers does that question have?''}
-  \item \textbf{``Has a number in it'' equated with ``statistical''} (CYU~5 distractor B).
-        Probe: \emph{``Whose hours? One person's, or many people's?''}
-  \item \textbf{``Statistical'' equated with ``numeric''} (Application~c). Probe: \emph{``Run
-        check~1. Do members live in different ZIP codes?''}
-  \item \textbf{Summary read as a prediction} (2d, HW~d): ``25 days'' taken as a promise.
-        Probe: \emph{``Show me a dog on the board that waited 25 days.''}
+  \item \textbf{Value named where a variable belongs} (notes 2, activity 1b, HW~A2): ``Beagle''
+        for ``Breed.'' Probe: \emph{``Is that the heading, or something written under it?''}
+  \item \textbf{``Many rows'' equated with ``statistical''} (activity 2b --- the crux, HW~B1):
+        counting the dogs needs the whole board and is still not statistical. Probe:
+        \emph{``How many different answers does that question have?''}
+  \item \textbf{``Has a number in it'' equated with ``statistical''} (HW~C2 distractors A, B, D).
+        Probe: \emph{``Whose value? One individual's, or many?''}
+  \item \textbf{``Statistical'' equated with ``numeric''} (Guided Practice~c, HW~B2). Probe:
+        \emph{``Run check~1. Do members live in different ZIP codes?''}
+  \item \textbf{Summary read as a prediction} (activity 2d, HW~C1, AP Practice~d): ``25 days''
+        taken as a promise. Probe: \emph{``Show me a dog on the board that waited 25 days.''}
 \end{itemize}
 Cold-call prompts: \emph{``Give me one individual and one variable from your board.''} \quad
 \emph{``Say a question that is NOT statistical, and tell me which check it fails.''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Point students to DeltaMath} for the graded homework (due next class) and remind them
-the AP Practice page in the packet is theirs to work and bring to review, then close on what
-changed rather than on the assignment: \emph{``This morning seven numbers meant nothing to you. You now know exactly what
-you were missing, and you have a two-question test that tells you whether a question is even
-worth collecting data for.''} \textbf{Preview:} Lesson~1.1, \emph{The Language of Variation} ---
-we split variables into categorical and quantitative, the first decision that determines every
-graph and summary for the rest of the course. Note that \emph{population} and \emph{sample} are
-deliberately \textbf{not} introduced today; they belong to Unit~3, and naming them now competes
-with the individual/variable distinction this lesson is built on.
+\begin{skillbox}[Close \& Assign (4 min)]{goldbox}
+Hand the homework launch first --- \emph{The Food Truck Lot}, scored, due next class (or the
+DeltaMath assignment in its place) --- and point out that the AP Practice page is theirs to work
+and bring to review. Then close on what changed rather than on the assignment: \emph{``This
+morning seven numbers meant nothing to you. You now know exactly what you were missing, and you
+have a two-question test that tells you whether a question is even worth collecting data for.''}
+\textbf{Preview:} Lesson~1.1, \emph{The Language of Variation} --- we split variables into
+categorical and quantitative, the first decision that determines every graph and summary for the
+rest of the course. Note that \emph{population} and \emph{sample} are deliberately \textbf{not}
+introduced today; they belong to Unit~3, and naming them now competes with the
+individual/variable distinction this lesson is built on.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 \begin{teachernote}[Warm-Up]
 Deliberately unanswerable at first glance. Give three minutes and resist rescuing --- the
-discomfort is the lesson. Expect some students to guess ``test scores'' and defend it; validate
-the reasoning while pointing out that a guess is not information. Debrief only item~3 aloud and
-leave it on the board all period; it is the same discrimination the activity's crux tests. If it
-runs long, cut item~2 and pick the ``what would you need to know'' list up during the debrief
-instead --- but never cut item~1, which is the whole seed.
+discomfort is what makes the definition of \emph{data} land in the notes. Expect some students to
+guess ``test scores'' and defend it; validate the reasoning while pointing out that a guess is
+not information. Debrief only item~3 aloud and leave it on the board all period. If it runs long,
+cut item~2 and pick the ``what would you need to know'' list up during notes section~1 instead
+--- but never cut item~1, which is the whole seed.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-\textbf{Activity (20 min).} Roughly 8 minutes on scenario~1, 12 on scenario~2 --- scenario~2
-carries the crux and needs the time. Groups that finish scenario~1 early should be pushed to
-justify 1d out loud rather than moving on. \textbf{The single discipline that makes this lesson
-work: do not name anything while circulating.} If you say ``variable'' at a table, that table
-stops discovering. Ask where they see it instead.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 12 / 6 / 4.} The notes are four short sections, not a lecture: if you are talking
+for more than 90 seconds without a student writing something, move. Sections 2 and 4 are the
+must-land ones --- heading-vs-entry and the two checks. Section~3 is four sentences and should
+stay that way; its whole job is the line \emph{variability is why statistics exists}.
 
-\textbf{Debrief (12 min).} The must-land moments are (2) heading-vs-entry and (4) the two checks;
-everything else can be compressed. Open on the \emph{almost}-right 2b answer you collected --- the
-group that decided many-rows means statistical --- because correcting it in public, gently, is
-what makes the crux stick. If time is short, cut the cold-call breed question and pick it up as
-the Application's part (c), which tests the same thing.
+The vocabulary box is filled \textbf{as each term is used}, never front-loaded. A student who
+writes all five definitions before seeing an example has copied, not learned.
 
-\textbf{Application (6 min).} Part (c) is the point of the whole box; if you only get through
-(a) and (c), that is the right trade. Students hold the pen.
+\textbf{Guided Practice is where the pen changes hands.} Do not work it on the board while
+students watch; take answers, write what they say, and push back with the probes in the plan.
+Part (c) is the point of the box --- if you only get through (a) and (c), that is the right trade.
 
-\textbf{Check Your Understanding (8 min).} Not scored --- spot-check rather than collecting the
-page. Priority items are 1, 3, and 5; 2 and 4 are the early-finisher bank. Item~3 is the
-deliberate contrast pair and item~5 is the formative check that decides how Lesson~1.1 opens.
+\textbf{Independent Practice is the formative check.} Item~2 tells you whether the two checks
+landed. Sort what you see into three piles as you circulate: circled (ii) with a
+variation-based reason (ready); circled (ii) with a vague reason (ready, needs the language);
+circled (i) (the misconception survived). If the third pile is more than a third of the room,
+reteach the two checks now --- the group activity's crux will not work otherwise.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+\textbf{16 minutes, roughly 6 on scenario~1 and 10 on scenario~2} --- scenario~2 carries the crux
+and needs the time. Groups that finish scenario~1 early should be pushed to justify 1d out loud
+rather than moving on. \textbf{One activity for the whole class:} do not split the room into
+levels. The differentiation is in how you circulate --- shorter, more concrete probes at tables
+that are stuck, and ``say that again using the word \emph{variability}'' at tables that are not.
+
+The board is deliberately the same context students will meet again on the AP Practice page: the
+context is already loaded, so the thinking stays on the distinctions rather than on re-reading a
+table.
+
+\textbf{Debrief (8 min).} Open on the \emph{almost}-right 2b answer you collected. The must-land
+moments are the (B) / (C) / (D) comparison and Debrief item~1; everything else can be compressed.
+If time is short, cut the cold-call breed question --- it is the same test as Guided Practice
+part (c), which students have already run once.
 \end{teachernote}
 
 \begin{teachernote}[AP Practice]
-\textbf{This page is not scored} --- the graded homework for this lesson is the DeltaMath
-assignment. Work it as AP-format reps and go over it at the start of Lesson~1.1.
-The adoption board is reused on purpose --- the context is already loaded, so the thinking stays
-on the distinctions rather than on re-reading a table. MC item~1 targets variable-vs-value, item~2
-the crux, item~3 identification in a fresh context, and item~4 variability as the reason the
-subject exists. \textbf{Item~4 is the one worth reading closely}: it is EK VAR-1.A.1 in its most
-transferable form and recurs on the AP exam as ``interpret in context.'' On the free response,
-hold the line on context from day one --- part (d) is where students first learn that an answer
-without the situation in it earns nothing. The extension pairs well with a bulletin-board display
-of headlines students bring in.
+\textbf{This page is not scored} --- the graded practice for this lesson is the homework that
+follows it. Work it as AP-format reps and go over it at the start of Lesson~1.1. MC item~1
+targets variable-vs-value, item~2 the crux, item~3 identification in a fresh context, and item~4
+variability as the reason the subject exists. \textbf{Item~4 is the one worth reading closely}:
+it is EK VAR-1.A.1 in its most transferable form and recurs on the AP exam as ``interpret in
+context.'' On the free response, hold the line on context from day one --- part (d) is where
+students first learn that an answer without the situation in it earns nothing. If you want an
+enrichment hook, have students bring in a headline containing a number and strip it for the
+context it leaves out; it pairs well with a bulletin-board display.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored, 10 points, due next class.} Launch it in the last four minutes so students hit
+Part~A while you can still answer. The food-truck lot is a fresh context on purpose: everything
+transferred from the adoption board has to be transferred, not recalled.
+
+\textbf{B2} --- ``give a question showing that a statistical question need not have a numerical
+answer'' --- is the item that predicts Lesson~1.1 performance, because a student who cannot
+separate \emph{varies} from \emph{numeric} will classify ZIP codes and jersey numbers as
+quantitative next period. Read those first. \textbf{C1}'s second half (why the sign does not tell
+one customer their wait) is the AP ``a summary does not predict an individual'' move; a
+restatement of the sign without reference to the spread of waits does not earn it.
+
+\textbf{When DeltaMath carries this topic, assign it instead}, strike the score cell on the
+cover, and tell students this page is now optional practice. Do not assign both.
 \end{teachernote}
 \end{document}

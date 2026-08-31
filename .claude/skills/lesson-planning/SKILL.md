@@ -3,17 +3,17 @@ name: lesson-planning
 description: >-
   Author complete, build-ready lessons for the AP Statistics LaTeX curriculum (a project with a
   shared/ style package — prefix apstats — and a Makefile hierarchy that compiles components with
-  latexmk and merges them with pdfunite).
-  Use this whenever the user wants to create, draft, or build a lesson, a lesson plan, a unit, or
-  any lesson component — warm-up, Experience & Formalize (the experience component: activity +
-  QuickNotes + application + check your understanding), homework, cover sheet, unit test, or their
-  answer keys. Lessons follow the Math Medic "experience first, formalize later" (EFFL) model.
-  Structure comes from the College Board AP Statistics CED in spec/ (files named ap-*): one CED
-  Topic maps to one lesson. Trigger this even when the user just says "make lesson 2.3" or "I need
-  a warm-up and key for tomorrow," and even if they don't say the words "skill" or "LaTeX."
-  Also use it to RETROFIT an already-authored lesson to a named convention — boxguard, namestrip,
-  vocabpar, the work rule, teachernotes, deck — or to REGENERATE a pre-EFFL lesson in the EFFL
-  shape, as in "apply boxguard namestrip retrofit to 1.1 and 1.3" or "regenerate unit 1 as EFFL."
+  latexmk and merges them with pdfunite). Use this whenever the user wants to create, draft, or
+  build a lesson, a lesson plan, a unit, or any lesson component — warm-up, guided notes & practice,
+  group activity, AP practice, homework, cover sheet, unit test, or their answer keys. Lessons
+  follow a traditional gradual-release model: warm-up, guided notes and practice (I do / we do / you
+  do), one group activity, a whole-class debrief, then close and assign. Structure comes from the
+  College Board AP Statistics CED in spec/ (files named ap-*): one CED Topic maps to one lesson.
+  Trigger this even when the user just says "make lesson 2.3" or "I need a warm-up and key for
+  tomorrow," and even if they don't say the words "skill" or "LaTeX." Also use it to RETROFIT an
+  already-authored lesson to a named convention — boxguard, namestrip, vocabpar, the work rule,
+  teachernotes, deck — or to REGENERATE a lesson in the current gradual-release shape, as in "apply
+  boxguard namestrip retrofit to 1.1 and 1.3" or "regenerate unit 1 in the gradual release shape."
   See the Retrofit section.
 ---
 
@@ -23,33 +23,32 @@ This skill authors lessons for the **AP Statistics** course and produces print-r
 the project's own build system. **It builds around the project's conventions — it does not invent
 its own.**
 
-**Every new lesson follows the Math Medic "experience first, formalize later" (EFFL) model**
-(mathmedic.com/how-it-works): students work an activity in small groups using only prior
-knowledge; the teacher circulates with *questions, cues, and prompts — not answers*; a debrief
-attaches the formal vocabulary to what the groups already found (QuickNotes); an application uses
-it once together; then a practice set applies it to new contexts. There is **no separate
-direct-instruction block, no guided-notes component, no exit ticket, and no tiered instruction.**
-The 55-minute period runs **5 warm-up / 20 activity / 12 debrief / 6 application / 8 check your
-understanding / 4 close & assign**.
+**Every new lesson follows a traditional gradual-release model: I do → we do → you do.** The
+teacher delivers the vocabulary and the core idea directly in guided notes; a guided practice
+problem is worked together with students holding the pen; an independent practice set is worked
+alone; then **one group activity for the whole class** applies it to a context students have not
+seen, and a whole-class debrief closes the loop. The 55-minute period runs
+**5 warm-up / 22 guided notes & practice / 16 group activity / 8 debrief / 4 close & assign**.
 
-**Naming rule — the component is called "Experience & Formalize."** That is the label on the
-cover's packet table, the component's `\pageheader`, the deck's activity frame, the lesson plan's
-activity box, and its teacher note — in LaTeX, `Experience \& Formalize`. The **directory keeps
-the short name `experience/`** (with `experience_key/`): it is a build identifier hard-coded in
-`shared/lesson.mk`'s `STUDENT_ORDER`/`KEYED_PAIRS`, and renaming it would mean editing the build
-system, which this skill never does. **Directory `experience`, label *Experience & Formalize*.**
+**There is no exit ticket** — the formative check is the last item of Independent Practice, and
+the lesson plan tells the teacher what to do with what they see. **There is no tiered
+instruction**: one activity, one version, for the entire class. Differentiation happens in how
+the teacher circulates, not on the page.
 
-## What is different about this course
+## Homework and AP Practice
 
-This course runs EFFL like Algebra 2, with three deliberate differences:
+Every lesson carries **two** back-of-packet components, and the distinction is load-bearing:
 
-1. **Homework is retained.** AP Statistics needs AP-style multiple-choice and free-response reps.
-   Check Your Understanding is *unscored in-class practice*; **homework is the graded practice**
-   and is where AP-format items live. (Algebra 2 dropped homework entirely — do not copy that.)
-2. **Structure comes from the AP CED**, not a course-plan document. One CED **Topic** maps to one
-   lesson. See `references/ap-workflow.md`.
-3. **There is no `fixedskillbox` and there are no tier boxes.** Every lesson-plan box is
-   `skillbox` (breakable) preceded by `\boxguard`. The palette has no `forest` family.
+- **`ap_practice` — assigned but NOT scored.** AP-format reps: four multiple-choice items (five
+  options, in context) plus one multi-part free-response set. The cover's score column prints
+  **`\textbf{NA}`** for it. Students keep it and bring it to review.
+- **`homework` — the lesson's GRADED practice**, and the last component in the packet. It is
+  **generated for every lesson**, because DeltaMath has thin statistics coverage. When DeltaMath
+  does carry a topic, the teacher assigns it *instead*, strikes the cover's score cell, and
+  leaves the page in the packet as extra practice. **Author the homework either way** — the
+  teacher decides at assign time, not the author.
+
+The homework is started in the last four minutes of the period and finished at home.
 
 ## The course at a glance
 
@@ -72,19 +71,33 @@ A lesson lives in `unitXX/lessonYY/` and consists of:
 - **`main.tex`** — the teacher-facing **lesson plan** (the root document of the lesson dir).
 - A set of **student components**, each its own subdirectory containing **either** a `main.tex`
   (authored, compiled to a PDF) **or** a `main.pdf` (a prefab PDF, used as-is):
-  `cover`, `warmup`, **`experience`** (displayed as **Experience & Formalize**), `homework`,
-  and `slides`.
+  `cover`, `warmup`, `notes`, `activity`, `ap_practice`, `homework`, and `slides`.
 - An **answer key** for each keyed component, as a *separate* sibling directory:
-  `warmup_key`, `experience_key`, `homework_key`. (`cover` and `slides` have no key.)
-- **`experience` — *Experience & Formalize* — is the heart of the lesson.** One document in
-  **four** parts on a page budget: the group **Activity** (two scenarios worked from prior
-  knowledge, **≤2pp**), a **QuickNotes** box the debrief fills (**½pp**), an **Application** worked
-  together (**½–1pp**), and **Check Your Understanding** (**1–2pp**, in-class practice — **not
-  scored**). See `references/components.md`.
-- *Legacy shape:* the ~78 lessons authored before the 2026-08 EFFL redesign carry `notes`,
-  `activity`, and `exit_ticket` dirs; the build accepts them and they keep working untouched. When
-  asked to touch a legacy lesson, **ask whether to regenerate it in the EFFL shape** rather than
-  patching the old components — see Retrofit.
+  `warmup_key`, `notes_key`, `activity_key`, `ap_practice_key`, `homework_key`.
+  (`cover` and `slides` have no key.)
+
+**The packet order is fixed by the build** (`shared/lesson.mk` `STUDENT_ORDER`):
+`cover → warmup → notes → activity → ap_practice → homework`. Never rename a component
+directory — each name is a build identifier.
+
+### The two in-class centrepieces
+
+- **`notes` — *Guided Notes & Practice*, 22 min.** One document in three moves:
+  an **objective box** and a **vocabulary box** filled *as each term is named*; three to four
+  numbered **notes sections** (the **I do**, ~12 min); a **`practicebox`** worked together (the
+  **we do**, ~6 min, `practicebox` takes no argument — its title is fixed as "Guided Practice");
+  and an **Independent Practice** `notesbox` worked alone (the **you do**, ~4 min), whose last
+  item is the **formative check**. Target 2–3 pages at 10pt.
+- **`activity` — *Group Activity*, 16 min + 8 min debrief.** One document: a **`headlinebox`**
+  launch, **two `scenariobox` scenarios** (scenario 1 is the clean case so every group has
+  something correct on the page; **scenario 2 carries the crux** — the item that surfaces the
+  target misconception), and a closing **`reflectionbox` Debrief** of three synthesis prompts
+  filled in together as a whole class. Target **≤2 pages** at 10pt.
+
+*Legacy shapes:* lessons authored before this redesign carry either `experience/` (the 2026-08
+EFFL experiment, `unit01/lesson02`–`lesson07`) or `notes/ + activity/ + exit_ticket/` with tiered
+activity boxes (units 02–09). The build accepts both and they keep working untouched. When asked
+to touch one, **ask whether to regenerate it in the current shape** — see Retrofit.
 
 ### The five work products
 
@@ -136,9 +149,6 @@ start — do not draft long and trim later. Budget: `\pageheader` + content ≈ 
 pdftoppm -r 72 target/unitXX/lessonYY/warmup/main.pdf /tmp/wm && ls /tmp/wm*.ppm | wc -l  # must be 1
 ```
 
-*(There is no exit ticket in an EFFL lesson — the formative check is an item inside Check Your
-Understanding. Legacy lessons still have `exit_ticket/`, which is also one page.)*
-
 ### 1b. Page-for-page: a component is the same length blank and keyed
 
 Every component must come out the **same number of pages** as its `_key`. The student and key
@@ -152,8 +162,10 @@ don't wait for a build to complain.
 
 Three mechanisms enforce it — use them while authoring, not as a cleanup pass:
 
-- **`\answerspace{H}{}`** in `experience/` — the blank reserves exactly `H`, the key prints the
-  answer in the identical height. Authored byte-identically in both files.
+- **`\answerspace{H}{}`** in `activity/` and `homework/` — the blank reserves exactly `H`, the key
+  prints the answer in the identical height. Authored byte-identically in both files. Sizing at
+  10pt: **1.0cm ≈ 2 handwritten lines, 1.5cm ≈ 3, 2.0cm ≈ 4**; a key answer runs roughly
+  **2.4 rendered lines per centimetre** at `\small`, so keep it inside the height it is given.
 - **`work` blocks** for every multi-step solution, authored **byte-identically in the blank and the
   key**. The blank reserves the block's exact height and prints nothing; the key prints it in
   `keyred`. They cannot drift.
@@ -162,14 +174,22 @@ Three mechanisms enforce it — use them while authoring, not as a cleanup pass:
 
 Verify after building:
 ```bash
-for c in warmup experience homework; do
+for c in warmup notes activity ap_practice homework; do
   b=$(pdfinfo target/unitXX/lessonYY/$c/main.pdf       | awk '/^Pages/{print $2}')
   k=$(pdfinfo target/unitXX/lessonYY/${c}_key/main.pdf | awk '/^Pages/{print $2}')
   [ "$b" = "$k" ] && echo "OK    $c $b" || echo "DRIFT $c blank=$b key=$k"
 done
 ```
 
-### 1c. `\boxguard` before every breakable box
+### 1c. Size every `\blank{}` close to the answer that replaces it
+
+This is the quiet cause of most page drift. `notes/` uses inline `\blank{W}` fills; the key
+replaces each with `\ans{answer}`. **If the blank is much wider than the answer, the key's
+paragraph rewraps shorter and the two files fall out of lockstep** — with nothing in the log to
+tell you. Write the answer first, then size the blank to it plus a little writing room. Same for
+`\writelines{n}` ↔ *n* `\ansline{}`: keep each key line short enough not to wrap.
+
+### 1d. `\boxguard` before every breakable box
 
 Never let a box break leaving a ~1in sliver — a title plus a line or two — at a page edge. Put
 `\boxguard` on its own line immediately before the `\begin{...}`, in the blank **and** the key:
@@ -181,9 +201,7 @@ Never let a box break leaving a ~1in sliver — a title plus a line or two — a
 \boxguard[30]             % raise it when the box opens with an unbreakable TikZ figure or tabularx
 ```
 
-Prefer it to a hard `\newpage` — it self-adjusts when content above it changes. **Counts are
-baseline-relative:** a value tuned at 10pt is ~40% oversized at 12pt, so in `experience/` use
-**~14–16**, not 24–30.
+Prefer it to a hard `\newpage` — it self-adjusts when content above it changes.
 
 ### 2. No "sketch the…" questions
 
@@ -234,14 +252,20 @@ never splits on its own, so the guard is what protects it.
 
 After writing each lesson plan, grep for `fixedskillbox` and confirm zero hits.
 
-### 5. The spoiler rule (EFFL)
+### 5. `\termblank` in a key needs `\termans`, not a second write-line
 
-Nothing the student sees *before* the activity — the cover, the warm-up, the deck's
-learning-targets frame — may pre-name the vocabulary the debrief will attach. Write targets in
-plain language ("how spread out the values are", not "standard deviation"; "how unusual this
-result would be", not "p-value"), and keep the cover's Keep-in-Mind box to describing the EFFL
-process itself. The **teacher-facing plan keeps the formal AP vocabulary** — the rule does not
-apply there.
+A key that mirrors `\termblank{Term}` with `\termblanklong{Term}` *plus* an `\ansline{}` runs a
+line longer than the blank every single time. Define this in the key file instead — it reproduces
+`\termblank`'s exact two-line geometry:
+
+```latex
+\newcommand{\termans}[3]{%
+  \noindent\textbf{\textcolor{navy}{#1:}}\quad\ans{#2}\\[1pt]%
+  \ansline{#3}\\[2pt]}
+```
+
+`\par` still brackets each `\termblank`/`\termans` inside a `vocabbox` (the vocabpar fix) —
+without it the intro sentence collides with the first term.
 
 ### 6. Other known-bad patterns (do not use)
 
@@ -252,11 +276,14 @@ apply there.
 - `\forestheader` in a deck — this course's beamer macro is `\navyheader`
 - `\usepackage{apstats-boxes}` in a key file — keys use `apstats-key` only (it includes boxes)
 - `fixedskillbox` anywhere (see rule 4)
-- `tierbox` — does not exist, and **EFFL has no tiered instruction**; drop the concept, don't
-  reimplement it with a `tcolorbox`
+- `tierbox` — does not exist, and **there is no tiered instruction**; one activity for the whole
+  class. Drop the concept, don't reimplement it with a `tcolorbox`
 - `\begin{practicebox}{Title}` — `practicebox` takes **no argument** (its title is fixed as
   "Guided Practice"); a titled box is `notesbox{Title}`
 - `\begin{work}{2cm}` — `work` takes **no argument**, and its body is math (an amsmath `aligned`)
+- `[resume]` on an `enumerate` split across separate `tcolorbox`es — it does not carry, so items
+  restart at 1. Either accept per-box numbering and reference items as A1/B2/C1, or keep the
+  enumerate inside one box.
 
 ### 7. Only use colors defined in `shared/apstats-colors.sty`
 
@@ -280,7 +307,7 @@ number, CED topic content, and a pointer to this skill. The coordinator gathers 
 
 ```
 # Coordinator does once:
-- read one model EFFL lesson, extract CED topics for L7.4 and L7.5
+- read one model lesson, extract CED topics for L7.4 and L7.5
 
 # Coordinator scaffolds ALL lesson directories before spawning subagents:
 python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 04 \
@@ -302,7 +329,7 @@ have auto-approved Bash access. The coordinator always does. Scaffolding first m
 only need the Write tool.
 
 Each subagent receives: (a) the extracted CED content for its single lesson, (b) the path of one
-model EFFL lesson to mirror, (c) the hard constraints above, and (d) instructions to use the Write
+model lesson to mirror, (c) the hard constraints above, and (d) instructions to use the Write
 tool only. The coordinator collects results, builds, verifies page counts, and opens one PR.
 
 ## Workflow
@@ -330,21 +357,20 @@ never force, reset, or discard changes to make the sync succeed. Then:
    defined in `apstats-article.sty`, so a lesson plan sets only `\UnitNumberName` and
    `\LessonNumberName`. The title block prints `\CourseName` plus the unit/lesson line and
    **nothing else**.
-3. **Find the insertion point.** List `unit*/lesson*` to find the target lesson and whether it
-   already exists — and whether it is **legacy** (has `notes/`, `activity/`, `exit_ticket/`) or
-   **EFFL** (has `experience/`).
-4. **Open a model lesson.** Mirror a built EFFL lesson's preamble, box usage, and tone. The live
-   project overrides the reference docs. If no EFFL lesson exists yet in this course, mirror the
-   skeletons in `assets/skeletons/` and `~/Mathematics/algebra_2/unit01/lesson02/experience` for
-   shape only — **recolor and re-scope it** per "What is different about this course."
+3. **Find the insertion point.** List `unit*/lesson*` to find the target lesson, whether it
+   already exists, and which shape it is in: **current** (`notes/` + `activity/` + `ap_practice/`,
+   no `exit_ticket/`), **EFFL** (`experience/`), or **pre-EFFL legacy** (`notes/` + `activity/` +
+   `exit_ticket/`).
+4. **Open the reference implementation.** `unit01/lesson00` is the model — mirror its preamble,
+   box usage, pacing, and tone. The live project overrides the reference docs.
 
 ### Step 1 — Map the CED topic to the lesson
 
 Locate the CED in `spec/`, extract the unit → topic → Learning Objective → Essential Knowledge
 content for this lesson, plus the governing Big Idea and AP Skill. One CED **Topic** maps to one
 lesson. **Confirm the topic mapping with the user before authoring.** Then decide, from the EK,
-**what the groups must discover** — the activity is designed backward from that. See
-`references/ap-workflow.md` → "EFFL: where CED content lands in the lesson."
+**what the notes must teach and what the activity must make students transfer** — the activity's
+crux is designed backward from the target misconception. See `references/ap-workflow.md`.
 
 ### Step 2 — Scaffold the lesson directory
 
@@ -354,9 +380,10 @@ python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 
   --unit-title "Exploring One-Variable Data"
 ```
 
-`--components` defaults to `cover,warmup,experience,homework,slides`, so it can be omitted. The
-script auto-detects the prefix, writes the one-line `Makefile`, the lesson plan, and each
-component + `_key` skeleton. Pass `--prefab warmup` to create a drop-in directory instead (Step 4).
+`--components` defaults to `cover,warmup,notes,activity,ap_practice,homework,slides`, so it can be
+omitted. The script auto-detects the prefix, writes the one-line `Makefile`, the lesson plan, and
+each component + `_key` skeleton. Pass `--prefab warmup` to create a drop-in directory instead
+(Step 4).
 
 **Unit assessments scaffold automatically** when the run creates a *new* unit (`tests/`,
 `test_keys/`, `sample_test/`, `sample_test_key/`). `--tests` (re)scaffolds them for an existing
@@ -371,41 +398,32 @@ Read every skeleton you intend to author (each component and its `_key`) up fron
 
 Author each file following `references/components.md`. Hold to these invariants:
 
-- **Student components** preamble with `\documentclass[10pt]{article}` +
-  `\usepackage{apstats-article}` + `\usepackage{apstats-boxes}`. The **Experience & Formalize**
-  component uses `\documentclass[12pt]{article}` (Math Medic sizing); warm-up, homework, and cover
-  stay `[10pt]`.
-- **EFFL scope (the timebox rule).** The activity must fit the 20-minute block: **two scenarios,
-  ~10–13 sub-questions, ~2 pages at 12pt**, worked from prior knowledge with every display
-  pre-drawn. Extra examples belong to the debrief, the Application, or Check Your Understanding —
-  not the activity.
-- **The Experience & Formalize page budget (non-negotiable).** Activity **≤2pp** · QuickNotes
-  **½pp** · Application **½–1pp** · Check Your Understanding **1–2pp**. A part that runs over gets
-  cut, not carried.
-- **Check Your Understanding is not scored.** The cover's score column prints **`\textbf{NA}`** for
-  it rather than a `\blank{}`, the plan tells the teacher to spot-check the formative item instead
-  of collecting for a grade, and the deck says "practice, not a quiz." **The homework is the graded
-  practice** and carries a score blank.
-- **Homework carries the AP reps.** AP-style multiple choice (five options, in context) plus at
-  least one multi-part free-response item, one spiral item, and the preview of the next lesson.
-- **The spoiler rule** (Hard constraint 5).
-- **Open answer space, not write-lines, in Experience & Formalize.** The component preamble defines
-  `\answerspace{H}{answer}`: the blank passes an empty second argument, the key passes the red
-  answer, so the two files paginate identically by construction. Size H for 2–4 handwritten lines
-  (1.4–2.8cm). Short inline `\blank{}`s are still fine for table cells and one-word fills.
+- **Every student component** preambles with `\documentclass[10pt]{article}` +
+  `\usepackage{apstats-article}` + `\usepackage{apstats-boxes}`. There is no 12pt component.
+- **The timebox rules.** Guided notes: 3–4 notes sections + one guided-practice problem + three
+  independent items, **2–3pp**. Group activity: two scenarios, **7–9 sub-questions, ≤2pp**, every
+  display pre-drawn. A part that runs over gets cut, not carried.
+- **The notes teach; the activity transfers.** Use a *different context* in the notes than in the
+  activity, and a *third* in the homework. Recall is not the skill being built.
+- **The activity's scenario 2 carries the crux** — the single item that surfaces the lesson's
+  target misconception. Name that misconception explicitly in the plan's Key Understandings cell
+  and again in "Watch For."
+- **The formative check is the last Independent Practice item**, and the plan says what the
+  teacher does with each of three possible piles of responses. There is no exit ticket.
+- **AP Practice carries `NA`** in the cover's score column; **homework carries a score blank** and
+  the DeltaMath-override note. Both are authored for every lesson.
 - **Answer keys** are *separate files* that swap `-boxes` for `\usepackage{apstats-key}` and wrap
-  every answer in `\ans{...}` (inline) or `\ansline{...}` (fills a write-line). Mirror the blank
-  exactly, then fill the blanks. There is **no** answer-key toggle — never try to build one.
+  every answer in `\ans{...}` (inline), `\ansline{...}` (fills a write-line), `\termans{}{}{}`
+  (fills a `\termblank`), or the second argument of `\answerspace{H}{}`. Mirror the blank exactly,
+  then fill the blanks. There is **no** answer-key toggle — never try to build one.
 - **Teacher notes go in the lesson plan, not in a key** — one `teachernote` per component, in
-  packet order: `[Warm-Up]`, `[Experience \& Formalize]`, `[Homework]`.
+  packet order: `[Warm-Up]`, `[Guided Notes \& Practice]`, `[Group Activity]`, `[AP Practice]`,
+  `[Homework]`.
 - **The work rule** (Hard constraint 1b): every worked solution in a `work` block authored
   byte-identically in blank and key. Never cram steps into one line as `$a=b \Rightarrow c=d$`.
 - **`\boxguard` before every breakable box**, in the blank and the key both.
 - **Namestrip: `\namedateperiod` on the cover only** — plus the unit tests, which are taken in a
-  testing setting. No name row on warmup, experience, or homework; the packet is stapled behind
-  its cover.
-- **`\par` around `\termblanklong`/`\ansline` inside a `vocabbox`** (the vocabpar fix) — without it
-  the intro sentence collides with the first term, and key answers drag onto the wrong line.
+  testing setting. No name row on any other component; the packet is stapled behind its cover.
 - Use the project's box vocabulary and fill-in helpers rather than reinventing layout; the full
   catalog is in `references/conventions.md`.
 - **AP habits of mind:** every context is real and plausible, every answer is phrased **in
@@ -457,12 +475,14 @@ find unitXX -name main.tex | while read f; do
   d=$(dirname "$f"); o=/tmp/scan/$(echo "$d" | tr / _); mkdir -p "$o"
   (cd "$d" && TEXINPUTS="$ROOT/shared//:" xelatex -halt-on-error -interaction=nonstopmode \
      -output-directory="$o" main.tex > "$o/scan.log" 2>&1) \
-    && echo "OK: $f" || { echo "FAIL: $f"; grep -m3 "^!" "$o/scan.log"; }
+    && echo "OK: $f  $(pdfinfo "$o/main.pdf" | awk '/^Pages/{print $2}')pp" \
+    || { echo "FAIL: $f"; grep -m3 "^!" "$o/scan.log"; }
 done
 ```
 
-Collect ALL failures, fix them, re-scan to confirm zero, then delete stale stamps
-(`find .stamps/unitXX -name '*.stamp' -delete`) and run `make`.
+The page counts printed here are also your Hard-constraint-1b check — compare each component
+against its `_key` before running `make`. Collect ALL failures, fix them, re-scan to confirm zero,
+then delete stale stamps (`find .stamps/unitXX -name '*.stamp' -delete`) and run `make`.
 
 ## Retrofit — apply a named convention to a lesson already authored
 
@@ -478,11 +498,11 @@ build and report.
 | --- | --- | --- |
 | **boxguard** | No box stranded as a ~1in sliver across a page break | `\boxguard` (or `\boxguard[n]`) on its own line before the `\begin{...}` — blank **and** key |
 | **namestrip** | Name/date/period row on the cover (and unit tests) only | `python3 .claude/skills/lesson-planning/scripts/namestrip.py --project . --unit NN --lesson MM` (`--check` to preview) |
-| **vocabpar** | `\par` around `\termblanklong`/`\ansline` in a `vocabbox` | Hand fix per lesson |
-| **work rule** | A component is the same length blank and keyed | `work` blocks authored identically in both files; `steptable`/`\step` for printed solutions; `\writelines{n}` to match a wrapped `\ansline` |
+| **vocabpar** | `\par` around `\termblank`/`\termblanklong`/`\ansline` in a `vocabbox` | Hand fix per lesson; the key side uses `\termans` (Hard constraint 5) |
+| **work rule** | A component is the same length blank and keyed | `work` blocks authored identically in both files; `\answerspace{H}{}` for prose answers; blank widths sized to their answers (Hard constraint 1c) |
 | **teachernotes** | Teacher prose in the lesson plan, one titled note per component | `python3 .claude/skills/lesson-planning/scripts/movenotes.py unitNN/lessonMM` (`--check` to preview) |
 | **deck** | Every lesson has a `slides/` Beamer deck | If `slides/main.tex` is absent, author one from `assets/skeletons/slides.tex` |
-| **effl** | The lesson uses the EFFL component shape | See "Regenerating a legacy lesson" below |
+| **gradual release** | The lesson uses the current component shape | See "Regenerating a lesson" below |
 
 Full spec for each: `references/conventions.md`.
 
@@ -490,23 +510,32 @@ Full spec for each: `references/conventions.md`.
 without `slides/main.tex` builds only three. **When you review or retrofit a lesson that has no
 deck, author one** — it is part of the review, not a separate request.
 
-### Regenerating a legacy lesson in EFFL shape
+### Regenerating a lesson in the current gradual-release shape
 
-A legacy lesson has `notes/`, `activity/`, and `exit_ticket/` and no `experience/`. Regenerating it:
+**From the EFFL shape** (has `experience/`, no `exit_ticket/`):
 
-1. Scaffold `experience` and `experience_key` into the existing lesson dir
-   (`--components experience --force` is not needed; scaffold into a fresh dir if unsure).
-2. Fold the old **activity** into the Activity part, the **guided notes** into QuickNotes, the
-   worked examples into the Application, and the **exit ticket** into the CYU formative-check item.
-3. Delete `notes`, `notes_key`, `activity`, `activity_key`, `exit_ticket`, `exit_ticket_key`.
-4. **Keep `homework`** — re-point it at AP-style MC/FRQ practice if it isn't already.
-5. Rewrite the cover's packet table (Warm-Up · Experience & Formalize · Check Your Understanding
-   with `NA` · Homework) and de-spoiler its learning targets.
-6. Rewrite the lesson plan in EFFL section order and re-cut its teacher notes to three.
-7. Author the deck if it has none.
-8. **Delete the stale stamps** — `rm -rf .stamps/unitXX/lessonYY target/unitXX/lessonYY` — or
-   `make` will skip recompiling a sibling whose PDF was cleaned and `pdfunite` will fail on a
-   missing file.
+1. Scaffold `notes`, `notes_key`, `activity`, `activity_key` into the existing lesson dir.
+2. Fold the old **QuickNotes** and **Application** into the guided notes (QuickNotes bullets become
+   the notes sections' fills; the Application becomes the `practicebox`), the old
+   **Check Your Understanding** into Independent Practice, and the old **Activity** into the group
+   activity — re-voiced to *use* the vocabulary rather than discover it.
+3. Add the Debrief `reflectionbox` at the end of the activity.
+4. Delete `experience`, `experience_key`.
+5. If the lesson has no `ap_practice/`, split the existing homework: AP-format items to
+   `ap_practice/` (unscored), and author a **new scored homework** in a fresh context.
+6. Rewrite the cover's packet table (Warm-Up · Guided Notes & Practice · Group Activity ·
+   AP Practice with `NA` · Homework) and re-voice its learning targets with the formal vocabulary.
+7. Rewrite the lesson plan in gradual-release order and re-cut its teacher notes to five.
+8. Reorder the deck: targets → warm-up → I-do divider → instruction frames → we-do → you-do →
+   activity divider + launch → debrief → close.
+
+**From the pre-EFFL legacy shape** (has `exit_ticket/` and tiered activity boxes): the same, plus
+**delete `exit_ticket` and `exit_ticket_key`** (fold its item into Independent Practice as the
+formative check) and **flatten the tiered activity into one version for the whole class**.
+
+Either way: **delete the stale stamps** — `rm -rf .stamps/unitXX/lessonYY target/unitXX/lessonYY` —
+or `make` will skip recompiling a sibling whose PDF was cleaned and `pdfunite` will fail on a
+missing file.
 
 **Always finish a retrofit or regeneration with the evidence**, per lesson: `make -C unitXX/lessonYY
 all` exits 0, and every component's page count equals its `_key`'s (Hard constraint 1b). Compare the
@@ -514,12 +543,15 @@ compiled components under `target/unitXX/lessonYY/<comp>/main.pdf` — comparing
 against `lessonYY_key.pdf` proves nothing, since the pagination pass pads them to equal length no
 matter what. Report any component that still differs and why.
 
-**Scope note for this course.** Conversion has started: **1 of 78 lessons are EFFL**, the rest are
-pre-EFFL. `unit01/lesson00` is the **reference implementation** — open it before converting anything
-else. Across the remaining legacy lessons, 131 `_key` files still carry teacher notes,
-`\namedateperiod` appears on every component rather than the cover alone, and **57 of 78 lessons
-have no deck**. Convert lesson by lesson (or unit by unit) as you review, authoring the missing deck
-as you go, and rebuild the unit packet each time — do not attempt the whole course in one pass.
+**Scope note for this course.** Conversion has started:
+**2 of 78 lessons are in the current gradual-release shape** (`unit01/lesson00` and
+`unit01/lesson01` — lesson00 is the **reference implementation**, open it before converting
+anything else). **6 lessons are in the EFFL shape** (`unit01/lesson02`–`lesson07`). The remaining
+**70 are pre-EFFL legacy**: they still carry `exit_ticket/` and tiered activity boxes, 96 `_key`
+files still hold teacher notes, `\namedateperiod` appears on every component rather than the cover
+alone, and **57 of 78 lessons have no deck**. Convert lesson by lesson (or unit by unit) as you
+review, authoring the missing deck as you go, and rebuild the unit packet each time — do not
+attempt the whole course in one pass.
 
 ## Reference files
 
@@ -527,9 +559,9 @@ as you go, and rebuild the unit packet each time — do not attempt the whole co
   answer-key macros, `\answerspace`, color palette, and per-document-type preambles. Read before
   authoring.
 - `references/components.md` — section-by-section spec and a skeleton for the lesson plan, each
-  component + key, the legacy components, and the unit tests.
+  component + key, and the unit tests.
 - `references/ap-workflow.md` — reading the AP CED, mapping Big Idea / Skill / LO / EK into the
-  lesson, and where each piece lands in the EFFL flow.
+  lesson, and where each piece lands in the gradual-release flow.
 - `references/standards-workflow.md` — the title + description + standards path, for anything the
   CED does not cover.
 - `references/build.md` — the Makefile hierarchy, scaffolding, prefab PDFs, unit tests, build
@@ -551,14 +583,15 @@ Both retrofit scripts take `--check` to preview without writing.
 - **Sync first** (Step 0). Never force or discard to make the merge succeed.
 - **Full `Read` each skeleton before writing it** (Step 3). A `bash`/`cat` dump does not register
   the file with the editor, so the write fails.
-- Mirror a built lesson for tone and preamble; the live project overrides these docs.
+- Mirror `unit01/lesson00` for tone and preamble; the live project overrides these docs.
 - Structure comes from the AP CED; one Topic → one lesson; confirm the mapping before authoring.
 - Keep blank and key documents in lockstep — the key is the blank with answers filled in, and it
-  must come out the **same number of pages**. `\answerspace` and `work` blocks are what enforce it.
-- **EFFL discipline:** the activity fits 20 minutes (two scenarios, ~10–13 sub-questions, ~2pp at
-  12pt); vocabulary arrives in the debrief, never before it (the spoiler rule); no tiers, no
-  guided-notes or exit-ticket components in new lessons.
-- **Homework stays** — it is this course's graded AP practice. Do not copy Algebra 2's removal.
+  must come out the **same number of pages**. `\answerspace`, `work` blocks, `\termans`, and
+  answer-sized `\blank{}` widths are what enforce it.
+- **Gradual-release discipline:** the notes teach and the activity transfers; one activity for the
+  whole class (no tiers); no exit ticket; the formative check is the last Independent Practice item.
+- **Both back-of-packet components are authored every lesson** — `ap_practice` unscored,
+  `homework` scored, with the DeltaMath-override note in the plan.
 - **`\ans{}` in text mode only; `skillbox` not `fixedskillbox`; no `forest` colors** — grep-check
   every file before building.
 - **One-page warm-up** — verify with `pdftoppm` after every build.
@@ -566,5 +599,5 @@ Both retrofit scripts take `--check` to preview without writing.
   tracked `main.pdf` files in the source directories.
 - **Multi-lesson requests → parallel subagents.**
 - Don't modify `shared/` or the Makefiles to make a lesson build; fix the lesson's `.tex`.
-- **Retrofit and EFFL regeneration are first-class modes**, not authoring — apply only what was
-  named, then prove it with build + page-count evidence.
+- **Retrofit and regeneration are first-class modes**, not authoring — apply only what was named,
+  then prove it with build + page-count evidence.

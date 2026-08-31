@@ -1,0 +1,149 @@
+%! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Group Activity (Answer Key)
+% GRADUAL RELEASE: this is the "you do together" block — 16 minutes in groups of 3-4, followed
+% by an 8-minute whole-class debrief that the Debrief box at the end captures.
+% ONE activity for the entire class — there are no tiers and no differentiated versions.
+% The vocabulary was GIVEN in the guided notes, so it is used freely here: the work is applying
+% individual / variable / value / variability / statistical question to a table students have
+% not seen, and defending each answer from the board itself.
+% CRUX: item 2b. "How many dogs are on the board?" needs the whole table AND returns a number,
+% and is still NOT statistical, because the answer does not differ from one dog to the next.
+%
+% PAGE LOCKSTEP with activity_key/: \answerspace{H}{} reserves exactly H in the blank and prints
+% the red answer in the key, so the two files paginate identically by construction. Keep the
+% macro definition, every \answerspace height, and every \boxguard byte-identical in both files.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.0}{Group Activity: The Adoption Board --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.10in}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{The Adoption Board.} A county animal shelter posts one board in its lobby listing every
+dog currently up for adoption. Visitors read it, and so does the shelter director --- but they
+are not looking for the same things. Work through both problems with your group, using the
+vocabulary from today's notes. For \textbf{every} answer, be ready to point at the board and
+show \emph{how you know}.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\boxguard[30]
+\begin{scenariobox}[1. Reading the Board]{navy}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Days on board} \\
+\hline
+Biscuit & Beagle    & 3 & 24 & 12 \\
+Momo    & Terrier   & 1 & 15 & 44 \\
+Ranger  & Shepherd  & 5 & 61 &  6 \\
+Pepper  & Retriever & 2 & 55 & 21 \\
+Sage    & Beagle    & 7 & 27 & 59 \\
+Tuck    & Mixed     & 4 & 38 &  9 \\
+Willow  & Terrier   & 2 & 17 & 33 \\
+Zeke    & Shepherd  & 6 & 70 & 15 \\
+\hline
+\end{tabularx}
+
+\vspace{6pt}
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item One \textbf{row} of this board describes one \ans{individual --- one dog}. The board lists
+        \ans{8} of them, and records \ans{4} variables about each one
+        (do not count the Name column).
+  \item ``Beagle'' appears on the board. Is it a \textbf{variable} or a \textbf{value}?
+        Circle one, then name the variable it belongs to.
+        \hfill \textbf{variable} \qquad \textbf{value} \ans{$\leftarrow$ circle}
+        \answerspace{1.2cm}{``Beagle'' is a \emph{value}. It is one entry recorded under the
+        variable \emph{Breed}; \emph{Breed} is the column heading, and ``Beagle'' is what two
+        of the dogs happen to be.}
+  \item \textbf{Underline} the part of the board you would read to answer each question. One
+        needs a single \emph{value}; the other needs an entire \emph{variable}.
+
+        \vspace{3pt}
+        \emph{How much does Zeke weigh?} \qquad\qquad \emph{How much do these dogs weigh?}
+        \answerspace{1.4cm}{Zeke's weight is a single \emph{value} --- the entry 70 where Zeke's
+        row meets the Weight column. ``How much do these dogs weigh?'' needs the entire
+        \emph{variable}: all eight entries in the Weight column.}
+  \item Sage has been on the board 59 days and Ranger 6. If \emph{every} dog had been on the
+        board the same number of days, would the \emph{Days on board} column still be worth
+        posting? Answer using the word \textbf{variability}.
+        \answerspace{1.8cm}{No. With no \textbf{variability} in that column, every dog would have
+        waited the same number of days, so a single number would tell a visitor everything there
+        is to know. The column is worth posting only because its values differ from dog to dog
+        --- 6 days for Ranger, 59 for Sage.}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{scenariobox}[2. Four Questions the Director Might Ask]{navy}
+\small
+The shelter director looks at the same board and asks these four questions.
+
+\vspace{4pt}
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item For each one, decide whether you could answer it by reading \textbf{one spot} on the
+        board or whether you would have to read \textbf{many rows}.
+
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=4pt]
+          \item Is Momo a terrier? \hfill \ans{one spot}
+          \item How many dogs are on the board? \hfill \ans{many rows}
+          \item How long do dogs on this board tend to wait? \hfill \ans{many rows}
+          \item Do heavier dogs tend to wait longer than lighter ones? \hfill \ans{many rows}
+        \end{enumerate}
+  \item \textbf{Three of those need many rows. Two of the three are statistical questions and
+        one is not.} Find the one that is not, then say exactly which check it fails and why.
+        \answerspace{2.4cm}{\textbf{(B)} is not statistical. (C) and (D) are. (B) fails
+        \textbf{check 1}: ``How many dogs are on the board?'' has one fixed answer --- 8 ---
+        and that answer does not differ from one dog to the next. Reading many rows is not the
+        test; \emph{variation across individuals} is. (C) and (D) pass both checks, because
+        waiting times and weights differ from dog to dog and you must read the data to answer.}
+  \item A flyer taped under the board reads: \textbf{``Our dogs go home in 25 days.''}
+        Name \textbf{two} pieces of context the flyer leaves out that you would want before
+        believing it.
+        \answerspace{1.8cm}{Which dogs it counted --- every dog, or only the ones already
+        adopted? And what ``25 days'' is: an average, a typical wait, or the longest one. Over
+        what stretch of time it was measured is a third.}
+  \item A visitor reads the flyer and says, ``Good --- so I'll have my dog home in 25 days.''
+        Using specific values from the board, give one reason that is the wrong way to read
+        the number.
+        \answerspace{1.8cm}{Not one dog on the board waited 25 days. Ranger waited 6 and Sage
+        has waited 59. A number that summarizes the whole group does not predict what will
+        happen to any one individual in it.}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+% ── DEBRIEF (8 min, whole class — filled together after the groups report out) ─
+\boxguard[18]
+\begin{reflectionbox}
+\small
+\textbf{Debrief --- we fill this in together.}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item In one sentence, what is the single thing that separates a statistical question from
+        a question that is not statistical?
+        \answerspace{1.2cm}{Whether the answers \textbf{differ from one individual to the next}
+        --- not whether the answer is a number, and not how much of the table you have to read.}
+  \item Write a question about this board that needs the \textbf{whole table} and is still
+        \textbf{not} statistical. Say which check it fails.
+        \answerspace{1.4cm}{``How many Beagles are on the board?'' It needs every row and it
+        returns a number, but that count is one fixed answer --- it fails check 1.}
+  \item Why would statistics be unnecessary if every dog on the board were identical?
+        \answerspace{1.2cm}{Because one dog would tell you everything about all of them. You
+        would need a single measurement, not a data set.}
+\end{enumerate}
+\end{reflectionbox}
+
+\end{document}

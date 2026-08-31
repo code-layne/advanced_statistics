@@ -1,0 +1,88 @@
+%! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Group Activity
+% GRADUAL RELEASE: the "you do together" block — 16 minutes in groups of 3-4, followed by an
+% 8-minute whole-class debrief that the Debrief box at the end captures.
+% ONE activity for the entire class. There are NO tiers, no differentiated versions, and no
+% `tierbox` — differentiation happens in how the teacher circulates, not on the page.
+% The vocabulary was GIVEN in the guided notes, so it is used freely here: the work is
+% APPLYING it to a context students have not seen, and defending every answer from the data.
+% Scenario 2 carries the CRUX — the item that surfaces the target misconception.
+% All displays are PRE-DRAWN: never ask a student to sketch, draw, or construct a graph.
+%
+% PAGE LOCKSTEP with activity_key/: \answerspace{H}{} reserves exactly H in the blank and
+% prints the red answer in the key, so the two files paginate identically by construction.
+% Sizing: 1.0cm ~ 2 handwritten lines, 1.5cm ~ 3, 2.0cm ~ 4. Keep the macro definition, every
+% \answerspace height, and every \boxguard byte-identical in both files.
+\documentclass[10pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit @@UNITINT@@, Lesson @@LESSONID@@}{Group Activity: TODO Activity Title}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.10in}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{TODO Activity Title.} TODO: one motivating data context, 2--3 sentences, ending with
+the ground rule --- what groups must be ready to show before they write an answer down.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\boxguard[28]
+\begin{scenariobox}[1. TODO Scenario One]{navy}
+\small
+TODO: the pre-drawn table or display. Scenario 1 is deliberately the clean case, so every
+group has something correct on the page before they hit the crux.
+
+\vspace{6pt}
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=5pt]
+  \item TODO: identification, using the notes' vocabulary. \blank{3.0cm}
+  \item TODO: a value to read or compute from the display.
+  \item TODO: an answer that must be justified \emph{from the data}.
+        \answerspace{1.5cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[26]
+\begin{scenariobox}[2. TODO Scenario Two --- the crux]{navy}
+\small
+TODO: the contrast case, on the same context.
+
+\vspace{6pt}
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=5pt]
+  \item TODO: the setup that sets the trap.
+  \item \textbf{TODO: THE CRUX.} TODO: the item that surfaces the target misconception, and
+        that the debrief opens on.
+        \answerspace{1.8cm}{}
+  \item TODO: the follow-through in context.
+        \answerspace{1.8cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+% ── DEBRIEF (8 min, whole class — filled together after the groups report out) ─
+% Three synthesis prompts, short. Item 1 is the sentence you want on every desk.
+\boxguard[18]
+\begin{reflectionbox}
+\small
+\textbf{Debrief --- we fill this in together.}
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+  \item TODO: state the lesson's key idea in one sentence.
+        \answerspace{1.0cm}{}
+  \item TODO: generate an example \emph{not} on this page --- where transfer shows up.
+        \answerspace{1.2cm}{}
+  \item TODO: the ``why does this matter'' line, in their own words.
+        \answerspace{1.0cm}{}
+\end{enumerate}
+\end{reflectionbox}
+
+\end{document}

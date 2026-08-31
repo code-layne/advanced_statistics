@@ -1,0 +1,246 @@
+%! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Guided Notes & Practice
+% GRADUAL RELEASE component (I do -> we do -> you do), 22 minutes.
+%   I DO   : the objective box, the vocabulary box, and notes sections 1-4. The teacher
+%            presents; students fill the blanks as each idea is named.
+%   WE DO  : the practicebox ("Guided Practice") — worked together, students hold the pen.
+%   YOU DO : the "Independent Practice" notesbox — students work alone, teacher circulates.
+% Vocabulary is GIVEN here, not discovered: the group activity that follows applies it.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} in this file becomes a short \ans{} there, and
+% every \writelines{n} becomes exactly n \ansline{} calls. Keep key answers short enough that
+% they do not wrap past the reserved lines, and keep every \boxguard byte-identical.
+% VOCABPAR: \par brackets each \termblank inside the vocabbox — without it the intro sentence
+% collides with the first term and key answers drag onto the wrong line.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.0}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.12in}
+
+\boxguard[14]
+\begin{objectivebox}
+\small
+By the end of these notes I will be able to:
+\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
+  \item explain why a number carries no information until it is placed in \textbf{context};
+  \item identify the \textbf{individuals}, \textbf{variables}, and \textbf{values} in a data set;
+  \item decide whether a question is a \textbf{statistical question} and justify it by naming
+        what varies.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+% ── VOCABULARY (I do — students fill each term as it is named) ────────────────
+\boxguard[20]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Individual}
+\par
+\termblank{Variable}
+\par
+\termblank{Value}
+\par
+\termblank{Variability}
+\par
+\termblank{Statistical question}
+\par
+\end{vocabbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+\boxguard[16]
+\begin{notesbox}{1. A Number Is Not Data Until It Has Context}
+\small
+The seven numbers from the warm-up --- 68, 71, 64, 70, 66, 73, 69 --- told you nothing. They
+could have been test scores, temperatures, ages, or heights. Nothing changes about the numbers
+themselves; what was missing was the \textbf{context}.
+
+\vspace{6pt}
+\textbf{Statistics} is the science of \blank{2.4cm}, organizing, analyzing, and drawing
+\blank{2.6cm} from data.
+
+\vspace{4pt}
+\textbf{Data} are recorded values \emph{together with} the \blank{2.4cm} that gives them
+meaning. \emph{Notice what is not in either definition: arithmetic.}
+
+\vspace{8pt}
+\textbf{The W questions.} Answer these and a bare number becomes data.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}l @{\hspace{0.8cm}} X @{}}
+\hline
+Who?           & \blank{9.5cm} \\
+What?          & \blank{9.5cm} \\
+In what units? & \blank{9.5cm} \\
+When \& where? & \blank{9.5cm} \\
+\hline
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Essential Knowledge VAR-1.A.1:} numbers convey meaningful information only when placed
+in context. This is the standard every answer you write this year is held to.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 2 ──────────────────────────────────────────────────────────
+\boxguard[24]
+\begin{notesbox}{2. Individuals, Variables, and Values}
+\small
+A survey of four students in a first-period class:
+
+\vspace{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Student} & \textbf{Grade level} & \textbf{Hours of sleep} & \textbf{Rides the bus?} \\
+\hline
+Alvarez & 10 & 7.5 & Yes \\
+Boone   & 11 & 6.0 & No  \\
+Chen    & 10 & 8.5 & Yes \\
+Delgado & 12 & 5.5 & No  \\
+\hline
+\end{tabularx}
+
+\vspace{8pt}
+\begin{itemize}[leftmargin=1.3em, itemsep=6pt]
+  \item An \textbf{individual} is what one \blank{2.0cm} of the table describes. Here the
+        individuals are \blank{4.4cm}.
+  \item A \textbf{variable} is a characteristic recorded for every individual --- a
+        \blank{3.0cm} heading. This table records \blank{1.0cm} variables.
+  \item A \textbf{value} is one \blank{2.0cm} underneath a variable. ``8.5'' is a value
+        of the variable \blank{3.2cm}.
+\end{itemize}
+
+\vspace{6pt}
+\begin{center}
+\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
+\textbf{The day-one error:} naming a \emph{value} where a \emph{variable} belongs. ``Yes'' is
+not a variable --- \emph{Rides the bus?} is. Before you answer, point at the column
+\blank{2.6cm}.}}
+\end{center}
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 3 ──────────────────────────────────────────────────────────
+\boxguard[16]
+\begin{notesbox}{3. Variability --- Why This Course Exists}
+\small
+Cover the \emph{Hours of sleep} column with your hand and imagine every entry read 7.0.
+
+\vspace{6pt}
+\textbf{Variability} means the values of a variable \blank{2.6cm} from one individual to the
+next.
+
+\vspace{6pt}
+If every individual gave the \blank{2.4cm} value, one measurement would answer everything ---
+no sample, no graph, no average, no course. Because the values differ (7.5, 6.0, 8.5, 5.5), one
+measurement is \blank{2.6cm}.
+
+\vspace{4pt}
+\textbf{Variability is the reason statistics exists.} Every technique in this course is a way
+of describing, measuring, or accounting for it.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 4 ──────────────────────────────────────────────────────────
+\boxguard[24]
+\begin{notesbox}{4. What Makes a Question Statistical?}
+\small
+A \textbf{statistical question} anticipates variability and is answered by collecting data. It
+must pass \textbf{both} checks:
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}l X @{}}
+Check 1 & Do the answers \blank{2.4cm} across individuals? \\[4pt]
+Check 2 & Must I \blank{2.6cm} data to answer it? \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Careful:} needing the whole table is \emph{not} the test, and having a number in the
+answer is \emph{not} the test. The test is \textbf{variation across individuals}.
+
+\vspace{6pt}
+Write \textbf{S} or \textbf{N} for each, then name what varies (or why nothing does).
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} X c X @{}}
+\hline
+\textbf{Question} & \textbf{S/N} & \textbf{What varies?} \\
+\hline
+How many students are in this table?          & \blank{0.8cm} & \blank{4.2cm} \\
+How many hours did Chen sleep?                & \blank{0.8cm} & \blank{4.2cm} \\
+How do the hours of sleep vary in this class? & \blank{0.8cm} & \blank{4.2cm} \\
+What grade levels are represented here?       & \blank{0.8cm} & \blank{4.2cm} \\
+\hline
+\end{tabularx}
+
+\vspace{6pt}
+\emph{Look at the last row.} Its answer is not a number --- and it is still statistical, because
+grade level differs from student to student.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── WE DO: guided practice ───────────────────────────────────────────────────
+\boxguard[20]
+\begin{practicebox}
+\small
+\textbf{The Gym Sign-Up --- we work this one together.} A gym records the \textbf{resting heart
+rate}, in beats per minute, of each of its 120 members on the morning they join. It also records
+each member's \textbf{home ZIP code}.
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item The individuals are \blank{4.6cm}, and the two variables recorded are
+        \blank{3.4cm} and \blank{3.0cm}.
+  \item Write one statistical question this gym could answer, and state exactly what varies
+        in it.\\[3pt]
+        \writelines{2}
+  \item ``What is the most common ZIP code among the members?'' --- statistical or not? Run
+        \textbf{both} checks before you answer.\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.10in}
+
+% ── YOU DO: independent practice ─────────────────────────────────────────────
+\boxguard[20]
+\begin{notesbox}{Independent Practice --- You Try}
+\small
+Work these on your own. I will circulate.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item A biologist weighs each of the 30 turtles in a pond and records the weight in kilograms.
+
+        The individuals are \blank{4.4cm}; the variable is \blank{3.0cm},
+        measured in \blank{2.2cm}.
+  \item \textbf{Same pond, two questions.} Exactly one is statistical. Circle it, then explain
+        which check the other one fails.
+
+        \vspace{4pt}
+        \hspace{1.0em}\emph{(i)} How much does the heaviest turtle weigh?
+        \hfill
+        \emph{(ii)} How do the turtles' weights vary?
+        \hspace{1.0em}\\[5pt]
+        \writelines{2}
+  \item A report states only: \textbf{``The average is 12.''} Name \textbf{two} pieces of
+        context you would need before this number means anything.\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

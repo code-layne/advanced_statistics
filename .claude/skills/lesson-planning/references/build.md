@@ -44,15 +44,14 @@ what replaced it.
     `latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error`,
     sending output to `target/UNIT/LESSON/<comp>/` and a stamp to `.stamps/`.
   - Builds two merged packets:
-    - **student** = `cover warmup experience notes activity exit_ticket homework` (blank
-      versions present), in that pedagogical order → `lessonYY_student.pdf`.
+    - **student** = `cover warmup experience notes activity exit_ticket ap_practice homework`
+      (blank versions present), in that pedagogical order → `lessonYY_student.pdf`.
 
-      `experience` is the EFFL centrepiece — the directory name is a **build identifier**, one of
-      these two lists in `shared/lesson.mk`; students and teachers read the component as
-      "Experience & Formalize". `notes`, `activity`, and `exit_ticket` are pre-EFFL names kept in
-      the list so the ~78 legacy lessons still build; a new lesson is
-      `cover warmup experience homework` (+ `slides`). Renaming `experience` would mean editing
-      the build system — don't.
+      A new lesson is `cover warmup notes activity ap_practice homework` (+ `slides`), which the
+      list already orders correctly. `experience` and `exit_ticket` are legacy names kept in the
+      list so older lessons still build. **Every one of these names is a build identifier** — one
+      of the two lists in `shared/lesson.mk` — so renaming a component directory would mean
+      editing the build system. Don't.
     - **key** = the *same list*, with each component swapped for its `_key` sibling where one
       exists (the cover has none, so it appears unchanged in both) → `lessonYY_key.pdf`.
       Deriving the key list from the student list is what makes the two packets pair up 1:1.
@@ -98,13 +97,13 @@ in the source tree), which resolves regardless of order.
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 02 --lesson 03 \
   --title "..." --unit-title "..." \
-  [--components cover,warmup,experience,homework,slides] \
+  [--components cover,warmup,notes,activity,ap_practice,homework,slides] \
   [--prefab warmup,warmup_key] [--lesson-id 2.3] [--tests | --no-tests]
 ```
 
-`--components` defaults to `cover,warmup,experience,homework,slides` — the EFFL set — so it can be
-omitted entirely. The legacy names `notes`, `activity`, and `exit_ticket` are still accepted for
-patching a pre-EFFL lesson, but are not defaults.
+`--components` defaults to `cover,warmup,notes,activity,ap_practice,homework,slides` — the full
+gradual-release set — so it can be omitted entirely. The legacy names `experience` and
+`exit_ticket` are still accepted for patching an older lesson, but are not defaults.
 
 It detects the prefix from `shared/*-colors.sty`, detects whether `\CourseName` is defined in
 `shared/` (this course defines it, so the plan omits it), writes the one-line `Makefile`, the
