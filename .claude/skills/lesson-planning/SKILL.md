@@ -5,9 +5,10 @@ description: >-
   shared/ style package — prefix apstats — and a Makefile hierarchy that compiles components with
   latexmk and merges them with pdfunite). Use this whenever the user wants to create, draft, or
   build a lesson, a lesson plan, a unit, or any lesson component — warm-up, guided notes & practice,
-  group activity, AP practice, homework, cover sheet, unit test, or their answer keys. Lessons
+  AP practice, homework, cover sheet, unit test, or their answer keys. Lessons
   follow a traditional gradual-release model: warm-up, guided notes and practice (I do / we do / you
-  do), one group activity, a whole-class debrief, then close and assign. Structure comes from the
+  do) that carries the entire release, a whole-class debrief, then close and assign. There is no
+  group activity. Structure comes from the
   College Board AP Statistics CED in spec/ (files named ap-*): one CED Topic maps to one lesson.
   Trigger this even when the user just says "make lesson 2.3" or "I need a warm-up and key for
   tomorrow," and even if they don't say the words "skill" or "LaTeX." Also use it to RETROFIT an
@@ -23,16 +24,20 @@ This skill authors lessons for the **AP Statistics** course and produces print-r
 the project's own build system. **It builds around the project's conventions — it does not invent
 its own.**
 
-**Every new lesson follows a traditional gradual-release model: I do → we do → you do.** The
-teacher delivers the vocabulary and the core idea directly in guided notes; a guided practice
-problem is worked together with students holding the pen; an independent practice set is worked
-alone; then **one group activity for the whole class** applies it to a context students have not
-seen, and a whole-class debrief closes the loop. The 55-minute period runs
-**5 warm-up / 22 guided notes & practice / 16 group activity / 8 debrief / 4 close & assign**.
+**Every new lesson follows a traditional gradual-release model: I do → we do → you do — and the
+guided notes carry all of it.** The teacher delivers the vocabulary and the core idea directly in
+guided notes; a guided practice problem is worked together with students holding the pen; an
+independent practice set is worked alone; then a transfer set applies it to a context students
+have not seen, still worked individually; and a whole-class debrief closes the loop. The
+55-minute period runs
+**5 warm-up / 38 guided notes & practice / 8 debrief / 4 close & assign**.
+
+**There is no group activity component.** Do not scaffold, author, or restore `activity/` —
+the notes absorbed it. `unit01/lesson01` is the reference for the current shape.
 
 **There is no exit ticket** — the formative check is the last item of Independent Practice, and
 the lesson plan tells the teacher what to do with what they see. **There is no tiered
-instruction**: one activity, one version, for the entire class. Differentiation happens in how
+instruction**: one document, one version, for the entire class. Differentiation happens in how
 the teacher circulates, not on the page.
 
 ## Homework and AP Practice
@@ -42,11 +47,12 @@ Every lesson carries **two** back-of-packet components, and the distinction is l
 - **`ap_practice` — assigned but NOT scored.** AP-format reps: four multiple-choice items (five
   options, in context) plus one multi-part free-response set. The cover's score column prints
   **`\textbf{NA}`** for it. Students keep it and bring it to review.
-- **`homework` — the lesson's GRADED practice**, and the last component in the packet. It is
-  **generated for every lesson**, because DeltaMath has thin statistics coverage. When DeltaMath
-  does carry a topic, the teacher assigns it *instead*, strikes the cover's score cell, and
-  leaves the page in the packet as extra practice. **Author the homework either way** — the
-  teacher decides at assign time, not the author.
+- **`homework` — the lesson's GRADED practice**, and the last component in the packet.
+  **Paper homework is the default for this course** and is **generated for every lesson**.
+  DeltaMath is an *occasional* override the teacher may choose on a given day — never the
+  default, and never assumed by the author. When it is used, it replaces the page, the cover's
+  score cell is struck, and the page stays in the packet as extra practice. **Author the
+  homework every time** — the teacher decides at assign time, not the author.
 
 The homework is started in the last four minutes of the period and finished at home.
 
@@ -71,33 +77,39 @@ A lesson lives in `unitXX/lessonYY/` and consists of:
 - **`main.tex`** — the teacher-facing **lesson plan** (the root document of the lesson dir).
 - A set of **student components**, each its own subdirectory containing **either** a `main.tex`
   (authored, compiled to a PDF) **or** a `main.pdf` (a prefab PDF, used as-is):
-  `cover`, `warmup`, `notes`, `activity`, `ap_practice`, `homework`, and `slides`.
+  `cover`, `warmup`, `notes`, `ap_practice`, `homework`, and `slides`.
 - An **answer key** for each keyed component, as a *separate* sibling directory:
-  `warmup_key`, `notes_key`, `activity_key`, `ap_practice_key`, `homework_key`.
+  `warmup_key`, `notes_key`, `ap_practice_key`, `homework_key`.
   (`cover` and `slides` have no key.)
 
 **The packet order is fixed by the build** (`shared/lesson.mk` `STUDENT_ORDER`):
-`cover → warmup → notes → activity → ap_practice → homework`. Never rename a component
+`cover → warmup → notes → ap_practice → homework`. Never rename a component
 directory — each name is a build identifier.
 
-### The two in-class centrepieces
+### The in-class centrepiece
 
-- **`notes` — *Guided Notes & Practice*, 22 min.** One document in three moves:
-  an **objective box** and a **vocabulary box** filled *as each term is named*; three to four
-  numbered **notes sections** (the **I do**, ~12 min); a **`practicebox`** worked together (the
-  **we do**, ~6 min, `practicebox` takes no argument — its title is fixed as "Guided Practice");
-  and an **Independent Practice** `notesbox` worked alone (the **you do**, ~4 min), whose last
-  item is the **formative check**. Target 2–3 pages at 10pt.
-- **`activity` — *Group Activity*, 16 min + 8 min debrief.** One document: a **`headlinebox`**
-  launch, **two `scenariobox` scenarios** (scenario 1 is the clean case so every group has
-  something correct on the page; **scenario 2 carries the crux** — the item that surfaces the
-  target misconception), and a closing **`reflectionbox` Debrief** of three synthesis prompts
-  filled in together as a whole class. Target **≤2 pages** at 10pt.
+- **`notes` — *Guided Notes & Practice*, 38 min + an 8 min debrief.** The whole lesson, in one
+  document:
+  - an **objective box** and a **vocabulary box** filled *as each term is named*;
+  - three to four numbered **notes sections** (the **I do**, ~14 min);
+  - a **`practicebox`** worked together (the **we do**, ~9 min; `practicebox` takes no argument —
+    its title is fixed as "Guided Practice");
+  - an **Independent Practice** `notesbox` worked alone (**you do**, pass 1, ~5 min), whose last
+    item is the **formative check**;
+  - a **transfer set** — a `notesbox` titled *Putting It Together* — on a context students have
+    not seen, **still individual** (**you do**, pass 2, ~10 min). **This is where the crux
+    lives**: the item that surfaces the lesson's target misconception;
+  - a closing **`reflectionbox` Debrief** of three synthesis prompts filled in together as a
+    whole class (~8 min).
 
-*Legacy shapes:* lessons authored before this redesign carry either `experience/` (the 2026-08
-EFFL experiment, `unit01/lesson02`–`lesson07`) or `notes/ + activity/ + exit_ticket/` with tiered
-activity boxes (units 02–09). The build accepts both and they keep working untouched. When asked
-to touch one, **ask whether to regenerate it in the current shape** — see Retrofit.
+  Target **3–4 pages** at 10pt. The **warm-up is 12pt** so its three items fill their one page;
+  every other component stays 10pt.
+
+*Legacy shapes:* lessons authored before this redesign carry `activity/` (the 2026-08
+gradual-release-with-group-work shape, `unit01/lesson00`), `experience/` (the EFFL experiment,
+`unit01/lesson02`–`lesson07`), or `notes/ + activity/ + exit_ticket/` with tiered activity boxes
+(units 02–09). The build accepts all of them and they keep working untouched. When asked to touch
+one, **ask whether to regenerate it in the current shape** — see Retrofit.
 
 ### The five work products
 
@@ -162,7 +174,7 @@ don't wait for a build to complain.
 
 Three mechanisms enforce it — use them while authoring, not as a cleanup pass:
 
-- **`\answerspace{H}{}`** in `activity/` and `homework/` — the blank reserves exactly `H`, the key
+- **`\answerspace{H}{}`** in `notes/` and `homework/` — the blank reserves exactly `H`, the key
   prints the answer in the identical height. Authored byte-identically in both files. Sizing at
   10pt: **1.0cm ≈ 2 handwritten lines, 1.5cm ≈ 3, 2.0cm ≈ 4**; a key answer runs roughly
   **2.4 rendered lines per centimetre** at `\small`, so keep it inside the height it is given.
@@ -174,7 +186,7 @@ Three mechanisms enforce it — use them while authoring, not as a cleanup pass:
 
 Verify after building:
 ```bash
-for c in warmup notes activity ap_practice homework; do
+for c in warmup notes ap_practice homework; do
   b=$(pdfinfo target/unitXX/lessonYY/$c/main.pdf       | awk '/^Pages/{print $2}')
   k=$(pdfinfo target/unitXX/lessonYY/${c}_key/main.pdf | awk '/^Pages/{print $2}')
   [ "$b" = "$k" ] && echo "OK    $c $b" || echo "DRIFT $c blank=$b key=$k"
@@ -276,8 +288,8 @@ without it the intro sentence collides with the first term.
 - `\forestheader` in a deck — this course's beamer macro is `\navyheader`
 - `\usepackage{apstats-boxes}` in a key file — keys use `apstats-key` only (it includes boxes)
 - `fixedskillbox` anywhere (see rule 4)
-- `tierbox` — does not exist, and **there is no tiered instruction**; one activity for the whole
-  class. Drop the concept, don't reimplement it with a `tcolorbox`
+- `tierbox` — does not exist, and **there is no tiered instruction**; one set of notes for the
+  whole class. Drop the concept, don't reimplement it with a `tcolorbox`
 - `\begin{practicebox}{Title}` — `practicebox` takes **no argument** (its title is fixed as
   "Guided Practice"); a titled box is `notesbox{Title}`
 - `\begin{work}{2cm}` — `work` takes **no argument**, and its body is math (an amsmath `aligned`)
@@ -358,10 +370,10 @@ never force, reset, or discard changes to make the sync succeed. Then:
    `\LessonNumberName`. The title block prints `\CourseName` plus the unit/lesson line and
    **nothing else**.
 3. **Find the insertion point.** List `unit*/lesson*` to find the target lesson, whether it
-   already exists, and which shape it is in: **current** (`notes/` + `activity/` + `ap_practice/`,
-   no `exit_ticket/`), **EFFL** (`experience/`), or **pre-EFFL legacy** (`notes/` + `activity/` +
-   `exit_ticket/`).
-4. **Open the reference implementation.** `unit01/lesson00` is the model — mirror its preamble,
+   already exists, and which shape it is in: **current** (`notes/` + `ap_practice/`, **no
+   `activity/`**), **group-activity legacy** (`notes/` + `activity/`, no `exit_ticket/`),
+   **EFFL** (`experience/`), or **pre-EFFL legacy** (`notes/` + `activity/` + `exit_ticket/`).
+4. **Open the reference implementation.** `unit01/lesson01` is the model — mirror its preamble,
    box usage, pacing, and tone. The live project overrides the reference docs.
 
 ### Step 1 — Map the CED topic to the lesson
@@ -369,8 +381,8 @@ never force, reset, or discard changes to make the sync succeed. Then:
 Locate the CED in `spec/`, extract the unit → topic → Learning Objective → Essential Knowledge
 content for this lesson, plus the governing Big Idea and AP Skill. One CED **Topic** maps to one
 lesson. **Confirm the topic mapping with the user before authoring.** Then decide, from the EK,
-**what the notes must teach and what the activity must make students transfer** — the activity's
-crux is designed backward from the target misconception. See `references/ap-workflow.md`.
+**what the notes must teach and what the transfer set must make students carry** — *Putting It
+Together* is designed backward from the target misconception. See `references/ap-workflow.md`.
 
 ### Step 2 — Scaffold the lesson directory
 
@@ -380,7 +392,9 @@ python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 
   --unit-title "Exploring One-Variable Data"
 ```
 
-`--components` defaults to `cover,warmup,notes,activity,ap_practice,homework,slides`, so it can be
+`--components` should be passed explicitly as
+`cover,warmup,notes,ap_practice,homework,slides` — the installed script still defaults to
+including `activity`, and any `activity/` it scaffolds must be deleted. Otherwise it can be
 omitted. The script auto-detects the prefix, writes the one-line `Makefile`, the lesson plan, and
 each component + `_key` skeleton. Pass `--prefab warmup` to create a drop-in directory instead
 (Step 4).
@@ -401,13 +415,14 @@ Author each file following `references/components.md`. Hold to these invariants:
 - **Every student component** preambles with `\documentclass[10pt]{article}` +
   `\usepackage{apstats-article}` + `\usepackage{apstats-boxes}`. There is no 12pt component.
 - **The timebox rules.** Guided notes: 3–4 notes sections + one guided-practice problem + three
-  independent items, **2–3pp**. Group activity: two scenarios, **7–9 sub-questions, ≤2pp**, every
-  display pre-drawn. A part that runs over gets cut, not carried.
-- **The notes teach; the activity transfers.** Use a *different context* in the notes than in the
-  activity, and a *third* in the homework. Recall is not the skill being built.
-- **The activity's scenario 2 carries the crux** — the single item that surfaces the lesson's
-  target misconception. Name that misconception explicitly in the plan's Key Understandings cell
-  and again in "Watch For."
+  independent items, plus a transfer set of **4–5 sub-questions** on an unseen context and the
+  Debrief — **3–4pp total**, every display pre-drawn. A part that runs over gets cut, not carried.
+- **The notes teach and the transfer set carries it across.** Use a *different context* in the
+  instruction than in *Putting It Together*, and a *third* in the homework. Recall is not the
+  skill being built.
+- **The transfer set carries the crux** — the single item that surfaces the lesson's target
+  misconception. Name that misconception explicitly in the plan's Key Understandings cell and
+  again in "Watch For."
 - **The formative check is the last Independent Practice item**, and the plan says what the
   teacher does with each of three possible piles of responses. There is no exit ticket.
 - **AP Practice carries `NA`** in the cover's score column; **homework carries a score blank** and
@@ -417,7 +432,7 @@ Author each file following `references/components.md`. Hold to these invariants:
   (fills a `\termblank`), or the second argument of `\answerspace{H}{}`. Mirror the blank exactly,
   then fill the blanks. There is **no** answer-key toggle — never try to build one.
 - **Teacher notes go in the lesson plan, not in a key** — one `teachernote` per component, in
-  packet order: `[Warm-Up]`, `[Guided Notes \& Practice]`, `[Group Activity]`, `[AP Practice]`,
+  packet order — **four of them**: `[Warm-Up]`, `[Guided Notes \& Practice]`, `[AP Practice]`,
   `[Homework]`.
 - **The work rule** (Hard constraint 1b): every worked solution in a `work` block authored
   byte-identically in blank and key. Never cram steps into one line as `$a=b \Rightarrow c=d$`.
@@ -502,7 +517,7 @@ build and report.
 | **work rule** | A component is the same length blank and keyed | `work` blocks authored identically in both files; `\answerspace{H}{}` for prose answers; blank widths sized to their answers (Hard constraint 1c) |
 | **teachernotes** | Teacher prose in the lesson plan, one titled note per component | `python3 .claude/skills/lesson-planning/scripts/movenotes.py unitNN/lessonMM` (`--check` to preview) |
 | **deck** | Every lesson has a `slides/` Beamer deck | If `slides/main.tex` is absent, author one from `assets/skeletons/slides.tex` |
-| **gradual release** | The lesson uses the current component shape | See "Regenerating a lesson" below |
+| **gradual release** | The lesson uses the current component shape (no `activity/`) | See "Regenerating a lesson" below |
 
 Full spec for each: `references/conventions.md`.
 
@@ -512,26 +527,38 @@ deck, author one** — it is part of the review, not a separate request.
 
 ### Regenerating a lesson in the current gradual-release shape
 
+**From the group-activity shape** (has `notes/` + `activity/`, no `exit_ticket/`):
+
+1. Fold the activity's crux scenario into the notes as a **`notesbox` titled *Putting It
+   Together***, re-voiced as individual work rather than group work, and move the activity's
+   closing **Debrief `reflectionbox`** to the end of the notes.
+2. `git rm -r` the `activity` and `activity_key` directories.
+3. Repace the plan to **5 / 38 / 8 / 4**, delete its Group Activity `skillbox`, and fold its
+   teacher note into the Guided Notes one (four notes, not five).
+4. Renumber the cover's packet table to four rows and re-voice its remind box.
+5. Re-title the deck's activity divider and launch frames as the second **you do** pass.
+
 **From the EFFL shape** (has `experience/`, no `exit_ticket/`):
 
-1. Scaffold `notes`, `notes_key`, `activity`, `activity_key` into the existing lesson dir.
+1. Scaffold `notes`, `notes_key` into the existing lesson dir.
 2. Fold the old **QuickNotes** and **Application** into the guided notes (QuickNotes bullets become
    the notes sections' fills; the Application becomes the `practicebox`), the old
-   **Check Your Understanding** into Independent Practice, and the old **Activity** into the group
-   activity — re-voiced to *use* the vocabulary rather than discover it.
-3. Add the Debrief `reflectionbox` at the end of the activity.
+   **Check Your Understanding** into Independent Practice, and the old **Activity** into
+   *Putting It Together* — re-voiced to *use* the vocabulary rather than discover it, and worked
+   individually.
+3. Add the Debrief `reflectionbox` at the end of the notes.
 4. Delete `experience`, `experience_key`.
 5. If the lesson has no `ap_practice/`, split the existing homework: AP-format items to
    `ap_practice/` (unscored), and author a **new scored homework** in a fresh context.
-6. Rewrite the cover's packet table (Warm-Up · Guided Notes & Practice · Group Activity ·
-   AP Practice with `NA` · Homework) and re-voice its learning targets with the formal vocabulary.
-7. Rewrite the lesson plan in gradual-release order and re-cut its teacher notes to five.
+6. Rewrite the cover's packet table (Warm-Up · Guided Notes & Practice · AP Practice with `NA` ·
+   Homework) and re-voice its learning targets with the formal vocabulary.
+7. Rewrite the lesson plan in gradual-release order and re-cut its teacher notes to four.
 8. Reorder the deck: targets → warm-up → I-do divider → instruction frames → we-do → you-do →
-   activity divider + launch → debrief → close.
+   transfer-set divider + launch → debrief → close.
 
 **From the pre-EFFL legacy shape** (has `exit_ticket/` and tiered activity boxes): the same, plus
 **delete `exit_ticket` and `exit_ticket_key`** (fold its item into Independent Practice as the
-formative check) and **flatten the tiered activity into one version for the whole class**.
+formative check) and **flatten the tiered activity into one transfer set for the whole class**.
 
 Either way: **delete the stale stamps** — `rm -rf .stamps/unitXX/lessonYY target/unitXX/lessonYY` —
 or `make` will skip recompiling a sibling whose PDF was cleaned and `pdfunite` will fail on a
@@ -544,9 +571,10 @@ against `lessonYY_key.pdf` proves nothing, since the pagination pass pads them t
 matter what. Report any component that still differs and why.
 
 **Scope note for this course.** Conversion has started:
-**2 of 78 lessons are in the current gradual-release shape** (`unit01/lesson00` and
-`unit01/lesson01` — lesson00 is the **reference implementation**, open it before converting
-anything else). **6 lessons are in the EFFL shape** (`unit01/lesson02`–`lesson07`). The remaining
+**1 of 78 lessons is in the current no-activity shape** — `unit01/lesson01`, the **reference
+implementation**; open it before converting anything else. **1 lesson is in the group-activity
+shape** (`unit01/lesson00`). **6 lessons are in the EFFL shape** (`unit01/lesson02`–`lesson07`).
+The remaining
 **70 are pre-EFFL legacy**: they still carry `exit_ticket/` and tiered activity boxes, 96 `_key`
 files still hold teacher notes, `\namedateperiod` appears on every component rather than the cover
 alone, and **57 of 78 lessons have no deck**. Convert lesson by lesson (or unit by unit) as you
@@ -588,8 +616,9 @@ Both retrofit scripts take `--check` to preview without writing.
 - Keep blank and key documents in lockstep — the key is the blank with answers filled in, and it
   must come out the **same number of pages**. `\answerspace`, `work` blocks, `\termans`, and
   answer-sized `\blank{}` widths are what enforce it.
-- **Gradual-release discipline:** the notes teach and the activity transfers; one activity for the
-  whole class (no tiers); no exit ticket; the formative check is the last Independent Practice item.
+- **Gradual-release discipline:** the notes carry the whole release, instruction through transfer;
+  **no group activity**; no tiers; no exit ticket; the formative check is the last Independent
+  Practice item.
 - **Both back-of-packet components are authored every lesson** — `ap_practice` unscored,
   `homework` scored, with the DeltaMath-override note in the plan.
 - **`\ans{}` in text mode only; `skillbox` not `fixedskillbox`; no `forest` colors** — grep-check
