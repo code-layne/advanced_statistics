@@ -1,7 +1,8 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Warm-Up (Answer Key)
 % Mirrors the blank exactly apart from the package swap, the pageheader, and the filled
-% answers. ONE PAGE, like the blank. NO teachernote here — teacher prose lives in the plan.
-\documentclass[10pt]{article}
+% answers. ONE PAGE at 12pt, like the blank. NO teachernote here — teacher prose lives in
+% the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
@@ -9,39 +10,60 @@
 
 \pageheader{Unit 1, Lesson 1.2}{Warm-Up --- Answer Key}
 
-\vspace{0.15in}
+\vspace{0.24in}
 
-\begin{enumerate}[leftmargin=1.7em, itemsep=0.20in]
+\boxguard[16]
+\begin{hookbox}
+A veterinary clinic logs every animal it treats.
 
-  \item \textbf{From last lesson.} A pet clinic records, for each animal it treats, the
-        \textbf{species} (dog, cat, bird) and the animal's \textbf{weight in kilograms}.
+\vspace{8pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l c c @{}}
+\rowcolor{sky}
+\textbf{Animal} & \textbf{Species} & \textbf{Weight (kg)} & \textbf{Visit (min)} \\
+\hline
+Rosie & Dog  & 24.0 & 35 \\
+Pip   & Bird &  0.4 & 15 \\
+Milo  & Cat  &  5.2 & 20 \\
+Bruno & Dog  & 31.5 & 40 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{4pt}
+\end{hookbox}
 
-        \vspace{5pt}
-        Species is \ans{categorical} \qquad Weight is \ans{quantitative}
-        \vspace{4pt}
+\vspace{0.26in}
 
-        (Write \emph{categorical} or \emph{quantitative} in each blank.)
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.34in]
+
+  \item \textbf{From last lesson.} Classify two of the clinic's columns. Write
+        \emph{categorical} or \emph{quantitative} in each blank.
+
+        \vspace{10pt}
+        \hspace{1.0em} Species is \ans{categorical} \hfill Weight is \ans{quantitative}
+        \hspace{1.0em}
 
   \item Work these out. Write each answer as a percent.
-        \vspace{6pt}
+        \vspace{10pt}
 
         \hspace{1.0em} 80 out of 400 is \ans{20\%}
         \hfill
         150 out of 1{,}000 is \ans{15\%}
         \hspace{1.0em}
-        \vspace{8pt}
+        \vspace{12pt}
 
         Which of those two is the \textbf{larger share}? \ans{80 out of 400}
 
   \item Team A won 9 of its 12 games. Team B won 15 of its 25 games.
 
-        \vspace{5pt}
+        \vspace{8pt}
         Which team has the better record? \ans{Team A (75\% vs.\ 60\%)}
-        \vspace{6pt}
+        \vspace{10pt}
 
         Team B won more games than Team A. Explain why that is not what decided your
-        answer.\\[4pt]
-        \ansline{The teams played different numbers of games, so the raw win totals are not}\\[1pt]\ansline{comparable. What matters is the share of games won, not how many.}
+        answer.\\[10pt]
+        \ansline{The teams played different numbers of games, so the raw win totals are not}\\[10pt]\ansline{comparable. What matters is the share of games won, not how many.}
 
 \end{enumerate}
 

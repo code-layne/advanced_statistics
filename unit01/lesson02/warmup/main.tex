@@ -1,9 +1,11 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Warm-Up
-% ONE PAGE, blank and key. Three items.
-% SPOILER RULE: `frequency table', `relative frequency', `proportion', and `bar graph' are what
-% today's debrief attaches, so none appear here. Item 3 IS the lesson stated in prior-knowledge
-% terms — comparing two groups of different sizes — and item 1 spirals Lesson 1.1.
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items, set at 12pt so the three items fill the page instead
+% of leaving the bottom third empty. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Item 1 is
+% the spiral back to Lesson 1.1 (categorical vs. quantitative); item 2 does the percent
+% arithmetic the crux needs so it is not the obstacle later; item 3 IS the lesson stated in
+% prior-knowledge terms — comparing two groups of different sizes.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
@@ -11,39 +13,60 @@
 
 \pageheader{Unit 1, Lesson 1.2}{Warm-Up}
 
-\vspace{0.15in}
+\vspace{0.24in}
 
-\begin{enumerate}[leftmargin=1.7em, itemsep=0.20in]
+\boxguard[16]
+\begin{hookbox}
+A veterinary clinic logs every animal it treats.
 
-  \item \textbf{From last lesson.} A pet clinic records, for each animal it treats, the
-        \textbf{species} (dog, cat, bird) and the animal's \textbf{weight in kilograms}.
+\vspace{8pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l c c @{}}
+\rowcolor{sky}
+\textbf{Animal} & \textbf{Species} & \textbf{Weight (kg)} & \textbf{Visit (min)} \\
+\hline
+Rosie & Dog  & 24.0 & 35 \\
+Pip   & Bird &  0.4 & 15 \\
+Milo  & Cat  &  5.2 & 20 \\
+Bruno & Dog  & 31.5 & 40 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{4pt}
+\end{hookbox}
 
-        \vspace{5pt}
-        Species is \blank{3.2cm} \qquad Weight is \blank{3.2cm}
-        \vspace{4pt}
+\vspace{0.26in}
 
-        (Write \emph{categorical} or \emph{quantitative} in each blank.)
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.34in]
+
+  \item \textbf{From last lesson.} Classify two of the clinic's columns. Write
+        \emph{categorical} or \emph{quantitative} in each blank.
+
+        \vspace{10pt}
+        \hspace{1.0em} Species is \blank{4.4cm} \hfill Weight is \blank{4.4cm}
+        \hspace{1.0em}
 
   \item Work these out. Write each answer as a percent.
-        \vspace{6pt}
+        \vspace{10pt}
 
-        \hspace{1.0em} 80 out of 400 is \blank{2.6cm}
+        \hspace{1.0em} 80 out of 400 is \blank{3.0cm}
         \hfill
-        150 out of 1{,}000 is \blank{2.6cm}
+        150 out of 1{,}000 is \blank{3.0cm}
         \hspace{1.0em}
-        \vspace{8pt}
+        \vspace{12pt}
 
-        Which of those two is the \textbf{larger share}? \blank{3.0cm}
+        Which of those two is the \textbf{larger share}? \blank{3.4cm}
 
   \item Team A won 9 of its 12 games. Team B won 15 of its 25 games.
 
-        \vspace{5pt}
-        Which team has the better record? \blank{3.0cm}
-        \vspace{6pt}
+        \vspace{8pt}
+        Which team has the better record? \blank{4.6cm}
+        \vspace{10pt}
 
         Team B won more games than Team A. Explain why that is not what decided your
-        answer.\\[4pt]
-        \writeline\\[1pt]\writeline
+        answer.\\[10pt]
+        \writeline\\[10pt]\writeline
 
 \end{enumerate}
 
