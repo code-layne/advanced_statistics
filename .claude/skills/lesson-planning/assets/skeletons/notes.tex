@@ -1,19 +1,21 @@
 %! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Guided Notes & Practice
-% GRADUAL RELEASE component (I do -> we do -> you do), 22 minutes.
-%   I DO   : the objective box, the vocabulary box, and the numbered notes sections. The
-%            teacher presents; students fill the blanks as each idea is named.
+% GRADUAL RELEASE component (I do -> we do), 34 minutes.
+%   I DO   : the objective box, the vocabulary box, and EXACTLY TWO long notes sections. The
+%            teacher presents; students fill the blanks as each idea is named. Each section
+%            carries two moves — the second introduced by a bold run-in heading, not a new box.
 %   WE DO  : the practicebox ("Guided Practice") — worked together, students hold the pen.
-%   YOU DO : the "Independent Practice" notesbox — students work alone, teacher circulates.
-% Vocabulary is GIVEN here, not discovered: the group activity that follows applies it.
-% The LAST item of Independent Practice is the FORMATIVE CHECK — the plan tells the teacher
-% what to do with what they see. There is no exit ticket.
+%            THE NOTES END HERE.
+% Vocabulary is GIVEN here, not discovered.
+% THERE IS NO INDEPENDENT PRACTICE SET, no "Putting It Together", and no reflectionbox. The
+% HOMEWORK is the individual practice: students start it in class in the last 8 minutes, and
+% that supervised start is the teacher's second formative read. There is no exit ticket.
 %
 % PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, and every
 % \writelines{n} becomes exactly n \ansline{} calls. SIZE EACH \blank{} CLOSE TO ITS ANSWER —
 % a 4.4cm blank replaced by a 2cm answer rewraps the paragraph and costs a page. Every
 % \begin{work} block is authored BYTE-IDENTICALLY in both files.
 % VOCABPAR: \par brackets each \termblank/\termblanklong inside the vocabbox.
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{@@PREFIX@@-article}
 \usepackage{@@PREFIX@@-boxes}
 
@@ -53,24 +55,31 @@ Fill in each term \textbf{as we name it} in the notes below.
 
 \vspace{0.10in}
 
-% ── I DO: the numbered notes sections (3-4 of them, ~12 minutes total) ────────
+% ── I DO: EXACTLY TWO long notes sections (~20 minutes total) ────────────────
+% The crux — the item that surfaces the lesson's target misconception — lives in the
+% second half of section 2.
 % Each section: a short piece of exposition, a PRE-DRAWN display or table, and \blank{} fills
 % that students complete as the idea is named. Never "sketch a graph" — every dotplot,
 % histogram, boxplot, scatterplot, and computer output is GIVEN.
-\boxguard[16]
-\begin{notesbox}{1. TODO Section Title}
+\boxguard[12]
+\begin{notesbox}{1. TODO Section Title --- and TODO Second Move}
 \small
 TODO: exposition, 2--3 sentences, in a real context.
 
 \vspace{6pt}
 \textbf{TODO Formal term} is \blank{2.4cm} --- TODO definition with fills sized close to
 their answers.
+
+% The second half of section 1 — a bold run-in heading, NOT a new box.
+\vspace{10pt}
+\textbf{\textcolor{navy}{TODO Second Move.}}
+TODO: the test, rule, or contrast that follows directly from the definition above.
 \end{notesbox}
 
 \vspace{0.10in}
 
-\boxguard[24]
-\begin{notesbox}{2. TODO Section Title}
+\boxguard[12]
+\begin{notesbox}{2. TODO Section Title --- and TODO Second Move}
 \small
 TODO: a pre-drawn table or display, then fills that read it.
 
@@ -89,16 +98,13 @@ TODO & TODO & TODO \\
 \fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
 \textbf{TODO: the target misconception, called out by name.} TODO: the probe that breaks it.}}
 \end{center}
-\end{notesbox}
 
-\vspace{0.10in}
-
+% The second half of section 2 — a bold run-in heading, NOT a new box. This is the crux.
 % The \begin{work} block takes NO argument and its body is math (an amsmath aligned):
 % one statement per line, & immediately before the relation. Author it BYTE-IDENTICALLY in
 % the key — the blank reserves its exact height and prints nothing.
-\boxguard[20]
-\begin{notesbox}{3. TODO Worked Example}
-\small
+\vspace{10pt}
+\textbf{\textcolor{navy}{TODO Second Move.}}
 TODO: the computation, modelled by the teacher.
 \begin{work}
   \text{TODO statistic} &= \text{TODO formula} \\
@@ -127,23 +133,9 @@ Interpreted in context, this says \blank{6.0cm}.
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.10in}
 
-% ── YOU DO: independent practice (~4 min) — silent, alone; the LAST item is the
-%    formative check the lesson plan tells the teacher to read over shoulders.
-\boxguard[20]
-\begin{notesbox}{Independent Practice --- You Try}
-\small
-Work these on your own. I will circulate.
-
-\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
-  \item TODO: identification in a new context. \blank{4.0cm}
-  \item TODO: the contrast pair, or the computation.\\[3pt]
-        \writelines{2}
-  \item \textbf{TODO: the formative check.} TODO: the item that decides how the next lesson
-        opens.\\[3pt]
-        \writelines{2}
-\end{enumerate}
-\end{notesbox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" box here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

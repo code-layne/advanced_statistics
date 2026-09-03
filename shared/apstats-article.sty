@@ -28,10 +28,30 @@
 % ── Fill-in helpers ───────────────────────────────────────────────────────────
 \newcommand{\blank}[1]{\underline{\hspace{#1}}}
 \newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
-\newcommand{\writelines}[1]{\foreach \i in {1,...,#1}{\writeline\\}}
+% \writelines{n} — n ruled writing lines. The line breaks go BETWEEN the rules,
+% never after the last one: a trailing \\ leaves a spurious empty line that the
+% key's \ansline has no counterpart for, and that one line is enough to push a
+% blank a page past its key. Keep this break-separated, not break-terminated.
+\newcommand{\writelines}[1]{%
+  \writeline
+  \@tempcnta=1\relax
+  \loop\ifnum\@tempcnta<#1\relax
+    \\\writeline
+    \advance\@tempcnta by 1\relax
+  \repeat}
+% \termblank{Term} — one vocabulary row: the term, then a rule running to the
+% end of the line to write the definition on, then open space to run over into.
+% There is no second full-width line. The row is a FIXED-HEIGHT box, so the key's
+% \termans (apstats-key) occupies exactly the same height whether its definition
+% sets on one line or two — the vocabulary box cannot drift blank vs. keyed.
+\newcommand{\termrowheight}{1.30cm}
+\newlength{\aps@termwd}
 \newcommand{\termblank}[1]{%
-  \noindent\textbf{\textcolor{navy}{#1:}}\quad\blank{6.5cm}\\[1pt]%
-  \writeline\\[2pt]}
+  \settowidth{\aps@termwd}{\textbf{#1:}}%
+  \noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \textbf{\textcolor{navy}{#1:}}\quad%
+    \blank{\dimexpr\linewidth-\aps@termwd-1.6em\relax}%
+  \end{minipage}\par}
 \newcommand{\termblanklong}[1]{%
   \noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
   \writeline\\[1pt]\writeline\\[3pt]}

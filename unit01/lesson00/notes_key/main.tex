@@ -1,16 +1,12 @@
 %! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Guided Notes & Practice (Answer Key)
 % Mirrors notes/main.tex line for line. Every \blank{} there is an \ans{} here and every
 % \writelines{n} there is exactly n \ansline{} calls here, so the two files paginate identically.
-% \termans{term}{line 1}{line 2} reproduces \termblank's exact two-line geometry — keep answers
 % short enough that neither line wraps. Teacher prose lives in the LESSON PLAN, never here.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 % Key-side counterpart of \termblank: term + inline answer on line 1, \ansline on line 2.
-\newcommand{\termans}[3]{%
-  \noindent\textbf{\textcolor{navy}{#1:}}\quad\ans{#2}\\[1pt]%
-  \ansline{#3}\\[2pt]}
 
 \begin{document}
 
@@ -37,15 +33,15 @@ By the end of these notes I will be able to:
 \small
 Fill in each term \textbf{as we name it} in the notes below.
 \par
-\termans{Individual}{a person, animal, or object}{described by one row of a data table --- the ``who'' the data is about.}
+\termans{Individual}{a person, animal, or object described by one row of a data table --- the ``who'' the data is about.}
 \par
-\termans{Variable}{a characteristic recorded}{for every individual; a column heading, never an entry under it.}
+\termans{Variable}{a characteristic recorded for every individual; a column heading, never an entry under it.}
 \par
-\termans{Value}{one entry under a variable}{for a single individual --- ``8.5'' under \emph{Hours of sleep}, for example.}
+\termans{Value}{one entry under a variable for a single individual --- ``8.5'' under \emph{Hours of sleep}, for example.}
 \par
-\termans{Variability}{values differ from one}{individual to the next. Variability is why statistics exists.}
+\termans{Variability}{values differ from one individual to the next. Variability is why statistics exists.}
 \par
-\termans{Statistical question}{anticipates}{variability and is answered by collecting data --- both checks pass.}
+\termans{Statistical question}{anticipates variability and is answered by collecting data --- both checks pass.}
 \par
 \end{vocabbox}
 
