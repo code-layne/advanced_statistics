@@ -107,13 +107,17 @@ Activity / Debrief / Application / CYU order. Leave them alone unless regenerati
 - `learningtargetbox` — an "I can…" list. **Name the formal vocabulary** and bold it; the notes
   teach it today. The AP Learning Objective code still belongs in the lesson plan, not here.
 - `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score) with a
-  Total row: Warm-Up, Guided Notes & Practice, Group Activity, **AP Practice**, Homework. Keep the
-  rows aligned with the components you actually scaffolded. **AP Practice's score cell prints
-  `\textbf{NA}`, never a `\blank{}`** — it is assigned but unscored. Homework carries a blank
-  (the teacher strikes it through when DeltaMath is assigned instead).
-- `remindbox` ("Keep in Mind") — describes the **gradual-release process** and the habit the
-  lesson insists on: "Today runs in three moves: I show you, we do one together, you do it with
-  your group." No answer previews.
+  Total row: Warm-Up, Guided Notes & Practice, **AP Practice**, Homework — four rows; there is
+  no group activity. Keep the rows aligned with the components you actually scaffolded.
+  **AP Practice's score cell prints `\textbf{NA}`, never a `\blank{}`** — it is assigned but
+  unscored. Homework carries a blank (the teacher strikes it through when DeltaMath is
+  assigned instead).
+- `remindbox` ("Keep in Mind") — **the notes that matter for this lesson**, in the student's
+  language: the hook the notes open on, and the habit the lesson insists on ("when a single
+  number and a picture disagree, believe the picture"). **Do not narrate the gradual-release
+  structure here** — no "today runs in three moves, I show you, then we do one together." The
+  students live the structure; the cover is for what they need to carry into the work. No
+  answer previews.
 
 ## Warm-up
 
