@@ -10,7 +10,7 @@ creates the root Makefile and the unit Makefile if they don't exist yet.
 Example:
     python new_lesson.py --project . --unit 01 --lesson 01 \
         --title "Vectors" --unit-title "Vectors as Data" \
-        --components cover,warmup,notes,activity,ap_practice,homework,slides
+        --components cover,warmup,notes,ap_practice,homework,slides
 """
 from __future__ import annotations
 
@@ -21,24 +21,27 @@ from pathlib import Path
 
 SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 
-# GRADUAL-RELEASE component set (warm-up / guided notes and practice / group activity and
-# debrief / AP practice / homework, 2026-08 redesign). A lesson is
-# cover / warmup / notes / activity / ap_practice / homework / slides. Every directory name
+# GRADUAL-RELEASE component set (warm-up / guided notes and practice / spoken debrief /
+# AP practice / homework). A lesson is
+# cover / warmup / notes / ap_practice / homework / slides. Every directory name
 # here is a build identifier in shared/lesson.mk (STUDENT_ORDER/KEYED_PAIRS) — never rename one.
 #
-# There is NO exit ticket (the formative check is the last Independent Practice item in the
-# notes) and NO tiered instruction (one group activity for the whole class).
+# There is NO group activity, NO exit ticket, NO tiered instruction, and NO independent
+# practice set in the notes. The notes run I do (two long sections) -> we do (guided practice)
+# and stop there. The HOMEWORK is the individual practice, started in class in the last eight
+# minutes; the teacher's formative read happens while circulating during Guided Practice and
+# again during that supervised start.
 # `ap_practice` is assigned but unscored; `homework` is the lesson's GRADED practice and is
 # generated for every lesson, so the teacher can substitute a DeltaMath assignment when
 # DeltaMath happens to cover the topic.
-# `experience` and `exit_ticket` are pre-redesign components, still scaffoldable by name so
+# `activity`, `experience` and `exit_ticket` are pre-redesign components, still scaffoldable by name so
 # lessons authored before the redesign can be regenerated or patched, but they are NOT defaults.
 KEYED = ["warmup", "notes", "activity", "ap_practice", "homework", "experience", "exit_ticket"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
 # slides is a default: every lesson owes a deck, since lessonYY_slides.pdf and
 # lessonYY_slides.pptx are two of the five work products the build produces.
-DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "ap_practice", "homework", "slides"]
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "ap_practice", "homework", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",

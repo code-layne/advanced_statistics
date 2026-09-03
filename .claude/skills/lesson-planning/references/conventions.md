@@ -16,10 +16,10 @@ with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
 
 ## Per-document-type preambles
 
-**Every student component** (cover, warmup, notes, activity, ap_practice, homework — and the
-legacy experience/exit_ticket) is **10pt**:
+**Every student component** (cover, warmup, notes, ap_practice, homework — and the legacy
+activity/experience/exit_ticket) is **12pt**. Only the teacher-facing lesson plan stays at 10pt:
 ```latex
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{<prefix>-article}
 \usepackage{<prefix>-boxes}
 % cover and some components also: \usepackage{ltablex}\keepXColumns
@@ -33,8 +33,8 @@ preamble, byte-identical in the blank and the key:
 ```
 `\answerspace{1.5cm}{}` in the blank reserves exactly 1.5cm of open space glued to its prompt; the
 key passes the answer as the second argument, occupying the identical height. **That is what keeps
-the two files page-for-page without write-lines.** Sizing guide at 10pt: **1.0cm ≈ 2 handwritten
-lines, 1.5cm ≈ 3, 2.0cm ≈ 4**; a key answer set in `\small` runs roughly **2.4 rendered lines per
+the two files page-for-page without write-lines.** Sizing guide at 12pt: **1.2cm ≈ 2 handwritten
+lines, 1.8cm ≈ 3, 2.4cm ≈ 4**; a key answer set in `\small` runs roughly **2.0 rendered lines per
 centimetre**, so keep it inside the height you gave it (a key answer that overflows its minipage
 does not warn — it just spills).
 
@@ -72,14 +72,14 @@ The `\TallMath` helper used for tall inline math is defined per-document where n
 | --- | --- |
 | `\blank{width}` | Underlined gap of the given width (e.g. `\blank{4.8cm}`) |
 | `\writeline` | A full-width gray rule to write on |
-| `\writelines{n}` | `n` stacked write-lines |
-| `\termblank{Term}` | Bold navy term + inline blank, then a write-line |
+| `\writelines{n}` | `n` stacked write-lines, breaks *between* them — exactly `n` line slots, no trailing blank line |
+| `\termblank{Term}` | One vocabulary row: bold navy term + a rule running to the end of the line, then open space. A **fixed `\termrowheight` tall**. No second full-width line. |
 | `\termblanklong{Term}` | Bold navy term on its own line + two write-lines (vocab style) |
 | `\namedateperiod` | Name / Date / Period row — **cover only** (Namestrip) |
 | `\namepartnerperiod` | Name / Partner / Period row — **not used**; superseded by Namestrip |
 | `\pageheader{Unit X, Lesson Y.Z}{Document Type}` | Full-width navy banner header |
 | `\answerspace{H}{answer}` | **Not from `-article`** — defined per-document in `activity/` and `homework/`; reserves H of open space in the blank, prints the answer in the key. See the preamble above. |
-| `\termans{Term}{line 1}{line 2}` | **Key-side only, defined per-document** — the counterpart of `\termblank`, reproducing its exact two-line geometry. Never mirror a `\termblank` with `\termblanklong` plus an `\ansline`: that runs a line long every time. |
+| `\termans{Term}{definition}` | **Key-side only, defined in `<prefix>-key.sty`** — the counterpart of `\termblank`, reusing its fixed `\termrowheight`, so a definition that wraps to a second line still costs exactly what the blank reserved. **Two arguments; never redefine it in a lesson file.** Never mirror a `\termblank` with `\termblanklong` plus an `\ansline`: that runs a line long every time. |
 
 ### Namestrip — the name row belongs on the cover, nowhere else
 
@@ -283,9 +283,12 @@ an `\ansline` whose prose wraps to four is three lines longer. When a key's pros
 give the blank `\writelines{n}` for the same n — the same principle as the work rule, applied by
 hand because prose cannot be measured from a shared body.
 
-**`\writelines{n}` occupies n+1 line slots** — it ends in `\\`, so `\writelines{3}` takes four
-lines' worth of room. Raising one is *not* free: it can overflow a 2pp blank to 3pp against a 2pp
-key. Set n from the key's true wrapped length, then rebuild and re-measure the **blank**.
+**`\writelines{n}` occupies exactly n line slots** — the breaks go *between* the rules, never
+after the last one, so it matches *n* `\ansline{}` calls in the key with nothing left over. (It
+used to end in a trailing `\\`, which added a spurious empty line and was a standing cause of a
+blank running a page past its key.) Raising one is still *not* free: it can overflow a 2pp blank
+to 3pp against a 2pp key. Set n from the key's true wrapped length, then rebuild and re-measure
+the **blank**.
 
 **Reach for `work` before `\writelines`.** If the answer is a multi-step computation rather than
 prose, a `work` block fixes the drift correctly and cannot come apart; a lengthened write-line only

@@ -97,18 +97,20 @@ arrives first, in the notes, and the activity is where students transfer it:
 | LO, as an "I can…" statement | plan: Learning Targets · cover: the same target, naming the term |
 | EK, as the "why" | plan: Key Understandings — with the target misconception named |
 | The formal terms and notation the EK introduces | plan: Vocabulary box · packet: the notes'
-  `vocabbox` and numbered notes sections, filled **as each term is named** |
-| The reasoning the LO asks for | the notes' worked example (**I do**), then the Guided Practice
-  box (**we do**), then Independent Practice (**you do**) |
-| Transfer of that reasoning to an unseen context | the **Group Activity** — scenario 2 carries the
-  crux, the item that surfaces the target misconception |
+  `vocabbox` and **two** numbered notes sections, filled **as each term is named** |
+| The reasoning the LO asks for | the notes' worked example (**I do**, two long sections), then
+  the Guided Practice box (**we do**) — the notes end there |
+| The crux, the item that surfaces the target misconception | the **second half of notes
+  section 2**, introduced by a bold run-in heading |
+| Transfer of that reasoning to an unseen context | the **homework** (**you do**) — the individual
+  practice, started in class in the last eight minutes and finished at home |
 | AP-style MC/FRQ reps on the topic | **AP Practice** (assigned, unscored) |
 | The graded practice, in a third context | the **homework** (scored, or replaced by DeltaMath) |
 
-The practical consequence: read the EK to decide **what the notes must teach**, then read it again
-to decide **what the activity must make students transfer** — and design scenario 2's crux
-backward from the misconception the EK implies. Use a different data context in the notes, the
-activity, and the homework; recall is not the skill being built.
+The practical consequence: read the EK to decide **what the two notes sections must teach**, then
+read it again to decide **what the homework must make students transfer** — and design section 2's
+second half backward from the misconception the EK implies. Use a different data context in the
+notes, the guided practice, and the homework; recall is not the skill being built.
 
 For the rest of the document structure, follow `references/components.md`; for macros and boxes,
 `references/conventions.md`.

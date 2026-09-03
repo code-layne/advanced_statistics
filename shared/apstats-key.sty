@@ -11,6 +11,15 @@
     \vspace{1pt}\noindent\textcolor{keyred}{\textbf{#1}}%
     \textcolor{linegray}{\dotfill}\vspace{3pt}}
 
+% ── Vocabulary row (key version) ──────────────────────────────────────────────
+% \termans{Term}{definition} — the filled counterpart of \termblank. It reuses
+% \termrowheight, so the row costs exactly what the blank reserved whether the
+% definition sets on one line or two. Keep definitions to two lines at most.
+\newcommand{\termans}[2]{%
+  \noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \textbf{\textcolor{navy}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
+
 % ── Component identification table (key version) ──────────────────────────────
 % Usage: \componenttablekey{individual}{population}{sample}{variable(s)}
 \newcommand{\componenttablekey}[4]{%

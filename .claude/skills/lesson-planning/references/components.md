@@ -22,19 +22,21 @@ and a whole-class debrief closes the loop. `experience/` and `exit_ticket/` are 
 [Legacy components](#legacy-components).
 
 **The packet order is fixed by `shared/lesson.mk`'s `STUDENT_ORDER`:**
-`cover → warmup → notes → activity → ap_practice → homework`. Never rename a component directory.
+`cover → warmup → notes → ap_practice → homework`. Never rename a component directory.
 
 General rules:
 - Student components preamble with `-article` + `-boxes`; keys with `-article` + `-key`.
-  **Everything is 10pt.**
+  **Every student component is 12pt**; only the teacher-facing lesson plan is 10pt.
 - Keep the **key structurally identical** to its blank — it is the blank with answers filled in,
   and it must come out the **same number of pages**.
 - Paraphrase any AP CED language into teaching wording; keep LO/EK codes as the audit trail.
 - Use the project's boxes and fill-in macros rather than hand-rolling layout.
-- **The notes teach, the activity transfers, the homework re-transfers.** Use a different data
-  context in each of the three. Recall is not the skill being built.
-- **There is no exit ticket** — the formative check is the last Independent Practice item in the
-  notes. **There is no tiered instruction** — one activity, one version, for the whole class.
+- **The notes teach, the guided practice rehearses, the homework transfers.** Use a different
+  data context in each of the three. Recall is not the skill being built.
+- **There is no exit ticket and no independent practice set** — the homework is the individual
+  practice, started in class, and the teacher's formative read happens while circulating during
+  Guided Practice and again during that supervised start. **There is no tiered instruction** and
+  **no group activity** — one document, one version, for the whole class.
 
 ## Lesson plan
 
@@ -124,11 +126,13 @@ in the plan. Key mirrors with `\ans`; multi-step solutions go in `work` blocks.
 
 ## Guided notes & practice
 
-`notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 22 minutes**, in three moves.
+`notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 34 minutes**, in two moves.
 `\pageheader{Unit X, Lesson Y.Z}{Guided Notes \& Practice}` (no name row — Namestrip).
-Target **2–3 pages** at 10pt.
+Target **3–4 pages** at 12pt.
 
-**I do (~12 min)**
+**I do (~20 min)** — **exactly two** numbered notes sections. Each is long, carrying two moves:
+the second is introduced by a bold run-in heading, `\textbf{\textcolor{navy}{Its Title.}}`, not by
+a second box. **The crux lives in the second half of section 2.**
 - `objectivebox` — three printed "By the end of these notes I will be able to…" targets, naming
   the formal terms. Print them; do not make students write them (a `\writeline` here is a
   page-drift risk for no pedagogical gain).
@@ -149,20 +153,23 @@ Target **2–3 pages** at 10pt.
   that tests the misconception on new ground. Students hold the pen; the questions the teacher
   asks belong in the plan, not on the page.
 
-**You do (~4 min)**
-- One `notesbox{Independent Practice --- You Try}` with three items, silent and alone. **The last
-  item is the formative check** — the plan says what the teacher does with each of three possible
-  piles of responses, and there is no exit ticket to replace it.
+**The notes end at Guided Practice.** There is no `notesbox{Independent Practice --- You Try}`,
+no *Putting It Together* transfer set, and no `reflectionbox`. The debrief is spoken and lives in
+the plan; the individual practice is `homework/`, started in class in the last eight minutes.
 
 **Page lockstep:** every `\blank{W}` becomes an `\ans{...}` in the key and every `\writelines{n}`
 becomes exactly *n* `\ansline{}` calls. **Size each `\blank{}` close to its answer** — a 4.4cm
 blank replaced by a 2cm answer rewraps the paragraph and silently costs a page.
 
-## Group activity
+## Group activity — LEGACY ONLY, never author one
+
+**This course has no group activity component.** The section below documents `activity/` so that
+lessons authored before the redesign can still be read and patched. **Do not scaffold or author
+one into a new lesson** — the guided notes absorbed it.
 
 `activity/` (+ `activity_key/`) — **16 minutes in groups of 3–4, then an 8-minute whole-class
 debrief.** `\pageheader{Unit X, Lesson Y.Z}{Group Activity: TODO Title}` (no name row).
-Target **≤2 pages** at 10pt.
+Target **≤2 pages**.
 
 **One activity for the entire class.** There are no tiers, no differentiated versions, and no
 `tierbox`. Differentiation happens in how the teacher circulates — shorter, more concrete probes
@@ -232,16 +239,17 @@ Two older shapes are still in the tree and still build:
 `shared/lesson.mk` still merges all of these, and the scaffolder still accepts `experience` and
 `exit_ticket` by name so an older lesson can be patched. **Do not author them into a new lesson.**
 
-**Regenerating an EFFL lesson** means: scaffold `notes` + `activity` (and their keys); fold the
-QuickNotes bullets into the notes sections' fills and the Application into the `practicebox`; fold
-Check Your Understanding into Independent Practice; re-voice the old Activity to *use* the
-vocabulary rather than discover it, and add the Debrief `reflectionbox`; delete `experience` and
-`experience_key`; split the old homework into an unscored `ap_practice` plus a **new scored
-homework** in a fresh context; rewrite the cover table, the plan, and the deck order.
+**Regenerating an EFFL lesson** means: scaffold `notes` (and its key); fold the QuickNotes
+bullets into the **two** notes sections' fills and the Application into the `practicebox`; fold
+Check Your Understanding and the old Activity into the **homework**, re-voiced to *use* the
+vocabulary rather than discover it; delete `experience` and `experience_key`; split the old
+homework into an unscored `ap_practice` plus a **new scored homework** in a fresh context;
+rewrite the cover table, the plan, and the deck order. The debrief is spoken — do not add a
+`reflectionbox`.
 
 **Regenerating a pre-EFFL lesson** is the same, plus: delete `exit_ticket` and `exit_ticket_key`
-(its item becomes the formative check at the end of Independent Practice), and **flatten the three
-tier boxes into one activity for the whole class**.
+(its item folds into the homework), and **flatten the three tier boxes into instruction for the
+whole class**.
 
 **Build gotcha when deleting a component:** a stale stamp under `.stamps/unitXX/lessonYY/` makes
 `make` skip recompiling a *sibling* whose PDF was cleaned, and `pdfunite` then fails on a missing

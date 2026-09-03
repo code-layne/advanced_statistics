@@ -1,9 +1,11 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Guided Notes & Practice (Answer Key)
 % THE in-class document. There is no group activity in this course — the notes carry the whole
-% gradual release (I do -> we do -> you do), 38 minutes, closed by a spoken 8-minute debrief.
-%   I DO      : the objective box, the vocabulary box, and notes sections 1-4.     (~18 min)
-%   WE DO     : the practicebox ("Guided Practice") — Two Shifts, together.        (~12 min)
-%   YOU DO    : "Independent Practice", alone — item 1 is the formative check.     (~8 min)
+% gradual release, closed by a spoken debrief. It runs SHORT on purpose: the period ends
+% with students starting the homework, which is where the individual practice lives.
+%   I DO      : the objective box, the vocabulary box, and notes sections 1-2.     (~20 min)
+%   WE DO     : the practicebox ("Guided Practice") — Two Shifts, together.        (~14 min)
+%   YOU DO    : nothing on this page — ../homework/ IS the individual practice,
+%               started in the last minutes of the period.
 % There is NO "Putting It Together" transfer set and NO reflection box in this lesson: the
 % debrief is spoken, off the Independent Practice papers, and the Recycling Audit appears
 % only in ../ap_practice/.
@@ -20,7 +22,7 @@
 % is authored BYTE-IDENTICALLY in both files.
 % VOCABPAR: \par brackets each \termblank inside the vocabbox.
 % NO SKETCH QUESTIONS: both displays are pre-drawn in TikZ and read, never constructed.
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 % Authored byte-identically in notes/ — the blank reserves exactly H and prints nothing.
@@ -28,9 +30,6 @@
   \color{keyred}\bfseries #2\end{minipage}\par}
 
 % Key-side counterpart of \termblank: term + inline answer on line 1, \ansline on line 2.
-\newcommand{\termans}[3]{%
-  \noindent\textbf{\textcolor{navy}{#1:}}\quad\ans{#2}\\[1pt]%
-  \ansline{#3}\\[2pt]}
 
 \begin{document}
 
@@ -38,7 +37,7 @@
 % NAMESTRIP: no \namedateperiod here — mirrors the blank.
 % NO teachernote here — teacher prose lives in the lesson plan.
 
-\vspace{0.12in}
+\vspace{6pt}
 
 \boxguard[14]
 \begin{objectivebox}
@@ -53,28 +52,28 @@ By the end of these notes I will be able to:
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.10in}
+\vspace{6pt}
 
 \boxguard[16]
 \begin{vocabbox}
 \small
 Fill in each term \textbf{as we name it} in the notes below.
 \par
-\termans{Frequency table}{a table of the}{number of cases in each category; the counts add to the group size.}
+\termans{Frequency table}{a table of the number of cases in each category; the counts add to the group size.}
 \par
-\termans{Relative frequency table}{a table of the share}{of the group in each category; the entries always add to 1, or 100\%.}
+\termans{Relative frequency table}{a table of the share of the group in each category; the entries always add to 1, or 100\%.}
 \par
-\termans{Bar graph}{one bar per category,}{its height the count or the relative frequency; gaps separate the bars.}
+\termans{Bar graph}{one bar per category, its height the count or the relative frequency; gaps separate the bars.}
 \par
-\termans{The comparison rule}{to compare groups of}{different sizes, use relative frequencies --- never raw counts.}
+\termans{The comparison rule}{to compare groups of different sizes, use relative frequencies --- never raw counts.}
 \par
 \end{vocabbox}
 
-\vspace{0.10in}
+\vspace{6pt}
 
 % ── I DO: section 1 ──────────────────────────────────────────────────────────
-\boxguard[20]
-\begin{notesbox}{1. Two Tables from One Column}
+\boxguard[12]
+\begin{notesbox}{1. From One Column to Two Tables --- Counts and Shares}
 \small
 A categorical column cannot be averaged --- last lesson settled that. What it \emph{can} be is
 \textbf{counted}. North High asked all \textbf{400} of its students how they usually get to
@@ -107,14 +106,9 @@ frequencies always add to \ans{1 (or 100\%)}, because every student is counted i
 bus.''} Bus is the largest single category at 45\% --- that makes it a \textbf{plurality}.
 A \textbf{majority} would need more than \ans{half (50\%)} of the group. Bus does not have it: the
 other three categories together come to \ans{55\%}.
-\end{notesbox}
 
-\vspace{0.10in}
-
-% ── I DO: section 2 ──────────────────────────────────────────────────────────
-\boxguard[16]
-\begin{notesbox}{2. Proportion, Percent, Rate --- Three Names for One Number}
-\small
+\vspace{10pt}
+\textbf{\textcolor{navy}{Proportion, Percent, Rate --- Three Names for One Number.}}
 Eighty of North's 400 students walk. Every line below says that same fact:
 
 \vspace{4pt}
@@ -133,11 +127,11 @@ understand fastest.
 North students} walk to school}.
 \end{notesbox}
 
-\vspace{0.10in}
+\vspace{6pt}
 
-% ── I DO: section 3 — the display ────────────────────────────────────────────
-\boxguard[30]
-\begin{notesbox}{3. Bar Graphs: What the Height Is}
+% ── I DO: section 2 — the display ────────────────────────────────────────────
+\boxguard[12]
+\begin{notesbox}{2. Bar Graphs, and Why Counts Mislead Across Groups}
 \small
 The same North High column, drawn:
 
@@ -172,14 +166,9 @@ and not points on a number line --- which is also why the order of the bars carr
 \textbf{Relabel the vertical axis with relative frequencies} --- 0.45, 0.30, 0.20, 0.05 --- and
 every bar keeps the height it already has. Only the \ans{axis labels} change. Reading a bar graph
 therefore starts with one question: \emph{what is the vertical axis counting?}
-\end{notesbox}
 
-\vspace{0.10in}
-
-% ── I DO: section 4 — the trap ───────────────────────────────────────────────
-\boxguard[30]
-\begin{notesbox}{4. The Bigger Group Wins Before Anyone Counts}
-\small
+\vspace{10pt}
+\textbf{\textcolor{navy}{The Bigger Group Wins Before Anyone Counts.}}
 South High is in the same district and surveyed all \textbf{1{,}000} of its students. The
 district posted the chart on the right to compare the two schools.
 
@@ -249,7 +238,7 @@ a question about \ans{how many}, and the count is exactly the right number. The 
 ``always use rates'' --- it is \emph{say which number you used, and why that one}.
 \end{notesbox}
 
-\vspace{0.10in}
+\vspace{6pt}
 
 % ── WE DO: guided practice ───────────────────────────────────────────────────
 \boxguard[26]
@@ -288,37 +277,5 @@ Evening &  18 &  30 & 32 &  80 \\
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.10in}
-
-% ── YOU DO: independent practice ─────────────────────────────────────────────
-\boxguard[24]
-\begin{notesbox}{Independent Practice --- You Try}
-\small
-Work these on your own. I will circulate.
-
-\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
-  \item The drama club has \textbf{40} members and \textbf{18} of them made honor roll. The band
-        has \textbf{100} members and \textbf{30} of them made honor roll.
-
-        \vspace{3pt}
-        More members on honor roll: \ans{the band (30)} \quad Higher honor-roll rate:
-        \ans{drama (45\%)}
-
-        \vspace{3pt}
-        The principal wants to say which club is doing better academically. Which of those two
-        numbers should she use, and why that one?\\[3pt]
-        \ansline{The rate. The clubs are very different sizes, so counts favor the band automatically;}
-        \ansline{45\% of drama versus 30\% of band is the fair comparison of academic performance.}
-  \item A poll of 250 students on a spirit-week theme: Decades 100, Superheroes 90, Neon 60.
-        The newspaper prints ``Most students chose Decades.'' Is that supported? Explain.\\[3pt]
-        \ansline{No. Decades is the largest share at 100/250 = 40\%, a plurality rather than a majority.}
-        \ansline{``Most'' would need more than 125 students; the other 150 chose something else.}
-  \item A student wants North's walking rate. He divides North's 80 walkers by 1{,}400 --- the
-        two schools combined --- and reports 5.7\%. Say what question his number actually
-        answers, and what he should have divided by instead.\\[3pt]
-        \ansline{His 5.7\% is the share of all 1,400 surveyed students who both walk and attend North.}
-        \ansline{North's walking rate needs North's own total: $80/400 = 20\%$.}
-\end{enumerate}
-\end{notesbox}
 
 \end{document}
