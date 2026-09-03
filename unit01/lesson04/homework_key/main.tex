@@ -1,8 +1,11 @@
 %! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Homework (Answer Key)
-% EFFL, AP Statistics variant: this is the lesson's SCORED practice and the LAST component in
-% the packet. These items were the in-class Check Your Understanding set; they are now the
-% graded homework, started in the closing minutes of the period and finished at home. The
-% AP Practice component that precedes it stays assigned-but-unscored.
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page and strikes its score cell on the cover. Started in the last eight minutes
+% of the period and finished at home. The AP Practice component that precedes it stays
+% assigned-but-unscored.
+% THIRD CONTEXT: the notes teach on checkout lines and three histograms, the AP Practice page
+% runs on a commute record, and these items are on fresh data again — recall is not the skill.
 % \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
 % argument, so the two files paginate identically by construction. Keep the macro and every
 % \boxguard byte-identical in the blank and the key.
@@ -20,7 +23,7 @@
 % GENERATED FROM homework/main.tex — this file is the blank with answers filled in, so the
 % \answerspace heights and every \boxguard are identical to it.
 % NO teachernote here — teacher prose lives in the lesson plan.
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
@@ -31,7 +34,7 @@
 \pageheader{Unit 1, Lesson 1.4}{Homework --- Answer Key}
 % NAMESTRIP: no \namedateperiod here — mirrors the blank.
 
-\vspace{0.15in}
+\vspace{0.10in}
 
 % Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
 % blank and the key the same number of pages.
@@ -45,18 +48,18 @@ it on your own.
 
 \vspace{0.12in}
 
-% ── The scored practice (formerly this lesson's Check Your Understanding) ────
+% ── The scored practice — five exercises spanning Topic 1.6 ────────────────
 \boxguard[14]
 \begin{notesbox}{Describing a Quantitative Distribution}
 Write every description \emph{in the context of the problem}, naming the variable and its
 units --- that is what earns credit on the AP exam, and it is the standard here.
-\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+\begin{enumerate}[leftmargin=1.9em, itemsep=5pt]
   \item \textbf{Match each display to its description.} Write the letter of the display on the
         line beside the description that fits it.
 
         \vspace{4pt}
         \begin{center}
-        \begin{tikzpicture}[scale=0.85]
+        \begin{tikzpicture}[scale=0.75]
           % A — symmetric, unimodal
           \foreach \i/\c in {0/1, 1/3, 2/6, 3/8, 4/6, 5/3, 6/1} {
             \fill[navy] ({\i*0.4},0) rectangle ({(\i+1)*0.4},{\c*0.15});
@@ -108,15 +111,14 @@ units --- that is what earns credit on the AP exam, and it is the standard here.
         the left, because almost all of the data is piled up on the left side.''} The student has
         the direction backwards. Correct the statement, and explain what actually decides the
         name.
-        \answerspace{3.1cm}{Display B is skewed to the \emph{right}. The name of a skew comes
-        from the side the \emph{tail} runs out on, not the side the pile sits on. In Display B
-        the values bunch at the low end and a few stragglers stretch far out to the high end, so
-        the right tail is the long one --- skewed right. The student named the picture by where
-        the data is instead of by where the data runs out.}
+        \answerspace{2.4cm}{Display B is skewed to the \emph{right}. A skew is named for the
+        side the \emph{tail} runs out on, not the side the pile sits on. Here the values bunch
+        at the low end and a few stragglers stretch far out to the high end, so the long tail is
+        the right one. The student named the picture by where the data \emph{is}.}
   \item \textbf{Display D} shows the ages, in years, of the 22 people at one community swim
         session. Name the unusual feature this display shows, and give one plausible reason the
         group splits the way it does.
-        \answerspace{2.8cm}{Display D is bimodal: two clear peaks separated by a gap, so the
+        \answerspace{2.2cm}{Display D is bimodal: two clear peaks separated by a gap, so the
         ages form two clusters with no one observed in between. A plausible reason is that the
         session drew young children together with the adults who brought them, and almost no
         teenagers or young adults came.}
@@ -124,26 +126,25 @@ units --- that is what earns credit on the AP exam, and it is the standard here.
 
         \vspace{3pt}
         \begin{center}
-        \begin{tikzpicture}[scale=0.95]
+        \begin{tikzpicture}[scale=0.88]
           \draw[->, thick] (-0.2,0) -- (5.9,0);
           \foreach \x/\lab in {0/0, 1/4, 2/8, 3/12, 4/16, 5/20} {
-            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
           \foreach \x/\n in {0.5/1, 0.75/2, 1.0/3, 1.25/4, 1.5/3, 1.75/2, 2.0/2, 2.25/1,
                              2.5/1, 2.75/1, 3.0/1, 3.25/1, 5.0/1, 5.25/1} {
             \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.18*\k}) circle (0.06); }}
-          \node[font=\scriptsize] at (2.8,-0.6) {Sugar per serving (grams)};
+          \node[font=\tiny] at (2.8,-0.85) {Sugar per serving (grams)};
         \end{tikzpicture}
         \end{center}
         \vspace{2pt}
 
         Write a complete description of this distribution: all four parts, in context, with the
         variable and its units named.
-        \answerspace{3.4cm}{The sugar content of these 24 breakfast cereals is unimodal and
-        skewed to the right. The center is about 6 grams of sugar per serving, and the values
-        run from 2 grams to 21 grams, with most cereals between 3 and 9 grams. Two cereals sit
-        far above the rest at 20 and 21 grams, separated from the others by an empty stretch
-        from 13 to 20 grams. This describes only these 24 cereals --- it is not a claim about
-        every cereal on the shelf.}
+        \answerspace{2.8cm}{The sugar content of these 24 cereals is unimodal and skewed to the
+        right. The center is about 6 grams per serving, and the values run from 2 to 21 grams,
+        with most cereals between 3 and 9 grams. Two cereals sit far above the rest at 20 and
+        21 grams, behind an empty stretch from 13 to 20 grams. This describes these 24 cereals
+        only --- not every cereal on the shelf.}
   \item \textbf{AP-style multiple choice.} A histogram of the salaries of all 250 employees at
         one company is strongly skewed to the right, with three salaries far above the rest.
         Which statement is best supported? Circle one, then justify it in a sentence.
@@ -156,7 +157,7 @@ units --- that is what earns credit on the AP exam, and it is the standard here.
                 described.
           \item The histogram must be wrong, because a distribution cannot have a long tail.
         \end{enumerate}
-        \answerspace{2.4cm}{(B). A right tail means the pile of salaries is at the low end with
+        \answerspace{2.0cm}{(B). A right tail means the pile of salaries is at the low end with
         a few much larger ones stretching out --- and the display describes only these 250
         employees, not every company in the industry.}
 \end{enumerate}
