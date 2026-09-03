@@ -1,0 +1,315 @@
+%! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Guided Notes & Practice
+% THE in-class document. There is no group activity in this course — the notes carry the whole
+% gradual release, closed by a spoken debrief. It runs SHORT on purpose: the period ends
+% with students starting the homework, which is where the individual practice lives.
+%   I DO      : the objective box, the vocabulary box, and notes sections 1-2.     (~20 min)
+%   WE DO     : the practicebox ("Guided Practice") — The Sleep Survey, together.  (~14 min)
+%   YOU DO    : nothing on this page — ../homework/ IS the individual practice,
+%               started in the last minutes of the period.
+% There is NO "Putting It Together" transfer set and NO reflection box in this lesson: the
+% debrief is spoken, and the commute record appears only in ../ap_practice/.
+% Vocabulary is GIVEN here, not discovered. The second half of section 2 is the crux —
+% the name of a skew follows the TAIL, not the pile (EK UNC-1.H.3).
+%
+% THE DATA
+%   Line A (20 waits, min): 3x4  4x8  5x5  6x3   -> median 4, every wait between 3 and 6
+%   Line B (20 waits, min): 1x4  2x3  3x2  4x2  5x3  6x2  7x2  11  13
+%                                                -> median 4, waits from 1 to 13, gap 7-11
+%   Identical center, completely different experience. That is what opens the lesson.
+%   Picture I   home prices, 40 homes, $100k bins:  6 14 10 5 3 1 1   (long right tail)
+%   Picture II  quiz scores, 32 students, 10-pt bins: 1 2 5 11 13     (long left tail)
+%   Picture III club heights, 40 adults, 2-in bins: 2 5 9 4 0 0 4 9 5 2
+%                       -> symmetric AND bimodal, empty stretch 66-70 in. A single "typical
+%                          height" of about 67 in belongs to nobody in the club.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, and every
+% \writelines{n} becomes exactly n \ansline{} calls. Blank widths are sized close to the answers
+% so the two files wrap identically. Every \begin{work} block and every \answerspace{H}{} height
+% is authored BYTE-IDENTICALLY in both files.
+% VOCABPAR: \par brackets each \termblank inside the vocabbox.
+% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read. Students never draw an axis
+% or place a dot — they read, fill a table, and write descriptions.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+% Authored byte-identically in notes_key/ — the blank reserves exactly H and prints nothing.
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.4}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{6pt}
+
+\boxguard[14]
+\begin{objectivebox}
+\small
+By the end of these notes I will be able to:
+\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
+  \item name the \textbf{shape} of a distribution --- symmetric, skewed left, or skewed right ---
+        and say why the \emph{tail} decides that name and the pile does not;
+  \item point out the \textbf{unusual features} of a display: outliers, gaps, and clusters;
+  \item describe a distribution completely --- \textbf{shape, outliers, center, spread} ---
+        with every one of the four stated in context, naming the variable and its units.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{6pt}
+
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Skewed right}
+\par
+\termblank{Skewed left}
+\par
+\termblank{Outlier}
+\par
+\termblank{SOCS}
+\par
+\end{vocabbox}
+
+\vspace{6pt}
+
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+\boxguard[12]
+\begin{notesbox}{1. Center, Variability, and the Values That Sit Apart}
+\small
+Last lesson you learned to \emph{read} these displays. Today you learn to \emph{say what they
+show} --- and one number is never enough.
+
+\vspace{5pt}
+A supermarket timed 20 customers in each of its two checkout lines. Both plots use the same
+scale, so you can compare them directly.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.80]
+  % ── Line A: tightly bunched ──
+  \draw[->, thick] (-0.2,0) -- (6.0,0);
+  \foreach \x/\lab in {0/0, 0.7/2, 1.4/4, 2.1/6, 2.8/8, 3.5/10, 4.2/12, 4.9/14, 5.6/16} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {1.05/4, 1.4/8, 1.75/5, 2.1/3} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.07); }}
+  \node[font=\tiny] at (2.8,-0.85) {Minutes waited};
+  \node[font=\bfseries\small] at (2.8,2.15) {Line A};
+  % ── Line B: widely spread, two customers stranded ──
+  \begin{scope}[xshift=7.0cm]
+    \draw[->, thick] (-0.2,0) -- (6.0,0);
+    \foreach \x/\lab in {0/0, 0.7/2, 1.4/4, 2.1/6, 2.8/8, 3.5/10, 4.2/12, 4.9/14, 5.6/16} {
+      \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+    \foreach \x/\n in {0.35/4, 0.7/3, 1.05/2, 1.4/2, 1.75/3, 2.1/2, 2.45/2, 3.85/1, 4.55/1} {
+      \foreach \k in {1,...,\n} { \fill[goldacc] (\x,{0.2*\k}) circle (0.07); }}
+    \node[font=\tiny] at (2.8,-0.85) {Minutes waited};
+    \node[font=\bfseries\small] at (2.8,2.15) {Line B};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\vspace{4pt}
+\textbf{Read them.} Counting in from both ends, the middle wait in Line A is \blank{1.1cm}
+minutes and the middle wait in Line B is \blank{1.1cm} minutes.
+
+\vspace{5pt}
+The \textbf{center} of a distribution is that middle, typical value --- where the data
+\blank{1.5cm} up. Both lines have the \blank{1.2cm} center. The \textbf{variability}, or
+\textbf{spread}, is how far the values reach \blank{2.6cm}. In Line A every wait falls between
+\blank{0.9cm} and \blank{0.9cm} minutes; in Line B they run from \blank{0.9cm} all the way to
+\blank{0.9cm}.
+
+\vspace{5pt}
+\begin{center}
+\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
+\textbf{Careful --- one number is not a description.} The manager reports
+\emph{``the typical wait is 4 minutes in both lines.''} That sentence is \blank{1.3cm} of both
+lines and tells a customer \blank{1.6cm} about which one to join. A center reported without the
+\blank{1.8cm} beside it is a summary of nothing.}}
+\end{center}
+
+\vspace{10pt}
+\textbf{\textcolor{navy}{What Sits Apart: Outliers, Gaps, and Clusters.}}
+Line B is not just wider than Line A --- two of its customers are somewhere else entirely.
+
+\vspace{4pt}
+An \textbf{outlier} is a value that sits unusually far \blank{1.3cm} the rest of the data. In
+Line B the customers at \blank{0.9cm} and \blank{0.9cm} minutes are outliers. A \textbf{gap} is a
+stretch of the number line where \blank{1.6cm} was observed --- here, everything from about 7
+minutes to 11. A \textbf{cluster} is a group of values bunched together and set off from the
+other values by a \blank{1.0cm}.
+
+\vspace{4pt}
+\textbf{An outlier is not automatically a mistake.} Check it, do not \blank{1.5cm} it. If the
+13-minute customer is a typing error, fix the record; if she is a real person with a full cart
+and a price check, she is precisely the customer the manager needs to hear about.
+\end{notesbox}
+
+\vspace{6pt}
+
+% ── I DO: section 2 — shape, and the crux ────────────────────────────────────
+\boxguard[12]
+\begin{notesbox}{2. Shape --- and the Tail That Names It}
+\small
+Three different things were measured, each drawn as a histogram. \textbf{I} --- sale prices of
+the 40 homes sold in one town last year. \textbf{II} --- scores of 32 students on a quiz most of
+the class found easy. \textbf{III} --- heights of the 40 adults in a mixed volleyball club.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+  % ── I: home prices, long right tail ──
+  \foreach \i/\c in {0/6, 1/14, 2/10, 3/5, 4/3, 5/1, 6/1} {
+    \fill[navy] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.14});
+    \draw[white, very thin] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.14});}
+  \draw[->, thick] (0,0) -- (0,2.5);
+  \draw[->, thick] (0,0) -- (3.9,0);
+  \foreach \y/\lab in {0/0, 0.7/5, 1.4/10} {
+    \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
+  \foreach \x/\lab in {0/100, 1/300, 2/500, 3/700} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \node[font=\tiny] at (1.75,-0.85) {Sale price (\$1000s)};
+  \node[font=\bfseries\small] at (1.75,2.75) {I};
+  % ── II: quiz scores, long left tail ──
+  \begin{scope}[xshift=4.9cm]
+    \foreach \i/\c in {0/1, 1/2, 2/5, 3/11, 4/13} {
+      \fill[goldacc] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.14});
+      \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.14});}
+    \draw[->, thick] (0,0) -- (0,2.5);
+    \draw[->, thick] (0,0) -- (3.9,0);
+    \foreach \y/\lab in {0/0, 0.7/5, 1.4/10} {
+      \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
+    \foreach \x/\lab in {0/50, 1.4/70, 2.8/90} {
+      \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+    \node[font=\tiny] at (1.75,-0.85) {Quiz score};
+    \node[font=\bfseries\small] at (1.75,2.75) {II};
+  \end{scope}
+  % ── III: club heights, symmetric with two humps and an empty stretch ──
+  \begin{scope}[xshift=9.8cm]
+    \foreach \i/\c in {0/2, 1/5, 2/9, 3/4, 4/0, 5/0, 6/4, 7/9, 8/5, 9/2} {
+      \fill[navy] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.14});
+      \draw[white, very thin] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.14});}
+    \draw[->, thick] (0,0) -- (0,2.5);
+    \draw[->, thick] (0,0) -- (3.9,0);
+    \foreach \y/\lab in {0/0, 0.7/5, 1.4/10} {
+      \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
+    \foreach \x/\lab in {0/58, 1.4/66, 2.8/74} {
+      \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+    \node[font=\tiny] at (1.75,-0.85) {Height (inches)};
+    \node[font=\bfseries\small] at (1.75,2.75) {III};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} c X X @{}}
+\rowcolor{sky}
+\textbf{Picture} & \textbf{Most of the values sit\ldots} &
+\textbf{The few stragglers run toward\ldots} \\
+\hline
+\textbf{I} & \blank{3.6cm} & \blank{3.6cm} \\
+\textbf{II} & \blank{3.6cm} & \blank{3.6cm} \\
+\textbf{III} & \blank{3.6cm} & \blank{3.6cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Count the peaks first.} One main peak: \blank{2.0cm}. Two clear peaks: \blank{1.9cm}.
+All the bars about equal, with no peak at all: \blank{1.8cm}.
+
+\vspace{4pt}
+A distribution is \textbf{symmetric} when the left half is roughly a \blank{2.4cm} of the right.
+Picture \blank{0.8cm} is symmetric; Pictures I and II are not, because each one \blank{1.4cm}.
+
+\vspace{10pt}
+\textbf{\textcolor{navy}{Skewed Which Way? The Tail Decides.}}
+Look again at Picture I. Count the homes in the bars:
+
+\begin{work}
+\text{Homes that sold below \$400{,}000} &= 6 + 14 + 10 = 30 \text{ of the } 40 \\[4pt]
+\text{Homes that sold above \$600{,}000} &= 1 + 1 = 2 \text{ of the } 40
+\end{work}
+
+Thirty of the forty homes sold for under \$400{,}000, and the picture still stretches out past
+\$700{,}000 --- because two houses really did sell for that. The pile is on the \blank{1.0cm};
+the long thin tail runs to the \blank{1.2cm}.
+
+\vspace{4pt}
+We call Picture I \textbf{skewed right}. Read that again: the data is piled on the \emph{left},
+and the name says \emph{right}.
+
+\vspace{5pt}
+\begin{center}
+\fcolorbox{navy}{sky}{\parbox{0.92\linewidth}{\centering\small
+\textbf{The name of a skew follows the \blank{1.1cm}, not the \blank{1.1cm}.}\\
+Skewed \textbf{right}: the longer tail runs right, so most values are \blank{1.4cm} and a few
+are much larger. Skewed \textbf{left}: the longer tail runs \blank{1.1cm}.}}
+\end{center}
+
+\vspace{5pt}
+Picture II is the mirror image. The quiz was easy, so most scores pile up on the
+\blank{1.0cm}, and the few students who struggled trail off to the left. Picture II is skewed
+\blank{1.0cm} --- and saying \emph{``skewed right, because the bars on the right are tallest''}
+gets it exactly backwards.
+
+\vspace{6pt}
+\textbf{Symmetric does not mean ``nothing to report.''} Picture III is symmetric, and it is also
+\blank{1.8cm}, with a gap between about \blank{0.9cm} and \blank{0.9cm} inches. Somebody who
+reports only \emph{``the typical height in this club is about 67 inches''} has said something
+true of the picture and false of every \blank{1.5cm} in it: the club is roughly half shorter
+adults and half taller ones, and \blank{2.2cm} of them is 67 inches tall. Shape is never one
+word, and center is never the whole answer.
+
+\vspace{6pt}
+\begin{center}
+\fcolorbox{navy}{sky}{\parbox{0.92\linewidth}{\centering\small
+\textbf{Four things or nothing --- \blank{1.5cm}}\\
+\textbf{S}hape \quad$\cdot$\quad \textbf{O}utliers and other unusual features \quad$\cdot$\quad
+\textbf{C}enter \quad$\cdot$\quad \textbf{S}pread\\
+and every one of the four stated \blank{2.0cm}, naming the variable and its units.}}
+\end{center}
+
+\vspace{5pt}
+\textbf{One limit on what you may claim.} Describing these 40 homes is a statement about
+\blank{1.5cm} 40 homes. It is not a claim about houses in general; at most it \blank{1.9cm}
+something worth investigating with data collected for that purpose.
+\end{notesbox}
+
+\vspace{6pt}
+
+% ── WE DO: guided practice ───────────────────────────────────────────────────
+\boxguard[26]
+\begin{practicebox}
+\small
+\textbf{The Sleep Survey --- we work this one together.} Thirty students reported how many hours
+they slept on a school night.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.86]
+  \draw[->, thick] (-0.2,0) -- (8.2,0);
+  \foreach \x/\lab in {0.6/4, 1.8/5, 3.0/6, 4.2/7, 5.4/8, 6.6/9, 7.8/10} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {0.6/1, 3.0/1, 3.6/2, 4.2/4, 4.8/5, 5.4/7, 6.0/6, 6.6/3, 7.2/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.07); }}
+  \node[font=\tiny] at (4.0,-0.85) {Hours of sleep on a school night};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item How many students are shown? \blank{1.2cm} \quad One value sits apart from all the
+        others, at \blank{1.2cm} hours, behind a gap running from \blank{1.9cm} hours.
+  \item Which way does this distribution lean? \blank{2.4cm} \quad Say what that longer tail
+        means \emph{for these students} --- not for the graph.\\[3pt]
+        \writelines{2}
+  \item \textbf{Now say all four.} Write the complete description in one paragraph: shape,
+        unusual features, center, and spread, in context, with the variable and its units
+        named.\\[3pt]
+        \writelines{4}
+\end{enumerate}
+\end{practicebox}
+
+
+\end{document}

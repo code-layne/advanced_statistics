@@ -23,28 +23,28 @@
 \end{frame}
 }
 
-% EFFL flow: targets (SPOILER-FREE) → hook → activity launch → debrief divider → QuickNotes
-% arc → the crux → application → homework (started in class) → AP Practice → close.
-% Nothing before the divider may say shape, symmetric, skewed, unimodal, bimodal, uniform,
-% center, variability, spread, unusual feature, outlier, gap, cluster, or SOCS.
+% GRADUAL RELEASE deck: title → targets → warm-up hook → I DO (notes frames) → WE DO (guided
+% practice) → spoken debrief → close & START THE HOMEWORK, which is the individual
+% practice — there is no independent practice set in the notes → AP Practice → close.
+% There is NO group activity in this course — the notes carry the whole release. There is no
+% transfer set and no reflection box: the commute record lives only in the AP Practice page.
+% Vocabulary is given up front here, not withheld: the notes frames ARE the direct instruction.
 \newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
-% ── LEARNING TARGETS (spoiler-free) ─────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 1.4}
   By the end of today, I can\ldots
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item explain why the typical value on its own does not tell you what a set of numbers
-          is like.
-    \item say which way a picture leans --- and why the \emph{stragglers} decide that, not
-          the pile.
-    \item point out the values that sit apart, the empty stretches, and the separate groups.
-    \item write a description somebody who never saw the picture could trust.
+    \item explain why one number is never a description of a set of data.
+    \item name a distribution's \textbf{shape} --- symmetric, skewed left, or skewed right.
+    \item point out the \textbf{unusual features}: outliers, gaps, and clusters.
+    \item describe a whole distribution in \textbf{four parts}, in context.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{two checkout lines} with your group $\to$ we name what you found
-    $\to$ practice. You will figure it out \emph{before} I give you the words.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
   \end{block}
 \end{frame}
 
@@ -54,266 +54,256 @@
 \begin{frame}[plain]
   \vspace{1.5cm}
   \begin{center}
-    {\color{skymid}\bfseries\small TWO LINES. THE SAME MIDDLE WAIT: 4 MINUTES.}\\[0.9cm]
+    {\color{skymid}\bfseries\small TWO CHECKOUT LINES. THE SAME MIDDLE WAIT.}\\[0.9cm]
     {\color{white}\bfseries\Large One of them you would never stand in again.}\\[0.9cm]
-    {\color{goldacc}\small Both numbers are correct. So what is the number failing to say?}
+    {\color{goldacc}\small Both managers report ``about 4 minutes.'' Only one of them is
+    telling you anything.}
   \end{center}
 \end{frame}
 }
 
-% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Experience \& Formalize: Two Checkout Lines}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
-  A supermarket timed 20 customers in each of two checkout lines.
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item \textbf{Problem 1} --- two lines with identical middle waits. Which one do you join?
-    \item \textbf{Problem 2} --- three pictures of three different things, and one summary
-          somebody could actually trust.
-  \end{itemize}
-  \begin{block}{Your job}
-    Use only what you already know. When a picture leans, do not just say ``it leans'' ---
-    say \textbf{which way the stragglers run}, and be ready to defend it.
-  \end{block}
-\end{frame}
-
-% ── DEBRIEF DIVIDER ──────────────────────────────────────────────────────────
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
-    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
-    {\color{white}\bfseries\Large You already found that one number is not a description.
-    We are only giving names to the things you added.}\\[0.9cm]
-    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today. Write each one the
+    moment we use it.}
   \end{minipage}
 \end{frame}
 }
 
-% ── SHAPE: SKEW IS NAMED FOR THE TAIL ───────────────────────────────────────
+% ── CENTER AND VARIABILITY ───────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Shape --- and the one rule everybody gets backwards}
-  \sectionlabel{the name follows the tail, not the pile}
-  \vspace{2pt}
-  \begin{columns}[t]
-    \begin{column}{0.47\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[scale=0.8]
-        \foreach \i/\c in {0/9, 1/7, 2/4, 3/2, 4/1, 5/1, 6/1} {
-          \fill[navy] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.16});
-          \draw[white, very thin] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.16});}
-        \draw[->, thick] (0,0) -- (0,1.9);
-        \draw[->, thick] (0,0) -- (3.9,0);
-      \end{tikzpicture}
-      \end{center}
-      \vspace{2pt}
-      \begin{block}{Skewed \textbf{right} (positive)}
-        The \redink{right} tail is longer. The pile is on the left.
-      \end{block}
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[scale=0.8]
-        \foreach \i/\c in {0/1, 1/1, 2/2, 3/4, 4/7, 5/9} {
-          \fill[goldacc] ({\i*0.58},0) rectangle ({(\i+1)*0.58},{\c*0.16});
-          \draw[white, very thin] ({\i*0.58},0) rectangle ({(\i+1)*0.58},{\c*0.16});}
-        \draw[->, thick] (0,0) -- (0,1.9);
-        \draw[->, thick] (0,0) -- (3.9,0);
-      \end{tikzpicture}
-      \end{center}
-      \vspace{2pt}
-      \begin{block}{Skewed \textbf{left} (negative)}
-        The \redink{left} tail is longer. The pile is on the right.
-      \end{block}
-    \end{column}
-  \end{columns}
-  \vspace{8pt}
-  \begin{center}
-    {\small\color{slate} \textbf{Symmetric:} the left half is roughly a mirror image of the
-    right half (EK UNC-1.H.3).}
-  \end{center}
-\end{frame}
-
-% ── PEAKS ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{How many peaks?}
-  \sectionlabel{unimodal $\cdot$ bimodal $\cdot$ uniform}
-  \vspace{10pt}
-  \begin{columns}[t]
-    \begin{column}{0.31\textwidth}
-      \begin{block}{Unimodal}
-        One main peak.
-      \end{block}
-      \vspace{3pt}
-      {\small Heights of one class $\cdot$ the sleep survey}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \begin{block}{Bimodal}
-        Two prominent peaks (EK UNC-1.H.4).
-      \end{block}
-      \vspace{3pt}
-      {\small The volleyball club --- two groups in one picture}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \begin{block}{Uniform}
-        Every bar about the same height; no prominent peak.
-      \end{block}
-      \vspace{3pt}
-      {\small Rolls of a fair die}
-    \end{column}
-  \end{columns}
-  \vspace{14pt}
-  \begin{center}
-    {\small\color{slate} Peaks are part of \textbf{shape}. Say them in the same breath as
-    ``symmetric'' or ``skewed.''}
-  \end{center}
-\end{frame}
-
-% ── CENTER, SPREAD, UNUSUAL FEATURES ────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{The other three}
-  \sectionlabel{center $\cdot$ spread $\cdot$ unusual features}
+  \navyheader{Same center. Nothing else the same.}
+  \sectionlabel{notes section 1 $\cdot$ centre and variability}
   \vspace{4pt}
   \begin{columns}[t]
     \begin{column}{0.47\textwidth}
       \begin{block}{Center}
-        The typical value. \textbf{Line A: 4 minutes. Line B: 4 minutes.}
+        The middle, typical value --- where the data pile up (EK UNC-1.H.5).
       \end{block}
       \vspace{4pt}
-      \begin{block}{Variability (spread)}
-        How far the values reach. \textbf{Line A: 3 to 6. Line B: 1 to 13.}
-      \end{block}
-      \vspace{4pt}
-      {\small Same center, different spread \redink{$\Rightarrow$} different line.}
+      {\small Line A: \textbf{4 minutes.} \quad Line B: \textbf{4 minutes.}}
     \end{column}
     \begin{column}{0.47\textwidth}
-      \begin{block}{Unusual features}
-        \begin{itemize}\setlength{\itemsep}{3pt}
-          \item \textbf{Outlier} --- unusually small or large \emph{relative to the rest}
-                (EK UNC-1.H.2). The 13-minute customer.
-          \item \textbf{Gap} --- a stretch with nothing observed (EK UNC-1.H.5).
-          \item \textbf{Cluster} --- a concentration of values, usually set off by gaps
-                (EK UNC-1.H.6).
-        \end{itemize}
+      \begin{block}{Variability (spread)}
+        How far the values reach from each other (EK UNC-1.H.6).
+      \end{block}
+      \vspace{4pt}
+      {\small Line A: every wait \textbf{3 to 6}. \quad Line B: \textbf{1 to 13}.}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\large ``The typical wait is 4 minutes in both lines'' is \redink{true} --- and useless.}\\[6pt]
+    {\small\color{slate} A center reported without the spread beside it is a summary of nothing.}
+  \end{center}
+\end{frame}
+
+% ── WHAT SITS APART ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{What sits apart}
+  \sectionlabel{notes section 1 $\cdot$ outliers, gaps, clusters}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item \textbf{\color{navy}Outlier} --- a value unusually far from the rest of the data.
+          Line B's customers at \textbf{11} and \textbf{13} minutes.
+    \item \textbf{\color{navy}Gap} --- a stretch of the number line where nothing was observed.
+          Line B: everything from about 7 minutes to 11.
+    \item \textbf{\color{navy}Cluster} --- values bunched together, set off from the others by
+          a gap.
+  \end{itemize}
+  \vspace{10pt}
+  \begin{block}{An outlier is not automatically a mistake}
+    Check it --- do not \redink{delete} it. A real customer with a full cart and a price check
+    is exactly the customer the manager needs to hear about.
+  \end{block}
+\end{frame}
+
+% ── SHAPE: PEAKS ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Shape, part one: count the peaks}
+  \sectionlabel{notes section 2 $\cdot$ three pictures, three stories}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.30\textwidth}
+      \begin{block}{Unimodal}
+        One main peak.
+      \end{block}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \begin{block}{Bimodal}
+        Two clear peaks.
+      \end{block}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \begin{block}{Uniform}
+        No peak at all.
       \end{block}
     \end{column}
   \end{columns}
-  \vspace{6pt}
+  \vspace{14pt}
   \begin{center}
-    {\small\color{slate} You do not delete an outlier for being inconvenient. You report it.}
+    {\large \textbf{Symmetric:} the left half is roughly a \redink{mirror image} of the
+    right.}\\[8pt]
+    {\small\color{slate} Home prices lean. Quiz scores lean the other way. Club heights do
+    not lean at all.}
   \end{center}
 \end{frame}
 
 % ── THE CRUX ─────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Point at the club member who is 67 inches tall}
-  \sectionlabel{the whole point of today}
-  \vspace{2pt}
-  \begin{columns}[t]
-    \begin{column}{0.44\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[scale=0.85]
-        \foreach \i/\c in {0/2, 1/5, 2/9, 3/4, 4/0, 5/0, 6/4, 7/9, 8/5, 9/2} {
-          \fill[navy] ({\i*0.38},0) rectangle ({(\i+1)*0.38},{\c*0.16});
-          \draw[white, very thin] ({\i*0.38},0) rectangle ({(\i+1)*0.38},{\c*0.16});}
-        \draw[->, thick] (0,0) -- (0,2.0);
-        \draw[->, thick] (0,0) -- (4.1,0);
-        \foreach \x/\lab in {0/58, 1.52/66, 3.04/74} {
-          \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
-        \node[font=\tiny] at (1.9,-0.55) {Height (inches)};
-      \end{tikzpicture}
-      \end{center}
-    \end{column}
-    \begin{column}{0.52\textwidth}
-      \begin{itemize}\setlength{\itemsep}{7pt}
-        \item A single ``typical height'' for this club lands around \textbf{67 inches}.
-        \item \redink{Nobody in the club is 67 inches tall.} That stretch is empty.
-        \item The club is two clusters --- one near 63 inches, one near 73 --- and one number
-              describes \redink{neither}.
-      \end{itemize}
-      \vspace{6pt}
-      \begin{block}{Essential Knowledge (UNC-1.H.1)}
-        A description needs \textbf{shape, center, variability, and unusual features}.
-      \end{block}
-    \end{column}
-  \end{columns}
+  \navyheader{Skewed which way? The tail decides.}
+  \sectionlabel{notes section 2 $\cdot$ the whole point of today}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Picture I: $6+14+10 = 30$ of the 40 homes sold below \$400{,}000.
+    \item And the picture still stretches past \$700{,}000 --- because two houses really did.
+    \item The pile is on the \textbf{left}. The long thin tail runs to the \textbf{right}.
+    \item So Picture I is \redink{skewed right.}
+  \end{itemize}
+  \vspace{10pt}
+  \begin{block}{Essential Knowledge (UNC-1.H.3)}
+    \textbf{A skew is named for the side the tail runs out on} --- not the side the pile
+    sits on.
+  \end{block}
 \end{frame}
 
-% ── SOCS + THE UNC-1.H.7 LIMIT ──────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Four things or nothing}
-  \sectionlabel[goldacc]{S O C S --- and every one in context}
+  \navyheader{And symmetric is not the end of the answer}
+  \sectionlabel{the counterweight --- do not skip this}
   \vspace{8pt}
   \begin{columns}[t]
-    \begin{column}{0.52\textwidth}
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item \textbf{S}hape --- symmetric or skewed (named for the tail); unimodal, bimodal,
-              uniform.
-        \item \textbf{O}utliers and other unusual features --- outliers, gaps, clusters.
-        \item \textbf{C}enter --- the typical value.
-        \item \textbf{S}pread --- how far the values reach.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.44\textwidth}
-      \begin{block}{In context, or it earns nothing}
-        Name the \textbf{variable} and its \textbf{units} every time. ``Skewed right, center
-        about 6'' is not an answer. ``Skewed right, center about 6 grams of sugar per
-        serving'' is.
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Picture III is symmetric}
+        The left half mirrors the right. So far, so tidy.
       \end{block}
-      \vspace{4pt}
-      {\small\color{slate} And (EK UNC-1.H.7): describing \emph{these} data is not a claim
-      about a larger population --- it can only suggest one to test later.}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Picture III is also bimodal}
+        Two humps, with nobody at all between 66 and 70 inches.
+      \end{block}
     \end{column}
   \end{columns}
+  \vspace{14pt}
+  \begin{center}
+    {\large ``The typical height in this club is about 67 inches.''}\\[8pt]
+    {\large \redink{Nobody in the club is 67 inches tall.}}
+  \end{center}
 \end{frame}
 
-% ── APPLICATION ──────────────────────────────────────────────────────────────
+% ── SOCS ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Application: The Sleep Survey}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  Thirty students, asked how many hours of sleep they got on a school night.
+  \navyheader{Four things or nothing: SOCS}
+  \sectionlabel{notes section 2 $\cdot$ what a complete answer contains}
+  \vspace{8pt}
+  \begin{itemize}\setlength{\itemsep}{6pt}
+    \item \textbf{\color{navy}S}hape --- symmetric, skewed left, skewed right; and the peaks.
+    \item \textbf{\color{navy}O}utliers and other unusual features --- gaps and clusters too.
+    \item \textbf{\color{navy}C}enter --- the typical value.
+    \item \textbf{\color{navy}S}pread --- how far the values reach.
+  \end{itemize}
+  \vspace{10pt}
+  \begin{block}{Every one of the four, \redink{in context}}
+    Name the variable and its units, every time. And remember the limit: describing these data
+    is not a claim about anybody who was not measured.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Sleep Survey}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  Thirty students reported their hours of sleep on a school night.
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item How many students? Which value sits apart from all the rest?
-    \item Which way does it lean --- and what does that tail mean \emph{for these students}?
-    \item Then the whole thing: all four parts, one paragraph, in context.
+    \item How many students? Which value sits apart, and where does the gap run?
+    \item Which way does this distribution lean --- and what does that tail mean \emph{for
+          these students}?
+    \item Now say all four: shape, unusual features, center, spread. In context.
   \end{itemize}
   \begin{block}{The question behind the question}
-    You will say ``skewed left.'' I will ask you to say it again \redink{about students},
-    not about the graph.
+    The pile is on the right and the tail runs left. If you answered \redink{skewed right},
+    you read the pile.
+  \end{block}
+\end{frame}
+
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \navyheader{You do: start the homework}
+  \sectionlabel{Last 8 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item Four displays, four shape descriptions --- match them.
+    \item A classmate calls Display B ``skewed left, because the data is piled on the left.''
+          Correct them.
+    \item A two-humped picture of ages at a swim session --- name the feature, explain it.
+    \item Twenty-four cereals' sugar content: write the whole four-part description.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Item 2} is the one I am reading over your shoulder. If you agreed with the classmate,
+    flag me before you leave.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: point at the tail}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Picture I --- skewed right}
+        Pile on the left. Tail to the right. The tail wins the name.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Picture II --- skewed left}
+        Pile on the right. Tail to the left. Same rule, mirrored.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{block}{Two things to say out loud}
+    Describe Picture I in one sentence a reader could act on. Then say what those 40 homes
+    \redink{cannot} tell you --- nothing about the next town, and nothing about next year.
   \end{block}
 \end{frame}
 
 % ── HOMEWORK (started in class, scored) ─────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Homework --- start it now}
-  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \sectionlabel[goldacc]{5 exercises $\cdot$ scored $\cdot$ due next class}
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item Match four displays to four shape descriptions.
-    \item A classmate called a right-tailed picture ``skewed left.'' Fix it, and say why.
-    \item A two-humped display: name the feature, and give a reason two groups exist.
-    \item One full four-part description, in context, with units.
+    \item Match four displays to four descriptions.
+    \item Correct the classmate who read the pile instead of the tail.
+    \item Name the unusual feature in a two-humped age distribution.
+    \item Describe 24 cereals' sugar content --- all four parts, in context.
     \item One multiple-choice item, with a one-sentence justification.
   \end{itemize}
   \begin{block}{This one is graded}
-    This is your \redink{scored} homework, due next class. Start with 1, 2, and 5 while
-    I am still here to answer questions --- finish the rest at home.
+    This is your \redink{scored} homework, on paper, due next class. Start with 1, 2, and 5
+    while I am still here to answer questions --- finish the rest at home.
   \end{block}
 \end{frame}
 
-% ── AP PRACTICE & PREVIEW (optional, unscored) ──────────────────────────────
+% ── AP PRACTICE & PREVIEW (assigned, unscored) ──────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{AP Practice \& what's next}
-  \sectionlabel[goldacc]{AP Practice --- optional, not scored}
+  \sectionlabel[goldacc]{AP Practice --- assigned, not scored}
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item Four multiple-choice items on 40 employees' commute times.
-    \item One free-response set: classify, describe, and say what a single average hides.
-    \item Optional: find a published ``average'' and name what it leaves out.
+    \item Four multiple-choice items on a 40-employee commute record.
+    \item One free-response set: classify, describe, take apart a manager's one number, and
+          regroup at a wider interval.
+    \item Watch distractor (B) on item 2. It is today's error, written out in full.
   \end{itemize}
-  \begin{block}{Optional --- but this is what the exam looks like}
-    The AP Practice page is \textbf{not required and not graded}. Work it for the reps,
-    and bring what you get stuck on to study hall or office hours. The \redink{graded}
-    homework is the section behind it.
+  \begin{block}{Not graded --- but this is what the exam looks like}
+    The AP Practice page is \textbf{not scored}. Work it for the reps, and bring what you
+    get stuck on to study hall or office hours. The \redink{graded} homework is the section
+    behind it.
   \end{block}
 \end{frame}
 
@@ -321,14 +311,13 @@
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
-  \vspace{1.4cm}\hspace{0.8cm}%
+  \vspace{1.5cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
-    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.6cm]
-    {\color{white}\bfseries\Large Four things or nothing: shape, center, spread, unusual
-    features --- and every one of them in context.\\[0.4cm]
-    A picture that leans is named for where its tail goes, not where its pile sits.}\\[0.8cm]
-    {\color{skymid}\small Next: Lesson 1.5 --- actual numbers for center and spread, and which
-    of them one strange value can drag around.}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large A skew is named for its tail. A center without a spread is a
+    summary of nothing. Say all four, in context.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 1.5 --- ``about 8 hours'' and ``most between 6 and 9''
+    become actual numbers, and we find out which of them an outlier can drag around.}
   \end{minipage}
 \end{frame}
 }
