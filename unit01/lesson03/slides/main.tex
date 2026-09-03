@@ -23,26 +23,28 @@
 \end{frame}
 }
 
-% EFFL flow: targets (SPOILER-FREE) → hook → activity launch → debrief divider → QuickNotes
-% arc → application → homework (started in
-% class) → AP Practice. Nothing before the divider may say histogram,
-% dotplot, stemplot, discrete, or continuous.
+% GRADUAL RELEASE deck: title → targets → warm-up hook → I DO (notes frames) → WE DO (guided
+% practice) → YOU DO (independent practice) → spoken debrief → homework → AP Practice → close.
+% There is NO group activity in this course — the notes carry the whole release. There is no
+% transfer set and no reflection box: the rainfall record lives only in the AP Practice page.
+% Vocabulary is given up front here, not withheld: the notes frames ARE the direct instruction.
 \newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
-% ── LEARNING TARGETS (spoiler-free) ─────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 1.3}
   By the end of today, I can\ldots
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item read numbers off a plot and group them into blocks.
-    \item say which measurements can land between two whole numbers, and which cannot.
-    \item explain what a picture of grouped data gains --- and what it throws away.
-    \item explain how two correct pictures of the same numbers can disagree.
+    \item classify a quantitative variable as \textbf{discrete} or \textbf{continuous}.
+    \item read a \textbf{dotplot}, a \textbf{stem plot}, and a \textbf{histogram}, and say what
+          each one keeps.
+    \item explain what grouping data gains --- and what it throws away.
+    \item explain how changing the \textbf{interval width} changes what a histogram shows.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{one class's 24 finishing times} with your group $\to$ we name what
-    you found $\to$ practice. You will figure it out \emph{before} I give you the words.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    \textbf{three you work alone} $\to$ debrief.
   \end{block}
 \end{frame}
 
@@ -60,31 +62,17 @@
 \end{frame}
 }
 
-% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Experience \& Formalize: Twenty-Four Finishing Times}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
-  A 50-minute quiz. The teacher wrote down how long each of her 24 students took.
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item \textbf{Problem 1} --- the class record, and grouping it into blocks.
-    \item \textbf{Problem 2} --- two pictures of those same 24 times.
-  \end{itemize}
-  \begin{block}{Your job}
-    Use only what you already know. When the two pictures disagree, do not pick a favourite ---
-    work out \textbf{what was changed} to turn one into the other.
-  \end{block}
-\end{frame}
-
-% ── DEBRIEF DIVIDER ──────────────────────────────────────────────────────────
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
-    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
-    {\color{white}\bfseries\Large You already found what each picture keeps and what it throws
-    away. We are only giving them names.}\\[0.9cm]
-    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today. Write each one the
+    moment we use it.}
   \end{minipage}
 \end{frame}
 }
@@ -92,7 +80,7 @@
 % ── DISCRETE VS CONTINUOUS ───────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Two kinds of quantitative variable}
-  \sectionlabel{can a value land in between?}
+  \sectionlabel{notes section 1 $\cdot$ can a value land in between?}
   \vspace{4pt}
   \begin{columns}[t]
     \begin{column}{0.47\textwidth}
@@ -115,15 +103,15 @@
   \end{columns}
   \vspace{12pt}
   \begin{center}
-    {\small\color{slate} Ask it of the \textbf{variable}, not of the numbers you happen to
-    have written down. Rounded measurements are still continuous.}
+    {\large A gauge reads 13\,mm and never 13.4. Rainfall is still \redink{continuous.}}\\[6pt]
+    {\small\color{slate} Ask it of the \textbf{variable}, not of the digits somebody wrote down.}
   \end{center}
 \end{frame}
 
 % ── DISPLAYS THAT KEEP EVERY VALUE ───────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Displays that keep every value}
-  \sectionlabel{dotplot and stemplot}
+  \sectionlabel{notes section 2 $\cdot$ dotplot and stem plot}
   \vspace{2pt}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
@@ -140,7 +128,7 @@
       \end{center}
     \end{column}
     \begin{column}{0.46\textwidth}
-      \textbf{\color{navy}Stemplot} --- each value split into a \textbf{stem} (leading digits)
+      \textbf{\color{navy}Stem plot} --- each value split into a \textbf{stem} (leading digits)
       and a \textbf{leaf} (last digit).
       \vspace{4pt}
       \begin{center}
@@ -157,14 +145,15 @@
   \end{columns}
   \vspace{8pt}
   \begin{center}
-    {\small Both let you read \redink{every individual value} straight back off the picture.}
+    {\small They look nothing alike and carry identical information: both let you read
+    \redink{every individual value} straight back off the picture.}
   \end{center}
 \end{frame}
 
 % ── HISTOGRAM ────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Histogram}
-  \sectionlabel{height = how many fall in that interval}
+  \navyheader{Grouping: the table \emph{is} the histogram}
+  \sectionlabel{notes section 3 $\cdot$ height = how many fall in that interval}
   \vspace{2pt}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
@@ -185,8 +174,8 @@
     \end{column}
     \begin{column}{0.46\textwidth}
       \begin{itemize}\setlength{\itemsep}{6pt}
-        \item Bar height = how many observations fall in that \textbf{interval}
-              (EK UNC-1.G.1).
+        \item You built this in the interval table. Bar height = how many observations fall in
+              that \textbf{interval} (EK UNC-1.G.1).
         \item Individual values are \redink{gone}. You know 7 students finished in 15--19
               minutes, not which minutes.
         \item \textbf{The bars touch.} The axis is a number line, not a set of categories.
@@ -222,31 +211,52 @@
 % ── THE CRUX ─────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Why the two pictures disagreed}
-  \sectionlabel{the whole point of today}
+  \sectionlabel{notes section 4 $\cdot$ the whole point of today}
   \vspace{6pt}
   \begin{itemize}\setlength{\itemsep}{8pt}
-    \item Same 24 times. Same total. Nothing added, nothing removed.
+    \item $4+7+1+0+1+5+5+1 = 24$. \quad $12 + 12 = 24$. Nothing added, nothing removed.
     \item The only change: blocks of \textbf{5} minutes became blocks of \textbf{20}.
     \item At width 20, the fast group and the slow group land in the same two bars --- and the
           empty stretch between them \redink{disappears}.
   \end{itemize}
   \vspace{10pt}
   \begin{block}{Essential Knowledge (UNC-1.G.1)}
-    \textbf{Altering the interval widths can change the appearance of the histogram.}
-    Too wide hides real features. Too narrow shows noise.
+    \textbf{Altering the interval widths can change the appearance of the histogram} ---
+    without changing a single data value.
   \end{block}
-  \vspace{4pt}
-  {\small\color{slate} So: when someone hands you a histogram, look at the interval width
-  before you believe the shape.}
 \end{frame}
 
-% ── APPLICATION ──────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Application: The Bus Stop}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  Eighteen riders' waiting times, in minutes.
+  \navyheader{But narrower is not automatically better}
+  \sectionlabel{the counterweight --- do not skip this}
+  \vspace{10pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Blocks of 20 minutes}
+        Too wide. The gap between the fast and slow finishers is averaged away.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Blocks of 1 minute}
+        Too narrow. These 24 times barely repeat, so almost every bar is 0 or 1 tall ---
+        every value back, and no shape at all.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{16pt}
+  \begin{center}
+    {\large A histogram is a \redink{choice}, not a fact.}\\[8pt]
+    {\small\color{slate} So before you believe a shape, check what width produced it.}
+  \end{center}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Bus Stop}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  Eighteen riders' waiting times at one bus stop, in minutes --- and a third kind of display.
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item How many riders? How many waited more than 8 minutes?
+    \item How many riders? How many waited longer than 8 minutes?
     \item Is waiting time discrete or continuous --- and how can you tell from the
           \emph{variable}?
     \item Regroup into 5-minute blocks. What happens to the two riders out at 11 and 12?
@@ -257,36 +267,77 @@
   \end{block}
 \end{frame}
 
+% ── YOU DO ───────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Independent Practice}
+  \sectionlabel{You do $\cdot$ 3 items $\cdot$ on your own}
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item 120 library books. One-day blocks: ragged. Seven-day blocks: three clean bars.
+          Is the ragged one wrong?
+    \item Number of pets, and the pet's weight rounded to the nearest kilogram. Classify each.
+    \item A bar of height 3 over 85--89. Did three students score 87?
+  \end{itemize}
+  \begin{block}{Silent and alone}
+    I am circulating. \emph{Item 1} is the one I am reading over your shoulder --- and it runs
+    today's idea \redink{backwards} from the notes. Careful.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: both totals were 24}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Nothing was thrown away}
+        Both pictures held all 24 times. So neither one lied.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Only the width changed}
+        And that was enough to make a real gap vanish.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{block}{Two things to say out loud}
+    Name a question a \redink{dotplot} answers that a histogram cannot. Then name one where
+    200 values make the histogram the better choice. Neither display wins in general --- the
+    question decides.
+  \end{block}
+\end{frame}
+
 % ── HOMEWORK (started in class, scored) ─────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Homework --- start it now}
-  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \sectionlabel[goldacc]{5 exercises $\cdot$ scored $\cdot$ due next class}
   \begin{itemize}\setlength{\itemsep}{5pt}
     \item Four variables: discrete or continuous?
     \item Two histograms of 60 test scores. Which one is \emph{wrong}?
     \item Bars touch, bars have gaps --- what is that telling you?
-    \item A stemplot row, and what a histogram cannot give back.
+    \item A stem plot row, and what a histogram cannot give back.
     \item One multiple-choice item, with a one-sentence justification.
   \end{itemize}
   \begin{block}{This one is graded}
-    This is your \redink{scored} homework, due next class. Start with 1, 2, and 5 while
-    I am still here to answer questions --- finish the rest at home.
+    This is your \redink{scored} homework, on paper, due next class. Start with 1, 2, and 5
+    while I am still here to answer questions --- finish the rest at home.
   \end{block}
 \end{frame}
 
-% ── AP PRACTICE & PREVIEW (optional, unscored) ──────────────────────────────
+% ── AP PRACTICE & PREVIEW (assigned, unscored) ──────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{AP Practice \& what's next}
-  \sectionlabel[goldacc]{AP Practice --- optional, not scored}
+  \sectionlabel[goldacc]{AP Practice --- assigned, not scored}
   \begin{itemize}\setlength{\itemsep}{5pt}
     \item Four multiple-choice items on a 20-day rainfall record.
     \item One free-response set: classify, group, and defend a display choice.
     \item Optional: find a published histogram and interrogate its interval width.
   \end{itemize}
-  \begin{block}{Optional --- but this is what the exam looks like}
-    The AP Practice page is \textbf{not required and not graded}. Work it for the reps,
-    and bring what you get stuck on to study hall or office hours. The \redink{graded}
-    homework is the section behind it.
+  \begin{block}{Not graded --- but this is what the exam looks like}
+    The AP Practice page is \textbf{not scored}. Work it for the reps, and bring what you
+    get stuck on to study hall or office hours. The \redink{graded} homework is the section
+    behind it.
   \end{block}
 \end{frame}
 

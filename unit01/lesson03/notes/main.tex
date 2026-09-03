@@ -1,0 +1,367 @@
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Guided Notes & Practice
+% THE in-class document. There is no group activity in this course — the notes carry the whole
+% gradual release (I do -> we do -> you do), 38 minutes, closed by a spoken 8-minute debrief.
+%   I DO      : the objective box, the vocabulary box, and notes sections 1-4.     (~18 min)
+%   WE DO     : the practicebox ("Guided Practice") — The Bus Stop, together.      (~12 min)
+%   YOU DO    : "Independent Practice", alone — item 1 is the formative check.     (~8 min)
+% There is NO "Putting It Together" transfer set and NO reflection box in this lesson: the
+% debrief is spoken, off the Independent Practice papers, and the rainfall record appears
+% only in ../ap_practice/.
+% Vocabulary is GIVEN here, not discovered. Section 4 is the trap that decides the lesson —
+% the same 24 times drawn at two interval widths tell two different stories, and neither
+% picture is wrong (EK UNC-1.G.1).
+%
+% THE DATA (24 quiz finishing times, used in sections 2-4):
+%   11 12 12 14 15 15 16 17 18 18 19 20 | 34 35 36 36 38 39 40 41 42 43 44 46
+% Width-5 bins from 10: 4, 7, 1, 0, 1, 5, 5, 1  -> two clear clumps with a gap at 25-30.
+% Width-20 bins from 10: 12, 12            -> two equal bars; the gap vanishes completely.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, and every
+% \writelines{n} becomes exactly n \ansline{} calls. Blank widths are sized close to the answers
+% so the two files wrap identically. Every \begin{work} block and every \answerspace{H}{} height
+% is authored BYTE-IDENTICALLY in both files.
+% VOCABPAR: \par brackets each \termblank inside the vocabbox.
+% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read. Students "construct" only
+% by filling in the interval table in section 3 — never by drawing an axis or plotting a point.
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+% Authored byte-identically in notes_key/ — the blank reserves exactly H and prints nothing.
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.3}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.12in}
+
+\boxguard[14]
+\begin{objectivebox}
+\small
+By the end of these notes I will be able to:
+\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
+  \item classify a quantitative variable as \textbf{discrete} or \textbf{continuous}, and say
+        why rounding the recorded values does not change the answer;
+  \item read a \textbf{dotplot}, a \textbf{stem plot}, and a \textbf{histogram}, and say exactly
+        what each one keeps and what it throws away;
+  \item explain how changing the \textbf{interval width} changes what a histogram shows ---
+        without changing a single data value.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Discrete variable}
+\par
+\termblank{Continuous variable}
+\par
+\termblank{Histogram}
+\par
+\termblank{Interval width}
+\par
+\end{vocabbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+\boxguard[20]
+\begin{notesbox}{1. Two Kinds of Quantitative Variable}
+\small
+Last lesson every column we summarized was categorical, and we counted it. Today's columns hold
+\emph{numbers}, and numbers come in two kinds.
+
+\vspace{5pt}
+A \textbf{discrete} variable takes a \blank{2.0cm} number of values --- you can list them, and
+nothing sits between two neighbours. A \textbf{continuous} variable takes \blank{2.2cm} many:
+between any two values there is always \blank{2.4cm}.
+
+\vspace{5pt}
+\textbf{The test is the one from the warm-up.} Ask whether a value like 7.5 makes sense.
+A teacher records two things about the same quiz: how many questions each student attempted,
+and how many minutes each student took.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{0.92\linewidth}{@{} l Y Y @{}}
+\rowcolor{sky}
+\textbf{Variable} & \textbf{Counted or measured?} & \textbf{Discrete or continuous?} \\
+\hline
+Questions attempted & counted  & \blank{2.2cm} \\
+Minutes to finish   & measured & \blank{2.2cm} \\
+\end{tabularx}
+\end{center}
+
+\vspace{5pt}
+\begin{center}
+\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
+\textbf{Careful --- the recorded digits are not the variable.} A rain gauge reports 13 mm and
+never 13.4 mm, but rainfall is still \emph{continuous}: the rain that fell was some real amount,
+and the gauge rounded it. Ask about the \blank{1.8cm}, not about the digits somebody wrote down.
+\emph{Probe:} \emph{could a better instrument have split that value?}}}
+\end{center}
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 2 — displays that keep every value ─────────────────────────
+\boxguard[30]
+\begin{notesbox}{2. The Class Record: Displays That Keep Every Value}
+\small
+Twenty-four students took that 50-minute quiz. Here is how the teacher first wrote down how long
+each one took. The digit left of the line is the \emph{tens} digit; each digit right of it is a
+\emph{ones} digit, so the row marked \textbf{3} holds 34, 35, 36, 36, 38, and 39.
+
+\vspace{4pt}
+\begin{minipage}[t]{0.34\linewidth}
+\vspace{0pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} r | l @{}}
+\textbf{1} & 1 \ 2 \ 2 \ 4 \ 5 \ 5 \ 6 \ 7 \ 8 \ 8 \ 9 \\
+\textbf{2} & 0 \\
+\textbf{3} & 4 \ 5 \ 6 \ 6 \ 8 \ 9 \\
+\textbf{4} & 0 \ 1 \ 2 \ 3 \ 4 \ 6 \\
+\end{tabular}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.62\linewidth}
+\vspace{0pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.86]
+  \draw[->, thick] (-0.25,0) -- (8.4,0);
+  \foreach \x/\lab in {0/10, 2/20, 4/30, 6/40, 8/50} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \v/\n in {11/1, 12/2, 14/1, 15/2, 16/1, 17/1, 18/2, 19/1, 20/1,
+                     34/1, 35/1, 36/2, 38/1, 39/1, 40/1, 41/1, 42/1, 43/1, 44/1, 46/1} {
+    \foreach \k in {1,...,\n} {
+      \fill[navy] ({(\v-10)*0.2},{0.155*\k}) circle (0.052);}}
+  \node[font=\tiny] at (4.0,-0.52) {Minutes to finish};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{6pt}
+\textbf{Read them.} Students shown: \blank{1.2cm} \quad Fastest: \blank{1.5cm} \quad
+Slowest: \blank{1.5cm}\\[4pt]
+How many students took exactly 36 minutes? \blank{1.2cm}
+
+\vspace{6pt}
+On the left is a \textbf{stem plot}: each value is split into a \blank{1.3cm} (the leading
+digits) and a \blank{1.3cm} (the final digit). On the right is a \textbf{dotplot}: one
+\blank{1.1cm} per observation, stacked above its value on a number line.
+
+\vspace{4pt}
+The two displays look nothing alike and carry exactly the same information, because both keep
+\blank{2.4cm} individual value. That is why you can still find the two 36s in either one.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 3 — grouping ───────────────────────────────────────────────
+\boxguard[30]
+\begin{notesbox}{3. Grouping: From the Record to a Histogram}
+\small
+Twenty-four dots is readable. Two hundred would not be. So we \textbf{group}. Count the times
+off the plots above into five-minute blocks:
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Minutes} & 10--14 & 15--19 & 20--24 & 25--29 & 30--34 & 35--39 & 40--44 & 45--49 \\
+\hline
+\textbf{Students} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
+\blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{That table is already the histogram.} A \textbf{histogram} draws each interval's count
+as a bar, so the height of a bar is the number of observations falling in that \blank{1.8cm}.
+What you give up is the individual values: after grouping, they are \blank{1.2cm}. Nothing in
+the picture below can tell you that two students took exactly 36 minutes.
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.74]
+  \foreach \y/\lab in {0/0, 1.4/5, 2.8/10} {
+    \draw[linegray, very thin] (0,\y) -- (5.6,\y);
+    \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+  \foreach \i/\c in {0/4, 1/7, 2/1, 3/0, 4/1, 5/5, 6/5, 7/1} {
+    \fill[navy] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});
+    \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});}
+  \draw[->, thick] (0,0) -- (0,3.9);
+  \draw[->, thick] (0,0) -- (6.0,0);
+  \foreach \x/\lab in {0/10, 1.4/20, 2.8/30, 4.2/40, 5.6/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.12) {\lab};}
+  \node[font=\tiny] at (2.8,-0.62) {Minutes to finish};
+  \node[rotate=90, font=\tiny] at (-0.72,1.6) {Students};
+\end{tikzpicture}
+\end{center}
+
+\vspace{2pt}
+\textbf{The bars touch}, and last lesson's bar-graph bars did not. The difference is the
+horizontal axis: here it is a \blank{2.4cm}, so the intervals are next to each other with
+nothing between them. A bar graph's axis held separate category names, so those bars needed
+\blank{1.3cm}.
+
+\vspace{5pt}
+\textbf{One more display, named now and used later.} A \textbf{cumulative graph} answers a
+different question about the same 24 times: how many students finished \blank{2.6cm} a given
+number of minutes. It returns in Lesson 1.6 with percentiles.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── I DO: section 4 — the trap ───────────────────────────────────────────────
+\boxguard[30]
+\begin{notesbox}{4. The Same 24 Times, Drawn Twice}
+\small
+Both pictures below were built from the \emph{same} 24 finishing times. Nothing was left out of
+either one.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.68]
+  % ── left: five-minute blocks ──
+  \foreach \y/\lab in {0/0, 1.4/5, 2.8/10} {
+    \draw[linegray, very thin] (0,\y) -- (5.6,\y);
+    \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+  \foreach \i/\c in {0/4, 1/7, 2/1, 3/0, 4/1, 5/5, 6/5, 7/1} {
+    \fill[navy] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});
+    \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});}
+  \draw[->, thick] (0,0) -- (0,4.0);
+  \draw[->, thick] (0,0) -- (6.0,0);
+  \foreach \x/\lab in {0/10, 1.4/20, 2.8/30, 4.2/40, 5.6/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.12) {\lab};}
+  \node[font=\tiny] at (2.8,-0.62) {Minutes to finish};
+  \node[font=\bfseries\scriptsize] at (2.8,4.3) {Blocks of 5 minutes};
+  % ── right: twenty-minute blocks ──
+  \begin{scope}[xshift=8.0cm]
+    \foreach \y/\lab in {0/0, 1.4/5, 2.8/10} {
+      \draw[linegray, very thin] (0,\y) -- (5.6,\y);
+      \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+    \foreach \i/\c in {0/12, 1/12} {
+      \fill[goldacc] ({\i*2.8},0) rectangle ({(\i+1)*2.8},{\c*0.28});
+      \draw[white, very thin] ({\i*2.8},0) rectangle ({(\i+1)*2.8},{\c*0.28});}
+    \draw[->, thick] (0,0) -- (0,4.0);
+    \draw[->, thick] (0,0) -- (6.0,0);
+    \foreach \x/\lab in {0/10, 2.8/30, 5.6/50} {
+      \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.12) {\lab};}
+    \node[font=\tiny] at (2.8,-0.62) {Minutes to finish};
+    \node[font=\bfseries\scriptsize] at (2.8,4.3) {Blocks of 20 minutes};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\vspace{4pt}
+\textbf{Before arguing about them, check that neither one dropped anybody.} Add the bar heights:
+
+\begin{work}
+\text{Blocks of 5 minutes} &= 4+7+1+0+1+5+5+1 = 24 \\[4pt]
+\text{Blocks of 20 minutes} &= 12 + 12 = 24
+\end{work}
+
+Both come to \blank{1.1cm}, so no data went missing either way. The left picture says the class
+split into a fast group and a slow group with almost nobody in between; the right picture says
+students finished \blank{2.4cm} across the period. The only thing that was changed is the
+\blank{2.6cm}.
+
+\vspace{6pt}
+\begin{center}
+\fcolorbox{navy}{sky}{\parbox{0.92\linewidth}{\centering\small
+\textbf{Changing the interval width changes the \blank{2.2cm} of a histogram}\\
+--- without changing a single data value.}}
+\end{center}
+
+\vspace{6pt}
+\textbf{So neither picture is wrong, and they are not equally useful.} The teacher who wants to
+know whether the quiz was the right length needs the \blank{2.0cm} picture, because the gap she
+has to see is the thing the wider blocks average away.
+
+\vspace{4pt}
+\textbf{Narrower is not automatically better either.} Redraw these 24 times in blocks of one
+minute and almost every bar is \blank{1.6cm} tall, because the values barely repeat: you get
+every value back and no shape at all. Too wide \blank{1.4cm} features; too narrow shows
+\blank{1.4cm}. \emph{A histogram is a choice, not a fact} --- so before you believe a shape,
+check what width produced it.
+\end{notesbox}
+
+\vspace{0.10in}
+
+% ── WE DO: guided practice ───────────────────────────────────────────────────
+\boxguard[26]
+\begin{practicebox}
+\small
+\textbf{The Bus Stop --- we work this one together.} Here are the waiting times, in minutes, for
+18 riders at one bus stop on a weekday morning.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.86]
+  \draw[->, thick] (-0.2,0) -- (7.4,0);
+  \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10, 6/12, 7/14} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {0.5/2, 1/3, 1.5/4, 2/3, 2.5/2, 3/1, 5.5/1, 6/2} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.07); }}
+  \node[font=\tiny] at (3.6,-0.52) {Minutes waited};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
+  \item How many riders are shown? \blank{1.5cm} \quad How many waited longer than 8 minutes?
+        \blank{2.6cm} \quad Which display is this? \blank{1.8cm}
+  \item Is waiting time discrete or continuous? \blank{2.2cm} \quad Say how you can tell from
+        the variable itself rather than from the picture.\\[3pt]
+        \writelines{2}
+  \item \textbf{Redraw it.} Suppose these 18 times were grouped into five-minute blocks instead.
+        What happens to the two riders out at 11 and 12 minutes, and would the new picture still
+        show that they stand apart from everyone else?\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.10in}
+
+% ── YOU DO: independent practice ─────────────────────────────────────────────
+\boxguard[24]
+\begin{notesbox}{Independent Practice --- You Try}
+\small
+Work these on your own. I will circulate.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item A librarian records how many days each of 120 borrowed books was kept. Drawn in
+        \textbf{one-day} blocks the histogram is ragged --- nearly every bar is 1 or 2 books
+        tall. Drawn in \textbf{seven-day} blocks it shows three clean bars.
+
+        \vspace{3pt}
+        A classmate says the one-day version must be wrong, because a histogram should not look
+        that ragged. Do you agree? Say which version you would hand someone who wants the
+        overall pattern, and why.\\[3pt]
+        \writelines{2}
+  \item A veterinary form records the \textbf{number of pets} in a household and the
+        \textbf{pet's weight, rounded to the nearest kilogram}.
+
+        \vspace{3pt}
+        Number of pets: \blank{2.2cm} \quad Weight in kilograms: \blank{2.4cm}
+
+        \vspace{3pt}
+        A classmate says weight has to be discrete here, because every recorded weight is a
+        whole number. Answer him.\\[3pt]
+        \writelines{2}
+  \item A histogram of 40 quiz scores has a bar of height 3 over the interval 85--89. A student
+        writes, ``Three students scored 87.'' Say what the histogram actually supports, and name
+        a display that would let you check his claim.\\[3pt]
+        \writelines{2}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}
