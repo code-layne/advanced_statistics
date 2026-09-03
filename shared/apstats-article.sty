@@ -45,10 +45,16 @@
 % \termans (apstats-key) occupies exactly the same height whether its definition
 % sets on one line or two — the vocabulary box cannot drift blank vs. keyed.
 \newcommand{\termrowheight}{1.30cm}
+% Leading inset ABOVE each vocabulary term, taken from INSIDE the fixed row
+% height — the row still costs exactly \termrowheight, so no lesson's page count
+% moves. It buys the gap the first term was missing under the box's intro line.
+\newlength{\termrowinset}
+\setlength{\termrowinset}{7pt}
 \newlength{\aps@termwd}
 \newcommand{\termblank}[1]{%
   \settowidth{\aps@termwd}{\textbf{#1:}}%
   \noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
     \textbf{\textcolor{navy}{#1:}}\quad%
     \blank{\dimexpr\linewidth-\aps@termwd-1.6em\relax}%
   \end{minipage}\par}
@@ -70,10 +76,41 @@
     }%
     \vspace{1.5em}\par\noindent}
 
+% ── Cover banner: \coverbanner{Unit 1}{Lesson 1.3 \quad Title} ────────────────
+% The full-bleed navy band at the top of a packet cover. The band is MEASURED
+% from the title block it holds, so a long lesson title that wraps to a second
+% line grows the band instead of spilling out the bottom of it. Hard-coding the
+% fill height (the old \fill ... [yshift=-0.9in] pattern) clipped the lesson
+% line on every long title once the covers moved to 12pt.
+\newsavebox{\aps@bannerbox}
+\newlength{\aps@bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\aps@bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{skymid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\aps@bannerht}{\dimexpr\ht\aps@bannerbox+\dp\aps@bannerbox
+                            +2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[navy] (current page.north west)
+      rectangle ([yshift=-\aps@bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\aps@bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so
+  % reserve only what the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\aps@bannerht-0.6in+0.16in\relax}%
+}
+
 % ── Student name rows ─────────────────────────────────────────────────────────
 \newcommand{\namedateperiod}{%
     \begin{tabularx}{\linewidth}{X X X}
-    Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
+    Name:\;\blank{4.0cm} & Date:\;\blank{2.6cm} & Period:\;\blank{1.5cm}
     \end{tabularx}}
 
 \newcommand{\namepartnerperiod}{%
