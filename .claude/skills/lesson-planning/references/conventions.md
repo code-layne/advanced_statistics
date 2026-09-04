@@ -322,7 +322,7 @@ must-land section; the questions asked while students hold the pen; the formativ
 its reteach trigger) → **Group Activity** ("one activity for the whole class — there is no tiered
 version"; launch + ground rule, then what students do | what the teacher does) → **Debrief —
 whole class** (open on the *almost*-right crux answer; the Debrief-box walkthrough) →
-**AP Practice — assigned, not scored** → **Homework — scored, due next class** (with the
+**AP Practice — assigned, not scored** → **Homework — scored, due the first class after two study halls** (with the
 DeltaMath override) → Watch For → Close & Assign → Teacher Notes (`[Warm-Up]`,
 `[Guided Notes \& Practice]`, `[Group Activity]`, `[AP Practice]`, `[Homework]`).
 

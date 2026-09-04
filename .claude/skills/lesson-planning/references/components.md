@@ -80,7 +80,7 @@ vocabulary freely. Canonical section order:
    short (item 1 is the one that cannot be cut).
 10. **AP Practice — assigned, not scored** — `skillbox{goldbox}`: what each item targets, the
     spiral item, the part worth reading closely, and when to go over it. The cover reads **NA**.
-11. **Homework — scored, due next class** — `skillbox{goldbox}`: the assignment, the scoring
+11. **Homework — scored, due the first class after two study halls** — `skillbox{goldbox}`: the assignment, the scoring
     breakdown, the item that predicts next-lesson performance, and the **DeltaMath override**.
 12. **Watch For** — `skillbox{redbox}`: misconceptions keyed to item numbers; cold-call prompts.
 13. **Close & Assign (4 min)** — `skillbox{goldbox}`: hand the homework launch first, then close
@@ -214,7 +214,7 @@ in the key. The next-lesson preview does **not** live here; it closes the packet
 `homework/` (+ `homework_key/`) — **the lesson's GRADED practice and the last component in the
 packet**, generated for every lesson. `\pageheader{...}{Homework}` (no name row).
 
-Open with a `remindbox` — "This is your graded homework. It is scored and due next class." —
+Open with a `remindbox` — "This is your graded homework. It is scored and due the first class after two study halls." —
 authored byte-identically in both files. Then 5–7 items in a **fresh context** the lesson has not
 used, grouped into two or three titled `notesbox`es (Part A / Part B / Part C). Include at least
 one AP-style multiple-choice item with a required one-sentence justification. Close the packet
