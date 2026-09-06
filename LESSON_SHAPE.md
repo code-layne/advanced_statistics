@@ -25,6 +25,7 @@ structure_source: ced
 spec_dir: spec
 course_index: COURSE_OUTLINE.md
 check_target: false
+point_size: 12
 ---
 
 # Lesson Shape — AP Statistics
