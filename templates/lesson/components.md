@@ -4,7 +4,7 @@ The spec for authoring each file after scaffolding. The scaffolder (`scripts/new
 gives you a correctly-preambled skeleton with TODO markers; this file says what fills them.
 **Always also open a real built lesson in the same course as the gold reference** — these specs
 summarize the pattern, but the live project is authoritative. For macros and boxes see
-`references/conventions.md`.
+the shared skill's `references/conventions.md` (`~/.claude/skills/lesson-planning/`).
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
 [**Guided notes & practice**](#guided-notes--practice) · [**Group activity**](#group-activity) ·
