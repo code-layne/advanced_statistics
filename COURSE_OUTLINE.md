@@ -1,13 +1,13 @@
 # Statistics — Course Outline
 
-Shepherd · 2026–2027 · **9 units · 80 lessons**
+Shepherd · 2026–2027 · **9 units · 78 lessons**
 
 Titles and focus lines are taken from each unit's cover sheet
 (`unitXX/unit_cover/main.tex`) and each lesson plan (`unitXX/lessonYY/main.tex`).
 
 | Unit | Title | Lessons | Sample test |
 | --- | --- | ---: | --- |
-| 1 | Exploring One-Variable Data | 10 | yes |
+| 1 | Exploring One-Variable Data | 8 | yes |
 | 2 | Exploring Two-Variable Data | 9 | yes |
 | 3 | Collecting Data | 7 | yes |
 | 4 | Probability, Random Variables, and Probability Distributions | 12 | **no** |
@@ -19,7 +19,7 @@ Titles and focus lines are taken from each unit's cover sheet
 
 ---
 
-## Unit 1 — Exploring One-Variable Data (10 lessons)
+## Unit 1 — Exploring One-Variable Data (8 lessons)
 
 Introduces the foundational language and tools of statistics: classifying variables,
 organizing and representing categorical and quantitative data, and describing
@@ -28,16 +28,14 @@ statistics, boxplots, comparisons across groups, and the Normal distribution.
 
 | # | Title | Focus |
 | --- | --- | --- |
-| 1.1 | Introducing Statistics | What can we learn from data? Statistical questions, individuals, variables, the data cycle |
-| 1.2 | The Language of Variation | Variables vs. values; categorical vs. quantitative; distribution |
-| 1.3 | Representing a Categorical Variable with Tables | Frequency and relative frequency tables; marginal and joint frequencies |
-| 1.4 | Representing a Categorical Variable with Graphs | Bar graphs, segmented bar graphs, pie charts; comparing displays |
-| 1.5 | Representing a Quantitative Variable with Graphs | Dotplots, stemplots, histograms; choosing a display |
-| 1.6 | Describing the Distribution of a Quantitative Variable | Shape, center, spread, unusual features (SOCS); describing in context |
-| 1.7 | Summary Statistics for a Quantitative Variable | Mean, median, range, IQR, standard deviation; resistance to outliers |
-| 1.8 | Graphical Representations of Summary Statistics | Boxplots and modified boxplots; the 1.5 × IQR outlier rule |
-| 1.9 | Comparing Distributions of a Quantitative Variable | Parallel boxplots, back-to-back stemplots; comparing shape, center, spread |
-| 1.10 | The Normal Distribution and z-Scores | Properties of the Normal curve; 68–95–99.7 rule; standardized scores |
+| 1.0 | Introducing Statistics: What Can We Learn from Data? | Numbers in context; individuals and variables; statistical questions and variability |
+| 1.1 | The Language of Variation | Categorical vs. quantitative variables; measured or counted, not written in digits |
+| 1.2 | Representing a Categorical Variable | Frequency and relative frequency tables; bar graphs; comparing groups of different sizes |
+| 1.3 | Representing a Quantitative Variable with Graphs | Discrete vs. continuous; dotplots, stem plots, histograms; interval width |
+| 1.4 | Describing the Distribution of a Quantitative Variable | Shape, unusual features, center, variability; every description in context |
+| 1.5 | Summary Statistics for a Quantitative Variable | Mean, median, quartiles, percentiles, range, IQR, standard deviation; resistance |
+| 1.6 | Boxplots and Comparing Distributions | Five-number summary; boxplots; comparing groups on center, variability, unusual features |
+| 1.7 | The Normal Distribution and z-Scores | Parameter vs. statistic; z-scores; the empirical rule; relative position |
 
 ## Unit 2 — Exploring Two-Variable Data (9 lessons)
 
