@@ -1,5 +1,5 @@
 %! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{ltablex}
@@ -7,40 +7,28 @@
 
 \begin{document}
 
-% Full-bleed navy banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 1}{Lesson 1.5 \quad Summary Statistics for a Quantitative Variable}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.5 \quad Summary Statistics for a Quantitative Variable}}
-\end{center}
-
-\vspace{0.22in}
 \namedateperiod
 \vspace{0.18in}
 
 \boxguard[14]
 \begin{learningtargetbox}
 \small
-% SPOILER RULE (EFFL): plain language only. The formal terms this lesson's debrief attaches —
-% statistic, quartile, Q1, Q3, interquartile range, IQR, percentile, range as a single number,
-% standard deviation, variance, resistant, nonresistant, and the two outlier rules — may not
-% appear here. `Average' and `the middle value' are prior knowledge from middle school and are
-% allowed. The AP Learning Objectives (UNC-1.I, UNC-1.J, UNC-1.K) live in the lesson plan.
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objectives (UNC-1.I, UNC-1.J, UNC-1.K) stay in the teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} find the average of a set of values and the value sitting in the middle of it,
-        and say what it means when the two disagree.
-  \item \ldots{} show how one unusual value can drag one of those summaries a long way while the
-        other does not move at all.
-  \item \ldots{} put a single number on how spread out a set of values is --- and say what that
-        number can be fooled by.
-  \item \ldots{} decide which summary to report, and defend the decision from the shape of the
-        picture.
+  \item \ldots{} calculate the \textbf{mean} and the \textbf{median} of a quantitative
+        variable, and find the \textbf{quartiles} $Q_1$ and $Q_3$ by splitting an ordered list.
+  \item \ldots{} read a \textbf{percentile} in context, and put a single number on spread ---
+        the \textbf{range}, the \textbf{interquartile range}, or the \textbf{standard deviation}.
+  \item \ldots{} say which summaries one unusual value can hijack, using the words
+        \textbf{resistant} and \textbf{nonresistant}.
+  \item \ldots{} choose which pair of summaries to report and defend the choice from the
+        \textbf{shape} of the distribution.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -54,18 +42,16 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up & A shape, an average, and one ordered list cut into halves & \blank{1.2cm} \\
-2 & Experience \& Formalize & \emph{Nine Paychecks} and \emph{Two Delivery Routes} --- two
-                 problems with your group, then the \mbox{QuickNotes} we fill in together and one
-                 application we work together & \blank{1.2cm} \\
+1 & Warm-Up & A shape from a dotplot, an average, and one ordered list cut into quarters & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Nine paychecks, three delivery routes, and the summaries that
+                 move when one value does --- then eleven quiz scores worked together & \blank{1.2cm} \\
 % AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
-% The Homework in row 4 is this lesson's GRADED practice and closes the packet — it is the
-% set that used to run in class as Check Your Understanding.
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
 3 & AP Practice & Household water use in 15 homes: AP-style multiple choice and one
-                 free-response set & \textbf{NA} \\
-4 & Homework & Averages and middles, one value changed, an ordered list cut into quarters,
-                 reading a ranked position in a sentence, and one multiple-choice item ---
-                 \textbf{scored, due next class} & \blank{1.2cm} \\
+                 free-response set --- practice, not a grade & \textbf{NA} \\
+4 & Homework & Commutes, summer books, homework minutes, a percentile, and one multiple-choice
+                 item --- \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -76,11 +62,12 @@
 \boxguard[8]
 \begin{remindbox}
 \small
-In this lesson you will \textbf{experience first, formalize later}: your group gets nine
-paychecks from one small company and two delivery routes' worth of times, and works out what a
-single summary number can honestly claim about a group of people --- only afterward will we name
-the summaries. Two of your answers will be \emph{\$250 apart and both correct}. Figuring out how
-that is possible, and which one you would be willing to print, is the whole point.
+Nine paychecks have a mean of \$1{,}000 and a median of \$750, and \textbf{both are correct}.
+Swap the owner's \$3{,}000 for \$750 and the mean falls \$250 while the median does not move:
+mean, standard deviation, and range are \textbf{nonresistant}; median and IQR are
+\textbf{resistant}. The shape picks the pair you report --- skewed or an outlier present, median
+and IQR; roughly symmetric with no outliers, mean and standard deviation. And a range is
+\textbf{one number}, maximum minus minimum --- never ``from 27 to 51.''
 \end{remindbox}
 
 \end{document}

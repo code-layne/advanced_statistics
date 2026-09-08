@@ -23,28 +23,30 @@
 \end{frame}
 }
 
-% EFFL flow: targets (SPOILER-FREE) → hook → activity launch → debrief divider → formalization
-% frames → the crux → application → homework (started in class) → AP Practice → close.
-% Nothing before the divider may say statistic, quartile, Q1, Q3, interquartile range, IQR,
-% percentile, range (as one number), standard deviation, variance, resistant, or nonresistant.
+% GRADUAL RELEASE deck: title → targets → warm-up hook → I DO (notes frames) → WE DO (guided
+% practice) → spoken debrief → close & START THE HOMEWORK, which is the individual
+% practice — there is no independent practice set in the notes → AP Practice → close.
+% There is NO group activity in this course — the notes carry the whole release. There is no
+% transfer set and no reflection box: the water-use record lives only in the AP Practice page.
+% Vocabulary is given up front here, not withheld: the notes frames ARE the direct instruction.
 \newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
-% ── LEARNING TARGETS (spoiler-free) ─────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 1.5}
   By the end of today, I can\ldots
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item find the average of a set of values and the value sitting in the middle of it.
-    \item show how one unusual value drags one of those summaries a long way while the other
-          does not move at all.
-    \item put a single number on how spread out a set of values is --- and say what that number
-          can be fooled by.
-    \item decide which summary to report, and defend the decision from the shape.
+    \item calculate the \textbf{mean} and the \textbf{median}, and find the \textbf{quartiles}
+          by splitting an ordered list.
+    \item put a single number on spread --- the \textbf{range}, the \textbf{IQR}, or the
+          \textbf{standard deviation} --- and say which one unusual value can hijack.
+    \item choose which pair of summaries to report and defend the choice from the
+          \textbf{shape}, using the words \textbf{resistant} and \textbf{nonresistant}.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{nine paychecks and three delivery routes} with your group $\to$ we name
-    what you found $\to$ practice. You will figure it out \emph{before} I give you the words.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
   \end{block}
 \end{frame}
 
@@ -63,41 +65,25 @@
 \end{frame}
 }
 
-% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Experience \& Formalize: Nine Paychecks}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 20 minutes}
-  A landscaping company with eight crew members and one owner. Then a courier company with
-  three delivery routes.
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item \textbf{Problem 1} --- nine paychecks. Two honest summaries, \$250 apart.
-    \item \textbf{Problem 2} --- two routes with the \emph{same} centre that are obviously not
-          the same. Then a third route that breaks your fix.
-  \end{itemize}
-  \begin{block}{Your job}
-    Use only what you already know. When two correct numbers disagree, do not pick a favourite
-    --- work out \textbf{which one is doing the disagreeing, and why}.
-  \end{block}
-\end{frame}
-
-% ── DEBRIEF DIVIDER ──────────────────────────────────────────────────────────
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
-    {\color{goldacc}\bfseries\small NOW WE NAME IT}\\[0.7cm]
-    {\color{white}\bfseries\Large You already found which summary moves and which one refuses
-    to. We are only giving them names.}\\[0.9cm]
-    {\color{skymid}\small Fill in your QuickNotes box as each name lands.}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Six terms go in the vocabulary box today. Write each one the
+    moment we use it.}
   \end{minipage}
 \end{frame}
 }
 
 % ── CENTRE: MEAN AND MEDIAN ──────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Two measures of centre}
-  \sectionlabel{a statistic is a numerical summary of sample data}
+  \navyheader{Two measures of center}
+  \sectionlabel{notes section 1 $\cdot$ a statistic is a numerical summary of sample data}
   \vspace{4pt}
   \begin{columns}[t]
     \begin{column}{0.47\textwidth}
@@ -120,93 +106,123 @@
   \end{columns}
   \vspace{12pt}
   \begin{center}
-    {\small\color{slate} Both are \textbf{statistics} --- numerical summaries of sample data
-    (EK UNC-1.I.1). Neither is the ``real'' one.}
+    {\large Both are correct. \redink{Nobody earns \$1{,}000.}}\\[6pt]
+    {\small\color{slate} Which one to \emph{report} is the question section 2 settles.}
   \end{center}
 \end{frame}
 
-% ── POSITION: PERCENTILES AND QUARTILES ─────────────────────────────────────
+% ── POSITION: QUARTILES AND PERCENTILES ─────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Measures of position}
-  \sectionlabel{where does a value sit in the pack?}
+  \sectionlabel{notes section 1 $\cdot$ where does a value sit in the pack?}
   \vspace{4pt}
   \begin{itemize}\setlength{\itemsep}{7pt}
-    \item The \textbf{$p$th percentile} is the value with $p\%$ of the data
-          \textbf{at or below} it (EK UNC-1.I.5).
+    \item Route A, twelve times: \; 27 \; 28 \; 28 \; 29 \; 29 \; 30 \; $|$ \; 30 \; 31 \; 31 \;
+          32 \; 32 \; 33. \quad Median $= 30$.
     \item \textbf{$Q_1$} is the median of the lower half; \textbf{$Q_3$} is the median of the
-          upper half (EK UNC-1.I.4). They are the 25th and 75th percentiles.
-    \item Between $Q_1$ and $Q_3$ sits the \redink{middle 50\%} of the data.
+          upper half (EK UNC-1.I.4). Here $Q_1 = 28.5$ and $Q_3 = 31.5$.
+    \item Between them sits the \redink{middle 50\%} of the data.
+    \item The \textbf{$p$th percentile} is the value with $p\%$ of the data \textbf{at or
+          below} it (EK UNC-1.I.5). $Q_1$ and $Q_3$ are the 25th and 75th.
   \end{itemize}
   \vspace{8pt}
   \begin{block}{You already did this}
-    Warm-up 3: \; 3 \; 5 \; \textbf{8} \; \textbf{9} \; \textbf{12} \; 15 \; 20. \;
-    You circled 9 (median), then 5 and 15. Those were $Q_1$ and $Q_3$.
+    Warm-up 3: \; 3 \; 5 \; 8 \; \textbf{9} \; 12 \; 15 \; 20. \;
+    You circled 9, then 5 and 15. Those were the median, $Q_1$, and $Q_3$.
   \end{block}
 \end{frame}
 
 % ── SPREAD ───────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Three measures of variability}
-  \sectionlabel{spread, as a single number}
+  \sectionlabel{notes section 2 $\cdot$ spread, as a single number}
   \vspace{4pt}
   \begin{itemize}\setlength{\itemsep}{7pt}
     \item \textbf{Range} $=$ maximum $-$ minimum. One number, \redink{not} an interval
-          (EK UNC-1.J.2). Route A: $33-27=6$ min. Route B: $42-18=24$ min.
-    \item \textbf{IQR} $= Q_3 - Q_1$ --- the width of the middle half. This is your problem 2d:
-          ignore the ends, measure the middle.
+          (EK UNC-1.J.2). Route A: $33-27=6$ minutes --- not ``27 to 33.''
+    \item \textbf{IQR} $= Q_3 - Q_1$ --- the width of the middle half. Route A: $31.5 - 28.5 = 3$.
     \item \textbf{Standard deviation} $s_x$ --- roughly the typical distance of a value from
           the mean (EK UNC-1.J.3). Its square $s_x^2$ is the \textbf{variance}.
   \end{itemize}
   \vspace{6pt}
   \begin{center}
     $\displaystyle s_x = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar x)^2}$
+    \qquad\qquad
+    {\small 26, 28, 30, 32, 34: \; $s_x^2 = \dfrac{40}{4} = 10$, \; $s_x \approx 3.16$}
   \end{center}
   \vspace{4pt}
-  {\small\color{slate} We read $s_x$ off technology in this course. Change the units and
+  {\small\color{slate} We read $s_x$ off technology from here on. Change the units and
   \emph{every} one of these is multiplied by the same factor (EK UNC-1.J.4).}
 \end{frame}
 
-% ── THE CRUX ─────────────────────────────────────────────────────────────────
+% ── THE CRUX, PART 1: ONE VALUE CHANGES ──────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Why your two answers were \$250 apart}
-  \sectionlabel{the whole point of today}
+  \navyheader{One value changes}
+  \sectionlabel{notes section 2 $\cdot$ the whole point of today}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{The owner's \$3{,}000 becomes \$750}
+        Mean: \$1{,}000 $\to$ \redink{\$750}\\[3pt]
+        Median: \$750 $\to$ \redink{\$750}
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Route C is Route A with one late package}
+        Range: 6 $\to$ \redink{24} --- the same as Route B\\[3pt]
+        IQR: 3 $\to$ \redink{3}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{center}
+    {\large The mean adds every value. The median asks only \redink{which one is fifth.}}\\[6pt]
+    {\small\color{slate} The range saw only the two ends. The IQR never touched the late
+    package.}
+  \end{center}
+\end{frame}
+
+% ── THE CRUX, PART 2: RESISTANT VS NONRESISTANT ──────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Resistant or nonresistant --- and which pair to report}
+  \sectionlabel{EK UNC-1.K.2 $\cdot$ Skill 4.B}
   \vspace{4pt}
   \begin{columns}[t]
-    \begin{column}{0.5\textwidth}
+    \begin{column}{0.47\textwidth}
       \begin{block}{Resistant}
         \textbf{Median} \quad\textbf{IQR}\\[3pt]
-        An outlier does not greatly affect them.
+        One extreme value barely moves them.
       \end{block}
-      \vspace{4pt}
-      {\small \$750 $\to$ \redink{\$750}}
     \end{column}
-    \begin{column}{0.46\textwidth}
+    \begin{column}{0.47\textwidth}
       \begin{block}{Nonresistant}
         \textbf{Mean} \quad\textbf{Standard deviation} \quad\textbf{Range}\\[3pt]
-        They are influenced by outliers (EK UNC-1.K.2).
+        One extreme value drags them.
       \end{block}
-      \vspace{4pt}
-      {\small \$1{,}000 $\to$ \redink{\$750}}
     \end{column}
   \end{columns}
   \vspace{10pt}
-  \begin{block}{Two outlier rules in this course (EK UNC-1.K.1)}
-    More than $1.5 \times \text{IQR}$ above $Q_3$ or below $Q_1$; \quad or 2 or more standard
-    deviations from the mean. The first one goes to work \textbf{next lesson}.
+  \begin{block}{The shape decides --- both measures of center are correct}
+    Skewed, or an outlier present $\to$ report the \redink{median and IQR}. \quad
+    Roughly symmetric, no outliers $\to$ report the \redink{mean and standard deviation}.
   \end{block}
+  \vspace{4pt}
+  {\small\color{slate} Two outlier rules (EK UNC-1.K.1): more than $1.5\times\text{IQR}$
+  past a quartile, or 2 or more standard deviations from the mean. The first one goes to work
+  next lesson.}
 \end{frame}
 
-% ── APPLICATION ──────────────────────────────────────────────────────────────
+% ── WE DO ────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Application: The Quiz Scores}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
+  \navyheader{Guided Practice: The Quiz Scores}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
   Eleven scores on a 20-point quiz: \; 12 \; 13 \; 14 \; 15 \; 15 \; 16 \; 17 \; 18 \; 18 \;
   19 \; 19.
   \begin{itemize}\setlength{\itemsep}{5pt}
     \item Fill the five-number summary: minimum, $Q_1$, median, $Q_3$, maximum.
-    \item Compute the range and the IQR.
+    \item Compute the range and the IQR --- one number each.
     \item Then the lowest score turns out to be a \textbf{1}, not a 12. Which of \emph{mean,
-          median, range, IQR} move?
+          median, range, IQR} move? Which pair would you report now?
   \end{itemize}
   \begin{block}{The question behind the question}
     Which \redink{position} in the ordered list did we change --- and is that position anywhere
@@ -214,10 +230,53 @@
   \end{block}
 \end{frame}
 
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \navyheader{You do: start the homework}
+  \sectionlabel{Last 8 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item Seven commutes: mean, median, and which one represents the office --- from the shape.
+    \item Five values, one changed to 32: what moved and what did not.
+    \item Twelve homework times: $Q_1$, $Q_3$, IQR --- and show the split.
+    \item A percentile of birth weight, interpreted in one sentence.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Item 2} is the one I am reading over your shoulder. If your median moved, flag me
+    before you leave.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: ``the median is more accurate''}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Almost right}
+        The median is not more \emph{accurate} --- the mean of the corrected scores really
+        is 15.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Right}
+        The median is \redink{resistant}: it only asks which score is sixth. The mean
+        touched the 1.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{block}{Two things to say out loud}
+    Name the person who earns the mean --- then the person who earns the median. Then give me
+    a data set where the \redink{mean and standard deviation} are the right pair. Neither
+    summary wins in general --- the shape decides.
+  \end{block}
+\end{frame}
+
 % ── HOMEWORK (started in class, scored) ─────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Homework --- start it now}
-  \sectionlabel{5 exercises $\cdot$ pairs first, then on your own}
+  \sectionlabel[goldacc]{5 exercises $\cdot$ scored $\cdot$ due the first class after two study halls}
   \begin{itemize}\setlength{\itemsep}{5pt}
     \item Seven commutes: mean, median, and which one represents the office.
     \item Five values, one changed to 32: what moved and what did not.
@@ -226,25 +285,26 @@
     \item One multiple-choice item, with a one-sentence justification.
   \end{itemize}
   \begin{block}{This one is graded}
-    This is your \redink{scored} homework, due next class. Start with 1, 2, and 5 while
-    I am still here to answer questions --- finish the rest at home.
+    This is your \redink{scored} homework, on paper, due the first class after two study halls.
+    Start with 1, 2, and 5 while I am still here to answer questions --- finish the rest at home.
   \end{block}
 \end{frame}
 
-% ── AP PRACTICE & PREVIEW (optional, unscored) ──────────────────────────────
+% ── AP PRACTICE & PREVIEW (assigned, unscored) ──────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{AP Practice \& what's next}
-  \sectionlabel[goldacc]{AP Practice --- optional, not scored}
+  \sectionlabel[goldacc]{AP Practice --- assigned, not scored}
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item Four multiple-choice items on 15 households' daily water use.
-    \item One free-response set: name the shape, then \emph{justify} which centre and which
+    \item Four multiple-choice items on 15 households' daily water use --- including which
+          pair to report, and why.
+    \item One free-response set: name the shape, then \emph{justify} which center and which
           spread you report.
     \item Optional: apply both outlier rules to the 620-gallon home and see whether they agree.
   \end{itemize}
-  \begin{block}{Optional --- but this is what the exam looks like}
-    The AP Practice page is \textbf{not required and not graded}. Work it for the reps,
-    and bring what you get stuck on to study hall or office hours. The \redink{graded}
-    homework is the section behind it.
+  \begin{block}{Not graded --- but this is what the exam looks like}
+    The AP Practice page is \textbf{not scored}. Work it for the reps, and bring what you
+    get stuck on to study hall or office hours. The \redink{graded} homework is the section
+    behind it.
   \end{block}
 \end{frame}
 
@@ -259,7 +319,8 @@
     distribution --- and whether one strange value is sitting in it --- is what decides which
     one you are allowed to quote.}\\[0.8cm]
     {\color{skymid}\small Next: Lesson 1.6 --- \emph{Boxplots and Comparing Distributions}.
-    Those five numbers become a picture, and the picture lets us compare two groups at once.}
+    Those five numbers become a picture, and the $1.5\times\text{IQR}$ rule decides where its
+    whiskers stop.}
   \end{minipage}
 \end{frame}
 }

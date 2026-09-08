@@ -1,0 +1,364 @@
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Guided Notes & Practice (Answer Key)
+% THE in-class document. There is no group activity in this course — the notes carry the whole
+% gradual release, closed by a spoken debrief. It runs SHORT on purpose: the period ends
+% with students starting the homework, which is where the individual practice lives.
+%   I DO      : the objective box, the vocabulary box, and notes sections 1-2.     (~20 min)
+%   WE DO     : the practicebox ("Guided Practice") — The Quiz Scores, together.   (~14 min)
+%   YOU DO    : nothing on this page — ../homework/ IS the individual practice,
+%               started in the last minutes of the period.
+% There is NO "Putting It Together" transfer set and NO reflection box in this lesson: the
+% debrief is spoken, and the household water-use record appears only in ../ap_practice/.
+% Vocabulary is GIVEN here, not discovered. The second half of section 2 is the crux that
+% decides the lesson — one paycheck moves the mean $250 and the median not at all, and one late
+% package hands Route C the same range as Route B while the IQR does not flinch (EK UNC-1.K.2).
+%
+% THE DATA
+%   Section 1 — nine weekly paychecks (printed out of order): 650 700 700 750 750 800 800 850 3000
+%     sum 9000 -> mean $1,000 ; median (5th of 9) $750.
+%   Section 1, second half — Route A, twelve delivery times, ordered:
+%     27 28 28 29 29 30 | 30 31 31 32 32 33   sum 360, mean 30, median 30, Q1 28.5, Q3 31.5
+%   Section 2 — Route A range 6, IQR 3.  Five-package route for the one hand s_x:
+%     26 28 30 32 34 -> mean 30, squared deviations 16 4 0 4 16, sum 40, s^2 = 10, s ~ 3.16.
+%   Section 2, second half (THE CRUX) — paycheck 3000 -> 750: sum 6750, mean $750, median $750.
+%     Route B: 18 20 22 24 26 29 | 31 34 36 38 40 42  mean 30, median 30, Q1 23, Q3 37,
+%              range 24, IQR 14
+%     Route C: 27 28 28 29 29 30 | 30 31 31 32 32 51  sum 378, mean 31.5, median 30,
+%              range 24 (same as B, from ONE package), IQR 3 (same as A)
+%   Guided Practice — eleven quiz scores 12 13 14 15 15 16 17 18 18 19 19: sum 176, mean 16,
+%     min 12, Q1 14, median 16, Q3 18, max 19, range 7, IQR 4.  With the 12 -> 1: sum 165,
+%     mean 15, range 18, median 16, IQR 4.
+%
+% GENERATED FROM notes/main.tex — the blank with answers filled in, so every \begin{work}
+% block, every \answerspace{H}{} height, and every \boxguard is identical to it. Each
+% \writelines{n} is answered by exactly n \ansline{} calls, each short enough not to wrap.
+% \ans{} IS TEXT MODE: never inside $...$; a filled slot inside a formula is written
+% {\color{keyred}\mathbf{...}} instead — see the two display formulas.
+% VOCABPAR: \par brackets each \termans inside the vocabbox. \termans is defined in
+% apstats-key — never redefined here.
+% NO teachernote here — teacher prose lives in the lesson plan.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+% Authored byte-identically in notes/ — the blank reserves exactly H and prints nothing.
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.5}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+% NO teachernote here — teacher prose lives in the lesson plan.
+
+\vspace{6pt}
+
+\boxguard[14]
+\begin{objectivebox}
+\small
+By the end of these notes I will be able to:
+\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
+  \item calculate the \textbf{mean} and the \textbf{median} of a quantitative variable, and find
+        the \textbf{quartiles} by splitting an ordered list;
+  \item put a single number on spread --- the \textbf{range}, the \textbf{interquartile range},
+        or the \textbf{standard deviation} --- and say which of them one unusual value can hijack;
+  \item choose which pair of summaries to report and defend the choice from the \textbf{shape}
+        of the distribution, using the words \textbf{resistant} and \textbf{nonresistant}.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{6pt}
+
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termans{Statistic}{a numerical summary of sample data --- the mean, the median, and every other number computed today.}
+\par
+\termans{Mean $\bar x$ and median}{mean: the sum of the values over the count; median: the middle of the ordered data (with an even count, average the two middle values).}
+\par
+\termans{Quartiles $Q_1$, $Q_3$ and percentile}{$Q_1$ and $Q_3$ are the medians of the lower and upper halves; the $p$th percentile is the value with $p\%$ of the data at or below it.}
+\par
+\termans{Range and interquartile range (IQR)}{range $=$ maximum $-$ minimum; IQR $= Q_3 - Q_1$. Each is one number, not an interval.}
+\par
+\termans{Standard deviation $s_x$}{roughly the typical distance of a value from the mean; computed by technology. Its square $s_x^2$ is the variance.}
+\par
+\termans{Resistant / nonresistant}{resistant --- an outlier barely moves it (median, IQR); nonresistant --- an outlier drags it (mean, standard deviation, range).}
+\par
+\end{vocabbox}
+
+\vspace{6pt}
+
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+\boxguard[12]
+\begin{notesbox}{1. Center and Position: Mean, Median, Quartiles, and Percentiles}
+\small
+Last lesson we described a distribution in words --- shape, center, spread, unusual features.
+Today center and spread get \emph{numbers}. A \textbf{statistic} is a numerical summary of
+\ans{sample} data, and every number we compute today is one.
+
+\vspace{5pt}
+\textbf{\textcolor{navy}{Nine Paychecks.}} A small landscaping company has nine people on the
+payroll --- eight crew members and the owner. Last week's take-home pay, in dollars:
+
+\vspace{2pt}
+\begin{center}
+800 \quad 3000 \quad 650 \quad 750 \quad 700 \quad 850 \quad 700 \quad 800 \quad 750
+\end{center}
+\vspace{1pt}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.80]
+  \draw[->, thick] (-0.3,0) -- (13.8,0);
+  \foreach \x/\lab in {0/600, 2.16/1000, 4.32/1400, 6.48/1800, 8.64/2200, 10.8/2600, 12.96/3000} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.11) {\lab};}
+  \foreach \x/\n in {0.27/1, 0.54/2, 0.81/2, 1.08/2, 1.35/1, 12.96/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.08); }}
+  \node[font=\tiny] at (6.5,-0.95) {Weekly take-home pay (dollars)};
+\end{tikzpicture}
+\end{center}
+
+\vspace{2pt}
+The \textbf{mean} $\bar x$ adds every value and divides by \ans{the number of values}:
+\[ \bar x \;=\; \frac{x_1 + x_2 + \cdots + x_n}{n} \;=\; \frac{\sum x_i}{{\color{keyred}\mathbf{n}}} \]
+\begin{work}
+\bar x &= \frac{650+700+700+750+750+800+800+850+3000}{9} \\
+       &= \frac{9000}{9} \\
+       &= \text{\$1{,}000}
+\end{work}
+
+The \textbf{median} is the \ans{middle} value of the \emph{ordered} data --- with an even
+count, the \ans{average} of the two middle values. Order the nine paychecks first:
+
+\vspace{2pt}
+\begin{center}
+\ans{650} \; \ans{700} \; \ans{700} \; \ans{750} \; \ans{750} \;
+\ans{800} \; \ans{800} \; \ans{850} \; \ans{3000}
+\end{center}
+\vspace{2pt}
+
+The fifth of nine is the median: \ans{\$750}. \quad A mean of \$1{,}000 and a median of
+\$750 are \textbf{both correct} --- and nobody at this company takes home \$1{,}000. Which one
+to \emph{report} is the question section 2 settles.
+
+\vspace{10pt}
+\textbf{\textcolor{navy}{Quartiles and Percentiles: Where a Value Sits.}}
+A courier company timed twelve packages on Route A. The delivery times, in minutes, are already
+in order:
+
+\vspace{2pt}
+\begin{center}
+27 \quad 28 \quad 28 \quad 29 \quad 29 \quad 30 \quad 30 \quad 31 \quad 31 \quad 32 \quad
+32 \quad 33
+\end{center}
+\vspace{1pt}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[->, thick] (-0.2,0) -- (6.9,0);
+  \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.11) {\lab};}
+  \foreach \x/\n in {1.92/1, 2.08/2, 2.24/2, 2.40/2, 2.56/2, 2.72/2, 2.88/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.18*\k}) circle (0.08); }}
+  \node[font=\tiny] at (3.2,-0.95) {Delivery time (minutes), Route A};
+\end{tikzpicture}
+\end{center}
+
+\vspace{2pt}
+Twelve values, so no single one sits in the middle: the median is halfway between the 6th and
+the 7th, $(30+30)/2 =$ \ans{30} minutes. Now \textbf{split each half at its own middle},
+exactly as you did in the warm-up. The \textbf{first quartile} $Q_1$ is the median of the
+\ans{lower} half; the \textbf{third quartile} $Q_3$ is the median of the \ans{upper} half.
+
+\vspace{3pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{0.96\linewidth}{@{} l Y Y @{}}
+\rowcolor{sky}
+ & \textbf{Lower half: 27 28 28 29 29 30} & \textbf{Upper half: 30 31 31 32 32 33} \\
+\hline
+\textbf{Its middle} & $Q_1 =$ \ans{28.5 min} & $Q_3 =$ \ans{31.5 min} \\
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Between $Q_1$ and $Q_3$ sits the middle \ans{50}\% of the data. Both are special cases of
+a \textbf{percentile}: the $p$th percentile is the value with $p\%$ of the data
+\ans{at or below} it, so $Q_1$ is the \ans{25}th percentile and $Q_3$ is the
+\ans{75}th. \textbf{In context:} a package that took 31.5 minutes on Route A sits at the
+75th percentile --- about 75\% of Route A's packages arrived in \ans{31.5} minutes or less.
+\end{notesbox}
+
+\vspace{6pt}
+
+% ── I DO: section 2 — variability, then the crux ─────────────────────────────
+\boxguard[12]
+\begin{notesbox}{2. Variability --- and Which Summary to Report}
+\small
+Route A's twelve times have a center of 30 minutes. How spread out are they? Three numbers
+answer that, and \textbf{each one is a single number, not an interval}.
+
+\vspace{4pt}
+The \textbf{range} is \ans{maximum} $-$ \ans{minimum}. For Route A it is one number, computed
+below --- \emph{not} ``from 27 to 33.'' The \textbf{interquartile range (IQR)} is
+\ans{$Q_3$} $-$ \ans{$Q_1$}, the width of the middle half:
+\begin{work}
+\text{range} &= \text{maximum} - \text{minimum} = 33 - 27 = 6 \text{ minutes} \\
+\text{IQR}   &= Q_3 - Q_1 = 31.5 - 28.5 = 3 \text{ minutes}
+\end{work}
+
+The \textbf{standard deviation} $s_x$ measures spread around the \emph{mean}: roughly the
+\ans{typical} distance of a value from $\bar x$. Here is what it does, once, on a tiny
+fourth route --- five packages, times 26, 28, 30, 32, and 34 minutes, so $\bar x = 30$.
+
+\vspace{3pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{0.92\linewidth}{@{} l Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Time} $x_i$ & 26 & 28 & 30 & 32 & 34 \\
+\hline
+\textbf{Deviation} $x_i - \bar x$ & $-4$ & \ans{$-2$} & 0 & \ans{2} & 4 \\
+\textbf{Squared} $(x_i - \bar x)^2$ & 16 & \ans{4} & \ans{0} & \ans{4} & 16 \\
+\end{tabularx}
+\end{center}
+
+\vspace{2pt}
+Sum the squares, divide by $n-1$ (the \textbf{variance} $s_x^2$), then take the root:
+\[ s_x \;=\; \sqrt{\frac{1}{n-{\color{keyred}\mathbf{1}}}\sum_{i=1}^{n}\left(x_i-\bar x\right)^2} \]
+\begin{work}
+s_x^2 &= \frac{16+4+0+4+16}{5-1} = \frac{40}{4} = 10 \\
+s_x   &= \sqrt{10} \approx 3.16 \text{ minutes}
+\end{work}
+
+\textbf{In practice, technology computes $s_x$} --- 1-Var Stats on your calculator --- from
+here on. Two things to carry: $s_x$ is built out of the \ans{mean}, and it carries the
+\ans{units} of the variable. Re-express every time in seconds ($\times 60$) and the mean,
+median, range, IQR, \emph{and} $s_x$ are all multiplied by \ans{60}.
+
+\vspace{8pt}
+\textbf{\textcolor{navy}{One Value Changes.}}
+Back to the paychecks. \textbf{Cross out the owner's \$3{,}000 and replace it with \$750}, then
+recompute both measures of center:
+\begin{work}
+\bar x_{\text{new}} &= \frac{6750}{9} = \text{\$750} \\[2pt]
+\text{median}_{\text{new}} &= \text{5th of } 650\ 700\ 700\ 750\ 750\ 750\ 800\ 800\ 850
+   = \text{\$750}
+\end{work}
+The mean fell by \ans{\$250}; the median moved \ans{not at all}. The mean adds all nine values,
+so one huge paycheck lifts the total; the median asks only which value is \ans{fifth} in the
+ordered list, and that position never saw the \$3{,}000.
+
+\vspace{5pt}
+Now two more courier routes. \textbf{Route B's twelve times also add to 360 minutes}, and its
+quartiles are $Q_1 = 23$ and $Q_3 = 37$. \textbf{Route C is Route A with one late package:} the
+33-minute delivery became 51.
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.72]
+  % ── left: Route B ──
+  \draw[->, thick] (-0.2,0) -- (6.9,0);
+  \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.11) {\lab};}
+  \foreach \x/\n in {0.48/1, 0.80/1, 1.12/1, 1.44/1, 1.76/1, 2.24/1, 2.56/1, 3.04/1,
+                     3.36/1, 3.68/1, 4.00/1, 4.32/1} {
+    \foreach \k in {1,...,\n} { \fill[goldacc] (\x,{0.18*\k}) circle (0.08); }}
+  \node[font=\tiny] at (3.2,-0.95) {Delivery time (minutes)};
+  \node[font=\bfseries\scriptsize] at (3.2,1.0) {Route B};
+  % ── right: Route C ──
+  \begin{scope}[xshift=7.6cm]
+    \draw[->, thick] (-0.2,0) -- (6.9,0);
+    \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
+      \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.11) {\lab};}
+    \foreach \x/\n in {1.92/1, 2.08/2, 2.24/2, 2.40/2, 2.56/2, 2.72/2, 5.76/1} {
+      \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.18*\k}) circle (0.08); }}
+    \node[font=\tiny] at (3.2,-0.95) {Delivery time (minutes)};
+    \node[font=\bfseries\scriptsize] at (3.2,1.0) {Route C};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Route} & \textbf{Mean} & \textbf{Median} & \textbf{Range} & \textbf{IQR} \\
+\hline
+A: 27 28 28 29 29 30 30 31 31 32 32 33 & 30 & 30 & 6 & 3 \\
+B: 18 20 22 24 26 29 31 34 36 38 40 42 & 30 & 30 & \ans{24} & \ans{14} \\
+C: 27 28 28 29 29 30 30 31 31 32 32 51 & \ans{31.5} & \ans{30} & \ans{24} &
+\ans{3} \\
+\end{tabularx}
+
+\vspace{4pt}
+Route C's range, \ans{24} minutes, equals Route B's --- on the strength of \textbf{one}
+package, while eleven of C's twelve arrived between 27 and 32. The IQR, \ans{3} minutes,
+still matches Route A's: the late package never touched the middle half.
+
+\vspace{5pt}
+\begin{center}
+\fcolorbox{navy}{sky}{\parbox{0.94\linewidth}{\small
+\textbf{Resistant} --- one extreme value barely moves it: the \ans{median} and the
+\ans{IQR}.\\[2pt]
+\textbf{Nonresistant} --- one extreme value drags it: the \ans{mean}, the
+\ans{standard deviation}, and the \ans{range}. \quad (EK UNC-1.K.2)}}
+\end{center}
+
+\vspace{5pt}
+\textbf{So which pair do you report?} Both measures of center are correct; the
+\textbf{shape} decides. Skewed, or an outlier present: the \ans{median} and the
+\ans{IQR}. Roughly symmetric, no outliers: the \ans{mean} and the \ans{standard deviation}.
+The justification is the sentence about the shape, not the choice.
+
+\vspace{4pt}
+\textbf{Two outlier rules} (EK UNC-1.K.1): more than $1.5\times\text{IQR}$ above $Q_3$ or below
+$Q_1$, or 2 or more standard deviations from the mean. Route C's 51: $Q_3 + 1.5\times\text{IQR}
+= 31.5 + 4.5 = 36$, and 51 is past it, so it is an \ans{outlier}. The $1.5\times\text{IQR}$
+rule goes to work \ans{next} lesson.
+\end{notesbox}
+
+\vspace{4pt}
+
+% ── WE DO: guided practice ───────────────────────────────────────────────────
+\boxguard[26]
+\begin{practicebox}
+\small
+\textbf{The Quiz Scores --- we work this one together.} Eleven students took a 20-point quiz.
+Their scores, in order:
+
+\vspace{2pt}
+\begin{center}
+12 \quad 13 \quad 14 \quad 15 \quad 15 \quad 16 \quad 17 \quad 18 \quad 18 \quad 19 \quad 19
+\end{center}
+\vspace{1pt}
+
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=5pt]
+  \item Find the median, split the list at it (five below, five above), and fill the table.
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Minimum} & $\mathbf{Q_1}$ & \textbf{Median} & $\mathbf{Q_3}$ & \textbf{Maximum} \\
+        \hline
+        \ans{12} & \ans{14} & \ans{16} & \ans{18} & \ans{19} \\
+        \end{tabularx}
+  \item Compute the \textbf{range} and the \textbf{IQR} for these eleven scores.
+        \begin{work}
+        \text{range} &= \text{maximum} - \text{minimum} = 19 - 12 = 7 \text{ points} \\
+        \text{IQR} &= Q_3 - Q_1 = 18 - 14 = 4 \text{ points}
+        \end{work}
+  \item \textbf{One value changes.} The 12 was entered wrong --- it was really a \textbf{1}. Of
+        \emph{mean, median, range, IQR}, which change and which do not? State the rule that decides it.\\[3pt]
+        \ansline{Mean $16 \to 15$ and range $7 \to 18$ change; the median stays 16 and the IQR stays 4.}
+        \ansline{Mean and range are built from the extreme value itself, so they are nonresistant;}
+        \ansline{median and IQR use only middle positions, so they are resistant.}
+  \item With the 1 in the list, which pair of summaries would you report for these eleven
+        scores, and why?\\[3pt]
+        \ansline{Median 16 and IQR 4. The 1 is an outlier (below $Q_1 - 1.5\times\text{IQR} = 8$), so}
+        \ansline{the resistant pair describes the other ten students; the mean and $s_x$ are dragged down.}
+\end{enumerate}
+\end{practicebox}
+
+
+\end{document}
