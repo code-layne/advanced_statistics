@@ -288,6 +288,93 @@
 %   \steprel{p\text{-value}}{\ans{$<$} $\alpha$}{\ans{Reject $H_0$}}
 \newcommand{\steprel}[3]{$#1$ & #2 & #3 \\}
 
+% ── Guided notes: the Main Ideas / Notes table ────────────────────────────────
+% The guided-notes component is ONE two-column table — the "Main Ideas /
+% Questions" column on the left, the "Notes" column on the right — modelled on
+% the Algebra 2 guided-notes worksheets. Each ROW is one idea: a big label on the
+% left, and on the right a terse definition with \blank{} fills, then a bold
+% prompt and a GRID of short numbered problems with reserved work space. The
+% teacher works the first problem or two of each grid (I do), the class works the
+% rest with students holding the pen (we do); the last row is the Guided Practice.
+% There is no prose exposition: every sentence on the page is one the student
+% completes, and every idea is immediately practised in the grid under it.
+%
+%   \begin{guidednotes}
+%     \mainidea[Two kinds of]{Variable} &
+%       A \textbf{discrete} variable takes a \blank{2cm} number of values.
+%       \notesprompt{Classify each variable.}
+%       \begin{probgrid}{|Y|Y|Y|}
+%         \pcell{1}{Siblings}{1.3cm}{} & \pcell{2}{Height}{1.3cm}{} & \pcell{3}{Minutes}{1.3cm}{} \\ \hline
+%       \end{probgrid}
+%       \\ \hline
+%     \mainidea{Guided practice} & ... \\ \hline
+%   \end{guidednotes}
+%
+% Mechanics:
+%   * The table is an xltabular (longtable + tabularx): it breaks BETWEEN rows
+%     across pages by itself — no \boxguard, no \newpage. A row must fit on one
+%     page, so keep each idea to well under a page; split a long idea into two rows.
+%     The head prints once; every page after a break re-opens with the row's own
+%     top rule, and the foot closes each page with a rule. Both columns are
+%     m-columns, so the label sits vertically centred beside its notes.
+%   * Every row ends `\\ \hline`. The first row after the head needs no top rule.
+%   * \mainidea[lead]{Label} — the left cell: an optional small italic lead
+%     ("Two kinds of") over the label, set bold sans in navy and UPPERCASED.
+%   * \notesprompt{...} — the bold instruction line that introduces a grid.
+%   * probgrid{colspec} — a nested grid flush with the row's rules; colspec is
+%     any tabularx spec, usually |Y|Y|Y| (three across, short answers) or |Y|Y|
+%     (two across, work space). Rows end `\\ \hline`; the grid draws its own top
+%     rule. Number problems continuously through the whole component, 1..N.
+%   * \pcell{n}{statement}{H}{answer} — one grid cell: bold number, the statement
+%     at its natural height, then the answer in keyred bold inside a FIXED-HEIGHT
+%     box of H below it. The BLANK passes {} as the answer and the KEY passes the
+%     answer text — that is the whole difference, and because H is fixed the two
+%     files cannot drift (the work rule, applied to grid cells). Argument 4 is
+%     TEXT MODE: wrap math in $...$. H is the ANSWER space only — size it to the
+%     answer: 0.9cm for a word or a number, 1.2–1.6cm for a sentence or a short
+%     computation (a keyred line is ~0.5cm). An answer longer than H overflows
+%     the cell silently: keep key answers short.
+%   * \stepnum{n} — a numbered step marker (white digit on a navy disc) for a
+%     procedure listed in the Notes column: \stepnum{1}\ Choose an interval width.
+%
+% \pageheader, then the vocabbox, then ONE guidednotes table — that is the
+% component. Objectives live on the cover; the notes do not repeat them.
+\RequirePackage{xltabular}
+\newlength{\mainideawidth} \setlength{\mainideawidth}{0.27\linewidth}
+\newcommand{\mainidea}[2][]{%
+  \begin{minipage}{\linewidth}\centering
+    \ifx\relax#1\relax\else{\itshape\small #1}\\[3pt]\fi
+    {\sffamily\bfseries\large\color{navy}\MakeUppercase{#2}}%
+  \end{minipage}}
+\newcommand{\notesprompt}[1]{\par\vspace{5pt}\noindent\textbf{#1}\par\vspace{3pt}}
+\newcommand{\pcell}[4]{%
+  {\raggedright\textbf{#1.}\ #2\par}%
+  \noindent\begin{minipage}[t][#3][t]{\linewidth}\raggedright
+    \vspace{2pt}{\color{keyred}\bfseries #4}%
+  \end{minipage}}
+\newcommand{\stepnum}[1]{\tikz[baseline=(c.base)]\node[circle, fill=navy, text=white,
+  inner sep=1.2pt, minimum size=1.1em, font=\bfseries\scriptsize] (c) {#1};}
+\NewDocumentEnvironment{probgrid}{m +b}
+  {\par\noindent\renewcommand{\tabularxcolumn}[1]{p{##1}}%
+   \makebox[\linewidth][l]{\hspace*{-\tabcolsep}%
+   \begin{tabularx}{\dimexpr\linewidth+2\tabcolsep\relax}[b]{#1}
+   \hline
+   #2
+   \end{tabularx}}\par}
+  {}
+\NewDocumentEnvironment{guidednotes}{+b}
+  {\renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}m{##1}}%
+   \setlength{\LTpre}{6pt}\setlength{\LTpost}{6pt}%
+   \begin{xltabular}{\linewidth}{|>{\centering\arraybackslash}m{\mainideawidth}|X|}
+   \hline
+   \multicolumn{1}{|c|}{\textbf{Main Ideas / Questions}} & \textbf{Notes} \\ \hline
+   \endfirsthead
+   \hline \endfoot
+   \endlastfoot
+   #1
+   \end{xltabular}}
+  {}
+
 % ── Teacher notes ─────────────────────────────────────────────────────────────
 % TEACHER NOTES LIVE IN THE LESSON PLAN, one per component, titled for it:
 %

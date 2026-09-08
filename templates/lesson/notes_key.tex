@@ -1,15 +1,14 @@
 %! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Guided Notes & Practice (Answer Key)
-% Copy the blank component VERBATIM, then: swap -boxes for -key, retitle the pageheader,
-% replace each \blank{} with a short \ans{}, each \writelines{n} with exactly n \ansline{}
-% calls, and each \termblank{T} with \termans{T}{definition} (TWO arguments, defined in
-% @@PREFIX@@-key.sty — never redefine it here; it reuses \termblank's fixed row height, so a
-% definition that wraps to a second line still costs exactly what the blank reserved).
-% Every \begin{work} block and every \boxguard stays BYTE-IDENTICAL to the blank's.
-% Keep \ans{} texts short enough not to wrap wider than the blank they replace, and keep
-% each \ansline{} short enough not to wrap past the line it fills — that is what keeps the
-% key page-for-page with the blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
+% MIRROR of ../notes/main.tex. Copy the blank VERBATIM, then change exactly these:
+%   \usepackage{@@PREFIX@@-boxes}      ->  \usepackage{@@PREFIX@@-key}   (pulls in -boxes; never load both)
+%   the \pageheader second argument    ->  Guided Notes \& Practice --- Answer Key
+%   \termblank{Term}                   ->  \termans{Term}{definition}   (TWO arguments, from -key)
+%   \blank{W}                          ->  \ans{short answer}           (no wider than the blank)
+%   \pcell{n}{statement}{H}{}          ->  \pcell{n}{statement}{H}{answer}  (answer shorter than H)
+% Every \begin{work} block, every height, every width, every sub-row stays BYTE-IDENTICAL.
+% \ans{} and the \pcell answer are TEXT MODE: wrap \sqrt/\dfrac/\hat/\bar in $...$.
 % NO teachernote here — teacher prose goes in the lesson plan.
+% Prove it: diff the two files and only the lines above may differ; then the page counts match.
 \documentclass[12pt]{article}
 \usepackage{@@PREFIX@@-article}
 \usepackage{@@PREFIX@@-key}   % pulls in -boxes; do NOT also load -boxes
@@ -19,12 +18,9 @@
 \pageheader{Unit @@UNITINT@@, Lesson @@LESSONID@@}{Guided Notes \& Practice --- Answer Key}
 % NAMESTRIP: no \namedateperiod here — mirrors the blank.
 
-\vspace{0.12in}
-
-% TODO: mirror the blank component exactly. Examples:
-%   \termblank{Variable}  ->  \termans{Variable}{a characteristic recorded for every individual; a column heading, never an entry under it.}
-%   \blank{2.4cm}         ->  \ans{context}
-%   \writelines{2}        ->  \ansline{first line of the answer}
-%                             \ansline{second line of the answer}
+% TODO: paste the blank here and apply the substitutions above. Examples:
+%   \termblank{Variable}          ->  \termans{Variable}{a characteristic recorded for every individual.}
+%   \blank{2.0cm}                 ->  \ans{countable}
+%   \pcell{4}{Rainfall}{0.9cm}{}  ->  \pcell{4}{Rainfall}{0.9cm}{C --- the gauge rounded a real amount}
 
 \end{document}

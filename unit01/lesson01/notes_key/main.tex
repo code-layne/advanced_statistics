@@ -1,54 +1,41 @@
 %! The Language of Variation — Unit 1, Lesson 1.1 — Guided Notes & Practice (Answer Key)
-% THE in-class document. There is no group activity in this course — the notes carry the whole
-% gradual release, closed by a spoken debrief. It runs SHORT on purpose: the period ends
-% with students starting the homework, which is where the individual practice lives.
-%   I DO      : the objective box, the vocabulary box, and notes sections 1-2.     (~20 min)
-%   WE DO     : the practicebox ("Guided Practice") — The Season Pass, together.   (~14 min)
-%   YOU DO    : nothing on this page — ../homework/ IS the individual practice,
-%               started in the last minutes of the period.
-% There is NO "Putting It Together" transfer set and NO reflection box in this lesson: the
-% debrief is spoken, off the Independent Practice papers, and the Trailhead Register appears
-% only in ../ap_practice/.
-% Vocabulary is GIVEN here, not discovered. Section 3 is the trap that decides the lesson —
-% a column written entirely in digits is not automatically quantitative. Permit numbers and
-% ZIP codes average cleanly and mean nothing.
+% MIRROR of ../notes/main.tex: -key in place of -boxes, \termblank -> \termans, \blank -> \ans, and the
+% fourth argument of every \pcell filled. Nothing else differs — keep it that way.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
+% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right a terse definition the student completes, then a grid of short numbered
+% problems with reserved work space. Problems are numbered 1..N through the whole component.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice, is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last minutes of the period. No independent set, no reflection box, no objectives
+%            box (the targets are on the cover).
+% Vocabulary is GIVEN here, not discovered. The crux is the AMOUNTS row — a column written
+% entirely in digits is not automatically quantitative. Permit numbers, parking spots, and ZIP
+% codes average cleanly and mean nothing (EK VAR-1.C.1, VAR-1.C.2).
 %
-% PAGE LOCKSTEP with notes/: every \blank{} here becomes a short \ans{} there, and every
-% \writelines{n} becomes exactly n \ansline{} calls. Blank widths are sized close to the answers
-% so the two files wrap identically. The \begin{work} block in section 3 and every
-% \answerspace{H}{} height are authored BYTE-IDENTICALLY in both files.
-% VOCABPAR: \par brackets each \termblank inside the vocabbox.
+% THE CONTEXTS: three hiking parties (Trail / Time out), two permits with their water bottles,
+% the ranger's Short / Medium / Long regrouping, the five-column digits strip, and the Season
+% Pass for Guided Practice.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
+% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
+% argument. Heights and blank widths are sized to the answers so the two files set identically.
+% The \begin{work} block is authored BYTE-IDENTICALLY in both files. A guidednotes row cannot
+% break across pages, so every idea is split into two sub-rows at its prompt (a `\\` with no
+% \hline, then `& ...`) so the table can break between the definition and its grid.
+% NO SKETCH QUESTIONS: every display is pre-drawn and read.
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-% Authored byte-identically in notes/ — the blank reserves exactly H and prints nothing.
-\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
-  \color{keyred}\bfseries #2\end{minipage}\par}
-
-% Key-side counterpart of \termblank: term + inline answer on line 1, \ansline on line 2.
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Guided Notes \& Practice --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank.
-% NO teachernote here — teacher prose lives in the lesson plan.
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{6pt}
-
-\boxguard[14]
-\begin{objectivebox}
-\small
-By the end of these notes I will be able to:
-\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
-  \item classify a variable as \textbf{categorical} or \textbf{quantitative} using the amount
-        test, not the ``does it have digits'' test;
-  \item explain why averaging a ZIP code or a permit number is meaningless;
-  \item explain what changes --- and what is lost --- when measured amounts are replaced by
-        group labels.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{6pt}
+\vspace{2pt}
 
 \boxguard[16]
 \begin{vocabbox}
@@ -65,31 +52,18 @@ Fill in each term \textbf{as we name it} in the notes below.
 \par
 \end{vocabbox}
 
-\vspace{6pt}
-
-% ── I DO: section 1 ──────────────────────────────────────────────────────────
-\boxguard[12]
-\begin{notesbox}{1. Two Kinds of Variable, and the Test That Decides}
 \small
-Last lesson a \textbf{variable} was any characteristic recorded for each individual. Today we
-split them in two --- and this single decision determines every graph and every summary you are
-allowed to use for the rest of the course.
+\begin{guidednotes}
+% ── ROW 1: two kinds of variable ─────────────────────────────────────────────
+\mainidea[Two kinds of]{Variable} &
+A \textbf{variable} is any characteristic recorded for each individual; today we split them in
+two. A \textbf{categorical} variable's values are category \ans{names} or group labels. A
+\textbf{quantitative} variable's values are \ans{numerical} for a measured or counted amount.
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.28\linewidth} X @{}}
-\hline
-Categorical & Values are category \ans{names} or group labels. \\
-Quantitative & Values are \ans{numerical} for a measured or counted amount. \\
-\hline
-\end{tabularx}
-
-\vspace{8pt}
-The same five hikers, two different kinds of column:
-
-\vspace{4pt}
+\vspace{3pt}
+Three hiking parties, two kinds of column:
 \begin{center}
-\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraystretch}{1.1}
 \begin{tabular}{@{} l l c @{}}
 \rowcolor{sky}
 \textbf{Party} & \textbf{Trail} & \textbf{Time out (min)} \\
@@ -100,112 +74,132 @@ Delgado & Summit Trail & 215 \\
 \hline
 \end{tabular}
 \end{center}
+\emph{Trail} is \ans{categorical}: its values name which trail, and Summit Trail is not ``more''
+than Ridge Loop. \emph{Time out} is \ans{quantitative}: 215 minutes really is more than 95, and the
+difference, 120 minutes, means something.
+\\
+& \notesprompt{The ranger records more about each party. Classify each: C or Q.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Group size (number of hikers)}{0.9cm}{Q} &
+\pcell{2}{Dog along (Yes / No)}{0.9cm}{C} &
+\pcell{3}{Weather at the trailhead}{0.9cm}{C} \\ \hline
+\pcell{4}{Pack weight, in pounds}{1.1cm}{Q} &
+\pcell{5}{Trail difficulty (Easy / Moderate / Hard)}{1.1cm}{C --- labels, not amounts} &
+\pcell{6}{Miles hiked}{1.1cm}{Q} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the amount test ───────────────────────────────────────────────────
+\mainidea[The]{Amount test} &
+Do not ask ``does it have digits.'' Ask: \textbf{is the value an \emph{amount} of something ---
+how much, or how many?} If yes, the variable is \ans{quantitative}. If the value only
+\emph{identifies} or \emph{labels}, it is \ans{categorical}.
 
-\vspace{4pt}
-\emph{Trail} is \ans{categorical}: its values name which trail, and there is no sense in which
-Summit Trail is ``more'' than Ridge Loop. \emph{Time out} is \ans{quantitative}: 215 minutes
-really is more than 95, and the difference, 120 minutes, means something.
+\vspace{3pt}
+A second way to run the same test: \textbf{does averaging the values produce something real?}
+If the average is \ans{nonsense}, the variable is categorical no matter how it is written.
 
-\vspace{10pt}
-\textbf{\textcolor{navy}{The Amount Test.}}
-Do not ask ``does it have digits.'' Ask:
-
-\vspace{6pt}
-\begin{center}
-\fcolorbox{navy}{sky}{\parbox{0.92\linewidth}{\centering\small
-\textbf{Is the value an \emph{amount} of something --- how much, or how many?}\\[3pt]
-If yes, the variable is \ans{quantitative}. If the value only \emph{identifies} or
-\emph{labels}, it is \ans{categorical}.}}
-\end{center}
-
-\vspace{6pt}
-A second way to run the same test: \textbf{does adding or averaging the values produce something
-real?} If the average is meaningful, the variable is quantitative. If the average is
-\ans{nonsense}, it is categorical no matter how it is written.
-\end{notesbox}
-
-\vspace{6pt}
-
-% ── I DO: section 2 — the trap ───────────────────────────────────────────────
-\boxguard[12]
-\begin{notesbox}{2. Digits Are Not Amounts --- and Grouping Runs One Way}
-\small
-Two hiking parties: permit numbers 2041 and 6318, carrying 6 and 2 water bottles. Both columns
-are written entirely in digits. Both averages compute without complaint.
+\\
+& Two hiking parties hold permits 2041 and 6318 and carry 6 and 2 water bottles. Both columns are
+written entirely in digits. Both averages compute without complaint:
 
 \begin{work}
 \text{average permit \#} &= \frac{2041 + 6318}{2} = 4179.5 \\[4pt]
 \text{average water bottles} &= \frac{6 + 2}{2} = 4
 \end{work}
+\notesprompt{Run the test on both averages.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{7}{Four water bottles --- what real thing does that number describe?}{1.5cm}{An amount: bottles per party, if shared evenly} &
+\pcell{8}{Hand me the party whose permit is 4179.5.}{1.5cm}{Nobody --- the digits are a label, not an amount} &
+\pcell{9}{Which column passes the amount test, and what is it an amount of?}{1.5cm}{Water bottles: an amount of bottles (how many)} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: grouping runs one way ─────────────────────────────────────────────
+\mainidea[Grouping is]{One way only} &
+A ranger stops recording \emph{Time out} in minutes and records \emph{Short} / \emph{Medium} /
+\emph{Long} instead. Same hikes, same afternoon:
 
-Four water bottles is a real amount --- it is what each party would have carried if the load were
-shared evenly. Permit 4179.5 is \ans{meaningless}: it does not identify a party, and no party
-carries ``half a permit.'' The digits in a permit number are a \ans{label}, not a
-measurement.
+\vspace{2pt}
+\centerline{\emph{Time out} \ 95, 140, 215 \ minutes \quad$\longrightarrow$\quad
+\emph{Length} \ Short, Medium, Long}
 
-\vspace{6pt}
-\textbf{Classify each. Write C or Q.}
+\vspace{2pt}
+The new column is \ans{categorical}. Replacing measured amounts with group labels is called
+\textbf{grouping} or \textbf{binning}. Once 95, 140, and 215 become labels, the mean time on the
+trail can no longer be \ans{computed} from the column. Grouping runs \ans{one} way only:
+you can always bin amounts into labels, but you can never \ans{recover} the amounts from the
+labels.
+\\
+& \notesprompt{Use the two columns.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Which column can be averaged? Compute that average.}{1.3cm}{Time out: $(95+140+215)/3 = 150$ minutes} &
+\pcell{11}{Boone's row now reads \emph{Medium}. Can the ranger get 140 back from it? Why?}{1.3cm}{No --- \emph{Medium} could be any of many times} \\ \hline
+\pcell{12}{Name one thing the ranger can no longer compute from the new column.}{1.2cm}{The mean time out (or which hike was longest)} &
+\pcell{13}{A second ranger records \emph{Under 2 hours} / \emph{2 hours or more}. Which kind of
+variable is that column?}{1.2cm}{Categorical --- two group labels} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: digits are not amounts — THE CRUX ─────────────────────────────────
+\mainidea[Digits are not]{Amounts} &
+A column written entirely in digits is \ans{not} automatically quantitative. Permit numbers
+and ZIP codes average without complaint and mean \ans{nothing}: their digits \ans{identify} an
+individual, they do not measure anything.
+
+\vspace{3pt}
+Counting a categorical variable also produces numbers. ``62\% of parties hiked with a dog'' is a
+numerical \ans{summary} of the categorical variable \emph{Dog along}. The \emph{summary} is
+numeric; the \emph{variable} is still \ans{categorical}.
+\\
+& \notesprompt{Classify each. Write C or Q.}
+\begin{probgrid}{|Y|Y|Y|Y|Y|}
+\pcell{14}{Permit \#}{0.9cm}{C} &
+\pcell{15}{Parking spot}{0.9cm}{C} &
+\pcell{16}{Home ZIP}{0.9cm}{C} &
+\pcell{17}{Water bottles}{0.9cm}{Q} &
+\pcell{18}{Group size}{0.9cm}{Q} \\ \hline
+\end{probgrid}
+\notesprompt{Then say why.}
+\begin{probgrid}{|Y|Y|}
+\pcell{19}{Every entry in the \emph{Dog along} column is Yes or No. Where did the 62 come from
+--- and is it a value of the variable?}{1.4cm}{Counted from the Yes entries; a summary, not a value} &
+\pcell{20}{State the amount test in one sentence --- without using the word
+\emph{digits}.}{1.4cm}{Is the value how much or how many of something?} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Season Pass} &
+A ski area records five things about each of its 3{,}400 season-pass holders: \textbf{pass
+number}, \textbf{age} (years), \textbf{pass tier} (Gold / Silver / Bronze), \textbf{miles
+traveled} to the mountain, and \textbf{locker number}.
 
 \vspace{4pt}
-\renewcommand{\arraystretch}{1.35}
+\textbf{21.} The individuals are \ans{the 3{,}400 pass holders}.
+
+\vspace{4pt}
+\textbf{22.} Label each variable \textbf{C} or \textbf{Q}:
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
-\textbf{Permit \#} & \textbf{Parking spot} & \textbf{Home ZIP} & \textbf{Water bottles} &
-\textbf{Group size} \\
-\ans{C} & \ans{C} & \ans{C} & \ans{Q} & \ans{Q} \\
+\textbf{Pass \#} & \textbf{Age} & \textbf{Pass tier} & \textbf{Miles traveled} &
+\textbf{Locker \#} \\
+\ans{C} & \ans{Q} & \ans{C} & \ans{Q} & \ans{C} \\
 \end{tabularx}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{23}{\emph{Miles traveled} and \emph{Locker \#} are both digits. Say the difference in
+one sentence.}{1.6cm}{Miles is how far; a locker number is a name} &
+\pcell{24}{The resort stops recording age in years and records \textbf{age group} instead
+(Under 18 / 18--34 / 35--54 / 55+). Which kind is the variable now, and what can the resort no
+longer compute?}{1.6cm}{Categorical; the mean age is lost} &
+\pcell{25}{A report states: \textbf{``The average pass number is 5{,}120.''} Why does that
+number tell you nothing about the pass holders?}{1.6cm}{A pass number is a name, not an amount} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{6pt}
-\textbf{Counting a categorical variable produces numbers.} ``62\% of parties hiked with a dog''
-is a numerical \ans{summary} of a categorical variable. The \emph{summary} is numeric; the
-\emph{variable} is still \ans{categorical}.
-
-\vspace{10pt}
-\textbf{\textcolor{navy}{Grouping Turns Q into C --- and Loses Something.}}
-A ranger stops recording \emph{Time out} in minutes and records \emph{Short} / \emph{Medium} /
-\emph{Long} instead. Same hikes, same afternoon.
-
-\vspace{6pt}
-The variable is now \ans{categorical}. This is called \textbf{grouping} or
-\textbf{binning}.
-
-\vspace{6pt}
-\textbf{What is lost:} once 95, 140, and 215 become labels, the mean time on the trail can no
-longer be \ans{computed} from the column. Grouping runs \ans{one} way only ---
-you can always bin amounts into labels, but you can never recover the amounts from the labels.
-\end{notesbox}
-
-\vspace{6pt}
-
-% ── WE DO: guided practice ───────────────────────────────────────────────────
-\boxguard[20]
-\begin{practicebox}
-\small
-\textbf{The Season Pass --- we work this one together.} A ski area records five things about each
-of its 3{,}400 season-pass holders: \textbf{pass number}, \textbf{age} (years), \textbf{pass
-tier} (Gold / Silver / Bronze), \textbf{miles traveled} to the mountain, and \textbf{locker
-number}.
-
-\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
-  \item The individuals are \ans{the 3,400 pass holders}. Label each variable \textbf{C} or \textbf{Q}.
-
-        \vspace{3pt}
-        \renewcommand{\arraystretch}{1.3}
-        \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
-        \textbf{Pass \#} & \textbf{Age} & \textbf{Pass tier} & \textbf{Miles traveled} &
-        \textbf{Locker \#} \\
-        \ans{C} & \ans{Q} & \ans{C} & \ans{Q} & \ans{C} \\
-        \end{tabularx}
-  \item The resort stops recording age in years and records \textbf{age group} instead
-        (Under 18 / 18--34 / 35--54 / 55+). Same people, same afternoon --- which kind is the
-        variable now, and what can the resort no longer compute?\\[3pt]
-        \ansline{Categorical --- the values are now group labels rather than measured amounts.}
-        \ansline{The resort can no longer compute the mean age of its pass holders.}
-  \item A report states: \textbf{``The average pass number is 5{,}120.''} Say in one sentence
-        why that number tells you nothing about the pass holders.\\[3pt]
-        \ansline{A pass number identifies a person; it does not measure anything about them, so}
-        \ansline{its average is not an amount of anything --- nobody is ``average'' at 5,120.}
-\end{enumerate}
-\end{practicebox}
-
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

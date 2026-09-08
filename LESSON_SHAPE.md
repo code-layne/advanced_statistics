@@ -40,33 +40,44 @@ Step 0. The skeletons and the per-component spec live in `templates/lesson/`.
 ## 1. The lesson shape
 
 **Every new lesson follows a traditional gradual-release model: I do → we do → you do.** The
-teacher delivers the vocabulary and the core idea directly in guided notes, in **two longer
-sections**; a guided practice problem is worked together with students holding the pen; a
-whole-class debrief closes the loop; and **the period ends with students starting the homework
-in class, alone** — the homework *is* the individual practice.
+teacher delivers the vocabulary and the core idea directly in guided notes laid out as a
+**Main Ideas / Notes table** — each idea a short definition to complete and a grid of short
+problems, the first worked by the teacher and the rest by the class with the pen in their hand;
+a Guided Practice row in a fresh context is worked together; a whole-class debrief closes the
+loop; and **the period ends with students starting the homework in class, alone** — the
+homework *is* the individual practice.
 
 | Phase | Minutes | Component |
 | --- | --- | --- |
 | Warm-up | 5 | `warmup` |
-| Guided notes & practice (I do ~20, we do ~14) | 34 | `notes` |
+| Guided notes & practice (I do / we do row by row ~24, Guided Practice ~10) | 34 | `notes` |
 | Debrief — whole class, spoken | 8 | — (in the plan only) |
 | Close & start the homework, alone, teacher circulating | 8 | `homework` |
 
-**`notes` — *Guided Notes & Practice* — is the in-class centrepiece:** an objective box and a
-vocabulary box filled *as each term is named*; **exactly two numbered notes sections** (the I
-do), each long — the second half of a section is introduced by a bold run-in heading
-`\textbf{\textcolor{navy}{Its Title.}}` rather than a second box; then a `practicebox` worked
-together (the we do; it takes no argument, its title is fixed as "Guided Practice"). **The notes
-end there.** Target 3–4 pages at 12pt. **The crux — the item that surfaces the lesson's target
-misconception — lives in the second half of section 2.**
+**`notes` — *Guided Notes & Practice* — is the in-class centrepiece:** a vocabulary box filled
+*as each term is named*, then **one two-column *Main Ideas / Questions* | *Notes* table**
+(`guidednotes` in `apstats-boxes.sty`), modelled on the Algebra 2 guided-notes worksheets
+(2026-09-08). Each **row** is one idea: a short label on the left (`\mainidea[lead]{Label}`),
+and on the right a terse definition the student completes with `\blank{}` fills, then a bold
+prompt (`\notesprompt`) and a **grid of short numbered problems** (`probgrid` + `\pcell`) with
+reserved answer space; a numbered procedure uses `\stepnum{n}`. **The last row is Guided
+Practice**, one fresh context worked entirely together. **The notes end there.** Problems are
+numbered 1..N through the whole component; **target 20–26 problems and 3 pages** at 12pt
+(the vocabulary box plus a two-page table). No prose exposition, no objective box (the targets
+are on the cover), no red misconception callout: the misconception is *a problem in a grid*,
+and **the crux — the problem that surfaces the lesson's target misconception — lives in the
+last instruction row before Guided Practice.** The I do / we do split runs **row by row**: the
+teacher fills the definition lines and works the first problem of each grid, the class works
+the rest (~24 min), then Guided Practice together (~10 min). The plan names, by problem number,
+which problems the teacher works, which is the trap, and which is the crux.
 
 **`ap_practice`** — four multiple-choice items (five options, in context) plus one multi-part
 free-response set, AP format. **`homework`** — the graded individual practice, in a *third*
 context (instruction, guided practice, and homework each use a different one). **`cover`** —
 packet table (Warm-Up · Guided Notes & Practice · AP Practice · Homework), learning targets that
 name the formal term in bold, and a *Keep in Mind* box that carries the lesson's ideas, never the
-lesson's process. **`slides`** — the Beamer deck, ordered targets → warm-up → I-do divider → two
-instruction frames → we-do → debrief → close & start the homework.
+lesson's process. **`slides`** — the Beamer deck, ordered targets → warm-up → I-do divider → one
+instruction frame per notes row → we-do → debrief → close & start the homework.
 
 **What this course does not have — do not re-add any of it:**
 
@@ -76,6 +87,9 @@ instruction frames → we-do → debrief → close & start the homework.
   piles of what the teacher sees.
 - **No independent practice set in the notes, no *Putting It Together* transfer set, no
   `reflectionbox`.** The debrief is spoken; the individual practice is the homework.
+- **No `objectivebox`, no `notesbox` sections, no `practicebox` in the notes.** Those were the
+  two-section shape (retired 2026-09-08). The notes are the table; Guided Practice is its last
+  row.
 - **No tiered instruction.** One document, one version, for the whole class. Differentiation is
   in how the teacher circulates, not on the page.
 
@@ -125,8 +139,19 @@ context**; conclusions acknowledge uncertainty. That is what the exam scores.
 - **`fixedskillbox` does not exist** — the only lesson-plan box is `skillbox` (breakable). Where a
   phase table must stay intact, `\boxguard[30]` before the `skillbox`.
 - **`tierbox` does not exist** and there is no tiered instruction — drop the concept.
-- `practicebox` takes **no** argument; a titled box is `notesbox{Title}`. `work` takes **no**
-  argument and its body is math (an amsmath `aligned`).
+- `practicebox` takes **no** argument; a titled box is `notesbox{Title}` — both are legacy in
+  the notes now (see §1). `work` takes **no** argument and its body is math (an amsmath
+  `aligned`).
+- **The Main Ideas / Notes table** — `guidednotes`, `\mainidea`, `\notesprompt`, `probgrid`,
+  `\pcell`, `\stepnum` — is defined in `apstats-boxes.sty` (the commentary there is the
+  reference). Three traps: **inside a table cell `\\` ends the row** and spills the rest into
+  the label column — break lines with `\par`; **a row cannot break across pages** — split a
+  long idea at a seam (the figure, the prompt) with a bare `\\` and continue with `& ...`, a
+  sub-row, and never put more than about half a page in one row; **`\pcell`'s height is the
+  answer space only**, below the statement, and an answer longer than it overflows silently, so
+  keep key answers short. The key differs from the blank in exactly three ways: `-key` for
+  `-boxes`, `\termblank`→`\termans`, and the fourth argument of each `\pcell` (plus
+  `\blank`→`\ans`) — nothing else.
 - `\ding{55}` — `pifont` is not loaded; use `\textbf{$\times$}`.
 - `[resume]` on an `enumerate` split across `tcolorbox`es does not carry; accept per-box
   numbering (A1/B2) or keep the enumerate in one box.
@@ -167,7 +192,8 @@ Recognize the shape by the component directories:
 
 | Shape | Has | Notes |
 | --- | --- | --- |
-| **current** | `notes/` + `ap_practice/`, no `activity/` | the target |
+| **current** | `notes/` opens `\begin{guidednotes}` | the target |
+| **two-section notes** (2026-09) | `notes/` with `objectivebox` + two `notesbox` + `practicebox`, `ap_practice/`, no `activity/` | `unit01/lesson01`–`05` before 2026-09-08 |
 | **group-activity** (2026-08) | `notes/` + `activity/`, no `exit_ticket/` | `unit01/lesson00` |
 | **EFFL** | `experience/` | `unit01/lesson02`–`lesson07` |
 | **pre-EFFL legacy** | `notes/` + `activity/` + `exit_ticket/`, tiered activity boxes | units 02–09 |
@@ -175,10 +201,24 @@ Recognize the shape by the component directories:
 The build accepts all of them. When asked to touch one, **ask whether to regenerate it** in the
 current shape.
 
+**From the two-section notes shape** (the notes only; plan, cover, deck, homework stay):
+
+1. Keep `\pageheader` and the `vocabbox`. Delete the `objectivebox`.
+2. Turn each half-section into one **row** of a `guidednotes` table: the exposition becomes
+   one or two definition sentences with `\blank{}` fills; the red misconception callout becomes
+   **a problem in the grid**; every display stays pre-drawn. Under each row's definition, a
+   `\notesprompt` and a `probgrid` of 3–6 short numbered problems (`\pcell`), numbered 1..N
+   through the component. The `practicebox` becomes the last row, *Guided practice / Its
+   Title*, a grid of 4–6 problems.
+3. Regenerate the key from the blank: `-key`, `\termans`, `\ans`, `\pcell` answers.
+4. Re-voice the plan's Guided Notes skillbox, glance row, and teacher note by **row and problem
+   number** (which problems the teacher works, the trap, the crux), and the deck's section
+   labels by row title. Then build and prove 3 pages blank = 3 pages keyed.
+
 **From the group-activity shape:**
 
-1. Fold the activity's crux scenario into the **second half of notes section 2**, re-voiced as
-   direct instruction. Its debrief becomes the *spoken* whole-class debrief in the plan — no
+1. Fold the activity's crux scenario into the **last instruction row of the notes table**, as
+   problems in its grid. Its debrief becomes the *spoken* whole-class debrief in the plan — no
    `reflectionbox`.
 2. `git rm -r activity activity_key`.
 3. Repace the plan to **5 / 34 / 8 / 8**, delete its Group Activity `skillbox`, fold its teacher
@@ -190,8 +230,8 @@ current shape.
 **From the EFFL shape:**
 
 1. Scaffold `notes`, `notes_key` into the existing lesson dir.
-2. Fold the old **QuickNotes** into the two notes sections' fills, the old **Application** into
-   the `practicebox`, and the old **Check Your Understanding** and **Activity** into the
+2. Fold the old **QuickNotes** into the notes table's definition fills and grids, the old
+   **Application** into the Guided Practice row, and the old **Check Your Understanding** and **Activity** into the
    **homework** — re-voiced to *use* the vocabulary rather than discover it.
 3. The debrief is spoken and lives in the plan; no `reflectionbox`.
 4. Delete `experience`, `experience_key`.
@@ -211,8 +251,9 @@ Either way, delete stale stamps — `rm -rf .stamps/unitXX/lessonYY target/unitX
 evidence per lesson: `make -C unitXX/lessonYY all` exits 0 and every component's page count
 equals its `_key`'s, compared on the compiled components, not the padded packets.
 
-**Scoreboard (2026-09):** 1 of 78 lessons is in the current shape (`unit01/lesson01`); 1 in the
-group-activity shape (`unit01/lesson00`); 6 in EFFL (`unit01/lesson02`–`07`); 70 pre-EFFL legacy,
+**Scoreboard (2026-09-08):** 5 of 78 lessons are in the current shape (`unit01/lesson01`–`05`,
+notes as the Main Ideas / Notes table); 1 in the group-activity shape (`unit01/lesson00`); 2 in
+EFFL (`unit01/lesson06`–`07`); 70 pre-EFFL legacy,
 of which 96 `_key` files still hold teacher notes, `\namedateperiod` appears on every component,
 and 57 lessons have no deck. Convert lesson by lesson or unit by unit as you review, authoring
 the missing deck as you go, and rebuild the unit packet each time — never the whole course in one

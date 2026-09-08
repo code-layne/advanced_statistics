@@ -1,55 +1,42 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Guided Notes & Practice
-% THE in-class document. There is no group activity in this course — the notes carry the whole
-% gradual release, closed by a spoken debrief. It runs SHORT on purpose: the period ends
-% with students starting the homework, which is where the individual practice lives.
-%   I DO      : the objective box, the vocabulary box, and notes sections 1-2.     (~20 min)
-%   WE DO     : the practicebox ("Guided Practice") — Two Shifts, together.        (~14 min)
-%   YOU DO    : nothing on this page — ../homework/ IS the individual practice,
-%               started in the last minutes of the period.
-% There is NO "Putting It Together" transfer set and NO reflection box in this lesson: the
-% debrief is spoken, off the Independent Practice papers, and the Recycling Audit appears
-% only in ../ap_practice/.
-% Vocabulary is GIVEN here, not discovered. Section 4 is the trap that decides the lesson —
-% the bigger group wins on every raw count before anyone counts anything, so counts cannot
-% compare groups of different sizes.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
+% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right a terse definition the student completes, then a grid of short numbered
+% problems with reserved work space. Problems are numbered 1..N through the whole component.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice, is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last minutes of the period. No independent set, no reflection box, no objectives
+%            box (the targets are on the cover).
+% Vocabulary is GIVEN here, not discovered. The crux is the WINS FIRST row — South has more
+% walkers AND North has the higher walking rate, both true, and the bigger group wins on every
+% raw count before anyone counts anything (EK UNC-1.E.1). The plurality trap (problem 6) and
+% the wrong-total trap (problem 19) are problems in a grid, not callouts.
 %
-% This lesson absorbs TWO CED topics (1.3 tables and 1.4 graphs), so section 3 keeps the
-% bar-graph mechanics to one pre-drawn chart and rides the axis idea into section 4.
+% This lesson absorbs TWO CED topics (1.3 tables and 1.4 graphs), so the Bar Graphs row keeps
+% the mechanics to one pre-drawn chart and rides the axis idea into the crux row.
 %
-% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, and every
-% \writelines{n} becomes exactly n \ansline{} calls. Blank widths are sized close to the answers
-% so the two files wrap identically. Every \begin{work} block and every \answerspace{H}{} height
-% is authored BYTE-IDENTICALLY in both files.
-% VOCABPAR: \par brackets each \termblank inside the vocabbox.
+% THE DATA: North High, all 400 students — Bus 180, Car 120, Walk 80, Bike 20.
+%           South High, all 1,000 students — Walk 150, Bike 20 (the district's side-by-side chart).
+%           Two Shifts (guided practice) — Morning 48/108/84 of 240; Evening 18/30/32 of 80.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
+% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
+% argument. Heights and blank widths are sized to the answers so the two files set identically.
+% A guidednotes row cannot break across pages — a long idea is split into sub-rows (a `\\` with
+% no \hline, then `& ...`) so the table can break between them.
 % NO SKETCH QUESTIONS: both displays are pre-drawn in TikZ and read, never constructed.
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-% Authored byte-identically in notes_key/ — the blank reserves exactly H and prints nothing.
-\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
-  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.2}{Guided Notes \& Practice}
 % NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{6pt}
-
-\boxguard[14]
-\begin{objectivebox}
-\small
-By the end of these notes I will be able to:
-\begin{enumerate}[leftmargin=1.6em, nosep, after=\vspace{2pt}]
-  \item build a \textbf{frequency} and a \textbf{relative frequency} table for a categorical
-        variable, and say what each column has to add to;
-  \item read a bar graph and say exactly which number each bar height is showing;
-  \item explain why two groups of different sizes can only be compared with relative
-        frequencies --- and when a count is still the right number.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{6pt}
+\vspace{2pt}
 
 \boxguard[16]
 \begin{vocabbox}
@@ -66,22 +53,24 @@ Fill in each term \textbf{as we name it} in the notes below.
 \par
 \end{vocabbox}
 
-\vspace{6pt}
-
-% ── I DO: section 1 ──────────────────────────────────────────────────────────
-\boxguard[12]
-\begin{notesbox}{1. From One Column to Two Tables --- Counts and Shares}
 \small
-A categorical column cannot be averaged --- last lesson settled that. What it \emph{can} be is
-\textbf{counted}. North High asked all \textbf{400} of its students how they usually get to
-school.
+\begin{guidednotes}
+% ── ROW 1: frequency and relative frequency tables ───────────────────────────
+\mainidea[Counts \&]{Shares} &
+A categorical column cannot be averaged, but it can be \textbf{counted}. A \textbf{frequency
+table} lists how many cases fall in each category; the counts add to the \blank{2.2cm}.
+A \textbf{relative frequency table} lists the share of the group in each category; the shares
+always add to \blank{2.3cm}, because every case is counted in exactly \blank{1.1cm} category.
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.3}
+\vspace{2pt}
+\textbf{1.} North High asked all \textbf{400} of its students how they get to school. Fill the
+shares:
+
+\vspace{1pt}
+\renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\linewidth}{@{} l Y Y @{}}
 \rowcolor{sky}
-\textbf{How they get to school} & \textbf{Frequency} (count) &
-\textbf{Relative frequency} \\
+\textbf{How they get to school} & \textbf{Frequency} (count) & \textbf{Relative frequency} \\
 \hline
 Bus  & 180 & \blank{2.4cm} \\
 Car  & 120 & \blank{2.4cm} \\
@@ -90,51 +79,35 @@ Bike &  20 & \blank{2.4cm} \\
 \hline
 \textbf{Total} & \textbf{400} & \blank{2.4cm} \\
 \end{tabularx}
+\notesprompt{Read your table.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{2}{What do the four counts add to, and why must they?}{1.2cm}{} &
+\pcell{3}{What do the four shares add to?}{1.2cm}{} &
+\pcell{4}{Eighty of 400 walk. Write that share as a fraction, a decimal, a percent, and a
+rate.}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: plurality vs majority, and the context habit ──────────────────────
+\mainidea[``Most'' is a promise]{About half} &
+The largest single category is a \blank{1.9cm}. A \textbf{majority} needs more than
+\blank{1.2cm} of the group --- not the same thing. On the AP exam a share always comes with
+its \blank{1.6cm}: not ``20\%,'' but \emph{20\% \textbf{of North students} walk to school}.
+\notesprompt{Check the claim.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{5}{A flyer says ``Most North students take the bus.'' What share takes the bus?}{1.2cm}{} &
+\pcell{6}{Is that a majority? Say why or why not.}{1.2cm}{} &
+\pcell{7}{Rewrite ``20\%'' as a sentence an AP reader would accept.}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: bar graphs ────────────────────────────────────────────────────────
+\mainidea{Bar graphs} &
+The same North High column, drawn. Each bar stands for one \blank{1.9cm}, and its height is
+the \blank{1.3cm} in that category --- or the \blank{2.9cm}, if the vertical axis is relabelled.
+The bars have \blank{1.2cm} between them: categories are separate groups, not points on a
+number line, so the order of the bars carries no meaning.
 
-\vspace{8pt}
-A \textbf{frequency table} lists how many cases fall in each category; a \textbf{relative
-frequency table} lists the share of the group in each category. \textbf{The two totals are
-different promises.} Frequencies add to the \blank{2.4cm} --- here, 400 students. Relative
-frequencies always add to \blank{2.5cm}, because every student is counted in exactly
-\blank{1.2cm} category.
-
-\vspace{6pt}
-\textbf{``Most'' is a promise about half.} A flyer reads \emph{``Most North students take the
-bus.''} Bus is the largest single category at 45\% --- that makes it a \textbf{plurality}.
-A \textbf{majority} would need more than \blank{2.3cm} of the group. Bus does not have it: the
-other three categories together come to \blank{1.4cm}.
-
-\vspace{10pt}
-\textbf{\textcolor{navy}{Proportion, Percent, Rate --- Three Names for One Number.}}
-Eighty of North's 400 students walk. Every line below says that same fact:
-
-\vspace{4pt}
 \begin{center}
-\fcolorbox{navy}{sky}{\parbox{0.92\linewidth}{\centering
-$\dfrac{80}{400} \;=\; 0.20 \;=\; 20\% \;=\;$ 1 in 5}}
-\end{center}
-
-\vspace{6pt}
-The decimal is the \blank{2.4cm}; the 20\% is the \blank{1.8cm}. Percentages, proportions,
-and rates all carry the \blank{1.3cm} information, so use whichever your reader will
-understand fastest.
-
-\vspace{4pt}
-\textbf{On the AP exam, always attach the context:} not ``20\%,'' but \emph{20\% \textbf{of
-North students} walk to school}.
-\end{notesbox}
-
-\vspace{6pt}
-
-% ── I DO: section 2 — the display ────────────────────────────────────────────
-\boxguard[12]
-\begin{notesbox}{2. Bar Graphs, and Why Counts Mislead Across Groups}
-\small
-The same North High column, drawn:
-
-\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.72]
+\begin{tikzpicture}[scale=0.5]
   \draw[linegray, very thin] (0,1) -- (5.4,1);
   \draw[linegray, very thin] (0,2) -- (5.4,2);
   \draw[linegray, very thin] (0,3) -- (5.4,3);
@@ -148,28 +121,23 @@ The same North High column, drawn:
   \node[rotate=90, font=\tiny] at (-0.75,2.0) {Students};
 \end{tikzpicture}
 \end{center}
-
-\vspace{2pt}
-\vspace{6pt}
-\textbf{Read it.} The \emph{Walk} bar reaches \blank{1.4cm} students, which is \blank{1.6cm} of
-North's 400. Add the four bar heights and you are back to \blank{1.6cm} --- a bar graph of
-counts carries exactly the information the frequency table carried.
-
-Each bar stands for one \blank{2.0cm}, and its height is the \blank{1.4cm} in that category.
-The bars are drawn with \blank{1.3cm} between them, because the categories are separate groups
-and not points on a number line --- which is also why the order of the bars carries no meaning.
-
-\vspace{6pt}
-\textbf{Relabel the vertical axis with relative frequencies} --- 0.45, 0.30, 0.20, 0.05 --- and
-every bar keeps the height it already has. Only the \blank{2.4cm} change. Reading a bar graph
-therefore starts with one question: \emph{what is the vertical axis counting?}
-
-\vspace{10pt}
-\textbf{\textcolor{navy}{The Bigger Group Wins Before Anyone Counts.}}
+\\
+& \notesprompt{Read the graph.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{8}{How tall is the Walk bar, and what is it counting?}{1.0cm}{} &
+\pcell{9}{What share of North is that?}{1.0cm}{} &
+\pcell{10}{Add the four bar heights. What do you get?}{1.0cm}{} \\ \hline
+\pcell{11}{Why are there gaps between the bars?}{1.3cm}{} &
+\pcell{12}{Relabel the axis 0.45, 0.30, 0.20, 0.05. Which bars change height?}{1.3cm}{} &
+\pcell{13}{Before reading any bar graph, what is the first question to ask?}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: the comparison rule — THE CRUX ────────────────────────────────────
+\mainidea[The bigger group]{Wins first} &
 South High is in the same district and surveyed all \textbf{1{,}000} of its students. The
 district posted the chart on the right to compare the two schools.
 
-\vspace{4pt}
+\vspace{2pt}
 \begin{minipage}[t]{0.46\linewidth}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
@@ -185,7 +153,7 @@ South & 150 & 20 & 1{,}000 \\
 \begin{minipage}[t]{0.50\linewidth}
 \vspace{-6pt}
 \begin{center}
-\begin{tikzpicture}[scale=0.62]
+\begin{tikzpicture}[scale=0.5]
   \draw[linegray, very thin] (0,1) -- (6.6,1);
   \draw[linegray, very thin] (0,2) -- (6.6,2);
   \draw[linegray, very thin] (0,3) -- (6.6,3);
@@ -205,47 +173,29 @@ South & 150 & 20 & 1{,}000 \\
 \end{tikzpicture}
 \end{center}
 \end{minipage}
+\\
+& South's bar is taller in almost every category --- and that was guaranteed before anyone
+counted anything, because South surveyed \blank{1.9cm} as many students.
+\textbf{The comparison rule:} to compare groups of different sizes, use \blank{3.6cm},
+never raw counts. But ``how many students in this district walk?'' asks about \blank{1.9cm},
+and there a count is exactly the right number --- \emph{say which number you used, and why}.
+\notesprompt{Compare the schools.}
+\begin{probgrid}{|Y|Y|}
+\pcell{14}{Work both walking rates.}{1.3cm}{} &
+\pcell{15}{Which school has more walkers? Which has the higher walking rate?}{1.3cm}{} \\ \hline
+\pcell{16}{So which school ``walks more''? Answer honestly.}{1.2cm}{} &
+\pcell{17}{What one change would make the district's chart a fair comparison?}{1.2cm}{} \\ \hline
+\pcell{18}{``How many students in this district walk to school?'' Which number, and why?}{1.3cm}{} &
+\pcell{19}{A student divides South's 150 walkers by 1{,}400. What did she compute?}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{Two Shifts} &
+A coffee shop records the size of every drink it sells. Morning shift: \textbf{240} orders.
+Evening shift: \textbf{80}.
 
-\vspace{4pt}
-South's bar is taller in almost every category --- and that was guaranteed before anyone counted
-anything, because South surveyed \blank{2.2cm} as many students. Work the two walking rates:
-
-\begin{work}
-\text{North walking rate} &= \frac{80}{400} = 0.20 = 20\% \\[4pt]
-\text{South walking rate} &= \frac{150}{1000} = 0.15 = 15\%
-\end{work}
-
-South has \blank{1.3cm} walkers, 150 against 80. North has the \blank{1.6cm} walking rate,
-20\% against 15\%. \textbf{Both statements are true}, and they answer two different questions.
-
-\vspace{6pt}
-\begin{center}
-\fcolorbox{navy}{sky}{\parbox{0.92\linewidth}{\centering\small
-\textbf{The comparison rule.} To compare groups of different sizes, use\\
-\blank{4.0cm}, never raw counts.}}
-\end{center}
-
-\vspace{6pt}
-The fix for the district's chart is one change: relabel the vertical axis so each bar shows the
-\blank{1.8cm} of that school rather than a head count.
-
-\vspace{4pt}
-\textbf{Counts are not always wrong.} ``How many students in this district walk to school?'' is
-a question about \blank{2.2cm}, and the count is exactly the right number. The rule is not
-``always use rates'' --- it is \emph{say which number you used, and why that one}.
-\end{notesbox}
-
-\vspace{6pt}
-
-% ── WE DO: guided practice ───────────────────────────────────────────────────
-\boxguard[26]
-\begin{practicebox}
-\small
-\textbf{Two Shifts --- we work this one together.} A coffee shop records the size of every drink
-it sells. The morning shift filled \textbf{240} orders; the evening shift filled \textbf{80}.
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.2}
+\vspace{1pt}
+\renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
 \rowcolor{sky}
 \textbf{Shift} & \textbf{Small} & \textbf{Medium} & \textbf{Large} & \textbf{Total} \\
@@ -254,23 +204,23 @@ Morning &  48 & 108 & 84 & 240 \\
 Evening &  18 &  30 & 32 &  80 \\
 \hline
 \end{tabularx}
+\notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{20}{Which shift sold more large drinks?}{1.0cm}{} &
+\pcell{21}{Morning's large-drink rate.}{1.0cm}{} &
+\pcell{22}{Evening's large-drink rate.}{1.0cm}{} \\ \hline
+\pcell{23}{Which shift sells large drinks at the higher rate? Is that the same question as
+problem~20?}{1.4cm}{} &
+\pcell{24}{One sentence for the staff newsletter comparing what the shifts sell. Which kind of
+number did you use, and why?}{1.4cm}{} &
+\pcell{25}{The owner asks, ``Which shift is \emph{busier}?'' Which column answers that --- and
+is the answer a rate or a count?}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=7pt]
-  \item Which shift sold more large drinks? \blank{2.8cm} \quad Now work out each shift's
-        large-drink rate.
-        \begin{work}
-        \text{Morning} &= \frac{84}{240} = 0.35 = 35\% \\[4pt]
-        \text{Evening} &= \frac{32}{80} = 0.40 = 40\%
-        \end{work}
-        Which shift sells them at the higher rate? \blank{2.8cm}
-  \item The owner wants one sentence for the staff newsletter comparing what the two shifts
-        sell. Write it, and say which kind of number you used and why.\\[3pt]
-        \writelines{2}
-  \item \textbf{The question changes.} The owner now asks, ``Which shift is \emph{busier}?''
-        Which column answers that --- and is the answer a rate or a count?\\[3pt]
-        \writelines{2}
-\end{enumerate}
-\end{practicebox}
-
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}
