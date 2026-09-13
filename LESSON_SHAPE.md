@@ -58,15 +58,21 @@ homework *is* the individual practice.
 *as each term is named*, then **one two-column *Main Ideas / Questions* | *Notes* table**
 (`guidednotes` in `apstats-boxes.sty`), modelled on the Algebra 2 guided-notes worksheets
 (2026-09-08). Each **row** is one idea: a short label on the left (`\mainidea[lead]{Label}`),
-and on the right a terse definition the student completes with `\blank{}` fills, then a bold
-prompt (`\notesprompt`) and a **grid of short numbered problems** (`probgrid` + `\pcell`) with
-reserved answer space; a numbered procedure uses `\stepnum{n}`. **The last row is Guided
-Practice**, one fresh context worked entirely together. **The notes end there.** Problems are
-numbered 1..N through the whole component; **target 20–26 problems and 3 pages** at 12pt
-(the vocabulary box plus a two-page table). No prose exposition, no objective box (the targets
-are on the cover), no red misconception callout: the misconception is *a problem in a grid*,
-and **the crux — the problem that surfaces the lesson's target misconception — lives in the
-last instruction row before Guided Practice.** The I do / we do split runs **row by row**: the
+and on the right **one or two complete printed sentences** (the definition, read, not punched
+full of holes), **one large pre-drawn display** the student reads or annotates (`\labelbox`),
+then a bold prompt (`\notesprompt`) and a **two-across grid of a few numbered problems**
+(`probgrid` + `\pcell`) with **2–3 cm of writing room each**; a numbered procedure uses
+`\stepnum{n}`, and a definition that deserves a restatement gets an *In your own words*
+`\writespace`. **The last row is Guided Practice**, one fresh context worked entirely together.
+**The notes end there.** Problems are numbered 1..N through the whole component.
+
+**Density rules (2026-09-12 — the page belongs to the student's pen):** a `\blank{}` appears
+only where a single word or number *is* the answer — a table to fill, a display to name — never
+mid-sentence; budget a handful per lesson, not per row. Printed prose is short and complete.
+Every row carries a display, set large. **12–19 problems, two across, never three; 3–4 pages**
+at 12pt. No objective box (the targets are on the cover), no red misconception callout: the
+misconception is *a problem in a grid*, and **the crux — the problem that surfaces the lesson's
+target misconception — lives in the last instruction row before Guided Practice.** The I do / we do split runs **row by row**: the
 teacher fills the definition lines and works the first problem of each grid, the class works
 the rest (~24 min), then Guided Practice together (~10 min). The plan names, by problem number,
 which problems the teacher works, which is the trap, and which is the crux.
@@ -145,13 +151,14 @@ context**; conclusions acknowledge uncertainty. That is what the exam scores.
 - **The Main Ideas / Notes table** — `guidednotes`, `\mainidea`, `\notesprompt`, `probgrid`,
   `\pcell`, `\stepnum` — is defined in `apstats-boxes.sty` (the commentary there is the
   reference). Three traps: **inside a table cell `\\` ends the row** and spills the rest into
-  the label column — break lines with `\par`; **a row cannot break across pages** — split a
-  long idea at a seam (the figure, the prompt) with a bare `\\` and continue with `& ...`, a
-  sub-row, and never put more than about half a page in one row; **`\pcell`'s height is the
+  the label column — break lines with `\par`; **a row cannot break across pages** — so give the
+  figure its own sub-row (a bare `\\`, then `& ...`) and put **each grid row in its own sub-row**,
+  closing the `probgrid` and reopening the next as `probgrid*` (no top rule, so they read as one
+  grid); then the table breaks wherever it needs to and the pages fill; **`\pcell`'s height is the
   answer space only**, below the statement, and an answer longer than it overflows silently, so
-  keep key answers short. The key differs from the blank in exactly three ways: `-key` for
-  `-boxes`, `\termblank`→`\termans`, and the fourth argument of each `\pcell` (plus
-  `\blank`→`\ans`) — nothing else.
+  keep key answers short. The key differs from the blank in exactly these ways: `-key` for
+  `-boxes`, `\termblank`→`\termans`, `\blank`→`\ans`, and the answer argument of each
+  `\pcell`, `\writespace` and `\labelbox` — nothing else.
 - `\ding{55}` — `pifont` is not loaded; use `\textbf{$\times$}`.
 - `[resume]` on an `enumerate` split across `tcolorbox`es does not carry; accept per-box
   numbering (A1/B2) or keep the enumerate in one box.
@@ -207,13 +214,14 @@ current shape.
 2. Turn each half-section into one **row** of a `guidednotes` table: the exposition becomes
    one or two definition sentences with `\blank{}` fills; the red misconception callout becomes
    **a problem in the grid**; every display stays pre-drawn. Under each row's definition, a
-   `\notesprompt` and a `probgrid` of 3–6 short numbered problems (`\pcell`), numbered 1..N
-   through the component. The `practicebox` becomes the last row, *Guided practice / Its
-   Title*, a grid of 4–6 problems.
+   `\notesprompt` and a two-across `probgrid` of 2–4 numbered problems (`\pcell`, 2–3 cm of
+   answer space), numbered 1..N through the component; delete every mid-sentence blank and
+   print the sentence whole. The `practicebox` becomes the last row, *Guided practice / Its
+   Title*, a grid of 4 problems.
 3. Regenerate the key from the blank: `-key`, `\termans`, `\ans`, `\pcell` answers.
 4. Re-voice the plan's Guided Notes skillbox, glance row, and teacher note by **row and problem
    number** (which problems the teacher works, the trap, the crux), and the deck's section
-   labels by row title. Then build and prove 3 pages blank = 3 pages keyed.
+   labels by row title. Then build and prove the page counts match (3–4 pages).
 
 **From the group-activity shape:**
 

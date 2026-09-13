@@ -1,29 +1,25 @@
 %! The Language of Variation — Unit 1, Lesson 1.1 — Guided Notes & Practice
-% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
-% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
-% left; on the right a terse definition the student completes, then a grid of short numbered
-% problems with reserved work space. Problems are numbered 1..N through the whole component.
-%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, then ONE two-column guidednotes table. Each row is one idea — a label on the left; on the
+% right a SHORT printed definition, ONE large pre-drawn display, then a grid of a few numbered
+% problems with real writing room. Problems are numbered 1..N through the component.
+% DENSITY: a \blank{} only where a word or number IS the answer (the C/Q strip in the Amounts
+% row); no mid-sentence blanks; two problems across; 2–3cm of answer space each.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem.
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
 %            Guided Practice, is worked entirely together in a fresh context.
-%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
-%            last minutes of the period. No independent set, no reflection box, no objectives
-%            box (the targets are on the cover).
-% Vocabulary is GIVEN here, not discovered. The crux is the AMOUNTS row — a column written
-% entirely in digits is not automatically quantitative. Permit numbers, parking spots, and ZIP
-% codes average cleanly and mean nothing (EK VAR-1.C.1, VAR-1.C.2).
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% The crux is the AMOUNTS row — a column written entirely in digits is not automatically
+% quantitative. Permit numbers, parking spots, and ZIP codes average cleanly and mean nothing
+% (EK VAR-1.C.1, VAR-1.C.2).
 %
 % THE CONTEXTS: three hiking parties (Trail / Time out), two permits with their water bottles,
 % the ranger's Short / Medium / Long regrouping, the five-column digits strip, and the Season
 % Pass for Guided Practice.
 %
-% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
-% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
-% argument. Heights and blank widths are sized to the answers so the two files set identically.
-% The \begin{work} block is authored BYTE-IDENTICALLY in both files. A guidednotes row cannot
-% break across pages, so every idea is split into two sub-rows at its prompt (a `\\` with no
-% \hline, then `& ...`) so the table can break between the definition and its grid.
-% NO SKETCH QUESTIONS: every display is pre-drawn and read.
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, and the answer argument
+% of every \pcell, \writespace and \labelbox filled. Nothing else differs. A row cannot break
+% across pages: figure and grid are separate sub-rows (`\\` then `& ...`).
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -54,144 +50,230 @@ Fill in each term \textbf{as we name it} in the notes below.
 \begin{guidednotes}
 % ── ROW 1: two kinds of variable ─────────────────────────────────────────────
 \mainidea[Two kinds of]{Variable} &
-A \textbf{variable} is any characteristic recorded for each individual; today we split them in
-two. A \textbf{categorical} variable's values are category \blank{1.6cm} or group labels. A
-\textbf{quantitative} variable's values are \blank{2.2cm} for a measured or counted amount.
+A \textbf{variable} is anything recorded for each individual. \textbf{Categorical} values are
+\emph{group labels}; \textbf{quantitative} values are \emph{numbers for a measured or counted
+amount}.
 
-\vspace{3pt}
-Three hiking parties, two kinds of column:
+\vspace{4pt}
 \begin{center}
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{@{} l l c @{}}
-\rowcolor{sky}
-\textbf{Party} & \textbf{Trail} & \textbf{Time out (min)} \\
-\hline
-Alvarez & Ridge Loop   &  95 \\
-Boone   & Cedar Falls  & 140 \\
-Delgado & Summit Trail & 215 \\
-\hline
-\end{tabular}
+\begin{tikzpicture}[scale=1.0]
+  % column shading
+  \fill[goldbg] (2.3,-0.3) rectangle (5.6,2.9);
+  \fill[greenbg] (5.6,-0.3) rectangle (9.2,2.9);
+  % header
+  \fill[navy] (0,2.2) rectangle (9.2,2.9);
+  \node[white, font=\bfseries\small] at (1.15,2.55) {Party};
+  \node[white, font=\bfseries\small] at (3.95,2.55) {Trail};
+  \node[white, font=\bfseries\small] at (7.4,2.55) {Time out (min)};
+  % rows
+  \foreach \y/\p/\t/\m in {1.6/Alvarez/Ridge Loop/95, 0.9/Boone/Cedar Falls/140,
+                           0.2/Delgado/Summit Trail/215} {
+    \node[font=\small] at (1.15,\y) {\p};
+    \node[font=\small] at (3.95,\y) {\t};
+    \node[font=\small] at (7.4,\y) {\m};}
+  \draw[linegray] (0,-0.3) rectangle (9.2,2.9);
+  \draw[linegray] (2.3,-0.3) -- (2.3,2.9);
+  \draw[linegray] (5.6,-0.3) -- (5.6,2.9);
+  % arrows to the label boxes
+  \draw[->, thick, goldacc] (3.95,-0.35) -- (3.95,-0.95);
+  \draw[->, thick, greenacc] (7.4,-0.35) -- (7.4,-0.95);
+  \node[anchor=north] at (3.95,-1.0) {\labelbox{2.6cm}{}};
+  \node[anchor=north] at (7.4,-1.0) {\labelbox{2.6cm}{}};
+  \node[font=\scriptsize\itshape, text width=3.2cm, align=center, anchor=north] at (3.95,-2.05)
+    {Summit Trail is not ``more'' than Ridge Loop};
+  \node[font=\scriptsize\itshape, text width=3.2cm, align=center, anchor=north] at (7.4,-2.05)
+    {215 really is 120 more than 95};
+\end{tikzpicture}
 \end{center}
-\emph{Trail} is \blank{2.6cm}: its values name which trail, and Summit Trail is not ``more''
-than Ridge Loop. \emph{Time out} is \blank{2.6cm}: 215 minutes really is more than 95, and the
-difference, 120 minutes, means something.
 \\
-& \notesprompt{The ranger records more about each party. Classify each: C or Q.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{1}{Group size (number of hikers)}{0.9cm}{} &
-\pcell{2}{Dog along (Yes / No)}{0.9cm}{} &
-\pcell{3}{Weather at the trailhead}{0.9cm}{} \\ \hline
-\pcell{4}{Pack weight, in pounds}{1.1cm}{} &
-\pcell{5}{Trail difficulty (Easy / Moderate / Hard)}{1.1cm}{} &
-\pcell{6}{Miles hiked}{1.1cm}{} \\ \hline
+& \notesprompt{Categorical or quantitative? Say why.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Group size (number of hikers)}{1.8cm}{} &
+\pcell{2}{Dog along (Yes / No)}{1.8cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Pack weight (pounds)}{1.8cm}{} &
+\pcell{4}{Weather at the trailhead}{1.8cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 2: the amount test ───────────────────────────────────────────────────
 \mainidea[The]{Amount test} &
-Do not ask ``does it have digits.'' Ask: \textbf{is the value an \emph{amount} of something ---
-how much, or how many?} If yes, the variable is \blank{2.8cm}. If the value only
-\emph{identifies} or \emph{labels}, it is \blank{2.6cm}.
+Do not ask whether it has digits. Ask: \textbf{is the value an \emph{amount} of something ---
+how much, or how many?} Second form: \textbf{does the average mean anything?}
 
-\vspace{3pt}
-A second way to run the same test: \textbf{does averaging the values produce something real?}
-If the average is \blank{2.2cm}, the variable is categorical no matter how it is written.
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % ── permits ──
+  \node[font=\bfseries\small\color{navy}] at (1.9,3.1) {Permit \#};
+  \foreach \x/\n in {0.9/2041, 2.9/6318} {
+    \fill[sky, rounded corners=2pt] (\x-0.75,1.8) rectangle (\x+0.75,2.75);
+    \draw[navy, rounded corners=2pt] (\x-0.75,1.8) rectangle (\x+0.75,2.75);
+    \node[font=\tiny\color{slate}] at (\x,2.52) {PERMIT};
+    \node[font=\bfseries\normalsize] at (\x,2.12) {\n};}
+  \draw[->, thick] (1.9,1.7) -- (1.9,1.15);
+  \node[font=\small] at (1.9,0.85) {average $=4179.5$};
+  \node[font=\bfseries\large\color{redacc}] at (1.9,0.25) {nobody's permit};
+  \node[font=\small] at (1.6,-0.45) {Permit \# is \labelbox{2.2cm}{}};
+  % ── bottles ──
+  \node[font=\bfseries\small\color{navy}] at (6.6,3.1) {Water bottles};
+  \foreach \xo/\n in {4.6/6, 7.3/2} {
+    \foreach \k in {1,...,\n} {
+      \fill[navy!55, rounded corners=1pt] ({\xo+0.32*\k-0.1},1.85) rectangle ({\xo+0.32*\k+0.1},2.35);
+      \fill[navy] ({\xo+0.32*\k-0.05},2.35) rectangle ({\xo+0.32*\k+0.05},2.5);}}
+  \node[font=\small] at (5.75,2.7) {6};
+  \node[font=\small] at (7.8,2.7) {2};
+  \draw[->, thick] (6.6,1.7) -- (6.6,1.15);
+  \node[font=\small] at (6.6,0.85) {average $=4$};
+  \foreach \k in {1,...,4} {
+    \fill[navy!55, rounded corners=1pt] ({5.9+0.32*\k-0.1},0.0) rectangle ({5.9+0.32*\k+0.1},0.5);
+    \fill[navy] ({5.9+0.32*\k-0.05},0.5) rectangle ({5.9+0.32*\k+0.05},0.65);}
+  \node[font=\small] at (7.2,-0.45) {Water bottles is \labelbox{2.2cm}{}};
+\end{tikzpicture}
+\end{center}
 
+\vspace{2pt}
+\textbf{In your own words:} the amount test.
+\writespace{1.6cm}{}
 \\
-& Two hiking parties hold permits 2041 and 6318 and carry 6 and 2 water bottles. Both columns are
-written entirely in digits. Both averages compute without complaint:
-
-\begin{work}
-\text{average permit \#} &= \frac{2041 + 6318}{2} = 4179.5 \\[4pt]
-\text{average water bottles} &= \frac{6 + 2}{2} = 4
-\end{work}
-\notesprompt{Run the test on both averages.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{7}{Four water bottles --- what real thing does that number describe?}{1.5cm}{} &
-\pcell{8}{Hand me the party whose permit is 4179.5.}{1.5cm}{} &
-\pcell{9}{Which column passes the amount test, and what is it an amount of?}{1.5cm}{} \\ \hline
+& \notesprompt{Run the test.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{Four water bottles --- what real thing is that?}{2.0cm}{} &
+\pcell{6}{Hand me the party whose permit is 4179.5.}{2.0cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 3: grouping runs one way ─────────────────────────────────────────────
 \mainidea[Grouping is]{One way only} &
-A ranger stops recording \emph{Time out} in minutes and records \emph{Short} / \emph{Medium} /
-\emph{Long} instead. Same hikes, same afternoon:
+\textbf{Grouping (binning)} replaces amounts with group labels. It runs one way: 95 minutes
+becomes \emph{Short}, but \emph{Short} never becomes 95 again.
 
-\vspace{2pt}
-\centerline{\emph{Time out} \ 95, 140, 215 \ minutes \quad$\longrightarrow$\quad
-\emph{Length} \ Short, Medium, Long}
-
-\vspace{2pt}
-The new column is \blank{2.6cm}. Replacing measured amounts with group labels is called
-\textbf{grouping} or \textbf{binning}. Once 95, 140, and 215 become labels, the mean time on the
-trail can no longer be \blank{2.1cm} from the column. Grouping runs \blank{1.2cm} way only:
-you can always bin amounts into labels, but you can never \blank{1.8cm} the amounts from the
-labels.
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  % ruler
+  \fill[sky] (0,1.5) rectangle (4.0,2.1);
+  \fill[goldbg] (4.0,1.5) rectangle (6.0,2.1);
+  \fill[greenbg] (6.0,1.5) rectangle (8.0,2.1);
+  \draw[thick] (0,1.5) rectangle (8.0,2.1);
+  \draw[thick] (4.0,1.5) -- (4.0,2.1); \draw[thick] (6.0,1.5) -- (6.0,2.1);
+  \foreach \x/\l in {0/0, 2/60, 4/120, 6/180, 8/240} {
+    \draw (\x,1.5) -- (\x,1.35); \node[below, font=\tiny] at (\x,1.35) {\l};}
+  \node[font=\tiny] at (4.0,0.75) {\emph{Time out}, minutes};
+  % the three hikes
+  \foreach \x/\p in {3.167/95, 4.667/140, 7.167/215} {
+    \fill[navy] (\x,1.8) circle (0.11);
+    \node[above, font=\scriptsize\bfseries] at (\x,2.15) {\p};}
+  % one-way arrow down to the label column
+  \draw[->, very thick] (4.3,0.55) -- (4.3,-0.2);
+  \node[right, font=\scriptsize\itshape] at (4.45,0.18) {amounts $\rightarrow$ labels};
+  \draw[->, very thick, redacc] (3.5,-0.2) -- (3.5,0.55);
+  \draw[redacc, very thick] (3.3,0.0) -- (3.7,0.4);
+  \draw[redacc, very thick] (3.3,0.4) -- (3.7,0.0);
+  \node[left, font=\scriptsize\itshape\color{redacc}] at (3.35,0.18) {never back};
+  \foreach \x/\l/\c in {2.0/Short/sky, 5.0/Medium/goldbg, 7.0/Long/greenbg} {
+    \fill[\c] (\x-0.9,-0.95) rectangle (\x+0.9,-0.3);
+    \draw[thick] (\x-0.9,-0.95) rectangle (\x+0.9,-0.3);
+    \node[font=\bfseries\small] at (\x,-0.62) {\l};}
+  \node[font=\tiny] at (4.0,-1.25) {the new \emph{Length} column};
+  \node[font=\small] at (4.0,-1.85) {The new column is \labelbox{2.6cm}{}};
+\end{tikzpicture}
+\end{center}
 \\
 & \notesprompt{Use the two columns.}
 \begin{probgrid}{|Y|Y|}
-\pcell{10}{Which column can be averaged? Compute that average.}{1.3cm}{} &
-\pcell{11}{Boone's row now reads \emph{Medium}. Can the ranger get 140 back from it? Why?}{1.3cm}{} \\ \hline
-\pcell{12}{Name one thing the ranger can no longer compute from the new column.}{1.2cm}{} &
-\pcell{13}{A second ranger records \emph{Under 2 hours} / \emph{2 hours or more}. Which kind of
-variable is that column?}{1.2cm}{} \\ \hline
+\pcell{7}{Which column can be averaged? Compute it.}{2.0cm}{} &
+\pcell{8}{Boone now reads \emph{Medium}. Can the ranger get 140 back? Why?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{Name one thing the ranger can no longer compute.}{2.0cm}{} &
+\pcell{10}{A second ranger records \emph{Under 2 hours} / \emph{2 hours or more}. Which kind
+is that?}{2.0cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 4: digits are not amounts — THE CRUX ─────────────────────────────────
 \mainidea[Digits are not]{Amounts} &
-A column written entirely in digits is \blank{1.2cm} automatically quantitative. Permit numbers
-and ZIP codes average without complaint and mean \blank{1.6cm}: their digits \blank{1.7cm} an
-individual, they do not measure anything.
+A column of digits is \textbf{not automatically quantitative}: a permit number \emph{identifies}
+a party and measures nothing. Counting a categorical variable also makes a number --- ``62\% hiked
+with a dog'' is a \emph{summary} of \emph{Dog along}, not a value of it.
 
-\vspace{3pt}
-Counting a categorical variable also produces numbers. ``62\% of parties hiked with a dog'' is a
-numerical \blank{1.9cm} of the categorical variable \emph{Dog along}. The \emph{summary} is
-numeric; the \emph{variable} is still \blank{2.4cm}.
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \foreach \x/\h/\a/\b/\c in {1.0/Permit \#/2041/6318/0377, 3.0/Parking spot/04/17/22,
+                              5.0/Home ZIP/80211/80304/80027, 7.0/Water bottles/6/2/3,
+                              9.0/Group size/4/2/5} {
+    \fill[sky] (\x-0.95,0) rectangle (\x+0.95,2.4);
+    \fill[navy] (\x-0.95,2.4) rectangle (\x+0.95,3.0);
+    \draw[navy] (\x-0.95,0) rectangle (\x+0.95,3.0);
+    \node[white, font=\bfseries\scriptsize] at (\x,2.7) {\h};
+    \node[font=\normalsize] at (\x,1.95) {\a};
+    \node[font=\normalsize] at (\x,1.2) {\b};
+    \node[font=\normalsize] at (\x,0.45) {\c};}
+  \node[font=\scriptsize\itshape] at (5.0,-0.35) {five columns, all digits --- not all amounts};
+\end{tikzpicture}
+\end{center}
+
+\vspace{2pt}
+\textbf{11.} Label each column \textbf{C} or \textbf{Q}:
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+\textbf{Permit \#} & \textbf{Parking spot} & \textbf{Home ZIP} & \textbf{Water bottles} &
+\textbf{Group size} \\
+\hline
+\blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\end{tabularx}
 \\
-& \notesprompt{Classify each. Write C or Q.}
-\begin{probgrid}{|Y|Y|Y|Y|Y|}
-\pcell{14}{Permit \#}{0.9cm}{} &
-\pcell{15}{Parking spot}{0.9cm}{} &
-\pcell{16}{Home ZIP}{0.9cm}{} &
-\pcell{17}{Water bottles}{0.9cm}{} &
-\pcell{18}{Group size}{0.9cm}{} \\ \hline
-\end{probgrid}
-\notesprompt{Then say why.}
+& \notesprompt{Then say why.}
 \begin{probgrid}{|Y|Y|}
-\pcell{19}{Every entry in the \emph{Dog along} column is Yes or No. Where did the 62 come from
---- and is it a value of the variable?}{1.4cm}{} &
-\pcell{20}{State the amount test in one sentence --- without using the word
-\emph{digits}.}{1.4cm}{} \\ \hline
+\pcell{12}{Trail difficulty: \emph{Easy} / \emph{Moderate} / \emph{Hard}. Hard is more than Easy
+--- so is it quantitative? How much more?}{2.2cm}{} &
+\pcell{13}{Parking spots 04 and 17. Average them, then hand me the party whose spot that is.
+Which kind is \emph{Parking spot}?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{14}{\emph{Dog along} is all Yes or No. Where did the 62 come from --- is it a value of
+the variable?}{2.2cm}{} &
+\pcell{15}{State the amount test in one sentence, without the word \emph{digits}.}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 5: guided practice — WE DO, together, fresh context ──────────────────
 \mainidea[Guided practice]{The Season Pass} &
-A ski area records five things about each of its 3{,}400 season-pass holders: \textbf{pass
-number}, \textbf{age} (years), \textbf{pass tier} (Gold / Silver / Bronze), \textbf{miles
-traveled} to the mountain, and \textbf{locker number}.
+A ski area records five things about each of its 3{,}400 pass holders. One holder's pass:
 
 \vspace{4pt}
-\textbf{21.} The individuals are \blank{3.6cm}.
-
-\vspace{4pt}
-\textbf{22.} Label each variable \textbf{C} or \textbf{Q}:
-
-\vspace{2pt}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
-\textbf{Pass \#} & \textbf{Age} & \textbf{Pass tier} & \textbf{Miles traveled} &
-\textbf{Locker \#} \\
-\blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
-\end{tabularx}
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \fill[goldbg, rounded corners=6pt] (0,0) rectangle (8.6,3.4);
+  \draw[goldacc, thick, rounded corners=6pt] (0,0) rectangle (8.6,3.4);
+  \fill[navy, rounded corners=6pt] (0,2.6) rectangle (8.6,3.4);
+  \fill[navy] (0,2.6) rectangle (8.6,2.9);
+  \node[white, font=\bfseries] at (4.3,3.0) {SUMMIT RIDGE \quad SEASON PASS};
+  \foreach \x/\y/\h/\v in {0.4/2.1/Pass number/5120, 4.5/2.1/Age (years)/34,
+                           0.4/1.35/Pass tier/Gold, 4.5/1.35/Miles traveled/42,
+                           0.4/0.6/Locker number/117} {
+    \node[anchor=west, font=\scriptsize\color{slate}] at (\x,\y+0.25) {\h};
+    \node[anchor=west, font=\bfseries\normalsize] at (\x,\y-0.1) {\v};}
+  \draw[goldacc] (4.3,0.2) -- (4.3,2.5);
+\end{tikzpicture}
+\end{center}
 \\
 & \notesprompt{We work these together.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{23}{\emph{Miles traveled} and \emph{Locker \#} are both digits. Say the difference in
-one sentence.}{1.6cm}{} &
-\pcell{24}{The resort stops recording age in years and records \textbf{age group} instead
-(Under 18 / 18--34 / 35--54 / 55+). Which kind is the variable now, and what can the resort no
-longer compute?}{1.6cm}{} &
-\pcell{25}{A report states: \textbf{``The average pass number is 5{,}120.''} Why does that
-number tell you nothing about the pass holders?}{1.6cm}{} \\ \hline
+\begin{probgrid}{|Y|Y|}
+\pcell{16}{Who are the individuals? Label all five \textbf{C} or \textbf{Q}.}{2.4cm}{} &
+\pcell{17}{\emph{Miles traveled} and \emph{Locker number} are both digits. Say the difference in
+one sentence.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{18}{Age in years becomes \textbf{age group} (Under 18 / 18--34 / 35--54 / 55+). Which
+kind now, and what can the resort no longer compute?}{2.4cm}{} &
+\pcell{19}{\textbf{``The average pass number is 5{,}120.''} Why does that tell you
+nothing?}{2.4cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

@@ -131,40 +131,42 @@ in the plan. Key mirrors with `\ans`; multi-step solutions go in `work` blocks.
 ## Guided notes & practice
 
 `notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 34 minutes**, in the **Main
-Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets, 2026-09-08).
-`\pageheader{Unit X, Lesson Y.Z}{Guided Notes \& Practice}` (no name row — Namestrip), the
-`vocabbox`, then **one `guidednotes` table**. Target **3 pages** at 12pt — the vocabulary box and
-a two-page table — and **20–26 numbered problems**. Set the whole table in `\small`.
+Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; density rules of
+2026-09-12). `\pageheader{Unit X, Lesson Y.Z}{Guided Notes \& Practice}` (no name row —
+Namestrip), the `vocabbox`, then **one `guidednotes` table** set in `\small`. **3–4 pages** at
+12pt, **12–19 numbered problems**. The page belongs to the student's pen.
 
 - `vocabbox` — one `\termblank{Term}` per key term (3–5 of them), each bracketed by `\par` (the
   vocabpar fix). The box says **"Fill in each term as we name it in the notes below"** — it is
-  filled during instruction, never front-loaded. The key uses `\termans{Term}{definition}`,
-  **not** `\termblanklong` plus an `\ansline` (that runs a line long every time).
+  filled during instruction, never front-loaded. The key uses `\termans{Term}{definition}`.
 - **No `objectivebox`** — the targets are on the cover. No `notesbox`, no `practicebox`.
-- `guidednotes` — the two-column table, *Main Ideas / Questions* | *Notes*. **Four to five
-  rows.** Each row is `\mainidea[small lead]{Label} & ... \\ \hline`. The label is two or three
-  words, uppercased by the macro; keep a single word under ten letters or it overflows the
-  column. The Notes cell holds, in order: one or two definition sentences with `\blank{W}`
-  fills sized to their answers (a pre-drawn display or a `\stepnum{n}` procedure where the idea
-  needs one); a `\notesprompt{Classify each …}`; and a `probgrid` — `|Y|Y|Y|` for short
-  answers, `|Y|Y|` where an answer is a sentence or a short computation — of `\pcell{n}{statement}{H}{}`
-  cells, rows ending `\\ \hline`. **H is the answer space below the statement**: 0.9cm for a
-  word or number, 1.2–1.6cm for a sentence. Number problems 1..N straight through the component.
-- **The I do / we do split is row by row**: the teacher fills the definition lines and works the
-  first problem of each grid; the class works the rest with the pen in their hand. **The trap
-  and the crux are problems in a grid**, not callouts — the crux sits in the last instruction
-  row. **The last row is Guided Practice**: `\mainidea[Guided practice]{Its Title}`, one fresh
-  context with a pre-drawn display and a grid of 4–6 problems worked entirely together, with a
-  `\notesprompt{We work these together.}`.
-- **Every display is pre-drawn** (TikZ) and read; students construct only by filling a table.
-  Any computation the student writes goes in a `work` block or in a `\pcell` answer space.
-- Three mechanics that bite: **`\\` inside a cell ends the table row** — use `\par` for a line
-  break; **a row cannot break across pages** — split a long idea into sub-rows (`\\` then
-  `& …`) at a natural seam, and keep any one row under about half a page; the fill-in helpers
-  `\blank`, `\writelines`, `work` all work inside a cell.
+- `guidednotes` — the two-column table, *Main Ideas / Questions* | *Notes*, **four to five
+  rows**, each `\mainidea[small lead]{Label} & ... \\ \hline`. The label is one short word or
+  two (uppercased by the macro; a single word over ten letters overflows). The Notes cell holds,
+  in order:
+  1. **One or two complete printed sentences** — the definition, read. Never a sentence with
+     words punched out. A `\stepnum{n}` list for a procedure.
+  2. **One large pre-drawn display** (TikZ, `scale` 0.8–1.0) the student reads — or annotates
+     with `\labelbox{W}{}` ("This is a ___", an arrow's label). Where the idea deserves it, an
+     *In your own words* line with a `\writespace{1.6cm}{}`.
+  3. `\notesprompt{…}` and a **two-across `probgrid`** (`|Y|Y|`, never three across) of
+     `\pcell{n}{statement}{H}{}` cells, **H = 1.8–2.6 cm** of answer space each, 2–4 problems
+     per row.
+- **Blanks:** a `\blank{}` only where a single word or number *is* the answer — a table to fill,
+  a display to name. Budget a handful per lesson. Mid-sentence blanks are banned.
+- **The I do / we do split is row by row**: the teacher reads the definition, marks up the
+  display, and works the first problem of each grid; the class works the rest with the pen in
+  their hand. **The trap and the crux are problems in a grid**, in the last instruction row.
+  **The last row is Guided Practice**: `\mainidea[Guided practice]{Its Title}`, a fresh context
+  with its display and a grid of four problems, prompt `We work these together.`
+- **Packing** (a table row cannot break across pages): the figure gets its own sub-row (`\\`
+  then `& …`), and **each grid row is its own sub-row** — close the `probgrid`, `\\ &`, reopen
+  as `probgrid*` (no top rule). `\\` inside a cell ends the row: break lines with `\par`.
+- **Every display is pre-drawn** and read; students construct only by filling a table.
 - **The key mirrors the blank byte for byte** except `-key` for `-boxes`, the header's
-  `--- Answer Key`, `\termblank`→`\termans`, `\blank`→`\ans`, and the fourth argument of each
-  `\pcell`. Keep every answer shorter than its space. Prove 3 pages = 3 pages.
+  `--- Answer Key`, `\termblank`→`\termans`, `\blank`→`\ans`, and the answer argument of each
+  `\pcell`, `\writespace`, `\labelbox`. Keep every answer shorter than its space. Prove the
+  page counts match.
 
 ## Group activity — LEGACY ONLY, never author one
 

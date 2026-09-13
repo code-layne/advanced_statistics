@@ -1,39 +1,35 @@
 %! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Guided Notes & Practice (Answer Key)
 % MIRROR of ../notes/main.tex: -key in place of -boxes, \termblank -> \termans, \blank -> \ans, and the
-% fourth argument of every \pcell filled. Nothing else differs — keep it that way.
-% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
-% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
-% left; on the right a terse definition the student completes, then a grid of short numbered
-% problems with reserved work space. Problems are numbered 1..N through the whole component.
-%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+% answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, then ONE two-column guidednotes table. Each row is one idea — a label on the left; on the
+% right a SHORT printed definition, ONE large pre-drawn display the student annotates, then a
+% grid of a few numbered problems with real writing room. Problems are numbered 1..N.
+% DENSITY: a \blank{} only where a word or number IS the answer (the pile-and-stragglers table);
+% a \labelbox to name what a picture shows; no mid-sentence blanks; two problems across;
+% 1.8–2.6cm of answer space each.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem.
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
 %            Guided Practice, is worked entirely together in a fresh context.
-%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
-%            last minutes of the period. No independent set, no reflection box, no objectives
-%            box (the targets are on the cover).
-% Vocabulary is GIVEN here, not discovered. The crux is THE TAIL row — the name of a skew
-% follows the TAIL, not the pile (EK UNC-1.H.3); problem 15 is the crux and problem 21 is the
-% crux transferred. Problem 6 is the trap: one number is never a description.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% The crux is THE TAIL row — the name of a skew follows the TAIL, not the pile (EK UNC-1.H.3);
+% problem 12 is the crux, problem 15 is the trap (one number is never a description), and
+% problem 16 is the crux transferred.
 %
 % THE DATA
 %   Line A (20 waits, min): 3x4  4x8  5x5  6x3   -> median 4, every wait between 3 and 6
 %   Line B (20 waits, min): 1x4  2x3  3x2  4x2  5x3  6x2  7x2  11  13
 %                                                -> median 4, waits from 1 to 13, gap 7-11
-%   Identical center, completely different experience. That is what opens the lesson.
 %   Picture I   home prices, 40 homes, $100k bins:  6 14 10 5 3 1 1   (long right tail)
 %   Picture II  quiz scores, 32 students, 10-pt bins: 1 2 5 11 13     (long left tail)
 %   Picture III club heights, 40 adults, 2-in bins: 2 5 9 4 0 0 4 9 5 2
-%                       -> symmetric AND bimodal, empty stretch 66-70 in. A single "typical
-%                          height" of about 68 in belongs to nobody in the club.
+%                       -> symmetric AND bimodal, empty stretch 66-70 in.
 %   Guided Practice: 30 students' hours of sleep: 4 | 6 6.5x2 7x4 7.5x5 8x7 8.5x6 9x3 9.5
 %                       -> skewed left, peak and median at 8 h, outlier at 4 h, gap 4-6 h.
 %
-% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
-% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
-% argument. Heights and blank widths are sized to the answers so the two files set identically.
-% A guidednotes row cannot break across pages — a long idea is split into sub-rows (a `\\` with
-% no \hline, then `& ...`) so the table can break between them.
-% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read.
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, and the answer argument
+% of every \pcell, \writespace and \labelbox filled. Nothing else differs. A row cannot break
+% across pages: figure and grid are separate sub-rows (`\\` then `& ...`).
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -50,7 +46,7 @@
 \small
 Fill in each term \textbf{as we name it} in the notes below.
 \par
-\termans{Unimodal, bimodal, uniform}{one main peak; two clear peaks; all bars about equal, with no peak at all.}
+\termans{Unimodal, bimodal, uniform}{one main peak; two clear peaks; all bars about level, with no peak at all.}
 \par
 \termans{Symmetric}{the left half of the distribution is roughly a mirror image of the right half.}
 \par
@@ -66,100 +62,105 @@ Fill in each term \textbf{as we name it} in the notes below.
 \begin{guidednotes}
 % ── ROW 1: center and variability — the two checkout lines ───────────────────
 \mainidea[Center \&]{Variability} &
-A supermarket timed 20 customers in each of its two checkout lines, drawn on the same scale.
-\par\vspace{2pt}\noindent\hfil
-\begin{tikzpicture}[scale=0.62]
+The \textbf{center} of a distribution is its middle, typical value. The \textbf{variability}, or
+\textbf{spread}, is how far the values reach from each other. Today we describe both by eye.
+
+\vspace{3pt}
+A supermarket timed 20 customers in each of its two checkout lines.
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
   % ── Line A: tightly bunched ──
-  \draw[->, thick] (-0.2,0) -- (6.0,0);
-  \foreach \x/\lab in {0/0, 0.7/2, 1.4/4, 2.1/6, 2.8/8, 3.5/10, 4.2/12, 4.9/14, 5.6/16} {
-    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
-  \foreach \x/\n in {1.05/4, 1.4/8, 1.75/5, 2.1/3} {
-    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.07); }}
-  \node[font=\tiny] at (2.8,-0.85) {Minutes waited};
-  \node[font=\bfseries\small] at (2.8,2.05) {Line A};
-  % ── Line B: widely spread, two customers stranded ──
-  \begin{scope}[xshift=7.0cm]
-    \draw[->, thick] (-0.2,0) -- (6.0,0);
-    \foreach \x/\lab in {0/0, 0.7/2, 1.4/4, 2.1/6, 2.8/8, 3.5/10, 4.2/12, 4.9/14, 5.6/16} {
+  \begin{scope}[yshift=2.3cm]
+    \node[left, font=\small\bfseries\color{navy}] at (-0.3,0.8) {Line A};
+    \draw[->, thick] (-0.2,0) -- (8.4,0);
+    \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10, 6/12, 7/14, 8/16} {
       \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
-    \foreach \x/\n in {0.35/4, 0.7/3, 1.05/2, 1.4/2, 1.75/3, 2.1/2, 2.45/2, 3.85/1, 4.55/1} {
-      \foreach \k in {1,...,\n} { \fill[goldacc] (\x,{0.2*\k}) circle (0.07); }}
-    \node[font=\tiny] at (2.8,-0.85) {Minutes waited};
-    \node[font=\bfseries\small] at (2.8,2.05) {Line B};
+    \foreach \x/\n in {1.5/4, 2/8, 2.5/5, 3/3} {
+      \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.075); }}
+    \node[font=\tiny] at (4.1,-0.5) {Minutes waited};
   \end{scope}
-\end{tikzpicture}\hfil\par\vspace{3pt}
-The \textbf{center} of a distribution is its middle, typical value --- where the data
-\ans{pile} up. The \textbf{variability}, or \textbf{spread}, is how far the values reach
-\ans{from each other}. Next lesson puts numbers on both; today we describe them by eye.
-\notesprompt{Read the two lines --- count in from both ends.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{1}{Middle wait, Line A}{0.9cm}{4 minutes} &
-\pcell{2}{Middle wait, Line B}{0.9cm}{4 minutes} &
-\pcell{3}{Line A: lowest to highest wait}{0.9cm}{3 to 6 minutes} \\ \hline
-\pcell{4}{Line B: lowest to highest wait}{1.0cm}{1 to 13 minutes} &
-\pcell{5}{Which line has more spread?}{1.0cm}{Line B, by far} &
-\pcell{6}{``The typical wait is 4 minutes in both lines.'' True? Useful?}{1.0cm}{True --- and useless without the spread} \\ \hline
+  % ── Line B: widely spread, two customers stranded ──
+  \node[left, font=\small\bfseries\color{navy}] at (-0.3,0.5) {Line B};
+  \draw[->, thick] (-0.2,0) -- (8.4,0);
+  \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10, 6/12, 7/14, 8/16} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {0.5/4, 1/3, 1.5/2, 2/2, 2.5/3, 3/2, 3.5/2, 5.5/1, 6.5/1} {
+    \foreach \k in {1,...,\n} { \fill[goldacc] (\x,{0.2*\k}) circle (0.075); }}
+  \node[font=\tiny] at (4.1,-0.5) {Minutes waited};
+\end{tikzpicture}
+\end{center}
+Middle wait --- Line A: \labelbox{1.4cm}{4 min} \quad Line B: \labelbox{1.4cm}{4 min}
+\\
+& \notesprompt{Read the two lines.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Line A: lowest to highest wait}{1.8cm}{3 to 6 minutes} &
+\pcell{2}{Line B: lowest to highest wait}{1.8cm}{1 to 13 minutes} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Which line has more spread? How can you tell?}{1.8cm}{Line B --- its dots reach much farther apart along the line} &
+\pcell{4}{Same middle wait. Which line would you rather stand in, and why?}{1.8cm}{Line A: every wait is 3--6 minutes; in B you might wait 13} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 2: shape — count the peaks, then check the mirror ────────────────────
 \mainidea[Shape]{Peaks \& Mirror} &
-Three histograms: \textbf{I} sale prices of the 40 homes sold in one town last year;
-\textbf{II} scores of 32 students on an easy quiz; \textbf{III} heights of the 40 adults in a
-mixed volleyball club.
-\par\vspace{2pt}\noindent\hfil
-\begin{tikzpicture}[scale=0.58]
+\textbf{Count the peaks first.} One main peak is \textbf{unimodal}; two clear peaks is
+\textbf{bimodal}; all bars about level is \textbf{uniform}. \textbf{Then check the mirror:}
+a distribution is \textbf{symmetric} when its left half roughly mirrors its right half.
+
+\vspace{3pt}
+\textbf{I} sale prices of 40 homes in one town; \textbf{II} 32 students' scores on an easy
+quiz; \textbf{III} heights of 40 adults in a volleyball club.
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
   % ── I: home prices, long right tail ──
   \foreach \i/\c in {0/6, 1/14, 2/10, 3/5, 4/3, 5/1, 6/1} {
-    \fill[navy] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.14});
-    \draw[white, very thin] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.14});}
-  \draw[->, thick] (0,0) -- (0,2.5);
+    \fill[navy] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.16});
+    \draw[white, very thin] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.16});}
+  \draw[->, thick] (0,0) -- (0,2.8);
   \draw[->, thick] (0,0) -- (3.9,0);
-  \foreach \y/\lab in {0/0, 0.7/5, 1.4/10} {
+  \foreach \y/\lab in {0/0, 0.8/5, 1.6/10} {
     \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
   \foreach \x/\lab in {0/100, 1/300, 2/500, 3/700} {
     \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
-  \node[font=\tiny] at (1.75,-0.85) {Sale price (\$1000s)};
-  \node[font=\bfseries\small] at (1.75,2.65) {I};
+  \node[font=\tiny] at (1.75,-0.8) {Sale price (\$1000s)};
+  \node[font=\bfseries\small] at (1.75,2.95) {I};
   % ── II: quiz scores, long left tail ──
-  \begin{scope}[xshift=4.9cm]
+  \begin{scope}[xshift=4.8cm]
     \foreach \i/\c in {0/1, 1/2, 2/5, 3/11, 4/13} {
-      \fill[goldacc] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.14});
-      \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.14});}
-    \draw[->, thick] (0,0) -- (0,2.5);
+      \fill[goldacc] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.16});
+      \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.16});}
+    \draw[->, thick] (0,0) -- (0,2.8);
     \draw[->, thick] (0,0) -- (3.9,0);
-    \foreach \y/\lab in {0/0, 0.7/5, 1.4/10} {
+    \foreach \y/\lab in {0/0, 0.8/5, 1.6/10} {
       \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
     \foreach \x/\lab in {0/50, 1.4/70, 2.8/90} {
       \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
-    \node[font=\tiny] at (1.75,-0.85) {Quiz score};
-    \node[font=\bfseries\small] at (1.75,2.65) {II};
+    \node[font=\tiny] at (1.75,-0.8) {Quiz score};
+    \node[font=\bfseries\small] at (1.75,2.95) {II};
   \end{scope}
   % ── III: club heights, symmetric with two humps and an empty stretch ──
-  \begin{scope}[xshift=9.8cm]
+  \begin{scope}[xshift=9.6cm]
     \foreach \i/\c in {0/2, 1/5, 2/9, 3/4, 4/0, 5/0, 6/4, 7/9, 8/5, 9/2} {
-      \fill[navy] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.14});
-      \draw[white, very thin] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.14});}
-    \draw[->, thick] (0,0) -- (0,2.5);
+      \fill[navy] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.16});
+      \draw[white, very thin] ({\i*0.35},0) rectangle ({(\i+1)*0.35},{\c*0.16});}
+    \draw[->, thick] (0,0) -- (0,2.8);
     \draw[->, thick] (0,0) -- (3.9,0);
-    \foreach \y/\lab in {0/0, 0.7/5, 1.4/10} {
+    \foreach \y/\lab in {0/0, 0.8/5, 1.6/10} {
       \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
     \foreach \x/\lab in {0/58, 1.4/66, 2.8/74} {
       \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
-    \node[font=\tiny] at (1.75,-0.85) {Height (inches)};
-    \node[font=\bfseries\small] at (1.75,2.65) {III};
+    \node[font=\tiny] at (1.75,-0.8) {Height (inches)};
+    \node[font=\bfseries\small] at (1.75,2.95) {III};
   \end{scope}
-\end{tikzpicture}\hfil\par\vspace{3pt}
-\textbf{Count the peaks first.} One main peak: \ans{unimodal}. Two clear peaks: \ans{bimodal}.
-All bars about equal, no peak: \ans{uniform}. \textbf{Then check the mirror.} A distribution
-is \textbf{symmetric} when its left half is roughly a \ans{mirror image} of the right. Pictures I
-and II instead \emph{lean}: a pile at one end, a few stragglers trailing toward the other.
-
-\vspace{3pt}
-\textbf{7.} Fill the table. The name for the lean comes in \emph{The Tail} row --- and it is
-not the name most people guess.
+\end{tikzpicture}
+\end{center}
+Peaks --- I: \labelbox{1.8cm}{unimodal} \quad II: \labelbox{1.8cm}{unimodal} \quad III: \labelbox{1.8cm}{bimodal}
+\\
+& \textbf{5.} Fill the table. The lean gets its name in \emph{The Tail} row.
 
 \vspace{2pt}
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{} c X X @{}}
 \rowcolor{sky}
 \textbf{Picture} & \textbf{Most of the values sit\ldots} &
@@ -169,84 +170,137 @@ not the name most people guess.
 \textbf{II} & \ans{in the 80s and 90s} & \ans{to the left} \\
 \textbf{III} & \ans{in two humps} & \ans{neither way} \\
 \end{tabularx}
-\notesprompt{Name what you see.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{8}{Peaks in Picture I --- the word?}{0.9cm}{One --- unimodal} &
-\pcell{9}{Peaks in Picture III --- the word?}{0.9cm}{Two --- bimodal} &
-\pcell{10}{The symmetric picture}{0.9cm}{III} \\ \hline
+\\
+& \notesprompt{Name what you see.}
+\begin{probgrid}{|Y|Y|}
+\pcell{6}{Which picture is symmetric? Say how you checked.}{1.8cm}{III --- fold it at 68 inches and the halves match} &
+\pcell{7}{Roll a die 600 times and histogram the results. Which peaks word fits, and
+why?}{1.8cm}{Uniform --- all six bars about 100 tall, no peak} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 3: unusual features and the four-part description ────────────────────
 \mainidea[Unusual]{Features} &
-An \textbf{outlier} is a value that sits unusually far \ans{from} the rest of the data.
-A \textbf{gap} is a stretch of the number line where \ans{nothing} was observed. A
-\textbf{cluster} is a group of values bunched together and set off from the rest by a
-\ans{gap}.
+An \textbf{outlier} is a value that sits unusually far from the rest of the data. A
+\textbf{gap} is a stretch of the number line where nothing was observed. A \textbf{cluster} is
+a group of values bunched together and set off from the rest by a gap.
 
-\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \draw[->, thick] (-0.2,0) -- (8.6,0);
+  \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10, 6/12, 7/14, 8/16} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {0.5/4, 1/3, 1.5/2, 2/2, 2.5/3, 3/2, 3.5/2, 5.5/1, 6.5/1} {
+    \foreach \k in {1,...,\n} { \fill[goldacc] (\x,{0.22*\k}) circle (0.08); }}
+  \draw[navy, thick] (5.5,0.22) circle (0.2);
+  \draw[navy, thick] (6.5,0.22) circle (0.2);
+  \draw[navy, thick, <->] (3.7,0.7) -- (5.3,0.7);
+  \node[above, font=\scriptsize\bfseries\color{navy}] at (4.5,0.72) {nobody here};
+  \node[font=\tiny] at (4.2,-0.5) {Minutes waited};
+\end{tikzpicture}
+\end{center}
+The customers at 11 and 13 minutes are \labelbox{2.0cm}{outliers}.\par
+The empty stretch from 7 to 11 minutes is a \labelbox{2.0cm}{gap}.
+
+\vspace{5pt}
 \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{Four things or nothing --- \ans{SOCS}:} \textbf{S}hape $\cdot$ \textbf{O}utliers and
-other unusual features $\cdot$ \textbf{C}enter $\cdot$ \textbf{S}pread\par
---- every one of the four stated \ans{in context}, naming the variable and its units.}}
-
-\vspace{3pt}
-\textbf{In context} means a stranger could use the sentence.
-\notesprompt{Back to Line B and Picture III.}
+\textbf{Four things or nothing --- SOCS:} \textbf{S}hape $\cdot$ \textbf{O}utliers and other
+unusual features $\cdot$ \textbf{C}enter $\cdot$ \textbf{S}pread\par
+--- every one stated \textbf{in context}: a stranger could use the sentence.}}
+\\
+& \notesprompt{Back to Line B and Picture III.}
 \begin{probgrid}{|Y|Y|}
-\pcell{11}{Line B's outliers sit at \ldots; its gap runs from \ldots\ to \ldots}{1.0cm}{11 and 13 minutes; about 7 to 11 minutes} &
-\pcell{12}{Clusters in Picture III --- how many, and where?}{1.0cm}{Two: 60--66 and 70--76 inches} \\ \hline
-\pcell{13}{``Center about 4, spread 1 to 13.'' Rewrite it so a stranger could use it.}{1.5cm}{Typical wait in Line B about 4 minutes; waits ran from 1 to 13 minutes} &
-\pcell{14}{These 20 customers were timed on one day. What does that say about the store's lines
-in general?}{1.5cm}{Nothing for certain --- at most it suggests something worth investigating} \\ \hline
+\pcell{8}{Clusters in Picture III --- how many, and where?}{2.0cm}{Two: 60--66 inches and 70--76 inches} &
+\pcell{9}{``Center about 4, spread 1 to 13.'' Rewrite it so a stranger could use it.}{2.0cm}{Typical wait in Line B about 4 minutes; waits ran from 1 to 13 minutes} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{10}{Line B's 13-minute customer: delete her, or check her? Why?}{2.0cm}{Check her: if real, she is who the manager needs to hear about} &
+\pcell{11}{These 20 customers were timed on one day. What does that say about the lines in
+general?}{2.0cm}{Nothing for certain --- at most, something worth a second look} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 4: the tail decides — THE CRUX ───────────────────────────────────────
 \mainidea[Skewed which way?]{The Tail} &
-Count Picture I's homes. Below \$400{,}000: $6 + 14 + 10 = $ \ans{30} of the 40. Above
-\$600{,}000: \ans{2} of the 40 --- yet the picture stretches past \$700{,}000, because
-two houses really did sell for that. The pile is on the \ans{left}; the long thin tail runs
-to the \ans{right}. So Picture I is \textbf{skewed right}: piled \emph{left}, named \emph{right}.
-
-\vspace{4pt}
-\fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{The name of a skew follows the \ans{tail}, not the \ans{pile}.}\par
-Skewed \textbf{right}: the longer tail runs right, so most values are \ans{small} and a few
-are much larger. Skewed \textbf{left}: the longer tail runs \ans{left}.}}
+Thirty of Picture~I's 40 homes sold for under \$400{,}000 and only two for over \$600{,}000
+--- yet the axis runs past \$700{,}000, because those two really did.
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  % ── I: home prices, enlarged ──
+  \foreach \i/\c in {0/6, 1/14, 2/10, 3/5, 4/3, 5/1, 6/1} {
+    \fill[navy] ({\i*0.8},0) rectangle ({(\i+1)*0.8},{\c*0.16});
+    \draw[white, very thin] ({\i*0.8},0) rectangle ({(\i+1)*0.8},{\c*0.16});}
+  \draw[->, thick] (0,0) -- (0,2.7);
+  \draw[->, thick] (0,0) -- (6.0,0);
+  \foreach \y/\lab in {0/0, 0.8/5, 1.6/10} {
+    \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
+  \foreach \x/\lab in {0/100, 1.6/300, 3.2/500, 4.8/700} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \node[font=\tiny] at (2.8,-0.6) {Sale price (\$1000s)};
+  \node[font=\bfseries\small] at (2.8,2.85) {I};
+  \node[font=\scriptsize\bfseries\color{goldacc}] at (1.2,2.55) {the pile};
+  \draw[goldacc, thick, ->] (3.6,1.4) -- (5.2,0.45);
+  \node[font=\scriptsize\bfseries\color{goldacc}, above] at (3.6,1.4) {the tail};
+  % ── II: quiz scores, for problem 12 ──
+  \begin{scope}[xshift=7.6cm]
+    \foreach \i/\c in {0/1, 1/2, 2/5, 3/11, 4/13} {
+      \fill[goldacc] ({\i*0.8},0) rectangle ({(\i+1)*0.8},{\c*0.16});
+      \draw[white, very thin] ({\i*0.8},0) rectangle ({(\i+1)*0.8},{\c*0.16});}
+    \draw[->, thick] (0,0) -- (0,2.7);
+    \draw[->, thick] (0,0) -- (4.4,0);
+    \foreach \y/\lab in {0/0, 0.8/5, 1.6/10} {
+      \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
+    \foreach \x/\lab in {0/50, 1.6/70, 3.2/90} {
+      \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+    \node[font=\tiny] at (2.0,-0.6) {Quiz score};
+    \node[font=\bfseries\small] at (2.0,2.85) {II};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+Piled \emph{left}, named for the tail: Picture I is skewed \labelbox{1.8cm}{right}.
 \\
-& \textbf{All four for Picture I:} sale prices are \ans{skewed right} and unimodal; no gaps, and
-\ans{two} homes above \$600{,}000; the middle home sold for about \$\ans{300{,}000}; prices
-run from about \$100{,}000 to \$\ans{800{,}000}.
-\notesprompt{Point at the tail, then say the name.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{15}{Picture II: which side is the pile on? Skewed which way?}{1.5cm}{Pile on the right; skewed left (the tail runs left)} &
-\pcell{16}{``Picture II is skewed right --- its tallest bars are on the right.'' What got read
-instead of the tail?}{1.5cm}{The pile. The tail runs left: skewed left} &
-\pcell{17}{Picture III is symmetric. Is that the whole shape? Where is its gap?}{1.5cm}{No --- also bimodal; gap from 66 to 70 inches} \\ \hline
-\pcell{18}{``The typical height in this club is about 68 inches.'' True of how many
-adults?}{1.5cm}{Not one: half shorter, half taller} &
-\pcell{19}{Line B's 13-minute customer: delete her, or check her? Why?}{1.5cm}{Check her: if real, she is who the manager needs} &
-\pcell{20}{Name a variable you expect to be skewed right, and say why.}{1.5cm}{e.g.\ income: most modest, a few very large} \\ \hline
+& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{The name of a skew follows the tail, not the pile.} Skewed \textbf{right}: the
+tail runs right (a few values much larger). Skewed \textbf{left}: the tail runs left.}}
+
+\vspace{3pt}
+\textbf{In your own words:} all four for Picture I (shape, unusual features, center, spread), in context.
+\writespace{1.6cm}{Sale prices are skewed right and unimodal; no gaps, but two homes above \$600{,}000; the middle home sold for about \$300{,}000; prices run from about \$100{,}000 to \$800{,}000.}
+\\
+& \notesprompt{Point at the tail, then say the name.}
+\begin{probgrid}{|Y|Y|}
+\pcell{12}{Picture II: which side is the pile on? Point at the tail. Skewed which way?}{1.8cm}{Pile on the right; the tail runs left: skewed left} &
+\pcell{13}{``Picture II is skewed right --- its tallest bars are on the right.'' What got read
+instead of the tail?}{1.8cm}{The pile. The tail runs left, so it is skewed left} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{14}{Picture III is symmetric. Is that the whole shape? What else must be said?}{1.8cm}{No --- also bimodal, gap 66--70 in; ``about 68 in'' fits nobody} &
+\pcell{15}{Back to the checkout lines. ``The typical wait is 4 minutes in both lines.'' True?
+Useful?}{1.8cm}{True --- and useless without the spread} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 5: guided practice — WE DO, together, fresh context ──────────────────
 \mainidea[Guided practice]{The Sleep Survey} &
 Thirty students reported how many hours they slept on a school night.
 \par\vspace{2pt}\noindent\hfil
-\begin{tikzpicture}[scale=0.62]
-  \draw[->, thick] (-0.2,0) -- (8.2,0);
+\begin{tikzpicture}[scale=0.95]
+  \draw[->, thick] (-0.2,0) -- (8.4,0);
   \foreach \x/\lab in {0.6/4, 1.8/5, 3.0/6, 4.2/7, 5.4/8, 6.6/9, 7.8/10} {
     \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
   \foreach \x/\n in {0.6/1, 3.0/1, 3.6/2, 4.2/4, 4.8/5, 5.4/7, 6.0/6, 6.6/3, 7.2/1} {
-    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.07); }}
-  \node[font=\tiny] at (4.0,-0.85) {Hours of sleep on a school night};
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.19*\k}) circle (0.075); }}
+  \node[font=\tiny] at (4.1,-0.52) {Hours of sleep on a school night};
 \end{tikzpicture}\hfil\par
-\notesprompt{We work these together.}
+\\
+& \notesprompt{We work these together.}
 \begin{probgrid}{|Y|Y|}
-\pcell{21}{Which way does it lean? Point at the tail, then name it.}{1.0cm}{Skewed left --- the tail runs left} &
-\pcell{22}{Students shown; peaks; the value that sits apart, and its gap.}{1.0cm}{30 students; one peak; 4 hours, gap from 4 to 6 hours} \\ \hline
-\pcell{23}{What does the longer tail mean for \emph{these students}, not for the graph?}{1.6cm}{A few slept far less than the rest, one only 4 hours; most slept 7 to 9} &
-\pcell{24}{All four, in context: shape, unusual features, center, spread --- variable and
-units.}{2.2cm}{Skewed left, one peak at 8 h; the 4-h student is an outlier (gap 4--6 h); typical about 8 h; from 4 to 9.5 h} \\ \hline
+\pcell{16}{Which way does it lean? Point at the tail, then name it.}{1.8cm}{Skewed left --- the tail runs left} &
+\pcell{17}{Students shown; peaks; the value that sits apart, and its gap.}{1.8cm}{30 students; one peak, at 8 h; 4 h sits apart, gap from 4 to 6 h} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{18}{What does the longer tail mean for \emph{these students}, not for the graph?}{2.0cm}{A few slept far less than the rest, one only 4 hours; most slept 7 to 9} &
+\pcell{19}{All four, in context: shape, unusual features, center, spread.}{2.0cm}{Skewed left, one peak at 8 h; 4-h student an outlier (gap 4--6 h); typical 8 h; 4 to 9.5 h} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

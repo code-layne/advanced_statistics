@@ -296,8 +296,17 @@
 % prompt and a GRID of short numbered problems with reserved work space. The
 % teacher works the first problem or two of each grid (I do), the class works the
 % rest with students holding the pen (we do); the last row is the Guided Practice.
-% There is no prose exposition: every sentence on the page is one the student
-% completes, and every idea is immediately practised in the grid under it.
+% DENSITY — the page belongs to the student's pen, not to the author's prose:
+%   * Printed text is SHORT and COMPLETE. A definition is one or two full
+%     sentences the student reads, never a sentence with words punched out.
+%   * A \blank{} appears only where a single word or number IS the answer (a
+%     table to fill, a display to name). Never a mid-sentence blank ("the bars
+%     ___"). Budget: a handful per lesson, not per row.
+%   * Every row carries ONE pre-drawn display, set large; where the idea is a
+%     picture, the student annotates it (\labelbox) instead of reading about it.
+%   * Problems are TWO across, 12–18 per lesson, each with 2–3cm of answer
+%     space; add a \writespace "In your own words" under a definition where
+%     the idea deserves a restatement. Target 3–4 pages.
 %
 %   \begin{guidednotes}
 %     \mainidea[Two kinds of]{Variable} &
@@ -322,9 +331,14 @@
 %     ("Two kinds of") over the label, set bold sans in navy and UPPERCASED.
 %   * \notesprompt{...} — the bold instruction line that introduces a grid.
 %   * probgrid{colspec} — a nested grid flush with the row's rules; colspec is
-%     any tabularx spec, usually |Y|Y|Y| (three across, short answers) or |Y|Y|
-%     (two across, work space). Rows end `\\ \hline`; the grid draws its own top
-%     rule. Number problems continuously through the whole component, 1..N.
+%     a tabularx spec, |Y|Y| (two across — the default; three across only for
+%     one-word answers). Rows end `\\ \hline`; the grid draws its own top rule.
+%     Number problems continuously through the whole component, 1..N.
+%     PACKING: a table row cannot break across pages, so put EACH grid row in
+%     its own sub-row — close the probgrid, write `\\` and `& `, and open the
+%     next one as probgrid* (starred: no top rule, so the two read as one grid).
+%     The figure gets a sub-row of its own the same way. Then the table breaks
+%     wherever it needs to and pages fill.
 %   * \pcell{n}{statement}{H}{answer} — one grid cell: bold number, the statement
 %     at its natural height, then the answer in keyred bold inside a FIXED-HEIGHT
 %     box of H below it. The BLANK passes {} as the answer and the KEY passes the
@@ -336,6 +350,15 @@
 %     the cell silently: keep key answers short.
 %   * \stepnum{n} — a numbered step marker (white digit on a navy disc) for a
 %     procedure listed in the Notes column: \stepnum{1}\ Choose an interval width.
+%   * \writespace{H}{answer} — an open writing area of fixed height H, full cell
+%     width, for the student's own sentence; the blank passes {} and the key
+%     prints the answer in keyred. Same height both ways (the work rule). It is
+%     the shared spelling of the per-file \answerspace that older homework
+%     components define locally.
+%   * \labelbox{W}{answer} — a small framed box of width W and fixed height for
+%     annotating a display ("this display is a ___", an arrow's label); blank
+%     passes {}, key passes the label. Use it beside or under a figure, with
+%     \quad or a TikZ node, so the picture is what gets marked up.
 %
 % \pageheader, then the vocabbox, then ONE guidednotes table — that is the
 % component. Objectives live on the cover; the notes do not repeat them.
@@ -354,12 +377,17 @@
   \end{minipage}}
 \newcommand{\stepnum}[1]{\tikz[baseline=(c.base)]\node[circle, fill=navy, text=white,
   inner sep=1.2pt, minimum size=1.1em, font=\bfseries\scriptsize] (c) {#1};}
-\NewDocumentEnvironment{probgrid}{m +b}
+\newcommand{\writespace}[2]{\par\noindent
+  \begin{minipage}[t][#1][t]{\linewidth}\raggedright\vspace{2pt}%
+    \strut{\color{keyred}\bfseries #2}\end{minipage}\par}
+\newcommand{\labelbox}[2]{\fbox{\begin{minipage}[c][0.75cm][c]{#1}\centering
+  \strut{\color{keyred}\bfseries #2}\end{minipage}}}
+\NewDocumentEnvironment{probgrid}{s m +b}
   {\par\noindent\renewcommand{\tabularxcolumn}[1]{p{##1}}%
    \makebox[\linewidth][l]{\hspace*{-\tabcolsep}%
-   \begin{tabularx}{\dimexpr\linewidth+2\tabcolsep\relax}[b]{#1}
-   \hline
-   #2
+   \begin{tabularx}{\dimexpr\linewidth+2\tabcolsep\relax}[b]{#2}
+   \IfBooleanF{#1}{\hline}
+   #3
    \end{tabularx}}\par}
   {}
 \NewDocumentEnvironment{guidednotes}{+b}

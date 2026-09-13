@@ -1,24 +1,26 @@
 %! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Guided Notes & Practice (Answer Key)
 % MIRROR of ../notes/main.tex: -key in place of -boxes, \termblank -> \termans, \blank -> \ans, and the
-% fourth argument of every \pcell filled. Nothing else differs — keep it that way.
-% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
-% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
-% left; on the right a terse definition the student completes, then a grid of short numbered
-% problems with reserved work space. Problems are numbered 1..N through the whole component.
-%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+% answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, then ONE two-column guidednotes table. Each row is one idea — a label on the left; on the
+% right a SHORT printed definition, ONE large pre-drawn display, then a grid of a few numbered
+% problems with real writing room. Problems are numbered 1..N through the component.
+% DENSITY: a \blank{} only where a word or number IS the answer (Route C's row of the summary
+% table, the five-number summary); no mid-sentence blanks; two problems across; 1.8–2.4cm of
+% answer space each. The one by-hand computation (s_x) sits in a \begin{work} block, byte-
+% identical in blank and key.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem.
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
 %            Guided Practice, is worked entirely together in a fresh context.
-%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
-%            last minutes of the period. No independent set, no reflection box, no objectives
-%            box (the targets are on the cover).
-% Vocabulary is GIVEN here, not discovered. The crux is the RESISTANCE row — one paycheck moves
-% the mean $250 and the median not at all, and one late package hands Route C the same range as
-% Route B while the IQR does not flinch (EK UNC-1.K.2). Problem 11 is the crux ("the median is
-% more accurate"); problem 8 is the interval trap (range written as "27 to 33").
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% The crux is the RESISTANCE row — one paycheck moves the mean $250 and the median not at all,
+% and one late package hands Route C the same range as Route B while the IQR does not flinch
+% (EK UNC-1.K.2). Problem 11 is the crux ("the median is more accurate"); problem 10 is the
+% interval trap (range written as "27 to 33").
 %
 % THE DATA
 %   Center     — nine weekly paychecks (printed out of order): 650 700 700 750 750 800 800 850 3000
-%                sum 9000 -> mean $1,000 ; median (5th of 9) $750 ; crew only: 6000/8 = 750.
+%                sum 9000 -> mean $1,000 ; median (5th of 9) $750.
 %   Quartiles  — Route A, twelve delivery times, ordered:
 %                27 28 28 29 29 30 | 30 31 31 32 32 33   mean 30, median 30, Q1 28.5, Q3 31.5
 %   Spread     — Route A range 6, IQR 3.  Five-package route for the one hand s_x:
@@ -31,17 +33,11 @@
 %                         range 24 (same as B, from ONE package), IQR 3 (same as A)
 %   Guided Practice — eleven quiz scores 12 13 14 15 15 16 17 18 18 19 19: sum 176, mean 16,
 %                min 12, Q1 14, median 16, Q3 18, max 19, range 7, IQR 4.  With the 12 -> 1:
-%                sum 165, mean 15, range 18, median 16, IQR 4.
+%                sum 165, mean 15, range 18, median 16, IQR 4; 1 < Q1 - 1.5 IQR = 8.
 %
-% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
-% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
-% argument. Heights and blank widths are sized to the answers so the two files set identically.
-% Every \begin{work} block is authored BYTE-IDENTICALLY in both files (the blank reserves its
-% space and prints nothing). \ans{} is text mode and never goes inside $...$ — no formula on
-% this page carries a fill.
-% A guidednotes row cannot break across pages — a long idea is split into sub-rows (a `\\` with
-% no \hline, then `& ...`) so the table can break between them.
-% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read.
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, and the answer argument
+% of every \pcell, \writespace and \labelbox filled. Nothing else differs. A row cannot break
+% across pages: figure and each grid row are separate sub-rows (`\\` then `& ...`).
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -58,9 +54,9 @@
 \small
 Fill in each term \textbf{as we name it} in the notes below.
 \par
-\termans{Statistic}{a numerical summary of sample data --- the mean, the median, and every other number computed today.}
+\termans{Statistic}{a number computed from sample data --- the mean, the median, and every other summary today.}
 \par
-\termans{Mean $\bar x$ and median}{mean: the sum of the values over the count; median: the middle of the ordered data (with an even count, average the two middle values).}
+\termans{Mean $\bar x$ and median}{mean: the sum of the values over the count; median: the middle of the ordered data (even count: average the two middle values).}
 \par
 \termans{Quartiles $Q_1$, $Q_3$ and percentile}{$Q_1$ and $Q_3$ are the medians of the lower and upper halves; the $p$th percentile is the value with $p\%$ of the data at or below it.}
 \par
@@ -76,124 +72,186 @@ Fill in each term \textbf{as we name it} in the notes below.
 \begin{guidednotes}
 % ── ROW 1: center — mean and median ──────────────────────────────────────────
 \mainidea[Two measures of]{Center} &
-A \textbf{statistic} is a numerical summary of \ans{sample} data. \textbf{Nine Paychecks:} a
-landscaping crew of eight and their boss took home last week, in dollars:
+A \textbf{statistic} is a number computed from sample data. The \textbf{mean}
+$\bar x = \sum x_i / n$ is the sum over the count. The \textbf{median} is the middle of the
+\emph{ordered} data (even count: average the two middle values).
 
 \vspace{2pt}
+\textbf{Nine Paychecks} --- a crew of eight and their boss, in dollars:
+\par\vspace{2pt}
 {\centering
 800 \quad 3000 \quad 650 \quad 750 \quad 700 \quad 850 \quad 700 \quad 800 \quad 750
 \par}
 \\
-& The \textbf{mean} $\bar x$ adds every value and divides by \ans{the number of values}:
-$\bar x = \sum x_i / n$. The nine paychecks add to \$9{,}000, so
-\begin{work}
-\bar x &= \tfrac{9000}{9} = \text{\$1{,}000}
-\end{work}
-The \textbf{median} is the \ans{middle} value of the \emph{ordered} data --- with an even
-count, the \ans{average} of the two middle values. Order the nine paychecks first:
-
-\vspace{2pt}
-{\centering
-\ans{650} \; \ans{700} \; \ans{700} \; \ans{750} \; \ans{750} \;
-\ans{800} \; \ans{800} \; \ans{850} \; \ans{3000}
-\par}
-\vspace{2pt}
-The fifth of nine is the median: \ans{\$750}. Both numbers are \textbf{correct}.
+& \begin{center}
+\begin{tikzpicture}[scale=0.95]
+  \draw[->, thick] (-0.3,0) -- (10.7,0);
+  \foreach \x/\lab in {0/500, 2/1000, 4/1500, 6/2000, 8/2500, 10/3000} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.34) {\lab};}
+  \foreach \x/\n in {0.6/1, 0.8/2, 1.0/2, 1.2/2, 1.4/1, 10/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.24*\k}) circle (0.085); }}
+  \node[font=\tiny, anchor=east] at (10.5,-0.85) {Dollars taken home};
+  % the balance point (the mean) and the middle dot (the median)
+  \fill[goldacc] (2,-0.02) -- (1.84,-0.3) -- (2.16,-0.3) -- cycle;
+  \node[font=\tiny, anchor=west] at (2.3,-0.85) {the dots would balance here};
+  \draw[->, thick, navy] (1.7,1.05) -- (1.1,0.68);
+  \node[anchor=south west, inner sep=1pt] at (1.6,0.95) {\labelbox{2.4cm}{median \$750}};
+  \draw[->, thick, goldacc] (4.9,0.95) -- (2.25,-0.25);
+  \node[anchor=south west, inner sep=1pt] at (4.8,0.95) {\labelbox{2.4cm}{mean \$1{,}000}};
+\end{tikzpicture}
+\end{center}
 \\
 & \notesprompt{Use the paychecks.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{1}{Who takes home the mean, \$1{,}000?}{1.1cm}{Nobody: eight earn less, one far more} &
-\pcell{2}{Who earns the median?}{1.1cm}{The 5th in order: a crew member, \$750} &
-\pcell{3}{The owner says ``we average \$1{,}000.'' Which measure? Is she wrong?}{1.1cm}{The mean --- and both are correct} \\ \hline
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Write the nine paychecks in order and circle the median.}{1.8cm}{650 700 700 750 750 800 800 850 3000; the 5th of nine is the median, \$750} &
+\pcell{2}{The nine add to \$9{,}000. Find the mean. The owner says ``we average \$1{,}000''
+--- is she wrong?}{1.8cm}{$9000/9 = \$1{,}000$. Not wrong --- that is the mean. But nobody takes it home.} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 2: position — quartiles and percentiles ──────────────────────────────
 \mainidea[Position]{Quartiles} &
-Twelve delivery times on a courier company's Route A, in minutes, already in order:
+The \textbf{quartiles} cut the ordered data into quarters: $Q_1$ is the median of the lower
+half, $Q_3$ the median of the upper half, and the middle 50\% sits between them. The $p$th
+\textbf{percentile} is the value with $p\%$ of the data at or below it, so $Q_1$ is the 25th
+percentile and $Q_3$ the 75th.
 
-\vspace{2pt}
+\vspace{3pt}
+\textbf{Route A} --- twelve delivery times on a courier route, in minutes, already in order:
+\par\vspace{2pt}
 {\centering
-27 \quad 28 \quad 28 \quad 29 \quad 29 \quad 30 \quad 30 \quad 31 \quad 31 \quad 32 \quad
-32 \quad 33
+27 \; 28 \; 28 \; 29 \; 29 \; 30 \; $\big|$ \; 30 \; 31 \; 31 \; 32 \; 32 \; 33
 \par}
-\vspace{2pt}
-Twelve values, so the median is halfway between the 6th and the 7th: $(30+30)/2 =$
-\ans{30} minutes. Now \textbf{split each half at its own middle}: the \textbf{first
-quartile} $Q_1$ is the median of the \ans{lower} half, the \textbf{third quartile} $Q_3$
-the median of the \ans{upper} half, and between them sits the middle \ans{50}\%
-of the data. The $p$th \textbf{percentile} is the value with $p\%$ of the data
-\ans{at or below} it: $Q_1$ is the \ans{25}th percentile, $Q_3$ the \ans{75}th.
-\textbf{In context:} a 31.5-minute package sits at the 75th percentile --- about 75\% of Route A's
-packages took \ans{31.5} minutes or less.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \draw[->, thick] (-0.3,0) -- (8.6,0);
+  \foreach \x/\lab in {0/26, 1/27, 2/28, 3/29, 4/30, 5/31, 6/32, 7/33, 8/34} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {1/1, 2/2, 3/2, 4/2, 5/2, 6/2, 7/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.3*\k}) circle (0.1); }}
+  \node[font=\tiny] at (4.2,-0.6) {Minutes to deliver};
+  \foreach \x in {2.5, 4, 5.5} {
+    \draw[goldacc, very thick, dashed] (\x,-0.15) -- (\x,1.1);}
+  \node[anchor=south, inner sep=1pt] at (1.5,1.2) {\labelbox{2.3cm}{$Q_1 = 28.5$}};
+  \node[anchor=south, inner sep=1pt] at (4.0,1.2) {\labelbox{2.3cm}{median $= 30$}};
+  \node[anchor=south, inner sep=1pt] at (6.5,1.2) {\labelbox{2.3cm}{$Q_3 = 31.5$}};
+  \draw[->, thick, goldacc] (1.9,1.2) -- (2.45,1.12);
+  \draw[->, thick, goldacc] (6.1,1.2) -- (5.55,1.12);
+\end{tikzpicture}
+\end{center}
 \\
 & \notesprompt{Use Route A.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{4}{$Q_1$ --- the middle of 27 28 28 29 29 30}{0.9cm}{28.5 minutes} &
-\pcell{5}{$Q_3$ --- the middle of 30 31 31 32 32 33}{0.9cm}{31.5 minutes} &
-\pcell{6}{How many of the twelve took $Q_1$ minutes or less?}{0.9cm}{3 of 12: a quarter} \\ \hline
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{The median: average the 6th and 7th values.}{1.8cm}{$(30+30)/2 = 30$ minutes} &
+\pcell{4}{$Q_1$: the middle of the lower half 27 28 28 29 29 30.}{1.8cm}{$(28+29)/2 = 28.5$ minutes} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{$Q_3$: the middle of the upper half 30 31 31 32 32 33.}{1.8cm}{$(31+32)/2 = 31.5$ minutes} &
+\pcell{6}{A 31.5-minute package sits at the 75th percentile. Say what that means in
+context.}{1.8cm}{About 75\% of Route A's packages took 31.5 minutes or less.} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 3: spread — range, IQR, standard deviation ───────────────────────────
 \mainidea[Three measures of]{Spread} &
-Each one is a \textbf{single number, not an interval}. The \textbf{range} is \ans{maximum}
-$-$ \ans{minimum}. The \textbf{interquartile range (IQR)} is \ans{$Q_3$} $-$
-\ans{$Q_1$}, the width of the middle half. For Route A:
-\begin{work}
-\text{range} &= 33 - 27 = 6 \text{ min}, \qquad \text{IQR} = 31.5 - 28.5 = 3 \text{ min}
-\end{work}
+Each measure of spread is \textbf{one number, not an interval}. The \textbf{range} is
+maximum $-$ minimum. The \textbf{IQR} is $Q_3 - Q_1$, the width of the middle half. The
+\textbf{standard deviation} $s_x = \sqrt{\dfrac{1}{n-1}\sum (x_i - \bar x)^2}$ is roughly the
+typical distance of a value from the mean. Technology computes it; we do it by hand once, on
+a five-package route: 26, 28, 30, 32, 34 minutes, so $\bar x = 30$.
 \\
-& The \textbf{standard deviation} $s_x$ measures spread around the \emph{mean}: roughly the
-\ans{typical} distance of a value from $\bar x$. Once, by hand, on a tiny fourth route:
-five packages at 26, 28, 30, 32, 34 minutes, so $\bar x = 30$.
-\par\vspace{2pt}
-\textbf{Deviations} $x_i - \bar x$: \; $-4$, \; \ans{$-2$}, \; 0, \; \ans{2}, \; 4.
-Square them, add, divide by $n-1$ (the \textbf{variance} $s_x^2$), take the root:
-$s_x = \sqrt{\frac{1}{n-1}\sum (x_i-\bar x)^2}$.
+& \begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[->, thick] (-0.3,0) -- (10.3,0);
+  \foreach \x/\lab in {0/24, 1.6/26, 3.2/28, 4.8/30, 6.4/32, 8.0/34, 9.6/36} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x in {1.6, 3.2, 4.8, 6.4, 8.0} { \fill[navy] (\x,0.3) circle (0.11); }
+  \node[font=\tiny] at (4.8,-0.6) {Minutes to deliver};
+  \draw[goldacc, very thick, dashed] (4.8,-0.15) -- (4.8,1.9);
+  \node[font=\scriptsize\bfseries, above] at (4.8,1.9) {$\bar x = 30$};
+  \draw[<-, navy, thick] (1.6,1.35) -- (4.8,1.35);
+  \node[font=\scriptsize, above] at (3.2,1.35) {$26 - 30 = -4$};
+  \draw[<-, navy, thick] (3.2,0.7) -- (4.8,0.7);
+  \node[font=\scriptsize, above] at (4.0,0.7) {$-2$};
+  \draw[->, navy, thick] (4.8,0.7) -- (6.4,0.7);
+  \node[font=\scriptsize, above] at (5.6,0.7) {$+2$};
+  \draw[->, navy, thick] (4.8,1.35) -- (8.0,1.35);
+  \node[font=\scriptsize, above] at (6.4,1.35) {$34 - 30 = +4$};
+  \node[font=\tiny, anchor=west] at (8.3,0.5) {deviations $x_i - \bar x$};
+\end{tikzpicture}
+\end{center}
+Square the deviations, add, divide by $n-1$ (that is the \textbf{variance} $s_x^2$), take the root:
 \begin{work}
 s_x^2 &= \tfrac{16+4+0+4+16}{5-1} = \tfrac{40}{4} = 10, \qquad s_x = \sqrt{10} \approx 3.16 \text{ min}
 \end{work}
-\textbf{Technology computes $s_x$ from here on.} It is built from the \ans{mean} and carries
-the \ans{units} of the variable.
 \\
-& \notesprompt{Use the five-package route.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{7}{Its range and its IQR (halves 26, 28 and 32, 34)}{1.2cm}{Range $34-26=8$; IQR $33-27=6$ min} &
-\pcell{8}{A student writes Route A's range as ``27 to 33.'' What is wrong?}{1.2cm}{One number: $33-27=6$ min} &
-\pcell{9}{In seconds instead: what happens to $\bar x$, the range, and $s_x$?}{1.2cm}{All $\times 60$: 1800, 480, about 190 s} \\ \hline
+& \notesprompt{One number each.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Route A: the range and the IQR ($\min 27$, $\max 33$, $Q_1 = 28.5$,
+$Q_3 = 31.5$).}{1.8cm}{Range $33-27 = 6$ min; IQR $31.5-28.5 = 3$ min} &
+\pcell{8}{The five-package route: the range and the IQR (halves 26, 28 and 32, 34).}{1.8cm}{Range $34-26 = 8$ min; IQR $33-27 = 6$ min} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 4: resistance — THE CRUX ─────────────────────────────────────────────
 \mainidea[One value changes:]{Resistance} &
-Back to the paychecks: \textbf{the owner's \$3{,}000 becomes \$750.} Recompute both centers:
-\begin{work}
-\bar x_{\text{new}} &= \tfrac{6750}{9} = \text{\$750}, \qquad \text{median}_{\text{new}} = \text{5th value} = \text{\$750}
-\end{work}
-The mean fell by \ans{\$250}; the median moved \ans{not at all} --- it asks only
-which value is \ans{fifth} in order, and that position never saw the \$3{,}000.
+A statistic is \textbf{resistant} if one extreme value barely moves it (the median, the IQR)
+and \textbf{nonresistant} if one extreme value drags it along (the mean, the range, $s_x$).
+Both centers are correct; the \textbf{shape} picks the pair to report: skewed or an outlier
+present, \textbf{median and IQR}; roughly symmetric, \textbf{mean and $s_x$}. An
+\textbf{outlier} is more than $1.5\times\text{IQR}$ beyond a quartile.
 \\
-& \textbf{Route B's} twelve times also add to 360 minutes ($Q_1 = 23$, $Q_3 = 37$). \textbf{Route C is
-Route A with one late package:} its 33-minute delivery became 51.
-\par\vspace{2pt}
-{\centering
-\begin{tikzpicture}[scale=0.42]
-  \draw[->, thick] (-0.2,0) -- (6.9,0);
-  \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
-    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.11) {\lab};}
-  \foreach \x/\n in {0.48/1, 0.80/1, 1.12/1, 1.44/1, 1.76/1, 2.24/1, 2.56/1, 3.04/1,
-                     3.36/1, 3.68/1, 4.00/1, 4.32/1} {
-    \foreach \k in {1,...,\n} { \fill[goldacc] (\x,{0.26*\k}) circle (0.13); }}
-  \node[font=\bfseries\scriptsize, anchor=west] at (5.9,0.75) {Route B};
-  \begin{scope}[xshift=7.6cm]
-    \draw[->, thick] (-0.2,0) -- (6.9,0);
-    \foreach \x/\lab in {0.8/20, 2.4/30, 4.0/40, 5.6/50} {
-      \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.11) {\lab};}
-    \foreach \x/\n in {1.92/1, 2.08/2, 2.24/2, 2.40/2, 2.56/2, 2.72/2, 5.76/1} {
-      \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.26*\k}) circle (0.13); }}
-    \node[font=\bfseries\scriptsize, anchor=west] at (5.9,0.75) {Route C};
+& \textbf{The owner's \$3{,}000 becomes \$750.}
+\begin{center}
+\begin{tikzpicture}[scale=0.82]
+  % before
+  \node[font=\scriptsize\bfseries, anchor=east] at (-0.4,0.45) {Before};
+  \draw[->, thick] (-0.3,0) -- (10.7,0);
+  \foreach \x/\lab in {0/500, 2/1000, 4/1500, 6/2000, 8/2500, 10/3000} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.34) {\lab};}
+  \foreach \x/\n in {0.6/1, 0.8/2, 1.0/2, 1.2/2, 1.4/1, 10/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.24*\k}) circle (0.085); }}
+  \fill[goldacc] (2,-0.02) -- (1.84,-0.3) -- (2.16,-0.3) -- cycle;
+  \node[font=\tiny, anchor=west] at (2.25,0.32) {mean \$1{,}000};
+  \node[font=\tiny, anchor=south] at (1.0,0.7) {median \$750};
+  \draw[->, goldacc, thick, dashed] (9.85,0.15) .. controls (7,1.0) and (2.5,-1.1) .. (1.2,-1.75);
+  % after
+  \begin{scope}[yshift=-2.5cm]
+  \node[font=\scriptsize\bfseries, anchor=east] at (-0.4,0.45) {After};
+  \draw[->, thick] (-0.3,0) -- (10.7,0);
+  \foreach \x/\lab in {0/500, 2/1000, 4/1500, 6/2000, 8/2500, 10/3000} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.34) {\lab};}
+  \foreach \x/\n in {0.6/1, 0.8/2, 1.0/3, 1.2/2, 1.4/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.24*\k}) circle (0.085); }}
+  \fill[goldacc] (1,-0.02) -- (0.84,-0.3) -- (1.16,-0.3) -- cycle;
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (3.4,0.72) {new mean \labelbox{1.6cm}{\$750}};
+  \node[font=\scriptsize, anchor=west, inner sep=1pt] at (7.1,0.72) {new median \labelbox{1.6cm}{\$750}};
   \end{scope}
 \end{tikzpicture}
-\par}
-\vspace{2pt}
+\end{center}
+\textbf{In your own words:} why did the median not move?
+\writespace{1.4cm}{It is the fifth value in order, and that position never saw the \$3{,}000.}
+\\
+& \textbf{Route B} also averages 30 minutes. \textbf{Route C is Route A with one late package}:
+its 33-minute delivery became 51. Fill in Route C's row.
+\begin{center}
+\begin{tikzpicture}[scale=0.92]
+  \node[font=\scriptsize\bfseries, anchor=east] at (-0.35,0.4) {Route B};
+  \draw[->, thick] (-0.3,0) -- (8.6,0);
+  \foreach \x/\lab in {1/20, 3/30, 5/40, 7/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x in {0.6, 1.0, 1.4, 1.8, 2.2, 2.8, 3.2, 3.8, 4.2, 4.6, 5.0, 5.4} {
+    \fill[goldacc] (\x,0.26) circle (0.095); }
+  \begin{scope}[yshift=-1.2cm]
+  \node[font=\scriptsize\bfseries, anchor=east] at (-0.35,0.4) {Route C};
+  \draw[->, thick] (-0.3,0) -- (8.6,0);
+  \foreach \x/\lab in {1/20, 3/30, 5/40, 7/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {2.4/1, 2.6/2, 2.8/2, 3.0/2, 3.2/2, 3.4/2, 7.2/1} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.26*\k}) circle (0.095); }}
+  \node[font=\tiny, anchor=west] at (8.7,0) {min};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
 \footnotesize\setlength{\tabcolsep}{3pt}%
 \renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
@@ -201,34 +259,39 @@ Route A with one late package:} its 33-minute delivery became 51.
 \textbf{Route} & \textbf{Mean} & \textbf{Median} & \textbf{Range} & \textbf{IQR} \\
 \hline
 A: 27 28 28 29 29 30 30 31 31 32 32 33 & 30 & 30 & 6 & 3 \\
-B: 18 20 22 24 26 29 31 34 36 38 40 42 & 30 & 30 & \ans{24} & \ans{14} \\
+B: 18 20 22 24 26 29 31 34 36 38 40 42 & 30 & 30 & 24 & 14 \\
 C: 27 28 28 29 29 30 30 31 31 32 32 51 & \ans{31.5} & \ans{30} & \ans{24} &
 \ans{3} \\
 \end{tabularx}\small
 \\
-& \textbf{Resistant} --- one extreme value barely moves it: the \ans{median} and the
-\ans{IQR}. \textbf{Nonresistant} --- one extreme value drags it: the \ans{mean},
-the \ans{standard deviation}, and the \ans{range}.
-\textbf{Which pair to report?} Both centers are correct; the \textbf{shape} decides. Skewed, or an
-outlier present: \ans{median} and \ans{IQR}. Roughly symmetric, no outliers:
-\ans{mean} and \ans{standard deviation}. \textbf{Outlier rules:} more than
-$1.5\times\text{IQR}$ beyond a quartile, or 2 or more standard deviations from the mean.
-\\
 & \notesprompt{Decide, and say why.}
 \begin{probgrid}{|Y|Y|}
-\pcell{10}{C's range equals B's. Which number tells the routes apart?}{1.1cm}{The IQR: 3 against 14} &
-\pcell{11}{``The median is more accurate.'' What is the right word, and why?}{1.1cm}{\emph{Resistant}: it uses only the fifth position} \\ \hline
-\pcell{12}{Which pair for the paychecks? Justify it from the shape.}{1.1cm}{Median and IQR: skewed right by the \$3{,}000} &
-\pcell{13}{Which pair for Route A, and why?}{1.1cm}{Mean and $s_x$: roughly symmetric, no outlier} \\ \hline
+\pcell{9}{C's range equals B's. Which number tells the two routes apart?}{1.8cm}{The IQR: 3 against 14. C is bunched with one late package; B is spread out.} &
+\pcell{10}{A student writes Route A's range as ``27 to 33.'' What is wrong?}{1.8cm}{A range is one number: $33 - 27 = 6$ minutes, not an interval.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{11}{``The median is more accurate than the mean.'' What is the right word, and
+why?}{2.0cm}{\emph{Resistant.} It uses only the middle position, which never saw the \$3{,}000.} &
+\pcell{12}{Which pair for the paychecks, and which pair for Route A? Justify each from its
+shape.}{2.0cm}{Paychecks: median and IQR (skewed right by the \$3{,}000). Route A: mean and $s_x$ (symmetric, no outlier).} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 5: guided practice — WE DO, together, fresh context ──────────────────
 \mainidea[Guided practice]{Quiz Scores} &
-Eleven scores on a 20-point quiz, in order: 12, 13, 14, 15, 15, 16, 17, 18, 18, 19, 19.
+Eleven scores on a 20-point quiz: 12 13 14 15 15 16 17 18 18 19 19.
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \draw[->, thick] (-0.3,0) -- (9.6,0);
+  \foreach \x/\lab in {0/10, 1/11, 2/12, 3/13, 4/14, 5/15, 6/16, 7/17, 8/18, 9/19} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {2/1, 3/1, 4/1, 5/2, 6/1, 7/1, 8/2, 9/2} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.3*\k}) circle (0.1); }}
+  \node[font=\tiny] at (4.5,-0.6) {Score out of 20};
+\end{tikzpicture}
+\end{center}
+\textbf{13.} Split the list at the median and fill in the five-number summary:
 \par\vspace{2pt}
-\textbf{14.} Find the median, split the list at it, and fill the table:
-
-\vspace{2pt}
 \renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
 \rowcolor{sky}
@@ -238,13 +301,16 @@ Eleven scores on a 20-point quiz, in order: 12, 13, 14, 15, 15, 16, 17, 18, 18, 
 \end{tabularx}
 \\
 & \notesprompt{We work these together.}
-\begin{probgrid}{|Y|Y|Y|}
-\pcell{15}{The eleven scores add to 176. Their mean?}{1.0cm}{$176/11 = 16$ points} &
-\pcell{16}{The \textbf{range} and the \textbf{IQR} --- one number each.}{1.0cm}{Range $19-12=7$; IQR $18-14=4$} &
-\pcell{17}{Is 12 an outlier? Use $Q_1 - 1.5\times\text{IQR}$.}{1.0cm}{$14-6=8$; 12 is not below: no} \\ \hline
-\pcell{18}{The 12 was really a \textbf{1}. Which of \emph{mean, median, range, IQR} change?}{1.2cm}{Mean and range; not median or IQR} &
-\pcell{19}{State the rule that sorts those four into two piles.}{1.2cm}{Only the mean and range see the extreme value} &
-\pcell{20}{With the 1 in the list, which pair would you report, and why?}{1.2cm}{Median, IQR: the 1 is an outlier (below 8)} \\ \hline
+\begin{probgrid}{|Y|Y|}
+\pcell{14}{The eleven scores add to 176. Find the mean.}{1.8cm}{$176/11 = 16$ points} &
+\pcell{15}{The range and the IQR --- one number each.}{1.8cm}{Range $19-12 = 7$; IQR $18-14 = 4$} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{16}{The 12 was really a \textbf{1}. Which of \emph{mean, median, range, IQR} change, and
+by how much?}{2.0cm}{Mean $165/11 = 15$ (down 1); range $19-1 = 18$ (up 11). Median 16 and IQR 4 do not change.} &
+\pcell{17}{Is the 1 an outlier? Use $Q_1 - 1.5\times\text{IQR}$. Which pair would you report
+now, and why?}{2.0cm}{$14 - 1.5(4) = 8$; 1 is below it, so yes. Median and IQR --- an outlier is present.} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}
