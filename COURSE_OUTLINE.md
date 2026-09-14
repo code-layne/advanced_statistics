@@ -37,6 +37,13 @@ statistics, boxplots, comparisons across groups, and the Normal distribution.
 | 1.6 | Boxplots and Comparing Distributions | Five-number summary; boxplots; comparing groups on center, variability, unusual features |
 | 1.7 | The Normal Distribution and z-Scores | Parameter vs. statistic; z-scores; the empirical rule; relative position |
 
+**Mid-unit quiz (Lessons 1.0–1.4).** `unit01/quizzes/` holds `study_guide/` (a reference
+sheet — no key by design), `sample_quiz/`, and `actual_quiz/`; `unit01/quiz_keys/` holds
+`sample_quiz_key/` and `actual_quiz_key/`. The two quizzes are parallel forms — same sections,
+same six multiple-choice targets in order, same two free-response sets — in different contexts.
+Build with `make -C unit01/quizzes all && make -C unit01/quiz_keys all`. Nothing here is merged
+into the unit student or key packet, so the actual quiz never reaches a packet.
+
 ## Unit 2 — Exploring Two-Variable Data (9 lessons)
 
 Extends statistical thinking to relationships between two variables: two-way tables and
@@ -190,7 +197,9 @@ course-wide procedure-selection synthesis.
 Every lesson lives in `unitXX/lessonYY/` with the plan at `main.tex` and one
 subdirectory per component: `cover`, `warmup`/`_key`, `notes`/`_key`,
 `activity`/`_key`, `exit_ticket`/`_key`, `homework`/`_key`, `slides`. Units add
-`unit_cover/`, `binder_cover/`, and `sample_test`/`sample_test_key`.
+`unit_cover/`, `binder_cover/`, and `sample_test`/`sample_test_key`. A unit may also carry
+mid-unit `quizzes/` and `quiz_keys/` directories, which stay out of both packets (Unit 1 has
+them; see above).
 
 ## Gaps found while compiling this outline
 

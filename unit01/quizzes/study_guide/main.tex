@@ -1,0 +1,174 @@
+%! Unit 1, Lessons 1.0–1.4 — Quiz Study Guide (reference sheet; no answer key by design)
+% This is a REFERENCE sheet, not a worksheet: every definition, every worked move, and every
+% trap is already filled in, so there is nothing to answer and therefore no _key sibling.
+% The practice a student does before the quiz is ../sample_quiz/, which HAS a key.
+% NAMESTRIP: no \namedateperiod — the name row lives on a packet cover and the unit tests only.
+% Vocabulary below is quoted from the five lessons' own vocabulary boxes (notes_key /
+% experience_key \termans entries) so a student reading this reads the same words twice.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+% One tabularx per group of lessons rather than one long table: a tabularx with X
+% columns is an unbreakable box, so a single 25-row table floats whole to a fresh page
+% and strands most of page 1. Three short tables flow, and each carries its lesson tag.
+
+\newcommand{\sghead}[1]{%
+  \vspace{0.13in}
+  \boxguard[10]
+  \begin{headlinebox}{navy}\color{white}\bfseries\small #1\end{headlinebox}
+  \vspace{0.09in}}
+
+\begin{document}
+
+\pageheader{Unit 1 \quad Lessons 1.0--1.4}{Quiz Study Guide}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+The quiz covers \textbf{Lesson 1.0} through \textbf{Lesson 1.4} --- the vocabulary of data,
+categorical vs.\ quantitative variables, displays for each, and describing a distribution.
+Nothing on it needs a calculation harder than a percent. What it does need, every single time,
+is an answer written \textbf{in context}: name the variable and its units, and say \emph{how}
+you know. An answer that would be true of any data set anywhere earns nothing.
+\end{remindbox}
+
+\sghead{1. Vocabulary you are expected to use, not just recognize}
+
+\small
+\renewcommand{\arraystretch}{1.26}
+
+\textbf{From Lessons 1.0 and 1.1 --- what data is, and the two kinds of variable}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Individual & one person, animal, or object described by \emph{one row} of the table. \\
+Variable & a characteristic recorded for every individual --- a \emph{column heading}. \\
+Value & one entry under a variable for one individual. \\
+Variability & values differ from one individual to the next. This is why statistics exists. \\
+Statistical question & anticipates variability \emph{and} is answered by collecting data. \\
+Categorical variable & its values are category names or group labels --- Produce, Yes, Cedar Falls. \\
+Quantitative variable & its values record a measured or counted \emph{amount} --- minutes, pounds, dollars. \\
+The amount test & ask whether the value records \emph{how much or how many} --- not whether it
+                   is written in digits. \\
+Grouping (binning) & replacing measured amounts with group labels. Turns quantitative into
+                   categorical, and the individual amounts cannot be recovered. \\
+\end{tabularx}
+
+\vspace{7pt}
+\textbf{From Lessons 1.2 and 1.3 --- displaying each kind}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Frequency table & the \emph{count} in each category; the counts add to the group size. \\
+Relative frequency table & the \emph{share} in each category; the entries add to 1, or 100\%. \\
+Bar graph & one bar per category; gaps between the bars. \\
+The comparison rule & to compare groups of \textbf{different sizes}, use relative frequencies ---
+                   never raw counts. \\
+Discrete variable & a count; nothing sits between two neighbouring values. \\
+Continuous variable & a measurement; between any two values there is always another. \\
+Histogram & grouped quantitative data, one bar per interval, height = count,
+                   \textbf{bars touching}. \\
+Interval width & the size of each histogram interval. Changing it changes the picture without
+                   changing a single data value. \\
+\end{tabularx}
+
+\vspace{7pt}
+\textbf{From Lesson 1.4 --- describing what the display shows}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Symmetric & the left half is roughly a mirror image of the right half. \\
+Skewed right / left & named for the side the \textbf{longer tail} runs out on --- right: a few
+                   values much larger; left: a few much smaller. \\
+Unimodal / bimodal / uniform & one main peak; two clear peaks; all bars about equal, no peak. \\
+Outlier & a value unusually far from the rest --- \textbf{investigated}, never simply deleted. \\
+Gap / cluster & a stretch where nothing was observed; a bunch of values set off by a gap. \\
+\end{tabularx}
+
+\normalsize
+
+\sghead{2. The five moves the quiz will ask you to make}
+
+\small
+\textbf{Move 1 --- Read a data table (1.0).} Rows are the individuals, column headings are the
+variables, entries are the values. \emph{Worked:} in a table with one row per market vendor and
+columns \emph{Stall type} and \emph{Weekly revenue}, the individuals are the \textbf{vendors},
+the variables are \textbf{stall type} (categorical) and \textbf{weekly revenue} (quantitative),
+and ``Produce'' is a \textbf{value}, not a variable.
+
+\vspace{5pt}
+\textbf{Move 2 --- Classify a variable (1.1).} Run the amount test, then --- if quantitative ---
+ask counted or measured. \emph{Worked:} \emph{Stall number 101--148} is written in digits but
+records no amount, so it is \textbf{categorical}. \emph{Bottles sold} is a count, so
+\textbf{discrete quantitative}. \emph{Pounds of tomatoes} is a measurement, so
+\textbf{continuous quantitative} --- and it stays continuous even if every value was rounded to a
+whole pound.
+
+\vspace{5pt}
+\textbf{Move 3 --- Build and use the two tables (1.2).} Counts add to the group size; relative
+frequencies add to 100\%. \emph{Worked:} 18 of 48 vendors sell produce, so the relative frequency
+is $18/48 = 0.375$, or 37.5\%. To compare that market with one where 15 of 30 vendors sell
+produce ($15/30 = 50\%$), you must use those shares: 18 is the larger \emph{count} and 50\% is
+the larger \emph{share}, and the question asks which.
+
+\vspace{5pt}
+\textbf{Move 4 --- Read a quantitative display (1.3).} A dotplot and a stem plot give back every
+individual value; a histogram does not --- it gives back only how many landed in each interval.
+Histogram bars \textbf{touch} because the intervals run into one another; bar-graph bars have
+gaps because the categories do not.
+
+\vspace{5pt}
+\textbf{Move 5 --- Describe a distribution (1.4).} All four, every time, in context:
+\textbf{shape}, \textbf{unusual features}, \textbf{center}, \textbf{variability}.
+\normalsize
+
+\vspace{0.10in}
+\boxguard[14]
+\begin{scenariobox}[The sentence that earns full credit]{navy}
+\small
+``Weekly revenue for the 30 vendors is \textbf{skewed right}, with a \textbf{gap} between
+\$1{,}000 and \$1{,}900 and one \textbf{outlier} near \$1{,}900. The \textbf{center} is about
+\$500 per week, and the values run from about \$200 to \$1{,}900, so there is a great deal of
+\textbf{variability} among the vendors.''
+\par\vspace{4pt}
+Four things. The variable named. The units named. If you can delete the context from your
+sentence and still have it make sense, it is not yet an answer.
+\end{scenariobox}
+
+\sghead{3. Five traps that cost points every year}
+
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt]
+  \item \textbf{Digits are not the test.} ZIP codes, jersey numbers, and stall numbers are
+        categorical. Ask what the value \emph{records}, not what it looks like.
+  \item \textbf{Skew is named for the tail, not the pile.} Most of the dots on the left with a
+        few stragglers reaching right is \textbf{skewed right}.
+  \item \textbf{A center by itself describes nothing.} Two checkout lines can share a middle wait
+        of 4 minutes and be nothing alike. Always pair center with variability.
+  \item \textbf{Different-sized groups need shares.} A bigger count out of a bigger group can be
+        the smaller share. Say which number you used and why.
+  \item \textbf{An outlier is a finding, not an error.} Report it, investigate it, and describe
+        the distribution with it. Never delete a value because it is inconvenient.
+\end{enumerate}
+\normalsize
+
+\sghead{4. Before you walk in}
+
+\small
+Work the \textbf{sample quiz} without your notes first, then check it against its key --- that
+order is the whole point of it. If a free-response answer of yours is shorter than the key's, it
+is almost certainly missing the context, not the arithmetic. Re-read the \textbf{Watch For} idea
+from each lesson's cover, and be ready to say, out loud, what a histogram throws away.
+\normalsize
+
+\end{document}
