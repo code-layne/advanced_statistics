@@ -1,5 +1,11 @@
 %! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+% GRADUAL-RELEASE cover: four packet rows (Warm-Up · Guided Notes & Practice · AP Practice with
+% NA · Homework). The EFFL spoiler rule is GONE — the learning targets name the formal
+% vocabulary in bold, because the guided notes teach it directly today.
+% The remindbox carries the lesson's IDEAS, never the lesson's process: no narrating the
+% gradual release here (unit01/lesson03's cover is the model).
+% \namedateperiod appears HERE ONLY — no name row on any other component.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{ltablex}
@@ -7,37 +13,29 @@
 
 \begin{document}
 
-% Full-bleed navy banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 1}{Lesson 1.7 \quad The Normal Distribution and z-Scores}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.7 \quad The Normal Distribution and z-Scores}}
-\end{center}
-
-\vspace{0.22in}
 \namedateperiod
 \vspace{0.18in}
 
 \boxguard[14]
 \begin{learningtargetbox}
 \small
-% SPOILER RULE (EFFL): plain language only. The formal terms this lesson's debrief attaches —
-% parameter, mu, sigma, normal distribution, approximately normal, the empirical rule,
-% standardized score, z-score — may not appear here. The AP Learning Objectives
-% (VAR-2.A, VAR-2.B, VAR-2.C) live in the teacher-facing lesson plan.
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly and in bold. The AP Learning Objectives (VAR-2.A, VAR-2.B, VAR-2.C) stay in the
+% teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} say why the bigger number is not always the better result.
-  \item \ldots{} measure how far a value sits from its own group's average, counted in that
-        group's own typical spread.
-  \item \ldots{} use that measurement to compare results from two completely different settings.
-  \item \ldots{} read the same three percentages off any mound-shaped pile of data, whatever it
-        is measuring.
+  \item \ldots{} tell a \textbf{parameter} ($\mu$, $\sigma$) from a \textbf{statistic}
+        ($\bar x$, $s_x$), and say which one a summary is by asking who got measured.
+  \item \ldots{} compute a \textbf{standardized score} (\textbf{$z$-score}) and interpret it in
+        context --- how many standard deviations, on which side, of what.
+  \item \ldots{} use the \textbf{empirical rule} on an approximately \textbf{normal}
+        distribution to estimate what percent of values fall in a range, including a single tail.
+  \item \ldots{} use $z$-scores to compare two results that came from two completely different
+        distributions, and explain why the raw numbers cannot settle it.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -53,16 +51,17 @@
 \midrule
 1 & Warm-Up & Two five-number summaries, counting steps away from an average, and one percent
                  split between two ends & \blank{1.2cm} \\
-2 & Experience \& Formalize & \emph{Two Tryouts} --- two problems with your group, then the
-                 \mbox{QuickNotes} we fill in together and one application we work together
-                 & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Parameters and statistics, the $z$-score, the normal curve and
+                 68--95--99.7 --- two tryouts, 500 loaves, 400 thermometers, and one loaf we
+                 judge together & \blank{1.2cm} \\
 % AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
-% The Homework in row 4 is this lesson's GRADED practice and closes the packet.
-3 & AP Practice & Newborn birth weights: AP-style multiple choice and one free-response set
-                 & \textbf{NA} \\
-4 & Homework & Which summaries describe everybody, three quick calculations, two students on two
-                 different tests, a curve to read, and one multiple-choice item ---
-                 \textbf{scored, due next class} & \blank{1.2cm} \\
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
+3 & AP Practice & Newborn birth weights: AP-style multiple choice and one free-response set ---
+                 practice, not a grade & \textbf{NA} \\
+4 & Homework & Parameter or statistic, three $z$-scores, two students on two different tests, a
+                 normal curve to read, and one multiple-choice item ---
+                 \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -73,11 +72,13 @@
 \boxguard[8]
 \begin{remindbox}
 \small
-In this lesson you will \textbf{experience first, formalize later}: your group gets one
-scholarship, two athletes, and two events that have nothing in common except that somebody has to
-choose between them --- only afterward will we name the tool you built to do it. Then two data
-sets that could not be less alike, a bakery's loaves and a clinic's thermometers, turn out to
-agree on three numbers to within a fraction of a percent. Working out why is the whole point.
+A raw number means nothing on its own. Twelve metres in the shot put and 12.3 seconds in the
+100 m are not on the same scale, and no amount of staring at them will make them comparable ---
+\textbf{so before you compare two results, count each one in the standard deviations of its own
+distribution.} Keep the sign when you do: negative means below the mean, and below the mean is
+good news in a race and bad news on a test. And the three percentages --- \textbf{68, 95,
+99.7} --- are a fact about a \emph{shape}, not about data in general: they hold when a
+distribution is mound-shaped and symmetric, and they hold for nothing else.
 \end{remindbox}
 
 \end{document}

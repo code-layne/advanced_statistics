@@ -1,13 +1,16 @@
 %! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Warm-Up
-% ONE PAGE, blank and key. Three items.
-% SPOILER RULE: `parameter', `mu', `sigma', `normal', `approximately normal', `empirical rule',
-% `standardized score', and `z-score' are what today's debrief attaches, so none appear here.
-% Mean and standard deviation WERE formalized in Lesson 1.5 and the five-number summary and IQR
-% in Lesson 1.6 — those are prior knowledge and are used freely.
-% Item 2 seeds the division the activity's 1c needs; item 3 seeds the halve-the-tail move that
-% 2d and the Application both rest on. Item 3's percentages are 90/10/5 ON PURPOSE — using the
-% real 95/5/2.5 here would hand away the discovery in Problem 2.
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items. 12pt, like every student component.
+% CONVERTED FROM 10pt: going to 12pt costs roughly 20% of the vertical budget, so the structural
+% spacing was trimmed (itemsep 0.19in -> 0.13in, the \vspace values, the \blank widths, the
+% table's \arraystretch) and item 2's first two sub-parts were merged into one. Budget is
+% \pageheader + three short items — if anything is added here, something else has to go.
+% Mean and standard deviation were formalized in Lesson 1.5, the five-number summary and IQR in
+% Lesson 1.6 — prior knowledge, used freely.
+% Item 2 seeds the z-score arithmetic of notes row 2, done once with numbers that divide evenly;
+% item 3 seeds the halve-the-tail move that notes problems 23-24 rest on. Item 3's percentages
+% are 90/10/5 rather than the real 95/5/2.5 so that the empirical rule's own numbers arrive out
+% of the students' band counts in notes problem 13.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
@@ -15,15 +18,15 @@
 
 \pageheader{Unit 1, Lesson 1.7}{Warm-Up}
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\begin{enumerate}[leftmargin=1.7em, itemsep=0.19in]
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.13in]
 
   \item \textbf{From last lesson.} Here are five-number summaries for the daily commute times,
         in minutes, of two groups of workers.
 
-        \vspace{4pt}
-        \renewcommand{\arraystretch}{1.4}
+        \vspace{3pt}
+        \renewcommand{\arraystretch}{1.25}
         \begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
         \rowcolor{sky}
         \textbf{Group} & \textbf{Min} & \textbf{Q1} & \textbf{Med} & \textbf{Q3} & \textbf{Max} \\
@@ -31,40 +34,37 @@
         \textbf{Downtown} & 8 & 14 & 19 & 26 & 41 \\
         \textbf{Suburban} & 15 & 22 & 25 & 30 & 38 \\
         \end{tabularx}
-        \vspace{5pt}
-
-        IQR for Downtown: \blank{2.2cm} \qquad IQR for Suburban: \blank{2.2cm}
-
         \vspace{4pt}
-        Whose \emph{middle half} of commute times is more spread out? \blank{3.0cm}
+
+        IQR for Downtown: \blank{2.0cm} \qquad IQR for Suburban: \blank{2.0cm}
+
+        \vspace{3pt}
+        Whose \emph{middle half} of commute times is more spread out? \blank{3.7cm}
 
   \item A set of quiz scores has a mean of \textbf{20} points and a standard deviation of
         \textbf{3} points.
 
-        \vspace{5pt}
-        \hspace{1.0em}\textbf{(a)} How many points \emph{above} the mean is a score of 26?
-        \blank{2.4cm}
-        \vspace{5pt}
+        \vspace{3pt}
+        \hspace{1.0em}\textbf{(a)} A score of 26 is how many points above the mean, and how many
+        3-point steps is that? \blank{3.6cm}
+        \vspace{3pt}
 
-        \hspace{1.0em}\textbf{(b)} That many points is how many 3-point steps? \blank{2.4cm}
-        \vspace{5pt}
-
-        \hspace{1.0em}\textbf{(c)} A score of 17 is how many 3-point steps from the mean, and on
-        which side? \blank{4.0cm}
+        \hspace{1.0em}\textbf{(b)} A score of 17 is how many 3-point steps from the mean, and on
+        which side? \blank{4.3cm}
 
   \item In a set of \textbf{400} measurements, \textbf{360} of them fall inside a certain range
         of values.
 
-        \vspace{5pt}
-        \hspace{1.0em}\textbf{(a)} What percent of the measurements is that? \blank{2.4cm}
-        \vspace{5pt}
+        \vspace{3pt}
+        \hspace{1.0em}\textbf{(a)} What percent of the measurements is that? \blank{2.0cm}
+        \vspace{3pt}
 
-        \hspace{1.0em}\textbf{(b)} What percent fall \emph{outside} that range? \blank{2.4cm}
-        \vspace{5pt}
+        \hspace{1.0em}\textbf{(b)} What percent fall \emph{outside} that range? \blank{2.0cm}
+        \vspace{3pt}
 
         \hspace{1.0em}\textbf{(c)} The measurements pile up evenly on both sides of the middle,
         so the leftovers split evenly between the low end and the high end. What percent fall
-        past the \emph{high} end? \blank{2.4cm}
+        past the \emph{high} end? \blank{2.0cm}
 
 \end{enumerate}
 

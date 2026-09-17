@@ -1,16 +1,21 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — AP Practice
-% EFFL, AP Statistics variant: AP-format practice, assigned but NOT scored — the cover's score
+% GRADUAL-RELEASE lesson: AP-format practice, assigned but NOT scored — the cover's score
 % column reads NA for this component. The graded practice is the `homework` component that
 % follows it at the back of the packet.
+% THIRD CONTEXT: the guided notes teach on twenty free throws and two bus routes, Guided Practice
+% is two science sections, and this page runs on weekday-versus-weekend tips — a data set that
+% appears nowhere else in the packet.
 % The four MC items cover the four ways this topic is tested: 1 is the width-means-count
-% distractor, 2 is a five-number-summary/IQR reading item, 3 is mean-vs-median position under
-% right skew (EK UNC-1.M.2), and 4 is the item whose correct answer is that the display CANNOT
-% answer the question asked. Free-response (d) spirals to Lessons 1.3 and 1.4 (which display
-% would show a second peak).
-% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching a terse
-% \ansline{} in the key — keep key answers short enough not to wrap past the reserved lines.
+% distractor (the lesson's target misconception dressed as an AP answer choice), 2 is a
+% five-number-summary/IQR reading item, 3 is mean-vs-median position under right skew
+% (EK UNC-1.M.2), and 4 is the item whose correct answer is that the display CANNOT answer the
+% question asked — the same limit students met in notes problem 17. Free-response (d) spirals to
+% Lessons 1.3 and 1.4 (which display would show a second peak).
+% Every student component in this course is 12pt.
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching exactly n terse
+% \ansline{} calls in the key, and on the \bxp macro and every TikZ block being byte-identical.
 % The next-lesson preview is NOT here: it closes the packet, in ../homework/.
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 % \bxp{y-center}{half-height}{min}{Q1}{median}{Q3}{max} — the display is PRE-DRAWN.

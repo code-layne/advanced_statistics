@@ -1,9 +1,10 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Warm-Up (Answer Key)
-% ONE PAGE, blank and key. Three items.
-% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
-% The \begin{work} block in item 3 is BYTE-IDENTICAL to the blank's — that is what keeps the
-% two files the same height. NO teachernote here — teacher prose lives in the lesson plan.
-\documentclass[10pt]{article}
+% ONE PAGE at 12pt, blank and key. Three items, no name row (Namestrip).
+% Mirrors ../warmup/main.tex exactly apart from the package swap, the \pageheader second
+% argument, and \blank -> \ans. The \begin{work} block in item 3 is BYTE-IDENTICAL to the
+% blank's — that is what keeps the two files the same height.
+% NO teachernote here — teacher prose lives in the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
@@ -11,20 +12,20 @@
 
 \pageheader{Unit 1, Lesson 1.6}{Warm-Up --- Answer Key}
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-\begin{enumerate}[leftmargin=1.7em, itemsep=0.19in]
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.13in]
 
   \item \textbf{From last lesson.} Here are the ages, in years, of nine trees in a city park,
         already put in order.
 
-        \vspace{4pt}
+        \vspace{3pt}
         \begin{center}
         12 \quad 14 \quad 15 \quad 18 \quad 20 \quad 23 \quad 27 \quad 28 \quad 35
         \end{center}
-        \vspace{4pt}
+        \vspace{3pt}
 
-        \renewcommand{\arraystretch}{1.4}
+        \renewcommand{\arraystretch}{1.3}
         \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
         \rowcolor{sky}
         \textbf{Least} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} & \textbf{Greatest} \\
@@ -32,19 +33,19 @@
         \ans{12} & \ans{14.5} & \ans{20} & \ans{27.5} & \ans{35} \\
         \end{tabularx}
 
-        \vspace{5pt}
+        \vspace{4pt}
         IQR: \ans{13 years} \qquad Range: \ans{23 years}
 
   \item Here are twelve measurements. \textbf{Count} how many fall in each stretch.
 
-        \vspace{4pt}
+        \vspace{3pt}
         \begin{center}
         3 \quad 5 \quad 6 \quad 8 \quad 9 \quad 12 \quad 14 \quad 15 \quad 19 \quad 26 \quad
         33 \quad 55
         \end{center}
-        \vspace{4pt}
+        \vspace{3pt}
 
-        \renewcommand{\arraystretch}{1.4}
+        \renewcommand{\arraystretch}{1.3}
         \begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
         \rowcolor{sky}
         \textbf{Stretch} & between 2 and 10 & between 10 and 20 & between 20 and 60 \\
@@ -52,11 +53,10 @@
         \textbf{How many} & \ans{5} & \ans{4} & \ans{3} \\
         \end{tabularx}
 
-  \item \textbf{From last lesson.} We named a rule for flagging a value that sits unusually far
-        from the rest: it is unusual if it lies more than $1.5 \times \text{IQR}$ below $Q_1$ or
-        more than $1.5 \times \text{IQR}$ above $Q_3$.
+  \item \textbf{From last lesson.} A value counts as unusually far from the rest if it lies more
+        than $1.5 \times \text{IQR}$ below $Q_1$ or more than $1.5 \times \text{IQR}$ above $Q_3$.
 
-        \vspace{4pt}
+        \vspace{3pt}
         A data set has $Q_1 = 20$ and $Q_3 = 32$. Is the value \textbf{55} unusually far from the
         rest? Show the arithmetic.
 
