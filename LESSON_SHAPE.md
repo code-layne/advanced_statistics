@@ -96,6 +96,24 @@ instruction frame per notes row → we-do → debrief → close & start the home
 **`unit01/lesson01` is the reference implementation** of this shape. Mirror its preamble, box
 usage, pacing, and tone; the live lesson overrides every document, this one included.
 
+**For the `notes` component specifically, the layout exemplar is `unit01/lesson05`** — read it
+before authoring a notes table, in preference to 1.1–1.4, which are looser. What 1.5 gets right:
+
+- The Notes column is **continuous teaching prose carrying inline `\blank{}` fills**, the way a
+  teacher narrates while students write — *not* a terse definition followed by a large grid.
+- **Every multi-step computation sits in an inline `work` block** (1.5 has five), authored
+  byte-identically in the blank and the key.
+- Data is printed as a **plain centered number list** (`{\centering 27 \quad 28 \quad …\par}`)
+  or a compact `tabularx`, reserving TikZ for a display that is itself the object of study.
+  **1.5 carries one figure in the whole component**; four is a symptom, not a style.
+- **Every idea is split into three to five sub-rows** — a bare `\\` with no `\hline`, then a line
+  beginning `& `. This is what lets the table break across pages. A row with no seams is thrown
+  whole to the next page and strands half a page of white behind it, which is how a 3-page
+  component silently becomes 4.
+- **One grid of exactly three problems per row** (`|Y|Y|Y|`), always the row's last sub-row, with
+  `\pcell` heights of 0.9–1.2cm. 1.5 totals **20 problems across 5 rows** — the low end of the
+  20–26 target, and the right end to aim at.
+
 ## 2. Grading and homework policy
 
 Every lesson carries **both** back-of-packet components, authored every time:

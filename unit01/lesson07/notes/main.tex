@@ -1,25 +1,43 @@
 %! The Normal Distribution and z-Scores — Unit 1, Lesson 1.7 — Guided Notes & Practice
-% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
-% box, then ONE two-column guidednotes table. Each row is one idea — a label on the left; on the
-% right a terse definition the student completes, then a grid of short numbered problems with
-% reserved answer space. Problems are numbered 1..26 through the whole component.
-%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
+% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right teaching prose the student completes with inline \blank{} fills, every
+% multi-step computation in an inline `work` block, then a grid of short numbered problems with
+% reserved answer space. Problems are numbered 1..20 through the whole component.
+%   I DO   : the teacher narrates the prose, fills the lines, and works the FIRST problem of each
+%            grid; every `work` block is teacher-worked at the board.
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
 %            Guided Practice, is worked entirely together.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
 %            last minutes of the period. No independent set, no reflection box, no objectives
 %            box (the targets are on the cover), no notesbox, no practicebox.
-% REGENERATED FROM THE RETIRED EFFL SHAPE: the old QuickNotes became these rows' definition
-% fills, the old Activity's *Two Tryouts* (row 2) and *The Same Three Numbers, Twice* (row 3)
-% became instruction rows, and the old *Application: The Bread Loaf* became the Guided Practice
-% row. Vocabulary is GIVEN here, not discovered — there is no spoiler rule any more.
+% Vocabulary is GIVEN here, not discovered.
+%
+% LAYOUT, modelled row-for-row on unit01/lesson05 (the house style):
+%   * 5 rows, 20 problems, 5 `work` blocks, 14 sub-row seams, EXACTLY TWO TikZ figures.
+%   * The Notes column is teaching prose carrying the fills mid-sentence, never a terse
+%     definition followed by a big grid — but TERSE prose: 1.5's row 1 runs about six typeset
+%     lines and so does this one. Connective and motivational sentences are cut, not kept.
+%   * Every computation lives in a `work` block, so no \ans{} ever carries arithmetic. Maya's and
+%     Dev's z-scores share ONE block (two columns of one aligned row) rather than two blocks —
+%     each block costs \abovedisplayskip + \belowdisplayskip, so merging buys most of an inch.
+%   * Data is a compact \rowcolor{sky} tabularx or a centred number list, not a picture, unless
+%     the picture itself is the object of study. The old bread HISTOGRAM became the band-count
+%     table; the old gram/z number line was dropped (mu and sigma are stated in the prose).
+%   * Each row is split into 3–5 sub-rows (a bare `\\`, then a line beginning `& `) so the
+%     table can break between pages; the problem grid is ALWAYS the last sub-row of its row.
+%   * Grids hold exactly 3 problems (|Y|Y|Y|); the crux row uses 2x2 and Guided Practice 3x2.
+%     \pcell heights stay 0.9–1.2cm.
+%   * Axis captions clear their tick labels: at scale 0.50 a caption needs ~1.0 units of
+%     clearance below the tick-label row, not 0.55. Panel titles are SHORT and carry the units,
+%     so the two dotplots need no bottom captions and their titles cannot touch.
 %
 % THE CRUX is row 4: that the bigger RAW number is the better result — that a raw score can be
-% compared across two different distributions without standardizing (problem 17), with its
+% compared across two different distributions without standardizing (problem 11), with its
 % companion error, reading a negative z as automatically worse when in a race lower is better
-% (problem 19). Problem 20 is the counterweight: what makes a data set NOT produce 68/95/99.7.
+% (problem 13). Problem 14 is the counterweight: what makes a data set NOT produce 68/95/99.7.
 %
-% THE PROTECTED DATA (carried verbatim from the retired experience/; the TikZ is pre-drawn):
+% THE PROTECTED DATA (the TikZ is pre-drawn; nothing here is student-drawn):
 %   Shot put field (20 throws, m): mean 9.0, s 1.5. Maya 12.0 -> z = (12.0-9.0)/1.5 = +2.0.
 %   100 m field (20 times, s): mean 13.2, s 0.6. Dev 12.3 -> z = (12.3-13.2)/0.6 = -1.5,
 %     AND LOWER IS BETTER IN A SPRINT.
@@ -28,16 +46,22 @@
 %   Clinic: 400 readings, mean 98.2 F, spread 0.7 F. Bands 9/54/137/136/54/9 (+1 outside):
 %     within 1 = 273 (68.25%), within 2 = 381 (95.25%), within 3 = 399 (99.75%).
 %   The two records' percentages agreeing is the second discovery (EK VAR-2.A.3).
+%   Guided Practice — the bakery as a model: mu = 800 g, sigma = 20 g. 834 g -> z = 1.7;
+%     840 g is +2 s.d., so about 2.5% above it (5% outside, halved by symmetry);
+%     754 g -> z = -2.3; 790 g -> z = -0.5.
 %
-% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
-% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
-% argument. H is the ANSWER space below the statement; blank widths are sized to the answers.
-% Nothing else differs between the two files — every TikZ block and every height is identical.
+% PAGE LOCKSTEP with notes_key/: the key differs in exactly FIVE ways — apstats-key for
+% apstats-boxes, the \pageheader's second argument, \termblank -> \termans, \blank -> \ans, and
+% the fourth argument of every \pcell. Every `work` block, TikZ block, height, width, sub-row
+% seam and \boxguard is BYTE-IDENTICAL, and every prose cut is made in BOTH files. H is the
+% ANSWER space below the statement; blank widths are sized to the answers, so the two files set
+% to the same page count.
 % \ans{} IS TEXT MODE: this lesson is the highest-risk one for it. Never put \ans{} inside
-% $...$ or \[...\]; every symbol in an answer is wrapped, as \ans{$\mu$}, \ans{$z = 2.0$}.
-% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
-% across pages: long ideas are split at a seam with a bare `\\` and continued with `& ...`.
-% NO SKETCH QUESTIONS: every dotplot, histogram, and curve is pre-drawn and read.
+% $...$ or \[...\]; every symbol in an answer is wrapped, as \ans{$\mu$}, \ans{$\bar x$}. The
+% arithmetic lives in `work` blocks precisely so that no \ans{} has to carry a formula.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. (Inside a `work`
+% block `\\` is the amsmath aligned's own row break and is safe.)
+% NO SKETCH QUESTIONS: every dotplot and curve is pre-drawn and read.
 % Target 3 pages at 12pt: the vocabulary box plus a two-page table.
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
@@ -72,100 +96,100 @@ Fill in each term \textbf{as we name it} in the notes below.
 \begin{guidednotes}
 % ── ROW 1: parameter vs statistic ────────────────────────────────────────────
 \mainidea[Parameter \&]{Statistic} &
-A \textbf{parameter} is a numerical summary of a \blank{2.5cm} --- \emph{everybody}. Its symbols
-are \blank{0.9cm} for the mean and \blank{0.9cm} for the standard deviation.
+Ask first: \textbf{who got measured?} A \textbf{parameter} summarizes a \blank{2.4cm} ---
+\emph{everybody}. Its symbols are \blank{0.8cm} for the mean and \blank{0.8cm} for the standard
+deviation.
+\\
+& A \textbf{statistic} summarizes a \blank{1.7cm} --- \emph{some of them}. Its symbols are
+Lesson~1.5's pair: \blank{0.9cm} and \blank{0.9cm}. Only the \blank{1.4cm} changes.
 \par\vspace{2pt}
-A \textbf{statistic} is a numerical summary of a \blank{1.8cm} --- \emph{some of them}. Its
-symbols, from Lesson~1.5, are \blank{1.0cm} and \blank{1.1cm}.
-\par\vspace{3pt}
-\textbf{The test:} ask \blank{3.4cm} --- everyone, or a handful?
-\notesprompt{Label each summary a parameter (P) or a statistic (S).}
+\textbf{The test:} ask \blank{3.3cm} --- everyone, or a handful? All 500 loaves a bakery baked:
+\blank{2.0cm}. The 40 an inspector weighed: \blank{1.7cm}.
+\\
+& \notesprompt{Label each summary a parameter (P) or a statistic (S), and give its symbol.}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{1}{The mean distance of all 20 throwers in Saturday's shot put field}{1.1cm}{} &
-\pcell{2}{A coach times 6 of the meet's 20 sprinters and averages those}{1.1cm}{} &
-\pcell{3}{The standard deviation of all 400 temperatures a clinic recorded}{1.1cm}{} \\ \hline
-\pcell{4}{A nurse re-reads 15 of those 400 charts and averages them}{1.1cm}{} &
-\pcell{5}{Which two symbols describe a sample?}{1.1cm}{} &
-\pcell{6}{Every athlete in the field got measured. Which mean symbol do you write?}{1.1cm}{} \\ \hline
+\pcell{1}{The mean distance of all 20 throwers in Saturday's shot put field}{1.0cm}{} &
+\pcell{2}{A coach times 6 of the meet's 20 sprinters and averages those}{1.0cm}{} &
+\pcell{3}{The standard deviation of all 400 temperatures a clinic recorded}{1.0cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 2: the standardized score — two tryouts ──────────────────────────────
 \mainidea[Standardized score]{$z$-score} &
-One scholarship, two candidates, two different events. Maya threw 12.0 m; Dev ran 12.3 s.
+One scholarship, two events: Maya threw 12.0 m; Dev ran 12.3 s. Nearly equal numbers, and not on
+the same \blank{1.3cm}. A \textbf{standardized score}, or \textbf{$z$-score}, counts how many
+\blank{3.4cm} a value sits from the mean of its \emph{own} distribution:
 \par\vspace{2pt}
-A \textbf{standardized score}, or \textbf{$z$-score}, counts how many \blank{3.7cm} a value sits
-from the mean of its \emph{own} distribution:
-\par\vspace{3pt}
 \centerline{$z = \dfrac{x_i - \mu}{\sigma}$}
-\par\vspace{3pt}
-\stepnum{1}\ Subtract the mean: $x_i - \mu$ is the distance in the variable's own
-\blank{1.5cm}.\par
-\stepnum{2}\ Divide by $\sigma$: the units \blank{1.5cm}, and what is left is a plain count.\par
-\stepnum{3}\ Keep the \blank{1.1cm}: positive means \blank{1.4cm} the mean, negative means
-\blank{1.4cm} it.
+\par\vspace{2pt}
+\stepnum{1}\ Subtract the mean: a distance in the variable's own \blank{1.3cm}.\par
+\stepnum{2}\ Divide by $\sigma$: the units \blank{1.4cm}, leaving a plain count.\par
+\stepnum{3}\ Keep the \blank{1.0cm}: positive is \blank{1.3cm} the mean, negative \blank{1.3cm} it.
 \\
-& \begin{center}
-\begin{tikzpicture}[scale=0.62]
-  % ── left: shot put field, one dot per throw ──
-  \draw[->, thick] (-0.25,0) -- (6.3,0);
+& {\centering
+\begin{tikzpicture}[scale=0.50]
+  % ── left: the shot put field, one dot per throw. Short title carries the units, so the
+  %    panel needs no bottom caption and the two titles cannot collide. ──
+  \draw[->, thick] (-0.2,0) -- (5.7,0);
   \foreach \v in {6,7,8,9,10,11,12} {
-    \draw ({(\v-5.5)*0.85},-0.08) -- ({(\v-5.5)*0.85},0.08);
-    \node[below, font=\scriptsize] at ({(\v-5.5)*0.85},-0.12) {\v};}
+    \draw ({(\v-5.5)*0.8},-0.07) -- ({(\v-5.5)*0.8},0.07);}
+  \foreach \v in {6,8,10,12} {
+    \node[below, font=\tiny] at ({(\v-5.5)*0.8},-0.10) {\v};}
   \foreach \v/\n in {6.0/1, 7.0/2, 7.5/1, 8.0/3, 8.5/2, 9.0/3, 9.5/2, 10.0/2, 10.5/1, 11.0/1,
     11.5/1} {
-    \foreach \k in {1,...,\n} { \fill[navy] ({(\v-5.5)*0.85},{0.2*\k}) circle (0.075); }}
-  \fill[goldacc] ({(12.0-5.5)*0.85},0.2) circle (0.1);
-  \node[font=\scriptsize\bfseries, text=goldacc] at ({(12.0-5.5)*0.85},0.6) {Maya};
-  \node[font=\scriptsize] at (2.9,-1.02) {Distance thrown (metres)};
-  \node[font=\bfseries\small] at (2.9,1.15) {Shot put: 20 throwers};
-  % ── right: 100 m field, one dot per runner ──
-  \begin{scope}[xshift=8.1cm]
-    \draw[->, thick] (-0.25,0) -- (6.2,0);
-    \foreach \v/\lab in {12.5/12.5, 13.0/13.0, 13.5/13.5, 14.0/14.0, 14.5/14.5} {
-      \draw ({(\v-12.2)*2.4},-0.08) -- ({(\v-12.2)*2.4},0.08);
-      \node[below, font=\scriptsize] at ({(\v-12.2)*2.4},-0.12) {\lab};}
+    \foreach \k in {1,...,\n} { \fill[navy] ({(\v-5.5)*0.8},{0.24*\k}) circle (0.10); }}
+  \fill[goldacc] ({(12.0-5.5)*0.8},0.24) circle (0.12);
+  \node[font=\tiny\bfseries, text=goldacc] at ({(12.0-5.5)*0.8},0.60) {Maya};
+  \node[font=\bfseries\scriptsize] at (2.7,1.35) {Shot put (metres)};
+  % ── right: the 100 m field, one dot per runner ──
+  \begin{scope}[xshift=6.6cm]
+    \draw[->, thick] (-0.2,0) -- (5.5,0);
+    \foreach \v in {12.5, 13.0, 13.5, 14.0, 14.5} {
+      \draw ({(\v-12.2)*2.2},-0.07) -- ({(\v-12.2)*2.2},0.07);}
+    \foreach \v/\lab in {12.5/12.5, 13.5/13.5, 14.5/14.5} {
+      \node[below, font=\tiny] at ({(\v-12.2)*2.2},-0.10) {\lab};}
     \foreach \v/\n in {12.5/1, 12.6/1, 12.7/1, 12.8/2, 12.9/1, 13.0/1, 13.1/1, 13.2/2, 13.3/1,
       13.4/1, 13.5/1, 13.6/2, 13.7/1, 13.9/1, 14.1/1, 14.5/1} {
-      \foreach \k in {1,...,\n} { \fill[navy] ({(\v-12.2)*2.4},{0.2*\k}) circle (0.075); }}
-    \fill[goldacc] ({(12.3-12.2)*2.4},0.2) circle (0.1);
-    \node[font=\scriptsize\bfseries, text=goldacc] at ({(12.3-12.2)*2.4},0.6) {Dev};
-    \node[font=\scriptsize] at (2.9,-1.02) {Finishing time (seconds)};
-    \node[font=\bfseries\small] at (2.9,1.15) {100 m dash: 20 runners};
+      \foreach \k in {1,...,\n} { \fill[navy] ({(\v-12.2)*2.2},{0.24*\k}) circle (0.10); }}
+    \fill[goldacc] ({(12.3-12.2)*2.2},0.24) circle (0.12);
+    \node[font=\tiny\bfseries, text=goldacc] at ({(12.3-12.2)*2.2},0.60) {Dev};
+    \node[font=\bfseries\scriptsize] at (2.65,1.35) {100 m dash (seconds)};
   \end{scope}
 \end{tikzpicture}
-\end{center}
-\par\vspace{2pt}
-\footnotesize\setlength{\tabcolsep}{2pt}%
-\renewcommand{\arraystretch}{1.15}
+\par}
+\vspace{2pt}
+\footnotesize\setlength{\tabcolsep}{3pt}%
+\renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
 \rowcolor{sky}
 \textbf{Event} & \textbf{Field mean} & \textbf{Field std.\ dev.} & \textbf{Our athlete} \\
 \hline
-Shot put (metres) & 9.0 m & 1.5 m & Maya: 12.0 m \\
-100 m dash (seconds) & 13.2 s & 0.6 s & Dev: 12.3 s \\
+Shot put, 20 throwers (metres) & 9.0 & 1.5 & Maya: 12.0 \\
+100 m dash, 20 runners (seconds) & 13.2 & 0.6 & Dev: 12.3 \\
 \end{tabularx}\small
-\notesprompt{Use each athlete's own field. Keep the units until step 2 cancels them.}
+\\
+& Standardize each against \emph{their own} field:
+\begin{work}
+z_{\text{Maya}} &= \tfrac{12.0 - 9.0}{1.5} = +2.0 \qquad
+z_{\text{Dev}} = \tfrac{12.3 - 13.2}{0.6} = -1.5
+\end{work}
+The units are gone. Maya sits \blank{0.9cm} standard deviations \blank{1.3cm} her field's mean;
+Dev sits 1.5 \blank{1.3cm} his. \textbf{In a sprint a lower time is better}, so Dev's negative
+$z$ is \blank{1.2cm} news.
+\\
+& \notesprompt{Read the two $z$-scores above. Answer in context, sign included.}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{7}{How far is Maya's throw from her field's mean?}{1.2cm}{} &
-\pcell{8}{How far is Dev's time from his field's mean?}{1.2cm}{} &
-\pcell{9}{Maya's $z$-score}{1.2cm}{} \\ \hline
-\pcell{10}{Dev's $z$-score}{1.7cm}{} &
-\pcell{11}{Interpret Dev's $z$-score in context. In a sprint, is below average good news?}{1.7cm}{} &
-\pcell{12}{Jordan clears exactly the high-jump field's mean height. What is Jordan's $z$?}{1.7cm}{} \\ \hline
+\pcell{4}{Interpret Maya's $z$-score in one sentence, in context.}{1.2cm}{} &
+\pcell{5}{Interpret Dev's. In a sprint, is below average good news?}{1.2cm}{} &
+\pcell{6}{Jordan clears exactly the high-jump field's mean height. Jordan's $z$?}{1.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 3: the normal distribution and the empirical rule ────────────────────
 \mainidea[Normal distribution \&]{Empirical rule} &
-A \textbf{normal distribution} is drawn as a curve that is \blank{2.2cm} about its centre and
-\blank{2.2cm}-shaped, and it is fixed entirely by \blank{0.9cm} and \blank{0.9cm}. Real data is
-never exactly that shape, so we say a data set is \blank{3.0cm} normal.
-\par\vspace{2pt}
-\textbf{Empirical rule.} If a distribution is approximately normal, then about \blank{1.2cm} of
-the observations fall within 1 standard deviation of the mean, about \blank{1.2cm} within 2, and
-about \blank{1.4cm} within 3.
+A \textbf{normal distribution} is a curve \blank{2.1cm} about its centre and
+\blank{1.5cm}-shaped, fixed entirely by \blank{0.8cm} and \blank{0.8cm}. Real data is never
+\emph{exactly} that, so we say a data set is \blank{2.8cm} normal.
 \\
-& \begin{minipage}[c]{0.44\linewidth}
-\centering
+& {\centering
 \begin{tikzpicture}[scale=0.50]
   \draw[navy, very thick] plot[smooth] coordinates
     {(-3.5,0.01) (-3,0.03) (-2.5,0.11) (-2,0.34) (-1.5,0.81) (-1,1.52) (-0.5,2.21) (0,2.50)
@@ -174,110 +198,119 @@ about \blank{1.4cm} within 3.
     \draw[linegray, thin, dashed] (\x,0) -- (\x,\h);}
   \draw[->, thick] (-4.0,0) -- (4.0,0);
   \foreach \x/\lab in {-3/$-3$, -2/$-2$, -1/$-1$, 0/$\mu$, 1/$+1$, 2/$+2$, 3/$+3$} {
-    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
-  \node[font=\scriptsize] at (0,-1.25) {standard deviations from the mean};
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.12) {\lab};}
+  % Caption clearance: tick labels are anchored below at y = -0.12, so at scale 0.50 the
+  % caption needs about 1.0 units beneath them. -1.55 leaves 1.43 — deliberately generous.
+  \node[font=\scriptsize] at (0,-1.55) {standard deviations from the mean};
 \end{tikzpicture}
-\end{minipage}\hfill
-\begin{minipage}[c]{0.52\linewidth}
-\centering
-\begin{tikzpicture}[scale=0.58]
-  \foreach \i/\c in {0/3, 1/8, 2/24, 3/44, 4/74, 5/96, 6/96, 7/75, 8/43, 9/24, 10/8, 11/4} {
-    \fill[navy] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.019});
-    \draw[white, very thin] ({\i*0.5},0) rectangle ({(\i+1)*0.5},{\c*0.019});}
-  \draw[->, thick] (0,0) -- (0,2.3);
-  \draw[->, thick] (0,0) -- (6.4,0);
-  \foreach \y/\lab in {0/0, 0.95/50, 1.90/100} {
-    \draw (-0.08,\y) -- (0.08,\y); \node[left, font=\tiny] at (-0.1,\y) {\lab};}
-  \foreach \x/\lab in {0/740, 1/760, 2/780, 3/800, 4/820, 5/840, 6/860} {
-    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
-  \draw[redacc, dashed, thin] (3,0) -- (3,2.0);
-  \node[font=\tiny, text=redacc] at (3,2.18) {mean 800 g};
-  \node[font=\scriptsize] at (3,-0.95) {Weight of a loaf (grams)};
-\end{tikzpicture}
-\end{minipage}
+\par}
+\vspace{2pt}
+\textbf{Empirical rule.} If a distribution is approximately normal, about \blank{1.1cm} of
+observations lie within 1 standard deviation of the mean, \blank{1.1cm} within 2, \blank{1.3cm}
+within 3.
 \\
-& Two records with nothing in common: a bakery's \textbf{500} loaves (pictured, mean 800 g,
-standard deviation 20 g) and a clinic's \textbf{400} body temperatures (mean 98.2$^\circ$F,
-standard deviation 0.7$^\circ$F). Each is sorted into bands one standard deviation wide. One loaf
-and one reading fell outside the bands.
-\par\vspace{3pt}
+& Two unrelated records --- a bakery's \textbf{500} loaf weights (mean 800 g, s.d.\ 20 g) and a
+clinic's \textbf{400} body temperatures (mean 98.2$^\circ$F, s.d.\ 0.7$^\circ$F) --- each sorted
+into bands one standard deviation wide. One loaf and one reading fell outside.
+\par\vspace{2pt}
 \footnotesize\setlength{\tabcolsep}{2pt}%
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y @{}}
 \rowcolor{sky}
 \textbf{Band} & $-3$ to $-2$ & $-2$ to $-1$ & $-1$ to 0 & 0 to $+1$ & $+1$ to $+2$ &
   $+2$ to $+3$ \\
 \hline
-\textbf{Loaves} (500) & 11 & 68 & 170 & 171 & 67 & 12 \\
-\textbf{Readings} (400) & 9 & 54 & 137 & 136 & 54 & 9 \\
-\end{tabularx}
-\par\vspace{4pt}
-\normalsize\textbf{13.} Add the bands and fill in both records:\par
-\vspace{2pt}
+Loaves (500) & 11 & 68 & 170 & 171 & 67 & 12 \\
+Readings (400) & 9 & 54 & 137 & 136 & 54 & 9 \\
+\end{tabularx}\small
+\par\vspace{2pt}
+Add the loaves' bands outward:
+\begin{work}
+\text{within } 1\sigma &: 170 + 171 = 341 \to \tfrac{341}{500} = 68.2\% \\
+\text{within } 2\sigma &: 341 + 68 + 67 = 476 \to \tfrac{476}{500} = 95.2\% \\
+\text{within } 3\sigma &: 476 + 11 + 12 = 499 \to \tfrac{499}{500} = 99.8\%
+\end{work}
+\\
+& \textbf{7.} Now the clinic's 400 readings, the same way:
+\par\vspace{2pt}
 \footnotesize\setlength{\tabcolsep}{2pt}%
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
 \rowcolor{sky}
 \textbf{Within \ldots{} of the mean} & \textbf{Loaves} & \textbf{Percent of 500} &
 \textbf{Readings} & \textbf{Percent of 400} \\
 \hline
-1 standard deviation & \blank{1.1cm} & \blank{1.4cm} & \blank{1.1cm} & \blank{1.6cm} \\
-2 standard deviations & \blank{1.1cm} & \blank{1.4cm} & \blank{1.1cm} & \blank{1.6cm} \\
-3 standard deviations & \blank{1.1cm} & \blank{1.4cm} & \blank{1.1cm} & \blank{1.6cm} \\
+1 standard deviation & 341 & 68.2\% & \blank{1.0cm} & \blank{1.5cm} \\
+2 standard deviations & 476 & 95.2\% & \blank{1.0cm} & \blank{1.5cm} \\
+3 standard deviations & 499 & 99.8\% & \blank{1.0cm} & \blank{1.5cm} \\
 \end{tabularx}\small
-\notesprompt{Read your own two columns of percentages.}
+\\
+& \notesprompt{Compare your two columns of percentages.}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{14}{Grams and degrees, 500 and 400. Why did the six percentages come out the same?}{1.6cm}{} &
-\pcell{15}{Round your six percentages into the empirical rule's three numbers.}{1.6cm}{} &
-\pcell{16}{Why do we say a data set is only \emph{approximately} normal?}{1.6cm}{} \\ \hline
+\pcell{8}{Grams and degrees, 500 and 400. Why did the percentages come out the same?}{1.2cm}{} &
+\pcell{9}{Round all six percentages into the empirical rule's three numbers.}{1.2cm}{} &
+\pcell{10}{Why do we say a data set is only \emph{approximately} normal?}{1.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 4: THE CRUX — the raw-number comparison, and the sign read wrongly ───
 \mainidea[Whose day was]{Better?} &
-Back to the scholarship. \textbf{A coach settles it by the raw numbers: ``Dev ran 12.3 and Maya
-threw 12.0, so Dev's number is bigger.''}
-\par\vspace{3pt}
+\textbf{A coach settles the scholarship in one line: ``Dev ran 12.3 and Maya threw 12.0, so Dev's
+number is bigger.''} Which is the argument --- that, or the two $z$-scores?
+\par\vspace{2pt}
 \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{A raw value cannot be compared across two different \blank{2.9cm}.}\par
-Standardize each one against its own mean and standard deviation --- then read the
-\textbf{\blank{2.1cm}} in context.}}
-\notesprompt{Settle it properly, then repair two wrong readings.}
+\textbf{A raw value cannot be compared across two different \blank{2.8cm}.}\par
+Standardize each against its own mean and standard deviation, then read the
+\textbf{\blank{2.0cm}} in context.}}
+\\
+& The sign is not a verdict: it says which \blank{1.0cm} of the mean the value fell on. A negative
+$z$ means \blank{1.3cm} the mean, nothing more. Good or bad depends on the \blank{1.6cm}: below
+average on a 100 m \emph{time} means \blank{1.5cm} than the field.
+\par\vspace{2pt}
+Likewise the empirical rule is a fact about a \blank{1.3cm}: a strongly \blank{1.4cm} or
+two-peaked record will not give 68--95--99.7.
+\\
+& \notesprompt{Settle it properly, then repair two wrong readings.}
 \begin{probgrid}{|Y|Y|}
-\pcell{17}{\textbf{The coach's argument.} Name what is wrong with comparing 12.0 and 12.3
-directly.}{2.0cm}{} &
-\pcell{18}{Settle it with the two $z$-scores instead, and say who had the better day
-\emph{for their own event}.}{2.0cm}{} \\ \hline
-\pcell{19}{A classmate says ``Dev's $z$ is negative, so Dev ran worse than average.'' Repair
-that sentence.}{2.0cm}{} &
-\pcell{20}{Describe a data set whose bands would \emph{not} come out 68--95--99.7, and say
-why.}{2.0cm}{} \\ \hline
+\pcell{11}{\textbf{The coach's argument.} Name what is wrong with comparing 12.0 and 12.3
+directly.}{1.2cm}{} &
+\pcell{12}{Settle it with the two $z$-scores, and say who had the better day \emph{for their own
+event}.}{1.2cm}{} \\ \hline
+\pcell{13}{``Dev's $z$ is negative, so Dev ran worse than average.'' Repair that
+sentence.}{1.2cm}{} &
+\pcell{14}{Describe a data set whose bands would \emph{not} come out 68--95--99.7, and say
+why.}{1.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── LAST ROW: GUIDED PRACTICE — we do, together ──────────────────────────────
 \mainidea[Guided practice]{The Bread Loaf} &
-The bakery again, now as a model: loaf weights are approximately normal with $\mu = 800$ grams
-and $\sigma = 20$ grams. The band boundaries are marked on the scale below.
-\par\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.72]
-  \draw[->, thick] (-0.3,0) -- (6.7,0);
-  \foreach \x/\lab in {0/740, 1/760, 2/780, 3/800, 4/820, 5/840, 6/860} {
-    \draw (\x,-0.09) -- (\x,0.09); \node[below, font=\scriptsize] at (\x,-0.12) {\lab};}
-  \foreach \x/\lab in {0/$-3$, 1/$-2$, 2/$-1$, 3/0, 4/$+1$, 5/$+2$, 6/$+3$} {
-    \node[above, font=\scriptsize, text=navy] at (\x,0.12) {\lab};}
-  \node[font=\scriptsize] at (3,-1.15) {Weight of a loaf (grams), with $z$ above the scale};
-\end{tikzpicture}
-\end{center}
+The bakery as a \emph{model}: loaf weights are approximately normal, $\mu = 800$ g and
+$\sigma = 20$ g. A loaf comes off the line at 834 g:
+\begin{work}
+z &= \tfrac{834 - 800}{20} = \tfrac{34}{20} = 1.7
+\end{work}
+That loaf is 1.7 standard deviations \blank{1.3cm} the mean weight of \blank{1.1cm} grams.
+\\
+& \textbf{A tail.} About 95\% lie within 2 standard deviations, so about \blank{1.0cm} lie
+outside; the curve is \blank{2.1cm}, so that splits evenly:
+\begin{work}
+840 \text{ g} &\to z = +2, \quad 5\% \text{ outside} \to \tfrac{5\%}{2} = 2.5\% \text{ above}
+\end{work}
+\\
+& \textbf{A complaint.} A customer returns a 754 g loaf as ``way underweight'':
+\begin{work}
+z &= \tfrac{754 - 800}{20} = \tfrac{-46}{20} = -2.3
+\end{work}
+Fewer than \blank{1.3cm} of loaves are that light: the complaint has \blank{1.4cm}. But the
+model is only \blank{2.8cm} normal, and one loaf says nothing about the \blank{1.1cm}.
 \\
 & \notesprompt{We work these together.}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{21}{A loaf weighs 834 g. Find its $z$-score.}{1.5cm}{} &
-\pcell{22}{Interpret that $z$-score in one sentence, in context.}{1.5cm}{} &
-\pcell{23}{By the empirical rule, about what percent of loaves weigh more than 840 g?}{1.5cm}{} \\ \hline
-\pcell{24}{Explain the arithmetic behind your answer to 23.}{1.7cm}{} &
-\pcell{25}{A customer returns a 754 g loaf, calling it ``way underweight.'' Find its $z$-score
-and judge the complaint.}{1.7cm}{} &
-\pcell{26}{Name one limit of the model you just judged with.}{1.7cm}{} \\ \hline
+\pcell{15}{Interpret $z = 1.7$ in one sentence, in context.}{1.0cm}{} &
+\pcell{16}{About what percent of loaves weigh \emph{more} than 840 g?}{1.0cm}{} &
+\pcell{17}{Explain the halving step in one sentence.}{1.0cm}{} \\ \hline
+\pcell{18}{A 790 g loaf: find its $z$, and say which side of the mean it is on.}{1.2cm}{} &
+\pcell{19}{Is the 754 g complaint fair? Answer with the evidence.}{1.2cm}{} &
+\pcell{20}{Name one limit of the model you just judged with.}{1.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

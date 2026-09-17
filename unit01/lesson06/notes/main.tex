@@ -1,36 +1,51 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Guided Notes & Practice
 % THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
 % vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
-% left; on the right a terse definition the student completes, then a grid of short numbered
-% problems with reserved answer space. Problems are numbered 1..26 through the whole component.
-%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+% left; on the right CONTINUOUS TEACHING PROSE carrying inline \blank{} fills, every multi-step
+% computation in an inline `work` block, then a grid of short numbered problems with reserved
+% answer space. Problems are numbered 1..20 through the whole component.
+%   I DO   : the teacher fills the definition lines, writes each `work` block, and works the
+%            FIRST problem of each grid.
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
 %            Guided Practice, is worked entirely together in a fresh context.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
 %            last minutes of the period. No independent set, no reflection box, no objectives
 %            box (the targets are on the cover), no notesbox, no practicebox.
-% REGENERATED FROM THE RETIRED EFFL SHAPE (LESSON_SHAPE.md §7): the old QuickNotes became these
-% rows' definition fills and \stepnum procedure, the old Activity's Twenty Free Throws and Two
-% Bus Routes became instruction rows 1-4, and the old Application: Two Science Sections became
-% the Guided Practice row. The old Check Your Understanding items stay in ../homework/.
 % VOCABULARY IS GIVEN HERE, NOT DISCOVERED — there is no spoiler rule any more.
 %
-% THE CRUX is row 3, EVERY SECTION HOLDS ONE QUARTER. Target misconception: "a wide section
-% means most of the data is there." Problem 14 is the trap (the classmate who reads width as
-% count) and problem 15 is the counterweight (width reports spread, never count).
+% THE SHAPE — five rows, 20 problems, 3 pages, modelled on unit01/lesson05/notes:
+%   ROW 1  The Five Numbers      problems 1--3    (the twenty totals as a NUMBER LIST, then the
+%                                                  one display the next rows read)
+%   ROW 2  Anatomy of a Boxplot  problems 4--6
+%   ROW 3  Parallel Boxplots     problems 7--9    (Topic 1.9: comparing two groups)
+%   ROW 4  One Quarter           problem 10 (the count table) + 11--14  ← THE CRUX ROW, and it
+%          is the LAST INSTRUCTION ROW before Guided Practice, as LESSON_SHAPE.md §1 requires
+%   ROW 5  Two Science Sections  problems 15--20  (Guided Practice, worked together)
+% Every row is split into 3--4 SUB-ROWS (a bare `\\` with NO \hline, continued with `& ...`) so
+% the table can break between them: 12 seams in all. Each TikZ figure sits in its own sub-row.
+% FOUR `work` blocks carry the arithmetic, each merged onto ONE aligned line so its reserved
+% height is paid for once: the quartiles of the twenty (row 1), the free-throw IQR with both
+% 1.5xIQR fences (row 2), the two route IQRs with Route B's outlier test (row 3), and the two
+% section IQRs (row 5). Row 5's grid is |Y|Y| so problem 20, the AP-scored
+% paragraph, has room for a real answer; every other grid is |Y|Y|Y| except the crux row's 2x2.
 %
-% THE PROTECTED DATA (rows 1-3: free throws made out of 100, twenty players):
+% THE CRUX is row 4, EVERY SECTION HOLDS ONE QUARTER. Target misconception: "a wide section
+% means most of the data is there." Problem 11 is the trap (the classmate who reads width as
+% count) and problem 12 is the counterweight (width reports spread, never count).
+%
+% THE PROTECTED DATA (rows 1, 2, 4: free throws made out of 100, twenty players):
 %   30 31 31 32 33 | 36 36 37 38 38 | 41 43 45 47 49 | 52 56 60 66 74
-%   min 30 · Q1 34.5 · median 39.5 · Q3 50.5 · max 74
+%   min 30 · Q1 34.5 · median 39.5 · Q3 50.5 · max 74 · IQR 16 · fences 10.5 and 74.5 (no outlier)
 %   Section widths: 4.5, 5.0, 11.0, 23.5 — the right section is over five times the left —
 %   yet each holds exactly FIVE of the twenty. That count is the crux (EK UNC-1.L.2).
 %   Every boundary falls inside a gap in the data (33|36, 38|41, 49|52), so the counting in
-%   problem 13 is unambiguous: 5, 5, 5, 5. PROTECTED — do not soften the width contrast.
-% THE PROTECTED DATA (row 4, travel minutes): Route A 18/21/23/26/31 (IQR 5, no outliers);
+%   problem 10 is unambiguous: 5, 5, 5, 5. PROTECTED — do not soften the width contrast.
+% THE PROTECTED DATA (row 3, travel minutes): Route A 18/21/23/26/31 (IQR 5, no outliers);
 %   Route B 16/20/25/32/58 (IQR 12; upper cut-off 32 + 1.5(12) = 50, so 58 is set apart and
 %   the whisker stops at 40, the most extreme value that is NOT unusually far).
-% THE PROTECTED DATA (Guided Practice, test points): Period 2 58/74/80/86/94 (IQR 12, skewed
-%   left); Period 5 60/68/72/84/98 (IQR 16, skewed right). Neither has an outlier.
+% THE PROTECTED DATA (Guided Practice, test points): Period 2 58/74/80/86/94 (IQR 12, range 36,
+%   skewed left); Period 5 60/68/72/84/98 (IQR 16, range 38, skewed right). Neither has an
+%   outlier: 84 + 1.5(16) = 108, and 98 is below it.
 % CONTEXTS ARE DISTINCT BY DESIGN: the notes teach on free throws and bus routes, Guided
 % Practice is the science sections, ../ap_practice/ is weekday-vs-weekend tips, and
 % ../homework/ is reading minutes, bus delays, and pizza deliveries.
@@ -38,10 +53,15 @@
 % PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
 % \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
 % argument. Heights and blank widths are sized to the answers so the two files set identically.
-% The \bxp macro is authored BYTE-IDENTICALLY in the blank and the key, as is every TikZ block.
-% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
-% across pages: each long idea is split at a seam (after the figure, before the prompt) with a
-% bare `\\` and continued with `& ...` as a sub-row.
+% The \bxp macro, every TikZ block, and every \begin{work} block are authored BYTE-IDENTICALLY
+% in the blank and the key (the blank reserves the space and prints nothing). \ans{} is text
+% mode and never goes inside $...$ — math in a fill is wrapped, as \ans{$Q_1$}.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par, never `\\`.
+% ONLY TWO TikZ FIGURES: the free-throw dotplot with its boxplot beneath (row 1) and the
+% parallel boxplots of the two bus routes (row 3). Everything else is a five-number tabularx.
+% AXIS CAPTIONS: `scale` shrinks coordinates but not node text, so a caption needs about
+% 0.5/scale units of clearance below the tick-label row — the free-throw caption sits below the
+% WHOLE display, a full unit under the boxplot.
 % NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read; students fill tables only.
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
@@ -84,78 +104,143 @@ Fill in each term \textbf{as we name it} in the notes below.
 \begin{guidednotes}
 % ── ROW 1: the five-number summary ───────────────────────────────────────────
 \mainidea[The five]{Numbers} &
-The \textbf{five-number summary} of a quantitative variable is, in order, the \blank{1.6cm},
-\blank{0.9cm}, the \blank{1.5cm}, \blank{0.9cm}, and the \blank{1.6cm}. A \textbf{boxplot} is
-that summary \blank{1.2cm} to scale on a number line --- five numbers, nothing else.
-
-\vspace{3pt}
-Twenty players on a squad; each made this many free throws out of 100 attempts. Every player is
-one dot, and the boxplot below was built from those same twenty numbers.
+A \textbf{boxplot} draws only \blank{1.2cm} numbers and nothing else. Those five are the
+\textbf{five-number summary}, in this order: the \blank{2.0cm}, \blank{0.9cm}, the
+\blank{1.5cm}, \blank{0.9cm}, and the \blank{2.0cm}. \textbf{Twenty Free Throws:} each player on
+a squad shot 100. Their made totals, in order:
 
 \vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
+{\centering
+30 \quad 31 \quad 31 \quad 32 \quad 33 \quad 36 \quad 36 \quad 37 \quad 38 \quad 38 \quad
+41 \quad 43 \quad 45 \quad 47 \quad 49 \quad 52 \quad 56 \quad 60 \quad 66 \quad 74
+\par}
+\\
+& Twenty values, so the median is halfway between the 10th and the 11th, and each quartile is
+the middle of its own half of \blank{1.0cm} values --- the technique from Lesson~1.5:
+\begin{work}
+Q_1 &= \tfrac{33+36}{2} = 34.5, \qquad \text{median} = \tfrac{38+41}{2} = 39.5, \qquad Q_3 = \tfrac{49+52}{2} = 50.5
+\end{work}
+A boxplot is that summary \blank{1.4cm} to scale on a number line: it keeps those five and
+\blank{2.3cm} everything in between.
+\\
+& Each player is one dot; the boxplot below was built from those same twenty numbers.
+
+\vspace{2pt}
+{\centering
+\begin{tikzpicture}[scale=0.55]
   \foreach \x in {0,1,2,3,4,5,6,7,8,9} {
-    \draw[linegray, very thin] (\x,0.02) -- (\x,0.55);
-    \draw[linegray, very thin] (\x,-1.70) -- (\x,-0.85);}
+    \draw[linegray, very thin] (\x,0.05) -- (\x,0.70);
+    \draw[linegray, very thin] (\x,-1.99) -- (\x,-1.21);}
   \foreach \x/\n in {0/1, 0.2/2, 0.4/1, 0.6/1, 1.2/2, 1.4/1, 1.6/2, 2.2/1, 2.6/1, 3.0/1,
                      3.4/1, 3.8/1, 4.4/1, 5.2/1, 6.0/1, 7.2/1, 8.8/1} {
-    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.075); }}
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.24*\k}) circle (0.095); }}
   \draw[->, thick] (-0.35,0) -- (9.4,0);
-  \foreach \x/\lab in {0/30, 1/35, 2/40, 3/45, 4/50, 5/55, 6/60, 7/65, 8/70, 9/75} {
-    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\scriptsize] at (\x,-0.12) {\lab};}
-  \bxp{-1.25}{0.36}{0}{0.9}{1.9}{4.1}{8.8}
-  \node[font=\scriptsize] at (4.5,-1.98) {Free throws made (out of 100)};
+  \foreach \x in {1,3,5,7,9} { \draw (\x,-0.06) -- (\x,0.06); }
+  \foreach \x/\lab in {0/30, 2/40, 4/50, 6/60, 8/70} {
+    \draw (\x,-0.10) -- (\x,0.10); \node[below, font=\scriptsize] at (\x,-0.14) {\lab};}
+  \bxp{-1.60}{0.36}{0}{0.9}{1.9}{4.1}{8.8}
+  \node[font=\scriptsize] at (4.4,-2.95) {Free throws made (out of 100)};
 \end{tikzpicture}
-\end{center}
+\par}
 \\
-& \notesprompt{Read the five numbers off the dotplot, then find each one in the boxplot.}
+& \notesprompt{Find each number in both displays.}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{1}{Minimum}{0.9cm}{} &
-\pcell{2}{$Q_1$}{0.9cm}{} &
-\pcell{3}{Median}{0.9cm}{} \\ \hline
-\pcell{4}{$Q_3$}{0.9cm}{} &
-\pcell{5}{Maximum}{0.9cm}{} &
-\pcell{6}{Which part of the boxplot marks $Q_1$?}{1.3cm}{} \\ \hline
+\pcell{1}{Which dot is the minimum, and where is it drawn below?}{1.0cm}{} &
+\pcell{2}{Which part of the boxplot marks $Q_1$?}{1.0cm}{} &
+\pcell{3}{Where is the median drawn, and what is it?}{1.0cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 2: boxplot anatomy, as a procedure ───────────────────────────────────
+% ── ROW 2: boxplot anatomy ───────────────────────────────────────────────────
 \mainidea[Anatomy of a]{Boxplot} &
-The \textbf{box} runs from \blank{0.9cm} to \blank{0.9cm} --- the middle \blank{0.8cm}\% of the
-data --- and the line inside it is the \blank{1.5cm}. Each \textbf{whisker} reaches the most
-extreme value that is \blank{0.9cm} an outlier. An outlier is not swallowed by a whisker: it
-gets its \blank{1.5cm}, which makes the display a \textbf{modified boxplot} --- the version the
+The \textbf{box} runs from \blank{0.9cm} to \blank{0.9cm}, so it spans the middle
+\blank{0.9cm}\% of the data, and the line drawn inside it is the \blank{1.5cm}. Each
+\textbf{whisker} then runs from a quartile out to the most extreme value that is
+\blank{2.8cm}. An outlier is never swallowed by a whisker --- it is plotted as
+\blank{2.3cm}, and a display drawn that way is a \textbf{modified boxplot}, the version the
 AP exam draws.
-
-\vspace{3pt}
-\stepnum{1}\ Mark the five numbers on a \blank{2.2cm}.\par
-\stepnum{2}\ Draw the box from $Q_1$ to $Q_3$, with a line at the \blank{1.5cm}.\par
-\stepnum{3}\ Test each end with the \blank{2.0cm} rule from Lesson~1.5.\par
-\stepnum{4}\ Run each whisker out to the most extreme value that is \blank{2.6cm}; plot any
-outlier on its own.
-\notesprompt{Use the free-throw boxplot above.}
+\\
+& The box's width is the \textbf{IQR}, and the \blank{2.2cm} rule from Lesson~1.5 decides
+where each whisker has to stop. Test both ends of the twenty free-throw totals:
+\begin{work}
+\text{IQR} &= 50.5 - 34.5 = 16 \text{ shots}, \qquad 34.5 - 1.5(16) = 10.5, \qquad 50.5 + 1.5(16) = 74.5
+\end{work}
+The lowest total is 30 and the highest is 74, so \blank{2.3cm} falls outside those two
+boundaries and this display has \blank{2.1cm} --- both whiskers reach the extremes.
+\\
+& \notesprompt{Use the free-throw display above.}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{7}{How wide is the box?}{1.2cm}{} &
-\pcell{8}{How many of the twenty players sit inside the box?}{1.2cm}{} &
-\pcell{9}{Does this plot show an outlier? How can you tell?}{1.2cm}{} \\ \hline
-\pcell{10}{Between which two totals does the top quarter sit?}{1.5cm}{} &
-\pcell{11}{The lower whisker runs 30 to 34.5. What does its short length say?}{1.5cm}{} &
-\pcell{12}{Name one thing the dotplot shows that the boxplot cannot.}{1.5cm}{} \\ \hline
+\pcell{4}{How wide is the box, and what is that number called?}{1.1cm}{} &
+\pcell{5}{How many of the twenty players sit inside the box?}{1.1cm}{} &
+\pcell{6}{Name one thing the dotplot shows that the boxplot cannot.}{1.1cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 3: THE CRUX — every section holds one quarter ────────────────────────
-\mainidea[Every section holds]{One quarter} &
-The five numbers cut a boxplot into \blank{1.0cm} sections: lower whisker, lower half of the
-box, upper half of the box, upper whisker. Each one holds \blank{0.8cm}\% of the data, however
-wide it looks. Width reports \blank{1.4cm} --- it never reports \blank{1.2cm}.
-
-\vspace{4pt}
-\textbf{13.} Count the twenty dots in each section of the free-throw plot above. The widths are
-given; every boundary falls in a gap, so each count is exact.
+% ── ROW 3: comparing two distributions on a shared axis ─────────────────────
+\mainidea[Comparing two groups]{Parallel Boxplots} &
+Two or more boxplots on one shared axis are \textbf{parallel} (side-by-side) boxplots. A
+comparison addresses \blank{1.5cm}, \blank{2.3cm}, and unusual features --- all three, every
+time, each carrying a \blank{2.3cm} word (\emph{higher than}, \emph{more variable than}) and each
+stated \blank{2.1cm}. Describing one group and then describing the other is \emph{not} a
+comparison and earns nothing. Under skew the mean leaves the median: skewed right pulls the mean
+to the \blank{1.4cm} of the median, skewed left to the \blank{1.2cm}.
+\\
+& A commuter timed the same morning trip on two bus routes, in minutes.
 
 \vspace{2pt}
-\footnotesize\setlength{\tabcolsep}{2pt}%
-\renewcommand{\arraystretch}{1.25}
+{\centering
+\begin{tikzpicture}[scale=0.5]
+  \foreach \x in {0,1,2,3,4,5,6,7,8,9} {
+    \draw[linegray, very thin] (\x,-0.12) -- (\x,1.70);}
+  \bxp{1.30}{0.28}{0.6}{1.2}{1.6}{2.2}{3.2}
+  \bxp{0.50}{0.28}{0.2}{1.0}{2.0}{3.4}{5.0}
+  \fill[navy] (8.6,0.50) circle (0.11);
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.35,1.30) {Route A};
+  \node[font=\bfseries\scriptsize, anchor=east] at (-0.35,0.50) {Route B};
+  \draw[->, thick] (-0.20,-0.10) -- (9.4,-0.10);
+  \foreach \x in {0,2,4,6,8} { \draw (\x,-0.16) -- (\x,-0.04); }
+  \foreach \x/\lab in {1/20, 3/30, 5/40, 7/50, 9/60} {
+    \draw (\x,-0.20) -- (\x,0.00); \node[below, font=\scriptsize] at (\x,-0.22) {\lab};}
+  \node[font=\scriptsize] at (4.5,-1.65) {Travel time (minutes)};
+\end{tikzpicture}
+\par}
+\\
+& \footnotesize\setlength{\tabcolsep}{3pt}%
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Route} & \textbf{Min} & $\mathbf{Q_1}$ & \textbf{Median} & $\mathbf{Q_3}$ &
+\textbf{Max} \\
+\hline
+A & 18 & 21 & 23 & 26 & 31 \\
+B & 16 & 20 & 25 & 32 & 58 \\
+\end{tabularx}\small
+\par\vspace{2pt}
+Put the two middle halves side by side, and then test Route B's slowest morning:
+\begin{work}
+\text{IQR}_{A} &= 26 - 21 = 5 \text{ min} \quad \text{IQR}_{B} = 32 - 20 = 12 \text{ min} \quad 32 + 1.5(12) = 50 < 58
+\end{work}
+So the 58-minute morning is drawn on \blank{1.7cm}, and Route B's upper whisker stops at
+\blank{1.0cm} minutes --- the slowest morning that is \blank{2.8cm}.
+\\
+& \notesprompt{Compare the two routes.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{7}{How wide is the middle half of each route's times?}{1.1cm}{} &
+\pcell{8}{Which route is typically faster, and which is less predictable? In context.}{1.1cm}{} &
+\pcell{9}{Route B is skewed right. Is its mean above or below 25 minutes? Why?}{1.1cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — every section holds one quarter (last instruction row) ─
+\mainidea[Every section holds]{One quarter} &
+The five numbers cut a boxplot into \blank{1.2cm} sections --- lower whisker, lower half of the
+box, upper half of the box, upper whisker --- and every one of them holds \blank{0.9cm}\% of
+the data, however wide it happens to look. Width reports \blank{1.5cm}; it never reports
+\blank{1.4cm}.
+\par\vspace{3pt}
+\textbf{10.} Count the twenty dots into the display's four sections. Every boundary falls in a
+gap, so each count is exact.
+
+\vspace{2pt}
+\footnotesize\setlength{\tabcolsep}{3pt}%
+\renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
 \rowcolor{sky}
 \textbf{Section} & 30 to 34.5 & 34.5 to 39.5 & 39.5 to 50.5 & 50.5 to 74 \\
@@ -165,115 +250,63 @@ given; every boundary falls in a gap, so each count is exact.
 \end{tabularx}\small
 \\
 & \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{The widest section is over five times the narrowest ---}\\
-\textbf{and holds exactly the \blank{1.1cm} number of players.}}}
-\notesprompt{Answer the classmate.}
+\textbf{The widest section is over five times the narrowest ---}\par
+\textbf{and holds exactly the \blank{1.2cm} number of players.}}}
+\par\vspace{3pt}
+The right-hand five are strung out from 52 to 74 shots; the left-hand five are packed inside 30
+to 33. Same \blank{1.4cm}, very different \blank{1.5cm}.
+\\
+& \notesprompt{Answer the classmate.}
 \begin{probgrid}{|Y|Y|}
-\pcell{14}{A classmate says, \emph{``the wide part is where most of the shots landed.''} Use
-your counts to say what is wrong.}{1.5cm}{} &
-\pcell{15}{So what does that wide section actually tell you about those players?}{1.5cm}{} \\ \hline
-\pcell{16}{Ten players made how many free throws or fewer, and which of the five numbers told
-you?}{1.5cm}{} &
-\pcell{17}{The dotplot has a tight clump from 30 to 38. Why can the boxplot not show
-it?}{1.5cm}{} \\ \hline
+\pcell{11}{A classmate says, \emph{``the wide part is where most of the shots landed.''} Use
+your counts to say what is wrong.}{1.1cm}{} &
+\pcell{12}{So what does that wide section actually tell you about those five players?}{1.1cm}{} \\ \hline
+\pcell{13}{Ten players made how many shots or fewer, and which of the five numbers told
+you?}{1.1cm}{} &
+\pcell{14}{The dotplot has a tight clump from 30 to 38. Why can the boxplot not show
+it?}{1.1cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 4: comparing two distributions on a shared axis ─────────────────────
-\mainidea[Comparing two groups]{Parallel Boxplots} &
-Two or more boxplots drawn on one shared axis are \textbf{parallel} (side-by-side) boxplots.
-Comparing distributions means addressing \blank{1.4cm}, \blank{2.0cm}, and unusual features ---
-all three, every time, each with a \blank{2.2cm} word (\emph{higher than}, \emph{more variable
-than}) and each \blank{1.9cm}. Describing one group and then describing the other is
-\emph{not} a comparison and earns nothing.
-
-\vspace{3pt}
-Under skew the mean leaves the median: skewed right pulls the mean to the \blank{1.1cm} of the
-median; skewed left pulls it to the \blank{0.9cm}.
-\\
-& A commuter timed the same morning trip on two bus routes.
-
-\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \foreach \x in {0,0.8,1.6,2.4,3.2,4.0,4.8,5.6,6.4,7.2} {
-    \draw[linegray, very thin] (\x,-0.10) -- (\x,1.80);}
-  \bxp{1.40}{0.30}{0.48}{0.96}{1.28}{1.76}{2.56}
-  \bxp{0.50}{0.30}{0.16}{0.80}{1.60}{2.72}{4.00}
-  \fill[navy] (6.88,0.50) circle (0.085);
-  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,1.40) {Route A};
-  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,0.50) {Route B};
-  \draw[->, thick] (-0.20,-0.10) -- (7.75,-0.10);
-  \foreach \x/\lab in {0/15, 0.8/20, 1.6/25, 2.4/30, 3.2/35, 4.0/40, 4.8/45, 5.6/50, 6.4/55,
-                       7.2/60} {
-    \draw (\x,-0.18) -- (\x,-0.02); \node[below, font=\scriptsize] at (\x,-0.22) {\lab};}
-  \node[font=\scriptsize] at (3.6,-0.95) {Travel time (minutes)};
-\end{tikzpicture}
-\end{center}
-
-\footnotesize\setlength{\tabcolsep}{2pt}%
-\renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
-\rowcolor{sky}
-\textbf{Route} & \textbf{Min} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} &
-\textbf{Max} \\
-\hline
-\textbf{A} & 18 & 21 & 23 & 26 & 31 \\
-\textbf{B} & 16 & 20 & 25 & 32 & 58 \\
-\end{tabularx}\small
-\\
-& \notesprompt{Compare the two routes.}
-\begin{probgrid}{|Y|Y|}
-\pcell{18}{How wide is the middle half of each route's times?}{1.4cm}{} &
-\pcell{19}{Which route is typically faster, and which is less predictable? Say it in
-context.}{1.4cm}{} \\ \hline
-\pcell{20}{Route B's 58-minute morning is drawn on its own. Show why, and say where its whisker
-stops.}{1.7cm}{} &
-\pcell{21}{Route B is skewed right. Is its mean above or below its median of 25 minutes?
-Why?}{1.7cm}{} \\ \hline
-\end{probgrid}
-\\ \hline
-% ── LAST ROW: GUIDED PRACTICE — we do, together, a fresh context ─────────────
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
 \mainidea[Guided practice]{Two Science Sections} &
-Two sections of the same course sat one test. The five-number summaries are given, in points.
+Two sections of the same course sat one test. Their five-number summaries, in points:
 
 \vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \foreach \x in {0,1.4,2.8,4.2,5.6,7.0} {
-    \draw[linegray, very thin] (\x,-0.15) -- (\x,1.75);}
-  \bxp{1.35}{0.30}{1.12}{3.36}{4.20}{5.04}{6.16}
-  \bxp{0.50}{0.30}{1.40}{2.52}{3.08}{4.76}{6.72}
-  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,1.35) {Period 2};
-  \node[font=\bfseries\scriptsize, anchor=east] at (-0.22,0.50) {Period 5};
-  \draw[->, thick] (-0.20,-0.15) -- (7.55,-0.15);
-  \foreach \x/\lab in {0/50, 1.4/60, 2.8/70, 4.2/80, 5.6/90, 7.0/100} {
-    \draw (\x,-0.23) -- (\x,-0.07); \node[below, font=\scriptsize] at (\x,-0.27) {\lab};}
-  \node[font=\scriptsize] at (3.5,-1.00) {Test score (points)};
-\end{tikzpicture}
-\end{center}
-
-\footnotesize\setlength{\tabcolsep}{2pt}%
-\renewcommand{\arraystretch}{1.2}
+\footnotesize\setlength{\tabcolsep}{3pt}%
+\renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
 \rowcolor{sky}
-\textbf{Section} & \textbf{Min} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} &
+\textbf{Section} & \textbf{Min} & $\mathbf{Q_1}$ & \textbf{Median} & $\mathbf{Q_3}$ &
 \textbf{Max} \\
 \hline
-\textbf{Period 2} & 58 & 74 & 80 & 86 & 94 \\
-\textbf{Period 5} & 60 & 68 & 72 & 84 & 98 \\
+Period 2 & 58 & 74 & 80 & 86 & 94 \\
+Period 5 & 60 & 68 & 72 & 84 & 98 \\
 \end{tabularx}\small
+\\
+& Fill the spread measures in as we compute them together:
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{} l Y Y @{}}
+\rowcolor{sky}
+\textbf{Section} & \textbf{IQR (points)} & \textbf{Range (points)} \\
+\hline
+Period 2 & \blank{1.4cm} & \blank{1.4cm} \\
+Period 5 & \blank{1.4cm} & \blank{1.4cm} \\
+\end{tabularx}
+\begin{work}
+\text{IQR}_{P2} &= 86 - 74 = 12 \text{ points}, \qquad \text{IQR}_{P5} = 84 - 68 = 16 \text{ points}
+\end{work}
 \\
 & \notesprompt{We work these together.}
 \begin{probgrid}{|Y|Y|}
-\pcell{22}{Report each section's median, with units.}{1.2cm}{} &
-\pcell{23}{Report each section's IQR, with the subtraction.}{1.2cm}{} \\ \hline
-\pcell{24}{Which section is skewed, and which way? How does the picture tell you?}{1.7cm}{} &
-\pcell{25}{Does either section show an outlier? How can you tell from the display?}{1.7cm}{} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}{|Y|}
-\pcell{26}{\textbf{One paragraph, in context}, comparing the two sections: center, variability,
-and unusual features --- every claim carrying a comparative word.}{2.0cm}{} \\ \hline
+\pcell{15}{Compare the two centers, with units.}{1.1cm}{} &
+\pcell{16}{Compare the two middle halves, using your IQRs.}{1.1cm}{} \\ \hline
+\pcell{17}{Which section is skewed, and which way? Point at the numbers that say so.}{1.2cm}{} &
+\pcell{18}{Does either section show an outlier? Test Period 5's high score.}{1.2cm}{} \\ \hline
+\pcell{19}{Is Period 5's mean above or below its median of 72 points? Why?}{1.6cm}{} &
+\pcell{20}{\textbf{One paragraph, in context}, comparing the two sections: center, variability,
+and unusual features --- every claim carrying a comparative word.}{1.6cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

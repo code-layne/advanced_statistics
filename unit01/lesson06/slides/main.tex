@@ -24,7 +24,8 @@
 }
 
 % GRADUAL RELEASE deck: title → targets → warm-up hook → I DO divider → ONE INSTRUCTION FRAME
-% PER NOTES ROW (the five numbers · anatomy · one quarter, the crux · comparing distributions) →
+% PER NOTES ROW (the five numbers · anatomy · comparing distributions · one quarter, the crux —
+% the crux row is LAST, straight before Guided Practice) →
 % WE DO (Guided Practice: Two Science Sections) → spoken debrief → close & START THE HOMEWORK,
 % which is the individual practice → AP Practice → close.
 % There is NO group activity in this course — the notes carry the whole release. There is no
@@ -95,7 +96,7 @@
 % ── NOTES ROW 1 ──────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Five numbers, drawn to scale}
-  \sectionlabel{notes row 1, The Five Numbers $\cdot$ problems 1--6}
+  \sectionlabel{notes row 1, The Five Numbers $\cdot$ problems 1--3}
   \vspace{2pt}
   \begin{columns}[t]
     \begin{column}{0.52\textwidth}
@@ -122,25 +123,26 @@
   \end{columns}
   \vspace{6pt}
   \begin{center}
-    {\small\color{slate} Problem~6: which \emph{part} of the plot marks $Q_1$? The box has two
+    {\small\color{slate} Problem~2: which \emph{part} of the plot marks $Q_1$? The box has two
     edges --- say which one.}
   \end{center}
 \end{frame}
 
 % ── NOTES ROW 2 ──────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Anatomy: box, whiskers, and the rider who was set apart}
-  \sectionlabel{notes row 2, Anatomy of a Boxplot $\cdot$ problems 7--12}
+  \navyheader{Anatomy: box, whiskers, and where a whisker has to stop}
+  \sectionlabel{notes row 2, Anatomy of a Boxplot $\cdot$ problems 4--6}
   \vspace{2pt}
   \begin{columns}[t]
     \begin{column}{0.52\textwidth}
       \begin{center}
       \begin{tikzpicture}[scale=0.9]
-        \bxp{0.9}{0.42}{0.2}{0.9}{1.9}{3.4}{5.0}
-        \fill[navy] (7.6,0.9) circle (0.10);
+        \bxp{0.9}{0.42}{0}{0.9}{1.9}{4.1}{8.0}
         \draw[->, thick] (-0.2,0) -- (8.6,0);
-        \node[font=\tiny, above] at (7.6,1.08) {58 min};
-        \node[font=\tiny, above] at (5.0,1.08) {40 min};
+        \node[font=\tiny, above] at (0.9,1.35) {34.5};
+        \node[font=\tiny, above] at (4.1,1.35) {50.5};
+        \node[font=\tiny, below] at (0,-0.1) {30};
+        \node[font=\tiny, below] at (8.0,-0.1) {74};
       \end{tikzpicture}
       \end{center}
     \end{column}
@@ -150,44 +152,24 @@
               is the \textbf{median}.
         \item A \textbf{whisker} reaches the most extreme value that is \redink{not} an outlier
               (EK UNC-1.L.2).
-        \item Route B: IQR $= 12$, cut-off $32 + 1.5(12) = \mathbf{50}$, and $58 > 50$. So 58
-              gets \textbf{its own dot} and the whisker stops at \textbf{40}.
+        \item Free throws: IQR $= 50.5 - 34.5 = \mathbf{16}$, fences $34.5 - 1.5(16) =
+              \mathbf{10.5}$ and $50.5 + 1.5(16) = \mathbf{74.5}$. Nothing is outside them, so
+              there is \textbf{no outlier} and both whiskers run to the extremes.
       \end{itemize}
     \end{column}
   \end{columns}
   \vspace{6pt}
   \begin{center}
-    {\small\color{slate} That is a \textbf{modified boxplot} --- the version the AP exam draws.
-    Problem~8: how many of the twenty sit \emph{inside} the box?}
+    {\small\color{slate} An outlier \emph{would} get its own dot --- that is a \textbf{modified
+    boxplot}, the version the AP exam draws. Problem~5: how many of the twenty sit \emph{inside}
+    the box?}
   \end{center}
 \end{frame}
 
-% ── NOTES ROW 3 — THE CRUX ───────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Why the wide section is not the full one}
-  \sectionlabel{notes row 3, One Quarter $\cdot$ problems 13--17 --- the whole point of today}
-  \vspace{6pt}
-  \begin{itemize}\setlength{\itemsep}{8pt}
-    \item Twenty players. Four sections. Your problem~13 counts: \textbf{5 \quad 5 \quad 5 \quad
-          5}.
-    \item That is \textbf{25\% \quad 25\% \quad 25\% \quad 25\%} --- and it is always true, in
-          every boxplot ever drawn.
-    \item The right section is more than five times as wide as the left. It holds the
-          \redink{same five players}, just spread from 52 to 74 instead of packed into 30 to 33.
-  \end{itemize}
-  \vspace{8pt}
-  \begin{block}{Essential Knowledge (UNC-1.L.2)}
-    \textbf{Each section of a boxplot holds one quarter of the data.} Width reports how far apart
-    those values are --- \textbf{spread}, never \textbf{count}. And problem~17 is the price: a
-    gap, a clump, or a second peak all vanish inside the box, so for a shape question ask for a
-    \redink{dotplot or histogram} instead.
-  \end{block}
-\end{frame}
-
-% ── NOTES ROW 4 ──────────────────────────────────────────────────────────────
+% ── NOTES ROW 3 ──────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Comparing two distributions}
-  \sectionlabel{notes row 4, Comparing Distributions $\cdot$ problems 18--21}
+  \sectionlabel{notes row 3, Parallel Boxplots $\cdot$ problems 7--9}
   \vspace{4pt}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
@@ -201,7 +183,7 @@
       \begin{block}{Mean vs.\ median (EK UNC-1.M.2)}
         Symmetric: the two sit close together.\\[3pt]
         Skewed \textbf{right}: the mean is to the \textbf{right} of the median --- that is
-        problem~21, Route B.\\[3pt]
+        problem~9, Route B.\\[3pt]
         Skewed \textbf{left}: to the \textbf{left}.
       \end{block}
     \end{column}
@@ -213,15 +195,37 @@
   \end{center}
 \end{frame}
 
+% ── NOTES ROW 4 — THE CRUX ───────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Why the wide section is not the full one}
+  \sectionlabel{notes row 4, One Quarter $\cdot$ problems 10--14 --- the whole point of today}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Twenty players. Four sections. Your problem~10 counts: \textbf{5 \quad 5 \quad 5 \quad
+          5}.
+    \item That is \textbf{25\% \quad 25\% \quad 25\% \quad 25\%} --- and it is always true, in
+          every boxplot ever drawn.
+    \item The right section is more than five times as wide as the left. It holds the
+          \redink{same five players}, just spread from 52 to 74 instead of packed into 30 to 33.
+  \end{itemize}
+  \vspace{8pt}
+  \begin{block}{Essential Knowledge (UNC-1.L.2)}
+    \textbf{Each section of a boxplot holds one quarter of the data.} Width reports how far apart
+    those values are --- \textbf{spread}, never \textbf{count}. And problem~14 is the price: a
+    gap, a clump, or a second peak all vanish inside the box, so for a shape question ask for a
+    \redink{dotplot or histogram} instead.
+  \end{block}
+\end{frame}
+
 % ── WE DO ────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Guided Practice: Two Science Sections}
-  \sectionlabel[goldacc]{We do $\cdot$ problems 22--26 $\cdot$ you hold the pen}
-  Two sections of the same course, one test, two boxplots on one axis.
+  \sectionlabel[goldacc]{We do $\cdot$ problems 15--20 $\cdot$ you hold the pen}
+  Two sections of the same course, one test, two five-number summaries side by side.
   \begin{itemize}\setlength{\itemsep}{5pt}
     \item Read both medians and both IQRs --- with units, and with the subtraction shown.
     \item Which section is skewed, and which way? Does either show an outlier?
-    \item \textbf{Problem 26:} write the comparison as \textbf{one paragraph}, in context.
+    \item \textbf{Problem 20:} write the comparison as \textbf{one paragraph}, in context.
   \end{itemize}
   \begin{block}{The standard, out loud}
     A paragraph that describes Period 2 and then describes Period 5 earns \redink{nothing}.

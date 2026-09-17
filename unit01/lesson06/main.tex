@@ -10,7 +10,9 @@
 % Teacher-facing. Every box is `skillbox` (breakable) with a \boxguard ahead of it; this course
 % has no `fixedskillbox`, no tier boxes, and no exit ticket.
 % THIS LESSON MERGES CED TOPICS 1.8 AND 1.9 into one period, so the notes table carries both:
-% rows 1-3 build and read ONE boxplot (1.8), row 4 and Guided Practice compare TWO (1.9).
+% rows 1, 2 and 4 build and read ONE boxplot (1.8), row 3 and Guided Practice compare TWO (1.9).
+% Row 4, One Quarter, is the CRUX ROW and therefore the LAST INSTRUCTION ROW before Guided
+% Practice (LESSON_SHAPE.md §1); the comparison row comes before it.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -51,7 +53,7 @@
     eats the period; the exam asks students to \emph{read} and \emph{compare} them.
     \\[2pt]
     \textbf{Note on the merge:} this period carries Topic 1.8 (build and read one boxplot) in
-    notes rows 1--3 and Topic 1.9 (compare two or more) in row 4 and Guided Practice. Protect
+    notes rows 1, 2 and 4 and Topic 1.9 (compare two or more) in row 3 and Guided Practice. Protect
     the 34 minutes of notes; the extra comparison reps live in the AP Practice page and the
     homework, not in a sixth row.
 \end{tcolorbox}
@@ -130,12 +132,12 @@
 Warm-Up & 5 & Five numbers off an ordered list, a counting drill, and one $1.5\times$IQR check &
               Debrief item~1 aloud; put item~3's arithmetic on the board and leave it up all
               period \\
-Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--21 row
-              by row, then \emph{Two Science Sections} (22--26) together, pen in their hand &
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--14 row
+              by row, then \emph{Two Science Sections} (15--20) together, pen in their hand &
               \textbf{I do} each row's definition lines and first problem, \textbf{we do} the
               rest of its grid (24) $\to$ \textbf{we do} Guided Practice (10) \\
 Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Open on an
-              \emph{almost}-right answer to problem~14, then the count row of problem~13 and the
+              \emph{almost}-right answer to problem~11, then the count row of problem~10 and the
               comparison standard \\
 Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Announce the paper
               homework --- due the first class after two study halls --- circulate for your
@@ -153,9 +155,9 @@ Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & A
               five numbers get their collective name, \emph{five-number summary}, in the first
               line of the table.
         \item \textbf{2.} Count twelve values into three stated stretches. \textbf{Seeds:}
-              problem~13, the counting move the crux depends on, made mechanical first.
+              problem~10, the counting move the crux depends on, made mechanical first.
         \item \textbf{3.} One $1.5\times$IQR check with the arithmetic shown. \textbf{Seeds:}
-              problem~20, the Route B rider at 58 minutes.
+              notes row~3's \texttt{work} block, the Route B rider at 58 minutes.
     \end{itemize}
 \end{minipage}
 \hfill
@@ -165,9 +167,9 @@ Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & A
         \item \textbf{Debrief item~1 aloud} and leave the five numbers on the board. You will
               point at them in the first minute of the notes and say ``these five have a name.''
         \item Item~2 is a drill --- 60 seconds. It exists so that counting is not the obstacle
-              in problem~13, where the count \emph{is} the point.
+              in problem~10, where the count \emph{is} the point.
         \item \textbf{Leave item~3's arithmetic on the board for the rest of the period.}
-              Problem~20 reuses it with different numbers, and a student who can look up the
+              Notes row~3 reuses it with different numbers, and a student who can look up the
               structure rather than re-derive it spends the time on the reasoning.
     \end{itemize}
 \end{minipage}
@@ -177,57 +179,59 @@ Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & A
 \begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
 \textbf{This is the whole lesson.} There is no group activity, and there is no independent
 practice set on this page: \textbf{the homework is the individual practice}, started in class.
-The notes are one \emph{Main Ideas / Notes} table --- five rows, 26 short problems. \textbf{In
+The notes are one \emph{Main Ideas / Notes} table --- five rows, 20 short problems. \textbf{In
 every row you fill the definition lines and work the first problem of the grid; the class works
 the rest, pen in their hand.} The vocabulary box is filled \emph{as you go}, never in advance,
-and the free-throw dotplot with its boxplot beneath it is the picture the first three rows all
+and the free-throw dotplot with its boxplot beneath it is the picture rows 1, 2 and~4 all
 point back at.
 \begin{multicols}{2}
 \textbf{The Five Numbers (6 min).} Point at the warm-up's five numbers still on the board and
-name them: \emph{five-number summary}. Fill the definition lines, then the boxplot sentence ---
-``five numbers, nothing else'' is the claim the whole lesson rests on. Work problem~1 yourself
-(minimum 30, read off the leftmost dot); problems 2--6 are theirs. \textbf{Problem~6 is worth a
-hand count} --- which part of the boxplot marks $Q_1$ --- because students who answer ``the line
-in the middle'' have not yet accepted that the box has \emph{two} edges.
+name them: \emph{five-number summary}. Fill the definition lines, write the quartile
+\texttt{work} block, then the boxplot sentence --- ``five numbers, nothing else'' is the claim the
+whole lesson rests on. Work problem~1 yourself (minimum 30, read off the leftmost dot); problems
+2--3 are theirs. \textbf{Problem~2 is worth a hand count} --- which part of the boxplot marks
+$Q_1$ --- because students who answer ``the line in the middle'' have not yet accepted that the
+box has \emph{two} edges.
 
-\textbf{Anatomy of a Boxplot (7 min).} Fill the box/whisker/outlier lines, then walk the four
-\texttt{stepnum} steps aloud on the free-throw picture. Work problem~7 yourself ($50.5 - 34.5 =
-16$); 8--12 are theirs. \textbf{Problem~8 is the quiet one that matters}: ten of the twenty sit
-inside the box, and a student who says ``most of them'' is already showing you the misconception
-the next row exists to break. Problem~12 must name the individual values.
+\textbf{Anatomy of a Boxplot (7 min).} Fill the box/whisker/outlier lines, then write the IQR and
+fence \texttt{work} block on the free-throw totals: $10.5$ and $74.5$, and nothing outside them.
+Work problem~4 yourself ($50.5 - 34.5 = 16$); 5--6 are theirs. \textbf{Problem~5 is the quiet one
+that matters}: ten of the twenty sit inside the box, and a student who says ``most of them'' is
+already showing you the misconception row~4 exists to break. Problem~6 must name the individual
+values.
 
-\textbf{One Quarter (8 min) --- the crux row.} Fill the four-sections line and the 25\% line,
-then release \textbf{problem~13, the count row}. Do not let anyone estimate: every boundary falls
-in a gap, so the four counts are exactly 5, 5, 5, 5. Write them on the board with
-\textbf{25\% \quad 25\% \quad 25\% \quad 25\%} above them. \textbf{Problem~14 is the trap} --- the
-classmate who says the wide part is where most of the shots landed --- and \textbf{problem~15 is
-the counterweight}: width reports spread, never count. Take a hand count on 14 before anyone
-speaks; pick one \emph{almost}-right answer off a desk for the debrief. Problem~17 is the cost of
-the box, and it returns in the AP Practice page's MC~4.
+\textbf{Comparing Distributions (6 min).} Fill the checklist line --- center, variability,
+unusual features, comparative word, in context --- and say plainly that describing one group then
+the other earns nothing. Work problem~7 yourself (Route A's middle half is 5 minutes, Route B's
+is 12); 8--9 are theirs. \textbf{The second \texttt{work} block is where the warm-up arithmetic
+gets reused}: $32 + 1.5(12) = 50$, and $58 > 50$, so the whisker stops at 40.
 
 \columnbreak
-\textbf{Comparing Distributions (5 min).} Fill the checklist line --- center, variability,
-unusual features, comparative word, in context --- and say plainly that describing one group then
-the other earns nothing. Work problem~18 yourself (Route A's middle half is 5 minutes, Route B's
-is 12); 19--21 are theirs. \textbf{Problem~20 is where the warm-up arithmetic gets reused}:
-$32 + 1.5(12) = 50$, and $58 > 50$, so the whisker stops at 40.
+\textbf{One Quarter (8 min) --- the crux row, and the last one before Guided Practice.} Fill the
+four-sections line and the 25\% line, then release \textbf{problem~10, the count row}. Do not let
+anyone estimate: every boundary falls in a gap, so the four counts are exactly 5, 5, 5, 5. Write
+them on the board with \textbf{25\% \quad 25\% \quad 25\% \quad 25\%} above them.
+\textbf{Problem~11 is the trap} --- the classmate who says the wide part is where most of the
+shots landed --- and \textbf{problem~12 is the counterweight}: width reports spread, never count.
+Take a hand count on 11 before anyone speaks; pick one \emph{almost}-right answer off a desk for
+the debrief. Problem~14 is the cost of the box, and it returns in the AP Practice page's MC~4.
 
-\textbf{We do (about 10 min): Two Science Sections.} Problems 22--26, worked entirely together,
+\textbf{We do (about 10 min): Two Science Sections.} Problems 15--20, worked entirely together,
 in a context the lesson has not used. Students hold the pen; you hold the questions: \emph{``You
 wrote `Period 5 has an IQR of 16.' Compared with what?''} \quad \emph{``Which side of Period 2's
-box is longer? So which way does it trail off?''} \textbf{Problem~26 is the AP-scored form} --- one
-paragraph, in context, with comparative language --- and it is the one that cannot be cut. If you
-only get 22, 23, and~26, that is the right trade.
+summary is stretched? So which way does it trail off?''} \textbf{Problem~20 is the AP-scored
+form} --- one paragraph, in context, with comparative language --- and it is the one that cannot
+be cut. If you only get 15, 16, and~20, that is the right trade.
 
 Circulate and demand the reason, not the number:
 \begin{itemize}[leftmargin=1.1em, nosep]
-  \item \textbf{Problem~14, the crux:} ``Count them. How many in the wide section? How many in
+  \item \textbf{Problem~11, the crux:} ``Count them. How many in the wide section? How many in
         the narrow one? Now say that out loud.''
-  \item \textbf{Problem~25:} ``Where would an outlier be drawn if there were one?''
-  \item \textbf{Problem~26:} ``Cross out every word in your paragraph that is not comparing.''
+  \item \textbf{Problem~18:} ``Where would an outlier be drawn if there were one?''
+  \item \textbf{Problem~20:} ``Cross out every word in your paragraph that is not comparing.''
 \end{itemize}
-While circulating, pick the papers for the debrief --- one \emph{almost}-right problem~14, and
-one problem~26 that describes twice instead of comparing once. \textbf{Your formative read comes
+While circulating, pick the papers for the debrief --- one \emph{almost}-right problem~11, and
+one problem~20 that describes twice instead of comparing once. \textbf{Your formative read comes
 twice}: here, and again in the last eight minutes as students start the homework.
 \end{multicols}
 \end{skillbox}
@@ -238,19 +242,19 @@ Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the
 to fill in, so it lives entirely on the board and in the room.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item \textbf{Open on the \emph{almost}-right problem~14 you collected} --- typically ``the
+  \item \textbf{Open on the \emph{almost}-right problem~11 you collected} --- typically ``the
         wide part is spread out, so it has fewer people in the middle.'' Half right, and the half
-        that is wrong is the lesson. Put the count row from problem~13 beside it: \textbf{5 \quad
+        that is wrong is the lesson. Put the count row from problem~10 beside it: \textbf{5 \quad
         5 \quad 5 \quad 5}, and above it \textbf{25\% \quad 25\% \quad 25\% \quad 25\%}.
   \item Say the sentence, write the sentence, and point at the fives while you do: \emph{``Every
         section of a boxplot holds the same quarter of the data. Width tells you how stretched out
         those values are --- it never tells you how many there are.''}
-  \item Take problem~8 next: ten of twenty inside the box, ten outside. The box is not ``where
+  \item Take problem~5 next: ten of twenty inside the box, ten outside. The box is not ``where
         the data is''; it is where the middle half is.
-  \item Put up the two problem~26 paragraphs and name the difference out loud: one wrote two
+  \item Put up the two problem~20 paragraphs and name the difference out loud: one wrote two
         descriptions, one wrote a comparison. \textbf{Only the second scores}, however accurate
         the first is.
-  \item Close on the cost, off problem~17: gaps, clusters, and a second peak all vanish inside
+  \item Close on the cost, off problem~14: gaps, clusters, and a second peak all vanish inside
         the box. If someone asks whether there are two kinds of night, ask for a dotplot.
 \end{enumerate}
 \columnbreak
@@ -261,7 +265,7 @@ a context not on any page today}, with a comparative word and a unit in it; that
 shows up now that there is no transfer set on paper.
 
 \textbf{Connect back to Lesson~1.4 if time allows:} skew was a shape word there and it is a
-position rule here --- right-skew puts the mean right of the median (problem~21). One line is
+position rule here --- right-skew puts the mean right of the median (problem~9). One line is
 enough; it returns in 1.7.
 
 \textbf{If the debrief runs short}, cut items~3 and~5. \textbf{Item~1 is the one that cannot be
@@ -315,22 +319,22 @@ stays in the packet as extra practice. Never assign both.
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item \textbf{``Most of the players are in the wide part''} (notes~14, 15; AP MC~1; HW~2, HW~5
+  \item \textbf{``Most of the players are in the wide part''} (notes~11, 12; AP MC~1; HW~2, HW~5
         --- the target misconception). Probe: \emph{``Count them. How many dots in the wide
         section? Now the narrow one. Say that out loud.''}
-  \item \textbf{Estimating the counts instead of counting} (notes~13). The crux only lands if the
+  \item \textbf{Estimating the counts instead of counting} (notes~10). The crux only lands if the
         four numbers come out exactly 5, 5, 5, 5. Probe: \emph{``Point at each dot as you say the
         number.''}
-  \item \textbf{Reading the box as ``where the data is'' and the whiskers as empty} (notes~8,
+  \item \textbf{Reading the box as ``where the data is'' and the whiskers as empty} (notes~5,
         AP MC~1). Probe: \emph{``How many of the twenty are past the right edge of the box?''}
-  \item \textbf{Two descriptions parked side by side} (notes~19, 26; HW~4 --- the second
+  \item \textbf{Two descriptions parked side by side} (notes~8, 20; HW~4 --- the second
         misconception). Probe: \emph{``I read your sentence about Period 2. Now cross out every
         word that is not comparing.''}
-  \item \textbf{Comparison with no context} (notes~26, HW~4): ``the median is higher'' with no
+  \item \textbf{Comparison with no context} (notes~20, HW~4): ``the median is higher'' with no
         variable, no units, no groups. Probe: \emph{``Higher what? Higher than what?''}
-  \item \textbf{The lone dot read as an error in the data} (notes~20). It is a real rider with a
+  \item \textbf{The lone dot read as an error in the data} (notes row~3). It is a real rider with a
         real time. Probe: \emph{``Did somebody mistype it, or did somebody have a bad morning?''}
-  \item \textbf{Shape claimed from a boxplot} (notes~17, AP MC~4, HW~5): a boxplot cannot show a
+  \item \textbf{Shape claimed from a boxplot} (notes~14, AP MC~4, HW~5): a boxplot cannot show a
         second peak. Probe: \emph{``Where inside that box would a second hump be drawn?''}
 \end{itemize}
 Cold-call prompts: \emph{``What fraction of the data is in the left whisker?''} \quad
@@ -364,48 +368,51 @@ Circulate during item~1 specifically and fix quartile technique on the spot. \te
 item~1 aloud and leave its five numbers on the board}: the first line of the notes names them,
 and pointing at their own numbers while you say \emph{five-number summary} is worth more than the
 definition is. Item~2 is a 60-second counting drill; do not let it expand --- it exists only so
-that counting is not the obstacle in problem~13. \textbf{Put item~3's four lines of arithmetic on
-the board and leave them there for the whole period}: problem~20 runs the same rule on Route B's
-58-minute morning, and the AP Practice free response runs it a third time on a \$158 shift.
+that counting is not the obstacle in problem~10. \textbf{Put item~3's four lines of arithmetic on
+the board and leave them there for the whole period}: notes row~3's \texttt{work} block runs the
+same rule on Route B's 58-minute morning, and the AP Practice free response runs it a third time
+on a \$158 shift.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes \& Practice]
 \textbf{This one document is the lesson --- pace it 24 / 10, then 8 for the debrief, then 8 for
-the homework start.} The notes are a \emph{Main Ideas / Notes} table, not prose: five rows, 26
-short problems, and \textbf{in every row you fill the definition lines and work the first problem
-while the class watches, then the class works the rest with the pen in their hand.} Rows 1--3 are
-Topic 1.8 and all three read the same free-throw picture, so the picture is worth 30 seconds of
-orientation before row~1: twenty dots on top, the boxplot built from them underneath.
+the homework start.} The notes are a \emph{Main Ideas / Notes} table, not prose: five rows, 20
+short problems, and \textbf{in every row you fill the definition lines, write the row's
+\texttt{work} block, and work the first problem while the class watches, then the class works the
+rest with the pen in their hand.} Rows 1, 2 and~4 are Topic 1.8 and all three read the same
+free-throw picture, so the picture is worth 30 seconds of orientation before row~1: twenty dots on
+top, the boxplot built from them underneath.
 
-\textbf{Spend the time in One Quarter, the crux row.} Problem~13 is the whole lesson: twenty dots
+\textbf{Spend the time in One Quarter, the crux row --- it is the last instruction row, straight
+before Guided Practice.} Problem~10 is the whole lesson: twenty dots
 counted into four sections, coming out 5, 5, 5, 5, even though the sections are 4.5, 5.0, 11.0,
 and 23.5 shots wide. \textbf{Every boundary falls inside a gap in the data} (33 to 36, 38 to 41,
 49 to 52), so there is no judgment call and no excuse for estimating --- a group that writes
 ``about 4, about 7'' has lost the discovery, so make them point at each dot. Then
-\textbf{problem~14 is the trap} (the classmate who reads width as count) and \textbf{problem~15
-is the counterweight} (width reports spread). Take a hand count on 14 before anyone speaks and
+\textbf{problem~11 is the trap} (the classmate who reads width as count) and \textbf{problem~12
+is the counterweight} (width reports spread). Take a hand count on 11 before anyone speaks and
 pick one \emph{almost}-right answer off a desk --- the debrief opens on it.
 
-Two quieter problems carry more than they look like they do. \textbf{Problem~8} --- how many of
+Two quieter problems carry more than they look like they do. \textbf{Problem~5} --- how many of
 the twenty sit inside the box --- is an early read on the misconception; a student who answers
-``most of them'' will fail problem~14. \textbf{Problem~17} --- why the boxplot cannot show the
+``most of them'' will fail problem~11. \textbf{Problem~14} --- why the boxplot cannot show the
 clump from 30 to 38 --- is the honest limit of the display, and it comes back as the AP Practice
 page's MC~4.
 
-\textbf{Two Science Sections is where the pen changes hands.} Problems 22--26, a fresh context,
-worked entirely together. \textbf{Problem~26 is the AP-scored form} and the one that cannot be
+\textbf{Two Science Sections is where the pen changes hands.} Problems 15--20, a fresh context,
+worked entirely together. \textbf{Problem~20 is the AP-scored form} and the one that cannot be
 cut: one paragraph, in context, every claim carrying a comparative word. A paragraph that
 describes Period 2 and then describes Period 5 \textbf{earns nothing} on an AP comparison item, no
 matter how accurate each half is --- say that out loud before they write, and hold it while they
-do. If you only get through 22, 23, and~26, that is the right trade.
+do. If you only get through 15, 16, and~20, that is the right trade.
 
 \textbf{There is no independent practice set on this page, and that is deliberate --- the homework
 is the individual practice.} Guided Practice is the last thing on the page; the period ends with
 students starting the homework in front of you, which is where your second formative read comes
 from.
 
-\textbf{Debrief (8 min), spoken.} Open on the \emph{almost}-right problem~14, then the count row,
-then the comparison standard off the two problem~26 paragraphs you collected. If time is short,
+\textbf{Debrief (8 min), spoken.} Open on the \emph{almost}-right problem~11, then the count row,
+then the comparison standard off the two problem~20 paragraphs you collected. If time is short,
 cut the Lesson~1.4 skew callback and the boxplot's-cost item; \textbf{the count row cannot be
 cut}. Do not let the debrief eat the last eight minutes.
 \end{teachernote}
@@ -421,7 +428,7 @@ the widest stretch of the display, which is the target misconception dressed as 
 choice. \textbf{MC item~4 is the second one to read}: its correct answer is that the display
 cannot tell you whether weekend tips are bimodal, and students who have decided a boxplot ``shows
 the shape'' will not even consider it. If either goes badly for more than a handful, spend three
-minutes on the counting picture from notes problem~13 before starting 1.7. On the free response,
+minutes on the counting picture from notes problem~10 before starting 1.7. On the free response,
 part~(c) is the highest-value part --- Skill 2.D in the exact form the exam asks it, scored on
 comparative language rather than on arithmetic --- and part~(d) is the spiral back to Lessons 1.3
 and 1.4.
@@ -439,7 +446,7 @@ only half an answer. Item~3's arithmetic is in a \texttt{work} block authored by
 the blank and the key; require the boundary to be written out, not just the verdict.
 \textbf{Score item~4 against the comparison standard}: no comparative word, no credit, however
 accurate the two descriptions are. If more than a third of the class lands in that pile, reopen
-problem~26's paragraph in the Lesson~1.7 warm-up debrief rather than letting it ride into
+problem~20's paragraph in the Lesson~1.7 warm-up debrief rather than letting it ride into
 inference. Item~5's justification sentence is where you find out whether the crux survived the
 drive home.
 
