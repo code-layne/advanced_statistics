@@ -1,12 +1,18 @@
 %! Boxplots and Comparing Distributions — Unit 1, Lesson 1.6 — Warm-Up
-% ONE PAGE, blank and key. Three items.
-% SPOILER RULE: `five-number summary', `boxplot', `box', `whisker', `modified boxplot', and
-% `parallel boxplots' are what today's debrief attaches, so none appear here. Item 1 produces
-% the five numbers without naming them collectively; median, Q1, Q3, IQR and the 1.5 x IQR
-% rule were formalized in Lesson 1.5 and are prior knowledge.
-% The \begin{work} block in item 3 is authored BYTE-IDENTICALLY here and in warmup_key/ —
-% under -boxes it ships as a \vphantom (exact height, no ink), under -key it prints.
-\documentclass[10pt]{article}
+% ONE PAGE at 12pt, blank and key. Three items, no name row (Namestrip).
+% GRADUAL-RELEASE lesson: there is no spoiler rule any more, but this page still has no reason to
+% name the boxplot vocabulary — it SEEDS the notes rather than previewing them. Item 1 produces
+% the five numbers the notes name in their first line (five-number summary); item 2 makes the
+% counting in notes problem 13 mechanical; item 3's arithmetic goes on the board and is reused in
+% notes problem 20 and again in the AP Practice free response.
+% Median, Q1, Q3, IQR, range and the 1.5 x IQR rule were formalized in Lesson 1.5 — prior
+% knowledge here.
+% PAGE BUDGET: moving 10pt -> 12pt costs roughly a fifth of the vertical budget, so the
+% structural spacing was trimmed (itemsep 0.19in -> 0.13in, the leading \vspace, the interior
+% \vspace values, and the \blank widths). The \begin{work} block was NOT shaved: it is authored
+% BYTE-IDENTICALLY here and in warmup_key/ — under -boxes it ships as a \vphantom (exact height,
+% no ink), under -key it prints. That is what keeps the two files one page each.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
@@ -14,52 +20,51 @@
 
 \pageheader{Unit 1, Lesson 1.6}{Warm-Up}
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-\begin{enumerate}[leftmargin=1.7em, itemsep=0.19in]
+\begin{enumerate}[leftmargin=1.7em, itemsep=0.13in]
 
   \item \textbf{From last lesson.} Here are the ages, in years, of nine trees in a city park,
         already put in order.
 
-        \vspace{4pt}
+        \vspace{3pt}
         \begin{center}
         12 \quad 14 \quad 15 \quad 18 \quad 20 \quad 23 \quad 27 \quad 28 \quad 35
         \end{center}
-        \vspace{4pt}
+        \vspace{3pt}
 
-        \renewcommand{\arraystretch}{1.4}
+        \renewcommand{\arraystretch}{1.3}
         \begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
         \rowcolor{sky}
         \textbf{Least} & \textbf{$Q_1$} & \textbf{Median} & \textbf{$Q_3$} & \textbf{Greatest} \\
         \hline
-        \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
+        \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
         \end{tabularx}
 
-        \vspace{5pt}
-        IQR: \blank{2.4cm} \qquad Range: \blank{2.4cm}
+        \vspace{4pt}
+        IQR: \blank{2.2cm} \qquad Range: \blank{2.2cm}
 
   \item Here are twelve measurements. \textbf{Count} how many fall in each stretch.
 
-        \vspace{4pt}
+        \vspace{3pt}
         \begin{center}
         3 \quad 5 \quad 6 \quad 8 \quad 9 \quad 12 \quad 14 \quad 15 \quad 19 \quad 26 \quad
         33 \quad 55
         \end{center}
-        \vspace{4pt}
+        \vspace{3pt}
 
-        \renewcommand{\arraystretch}{1.4}
+        \renewcommand{\arraystretch}{1.3}
         \begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
         \rowcolor{sky}
         \textbf{Stretch} & between 2 and 10 & between 10 and 20 & between 20 and 60 \\
         \hline
-        \textbf{How many} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
+        \textbf{How many} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
         \end{tabularx}
 
-  \item \textbf{From last lesson.} We named a rule for flagging a value that sits unusually far
-        from the rest: it is unusual if it lies more than $1.5 \times \text{IQR}$ below $Q_1$ or
-        more than $1.5 \times \text{IQR}$ above $Q_3$.
+  \item \textbf{From last lesson.} A value counts as unusually far from the rest if it lies more
+        than $1.5 \times \text{IQR}$ below $Q_1$ or more than $1.5 \times \text{IQR}$ above $Q_3$.
 
-        \vspace{4pt}
+        \vspace{3pt}
         A data set has $Q_1 = 20$ and $Q_3 = 32$. Is the value \textbf{55} unusually far from the
         rest? Show the arithmetic.
 

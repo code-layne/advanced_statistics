@@ -195,7 +195,7 @@ Recognize the shape by the component directories:
 | **current** | `notes/` opens `\begin{guidednotes}` | the target |
 | **two-section notes** (2026-09) | `notes/` with `objectivebox` + two `notesbox` + `practicebox`, `ap_practice/`, no `activity/` | `unit01/lesson01`–`05` before 2026-09-08 |
 | **group-activity** (2026-08) | `notes/` + `activity/`, no `exit_ticket/` | `unit01/lesson00` |
-| **EFFL** | `experience/` | `unit01/lesson02`–`lesson07` |
+| **EFFL** | `experience/` | none left in the repo (was `unit01/lesson02`–`lesson07`) |
 | **pre-EFFL legacy** | `notes/` + `activity/` + `exit_ticket/`, tiered activity boxes | units 02–09 |
 
 The build accepts all of them. When asked to touch one, **ask whether to regenerate it** in the
@@ -251,9 +251,9 @@ Either way, delete stale stamps — `rm -rf .stamps/unitXX/lessonYY target/unitX
 evidence per lesson: `make -C unitXX/lessonYY all` exits 0 and every component's page count
 equals its `_key`'s, compared on the compiled components, not the padded packets.
 
-**Scoreboard (2026-09-08):** 5 of 78 lessons are in the current shape (`unit01/lesson01`–`05`,
-notes as the Main Ideas / Notes table); 1 in the group-activity shape (`unit01/lesson00`); 2 in
-EFFL (`unit01/lesson06`–`07`); 70 pre-EFFL legacy,
+**Scoreboard (2026-09-17):** 7 of 78 lessons are in the current shape (`unit01/lesson01`–`07`,
+notes as the Main Ideas / Notes table); 1 in the group-activity shape (`unit01/lesson00`);
+**no EFFL lessons remain**; 70 pre-EFFL legacy,
 of which 96 `_key` files still hold teacher notes, `\namedateperiod` appears on every component,
 and 57 lessons have no deck. Convert lesson by lesson or unit by unit as you review, authoring
 the missing deck as you go, and rebuild the unit packet each time — never the whole course in one
