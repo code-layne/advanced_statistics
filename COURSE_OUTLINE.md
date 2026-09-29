@@ -1,6 +1,6 @@
 # Statistics — Course Outline
 
-Shepherd · 2026–2027 · **9 units · 78 lessons**
+Shepherd · 2026–2027 · **9 units · 74 lessons**
 
 Titles and focus lines are taken from each unit's cover sheet
 (`unitXX/unit_cover/main.tex`) and each lesson plan (`unitXX/lessonYY/main.tex`).
@@ -8,7 +8,7 @@ Titles and focus lines are taken from each unit's cover sheet
 | Unit | Title | Lessons | Sample test |
 | --- | --- | ---: | --- |
 | 1 | Exploring One-Variable Data | 8 | yes |
-| 2 | Exploring Two-Variable Data | 9 | yes |
+| 2 | Exploring Two-Variable Data | 5 | yes |
 | 3 | Collecting Data | 7 | yes |
 | 4 | Probability, Random Variables, and Probability Distributions | 12 | **no** |
 | 5 | Sampling Distributions | 8 | yes |
@@ -44,24 +44,21 @@ same six multiple-choice targets in order, same two free-response sets — in di
 Build with `make -C unit01/quizzes all && make -C unit01/quiz_keys all`. Nothing here is merged
 into the unit student or key packet, so the actual quiz never reaches a packet.
 
-## Unit 2 — Exploring Two-Variable Data (9 lessons)
+## Unit 2 — Exploring Two-Variable Data (5 lessons)
 
 Extends statistical thinking to relationships between two variables: two-way tables and
 conditional distributions for categorical pairs, then scatterplots, correlation, linear
-regression, and residual analysis for quantitative pairs. Closes with power and
-exponential transformations that linearize curved patterns.
+regression, and residual analysis for quantitative pairs. Closes with departures from
+linearity — curved residual plots, influential points, transformations. Compressed from the
+CED's nine Topics to five lessons (2026-09-29), each sized to finish in one period.
 
-| # | Title | Focus |
-| --- | --- | --- |
-| 2.1 | Introducing Statistics: Are Variables Related? | Statistical questions about relationships; apparent vs. real associations |
-| 2.2 | Representing Two Categorical Variables | Two-way tables; joint, marginal, and conditional relative frequencies |
-| 2.3 | Statistics for Two Categorical Variables | Comparing conditional distributions; segmented bar charts; association |
-| 2.4 | Representing Two Quantitative Variables | Scatterplots; direction, form, strength; explanatory vs. response |
-| 2.5 | Correlation | Pearson's *r*; properties and interpretation; correlation ≠ causation |
-| 2.6 | Linear Regression Models | Least-squares line ŷ = a + bx; interpreting slope and intercept |
-| 2.7 | Residuals | Calculating residuals; residual plots; assessing linearity |
-| 2.8 | Least Squares Regression | b = r·s_y/s_x and a = ȳ − bx̄; *s* and *r*²; influential points |
-| 2.9 | Analyzing Departures from Linearity | Power and exponential transformations; evaluating linearized models |
+| # | Title | CED Topics | Focus |
+| --- | --- | --- | --- |
+| 2.1 | Two Categorical Variables | 2.1–2.3 | Two-way tables; joint, marginal, conditional relative frequencies; association |
+| 2.2 | Scatterplots and Correlation | 2.4–2.5 | Explanatory vs. response; direction, form, strength; correlation *r* |
+| 2.3 | Regression Lines and Residuals | 2.6–2.7 | Predicting with ŷ = a + bx; extrapolation; residual = y − ŷ |
+| 2.4 | Least-Squares Regression | 2.8 | b = r·s_y/s_x, a = ȳ − bx̄; slope and intercept in context; *r*² and *s* |
+| 2.5 | Departures from Linearity | 2.9 | Residual plots; outliers, leverage, influence; transformations |
 
 ## Unit 3 — Collecting Data (7 lessons)
 
@@ -203,8 +200,8 @@ them; see above).
 
 ## Gaps found while compiling this outline
 
-- **Slide decks exist for 24 of 80 lessons.** All of Unit 1 and Unit 3 have `slides/`;
-  Unit 2 is missing 2.5, 2.8, and 2.9. Units 4–9 have no `slides/` directory at all
+- **Slide decks exist for 20 of 74 lessons.** All of Unit 1 and Unit 3 have `slides/`;
+  Unit 2's five lessons all have one. Units 4–9 have no `slides/` directory at all
   (56 lessons).
 - **Unit 4 has no `sample_test` / `sample_test_key`** — the only unit without one.
 - **Title drift between lesson plans and unit covers** in three places; the cover text is

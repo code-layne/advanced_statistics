@@ -1,90 +1,52 @@
-%! AP Statistics — Unit 2, Lesson 2.3 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items at 12pt. Do not add a fourth.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+% Item 1 is the spiral to Lesson 2.2 (explanatory variable, direction, strength of r) on the
+% pizza-delivery data the notes open on; item 2 is plugging into a line — exactly the move
+% notes row 1 names "prediction"; item 3 is "above or below the line, and by how much" — the
+% residual, in algebra language, before the notes name it and fix its sign.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Warm-Up --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
-
-\vspace{0.3in}
-
-{\large\bfseries\color{navy} Part 1 \quad Conditional Relative Frequencies (Lesson 2.2 Review)}
-
-\vspace{0.12in}
-
-\noindent A survey of 200 high school students recorded two variables: whether they play
-a sport (Yes / No) and whether they have a part-time job (Yes / No). Results are below.
-
-\vspace{0.1in}
-
-\renewcommand{\arraystretch}{1.9}
-\begin{tabularx}{\linewidth}{@{} l C{2.8cm} C{2.8cm} C{2.4cm} @{}}
-\rowcolor{sky}
-                    & \textbf{Job: Yes} & \textbf{Job: No} & \textbf{Row Total} \\
-\hline
-\textbf{Sport: Yes} & 30 & 90 & \ans{120} \\
-\textbf{Sport: No}  & 40 & 40 & \ans{80} \\
-\hline
-\textbf{Col.\ Total}& \ans{70} & \ans{130} & \ans{200} \\
-\end{tabularx}
-
-\vspace{0.18in}
-
-\begin{enumerate}
-
-    \item \ans{Row totals: 120, 80. Column totals: 70, 130. Grand total: 200.}
-
-    \vspace{0.06in}
-
-    \item $P(\text{Job: Yes} \mid \text{Sport: Yes}) = \dfrac{\ans{30}}{\ans{120}} = \ans{0.25 = 25\%}$
-
-    \vspace{0.18in}
-
-    \item $P(\text{Job: Yes} \mid \text{Sport: No}) = \dfrac{\ans{40}}{\ans{80}} = \ans{0.50 = 50\%}$
-
-    \vspace{0.14in}
-
-    \item Circle: \textbf{Yes} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}\\[8pt]
-    \ans{Student-athletes have a job rate of 25\%, while non-athletes have a job rate of 50\% ---
-    a substantial difference, suggesting an association between playing a sport and having a job.}
-
-\end{enumerate}
 
 \vspace{0.28in}
 
-{\large\bfseries\color{navy} Part 2 \quad Putting a Number on the Difference}
+\begin{enumerate}[leftmargin=1.9em, itemsep=1.0in]
 
-\vspace{0.12in}
+  \item \textbf{From last lesson.} A pizza shop plotted delivery distance (miles) against
+        delivery time (minutes) for 17 deliveries. The points rise from left to right in a
+        tight, straight band.
 
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-    \small
-    \textbf{Think about it:} In Part 1 you found two conditional proportions and compared
-    them informally. Today we will compute \emph{statistics} that quantify exactly
-    \emph{how different} the two proportions are.
-\end{tcolorbox}
+        \vspace{12pt}
+        Explanatory variable: \ans{distance} \qquad Direction: \ans{positive}
 
-\vspace{0.14in}
+        \vspace{16pt}
+        Is $r$ closer to $0.3$ or to $0.95$? \ans{$0.95$} \qquad Form: \ans{linear}
 
-\noindent $\hat{p}_{\text{athlete}} - \hat{p}_{\text{non-athlete}} = \ans{0.25} - \ans{0.50} = \ans{-0.25}$
+  \item Use the line $y = 8 + 3x$.
 
-\vspace{0.1in}
+        \vspace{12pt}
+        When $x = 4$, \quad $y =$ \ans{$8+3(4)=20$} \qquad When $x = 7$, \quad $y =$ \ans{$8+3(7)=29$}
 
-\noindent \ansline{Student-athletes are 25 percentage points \emph{less} likely to have a job
-than non-athletes.}
+  \item The point $(5,\ 26)$ is plotted beside the line $y = 8 + 3x$.
 
-\begin{teachernote}
-\textbf{Item 4:} Many students will circle ``No'' because the raw job counts for non-athletes
-(40 vs.\ 40) look balanced. Emphasize conditioning: the relevant comparison is 25\% vs.\ 50\%,
-not 30 vs.\ 40.
+        \vspace{12pt}
+        At $x = 5$ the line is at height \ans{$8+3(5)=23$}
 
-\textbf{Part 2 sign:} The sign is negative because athletes are the first group. Students who
-flip the subtraction get $+0.25$ --- accept either as long as direction is stated in context.
-\end{teachernote}
+        \vspace{16pt}
+        Is the point above or below the line? \ans{above} \quad By how much? \ans{3}
+
+        \vspace{16pt}
+        Now the point $(4,\ 17)$: above or below? \ans{below} \quad By how much? \ans{3}
+
+        \vspace{16pt}
+        Which point's actual $y$ came out \emph{bigger} than the line predicted?\\[18pt]
+        \ansline{$(5,\ 26)$ --- its $y$ is 3 above the line; $(4,\ 17)$ is 3 below it.}
+
+\end{enumerate}
 
 \end{document}

@@ -1,0 +1,97 @@
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — AP Practice
+% GRADUAL RELEASE: AP-format practice, assigned but NOT scored — the cover's score column reads
+% NA for this component. The graded practice is the `homework` component that follows it.
+% ONE PAGE: two multiple-choice items and one three-part free response, on a fresh context
+% (a cafe's daily high temperature vs. iced drinks sold). MC 1 is the crux in AP clothing (the
+% slope read deterministically or causally); MC 2 is the trap (the sign of r from R-Sq).
+% FRQ (c) is the spiral to Lesson 2.3 (a residual).
+% Output consistent with n = 40, r = 0.8503: SE(b) 0.236, T 9.96.
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching n terse
+% \ansline{} in the key. The next-lesson preview is NOT here: it closes the packet, in ../homework/.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.4}{AP Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.08in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. Work these AP-format reps and bring what stalls you to study hall.
+\end{remindbox}
+
+\vspace{0.10in}
+
+\boxguard[20]
+\begin{scenariobox}[Iced Drinks]{navy}
+\small
+A caf\'e recorded the daily high temperature ($^\circ$F, from 55 to 95) and the iced drinks sold
+on 40 summer days, and regressed drinks sold on temperature:
+\par\vspace{2pt}
+{\centering\footnotesize\ttfamily
+\begin{tabular}{@{} l r r r r @{}}
+Predictor & Coef & SE Coef & T & P \\ \hline
+Constant & $-$42.50 & 16.80 & $-$2.53 & 0.016 \\
+Temp & 2.350 & 0.236 & 9.96 & 0.000 \\
+\end{tabular}\par
+S = 14.20 \quad R-Sq = 72.3\% \quad R-Sq(adj) = 71.6\%\par}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer.
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.08in]
+
+  \item Which is the correct interpretation of the slope?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item On every day, each 1$^\circ$F warmer means 2.35 more iced drinks are sold.
+          \item For each 1$^\circ$F warmer, the predicted number of iced drinks sold rises by 2.35.
+          \item Raising the temperature by 1$^\circ$F causes 2.35 more iced drinks to be sold.
+          \item About 2.35\% of the variation in iced drinks sold is explained by temperature.
+          \item On a 0$^\circ$F day, the caf\'e is predicted to sell 2.35 iced drinks.
+        \end{enumerate}
+
+  \item What is the correlation between daily high temperature and iced drinks sold?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item $-0.850$ \hfill \textbf{(B)}\ $0.277$ \hfill \textbf{(C)}\ $0.723$ \hfill
+                \textbf{(D)}\ $0.850$ \hfill \textbf{(E)}\ $2.350$ \hspace*{2em}
+        \end{enumerate}
+
+\end{enumerate}
+
+\boxguard[12]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning, and answer \emph{in context}.
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, resume]
+
+  \item \textbf{(a)} Interpret the value of $r^2$ in context.\\[2pt]
+        \writelines{2}
+
+        \vspace{2pt}
+        \textbf{(b)} Interpret the $y$-intercept in context. Does it have a sensible meaning
+        here? Explain.\\[2pt]
+        \writelines{2}
+
+        \vspace{2pt}
+        \textbf{(c)} On an 80$^\circ$F day the caf\'e sold 150 iced drinks. Find and interpret
+        that day's residual.\\[2pt]
+        \writelines{2}
+
+\end{enumerate}
+
+\end{document}

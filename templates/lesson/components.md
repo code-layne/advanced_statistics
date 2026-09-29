@@ -61,7 +61,7 @@ vocabulary freely. Canonical section order:
    by `\hfill` (use `\TallMath{...}` for tall formulas).
 5. **Lesson at a Glance — `\MeetingLength`** — `skillbox{sky}` with a phase table
    (Phase | Min | Students | Teacher). The 55-minute split is
-   **5 warm-up / 22 guided notes & practice / 16 group activity / 8 debrief / 4 close & assign**.
+   **5 warm-up / 34 guided notes & practice / 8 debrief / 8 close & start the homework**.
    Guard it with `\boxguard[30]`: a `tabularx` never splits.
 6. **Warm-Up — Activate Prior Knowledge (5 min)** — `skillbox{sky}`: the ~3 items and the **seed**
    each plants (which part of the notes it sets up), what to debrief aloud, and what to leave on
@@ -133,16 +133,17 @@ in the plan. Key mirrors with `\ans`; multi-step solutions go in `work` blocks.
 `notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 34 minutes**, in the **Main
 Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets, 2026-09-08).
 `\pageheader{Unit X, Lesson Y.Z}{Guided Notes \& Practice}` (no name row — Namestrip), the
-`vocabbox`, then **one `guidednotes` table**. Target **3 pages** at 12pt — the vocabulary box and
-a two-page table — and **20–26 numbered problems**. Set the whole table in `\small`.
+`vocabbox`, then **one `guidednotes` table**. Target **2 pages** at 12pt — the vocabulary box and
+the table — and **12–14 numbered problems** (the compact budget: the whole packet is about six
+pages so the lesson is finished in one period). Set the whole table in `\small`.
 
 - `vocabbox` — one `\termblank{Term}` per key term (3–5 of them), each bracketed by `\par` (the
   vocabpar fix). The box says **"Fill in each term as we name it in the notes below"** — it is
   filled during instruction, never front-loaded. The key uses `\termans{Term}{definition}`,
   **not** `\termblanklong` plus an `\ansline` (that runs a line long every time).
 - **No `objectivebox`** — the targets are on the cover. No `notesbox`, no `practicebox`.
-- `guidednotes` — the two-column table, *Main Ideas / Questions* | *Notes*. **Four to five
-  rows.** Each row is `\mainidea[small lead]{Label} & ... \\ \hline`. The label is two or three
+- `guidednotes` — the two-column table, *Main Ideas / Questions* | *Notes*. **Three or four
+rows**, 3–4 problems in each grid. Each row is `\mainidea[small lead]{Label} & ... \\ \hline`. The label is two or three
   words, uppercased by the macro; keep a single word under ten letters or it overflows the
   column. The Notes cell holds, in order: one or two definition sentences with `\blank{W}`
   fills sized to their answers (a pre-drawn display or a `\stepnum{n}` procedure where the idea
@@ -164,7 +165,7 @@ a two-page table — and **20–26 numbered problems**. Set the whole table in `
   `\blank`, `\writelines`, `work` all work inside a cell.
 - **The key mirrors the blank byte for byte** except `-key` for `-boxes`, the header's
   `--- Answer Key`, `\termblank`→`\termans`, `\blank`→`\ans`, and the fourth argument of each
-  `\pcell`. Keep every answer shorter than its space. Prove 3 pages = 3 pages.
+  `\pcell`. Keep every answer shorter than its space. Prove 2 pages = 2 pages.
 
 ## Group activity — LEGACY ONLY, never author one
 
@@ -197,13 +198,13 @@ construction (1.0cm ≈ 2 handwritten lines, 1.5cm ≈ 3, 2.0cm ≈ 4).
 ## AP practice
 
 `ap_practice/` (+ `ap_practice_key/`) — **assigned but NOT scored.** The cover's score column reads
-`\textbf{NA}`. `\pageheader{...}{AP Practice}` (no name row).
+`\textbf{NA}`. `\pageheader{...}{AP Practice}` (no name row). **One page.**
 
 Open with a `remindbox` stating plainly that the page is not required and not scored and that the
 graded homework is the last section of the packet — authored **byte-identically** in the blank and
 the key. Then shape it like the exam: a `headlinebox{goldbg}` "Section I — Multiple Choice" with
-four items (five options each, in context), and a `headlinebox{goldbg}` "Section II — Free
-Response" with one multi-part set whose last part is the **spiral** reaching back to an earlier
+**two** items (five options each, in context), and a `headlinebox{goldbg}` "Section II — Free
+Response" with one short set of two or three parts whose last part is the **spiral** reaching back to an earlier
 topic. Reuse the activity's data context on purpose — the context is already loaded, so the
 thinking stays on the distinctions.
 
@@ -216,7 +217,7 @@ in the key. The next-lesson preview does **not** live here; it closes the packet
 packet**, generated for every lesson. `\pageheader{...}{Homework}` (no name row).
 
 Open with a `remindbox` — "This is your graded homework. It is scored and due the first class after two study halls." —
-authored byte-identically in both files. Then 5–7 items in a **fresh context** the lesson has not
+authored byte-identically in both files. Then 5–6 items — **one page** — in a **fresh context** the lesson has not
 used, grouped into two or three titled `notesbox`es (Part A / Part B / Part C). Include at least
 one AP-style multiple-choice item with a required one-sentence justification. Close the packet
 with a `spiralbox` previewing the next lesson.

@@ -1,195 +1,371 @@
-%! AP Statistics — Unit 2, Lesson 3
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
+% homework), at the COMPACT budget: the packet is ~6 pages and the lesson finishes in 55 minutes.
+% THERE IS NO GROUP ACTIVITY in this course, and NO INDEPENDENT PRACTICE SET in the notes: the
+% notes are one Main Ideas / Notes table — I do / we do row by row, then the Guided Practice row
+% together. The HOMEWORK is the individual practice, started in class in the last 8 minutes.
+% Every box is `skillbox` (breakable) with a \boxguard ahead of it; this course has no
+% `fixedskillbox`, no tier boxes, and no exit ticket.
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\tcbuselibrary{breakable}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
 
-\definecolor{sky}{HTML}{F8F8EE}
-\definecolor{navy}{HTML}{3A3D28}
-\definecolor{redbox}{HTML}{FAEFE7}
-\definecolor{greenbox}{HTML}{F0F4E6}
-\definecolor{goldbox}{HTML}{FCF8E9}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-\newcommand{\CourseName}{Statistics}
-\newcommand{\SchoolYear}{2026--2027}
-\newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 2.3: Statistics for Two Categorical Variables}
+\newcommand{\LessonNumberName}{Lesson 2.3: Regression Lines and Residuals}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will quantify the association between two categorical
-    variables by computing and interpreting the difference in proportions and relative risk.
-    Students will use these statistics to make comparative claims in context, understanding that
-    the size of the statistics (not just direction) conveys the strength of the association (Big Idea: UNC).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will use a given regression line to calculate a
+    predicted response $\hat{y}$ in context, flag a prediction made by extrapolation as
+    unreliable, calculate and interpret a residual as $y - \hat{y}$ with its sign read
+    correctly, and read a pre-drawn residual plot to judge whether a linear model is
+    appropriate.
+    \\[2pt]
+    \textbf{CED alignment:} Topics 2.6--2.7 \quad$\cdot$\quad Big Idea: DAT (Data Analysis)
+    \quad$\cdot$\quad Skills 2.C, 2.B, 2.A \quad$\cdot$\quad LO DAT-1.D, DAT-1.E, DAT-1.F
+    \quad$\cdot$\quad EK DAT-1.D.1--1.D.3, 1.E.1--1.E.2, 1.F.1--1.F.2
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction row by row in one \emph{Main Ideas / Notes} table --- each
+    idea a definition to complete and a grid of short problems, the first worked by you and the
+    rest by the class; the last row, Guided Practice, is worked together with students holding
+    the pen; \textbf{the homework is the individual practice}, and students start it in class
+    while you circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Scope:} the line is \emph{given} and only \emph{used} today. Where $a$ and $b$ come
+    from, interpreting the slope and intercept in context, and $r^2$ are Lesson~2.4; detailed
+    residual-plot departures (curves, fanning) are Lesson~2.5. Every display is pre-drawn.
 \end{tcolorbox}
 
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can plug an $x$-value into a regression line and say what the answer predicts, in
+        context.
+  \item I can tell a predicted value $\hat{y}$ from an actual value $y$.
+  \item I can say when a prediction is extrapolation and why not to trust it.
+  \item I can calculate a residual and say whether the line predicted too high or too low.
+  \item I can read a residual plot and decide whether a line is a good model.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item A regression model $\hat{y} = a + bx$ uses the explanatory variable to predict the
+        response; $\hat{y}$ is a prediction, not an observation (EK DAT-1.D.1--1.D.2).
+  \item Extrapolation predicts beyond the interval of $x$-values used to build the line, and
+        grows less reliable the farther out it goes (EK DAT-1.D.3).
+  \item \textbf{Target misconception:} the residual's \emph{sign}. Students compute
+        $\hat{y} - y$ instead of $y - \hat{y}$, or compute it correctly and then read a
+        positive residual as ``the line was too high.'' Positive means the actual value is
+        \emph{above} the line --- the line \emph{under}predicted (EK DAT-1.E.1).
+  \item A residual plot graphs residuals against $x$; apparent randomness around 0 is
+        evidence that a linear model is appropriate (EK DAT-1.E.2, 1.F.1--1.F.2).
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 2 --- Data Analysis}
     \begin{itemize}
-        \item Compute conditional proportions (e.g., proportion of successes in each group).
-        \item Calculate and interpret the difference in proportions in context.
-        \item Calculate and interpret relative risk (ratio of proportions) in context.
-        \item Recognize that a difference in proportions and relative risk can tell different stories about the same data.
+        \item \textbf{Regression line} --- $\hat{y} = a + bx$; uses $x$ to predict $y$
+              (EK DAT-1.D.1)
+        \item \textbf{Predicted value} $\hat{y}$ --- the line's value at a given $x$
+              (EK DAT-1.D.2)
+        \item \textbf{Extrapolation} --- predicting outside the $x$-interval of the data;
+              less reliable the farther out (EK DAT-1.D.3)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item Difference in proportions is additive: ``Group A's rate is 0.15 higher than Group B's.''
-        \item Relative risk is multiplicative: ``Group A's rate is 3 times Group B's rate.''
-        \item Both statistics are needed: a small absolute difference can be a large relative risk (and vice versa).
-        \item These statistics lay the groundwork for two-proportion inference in Unit 6.
+        \item \textbf{Residual} --- $y - \hat{y}$, actual minus predicted (EK DAT-1.E.1)
+        \item \textbf{Residual plot} --- residuals vs.\ $x$; random scatter around 0 supports
+              a linear model (EK DAT-1.E.2, 1.F.1)
+        \item \textbf{Carried forward} --- explanatory/response, direction, form, and $r$
+              (Lesson~2.2)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Describe the pizza scatterplot, plug into $y = 8 + 3x$, and place two points above or below the line & Debrief item~3 aloud; leave ``$(5,26)$ is 3 \emph{above}'' on the board all period \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--10 row by row, then \emph{Sleep \& Reaction} (11--14) together, pen in their hand & \textbf{I do} each row's definition lines and first problem (1, 4, 7), \textbf{we do} the rest of its grid (24) $\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Open on an \emph{almost}-right problem~9, then the sign in context from problem~12 \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Announce the paper homework, circulate for the second formative read (A2), preview Lesson~2.4 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
     \begin{itemize}
-        \item \textbf{Conditional proportion} --- the proportion of ``successes'' within a given group; $\hat{p} = \frac{\text{count of successes}}{\text{group total}}$
-        \item \textbf{Difference in proportions} --- $\hat{p}_1 - \hat{p}_2$; quantifies the additive difference between two groups' rates
-        \item \textbf{Relative risk (risk ratio)} --- $\dfrac{\hat{p}_1}{\hat{p}_2}$; how many times higher one group's rate is compared to the other
+        \item \textbf{1.} The pizza scatterplot in words: explanatory variable, direction,
+              form, $r$ near 0.95. \textbf{Spirals} to Lesson 2.2 and loads the context the
+              notes open on.
+        \item \textbf{2.} Plug into $y = 8 + 3x$. \textbf{Seeds} row~1: prediction is
+              substitution --- nothing new, only a new name.
+        \item \textbf{3.} Is $(5, 26)$ above or below the line, and by how much?
+              \textbf{Seeds} row~3: the residual, before it has a name or a sign convention.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Baseline group} --- the reference group in the denominator of the relative risk
-        \item \textbf{Strength of association} --- how much the conditional distributions differ; larger differences $\to$ stronger association
-        \item \textbf{Direction of association} --- which group has the higher proportion; determines the sign of the difference
+        \item \textbf{Debrief item~3 aloud} and write ``$(5,26)$ is 3 \emph{above} the line''
+              on the board. Leave it up: problem~7 turns it into ``residual $= +3$,'' and
+              problem~9 leans on the word \emph{above}.
+        \item Items~1 and~2 are a minute each. Do not let item~1 become a correlation review
+              --- one sentence and move on.
+        \item Expect some students to answer item~3 with a subtraction in the wrong order
+              (``$23 - 26 = -3$, below''). Do not correct it yet --- the picture says above,
+              and the crux settles it.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Return to the two-way table from Lesson 2.2. Students have already computed conditional relative frequencies. Ask: ``How much different are the two conditional proportions? Can we put a single number on that difference?'' This motivates both statistics today.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
-    \begin{itemize}
-        \item Conditional relative frequencies (Lesson 2.2) are the $\hat{p}$ values used here.
-        \item Unit 6: the difference in proportions becomes a test statistic for formal inference.
-        \item Relative risk appears in epidemiology and medical research --- a real-world application of statistics.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are one \emph{Main Ideas / Notes} table --- four rows, 14 short problems, two pages.
+\textbf{In every row you fill the definition lines and work the first problem of the grid
+(problems 1, 4, 7); the class works the rest, pen in their hand.} The vocabulary box is filled
+\emph{as you go}, never in advance.
+\begin{multicols}{2}
+\textbf{The Equation \& Prediction (6 min).} Fill the five blanks, write
+$\widehat{\text{time}} = 8 + 3(\text{distance})$, and work problem~1 on the scatterplot:
+find 5 miles, go up to the line, read 23. Problem~2 is theirs. \textbf{Problem~3 is the trap}:
+``A 6-mile delivery took 24 minutes. Give $y$ and $\hat{y}$.'' The 24 is \emph{given}, so half
+the room writes $\hat{y} = 24$. Take a hand count before anyone speaks: \emph{``Which number came
+from the line?''}
+
+\textbf{Predicting Beyond the Data (6 min).} Problem~4 yourself: 30 miles gives 98 minutes, and
+the equation never objects. That is the point --- the line always answers; the data decide
+whether to believe it. Problems~5--6 are theirs. Hold them to the reason in problem~6: not ``it
+might be wrong'' but ``we have no deliveries out there to check.''
+
+\textbf{Actual Minus Predicted (12 min) --- the must-land row, and the crux.} Fill
+residual $= y - \hat{y}$ and point at the warm-up sentence still on the board: $(5,26)$ was 3
+\emph{above}, and $26 - 23 = +3$. Work problem~7 that way. Problem~8 is theirs --- a negative
+residual, the line \emph{over}predicted. \textbf{Problem~9 is the crux}: Jordan subtracts in
+the wrong order \emph{and} reads the sign backwards. Give it two full minutes, silent, and
+demand \emph{both} fixes. Many students fix the arithmetic and keep ``too high'' --- that is
+the misconception surviving, and it is the paper you want for the debrief. Problem~10 names the
+residual plot's one job today: random scatter, no pattern, a line is fine.
+
+\columnbreak
+\textbf{We do (about 10 min): Sleep \& Reaction.} Problems 11--14, a fresh context, worked
+entirely together. Students hold the pen; you hold the questions: \emph{``Is 270 above or below
+255? So is the line too high or too low?''} \quad \emph{``Is 12 hours inside 4 to 9?''}
+\textbf{Problem~12 is the crux transferred}, and the context adds one layer: a positive
+residual here is a \emph{slower} reaction, so ``positive'' does not mean ``good.'' Protect it
+when time is short; problem~13 can be done aloud.
+
+\textbf{The pen must actually change hands.} Put problem~11 on them cold, then take a hand
+count on problem~12's sign before anyone explains it.
+
+Circulate and demand the reason, not the number:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~12:} ``Which came first in your subtraction --- the 270 or the 255?
+        Why that one?''
+  \item \textbf{Problem~13:} ``The equation gave you a number. Why don't you believe it?''
+  \item \textbf{Problem~14:} ``What would the plot have to look like for you to say no?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one problem~9 with the
+arithmetic fixed but ``too high'' kept (the \emph{almost}-right answer), one with both fixed.
+\textbf{Your formative read comes twice}: here, and again in the last eight minutes as students
+start the homework.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Medical context: ``A study found that 2\% of people who took Drug A got a side effect, vs.\ 1\% who took a placebo.'' Ask: Is 1 percentage point a big deal? Now reframe: ``Those who took Drug A are \textit{twice} as likely to get the side effect.'' Discuss: same data, two different ways to describe it.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item Define and compute the difference in proportions from a two-way table.
-        \item Define and compute relative risk from the same table.
-        \item Interpret both in context side-by-side.
-        \item Work a second example where relative risk is dramatic but absolute difference is tiny --- and vice versa.
-        \item Discuss: which statistic is more informative depends on the question being asked.
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class, spoken (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box to fill in, so it lives
+on the board and in the room.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Open on the \emph{almost}-right problem~9}: $26 - 23 = +3$, ``so the line
+        predicted too high.'' Ask the room what is right about it and what is still wrong.
+        Then point at the scatterplot: the point is above the line, so the line was
+        \emph{under} it --- too low.
+  \item Say the rule as one sentence and leave it up: \emph{residual = actual minus predicted;
+        positive means the line guessed too low.}
+  \item Problem~12: the same sign, a new meaning in context --- 15~ms \emph{slower} than
+        predicted. The sign is about the line, not about good or bad.
+  \item Problem~13: the equation gave 130~ms for 12 hours. Nothing in the arithmetic warned
+        us; only the data range did.
+\end{enumerate}
+\columnbreak
+\textbf{Two things to demand aloud.} First, \textbf{make a student interpret one residual
+completely in context} --- the number, the direction, and what the line did. Second,
+\textbf{ask what a residual plot would have to look like to make them distrust the line}; take
+any ``a pattern, a curve'' answer and tell them Lesson~2.5 is exactly that.
+
+\textbf{If the debrief runs short}, cut item~4 --- item~1 is the one that cannot be cut.
+\textbf{Do not let the debrief eat the last eight minutes} --- the homework start is not optional
+padding, it is your second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Difference in proportions template: ``The proportion of [response] among [Group 1] ($\hat{p}_1 = \ldots$) was [value] [higher/lower] than the proportion among [Group 2] ($\hat{p}_2 = \ldots$).''
-        \item Relative risk template: ``[Group 1] was [value] times as likely to [response] as [Group 2].''
-        \item Relative risk $= 1$ means no association; $> 1$ means Group 1 higher; $< 1$ means Group 1 lower.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Common error: interpreting relative risk as a percentage difference (e.g., ``RR = 2 means 2\% more'' --- wrong; it means twice as likely).
-        \item Check: Is the student's interpretation in context? Is the direction stated?
-        \item Probe: ``If the relative risk is 1.05, is there a strong association? What about the difference in proportions --- could it be large at the same time?''
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- assigned, not scored]{goldbox}
+One page on a coffee shop's hot-drink sales against daily high temperature,
+$\widehat{\text{drinks}} = 210 - 2.4(\text{temperature})$, 30--75$^\circ$F. \textbf{MC~1}: the
+residual on a 50$^\circ$F day with 100 drinks sold --- (B) $+10$, sold more than predicted;
+distractor (A) is the sign flip and (C) is the right number with the wrong reading.
+\textbf{MC~2}: a $-30$-drink prediction at 100$^\circ$F --- (C) extrapolation. \textbf{Free
+response}: (a) predict at 60$^\circ$F (66 drinks); (b) residual for 58 drinks sold ($-8$, the
+line overpredicted), interpreted in context; \textbf{(c) is the spiral} to Lesson~2.2 ---
+negative direction, and association is not causation.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~2.4 and hold the AP standard out loud: \emph{in context or it does not
+count}. Part (b) without the words ``fewer hot drinks than predicted'' is incomplete, and part
+(c) that says ``yes, heat causes it'' does not earn the point.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Groups receive a two-way table: vaccination status (vaccinated/unvaccinated) $\times$ illness (sick/not sick). Groups compute:
-    \begin{enumerate}
-        \item Conditional proportion sick for each group.
-        \item Difference in proportions (with direction).
-        \item Relative risk (vaccinated vs.\ unvaccinated).
-        \item A 2-sentence conclusion about the association, including both statistics.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide the interpretation templates filled in with blanks; students supply the numbers.
-        \item \textit{Extension}: Students research and critique a real news article that reports relative risk without reporting the absolute difference --- is the headline misleading?
-        \item \textit{AP Connection}: Discuss how Unit 6 tests will ask whether the observed difference in proportions is statistically significant.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored, due the first class after two study halls]{goldbox}
+Five items on used-car prices, $\widehat{\text{price}} = 32.0 - 0.24(\text{mileage})$, 8--95
+thousand miles --- the third context. \textbf{Part A}: A1 predict at 50 thousand miles
+(\$20{,}000); \textbf{A2} the residual for a car listed at \$22{,}500 ($+2.5$ thousand --- the
+line underpredicted); A3 a 150-thousand-mile prediction that comes out negative, because it is
+extrapolation. \textbf{Part B}: B1 read a pre-drawn residual plot (random scatter --- a line is
+appropriate); B2 an AP-style multiple-choice item on a residual of $-1.8$ with a required
+justification.
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.}
+\textbf{Scoring:} 10 points --- 2 per item. \textbf{A2 is where the misconception shows}: a
+student who writes $-2.5$ or ``the line guessed too high'' has not yet owned the sign.
+\textbf{B2 carries the check:} distractors (A) and (C) are both the flipped sign in AP clothing.
+
+\textbf{Paper homework is the default for this course} --- assign this page unless you have
+decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
+instead, it replaces this page, you strike through the score cell on the cover, and this page
+stays in the packet as extra practice. Never assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    A survey finds 45 of 150 smokers (30\%) and 18 of 180 non-smokers (10\%) developed a certain condition. Students: (1) compute the difference in proportions and interpret, (2) compute the relative risk and interpret, (3) state which statistic better conveys the practical importance of the association and justify.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``Based on the table, calculate and interpret the relative risk of [outcome] for Group A compared to Group B. Does the relative risk or the difference in proportions better communicate the strength of this association? Explain.''}\\[4pt]
-    Assess: correct calculation, correct direction, full context in interpretation.
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{The residual's sign, flipped or misread} (notes~7--9, 12; AP MC~1, (b); HW~A2,
+        B2 --- the target misconception). Computing $\hat{y} - y$, or a positive residual read
+        as ``the line was too high.'' Probe: \emph{``Is the point above or below the line?
+        So is the line above or below the point?''}
+  \item \textbf{$y$ and $\hat{y}$ confused} (notes~3; HW~A2): the given data value written as
+        the prediction. Probe: \emph{``Which number came out of the equation?''}
+  \item \textbf{Extrapolation trusted because the arithmetic worked} (notes~4, 13; AP MC~2;
+        HW~A3). Probe: \emph{``What $x$-values was this line built from?''}
+  \item \textbf{A residual plot read as a scatterplot} (notes~10, 14; HW~B1): ``the points go
+        up, so it's linear.'' Probe: \emph{``What is on the vertical axis here --- and where
+        is the zero line?''}
+  \item \textbf{Slope interpretation creeping in early} --- welcome the question, park it for
+        Lesson~2.4.
+\end{itemize}
+Cold-call prompts: \emph{``Give me a residual of zero in words.''} \quad \emph{``Name an
+$x$-value that would be extrapolation for the pizza line.''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Given two different two-way tables, compute both statistics for each and write a comparison paragraph.
-        \item Reflect: When would a researcher prefer to report relative risk vs.\ difference in proportions?
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Research ``absolute risk reduction'' and ``number needed to treat'' --- two more ways to quantify the same association in medical studies.
-        \item \textit{Preview}: Lesson 2.4 shifts to two \textit{quantitative} variables. Instead of a table, we'll plot data on a coordinate plane --- a scatterplot. Think about what features you would look for in such a plot.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Start the Homework (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+five items on paper, scored, due the first class after two study halls --- and point out that
+the AP Practice page before it is theirs to work and bring to review. Circulate:
+\textbf{A2 is the item that tells you whether the crux landed}. Sort what you see into three
+piles as you walk --- $22.5 - 20.0 = +2.5$ and ``listed above the prediction; the line
+underpredicted'' (ready); $+2.5$ with no reading, or a reading with no number (ready, needs the
+language); $-2.5$ or ``too high'' (the misconception survived) --- and open Lesson~2.4 by
+reworking problem~9 if that third pile ran past a third of the room. Then close on what changed:
+\emph{``You walked in able to plug a number into a line. You walk out knowing the line is a
+guess, how far each point missed it, and which way.''} \textbf{Preview:} Lesson~2.4,
+\emph{Least-Squares Regression} --- where $a$ and $b$ come from, what the slope and intercept
+say in context, and $r^2$.
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Three items, five minutes. Item~3 is the seed: ``is $(5, 26)$ above or below $y = 8 + 3x$, and by
+how much?'' is a residual with its sign read from the picture before anyone has a formula to
+misapply. \textbf{Write the room's answer --- ``3 above'' --- on the board and leave it all
+period}; problems~7 and~9 lean on it. If a student subtracts $23 - 26$ and says ``below,'' ask
+the room to look at the height, not the subtraction, and leave the order question for the notes.
+Item~1 is a one-minute spiral to Lesson~2.2 --- do not let it grow.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Four rows, 14
+problems, two pages. \textbf{You work problems 1, 4, and~7}; the class works the rest of each
+grid; problems 11--14 are Guided Practice, together. The first two rows are machinery and must
+move --- six minutes each. Prediction is substitution, and students already know how to
+substitute; the only new thing in row~1 is the hat, which is why \textbf{problem~3 is the trap}
+(the given 24 is $y$, the line's 26 is $\hat{y}$).
+
+\textbf{Spend the time in Actual Minus Predicted}, which carries the misconception.
+\textbf{Problem~9 is the crux} --- Jordan's $23 - 26 = -3$, ``so the line predicted too high,''
+has two errors, and the second survives the first: a student who fixes the order often keeps
+``too high.'' Do not rescue it. Collect one such paper for the debrief.
+
+\textbf{Keep the residual plot modest.} Problem~10 and problem~14 ask one thing: is there a
+pattern? Random scatter means a line is appropriate. Curves, fans, and outliers in a residual
+plot are Lesson~2.5; if a student asks, say so and move on. Likewise, a student who asks what
+the 3 in $8 + 3x$ \emph{means} is asking the first question of Lesson~2.4 --- park it.
+
+\textbf{Sleep \& Reaction is where the pen changes hands.} Problem~12 is the crux transferred,
+and the context makes it harder: a positive residual is a \emph{slower} reaction. If you only
+get through 11, 12, and~14, that is the right trade; 13 can be done aloud.
+
+\textbf{There is no independent practice set on this page, and that is deliberate --- the
+homework is the individual practice.} The period ends with students starting it in front of
+you; A2 is the item to watch. \textbf{Debrief (8 min), spoken}: open on the almost-right
+problem~9. \textbf{Do not let the debrief eat the last eight minutes.}
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded practice for this lesson is
+the homework behind it. Work it as AP-format reps and go over it at the start of Lesson~2.4.
+\textbf{MC~1 is the one worth reading closely}: (A) is $\hat{y} - y$ and (C) has the right
+number with the wrong reading, which is exactly problem~9's two errors split into two
+distractors. If more than a handful choose (C), the sign-reading half of the misconception is
+the one that survived --- reopen the ``above the line means the line was too low'' picture
+before Lesson~2.4 builds residuals into least squares. Part~(c) is the spiral; it must hedge
+(association, not causation) to earn credit.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored, 10 points (2 per item), due the first class after two study halls.} The eight
+minutes at the end of the period are a \emph{start}, not a completion: put students on A1, A2,
+and~B2 while you can still catch a wrong start, and let A3 and B1 go home. \textbf{A2 is the
+one to read first when scoring} --- full credit needs $+2.5$ (thousand dollars), the words
+``listed above the prediction,'' and ``underpredicted'' or equivalent; a correct number with
+``too high'' earns 1 of 2. A3 earns full credit only if it names extrapolation (150 is outside
+8--95), not merely ``prices can't be negative.'' \textbf{B2}: (B), and the justification must
+use the sign. If more than a third of the room misses A2 or B2, open Lesson~2.4 with problem~9
+again --- Lesson~2.4 minimizes squared residuals, and it rests on this.
+
+\textbf{Paper is the default.} On the occasions you assign DeltaMath in its place, strike the
+score cell on the cover and tell students this page is now optional practice. Do not assign
+both.
+\end{teachernote}
 \end{document}

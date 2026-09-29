@@ -1,151 +1,98 @@
-%! AP Statistics — Unit 2, Lesson 2.2 — Homework KEY
-\documentclass[10pt]{article}
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — Homework (Answer Key)
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT; DeltaMath is an occasional override that replaces this page and
+% strikes its score cell on the cover. Started in the last eight minutes of the period.
+% ONE PAGE (compact budget), five items in two parts: A1–A2 on the plot, B1–B3 on r.
+% THIRD CONTEXT: the notes teach on cars, Guided Practice runs on a city pool, AP Practice on
+% screen time and sleep; Part A is a basketball team — fresh data again.
+%   practice (h/week): 2 3 3 4 5 5 6 7 7 8 9 10 11 12
+%   free-throw %     : 52 55 60 58 63 57 66 64 70 68 74 72 50 80      r = 0.60
+%   (the 11-hour, 50% player is the unusual point; without them r is about 0.95)
+% B2 is the target misconception (r near 0 read as "no relationship"); B3 is causation.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction.
+% NO teachernote here — teacher prose lives in the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Homework --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.1in}
+\vspace{0.04in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For each problem: (a) complete missing values, (b) compute conditional
-relative frequencies, and (c) state whether there is evidence of an association.
-\end{tcolorbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PROBLEM 1 KEY
-% ════════════════════════════════════════════════════════════════════════════
-\begin{blurbbox}[Problem 1]{navylight}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
 \small
+\textbf{This is your graded homework.} Scored; due the first class after two study halls.
+\end{remindbox}
 
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l C{2.4cm} C{2.4cm} C{2.2cm} @{}}
-\rowcolor{sky}
-                     & \textbf{Remote: Yes} & \textbf{Remote: No} & \textbf{Row Total} \\
-\hline
-Nexus       & 60  & 40  & 100 \\
-Apex        & 30  & 70  & 100 \\
-\hline
-Col.\ Total & \ans{90} & \ans{110} & \ans{200} \\
-\end{tabularx}
+\vspace{0.04in}
 
-\vspace{10pt}
-\textbf{(b)} P(Remote $|$ Nexus) $= \ans{60}/\ans{100} = \ans{60\%}$
-\hfill
-P(Remote $|$ Apex) $= \ans{30}/\ans{100} = \ans{30\%}$
+\boxguard[20]
+\begin{notesbox}{Part A --- Practice and Free Throws}
+\begin{minipage}[c]{0.44\linewidth}\raggedright
+A coach recorded each of 14 players' hours of free-throw practice per week and their
+free-throw percentage for the season. Technology gives $r = 0.60$.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.54\linewidth}\centering
+\begin{tikzpicture}[x=0.52cm, y=0.05cm]
+  \foreach \y in {50,60,70,80} {
+    \draw[linegray, very thin] (0,\y) -- (13,\y);
+    \node[left, font=\tiny] at (0,\y) {\y};}
+  \draw[thick] (0,45) -- (13.2,45);
+  \draw[thick] (0,45) -- (0,84);
+  \foreach \x in {0,2,4,6,8,10,12} {
+    \draw (\x,44.3) -- (\x,45.7); \node[below, font=\tiny] at (\x,44.5) {\x};}
+  \foreach \h/\p in {2/52, 3/55, 3/60, 4/58, 5/63, 5/57, 6/66, 7/64, 7/70, 8/68, 9/74,
+                     10/72, 11/50, 12/80}
+    \fill[navy] (\h,\p) circle (1.5pt);
+  \node[font=\tiny] at (6.5,33.5) {Practice (hours per week)};
+  \node[rotate=90, font=\tiny] at (-1.3,64.5) {Free throws (\%)};
+\end{tikzpicture}
+\end{minipage}
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt, topsep=4pt]
+  \item Explanatory variable: \ans{hours of practice} \quad Response: \ans{free-throw \%}
+  \item Describe the association in context (direction, unusual point, form, strength).
+        \answerspace{1.2cm}{Moderate, positive, linear: players who practice more tend to make a
+        higher percent of free throws. One player (11 hours, 50\%) sits far below the pattern.}
+\end{enumerate}
+\end{notesbox}
 
-\vspace{8pt}
-\textbf{(c)} \ans{Yes, there is evidence of an association. Nexus employees work remotely
-at twice the rate of Apex employees (60\% vs.\ 30\%). The conditional distributions differ
-substantially, suggesting that company and remote work status are associated.}
+\vspace{0.04in}
 
-\end{blurbbox}
+\boxguard[14]
+\begin{notesbox}{Part B --- What $r$ Can and Cannot Tell You}
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt, topsep=2pt]
+  \item \textbf{AP-style multiple choice.} Which correlation shows the \emph{strongest}
+        linear association? Circle one, then justify it in a sentence.\par
+        \textbf{(A)} $r = 0.45$ \quad \ans{\textbf{(B)} $r = -0.91$} \quad \textbf{(C)} $r = 0$
+        \quad \textbf{(D)} $r = 0.78$ \quad \textbf{(E)} $r = -0.20$
+        \answerspace{0.7cm}{$-0.91$ is closest to $\pm 1$; the sign gives only the direction.}
+  \item For 40 people aged 5 to 85, age vs.\ reaction time makes a clear U (young adults
+        fastest), and $r = 0.05$. Jordan says age and reaction time are unrelated. Is he right?
+        \answerspace{1.1cm}{No. There is a strong \emph{curved} relationship. $r$ near 0 only
+        says there is no \emph{linear} association.}
+  \item Across 50 towns, $r = 0.92$ between the number of libraries and the number of crimes.
+        Should a town close libraries to cut crime? Explain.
+        \answerspace{1.1cm}{No. Correlation is not causation. Bigger towns have more of both, so
+        population is a likely lurking variable.}
+\end{enumerate}
+\end{notesbox}
 
-\vspace{0.14in}
+\vspace{0.04in}
 
-% ════════════════════════════════════════════════════════════════════════════
-% PROBLEM 2 KEY
-% ════════════════════════════════════════════════════════════════════════════
-\begin{blurbbox}[Problem 2]{greenacc}
+% The next-lesson preview closes the packet.
+\boxguard[4]
+\begin{spiralbox}
 \small
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l C{2.0cm} C{2.0cm} C{2.0cm} C{2.0cm} @{}}
-\rowcolor{sky}
-                      & \textbf{Low} & \textbf{Moderate} & \textbf{High} & \textbf{Row Total} \\
-\hline
-Short sleep  & 18 & 42 & 90 & \ans{150} \\
-Adequate     & 60 & 54 & 36 & \ans{150} \\
-\hline
-Col.\ Total  & \ans{78} & \ans{96} & \ans{126} & \ans{300} \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{(b)} Conditional distributions:
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l C{2.6cm} C{2.6cm} C{2.6cm} C{1.6cm} @{}}
-\rowcolor{sky}
-                     & \textbf{Low} & \textbf{Moderate} & \textbf{High} & \textbf{Total} \\
-\hline
-Short sleep & \ans{12\%} & \ans{28\%} & \ans{60\%} & 100\% \\
-Adequate    & \ans{40\%} & \ans{36\%} & \ans{24\%} & 100\% \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{(c)} Segmented bar chart: two bars (Short / Adequate), each reaching 100\%,
-divided into Low (bottom), Moderate (middle), High (top). Short sleep: 12/28/60;
-Adequate: 40/36/24. High-stress segment is much larger for Short sleep.
-
-\vspace{8pt}
-\textbf{(d)} \ans{There is strong evidence of an association between sleep duration and
-academic stress. Among short-sleepers, 60\% report high stress, compared to only 24\%
-of adequate sleepers. The conditional distributions differ greatly across the two groups.}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% PROBLEM 3 KEY
-% ════════════════════════════════════════════════════════════════════════════
-\begin{blurbbox}[Problem 3]{redacc}
-\small
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l C{2.6cm} C{2.6cm} C{2.4cm} @{}}
-\rowcolor{sky}
-                     & \textbf{Music: Yes} & \textbf{Music: No} & \textbf{Row Total} \\
-\hline
-Print books & 0.24 & 0.16 & \ans{0.40} \\
-E-books     & 0.36 & 0.24 & \ans{0.60} \\
-\hline
-Col.\ Total & \ans{0.60} & \ans{0.40} & \ans{1.00} \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{(b)} P(Music $|$ Print) $= \ans{0.24}/\ans{0.40} = \ans{0.60 = 60\%}$
-\hfill
-P(Music $|$ E-books) $= \ans{0.36}/\ans{0.60} = \ans{0.60 = 60\%}$
-
-\vspace{8pt}
-\textbf{(c)} \ans{\textbf{No} evidence of association. Both print and e-book readers
-listen to music while studying at exactly the same rate (60\%). The conditional
-distributions are identical, so there is no association between book preference and
-music listening.}
-
-\end{blurbbox}
-
-\vspace{0.14in}
-
-\begin{reflectionbox}
-\small
-\ans{We use conditional relative frequencies because raw counts and joint relative
-frequencies are affected by the sizes of the groups. Conditional frequencies put each
-group on the same ``100\%'' scale, allowing fair comparison. For example, in Problem 2
-the short-sleep and adequate-sleep groups had the same number of students (150 each),
-but the raw count comparison would still be misleading for groups of different sizes.
-Joint relative frequencies tell us what fraction of \emph{everyone} falls in a cell,
-not what fraction of each group shows the outcome --- that distinction is what reveals
-association.}
-\end{reflectionbox}
-
-\begin{teachernote}
-\textbf{Problem 3 (no association):} A deliberate counterexample --- students should not assume every table shows association. The identical conditional frequencies (60\%/60\%) are the key. Emphasize: association requires the conditional distributions to \emph{differ}.
-\textbf{Problem 2 (sleep/stress):} The unequal group sizes (150/150 here, but could differ) reinforce why conditional, not joint, frequencies matter.
-\end{teachernote}
+\textbf{Next lesson: Regression Lines and Residuals.} A linear pattern earns a line: we use it to
+\emph{predict} the response, then measure how far each point misses.
+\end{spiralbox}
 
 \end{document}

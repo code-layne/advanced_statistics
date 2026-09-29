@@ -1,103 +1,62 @@
-%! AP Statistics — Unit 2, Lesson 2.2 — Warm-Up KEY
-\documentclass[10pt]{article}
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three short items.
+% Item 1 spirals to Lesson 2.1 (association between two categorical variables, by comparing
+% conditional percents) and plants the word ASSOCIATION. Item 2 spirals to Unit 1 (the four
+% things every description of a distribution names) and seeds DOFS, today's four-part
+% description. Item 3 seeds explanatory/response and direction with five pairs of numbers.
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Warm-Up --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.3in}
+\vspace{0.28in}
 
-{\large\bfseries\color{navy} Part 1 \quad Frequency Tables (Lesson 1.4 Review)}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.75in]
 
-\vspace{0.12in}
+  \item \textbf{From last lesson.} At one school, 60 of the 80 students who play a sport
+        passed a fitness test, and 72 of the 120 who do not play a sport passed.
 
-\noindent A survey asked 60 students which after-school activity they prefer.
-The results are shown below.
+        \vspace{12pt}
+        Pass rate, sport: \ans{75\%} \qquad no sport: \ans{60\%}
+        \vspace{16pt}
 
-\vspace{0.1in}
+        Is there an \emph{association} between playing a sport and passing? How can you
+        tell?\\[18pt]
+        \ansline{Yes --- the pass rates differ (75\% vs.\ 60\%),}\\[1pt]
+        \ansline{so knowing one variable helps predict the other.}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} l C{2.8cm} C{2.8cm} @{}}
-\rowcolor{sky}
-\textbf{Activity}   & \textbf{Frequency} & \textbf{Relative Frequency} \\
-\hline
-Sports              & 24 & \ans{$24/60 = 0.40$} \\
-Arts / Music        & 18 & \ans{$18/60 = 0.30$} \\
-Academic clubs      & 12 & \ans{$12/60 = 0.20$} \\
-None / Other        &  6 & \ans{$6/60 = 0.10$} \\
-\hline
-\textbf{Total}      & \ans{60} & \ans{1.00} \\
-\end{tabularx}
+  \item \textbf{From Unit 1.} Every description of a distribution of one quantitative
+        variable names four things. List them.
 
-\vspace{0.18in}
+        \vspace{16pt}
+        \ans{shape} \quad \ans{center} \quad \ans{spread} \quad
+        \ans{outliers/unusual}
 
-\begin{enumerate}
+  \item Five students reported hours studied and their quiz score.
 
-    \item \ans{Relative frequency $= 24 \div 60 = 0.40$ (or 40\%).}
+        \vspace{12pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Hours studied} & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        \textbf{Quiz score} & 62 & 70 & 74 & 81 & 88 \\
+        \end{tabularx}
 
-    \vspace{0.1in}
+        \vspace{16pt}
+        As hours studied go up, what tends to happen to the score? \ans{it tends to go up}
+        \vspace{16pt}
 
-    \item \ans{40\% of surveyed students preferred sports.}
-
-    \vspace{0.1in}
-
-    \item \ans{The bar height would be 0.30 (or 30\%), representing the proportion of
-    students who preferred Arts/Music out of all 60 surveyed.}
+        Which variable would you use to \emph{predict} the other? Why?\\[18pt]
+        \ansline{Hours studied: it comes first, and it could help}\\[1pt]
+        \ansline{explain or predict the score.}
 
 \end{enumerate}
-
-\vspace{0.3in}
-
-{\large\bfseries\color{navy} Part 2 \quad Two Variables at Once}
-
-\vspace{0.12in}
-
-\noindent Now suppose we also recorded whether each student is an underclassman
-(9th/10th grade) or upperclassman (11th/12th grade).
-
-\vspace{0.14in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-    \small
-    \textbf{Think about it:} The one-way table above describes one variable at a time.
-    If we want to know \emph{whether grade level is related to activity preference},
-    we need to cross \textbf{two} categorical variables simultaneously.
-    \begin{itemize}[leftmargin=1.3em, itemsep=6pt]
-        \item A \textbf{two-way table} organizes two categorical variables at once
-              --- you will build one in today's guided notes.
-        \item What would the rows represent? What would the columns represent?
-    \end{itemize}
-\end{tcolorbox}
-
-\vspace{0.16in}
-
-\noindent\textbf{Sketch a blank two-way table.}
-
-\vspace{0.15in}
-
-\renewcommand{\arraystretch}{2.2}
-\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
-\rowcolor{sky}
-\textbf{Grade} & \textbf{Sports} & \textbf{Arts} & \textbf{Clubs} & \textbf{None} & \textbf{Total} \\
-\hline
-Under          & \ans{} & \ans{} & \ans{} & \ans{} & \ans{} \\
-Upper          & \ans{} & \ans{} & \ans{} & \ans{} & \ans{} \\
-\hline
-Total          & \ans{} & \ans{} & \ans{} & \ans{} & \ans{} \\
-\end{tabularx}
-
-\begin{teachernote}
-Part 1: Students should compute all four relative frequencies and verify they sum to 1.00.
-Common error: dividing by a row total rather than the grand total of 60.
-Part 2: Accept any blank two-way table structure with grade level as rows and activity as columns.
-The purpose is to activate schema for what a two-way table looks like before guided notes.
-\end{teachernote}
 
 \end{document}

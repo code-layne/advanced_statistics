@@ -1,411 +1,247 @@
-%! AP Statistics — Unit 2, Lesson 2.2 — Slides (Beamer)
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{apstats-beamer}
+\usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
-%=============================================================================
 \begin{document}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 1 — LESSON TITLE
-% ─────────────────────────────────────────────────────────────────────────────
+% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navylight] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{2.8cm}
-  \hspace{0.55cm}%
+  \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.2}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Representing Two\\[0.25cm]
-      Categorical Variables}\\[1.4cm]
-    {\color{skymid}\small Statistics~$\cdot$~Unit 2: Exploring Two-Variable Data}
+    {\color{white}\bfseries\LARGE Scatterplots and Correlation}\\[1.2cm]
+    {\color{skymid}\small Statistics~$\cdot$~Unit 2}
   \end{minipage}
 \end{frame}
 }
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 2 — PRIMARY OBJECTIVE
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=sky}
+% GRADUAL-RELEASE deck: targets → warm-up → I-DO divider → one frame per notes row (three) →
+% WE-DO guided practice → spoken debrief → close & START THE HOMEWORK (the individual
+% practice). There is no group activity and no independent set in the notes.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navy] (current page.north west)
-      rectangle ([yshift=-0.25cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-
-    \sectionlabel{Primary Objective}
-
-    \normalsize
-    Students will construct and interpret two-way tables and segmented bar charts
-    for two categorical variables, and use \textbf{conditional relative frequencies}
-    to determine whether the variables are associated (Big Idea: UNC, Skill 2.D).
-
-    \vspace{0.6cm}
-
-    \normalsize\textbf{\color{navy}By the end of this lesson, I will be able to:}
-    \smallskip
-    \begin{itemize}
-      \setlength{\itemsep}{0.3em}
-      \item Construct a two-way table and identify joint and marginal frequencies.
-      \item Compute joint and conditional relative frequencies and explain the difference.
-      \item Construct and interpret a segmented bar chart to determine association.
-    \end{itemize}
-
-  \end{minipage}
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 2.2}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item read a \textbf{scatterplot} and name its \textbf{explanatory} and
+          \textbf{response} variables.
+    \item describe an \textbf{association} --- direction, form, strength, unusual features ---
+          in context.
+    \item interpret the \textbf{correlation} $r$, and say why $r$ near 0 is not ``no
+          relationship.''
+    \item explain why a strong $r$ does not show \textbf{causation}.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
-}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 3 — HOOK
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=hookbg}
-\setbeamercolor{itemize item}{fg=white}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-
-    {\color{white}\bfseries\footnotesize\MakeUppercase{Hook}}
-
-    \vspace{0.3cm}
-    {\color{white}\large\bfseries A researcher surveys 240 students and records:}\\[0.3cm]
-    {\color{skymid} Variable 1: Grade level --- Underclassman or Upperclassman}\\[0.15cm]
-    {\color{skymid} Variable 2: Preferred lunch --- Cafeteria, Off-campus, or Home}
-
-    \vspace{0.5cm}
-    {\color{goldacc}\bfseries Statistical question:}\\[0.2cm]
-    {\color{white}\itshape ``Is there an association between grade level and lunch preference?''}
-
-    \vspace{0.5cm}
-    {\color{white}\bfseries Discussion:}
-    \begin{itemize}
-      \setlength{\itemsep}{0.35em}
-      \item {\color{white}Why can't a single bar chart answer this question?}
-      \item {\color{white}What kind of table or chart would let you compare lunch
-        preferences \emph{across} grade levels?}
-    \end{itemize}
-
-  \end{minipage}
+  \navyheader{Warm-Up: three things you already know}
+  \sectionlabel{5 minutes --- on your own}
+  \begin{enumerate}\setlength{\itemsep}{7pt}
+    \item 60 of 80 athletes passed a fitness test; 72 of 120 non-athletes did. Is there an
+          \textbf{association}?
+    \item Name the four things every description of a distribution mentions.
+    \item Five students' study hours and quiz scores: as hours go up, what happens to the
+          score? Which variable would you use to \emph{predict} the other?
+  \end{enumerate}
+  \begin{block}{Keep this on the board}
+    Shape, center, spread, unusual values --- today a scatterplot gets its own four words.
+  \end{block}
 \end{frame}
-}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 4 — BUILDING THE TWO-WAY TABLE
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=white}
-\begin{frame}[t, plain]
-  \navyheader{Step 1 --- Build the Two-Way Table (UNC-1.P.3)}
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{0.3cm}
-    \small
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabular}{l cccc}
-    \rowcolor{sky}
-    \textbf{Grade Level} & \textbf{Cafeteria} & \textbf{Off-campus} & \textbf{Home} & \textbf{Row Total} \\
-    \hline
-    Underclassman & 54 & 18 & 48 & \textcolor{navy!60}{\textit{fill in}} \\
-    Upperclassman & 36 & 42 & 42 & \textcolor{navy!60}{\textit{fill in}} \\
-    \hline
-    \textbf{Col.\ Total} & \textcolor{navy!60}{\textit{fill}} & \textcolor{navy!60}{\textit{fill}} & \textcolor{navy!60}{\textit{fill}} & \textcolor{navy!60}{\textit{fill}} \\
-    \end{tabular}
-
-    \vspace{0.5cm}
-    \begin{columns}[T]
-      \begin{column}{0.48\textwidth}
-        \textbf{\color{navy}Vocabulary:}
-        \begin{itemize}\setlength{\itemsep}{0.3em}
-          \item \textbf{Joint frequency} --- count in an interior cell (describes both variables)
-          \item \textbf{Marginal frequency} --- row or column total (describes one variable)
-        \end{itemize}
-      \end{column}
-      \begin{column}{0.48\textwidth}
-        \textbf{\color{navy}Grand total:}\\
-        Sum of row totals = sum of column totals = \textbf{240}
-      \end{column}
-    \end{columns}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 5 — JOINT vs. CONDITIONAL RELATIVE FREQUENCIES
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=greenbg}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[greenacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large, inner xsep=0.55cm]
-      at ([yshift=-0.68cm]current page.north west)
-      {Step 2 --- Joint vs.\ Conditional Relative Frequencies (UNC-1.P.4)};
-  \end{tikzpicture}
-  \vspace{1.05cm}\par
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{1em}
-    \small
-    \begin{columns}[T]
-      \begin{column}{0.48\textwidth}
-        \textbf{\color{greenacc}Joint relative frequency}\\[4pt]
-        $\dfrac{\text{cell count}}{\text{grand total}}$\\[8pt]
-        Example: underclassmen who eat in the cafeteria\\[4pt]
-        $\dfrac{54}{240} = 0.225 = 22.5\%$ of \textbf{all students}
-      \end{column}
-      \begin{column}{0.48\textwidth}
-        \textbf{\color{greenacc}Conditional relative frequency}\\[4pt]
-        $\dfrac{\text{cell count}}{\text{row (or column) total}}$\\[8pt]
-        Example: among underclassmen, proportion who eat in the cafeteria\\[4pt]
-        $\dfrac{54}{120} = 0.45 = 45\%$ of \textbf{underclassmen}
-      \end{column}
-    \end{columns}
-    \vspace{0.6cm}
-    \textbf{\color{navy}Key question:} To detect association, which do we use and why?\\
-    \textit{Use \textbf{conditional} --- it holds group size constant (``out of each group'').}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 6 — CONDITIONAL DISTRIBUTION TABLE
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=white}
-\begin{frame}[t, plain]
-  \navyheader{Step 3 --- Complete the Conditional Distribution Table}
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{0.3cm}
-    \small
-    Divide each row by its row total; round to the nearest percent.
-
-    \vspace{0.3cm}
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabular}{l cccc}
-    \rowcolor{sky}
-    \textbf{Grade Level} & \textbf{Cafeteria} & \textbf{Off-campus} & \textbf{Home} & \textbf{Total} \\
-    \hline
-    Underclassman & 45\% & 15\% & 40\% & 100\% \\
-    Upperclassman & 30\% & 35\% & 35\% & 100\% \\
-    \end{tabular}
-
-    \vspace{0.5cm}
-    \textbf{Compare the rows:}
-    \begin{itemize}\setlength{\itemsep}{0.3em}
-      \item Underclassmen: mostly cafeteria (45\%), very few go off-campus (15\%)
-      \item Upperclassmen: cafeteria use drops to 30\%, off-campus jumps to 35\%
-      \item The rows are \textbf{different} $\to$ evidence of an \textbf{association}
-    \end{itemize}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 7 — SEGMENTED BAR CHART
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=white}
-\begin{frame}[t, plain]
-  \navyheader{Step 4 --- Segmented Bar Chart (UNC-1.P.1, UNC-1.P.2)}
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{0.3cm}
-    \begin{columns}[T]
-      \begin{column}{0.48\textwidth}
-        \small
-        \textbf{\color{navy}Construction rules:}
-        \begin{enumerate}\setlength{\itemsep}{0.3em}
-          \item One bar per group (explanatory variable).
-          \item Each bar reaches 100\%.
-          \item Divide bar into segments using \textbf{conditional} relative frequencies.
-          \item Label segments; use a consistent color legend.
-        \end{enumerate}
-        \vspace{6pt}
-        \textbf{\color{navy}Reading the chart:}\\
-        \textit{If bars look the same $\to$ no association.}\\
-        \textit{If bars look different $\to$ association.}
-      \end{column}
-      \begin{column}{0.48\textwidth}
-        \begin{tikzpicture}[x=1.5cm, y=0.033cm]
-          \draw[thick,->] (0,0) -- (3.0,0);
-          \draw[thick,->] (0,0) -- (0,115) node[above,font=\tiny] {\%};
-          \foreach \y in {0,25,50,75,100}{
-            \draw (0,\y) -- (-0.07,\y) node[left,font=\tiny] {\y};
-          }
-          \node[below,font=\small] at (0.75,0) {Under};
-          \node[below,font=\small] at (2.25,0) {Upper};
-          \fill[navy!70]     (0.2,  0) rectangle (1.3, 45);
-          \fill[sky!80!navy] (0.2, 45) rectangle (1.3, 60);
-          \fill[greenbg!90]  (0.2, 60) rectangle (1.3,100);
-          \draw (0.2,0) rectangle (1.3,100);
-          \fill[navy!70]     (1.7,  0) rectangle (2.8, 30);
-          \fill[sky!80!navy] (1.7, 30) rectangle (2.8, 65);
-          \fill[greenbg!90]  (1.7, 65) rectangle (2.8,100);
-          \draw (1.7,0) rectangle (2.8,100);
-          \fill[navy!70]   (-0.05,108) rectangle (0.13,116); \node[right,font=\tiny] at (0.15,112) {Cafe};
-          \fill[sky!80!navy] (0.62,108) rectangle (0.80,116); \node[right,font=\tiny] at (0.82,112) {Off};
-          \fill[greenbg!90] (1.15,108) rectangle (1.33,116); \node[right,font=\tiny] at (1.35,112) {Home};
-        \end{tikzpicture}
-      \end{column}
-    \end{columns}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 8 — VOCABULARY
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=greenbg}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[greenacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large, inner xsep=0.55cm]
-      at ([yshift=-0.68cm]current page.north west)
-      {Vocabulary \& Key Concepts};
-  \end{tikzpicture}
-  \vspace{1.05cm}\par
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{1em}
-    \footnotesize
-    \begin{multicols}{2}
-      \textbf{\color{greenacc}Two-way table} --- organizes two categorical variables simultaneously; rows = one variable, columns = other\\[4pt]
-      \textbf{\color{greenacc}Joint frequency} --- count in a single interior cell; describes both variables at once\\[4pt]
-      \textbf{\color{greenacc}Marginal frequency} --- row or column total; one variable, ignoring the other\\[4pt]
-
-      \columnbreak
-
-      \textbf{\color{greenacc}Joint relative frequency} --- cell count $\div$ grand total (UNC-1.P.4)\\[4pt]
-      \textbf{\color{greenacc}Conditional relative frequency} --- cell count $\div$ row or column total; holds one variable fixed\\[4pt]
-      \textbf{\color{greenacc}Association} --- present when conditional distributions \emph{differ} across groups
-    \end{multicols}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 9 — GROUP ACTIVITY
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=redbg}
-\setbeamercolor{enumerate item}{fg=redacc}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[redacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm, inner ysep=0pt]
-      at ([yshift=-0.675cm]current page.north west)
-      {Group Activity};
-  \end{tikzpicture}
-  \vspace{1.05cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    \vspace{1em}
-    \small
-    \textbf{Two-Way Tables --- Tiered Practice}\\[6pt]
-    Work on the tier assigned by your teacher:
-    \begin{itemize}
-      \setlength{\itemsep}{0.4em}\setlength{\topsep}{0em}
-      \item \textbf{Tier R:} Given a completed 2$\times$2 table --- compute conditional relative frequencies and state association.
-      \item \textbf{Tier A:} Build a 2$\times$3 table from counts --- compute conditionals, sketch segmented bar chart, state association.
-      \item \textbf{Tier E:} Start from joint relative frequencies --- derive conditionals, compare, state association, and investigate symmetry.
-    \end{itemize}
-    \vspace{0.5cm}
-    {\color{redacc}\bfseries\small TIME: 10--12 minutes}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 10 — EXIT TICKET
-% ─────────────────────────────────────────────────────────────────────────────
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
-\setbeamercolor{enumerate item}{fg=white}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navylight] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Exit Ticket}}
-    \vspace{0.4cm}\par
-    {\color{skymid}\small\itshape
-      180 students: pet ownership (Yes/No) $\times$ volunteering (Yes/No).
-      Pet owners: 48 volunteer, 72 do not. Non-owners: 24 volunteer, 36 do not.}
-    \vspace{0.4cm}
-    \small
-    \begin{enumerate}
-      \setlength{\itemsep}{0.45em}
-      \item {\color{white}Fill in all missing marginal totals.}
-      \item {\color{white}Compute P(Volunteer $|$ Pet: Yes) and P(Volunteer $|$ Pet: No).}
-      \item {\color{white}Is there evidence of an association? Justify.}
-    \end{enumerate}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Three terms go in the vocabulary box today. Write each one the
+    moment we use it.}
   \end{minipage}
 \end{frame}
 }
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 11 — CLOSING
-% ─────────────────────────────────────────────────────────────────────────────
+% ── ROW 1: TWO QUANTITATIVE VARIABLES ────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Two quantitative variables}
+  \sectionlabel{notes, Variables $\cdot$ problems 1--3}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Scatterplot}
+        Two quantitative variables on the same individuals --- \textbf{one dot per
+        individual} (EK UNC-1.S.1, 1.S.2).
+      \end{block}
+      \vspace{4pt}
+      \begin{block}{Explanatory $\to$ response}
+        The \textbf{explanatory} variable ($x$-axis) helps explain or predict the
+        \textbf{response} ($y$-axis) (EK UNC-1.S.3).
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[x=1.0cm, y=0.065cm]
+        \foreach \y in {20,30,40,50} {
+          \draw[linegray, very thin] (2,\y) -- (6,\y);
+          \node[left, font=\tiny] at (2,\y) {\y};}
+        \draw[thick] (2,15) -- (6.1,15); \draw[thick] (2,15) -- (2,52);
+        \foreach \x in {2,3,4,5,6} \node[below, font=\tiny] at (\x,15) {\x};
+        \foreach \w/\m in {2.5/38, 2.8/36, 3.0/35, 3.2/48, 3.3/32, 3.5/31, 3.6/29, 3.9/28,
+                           4.1/26, 4.4/24, 4.8/21, 5.4/17}
+          \fill[navy] (\w,\m) circle (2pt);
+        \node[font=\tiny] at (4,7) {Weight (1000 lb)};
+        \node[rotate=90, font=\tiny] at (1.4,33) {Highway mpg};
+      \end{tikzpicture}\\[2pt]
+      {\small 12 car models}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: DESCRIBING THE PATTERN ────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Describing the pattern: DOFS}
+  \sectionlabel{notes, Pattern $\cdot$ problems 4--6 $\cdot$ always in context}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \textbf{D}irection --- positive or negative (EK DAT-1.A.2, 1.A.3)
+        \item \textbf{O}utliers \& unusual features --- far from the pattern, or clusters
+              (EK DAT-1.A.6)
+        \item \textbf{F}orm --- linear or curved (EK DAT-1.A.4)
+        \item \textbf{S}trength --- how closely points follow the form (EK DAT-1.A.5)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{The cars, in one sentence}
+        A strong, negative, linear association between weight and highway mpg --- heavier
+        cars tend to get lower mpg. One hybrid sits far above the pattern.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{center}
+    {\large The heaviest car is far to the right --- but it \redink{fits the pattern.}}\\[4pt]
+    {\small\color{slate} Unusual means far from the \emph{pattern}, not far from the middle.}
+  \end{center}
+\end{frame}
+
+% ── ROW 3: READING r — THE CRUX ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Reading the correlation $r$}
+  \sectionlabel{notes, Reading $r$ $\cdot$ problems 7--10 $\cdot$ problem 9 is the crux}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item $r$ gives the direction and strength of the \textbf{linear} association
+              (EK DAT-1.B.1).
+        \item $-1 \le r \le 1$; no units; switching $x$ and $y$ leaves it alone
+              (EK DAT-1.C.1).
+        \item Cars: $r = -0.86$ --- negative and fairly strong.
+        \item Correlation is \textbf{not} causation (EK DAT-1.C.2).
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.068cm, y=0.16cm]
+        \foreach \y in {20,25,30,35} {
+          \draw[linegray, very thin] (15,\y) -- (80,\y);
+          \node[left, font=\tiny] at (15,\y) {\y};}
+        \draw[thick] (15,20) -- (81,20); \draw[thick] (15,20) -- (15,37);
+        \foreach \x in {20,40,60,80} \node[below, font=\tiny] at (\x,20) {\x};
+        \foreach \s/\m in {20/23, 25/27, 30/30, 35/32, 40/34, 45/35, 50/35, 55/34, 60/32,
+                           65/30, 70/27, 75/24}
+          \fill[navy] (\s,\m) circle (2pt);
+        \node[font=\tiny] at (47.5,16.5) {Speed (mph)};
+        \node[rotate=90, font=\tiny] at (7,28) {mpg};
+      \end{tikzpicture}\\[2pt]
+      {\small One car, 12 speeds: $r = 0.03$}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{center}
+    {\large $r = 0.03$ --- and yet speed \redink{clearly matters.}}\\[4pt]
+    {\small\color{slate} $r$ near 0 means no \emph{linear} association. Look at the plot first.}
+  \end{center}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The City Pool}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--13}
+  High temperature and visitors at a city pool on 14 summer days; $r = 0.90$.
+  \begin{itemize}\setlength{\itemsep}{6pt}
+    \item Which variable is explanatory, and which is the response?
+    \item Describe the association in context --- direction, form, strength, unusual points,
+          and $r$.
+    \item Ice-cream sales and visitors have $r = 0.88$. Does ice cream bring swimmers?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    When two things rise together, ask: \redink{what else rises with both?}
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: what $r$ can and cannot say}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[T]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{$r$ near 0}
+        No \emph{linear} association. The speed plot is a strong curve with $r = 0.03$.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{$r$ near $\pm 1$}
+        A strong linear pattern --- still not proof that $x$ causes $y$.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{block}{Say it out loud}
+    Name something $r$ tells you, and something only the \redink{picture} can tell you.
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{Scored $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Part A:} practice hours and free throws --- variables, then a description
+          in context.
+    \item \textbf{Part B:} the strongest $r$, a U-shaped plot with $r = 0.05$, and libraries
+          and crime.
+    \item \textbf{AP Practice --- not scored:} screens and sleep. Work it for the reps.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Part B, item 2} is the one I am reading over your shoulder. If you wrote ``no
+    relationship,'' flag me before you leave.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
-\setbeamercolor{itemize item}{fg=white}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navylight] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Closing \& What's Next}}
-    \vspace{0.45cm}\par
-    \begin{columns}[T]
-      \begin{column}{0.54\textwidth}
-        \small
-        {\color{goldacc}\bfseries Key Reminders}\\[5pt]
-        \begin{itemize}
-          \setlength{\itemsep}{0.4em}
-          \item {\color{white}\textbf{Joint vs.\ conditional.}
-            {\color{skymid} Joint $\div$ grand total; conditional $\div$ row/col total.
-            Use conditional to detect association.}}
-          \item {\color{white}\textbf{Condition on the explanatory variable.}
-            {\color{skymid} Divide by the row/column of the variable that explains.}}
-          \item {\color{white}\textbf{Segmented bars tell the story.}
-            {\color{skymid} Same bars $=$ no association; different bars $=$ association.}}
-        \end{itemize}
-      \end{column}
-      \begin{column}{0.42\textwidth}
-        \small
-        {\color{goldacc}\bfseries Where We Go Next}\\[5pt]
-        \begin{itemize}
-          \setlength{\itemsep}{0.35em}
-          \item {\color{white}\textbf{Lesson 2.3:} Quantify association with
-            difference in proportions \& relative risk}
-          \item {\color{white}\textbf{Lessons 2.4--2.9:} Two quantitative variables
-            $\to$ scatterplots and regression}
-          \item {\color{white}\textbf{Unit 8:} Chi-square test for significance}
-        \end{itemize}
-        \vspace{0.5cm}
-        {\color{skymid}\itshape\small Homework due next class.}
-      \end{column}
-    \end{columns}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large $r$ measures a straight line. Look at the picture before
+    you believe the number.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 2.3 --- Regression Lines and Residuals. When the
+    pattern is linear, we draw the line and use it to predict.}
   \end{minipage}
 \end{frame}
 }

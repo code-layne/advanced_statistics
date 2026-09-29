@@ -1,46 +1,38 @@
-%! AP Statistics — Unit 2, Lesson 2.2 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — Student Packet Cover Sheet
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
 
-%=============================================================================
 \begin{document}
 
-% ── Full-bleed navy banner ────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
-
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2: Exploring Two-Variable Data}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.2 \quad Representing Two Categorical Variables}}
-\end{center}
-
-\vspace{0.22in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the band to it.
+\coverbanner{Unit 2}{Lesson 2.2 \quad Scatterplots and Correlation}
 
 \namedateperiod
-
 \vspace{0.18in}
 
-% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objectives (UNC-1.S, DAT-1.A, DAT-1.B, DAT-1.C) stay in the plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} construct a two-way (contingency) table and identify joint and marginal
-        frequencies.
-  \item \ldots{} compute joint and conditional relative frequencies from a two-way table
-        and explain the difference between them.
-  \item \ldots{} construct and interpret a segmented bar chart using conditional relative
-        frequencies to determine whether two categorical variables are associated.
+  \item \ldots{} read a \textbf{scatterplot} and name its \textbf{explanatory variable} and its
+        \textbf{response variable}.
+  \item \ldots{} describe an \textbf{association} by its \textbf{direction}, \textbf{form},
+        \textbf{strength}, and \textbf{unusual features} --- in context.
+  \item \ldots{} interpret the \textbf{correlation} $r$ and explain why $r$ near 0 does not mean
+        ``no relationship.''
+  \item \ldots{} explain why a strong correlation does not show that one variable
+        \textbf{causes} the other.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
-% ── TABLE OF CONTENTS ────────────────────────────────────────────────────────
+\boxguard[14]
 \begin{tocbox}
 \small
 \renewcommand{\arraystretch}{1.5}
@@ -48,11 +40,17 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up       & Spiral review --- relative frequency tables      & \blank{1.2cm} \\
-2 & Guided Notes  & Two-way tables, joint/conditional frequencies, segmented bars & \blank{1.2cm} \\
-3 & Group Activity & Build and interpret two-way tables by tier        & \blank{1.2cm} \\
-4 & Exit Ticket   & Compute conditional frequencies; describe association & \blank{1.2cm} \\
-5 & Homework      & Real-data two-way tables + segmented bar charts    & \blank{1.2cm} \\
+1 & Warm-Up & Pass rates, the four words for a distribution, and five students' study
+                 hours & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Weight and fuel economy for 12 cars, one car driven at 12
+                 speeds, and a city pool on hot days & \blank{1.2cm} \\
+% AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
+3 & AP Practice & Screen time and sleep: two multiple-choice items and one free-response set
+                 --- practice, not a grade & \textbf{NA} \\
+4 & Homework & Practice hours and free throws, then what $r$ can and cannot tell you ---
+                 \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -60,32 +58,15 @@
 
 \vspace{0.14in}
 
-% ── KEEP IN MIND ─────────────────────────────────────────────────────────────
+\boxguard[8]
 \begin{remindbox}
 \small
-Two categorical variables call for a two-way table. Here are the key ideas to keep in mind.
-
-\vspace{6pt}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
-                                    X @{}}
-\textbf{\large!} &
-\textbf{Joint vs.\ conditional.}\enspace
-A joint relative frequency divides a cell by the \emph{grand} total.
-A conditional relative frequency divides by a \emph{row or column} total.
-To detect association, use conditional frequencies. \\[6pt]
-\textbf{\large!} &
-\textbf{Condition on the explanatory variable.}\enspace
-Identify which variable is explanatory, then divide by its row (or column) total.
-Comparing those conditional distributions reveals association. \\[6pt]
-\textbf{\large!} &
-\textbf{Segmented bars add to 100\%.}\enspace
-Each bar represents one group; segments are proportional to conditional relative
-frequencies. If the bars look the same, there is no association. \\[6pt]
-\textbf{\large!} &
-\textbf{Association $\neq$ causation.}\enspace
-Even a clear association in a two-way table does not mean one variable causes the
-other --- remember Lesson 2.1. \\
-\end{tabularx}
+\textbf{Look before you calculate.} The correlation $r$ only measures how well the points fit a
+\emph{straight line}. A car driven at different speeds makes a clean curve and still has
+$r$ close to 0 --- so an $r$ near 0 means ``no \emph{linear} association,'' not ``no
+relationship.'' And a strong $r$ is not proof: two variables can rise together because
+\textbf{something else} drives both. Describe what you see --- direction, form, strength,
+unusual points --- in the words of the problem.
 \end{remindbox}
 
 \end{document}

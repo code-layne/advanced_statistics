@@ -1,0 +1,99 @@
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — AP Practice (Answer Key)
+% GRADUAL RELEASE: AP-format practice, assigned but NOT scored — the cover's score column reads
+% NA for this component. The graded practice is the `homework` component that follows it.
+% ONE PAGE: two multiple-choice items and one free-response set of three parts, all on one
+% coffee-shop context (a fourth context — the notes use pizza deliveries and sleep, the
+% homework used cars). MC 1 carries the sign-flip distractor (A); MC 2 is extrapolation.
+% Free-response (c) is the spiral to Lesson 2.2 (direction, and association is not causation).
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching n terse
+% \ansline{} in the key. The next-lesson preview is NOT here: it closes the packet, in homework.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.3}{AP Practice --- Answer Key}
+% NAMESTRIP: no name row here — it lives on the cover only.
+
+\vspace{0.06in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Not required, not scored} --- AP reps. Your graded homework is the last section.
+\end{remindbox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{scenariobox}[The Coffee Shop]{navy}
+\small
+A coffee shop recorded the daily high temperature ($^\circ$F) and the number of hot drinks
+sold on 40 days with highs from 30$^\circ$F to 75$^\circ$F. The regression line is
+\ $\widehat{\text{drinks}} = 210 - 2.4(\text{temperature})$.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer.
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.05in]
+
+  \item On a 50$^\circ$F day the shop sold 100 hot drinks. What is the residual, and what
+        does it mean?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item $-10$; the model predicted 10 more drinks than the shop sold.
+          \item \ans{$10$; the shop sold 10 more hot drinks than the model predicted.}
+          \item $10$; the model predicted 10 more drinks than the shop sold.
+          \item $90$; the model predicted 90 drinks, so the residual is 90.
+          \item $-10$; the shop sold 10 more hot drinks than the model predicted.
+        \end{enumerate}
+
+  \item The manager plugs in a 100$^\circ$F day and gets $-30$ hot drinks. Which is the best
+        explanation?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item The equation must be wrong, because sales cannot be negative.
+          \item On a 100$^\circ$F day the shop will certainly sell no hot drinks.
+          \item \ans{100$^\circ$F is outside the 30--75$^\circ$F data, so this extrapolation is
+                not trustworthy.}
+          \item The residual for a 100$^\circ$F day will be $-30$.
+          \item The line predicts well for any temperature once it is rounded to zero.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.02in}
+
+\boxguard[12]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your work, and answer \emph{in context}.
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.1in, resume]
+
+  \item \textbf{(a)} Predict the number of hot drinks sold on a 60$^\circ$F day. Show your
+        work.\\[4pt]
+        \ansline{$\widehat{\text{drinks}} = 210 - 2.4(60) = 210 - 144 = 66$ hot drinks.}
+
+        \vspace{4pt}
+        \textbf{(b)} On one 60$^\circ$F day the shop sold 58 hot drinks. Calculate the residual
+        for that day and interpret it in context.\\[4pt]
+        \ansline{Residual $= y - \hat{y} = 58 - 66 = -8$. On that 60$^\circ$F day the shop sold 8}\\[1pt]
+        \ansline{fewer hot drinks than the line predicted --- the line overpredicted.}
+
+        \vspace{4pt}
+        \textbf{(c)} Describe the direction of the association. Does warm weather \emph{cause}
+        lower sales? Explain.\\[4pt]
+        \ansline{Negative: warmer days tend to go with fewer hot drinks sold. No --- these are}\\[1pt]
+        \ansline{observational data; an association alone does not show causation.}
+
+\end{enumerate}
+
+\end{document}

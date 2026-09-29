@@ -1,119 +1,91 @@
-%! AP Statistics — Unit 2, Lesson 2.5 — Homework
-\documentclass[10pt]{article}
+%! Departures from Linearity — Unit 2, Lesson 2.5 — Homework
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page and strikes its score cell on the cover. Started in the last eight minutes
+% of the period and finished at home. The AP Practice component before it stays unscored.
+% THIRD CONTEXT: the notes teach on coffee shops and an antibiotic, Guided Practice runs on a
+% lemonade stand, and these items are on apartment rents and phone resale values.
+% ONE PAGE (compact budget): Part A (influence, 3 items incl. the AP-style MC with a required
+% justification), Part B (the crux restated + a log-model prediction + evidence, 3 items), then
+% the spiralbox — Lesson 2.5 closes Unit 2, so it previews the unit test and Unit 3.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.5}{Homework}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.16in}
+\vspace{0.06in}
 
-\noindent\textbf{Directions:} Complete all problems. Write all interpretations in complete
-sentences with context. Show technology results where requested.
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework} --- scored, and due the first class after two study halls.
+\end{remindbox}
 
-\vspace{0.14in}
 
-% Problem 1 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{1.} For each correlation coefficient, describe the direction and strength
-of the linear association and give a real-world example that could produce that $r$ value.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabularx}{\linewidth}{@{} C{1.4cm} X X @{}}
-\rowcolor{sky}
-\textbf{$r$} & \textbf{Direction \& Strength} & \textbf{Real-world example} \\
-\midrule
-$0.95$  & & \\[2pt]
-$-0.72$ & & \\[2pt]
-$0.08$  & & \\[2pt]
-$-0.99$ & & \\[2pt]
-$0.45$  & & \\
-\end{tabularx}
-
-\vspace{0.2in}
-
-% Problem 2 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{2.} Match each scatterplot description (A -- E) to the $r$ value that best
-fits. Each value is used exactly once.
-
-\vspace{8pt}
-\textbf{$r$ values:} $\quad -0.93 \qquad -0.42 \qquad 0.00 \qquad 0.68 \qquad 0.99$
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} l X c @{}}
-\rowcolor{sky}
-\textbf{Plot} & \textbf{Description} & \textbf{$r$} \\
-\midrule
-A & Points scattered randomly with no pattern & \blank{2cm} \\
-B & Points tightly clustered on a line sloping upward to the right & \blank{2cm} \\
-C & Points loosely follow a line sloping upward & \blank{2cm} \\
-D & Points tightly follow a line sloping steeply downward & \blank{2cm} \\
-E & Points loosely follow a downward pattern with several outliers & \blank{2cm} \\
-\end{tabularx}
-
-\vspace{0.2in}
-
-% Problem 3 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{3.} A study finds that the number of fire trucks sent to a fire ($x$) is
-strongly positively correlated with the amount of fire damage ($y$), with $r = 0.92$.
-
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2em, itemsep=0.16in]
-  \item Write a complete interpretation of $r = 0.92$ in context.\\[8pt]
-        \writeline\\[3pt]\writeline\\[3pt]\writeline
-  \item A city council member says this shows that sending more fire trucks causes more
-        damage. Explain why this conclusion is not justified. Identify a likely lurking
-        variable.\\[8pt]
-        \writeline\\[3pt]\writeline\\[3pt]\writeline
+\boxguard[12]
+\begin{notesbox}{Part A --- Apartment Rents}
+Ten apartments sit 0.5 to 3.0 miles from campus; apartment P is 9 miles out and rents for
+\$1{,}300. For rent ($y$, dollars) against distance ($x$, miles), all 11 give
+$\hat{y} = 1328 - 14.1x$, $r = -0.32$; the 10 without P give $\hat{y} = 1516 - 130.5x$,
+$r = -0.99$.
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
+  \item Is P high-leverage? Is it influential? Justify both with the numbers above.
+        \answerspace{1.1cm}{}
+  \item \textbf{AP-style multiple choice.} A new point has an $x$-value far from the rest but lies
+        right on their line. Adding it most likely (circle, then justify):\par
+        \textbf{(A)} slope changes a lot \hfill \textbf{(B)} $r$ nears 0 \hfill
+        \textbf{(C)} slope barely changes\par
+        \textbf{(D)} it becomes an outlier \hspace{2em} \textbf{(E)} the association disappears
+        \answerspace{0.7cm}{}
 \end{enumerate}
+\end{notesbox}
 
-\vspace{0.2in}
-
-% Problem 4 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{4.} The table below shows data for 8 athletes: daily protein intake in grams
-($x$) and muscle gain in pounds over 8 weeks ($y$).
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} l *{8}{C{1cm}} @{}}
-\rowcolor{sky}
-\textbf{Protein (g)} & 80 & 100 & 110 & 130 & 140 & 150 & 170 & 180 \\
-\textbf{Gain (lb)}   & 1.2 & 1.8 & 2.1 & 2.9 & 3.3 & 3.5 & 4.0 & 4.4 \\
-\end{tabularx}
-
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2em, itemsep=0.16in]
-  \item Use technology to compute $r$. \quad $r = \blank{2cm}$
-  \item Write a complete interpretation of $r$ in context.\\[8pt]
-        \writeline\\[3pt]\writeline\\[3pt]\writeline
-  \item Does the correlation prove that eating more protein causes muscle gain?
-        Explain.\\[8pt]
-        \writeline\\[3pt]\writeline
+\boxguard[12]
+\begin{notesbox}{Part B --- Phone Resale Values}
+\begin{minipage}[c]{0.60\linewidth}\raggedright
+Resale value ($y$, dollars) of 11 used phones against age ($x$, years): $\hat{y} = 518 -
+95.4x$, \ $r = -0.94$. \textbf{1.}~A classmate says, ``$r$ is close to $-1$, so the line is a
+good model.'' Respond, using the residual plot at the right.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.37\linewidth}\centering
+\begin{tikzpicture}[xscale=0.9, yscale=0.0062]
+  \draw[linegray] (0,0) -- (6.3,0);
+  \draw[->, thick] (0,-90) -- (0,140);
+  \draw[thick] (0,-90) -- (6.3,-90);
+  \foreach \y in {-50,0,50,100} { \node[left, font=\tiny] at (0,\y) {\y}; }
+  \foreach \x in {0,2,4,6} { \node[below, font=\tiny] at (\x,-90) {\x}; }
+  \foreach \x/\y in {0/122,0.5/50,1/-12,1.5/-35,2/-67,2.5/-59,3/-61,3.5/-44,4/-26,5/29,6/103}
+    \fill[navy] (\x,\y) circle (0.06 and 9);
+  \node[font=\tiny] at (3.1,-140) {Age (years)};
+  \node[rotate=90, font=\tiny] at (-0.8,25) {Residual (\$)};
+\end{tikzpicture}
+\end{minipage}
+\answerspace{1.0cm}{}
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt, start=2]
+  \item The log of each value gives $\widehat{\log y} = 2.81 - 0.19x$, $r = -0.9997$, and a
+        random residual plot. Predict the value of a 3-year-old phone.
+        \answerspace{0.7cm}{}
+  \item Give two pieces of evidence that the log model is more appropriate than the line.
+        \answerspace{0.6cm}{}
 \end{enumerate}
+\end{notesbox}
 
-\vspace{0.18in}
-
-\begin{extensionbox}
-\small\textbf{Extension --- Optional}
-
-Look up ``spurious correlations'' online (e.g., the website by Tyler Vigen). Choose one example
-with a high $r$ value. Write a paragraph explaining: (a) what the two variables are,
-(b) what the $r$ value is, and (c) why this correlation almost certainly does not reflect causation.
-\end{extensionbox}
-
-\vspace{0.14in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-\small\textbf{Preview --- Lesson 2.6}\\[4pt]
-In Lesson 2.6 we will use $r$ to build the \textbf{least-squares regression line} --- a line
-that uses the correlation to make predictions. The slope of that line depends directly on $r$.
-
-\vspace{4pt}
-\textbf{Think ahead:} If $r = 0$, what would the slope of the regression line be? What
-would you predict for $y$ regardless of $x$?\\[6pt]
-\writeline\\[2pt]\writeline
-\end{tcolorbox}
+% Lesson 2.5 closes Unit 2, so the preview is the unit test and Unit 3, not a next lesson.
+\boxguard[4]
+\begin{spiralbox}
+\small
+\textbf{Next: the Unit 2 test} (all five lessons --- work the sample test first), \textbf{then
+Unit 3, Collecting Data}: why only a well-designed experiment earns the word \emph{cause}.
+\end{spiralbox}
 
 \end{document}
