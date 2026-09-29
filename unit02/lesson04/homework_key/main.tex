@@ -1,140 +1,79 @@
-%! AP Statistics — Unit 2, Lesson 2.4 — Homework (Answer Key)
-\documentclass[10pt]{article}
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — Homework (Answer Key)
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page and strikes its score cell on the cover. Started in the last eight minutes
+% of the period and finished at home. Due the first class after two study halls.
+% THIRD CONTEXT: the notes teach on sleep and reaction time, Guided Practice runs on used-car
+% prices, and these items are on car weight and highway mileage. ONE PAGE, five items.
+% THE DATA: 35 car models, weight x (1000s of lb, 2.5 to 5.0), highway mpg y.
+%   xbar 3.5, s_x 0.6, ybar 30, s_y 5, r -0.84 -> b = -7.0, a = 54.5, r^2 = 0.7056.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
+% GENERATED FROM homework/main.tex — the blank with answers filled in.
+% NO teachernote here — scoring guidance lives in the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Homework --- Answer Key}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.18in}
+\vspace{0.04in}
 
-\noindent\textbf{Directions:} Complete all problems. Show your work and write all
-descriptions in complete sentences with context.
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due the first class after two study
+halls. Start it now; ask about anything that stalls you before you leave.
+\end{remindbox}
 
-\vspace{0.14in}
+\vspace{0.04in}
 
-% Problem 1 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{1.} The table below shows the number of absences and the final exam score
-for 10 students.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} l *{10}{C{0.9cm}} @{}}
-\rowcolor{sky}
-\textbf{Absences} & 0 & 1 & 1 & 2 & 3 & 3 & 4 & 5 & 6 & 8 \\
-\textbf{Exam score} & 95 & 90 & 88 & 85 & 80 & 76 & 72 & 68 & 60 & 50 \\
-\end{tabularx}
-
-\vspace{10pt}
-
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2em, itemsep=0.2in]
-
-  \item Identify the explanatory and response variables.\\[8pt]
-        Explanatory: \ans{number of absences} \quad Response: \ans{final exam score}
-
-  \item Construct a correctly labeled scatterplot on the grid below.
-
-        \begin{center}
-        \begin{tikzpicture}
-          \draw[very thin, gray!35] (0,0) grid (8,6);
-          \draw[->, thick, navy] (0,0) -- (8.4,0);
-          \draw[->, thick, navy] (0,0) -- (0,6.5);
-          \node[below=8pt] at (4,0) {\small \ans{Number of absences}};
-          \node[left=8pt, rotate=90] at (0,3) {\small \ans{Final exam score}};
-          % Points scaled: x=absences/8*7, y=(score-50)/50*6
-          \filldraw[keyred] (0,5.4) circle (2pt);    % (0, 95)
-          \filldraw[keyred] (0.875,4.8) circle (2pt);% (1, 90)
-          \filldraw[keyred] (0.875,4.56) circle (2pt);%(1, 88)
-          \filldraw[keyred] (1.75,4.2) circle (2pt); % (2, 85)
-          \filldraw[keyred] (2.625,3.6) circle (2pt);% (3, 80)
-          \filldraw[keyred] (2.625,3.12) circle (2pt);%(3, 76)
-          \filldraw[keyred] (3.5,2.64) circle (2pt); % (4, 72)
-          \filldraw[keyred] (4.375,2.16) circle (2pt);%(5, 68)
-          \filldraw[keyred] (5.25,1.2) circle (2pt); % (6, 60)
-          \filldraw[keyred] (7,0) circle (2pt);       % (8, 50)
-        \end{tikzpicture}
-        \end{center}
-
-        \begin{teachernote}
-        Accept any consistent scale. Points should form a downward-sloping linear pattern.
-        \end{teachernote}
-
-  \item Write a complete DOFS description of the association.\\[8pt]
-        \ansline{There is a strong negative linear association between number of absences and}\\[3pt]
-        \ansline{final exam score for these 10 students. As the number of absences increases,}\\[3pt]
-        \ansline{final exam scores tend to decrease. There are no obvious outliers.}\\[3pt]
-        \writeline
-
+\boxguard[14]
+\begin{notesbox}{Weight and Highway Mileage}
+\small
+For 35 car models: \textbf{weight} ($x$, 1000s of pounds, 2.5 to 5.0) and \textbf{highway
+mileage} ($y$, mpg). \ $\bar x = 3.5$, \ $s_x = 0.6$, \ $\bar y = 30$, \ $s_y = 5$, \ $r = -0.84$. \hfill \textbf{Part A --- Build the line.}
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item Find $b$ and $a$ (show your work), then write the LSRL with the variable names.
+        \answerspace{1.5cm}{$b = -0.84 \cdot 5/0.6 = -7.0$ mpg per 1,000 lb; \ $a = 30 - (-7.0)(3.5) = 54.5$ mpg.\par $\widehat{\text{mpg}} = 54.5 - 7.0(\text{weight})$}
+  \item Interpret the slope in context.
+        \answerspace{1.15cm}{For each additional 1,000 pounds of weight, the \emph{predicted} highway mileage drops by 7.0 mpg.}
+  \item Interpret the intercept in context. Does it have a sensible meaning here? Explain.
+        \answerspace{1.15cm}{Predicted 54.5 mpg for a car weighing 0 pounds. Not meaningful: no car weighs 0 lb, far outside 2.5--5.0.}
 \end{enumerate}
 
-\vspace{0.2in}
-
-% Problem 2 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{2.} Match each DOFS description to the correct scatterplot label (A -- D).
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} l X c @{}}
-\rowcolor{sky}
-\textbf{\#} & \textbf{Description} & \textbf{Plot} \\
-\midrule
-i   & Strong negative linear association, no outliers. & \ans{A} \\
-ii  & No association; points are randomly scattered.   & \ans{C} \\
-iii & Moderate positive curved association.            & \ans{D} \\
-iv  & Weak positive linear association with one outlier. & \ans{B} \\
-\end{tabularx}
-
-\begin{teachernote}
-Answers depend on which plots you display. Adjust the key to match your chosen plots.
-\end{teachernote}
-
-\vspace{0.2in}
-
-% Problem 3 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{3.} A scatterplot shows the relationship between the number of firefighters
-dispatched ($x$) and the amount of fire damage in \$1000s ($y$) for 30 fires. The association
-is strong and positive.
-
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2em, itemsep=0.16in]
-
-  \item Write a complete DOFS description for this scatterplot in context.\\[8pt]
-        \ansline{There is a strong positive linear association between the number of firefighters}\\[3pt]
-        \ansline{dispatched and the fire damage (\$1000s) for these 30 fires. As more firefighters}\\[3pt]
-        \ansline{are dispatched, fire damage tends to be higher. No outliers mentioned.}
-
-  \item Does this mean that sending more firefighters \textit{causes} more damage? Explain.\\[8pt]
-        \ansline{No --- this is a case of confounding. Larger, more severe fires both require more}\\[3pt]
-        \ansline{firefighters AND cause more damage. The size of the fire is a lurking variable that}\\[3pt]
-        \ansline{explains the association; more firefighters do not cause more damage.}
-
+\textbf{Part B --- How good is it?}
+\begin{enumerate}[label=\textbf{B\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item Find $r^2$ and interpret it in context.
+        \answerspace{1.15cm}{$r^2 = (-0.84)^2 \approx 0.71$. About 71\% of the variation in highway mileage is explained by the linear model with weight.}
+  \item \textbf{AP-style.} Which statement is \textbf{correct}? Circle one, then justify it in a
+        sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item Every extra 1,000 pounds lowers a car's mileage by exactly 7 mpg.
+          \item \ans{For each extra 1,000 pounds, the predicted highway mileage drops by 7 mpg.}
+          \item About 84\% of the variation in mileage is explained by weight.
+          \item A car weighing 0 pounds would get about 54.5 mpg.
+          \item Adding weight to a car causes its mileage to fall by 7 mpg.
+        \end{enumerate}
+        \answerspace{0.8cm}{(B): it says \emph{predicted}. (A) ignores the scatter, (C) uses $r$, (D) extrapolates, (E) claims cause.}
 \end{enumerate}
+\end{notesbox}
 
-\vspace{0.2in}
+\vspace{0.04in}
 
-\begin{extensionbox}
-\small\textbf{Extension --- Optional}
-
-Find a scatterplot in a news article, scientific journal, or textbook. Write a DOFS description
-of the scatterplot in 3--5 sentences. Then answer: do the authors draw a causal conclusion from
-the association? Is that conclusion justified? Attach or sketch the scatterplot.
-\end{extensionbox}
-
-\vspace{0.16in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-\small\textbf{Preview --- Lesson 2.5}\\[4pt]
-In Lesson 2.5 we will quantify the \emph{direction} and \emph{strength} of a \textit{linear}
-association with a single number called the \textbf{correlation coefficient} $r$.
-
-\vspace{4pt}
-\textbf{Think ahead:} For each scatterplot in Problem 1 and 2, predict whether $r$ would be
-close to $-1$, close to $0$, or close to $+1$. Write your predictions below.\\[6pt]
-\ansline{Problem 1: $r$ close to $-1$ (strong negative linear). Plot i (A): $r$ close to $-1$;}\\[2pt]
-\ansline{Plot ii (C): $r$ close to $0$ (no association); Plot iii (D): $r$ may not be near $\pm1$ (curved); Plot iv (B): $r$ slightly positive.}
-\end{tcolorbox}
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+% A one-line, unbreakable box: guard it by its own height so it moves whole.
+\boxguard[3]
+\begin{spiralbox}
+\small
+\textbf{Next: Departures from Linearity} --- what one unusual point can do to $b$, $a$, and $r^2$.
+\end{spiralbox}
 
 \end{document}

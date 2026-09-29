@@ -1,126 +1,100 @@
-%! AP Statistics — Unit 2, Lesson 2.1 — Homework
-\documentclass[10pt]{article}
+%! Two Categorical Variables — Unit 2, Lesson 2.1 — Homework
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page and strikes its score cell on the cover. Started in the last eight minutes
+% of the period and finished at home; due the first class after two study halls.
+% THIRD CONTEXT: the notes teach on phones and sleep, Guided Practice runs on texting drivers,
+% and these items are on a gym's membership records — recall is not the skill being built.
+% ONE PAGE (compact budget): six items in two parts, then the spiralbox preview of Lesson 2.2.
+%   A3 is the denominator trap (of those who STOPPED — divide by the column total, 120).
+%   B2 is the crux restated plus the causation hedge; B3 is the AP-style MC with a justification.
+% DATA (250 gym members, membership type × still attending after six months):
+%              Still attending   Stopped   Total
+%   Monthly          60             90      150   -> 40%
+%   Annual           70             30      100   -> 70%
+%   Total           130            120      250
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.1}{Homework}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.1in}
+\vspace{0.06in}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
-\small For each news blurb: (a) identify the two variables and their types,
-(b) evaluate whether the apparent association is likely \textbf{real} or possibly
-\textbf{random}, and (c) identify one \textbf{confounding variable}.
-Write in complete phrases.
-\end{tcolorbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% BLURB 1
-% ════════════════════════════════════════════════════════════════════════════
-\begin{blurbbox}[Study 1]{navylight}
-\begin{headlinebox}{sky}
-\small\textit{``A national study of 4{,}000 adults found that people who reported
-exercising at least 3 times per week had significantly lower rates of depression
-than those who exercised less.''}
-\end{headlinebox}
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l X @{}}
-Two variables \& types: & \blank{9cm} \\
-Real or possibly random? & \blank{9cm} \\
-One confounding variable: & \blank{9cm} \\
-\end{tabularx}
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% BLURB 2
-% ════════════════════════════════════════════════════════════════════════════
-\begin{blurbbox}[Study 2]{greenacc}
-\begin{headlinebox}{greenbg}
-\small\textit{``In a sample of 15 cities, researchers noticed that cities with more
-libraries also tended to have lower crime rates.''}
-\end{headlinebox}
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l X @{}}
-Two variables \& types: & \blank{9cm} \\
-Real or possibly random? & \blank{9cm} \\
-One confounding variable: & \blank{9cm} \\
-\end{tabularx}
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ════════════════════════════════════════════════════════════════════════════
-% BLURB 3
-% ════════════════════════════════════════════════════════════════════════════
-\begin{blurbbox}[Study 3]{redacc}
-\begin{headlinebox}{redbg}
-\small\textit{``Researchers analyzed data from 10{,}000 people and found that
-individuals who sleep fewer than 6 hours per night are more likely to be overweight
-than those who sleep 7--9 hours.''}
-\end{headlinebox}
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l X @{}}
-Two variables \& types: & \blank{9cm} \\
-Real or possibly random? & \blank{9cm} \\
-One confounding variable: & \blank{9cm} \\
-\end{tabularx}
-\end{blurbbox}
-
-\vspace{0.14in}
-
-% ── REFLECTION ───────────────────────────────────────────────────────────────
-\begin{reflectionbox}
-\small Choose \textbf{one} of the three studies above and answer:
-\textit{Why isn't the observed association enough to prove causation?}
-What additional evidence would you need before claiming one variable causes the other?
-
-\vspace{6pt}
-\textcolor{slate}{\scriptsize Study \#:\;\blank{0.6cm}}
-
-\vspace{4pt}
-\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline
-\end{reflectionbox}
-
-\vspace{0.14in}
-
-% ── EXTENSION ────────────────────────────────────────────────────────────────
-\begin{extensionbox}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
 \small
+\textbf{This is your graded homework.} It is scored and due the first class after two study
+halls. Start it now, ask about anything that stalls you before you leave, then finish it alone.
+\end{remindbox}
 
-\textbf{Spurious Correlations}\\[4pt]
-The website \textit{tylervigen.com/spurious-correlations} shows pairs of variables
-that are highly correlated in real data but clearly have no causal relationship.
+\vspace{0.04in}
 
-\vspace{5pt}
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Describe one spurious correlation from the website (or make up a plausible one).
-        What are the two variables?\\[4pt]
-        \writeline\\[1pt]\writeline
-
-  \item Explain why this association almost certainly does not reflect a real relationship.
-        What might explain it (e.g., both variables trend over time)?\\[4pt]
-        \writeline\\[1pt]\writeline
-
-  \item \textbf{Preview:} In Lesson 2.2 we analyze two \emph{categorical} variables using
-        a two-way table. Think of a two-categorical-variable research question you are curious about.\\[4pt]
-        \writeline\\[1pt]\writeline
+\boxguard[20]
+\begin{notesbox}{Part A --- Reading the Table}
+\small
+\begin{minipage}[c]{0.34\linewidth}\raggedright
+A gym checked on its 250 newest members six months after they joined.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.64\linewidth}
+\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{} l | c c | c @{}}
+ & \textbf{Still attending} & \textbf{Stopped} & \textbf{Total} \\ \hline
+\textbf{Monthly plan} & 60 & 90 & 150 \\
+\textbf{Annual plan} & 70 & 30 & 100 \\ \hline
+\textbf{Total} & 130 & 120 & 250 \\
+\end{tabular}
+\end{minipage}
+\vspace{2pt}
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
+  \item What proportion of all 250 are annual members still attending? Joint or marginal?
+        \answerspace{0.7cm}{}
+  \item Of the members who \emph{stopped} attending, what proportion had a monthly plan?
+        \answerspace{0.7cm}{}
 \end{enumerate}
+\end{notesbox}
 
-\end{extensionbox}
+\vspace{0.04in}
+
+\boxguard[14]
+\begin{notesbox}{Part B --- Is There an Association?}
+\small
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
+  \item Find the proportion still attending for each plan. Show the fractions.
+        \answerspace{0.7cm}{}
+  \item The manager says: ``70 annual and 60 monthly members still come, so the plan doesn't
+        matter.'' Is there an association? Use percents, and say what this study \emph{cannot} show.
+        \answerspace{1.3cm}{}
+  \item \textbf{AP-style MC.} Which result at another gym shows \textbf{no} association? Circle, then justify.
+        \par\vspace{2pt}
+        \begin{tabularx}{\linewidth}{@{} X X @{}}
+        \textbf{(A)} 60 of 150 monthly, 60 of 100 annual & \textbf{(B)} 60 of 150 monthly, 40 of 100 annual \\
+        \textbf{(C)} 90 monthly and 70 annual attend & \textbf{(D)} half of all members attend \\
+        \textbf{(E)} the two plans have equal sizes & \\
+        \end{tabularx}
+        \answerspace{0.7cm}{}
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.04in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+\boxguard[5]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: Scatterplots and Correlation.} Next time both variables are \emph{numbers}
+--- hours studied and test score --- and we read their pattern in a scatterplot.
+\end{spiralbox}
 
 \end{document}

@@ -1,0 +1,118 @@
+%! Two Categorical Variables — Unit 2, Lesson 2.1 — AP Practice (Answer Key)
+% MIRROR of ../ap_practice/main.tex: -key, header, the correct MC options in \ans{} with the tag,
+% and one terse \ansline{} per \writelines line. NO teachernote here.
+% GRADUAL RELEASE: AP-format practice, assigned but NOT scored — the cover's score
+% column reads NA for this component. The graded practice is the `homework` component that
+% follows it at the back of the packet.
+% ONE PAGE (compact budget): two MC items + one FRQ of three parts, on one grocery survey.
+% MC 1 carries the denominator trap (distractor B is the reverse conditional, 60/250).
+% MC 2 carries the crux (distractor A compares raw counts from groups of 250 and 150).
+% FRQ (c) is the spiral to Lessons 1.2–1.3 (a bar graph is for categories, a histogram is not).
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching exactly n
+% terse \ansline{} calls in the key.
+% The next-lesson preview is NOT here: it closes the packet, in ../homework/.
+%
+% DATA (400 households, location × main way of getting groceries):
+%            In store  Delivery  Pickup  Total
+%   Urban       150       60       40     250   -> 60% / 24% / 16%
+%   Rural       105       15       30     150   -> 70% / 10% / 20%
+%   Total       255       75       70     400
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.1}{AP Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.04in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. Work these AP-format reps and bring what stalls you to study hall.
+\end{remindbox}
+
+\vspace{0.05in}
+
+\boxguard[20]
+\begin{scenariobox}[Getting the Groceries]{navy}
+\small
+\begin{minipage}[c]{0.30\linewidth}\raggedright
+A grocery chain surveyed 400 households: where they live, and how they \emph{usually} get
+groceries.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.68\linewidth}
+\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{} l | c c c | c @{}}
+ & \textbf{In store} & \textbf{Delivery} & \textbf{Curbside pickup} & \textbf{Total} \\ \hline
+\textbf{Urban} & 150 & 60 & 40 & 250 \\
+\textbf{Rural} & 105 & 15 & 30 & 150 \\ \hline
+\textbf{Total} & 255 & 75 & 70 & 400 \\
+\end{tabular}
+\end{minipage}
+\end{scenariobox}
+
+\vspace{0.05in}
+
+\boxguard[12]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.08in]
+
+  \item Of the households that use delivery, what proportion are urban?
+        \par\vspace{3pt}
+        \hspace*{1.2em}\textbf{(A)} 0.150 \hfill \textbf{(B)} 0.240 \hfill \textbf{(C)} 0.625
+        \hfill \ans{(D) 0.800} \hfill \textbf{(E)} 0.188 \hspace*{1.2em}
+
+  \item Which statement is best supported by the survey?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item Urban households shop in store more than rural ones, since 150 exceeds 105.
+          \item \ans{Location and grocery method are associated: 24\% of urban households use
+                delivery, vs.\ 10\% of rural households.}
+          \item There is no association: in both locations, most households shop in store.
+          \item Living in a city causes a household to order grocery delivery.
+          \item The variables cannot be associated, because both are categorical.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\boxguard[12]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your work, and answer \emph{in context}.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.08in, resume]
+
+  \item \textbf{(a)} Find the conditional distribution of grocery method for \emph{rural}
+        households, as percents.\\[4pt]
+        \ansline{In store $105/150 = 70\%$, delivery $15/150 = 10\%$, pickup $30/150 = 20\%$.}
+
+        \vspace{4pt}
+        \textbf{(b)} Is there an association between location and grocery method? Justify.\\[4pt]
+        \ansline{Yes. The distributions differ: 24\% of urban vs.\ 10\% of rural households}\\
+        \ansline{use delivery, and 60\% vs.\ 70\% shop in store. (A survey: no cause shown.)}
+
+        \vspace{4pt}
+        \textbf{(c)} Why is a segmented bar graph, not a histogram, the right display here?\\[4pt]
+        \ansline{Both variables are categorical. A histogram needs a quantitative variable on a}\\
+        \ansline{number line; a segmented bar graph compares each location's percents.}
+
+\end{enumerate}
+
+\end{document}

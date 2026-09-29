@@ -142,6 +142,8 @@ endif
 # Both targets build BOTH packets of every lesson, because each one's slot sizes
 # are computed against the other's. That is the price of page-for-page
 # alignment, and it is why `make -C unitXX student` compiles the keys too.
+# The same holds for the bookends: the student pass pairs its sample test
+# against the key's, so `student` needs _sample_test_key as much as `key` does.
 #
 # The paired lists are assembled from $(LESSONS) rather than by globbing, so
 # they stay 1:1 and in the same order; a lesson missing either packet is
@@ -159,7 +161,7 @@ unit_lesson_lists = sl=''; kl=''; \
   student_list="$(BINDER_COVER_PDF) $(UNIT_COVER_PDF) $$sl $(STUDENT_TAIL)"; \
   key_list="$(BINDER_COVER_PDF) $(UNIT_COVER_PDF) $$kl $(KEY_TAIL)"
 
-student: _binder_cover _unit_cover _sample_test
+student: _binder_cover _unit_cover _sample_test _sample_test_key
 	@for l in $(LESSONS); do $(MAKE) -C $$l student key || exit 1; done
 	@mkdir -p $(COMPILED_DIR)/$(UNIT) $(COMPILED_DIR)
 	@set -e; \

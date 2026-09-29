@@ -1,118 +1,77 @@
-%! AP Statistics — Unit 2, Lesson 2.4 — Homework
-\documentclass[10pt]{article}
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — Homework
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page and strikes its score cell on the cover. Started in the last eight minutes
+% of the period and finished at home. Due the first class after two study halls.
+% THIRD CONTEXT: the notes teach on sleep and reaction time, Guided Practice runs on used-car
+% prices, and these items are on car weight and highway mileage. ONE PAGE, five items.
+% THE DATA: 35 car models, weight x (1000s of lb, 2.5 to 5.0), highway mpg y.
+%   xbar 3.5, s_x 0.6, ybar 30, s_y 5, r -0.84 -> b = -7.0, a = 54.5, r^2 = 0.7056.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Homework}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.18in}
+\vspace{0.04in}
 
-% ── PRACTICE ──────────────────────────────────────────────────────────────────
-\noindent\textbf{Directions:} Complete all problems. Show your work and write all
-descriptions in complete sentences with context.
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due the first class after two study
+halls. Start it now; ask about anything that stalls you before you leave.
+\end{remindbox}
 
-\vspace{0.14in}
+\vspace{0.04in}
 
-% Problem 1 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{1.} The table below shows the number of absences and the final exam score
-for 10 students.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} l *{10}{C{0.9cm}} @{}}
-\rowcolor{sky}
-\textbf{Absences} & 0 & 1 & 1 & 2 & 3 & 3 & 4 & 5 & 6 & 8 \\
-\textbf{Exam score} & 95 & 90 & 88 & 85 & 80 & 76 & 72 & 68 & 60 & 50 \\
-\end{tabularx}
-
-\vspace{10pt}
-
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2em, itemsep=0.2in]
-
-  \item Identify the explanatory and response variables.\\[8pt]
-        Explanatory: \blank{5.5cm} \quad Response: \blank{5.5cm}
-
-  \item Construct a correctly labeled scatterplot on the grid below.
-
-        \vspace{6pt}
-        \begin{center}
-        \begin{tikzpicture}
-          \draw[very thin, gray!35] (0,0) grid (8,6);
-          \draw[->, thick, navy] (0,0) -- (8.4,0);
-          \draw[->, thick, navy] (0,0) -- (0,6.5);
-          \node[below=8pt] at (4,0) {\small \blank{5cm}};
-          \node[left=8pt, rotate=90] at (0,3) {\small \blank{5cm}};
-        \end{tikzpicture}
-        \end{center}
-
-  \item Write a complete DOFS description of the association.\\[8pt]
-        \writeline\\[3pt]\writeline\\[3pt]\writeline\\[3pt]\writeline
-
+\boxguard[14]
+\begin{notesbox}{Weight and Highway Mileage}
+\small
+For 35 car models: \textbf{weight} ($x$, 1000s of pounds, 2.5 to 5.0) and \textbf{highway
+mileage} ($y$, mpg). \ $\bar x = 3.5$, \ $s_x = 0.6$, \ $\bar y = 30$, \ $s_y = 5$, \ $r = -0.84$. \hfill \textbf{Part A --- Build the line.}
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item Find $b$ and $a$ (show your work), then write the LSRL with the variable names.
+        \answerspace{1.5cm}{}
+  \item Interpret the slope in context.
+        \answerspace{1.15cm}{}
+  \item Interpret the intercept in context. Does it have a sensible meaning here? Explain.
+        \answerspace{1.15cm}{}
 \end{enumerate}
 
-\vspace{0.2in}
-
-% Problem 2 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{2.} Match each DOFS description to the correct scatterplot label (A -- D).
-(Your teacher will display or distribute the four plots.)
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} l X c @{}}
-\rowcolor{sky}
-\textbf{\#} & \textbf{Description} & \textbf{Plot} \\
-\midrule
-i   & Strong negative linear association, no outliers. & \blank{1.2cm} \\
-ii  & No association; points are randomly scattered.   & \blank{1.2cm} \\
-iii & Moderate positive curved association.            & \blank{1.2cm} \\
-iv  & Weak positive linear association with one outlier. & \blank{1.2cm} \\
-\end{tabularx}
-
-\vspace{0.2in}
-
-% Problem 3 ──────────────────────────────────────────────────────────────────
-\noindent\textbf{3.} A scatterplot shows the relationship between the number of firefighters
-dispatched ($x$) and the amount of fire damage in \$1000s ($y$) for 30 fires. The association
-is strong and positive.
-
-\begin{enumerate}[label=\textbf{(\alph*)}, leftmargin=2em, itemsep=0.16in]
-
-  \item Write a complete DOFS description for this scatterplot in context.\\[8pt]
-        \writeline\\[3pt]\writeline\\[3pt]\writeline
-
-  \item Does this mean that sending more firefighters \textit{causes} more damage? Explain.\\[8pt]
-        \writeline\\[3pt]\writeline\\[3pt]\writeline
-
+\textbf{Part B --- How good is it?}
+\begin{enumerate}[label=\textbf{B\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item Find $r^2$ and interpret it in context.
+        \answerspace{1.15cm}{}
+  \item \textbf{AP-style.} Which statement is \textbf{correct}? Circle one, then justify it in a
+        sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item Every extra 1,000 pounds lowers a car's mileage by exactly 7 mpg.
+          \item For each extra 1,000 pounds, the predicted highway mileage drops by 7 mpg.
+          \item About 84\% of the variation in mileage is explained by weight.
+          \item A car weighing 0 pounds would get about 54.5 mpg.
+          \item Adding weight to a car causes its mileage to fall by 7 mpg.
+        \end{enumerate}
+        \answerspace{0.8cm}{}
 \end{enumerate}
+\end{notesbox}
 
-\vspace{0.2in}
+\vspace{0.04in}
 
-% Extension ──────────────────────────────────────────────────────────────────
-\begin{extensionbox}
-\small\textbf{Extension --- Optional}
-
-Find a scatterplot in a news article, scientific journal, or textbook. Write a DOFS description
-of the scatterplot in 3--5 sentences. Then answer: do the authors draw a causal conclusion from
-the association? Is that conclusion justified? Attach or sketch the scatterplot.
-\end{extensionbox}
-
-\vspace{0.16in}
-
-% Preview ─────────────────────────────────────────────────────────────────────
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-\small\textbf{Preview --- Lesson 2.5}\\[4pt]
-In Lesson 2.5 we will quantify the \emph{direction} and \emph{strength} of a \textit{linear}
-association with a single number called the \textbf{correlation coefficient} $r$.
-
-\vspace{4pt}
-\textbf{Think ahead:} For each scatterplot in Problem 1 and 2, predict whether $r$ would be
-close to $-1$, close to $0$, or close to $+1$. Write your predictions below.\\[6pt]
-\writeline\\[2pt]\writeline
-\end{tcolorbox}
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+% A one-line, unbreakable box: guard it by its own height so it moves whole.
+\boxguard[3]
+\begin{spiralbox}
+\small
+\textbf{Next: Departures from Linearity} --- what one unusual point can do to $b$, $a$, and $r^2$.
+\end{spiralbox}
 
 \end{document}

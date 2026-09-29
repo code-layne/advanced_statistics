@@ -1,107 +1,105 @@
-%! AP Statistics — Unit 2, Lesson 2.3 — Homework (Answer Key)
-\documentclass[10pt]{article}
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — Homework (Answer Key)
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page and strikes its score cell on the cover. Started in the last eight minutes
+% of the period and finished after two study halls.
+% THIRD CONTEXT: the notes teach on pizza deliveries, Guided Practice runs on sleep and reaction
+% time, and these items are on used-car prices — recall is not the skill being built.
+% ONE PAGE: five items in two parts (A1–A3, B1–B2), then the spiralbox preview of Lesson 2.4.
+% A2 and B2 carry the sign of the residual — the lesson's target misconception.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically. Keep the macro, the residual plot, and
+% every \boxguard byte-identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Homework --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+% NAMESTRIP: no name row here — it lives on the cover only.
 
-\vspace{0.2in}
+\vspace{0.08in}
 
-% ── PROBLEM 1 ─────────────────────────────────────────────────────────────────
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-\small\textbf{Problem 1 --- Helmet Use and Injuries}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework} --- scored, and due the first class after two study halls.
+\end{remindbox}
 
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l C{3cm} C{3cm} C{2.4cm} @{}}
-\rowcolor{sky}
-                          & \textbf{Injury: Yes} & \textbf{Injury: No} & \textbf{Row Total} \\
-\hline
-Helmet: Yes      & 15 & 285 & \ans{300} \\
-Helmet: No       & 40 & 160 & \ans{200} \\
-\hline
-Col.\ Total      & \ans{55} & \ans{445} & \ans{500} \\
-\end{tabularx}
-\end{tcolorbox}
+\vspace{0.02in}
 
-\vspace{0.14in}
+\noindent A car dealer listed 18 used cars with 8 to 95 thousand miles. Price is in
+thousands of dollars, mileage in thousands of miles:
+\ $\widehat{\text{price}} = 32.0 - 0.24(\text{mileage})$. \ Answer every part \emph{in context}.
 
-\begin{enumerate}[leftmargin=1.6em, itemsep=0.16in]
+\vspace{0.02in}
 
-    \item $\hat{p}_{\text{helmet}} = \ans{15/300 = 0.05}$
-          \hfill $\hat{p}_{\text{no helmet}} = \ans{40/200 = 0.20}$
-
-    \item Difference: \ans{$0.05 - 0.20 = -0.15$}\\[8pt]
-          \ansline{Helmet wearers had a head-injury rate 15 percentage points \emph{lower}
-          than non-wearers (5\% vs.\ 20\%).}
-
-    \item RR: \ans{$0.05/0.20 = 0.25$}\\[8pt]
-          \ansline{Helmet wearers were 0.25 times as likely to sustain a head injury as
-          non-wearers --- i.e., helmet wearers had only one-quarter the injury risk of non-wearers.}
-
-    \item \ansline{The headline is not accurate. The actual relative risk is 0.25 (helmet vs.\
-          no helmet), meaning non-wearers are $1/0.25 = 4$ times as likely to be injured ---
-          \emph{four} times the rate, not twice. The headline underestimates the association.}
-
+\boxguard[14]
+\begin{notesbox}{Part A --- Predicting with the Line}
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
+  \item Predict the price of a car with 50 thousand miles. Show your work.
+        \answerspace{0.7cm}{$\widehat{\text{price}} = 32.0 - 0.24(50) = 20.0$, so about \$20{,}000.}
+  \item A car with 50 thousand miles is listed at \$22{,}500. Find and interpret its residual.
+        \answerspace{1.2cm}{Residual $= 22.5 - 20.0 = +2.5$: the car is listed \$2{,}500 above the line's prediction --- the line underpredicted its price.}
+  \item Predict the price at 150 thousand miles. What went wrong, and why?
+        \answerspace{1.2cm}{$32.0 - 0.24(150) = -4.0$: a negative price. 150 thousand miles is far outside the 8--95 in the data --- extrapolation.}
 \end{enumerate}
+\end{notesbox}
 
-\vspace{0.22in}
+\vspace{0.02in}
 
-% ── PROBLEM 2 ─────────────────────────────────────────────────────────────────
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-\small\textbf{Problem 2 --- Screen Time and Sleep Quality}
-\end{tcolorbox}
+\boxguard[16]
+\begin{notesbox}{Part B --- Reading Residuals}
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
+  \item \begin{minipage}[t]{0.52\linewidth}
+        Here is the residual plot for the 18 cars. Is a linear model appropriate for
+        predicting price from mileage? Explain.
+        \answerspace{1.2cm}{Yes: random scatter around 0, no pattern.}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.44\linewidth}
+        \vspace{-10pt}\centering
+        \begin{tikzpicture}[xscale=0.058, yscale=0.28]
+          \draw[->, thick] (0,-3.3) -- (0,3.4);
+          \draw[thick] (0,-3.3) -- (102,-3.3);
+          \draw[dashed, slate] (0,0) -- (102,0);
+          \foreach \y in {-3,0,3} {\draw (-1.2,\y) -- (1.2,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \foreach \x in {0,20,40,60,80,100} {\draw (\x,-3.42) -- (\x,-3.18);
+            \node[below, font=\tiny] at (\x,-3.3) {\x};}
+          \foreach \x/\e in {8/1.2, 12/-0.8, 18/2.1, 22/-1.5, 27/0.4, 31/-2.2, 36/1.6, 40/-0.3,
+                             45/0.9, 50/2.5, 54/-1.8, 60/-0.6, 64/1.1, 70/-2.4, 75/0.7,
+                             81/-1.0, 88/1.9, 95/-1.8}
+            {\fill[navy] (\x,\e) circle[x radius=1.1, y radius=0.22];}
+          \node[font=\tiny] at (51,-5.0) {Mileage (thousands)};
+          \node[rotate=90, font=\tiny] at (-10,0) {Residual (\$1000s)};
+        \end{tikzpicture}
+        \end{minipage}
+  \item \textbf{AP-style.} A car's residual is $-1.8$. Which is \textbf{correct}? Circle one and
+        justify it.
 
-\vspace{0.14in}
-
-\begin{enumerate}[leftmargin=1.6em, itemsep=0.16in]
-
-    \item
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabularx}{\linewidth}{@{} l C{2.8cm} C{2.8cm} C{2.4cm} @{}}
-    \rowcolor{sky}
-                              & \textbf{Sleep: Poor} & \textbf{Sleep: Good} & \textbf{Row Total} \\
-    \hline
-    Screen: High     & \ans{63} & \ans{27} & \ans{90} \\
-    Screen: Low      & \ans{45} & \ans{105} & \ans{150} \\
-    \hline
-    Col.\ Total      & \ans{108} & \ans{132} & \ans{240} \\
-    \end{tabularx}
-
-    \item $\hat{p}_{\text{high}} = \ans{63/90 = 0.70}$
-          \quad $\hat{p}_{\text{low}} = \ans{45/150 = 0.30}$\\[10pt]
-          Difference: \ans{$0.70 - 0.30 = 0.40$}
-          \hfill RR: \ans{$0.70/0.30 \approx 2.33$}
-
-    \item \ansline{Among teenagers with high screen time before bed, 70\% reported poor sleep,
-          compared to only 30\% of those with low screen time --- a difference of 40 percentage
-          points. High-screen-time teens were about 2.33 times as likely to report poor sleep,
-          suggesting a strong positive association between screen time and poor sleep quality.}
-
-    \item \ansline{For the helmet problem, the outcome (head injury, 5--20\%) is relatively
-          rare, so the relative risk (4$\times$) is more striking than the 15-pp absolute
-          difference. For screen time, the outcome is common (30--70\%), so the absolute
-          difference (40 pp) is also very interpretable. The relative risk is especially
-          useful when outcomes are rare, because a small absolute difference can still
-          represent a dramatic multiplicative change.}
-
+        \begin{tabularx}{\linewidth}{@{} X X @{}}
+        \textbf{(A)} Listed \$1{,}800 above the prediction. &
+        \textcolor{keyred}{\textbf{(B)} Listed \$1{,}800 below the prediction.} \\
+        \textbf{(C)} The line predicted \$1{,}800 too low. &
+        \textbf{(D)} It has 1{,}800 fewer miles than predicted. \\
+        \textbf{(E)} A linear model does not fit this car. & \\
+        \end{tabularx}
+        \answerspace{1.0cm}{Residual $= y - \hat{y} = -1.8$ is negative, so the actual price is \$1{,}800 below the prediction.}
 \end{enumerate}
+\end{notesbox}
 
-\begin{teachernote}
-\textbf{Problem 1, item 4:} Many students confuse ``twice as likely'' with a RR of 2.0.
-Here the RR (non-helmet / helmet) $= 0.20/0.05 = 4.0$. The headline is wrong by a factor of 2.
-Use as a media-literacy discussion: statistics can be selectively or inaccurately reported.
+\vspace{0.02in}
 
-\textbf{Problem 2, reflection:} Accept any well-reasoned answer. The key idea is that the
-appropriateness of each statistic depends on the prevalence of the outcome.
-\end{teachernote}
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+\boxguard[4]
+\begin{spiralbox}
+\small
+\textbf{Next: Least-Squares Regression} --- where $a$ and $b$ come from (the line with the
+smallest squared residuals), and what the slope, intercept, and $r^2$ mean in context.
+\end{spiralbox}
 
 \end{document}

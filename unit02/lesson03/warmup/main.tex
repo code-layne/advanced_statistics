@@ -1,94 +1,52 @@
-%! AP Statistics — Unit 2, Lesson 2.3 — Warm-Up
-\documentclass[10pt]{article}
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — Warm-Up
+% ONE PAGE, blank and key. Three items at 12pt. Do not add a fourth.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+% Item 1 is the spiral to Lesson 2.2 (explanatory variable, direction, strength of r) on the
+% pizza-delivery data the notes open on; item 2 is plugging into a line — exactly the move
+% notes row 1 names "prediction"; item 3 is "above or below the line, and by how much" — the
+% residual, in algebra language, before the notes name it and fix its sign.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Warm-Up}
-\namedateperiod
-
-\vspace{0.3in}
-
-% ── SECTION 1: Spiral Review ──────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 1 \quad Conditional Relative Frequencies (Lesson 2.2 Review)}
-
-\vspace{0.12in}
-
-\noindent A survey of 200 high school students recorded two variables: whether they play
-a sport (Yes / No) and whether they have a part-time job (Yes / No). Results are below.
-
-\vspace{0.1in}
-
-\renewcommand{\arraystretch}{1.9}
-\begin{tabularx}{\linewidth}{@{} l C{2.8cm} C{2.8cm} C{2.4cm} @{}}
-\rowcolor{sky}
-                    & \textbf{Job: Yes} & \textbf{Job: No} & \textbf{Row Total} \\
-\hline
-\textbf{Sport: Yes} & 30 & 90 & \blank{1.8cm} \\
-\textbf{Sport: No}  & 40 & 40 & \blank{1.8cm} \\
-\hline
-\textbf{Col.\ Total}& \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
-\end{tabularx}
-
-\vspace{0.18in}
-
-\begin{enumerate}
-
-    \item Fill in all missing row totals, column totals, and the grand total.
-
-    \vspace{0.06in}
-
-    \item Compute the conditional relative frequency of having a job for student-athletes.\\[8pt]
-    $P(\text{Job: Yes} \mid \text{Sport: Yes}) = \dfrac{\blank{1.2cm}}{\blank{1.2cm}} = \blank{2.2cm}$
-
-    \vspace{0.18in}
-
-    \item Compute the conditional relative frequency of having a job for non-athletes.\\[8pt]
-    $P(\text{Job: Yes} \mid \text{Sport: No}) = \dfrac{\blank{1.2cm}}{\blank{1.2cm}} = \blank{2.2cm}$
-
-    \vspace{0.14in}
-
-    \item Based on your answers to \#2 and \#3, does there appear to be an association between
-    playing a sport and having a job? Circle one and explain briefly.\\[4pt]
-    \textbf{Yes} \quad / \quad \textbf{No}\\[8pt]
-    \writeline\\[2pt]\writeline
-
-\end{enumerate}
 
 \vspace{0.28in}
 
-% ── SECTION 2: Looking Ahead ──────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 2 \quad Putting a Number on the Difference}
+\begin{enumerate}[leftmargin=1.9em, itemsep=1.0in]
 
-\vspace{0.12in}
+  \item \textbf{From last lesson.} A pizza shop plotted delivery distance (miles) against
+        delivery time (minutes) for 17 deliveries. The points rise from left to right in a
+        tight, straight band.
 
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-    \small
-    \textbf{Think about it:} In Part 1 you found two conditional proportions and compared
-    them informally. Today we will compute \emph{statistics} that quantify exactly
-    \emph{how different} the two proportions are.
+        \vspace{12pt}
+        Explanatory variable: \blank{3.4cm} \qquad Direction: \blank{2.4cm}
 
-    \vspace{6pt}
-    Two questions to consider before the lesson:
-    \begin{itemize}[leftmargin=1.3em, itemsep=6pt]
-        \item \textbf{Additive:} How many percentage points apart are the two proportions?
-              This is the \textbf{difference in proportions}.
-        \item \textbf{Multiplicative:} How many times as likely is one group compared to the other?
-              This is the \textbf{relative risk}.
-    \end{itemize}
-\end{tcolorbox}
+        \vspace{16pt}
+        Is $r$ closer to $0.3$ or to $0.95$? \blank{1.6cm} \qquad Form: \blank{2.4cm}
 
-\vspace{0.14in}
+  \item Use the line $y = 8 + 3x$.
 
-\noindent Using your values from Part 1, \textbf{subtract} the two conditional proportions.\\[8pt]
-$\hat{p}_{\text{athlete}} - \hat{p}_{\text{non-athlete}} = \blank{2cm} - \blank{2cm} = \blank{2.2cm}$
+        \vspace{12pt}
+        When $x = 4$, \quad $y =$ \blank{3.6cm} \qquad When $x = 7$, \quad $y =$ \blank{3.6cm}
 
-\vspace{0.1in}
+  \item The point $(5,\ 26)$ is plotted beside the line $y = 8 + 3x$.
 
-\noindent What does this value tell you? Write one sentence.\\[8pt]
-\writeline\\[2pt]\writeline
+        \vspace{12pt}
+        At $x = 5$ the line is at height \blank{3.4cm}
+
+        \vspace{16pt}
+        Is the point above or below the line? \blank{2.0cm} \quad By how much? \blank{1.6cm}
+
+        \vspace{16pt}
+        Now the point $(4,\ 17)$: above or below? \blank{2.0cm} \quad By how much? \blank{1.6cm}
+
+        \vspace{16pt}
+        Which point's actual $y$ came out \emph{bigger} than the line predicted?\\[18pt]
+        \writeline
+
+\end{enumerate}
 
 \end{document}

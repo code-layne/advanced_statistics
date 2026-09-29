@@ -1,186 +1,240 @@
-%! AP Statistics — Unit 2, Lesson 2.4 — Slides
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{apstats-beamer}
+\usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
-% ── TITLE SLIDE ───────────────────────────────────────────────────────────────
+% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.4}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Representing the Relationship Between Two Quantitative Variables}\\[1.2cm]
-    {\color{skymid}\small Statistics~$\cdot$~Unit 2: Exploring Two-Variable Data}
+    {\color{white}\bfseries\LARGE Least-Squares Regression}\\[1.2cm]
+    {\color{skymid}\small Statistics~$\cdot$~Unit 2}
   \end{minipage}
 \end{frame}
 }
 
+% GRADUAL RELEASE deck: title → targets → warm-up → I DO divider → one frame per notes
+% instruction row (Least squares · Computer output & R-squared · Slope & intercept) → WE DO
+% (Used cars) → spoken debrief → close & START THE HOMEWORK. No group activity, no exit ticket.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
 % ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Today's Learning Targets}
-  \vspace{0.3cm}
-  By the end of class, I will be able to\dots
-  \begin{itemize}
-    \item identify the \textbf{explanatory} and \textbf{response} variables and place them on the correct axes.
-    \item \textbf{construct} a correctly labeled scatterplot from a two-variable dataset.
-    \item describe the \textbf{direction}, \textbf{form}, \textbf{strength}, and \textbf{outliers} of a scatterplot in context.
-    \item write a complete \textbf{DOFS description} using the DOFS framework.
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 2.4}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item explain what makes the \textbf{least-squares regression line} the best line, and
+          compute it from summary statistics.
+    \item find the slope, intercept, and $r^2$ in \textbf{computer regression output}.
+    \item interpret the \textbf{slope} and \textbf{$y$-intercept} in context.
+    \item interpret the \textbf{coefficient of determination} $r^2$ in context.
   \end{itemize}
-  \vspace{0.4cm}
-  \textcolor{goldacc}{\small Standards: UNC-1.S [Skill 2.A] $\cdot$ UNC-1.T [Skill 4.B]}
-\end{frame}
-
-% ── HOOK ─────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Hook --- Which Pattern Is Most Useful?}
-  \vspace{0.3cm}
-  \textit{Four scatterplots are displayed. Rank them from most useful for prediction to least useful.}
-  \vspace{0.4cm}
-  \begin{columns}
-    \column{0.48\textwidth}
-      \textbf{What makes a pattern useful?}
-      \begin{itemize}
-        \item Points follow a clear, consistent shape.
-        \item We can predict $y$ reliably from $x$.
-        \item The scatter around the pattern is small.
-      \end{itemize}
-    \column{0.48\textwidth}
-      \textbf{What makes a pattern less useful?}
-      \begin{itemize}
-        \item Points are scattered randomly.
-        \item The relationship is curved in an irregular way.
-        \item A few extreme points distort the picture.
-      \end{itemize}
-  \end{columns}
-  \vspace{0.5cm}
-  \textcolor{navy}{\small Today we learn the precise language to describe these patterns: \textbf{DOFS}.}
-\end{frame}
-
-% ── WHAT IS A SCATTERPLOT ────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{What Is a Scatterplot?}
-  \vspace{0.3cm}
-  A \textbf{scatterplot} displays two \textbf{quantitative} variables for the same set of individuals.
-  \vspace{0.4cm}
-  \begin{columns}
-    \column{0.48\textwidth}
-      \textbf{Axis rule:}
-      \begin{itemize}
-        \item \textbf{Explanatory variable} ($x$) on the horizontal axis.
-        \item \textbf{Response variable} ($y$) on the vertical axis.
-        \item Each point = one individual.
-      \end{itemize}
-    \column{0.48\textwidth}
-      \textbf{Label your axes:}
-      \begin{itemize}
-        \item Variable name \textit{and} units.
-        \item Consistent, reasonable scale.
-        \item Start at a value that shows the data well.
-      \end{itemize}
-  \end{columns}
-\end{frame}
-
-% ── DOFS: DIRECTION ──────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{DOFS: \textbf{D}irection}
-  \vspace{0.3cm}
-  \begin{columns}
-    \column{0.32\textwidth}
-      \textbf{Positive}\\
-      As $x$ increases, $y$ tends to \textbf{increase}.\\[0.2cm]
-      \textit{Points go up from left to right.}
-    \column{0.32\textwidth}
-      \textbf{Negative}\\
-      As $x$ increases, $y$ tends to \textbf{decrease}.\\[0.2cm]
-      \textit{Points go down from left to right.}
-    \column{0.32\textwidth}
-      \textbf{None}\\
-      Knowing $x$ gives \textbf{no information} about $y$.\\[0.2cm]
-      \textit{Points show no slope.}
-  \end{columns}
-  \vspace{0.8cm}
-  \textcolor{navy!70}{\small Caution: ``positive'' does not mean ``good'' --- it only describes the direction of the pattern.}
-\end{frame}
-
-% ── DOFS: FORM AND STRENGTH ──────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{DOFS: \textbf{F}orm and \textbf{S}trength}
-  \vspace{0.3cm}
-  \begin{columns}
-    \column{0.48\textwidth}
-      \textbf{Form} --- overall shape:
-      \begin{itemize}
-        \item \textbf{Linear} --- points cluster around a straight line.
-        \item \textbf{Curved} --- points follow a curved path.
-        \item \textbf{None} --- no discernible pattern.
-      \end{itemize}
-      \vspace{0.3cm}
-      \textit{Form matters: correlation and regression only apply to \textbf{linear} associations.}
-    \column{0.48\textwidth}
-      \textbf{Strength} --- how closely points follow the form:
-      \begin{itemize}
-        \item \textbf{Strong} --- points hug the form tightly.
-        \item \textbf{Moderate} --- points follow the form with some scatter.
-        \item \textbf{Weak} --- points are loosely scattered.
-      \end{itemize}
-  \end{columns}
-\end{frame}
-
-% ── DOFS: OUTLIERS ───────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{DOFS: \textbf{O}utliers}
-  \vspace{0.3cm}
-  An \textbf{outlier} in a scatterplot is a point that \textbf{deviates from the overall pattern}.
-  \vspace{0.4cm}
-  \begin{columns}
-    \column{0.48\textwidth}
-      A bivariate outlier may have:
-      \begin{itemize}
-        \item An extreme $x$ value.
-        \item An extreme $y$ value.
-        \item Both $x$ and $y$ in range but \textit{far from the pattern}.
-      \end{itemize}
-    \column{0.48\textwidth}
-      \textbf{Describe it in context:}\\[0.2cm]
-      ``One [individual] with [x-value] had [y-value], which does not follow the overall [direction] pattern.''
-  \end{columns}
-  \vspace{0.5cm}
-  \textcolor{navy!70}{\small Preview: Lesson 2.8 --- \textit{influential points} are outliers that substantially change the regression line when removed.}
-\end{frame}
-
-% ── PUTTING IT TOGETHER ───────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Putting It Together: The DOFS Template}
-  \vspace{0.3cm}
-  \textbf{Complete description template:}\\[0.4cm]
-  \begin{block}{}
-    ``There is a \textbf{[strength]} \textbf{[direction]} \textbf{[form]} association between
-    \textbf{[explanatory variable]} and \textbf{[response variable]} for these \textbf{[individuals]}.
-    \textbf{[Outlier sentence if applicable.]}''
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
   \end{block}
-  \vspace{0.4cm}
-  \textbf{Example (sleep vs.\ reaction time):}\\[0.2cm]
-  ``There is a strong negative linear association between hours of sleep and reaction time (ms)
-  for these 10 students. As sleep increases, reaction time tends to decrease. There are no
-  obvious outliers.''
 \end{frame}
 
-% ── CLOSING ──────────────────────────────────────────────────────────────────
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own, then we check}
+  \begin{enumerate}\setlength{\itemsep}{6pt}
+    \item $\widehat{\text{minutes}} = 8 + 1.5(\text{miles})$. Predict a 4-mile delivery. It
+          took 16 minutes: what is its residual?
+    \item Two lines, the same four points. Add each line's residuals. Then add their
+          \emph{squares}. Which line fits better?
+    \item $r = -0.80$. Describe it. Then compute $(-0.80)^2$ and $-0.80 \times 45/1.5$.
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Hold on to item 2}
+    Both lines' residuals add to \redink{0}. So the plain sum cannot pick a winner ---
+    the \emph{squares} can.
+  \end{block}
+\end{frame}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
-  \vspace{3cm}\hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\large Exit Ticket}\\[0.6cm]
-    {\color{white} A scatterplot shows hours of TV per day vs.\ GPA for 25 students.
-    The points slope downward from left to right, with most clustering tightly along the line.
-    One student who watches 7 hr/day has a GPA of 3.8.}\\[0.5cm]
-    {\color{skymid}\small
-      (1) Identify the explanatory and response variables.\\
-      (2) Write a complete DOFS description in context.\\
-      (3) Describe the red point and explain whether it is an outlier.}
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Three terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: LEAST SQUARES ─────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{The least-squares regression line}
+  \sectionlabel{notes, Least Squares $\cdot$ problems 1--3}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{The best line (EK DAT-1.G.1)}
+        The one line that makes the sum of the \textbf{squared residuals} as small as
+        possible. It always passes through $(\bar x, \bar y)$.
+      \end{block}
+      \vspace{4pt}
+      {\small Twenty students: sleep $x$ (hr) and reaction time $y$ (ms).\\
+      $\bar x = 7.2$, \ $s_x = 1.5$, \ $\bar y = 310$, \ $s_y = 45$, \ $r = -0.80$.}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \item $b = r\,\dfrac{s_y}{s_x} = -0.80 \cdot \dfrac{45}{1.5} = -24$
+        \item $a = \bar y - b\bar x = 310 - (-24)(7.2) = 482.8$
+        \item $\widehat{\text{time}} = 482.8 - 24(\text{sleep})$
+      \end{enumerate}
+      \vspace{4pt}
+      {\small $b$ always has the \redink{same sign} as $r$.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: COMPUTER OUTPUT & R-SQUARED ───────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Reading computer output}
+  \sectionlabel{notes, Computer Output \& R-Squared $\cdot$ problems 4--6}
+  \vspace{4pt}
+  \begin{center}
+  {\small\ttfamily
+  \begin{tabular}{@{} l r r r r @{}}
+  Predictor & Coef & SE Coef & T & P \\ \hline
+  Constant & \redink{482.8} & 31.17 & 15.49 & 0.000 \\
+  Sleep & \redink{$-$24.00} & 4.243 & $-$5.66 & 0.000 \\
+  \end{tabular}\\[3pt]
+  S = 27.74 \quad \redink{R-Sq = 64.0\%} \quad R-Sq(adj) = 62.0\%}
+  \end{center}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Where the line lives}
+        $a$ = Coef on \textbf{Constant}. \ $b$ = Coef on the $x$ row (\textbf{Sleep}).
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{$r^2$ (EK DAT-1.G.4)}
+        About 64\% of the \textbf{variation in reaction time} is explained by the linear model
+        with sleep.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    {\small $r = \pm\sqrt{0.64}$ --- the square root forgets the sign. The slope is negative,
+    so $r = $ \redink{$-0.80$}.}
+  \end{center}
+\end{frame}
+
+% ── ROW 3: SLOPE & INTERCEPT — THE CRUX ──────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Saying what the numbers mean}
+  \sectionlabel{notes, Slope \& Intercept $\cdot$ problems 7--10 $\cdot$ the point of today}
+  \vspace{4pt}
+  \begin{block}{Slope (EK DAT-1.H.2)}
+    For each additional hour of sleep, the \redink{predicted} reaction time decreases by 24 ms.
+  \end{block}
+  \vspace{4pt}
+  \begin{block}{Intercept (EK DAT-1.G.3, H.3)}
+    Predicted 482.8 ms at 0 hours of sleep --- \textbf{not meaningful}: nobody in the data slept
+    less than 4 hours.
+  \end{block}
+  \vspace{8pt}
+  \begin{center}
+    Maya: \emph{``When a student sleeps one more hour, their reaction time goes down 24 ms.''}\\[4pt]
+    {\small\color{slate} Real students scatter around the line, and nobody assigned the sleep.
+    The line promises a \textbf{prediction}, not an outcome --- and not a cause.}
+  \end{center}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: Used Cars}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
+  Thirty used Honda Civics, ages 0 to 10 years; price in thousands of dollars.
+  \begin{center}
+  {\small\ttfamily
+  \begin{tabular}{@{} l r r r r @{}}
+  Predictor & Coef & SE Coef & T & P \\ \hline
+  Constant & 24.60 & 0.950 & 25.89 & 0.000 \\
+  Age & $-$1.850 & 0.169 & $-$10.93 & 0.000 \\
+  \end{tabular}\\[3pt]
+  S = 2.10 \quad R-Sq = 81.0\% \quad R-Sq(adj) = 80.3\%}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Write the line. Interpret the slope --- say \emph{predicted}.
+    \item Interpret the intercept. Is a 0-year-old Civic a real car?
+    \item Find $r$ (which sign?) and interpret $r^2$.
+  \end{itemize}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: what did Maya get wrong?}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Almost right}
+        ``Each extra hour, reaction time goes down 24 ms.'' The number is right. The word
+        that is missing is \redink{predicted}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Two intercepts}
+        Sleep: 0 hours is outside the data --- no meaning. Civics: age 0 is a new car ---
+        \textbf{it means something}.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{block}{Say it out loud}
+    $r^2$ is about \redink{variation in $y$}, not about how many points are on the line, and
+    not about ``percent correct.''
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK (the individual practice) ─────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 items $\cdot$ scored $\cdot$ due the first class after two study halls}
+  Car weight and highway mileage --- a new context, on your own.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{A1--A3:} build the line from summary statistics; interpret the slope and
+          the intercept.
+    \item \textbf{B1--B2:} interpret $r^2$; one multiple-choice item with a justification.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    Start with A1 and A2 while I can still catch a wrong start. The \textbf{AP Practice} page
+    (iced drinks) is \redink{not scored} --- work it for the reps and bring it to review.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large The slope tells you how the prediction changes --- not what
+    happens to every individual.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 2.5 --- departures from linearity. What one unusual
+    point can do to $b$, $a$, and $r^2$.}
   \end{minipage}
 \end{frame}
 }

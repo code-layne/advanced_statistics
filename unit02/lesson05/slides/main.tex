@@ -1,0 +1,220 @@
+%! Departures from Linearity — Unit 2, Lesson 2.5 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.5}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Departures from Linearity}\\[1.2cm]
+    {\color{skymid}\small Statistics~$\cdot$~Unit 2}
+  \end{minipage}
+\end{frame}
+}
+
+% GRADUAL-RELEASE deck: targets → warm-up → I DO divider → one frame per instruction row of the
+% notes (Unusual Points; Residual Plots, which carries the crux and the transformation) → WE DO
+% (The Lemonade Stand) → spoken debrief → close & START THE HOMEWORK, which is the individual
+% practice. There is no group activity and no independent practice set in the notes.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 2.5}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item tell an \textbf{outlier} from a \textbf{high-leverage point}, and decide from output
+          whether a point is \textbf{influential}.
+    \item use a \textbf{residual plot} to decide whether a line is appropriate --- even when
+          $r$ is close to $\pm 1$.
+    \item use a \textbf{transformation} (the log of $y$) to straighten a curve and predict.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
+\end{frame}
+
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item Taxi fares: $\hat{y} = 2.50 + 0.80x$. A 10-mile ride cost \$12.00. Predicted fare?
+          Residual? Too high or too low?
+    \item Two residual plots. Which one says a line is a good model?
+    \item One more point, P or Q. Which one moves the \emph{slope} more?
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Keep item 3 in mind}
+    Where a point sits \emph{left to right} matters as much as how far it sits from the line.
+  \end{block}
+\end{frame}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes. Fill each blank as we name it
+    --- not before.}\\[0.9cm]
+    {\color{skymid}\small Three terms go in the vocabulary box today: outlier, high-leverage
+    point, influential point.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: UNUSUAL POINTS ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Three kinds of unusual point}
+  \sectionlabel{notes, Unusual Points $\cdot$ problems 1--4}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Outlier}
+        Far from the \textbf{trend}: a large residual (EK DAT-1.I.1).
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{High-leverage point}
+        Far out in $\boldsymbol{x}$: much larger or smaller than the rest (EK DAT-1.I.2).
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Influential point}
+        Remove it and the slope, intercept, or $r$ \textbf{changes a lot} (EK DAT-1.I.3).
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\small Ten coffee shops, then A, B, C added one at a time:}\\[4pt]
+      {\small\renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{@{} l l c @{}}
+        \textbf{Fit to} & \textbf{Equation} & $r$ \\ \hline
+        10 shops & $\hat{y} = 77.9 + 4.14x$ & 0.97 \\
+        10 + A & $\hat{y} = 86.0 + 4.10x$ & 0.87 \\
+        10 + B & $\hat{y} = 78.9 + 4.12x$ & 0.99 \\
+        10 + C & $\hat{y} = 187.1 + 1.01x$ & \redink{0.48} \\
+      \end{tabular}}
+      \vspace{8pt}
+
+      {\small A is far off the trend and \emph{barely moves the slope}. C is far out in $x$
+      \emph{and} off the trend --- it \redink{drags the line}.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: RESIDUAL PLOTS — THE CRUX ─────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Is a line the right model?}
+  \sectionlabel{notes, Residual Plots $\cdot$ problems 5--9 $\cdot$ the whole point of today}
+  \vspace{2pt}
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[xscale=0.40, yscale=0.40]
+        \draw[linegray] (0,0) -- (10.6,0);
+        \draw[->, thick] (0,-3) -- (0,5);
+        \foreach \y in {-2,0,2,4} { \node[left, font=\tiny] at (0,\y) {\y}; }
+        \foreach \x/\y in {0/4.3,1/0.8,2/-0.7,3/-1.7,4/-2.4,5/-2.3,6/-1.5,7/-0.8,8/0.1,9/1.5,10/2.7}
+          \fill[navy] (\x,\y) circle (0.12 and 0.09);
+        \node[font=\scriptsize] at (5.3,-3.6) {Hours after the dose};
+        \node[font=\bfseries\scriptsize] at (5.3,5.5) {Residuals from $\hat{y} = 15.9 - 1.74x$};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item $r = -0.94$. Strong. \emph{So the line is a good model?}
+        \item The residuals make a \redink{U}: the line is too low at both ends and too high in
+              the middle.
+        \item A strong \emph{curve} can still give $r$ near $\pm 1$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{block}{Say it, write it in the box}
+    $r$ measures \textbf{strength}. Only the residual plot checks the \redink{form}.
+    \quad Straighten the curve with $\log y$: \ $\widehat{\log y} = 1.31 - 0.12x$, \
+    $r = -0.9996$, random residuals.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Lemonade Stand}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 10--13}
+  High temperature vs.\ cups sold, 13 summer days: $\hat{y} = -81.6 + 2.15x$, \ $r = 0.80$.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Describe the residual plot. Any curve?
+    \item $r$ is only 0.80. Is a line still appropriate?
+    \item The street-fair day: outlier, high-leverage, or both?
+    \item Without it: $\hat{y} = -91.7 + 2.24x$, $r = 0.94$. What changed most?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    Problem 7 said a \redink{high} $r$ does not make a line right. Does a \redink{moderate} $r$
+    make a line wrong?
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: strength is not form}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Antibiotic: $r = -0.94$}
+        Strong --- and the \textbf{wrong} model. The residuals curve.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Lemonade: $r = 0.80$}
+        Moderate --- and the \textbf{right} form. The residuals are random.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{block}{Two things to say out loud}
+    Why did shop A barely move the line, while shop C \redink{dragged} it? And what would you
+    look at \emph{first}, before you ever trust a line: $r$, or the residual plot?
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 items $\cdot$ scored $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Part A: an apartment 9 miles from campus --- high-leverage? influential? Plus one
+          multiple-choice item, with a sentence of justification.
+    \item Part B: phone resale values --- $r = -0.94$ and a U-shaped residual plot; then a log
+          model, a prediction, and the evidence it fits better.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Part B, item 1} is the one I am reading over your shoulder. Start there. The AP
+    Practice page is \textbf{not scored} --- work it for the reps before the unit test.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large $r$ tells you how strong. The residual plot tells you whether
+    a line is the right shape at all.}\\[0.9cm]
+    {\color{skymid}\small Next: the Unit 2 test, then Unit 3 --- Collecting Data, and why only a
+    well-designed experiment earns the word \emph{cause}.}
+  \end{minipage}
+\end{frame}
+}
+
+\end{document}

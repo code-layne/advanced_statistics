@@ -47,6 +47,12 @@ a Guided Practice row in a fresh context is worked together; a whole-class debri
 loop; and **the period ends with students starting the homework in class, alone** — the
 homework *is* the individual practice.
 
+**The packet is sized so the whole lesson is finished in one 55-minute period — the compact
+budget (2026-09-29).** About **six printed pages**: cover 1 · warm-up 1 · notes **2** · AP
+practice **1** · homework **1**. When a component will not fit its budget, cut content rather
+than squeeze it: a lesson that cannot be finished in the period is the defect. Unit 1 (authored
+2026-09-08 → 09-25) predates the budget and runs ~12 pages; leave it alone until asked.
+
 | Phase | Minutes | Component |
 | --- | --- | --- |
 | Warm-up | 5 | `warmup` |
@@ -62,8 +68,9 @@ and on the right a terse definition the student completes with `\blank{}` fills,
 prompt (`\notesprompt`) and a **grid of short numbered problems** (`probgrid` + `\pcell`) with
 reserved answer space; a numbered procedure uses `\stepnum{n}`. **The last row is Guided
 Practice**, one fresh context worked entirely together. **The notes end there.** Problems are
-numbered 1..N through the whole component; **target 20–26 problems and 3 pages** at 12pt
-(the vocabulary box plus a two-page table). No prose exposition, no objective box (the targets
+numbered 1..N through the whole component; **target 12–14 problems and 2 pages** at 12pt
+(a vocabulary box of 3–4 terms plus a table of **three or four rows**, the last Guided
+Practice, 3–4 problems a row). No prose exposition, no objective box (the targets
 are on the cover), no red misconception callout: the misconception is *a problem in a grid*,
 and **the crux — the problem that surfaces the lesson's target misconception — lives in the
 last instruction row before Guided Practice.** The I do / we do split runs **row by row**: the
@@ -71,9 +78,10 @@ teacher fills the definition lines and works the first problem of each grid, the
 the rest (~24 min), then Guided Practice together (~10 min). The plan names, by problem number,
 which problems the teacher works, which is the trap, and which is the crux.
 
-**`ap_practice`** — four multiple-choice items (five options, in context) plus one multi-part
-free-response set, AP format. **`homework`** — the graded individual practice, in a *third*
-context (instruction, guided practice, and homework each use a different one). **`cover`** —
+**`ap_practice`** — **one page**: two multiple-choice items (five options, in context) plus one
+short free-response set of two or three parts, AP format. **`homework`** — **one page**, 5–6
+items: the graded individual practice, in a *third* context (instruction, guided practice, and
+homework each use a different one), finishable in the 8 minutes plus one study hall. **`cover`** —
 packet table (Warm-Up · Guided Notes & Practice · AP Practice · Homework), learning targets that
 name the formal term in bold, and a *Keep in Mind* box that carries the lesson's ideas, never the
 lesson's process. **`slides`** — the Beamer deck, ordered targets → warm-up → I-do divider → one
@@ -113,9 +121,12 @@ Every lesson carries **both** back-of-packet components, authored every time:
 ## 3. Where structure comes from
 
 The **College Board CED** in `spec/` — `ap-statistics-course-and-exam-description.pdf` and the
-course-at-a-glance files. **One CED Topic maps to one lesson**; confirm the mapping with the user
-before authoring (`references/ap-workflow.md` in the skill). The units are shorter than the CED
-by choice (Unit 1 is 8 lessons); **trust the live `unit*/lesson*` directories, not
+course-at-a-glance files. **One CED Topic maps to one lesson** unless the unit is compressed; confirm the mapping with
+the user before authoring (`references/ap-workflow.md` in the skill). The units are shorter than
+the CED by choice (Unit 1 is 8 lessons; Unit 2 folds nine Topics into five lessons — 2.1 two
+categorical variables = CED 2.1–2.3 · 2.2 scatterplots & correlation = 2.4–2.5 · 2.3 regression
+line & residuals = 2.6–2.7 · 2.4 least-squares regression = 2.8 · 2.5 departures from linearity =
+2.9); **trust the live `unit*/lesson*` directories, not
 `COURSE_OUTLINE.md`**, for what exists. `COURSE_OUTLINE.md` is the unit → lesson index; update its
 row after authoring a lesson.
 
@@ -251,9 +262,10 @@ Either way, delete stale stamps — `rm -rf .stamps/unitXX/lessonYY target/unitX
 evidence per lesson: `make -C unitXX/lessonYY all` exits 0 and every component's page count
 equals its `_key`'s, compared on the compiled components, not the padded packets.
 
-**Scoreboard (2026-09-17):** 7 of 78 lessons are in the current shape (`unit01/lesson01`–`07`,
-notes as the Main Ideas / Notes table); 1 in the group-activity shape (`unit01/lesson00`);
-**no EFFL lessons remain**; 70 pre-EFFL legacy,
+**Scoreboard (2026-09-29):** 12 of 74 lessons are in the current shape (`unit01/lesson01`–`07`
+at the old 3-page notes budget; `unit02/lesson01`–`05` at the compact budget, Unit 2 cut from
+nine lessons to five); 1 in the group-activity shape (`unit01/lesson00`);
+**no EFFL lessons remain**; 61 pre-EFFL legacy (units 03–09),
 of which 96 `_key` files still hold teacher notes, `\namedateperiod` appears on every component,
 and 57 lessons have no deck. Convert lesson by lesson or unit by unit as you review, authoring
 the missing deck as you go, and rebuild the unit packet each time — never the whole course in one

@@ -1,0 +1,113 @@
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — AP Practice (Answer Key)
+% GRADUAL RELEASE: AP-format practice, assigned but NOT scored — the cover's score column reads
+% NA for this component. The graded practice is the `homework` component that follows it.
+% ONE PAGE (compact budget): two multiple-choice items and one three-part free response, all
+% on one context — 20 teenagers' screen time and sleep (r = -0.72) — which appears nowhere
+% else in the packet. FRQ (c) is the spiral to Lesson 2.1 (two categorical variables).
+%   screen (h/day): 1 1.5 2 2.5 3 3 3.5 4 4.5 5 5 5.5 6 6.5 7 7.5 8 8 9 9.5
+%   sleep  (h)    : 8.2 8.9 7.6 8.5 7.4 8.6 7.9 8.3 7.2 8.1 7.0 7.8 7.5 6.8 7.9 6.9 7.4 6.6 7.3 6.5
+% Page lockstep with the key rests on \writelines{n} in the blank matching n terse \ansline{}
+% in the key. The next-lesson preview is NOT here: it closes the packet, in ../homework/.
+% NO teachernote here — scoring guidance lives in the lesson plan.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.2}{AP Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.10in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored}. Your graded homework is the last section.
+\end{remindbox}
+
+\vspace{0.08in}
+
+\noindent\begin{minipage}[c]{0.46\linewidth}\raggedright
+\textbf{Screens and Sleep.} Twenty teenagers reported their daily screen time and how many hours they slept last night.
+Technology gives $r = -0.72$.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.50\linewidth}\centering
+\begin{tikzpicture}[x=0.62cm, y=0.48cm]
+  \foreach \y in {6.5,7.5,8.5} {
+    \draw[linegray, very thin] (0,\y) -- (10,\y);
+    \node[left, font=\tiny] at (0,\y) {\y};}
+  \draw[thick] (0,6.3) -- (10.2,6.3);
+  \draw[thick] (0,6.3) -- (0,9.2);
+  \foreach \x in {0,2,4,6,8,10} {
+    \draw (\x,6.25) -- (\x,6.35); \node[below, font=\tiny] at (\x,6.28) {\x};}
+  \foreach \s/\h in {1/8.2, 1.5/8.9, 2/7.6, 2.5/8.5, 3/7.4, 3/8.6, 3.5/7.9, 4/8.3, 4.5/7.2,
+                     5/8.1, 5/7.0, 5.5/7.8, 6/7.5, 6.5/6.8, 7/7.9, 7.5/6.9, 8/7.4, 8/6.6,
+                     9/7.3, 9.5/6.5}
+    \fill[navy] (\s,\h) circle (1.5pt);
+  \node[font=\tiny] at (5,5.45) {Screen time (hours per day)};
+  \node[rotate=90, font=\tiny] at (-1.0,7.75) {Sleep (h)};
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{0.06in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the single best answer.
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.06in, topsep=4pt]
+
+  \item Which is the best interpretation of $r = -0.72$?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt, topsep=2pt]
+          \item 72\% of the change in sleep is caused by screen time.
+          \item \ans{There is a moderately strong, negative, linear association.}
+          \item Each extra hour of screen time lowers sleep by 0.72 hours.
+          \item The association is weak, because $r$ is negative.
+          \item Screen time and sleep are unrelated, because $r$ is not close to $-1$.
+        \end{enumerate}
+
+  \item Which change would alter the value of $r$?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt, topsep=2pt]
+          \item Recording sleep in minutes instead of hours.
+          \item Putting sleep on the $x$-axis and screen time on the $y$-axis.
+          \item Adding 30 minutes to every teen's screen time.
+          \item \ans{Adding a 21st teen with 9 hours of screen time and 9 hours of sleep.}
+          \item Giving every teen a new ID number.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.04in}
+
+\boxguard[8]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Answer \emph{in context} --- that is what earns
+credit.
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.06in, topsep=4pt, resume]
+
+  \item \textbf{(a)} Name the explanatory and the response variable, then describe the
+        association in context.\\[4pt]
+        \ansline{Explanatory: screen time; response: sleep. Moderately strong, negative, linear ---}\\[1pt]
+        \ansline{teens with more screen time tend to sleep less; no clear outliers.}
+
+        \vspace{4pt}
+        \textbf{(b)} A headline reads: \emph{``Screens steal sleep --- cut screen time and teens
+        will sleep more.''} Does this study support that claim? Explain.\\[4pt]
+        \ansline{No. It is an observational study and correlation is not causation; homework load}\\[1pt]
+        \ansline{or a late bedtime could raise screen time and cut sleep at the same time.}
+
+        \vspace{4pt}
+        \textbf{(c)} If each teen were recorded only as a ``heavy'' or ``light'' screen user and
+        as sleeping 8+ hours or not, how would you check for an association?\\[4pt]
+        \ansline{Two-way table: compare the percent sleeping 8+ hours, heavy vs.\ light users.}
+
+\end{enumerate}
+
+\end{document}
