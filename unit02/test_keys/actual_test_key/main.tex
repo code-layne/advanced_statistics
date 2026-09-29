@@ -1,0 +1,451 @@
+%! Unit 2, Lessons 2.1–2.5 — ACTUAL Unit Test (Answer Key)
+% The scored unit test. Item for item it is the parallel form of ../practice_test/: same two
+% sections, the same ten multiple-choice targets in the same order, the same two free-response
+% questions with the same parts and point values — every context different, so a student who
+% worked the practice test has practised the moves and not memorised the answers.
+% BLUEPRINT (1 pt per MC, FRQ 1 = 4, FRQ 2 = 6, total 20; one 55-minute period):
+%   MC 1 conditional relative frequency (denominator)  — clinic walk-in vs scheduled × wait    2.1
+%   MC 2 association, groups of unequal size           — street vs park trees × stressed       2.1
+%   MC 3 explanatory vs response                       — library hours open vs checkouts       2.2
+%   MC 4 describe a scatterplot                        — river water temp vs dissolved oxygen     2.2
+%   MC 5 properties of r                               — hardware store floor area vs sales    2.2
+%   MC 6 predict + extrapolation                       — tomato plant age vs height             2.3
+%   MC 7 residual, sign and meaning                    — dairy feed vs milk                    2.3
+%   MC 8 slope in context                              — lake algae vs water clarity           2.4
+%   MC 9 r^2 from computer output                      — home size vs monthly heating cost     2.4
+%   MC 10 residual plot vs high r                      — fish-farm age vs weight               2.5
+%   FRQ 1 two-way table                                — rail-station distance × commute mode  2.1
+%   FRQ 2 regression                                   — growing-season rainfall vs wheat yield 2.2–2.5
+% THE DATA
+%   MC 1: walk-in 54/36 (90), scheduled 42/168 (210), totals 96/204/300 -> 54/90 = 0.60.
+%   MC 9: n = 30, xbar 2000, s_x 500, ybar 150, s_y 40, r 0.77 -> b 0.0616, a 26.80, S 25.97,
+%         SE(b) 0.009646, T 6.39; SE(a) 19.87, T 1.35, P 0.188; R-Sq 59.3%, adj 57.8%.
+%   FRQ 1: near 96/64/40 (200), far 54/216/30 (300); transit 150, car 280, bike/walk 70; 500.
+%   FRQ 2: 15 fields, rainfall x (in): 9 10 11 12 13 14 14 15 16 17 18 19 20 21 22
+%          yield y (bu/acre):          43 46 44 49 53 58 53 55 62 57 60 66 68 64 71
+%          yhat = 24.85 + 2.062x, r = 0.957, R-Sq 91.6%, S 2.624, SE(b) 0.1732, T 11.91,
+%          SE(a) 2.752, T 9.03. Residuals: -.40 .53 -3.53 -.59 1.35 4.29 -.71 -.78 4.16 -2.90
+%          -1.96 1.98 1.92 -4.15 .79 (random scatter). The (14, 58) residual is 4.28 with the
+%          printed coefficients.
+% NAMESTRIP: \namedateperiod mirrors the blank — structural, so the pages stay in lockstep.
+% NO teachernote here — scoring guidance belongs in the teacher's copy, never in a key.
+% GENERATED FROM the blank.
+% PAGINATION: each item carries a \boxguard sized to its height so no stem, graph or option
+% list splits across a page; the Section II strip is guarded to travel with FRQ 1.
+% NO SKETCH ITEMS: every display is pre-drawn in TikZ and read.
+% PAGE LOCKSTEP with ../../tests/actual_test/: every \writelines{n} here is answered by
+% exactly n \ansline{} there, each terse enough not to wrap; every work block is byte-identical.
+% Nothing else differs except the preamble, the header, and the \ans{} marks on the correct MC
+% options.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 2 \quad Lessons 2.1--2.5}{Unit Test --- Answer Key}
+
+\namedateperiod
+\par\vspace{2pt}
+\hfill\small Score:\;\blank{1.3cm}\;/\;20\normalsize
+\vspace{0.06in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice} (1 point each). Circle the single best answer. Read all
+five options --- more than one of them is about the context, not just the arithmetic.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \item A health clinic recorded, for 300 patient visits last month, the type of visit and
+        whether the patient waited more than 30 minutes to be seen.
+
+        \vspace{2pt}
+        {\centering\small
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{} l c c c @{}}
+        \rowcolor{sky}
+         & \textbf{Waited over 30 min} & \textbf{Did not} & \textbf{Total} \\
+        \midrule
+        Walk-in   & 54 & 36  & 90  \\
+        Scheduled & 42 & 168 & 210 \\
+        \midrule
+        Total     & 96 & 204 & 300 \\
+        \end{tabular}\par}
+        \vspace{4pt}
+
+        What proportion of \textbf{walk-in} visits waited more than 30 minutes?
+        \par\vspace{3pt}\noindent
+        \hspace{1.2em}\textbf{(A)} 0.18 \hfill \textbf{(B)} 0.30 \hfill
+        \textbf{(C)} 0.32 \hfill \textbf{(D)} 0.5625 \hfill \textbf{(E)} \ans{0.60}
+
+  \boxguard[18]% keep the item whole
+  \item A city forester checked 240 street trees and 60 park trees and rated each one
+        \emph{stressed} or \emph{healthy}. The segmented bar graph shows the results.
+
+        \vspace{4pt}
+        {\centering
+        \begin{tikzpicture}[x=1cm, y=0.024cm]
+          \foreach \y in {0,50,100} {
+            \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\y\%};}
+          \draw[thick] (0,0) -- (0,104);
+          \draw[thick] (0,0) -- (3.6,0);
+          \fill[navy]  (0.4,0)  rectangle (1.6,35);
+          \fill[sky]   (0.4,35) rectangle (1.6,100);
+          \fill[navy]  (2.1,0)  rectangle (3.3,15);
+          \fill[sky]   (2.1,15) rectangle (3.3,100);
+          \draw (0.4,0) rectangle (1.6,100);
+          \draw (2.1,0) rectangle (3.3,100);
+          \node[white, font=\scriptsize\bfseries] at (1.0,17.5) {35\%};
+          \node[font=\scriptsize\bfseries] at (1.0,67.5) {65\%};
+          \node[white, font=\tiny\bfseries] at (2.7,7.5) {15\%};
+          \node[font=\scriptsize\bfseries] at (2.7,57.5) {85\%};
+          \node[below, font=\tiny, align=center] at (1.0,-2) {Street trees\\($n = 240$)};
+          \node[below, font=\tiny, align=center] at (2.7,-2) {Park trees\\($n = 60$)};
+          \fill[navy] (4.0,80) rectangle (4.25,90); \node[right, font=\tiny] at (4.3,85) {Stressed};
+          \fill[sky]  (4.0,62) rectangle (4.25,72); \draw (4.0,62) rectangle (4.25,72);
+          \node[right, font=\tiny] at (4.3,67) {Healthy};
+        \end{tikzpicture}\par}
+        \vspace{2pt}
+
+        Which statement is best supported by these data?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Street trees are more often stressed, because 84 street trees are stressed and
+                only 9 park trees are.
+          \item No comparison is possible, because there are four times as many street trees.
+          \item \ans{Location and tree health are associated: 35\% of street trees are stressed,
+                compared with 15\% of park trees.}
+          \item Location and tree health are not associated, because most trees in both
+                locations are healthy.
+          \item Growing along a street causes 35\% of trees to become stressed.
+        \end{enumerate}
+
+  \boxguard[9]% keep the item whole
+  \item A library system records, for each of its 18 branches, the number of hours the branch
+        is open per week and the number of books checked out per week. The staff want to know
+        whether longer hours go with more checkouts. Which choice of variables is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{Explanatory: hours open per week. Response: books checked out per week.}
+          \item Explanatory: books checked out per week. Response: hours open per week.
+          \item Explanatory: the 18 branches. Response: books checked out per week.
+          \item Both are response variables, because both are recorded every week.
+          \item Neither can be named until the correlation has been computed.
+        \end{enumerate}
+
+  \boxguard[18]% keep the item whole
+  \item The scatterplot shows the water temperature and the dissolved oxygen measured at 15
+        river sites on one summer afternoon.
+
+        \vspace{4pt}
+        {\centering
+        \begin{tikzpicture}[xscale=0.20, yscale=0.28]
+          \foreach \y in {6,8,10,12} {\draw[linegray, very thin] (0,\y) -- (29,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \draw[->, thick] (0,4.5) -- (30,4.5);
+          \draw[->, thick] (0,4.5) -- (0,14);
+          \foreach \x in {0,5,10,15,20,25} {\draw (\x,4.3) -- (\x,4.7);
+            \node[below, font=\tiny] at (\x,4.4) {\x};}
+          \foreach \x/\y in {4/12.6, 6/12.1, 8/11.9, 10/11.2, 11/11.0, 13/10.4, 14/10.3, 16/9.7,
+                             17/9.6, 19/9.0, 20/8.9, 22/8.3, 23/8.2, 25/7.7}
+            {\fill[navy] (\x,\y) circle[x radius=0.32, y radius=0.23];}
+          \fill[navy] (9,6.0) circle[x radius=0.32, y radius=0.23];
+          \node[font=\tiny] at (14.5,2.2) {Water temperature ($^\circ$C)};
+          \node[rotate=90, font=\tiny] at (-4.3,9.2) {Dissolved oxygen (mg/L)};
+        \end{tikzpicture}\par}
+        \vspace{2pt}
+
+        Which is the best description of the association?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Strong, positive, and linear, with no unusual points.
+          \item Strong, negative, and linear, with no unusual points.
+          \item \ans{Strong, negative, and linear, with one site far below the pattern.}
+          \item Weak and curved, because one site does not follow the others.
+          \item There is no association, because one site has low temperature and low
+                oxygen.
+        \end{enumerate}
+
+  \boxguard[9]% keep the item whole
+  \item A hardware chain finds $r = 0.74$ between store floor area (square feet) and monthly
+        sales (dollars) for its 40 stores. Which statement is true?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item If floor area were recorded in square meters, $r$ would change.
+          \item \ans{If sales were in thousands of dollars and floor area in square meters, $r$
+                would still be 0.74.}
+          \item Using sales to predict floor area would give $r = 1/0.74 \approx 1.35$.
+          \item $r = 0.74$ means that 74\% of the stores have sales that match their size.
+          \item $r$ is measured in dollars per square foot.
+        \end{enumerate}
+
+  \boxguard[10]% keep the item whole
+  \item A gardener fits $\hat{y} = 2.5 + 1.2x$, where $x$ is a tomato plant's age (days) and
+        $\hat{y}$ is its predicted height (cm), using plants 10 to 40 days old. What does the
+        line say about a plant 120 days old? Which statement is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 146.5 cm, and the prediction is reliable because it comes from the line.
+          \item No number can be computed, because no plant in the data was 120 days old.
+          \item 97.9 days, found by solving $120 = 2.5 + 1.2x$.
+          \item 146.5 cm, and every 120-day-old plant will be exactly that tall.
+          \item \ans{146.5 cm, but this is extrapolation --- 120 days is far outside the 10 to 40
+                days in the data --- so the prediction may be very unreliable.}
+        \end{enumerate}
+
+  \boxguard[9]% keep the item whole
+  \item On a dairy farm, $\hat{y} = 4.2 + 1.5x$ predicts a cow's daily milk (liters) from its
+        daily feed (kilograms). A cow that ate 20 kg of feed gave 31 liters of milk. What is
+        its residual, and what does it mean?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 3.2 liters; the cow gave more milk than predicted.
+          \item $-3.2$ liters; the cow gave more milk than predicted.
+          \item 3.2 liters; the cow gave less milk than predicted.
+          \item \ans{$-3.2$ liters; the cow gave less milk than predicted.}
+          \item 34.2 liters; the line predicted this cow exactly.
+        \end{enumerate}
+
+  \boxguard[11]% keep the item whole
+  \item For 25 lakes, $\hat{y} = 18.4 - 0.62x$, where $x$ is algae concentration (micrograms
+        per liter) and $\hat{y}$ is predicted water clarity (feet). Which is the correct
+        interpretation of the slope?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{For each additional microgram per liter of algae, the predicted water clarity
+                decreases by 0.62 feet.}
+          \item For each additional microgram per liter of algae, a lake's water clarity
+                decreases by exactly 0.62 feet.
+          \item For each additional foot of clarity, the predicted algae concentration
+                decreases by 0.62 micrograms per liter.
+          \item When a lake has no algae, its water clarity is 18.4 feet.
+          \item Adding algae to a lake causes its clarity to fall 0.62 feet per microgram.
+        \end{enumerate}
+
+  \boxguard[15]% keep the item whole
+  \item An energy company regressed monthly winter heating cost (dollars) on home size
+        (square feet) for 30 homes.
+
+        \vspace{2pt}
+        {\centering\footnotesize\ttfamily
+        \begin{tabular}{@{} l r r r r @{}}
+        Predictor & Coef & SE Coef & T & P \\ \hline
+        Constant & 26.80 & 19.87 & 1.35 & 0.188 \\
+        Size & 0.06160 & 0.009646 & 6.39 & 0.000 \\
+        \end{tabular}\par
+        S = 25.97 \quad R-Sq = 59.3\% \quad R-Sq(adj) = 57.8\%\par}
+        \vspace{2pt}
+
+        Which is the correct interpretation of the value of R-Sq?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The correlation between home size and heating cost is 0.593.
+          \item About 59.3\% of the homes have heating costs the line predicts correctly.
+          \item \ans{About 59.3\% of the variation in monthly heating cost is explained by the
+                linear model with home size.}
+          \item Home size causes 59.3\% of a home's heating cost.
+          \item Each extra square foot raises the predicted heating cost by 59.3\%.
+        \end{enumerate}
+
+  \boxguard[18]% keep the item whole
+  \item A fish farm fits a line predicting a fish's weight (grams) from its age (weeks) for
+        14 fish, and finds $r = 0.96$. The residual plot is below.
+
+        \vspace{4pt}
+        {\centering
+        \begin{tikzpicture}[xscale=0.19, yscale=0.055]
+          \draw[->, thick] (0,-24) -- (0,28);
+          \draw[thick] (0,-24) -- (30,-24);
+          \draw[dashed, slate] (0,0) -- (30,0);
+          \foreach \y in {-20,0,20} {\draw (-0.4,\y) -- (0.4,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \foreach \x in {0,10,20,30} {\draw (\x,-25) -- (\x,-23);
+            \node[below, font=\tiny] at (\x,-24) {\x};}
+          \foreach \x/\e in {2/24, 4/14, 6/5, 8/-2, 10/-8, 12/-13, 14/-16, 16/-16, 18/-14,
+                             20/-10, 22/-4, 24/4, 26/14, 28/24}
+            {\fill[navy] (\x,\e) circle[x radius=0.35, y radius=1.2];}
+          \node[font=\tiny] at (15,-34) {Age (weeks)};
+          \node[rotate=90, font=\tiny] at (-5.2,2) {Residual (g)};
+        \end{tikzpicture}\par}
+        \vspace{2pt}
+
+        Which conclusion is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item A line is appropriate, because $r = 0.96$ is close to 1.
+          \item Age and weight are not associated, because the residuals are not all zero.
+          \item A line is appropriate, because there are about as many positive residuals as
+                negative ones.
+          \item \ans{A line is not appropriate: the residuals form a clear curve, even though $r$
+                is high.}
+          \item The curve in the residuals shows that the farm weighed the fish incorrectly.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[26]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response} (10 points). Show your reasoning. Every answer must be
+written \emph{in the context of the problem} --- name the variables and their units.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \boxguard[18]% keep the item whole
+  \item \textbf{(4 points)} A regional transit agency surveyed 500 commuters about whether they
+        live within half a mile of a rail station and how they usually get to work.
+
+        \vspace{4pt}
+        \noindent
+        \begin{minipage}[c]{0.56\linewidth}\centering\small
+        \renewcommand{\arraystretch}{1.2}
+        \setlength{\tabcolsep}{4pt}
+        \begin{tabular}{@{} l c c c c @{}}
+        \rowcolor{sky}
+         & \textbf{Transit} & \textbf{Car} & \textbf{Bike/walk} & \textbf{Total} \\
+        \midrule
+        Near a station & 96 & 64  & 40 & 200 \\
+        Far from one   & 54 & 216 & 30 & 300 \\
+        \midrule
+        Total          & 150 & 280 & 70 & 500 \\
+        \end{tabular}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.42\linewidth}\centering
+        \begin{tikzpicture}[x=1cm, y=0.032cm]
+          \foreach \y in {0,50,100} {
+            \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\y\%};}
+          \draw[thick] (0,0) -- (0,104);
+          \draw[thick] (0,0) -- (2.9,0);
+          \fill[navy]    (0.3,0)  rectangle (1.3,48);
+          \fill[goldacc] (0.3,48) rectangle (1.3,80);
+          \fill[sky]     (0.3,80) rectangle (1.3,100);
+          \fill[navy]    (1.7,0)  rectangle (2.7,18);
+          \fill[goldacc] (1.7,18) rectangle (2.7,90);
+          \fill[sky]     (1.7,90) rectangle (2.7,100);
+          \draw (0.3,0) rectangle (1.3,100);
+          \draw (1.7,0) rectangle (2.7,100);
+          \node[white, font=\tiny\bfseries] at (0.8,24) {48\%};
+          \node[font=\tiny\bfseries] at (0.8,64) {32\%};
+          \node[font=\tiny\bfseries] at (0.8,90) {20\%};
+          \node[white, font=\tiny\bfseries] at (2.2,9) {18\%};
+          \node[font=\tiny\bfseries] at (2.2,54) {72\%};
+          \node[font=\tiny\bfseries] at (2.2,95) {10\%};
+          \node[below, font=\tiny] at (0.8,-2) {Near};
+          \node[below, font=\tiny] at (2.2,-2) {Far};
+          \fill[sky]     (3.0,86) rectangle (3.22,96); \draw (3.0,86) rectangle (3.22,96);
+          \node[right, font=\tiny] at (3.25,91) {Bike/walk};
+          \fill[goldacc] (3.0,70) rectangle (3.22,80); \node[right, font=\tiny] at (3.25,75) {Car};
+          \fill[navy]    (3.0,54) rectangle (3.22,64); \node[right, font=\tiny] at (3.25,59) {Transit};
+        \end{tikzpicture}
+        \end{minipage}
+
+        \vspace{6pt}
+        \textbf{(a)} What proportion of \emph{all} 500 commuters use transit? Of the commuters
+        who live \emph{far} from a station, what proportion drive a car?
+        \begin{work}
+          \text{Transit, all commuters: } &\ 150/500 = 0.30 \\
+          \text{Car, among far commuters: } &\ 216/300 = 0.72
+        \end{work}
+
+        \vspace{2pt}
+        \boxguard[6]% keep the item whole
+        \textbf{(b)} Use the segmented bar graph to compare the distributions of commute mode
+        for commuters who live near a station and those who live far from one.\\[4pt]
+        \ansline{Near: 48\% transit, 32\% car, 20\% bike/walk. Far: 18\% transit, 72\% car,}\\
+        \ansline{10\% bike/walk. Near commuters take transit far more often (48\% vs.\ 18\%);}\\
+        \ansline{far commuters mostly drive (72\% vs.\ 32\%) and bike or walk less (10\% vs.\ 20\%).}
+
+        \vspace{6pt}
+        \boxguard[6]% keep the item whole
+        \textbf{(c)} Is there an association between living near a rail station and commute
+        mode for these 500 commuters? Justify with numbers. Can the agency conclude that
+        living near a station \emph{causes} people to take transit? Explain.\\[4pt]
+        \ansline{Yes: the mode distributions differ a lot --- 48\% of near commuters take transit,}\\
+        \ansline{only 18\% of far ones. No cause: this is a survey, not an experiment; people who}\\
+        \ansline{like transit may choose to live near a station, or other variables may differ.}
+
+  \boxguard[42]% keep the item whole
+  \item \textbf{(6 points)} An agricultural extension agent recorded the growing-season rainfall
+        (inches) and the wheat yield (bushels per acre) for 15 fields in one county. The
+        scatterplot, computer output, and residual plot are below.
+
+        \vspace{4pt}
+        \noindent
+        \begin{minipage}[b]{0.49\linewidth}\centering
+        \begin{tikzpicture}[xscale=0.38, yscale=0.075]
+          \foreach \y in {40,50,60,70} {\draw[linegray, very thin] (8,\y) -- (23,\y);
+            \node[left, font=\tiny] at (8,\y) {\y};}
+          \draw[->, thick] (8,37) -- (23.5,37);
+          \draw[->, thick] (8,37) -- (8,75);
+          \foreach \x in {10,14,18,22} {\draw (\x,36.3) -- (\x,37.7);
+            \node[below, font=\tiny] at (\x,36.6) {\x};}
+          \foreach \x/\y in {9/43, 10/46, 11/44, 12/49, 13/53, 14/58, 14/53, 15/55, 16/62,
+                             17/57, 18/60, 19/66, 20/68, 21/64, 22/71}
+            {\fill[navy] (\x,\y) circle[x radius=0.17, y radius=0.85];}
+          \node[font=\tiny] at (15.5,29.5) {Rainfall (inches)};
+          \node[rotate=90, font=\tiny] at (5.6,56) {Yield (bu/acre)};
+        \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.49\linewidth}\centering
+        \begin{tikzpicture}[xscale=0.38, yscale=0.25]
+          \draw[->, thick] (8,-5.5) -- (8,6);
+          \draw[thick] (8,-5.5) -- (23.5,-5.5);
+          \draw[dashed, slate] (8,0) -- (23.5,0);
+          \foreach \y in {-4,-2,0,2,4} {\draw (7.8,\y) -- (8.2,\y);
+            \node[left, font=\tiny] at (8,\y) {\y};}
+          \foreach \x in {10,14,18,22} {\draw (\x,-5.65) -- (\x,-5.35);
+            \node[below, font=\tiny] at (\x,-5.5) {\x};}
+          \foreach \x/\e in {9/-0.40, 10/0.53, 11/-3.53, 12/-0.59, 13/1.35, 14/4.29, 14/-0.71,
+                             15/-0.78, 16/4.16, 17/-2.90, 18/-1.96, 19/1.98, 20/1.92, 21/-4.15,
+                             22/0.79}
+            {\fill[navy] (\x,\e) circle[x radius=0.17, y radius=0.26];}
+          \node[font=\tiny] at (15.5,-7.8) {Rainfall (inches)};
+          \node[rotate=90, font=\tiny] at (5.9,0) {Residual (bu/acre)};
+        \end{tikzpicture}
+        \end{minipage}
+
+        \vspace{4pt}
+        {\centering\footnotesize\ttfamily
+        \begin{tabular}{@{} l r r r r @{}}
+        Predictor & Coef & SE Coef & T & P \\ \hline
+        Constant & 24.85 & 2.752 & 9.03 & 0.000 \\
+        Rainfall & 2.062 & 0.1732 & 11.91 & 0.000 \\
+        \end{tabular}\par
+        S = 2.624 \quad R-Sq = 91.6\% \quad R-Sq(adj) = 91.0\%\par}
+
+        \vspace{6pt}
+        \textbf{(a)} Describe the association between rainfall and wheat yield.\\[4pt]
+        \ansline{Strong, positive, linear association ($r = \sqrt{0.916} \approx 0.957$): fields with}\\
+        \ansline{more rainfall tend to have higher wheat yields. No clear outliers.}
+
+        \vspace{6pt}
+        \textbf{(b)} Write the equation of the least-squares regression line, using the
+        variable names. Then interpret its slope in context.\\[4pt]
+        \ansline{$\widehat{\text{yield}} = 24.85 + 2.062(\text{rainfall})$}\\
+        \ansline{For each additional inch of growing-season rainfall, the \emph{predicted} wheat}\\
+        \ansline{yield increases by 2.062 bushels per acre.}
+
+        \vspace{6pt}
+        \textbf{(c)} One field had 14 inches of rainfall and yielded 58 bushels per acre. Find
+        its residual and interpret it in context.
+        \begin{work}
+          \widehat{\text{yield}} &= 24.85 + 2.062(14) = 53.72 \text{ bu/acre} \\
+          \text{residual} &= y - \hat{y} = 58 - 53.72 = 4.28 \text{ bu/acre}
+        \end{work}
+        \ansline{This field yielded 4.28 bu/acre \emph{more} than predicted for 14 inches of rain.}
+
+        \vspace{6pt}
+        \textbf{(d)} Interpret the value of R-Sq in context.\\[4pt]
+        \ansline{About 91.6\% of the variation in wheat yield among these 15 fields is explained}\\
+        \ansline{by the linear model with growing-season rainfall.}
+
+        \vspace{6pt}
+        \textbf{(e)} Use the residual plot to decide whether a linear model is appropriate for
+        these data. Explain.\\[4pt]
+        \ansline{Yes: the residuals scatter randomly above and below 0 with no curve and no}\\
+        \ansline{fanning, so a linear model for yield from rainfall is appropriate.}
+
+\end{enumerate}
+
+\end{document}

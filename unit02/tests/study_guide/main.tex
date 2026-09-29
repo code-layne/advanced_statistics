@@ -1,0 +1,251 @@
+%! Unit 2, Lessons 2.1–2.5 — Unit Test Study Guide (reference sheet; no answer key by design)
+% This is a REFERENCE sheet, not a worksheet: every definition, every worked move, and every
+% trap is already filled in, so there is nothing to answer and therefore no _key sibling.
+% The practice a student does before the test is ../practice_test/, which HAS a key.
+% NAMESTRIP: no \namedateperiod — the name row lives on a packet cover and the unit tests only.
+% Vocabulary below is quoted from the five lessons' own vocabulary boxes (notes_key \termans
+% entries) so a student reading this reads the same words twice.
+% Worked contexts (museum audio tour; hiking trails) are deliberately NOT used in any lesson,
+% AP practice, or homework — and the practice and actual tests must not use them either.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+% One tabularx per group of lessons rather than one long table: a tabularx with X
+% columns is an unbreakable box, so a single long table floats whole to a fresh page
+% and strands most of page 1. Short tables flow, and each carries its lesson tag.
+
+% Optional arg: the \boxguard size (lines kept with the strip). The last section is three
+% lines long, so it guards only what it needs.
+\newcommand{\sghead}[2][10]{%
+  \vspace{0.13in}
+  \boxguard[#1]
+  \begin{headlinebox}{navy}\color{white}\bfseries\small #2\end{headlinebox}
+  \vspace{0.09in}}
+
+\begin{document}
+
+\pageheader{Unit 2 \quad Lessons 2.1--2.5}{Unit Test Study Guide}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+The test covers \textbf{Lesson 2.1} through \textbf{Lesson 2.5} --- two categorical variables,
+then scatterplots, correlation, regression lines, residuals, and when a line is the wrong
+model. Multiple choice, then two free-response questions: one on a two-way table, one on a
+scatterplot with computer output and a residual plot. Every graph is already drawn: \textbf{read}
+it, and answer \textbf{in context} --- variables, units, and \emph{predicted} for the line.
+\end{remindbox}
+
+\sghead{1. Vocabulary you are expected to use, not just recognize}
+
+\small
+\renewcommand{\arraystretch}{1.15}
+
+\textbf{From Lesson 2.1 --- two categorical variables}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Two-way table & a table of counts for two categorical variables on the same individuals. \\
+Joint rel.\ freq. & one cell $\div$ the \textbf{grand} total. \\
+Marginal rel.\ freq. & a row or column total $\div$ the \textbf{grand} total. \\
+Conditional rel.\ freq. & a cell count $\div$ the total of its \textbf{own} row or column.
+                   In ``of those who\ldots'', the words after \emph{of} name the denominator. \\
+Segmented bar graph & one bar per group, totalling 100\%, split into its conditional distribution. \\
+Association & the distribution of one variable changes across the categories of the other. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\textbf{From Lessons 2.2 and 2.3 --- scatterplots, $r$, and the line}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Scatterplot & two quantitative variables on the same individuals; one dot per individual. \\
+Explanatory \& response & the explanatory variable ($x$-axis) helps explain or predict the
+                   response ($y$-axis), the outcome. \\
+DOFS & describe a scatterplot by \textbf{D}irection, \textbf{O}utliers \& unusual features,
+                   \textbf{F}orm, \textbf{S}trength --- always in context. \\
+Correlation $r$ & a number from $-1$ to $1$ giving the direction and strength of a
+                   \textbf{linear} association. \\
+Regression line & a line $\hat{y}=a+bx$ that uses the explanatory variable $x$ to predict the
+                   response variable $y$. \\
+Predicted value ($\hat{y}$) & the $y$-value the line gives for a particular $x$; the actual
+                   $y$ usually differs from it. \\
+Extrapolation & predicting for an $x$ outside the $x$-values used to build the line --- unreliable. \\
+Residual & actual minus predicted, $y-\hat{y}$; positive means the point lies above the line. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\textbf{From Lesson 2.4 --- the least-squares line}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Least-squares line & the line $\hat y = a + bx$ that makes the sum of the squared residuals as
+                   small as possible. Passes through $(\bar x, \bar y)$. \\
+Slope $b$ & $b = r\,s_y/s_x$: change in the \emph{predicted} $y$ per 1-unit increase
+                   in $x$; same sign as $r$. \\
+Intercept $a$ & $a = \bar y - b\,\bar x$: predicted $y$ at $x = 0$ --- meaningful only if
+                   $x = 0$ makes sense \emph{and} is near the data. \\
+$r^2$ (R-Sq) & the proportion of the variation in $y$ explained by the linear model with $x$. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\textbf{From Lesson 2.5 --- when a line is the wrong model}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Residual plot & residuals graphed against $x$. Random scatter around 0: a line fits.
+                   A curve: wrong model. \\
+Outlier & a point that does not follow the trend of the rest; it has a large residual. \\
+High-leverage point & a point whose $x$-value is much larger or smaller than the other
+                   $x$-values. \\
+Influential point & a point that, if removed, changes the slope, $y$-intercept, or $r$ a lot. \\
+Transformation & re-expressing a variable (for example, $\log y$) to straighten a curve; undo it
+                   at the end ($10^{\,\widehat{\log y}}$). \\
+\end{tabularx}
+
+\normalsize
+
+\sghead{2. The moves the test will ask you to make}
+
+\small
+\textbf{Move 1 --- Use the right denominator (2.1).} 250 museum visitors: 80 took the audio
+tour and 52 of them rated the visit \emph{excellent}; 170 skipped it and 68 of them did.
+\emph{Worked:} \textbf{joint} --- toured and excellent: $52/250 = 0.208$. \textbf{Marginal}
+--- excellent: $120/250 = 0.48$. \textbf{Conditional} --- of the tour-takers, excellent:
+$52/80 = 0.65$; of the others, $68/170 = 0.40$.
+
+\vspace{3pt}
+\textbf{Move 2 --- Decide association (2.1).} Compare the \emph{conditional} percents, never
+the counts. \emph{Worked:} 68 excellent ratings is the bigger \emph{count}, but 65\% vs.\
+40\% is the fair comparison, so tour and rating \textbf{are associated} in this sample --- and
+because visitors chose whether to take the tour, it does not show the tour \emph{causes}
+better ratings.
+
+\vspace{3pt}
+\textbf{Move 3 --- Build the line from summary statistics (2.4).} 15 hiking trails: elevation
+gain $x$ (hundreds of feet, 2 to 20) and hiking time $y$ (minutes).
+$\bar x = 10$, $s_x = 5$, $\bar y = 150$, $s_y = 40$, $r = 0.90$.
+\emph{Worked:} $b = 0.90 \cdot 40/5 = 7.2$; \ $a = 150 - 7.2(10) = 78$; \ so
+$\widehat{\text{time}} = 78 + 7.2(\text{gain})$.
+
+\vspace{3pt}
+\textbf{Move 4 --- Read computer output (2.4).} The same line, as software prints it:
+\par\vspace{3pt}
+{\centering\footnotesize\ttfamily
+\begin{tabular}{@{} l r r r r @{}}
+Predictor & Coef & SE Coef & T & P \\ \hline
+Constant & 78.00 & 10.74 & 7.26 & 0.000 \\
+Gain & 7.200 & 0.967 & 7.45 & 0.000 \\
+\end{tabular}\par
+S = 18.09 \quad R-Sq = 81.0\% \quad R-Sq(adj) = 79.5\%\par}
+\vspace{3pt}
+$a$ is the Coef in the \textbf{Constant} row; $b$ is the Coef in the row named for $x$. R-Sq
+is $r^2$. To get $r$, take $\sqrt{0.81} = 0.90$ and give it the \textbf{sign of the slope}.
+
+\vspace{3pt}
+\textbf{Move 5 --- Predict, and check the range (2.3).} \emph{Worked:} a 1{,}200-ft trail
+($x = 12$): $\hat y = 78 + 7.2(12) = 164.4$ minutes. A 4{,}000-ft trail ($x = 40$) gives
+366 minutes --- but 40 is far outside 2 to 20, so that is \textbf{extrapolation}: don't trust it.
+
+\vspace{3pt}
+\textbf{Move 6 --- Residual, with the sign read correctly (2.3).} \emph{Worked:} that
+1{,}200-ft trail actually took 150 minutes. Residual $= y - \hat y = 150 - 164.4 = -14.4$
+minutes: 14.4 minutes \emph{less} than predicted --- the point is below the line, so the line
+\textbf{over}predicted.
+
+\vspace{3pt}
+\textbf{Move 7 --- Judge the model with the residual plot (2.5).} Look for a \emph{pattern}:
+\par\vspace{4pt}
+{\centering
+\begin{tikzpicture}[x=0.26cm, y=0.2cm]
+  \foreach \dx/\lab in {0/{Random scatter: a line fits}, 17/{A curve: wrong model},
+                        34/{One big residual: an outlier}} {
+    \begin{scope}[xshift=\dx*0.26cm]
+      \draw[thick] (0,-3) -- (0,3); \draw[thick] (0,-3) -- (13,-3);
+      \draw[dashed, slate] (0,0) -- (13,0);
+      \node[below, font=\scriptsize, align=center] at (6.5,-3.1) {\lab};
+    \end{scope}}
+  \foreach \x/\e in {1/1.2, 2/-1.4, 3/0.5, 4/-0.6, 5/1.6, 6/-1.1, 7/0.3, 8/-1.7, 9/1.0,
+                     10/-0.4, 11/1.3, 12/-0.9}
+    \fill[navy] (\x,\e) circle (4pt);
+  \foreach \x/\e in {1/2.3, 2/1.1, 3/0.1, 4/-0.8, 5/-1.4, 6/-1.7, 7/-1.6, 8/-1.2, 9/-0.5,
+                     10/0.4, 11/1.4, 12/2.5}
+    \fill[navy] (17+\x,\e) circle (4pt);
+  \foreach \x/\e in {1/0.6, 2/-0.7, 3/0.4, 4/-0.3, 5/-0.8, 7/0.5, 8/-0.5, 9/0.7,
+                     10/-0.6, 11/0.2, 12/-0.4}
+    \fill[navy] (34+\x,\e) circle (4pt);
+  \fill[redacc] (34+6,2.6) circle (4pt);
+\end{tikzpicture}\par}
+\vspace{3pt}
+To call a point \textbf{influential}, quote the numbers: the slope, intercept, or $r$ with
+and without it.
+\normalsize
+
+\vspace{0.10in}
+\boxguard[20]
+\begin{scenariobox}[The sentences that earn full credit]{navy}
+\small
+\textbf{Describe a scatterplot:} ``There is a \textbf{strong, positive, linear} association
+between elevation gain and hiking time: trails with more climbing tend to take longer. No
+point stands far from the pattern.''\par\vspace{2pt}
+\textbf{Slope:} ``For each additional 100 feet of elevation gain, the \emph{predicted} hiking
+time rises 7.2 minutes.''\par\vspace{3pt}
+\textbf{Intercept:} ``A trail with no elevation gain has a predicted time of 78 minutes'' ---
+then say whether $x = 0$ is sensible and near the data (here it is below 2 to 20: caution).\par\vspace{3pt}
+\textbf{$r^2$:} ``About \textbf{81\%} of the variation in hiking time is explained by the
+linear model with elevation gain.''\par\vspace{3pt}
+\textbf{Residual:} ``This trail took 14.4 minutes \emph{less} than the line predicted.''
+\par\vspace{3pt}
+\textbf{Association (two-way table):} ``In this sample, 65\% of audio-tour visitors rated the
+visit excellent, compared with 40\% of the others, so the tour and the rating are associated.
+The visitors chose, so this does not show the tour \emph{causes} higher ratings.''
+\par\vspace{3pt}
+Each names both variables and the units --- delete the context and it is no longer an answer.
+\end{scenariobox}
+
+\sghead{3. Seven traps that cost points every year}
+
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Counts are not rates.} Compare percents, each out of its \emph{own} group's
+        total --- not the grand total. The bigger count can be the smaller percent.
+  \item \textbf{$r \approx 0$ is not ``no relationship.''} It means no \emph{linear} one; a
+        strong curve can have $r \approx 0$.
+  \item \textbf{$r$ has no units}: new units or swapped axes leave it unchanged. And $-0.9$ is
+        \emph{stronger} than $0.6$.
+  \item \textbf{The residual is $y - \hat y$}, never $\hat y - y$. Positive: the point is
+        \emph{above} the line, so the line predicted too \emph{low}.
+  \item \textbf{Say \emph{predicted}.} The slope describes the line, not each individual; and
+        observational data show no cause.
+  \item \textbf{$r = \pm\sqrt{r^2}$, with the slope's sign.} $r^2$ is variation
+        \emph{explained}, not a share of the points.
+  \item \textbf{A high $r$ does not make a line appropriate} --- only the residual plot checks
+        form. And a point off the trend is not automatically influential; leverage comes from
+        being far out in $x$.
+\end{enumerate}
+\normalsize
+
+\sghead[6]{4. Before you walk in}
+
+\small
+Work the \textbf{practice test} without notes first, then check it against its key. A
+free-response answer shorter than the key's is almost always missing the context or the word
+\emph{predicted}. Re-read each lesson cover's \textbf{Keep in Mind} box.
+\normalsize
+
+\end{document}

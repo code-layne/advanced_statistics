@@ -1,0 +1,437 @@
+%! Unit 2, Lessons 2.1–2.5 — SAMPLE Test (blank)
+% The practice form of the Unit 2 test. Item for item it is the parallel form of ../actual_test/:
+% same two sections, the same ten multiple-choice targets in the same order, the same two
+% free-response sets with the same parts and the same points (MC 10, FRQ 1 = 4, FRQ 2 = 6,
+% total 20) — every context different, so working this one teaches the moves, not the answers.
+% Merged into the unit student packet via ../../sample_test/ (see shared/tests.mk).
+% NAME ROW: \namedateperiod IS carried — a unit test is taken in a testing setting, and the
+% practice form is sat the same way (LESSON_SHAPE.md §4, components.md "Unit tests").
+% NO SKETCH ITEMS: every display is pre-drawn in TikZ and read.
+%
+% THE DATA (every number checked; regression outputs computed from the listed points)
+%  MC1  theater, 250: Under 30 84/16 (100), 30+ 90/60 (150); box office 76 -> 16/76 = 0.211.
+%  MC2  bike share: commuters 240 (75% helmet = 180), recreational 60 (40% = 24).
+%  MC4  14 stations, elevation (1000 ft) vs July mean temp: r = -0.95, one station +10.3 off.
+%  MC6  yhat = 4.0 + 2.6(200) = 524 cm (data 10–60 days).
+%  MC7  yhat = 1.5 + 0.9(12) = 12.3; residual 11.2 - 12.3 = -1.1 lb.
+%  MC9  22 runners, miles x vs 5K minutes: a 31.64, b -0.2103, S 1.396, R-Sq 76.1% (r -0.872).
+%  MC10 ramp, t 0.5..3.0 s: yhat = -48.5 + 69.9t, r = 0.98, residuals
+%       19.0 7.0 -0.8 -8.1 -11.1 -11.8 -11.7 -7.3 -1.9 8.1 18.6 (a U).
+%  FRQ1 college, 400: FT 132/84/24 (240) = 55/35/10%; PT 112/36/12 (160) = 70/22.5/7.5%.
+%  FRQ2 15 refrigerators, capacity x (cu ft) vs energy y (kWh/yr):
+%    x 10.1 11.5 12.8 14.0 15.2 16.4 17.9 18.6 19.8 20.5 21.9 23.0 24.7 25.6 27.3
+%    y  379  429  391  459  444  461  539  504  516  546  577  563  603  576  616
+%    a 249.70, b 13.811, S 21.76, R-Sq 92.4% (r 0.961); (17.9, 539): yhat 496.9, res +42.1.
+%
+% PAGE LOCKSTEP with ../../test_keys/practice_test_key/: every \writelines{n} here is answered
+% by exactly n \ansline{} there, each terse enough not to wrap; every work block is
+% byte-identical. Nothing else differs except the preamble, the header, and the \ans{} marks
+% on the correct MC options.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 2 \quad Lessons 2.1--2.5}{Sample Test}
+
+\namedateperiod
+
+{\small\hfill Score:\ \blank{1.4cm}\ / 20}
+
+\vspace{0.06in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+This is the \textbf{practice} test --- not scored. Work it in one period, notes closed, then check
+it against the key. It matches the real test item for item; every answer must be in context.
+\end{remindbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice} \hfill \textbf{10 points, 1 each}\\
+Circle the single best answer. Read all five options --- more than one of them is about the
+context, not just the arithmetic.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \boxguard[12]
+  \item \begin{minipage}[t]{0.44\linewidth}\raggedright
+        A community theater asked 250 audience members their age and how they bought their
+        ticket. Of the audience members who bought at the \textbf{box office}, what proportion
+        were under 30?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.52\linewidth}
+        \centering\small
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}[t]{@{} l | c c | c @{}}
+         & \textbf{Online} & \textbf{Box office} & \textbf{Total} \\ \hline
+        \textbf{Under 30} & 84 & 16 & 100 \\
+        \textbf{30 and over} & 90 & 60 & 150 \\ \hline
+        \textbf{Total} & 174 & 76 & 250 \\
+        \end{tabular}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item $16/250 = 0.064$
+          \item $16/100 = 0.160$
+          \item $16/76 \approx 0.211$
+          \item $76/250 = 0.304$
+          \item $100/250 = 0.400$
+        \end{enumerate}
+
+  \boxguard[15]
+  \item \begin{minipage}[t]{0.62\linewidth}\raggedright
+        A city bike-share program surveyed 300 riders: 240 who ride to commute and 60 who ride
+        for recreation. The segmented bar graph shows whether each group wore a helmet on
+        their last ride. Which statement is best supported?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.34\linewidth}
+        \centering
+        \begin{tikzpicture}[x=1cm, y=0.024cm, baseline=(current bounding box.north)]
+          \foreach \y in {0,50,100} {
+            \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\y\%};}
+          \fill[navy]    (0.3,0)  rectangle (1.2,75);
+          \fill[goldacc] (0.3,75) rectangle (1.2,100);
+          \fill[navy]    (1.6,0)  rectangle (2.5,40);
+          \fill[goldacc] (1.6,40) rectangle (2.5,100);
+          \draw (0.3,0) rectangle (1.2,100);
+          \draw (1.6,0) rectangle (2.5,100);
+          \draw[thick] (0,0) -- (0,104);
+          \draw[thick] (0,0) -- (2.7,0);
+          \node[below, font=\tiny, align=center] at (0.75,-2) {Commute\\(240)};
+          \node[below, font=\tiny, align=center] at (2.05,-2) {Recreation\\(60)};
+          \fill[navy] (0.2,112) rectangle (0.4,122); \node[right, font=\tiny] at (0.4,117) {Helmet};
+          \fill[goldacc] (1.4,112) rectangle (1.6,122); \node[right, font=\tiny] at (1.6,117) {No helmet};
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item No association: far more commuters than recreational riders were surveyed.
+          \item Commuters skip the helmet more often: 60 commuters rode without one, but only
+                36 recreational riders did.
+          \item There is no association, because both bars reach 100\%.
+          \item Type of ride and helmet use are associated: 75\% of commuters wore a helmet,
+                compared with 40\% of recreational riders.
+          \item Commuting causes riders to wear a helmet.
+        \end{enumerate}
+
+  \boxguard[9]
+  \item A nutritionist wants to know whether the \textbf{sugar} in a breakfast cereal (grams per
+        serving) helps predict its \textbf{customer rating} (0 to 100). Which is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Explanatory: sugar per serving. \ Response: customer rating.
+          \item Explanatory: customer rating. \ Response: sugar per serving.
+          \item Both are response variables, because the nutritionist assigned neither one.
+          \item The cereals are the explanatory variable; the ratings are the response.
+          \item There is no explanatory variable, because this is not an experiment.
+        \end{enumerate}
+
+  \boxguard[13]
+  \item \begin{minipage}[t]{0.50\linewidth}\raggedright
+        A weather service recorded the \textbf{elevation} (thousands of feet) and the average
+        \textbf{July high temperature} ($^\circ$F) at 14 weather stations. Which description of
+        the scatterplot is best?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.46\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.55cm, y=0.085cm, baseline=(current bounding box.north)]
+          \foreach \y in {50,60,...,90} {
+            \draw[linegray, very thin] (0,\y) -- (10.5,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \draw[thick] (0,48) -- (10.7,48);
+          \draw[thick] (0,48) -- (0,91);
+          \foreach \x in {0,2,...,10} {
+            \draw (\x,47.3) -- (\x,48.7); \node[below, font=\tiny] at (\x,47.5) {\x};}
+          \foreach \x/\y in {1/84.9, 2/81.5, 2.5/79.0, 3/77.8, 4/74.2, 4.5/72.9, 5/70.1,
+                             5.5/80.0, 6/67.4, 6.5/64.9, 7/63.8, 8/60.1, 9/56.2, 10/53.5}
+            \fill[navy] (\x,\y) circle (1.7pt);
+          \node[font=\tiny] at (5.2,40) {Elevation (1000 ft)};
+          \node[rotate=90, font=\tiny] at (-1.5,69.5) {July high ($^\circ$F)};
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Strong, positive, and linear, with no unusual points.
+          \item Strong, negative, and linear, with one station far above the pattern.
+          \item Weak, negative, and curved, with no unusual points.
+          \item Moderate, positive, and curved, with one station far below the pattern.
+          \item No association, because one station does not follow the pattern.
+        \end{enumerate}
+
+  \boxguard[10]
+  \item For 40 commuters, the correlation between one-way commute \textbf{distance} (miles) and
+        monthly \textbf{fuel cost} (dollars) is $r = 0.64$. Which statement is true?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item If fuel cost were recorded in euros instead of dollars, $r$ would change.
+          \item If fuel cost were put on the $x$-axis and distance on the $y$-axis, $r$ would be
+                $-0.64$.
+          \item $r = 0.64$ means 64\% of the variation in fuel cost is explained by distance.
+          \item Had $r$ been close to 0, distance and fuel cost could have no relationship of
+                any kind.
+          \item If distance were recorded in kilometers instead of miles, $r$ would still be
+                0.64.
+        \end{enumerate}
+
+  \boxguard[8]
+  \item A gardener's line predicts a sunflower's height (cm) from its age (days):
+        $\widehat{\text{height}} = 4.0 + 2.6(\text{age})$, built from plants 10 to 60 days old.
+        What does the line predict for a sunflower \textbf{200 days} old, and should the
+        prediction be trusted?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 524 cm, and it can be trusted, because the least-squares line is the best line.
+          \item 520 cm, and it can be trusted, because the intercept matters only for young
+                plants.
+          \item 524 cm, but 200 days is far outside the 10--60 days in the data, so this
+                extrapolation may be badly wrong.
+          \item 802.6 cm, but 200 days is an extrapolation.
+          \item No prediction is possible, because no 200-day-old sunflower was measured.
+        \end{enumerate}
+
+  \boxguard[9]
+  \item A veterinarian's line predicts a puppy's weight (lb) from its age (weeks), built from
+        puppies 6 to 20 weeks old: $\widehat{\text{weight}} = 1.5 + 0.9(\text{age})$. A
+        12-week-old puppy weighs 11.2 lb. What is its residual, and what does it mean?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item $1.1$ lb; the puppy weighs 1.1 lb more than the line predicts.
+          \item $-1.1$ lb; the puppy weighs 1.1 lb less than the line predicts.
+          \item $-1.1$ lb; the puppy weighs 1.1 lb more than the line predicts.
+          \item $1.1$ lb; the line predicted a weight 1.1 lb too low.
+          \item $12.3$ lb; the residual is the predicted weight.
+        \end{enumerate}
+
+  \boxguard[11]
+  \item For 32 schools, a district fit
+        $\widehat{\text{cost}} = 14.2 + 0.85(\text{area})$, where cost is the annual electricity
+        cost (thousands of dollars) and area is the floor area (thousands of square feet).
+        Which is the correct interpretation of the slope?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Every school's electricity cost rises by exactly \$850 for each extra
+                1{,}000 square feet.
+          \item A school with 0 square feet is predicted to spend \$14{,}200 a year.
+          \item Adding 1{,}000 square feet to a school will cause its annual cost to rise by
+                \$850.
+          \item For each additional 1{,}000 square feet of floor area, the \emph{predicted}
+                annual electricity cost increases by \$850.
+          \item About 85\% of the variation in electricity cost is explained by floor area.
+        \end{enumerate}
+
+  \boxguard[12]
+  \item \begin{minipage}[t]{0.42\linewidth}\raggedright
+        A coach regressed 5K race time (minutes) on weekly training miles for 22 runners.
+        Which is the correct interpretation of R-Sq?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.56\linewidth}
+        \centering\footnotesize\ttfamily
+        \begin{tabular}[t]{@{} l r r r r @{}}
+        Predictor & Coef & SE Coef & T & P \\ \hline
+        Constant & 31.645 & 0.714 & 44.33 & 0.000 \\
+        Miles & $-$0.2103 & 0.0264 & $-$7.97 & 0.000 \\
+        \end{tabular}\par
+        S = 1.396 \quad R-Sq = 76.1\% \quad R-Sq(adj) = 74.9\%\par
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item About 76.1\% of the variation in 5K time is explained by the linear model with
+                weekly training miles.
+          \item The correlation between training miles and 5K time is 0.761.
+          \item The line predicts 76.1\% of the runners' 5K times correctly.
+          \item Each additional training mile lowers a runner's 5K time by 76.1\%.
+          \item Weekly training miles cause 76.1\% of a runner's 5K time.
+        \end{enumerate}
+
+  \boxguard[14]
+  \item \begin{minipage}[t]{0.50\linewidth}\raggedright
+        A physics class rolled a ball down a ramp and recorded the \textbf{distance} it had
+        traveled (cm) at 11 \textbf{times} (seconds). The least-squares line is
+        $\hat{y} = -48.5 + 69.9x$, with $r = 0.98$. Its residual plot is shown. Which
+        conclusion is best?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.46\linewidth}
+        \centering
+        \begin{tikzpicture}[x=1.75cm, y=0.068cm, baseline=(current bounding box.north)]
+          \draw[linegray] (0.25,0) -- (3.2,0);
+          \draw[thick] (0.25,-16) -- (0.25,22);
+          \draw[thick] (0.25,-16) -- (3.2,-16);
+          \foreach \y in {-10,0,10,20} { \node[left, font=\tiny] at (0.25,\y) {\y}; }
+          \foreach \x in {0.5,1.0,...,3.0} {
+            \draw (\x,-16.7) -- (\x,-15.3); \node[below, font=\tiny] at (\x,-16.3) {\x};}
+          \foreach \x/\y in {0.5/19.0, 0.75/7.0, 1.0/-0.8, 1.25/-8.1, 1.5/-11.1, 1.75/-11.8,
+                             2.0/-11.7, 2.25/-7.3, 2.5/-1.9, 2.75/8.1, 3.0/18.6}
+            \fill[navy] (\x,\y) circle (1.7pt);
+          \node[font=\tiny] at (1.72,-27) {Time (seconds)};
+          \node[rotate=90, font=\tiny] at (-0.05,3) {Residual (cm)};
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The line is a good model, because $r = 0.98$ is very close to 1.
+          \item The line is a good model, because the residuals add to zero.
+          \item Time and distance are not associated, because the residuals are not random.
+          \item The points at 0.5 s and 3.0 s are influential and should be removed.
+          \item A line is not an appropriate model: the residuals form a clear U-shape, so the
+                form is curved even though $r$ is high.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+% No \newpage here: the guard keeps the Section II strip off a page edge.
+\boxguard[30]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response} \hfill \textbf{10 points}\\
+Show your reasoning. Answer \emph{in context} --- name the variables and their units.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \boxguard[22]
+  \item \textbf{(4 points)} A community college asked 400 students whether they attend
+        \textbf{full-time} or \textbf{part-time} and how they \textbf{usually get to campus}.
+
+        \vspace{4pt}
+        \begin{minipage}[c]{0.56\linewidth}
+        \centering\small
+        \setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{} l | c c c | c @{}}
+         & \textbf{Drive} & \textbf{Bus} & \textbf{Walk/bike} & \textbf{Total} \\ \hline
+        \textbf{Full-time} & 132 & 84 & 24 & 240 \\
+        \textbf{Part-time} & 112 & 36 & 12 & 160 \\ \hline
+        \textbf{Total} & 244 & 120 & 36 & 400 \\
+        \end{tabular}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[x=1cm, y=0.026cm]
+          \foreach \y in {0,50,100} {
+            \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\y\%};}
+          \fill[navy]     (0.3,0)   rectangle (1.2,55);
+          \fill[goldacc]  (0.3,55)  rectangle (1.2,90);
+          \fill[skymid]   (0.3,90)  rectangle (1.2,100);
+          \fill[navy]     (1.6,0)   rectangle (2.5,70);
+          \fill[goldacc]  (1.6,70)  rectangle (2.5,92.5);
+          \fill[skymid]   (1.6,92.5) rectangle (2.5,100);
+          \draw (0.3,0) rectangle (1.2,100);
+          \draw (1.6,0) rectangle (2.5,100);
+          \node[white, font=\tiny\bfseries] at (0.75,27.5) {55\%};
+          \node[font=\tiny\bfseries] at (0.75,72.5) {35\%};
+          \node[white, font=\tiny\bfseries] at (2.05,35) {70\%};
+          \node[font=\tiny\bfseries] at (2.05,81.25) {22.5\%};
+          \draw[thick] (0,0) -- (0,104);
+          \draw[thick] (0,0) -- (2.7,0);
+          \node[below, font=\tiny] at (0.75,-2) {Full-time};
+          \node[below, font=\tiny] at (2.05,-2) {Part-time};
+          \fill[navy] (3.0,85) rectangle (3.2,95); \node[right, font=\tiny] at (3.2,90) {Drive};
+          \fill[goldacc] (3.0,60) rectangle (3.2,70); \node[right, font=\tiny] at (3.2,65) {Bus};
+          \fill[skymid] (3.0,35) rectangle (3.2,45); \node[right, font=\tiny] at (3.2,40) {Walk/bike};
+        \end{tikzpicture}
+        \end{minipage}
+
+        \vspace{6pt}
+        \textbf{(a)} What proportion of \emph{all} 400 students ride the bus? Of the students who
+        walk or bike, what proportion attend full-time?\\[4pt]
+        \writelines{2}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(b)} Use the graph to compare how full-time and part-time students get to campus.\\[4pt]
+        \writelines{2}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(c)} Are enrollment status and travel to campus associated? Justify with numbers.
+        Does this survey show that attending part-time \emph{causes} a student to drive?\\[4pt]
+        \writelines{3}
+
+  \boxguard[26]
+  \item \textbf{(6 points)} An appliance lab measured the \textbf{capacity} (cubic feet) and the
+        \textbf{annual energy use} (kWh per year) of 15 refrigerator models, then regressed energy
+        use on capacity.
+
+        \vspace{4pt}
+        \noindent\hfil
+        \begin{tikzpicture}[x=0.26cm, y=0.0135cm, baseline=(current bounding box.south)]
+          \foreach \y in {400,500,600} {
+            \draw[linegray, very thin] (8,\y) -- (29,\y);
+            \node[left, font=\tiny] at (8,\y) {\y};}
+          \draw[thick] (8,340) -- (29.3,340);
+          \draw[thick] (8,340) -- (8,660);
+          \foreach \x in {8,12,...,28} {
+            \draw (\x,335) -- (\x,345); \node[below, font=\tiny] at (\x,337) {\x};}
+          \foreach \x/\y in {10.1/379, 11.5/429, 12.8/391, 14.0/459, 15.2/444, 16.4/461,
+                             17.9/539, 18.6/504, 19.8/516, 20.5/546, 21.9/577, 23.0/563,
+                             24.7/603, 25.6/576, 27.3/616}
+            \fill[navy] (\x,\y) circle (1.7pt);
+          \node[font=\tiny] at (18.5,290) {Capacity (cubic feet)};
+          \node[rotate=90, font=\tiny] at (3.2,500) {Energy use (kWh/yr)};
+          \node[font=\bfseries\scriptsize] at (18.5,690) {Scatterplot};
+        \end{tikzpicture}\hfil
+        \begin{tikzpicture}[x=0.26cm, y=0.052cm, baseline=(current bounding box.south)]
+          \draw[linegray] (8,0) -- (29,0);
+          \draw[thick] (8,-45) -- (29.3,-45);
+          \draw[thick] (8,-45) -- (8,48);
+          \foreach \y in {-40,-20,0,20,40} { \node[left, font=\tiny] at (8,\y) {\y}; }
+          \foreach \x in {8,12,...,28} {
+            \draw (\x,-46.3) -- (\x,-43.7); \node[below, font=\tiny] at (\x,-45.5) {\x};}
+          \foreach \x/\y in {10.1/-10.2, 11.5/20.5, 12.8/-35.5, 14.0/15.9, 15.2/-15.6,
+                             16.4/-15.2, 17.9/42.1, 18.6/-2.6, 19.8/-7.2, 20.5/13.2,
+                             21.9/24.8, 23.0/-4.4, 24.7/12.2, 25.6/-27.3, 27.3/-10.8}
+            \fill[navy] (\x,\y) circle (1.7pt);
+          \node[font=\tiny] at (18.5,-58) {Capacity (cubic feet)};
+          \node[rotate=90, font=\tiny] at (3.2,0) {Residual (kWh/yr)};
+          \node[font=\bfseries\scriptsize] at (18.5,56) {Residual plot};
+        \end{tikzpicture}\hfil
+
+        \vspace{4pt}
+        {\centering\footnotesize\ttfamily
+        \begin{tabular}{@{} l r r r r @{}}
+        Predictor & Coef & SE Coef & T & P \\ \hline
+        Constant & 249.70 & 21.23 & 11.76 & 0.000 \\
+        Capacity & 13.811 & 1.100 & 12.56 & 0.000 \\
+        \end{tabular}\par
+        S = 21.76 \quad R-Sq = 92.4\% \quad R-Sq(adj) = 91.8\%\par}
+
+        \boxguard[5]
+        \vspace{6pt}
+        \textbf{(a)} Describe the association between capacity and annual energy use.\\[4pt]
+        \writelines{2}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(b)} Write the equation of the least-squares regression line, using the variable
+        names. Then interpret the slope in context.\\[4pt]
+        \writelines{3}
+
+        \boxguard[12]
+        \vspace{6pt}
+        \textbf{(c)} One model has a capacity of 17.9 cubic feet and uses 539 kWh per year. Find
+        its residual and interpret it in context.
+        \begin{work}
+          \widehat{\text{energy}} &= 249.70 + 13.811(17.9) \\
+                                  &\approx 496.9 \text{ kWh} \\
+          \text{residual} &= y - \hat{y} \\
+                          &= 539 - 496.9 \\
+                          &= 42.1 \text{ kWh}
+        \end{work}
+        \writelines{2}
+
+        \boxguard[5]
+        \vspace{6pt}
+        \textbf{(d)} Interpret the value of $r^2$ in context.\\[4pt]
+        \writelines{2}
+
+        \boxguard[5]
+        \vspace{6pt}
+        \textbf{(e)} Is a linear model appropriate for these data? Justify your answer using the
+        residual plot.\\[4pt]
+        \writelines{2}
+
+\end{enumerate}
+
+\end{document}
