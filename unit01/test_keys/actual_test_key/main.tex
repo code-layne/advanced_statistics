@@ -1,58 +1,51 @@
 %! Unit 1, Lessons 1.0–1.7 — ACTUAL Unit Test (Answer Key)
 % The scored unit test. Item for item it is the parallel form of ../practice_test_key/: the same
-% 20 multiple-choice targets in the same order and the same five free-response questions with the
-% same parts and points (MC 20 x 3 = 60, FRQ 5 x 8 = 40, total 100; 25 questions) --- every
-% context different, so a student who worked the practice test has practised the moves and not
-% memorised the answers. NEVER merged into any packet (shared/test_keys.mk drops only the
-% practice key).
+% 15 multiple-choice targets in the same order and the same five free-response questions with the
+% same parts and points (MC 15 x 4 = 60, FRQ 5 x 8 = 40, total 100; 20 questions; 5 pages at
+% most) --- every context different, so a student who worked the practice test has practised the
+% moves and not memorised the answers. NEVER merged into any packet (shared/test_keys.mk drops
+% only the practice key).
 % NAME ROW: \namedateperiod IS carried --- a unit test is taken in a testing setting.
 % NO SKETCH ITEMS: every display is pre-drawn in TikZ and read.
+% COMPACT LAYOUT: short answer choices run in two columns (multicols), figures sit beside their
+% stems, and each free-response part gets only the lines its answer needs. Keep it to 5 pages.
 %
 % BLUEPRINT
-%   MC 1 individuals                      car-wash tickets                 1.0
-%   MC 2 statistical question             car-wash tickets                 1.0
-%   MC 3 categorical vs quantitative      car-wash tickets (area code)     1.1
-%   MC 4 grouping (binning)               reading speed in words/min       1.1
-%   MC 5 relative frequency               200 adults' favorite topping     1.2
-%   MC 6 groups of unequal size           two school bands, brass          1.2
-%   MC 7 discrete vs continuous           backpack weight to 0.1 lb        1.3
-%   MC 8 read a stem plot (median)        15 yoga-class ages               1.3
-%   MC 9 interval width                   60 lake depths                   1.3
-%   MC10 shape from a histogram           40 quiz scores                   1.4
-%   MC11 unusual features (dotplot)       20 students' push-ups            1.4
-%   MC12 mean vs median from shape        retirement ages                  1.5
-%   MC13 resistance (a typo)              9 runners' times                 1.5
-%   MC14 standard deviation in context    40 water bottles                 1.5
-%   MC15 percentile                       a baby's length                  1.5
-%   MC16 1.5 x IQR rule                   50 help-desk calls               1.6
-%   MC17 every section holds a quarter    40 days at a skate park          1.6
-%   MC18 parallel boxplots                tomato plants, two fertilizers   1.6
-%   MC19 parameter vs statistic           university GPA                   1.7
-%   MC20 z-scores across distributions    math vs spelling contests        1.7
+%   MC 1 grouping (binning)               reading speed in words/min       1.1
+%   MC 2 groups of unequal size           two school bands, brass          1.2
+%   MC 3 discrete vs continuous           backpack weight to 0.1 lb        1.3
+%   MC 4 read a stem plot (median)        15 yoga-class ages               1.3
+%   MC 5 interval width                   60 lake depths                   1.3
+%   MC 6 shape from a histogram           40 quiz scores                   1.4
+%   MC 7 unusual features (dotplot)       20 students' push-ups            1.4
+%   MC 8 mean vs median from shape        retirement ages                  1.5
+%   MC 9 resistance (a typo)              9 runners' times                 1.5
+%   MC10 standard deviation in context    40 water bottles                 1.5
+%   MC11 percentile                       a baby's length                  1.5
+%   MC12 every section holds a quarter    40 days at a skate park          1.6
+%   MC13 parallel boxplots                tomato plants, two fertilizers   1.6
+%   MC14 parameter vs statistic           university GPA                   1.7
+%   MC15 z-scores across distributions    math vs spelling contests        1.7
 %   FRQ1 individuals, variables, SQ       a marina's boats                 1.0, 1.1, 1.3
 %   FRQ2 relative frequency comparison    two gyms' favorite classes       1.2
-%   FRQ3 histogram, describe              50 pumpkin weights               1.3, 1.4
+%   FRQ3 histogram, median, describe      50 pumpkin weights               1.3, 1.4
 %   FRQ4 five numbers, outlier, center    15 podcast-episode lengths       1.5, 1.6
 %   FRQ5 empirical rule, z-scores         coffee-machine fills             1.7
-% ANSWERS (MC): 1C 2E 3C 4A 5D 6E 7B 8C 9A 10D 11E 12B 13A 14D 15D 16B 17E 18C 19A 20B
+% ANSWERS (MC): 1A 2E 3B 4C 5A 6D 7E 8B 9A 10D 11D 12E 13C 14C 15B
 %
 % THE DATA (every number checked)
-%  MC3  Ticket #, Vehicle type, Wash package, Area code: categorical; Wait time, Amount paid,
-%       Passengers: quantitative -> three.
-%  MC5  78/52/40/30 = 200; cheese 52/200 = 0.26.
-%  MC6  Band A 27/90 = 0.30; Band B 21/60 = 0.35.
-%  MC8  23 25 28 30 31 34 34 36 39 42 45 45 48 51 57; median (8th) 36; mean 568/15 = 37.9.
-%  MC10 bins of 5 from 20: 1 1 3 6 12 17 (40), skewed left.
-%  MC11 20:1 22:2 24:4 26:6 28:4 30:2 44:1 (20).
-%  MC13 21 22 24 25 26 27 27 29 31 -> 2.1: Q1 23, med 26, Q3 28 both ways; mean, range move.
-%  MC16 2/6/9/14/33: IQR 8, fences -6 and 26; 33 > 26.
-%  MC17 12/20/31/36/48.
-%  MC18 X 30/38/45/52/60 (IQR 14); Y 35/47/52/57/62 (IQR 10).
-%  MC20 Leo (62-50)/8 = 1.5; Kim (45-33)/10 = 1.2.
+%  MC2  Lincoln 27/90 = 0.30; Monroe 21/60 = 0.35.
+%  MC4  23 25 28 30 31 34 34 36 39 42 45 45 48 51 57; median (8th) 36; mean 568/15 = 37.9.
+%  MC6  bins of 5 from 20: 1 1 3 6 12 17 (40), skewed left.
+%  MC7  20:1 22:2 24:4 26:6 28:4 30:2 44:1 (20).
+%  MC9  21 22 24 25 26 27 27 29 31 -> 2.1: Q1 23, med 26, Q3 28 both ways; mean, range move.
+%  MC12 12/20/31/36/48.
+%  MC13 X 30/38/45/52/60 (IQR 14); Y 35/47/52/57/62 (IQR 10).
+%  MC15 Leo (62-50)/8 = 1.5; Kim (45-33)/10 = 1.2.
 %  FRQ2 East 105/90/75/30 (300) = 35/30/25/10%; West 72/36/54/18 (180) = 40/20/30/10%.
 %  FRQ3 bins of 4 lb from 4: 6 14 12 8 5 3 0 2 (50); cum 6 20 32 40 45 48 48 50.
 %  FRQ4 4 22 25 27 28 30 31 32 33 35 36 38 40 41 44: Q1 27, med 32, Q3 38, IQR 11,
-%       fences 10.5 and 54.5; sum 466, mean 31.07; 7 lengths below the mean.
+%       fences 10.5 and 54.5; sum 466, mean 31.07.
 %  FRQ5 N(12, 0.4): 11.6-12.4 68%; <11.2 2.5%; 12.7 -> z 1.75; vs machine 2 N(16, 0.6) 17.2 -> 2.0.
 %
 % LOCKSTEP: the blank ../../tests/actual_test/ is generated FROM THIS FILE (edit here, regenerate).
@@ -61,152 +54,86 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{multicol}
+\setlength{\multicolsep}{1pt}
+
+% Answer choices: tight list; wrap in multicols{2} when every choice fits half a line.
+\newenvironment{choices}
+  {\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt, topsep=1pt]}
+  {\end{enumerate}}
 
 \begin{document}
 
 \pageheader{Unit 1 \quad Lessons 1.0--1.7}{Unit Test --- Answer Key}
 
 \namedateperiod
+\par\vspace{2pt}
+\hfill\small Score:\;\blank{1.3cm}\;/\;100\normalsize
+\vspace{0.04in}
 
-{\small\hfill Score:\ \blank{1.4cm}\ / 100}
-
-\vspace{0.06in}
-
-\boxguard[8]
-\begin{remindbox}
-\small
-Notes closed. Read every option before you choose, show your work on the free response, and
-answer \textbf{in context} --- name the variable and its units every time.
-\end{remindbox}
-
-\vspace{0.10in}
-
-\boxguard[16]
+\boxguard[6]
 \begin{headlinebox}{goldbg}
 \small
-\textbf{Section I --- Multiple Choice} \hfill \textbf{60 points, 3 each}\\
-Circle the single best answer. Read all five options --- more than one of them is about the
-context, not just the arithmetic.
+\textbf{Section I --- Multiple Choice} \hfill \textbf{60 points, 4 each}\\
+Notes closed. Circle the single best answer.
 \end{headlinebox}
-
-\vspace{0.10in}
-
-\boxguard[10]
-\noindent\textbf{Questions 1--3} use these records from a car wash. Each row is one car that came
-through the wash.
-
-\vspace{4pt}
-{\centering\small
-\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{} c l l c c c c @{}}
-\textbf{Ticket \#} & \textbf{Vehicle} & \textbf{Package} & \textbf{Wait (min)} &
-\textbf{Paid (\$)} & \textbf{Passengers} & \textbf{Area code} \\ \hline
-2081 & SUV     & Deluxe  & 12 & 18.00 & 3 & 614 \\
-2082 & Sedan   & Basic   & 4  & 9.50  & 1 & 740 \\
-2083 & Pickup  & Premium & 15 & 26.00 & 2 & 614 \\
-2084 & Minivan & Deluxe  & 9  & 18.00 & 5 & 937 \\
-\end{tabular}\par}
 
 \vspace{0.06in}
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.03in]
 
   \boxguard[8]
-  \item In the car wash's records, the \textbf{individuals} are
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item the wash packages.
-          \item the area codes.
-          \item \ans{the cars that came through the wash.}
-          \item the wait times.
-          \item the car wash.
-        \end{enumerate}
-
-  \boxguard[8]
-  \item Which of the following is a \textbf{statistical question} about the car wash?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item How long did the car on ticket 2083 wait?
-          \item Which package did ticket 2081 buy?
-          \item What time does the car wash close?
-          \item How many wash bays does the car wash have?
-          \item \ans{How much do wait times vary among the cars washed last week?}
-        \end{enumerate}
-
-  \boxguard[8]
-  \item How many of the seven columns are \textbf{quantitative} variables?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item One
-          \item Two
-          \item \ans{Three}
-          \item Four
-          \item Five
-        \end{enumerate}
-
-  \boxguard[11]
-  \item A teacher records each student's reading speed in words per minute, then replaces it with
-        a label: \emph{Slow} (under 150), \emph{Average} (150 to 250), or \emph{Fast} (over 250).
-        Which statement is true?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item \ans{The new variable is categorical, and the mean reading speed can no longer
-                be found from it.}
-          \item The new variable is still quantitative, because the labels are based on words
-                per minute.
+  \item A teacher records each student's reading speed in words per minute, then replaces it
+        with a label: \emph{Slow} (under 150), \emph{Average} (150 to 250), or \emph{Fast} (over
+        250). Which statement is true?
+        \begin{choices}
+          \item \ans{It is now categorical, and the mean reading speed can no longer be found.}
+          \item The new variable is still quantitative, because the labels are based on speed.
           \item The new variable is quantitative, because the labels are in order.
           \item Nothing is lost: the speeds can be recovered from the labels.
           \item The median reading speed can still be found exactly from the labels.
-        \end{enumerate}
+        \end{choices}
 
-  \boxguard[12]
-  \item \begin{minipage}[t]{0.50\linewidth}\raggedright
-        A survey asked 200 adults to name their favorite pizza topping. What is the
-        \textbf{relative frequency} of \emph{Cheese only}?
-        \end{minipage}\hfill
-        \begin{minipage}[t]{0.44\linewidth}
-        \centering\small
-        \renewcommand{\arraystretch}{1.1}
-        \begin{tabular}[t]{@{} l c @{}}
-        \textbf{Topping} & \textbf{Frequency} \\ \hline
-        Pepperoni   & 78 \\
-        Cheese only & 52 \\
-        Vegetable   & 40 \\
-        Sausage     & 30 \\ \hline
-        \textbf{Total} & 200 \\
-        \end{tabular}
-        \end{minipage}
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item $0.052$
-          \item $0.150$
-          \item $0.200$
-          \item \ans{$0.260$}
-          \item $0.390$
-        \end{enumerate}
+  \boxguard[8]
+  \item In the Lincoln school band, 27 of 90 members play brass. In the Monroe school band, 21 of
+        60 do. Which is best supported?
+        \begin{multicols}{2}
+        \begin{choices}
+          \item Lincoln: 27 is greater than 21
+          \item Equally common in both bands
+          \item Can't compare: bands differ in size
+          \item Lincoln: it has more members
+          \item \ans{Monroe: 35\% is greater than 30\%}
+        \end{choices}
+        \end{multicols}
 
-  \boxguard[11]
-  \item In the Lincoln school band, 27 of its 90 members play a brass instrument. In the Monroe
-        school band, 21 of its 60 members do. Which statement is best supported?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item Brass is more common in the Lincoln band, because 27 is greater than 21.
-          \item Brass is equally common in the two bands.
-          \item No comparison is possible, because the bands have different numbers of members.
-          \item Brass is more common in the Lincoln band, because it has more members.
-          \item \ans{Brass is more common in the Monroe band, because 35\% is greater than 30\%.}
-        \end{enumerate}
-
-  \boxguard[9]
+  \boxguard[6]
   \item Which of these variables is \textbf{continuous}?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item The number of books in a student's backpack
-          \item \ans{The weight of a student's backpack, recorded to the nearest tenth of a pound}
-          \item The number of classes a student takes
-          \item The number of absences a student has this year
-          \item The number of pencils in a student's pencil case
-        \end{enumerate}
+        \begin{multicols}{2}
+        \begin{choices}
+          \item Number of books in a backpack
+          \item \ans{Backpack weight, to 0.1 lb}
+          \item Number of classes taken
+          \item Number of absences this year
+          \item Number of pencils in a case
+        \end{choices}
+        \end{multicols}
 
-  \boxguard[12]
-  \item \begin{minipage}[t]{0.52\linewidth}\raggedright
+  \boxguard[8]
+  \item \begin{minipage}[t]{0.62\linewidth}\raggedright
         The stem plot shows the ages (years) of the 15 people in an evening yoga class. What is
         the \textbf{median} age?
+        \begin{multicols}{3}
+        \begin{choices}
+          \item 6 years
+          \item 34 years
+          \item \ans{36 years}
+          \item 37.9 years
+          \item 39 years
+        \end{choices}
+        \end{multicols}
         \end{minipage}\hfill
-        \begin{minipage}[t]{0.42\linewidth}
+        \begin{minipage}[t]{0.32\linewidth}
         \centering\small
         \begin{tabular}[t]{@{} r | l @{}}
         2 & 3 5 8 \\
@@ -216,35 +143,33 @@ through the wash.
         \end{tabular}\par\vspace{2pt}
         {\footnotesize Key: $3\,|\,6 = 36$ years}
         \end{minipage}
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item 6 years
-          \item 34 years
-          \item \ans{36 years}
-          \item 37.9 years
-          \item 39 years
-        \end{enumerate}
 
-  \boxguard[12]
-  \item A student made two histograms of the \emph{same} 60 depth measurements (feet) taken
-        across a lake. With intervals 2 feet wide, the histogram has two clear peaks. With
-        intervals 10 feet wide, it has only one. Which statement is correct?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item \ans{Both are correct displays of the same data; changing the interval width
-                changes what the display shows without changing any value.}
+  \boxguard[8]
+  \item Two histograms of the \emph{same} 60 lake depths (feet): with 2-foot intervals there are
+        two clear peaks; with 10-foot intervals there is one. Which is correct?
+        \begin{choices}
+          \item \ans{Both are correct: the interval width changes the picture, not the data.}
           \item One of the two histograms must have been drawn incorrectly.
           \item The wider intervals changed some of the depth measurements.
           \item Only the histogram with fewer bars is a true histogram.
           \item The two peaks show that the data set contains two outliers.
-        \end{enumerate}
+        \end{choices}
 
-  \boxguard[14]
-  \item \begin{minipage}[t]{0.46\linewidth}\raggedright
+  \boxguard[9]
+  \item \begin{minipage}[t]{0.56\linewidth}\raggedright
         The histogram shows the scores of 40 students on a 50-point quiz. Which best describes
-        the \textbf{shape} of the distribution?
+        the \textbf{shape}?
+        \begin{choices}
+          \item Skewed right: most scores pile up on the right.
+          \item Roughly symmetric: there is one peak.
+          \item Uniform: every interval has a student.
+          \item \ans{Skewed left: a few scores are low.}
+          \item Bimodal: the two highest bars are tall.
+        \end{choices}
         \end{minipage}\hfill
-        \begin{minipage}[t]{0.50\linewidth}
+        \begin{minipage}[t]{0.40\linewidth}
         \centering
-        \begin{tikzpicture}[x=0.15cm, y=0.16cm, baseline=(current bounding box.north)]
+        \begin{tikzpicture}[x=0.135cm, y=0.135cm, baseline=(current bounding box.north)]
           \foreach \y in {0,5,10,15} {
             \draw[linegray, very thin] (20,\y) -- (51,\y);
             \node[left, font=\tiny] at (20,\y) {\y};}
@@ -253,263 +178,221 @@ through the wash.
           \draw[thick] (20,0) -- (52,0);
           \draw[thick] (20,0) -- (20,18);
           \foreach \x in {20,25,...,50} { \node[below, font=\tiny] at (\x,0) {\x}; }
-          \node[font=\tiny] at (36,-4) {Quiz score (points)};
-          \node[rotate=90, font=\tiny] at (15.5,9) {Count};
+          \node[font=\tiny] at (36,-4.5) {Quiz score (points)};
+          \node[rotate=90, font=\tiny] at (14.5,9) {Count};
         \end{tikzpicture}
         \end{minipage}
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item Skewed right, because most of the scores pile up on the right.
-          \item Roughly symmetric, because there is only one peak.
-          \item Uniform, because every interval has at least one student.
-          \item \ans{Skewed left, because a few scores are much lower than the rest.}
-          \item Bimodal, because the two highest intervals are both tall.
-        \end{enumerate}
 
-  \boxguard[14]
-  \item \begin{minipage}[t]{0.40\linewidth}\raggedright
+  \boxguard[9]
+  \item \begin{minipage}[t]{0.56\linewidth}\raggedright
         The dotplot shows how many push-ups each of 20 students did in one minute. Which
         statement is best?
         \end{minipage}\hfill
-        \begin{minipage}[t]{0.56\linewidth}
+        \begin{minipage}[t]{0.40\linewidth}
         \centering
-        \begin{tikzpicture}[x=0.27cm, y=0.22cm, baseline=(current bounding box.north)]
+        \begin{tikzpicture}[x=0.22cm, y=0.2cm, baseline=(current bounding box.north)]
           \draw[thick] (18,0) -- (46,0);
           \foreach \x in {18,22,...,46} {
             \draw (\x,-0.4) -- (\x,0.4); \node[below, font=\tiny] at (\x,-0.3) {\x};}
           \foreach \x/\n in {20/1, 22/2, 24/4, 26/6, 28/4, 30/2, 44/1}
-            \foreach \k in {1,...,\n} \fill[navy] (\x,\k*0.9) circle (2.2pt);
+            \foreach \k in {1,...,\n} \fill[navy] (\x,\k*0.9) circle (2pt);
           \node[font=\tiny] at (32,-3) {Push-ups in one minute};
         \end{tikzpicture}
         \end{minipage}
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+        \begin{choices}
           \item The student with 44 push-ups is an outlier, so that value should be deleted.
           \item There are no unusual features, because most students did 22 to 30 push-ups.
           \item The distribution is bimodal, with peaks at 26 and 44 push-ups.
           \item The gap from 20 to 22 push-ups is the most unusual feature.
-          \item \ans{44 push-ups is a possible outlier, set off by a gap from 30 to 44; it should
-                be investigated, not deleted.}
-        \end{enumerate}
+          \item \ans{44 push-ups is a possible outlier, set off by a gap; investigate it.}
+        \end{choices}
 
-  \boxguard[11]
-  \item The distribution of the ages at which 120 employees of a company retired is strongly
-        \textbf{skewed to the left}. Which statement is most likely true?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item The mean is greater than the median, so the median better describes a typical
-                retirement age.
-          \item \ans{The mean is less than the median, so the median better describes a typical
-                retirement age.}
-          \item The mean and median are equal, because both measure center.
-          \item The mean is less than the median, so the mean better describes a typical
-                retirement age.
-          \item Nothing can be said about the mean and median without the data.
-        \end{enumerate}
+  \boxguard[8]
+  \item The ages at which 120 employees of a company retired are strongly \textbf{skewed left}.
+        Which is most likely true?
+        \begin{multicols}{2}
+        \begin{choices}
+          \item Mean $>$ median; report the median
+          \item \ans{Mean $<$ median; report the median}
+          \item Mean $=$ median
+          \item Mean $<$ median; report the mean
+          \item Can't tell without the data
+        \end{choices}
+        \end{multicols}
 
-  \boxguard[11]
+  \boxguard[8]
   \item Nine runners finished a 5-mile race in 21, 22, 24, 25, 26, 27, 27, 29, and 31 minutes. The
-        21-minute time is mistakenly entered as 2.1 minutes. Which summaries change?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item \ans{The mean and the range change; the median and the IQR do not.}
-          \item Both the mean and the median change.
-          \item The median changes, but the mean does not.
-          \item None of the summaries change, because only one time is wrong.
-          \item Only the IQR changes.
-        \end{enumerate}
+        21 is mistakenly entered as 2.1. Which summaries change?
+        \begin{multicols}{2}
+        \begin{choices}
+          \item \ans{Mean and range; not median or IQR}
+          \item Both the mean and the median
+          \item The median, but not the mean
+          \item None of them: only one time is wrong
+          \item Only the IQR
+        \end{choices}
+        \end{multicols}
 
-  \boxguard[11]
-  \item A bottling plant fills bottles labeled 500 mL. For 40 bottles, the standard deviation of
-        the amounts is 3 mL. Which is the best interpretation?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+  \boxguard[8]
+  \item For 40 bottles of water labeled 500 mL, the standard deviation of the amounts is 3 mL.
+        Which is the best interpretation?
+        \begin{choices}
           \item Every bottle holds within 3 mL of the mean amount.
           \item A typical bottle holds 3 mL.
           \item The fullest bottle holds 3 mL more than the least full bottle.
           \item \ans{The amounts typically vary by about 3 mL from the mean amount.}
           \item About 3\% of the bottles hold more than the mean amount.
-        \end{enumerate}
+        \end{choices}
 
-  \boxguard[10]
+  \boxguard[8]
   \item At a checkup, a baby's length is at the \textbf{30th percentile} for babies of the same
-        age. Which statement is correct?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item The baby is 30 centimeters long.
-          \item The baby is 30\% shorter than a typical baby of the same age.
-          \item About 70\% of babies of the same age are at or below this baby's length.
-          \item \ans{About 30\% of babies of the same age are at or below this baby's length.}
-          \item The baby is longer than exactly 30 other babies.
-        \end{enumerate}
+        age. This means
+        \begin{choices}
+          \item the baby is 30 centimeters long.
+          \item the baby is 30\% shorter than a typical baby of the same age.
+          \item about 70\% of babies the same age are this length or shorter.
+          \item \ans{about 30\% of babies the same age are this length or shorter.}
+          \item the baby is longer than exactly 30 other babies.
+        \end{choices}
 
-  \boxguard[12]
-  \item The five-number summary of the lengths (minutes) of 50 calls to a help desk is
-        \[ \text{Min} = 2 \quad Q_1 = 6 \quad \text{Median} = 9 \quad Q_3 = 14 \quad
-           \text{Max} = 33. \]
-        Which statement is true?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item Both 2 and 33 minutes are outliers, because they are the minimum and maximum.
-          \item \ans{33 minutes is an outlier, because it is greater than $Q_3 + 1.5 \times
-                \text{IQR} = 26$.}
-          \item There are no outliers, because the IQR of 8 is small.
-          \item 33 minutes is an outlier, because it is more than 3 times the median.
-          \item Outliers cannot be identified from a five-number summary.
-        \end{enumerate}
-
-  \boxguard[14]
-  \item \begin{minipage}[t]{0.46\linewidth}\raggedright
+  \boxguard[9]
+  \item \begin{minipage}[t]{0.56\linewidth}\raggedright
         The boxplot shows the number of skaters at a skate park on each of 40 days. Which
         statement is true?
         \end{minipage}\hfill
-        \begin{minipage}[t]{0.50\linewidth}
+        \begin{minipage}[t]{0.40\linewidth}
         \centering
-        \begin{tikzpicture}[x=0.17cm, y=1cm, baseline=(current bounding box.north)]
+        \begin{tikzpicture}[x=0.15cm, y=1cm, baseline=(current bounding box.north)]
           \draw[thick] (10,0) -- (50,0);
-          \foreach \x in {10,15,...,50} {
+          \foreach \x in {10,20,...,50} {
             \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.05) {\x};}
-          \draw (12,0.65) -- (20,0.65);
-          \draw (36,0.65) -- (48,0.65);
-          \draw[fill=skymid] (20,0.4) rectangle (36,0.9);
-          \draw[thick] (31,0.4) -- (31,0.9);
-          \draw (12,0.5) -- (12,0.8);
-          \draw (48,0.5) -- (48,0.8);
-          \node[font=\tiny] at (30,-0.5) {Skaters per day};
+          \draw (12,0.45) -- (20,0.45);
+          \draw (36,0.45) -- (48,0.45);
+          \draw[fill=skymid] (20,0.25) rectangle (36,0.65);
+          \draw[thick] (31,0.25) -- (31,0.65);
+          \draw (12,0.33) -- (12,0.57);
+          \draw (48,0.33) -- (48,0.57);
+          \node[font=\tiny] at (30,-0.45) {Skaters per day};
         \end{tikzpicture}
         \end{minipage}
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item More days had from 20 to 31 skaters than from 31 to 36, because that part of
-                the box is wider.
+        \begin{choices}
+          \item More days had 20 to 31 skaters than 31 to 36, because that part of the box is wider.
           \item About half of the days had more than 36 skaters.
           \item The mean number of skaters per day was 31.
           \item The range of the counts is 16 skaters.
-          \item \ans{About a quarter of the days had from 20 to 31 skaters, and about a quarter
-                had from 31 to 36.}
-        \end{enumerate}
+          \item \ans{About a quarter of the days had 20 to 31, and about a quarter 31 to 36.}
+        \end{choices}
 
-  \boxguard[15]
-  \item \begin{minipage}[t]{0.40\linewidth}\raggedright
+  \boxguard[10]
+  \item \begin{minipage}[t]{0.50\linewidth}\raggedright
         The parallel boxplots show the heights (cm) of tomato plants grown with two fertilizers.
         Which comparison is best?
         \end{minipage}\hfill
-        \begin{minipage}[t]{0.56\linewidth}
+        \begin{minipage}[t]{0.46\linewidth}
         \centering
-        \begin{tikzpicture}[x=0.17cm, y=1cm, baseline=(current bounding box.north)]
+        \begin{tikzpicture}[x=0.15cm, y=1cm, baseline=(current bounding box.north)]
           \draw[thick] (25,0) -- (65,0);
-          \foreach \x in {25,30,...,65} {
+          \foreach \x in {30,40,...,60} {
             \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.05) {\x};}
-          % Fertilizer X (upper)
-          \draw (30,1.45) -- (38,1.45); \draw (52,1.45) -- (60,1.45);
-          \draw[fill=skymid] (38,1.25) rectangle (52,1.65); \draw[thick] (45,1.25) -- (45,1.65);
-          \draw (30,1.33) -- (30,1.57); \draw (60,1.33) -- (60,1.57);
-          \node[left, font=\tiny] at (25,1.45) {X};
-          % Fertilizer Y (lower)
-          \draw (35,0.6) -- (47,0.6); \draw (57,0.6) -- (62,0.6);
-          \draw[fill=goldbg] (47,0.4) rectangle (57,0.8); \draw[thick] (52,0.4) -- (52,0.8);
-          \draw (35,0.48) -- (35,0.72); \draw (62,0.48) -- (62,0.72);
-          \node[left, font=\tiny] at (25,0.6) {Y};
-          \node[font=\tiny] at (45,-0.5) {Plant height (cm)};
+          \draw (30,1.0) -- (38,1.0); \draw (52,1.0) -- (60,1.0);
+          \draw[fill=skymid] (38,0.82) rectangle (52,1.18); \draw[thick] (45,0.82) -- (45,1.18);
+          \draw (30,0.9) -- (30,1.1); \draw (60,0.9) -- (60,1.1);
+          \node[left, font=\tiny] at (25,1.0) {X};
+          \draw (35,0.45) -- (47,0.45); \draw (57,0.45) -- (62,0.45);
+          \draw[fill=goldbg] (47,0.27) rectangle (57,0.63); \draw[thick] (52,0.27) -- (52,0.63);
+          \draw (35,0.35) -- (35,0.55); \draw (62,0.35) -- (62,0.55);
+          \node[left, font=\tiny] at (25,0.45) {Y};
+          \node[font=\tiny] at (45,-0.45) {Plant height (cm)};
         \end{tikzpicture}
         \end{minipage}
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+        \begin{choices}
           \item Fertilizer X has the higher median, because its box starts farther left.
-          \item The fertilizers are equally variable, because both boxes are the same height.
-          \item \ans{Fertilizer Y has the higher median height (52 vs.\ 45 cm) and the smaller IQR
-                (10 vs.\ 14 cm).}
+          \item The fertilizers are equally variable, because the boxes are the same height.
+          \item \ans{Y has the higher median (52 vs.\ 45 cm) and the smaller IQR (10 vs.\ 14).}
           \item Fertilizer X's plants are taller, because its minimum is smaller.
           \item Every plant given Fertilizer Y is taller than every plant given Fertilizer X.
-        \end{enumerate}
+        \end{choices}
 
-  \boxguard[11]
-  \item A university reports that the mean GPA of all 12,000 of its students is 3.12. A student
-        club surveys 40 students and finds that their mean GPA is 3.35. Which is correct?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item \ans{3.12 is a parameter $\mu$, and 3.35 is a statistic $\bar x$.}
-          \item 3.12 is a statistic $\bar x$, and 3.35 is a parameter $\mu$.
-          \item Both numbers are parameters, because both describe students.
-          \item Both numbers are statistics, because both are means.
-          \item 3.35 is a parameter, because it is the larger number.
-        \end{enumerate}
+  \boxguard[8]
+  \item A university reports the mean GPA of all 12,000 of its students is 3.12. A club surveys
+        40 students; their mean GPA is 3.35. Which is correct?
+        \begin{multicols}{2}
+        \begin{choices}
+          \item 3.12 is $\bar x$; 3.35 is $\mu$
+          \item Both are parameters
+          \item \ans{3.12 is $\mu$; 3.35 is $\bar x$}
+          \item Both are statistics, since both are means
+          \item 3.35 is $\mu$, since it is larger
+        \end{choices}
+        \end{multicols}
 
-  \boxguard[13]
-  \item Leo scored 62 on a math contest where the mean was 50 and the standard deviation was 8.
-        Kim scored 45 on a spelling contest where the mean was 33 and the standard deviation was
-        10. Who did better \emph{relative to their own contest}?
-        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
-          \item They did equally well, because both scored 12 points above their contest's mean.
-          \item \ans{Leo, because Leo's $z$-score of 1.5 is greater than Kim's 1.2.}
-          \item Kim, because Kim's $z$-score of 1.5 is greater than Leo's 1.2.
-          \item Leo, because 62 is greater than 45.
-          \item They cannot be compared, because the contests are in different subjects.
-        \end{enumerate}
+  \boxguard[9]
+  \item Leo scored 62 on a math contest (mean 50, standard deviation 8). Kim scored 45 on a
+        spelling contest (mean 33, standard deviation 10). Who did better \emph{relative to
+        their own contest}?
+        \begin{multicols}{2}
+        \begin{choices}
+          \item Equal: both are 12 points above
+          \item \ans{Leo: $z = 1.5$ vs.\ Kim's 1.2}
+          \item Kim: $z = 1.5$ vs.\ Leo's 1.2
+          \item Leo: 62 is greater than 45
+          \item Can't compare different subjects
+        \end{choices}
+        \end{multicols}
 
 \end{enumerate}
 
-\vspace{0.14in}
+\vspace{0.08in}
 
-% No \newpage here: the guard keeps the Section II strip off a page edge.
-\boxguard[30]
+\boxguard[12]
 \begin{headlinebox}{goldbg}
 \small
 \textbf{Section II --- Free Response} \hfill \textbf{40 points, 8 each}\\
 Show your reasoning. Answer \emph{in context} --- name the variables and their units.
 \end{headlinebox}
 
-\vspace{0.10in}
+\vspace{0.06in}
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
 
-  \boxguard[24]
+  \boxguard[8]
   \item \textbf{(8 points)} A marina keeps these records on the boats docked there.
 
-        \vspace{4pt}
+        \vspace{3pt}
         {\centering\small
-        \renewcommand{\arraystretch}{1.12}
+        \renewcommand{\arraystretch}{1.05}
         \begin{tabular}{@{} c l c c l @{}}
-        \textbf{Slip \#} & \textbf{Boat type} & \textbf{Length (ft)} & \textbf{Capacity} &
+        \textbf{Slip \#} & \textbf{Boat type} & \textbf{Length (ft)} & \textbf{Passengers allowed} &
         \textbf{Hull color} \\ \hline
         12 & Sailboat  & 28.5 & 6  & White \\
         15 & Motorboat & 22.0 & 8  & Blue \\
         21 & Sailboat  & 34.0 & 8  & White \\
         26 & Pontoon   & 24.5 & 12 & Gray \\
-        30 & Motorboat & 19.5 & 5  & Red \\
-        \end{tabular}\par
-        {\footnotesize \emph{Capacity} is the number of passengers the boat is allowed to carry.}\par}
-
-        \vspace{6pt}
-        \textbf{(a)} What are the individuals in this data set? Is \emph{Sailboat} a variable or
-        a value? Explain.\\[4pt]
-        \ansline{The individuals are the boats docked at the marina --- one row each.}\\
-        \ansline{\emph{Sailboat} is a value: one entry under the variable \emph{Boat type}.}
-
-        \boxguard[12]
-        \vspace{6pt}
-        \textbf{(b)} Classify each variable. For each quantitative variable, also say whether it
-        is discrete or continuous.
-
-        \vspace{4pt}
-        {\centering\small
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{@{} l | p{4.2cm} | p{4.2cm} @{}}
-        \textbf{Variable} & \textbf{Categorical or quantitative?} &
-        \textbf{If quantitative: discrete or continuous?} \\ \hline
-        Slip \#    & \ans{Categorical}  & \\ \hline
-        Boat type  & \ans{Categorical}  & \\ \hline
-        Length     & \ans{Quantitative} & \ans{Continuous} \\ \hline
-        Capacity   & \ans{Quantitative} & \ans{Discrete} \\ \hline
-        Hull color & \ans{Categorical}  & \\
         \end{tabular}\par}
 
-        \boxguard[6]
-        \vspace{6pt}
-        \textbf{(c)} The harbor master asks, ``How long is the boat in slip 21?'' Is this a
-        statistical question? Explain. Then write a statistical question these data could
-        answer.\\[4pt]
-        \ansline{No: it has one answer (34.0 ft), read from one row --- no variability.}\\
-        \ansline{Statistical: ``How much do the lengths of the boats at the marina vary?''}\\
-        \ansline{--- it expects different answers from different boats.}
+        \vspace{3pt}
+        \textbf{(a)} What are the individuals? Is \emph{Sailboat} a variable or a value?\\[2pt]
+        \ansline{The boats docked at the marina (one per row). \emph{Sailboat} is a value of \emph{Boat type}.}
 
-  \boxguard[24]
+        \vspace{3pt}
+        \textbf{(b)} Classify \emph{Slip \#}, \emph{Length}, and \emph{Passengers allowed} as
+        categorical or quantitative. For each quantitative one, say discrete or continuous.\\[2pt]
+        \ansline{Slip \#: categorical (a label). Length: quantitative, continuous.}\\
+        \ansline{Passengers allowed: quantitative, discrete (a count).}
+
+        \vspace{3pt}
+        \textbf{(c)} Is ``How long is the boat in slip 21?'' a statistical question? Explain, then
+        write one that is.\\[2pt]
+        \ansline{No: one answer (34.0 ft), read from one row --- no variability. Statistical:}\\
+        \ansline{``How much do the lengths of the boats at the marina vary?''}
+
+  \boxguard[14]
   \item \textbf{(8 points)} Two gyms asked their members to name their favorite group class.
 
-        \vspace{4pt}
-        \begin{minipage}[c]{0.50\linewidth}
+        \vspace{3pt}
+        \begin{minipage}[c]{0.46\linewidth}
         \centering\small
-        \setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+        \setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.05}
         \begin{tabular}{@{} l | c c @{}}
          & \textbf{East Gym} & \textbf{West Gym} \\ \hline
         Yoga           & 105 & 72 \\
@@ -519,9 +402,9 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
         \textbf{Total} & 300 & 180 \\
         \end{tabular}
         \end{minipage}\hfill
-        \begin{minipage}[c]{0.46\linewidth}
+        \begin{minipage}[c]{0.50\linewidth}
         \centering
-        \begin{tikzpicture}[x=0.62cm, y=0.0155cm]
+        \begin{tikzpicture}[x=0.62cm, y=0.0145cm]
           \foreach \y in {0,40,80,120} {
             \draw[linegray, very thin] (0,\y) -- (8.4,\y);
             \node[left, font=\tiny] at (0,\y) {\y};}
@@ -532,149 +415,130 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
           \draw[thick] (0,0) -- (0,130);
           \foreach \i/\lab in {0/Yoga, 1/Spin, 2/Weights, 3/Dance}
             \node[below, font=\tiny] at (1.0+2*\i,0) {\lab};
-          \node[rotate=90, font=\tiny] at (-1.1,65) {Number of members};
+          \node[rotate=90, font=\tiny] at (-1.1,65) {Members};
           \fill[navy] (4.6,128) rectangle (4.9,138); \node[right, font=\tiny] at (4.9,133) {East};
           \fill[goldacc] (6.5,128) rectangle (6.8,138); \node[right, font=\tiny] at (6.8,133) {West};
         \end{tikzpicture}
         \end{minipage}
 
-        \vspace{6pt}
-        \textbf{(a)} What proportion of East Gym members chose yoga? What proportion of West Gym
-        members?\\[4pt]
-        \ansline{East: $105/300 = 0.35$ (35\%).}\\
-        \ansline{West: $72/180 = 0.40$ (40\%).}
+        \vspace{3pt}
+        \textbf{(a)} What proportion of each gym's members chose yoga?\\[2pt]
+        \ansline{East: $105/300 = 0.35$. \quad West: $72/180 = 0.40$.}
 
-        \boxguard[6]
-        \vspace{6pt}
-        \textbf{(b)} A manager wrote: ``Yoga is more popular at East Gym --- just look how much
-        taller its yoga bar is.'' Explain what is wrong with this reasoning.\\[4pt]
-        \ansline{The bars show counts, and East has 300 members to West's 180, so its bars}\\
-        \ansline{are taller just because the gym is bigger. Compare relative frequencies:}\\
-        \ansline{35\% of East members vs.\ 40\% of West members --- West's share is larger.}
+        \vspace{3pt}
+        \textbf{(b)} A manager wrote: ``Yoga is more popular at East Gym --- look how much taller
+        its yoga bar is.'' What is wrong with this reasoning?\\[2pt]
+        \ansline{The bars are counts, and East has 300 members to West's 180. Compare}\\
+        \ansline{relative frequencies: 35\% vs.\ 40\% --- West's share is larger.}
 
-        \boxguard[6]
-        \vspace{6pt}
-        \textbf{(c)} Do \emph{most} West Gym members prefer yoga? Do most East Gym members prefer
-        spin? Justify with numbers.\\[4pt]
-        \ansline{West: no. 40\% is less than half --- yoga is West's most common choice, but}\\
-        \ansline{not a majority. East: no. Only $90/300 = 30\%$ of East members chose spin,}\\
-        \ansline{and spin is not even East's most common choice.}
+        \vspace{3pt}
+        \textbf{(c)} Do \emph{most} West members prefer yoga? Do most East members prefer spin?
+        Justify.\\[2pt]
+        \ansline{West: no --- 40\% is less than half (most common, not a majority).}\\
+        \ansline{East: no --- only $90/300 = 30\%$ chose spin.}
 
-  \boxguard[26]
-  \item \textbf{(8 points)} A farm weighed the 50 pumpkins in one row of its pumpkin patch. The
-        histogram shows the weights (pounds).
+  \boxguard[14]
+  \item \textbf{(8 points)} A farm weighed the 50 pumpkins in one row of its pumpkin patch.
 
-        \vspace{4pt}
-        {\centering
-        \begin{tikzpicture}[x=0.27cm, y=0.24cm]
-          \foreach \y in {0,4,8,12,16} {
+        \vspace{3pt}
+        \begin{minipage}[t]{0.42\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.165cm, y=0.15cm, baseline=(current bounding box.north)]
+          \foreach \y in {0,5,10,15} {
             \draw[linegray, very thin] (2,\y) -- (38,\y);
             \node[left, font=\tiny] at (2,\y) {\y};}
           \foreach \l/\c in {4/6, 8/14, 12/12, 16/8, 20/5, 24/3, 28/0, 32/2}
             \draw[fill=skymid] (\l,0) rectangle (\l+4,\c);
           \draw[thick] (2,0) -- (38,0);
-          \draw[thick] (2,0) -- (2,17);
-          \foreach \x in {4,8,...,36} { \node[below, font=\tiny] at (\x,0) {\x}; }
-          \node[font=\tiny] at (20,-2.6) {Weight (pounds)};
-          \node[rotate=90, font=\tiny] at (-0.4,8) {Number of pumpkins};
-        \end{tikzpicture}\par}
-
-        \vspace{6pt}
+          \draw[thick] (2,0) -- (2,16);
+          \foreach \x in {4,12,...,36} { \node[below, font=\tiny] at (\x,0) {\x}; }
+          \node[font=\tiny] at (20,-3.6) {Weight (pounds)};
+          \node[rotate=90, font=\tiny] at (-1.4,8) {Pumpkins};
+        \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.55\linewidth}\raggedright
         \textbf{(a)} How many pumpkins weighed 20 pounds or more? What percent of the row is
-        that?\\[4pt]
-        \ansline{$5 + 3 + 0 + 2 = 10$ pumpkins weighed 20 pounds or more.}\\
-        \ansline{$10/50 = 0.20$, so 20\% of the row.}
+        that?\\[2pt]
+        \ansline{$5+3+0+2 = 10$ pumpkins; $10/50 = 20\%$.}
 
-        \boxguard[8]
-        \vspace{6pt}
-        \textbf{(b)} Describe the distribution of pumpkin weights.\\[4pt]
-        \ansline{Shape: skewed right --- a long tail toward heavy pumpkins; one peak at 8--12 lb.}\\
-        \ansline{Unusual: a gap at 28--32 lb; the 2 pumpkins at 32--36 lb are possible outliers.}\\
-        \ansline{Center: the median weight is in the 12--16 lb interval (about 13 lb).}\\
-        \ansline{Variability: weights run from about 4 lb to 36 lb, a range of about 32 lb.}
+        \vspace{3pt}
+        \textbf{(b)} Can the exact median be found from the histogram? If not, which interval
+        holds it? Explain.\\[2pt]
+        \ansline{No --- values are grouped. 20 are}\\
+        \ansline{under 12 lb, 32 under 16, so the}\\
+        \ansline{25th and 26th are in 12--16 lb.}
+        \end{minipage}
 
-        \boxguard[6]
-        \vspace{6pt}
-        \textbf{(c)} Can the exact median weight be found from the histogram? If not, which
-        interval contains it? Explain.\\[4pt]
-        \ansline{No --- a histogram groups the values. 20 pumpkins are under 12 lb and 32 are}\\
-        \ansline{under 16 lb, so the 25th and 26th weights (the median) are in 12--16 lb.}
+        \vspace{3pt}
+        \textbf{(c)} Describe the distribution of pumpkin weights.\\[2pt]
+        \ansline{Skewed right (a long tail toward heavy pumpkins), one peak at 8--12 lb.}\\
+        \ansline{A gap at 28--32 lb; the 2 pumpkins at 32--36 lb are possible outliers.}\\
+        \ansline{Median in 12--16 lb (about 13 lb); weights run from about 4 to 36 lb.}
 
-  \boxguard[22]
-  \item \textbf{(8 points)} The lengths (minutes) of 15 episodes of a podcast, in order:
-        \[ 4 \quad 22 \quad 25 \quad 27 \quad 28 \quad 30 \quad 31 \quad 32 \quad 33 \quad 35
-           \quad 36 \quad 38 \quad 40 \quad 41 \quad 44 \]
+  \boxguard[14]
+  \item \textbf{(8 points)} The lengths (minutes) of 15 episodes of a podcast, in order:\\[2pt]
+        \hspace*{\fill}4 \ \ 22 \ \ 25 \ \ 27 \ \ 28 \ \ 30 \ \ 31 \ \ 32 \ \ 33 \ \ 35 \ \ 36
+        \ \ 38 \ \ 40 \ \ 41 \ \ 44\hspace*{\fill}
 
+        \vspace{2pt}
         \textbf{(a)} Find the five-number summary.
         \begin{work}
-          \text{Min} &= 4, \quad Q_1 = 27 \ (\text{median of the lower 7}) \\
-          \text{Median} &= 32 \ (\text{the 8th length}) \\
-          Q_3 &= 38 \ (\text{median of the upper 7}), \quad \text{Max} = 44
+          \text{Min} = 4, \quad Q_1 = 27, \quad \text{Median} = 32, \quad Q_3 = 38, \quad
+          \text{Max} = 44
         \end{work}
 
-        \boxguard[10]
-        \vspace{6pt}
         \textbf{(b)} Use the $1.5 \times \text{IQR}$ rule to decide whether the 4-minute episode is
         an outlier. If it is, where does the lower whisker of a modified boxplot end?
         \begin{work}
-          \text{IQR} &= 38 - 27 = 11 \\
-          Q_1 - 1.5(\text{IQR}) &= 27 - 16.5 = 10.5
+          \text{IQR} = 38 - 27 = 11, \qquad Q_1 - 1.5(\text{IQR}) = 27 - 16.5 = 10.5
         \end{work}
         \ansline{4 $<$ 10.5, so the 4-minute episode is an outlier. The lower whisker ends at 22.}
 
-        \boxguard[6]
-        \vspace{6pt}
-        \textbf{(c)} The mean length is 31.07 minutes. Which better describes a typical episode
-        length here, the mean or the median? Explain.\\[4pt]
-        \ansline{The median, 32 minutes. It is resistant: the 4-minute outlier barely moves it.}\\
-        \ansline{The mean is nonresistant --- the 4-minute episode drags it down to 31.07,}\\
-        \ansline{so it understates a typical episode.}
+        \vspace{3pt}
+        \textbf{(c)} The mean length is 31.07 minutes. Which better describes a typical episode,
+        the mean or the median? Explain.\\[2pt]
+        \ansline{The median, 32 min: it is resistant, so the 4-minute outlier barely moves it.}\\
+        \ansline{The nonresistant mean is dragged down to 31.07 by that one short episode.}
 
-  \boxguard[20]
+  \boxguard[14]
   \item \textbf{(8 points)} The amount of coffee a machine pours into a cup is approximately
         normal, with mean $\mu = 12$ ounces and standard deviation $\sigma = 0.4$ ounces.
 
-        \vspace{4pt}
-        {\centering
-        \begin{tikzpicture}[x=1.0cm, y=3.2cm]
+        \vspace{2pt}
+        \begin{minipage}[t]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.62cm, y=1.5cm, baseline=(current bounding box.north)]
           \draw[thick, navy, domain=-3.6:3.6, samples=80, smooth]
             plot (\x, {exp(-\x*\x/2)});
           \draw[thick] (-3.8,0) -- (3.8,0);
-          \foreach \k/\lab in {-3/10.8, -2/11.2, -1/11.6, 0/12.0, 1/12.4, 2/12.8, 3/13.2} {
-            \draw (\k,-0.04) -- (\k,0.04); \node[below, font=\tiny] at (\k,-0.02) {\lab};}
-          \node[font=\tiny] at (0,-0.28) {Amount poured (ounces)};
-        \end{tikzpicture}\par}
+          \foreach \k/\lab in {-3/10.8, -2/11.2, -1/11.6, 0/12, 1/12.4, 2/12.8, 3/13.2} {
+            \draw (\k,-0.05) -- (\k,0.05); \node[below, font=\tiny] at (\k,-0.03) {\lab};}
+          \node[font=\tiny] at (0,-0.38) {Amount poured (ounces)};
+        \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.57\linewidth}\raggedright
+        \textbf{(a)} About what percent of cups get between 11.6 and 12.4 ounces?\\[2pt]
+        \ansline{$\pm 1$ SD from 12, so about 68\%.}
 
-        \vspace{4pt}
-        \textbf{(a)} About what percent of cups get between 11.6 and 12.4 ounces?\\[4pt]
-        \ansline{11.6 and 12.4 are 1 standard deviation below and above 12,}\\
-        \ansline{so about 68\% of the cups (empirical rule).}
+        \vspace{3pt}
+        \textbf{(b)} About what percent get \emph{less than} 11.2 ounces?\\[2pt]
+        \ansline{2 SDs below: half of 5\%, about 2.5\%.}
+        \end{minipage}
 
-        \boxguard[5]
-        \vspace{6pt}
-        \textbf{(b)} About what percent of cups get \emph{less than} 11.2 ounces?\\[4pt]
-        \ansline{11.2 is 2 SDs below. 95\% are within 2 SDs, so 5\% are outside, split evenly:}\\
-        \ansline{about 2.5\% of the cups get less than 11.2 ounces.}
-
-        \boxguard[8]
-        \vspace{6pt}
         \textbf{(c)} One cup gets 12.7 ounces. Find its $z$-score and interpret it in context.
         \begin{work}
-          z &= \frac{12.7 - 12}{0.4} = 1.75
+          z = \frac{12.7 - 12}{0.4} = 1.75
         \end{work}
         \ansline{This cup got 1.75 SDs more than the mean amount of 12 ounces.}
 
-        \boxguard[10]
-        \vspace{6pt}
-        \textbf{(d)} A second machine pours with mean 16 ounces and standard deviation 0.6
-        ounces. Which pour is more unusually large \emph{for its own machine}: 12.7 ounces from
-        the first machine or 17.2 ounces from the second? Justify.
+        \vspace{3pt}
+        \textbf{(d)} A second machine pours with mean 16 oz and SD 0.6 oz. Which pour is more
+        unusually large \emph{for its own machine}: 12.7 oz from the first or 17.2 oz from the second?
         \begin{work}
-          z_{\text{first}} &= \frac{12.7 - 12}{0.4} = 1.75, \qquad
+          z_{\text{first}} = \frac{12.7 - 12}{0.4} = 1.75, \qquad
           z_{\text{second}} = \frac{17.2 - 16}{0.6} = 2.0
         \end{work}
-        \ansline{The 17.2-ounce pour: it is 2.0 SDs above its machine's mean, the 12.7-ounce}\\
-        \ansline{pour only 1.75 --- so the 17.2-ounce pour is more unusual for its machine.}
+        \ansline{The 17.2-oz pour: 2.0 SDs above its mean vs.\ 1.75 for the 12.7-oz pour.}
 
 \end{enumerate}
 
