@@ -1,0 +1,675 @@
+%! Unit 1, Lessons 1.0–1.7 — SAMPLE Test (Answer Key)
+% The practice form of the Unit 1 test. Item for item it is the parallel form of ../actual_test/:
+% the same 20 multiple-choice targets in the same order and the same five free-response
+% questions with the same parts and points (MC 20 x 3 = 60, FRQ 5 x 8 = 40, total 100;
+% 25 questions) --- every context different, so working this one teaches the moves, not the answers.
+% Merged into the unit student packet via ../../sample_test/ (see shared/tests.mk).
+% NAME ROW: \namedateperiod IS carried --- a unit test is taken in a testing setting.
+% NO SKETCH ITEMS: every display is pre-drawn in TikZ and read.
+%
+% BLUEPRINT
+%   MC 1 individuals                      bike-repair work orders          1.0
+%   MC 2 statistical question             bike-repair work orders          1.0
+%   MC 3 categorical vs quantitative      bike-repair work orders (ZIP)    1.1
+%   MC 4 grouping (binning)               gym workout minutes              1.1
+%   MC 5 relative frequency               how 160 students watch movies    1.2
+%   MC 6 groups of unequal size           two summer camps, swimming       1.2
+%   MC 7 discrete vs continuous           mile time to the second          1.3
+%   MC 8 read a stem plot (median)        15 April high temperatures       1.3
+%   MC 9 interval width                   50 battery lifetimes             1.3
+%   MC10 shape from a histogram           40 used-textbook prices          1.4
+%   MC11 unusual features (dotplot)       20 song lengths                  1.4
+%   MC12 mean vs median from shape        80 home sale prices              1.5
+%   MC13 resistance (a typo)              9 lunch-special prices           1.5
+%   MC14 standard deviation in context    30 dog-food bags                 1.5
+%   MC15 percentile                       state reading test               1.5
+%   MC16 1.5 x IQR rule                   40 concert ticket prices         1.6
+%   MC17 every section holds a quarter    30 basketball games              1.6
+%   MC18 parallel boxplots                two urgent-care clinics          1.6
+%   MC19 parameter vs statistic           town residents' ages             1.7
+%   MC20 z-scores across distributions    history vs chemistry tests       1.7
+%   FRQ1 individuals, variables, SQ       city playgrounds                 1.0, 1.1, 1.3
+%   FRQ2 relative frequency comparison    two high schools' senior plans   1.2
+%   FRQ3 histogram, describe              50 trout lengths                 1.3, 1.4
+%   FRQ4 five numbers, outlier, center    15 used video-game prices        1.5, 1.6
+%   FRQ5 empirical rule, z-scores         egg weights                      1.7
+% ANSWERS (MC): 1B 2D 3B 4E 5C 6A 7D 8B 9E 10C 11A 12D 13C 14E 15A 16D 17B 18E 19C 20A
+%
+% THE DATA (every number checked)
+%  MC5  92/36/20/12 = 160; theater 36/160 = 0.225.
+%  MC6  Camp A 54/120 = 0.45; Camp B 39/75 = 0.52.
+%  MC8  54 56 58 59 60 61 63 63 65 67 68 70 72 72 76; median (8th) 63; mean 964/15 = 64.3.
+%  MC10 bins of $10 from 0: 12 11 7 5 3 1 1 (40), skewed right.
+%  MC11 2.5:1 3.0:3 3.5:6 4.0:5 4.5:3 5.0:1 8.0:1 (20).
+%  MC13 6 7 7 8 9 9 10 11 12 -> 120: Q1 7, med 9, Q3 10.5 both ways; mean, range move.
+%  MC16 18/30/38/46/95: IQR 16, fences 6 and 70; 95 > 70.
+%  MC17 52/60/64/75/88.
+%  MC18 A 10/18/24/30/45 (IQR 12); B 15/26/30/34/40 (IQR 8).
+%  MC20 Maya (84-76)/5 = 1.6; Jordan (88-80)/8 = 1.0.
+%  FRQ2 North 120/55/50/25 (250) = 48/22/20/10%; South 88/32/28/12 (160) = 55/20/17.5/7.5%.
+%  FRQ3 bins of 4 cm from 12: 2 0 3 5 9 15 11 5 (50); cum 2 2 5 10 19 34 45 50.
+%  FRQ4 8 10 12 12 14 15 15 16 18 20 21 22 24 25 58: Q1 12, med 16, Q3 22, IQR 10,
+%       fences -3 and 37; sum 290, mean 19.33; 9 prices below the mean.
+%  FRQ5 N(58, 4): 50-66 95%; >62 16%; 51 -> z -1.75; 65 -> 1.75 vs farm 2 N(64, 6) 73 -> 1.5.
+%
+% LOCKSTEP: the blank ../../tests/practice_test/ is generated FROM THIS FILE (edit here, regenerate).
+% Every ans mark on an MC option prints bare there; every other ans mark becomes a phantom of
+% itself; every run of n anslines becomes writelines{n}; work blocks stay byte-identical.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 1 \quad Lessons 1.0--1.7}{Sample Test --- Answer Key}
+
+\namedateperiod
+
+{\small\hfill Score:\ \blank{1.4cm}\ / 100}
+
+\vspace{0.06in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+This is the \textbf{practice} test --- not scored. Work it in one period, notes closed, then check
+it against the key. It matches the real test item for item; every answer must be in context.
+\end{remindbox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice} \hfill \textbf{60 points, 3 each}\\
+Circle the single best answer. Read all five options --- more than one of them is about the
+context, not just the arithmetic.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\boxguard[10]
+\noindent\textbf{Questions 1--3} use these records from a bicycle repair shop. Each row is one
+bike brought in for repair.
+
+\vspace{4pt}
+{\centering\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{} c l c c c @{}}
+\textbf{Order \#} & \textbf{Bike type} & \textbf{Repair time (min)} & \textbf{Cost (\$)} &
+\textbf{Customer ZIP} \\ \hline
+4417 & Road     & 45 & 62.50  & 30214 \\
+4418 & Mountain & 90 & 118.00 & 30217 \\
+4419 & Kids'    & 20 & 25.00  & 30214 \\
+4420 & Hybrid   & 35 & 48.75  & 30220 \\
+\end{tabular}\par}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \boxguard[8]
+  \item In the shop's records, the \textbf{individuals} are
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item the bike types.
+          \item \ans{the bikes brought in for repair.}
+          \item the customers' ZIP codes.
+          \item the repair times.
+          \item the bicycle repair shop.
+        \end{enumerate}
+
+  \boxguard[8]
+  \item Which of the following is a \textbf{statistical question} about the shop?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item How long did the repair on order 4417 take?
+          \item What type of bike is order 4420?
+          \item Is the shop open on Sundays?
+          \item \ans{How much do repair times vary across the shop's orders last month?}
+          \item How many mechanics work at the shop?
+        \end{enumerate}
+
+  \boxguard[8]
+  \item How many of the five columns are \textbf{quantitative} variables?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item One
+          \item \ans{Two}
+          \item Three
+          \item Four
+          \item Five
+        \end{enumerate}
+
+  \boxguard[11]
+  \item A gym records each member's weekly workout time in minutes, then replaces it with a
+        label: \emph{Light} (under 90 min), \emph{Moderate} (90 to 180 min), or \emph{Heavy}
+        (over 180 min). Which statement is true?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The new variable is still quantitative, because the labels are based on minutes.
+          \item The new variable is quantitative, because the labels are in order.
+          \item Nothing is lost: the minutes can be recovered from the labels.
+          \item The median workout time can still be found exactly from the labels.
+          \item \ans{The new variable is categorical, and the mean workout time can no longer be
+                found from it.}
+        \end{enumerate}
+
+  \boxguard[12]
+  \item \begin{minipage}[t]{0.50\linewidth}\raggedright
+        A survey asked 160 high-school students how they most often watch movies. What is the
+        \textbf{relative frequency} of \emph{Theater}?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.44\linewidth}
+        \centering\small
+        \renewcommand{\arraystretch}{1.1}
+        \begin{tabular}[t]{@{} l c @{}}
+        \textbf{Way to watch} & \textbf{Frequency} \\ \hline
+        Streaming & 92 \\
+        Theater   & 36 \\
+        Cable TV  & 20 \\
+        DVD       & 12 \\ \hline
+        \textbf{Total} & 160 \\
+        \end{tabular}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item $0.036$
+          \item $0.180$
+          \item \ans{$0.225$}
+          \item $0.360$
+          \item $0.575$
+        \end{enumerate}
+
+  \boxguard[11]
+  \item At Camp Alder, 54 of its 120 campers named swimming as their favorite activity. At
+        Camp Birch, 39 of its 75 campers did. Which statement is best supported?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{Swimming is more popular at Camp Birch, because 52\% is greater than 45\%.}
+          \item Swimming is more popular at Camp Alder, because 54 is greater than 39.
+          \item Swimming is equally popular at the two camps.
+          \item No comparison is possible, because the camps have different numbers of campers.
+          \item Swimming is more popular at Camp Alder, because it has more campers.
+        \end{enumerate}
+
+  \boxguard[9]
+  \item Which of these variables is \textbf{continuous}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The number of siblings a student has
+          \item The number of text messages a student sent today
+          \item The number of pets in a household
+          \item \ans{The time a student takes to run a mile, recorded to the nearest second}
+          \item The number of songs on a playlist
+        \end{enumerate}
+
+  \boxguard[12]
+  \item \begin{minipage}[t]{0.52\linewidth}\raggedright
+        The stem plot shows the daily high temperature ($^\circ$F) in a city on 15 days in
+        April. What is the \textbf{median} daily high temperature?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.42\linewidth}
+        \centering\small
+        \begin{tabular}[t]{@{} r | l @{}}
+        5 & 4 6 8 9 \\
+        6 & 0 1 3 3 5 7 8 \\
+        7 & 0 2 2 6 \\
+        \end{tabular}\par\vspace{2pt}
+        {\footnotesize Key: $5\,|\,8 = 58^\circ$F}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item $61^\circ$F
+          \item \ans{$63^\circ$F}
+          \item $64.3^\circ$F
+          \item $65^\circ$F
+          \item $7^\circ$F
+        \end{enumerate}
+
+  \boxguard[12]
+  \item A student made two histograms of the \emph{same} 50 battery lifetimes (hours). With
+        intervals 1 hour wide, the histogram shows a gap between 12 and 14 hours. With intervals
+        4 hours wide, no gap appears. Which statement is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item One of the two histograms must have been drawn incorrectly.
+          \item The wider intervals changed some of the battery lifetimes.
+          \item Only the histogram with more bars is a true histogram.
+          \item The gap shows that the data set contains an outlier.
+          \item \ans{Both are correct displays of the same data; changing the interval width
+                changes what the display shows without changing any value.}
+        \end{enumerate}
+
+  \boxguard[14]
+  \item \begin{minipage}[t]{0.46\linewidth}\raggedright
+        The histogram shows the prices of 40 used textbooks sold online. Which best describes
+        the \textbf{shape} of the distribution?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.50\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.075cm, y=0.22cm, baseline=(current bounding box.north)]
+          \foreach \y in {0,4,8,12} {
+            \draw[linegray, very thin] (0,\y) -- (72,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \foreach \l/\c in {0/12, 10/11, 20/7, 30/5, 40/3, 50/1, 60/1}
+            \draw[fill=skymid] (\l,0) rectangle (\l+10,\c);
+          \draw[thick] (0,0) -- (73,0);
+          \draw[thick] (0,0) -- (0,13);
+          \foreach \x in {0,10,...,70} { \node[below, font=\tiny] at (\x,0) {\x}; }
+          \node[font=\tiny] at (36,-3) {Price (dollars)};
+          \node[rotate=90, font=\tiny] at (-9,6.5) {Count};
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Skewed left, because most of the prices pile up on the left.
+          \item Roughly symmetric, because there is only one peak.
+          \item \ans{Skewed right, because a few prices are much higher than the rest.}
+          \item Uniform, because every interval has at least one textbook.
+          \item Bimodal, because the two lowest intervals are both tall.
+        \end{enumerate}
+
+  \boxguard[14]
+  \item \begin{minipage}[t]{0.40\linewidth}\raggedright
+        The dotplot shows the lengths, in minutes, of the 20 songs on a playlist. Which
+        statement is best?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.56\linewidth}
+        \centering
+        \begin{tikzpicture}[x=1.15cm, y=0.22cm, baseline=(current bounding box.north)]
+          \draw[thick] (2,0) -- (8.5,0);
+          \foreach \x in {2,3,...,8} {
+            \draw (\x,-0.4) -- (\x,0.4); \node[below, font=\tiny] at (\x,-0.3) {\x};}
+          \foreach \x/\n in {2.5/1, 3/3, 3.5/6, 4/5, 4.5/3, 5/1, 8/1}
+            \foreach \k in {1,...,\n} \fill[navy] (\x,\k*0.9) circle (2.2pt);
+          \node[font=\tiny] at (5.25,-3) {Song length (minutes)};
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{The 8-minute song is a possible outlier, set off by a gap from 5 to 8 minutes;
+                it should be investigated, not deleted.}
+          \item The 8-minute song is an outlier, so it should be deleted from the data.
+          \item There are no unusual features, because most songs last 3 to 4.5 minutes.
+          \item The distribution is bimodal, with peaks at 3.5 and 8 minutes.
+          \item The gap from 2.5 to 3 minutes is the most unusual feature.
+        \end{enumerate}
+
+  \boxguard[11]
+  \item The distribution of the 80 home sale prices in a town last year is strongly
+        \textbf{skewed to the right}. Which statement is most likely true?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The mean is less than the median, so the mean better describes a typical price.
+          \item The mean and median are equal, because both measure center.
+          \item The mean is greater than the median, so the mean better describes a typical
+                price.
+          \item \ans{The mean is greater than the median, so the median better describes a
+                typical price.}
+          \item Nothing can be said about the mean and median without the data.
+        \end{enumerate}
+
+  \boxguard[11]
+  \item The prices of the 9 lunch specials at a diner are \$6, 7, 7, 8, 9, 9, 10, 11, and 12.
+        The \$12 price is mistakenly entered as \$120. Which summaries change?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Both the mean and the median change.
+          \item The median changes, but the mean does not.
+          \item \ans{The mean and the range change; the median and the IQR do not.}
+          \item None of the summaries change, because only one price is wrong.
+          \item Only the IQR changes.
+        \end{enumerate}
+
+  \boxguard[11]
+  \item A pet-food company fills bags labeled 20 lb. For 30 bags, the standard deviation of the
+        weights is 0.3 lb. Which is the best interpretation?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Every bag weighs within 0.3 lb of the mean weight.
+          \item A typical bag weighs 0.3 lb.
+          \item The heaviest bag weighs 0.3 lb more than the lightest bag.
+          \item About 30\% of the bags weigh more than the mean weight.
+          \item \ans{The bag weights typically vary by about 0.3 lb from the mean weight.}
+        \end{enumerate}
+
+  \boxguard[10]
+  \item A student's score on a state reading test is at the \textbf{82nd percentile}. Which
+        statement is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{About 82\% of the students who took the test scored at or below this
+                student.}
+          \item The student answered 82\% of the questions correctly.
+          \item The student scored 82 points.
+          \item About 18\% of the students scored at or below this student.
+          \item The student scored higher than exactly 82 other students.
+        \end{enumerate}
+
+  \boxguard[12]
+  \item The five-number summary of the ticket prices (dollars) for 40 concerts at a venue is
+        \[ \text{Min} = 18 \quad Q_1 = 30 \quad \text{Median} = 38 \quad Q_3 = 46 \quad
+           \text{Max} = 95. \]
+        Which statement is true?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Both \$18 and \$95 are outliers, because they are the minimum and maximum.
+          \item There are no outliers, because the IQR of 16 is small.
+          \item \$95 is an outlier, because it is more than 1.5 times the median.
+          \item \ans{\$95 is an outlier, because it is greater than $Q_3 + 1.5 \times
+                \text{IQR} = 70$.}
+          \item Outliers cannot be identified from a five-number summary.
+        \end{enumerate}
+
+  \boxguard[14]
+  \item \begin{minipage}[t]{0.46\linewidth}\raggedright
+        The boxplot shows the points a basketball team scored in each of its 30 games. Which
+        statement is true?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.50\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.17cm, y=1cm, baseline=(current bounding box.north)]
+          \draw[thick] (50,0) -- (90,0);
+          \foreach \x in {50,55,...,90} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.05) {\x};}
+          \draw (52,0.65) -- (60,0.65);
+          \draw (75,0.65) -- (88,0.65);
+          \draw[fill=skymid] (60,0.4) rectangle (75,0.9);
+          \draw[thick] (64,0.4) -- (64,0.9);
+          \draw (52,0.5) -- (52,0.8);
+          \draw (88,0.5) -- (88,0.8);
+          \node[font=\tiny] at (70,-0.5) {Points scored};
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item More games had scores from 64 to 75 than from 60 to 64, because that part of the
+                box is wider.
+          \item \ans{About a quarter of the games had scores from 60 to 64, and about a quarter
+                had scores from 64 to 75.}
+          \item About half of the games had scores above 75.
+          \item The team's mean score was 64 points.
+          \item The range of the scores is 28 points.
+        \end{enumerate}
+
+  \boxguard[15]
+  \item \begin{minipage}[t]{0.40\linewidth}\raggedright
+        The parallel boxplots show patients' waiting times (minutes) at two urgent-care clinics.
+        Which comparison is best?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.56\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.15cm, y=1cm, baseline=(current bounding box.north)]
+          \draw[thick] (5,0) -- (50,0);
+          \foreach \x in {5,10,...,50} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.05) {\x};}
+          % Clinic A (upper)
+          \draw (10,1.45) -- (18,1.45); \draw (30,1.45) -- (45,1.45);
+          \draw[fill=skymid] (18,1.25) rectangle (30,1.65); \draw[thick] (24,1.25) -- (24,1.65);
+          \draw (10,1.33) -- (10,1.57); \draw (45,1.33) -- (45,1.57);
+          \node[left, font=\tiny] at (5,1.45) {A};
+          % Clinic B (lower)
+          \draw (15,0.6) -- (26,0.6); \draw (34,0.6) -- (40,0.6);
+          \draw[fill=goldbg] (26,0.4) rectangle (34,0.8); \draw[thick] (30,0.4) -- (30,0.8);
+          \draw (15,0.48) -- (15,0.72); \draw (40,0.48) -- (40,0.72);
+          \node[left, font=\tiny] at (5,0.6) {B};
+          \node[font=\tiny] at (27.5,-0.5) {Waiting time (minutes)};
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Clinic A has the higher median wait, because its box reaches farther right.
+          \item The clinics are equally variable, because both boxes are about the same height.
+          \item Clinic A's waits are longer, because its maximum is larger.
+          \item Every patient at Clinic B waited longer than every patient at Clinic A.
+          \item \ans{Clinic B has the higher median wait (30 vs.\ 24 minutes) and the smaller IQR
+                (8 vs.\ 12 minutes).}
+        \end{enumerate}
+
+  \boxguard[11]
+  \item A town's records show that the mean age of all 4,200 residents is 38.6 years. A reporter
+        surveys 50 residents and finds that their mean age is 41.2 years. Which is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 38.6 is a statistic $\bar x$, and 41.2 is a parameter $\mu$.
+          \item Both numbers are parameters, because both describe residents.
+          \item \ans{38.6 is a parameter $\mu$, and 41.2 is a statistic $\bar x$.}
+          \item Both numbers are statistics, because both are means.
+          \item 41.2 is a parameter, because it is the larger number.
+        \end{enumerate}
+
+  \boxguard[13]
+  \item Maya scored 84 on a history test where the class mean was 76 and the standard deviation
+        was 5. Jordan scored 88 on a chemistry test where the class mean was 80 and the standard
+        deviation was 8. Who did better \emph{relative to their own class}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{Maya, because Maya's $z$-score of 1.6 is greater than Jordan's 1.0.}
+          \item Jordan, because 88 is greater than 84.
+          \item They did equally well, because both scored 8 points above their class mean.
+          \item Jordan, because Jordan's $z$-score of 1.6 is greater than Maya's 1.0.
+          \item They cannot be compared, because the tests are in different subjects.
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+% No \newpage here: the guard keeps the Section II strip off a page edge.
+\boxguard[30]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response} \hfill \textbf{40 points, 8 each}\\
+Show your reasoning. Answer \emph{in context} --- name the variables and their units.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \boxguard[24]
+  \item \textbf{(8 points)} A city's parks department keeps these records on its playgrounds.
+
+        \vspace{4pt}
+        {\centering\small
+        \renewcommand{\arraystretch}{1.12}
+        \begin{tabular}{@{} c l c c l @{}}
+        \textbf{Park \#} & \textbf{Neighborhood} & \textbf{Swings} & \textbf{Area (sq ft)} &
+        \textbf{Surface} \\ \hline
+        104 & Eastgate   & 6 & 2,450 & Wood chips \\
+        117 & Mill Creek & 4 & 1,820 & Rubber \\
+        122 & Eastgate   & 8 & 3,100 & Rubber \\
+        135 & Riverside  & 2 & 960   & Sand \\
+        141 & Hillcrest  & 6 & 2,275 & Wood chips \\
+        \end{tabular}\par}
+
+        \vspace{6pt}
+        \textbf{(a)} What are the individuals in this data set? Is \emph{Eastgate} a variable or
+        a value? Explain.\\[4pt]
+        \ansline{The individuals are the city's playgrounds --- one row each.}\\
+        \ansline{\emph{Eastgate} is a value: one entry under the variable \emph{Neighborhood}.}
+
+        \boxguard[12]
+        \vspace{6pt}
+        \textbf{(b)} Classify each variable. For each quantitative variable, also say whether it
+        is discrete or continuous.
+
+        \vspace{4pt}
+        {\centering\small
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{@{} l | p{4.2cm} | p{4.2cm} @{}}
+        \textbf{Variable} & \textbf{Categorical or quantitative?} &
+        \textbf{If quantitative: discrete or continuous?} \\ \hline
+        Park \#      & \ans{Categorical}           & \\ \hline
+        Neighborhood & \ans{Categorical}           & \\ \hline
+        Swings       & \ans{Quantitative}          & \ans{Discrete} \\ \hline
+        Area         & \ans{Quantitative}          & \ans{Continuous} \\ \hline
+        Surface      & \ans{Categorical}           & \\
+        \end{tabular}\par}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(c)} A council member asks, ``How many swings does the playground at Park 122
+        have?'' Is this a statistical question? Explain. Then write a statistical question these
+        data could answer.\\[4pt]
+        \ansline{No: it has one answer (8 swings), read from one row --- no variability.}\\
+        \ansline{Statistical: ``How much does playground area vary across the city's}\\
+        \ansline{playgrounds?'' --- it expects different answers from different playgrounds.}
+
+  \boxguard[24]
+  \item \textbf{(8 points)} Two high schools asked their seniors about their plans after
+        graduation.
+
+        \vspace{4pt}
+        \begin{minipage}[c]{0.50\linewidth}
+        \centering\small
+        \setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{} l | c c @{}}
+         & \textbf{North High} & \textbf{South High} \\ \hline
+        4-year college & 120 & 88 \\
+        2-year college & 55  & 32 \\
+        Work           & 50  & 28 \\
+        Military       & 25  & 12 \\ \hline
+        \textbf{Total} & 250 & 160 \\
+        \end{tabular}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.46\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.62cm, y=0.022cm]
+          \foreach \y in {0,40,80,120} {
+            \draw[linegray, very thin] (0,\y) -- (8.4,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \foreach \i/\n/\s in {0/120/88, 1/55/32, 2/50/28, 3/25/12} {
+            \fill[navy]    (0.3+2*\i,0) rectangle (1.0+2*\i,\n);
+            \fill[goldacc] (1.0+2*\i,0) rectangle (1.7+2*\i,\s);}
+          \draw[thick] (0,0) -- (8.4,0);
+          \draw[thick] (0,0) -- (0,130);
+          \foreach \i/\lab in {0/4-yr, 1/2-yr, 2/Work, 3/Military}
+            \node[below, font=\tiny] at (1.0+2*\i,0) {\lab};
+          \node[rotate=90, font=\tiny] at (-1.1,65) {Number of seniors};
+          \fill[navy] (4.6,128) rectangle (4.9,138); \node[right, font=\tiny] at (4.9,133) {North};
+          \fill[goldacc] (6.5,128) rectangle (6.8,138); \node[right, font=\tiny] at (6.8,133) {South};
+        \end{tikzpicture}
+        \end{minipage}
+
+        \vspace{6pt}
+        \textbf{(a)} What proportion of North High seniors plan to attend a 4-year college? What
+        proportion of South High seniors?\\[4pt]
+        \ansline{North: $120/250 = 0.48$ (48\%).}\\
+        \ansline{South: $88/160 = 0.55$ (55\%).}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(b)} A reporter wrote: ``North High sends more of its seniors to 4-year colleges
+        --- just look how much taller its bar is.'' Explain what is wrong with this reasoning.\\[4pt]
+        \ansline{The bars show counts, and North has 250 seniors to South's 160, so its bars}\\
+        \ansline{are taller just because the school is bigger. Compare relative frequencies:}\\
+        \ansline{48\% of North seniors vs.\ 55\% of South seniors --- South's share is larger.}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(c)} Do \emph{most} North High seniors plan to attend a 4-year college? Do most
+        South High seniors? Justify with numbers.\\[4pt]
+        \ansline{North: no. 48\% is less than half --- a 4-year college is North's most common}\\
+        \ansline{plan, but not a majority. South: yes. 55\% is more than half of the}\\
+        \ansline{160 seniors.}
+
+  \boxguard[26]
+  \item \textbf{(8 points)} A biologist measured the lengths (cm) of 50 trout caught in a lake.
+        The histogram shows the results.
+
+        \vspace{4pt}
+        {\centering
+        \begin{tikzpicture}[x=0.27cm, y=0.24cm]
+          \foreach \y in {0,4,8,12,16} {
+            \draw[linegray, very thin] (10,\y) -- (46,\y);
+            \node[left, font=\tiny] at (10,\y) {\y};}
+          \foreach \l/\c in {12/2, 16/0, 20/3, 24/5, 28/9, 32/15, 36/11, 40/5}
+            \draw[fill=skymid] (\l,0) rectangle (\l+4,\c);
+          \draw[thick] (10,0) -- (46,0);
+          \draw[thick] (10,0) -- (10,17);
+          \foreach \x in {12,16,...,44} { \node[below, font=\tiny] at (\x,0) {\x}; }
+          \node[font=\tiny] at (28,-2.6) {Length (cm)};
+          \node[rotate=90, font=\tiny] at (7.6,8) {Number of trout};
+        \end{tikzpicture}\par}
+
+        \vspace{6pt}
+        \textbf{(a)} How many trout were shorter than 28 cm? What percent of the catch is that?\\[4pt]
+        \ansline{$2 + 0 + 3 + 5 = 10$ trout were shorter than 28 cm.}\\
+        \ansline{$10/50 = 0.20$, so 20\% of the catch.}
+
+        \boxguard[8]
+        \vspace{6pt}
+        \textbf{(b)} Describe the distribution of trout lengths.\\[4pt]
+        \ansline{Shape: skewed left --- a long tail toward short lengths; one peak at 32--36 cm.}\\
+        \ansline{Unusual: a gap at 16--20 cm; the 2 trout at 12--16 cm are possible outliers.}\\
+        \ansline{Center: the median length is in the 32--36 cm interval (about 33 cm).}\\
+        \ansline{Variability: lengths run from about 12 cm to 44 cm, a range of about 32 cm.}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(c)} Can the exact median length be found from the histogram? If not, which
+        interval contains it? Explain.\\[4pt]
+        \ansline{No --- a histogram groups the values. 19 trout are under 32 cm and 34 are}\\
+        \ansline{under 36 cm, so the 25th and 26th lengths (the median) are in 32--36 cm.}
+
+  \boxguard[22]
+  \item \textbf{(8 points)} A resale shop's prices (dollars) for 15 used video games, in order:
+        \[ 8 \quad 10 \quad 12 \quad 12 \quad 14 \quad 15 \quad 15 \quad 16 \quad 18 \quad 20
+           \quad 21 \quad 22 \quad 24 \quad 25 \quad 58 \]
+
+        \textbf{(a)} Find the five-number summary.
+        \begin{work}
+          \text{Min} &= 8, \quad Q_1 = 12 \ (\text{median of the lower 7}) \\
+          \text{Median} &= 16 \ (\text{the 8th price}) \\
+          Q_3 &= 22 \ (\text{median of the upper 7}), \quad \text{Max} = 58
+        \end{work}
+
+        \boxguard[10]
+        \vspace{6pt}
+        \textbf{(b)} Use the $1.5 \times \text{IQR}$ rule to decide whether \$58 is an outlier. If
+        it is, where does the upper whisker of a modified boxplot end?
+        \begin{work}
+          \text{IQR} &= 22 - 12 = 10 \\
+          Q_3 + 1.5(\text{IQR}) &= 22 + 15 = 37
+        \end{work}
+        \ansline{\$58 $>$ \$37, so \$58 is an outlier. The upper whisker ends at \$25.}
+
+        \boxguard[6]
+        \vspace{6pt}
+        \textbf{(c)} The mean price is \$19.33. Which better describes a typical price here, the
+        mean or the median? Explain.\\[4pt]
+        \ansline{The median, \$16. It is resistant: the \$58 outlier barely moves it. The mean}\\
+        \ansline{is nonresistant --- the \$58 game drags it up to \$19.33, above 9 of the}\\
+        \ansline{15 prices, so it is not a typical price.}
+
+  \boxguard[20]
+  \item \textbf{(8 points)} The weights of eggs from a farm are approximately normal, with mean
+        $\mu = 58$ grams and standard deviation $\sigma = 4$ grams.
+
+        \vspace{4pt}
+        {\centering
+        \begin{tikzpicture}[x=1.0cm, y=3.2cm]
+          \draw[thick, navy, domain=-3.6:3.6, samples=80, smooth]
+            plot (\x, {exp(-\x*\x/2)});
+          \draw[thick] (-3.8,0) -- (3.8,0);
+          \foreach \k/\lab in {-3/46, -2/50, -1/54, 0/58, 1/62, 2/66, 3/70} {
+            \draw (\k,-0.04) -- (\k,0.04); \node[below, font=\tiny] at (\k,-0.02) {\lab};}
+          \node[font=\tiny] at (0,-0.28) {Egg weight (grams)};
+        \end{tikzpicture}\par}
+
+        \vspace{4pt}
+        \textbf{(a)} About what percent of the eggs weigh between 50 and 66 grams?\\[4pt]
+        \ansline{50 and 66 are 2 standard deviations below and above 58,}\\
+        \ansline{so about 95\% of the eggs (empirical rule).}
+
+        \boxguard[5]
+        \vspace{6pt}
+        \textbf{(b)} About what percent of the eggs weigh \emph{more than} 62 grams?\\[4pt]
+        \ansline{62 is 1 SD above. 68\% are within 1 SD, so 32\% are outside, split evenly:}\\
+        \ansline{about 16\% of the eggs weigh more than 62 grams.}
+
+        \boxguard[8]
+        \vspace{6pt}
+        \textbf{(c)} One egg weighs 51 grams. Find its $z$-score and interpret it in context.
+        \begin{work}
+          z &= \frac{51 - 58}{4} = -1.75
+        \end{work}
+        \ansline{This egg weighs 1.75 SDs below the mean egg weight of 58 grams.}
+
+        \boxguard[10]
+        \vspace{6pt}
+        \textbf{(d)} A second farm's eggs have mean 64 grams and standard deviation 6 grams. Which
+        egg is heavier \emph{relative to its own farm}: a 65-gram egg from the first farm or a
+        73-gram egg from the second? Justify.
+        \begin{work}
+          z_{\text{first}} &= \frac{65 - 58}{4} = 1.75, \qquad
+          z_{\text{second}} = \frac{73 - 64}{6} = 1.5
+        \end{work}
+        \ansline{The 65-gram egg: it is 1.75 SDs above its farm's mean, the 73-gram egg only}\\
+        \ansline{1.5 --- relatively heavier even though it weighs fewer grams.}
+
+\end{enumerate}
+
+\end{document}

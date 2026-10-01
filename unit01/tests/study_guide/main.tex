@@ -1,0 +1,269 @@
+%! Unit 1, Lessons 1.0–1.7 — Unit Test Study Guide (reference sheet; no answer key by design)
+% This is a REFERENCE sheet, not a worksheet: every definition, every worked move, and every
+% trap is already filled in, so there is nothing to answer and therefore no _key sibling.
+% The practice a student does before the test is ../practice_test/, which HAS a key.
+% It covers the whole unit; the mid-unit quiz guide (../../quizzes/study_guide/) covers 1.0–1.4 only.
+% NAMESTRIP: no \namedateperiod — the name row lives on a packet cover and the unit tests only.
+% Vocabulary below is quoted from the eight lessons' own vocabulary boxes (notes_key \termans
+% entries) so a student reading this reads the same words twice.
+% Worked contexts (used-car ages; lunch choices in two grades; light-bulb lifetimes) are NOT
+% used in the practice or actual test.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+% One tabularx per group of lessons rather than one long table: a tabularx with X
+% columns is an unbreakable box, so a single long table floats whole to a fresh page
+% and strands most of page 1. Short tables flow, and each carries its lesson tag.
+
+% Optional arg: the \boxguard size (lines kept with the strip).
+\newcommand{\sghead}[2][10]{%
+  \vspace{0.13in}
+  \boxguard[#1]
+  \begin{headlinebox}{navy}\color{white}\bfseries\small #2\end{headlinebox}
+  \vspace{0.09in}}
+
+\newcommand{\vocabhead}[1]{%
+  \textbf{#1}\par\vspace{3pt}}
+
+\begin{document}
+
+\pageheader{Unit 1 \quad Lessons 1.0--1.7}{Unit Test Study Guide}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+The test covers \textbf{Lesson 1.0} through \textbf{Lesson 1.7} --- the language of data, tables
+and graphs for one variable, describing a distribution, summary statistics, boxplots, and the
+normal distribution with $z$-scores. \textbf{25 questions, 100 points:} 20 multiple choice
+(3 points each) and 5 short free-response questions (8 points each). Every graph is already
+drawn: \textbf{read} it, and answer \textbf{in context} --- name the variable and its units.
+\end{remindbox}
+
+\sghead{1. Vocabulary you are expected to use, not just recognize}
+
+\small
+\renewcommand{\arraystretch}{1.15}
+
+\vocabhead{From Lessons 1.0 and 1.1 --- the language of data}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Individual & a person, animal, or object described by one row of a data table --- the
+             ``who'' the data is about. \\
+Variable & a characteristic recorded for every individual; a column heading, never an entry
+           under it. \\
+Value & one entry under a variable for a single individual. \\
+Variability & values differ from one individual to the next --- the reason statistics exists. \\
+Statistical question & anticipates variability and is answered by collecting data. \\
+Categorical variable & takes values that are category names or group labels. \\
+Quantitative variable & takes numerical values for a measured or counted amount. \\
+The amount test & ask whether the value records \emph{how much} or \emph{how many} --- not
+                  whether it is written in digits. A ZIP code is categorical. \\
+Grouping (binning) & replacing measured amounts with group labels; turns quantitative into
+                     categorical, and the mean cannot be recovered. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\vocabhead{From Lessons 1.2 and 1.3 --- tables and graphs}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Frequency table & the number of cases in each category; the counts add to the group size. \\
+Relative frequency table & the share of the group in each category; the entries add to 1, or
+                           100\%. \\
+Bar graph & one bar per category, its height the count or the relative frequency; gaps separate
+            the bars. \\
+The comparison rule & to compare groups of different sizes, use relative frequencies --- never
+                      raw counts. \\
+Discrete variable & a countable number of values (a count); nothing sits between two
+                    neighbours. \\
+Continuous variable & any value in an interval (a measurement); rounding the recorded values
+                      does not make it discrete. \\
+Histogram & grouped quantitative data: one bar per interval, height = count, bars touching. \\
+Interval width & the size of each histogram interval; changing it changes the shape you see
+                 without changing a data value. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\vocabhead{From Lessons 1.4 and 1.5 --- describing and summarizing}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Unimodal, bimodal, uniform & one main peak; two clear peaks; all bars about equal, no peak. \\
+Symmetric & the left half is roughly a mirror image of the right half. \\
+Skewed right, skewed left & named for the side the longer \textbf{tail} runs out on --- not
+                            the side the pile is on. \\
+Outlier & a value unusually far from the rest --- investigated, never simply deleted. \\
+Gap and cluster & a gap is a stretch where nothing was observed; a cluster is a bunch of values
+                  set off by a gap. \\
+Mean $\bar x$ and median & mean: the sum over the count; median: the middle of the ordered data
+                           (even count: average the two middle values). \\
+Quartiles, percentile & $Q_1$ and $Q_3$ are the medians of the lower and upper halves; the $p$th
+                        percentile has $p\%$ of the data at or below it. \\
+Range and IQR & range $=$ max $-$ min; IQR $= Q_3 - Q_1$. Each is one number, not an
+                interval. \\
+Standard deviation $s_x$ & roughly the typical distance of a value from the mean. \\
+Resistant / nonresistant & an outlier barely moves a resistant summary (median, IQR) and drags a
+                           nonresistant one (mean, standard deviation, range). \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\vocabhead{From Lessons 1.6 and 1.7 --- boxplots and the normal curve}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Five-number summary & minimum, $Q_1$, median, $Q_3$, maximum. \\
+Boxplot & the five-number summary drawn to scale: a box from $Q_1$ to $Q_3$ with the median
+          marked, and a whisker at each end. Each of the four sections holds about a
+          \textbf{quarter} of the data, however wide it looks. \\
+Whisker & runs from a quartile out to the most extreme value that is \emph{not} an outlier. \\
+Modified boxplot & plots each outlier as its own point beyond the whisker. \\
+Parallel boxplots & two or more boxplots on one shared axis, so groups can be compared. \\
+Parameter / statistic & a summary of a \textbf{population} ($\mu$, $\sigma$) / of a
+                        \textbf{sample} ($\bar x$, $s_x$). \\
+Normal distribution & a symmetric, mound-shaped curve fixed entirely by $\mu$ and $\sigma$. \\
+Empirical rule & in an approximately normal distribution, about 68\%, 95\%, and 99.7\% of values
+                 lie within 1, 2, and 3 standard deviations of the mean. \\
+$z$-score & $z = (x - \mu)/\sigma$ --- how many standard deviations a value sits from its own
+            distribution's mean, and on which side. \\
+\end{tabularx}
+
+\normalsize
+
+\sghead{2. The moves the test will ask you to make}
+
+\small
+\textbf{Move 1 --- Name the individuals and classify each variable (1.0, 1.1, 1.3).} A used-car
+lot lists each car's \emph{make}, \emph{age} (years), \emph{mileage}, and \emph{stock number}.
+\emph{Worked:} the individuals are the \textbf{cars}. Make and stock number are
+\textbf{categorical} (a stock number is a label --- its average means nothing). Age is
+\textbf{quantitative}; mileage is \textbf{quantitative} and \textbf{continuous}. ``How old is
+car 118?'' is \emph{not} a statistical question (one answer); ``How much do the ages of the cars
+on the lot vary?'' \emph{is}.
+
+\vspace{3pt}
+\textbf{Move 2 --- Compare groups of different sizes (1.2).} 36 of 80 ninth graders and 48 of
+120 tenth graders named tacos their favorite lunch. \emph{Worked:} 48 is the bigger
+\emph{count}, but $36/80 = 45\%$ and $48/120 = 40\%$, so tacos are \textbf{more} popular with the
+ninth graders. And 45\% is not ``most'' --- most means more than half.
+
+\vspace{3pt}
+\textbf{Move 3 --- Read a display (1.3).} A dotplot and a stem plot keep every value. A histogram
+\emph{groups} values, so it can tell you which interval holds the median, but not the exact
+median. Count up the bars to find which interval holds the middle value.
+
+\vspace{3pt}
+\textbf{Move 4 --- Summarize, then check for outliers (1.5, 1.6).} The ages (years) of the 11 cars
+on the lot, in order: \ 2 \ 3 \ 3 \ 4 \ 5 \ 5 \ 6 \ 7 \ 8 \ 9 \ 21.
+\emph{Worked:} median $=$ 6th value $= 5$. Lower half (first 5): $Q_1 = 3$. Upper half (last 5):
+$Q_3 = 8$. IQR $= 8 - 3 = 5$. Fences: $3 - 1.5(5) = -4.5$ and $8 + 1.5(5) = 15.5$. Since
+$21 > 15.5$, the 21-year-old car is an \textbf{outlier}; on a modified boxplot the upper whisker
+stops at 9. Mean $= 73/11 \approx 6.6$ --- pulled above the median by the outlier, so the
+\textbf{median} (resistant) is the better ``typical'' age.
+
+\vspace{4pt}
+{\centering
+\begin{tikzpicture}[x=0.5cm, y=1cm]
+  \draw[thick] (0,0) -- (22,0);
+  \foreach \x in {0,2,...,22} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.05) {\x};}
+  \draw (2,0.6) -- (3,0.6); \draw (8,0.6) -- (9,0.6);
+  \draw[fill=skymid] (3,0.4) rectangle (8,0.8); \draw[thick] (5,0.4) -- (5,0.8);
+  \draw (2,0.48) -- (2,0.72); \draw (9,0.48) -- (9,0.72);
+  \fill[redacc] (21,0.6) circle (2.5pt);
+  \node[font=\tiny, align=left, right] at (12.5,0.75) {whisker stops at 9,\\ the outlier plots alone};
+  \node[font=\tiny] at (11,-0.5) {Age of car (years)};
+\end{tikzpicture}\par}
+
+\vspace{3pt}
+\textbf{Move 5 --- Compare two distributions (1.4, 1.6).} Use comparative words and name
+\emph{all four}: shape, center, variability, unusual features. ``The median car age on lot B is
+\textbf{higher than} on lot A (7 vs.\ 5 years), and lot B is \textbf{less variable} (IQR 3 vs.\
+5 years).'' A wider section of a box means the values are more \emph{spread out}, not that it holds
+more of them.
+
+\vspace{3pt}
+\textbf{Move 6 --- Use the empirical rule (1.7).} A brand of light bulb lasts an approximately
+normal time with $\mu = 1{,}200$ hours and $\sigma = 100$ hours. \emph{Worked:} 1,100 to 1,300
+hours is $\pm 1\sigma$: about \textbf{68\%}. More than 1,400 hours is beyond $+2\sigma$: 95\% are
+inside, so 5\% are outside, half on each side --- about \textbf{2.5\%}.
+
+\vspace{4pt}
+{\centering
+\begin{tikzpicture}[x=0.85cm, y=2.4cm]
+  \fill[skymid, domain=-1:1, samples=40] (-1,0) -- plot (\x, {exp(-\x*\x/2)}) -- (1,0) -- cycle;
+  \draw[thick, navy, domain=-3.6:3.6, samples=80, smooth] plot (\x, {exp(-\x*\x/2)});
+  \draw[thick] (-3.8,0) -- (3.8,0);
+  \foreach \k/\lab in {-3/900, -2/1000, -1/1100, 0/1200, 1/1300, 2/1400, 3/1500} {
+    \draw (\k,-0.04) -- (\k,0.04); \node[below, font=\tiny] at (\k,-0.02) {\lab};}
+  \node[font=\tiny\bfseries] at (0,0.45) {68\%};
+  \node[font=\tiny] at (0,-0.28) {Bulb lifetime (hours)};
+\end{tikzpicture}\par}
+
+\vspace{3pt}
+\textbf{Move 7 --- Compute, interpret, and compare $z$-scores (1.7).} \emph{Worked:} a bulb that
+lasts 1,050 hours has $z = (1{,}050 - 1{,}200)/100 = -1.5$: it lasted \textbf{1.5 standard
+deviations below} the mean lifetime. An LED brand has $\mu = 20{,}000$ and $\sigma = 2{,}000$ hours;
+an LED that lasts 24,000 hours has $z = 2.0$. A 1,350-hour bulb has $z = 1.5$, so the LED is
+the more unusually long-lived \emph{for its own brand} --- compare $z$-scores, never raw hours.
+\normalsize
+
+\vspace{0.10in}
+\boxguard[20]
+\begin{scenariobox}[The sentences that earn full credit]{navy}
+\small
+\textbf{Describe a distribution:} ``The distribution of car ages is \textbf{skewed right}, with
+one \textbf{outlier} at 21 years. The \textbf{median} age is 5 years, and the ages vary from 2 to
+21 years (IQR 5 years).''\par\vspace{3pt}
+\textbf{Compare groups:} ``45\% of ninth graders chose tacos, compared with 40\% of tenth
+graders, so tacos are more popular with ninth graders.''\par\vspace{3pt}
+\textbf{Standard deviation:} ``The lifetimes typically vary by about 100 hours from the mean of
+1,200 hours.''\par\vspace{3pt}
+\textbf{Percentile:} ``An 8-year-old car is at about the 75th percentile: about 75\% of the cars on
+the lot are 8 years old or younger.''\par\vspace{3pt}
+\textbf{$z$-score:} ``This bulb lasted 1.5 standard deviations \emph{below} the mean
+lifetime.''\par\vspace{3pt}
+Each names the variable and its units --- delete the context and it is no longer an answer.
+\end{scenariobox}
+
+\sghead{3. Eight traps that cost points every year}
+
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Digits are not amounts.} A ZIP code, phone number, or ID is categorical.
+  \item \textbf{Counts are not rates.} When the groups are different sizes, compare percents ---
+        the taller bar of counts can be the smaller share.
+  \item \textbf{``Most'' means more than half}, not ``the most common choice.''
+  \item \textbf{The tail names the skew.} A pile on the left with a long tail to the right is
+        skewed \emph{right}.
+  \item \textbf{A center alone is not a description.} Shape, unusual features, center, and
+        variability --- all four, in context.
+  \item \textbf{Skew pulls the mean toward the tail}; report the median and IQR for a skewed
+        distribution or one with outliers.
+  \item \textbf{Every section of a boxplot holds about 25\%.} A wide section is spread out, not
+        crowded.
+  \item \textbf{The 68--95--99.7 rule is for normal shapes only}, and a $z$-score keeps its sign:
+        negative means below the mean.
+\end{enumerate}
+\normalsize
+
+\sghead[6]{4. Before you walk in}
+
+\small
+Work the \textbf{practice test} without notes first, then check it against its key. Bring a
+calculator. Re-read each lesson cover's \textbf{Keep in Mind} box and redo one homework problem
+from each lesson you missed points on.
+\normalsize
+
+\end{document}
