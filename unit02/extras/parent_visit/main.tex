@@ -1,0 +1,89 @@
+%! Parent Visit — Unit 2 — "Who Sleeps More?" — one-page handout
+% STANDALONE handout for a 20-minute class with parents visiting; the activity is the middle
+% 10 minutes. Merged into no packet — see ../Makefile. ONE PAGE. No key: the data is collected
+% live in the room. No name row: it goes home with the parent.
+% Unit 2 has just started, so the activity stays on one variable — the Unit 1 SOCS description
+% of a dot plot — and the parent box points ahead to two variables.
+% The run (10 min):
+%   0-1  Everyone writes hours of sleep last night (nearest half hour) on a sticky note —
+%        one color for students, another for parents. Anonymous.
+%   1-4  Everyone stacks their note on the board: two parallel axes, 4 to 11 hours,
+%        Students on top, Parents below — a live dot plot.
+%   4-7  Each student describes one plot to a parent with the frame in the navy box.
+%   7-9  Cold-call two students for the Compare box: center AND spread, each with a
+%        comparative word.
+%   9-10 The crux: point at a pile-high, tail-low plot and ask a parent which way it is
+%        skewed; a student corrects by the tail. The example plot here is the reference.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 2}{Parent Visit --- Who Sleeps More?}
+
+\boxguard
+\begin{scenariobox}[Tonight's Question]{goldacc}
+\textbf{How many hours did you sleep last night, to the nearest half hour?} Write it on a
+sticky note --- \textbf{students on one color, parents on the other} --- and stack it above
+your number on the board. No names. Together we are building two \textbf{dot plots}.
+\end{scenariobox}
+
+\vspace{0.08in}
+\boxguard[30]
+\begin{scenariobox}[Describing a Distribution: SOCS]{greenacc}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}\raggedright
+\textbf{Shape} --- where is the pile, and which way does the \textbf{tail} stretch?\par\vspace{3pt}
+\textbf{Outliers} --- a value far from the rest, or a gap.\par\vspace{3pt}
+\textbf{Center} --- a typical value.\par\vspace{3pt}
+\textbf{Spread} --- from the smallest value to the largest.\par\vspace{3pt}
+All four, \textbf{in context}.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\linewidth}\vspace{0pt}\centering
+\begin{tikzpicture}
+  \draw[thick] (0,0) -- (5.2,0);
+  \foreach \x in {0,...,7} {
+    \draw ({\x*0.7+0.2},0.07) -- ({\x*0.7+0.2},-0.07);
+    \node[below, font=\scriptsize] at ({\x*0.7+0.2},-0.07) {\the\numexpr\x+4\relax};
+  }
+  \foreach \x/\n in {0/2, 1/4, 2/3, 3/2, 4/1, 6/1} {
+    \foreach \k in {1,...,\n} {
+      \fill[navy] ({\x*0.7+0.2},{\k*0.24}) circle (0.09);
+    }
+  }
+  \draw[->, redacc, thick] (2.4,1.15) -- (4.6,0.5);
+  \node[font=\scriptsize\bfseries, redacc] at (3.9,1.2) {tail};
+\end{tikzpicture}\par\vspace{2pt}
+{\small The pile is on the left, the tail runs right:\par
+\textbf{skewed right.} The tail names the skew.}
+\end{minipage}
+\end{scenariobox}
+
+\vspace{0.08in}
+\boxguard
+\begin{scenariobox}[Student: Describe One Plot to a Parent]{navy}
+Circle one: \quad \textbf{Students} \quad / \quad \textbf{Parents}\par\vspace{10pt}
+Most people slept about \blank{1.6cm} hours. The tail stretches toward \blank{1.8cm} hours,
+so the shape is \blank{3.2cm}.\par\vspace{10pt}
+The values run from \blank{1.4cm} to \blank{1.4cm} hours. Outliers: \blank{3.4cm}.
+\end{scenariobox}
+
+\vspace{0.08in}
+\boxguard
+\begin{scenariobox}[Compare the Two Plots]{slate}
+\textbf{Who sleeps more,} students or parents? \blank{2.6cm} How do you know?\par\vspace{4pt}
+\writeline\par\vspace{8pt}
+\textbf{Who is more consistent} --- whose dots are less spread out? \blank{2.6cm}\par\vspace{4pt}
+\writeline
+\end{scenariobox}
+
+\vspace{0.08in}
+\begin{remindbox}
+\textbf{For parents.} Unit~1 taught describing one variable --- shape, outliers, center,
+spread, in context. Unit~2, starting now, studies \emph{two} at once: scatterplots,
+correlation, regression. Paper homework is due the first class after two study halls. \textbf{Ask
+your student:} \emph{``If most people slept a lot and a few slept very little, which way is
+that skewed?''}
+\end{remindbox}
+
+\end{document}
