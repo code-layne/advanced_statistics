@@ -161,14 +161,21 @@
 % Inside \answerspace{H}{…} a box is simply typeset (the minipage's height is
 % fixed); start with \normalcolor\mdseries so the frame is not drawn in keyred.
 \newsavebox{\aps@gradedbox}
+\newcount\aps@sf
 \newcommand{\gradedhide}[1]{{\let\hrulefill\aps@nofill#1}}
 % \hrulefill without the ink: a zero-width strut keeps the rule's 0.4pt height,
-% which decides the spacing where lines meet at \lineskip (after a display).
-\newcommand{\aps@nofill}{\leavevmode\vrule\@width\z@\@height.4\p@\hfill\kern\z@}
+% which decides the spacing where lines meet at \lineskip (after a display). A
+% rule resets the space factor, which leaders and glue do not, so it is put back:
+% a space after the hidden rule keeps its width (after a colon, say).
+\newcommand{\aps@nofill}{\leavevmode\aps@sf\spacefactor
+  \vrule\@width\z@\@height.4\p@\spacefactor\aps@sf\hfill\kern\z@}
+% The zero-footprint helpers also leave the space factor as they found it (a box
+% resets it), so a space after them is exactly the space that was there before.
 \newcommand{\gradedhere}[2][0.8\baselineskip]{%
   \sbox{\aps@gradedbox}{#2}%
+  \leavevmode\aps@sf\spacefactor
   \makebox[\z@][l]{\kern-3pt\raisebox{\dimexpr#1-\ht\aps@gradedbox\relax}[\z@][\z@]%
-    {\usebox{\aps@gradedbox}}}}
+    {\usebox{\aps@gradedbox}}}\spacefactor\aps@sf}
 \newcommand{\gradedbelow}[3][l]{%
   \sbox{\aps@gradedbox}{#3}%
   \vadjust{\vbox to\z@{\vskip\dimexpr#2\relax
@@ -178,7 +185,8 @@
     \vss}}}
 \newcommand{\gradedlinesheight}[1]{%
   \dimexpr0.8\baselineskip+(\baselineskip+5pt)*(#1-1)+4pt\relax}
-\newcommand{\gradedright}[1]{\makebox[\z@][r]{\smash{#1}}}
+\newcommand{\gradedright}[1]{\leavevmode\aps@sf\spacefactor
+  \makebox[\z@][r]{\smash{#1}}\spacefactor\aps@sf}
 \newcommand{\gradedtop}[1]{%
   \sbox{\aps@gradedbox}{#1}%
   \leavevmode\kern-3pt\raisebox{\dimexpr\ht\strutbox-\ht\aps@gradedbox\relax}{\usebox{\aps@gradedbox}}\kern-3pt}
