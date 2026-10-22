@@ -1,0 +1,20 @@
+# AP Practice item 3, part (c) (Unit 2, Lesson 2.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  Thirteen used cars of one model: twelve have 22,000 to 90,000 miles, one has
+  210,000. Price (y, thousands of dollars) against mileage (x, thousands of miles):
+  the line fit to all 13 cars is y-hat = 21.35 - 0.055x with r = -0.91; the line fit
+  to the 12 others is y-hat = 23.96 - 0.103x with r = -0.99. Interpret the slope of
+  the line for the 12 others in context.
+criteria:
+  - id: slope
+    points: 2
+    full: >-
+      E: Says for each additional 1,000 miles, the PREDICTED price of this model drops by
+      about 0.103 thousand dollars ($103), in context.
+    partial: >-
+      P (1 of 2): Gives the correct rate and direction in context but omits 'predicted'
+      (or average), OR has the units wrong (for example, $0.103 per mile).

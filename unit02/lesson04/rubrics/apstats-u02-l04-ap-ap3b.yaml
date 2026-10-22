@@ -1,0 +1,20 @@
+# AP Practice item 3, part (b) (Unit 2, Lesson 2.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3b
+points: 2
+task: >-
+  A cafe recorded the daily high temperature (F, from 55 to 95) and the iced drinks
+  sold on 40 summer days and regressed drinks sold on temperature: Constant -42.50,
+  Temp 2.350, S = 14.20, R-Sq = 72.3%. Interpret the y-intercept in context. Does it
+  have a sensible meaning here? Explain.
+criteria:
+  - id: intercept
+    points: 2
+    full: >-
+      E: Interprets -42.5 as the predicted number of iced drinks sold on a 0 F day AND
+      says it is not sensible because negative sales are impossible and/or 0 F is far
+      outside the 55 to 95 F days observed (extrapolation).
+    partial: >-
+      P (1 of 2): Gives one of the two: a correct interpretation in context, or a correct
+      reason that it is not sensible.

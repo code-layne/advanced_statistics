@@ -14,6 +14,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u02-l02-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -56,9 +59,10 @@ free-throw percentage for the season. Technology gives $r = 0.60$.
 \end{tikzpicture}
 \end{minipage}
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt, topsep=4pt]
-  \item Explanatory variable: \blank{4.2cm} \quad Response: \blank{4.2cm}
+  \item Explanatory variable: \makebox[0pt][l]{\smash{\gradedblank[id=hw1a, type=rubric, points=1, display={hours of practice}]{3.4cm}{0.2in}}}\phantom{\blank{4.2cm}} \quad Response: \makebox[0pt][l]{\smash{\gradedblank[id=hw1b, type=rubric, points=1, display={free-throw \%}]{4.2cm}{0.2in}}}\phantom{\blank{4.2cm}}
   \item Describe the association in context (direction, unusual point, form, strength).
-        \answerspace{1.2cm}{}
+        \answerspace{1.2cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw2, type=rubric, points=3, display={Moderate, positive, linear: players who practice more tend to make a
+        higher percent of free throws. One player (11 hours, 50\%) sits far below the pattern.}]{\linewidth-12.5pt}{1.0cm}}
 \end{enumerate}
 \end{notesbox}
 
@@ -68,16 +72,18 @@ free-throw percentage for the season. Technology gives $r = 0.60$.
 \begin{notesbox}{Part B --- What $r$ Can and Cannot Tell You}
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt, topsep=2pt]
   \item \textbf{AP-style multiple choice.} Which correlation shows the \emph{strongest}
-        linear association? Circle one, then justify it in a sentence.\par
+        linear association? Circle one, then justify it in a sentence.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.45in}{0.24in}}\par
         \textbf{(A)} $r = 0.45$ \quad \textbf{(B)} $r = -0.91$ \quad \textbf{(C)} $r = 0$
         \quad \textbf{(D)} $r = 0.78$ \quad \textbf{(E)} $r = -0.20$
-        \answerspace{0.7cm}{}
+        \answerspace{0.7cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw3j, type=rubric, points=1, display={$-0.91$ is closest to $\pm 1$; the sign gives only the direction.}]{\linewidth-12.5pt}{0.6cm}}
   \item For 40 people aged 5 to 85, age vs.\ reaction time makes a clear U (young adults
         fastest), and $r = 0.05$. Jordan says age and reaction time are unrelated. Is he right?
-        \answerspace{1.1cm}{}
+        \answerspace{1.1cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw4, type=rubric, points=2, display={No. There is a strong \emph{curved} relationship. $r$ near 0 only
+        says there is no \emph{linear} association.}]{\linewidth-12.5pt}{0.9cm}}
   \item Across 50 towns, $r = 0.92$ between the number of libraries and the number of crimes.
         Should a town close libraries to cut crime? Explain.
-        \answerspace{1.1cm}{}
+        \answerspace{1.1cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={No. Correlation is not causation. Bigger towns have more of both, so
+        population is a likely lurking variable.}]{\linewidth-12.5pt}{0.9cm}}
 \end{enumerate}
 \end{notesbox}
 

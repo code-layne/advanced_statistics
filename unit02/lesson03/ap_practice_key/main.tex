@@ -10,6 +10,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u02-l03-ap}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -53,6 +56,7 @@ sold on 40 days with highs from 30$^\circ$F to 75$^\circ$F. The regression line 
           \item $10$; the model predicted 10 more drinks than the shop sold.
           \item $90$; the model predicted 90 drinks, so the residual is 90.
           \item $-10$; the shop sold 10 more hot drinks than the model predicted.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item The manager plugs in a 100$^\circ$F day and gets $-30$ hot drinks. Which is the best
@@ -64,6 +68,7 @@ sold on 40 days with highs from 30$^\circ$F to 75$^\circ$F. The regression line 
                 not trustworthy.}
           \item The residual for a 100$^\circ$F day will be $-30$.
           \item The line predicts well for any temperature once it is rounded to zero.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -80,18 +85,18 @@ sold on 40 days with highs from 30$^\circ$F to 75$^\circ$F. The regression line 
 
   \item \textbf{(a)} Predict the number of hot drinks sold on a 60$^\circ$F day. Show your
         work.\\[4pt]
-        \ansline{$\widehat{\text{drinks}} = 210 - 2.4(60) = 210 - 144 = 66$ hot drinks.}
+        \gradedhere{\gradedblank[id=ap3a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{$\widehat{\text{drinks}} = 210 - 2.4(60) = 210 - 144 = 66$ hot drinks.}
 
         \vspace{4pt}
         \textbf{(b)} On one 60$^\circ$F day the shop sold 58 hot drinks. Calculate the residual
         for that day and interpret it in context.\\[4pt]
-        \ansline{Residual $= y - \hat{y} = 58 - 66 = -8$. On that 60$^\circ$F day the shop sold 8}\\[1pt]
+        \gradedhere{\gradedblank[id=ap3b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Residual $= y - \hat{y} = 58 - 66 = -8$. On that 60$^\circ$F day the shop sold 8}\\[1pt]
         \ansline{fewer hot drinks than the line predicted --- the line overpredicted.}
 
         \vspace{4pt}
         \textbf{(c)} Describe the direction of the association. Does warm weather \emph{cause}
         lower sales? Explain.\\[4pt]
-        \ansline{Negative: warmer days tend to go with fewer hot drinks sold. No --- these are}\\[1pt]
+        \gradedhere{\gradedblank[id=ap3c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Negative: warmer days tend to go with fewer hot drinks sold. No --- these are}\\[1pt]
         \ansline{observational data; an association alone does not show causation.}
 
 \end{enumerate}

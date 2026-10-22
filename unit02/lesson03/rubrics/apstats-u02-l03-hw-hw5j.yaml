@@ -1,0 +1,14 @@
+# Homework item B2, justification of the multiple-choice answer (Unit 2, Lesson 2.3). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  A car's residual is -1.8 (price in thousands of dollars). Which is correct? (A)
+  Listed $1,800 above the prediction. (B) Listed $1,800 below the prediction. (C) The
+  line predicted $1,800 too low. (D) It has 1,800 fewer miles than predicted. (E) A
+  linear model does not fit this car. Circle one and justify it.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B): residual = actual - predicted = -1.8 is negative, so the actual
+      (listed) price is $1,800 below the predicted price.

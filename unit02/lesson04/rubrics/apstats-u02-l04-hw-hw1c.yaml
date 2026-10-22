@@ -1,0 +1,16 @@
+# Homework item A1, the equation (Unit 2, Lesson 2.4). Relative to the lesson directory.
+id: hw1c
+points: 1
+task: >-
+  For 35 car models: weight (x, 1000s of pounds, 2.5 to 5.0) and highway mileage (y,
+  mpg); x-bar = 3.5, s_x = 0.6, y-bar = 30, s_y = 5, r = -0.84. Find b and a, then
+  write the LSRL with the variable names.
+criteria:
+  - id: equation
+    points: 1
+    full: >-
+      Writes predicted mpg = 54.5 - 7.0(weight): a hat (or the word predicted) on the
+      response and the variable names, not x and y.
+examples:
+  - response: "y = 54.5 - 7x"
+    scores: {equation: 0}

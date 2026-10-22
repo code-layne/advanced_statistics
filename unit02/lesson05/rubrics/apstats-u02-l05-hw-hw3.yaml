@@ -1,0 +1,19 @@
+# Homework item B1 (Unit 2, Lesson 2.5). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  Resale value (y, dollars) of 11 used phones against age (x, years): y-hat = 518 -
+  95.4x, r = -0.94; the residual plot against age is U-shaped (positive, then
+  negative, then positive). A classmate says, 'r is close to -1, so the line is a good
+  model.' Respond, using the residual plot.
+criteria:
+  - id: residuals
+    points: 1
+    full: >-
+      Disagrees, because the residual plot shows a clear U-shaped (curved) pattern, so a
+      line is the wrong form.
+  - id: r_limit
+    points: 1
+    full: >-
+      Explains that r near -1 does not show a line is appropriate: a strong curved
+      relationship can still give r close to -1.

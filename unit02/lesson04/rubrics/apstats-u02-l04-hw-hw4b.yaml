@@ -1,0 +1,20 @@
+# Homework item B1, interpretation of r-squared (Unit 2, Lesson 2.4). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  For 35 car models: weight (x, 1000s of pounds, 2.5 to 5.0) and highway mileage (y,
+  mpg); x-bar = 3.5, s_x = 0.6, y-bar = 30, s_y = 5, r = -0.84. Find r^2 and interpret
+  it in context.
+criteria:
+  - id: variation
+    points: 1
+    full: >-
+      Says about 71% of the variation in highway mileage is explained (accounted for).
+  - id: model
+    points: 1
+    full: >-
+      Attributes it to the linear model (the LSRL) with weight as the explanatory
+      variable.
+examples:
+  - response: "71% of cars' mileage is explained by weight."
+    scores: {variation: 0, model: 1}

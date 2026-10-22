@@ -1,0 +1,14 @@
+# Unit 2 actual test, item 12a. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12a
+points: 1
+task: >-
+  Growing-season rainfall (inches) and wheat yield (bushels per acre) for 15 fields,
+  R-Sq = 91.6%. Describe the association between rainfall and wheat yield.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Strong, positive, linear (direction, form and strength), in context: fields with
+      more rainfall tend to have higher yields; no clear outliers (r about 0.957).

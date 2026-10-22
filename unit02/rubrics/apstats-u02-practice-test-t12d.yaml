@@ -1,0 +1,13 @@
+# Unit 2 practice (sample) test, item 12d. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12d
+points: 1
+task: >-
+  R-Sq = 92.4%. Interpret the value of r-squared in context.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: About 92.4% of the variation in annual energy use among these models is explained
+      by the linear model with capacity (the linear relationship with capacity).

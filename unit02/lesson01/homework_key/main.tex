@@ -21,6 +21,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u02-l01-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -60,9 +63,9 @@ A gym checked on its 250 newest members six months after they joined.
 \end{minipage}
 \vspace{2pt}
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
-  \item What proportion of all 250 are annual members still attending? Joint or marginal?
+  \item What proportion of all 250 are annual members still attending? Joint or marginal?\gradedbelow[r]{5pt}{\gradedblank[id=hw1a, type=short, points=1, answer=0.28, check=numeric, tolerance=0.005]{0.7in}{0.2in}\quad\textit{Type:}~\gradedblank[id=hw1b, type=short, points=1, answer=joint, check=text]{0.9in}{0.2in}}
         \answerspace{0.7cm}{$70/250 = 0.28$ --- joint (one cell over the grand total).}
-  \item Of the members who \emph{stopped} attending, what proportion had a monthly plan?
+  \item Of the members who \emph{stopped} attending, what proportion had a monthly plan?\gradedbelow[r]{5pt}{\gradedblank[id=hw2, type=short, points=1, answer=0.75, check=numeric, tolerance=0.005]{0.7in}{0.2in}}
         \answerspace{0.7cm}{$90/120 = 0.75$ --- divide by the 120 who stopped.}
 \end{enumerate}
 \end{notesbox}
@@ -73,19 +76,19 @@ A gym checked on its 250 newest members six months after they joined.
 \begin{notesbox}{Part B --- Is There an Association?}
 \small
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
-  \item Find the proportion still attending for each plan. Show the fractions.
+  \item Find the proportion still attending for each plan. Show the fractions.\gradedbelow[r]{5pt}{\textit{Monthly:}~\gradedblank[id=hw3a, type=short, points=1, answer=0.40, check=numeric, tolerance=0.005]{0.7in}{0.2in}\quad\textit{Annual:}~\gradedblank[id=hw3b, type=short, points=1, answer=0.70, check=numeric, tolerance=0.005]{0.7in}{0.2in}}
         \answerspace{0.7cm}{Monthly: $60/150 = 0.40$. \quad Annual: $70/100 = 0.70$.}
   \item The manager says: ``70 annual and 60 monthly members still come, so the plan doesn't
         matter.'' Is there an association? Use percents, and say what this study \emph{cannot} show.
-        \answerspace{1.3cm}{Yes: the plans differ in size, so compare percents --- 70\% of annual vs.\ 40\% of monthly members still come. Observational data cannot show the plan \emph{causes} it.}
+        \answerspace{1.3cm}{\normalcolor\mdseries\hspace*{13.7pt}\gradedblank[id=hw4, type=rubric, points=3, display={Yes: the plans differ in size, so compare percents --- 70\% of annual vs.\ 40\% of monthly members still come. Observational data cannot show the plan \emph{causes} it.}]{\linewidth-13.7pt}{1.1cm}}
   \item \textbf{AP-style MC.} Which result at another gym shows \textbf{no} association? Circle, then justify.
         \par\vspace{2pt}
         \begin{tabularx}{\linewidth}{@{} X X @{}}
         \textbf{(A)} 60 of 150 monthly, 60 of 100 annual & \ans{(B) 60 of 150 monthly, 40 of 100 annual} \\
         \textbf{(C)} 90 monthly and 70 annual attend & \textbf{(D)} half of all members attend \\
-        \textbf{(E)} the two plans have equal sizes & \\
+        \textbf{(E)} the two plans have equal sizes & \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}} \\
         \end{tabularx}
-        \answerspace{0.7cm}{(B): 40\% of each plan still attends --- the conditional distributions match.}
+        \answerspace{0.7cm}{\normalcolor\mdseries\hspace*{13.7pt}\gradedblank[id=hw5j, type=rubric, points=1, display={(B): 40\% of each plan still attends --- the conditional distributions match.}]{\linewidth-13.7pt}{0.6cm}}
 \end{enumerate}
 \end{notesbox}
 

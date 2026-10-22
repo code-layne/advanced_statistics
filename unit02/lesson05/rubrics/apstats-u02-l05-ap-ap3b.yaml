@@ -1,0 +1,20 @@
+# AP Practice item 3, part (b) (Unit 2, Lesson 2.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3b
+points: 2
+task: >-
+  Thirteen used cars of one model: twelve have 22,000 to 90,000 miles, one has
+  210,000. Price (y, thousands of dollars) against mileage (x, thousands of miles):
+  the line fit to all 13 cars is y-hat = 21.35 - 0.055x with r = -0.91; the line fit
+  to the 12 others is y-hat = 23.96 - 0.103x with r = -0.99. Is that car an
+  influential point? Justify with the output.
+criteria:
+  - id: influential
+    points: 2
+    full: >-
+      E: Says yes AND justifies with the output: removing it changes the slope from -0.055
+      to -0.103 (nearly doubles) and r from -0.91 to -0.99.
+    partial: >-
+      P (1 of 2): Says yes citing only one of the changes, or says it changes the line
+      without quoting the numbers from the output.

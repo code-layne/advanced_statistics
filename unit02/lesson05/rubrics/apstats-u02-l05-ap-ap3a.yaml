@@ -1,0 +1,21 @@
+# AP Practice item 3, part (a) (Unit 2, Lesson 2.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  Thirteen used cars of one model: twelve have 22,000 to 90,000 miles, one has
+  210,000. Price (y, thousands of dollars) against mileage (x, thousands of miles):
+  the line fit to all 13 cars is y-hat = 21.35 - 0.055x with r = -0.91; the line fit
+  to the 12 others is y-hat = 23.96 - 0.103x with r = -0.99. Is the 210,000-mile car a
+  high-leverage point? Explain.
+criteria:
+  - id: leverage
+    points: 2
+    full: >-
+      E: Says yes AND explains that its x-value (210,000 miles) is far from the other
+      cars' mileages (22,000 to 90,000).
+    partial: >-
+      P (1 of 2): Says yes with a vague or incorrect reason (for example, only that its
+      price is unusual or that it is an outlier), without comparing its mileage to the
+      others.

@@ -1,0 +1,16 @@
+# Homework item B2, justification of the multiple-choice answer (Unit 2, Lesson 2.4). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  Which statement is correct? (A) Every extra 1,000 pounds lowers a car's mileage by
+  exactly 7 mpg. (B) For each extra 1,000 pounds, the predicted highway mileage drops
+  by 7 mpg. (C) About 84% of the variation in mileage is explained by weight. (D) A
+  car weighing 0 pounds would get about 54.5 mpg. (E) Adding weight to a car causes
+  its mileage to fall by 7 mpg. Justify the choice in a sentence.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B) because the slope describes the change in PREDICTED mileage (or names
+      the flaw in another option: (A) ignores the scatter, (C) uses r instead of r^2, (D)
+      extrapolates, (E) claims causation).

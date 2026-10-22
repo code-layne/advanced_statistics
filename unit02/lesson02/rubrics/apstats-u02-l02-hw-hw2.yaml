@@ -1,0 +1,22 @@
+# Homework item A2 (Unit 2, Lesson 2.2). Relative to the lesson directory.
+id: hw2
+points: 3
+task: >-
+  A coach recorded each of 14 players' hours of free-throw practice per week and their
+  free-throw percentage for the season; r = 0.60. Describe the association in context
+  (direction, unusual point, form, strength).
+criteria:
+  - id: direction_form
+    points: 1
+    full: >-
+      Says the association is positive and linear, in context (players who practice more
+      tend to make a higher percent of free throws).
+  - id: strength
+    points: 1
+    full: >-
+      Says the association is moderate (consistent with r = 0.60).
+  - id: unusual
+    points: 1
+    full: >-
+      Identifies the player with 11 hours of practice and 50% as an unusual point far
+      below the pattern.

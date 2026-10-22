@@ -15,6 +15,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u02-l04-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -42,17 +45,17 @@ For 35 car models: \textbf{weight} ($x$, 1000s of pounds, 2.5 to 5.0) and \textb
 mileage} ($y$, mpg). \ $\bar x = 3.5$, \ $s_x = 0.6$, \ $\bar y = 30$, \ $s_y = 5$, \ $r = -0.84$. \hfill \textbf{Part A --- Build the line.}
 \begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=2.2em, itemsep=2pt]
   \item Find $b$ and $a$ (show your work), then write the LSRL with the variable names.
-        \answerspace{1.5cm}{$b = -0.84 \cdot 5/0.6 = -7.0$ mpg per 1,000 lb; \ $a = 30 - (-7.0)(3.5) = 54.5$ mpg.\par $\widehat{\text{mpg}} = 54.5 - 7.0(\text{weight})$}
+        \answerspace{1.5cm}{$b = -0.84 \cdot 5/0.6 = -7.0$ mpg per 1,000 lb; \ $a = 30 - (-7.0)(3.5) = 54.5$ mpg.\par $\widehat{\text{mpg}} = 54.5 - 7.0(\text{weight})$\par\vfill\hfill\normalcolor\mdseries\textit{b:}~\gradedblank[id=hw1a, type=short, points=1, answer=-7.0, check=numeric, tolerance=0.05]{0.65in}{0.24in}\quad\textit{a:}~\gradedblank[id=hw1b, type=short, points=1, answer=54.5, check=numeric, tolerance=0.1]{0.65in}{0.24in}\quad\textit{LSRL:}~\gradedblank[id=hw1c, type=rubric, points=1, display={$\widehat{\text{mpg}} = 54.5 - 7.0(\text{weight})$}]{1.9in}{0.24in}}
   \item Interpret the slope in context.
-        \answerspace{1.15cm}{For each additional 1,000 pounds of weight, the \emph{predicted} highway mileage drops by 7.0 mpg.}
+        \answerspace{1.15cm}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw2, type=rubric, points=2, display={For each additional 1,000 pounds of weight, the \emph{predicted} highway mileage drops by 7.0 mpg.}]{\linewidth-10.5pt}{0.95cm}}
   \item Interpret the intercept in context. Does it have a sensible meaning here? Explain.
-        \answerspace{1.15cm}{Predicted 54.5 mpg for a car weighing 0 pounds. Not meaningful: no car weighs 0 lb, far outside 2.5--5.0.}
+        \answerspace{1.15cm}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw3, type=rubric, points=2, display={Predicted 54.5 mpg for a car weighing 0 pounds. Not meaningful: no car weighs 0 lb, far outside 2.5--5.0.}]{\linewidth-10.5pt}{0.95cm}}
 \end{enumerate}
 
 \textbf{Part B --- How good is it?}
 \begin{enumerate}[label=\textbf{B\arabic*.}, leftmargin=2.2em, itemsep=2pt]
   \item Find $r^2$ and interpret it in context.
-        \answerspace{1.15cm}{$r^2 = (-0.84)^2 \approx 0.71$. About 71\% of the variation in highway mileage is explained by the linear model with weight.}
+        \answerspace{1.15cm}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw4b, type=rubric, points=2, display={About 71\% of the variation in highway mileage is explained by the linear model with weight.}]{\linewidth-10.5pt-1.0in-6pt}{0.95cm}\hfill\gradedblank[id=hw4a, type=short, points=1, answer=0.71, check=numeric, tolerance=0.01]{1.0in}{0.85cm}}
   \item \textbf{AP-style.} Which statement is \textbf{correct}? Circle one, then justify it in a
         sentence.
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
@@ -61,8 +64,9 @@ mileage} ($y$, mpg). \ $\bar x = 3.5$, \ $s_x = 0.6$, \ $\bar y = 30$, \ $s_y = 
           \item About 84\% of the variation in mileage is explained by weight.
           \item A car weighing 0 pounds would get about 54.5 mpg.
           \item Adding weight to a car causes its mileage to fall by 7 mpg.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
-        \answerspace{0.8cm}{(B): it says \emph{predicted}. (A) ignores the scatter, (C) uses $r$, (D) extrapolates, (E) claims cause.}
+        \answerspace{0.8cm}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw5j, type=rubric, points=1, display={(B): the slope gives the change in \emph{predicted} mileage.}]{\linewidth-10.5pt}{0.7cm}}
 \end{enumerate}
 \end{notesbox}
 

@@ -1,0 +1,18 @@
+# Homework item B2 (Unit 2, Lesson 2.2). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  For 40 people aged 5 to 85, age vs. reaction time makes a clear U (young adults
+  fastest), and r = 0.05. Jordan says age and reaction time are unrelated. Is he
+  right?
+criteria:
+  - id: curved
+    points: 1
+    full: >-
+      Says no: there is a strong curved (U-shaped) relationship between age and reaction
+      time.
+  - id: linear_only
+    points: 1
+    full: >-
+      Explains that r measures only linear association, so r near 0 does not mean no
+      relationship.

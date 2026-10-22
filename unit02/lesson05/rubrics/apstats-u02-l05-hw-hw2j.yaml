@@ -1,0 +1,13 @@
+# Homework item A2, justification of the multiple-choice answer (Unit 2, Lesson 2.5). Relative to the lesson directory.
+id: hw2j
+points: 1
+task: >-
+  A new point has an x-value far from the rest but lies right on their line. Adding it
+  most likely: (A) slope changes a lot (B) r nears 0 (C) slope barely changes (D) it
+  becomes an outlier (E) the association disappears. Justify the choice.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (C): the point lies on the existing line, so it does not pull the slope
+      (its far-out x only makes r stronger).

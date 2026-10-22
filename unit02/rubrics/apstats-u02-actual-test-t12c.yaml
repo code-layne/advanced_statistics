@@ -1,0 +1,14 @@
+# Unit 2 actual test, item 12c. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12c
+points: 1
+task: >-
+  One field had 14 inches of rainfall and yielded 58 bushels per acre. Find its
+  residual and interpret it in context.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Residual = 58 - 53.72 = 4.28 bu/acre AND interprets: this field yielded 4.28
+      bushels per acre more than the line predicts for 14 inches of rain.
