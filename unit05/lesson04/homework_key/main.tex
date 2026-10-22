@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l04-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -14,23 +17,23 @@
 
   \item
         \begin{enumerate}[label=\alph*.]
-          \item \ans{Unbiased: $E(\bar{x}) = \mu$.}
-          \item \ans{Unbiased: $E(\hat{p}) = p$.}
-          \item \ans{Biased high: the sample minimum is always $\ge$ the population minimum, so on average it overestimates the population minimum.}
-          \item \ans{Unbiased: dividing by $n-1$ corrects for the tendency of sample deviations to underestimate population deviations.}
+          \item \ans{Unbiased: $E(\bar{x}) = \mu$.}\gradedkey{\gradedblank[id=hw1a, type=short, points=1, answer=unbiased, check=text]{2.2in}{0.17in}}
+          \item \ans{Unbiased: $E(\hat{p}) = p$.}\gradedkey{\gradedblank[id=hw1b, type=short, points=1, answer=unbiased, check=text]{2.2in}{0.17in}}
+          \item \ans{Biased high: the sample minimum is always $\ge$ the population minimum, so on average it overestimates the population minimum.}\gradedkey{\gradedblank[id=hw1c, type=short, points=1, answer={biased high}, check=text]{2.2in}{0.17in}}
+          \item \ans{Unbiased: dividing by $n-1$ corrects for the tendency of sample deviations to underestimate population deviations.}\gradedkey{\gradedblank[id=hw1d, type=short, points=1, answer=unbiased, check=text]{2.2in}{0.17in}}
         \end{enumerate}
 
   \item
         \begin{enumerate}[label=\alph*.]
-          \item \ans{$\sigma_{\bar{x}} = 2200/\sqrt{121} = 2200/11 = 200$ steps.}
-          \item \ans{$n = 484$: $\sigma_{\bar{x}} = 2200/\sqrt{484} = 2200/22 = 100$ steps. Standard error halved.}
-          \item \ansline{Increasing the sample size from 121 to 484 (quadrupling it) cuts the variability of the sample mean in half, so the estimate of average daily steps will be twice as precise.}
+          \item \ans{$\sigma_{\bar{x}} = 2200/\sqrt{121} = 2200/11 = 200$ steps.}\gradedkey{$\sigma_{\bar{x}} = $~\gradedblank[id=hw2a, type=short, points=1, answer=200, check=numeric, tolerance=0]{0.9in}{0.27in}}
+          \item \ans{$n = 484$: $\sigma_{\bar{x}} = 2200/\sqrt{484} = 2200/22 = 100$ steps. Standard error halved.}\gradedkey{$\sigma_{\bar{x}} = $~\gradedblank[id=hw2b, type=short, points=2, answer=100, check=numeric, tolerance=0]{0.9in}{0.27in}}
+          \item \ansline{Increasing the sample size from 121 to 484 (quadrupling it) cuts the variability of the sample mean in half, so the estimate of average daily steps will be twice as precise.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={Quadrupling $n$ halves the SD of $\bar{x}$, so the estimate of mean daily steps is twice as precise.}]{\linewidth+6pt}{0.2in}}
         \end{enumerate}
 
   \item
         \begin{enumerate}[label=\alph*.]
-          \item \ansline{No. Sampling variability means that any finite simulation will not produce \emph{exactly} 30. The value 30.1 is very close to 30 and is consistent with random chance; it does not suggest bias.}
-          \item \ansline{30 --- the population mean $\mu$, because $\bar{x}$ is an unbiased estimator.}
+          \item \ansline{No. Sampling variability means that any finite simulation will not produce \emph{exactly} 30. The value 30.1 is very close to 30 and is consistent with random chance; it does not suggest bias.}\gradedkeyline{\gradedblank[id=hw3a, type=rubric, points=2, display={No: the 0.1 difference from 30 is just sampling variability, not evidence of bias.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{30 --- the population mean $\mu$, because $\bar{x}$ is an unbiased estimator.}\gradedkey{\gradedblank[id=hw3b, type=short, points=1, answer=30, check=numeric, tolerance=0]{1.1in}{0.17in}}
         \end{enumerate}
 
 \end{enumerate}

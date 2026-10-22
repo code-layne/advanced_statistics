@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u05-l02-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -15,22 +18,22 @@
 
   \item Women's heights $N(64.0, 2.8)$.
         \begin{enumerate}[label=\alph*.]
-          \item \ans{$z = (60-64)/2.8 \approx -1.43$; $P(X<60) = P(Z<-1.43) \approx 0.0764$.}
-          \item \ans{$z_1 = (62-64)/2.8 \approx -0.71$, $z_2 = (68-64)/2.8 \approx 1.43$; $P(62<X<68) = 0.9236 - 0.2389 \approx 0.6847$.}
-          \item \ans{$z = \text{invNorm}(0.90) \approx 1.282$; $x = 64 + 1.282(2.8) \approx 67.6$ in.}
-          \item \ansline{Approximately 90\% of women are shorter than 67.6 inches; the 90th percentile height for women is about 67.6 inches.}
+          \item \ans{$z = (60-64)/2.8 \approx -1.43$; $P(X<60) = P(Z<-1.43) \approx 0.0764$.}\gradedkey{\gradedblank[id=hw1a, type=short, points=2, answer=0.0764, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
+          \item \ans{$z_1 = (62-64)/2.8 \approx -0.71$, $z_2 = (68-64)/2.8 \approx 1.43$; $P(62<X<68) = 0.9236 - 0.2389 \approx 0.6847$.}\gradedkey{\gradedblank[id=hw1b, type=short, points=2, answer=0.6847, check=numeric, tolerance=0.005]{0.9in}{0.28in}}
+          \item \ans{$z = \text{invNorm}(0.90) \approx 1.282$; $x = 64 + 1.282(2.8) \approx 67.6$ in.}\gradedkey{$x = $~\gradedblank[id=hw1c, type=short, points=2, answer=67.6, check=numeric, tolerance=0.1]{0.9in}{0.28in}}
+          \item \ansline{Approximately 90\% of women are shorter than 67.6 inches; the 90th percentile height for women is about 67.6 inches.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=1, display={About 90\% of women are shorter than 67.6 inches.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
   \item Egg mass $N(62, 5)$ g.
         \begin{enumerate}[label=\alph*.]
-          \item \ans{$z = (63-62)/5 = 0.20$; $P(X>63) = 1 - 0.5793 \approx 0.4207$. About 42\% of eggs are large.}
-          \item \ans{Top 15\%: $z = \text{invNorm}(0.85) \approx 1.036$; $x = 62 + 1.036(5) \approx 67.2$ g. Extra-large eggs weigh at least 67.2 g.}
+          \item \ans{$z = (63-62)/5 = 0.20$; $P(X>63) = 1 - 0.5793 \approx 0.4207$. About 42\% of eggs are large.}\gradedkey{\gradedblank[id=hw2a, type=short, points=2, answer=0.4207, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
+          \item \ans{Top 15\%: $z = \text{invNorm}(0.85) \approx 1.036$; $x = 62 + 1.036(5) \approx 67.2$ g. Extra-large eggs weigh at least 67.2 g.}\gradedkey{$x = $~\gradedblank[id=hw2b, type=short, points=2, answer=67.2, check=numeric, tolerance=0.1]{0.9in}{0.28in}}
         \end{enumerate}
 
   \item Text messages.
         \begin{enumerate}[label=\alph*.]
-          \item \ansline{No. The normal model requires a symmetric, bell-shaped distribution. A strongly right-skewed distribution does not satisfy this condition, so the normal model is not appropriate for the individual observations.}
-          \item \ansline{By the Central Limit Theorem (Lesson 5.3), if the student takes many random samples and computes sample means, those sample means will be approximately normally distributed for large enough sample sizes --- even though the original distribution is skewed.}
+          \item \ansline{No. The normal model requires a symmetric, bell-shaped distribution. A strongly right-skewed distribution does not satisfy this condition, so the normal model is not appropriate for the individual observations.}\gradedkeyline{\gradedblank[id=hw3a, type=rubric, points=2, display={No: the distribution is strongly right-skewed, not symmetric and bell-shaped.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{By the Central Limit Theorem (Lesson 5.3), if the student takes many random samples and computes sample means, those sample means will be approximately normally distributed for large enough sample sizes --- even though the original distribution is skewed.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={Use means of large random samples: by the CLT they are approximately normal.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
 \end{enumerate}

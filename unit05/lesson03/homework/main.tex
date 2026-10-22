@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l03-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -17,12 +20,12 @@
         with $\mu = 182$ g and $\sigma = 20$ g. A sample of $n = 16$ apples is selected.
         \begin{enumerate}[label=\alph*.]
           \item Verify all three conditions for using the normal model for $\bar{x}$.
-                \writelines{3}
-          \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=3, display={Random sample; $16 \le 10\%$ of all apples; population approximately normal. All three conditions met.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+          \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.\gradedbelow[r]{0.6in-0.33in}{$\mu_{\bar{x}} = $~\gradedblank[id=hw1b1, type=short, points=1, answer=182, check=numeric, tolerance=0]{0.9in}{0.28in}\quad $\sigma_{\bar{x}} = $~\gradedblank[id=hw1b2, type=short, points=1, answer=5, check=numeric, tolerance=0]{0.9in}{0.28in}}
                 \vspace{0.6in}
-          \item Find $P(\bar{x} > 190)$.
+          \item Find $P(\bar{x} > 190)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw1c, type=short, points=2, answer=0.0548, check=numeric, tolerance=0.002]{0.9in}{0.28in}}
                 \vspace{0.9in}
-          \item Find the value $m$ such that $P(\bar{x} > m) = 0.25$. Interpret in context.
+          \item Find the value $m$ such that $P(\bar{x} > m) = 0.25$. Interpret in context.\gradedbelow[r]{0.9in-0.45in}{$m = $~\gradedblank[id=hw1d1, type=short, points=2, answer=185.4, check=numeric, tolerance=0.2]{0.9in}{0.28in}\quad \gradedblank[id=hw1d2, type=rubric, points=1, display={In 25\% of samples of 16 apples, the sample mean weight exceeds 185.4 g.}]{3.2in}{0.4in}}
                 \vspace{0.9in}
         \end{enumerate}
 
@@ -31,16 +34,16 @@
         counts for a random sample of $n = 36$ hours.
         \begin{enumerate}[label=\alph*.]
           \item Can the normal model be used for $\bar{x}$? Justify using all three conditions.
-                \writelines{3}
-          \item Find $P(26 < \bar{x} < 31)$.
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=3, display={Random sample; $36 \le 10\%$ of all hours; $n = 36 \ge 30$, so the CLT applies. Yes, the normal model can be used.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+          \item Find $P(26 < \bar{x} < 31)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw2b, type=short, points=2, answer=0.8854, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{0.9in}
         \end{enumerate}
 
   \item A population has $\mu = 100$, $\sigma = 25$, and is uniform (not normal).
         \begin{enumerate}[label=\alph*.]
           \item For $n = 4$: can we use the normal model for $\bar{x}$? Why or why not?
-                \writelines{2}
-          \item For $n = 64$: find $\sigma_{\bar{x}}$ and $P(\bar{x} < 97)$.
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3a, type=rubric, points=2, display={No: the population is not normal and $n = 4 < 30$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+          \item For $n = 64$: find $\sigma_{\bar{x}}$ and $P(\bar{x} < 97)$.\gradedbelow[r]{0.9in-0.33in}{$\sigma_{\bar{x}} = $~\gradedblank[id=hw3b1, type=short, points=1, answer=3.125, check=numeric, tolerance=0.001]{0.9in}{0.28in}\quad $P = $~\gradedblank[id=hw3b2, type=short, points=2, answer=0.1685, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{0.9in}
         \end{enumerate}
 

@@ -1,0 +1,14 @@
+# Homework item 1d interpretation (Unit 5, Lesson 5.3). Relative to the lesson directory.
+id: hw1d2
+points: 1
+task: >-
+  Interpret m = 185.4 g, the value with P(sample mean > m) = 0.25, in context.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      Says that in about 25% of all random samples of 16 apples, the sample mean weight is
+      greater than 185.4 g (about the sample mean, not one apple's weight).
+examples:
+  - response: "25% of apples weigh more than 185.4 g."
+    scores: {interpret: 0}

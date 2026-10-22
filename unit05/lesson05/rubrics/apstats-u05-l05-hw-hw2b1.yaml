@@ -1,0 +1,13 @@
+# Homework item 2b conditions (Unit 5, Lesson 5.5). Relative to the lesson directory.
+id: hw2b1
+points: 1
+task: >-
+  Transit riders, p = 0.15, n = 100: check all conditions (before finding P(0.10 <=
+  sample proportion <= 0.20)).
+criteria:
+  - id: conditions
+    points: 1
+    full: >-
+      Checks Large Counts (np = 15 and n(1-p) = 85, both at least 10) and the 10%
+      condition (100 is at most 10% of the city's residents); random sampling assumed or
+      stated.

@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l02-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -18,22 +21,22 @@ show all calculations.
 
   \item Women's heights are approximately $N(64.0, 2.8)$ inches.
         \begin{enumerate}[label=\alph*.]
-          \item Find $P(X < 60)$.
+          \item Find $P(X < 60)$.\gradedbelow[r]{1.0in-0.33in}{\gradedblank[id=hw1a, type=short, points=2, answer=0.0764, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{1.0in}
-          \item Find $P(62 < X < 68)$.
+          \item Find $P(62 < X < 68)$.\gradedbelow[r]{1.0in-0.33in}{\gradedblank[id=hw1b, type=short, points=2, answer=0.6847, check=numeric, tolerance=0.005]{0.9in}{0.28in}}
                 \vspace{1.0in}
-          \item What height is the 90th percentile for women?
+          \item What height is the 90th percentile for women?\gradedbelow[r]{0.9in-0.33in}{$x = $~\gradedblank[id=hw1c, type=short, points=2, answer=67.6, check=numeric, tolerance=0.1]{0.9in}{0.28in}}
                 \vspace{0.9in}
           \item Interpret your answer to (c) in a complete sentence.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=1, display={About 90\% of women are shorter than 67.6 inches.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
         \end{enumerate}
 
   \item The masses of eggs from a hen are approximately $N(62\text{ g}, 5\text{ g})$.
         \begin{enumerate}[label=\alph*.]
-          \item Large eggs are those above 63 g. Find $P(X > 63)$.
+          \item Large eggs are those above 63 g. Find $P(X > 63)$.\gradedbelow[r]{1.0in-0.33in}{\gradedblank[id=hw2a, type=short, points=2, answer=0.4207, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{1.0in}
           \item Extra-large eggs are the top 15\%. Find the minimum mass for an
-                extra-large egg.
+                extra-large egg.\gradedbelow[r]{0.9in-0.33in}{$x = $~\gradedblank[id=hw2b, type=short, points=2, answer=67.2, check=numeric, tolerance=0.1]{0.9in}{0.28in}}
                 \vspace{0.9in}
         \end{enumerate}
 
@@ -42,11 +45,11 @@ show all calculations.
         distribution that is strongly right-skewed with a long tail toward high values.
         \begin{enumerate}[label=\alph*.]
           \item Is the normal model appropriate here? Explain.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3a, type=rubric, points=2, display={No: the distribution is strongly right-skewed, not symmetric and bell-shaped.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
           \item What could the student do to make the normal model more appropriate?
                 \textit{(Hint: think about sample size and the CLT --- preview for
                 Lesson 5.3.)}
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={Use means of large random samples: by the CLT they are approximately normal.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
         \end{enumerate}
 
 \end{enumerate}

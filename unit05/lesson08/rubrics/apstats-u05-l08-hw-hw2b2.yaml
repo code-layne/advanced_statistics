@@ -1,0 +1,16 @@
+# Homework item 2b interpretation (Unit 5, Lesson 5.8). Relative to the lesson directory.
+id: hw2b2
+points: 1
+task: >-
+  Light bulbs: Brand X mean 1,200 hr, SD 120, n = 36; Brand Y mean 1,050 hr, SD 150, n
+  = 49. Interpret c = 198.2 hours, the value with P(difference in sample means > c) =
+  0.05.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      Says that in about 5% of repeated random samples (36 X bulbs, 49 Y bulbs), the
+      difference in sample mean lifetimes (X minus Y) exceeds 198.2 hours.
+examples:
+  - response: "5% of Brand X bulbs last 198.2 hours longer."
+    scores: {interpret: 0}

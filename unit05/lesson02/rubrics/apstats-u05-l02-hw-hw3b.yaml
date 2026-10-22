@@ -1,0 +1,22 @@
+# Homework item 3b (Unit 5, Lesson 5.2). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A histogram of 200 students' daily text messages is strongly right-skewed with a
+  long tail toward high values; a student claims the counts follow a normal
+  distribution. What could the student do to make the normal model more appropriate?
+  (Hint: sample size and the CLT.)
+criteria:
+  - id: means
+    points: 1
+    full: >-
+      Suggests taking (many) random samples and working with the sample means instead of
+      individual students' counts.
+  - id: clt
+    points: 1
+    full: >-
+      Says that for a large enough sample size the sample means are approximately normal
+      by the Central Limit Theorem, even though the population is skewed.
+examples:
+  - response: "Remove the outliers."
+    scores: {means: 0, clt: 0}

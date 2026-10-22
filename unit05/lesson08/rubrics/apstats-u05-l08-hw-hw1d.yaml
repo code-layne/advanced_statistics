@@ -1,0 +1,22 @@
+# Homework item 1d (Unit 5, Lesson 5.8). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  Resting heart rates: adults 20-39 have mean 70 bpm and SD 11 (random sample of 55);
+  adults 60-79 have mean 74 bpm and SD 14 (random sample of 45); both populations
+  approximately normal. P(difference in sample means < -8) is about 0.0591. Interpret
+  this in context.
+criteria:
+  - id: statement
+    points: 1
+    full: >-
+      Says there is about a 5.9% chance that the younger group's sample mean heart rate is
+      more than 8 bpm below the older group's.
+  - id: context
+    points: 1
+    full: >-
+      Refers to repeated random samples of 55 and 45 adults (the probability is about
+      sample means, given a true difference of -4 bpm), not to individual adults.
+examples:
+  - response: "5.9% of young adults have heart rates 8 bpm lower than older adults."
+    scores: {statement: 0, context: 0}

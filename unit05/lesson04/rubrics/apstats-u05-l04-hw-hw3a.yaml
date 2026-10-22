@@ -1,0 +1,20 @@
+# Homework item 3a (Unit 5, Lesson 5.4). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  A simulation repeatedly takes samples of size 50 from a right-skewed population with
+  mean 30 and SD 8; after 1000 trials the average of all the sample means is 30.1. Is
+  this evidence that the sample mean is biased? Explain why or why not.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that 30.1 is very close to 30 and the small difference is due to sampling
+      variability (a finite simulation will not give exactly 30), not to bias.
+examples:
+  - response: "Yes, because 30.1 is not 30."
+    scores: {answer: 0, reason: 0}

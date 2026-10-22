@@ -1,0 +1,17 @@
+# Homework item 2a (Unit 5, Lesson 5.1). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  Two researchers each measure 15 different randomly selected seedlings from the same
+  greenhouse and get mean heights of 4.3 cm and 4.7 cm. Are these two measurements the
+  same thing? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that they are two different sample means (statistics) from two different
+      random samples, each describing only its own 15 seedlings.

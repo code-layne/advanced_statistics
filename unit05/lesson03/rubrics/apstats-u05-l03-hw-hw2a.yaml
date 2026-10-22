@@ -1,0 +1,22 @@
+# Homework item 2a (Unit 5, Lesson 5.3). Relative to the lesson directory.
+id: hw2a
+points: 3
+task: >-
+  Hourly customer counts are right-skewed with mean 28 and SD 9; a random sample of 36
+  hours is tracked. Can the normal model be used for the sample mean? Justify using
+  all three conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the 36 hours are a random sample (stated).
+  - id: independence
+    points: 1
+    full: >-
+      Independence (10% condition): 36 hours is at most 10% of all hours the shop is open.
+  - id: normal
+    points: 1
+    full: >-
+      Large sample: n = 36 is at least 30, so by the central limit theorem the sampling
+      distribution of the sample mean is approximately normal even though the population
+      is skewed; concludes the normal model can be used.
