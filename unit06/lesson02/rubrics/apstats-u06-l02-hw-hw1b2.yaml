@@ -1,0 +1,12 @@
+# Homework item 1, Large Counts (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw1b2
+points: 1
+task: >-
+  A random sample of 400 registered voters finds 228 support a park expansion (95% CI
+  for the true proportion). Plan: Large Counts condition.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      Shows n p-hat = 228 and n(1 - p-hat) = 172 are both at least 10, so the condition is
+      met.

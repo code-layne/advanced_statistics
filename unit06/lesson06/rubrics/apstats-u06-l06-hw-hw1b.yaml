@@ -1,0 +1,20 @@
+# Homework item 1, Plan (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw1b
+points: 3
+task: >-
+  A marketing firm claims 40% of a city's adults visited a website in the past month;
+  a competitor believes it is lower. 126 of a random sample of 350 adults visited.
+  alpha = 0.05. Plan: verify the conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the sample is random (stated), so the condition is met.
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using p0: 350(0.40) = 140 and 350(0.60) = 210 are both at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: the sample is at most 10% of all adults in the city.

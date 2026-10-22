@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u06-l05-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -15,22 +18,22 @@
 
   \item $p$-values:
         \begin{enumerate}[label=\alph*.]
-          \item Tail: \ans{right} \quad $p$-value $= P(Z\ge1.88) =$ \ans{$0.0301$}
-          \item Tail: \ans{left}  \quad $p$-value $= P(Z\le-2.31) =$ \ans{$0.0104$}
-          \item Tail: \ans{both}  \quad $p$-value $= 2P(Z\ge2.05) = 2(0.0202) =$ \ans{$0.0404$}
+          \item Tail: \ans{right} \quad $p$-value $= P(Z\ge1.88) =$ \ans{$0.0301$}\gradedkey{\gradedblank[id=hw1a1, type=short, points=1, answer=right, check=text]{2cm}{0.17in}\quad \gradedblank[id=hw1a2, type=short, points=1, answer=0.0301, check=numeric, tolerance=0.002]{4cm}{0.17in}}
+          \item Tail: \ans{left}  \quad $p$-value $= P(Z\le-2.31) =$ \ans{$0.0104$}\gradedkey{\gradedblank[id=hw1b1, type=short, points=1, answer=left, check=text]{2cm}{0.17in}\quad \gradedblank[id=hw1b2, type=short, points=1, answer=0.0104, check=numeric, tolerance=0.002]{4cm}{0.17in}}
+          \item Tail: \ans{both}  \quad $p$-value $= 2P(Z\ge2.05) = 2(0.0202) =$ \ans{$0.0404$}\gradedkey{\gradedblank[id=hw1c1, type=short, points=1, answer=both, check=text]{2cm}{0.17in}\quad \gradedblank[id=hw1c2, type=short, points=1, answer=0.0404, check=numeric, tolerance=0.002]{4cm}{0.17in}}
         \end{enumerate}
 
   \item Customer satisfaction:
         \begin{enumerate}[label=\alph*.]
-          \item \ans{$H_0: p=0.80$; $H_a: p<0.80$}
-          \item $\hat p = $ \ans{$185/250=0.74$} \quad $z \approx$ \ans{$\dfrac{0.74-0.80}{\sqrt{0.80(0.20)/250}}=-2.37$} \quad $p$-value $\approx$ \ans{$P(Z\le-2.37)=0.0089$}
-          \item \ansline{Assuming 80\% of customers are satisfied, there is a 0.89\% probability of observing a sample proportion of 0.74 or lower by chance alone.}
+          \item \ans{$H_0: p=0.80$; $H_a: p<0.80$}\gradedkey{\gradedblank[id=hw2a, type=rubric, points=2, display={\bfseries $H_0\colon p = 0.80$; $H_a\colon p < 0.80$}]{8cm}{0.17in}}
+          \item $\hat p = $ \ans{$185/250=0.74$} \quad $z \approx$ \ans{$\dfrac{0.74-0.80}{\sqrt{0.80(0.20)/250}}=-2.37$} \quad $p$-value $\approx$ \ans{$P(Z\le-2.37)=0.0089$}\gradedkey{\gradedblank[id=hw2b1, type=short, points=1, answer=0.74, check=numeric]{2cm}{0.17in}\quad \gradedblank[id=hw2b2, type=short, points=2, answer=-2.37, check=numeric, tolerance=0.02]{2cm}{0.17in}\quad \gradedblank[id=hw2b3, type=short, points=2, answer=0.0089, check=numeric, tolerance=0.001]{3cm}{0.17in}}
+          \item \ansline{Assuming 80\% of customers are satisfied, there is a 0.89\% probability of observing a sample proportion of 0.74 or lower by chance alone.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=3, display={If 80\% of all customers are satisfied, there is about a 0.89\% chance of a sample proportion of 0.74 or lower (random samples of 250).}]{\linewidth+6pt}{\gradedlinesheight{2}}}
         \end{enumerate}
 
   \item Error corrections:
         \begin{enumerate}[label=\alph*.]
-          \item \ansline{Error: ``due to chance'' is not the correct phrasing. Correct: a $p$-value of 0.03 means that \emph{if $H_0$ were true}, there is a 3\% probability of observing a result at least this extreme.}
-          \item \ansline{Error: a large $p$-value does not prove $H_0$ --- it simply means the data don't provide strong evidence against it. We fail to reject $H_0$, but cannot accept it as true.}
+          \item \ansline{Error: ``due to chance'' is not the correct phrasing. Correct: a $p$-value of 0.03 means that \emph{if $H_0$ were true}, there is a 3\% probability of observing a result at least this extreme.}\gradedkeyline{\gradedblank[id=hw3a, type=rubric, points=2, display={It is not P(results due to chance): IF $H_0$ were true, there is a 3\% chance of a result at least this extreme.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{Error: a large $p$-value does not prove $H_0$ --- it simply means the data don't provide strong evidence against it. We fail to reject $H_0$, but cannot accept it as true.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={A large $p$-value does not prove $H_0$: the data give no convincing evidence against it, so we fail to reject $H_0$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
 \end{enumerate}

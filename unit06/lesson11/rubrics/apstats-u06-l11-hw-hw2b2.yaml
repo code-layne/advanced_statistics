@@ -1,0 +1,21 @@
+# Homework item 2b conditions (Unit 6, Lesson 6.11). Relative to the lesson directory.
+id: hw2b2
+points: 3
+task: >-
+  Employee turnover: new onboarding program, 18 of 240 left within the first year; old
+  program, 30 of 240. Test whether the new program reduced turnover (one-sided, alpha
+  = 0.05). Verify the conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: both groups are independent random samples (stated or assumed).
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using the pooled proportion: 240(0.1) = 24 and 240(0.9) = 216 for each
+      group, all at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: each sample is at most 10% of all employees in each program.

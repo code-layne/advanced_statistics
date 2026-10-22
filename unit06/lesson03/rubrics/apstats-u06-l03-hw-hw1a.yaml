@@ -1,0 +1,19 @@
+# Homework item 1a (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A 95% CI for the proportion of adults who exercise at least 3 days per week is
+  (0.42, 0.54). Write a complete interpretation of this CI.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 95% confidence and the interval (0.42, 0.54).
+  - id: parameter
+    points: 1
+    full: >-
+      Says the interval captures the TRUE proportion of ALL adults who exercise at least 3
+      days per week (the parameter, in context), not a sample result or a probability.
+examples:
+  - response: "There is a 95% chance the true proportion is between 0.42 and 0.54."
+    scores: {confidence: 0, parameter: 1}

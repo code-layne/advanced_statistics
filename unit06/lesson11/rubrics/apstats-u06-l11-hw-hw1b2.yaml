@@ -1,0 +1,21 @@
+# Homework item 1b conditions (Unit 6, Lesson 6.11). Relative to the lesson directory.
+id: hw1b2
+points: 3
+task: >-
+  Students who use social media more than 2 hours a day vs 2 hours or less: high use,
+  54 of 180 had a low GPA; low use, 36 of 200. Test whether high users have a higher
+  proportion of low-GPA outcomes (alpha = 0.05). Verify the conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: both groups are independent random samples (stated or assumed).
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using the pooled proportion: 180(0.237) = 42.7, 180(0.763) = 137.3,
+      200(0.237) = 47.4, 200(0.763) = 152.6, all at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: each sample is at most 10% of all students in each group.

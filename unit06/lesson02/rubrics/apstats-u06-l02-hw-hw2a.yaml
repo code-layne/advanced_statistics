@@ -1,0 +1,12 @@
+# Homework item 2, State (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw2a
+points: 1
+task: >-
+  A random sample of 80 fish from a lake finds 12 tagged (99% CI for the true
+  proportion tagged). State: define the parameter.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      Defines p as the true proportion of ALL fish in the lake that are tagged (not the
+      sample proportion).

@@ -1,0 +1,17 @@
+# Homework item 4 (Unit 6, Lesson 6.4). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  CDC: 18% of U.S. adults smoke. A researcher tests whether a county's rate differs; a
+  random sample of 450 county adults has 72 smokers. Reflection: what changes in the
+  setup if the researcher instead believed the county rate was higher than 18%?
+criteria:
+  - id: ha
+    points: 1
+    full: >-
+      Says Ha changes to p > 0.18 (a one-sided, greater-than alternative).
+  - id: same
+    points: 1
+    full: >-
+      Says H0 (p = 0.18), the conditions and the z statistic stay the same; only the
+      direction of Ha (which tail the p-value comes from) changes.

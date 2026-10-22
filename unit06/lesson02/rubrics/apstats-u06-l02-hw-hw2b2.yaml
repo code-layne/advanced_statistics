@@ -1,0 +1,12 @@
+# Homework item 2, Large Counts (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw2b2
+points: 1
+task: >-
+  A random sample of 80 fish from a lake finds 12 tagged (99% CI for the true
+  proportion tagged). Plan: Large Counts condition.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      Shows n p-hat = 12 and n(1 - p-hat) = 68 are both at least 10, so the condition is
+      met.

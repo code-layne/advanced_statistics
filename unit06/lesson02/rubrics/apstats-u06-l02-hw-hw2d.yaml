@@ -1,0 +1,17 @@
+# Homework item 2, Conclude (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  A random sample of 80 fish from a lake finds 12 tagged (99% CI for the true
+  proportion tagged). Conclude: interpret the interval (0.047, 0.253).
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      Says we are 99% confident and names the interval (0.047, 0.253) (or the student's
+      own correct interval).
+  - id: context
+    points: 1
+    full: >-
+      Says the interval captures the TRUE proportion of all fish in the lake that are
+      tagged.

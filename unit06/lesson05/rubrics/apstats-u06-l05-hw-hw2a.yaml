@@ -1,0 +1,19 @@
+# Homework item 2a (Unit 6, Lesson 6.5). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A company claims 80% of customers are satisfied; a watchdog group believes it is
+  lower. State H0 and Ha.
+criteria:
+  - id: h0
+    points: 1
+    full: >-
+      H0: p = 0.80, where p is the true proportion of all the company's customers who are
+      satisfied.
+  - id: ha
+    points: 1
+    full: >-
+      Ha: p < 0.80 (one-sided, lower).
+examples:
+  - response: "H0: p-hat = 0.80; Ha: p-hat < 0.80"
+    scores: {h0: 0, ha: 0}

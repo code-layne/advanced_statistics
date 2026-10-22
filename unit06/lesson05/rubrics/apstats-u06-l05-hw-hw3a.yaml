@@ -1,0 +1,17 @@
+# Homework item 3a (Unit 6, Lesson 6.5). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  Correct the statement: "p-value = 0.03 means there is only a 3% chance the study
+  results were due to chance."
+criteria:
+  - id: error
+    points: 1
+    full: >-
+      Identifies the error: the p-value is not the probability that the results are due to
+      chance (or that H0 is true).
+  - id: correction
+    points: 1
+    full: >-
+      Correct version: IF H0 were true, there is a 3% probability of getting a result at
+      least as extreme as the one observed.

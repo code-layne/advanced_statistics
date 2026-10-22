@@ -1,0 +1,21 @@
+# Homework item 3b (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  Sample size for a 95% CI with margin of error at most 0.05: with the pilot estimate
+  0.40 the minimum n is 369. How would the answer change using p-hat = 0.50 instead?
+  Would it be larger or smaller?
+criteria:
+  - id: larger
+    points: 1
+    full: >-
+      Says the required sample size would be larger: (1.96/0.05)^2(0.50)(0.50) = 384.16,
+      so n = 385 (instead of 369).
+  - id: reason
+    points: 1
+    full: >-
+      Explains that p-hat(1 - p-hat) is largest at p-hat = 0.5 (0.25 > 0.24), so 0.5 gives
+      the largest (most conservative) n.
+examples:
+  - response: "Smaller, because 0.5 is closer to the middle."
+    scores: {larger: 0, reason: 0}

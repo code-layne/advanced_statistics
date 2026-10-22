@@ -1,0 +1,17 @@
+# Homework item 2, State (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A national study: 72% of high school students do at least one extracurricular; an
+  administrator believes her district's rate has changed. 193 of 250 randomly selected
+  students participate. alpha = 0.05. State: hypotheses.
+criteria:
+  - id: h0
+    points: 1
+    full: >-
+      H0: p = 0.72, p = true proportion of all students in the district who participate
+      (about the parameter, not p-hat).
+  - id: ha
+    points: 1
+    full: >-
+      Ha: p != 0.72 (two-sided), matching the question's direction.

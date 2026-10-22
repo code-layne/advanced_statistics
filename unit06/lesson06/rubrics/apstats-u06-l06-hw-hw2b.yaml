@@ -1,0 +1,20 @@
+# Homework item 2, Plan (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw2b
+points: 3
+task: >-
+  A national study: 72% of high school students do at least one extracurricular; an
+  administrator believes her district's rate has changed. 193 of 250 randomly selected
+  students participate. alpha = 0.05. Plan: verify the conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the sample is random (stated), so the condition is met.
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using p0: 250(0.72) = 180 and 250(0.28) = 70 are both at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: the sample is at most 10% of all students in the district.

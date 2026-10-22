@@ -1,0 +1,15 @@
+# Homework item 1 (I), Large Counts (Unit 6, Lesson 6.1). Relative to the lesson directory.
+id: hw1a1
+points: 1
+task: >-
+  A poll of 350 randomly selected registered voters finds p-hat = 0.58 support a
+  ballot measure. Verify the Large Counts condition.
+criteria:
+  - id: counts
+    points: 1
+    full: >-
+      Computes n p-hat = 350(0.58) = 203 and n(1 - p-hat) = 350(0.42) = 147 and states
+      that both are at least 10.
+examples:
+  - response: "n is at least 30, so the condition is met."
+    scores: {counts: 0}

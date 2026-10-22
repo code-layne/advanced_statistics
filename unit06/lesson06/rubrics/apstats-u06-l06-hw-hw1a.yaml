@@ -1,0 +1,17 @@
+# Homework item 1, State (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A marketing firm claims 40% of a city's adults visited a website in the past month;
+  a competitor believes it is lower. 126 of a random sample of 350 adults visited.
+  alpha = 0.05. State: hypotheses.
+criteria:
+  - id: h0
+    points: 1
+    full: >-
+      H0: p = 0.40, p = true proportion of all adults in the city who visited the site
+      (about the parameter, not p-hat).
+  - id: ha
+    points: 1
+    full: >-
+      Ha: p < 0.40, matching the question's direction.

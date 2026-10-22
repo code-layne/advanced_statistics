@@ -1,0 +1,15 @@
+# Homework item 3b (Unit 6, Lesson 6.5). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  Correct the statement: "Since p-value = 0.62 is large, we have proven H0 is true."
+criteria:
+  - id: error
+    points: 1
+    full: >-
+      Identifies the error: a large p-value never proves H0 (we cannot accept H0 as true).
+  - id: correction
+    points: 1
+    full: >-
+      Correct version: the data do not give convincing evidence against H0, so we fail to
+      reject H0.

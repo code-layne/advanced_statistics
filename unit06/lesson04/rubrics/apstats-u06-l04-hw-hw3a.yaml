@@ -1,0 +1,15 @@
+# Homework item 3a (Unit 6, Lesson 6.4). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  A school claims 70% of students do extracurriculars; parents believe it has
+  increased. 135 of a random sample of 180 participate. State the hypotheses.
+criteria:
+  - id: h0
+    points: 1
+    full: >-
+      H0: p = 0.70 (p = true proportion of all students who participate).
+  - id: ha
+    points: 1
+    full: >-
+      Ha: p > 0.70 (one-sided, since the parents believe participation has increased).

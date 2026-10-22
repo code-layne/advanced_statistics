@@ -1,0 +1,12 @@
+# Homework item 1a, definitions (Unit 6, Lesson 6.8). Relative to the lesson directory.
+id: hw1a1
+points: 1
+task: >-
+  Independent random samples: City X, 168 of 280 adults exercise at least 3 times per
+  week; City Y, 126 of 240. Define p_X and p_Y.
+criteria:
+  - id: define
+    points: 1
+    full: >-
+      Defines p_X and p_Y as the TRUE (population) proportions of all adults in City X and
+      in City Y who exercise at least 3 times per week (not the sample proportions).

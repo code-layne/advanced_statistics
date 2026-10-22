@@ -1,0 +1,19 @@
+# Homework item 3a (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  Correcting errors (95% CI for the proportion of left-handed students, (0.09, 0.17)):
+  identify and correct the error in the statement "There is a 95% probability that the
+  true proportion of left-handed students is between 0.09 and 0.17."
+criteria:
+  - id: error
+    points: 1
+    full: >-
+      Identifies the error: once computed, the interval either contains p or not, so a
+      probability statement about this one interval is wrong (95% describes the method /
+      confidence).
+  - id: correction
+    points: 1
+    full: >-
+      Rewrites it as: we are 95% confident that the interval (0.09, 0.17) captures the
+      true proportion of left-handed students.
