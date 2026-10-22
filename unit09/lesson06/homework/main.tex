@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l06-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -22,13 +25,13 @@ A random sample of 45 high school seniors records their SAT scores. The research
 to estimate the mean SAT score for all seniors at this school with a 95\% confidence interval.
 
 \vspace{0.08in}
-(1) Procedure: \blank{9cm}
+(1) Procedure: \makebox[9cm][r]{\smash{\gradedblank[id=hw1a, type=rubric, points=1, display={\bfseries\boldmath 1-sample $t$-interval for $\mu$}]{7cm}{0.2in}}}
 
 \vspace{0.08in}
-(2) Parameter being estimated: \writeline
+(2) Parameter being estimated: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw1b, type=rubric, points=1, display={\bfseries\boldmath $\mu$ = true mean SAT score, all seniors here}]{3.3in}{0.2in}}}}
 
 \vspace{0.08in}
-(3) Conditions to check: \writelines{2}
+(3) Conditions to check: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2, display={\bfseries\boldmath Random; $n = 45 \ge 30$; $45 \le 10\%$ of seniors.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{notesbox}
 
 \begin{notesbox}{Problem 2}
@@ -36,14 +39,14 @@ A school randomly surveys 120 sophomores about how they get to school (walk, bus
 bike). The researcher tests whether the four options are equally popular.
 
 \vspace{0.08in}
-(1) Procedure: \blank{9cm}
+(1) Procedure: \makebox[9cm][r]{\smash{\gradedblank[id=hw2a, type=rubric, points=1, display={\bfseries\boldmath $\chi^2$ goodness-of-fit test}]{7cm}{0.2in}}}
 
 \vspace{0.08in}
-(2) $H_0$: \writeline
-$H_a$: \writeline
+(2) $H_0$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw2b1, type=rubric, points=1, display={\bfseries\boldmath All four $p = 0.25$}]{2.1in}{0.2in}}}}%
+$H_a$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw2b2, type=rubric, points=1, display={\bfseries\boldmath Some $p \ne 0.25$}]{1.9in}{0.2in}}}}%
 
 \vspace{0.08in}
-(3) Conditions to check: \writelines{2}
+(3) Conditions to check: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={\bfseries\boldmath Random; all expected $= 30 \ge 5$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{notesbox}
 
 \begin{notesbox}{Problem 3}
@@ -52,14 +55,14 @@ non-smoker. She tests whether the proportion of smokers in the city differs from
 national rate of 14\%.
 
 \vspace{0.08in}
-(1) Procedure: \blank{9cm}
+(1) Procedure: \makebox[9cm][r]{\smash{\gradedblank[id=hw3a, type=rubric, points=1, display={\bfseries\boldmath 1-proportion $z$-test}]{7cm}{0.2in}}}
 
 \vspace{0.08in}
-(2) $H_0$: \writeline
-$H_a$: \writeline
+(2) $H_0$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw3b1, type=rubric, points=1, display={\bfseries\boldmath $p = 0.14$}]{2.1in}{0.2in}}}}%
+$H_a$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw3b2, type=rubric, points=1, display={\bfseries\boldmath $p \ne 0.14$}]{1.9in}{0.2in}}}}%
 
 \vspace{0.08in}
-(3) Conditions to check: \writelines{2}
+(3) Conditions to check: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3c, type=rubric, points=2, display={\bfseries\boldmath Random; $80 \le 10\%$; $11.2, 68.8 \ge 10$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{notesbox}
 
 \begin{notesbox}{Problem 4}
@@ -68,14 +71,14 @@ A pediatrician follows 60 children for 5 years, recording average daily screen t
 time is linearly related to reading proficiency.
 
 \vspace{0.08in}
-(1) Procedure: \blank{9cm}
+(1) Procedure: \makebox[9cm][r]{\smash{\gradedblank[id=hw4a, type=rubric, points=1, display={\bfseries\boldmath $t$-test for slope}]{7cm}{0.2in}}}
 
 \vspace{0.08in}
-(2) $H_0$: \writeline
-$H_a$: \writeline
+(2) $H_0$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw4b1, type=rubric, points=1, display={\bfseries\boldmath $\beta = 0$}]{2.1in}{0.2in}}}}%
+$H_a$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw4b2, type=rubric, points=1, display={\bfseries\boldmath $\beta \ne 0$}]{1.9in}{0.2in}}}}%
 
 \vspace{0.08in}
-(3) Conditions to check: \writelines{2}
+(3) Conditions to check: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw4c, type=rubric, points=2, display={\bfseries\boldmath LINER: Linear, Independent, Normal residuals, Equal SD, Random.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{notesbox}
 
 \begin{notesbox}{Problem 5}
@@ -84,14 +87,14 @@ A study records whether a randomly selected sample of 200 adults (100 from urban
 tests whether anxiety rates differ between urban and rural adults.
 
 \vspace{0.08in}
-(1) Procedure: \blank{9cm}
+(1) Procedure: \makebox[9cm][r]{\smash{\gradedblank[id=hw5a, type=rubric, points=1, display={\bfseries\boldmath 2-proportion $z$-test}]{7cm}{0.2in}}}
 
 \vspace{0.08in}
-(2) $H_0$: \writeline
-$H_a$: \writeline
+(2) $H_0$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw5b1, type=rubric, points=1, display={\bfseries\boldmath $p_{\text{urban}} = p_{\text{rural}}$}]{2.1in}{0.2in}}}}%
+$H_a$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw5b2, type=rubric, points=1, display={\bfseries\boldmath $p_{\text{urban}} \ne p_{\text{rural}}$}]{1.9in}{0.2in}}}}%
 
 \vspace{0.08in}
-(3) Conditions to check: \writelines{2}
+(3) Conditions to check: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw5c, type=rubric, points=2, display={\bfseries\boldmath Random each group; 10\% each; Large Counts (pooled $\hat p$) $\ge 10$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{notesbox}
 
 \end{document}

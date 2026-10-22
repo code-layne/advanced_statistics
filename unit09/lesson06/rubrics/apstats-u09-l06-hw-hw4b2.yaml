@@ -1,0 +1,12 @@
+# Homework item 4(2), Ha (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw4b2
+points: 1
+task: >-
+  A pediatrician follows 60 children for 5 years recording daily screen time (x) and
+  reading proficiency (y); test whether screen time is linearly related to reading
+  proficiency. State Ha.
+criteria:
+  - id: alt
+    points: 1
+    full: >-
+      Ha: beta != 0.

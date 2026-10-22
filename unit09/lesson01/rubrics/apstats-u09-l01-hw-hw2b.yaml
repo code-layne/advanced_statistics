@@ -1,0 +1,18 @@
+# Homework item 2b (Unit 9, Lesson 9.1). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  Study hours (x) vs exam score (y) for 8 students shows b = 4.5 with much scatter.
+  State the population question as a hypothesis statement.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      States H0: beta = 0 with beta the POPULATION slope, in context: no linear
+      relationship between study hours and exam score in the population.
+  - id: question
+    points: 1
+    full: >-
+      Frames the statistician's question: is the sample slope convincingly different from
+      0, or could it have arisen by chance if beta = 0? (May note that with n = 8 and high
+      scatter b may not be significant.)

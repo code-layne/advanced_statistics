@@ -1,0 +1,18 @@
+# Homework item 1d (Unit 9, Lesson 9.5). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  Age (x, years) vs maximum running speed (y, mph), random sample of 28 adult
+  recreational runners: b = -0.12, SE_b = 0.037, t = -3.24, p = 0.003. State a
+  conclusion at alpha = 0.05. Does the data provide evidence that age is linearly
+  related to maximum running speed?
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p = 0.003 with 0.05 and rejects H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes in context: convincing evidence that age is linearly related to maximum
+      running speed (true slope not 0) for adult recreational runners.

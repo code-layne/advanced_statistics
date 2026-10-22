@@ -1,0 +1,16 @@
+# Homework item 2b (Unit 9, Lesson 9.2). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  18 cities, January high temperature (x, F) vs monthly heating fuel cost (y, $): b =
+  -4.8, SE_b = 1.1, t* = 2.120, 95% CI (-7.13, -2.47). A utility company claims beta =
+  -5. Is the claim consistent with your CI? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, the claim is consistent (plausible).
+  - id: reason
+    points: 1
+    full: >-
+      Because -5 lies inside the interval (-7.13, -2.47).

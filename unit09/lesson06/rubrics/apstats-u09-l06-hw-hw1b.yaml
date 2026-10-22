@@ -1,0 +1,11 @@
+# Homework item 1(2) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw1b
+points: 1
+task: >-
+  A random sample of 45 high school seniors' SAT scores; estimate the mean SAT score
+  for all seniors at the school with a 95% CI. State the parameter being estimated.
+criteria:
+  - id: param
+    points: 1
+    full: >-
+      mu = the true mean SAT score of all seniors at this school.

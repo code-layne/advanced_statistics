@@ -1,0 +1,16 @@
+# Homework item 2(3) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  A school randomly surveys 120 sophomores on how they get to school (walk, bus, car,
+  bike); test whether the four options are equally popular. List the key conditions
+  that must be checked.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random sample (stated); may include 10%: 120 is at most 10% of all sophomores.
+  - id: large
+    points: 1
+    full: >-
+      Large Counts: all expected counts are 120(0.25) = 30, at least 5.

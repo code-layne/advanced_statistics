@@ -1,0 +1,12 @@
+# Homework item 4(1) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw4a
+points: 1
+task: >-
+  A pediatrician follows 60 children for 5 years recording daily screen time (x) and
+  reading proficiency (y); test whether screen time is linearly related to reading
+  proficiency. Name the inference procedure.
+criteria:
+  - id: procedure
+    points: 1
+    full: >-
+      Names a t-test for the slope of the regression line.

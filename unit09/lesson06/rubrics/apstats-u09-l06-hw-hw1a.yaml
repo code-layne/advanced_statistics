@@ -1,0 +1,11 @@
+# Homework item 1(1) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw1a
+points: 1
+task: >-
+  A random sample of 45 high school seniors' SAT scores; estimate the mean SAT score
+  for all seniors at the school with a 95% CI. Name the inference procedure.
+criteria:
+  - id: procedure
+    points: 1
+    full: >-
+      Names a one-sample t-interval for a mean.

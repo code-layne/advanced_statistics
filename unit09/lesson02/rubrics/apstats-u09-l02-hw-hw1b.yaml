@@ -1,0 +1,23 @@
+# Homework item 1b (Unit 9, Lesson 9.2). Relative to the lesson directory.
+id: hw1b
+points: 3
+task: >-
+  Sleep (x, hours) vs reaction time (y, ms) for a random sample of 22 college
+  students: b = -18.6, SE_b = 5.3, 95% CI (-29.7, -7.5). Given: random sample;
+  residual plot shows random scatter with roughly constant spread; normality stated.
+  Briefly note how each LINER condition is addressed.
+criteria:
+  - id: le
+    points: 1
+    full: >-
+      Linear and Equal variance: both justified by the residual plot (random scatter, no
+      curve; roughly constant spread).
+  - id: i
+    points: 1
+    full: >-
+      Independent: random sample and n = 22 is at most 10% of all college students.
+  - id: nr
+    points: 1
+    full: >-
+      Normal: addressed as stated/assumed in the problem; Random: random sample of
+      students.

@@ -1,0 +1,12 @@
+# Homework item 2a, meaning of beta = 0 (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw2a3
+points: 1
+task: >-
+  Explain what beta = 0 means in context: rainfall (inches) vs umbrella sales, random
+  sample of 60 days.
+criteria:
+  - id: meaning
+    points: 1
+    full: >-
+      Says daily rainfall has no linear relationship with umbrella sales in the population
+      (about the population, not the sample).

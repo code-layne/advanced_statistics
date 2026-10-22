@@ -1,0 +1,12 @@
+# Homework item 2c, H0 (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw2c1
+points: 1
+task: >-
+  State H0 in terms of beta: class size vs average exam score, random sample of 35
+  classes; a teacher claims larger classes score lower (beta < -1).
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      H0: beta = 0 (key); also accept H0: beta = -1 when paired with Ha: beta < -1, which
+      tests the teacher's stated claim directly (beta is the population slope).

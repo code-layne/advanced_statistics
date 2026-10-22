@@ -1,0 +1,11 @@
+# Homework item 2a, Ha (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw2a2
+points: 1
+task: >-
+  State Ha in terms of beta: rainfall (inches) vs umbrella sales, random sample of 60
+  days.
+criteria:
+  - id: alt
+    points: 1
+    full: >-
+      Ha: beta != 0 (two-sided).

@@ -1,0 +1,21 @@
+# Homework item 1a (Unit 9, Lesson 9.1). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A least-squares line for daily temperature (x, degrees F) and hot drinks sold (y)
+  from a random sample of 20 days is y-hat = 85 - 1.4x. Interpret the slope in
+  context.
+criteria:
+  - id: direction
+    points: 1
+    full: >-
+      Says the PREDICTED number of hot drinks sold decreases by 1.4 (predicted/average,
+      not actual).
+  - id: unit
+    points: 1
+    full: >-
+      ...for each 1 degree F increase in daily temperature (in context, per one-unit
+      increase in x).
+examples:
+  - response: "When temperature goes up 1 degree, the cafe sells 1.4 fewer hot drinks."
+    scores: {direction: 0, unit: 1}

@@ -1,0 +1,17 @@
+# Homework item 2c (Unit 9, Lesson 9.3). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  15 cities: daily temperature (x, F) vs monthly electricity use (y, kWh); 90% CI for
+  the slope (12.3, 31.8). A 60-city study gives (18.1, 26.7). Explain why the second
+  CI is narrower, using the concept of standard error.
+criteria:
+  - id: n
+    points: 1
+    full: >-
+      Points to the larger sample size (60 vs 15 cities).
+  - id: se
+    points: 1
+    full: >-
+      Explains that larger n makes the standard error of the slope (SE_b) smaller, so the
+      margin of error t* SE_b is smaller and the CI narrower.
