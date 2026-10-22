@@ -1,0 +1,18 @@
+# Homework item 1b (Unit 3, Lesson 3.1). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A magazine publishes an online poll asking readers whether they support a new
+  environmental regulation; over 10,000 people vote. Identify whose opinion is over-
+  or under-represented.
+criteria:
+  - id: over
+    points: 1
+    full: >-
+      Says people with strong feelings about the regulation (motivated readers who choose
+      to vote) are over-represented.
+  - id: under
+    points: 1
+    full: >-
+      Says people who are neutral or indifferent, or who do not read the magazine, are
+      under-represented.

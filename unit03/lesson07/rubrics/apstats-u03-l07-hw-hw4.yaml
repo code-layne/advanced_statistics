@@ -1,0 +1,19 @@
+# Homework item 4 (Unit 3, Lesson 3.7). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  Explain the difference between statistical significance and practical importance.
+  Give an example.
+criteria:
+  - id: difference
+    points: 1
+    full: >-
+      Says statistical significance means the result is too large to be explained by
+      chance alone, while practical importance means the difference (effect size) is large
+      enough to matter in real life.
+  - id: example
+    points: 1
+    full: >-
+      Gives an example of a result that is statistically significant but not practically
+      important (e.g., a 1 mm Hg drop in blood pressure that is significant with n =
+      100,000), or the reverse, with the reason.

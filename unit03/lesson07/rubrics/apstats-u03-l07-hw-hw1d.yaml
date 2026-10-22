@@ -1,0 +1,12 @@
+# Homework item 1, generalize to (Unit 3, Lesson 3.7). Relative to the lesson directory.
+id: hw1d
+points: 1
+task: >-
+  800 adults are randomly selected from a national voter registry and surveyed about
+  political views and social media use; heavier social media users report more
+  polarized views. To what population can the results be generalized?
+criteria:
+  - id: population
+    points: 1
+    full: >-
+      Names all registered voters in the nation (the registry the sample was drawn from).

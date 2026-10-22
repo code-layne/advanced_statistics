@@ -1,0 +1,14 @@
+# Homework item 1, treatments (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw1c
+points: 1
+task: >-
+  A sleep aid study: 100 adults are randomly assigned, 50 take the new pill nightly
+  and 50 take a look-alike sugar pill. Name the treatments.
+criteria:
+  - id: both
+    points: 1
+    full: >-
+      Names both treatments: the new sleep pill and the look-alike sugar pill (placebo).
+examples:
+  - response: "the sleep pill"
+    scores: {both: 0}

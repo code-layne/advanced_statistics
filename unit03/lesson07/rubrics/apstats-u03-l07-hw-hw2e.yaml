@@ -1,0 +1,18 @@
+# Homework item 2, conclusion (Unit 3, Lesson 3.7). Relative to the lesson directory.
+id: hw2e
+points: 2
+task: >-
+  60 student volunteers are randomly assigned to an active-learning classroom or a
+  traditional lecture; the active-learning group scores significantly higher on the
+  final exam. Write a proper scope-of-inference conclusion.
+criteria:
+  - id: causation
+    points: 1
+    full: >-
+      States that the active-learning classroom caused the higher exam scores, because the
+      students were randomly assigned.
+  - id: generalization
+    points: 1
+    full: >-
+      States that the finding cannot be generalized beyond students similar to these
+      volunteers, because they were not randomly selected.

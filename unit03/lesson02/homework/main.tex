@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l02-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -22,9 +25,9 @@ asks each one about fruit and vegetable consumption and blood pressure. High con
 have significantly lower blood pressure.
 
 \vspace{6pt}
-Study type: \blank{5cm} \quad Random selection? \blank{2cm} \quad Random assignment? \blank{2cm}\\[6pt]
-Can we conclude diet \emph{causes} lower BP? \blank{3cm} \quad Generalize to city adults? \blank{3cm}\\[6pt]
-Explain: \writeline\\[1pt]\writeline
+Study type: \makebox[5cm][r]{\smash{\gradedblank[id=hw1a, type=short, points=1, answer={observational study}, check=text]{1.3in}{0.2in}}} \quad Random selection? \makebox[2cm][l]{\hspace{31bp}\smash{\gradedblank[id=hw1b, type=short, points=1, answer=yes, check=text]{0.45in}{0.2in}}} \quad Random assignment? \makebox[2cm][l]{\hspace{0.6in}\smash{\gradedblank[id=hw1c, type=short, points=1, answer=no, check=text]{0.8in}{0.2in}}}\\[6pt]
+Can we conclude diet \emph{causes} lower BP? \makebox[3cm][l]{\hspace{44bp}\smash{\gradedblank[id=hw1d, type=short, points=1, answer=no, check=text]{0.65in}{0.2in}}} \quad Generalize to city adults? \makebox[3cm][l]{\hspace{46bp}\smash{\gradedblank[id=hw1e, type=short, points=1, answer=yes, check=text]{0.9in}{0.2in}}}\\[6pt]
+Explain: \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw1f, type=rubric, points=2, display={Observational: confounding (exercise, genetics), so no causation. Random selection: generalize to city adults.}]{5.4in}{\gradedlinesheight{2}}}\hspace{\dimexpr 5.4in-3pt\relax}}\\[1pt]\writeline}
 
 \vspace{8pt}
 \textbf{2.} A tech company recruits 80 employees and randomly assigns 40 to a
@@ -32,10 +35,10 @@ standing-desk program and 40 to regular desks. After 3 months, the standing-desk
 group reports significantly less back pain.
 
 \vspace{6pt}
-Study type: \blank{5cm} \quad Random selection? \blank{2cm} \quad Random assignment? \blank{2cm}\\[6pt]
-Can we conclude standing desks \emph{caused} less pain? \blank{3cm}\\[6pt]
-Can we generalize to all office workers? \blank{3cm}\\[6pt]
-Explain: \writeline\\[1pt]\writeline
+Study type: \makebox[5cm][r]{\smash{\gradedblank[id=hw2a, type=short, points=1, answer=experiment, check=text]{1.3in}{0.2in}}} \quad Random selection? \makebox[2cm][l]{\hspace{31bp}\smash{\gradedblank[id=hw2b, type=short, points=1, answer=no, check=text]{0.45in}{0.2in}}} \quad Random assignment? \makebox[2cm][l]{\hspace{0.6in}\smash{\gradedblank[id=hw2c, type=short, points=1, answer=yes, check=text]{0.8in}{0.2in}}}\\[6pt]
+Can we conclude standing desks \emph{caused} less pain? \makebox[3cm][l]{\hspace{46bp}\smash{\gradedblank[id=hw2d, type=short, points=1, answer=yes, check=text]{1in}{0.2in}}}\\[6pt]
+Can we generalize to all office workers? \makebox[3cm][l]{\hspace{46bp}\smash{\gradedblank[id=hw2e, type=short, points=1, answer=no, check=text]{1in}{0.2in}}}\\[6pt]
+Explain: \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw2f, type=rubric, points=2, display={Random assignment, so causation. Volunteers, not randomly selected: no generalizing beyond this company.}]{5.4in}{\gradedlinesheight{2}}}\hspace{\dimexpr 5.4in-3pt\relax}}\\[1pt]\writeline}
 
 \vspace{8pt}
 \textbf{3.} Free Response Practice:\\
@@ -47,11 +50,11 @@ group. After 6 weeks, students in the intervention group score significantly hig
 \vspace{6pt}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Can we conclude the intervention caused higher scores? Explain.\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw3a, type=rubric, points=2, display={Yes: random assignment, so the intervention caused the higher scores.}]{6in}{\gradedlinesheight{2}}}\hspace{\dimexpr 6in-3pt\relax}}\\[1pt]\writeline}
   \item Can we generalize to all third-graders? Explain.\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={No: volunteers from one school, not a random sample of all third-graders.}]{6in}{\gradedlinesheight{2}}}\hspace{\dimexpr 6in-3pt\relax}}\\[1pt]\writeline}
   \item What change to the study design would allow generalization?\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw3c, type=rubric, points=2, display={Randomly select students from all third-graders (e.g., a district registry).}]{6in}{\gradedlinesheight{2}}}\hspace{\dimexpr 6in-3pt\relax}}\\[1pt]\writeline}
 \end{enumerate}
 \end{practicebox}
 

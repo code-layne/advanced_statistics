@@ -1,0 +1,18 @@
+# Homework item 2b (Unit 3, Lesson 3.6). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  A dentist compares two toothpaste brands for whitening; each patient uses Brand A on
+  one side and Brand B on the other (side chosen by coin flip). Why is a matched pairs
+  design the most appropriate design?
+criteria:
+  - id: both
+    points: 1
+    full: >-
+      Says each patient receives both brands (one side each), so each patient serves as
+      their own comparison.
+  - id: controls
+    points: 1
+    full: >-
+      Says this controls individual differences (diet, saliva chemistry, brushing habits),
+      giving a more precise comparison of the brands.

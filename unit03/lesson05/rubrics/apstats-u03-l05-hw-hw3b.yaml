@@ -1,0 +1,16 @@
+# Homework item 3, pairing (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A researcher pairs 60 participants by current weight and randomly assigns Diet A or
+  Diet B within each pair. Why is pairing by weight appropriate here?
+criteria:
+  - id: affects
+    points: 1
+    full: >-
+      Says current weight likely affects the response (weight-loss outcome).
+  - id: precision
+    points: 1
+    full: >-
+      Says pairing removes the weight differences from the comparison, giving a more
+      precise estimate of the diet effect.

@@ -1,0 +1,17 @@
+# Homework item 4c (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw4c
+points: 2
+task: >-
+  A researcher randomly selects 800 adults but only 200 complete the survey. How could
+  this distort the results?
+criteria:
+  - id: differ
+    points: 1
+    full: >-
+      Says the 200 who completed the survey may differ systematically from the 600 who did
+      not (e.g., more engaged, more health-conscious, more opinionated).
+  - id: direction
+    points: 1
+    full: >-
+      Says the estimate is then pulled toward the responders' views or characteristics, so
+      it is biased in that direction.

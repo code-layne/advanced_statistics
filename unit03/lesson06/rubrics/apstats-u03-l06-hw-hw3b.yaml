@@ -1,0 +1,17 @@
+# Homework item 3b (Unit 3, Lesson 3.6). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A biologist tests whether a new growth hormone increases plant height, using 36
+  seedlings, all from the same variety and grown in the same conditions. Why is
+  blocking not needed here?
+criteria:
+  - id: homogeneous
+    points: 1
+    full: >-
+      Says the seedlings are alike (same variety, same growing conditions).
+  - id: no_variable
+    points: 1
+    full: >-
+      Says there is no known nuisance variable to block on, so a completely randomized
+      design is enough.
