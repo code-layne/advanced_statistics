@@ -1,0 +1,15 @@
+# Homework item 3b (Unit 4, Lesson 4.10). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  n = 6 students selected from N = 30. Check the 10% condition: is n <= 0.10 x N? Show
+  the calculation.
+criteria:
+  - id: calc
+    points: 1
+    full: >-
+      Computes 0.10 x 30 = 3 and compares with n = 6.
+  - id: conclude
+    points: 1
+    full: >-
+      Concludes 6 > 3, so the 10% condition is not met (independence cannot be assumed).

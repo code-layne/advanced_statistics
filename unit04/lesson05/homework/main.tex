@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l05-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -34,39 +37,39 @@ One student is selected at random.
 \textbf{1.} Write the formula for conditional probability, then use it to compute
 $P(\text{GPA 3.5--4.0} | \text{Quiet Room})$. Show all steps.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
-  \item Formula: \blank{9cm}
-  \item $P(\text{GPA 3.5--4.0} \cap \text{Quiet Room}) = $ \blank{4cm}
-  \item $P(\text{Quiet Room}) = $ \blank{4cm}
-  \item $P(\text{GPA 3.5--4.0} | \text{Quiet Room}) = $ \blank{5cm}
-  \item Interpret in context: \writeline\writeline
+  \item Formula: \makebox[9cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1a, type=rubric, points=1, display={$P(A|B) = P(A \cap B)/P(B)$}]{7.4cm}{0.24in}}}}
+  \item $P(\text{GPA 3.5--4.0} \cap \text{Quiet Room}) = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1b, type=short, points=1, answer=0.1667, check=numeric, tolerance=0.002, display={$40/240 = 1/6$}]{2.4cm}{0.2in}}}}
+  \item $P(\text{Quiet Room}) = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1c, type=short, points=1, answer=0.375, check=numeric, tolerance=0.002, display={$90/240 = 3/8$}]{2.4cm}{0.2in}}}}
+  \item $P(\text{GPA 3.5--4.0} | \text{Quiet Room}) = $ \makebox[5cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1d, type=short, points=1, answer=0.444, check=numeric, tolerance=0.002, display={$40/90 \approx 0.444$}]{3.4cm}{0.2in}}}}
+  \item Interpret in context: \gradedhide{\writeline\writeline}\gradedright{\raisebox{-10pt}{\gradedblank[id=hw1e, type=rubric, points=2, display={Among quiet-room students, about 44.4\% have a GPA of 3.5--4.0.}]{4.5in}{0.22in}}}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{2.} Compute $P(\text{Music On} | \text{GPA below 3.0})$. Show setup.\\
-\blank{4cm} $\div$ \blank{4cm} $=$ \blank{3cm}
+\makebox[4cm][l]{\hspace{1.2cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2a, type=short, points=1, answer=30, check=numeric, tolerance=0]{2.6cm}{0.2in}}}} $\div$ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2b, type=short, points=1, answer=70, check=numeric, tolerance=0]{2.2cm}{0.2in}}}} $=$ \makebox[3cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2c, type=short, points=1, answer=0.429, check=numeric, tolerance=0.002]{2.2cm}{0.2in}}}}
 
 \vspace{8pt}
 \textbf{3.} Use the multiplication rule to verify $P(\text{Group Study} \cap \text{GPA 3.0--3.4})$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
-  \item $P(\text{Group Study}) = $ \blank{4cm}
-  \item $P(\text{GPA 3.0--3.4} | \text{Group Study}) = $ \blank{4cm}
-  \item Product = \blank{5cm} \quad Table cell / 240 = \blank{5cm} \quad Match? \blank{2cm}
+  \item $P(\text{Group Study}) = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a, type=short, points=1, answer=0.292, check=numeric, tolerance=0.002, display={$70/240 \approx 0.292$}]{2.4cm}{0.2in}}}}
+  \item $P(\text{GPA 3.0--3.4} | \text{Group Study}) = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3b, type=short, points=1, answer=0.429, check=numeric, tolerance=0.002, display={$30/70 \approx 0.429$}]{2.4cm}{0.2in}}}}
+  \item Product = \makebox[5cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3c1, type=short, points=1, answer=0.125, check=numeric, tolerance=0.002]{3cm}{0.2in}}}} \quad Table cell / 240 = \makebox[5cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3c2, type=short, points=1, answer=0.125, check=numeric, tolerance=0.002]{3cm}{0.2in}}}} \quad Match? \makebox[2cm][l]{\hspace{0.7cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3c3, type=short, points=1, answer=yes, check=text]{1.8cm}{0.2in}}}}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{4.} A student says: ``$P(\text{Quiet Room}|\text{GPA 3.5--4.0})$ is the same
 as $P(\text{GPA 3.5--4.0}|\text{Quiet Room})$ because they both involve the same two events.''
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
-  \item Compute both values. \writeline\writeline
-  \item Is the student's claim correct? Explain the error. \writeline\writeline
+  \item Compute both values. \gradedhide{\writeline\writeline}\gradedright{\raisebox{-4pt}{\textit{1st:}~\gradedblank[id=hw4a1, type=short, points=1, answer=0.5, check=numeric, tolerance=0.002]{1in}{0.2in}\quad \textit{2nd:}~\gradedblank[id=hw4a2, type=short, points=1, answer=0.444, check=numeric, tolerance=0.002]{1in}{0.2in}}}
+  \item Is the student's claim correct? Explain the error. \gradedhide{\writeline\writeline}\gradedright{\raisebox{-10pt}{\gradedblank[id=hw4b, type=rubric, points=2, display={No: denominators differ; order matters.}]{3in}{0.22in}}}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{5.} (AP Free-Response Style) In a complete sentence, interpret
 $P(\text{GPA 3.5--4.0} | \text{Music On})$ in context.
 First compute the value, then write your sentence.\\
-Calculation: \blank{6cm}\\
-Sentence: \writeline\writeline
+Calculation: \makebox[6cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw5a, type=short, points=1, answer=0.25, check=numeric, tolerance=0.002, display={$20/80 = 0.25$}]{2.5cm}{0.2in}}}}\\
+Sentence: \gradedhide{\writeline\writeline}\gradedright{\raisebox{-10pt}{\gradedblank[id=hw5b, type=rubric, points=2, display={Among students who study with music on, 25\% have a GPA of 3.5--4.0.}]{5.2in}{0.22in}}}
 
 \vspace{8pt}
 \textbf{6.} (Extension) Is $P(\text{Quiet Room}|\text{GPA 3.5--4.0})$ greater than,

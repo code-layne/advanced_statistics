@@ -1,0 +1,16 @@
+# Homework item 3a (Unit 4, Lesson 4.4). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  Same table. E = condition present, F = condition absent. Are E and F mutually
+  exclusive? Why or why not?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, E and F are mutually exclusive.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that a patient either has the condition or does not, so the two cannot both
+      be true for the same patient (no patient is in both rows).

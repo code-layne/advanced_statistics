@@ -1,0 +1,16 @@
+# Homework item 2c (Unit 4, Lesson 4.11). Relative to the lesson directory.
+id: hw2c2
+points: 2
+task: >-
+  X ~ B(50, 0.20) = number correct when guessing on 50 five-option questions; P(X >=
+  30) is essentially 0. Is passing (30 or more) likely by guessing?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no, passing by guessing is extremely unlikely (essentially impossible).
+  - id: reason
+    points: 1
+    full: >-
+      Supports it with the probability (about 0) or by noting 30 is far above the mean of
+      10 (about 7 SDs).

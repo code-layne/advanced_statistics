@@ -1,0 +1,20 @@
+# Homework item 2b (Unit 4, Lesson 4.2). Relative to the lesson directory.
+id: hw2b
+points: 3
+task: >-
+  A 5-question quiz, 4 choices each, student guesses randomly. Design a simulation
+  using a die or random digits 1-4 to estimate P(at least 3 correct).
+criteria:
+  - id: assign
+    points: 1
+    full: >-
+      Assigns outcomes with probability 1/4 to 'correct', e.g. digit 1 = correct and 2-4 =
+      wrong (ignoring other digits/die faces as needed).
+  - id: trial
+    points: 1
+    full: >-
+      One trial = 5 outcomes (one quiz of 5 questions).
+  - id: event
+    points: 1
+    full: >-
+      Counts the number correct in each trial; the event of interest is 3 or more correct.

@@ -1,0 +1,17 @@
+# Homework item 3a (Unit 4, Lesson 4.1). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  The last 6 Sundays in a city were all sunny; the historical probability of a sunny
+  Sunday is 0.45. Write a statistical question it suggests.
+criteria:
+  - id: question
+    points: 1
+    full: >-
+      Asks whether the probability of a sunny Sunday in this city is now higher than 0.45
+      (a question about the long-run process).
+  - id: chance
+    points: 1
+    full: >-
+      Allows for chance: asks whether 6 sunny Sundays in a row could be explained by
+      random variation.

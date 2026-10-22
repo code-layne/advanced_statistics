@@ -1,0 +1,17 @@
+# Homework item 3a (Unit 4, Lesson 4.10). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  A teacher randomly calls on 6 of 30 students without replacement (10 did not do the
+  homework); X = number called on who did not. Is this a binomial setting? Which
+  condition(s) are violated?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says it is not (strictly) binomial.
+  - id: condition
+    points: 1
+    full: >-
+      Names independence (and/or same p) as violated because selection is without
+      replacement, so the probability changes from one call to the next.

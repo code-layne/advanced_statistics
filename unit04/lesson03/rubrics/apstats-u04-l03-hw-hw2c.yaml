@@ -1,0 +1,17 @@
+# Homework item 2c (Unit 4, Lesson 4.3). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  A clinic's patients have blood type O with relative frequency 0.44. Interpret P(type
+  O) = 0.44 in the context of this clinic.
+criteria:
+  - id: repeat
+    points: 1
+    full: >-
+      Refers to randomly selecting many patients from this clinic (a long run of
+      selections).
+  - id: context
+    points: 1
+    full: >-
+      Says about 44% of them will have type O blood in the long run, in the clinic's
+      context.

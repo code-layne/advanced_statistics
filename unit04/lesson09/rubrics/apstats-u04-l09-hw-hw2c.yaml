@@ -1,0 +1,16 @@
+# Homework item 2c (Unit 4, Lesson 4.9). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  SD(X) = $2.00 and SD(Y) = $0.75 for independent X, Y. A friend claims the SD of the
+  total is $2.75. Explain the error.
+criteria:
+  - id: error
+    points: 1
+    full: >-
+      Identifies the error: the friend added the standard deviations directly.
+  - id: fix
+    points: 1
+    full: >-
+      Says variances add (for independent variables): add the variances, then take the
+      square root (giving about $2.14).

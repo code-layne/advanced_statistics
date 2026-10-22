@@ -1,0 +1,18 @@
+# Homework item 4b (Unit 4, Lesson 4.5). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  A student says P(Quiet Room | GPA 3.5-4.0) is the same as P(GPA 3.5-4.0 | Quiet
+  Room) because they involve the same two events. Is the claim correct? Explain the
+  error.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says the claim is incorrect (the values differ: 0.5 vs. about 0.444).
+  - id: reason
+    points: 1
+    full: >-
+      Explains that the given (conditioning) group differs, so the denominators differ:
+      one restricts to high-GPA students (80), the other to quiet-room studiers (90); the
+      order of conditioning matters.

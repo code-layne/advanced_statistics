@@ -1,0 +1,14 @@
+# Homework item 2c interpretation (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw2c2
+points: 2
+task: >-
+  Bolts are tested until the first oversized one (p = 0.04); mu_X = 25. Interpret.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average.
+  - id: context
+    points: 1
+    full: >-
+      Says about 25 bolts are tested, on average, to find the first oversized bolt.

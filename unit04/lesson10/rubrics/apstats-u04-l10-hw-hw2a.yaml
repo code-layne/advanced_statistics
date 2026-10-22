@@ -1,0 +1,17 @@
+# Homework item 2a (Unit 4, Lesson 4.10). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  200 randomly selected adults from a city of 500,000; 60% historically support the
+  program. Check BINS. Is the 10% condition relevant? Explain.
+criteria:
+  - id: bins
+    points: 1
+    full: >-
+      Checks BINS: binary (support or not), fixed n = 200, same p = 0.60, independence via
+      the 10% condition.
+  - id: tenpct
+    points: 1
+    full: >-
+      Says the 10% condition is relevant because sampling is without replacement, and it
+      is met: 200 <= 0.10 x 500,000 = 50,000.

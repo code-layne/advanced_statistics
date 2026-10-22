@@ -1,0 +1,17 @@
+# Homework item 4a (Unit 4, Lesson 4.6). Relative to the lesson directory.
+id: hw4a
+points: 2
+task: >-
+  A student claims TV Series and Under 25 are independent because being under 25
+  doesn't cause you to watch TV series. Is this reasoning correct? What is the actual
+  test?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says the reasoning is incorrect: independence is not about causation.
+  - id: test
+    points: 1
+    full: >-
+      States the test: events are independent if knowing one does not change the
+      probability of the other, i.e. P(A | B) = P(A) (or P(A and B) = P(A)P(B)).

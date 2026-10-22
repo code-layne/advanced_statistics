@@ -1,0 +1,16 @@
+# Homework item 4b (Unit 4, Lesson 4.10). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  C(6, 2) = 15. In one sentence, explain what this number represents in a binomial
+  experiment with n = 6 trials and exactly 2 successes.
+criteria:
+  - id: count
+    points: 1
+    full: >-
+      Says it is the number of different ways (arrangements/orderings) the successes can
+      occur.
+  - id: context
+    points: 1
+    full: >-
+      Specifically exactly 2 successes among the 6 trials.

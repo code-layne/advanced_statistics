@@ -1,0 +1,11 @@
+# Homework item 3a, why (Unit 4, Lesson 4.6). Relative to the lesson directory.
+id: hw3a2
+points: 1
+task: >-
+  Why are Movies and Documentaries (most-used content type) mutually exclusive?
+criteria:
+  - id: why
+    points: 1
+    full: >-
+      Each subscriber has exactly one most-used content type, so no subscriber is in both
+      Movies and Documentaries (P(both) = 0).

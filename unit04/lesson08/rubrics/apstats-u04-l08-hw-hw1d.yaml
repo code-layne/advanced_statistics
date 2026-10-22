@@ -1,0 +1,15 @@
+# Homework item 1d (Unit 4, Lesson 4.8). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  X = complaints per day, mu_X = 1.20, sigma_X = 1.17. Interpret sigma_X in context.
+criteria:
+  - id: typical
+    points: 1
+    full: >-
+      Describes sigma as a typical distance (variation) from the mean.
+  - id: context
+    points: 1
+    full: >-
+      Says the number of complaints per day typically varies from the mean of 1.20 by
+      about 1.17 complaints.

@@ -1,0 +1,14 @@
+# Homework item 1a (Unit 4, Lesson 4.5). Relative to the lesson directory.
+id: hw1a
+points: 1
+task: >-
+  Write the formula for conditional probability.
+criteria:
+  - id: formula
+    points: 1
+    full: >-
+      Writes P(A | B) = P(A and B) / P(B) (any equivalent notation, with the joint
+      probability over the probability of the given event).
+examples:
+  - response: "P(A|B) = P(A and B)/P(A)"
+    scores: {formula: 0}

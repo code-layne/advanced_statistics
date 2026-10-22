@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l11-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -21,25 +24,25 @@ A gardener plants 30 seeds. Let $X =$ the number that germinate.
 Assume $X \sim B(30, 0.85)$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Calculate $\mu_X$ and $\sigma_X$. Show formula setup.\\
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{$\mu_X =$~\gradedblank[id=hw1a1, type=short, points=1, answer=25.5, check=numeric, tolerance=0.05]{0.9in}{0.2in}\quad $\sigma_X =$~\gradedblank[id=hw1a2, type=short, points=1, answer=1.96, check=numeric, tolerance=0.01]{0.9in}{0.2in}}}
   \item Interpret $\mu_X$ in context.\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw1b, type=rubric, points=2, display={Over many plantings of 30 seeds, an average of 25.5 seeds germinate.}]{6.1in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
   \item Find $P(X \le 22)$. Write the calculator notation.\\
-        \writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw1c, type=short, points=1, answer=0.0698, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
   \item Find $P(X \ge 28)$. Write the inequality rewrite and the calculator notation.\\
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw1d, type=short, points=2, answer=0.1514, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{2.} A multiple-choice test has 50 questions, each with 5 options.
 A student guesses on every question. Let $X =$ the number correct.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item State the distribution of $X$: \blank{4cm}
+  \item State the distribution of $X$: \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2a, type=short, points=1, answer={B(50, 0.20)}, check=text]{2.4cm}{0.2in}}}}
   \item Compute $\mu_X$ and $\sigma_X$.\\
-        \writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{$\mu_X =$~\gradedblank[id=hw2b1, type=short, points=1, answer=10, check=numeric, tolerance=0, display={\textbf{10}}]{0.9in}{0.2in}\quad $\sigma_X =$~\gradedblank[id=hw2b2, type=short, points=1, answer=2.83, check=numeric, tolerance=0.01]{0.9in}{0.2in}}}
   \item The passing score is 30 out of 50. Find $P(X \ge 30)$.
         Is this likely to happen by guessing?\\
-        \writeline\\[1pt]\writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2c1, type=short, points=1, answer=0, check=numeric, tolerance=0.001, display={$\approx 0.0000$}]{1.3in}{0.2in}}}\\[1pt]\gradedhide{\writeline\gradedright{\raisebox{-1pt}{\gradedblank[id=hw2c2, type=rubric, points=2, display={No: 30 is about 7 SDs above the mean of 10; essentially impossible by guessing.}]{6.1in}{0.22in}}}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -47,10 +50,10 @@ A student guesses on every question. Let $X =$ the number correct.
 within 4 hours. On a given day, 120 patients visit the ER.
 Let $X =$ the number discharged within 4 hours. Assume $X \sim B(120, 0.40)$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item $\mu_X = $ \blank{2cm} \qquad $\sigma_X \approx$ \blank{2cm}
-  \item Interpret $\mu_X$: \writeline\\[1pt]\writeline
+  \item $\mu_X = $ \makebox[2cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a1, type=short, points=1, answer=48, check=numeric, tolerance=0]{0.9cm}{0.2in}}}} \qquad $\sigma_X \approx$ \makebox[2cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a2, type=short, points=1, answer=5.37, check=numeric, tolerance=0.01]{2cm}{0.2in}}}}
+  \item Interpret $\mu_X$: \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw3b, type=rubric, points=2, display={Over many days with 120 ER patients, an average of 48 are discharged within 4 hours.}]{4.9in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
   \item Find $P(40 \le X \le 50)$. Write this as a difference of two \texttt{binomcdf} values.\\
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw3c, type=short, points=2, answer=0.6257, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -60,13 +63,13 @@ a large city support a new public transit plan. A researcher randomly samples
 Let $X =$ the number who support the plan.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Define the distribution of $X$ and check all BINS conditions briefly.\\
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
+        \writeline\\[1pt]\gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw4a, type=rubric, points=3, display={$X \sim B(45, 0.62)$: support/not; sample $< 10\%$ of adults so independent; $n = 45$ fixed; $p = 0.62$ each.}]{6.1in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
   \item Calculate and interpret $\mu_X$.\\
-        \writeline\\[1pt]\writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4b1, type=short, points=1, answer=27.9, check=numeric, tolerance=0.05]{1.3in}{0.2in}}}\\[1pt]\gradedhide{\writeline\gradedright{\raisebox{-1pt}{\gradedblank[id=hw4b2, type=rubric, points=2, display={In many samples of 45 adults, an average of 27.9 would support the plan.}]{6.1in}{0.22in}}}}
   \item Calculate $\sigma_X$.\\
-        \writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4c, type=short, points=1, answer=3.26, check=numeric, tolerance=0.01]{1.3in}{0.2in}}}
   \item Find $P(X \ge 30)$. Show the equality rewrite and the calculator expression.\\
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4d, type=short, points=2, answer=0.3152, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{8pt}

@@ -1,0 +1,17 @@
+# Homework item 1a (Unit 4, Lesson 4.4). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  In a two-way table of 240 patients by blood type (A, B, AB, O) and condition
+  (present/absent), let A = Type A blood and B = Type O blood. Are A and B mutually
+  exclusive? Justify in context.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, A and B are mutually exclusive.
+  - id: reason
+    points: 1
+    full: >-
+      Justifies in context: each patient has exactly one blood type, so no patient has
+      both Type A and Type O (the intersection is empty, P(A and B) = 0).

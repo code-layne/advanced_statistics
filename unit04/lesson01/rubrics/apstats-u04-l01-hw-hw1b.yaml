@@ -1,0 +1,19 @@
+# Homework item 1b (Unit 4, Lesson 4.1). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A tennis player with a 65% clay-court win rate wins 10 consecutive clay matches.
+  Could chance alone explain this streak?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, chance is plausible (the streak is uncommon but not impossible).
+  - id: reason
+    points: 1
+    full: >-
+      Supports it: each match is more likely won than lost, (0.65)^10 is about 0.013,
+      and/or over a season with many opportunities such a streak can occur.
+examples:
+  - response: "No, 10 in a row is too many to be luck."
+    scores: {answer: 0, reason: 0}

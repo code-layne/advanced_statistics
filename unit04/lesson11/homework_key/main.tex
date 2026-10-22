@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l11-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -15,35 +18,35 @@
 
 \textbf{1.} Tomato seeds: $n=30$, $p=0.85$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{$\mu_X = 30(0.85) = 25.5$; \quad $\sigma_X = \sqrt{30(0.85)(0.15)} = \sqrt{3.825} \approx 1.96$}
-  \item \ans{If a gardener plants 30 seeds many times, an average of 25.5 seeds per planting would germinate.}
-  \item \ans{$P(X \le 22) = \texttt{binomcdf(30, 0.85, 22)} \approx 0.0480$}
-  \item \ans{$P(X \ge 28) = 1 - P(X \le 27) = 1 - \texttt{binomcdf(30, 0.85, 27)} \approx 1 - 0.5888 = 0.4112$}
+  \item \ans{$\mu_X = 30(0.85) = 25.5$; \quad $\sigma_X = \sqrt{30(0.85)(0.15)} = \sqrt{3.825} \approx 1.96$}\gradedkey{\raisebox{-3pt}{$\mu_X =$~\gradedblank[id=hw1a1, type=short, points=1, answer=25.5, check=numeric, tolerance=0.05]{0.9in}{0.2in}\quad $\sigma_X =$~\gradedblank[id=hw1a2, type=short, points=1, answer=1.96, check=numeric, tolerance=0.01]{0.9in}{0.2in}}}
+  \item \ans{If a gardener plants 30 seeds many times, an average of 25.5 seeds per planting would germinate.}\gradedkeyline{\kern0.4in\gradedblank[id=hw1b, type=rubric, points=2, display={Over many plantings of 30 seeds, an average of 25.5 seeds germinate.}]{6.1in}{\gradedlinesheight{2}-5pt}}
+  \item \ans{$P(X \le 22) = \texttt{binomcdf(30, 0.85, 22)} \approx 0.0480$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1c, type=short, points=1, answer=0.0698, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
+  \item \ans{$P(X \ge 28) = 1 - P(X \le 27) = 1 - \texttt{binomcdf(30, 0.85, 27)} \approx 1 - 0.5888 = 0.4112$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1d, type=short, points=2, answer=0.1514, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{2.} Multiple choice guessing: $n=50$, $p=0.20$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{$X \sim B(50, 0.20)$}
-  \item \ans{$\mu_X = 50(0.20) = 10$; \quad $\sigma_X = \sqrt{50(0.20)(0.80)} = \sqrt{8} \approx 2.83$}
-  \item \ans{$P(X \ge 30) = 1 - \texttt{binomcdf(50, 0.20, 29)} \approx 1 - 1.000 \approx 0.0000$. It is essentially impossible to pass by guessing --- the mean is only 10 and 30 is about 7 standard deviations above the mean.}
+  \item \ans{$X \sim B(50, 0.20)$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw2a, type=short, points=1, answer={B(50, 0.20)}, check=text]{2.4cm}{0.2in}}}
+  \item \ans{$\mu_X = 50(0.20) = 10$; \quad $\sigma_X = \sqrt{50(0.20)(0.80)} = \sqrt{8} \approx 2.83$}\gradedkey{\raisebox{-3pt}{$\mu_X =$~\gradedblank[id=hw2b1, type=short, points=1, answer=10, check=numeric, tolerance=0, display={\textbf{10}}]{0.9in}{0.2in}\quad $\sigma_X =$~\gradedblank[id=hw2b2, type=short, points=1, answer=2.83, check=numeric, tolerance=0.01]{0.9in}{0.2in}}}
+  \item \ans{$P(X \ge 30) = 1 - \texttt{binomcdf(50, 0.20, 29)} \approx 1 - 1.000 \approx 0.0000$. It is essentially impossible to pass by guessing --- the mean is only 10 and 30 is about 7 standard deviations above the mean.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw2c1, type=short, points=1, answer=0, check=numeric, tolerance=0.001, display={$\approx 0.0000$}]{1.3in}{0.2in}}}\gradedkeyline{\kern0.4in\gradedblank[id=hw2c2, type=rubric, points=2, display={No: 30 is about 7 SDs above the mean of 10; essentially impossible by guessing.}]{6.1in}{0.22in}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{3.} ER discharges: $n=120$, $p=0.40$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{$\mu_X = 120(0.40) = 48$; \quad $\sigma_X = \sqrt{120(0.40)(0.60)} = \sqrt{28.8} \approx 5.37$}
-  \item \ans{On days with 120 ER visits, the hospital would average 48 patients discharged within 4 hours over many such days.}
-  \item \ans{$P(40 \le X \le 50) = \texttt{binomcdf(120, 0.40, 50)} - \texttt{binomcdf(120, 0.40, 39)} \approx 0.6473 - 0.0827 = 0.5646$}
+  \item \ans{$\mu_X = 120(0.40) = 48$; \quad $\sigma_X = \sqrt{120(0.40)(0.60)} = \sqrt{28.8} \approx 5.37$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3a1, type=short, points=1, answer=48, check=numeric, tolerance=0]{0.9cm}{0.2in}}\quad \raisebox{-3pt}{\gradedblank[id=hw3a2, type=short, points=1, answer=5.37, check=numeric, tolerance=0.01]{2cm}{0.2in}}}
+  \item \ans{On days with 120 ER visits, the hospital would average 48 patients discharged within 4 hours over many such days.}\gradedkeyline{\kern1.6in\gradedblank[id=hw3b, type=rubric, points=2, display={Over many days with 120 ER patients, an average of 48 are discharged within 4 hours.}]{4.9in}{\gradedlinesheight{2}-5pt}}
+  \item \ans{$P(40 \le X \le 50) = \texttt{binomcdf(120, 0.40, 50)} - \texttt{binomcdf(120, 0.40, 39)} \approx 0.6473 - 0.0827 = 0.5646$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3c, type=short, points=2, answer=0.6257, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{4.} Public transit support: $n=45$, $p=0.62$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{$X \sim B(45, 0.62)$. B: each adult either supports (yes) or not (no). I: sample is $< 10\%$ of the population. N: fixed $n=45$. S: same $p=0.62$.}
-  \item \ans{$\mu_X = 45(0.62) = 27.9$. In many samples of 45 adults from this city, the average number who support the plan would be 27.9.}
-  \item \ans{$\sigma_X = \sqrt{45(0.62)(0.38)} = \sqrt{10.602} \approx 3.26$}
-  \item \ans{$P(X \ge 30) = 1 - P(X \le 29) = 1 - \texttt{binomcdf(45, 0.62, 29)} \approx 1 - 0.6614 = 0.3386$}
+  \item \ans{$X \sim B(45, 0.62)$. B: each adult either supports (yes) or not (no). I: sample is $< 10\%$ of the population. N: fixed $n=45$. S: same $p=0.62$.}\gradedkeyline{\kern0.4in\gradedblank[id=hw4a, type=rubric, points=3, display={$X \sim B(45, 0.62)$: support/not; sample $< 10\%$ of adults so independent; $n = 45$ fixed; $p = 0.62$ each.}]{6.1in}{\gradedlinesheight{2}-5pt}}
+  \item \ans{$\mu_X = 45(0.62) = 27.9$. In many samples of 45 adults from this city, the average number who support the plan would be 27.9.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw4b1, type=short, points=1, answer=27.9, check=numeric, tolerance=0.05]{1.3in}{0.2in}}}\gradedkeyline{\kern0.4in\gradedblank[id=hw4b2, type=rubric, points=2, display={In many samples of 45 adults, an average of 27.9 would support the plan.}]{6.1in}{0.22in}}
+  \item \ans{$\sigma_X = \sqrt{45(0.62)(0.38)} = \sqrt{10.602} \approx 3.26$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw4c, type=short, points=1, answer=3.26, check=numeric, tolerance=0.01]{1.3in}{0.2in}}}
+  \item \ans{$P(X \ge 30) = 1 - P(X \le 29) = 1 - \texttt{binomcdf(45, 0.62, 29)} \approx 1 - 0.6614 = 0.3386$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw4d, type=short, points=2, answer=0.3152, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{6pt}

@@ -1,0 +1,18 @@
+# Homework item 5 (reflection) (Unit 4, Lesson 4.1). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  Why is it dangerous to assume every pattern in data has a non-random cause? Give one
+  real-world example where this mistake could have harmful consequences.
+criteria:
+  - id: danger
+    points: 1
+    full: >-
+      Explains that random variation alone produces patterns, so assuming a cause can lead
+      to false conclusions, wrong decisions, or wasted resources.
+  - id: example
+    points: 1
+    full: >-
+      Gives a concrete real-world example with a harmful consequence (e.g. blaming a
+      vaccine for a chance disease cluster, chasing a 'cancer cluster' that is chance,
+      firing a coach after a random losing streak).

@@ -1,0 +1,17 @@
+# Homework item 3c (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw3c
+points: 2
+task: >-
+  W = number of voters interviewed until the first supporter (geometric); V = number
+  of supporters among exactly 10 voters (binomial). Explain the key difference between
+  W and V.
+criteria:
+  - id: w
+    points: 1
+    full: >-
+      W counts trials until the first success: the number of trials is random (no fixed
+      n).
+  - id: v
+    points: 1
+    full: >-
+      V counts successes in a fixed number of trials (n = 10).

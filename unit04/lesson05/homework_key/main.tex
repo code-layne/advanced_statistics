@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l05-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -29,33 +32,33 @@ Study environment $\times$ GPA table (240 students):
 \vspace{8pt}
 \textbf{1.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{$P(A|B) = P(A \cap B)/P(B)$}
-  \item \ans{$40/240 = 1/6$}
-  \item \ans{$90/240 = 3/8$}
-  \item \ans{$(40/240)/(90/240) = 40/90 \approx 0.444$}
-  \item \ans{Among students who prefer studying in a quiet room, approximately 44.4\% have a GPA of 3.5--4.0.}
+  \item \ans{$P(A|B) = P(A \cap B)/P(B)$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1a, type=rubric, points=1, display={$P(A|B) = P(A \cap B)/P(B)$}]{7.4cm}{0.24in}}}
+  \item \ans{$40/240 = 1/6$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1b, type=short, points=1, answer=0.1667, check=numeric, tolerance=0.002, display={$40/240 = 1/6$}]{2.4cm}{0.2in}}}
+  \item \ans{$90/240 = 3/8$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1c, type=short, points=1, answer=0.375, check=numeric, tolerance=0.002, display={$90/240 = 3/8$}]{2.4cm}{0.2in}}}
+  \item \ans{$(40/240)/(90/240) = 40/90 \approx 0.444$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1d, type=short, points=1, answer=0.444, check=numeric, tolerance=0.002, display={$40/90 \approx 0.444$}]{3.4cm}{0.2in}}}
+  \item \ans{Among students who prefer studying in a quiet room, approximately 44.4\% have a GPA of 3.5--4.0.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1e, type=rubric, points=2, display={Among quiet-room students, about 44.4\% have a GPA of 3.5--4.0.}]{4.5in}{0.22in}}}
 \end{enumerate}
 
 \vspace{6pt}
-\textbf{2.} \ans{$30 \div 70 \approx 0.429$}
+\textbf{2.} \ans{$30 \div 70 \approx 0.429$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw2a, type=short, points=1, answer=30, check=numeric, tolerance=0]{2.6cm}{0.2in}} $\div$ \raisebox{-3pt}{\gradedblank[id=hw2b, type=short, points=1, answer=70, check=numeric, tolerance=0]{2.2cm}{0.2in}} $=$ \raisebox{-3pt}{\gradedblank[id=hw2c, type=short, points=1, answer=0.429, check=numeric, tolerance=0.002]{2.2cm}{0.2in}}}
 
 \vspace{6pt}
 \textbf{3.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{$70/240 \approx 0.292$}
-  \item \ans{$30/70 \approx 0.429$}
-  \item \ans{$(70/240)(30/70) = 30/240 = 0.125$. Table: $30/240 = 0.125$. Yes, they match.}
+  \item \ans{$70/240 \approx 0.292$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3a, type=short, points=1, answer=0.292, check=numeric, tolerance=0.002, display={$70/240 \approx 0.292$}]{2.4cm}{0.2in}}}
+  \item \ans{$30/70 \approx 0.429$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3b, type=short, points=1, answer=0.429, check=numeric, tolerance=0.002, display={$30/70 \approx 0.429$}]{2.4cm}{0.2in}}}
+  \item \ans{$(70/240)(30/70) = 30/240 = 0.125$. Table: $30/240 = 0.125$. Yes, they match.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3c1, type=short, points=1, answer=0.125, check=numeric, tolerance=0.002]{3cm}{0.2in}}\quad \raisebox{-3pt}{\gradedblank[id=hw3c2, type=short, points=1, answer=0.125, check=numeric, tolerance=0.002]{3cm}{0.2in}}\quad \raisebox{-3pt}{\gradedblank[id=hw3c3, type=short, points=1, answer=yes, check=text]{1.8cm}{0.2in}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{4.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{$P(\text{Quiet Room}|\text{GPA 3.5--4.0}) = 40/80 = 0.5$; $P(\text{GPA 3.5--4.0}|\text{Quiet Room}) = 40/90 \approx 0.444$.}
-  \item \ans{The claim is incorrect. The two expressions ask different questions and use different denominators. The first restricts to students with high GPAs; the second restricts to quiet-room studiers. The order of conditioning always matters.}
+  \item \ans{$P(\text{Quiet Room}|\text{GPA 3.5--4.0}) = 40/80 = 0.5$; $P(\text{GPA 3.5--4.0}|\text{Quiet Room}) = 40/90 \approx 0.444$.}\gradedkey{\raisebox{-3pt}{\textit{1st:}~\gradedblank[id=hw4a1, type=short, points=1, answer=0.5, check=numeric, tolerance=0.002]{1in}{0.2in}\quad \textit{2nd:}~\gradedblank[id=hw4a2, type=short, points=1, answer=0.444, check=numeric, tolerance=0.002]{1in}{0.2in}}}
+  \item \ans{The claim is incorrect. The two expressions ask different questions and use different denominators. The first restricts to students with high GPAs; the second restricts to quiet-room studiers. The order of conditioning always matters.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw4b, type=rubric, points=2, display={No: denominators differ; order matters.}]{3in}{0.22in}}}
 \end{enumerate}
 
 \vspace{6pt}
-\textbf{5.} \ans{$P(\text{GPA 3.5--4.0}|\text{Music On}) = 20/80 = 0.25$.} \ans{Among students who prefer studying with music on, 25\% have a GPA between 3.5 and 4.0.}
+\textbf{5.} \ans{$P(\text{GPA 3.5--4.0}|\text{Music On}) = 20/80 = 0.25$.} \ans{Among students who prefer studying with music on, 25\% have a GPA between 3.5 and 4.0.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw5a, type=short, points=1, answer=0.25, check=numeric, tolerance=0.002, display={$20/80 = 0.25$}]{2.5cm}{0.2in}}\quad \raisebox{-3pt}{\gradedblank[id=hw5b, type=rubric, points=2, display={Among students who study with music on, 25\% have a GPA of 3.5--4.0.}]{5.2in}{0.22in}}}
 
 \vspace{6pt}
 \textbf{6.} \ans{$P(\text{Quiet Room}|\text{GPA 3.5--4.0}) = 40/80 = 0.5$; $P(\text{Quiet Room}) = 90/240 = 0.375$. The conditional probability is greater than the marginal probability, suggesting that students with high GPAs are more likely to prefer quiet study environments than the overall student population. If these two values were equal, the events would be independent --- they are not, so studying quietly appears to be associated with higher GPA. (This is the independence check we will formalize in Lesson 4.6.)}

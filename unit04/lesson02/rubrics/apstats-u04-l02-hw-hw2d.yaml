@@ -1,0 +1,12 @@
+# Homework item 2d (Unit 4, Lesson 4.2). Relative to the lesson directory.
+id: hw2d
+points: 1
+task: >-
+  After 15 simulated quizzes, give the empirical probability of at least 3 correct.
+criteria:
+  - id: phat
+    points: 1
+    full: >-
+      Gives p-hat = (number of trials with at least 3 correct)/15, consistent with the
+      student's own trials; a plausible value is about 0 to 0.20 (true probability about
+      0.104).

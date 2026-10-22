@@ -1,0 +1,15 @@
+# Homework item 4e interpretation (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw4e2
+points: 2
+task: >-
+  X ~ Geom(0.20); P(X > 5) = 0.8^5, about 0.3277. Interpret in context.
+criteria:
+  - id: value
+    points: 1
+    full: >-
+      Says there is about a 32.8% probability.
+  - id: context
+    points: 1
+    full: >-
+      That the geneticist must examine more than 5 individuals before finding the first
+      carrier (the first 5 examined are all non-carriers).

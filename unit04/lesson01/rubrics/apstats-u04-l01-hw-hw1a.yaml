@@ -1,0 +1,18 @@
+# Homework item 1a (Unit 4, Lesson 4.1). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A professional tennis player (career clay-court win rate 65%) wins 10 consecutive
+  matches on clay. Write a statistical question this pattern suggests.
+criteria:
+  - id: question
+    points: 1
+    full: >-
+      Asks a question about her true (long-run) clay win rate or the process, e.g. whether
+      it is higher than 65% during the streak, rather than a question about this one
+      streak's outcome.
+  - id: chance
+    points: 1
+    full: >-
+      The question anticipates variability: it asks whether the streak could happen by
+      chance for a 65% player (or is answerable with data on many matches).

@@ -1,0 +1,18 @@
+# Homework item 2c (Unit 4, Lesson 4.1). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  Observed 34 purple and 16 white among 50 plants versus a predicted 3:1 ratio. Is the
+  difference large enough to doubt the 3:1 ratio? Explain.
+criteria:
+  - id: expected
+    points: 1
+    full: >-
+      Compares with the expected counts under 3:1 (37.5 purple and 12.5 white) or the
+      expected proportion 0.75.
+  - id: conclusion
+    points: 1
+    full: >-
+      Concludes the difference is modest and could be due to random sampling variation
+      with only 50 plants, so it is not strong enough to doubt 3:1 (a formal test would be
+      needed).
