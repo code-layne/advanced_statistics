@@ -275,3 +275,37 @@ pass.
 
 When reviewing or converting a lesson: shape → deck → teachernotes → namestrip → work rule →
 boxguard → vocabpar, then build and prove page parity.
+
+## 9. Graded components
+
+The course builds against `math-shared` (the submodule at the project root) for scan grading.
+These components carry `\gradedblank` answer boxes, loading `grading.sty` themselves:
+
+- every lesson's **`ap_practice`** and **`homework`** (DeltaMath-override comments don't change
+  that: a homework is skipped only when its assignment *is* a DeltaMath set);
+- every unit **quiz** (`unitNN/quizzes/`, keys in `quiz_keys/`) and **test** (`unitNN/tests/`, keys
+  in `test_keys/`): sample, practice and actual forms alike.
+
+Nothing else carries a box: warm-ups, notes, activities, exit tickets, slides, covers, study
+guides and unit covers stay as they are.
+
+**Assignment ids** (`\gradingassignment{…}`, the id in every QR code), with
+`\gradingcourse{advanced_statistics}`:
+
+| Component | Id |
+| --- | --- |
+| lesson homework | `apstats-uNN-lNN-hw`, e.g. `apstats-u04-l03-hw` |
+| lesson AP Practice | `apstats-uNN-lNN-ap` |
+| unit quiz / test | `apstats-uNN-<name>`, e.g. `apstats-u01-sample-quiz`, `apstats-u02-actual-test` |
+
+Item ids are the component code, item number and part: `hw2a`, `ap5c`, `q7b`, `t16a`. Rubric
+items point to `rubrics/<assignment>-<id>.yaml` in the lesson directory, or in `unitNN/rubrics/`
+for quizzes and tests (written `rubric=../rubrics/…`). Free response in AP Practice, quizzes and
+tests is scored College Board style (each component essentially / partially correct).
+
+**Authoring rule:** write each `\gradedblank` identically in the blank and the key, and put it in
+space the page already reserves. The placement helpers in `apstats-boxes.sty` ("Graded answer
+boxes") do that without moving a line: `\gradedhide` + `\gradedhere` over `\writelines`,
+`\gradedbelow` at the foot of a work area, `\gradedright` for the "Letter:" box of a
+multiple-choice item, a box inside `\answerspace`. Then run `make manifest COMP=<dir>` (see
+README) and check that the blank and key manifests agree.
