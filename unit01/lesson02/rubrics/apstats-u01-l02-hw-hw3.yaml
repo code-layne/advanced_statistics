@@ -1,0 +1,18 @@
+# Homework item 3 (Unit 1, Lesson 1.2). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  A bar graph of club memberships has bars of height 40, 25, 20, 15; a second graph of
+  the same data has bars 0.40, 0.25, 0.20, 0.15. Explain what changed and what did
+  not.
+criteria:
+  - id: changed
+    points: 1
+    full: >-
+      Says the vertical scale changed: the first graph shows counts (out of 100 members),
+      the second shows the same data as proportions (relative frequencies).
+  - id: same
+    points: 1
+    full: >-
+      Says the bars' relative heights (the shape, the comparison between clubs) did not
+      change.

@@ -1,0 +1,19 @@
+# Sample quiz, Unit 1 (Lessons 1.0-1.4), item 7c. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q7c
+points: 2
+task: >-
+  A reporter says Riverside (18 produce vendors of 48) is the region's produce market
+  because it has more produce vendors than Bayview (15 of 30). Explain what is wrong
+  with the reasoning and state which market a share comparison favours.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Explains that counts cannot be compared because the markets have different
+      numbers of vendors, AND compares shares (18/48 = 37.5% vs 15/30 = 50%) to conclude a
+      share comparison favours Bayview.
+    partial: >-
+      P (1 of 2): Gives only one of the two components: the different-size flaw, or the
+      share comparison favouring Bayview.

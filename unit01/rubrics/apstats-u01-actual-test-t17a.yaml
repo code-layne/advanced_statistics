@@ -1,0 +1,16 @@
+# Unit 1 actual test, item 17a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t17a
+points: 2
+task: >-
+  East Gym: 105 of 300 members chose yoga; West Gym: 72 of 180. What proportion of
+  each gym's members chose yoga?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: East 105/300 = 0.35 AND West 72/180 = 0.40.
+    partial: >-
+      P (1 of 2): One proportion correct, or both set up correctly with an arithmetic
+      slip.

@@ -1,0 +1,27 @@
+# Homework Part C, item 1 (Unit 1, Lesson 1.0). Relative to the lesson directory.
+id: hwC1
+points: 3
+task: >-
+  A city record lists six food trucks licensed for one downtown lot, with Cuisine,
+  Menu items, Avg. wait (min), and Cash only? for each truck (waits range from 4 to 19
+  minutes). A sign at the lot reads only "Average wait: 10 minutes." Name two pieces
+  of context a customer would need before that number means anything, then explain why
+  the sign does not tell one customer how long they will wait.
+criteria:
+  - id: context1
+    points: 1
+    full: >-
+      Names one relevant piece of missing context: which trucks the average covers, when
+      (time of day or day of week) it was measured, how many customers were timed, or
+      whether it is a mean or a typical wait.
+  - id: context2
+    points: 1
+    full: >-
+      Names a second, different relevant piece of missing context from that list (or
+      similar).
+  - id: individual
+    points: 1
+    full: >-
+      Explains that the 10 minutes summarizes the whole lot while waits vary from truck to
+      truck (about 4 to 19 minutes) and customer to customer, so the group average cannot
+      predict one customer's wait.

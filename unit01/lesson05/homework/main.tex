@@ -19,6 +19,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l05-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -56,12 +59,15 @@ standard here.
         \end{center}
         \vspace{3pt}
 
-        \textbf{(a)} Mean: \blank{2.6cm} \qquad Median: \blank{2.6cm}
+        \textbf{(a)} Mean: \smash{\gradedblank[id=hw1a1, type=short, points=1, answer=22, check=numeric, display={22 minutes}]{2.6cm}{0.2in}} \qquad Median: \smash{\gradedblank[id=hw1a2, type=short, points=1, answer=16, check=numeric, display={16 minutes}]{2.6cm}{0.2in}}
 
         \vspace{5pt}
         \textbf{(b)} Which of the two better represents a typical commute for this office?
         Use the \emph{shape} of the data to justify your choice.
-        \answerspace{2.4cm}{}
+        \answerspace{2.4cm}{\normalcolor\mdseries\gradedblank[id=hw1b, type=rubric, points=2, display={The median, 16 minutes. The distribution is skewed to the right: six
+        of the seven commutes fall between 12 and 19 minutes, and the single 60-minute commute
+        drags the mean up to 22 --- longer than every commute but one. The median is resistant,
+        so it still sits inside the group of six.}]{\linewidth}{2.2cm}}
   \item Five children reported how many books they read over the summer:
         \quad 8 \quad 9 \quad 10 \quad 11 \quad 12. \quad For this set the mean is 10, the
         median is 10, and the range is 4.
@@ -71,11 +77,13 @@ standard here.
         actually read \textbf{32}. Recompute:
 
         \vspace{4pt}
-        New mean: \blank{1.8cm} \quad New median: \blank{1.8cm} \quad New range: \blank{1.8cm}
+        New mean: \smash{\gradedblank[id=hw2a, type=short, points=1, answer=14, check=numeric, display={14}]{1.8cm}{0.2in}} \quad New median: \smash{\gradedblank[id=hw2b, type=short, points=1, answer=10, check=numeric, display={10}]{1.8cm}{0.2in}} \quad New range: \smash{\gradedblank[id=hw2c, type=short, points=1, answer=24, check=numeric, display={24}]{1.8cm}{0.2in}}
 
         \vspace{5pt}
         In one or two sentences, say which summaries moved, which did not, and why.
-        \answerspace{2.2cm}{}
+        \answerspace{2.2cm}{\normalcolor\mdseries\gradedblank[id=hw2d, type=rubric, points=2, display={The mean moved from 10 to 14 and the range from 4 to 24; the median
+        did not move. Mean and range are nonresistant --- both use the changed value itself ---
+        while the median depends only on which value is third in order, and that is still 10.}]{\linewidth}{2.0cm}}
   \item Twelve students' homework minutes one evening, already in order:
 
         \vspace{3pt}
@@ -85,16 +93,20 @@ standard here.
         \end{center}
         \vspace{3pt}
 
-        Median: \blank{2.0cm} \quad $Q_1$: \blank{2.0cm} \quad $Q_3$: \blank{2.0cm} \quad
-        IQR: \blank{2.0cm}
+        Median: \smash{\gradedblank[id=hw3a, type=short, points=1, answer=57.5, check=numeric, display={57.5 min}]{2.0cm}{0.2in}} \quad $Q_1$: \smash{\gradedblank[id=hw3b, type=short, points=1, answer=35, check=numeric, display={35 min}]{2.0cm}{0.2in}} \quad $Q_3$: \smash{\gradedblank[id=hw3c, type=short, points=1, answer=80, check=numeric, display={80 min}]{2.0cm}{0.2in}} \quad
+        IQR: \smash{\gradedblank[id=hw3d, type=short, points=1, answer=45, check=numeric, display={45 min}]{2.0cm}{0.2in}}
 
         \vspace{5pt}
         Show how you split the list to get $Q_1$ and $Q_3$.
-        \answerspace{2.4cm}{}
+        \answerspace{2.4cm}{\normalcolor\mdseries\gradedblank[id=hw3e, type=rubric, points=1, display={Twelve values, so six fall in each half and the median is halfway
+        between the 6th and 7th: $(55+60)/2 = 57.5$. Lower half 15, 25, 30, 40, 45, 55, so
+        $Q_1 = (30+40)/2 = 35$. Upper half 60, 70, 75, 85, 100, 120, so $Q_3 = (75+85)/2 = 80$.
+        IQR $= 80 - 35 = 45$ minutes.}]{\linewidth}{2.2cm}}
   \item A pediatrician's growth chart reports that the \textbf{90th percentile} of birth weight
         for newborn girls is 3{,}900 grams. Write one sentence interpreting this value in
         context.
-        \answerspace{1.8cm}{}
+        \answerspace{1.8cm}{\normalcolor\mdseries\gradedblank[id=hw4, type=rubric, points=2, display={About 90\% of newborn girls weigh 3{,}900 grams or less at birth,
+        and only about 10\% weigh more than that.}]{\linewidth}{1.6cm}}
   \item \textbf{AP-style multiple choice.} A company with 40 employees reports that the
         \emph{mean} salary is \$95{,}000 while the \emph{median} salary is \$58{,}000. Which
         statement is the best conclusion? Circle one, then justify it in a sentence.
@@ -105,8 +117,12 @@ standard here.
           \item An error was made, because the mean and the median of a data set must be equal.
           \item The distribution of salaries is likely skewed to the left.
           \item The standard deviation of the salaries must be zero.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
-        \answerspace{2.4cm}{}
+        \answerspace{2.4cm}{\normalcolor\mdseries\gradedblank[id=hw5j, type=rubric, points=1, display={(B). The mean is nonresistant, so a handful of very large salaries
+        can pull it far above the median while the median stays with the middle employee ---
+        that is what a right-skewed salary distribution looks like. (A) is wrong because it is
+        the median, not the mean, that has half the employees above it.}]{\linewidth}{2.2cm}}
 \end{enumerate}
 \end{notesbox}
 

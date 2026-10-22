@@ -1,0 +1,18 @@
+# Sample quiz, Unit 1 (Lessons 1.0-1.4), item 8d. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q8d
+points: 2
+task: >-
+  The manager wants to drop the vendor near $1,900 before reporting a typical revenue,
+  calling it clearly a mistake. Give one reason that is a poor decision, and say what
+  should be done with that vendor instead.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Gives a reason (nothing shows it is an error; a stall can have a big week; an
+      outlier is a real finding) AND says to investigate it and keep it in the description
+      (or report a resistant center such as the median).
+    partial: >-
+      P (1 of 2): Gives a reason or a course of action, not both.

@@ -1,0 +1,16 @@
+# Homework item 4 (Unit 1, Lesson 1.2). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  A survey of 200 people reports the percents 34%, 28%, 22%, and 11%. Explain how you
+  can tell, without any other information, that something is wrong.
+criteria:
+  - id: sum
+    points: 1
+    full: >-
+      Notes the percents add to 95%, not 100%.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that every person falls in exactly one category, so the percents must add
+      to 100%; a category (5% of the responses) is missing or there is an error.

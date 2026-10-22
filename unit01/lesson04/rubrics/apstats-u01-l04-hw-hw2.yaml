@@ -1,0 +1,18 @@
+# Homework item 2 (Unit 1, Lesson 1.4). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  A student looked at Display B (values piled at the low end with a long tail to the
+  high end) and wrote: "This distribution is skewed to the left, because almost all of
+  the data is piled up on the left side." Correct the statement, and explain what
+  actually decides the name.
+criteria:
+  - id: correct
+    points: 1
+    full: >-
+      Says Display B is skewed to the right.
+  - id: tail
+    points: 1
+    full: >-
+      Explains that skew is named for the side the long tail stretches toward (the few
+      much larger values), not the side where most of the data piles up.

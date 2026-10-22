@@ -1,0 +1,13 @@
+# Homework item 4 (Unit 1, Lesson 1.1).
+id: hw4
+points: 2
+task: >-
+  Name one variable that is written entirely in digits and is not quantitative, and say
+  what its digits are doing instead of measuring.
+criteria:
+  - id: example
+    points: 1
+    full: Names a variable written in digits that is categorical (ZIP code, jersey number, phone number, student ID, or similar).
+  - id: reason
+    points: 1
+    full: Says the digits identify or label a group or individual rather than record an amount, so arithmetic on them is meaningless.

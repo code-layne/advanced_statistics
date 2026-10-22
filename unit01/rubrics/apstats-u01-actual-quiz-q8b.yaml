@@ -1,0 +1,26 @@
+# Actual quiz, Unit 1 (Lessons 1.0-1.4), item 8b. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q8b
+points: 4
+task: >-
+  Describe the distribution of length of visit (minutes) of 40 visitors completely,
+  from a histogram that piles up at 40-50 minutes, tails off to the right, has an
+  empty 80-90 block and two visitors at 90-100.
+criteria:
+  - id: shape_unusual
+    points: 2
+    full: >-
+      E: Shape: skewed right AND unusual features: the gap at 80-90 minutes and the two
+      visitors at 90-100 minutes (possible outliers).
+    partial: >-
+      P (1 of 2): Shape correct with no unusual feature named, or the unusual features
+      without the shape.
+  - id: center_variability
+    points: 2
+    full: >-
+      E: Center (in the 40-50 minute block) AND variability (visits from about 20 to 100
+      minutes), in context (length of visit, minutes).
+    partial: >-
+      P (1 of 2): One of center or variability correct, or both given without context or
+      units.

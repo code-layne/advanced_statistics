@@ -1,0 +1,17 @@
+# Unit 1 actual test, item 20c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t20c
+points: 2
+task: >-
+  One cup gets 12.7 ounces (mean 12 oz, SD 0.4 oz). Find its z-score and interpret it
+  in context.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: z = (12.7 - 12)/0.4 = 1.75 AND interprets: this cup got 1.75 SDs more than the
+      mean amount of 12 ounces.
+    partial: >-
+      P (1 of 2): Correct z with no or an incorrect interpretation, or a correct
+      interpretation of a z with an arithmetic slip.

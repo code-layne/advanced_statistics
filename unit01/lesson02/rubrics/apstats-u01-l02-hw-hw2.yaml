@@ -1,0 +1,23 @@
+# Homework item 2 (Unit 1, Lesson 1.2). Relative to the lesson directory.
+id: hw2
+points: 3
+task: >-
+  City General had 340 flu cases among its 8,500 patients; Ridgeview had 60 among its
+  1,000. Which hospital had more cases, and which had the higher rate? Show the two
+  rates.
+criteria:
+  - id: count
+    points: 1
+    full: >-
+      Says City General had more cases (340 vs 60).
+  - id: rates
+    points: 1
+    full: >-
+      Shows both rates correctly: 340/8500 = 0.04 (4%) and 60/1000 = 0.06 (6%).
+  - id: higher
+    points: 1
+    full: >-
+      Concludes Ridgeview had the higher rate.
+examples:
+  - response: "City General is worse: 340 cases is more than 60."
+    scores: {count: 1, rates: 0, higher: 0}

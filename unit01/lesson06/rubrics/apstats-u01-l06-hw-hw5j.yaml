@@ -1,0 +1,12 @@
+# Homework item 5, justification of the multiple-choice answer (Unit 1, Lesson 1.6). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  A boxplot of 200 commute times has five-number summary 8, 21, 27, 46, 95. Justify in
+  a sentence why about 50 of the commutes must lie between 27 and 46 minutes.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B): the median-to-Q3 section holds one quarter of the data, and a quarter
+      of 200 is 50 (each section holds a quarter however wide it looks).

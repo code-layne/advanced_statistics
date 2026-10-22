@@ -1,0 +1,17 @@
+# Sample quiz, Unit 1 (Lessons 1.0-1.4), item 8c. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q8c
+points: 2
+task: >-
+  A classmate says the dotplot is skewed left because most of the dots are on the left
+  side. Correct the classmate and say what actually decides the name.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Says it is skewed right AND explains a skew is named for the side the longer tail
+      runs out on, not the side the data pile up on.
+    partial: >-
+      P (1 of 2): Corrects to skewed right without the rule, or states the rule without
+      correcting the name.

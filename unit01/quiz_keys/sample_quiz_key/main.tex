@@ -10,6 +10,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-sample-quiz}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -72,6 +75,7 @@ more than one of them is about the context, not just the arithmetic.
           \item the weekly revenues.
           \item the market itself.
           \item the shoppers who visit the market.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q1, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Which of the following is a \textbf{statistical question} about these vendors?
@@ -81,6 +85,7 @@ more than one of them is about the context, not just the arithmetic.
           \item What is stall 129's stall type?
           \item \ans{How much does weekly revenue vary among the market's 48 vendors?}
           \item Is the market open on Saturdays?
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q2, type=choice, points=1, answer=D]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item \textbf{Stall number} is best classified as
@@ -90,6 +95,7 @@ more than one of them is about the context, not just the arithmetic.
           \item quantitative and continuous, because 117.5 is a number.
           \item \ans{categorical, because the number labels a stall rather than recording an amount.}
           \item categorical, because there are only 48 of them.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q3, type=choice, points=1, answer=D]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Bayview Market has 30 vendors, 15 of them selling produce. Which statement about the
@@ -100,6 +106,7 @@ more than one of them is about the context, not just the arithmetic.
           \item The two markets are equally produce-focused.
           \item No comparison is possible, because the markets have different numbers of vendors.
           \item Bayview is more produce-focused, because it has fewer vendors overall.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q4, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item \textbf{Pounds of tomatoes sold in a week}, recorded to the nearest whole pound, is
@@ -109,6 +116,7 @@ more than one of them is about the context, not just the arithmetic.
           \item \ans{continuous, because between any two weights another weight is possible.}
           \item discrete, because you can count the tomatoes.
           \item neither, because weight cannot be graphed.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q5, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item A dotplot of weekly revenue piles up at the low end and trails off toward the high end,
@@ -119,6 +127,7 @@ more than one of them is about the context, not just the arithmetic.
           \item symmetric, because it has one peak.
           \item uniform, because every vendor earns something.
           \item impossible to name without the center.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q6, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -143,27 +152,27 @@ more than one of them is about the context, not just the arithmetic.
         \vspace{6pt}
         \textbf{(a)} Identify the individuals, then name one categorical variable and one
         quantitative variable in the table.\\[4pt]
-        \ansline{Individuals: the 48 vendors, one per row.}\\
+        \gradedhere{\gradedblank[id=q7a, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Individuals: the 48 vendors, one per row.}\\
         \ansline{Categorical: stall type. Quantitative: weekly revenue, in dollars.}
 
         \vspace{6pt}
         \textbf{(b)} Give the relative frequency of each of the four stall types, to the nearest
         tenth of a percent.\\[4pt]
-        \ansline{Produce 37.5\%, Baked 25.0\%, Crafts 20.8\%, Prepared food 16.7\%.}
+        \gradedhere{\gradedblank[id=q7b, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7b.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{Produce 37.5\%, Baked 25.0\%, Crafts 20.8\%, Prepared food 16.7\%.}
 
         \vspace{6pt}
         \textbf{(c)} A reporter writes, ``Riverside is the region's produce market --- it has
         more produce vendors than Bayview does.'' Riverside has 18 of 48; Bayview has 15 of 30.
         Explain what is wrong with the reporter's reasoning, and state which market a share
         comparison favours.\\[4pt]
-        \ansline{Different sizes, so the counts cannot be compared: 48 vendors give}\\
+        \gradedhere{\gradedblank[id=q7c, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Different sizes, so the counts cannot be compared: 48 vendors give}\\
         \ansline{Riverside more of everything. Shares are fair: 18/48 = 37.5\% against}\\
         \ansline{15/30 = 50.0\%, so a share comparison favours Bayview.}
 
         \vspace{6pt}
         \textbf{(d)} Write one statistical question that could be answered using these records,
         and say which of your two checks makes it statistical.\\[4pt]
-        \ansline{``How much does weekly revenue vary among the 48 vendors?''}\\
+        \gradedhere{\gradedblank[id=q7d, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{``How much does weekly revenue vary among the 48 vendors?''}\\
         \ansline{It anticipates variability and is answered by collecting data.}
 
   \item The dotplot below shows the \textbf{weekly revenue}, in dollars, of all 30 vendors at a
@@ -184,12 +193,12 @@ more than one of them is about the context, not just the arithmetic.
 
         \textbf{(a)} Is weekly revenue discrete or continuous? Justify from the variable itself,
         not from the display.\\[4pt]
-        \ansline{Continuous --- revenue is a measured amount of money.}\\
+        \gradedhere{\gradedblank[id=q8a, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Continuous --- revenue is a measured amount of money.}\\
         \ansline{Between \$480 and \$481, \$480.25 is possible; rounding changes nothing.}
 
         \vspace{6pt}
         \textbf{(b)} Describe the distribution of weekly revenue completely.\\[4pt]
-        \ansline{Skewed right: the dots pile up near \$300--\$500, tail out to the right.}\\
+        \gradedhere{\gradedblank[id=q8b, type=rubric, points=4, rubric=../rubrics/apstats-u01-sample-quiz-q8b.yaml]{\linewidth+6pt}{\gradedlinesheight{4}}}\ansline{Skewed right: the dots pile up near \$300--\$500, tail out to the right.}\\
         \ansline{A gap from about \$1,000 to \$1,900, and one outlier near \$1,900.}\\
         \ansline{Center about \$500 per week; values run from about \$200 to \$1,900 ---}\\
         \ansline{a great deal of variability in weekly revenue among the 30 vendors.}
@@ -197,14 +206,14 @@ more than one of them is about the context, not just the arithmetic.
         \vspace{6pt}
         \textbf{(c)} A classmate writes, ``It is skewed left, because most of the dots are on the
         left side.'' Correct the classmate, and say what actually decides the name.\\[4pt]
-        \ansline{A skew is named for the side the longer tail runs out on, not the}\\
+        \gradedhere{\gradedblank[id=q8c, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{A skew is named for the side the longer tail runs out on, not the}\\
         \ansline{side the data piles up on. This tail reaches high, so: skewed right.}
 
         \vspace{6pt}
         \textbf{(d)} The market's manager proposes dropping the vendor near \$1{,}900 before
         reporting a typical revenue, calling it ``clearly a mistake.'' Give one reason that is a
         poor decision, and say what should be done with that vendor instead.\\[4pt]
-        \ansline{Nothing marks it as an error --- a stall can have a big week, and an}\\
+        \gradedhere{\gradedblank[id=q8d, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Nothing marks it as an error --- a stall can have a big week, and an}\\
         \ansline{outlier is a finding. Investigate it and report it in the description.}
 
 \end{enumerate}

@@ -1,0 +1,18 @@
+# Homework item 3 (Unit 1, Lesson 1.4). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  Display D (two peaks with an empty gap between them) shows the ages, in years, of
+  the 22 people at one community swim session. Name the unusual feature this display
+  shows, and give one plausible reason the group splits the way it does.
+criteria:
+  - id: feature
+    points: 1
+    full: >-
+      Names the feature: the distribution is bimodal, two clusters of ages with a gap (no
+      one observed) between them.
+  - id: reason
+    points: 1
+    full: >-
+      Gives a plausible reason in context, e.g., young children came with the adults who
+      brought them, and almost no teenagers or young adults attended.

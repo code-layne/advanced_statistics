@@ -1,0 +1,19 @@
+# Unit 1 practice (sample) test, item 16b. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t16b
+points: 3
+task: >-
+  Classify Park #, Swings, and Area as categorical or quantitative; for each
+  quantitative one, say discrete or continuous.
+criteria:
+  - id: classify
+    points: 2
+    full: >-
+      E: Park # categorical (a label), Swings quantitative, Area quantitative.
+    partial: >-
+      P (1 of 2): Two of the three classified correctly.
+  - id: type
+    points: 1
+    full: >-
+      E: Swings discrete (a count) and Area continuous (a measurement).

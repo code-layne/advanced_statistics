@@ -1,0 +1,17 @@
+# Actual quiz, Unit 1 (Lessons 1.0-1.4), item 7b. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q7b
+points: 2
+task: >-
+  Of the 60 tours, the themes are Tide pools 21, Sharks 15, Penguins 15, Coral reef 9.
+  Give the relative frequency of each theme to the nearest tenth of a percent.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: All four correct: Tide pools 35.0%, Sharks 25.0%, Penguins 25.0%, Coral reef
+      15.0% (proportions 0.350, 0.250, 0.250, 0.150 also earn credit).
+    partial: >-
+      P (1 of 2): Divides by 60 correctly for at least two themes, or all four with a
+      rounding or format error.

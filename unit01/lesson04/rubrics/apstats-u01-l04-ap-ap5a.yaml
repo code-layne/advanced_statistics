@@ -1,0 +1,20 @@
+# AP Practice item 5, part (a) (Unit 1, Lesson 1.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5a
+points: 2
+task: >-
+  A company recorded the one-way commute time (minutes) of its 40 employees; a
+  histogram with 10-minute intervals has counts 5, 12, 10, 6, 4, 2, 0, 0, 1 for 0-10,
+  10-20, ..., 80-90. Classify commute time as categorical or quantitative, and then as
+  discrete or continuous. Justify from the variable itself, not from the display.
+criteria:
+  - id: classify
+    points: 2
+    full: >-
+      E: Says commute time is quantitative (a measured amount) AND continuous, justified
+      from the variable: between any two times another is possible (e.g., 20.4 minutes
+      between 20 and 21).
+    partial: >-
+      P (1 of 2): Classifies both correctly without a justification from the variable (or
+      justifies from the display), OR gets one classification right with a correct reason.

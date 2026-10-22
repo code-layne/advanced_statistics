@@ -1,0 +1,31 @@
+# Homework item 4 (Unit 1, Lesson 1.4). Relative to the lesson directory.
+id: hw4
+points: 4
+task: >-
+  A dotplot shows grams of sugar per serving for 24 breakfast cereals (values 2 to 13
+  g with most between 3 and 9 g, plus two cereals at 20 and 21 g). Write a complete
+  description: all four parts, in context, with the variable and its units named.
+criteria:
+  - id: shape
+    points: 1
+    full: >-
+      Shape: unimodal and skewed to the right.
+  - id: center
+    points: 1
+    full: >-
+      Center: about 6 grams per serving (the median is 6 g; a typical value of 5-7 g is
+      fine).
+  - id: spread
+    points: 1
+    full: >-
+      Spread: values run from 2 to 21 grams (range about 19 g), with most cereals between
+      3 and 9 grams.
+  - id: unusual
+    points: 1
+    full: >-
+      Unusual features: two cereals at 20 and 21 grams sit far above the rest, behind a
+      gap from about 13 to 20 grams; the description names sugar per serving in grams
+      (context).
+examples:
+  - response: "It is skewed right with a center of 6 and a range of 19."
+    scores: {shape: 1, center: 0, spread: 0, unusual: 0}

@@ -1,0 +1,18 @@
+# Actual quiz, Unit 1 (Lessons 1.0-1.4), item 7a. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q7a
+points: 2
+task: >-
+  Harbor Aquarium keeps one row for each of its 60 guided tours last month (tour code,
+  theme, number of visitors, ...). Identify the individuals, then name one categorical
+  variable and one quantitative variable in the table.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Individuals are the 60 guided tours AND names a categorical variable (theme, or
+      tour code) AND a quantitative variable (number of visitors on the tour).
+    partial: >-
+      P (1 of 2): Two of the three components correct (for example, the visitors given as
+      the individuals, or tour code named as quantitative).

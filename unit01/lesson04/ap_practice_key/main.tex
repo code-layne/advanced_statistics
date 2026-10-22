@@ -16,6 +16,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-l04-ap}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -80,6 +83,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \ans{13}
           \item 17
           \item 27
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Which statement best describes the shape of this distribution?
@@ -90,16 +94,18 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \ans{Skewed to the right, because the longer commutes trail off to the right.}
           \item Approximately uniform, because every interval contains at least a few employees.
           \item Bimodal, because two bars are taller than the rest.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Which conclusion is \textbf{supported} by this display?
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
           \item Employees at this company commute longer than employees at other companies.
           \item Commute times for all workers in this city are skewed to the right.
-          \item \ans{Most of these 40 employees commute under 30 minutes; one commutes over 80.}
+          \item \textcolor{keyred}{Most of these 40 employees commute under 30 minutes; one commutes over 80.}  % not bold: bold wraps and breaks the mirror
           \item The employee with the longest commute should be removed before the distribution
                 is described.
           \item Half of these employees commute more than 40 minutes.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Before concluding that this distribution is skewed to the right, a careful reader should
@@ -110,6 +116,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item whether the bars have gaps between them, as in a bar graph.
           \item whether any employee was counted twice.
           \item nothing --- a histogram reports the shape of the data as a fact.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -132,20 +139,20 @@ about the context, not just the arithmetic --- read them all before choosing.
         \vspace{4pt}
         \textbf{(a)} Classify commute time as categorical or quantitative, and then as discrete
         or continuous. Justify from the variable itself, not from the display.\\[4pt]
-        \ansline{Quantitative --- a commute time is a measured amount, not a category. It is}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Quantitative --- a commute time is a measured amount, not a category. It is}\\[1pt]
         \ansline{continuous: between 20 and 21 minutes, 20.4 minutes is perfectly possible.}
 
         \vspace{4pt}
         \textbf{(b)} Describe the shape of this distribution and identify any unusual features,
         in context.\\[4pt]
-        \ansline{Skewed right: most of these 40 employees commute under 30 minutes, with a tail of}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Skewed right: most of the 40 employees commute under 30 minutes, with a tail of}\\[1pt]
         \ansline{longer ones. One is an outlier at 80--90 minutes, behind a 20-minute empty stretch.}
 
         \vspace{4pt}
         \textbf{(c)} A manager writes: \emph{``The average commute here is about 25 minutes, so
         our employees are fine.''} Explain what that single number leaves out, and state what
         these data can and cannot tell you about employees at other companies.\\[4pt]
-        \ansline{It leaves out shape, spread, and the unusual value: these commutes run from under}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{It leaves out shape, spread, and the unusual value: these commutes run from under}\\[1pt]
         \ansline{10 minutes to over 80, and one employee travels more than 80 minutes each way.}\\[1pt]
         \ansline{These data describe only these 40 employees, not workers at any other company.}
 
@@ -153,7 +160,7 @@ about the context, not just the arithmetic --- read them all before choosing.
         \textbf{(d)} The same 40 commute times are redrawn using intervals 30 minutes wide.
         Explain what happens to the employee who commutes more than 80 minutes, and why the
         interval width has to be checked before the shape is believed.\\[4pt]
-        \ansline{The bars become 27, 12, 1. That employee is alone in a 60--90 bar that now sits}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5d, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{The bars become 27, 12, 1. That employee is alone in a 60--90 bar that now sits}\\[1pt]
         \ansline{right beside the 30--60 bar: the gap vanished, but the data did not change.}
 
 \end{enumerate}

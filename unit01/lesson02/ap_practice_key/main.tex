@@ -12,6 +12,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-l02-ap}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -71,14 +74,16 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \ans{10\%}
           \item 25\%
           \item 40\%
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Which statement about contamination in the two neighborhoods is \textbf{correct}?
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
           \item Hillcrest is worse, because it had more contaminated bins.
           \item Riverside is worse, because it had more contaminated bins.
-          \item \ans{Hillcrest had more contaminated bins, but Riverside had the higher
-                contamination rate.}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+          \item \textcolor{keyred}{Hillcrest had more contaminated bins, but Riverside had the higher
+                contamination rate.}  % not bold: bold wraps to two lines and breaks the mirror
           \item Riverside had more contaminated bins, but Hillcrest had the higher
                 contamination rate.
           \item The neighborhoods cannot be compared, because different numbers of bins
@@ -93,6 +98,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item The four entries add to 750, the total bins inspected in the city.
           \item Each entry must be larger than the matching entry for Hillcrest.
           \item The entries cannot be compared to Hillcrest's under any circumstances.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item The city wants one graph showing whether the two neighborhoods sort their recycling
@@ -104,6 +110,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item A single bar for each neighborhood's total.
           \item Bars of the raw counts with Hillcrest's halved to match Riverside's total.
           \item No graph can compare two neighborhoods.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -128,13 +135,13 @@ about the context, not just the arithmetic --- read them all before choosing.
         \vspace{6pt}
         \textbf{(a)} Identify the individuals and the variable, and classify the variable as
         categorical or quantitative.\\[4pt]
-        \ansline{Individuals: the 300 ninth graders and 120 twelfth graders surveyed. The}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Individuals: the 300 ninth graders and 120 twelfth graders surveyed. The}\\[1pt]
         \ansline{variable is preferred use of an activity period, and it is categorical.}
 
         \vspace{6pt}
         \textbf{(b)} Build the relative frequency table for the twelfth graders. Show each
         calculation.\\[4pt]
-        \ansline{Sports $42/120 = 0.35 = 35\%$; Clubs $30/120 = 0.25 = 25\%$;}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Sports $42/120 = 0.35 = 35\%$; Clubs $30/120 = 0.25 = 25\%$;}\\[1pt]
         \ansline{Study hall $48/120 = 0.40 = 40\%$. The three add to $1.00$, as they must,}\\[1pt]
         \ansline{since every senior surveyed picked exactly one option.}
 
@@ -142,14 +149,14 @@ about the context, not just the arithmetic --- read them all before choosing.
         \textbf{(c)} A student newspaper writes: \textbf{``Ninth graders like sports far more
         than seniors do --- 150 of them chose it, versus only 42 seniors.''} Explain what is
         wrong with this comparison, and give the corrected version.\\[4pt]
-        \ansline{The grades are different sizes --- 300 ninth graders against 120 seniors ---}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{The grades are different sizes --- 300 ninth graders against 120 seniors ---}\\[1pt]
         \ansline{so raw counts are not comparable. Corrected: 50\% of ninth graders chose}\\[1pt]
         \ansline{sports versus 35\% of seniors, a real but far smaller gap than 150 to 42.}
 
         \vspace{6pt}
         \textbf{(d)} Identify one preference where the two grades differ most, and describe
         that difference in context using relative frequencies.\\[4pt]
-        \ansline{Study hall differs most: 20\% of ninth graders chose it against 40\% of}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5d, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Study hall differs most: 20\% of ninth graders chose it against 40\% of}\\[1pt]
         \ansline{seniors --- seniors picked study hall at twice the rate of ninth graders.}
 
 \end{enumerate}

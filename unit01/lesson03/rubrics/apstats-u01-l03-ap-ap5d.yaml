@@ -1,0 +1,21 @@
+# AP Practice item 5, part (d) (Unit 1, Lesson 1.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5d
+points: 2
+task: >-
+  A weather station recorded total rainfall (mm) on 20 rainy days, shown in a stem
+  plot (stems = tens digit): 2 4 5 8 9 | 11 13 13 16 17 18 | 20 22 25 29 | 31 34 38 |
+  42 47. A colleague suggests displaying these 20 rainfall amounts as a bar graph with
+  one bar per day. Explain why that is a poor choice here.
+criteria:
+  - id: explain
+    points: 2
+    full: >-
+      E: Explains that bar graphs are for categorical variables and the days are not
+      categories (rainfall is quantitative), AND that twenty one-day bars show no
+      distribution or pattern, whereas grouping into intervals (a histogram) reveals the
+      shape.
+    partial: >-
+      P (1 of 2): Gives one of the two reasons, or says it is a poor choice only vaguely
+      ("too many bars").

@@ -1,0 +1,19 @@
+# AP Practice item 5, part (a) (Unit 1, Lesson 1.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5a
+points: 2
+task: >-
+  A school surveyed its 9th and 12th graders about how they would prefer to spend an
+  activity period. 300 ninth graders: Sports 150, Clubs 90, Study hall 60. 120 twelfth
+  graders: Sports 42, Clubs 30, Study hall 48. Identify the individuals and the
+  variable, and classify the variable as categorical or quantitative.
+criteria:
+  - id: identify
+    points: 2
+    full: >-
+      E: Identifies the individuals as the ninth and twelfth graders surveyed (300 + 120
+      students), the variable as preferred use of the activity period, AND classifies it
+      as categorical.
+    partial: >-
+      P (1 of 2): Gets two of the three (individuals, variable, classification) correct.

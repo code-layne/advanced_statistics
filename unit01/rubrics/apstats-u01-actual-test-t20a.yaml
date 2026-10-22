@@ -1,0 +1,15 @@
+# Unit 1 actual test, item 20a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t20a
+points: 2
+task: >-
+  Cup amounts are approximately normal with mean 12 oz and SD 0.4 oz. About what
+  percent of cups get between 11.6 and 12.4 ounces?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: About 68%, because 11.6 and 12.4 are 1 SD below and above the mean.
+    partial: >-
+      P (1 of 2): Says 68% with no reason, or identifies 1 SD but gives the wrong percent.

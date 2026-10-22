@@ -1,0 +1,20 @@
+# Homework item 1, last part (Unit 1, Lesson 1.2). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A club of 50 members chose a service project: Park cleanup 22, Food bank 15,
+  Tutoring 13 (park cleanup is 44%). Is "most members chose the park cleanup" a fair
+  thing to say?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no, it is not fair.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that park cleanup's 44% (22 of 50) is the largest share but less than half,
+      so it is not a majority (most members did not choose it).
+examples:
+  - response: "Yes, because park cleanup got the most votes."
+    scores: {answer: 0, reason: 0}

@@ -1,0 +1,20 @@
+# AP Practice item 5, part (d) (Unit 1, Lesson 1.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5d
+points: 2
+task: >-
+  Write one statistical question the library could answer using a categorical variable
+  from this data set, and state what varies in it.
+criteria:
+  - id: question
+    points: 2
+    full: >-
+      E: Writes a statistical question about a categorical variable in the data (branch
+      used most often, or card number only if framed as a category), one that anticipates
+      variability across cardholders, AND states that the branch (the variable's value)
+      varies from one cardholder to the next.
+    partial: >-
+      P (1 of 2): Writes a statistical question about a categorical variable but does not
+      state what varies, OR states the variation but the question is about a quantitative
+      variable or is not statistical.

@@ -1,0 +1,18 @@
+# Sample quiz, Unit 1 (Lessons 1.0-1.4), item 7b. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q7b
+points: 2
+task: >-
+  Across all 48 vendors the stall types are Produce 18, Baked goods 12, Crafts 10,
+  Prepared food 8. Give the relative frequency of each stall type to the nearest tenth
+  of a percent.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: All four correct: Produce 37.5%, Baked goods 25.0%, Crafts 20.8%, Prepared food
+      16.7% (proportions 0.375, 0.250, 0.208, 0.167 also earn credit).
+    partial: >-
+      P (1 of 2): Divides by 48 correctly for at least two types, or gives all four with a
+      rounding error or without the tenth of a percent.

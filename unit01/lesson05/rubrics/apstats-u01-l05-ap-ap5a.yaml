@@ -1,0 +1,20 @@
+# AP Practice item 5, part (a) (Unit 1, Lesson 1.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5a
+points: 2
+task: >-
+  Fifteen homes' average daily water use (gallons): 110 120 130 140 150 160 180 200
+  220 240 270 310 350 400 620; mean 240, SD 136.6, Q1 140, median 200, Q3 310.
+  Describe the shape of this distribution of daily water use, and identify any value
+  that stands apart from the rest.
+criteria:
+  - id: shape
+    points: 2
+    full: >-
+      E: Says the distribution is skewed to the right (most homes cluster at lower use,
+      roughly 110 to 270 gallons, with a tail toward higher use) AND identifies the home
+      at 620 gallons per day as the value that stands apart (an outlier).
+    partial: >-
+      P (1 of 2): Gives one of the two correctly: right skew, or the 620-gallon home as
+      the value that stands apart.

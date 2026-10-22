@@ -1,0 +1,21 @@
+# AP Practice item 5, part (d) (Unit 1, Lesson 1.7). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5d
+points: 2
+task: >-
+  Record B: a histogram of 300 newborns' length of stay (mean 46 hours, SD 14 hours)
+  is unimodal and strongly skewed right, with a long tail past 72 hours. Is a normal
+  model reasonable? Name the deciding features and say what that means for the
+  empirical rule.
+criteria:
+  - id: normal
+    points: 2
+    full: >-
+      E: Says a normal model is NOT reasonable because the histogram is strongly skewed
+      right (long right tail, not symmetric / mound-shaped) AND that the empirical rule
+      (68-95-99.7) should not be applied to length of stay.
+    partial: >-
+      P (1 of 2): Says not normal with the right-skew reason but does not address the
+      empirical rule, OR says the empirical rule does not apply without naming a feature
+      of the display.

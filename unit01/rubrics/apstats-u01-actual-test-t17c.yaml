@@ -1,0 +1,19 @@
+# Unit 1 actual test, item 17c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t17c
+points: 3
+task: >-
+  Do most West members prefer yoga? Do most East members prefer spin? Justify.
+criteria:
+  - id: west
+    points: 2
+    full: >-
+      E: West: no, because 40% is less than half (the most common choice, but not a
+      majority).
+    partial: >-
+      P (1 of 2): Correct answer for West with no or a weak justification.
+  - id: east
+    points: 1
+    full: >-
+      E: East: no, because only 90/300 = 30% chose spin.

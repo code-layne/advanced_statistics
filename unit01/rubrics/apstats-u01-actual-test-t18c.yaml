@@ -1,0 +1,21 @@
+# Unit 1 actual test, item 18c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t18c
+points: 3
+task: >-
+  Describe the distribution of pumpkin weights (lb) from the histogram of 50 pumpkins.
+criteria:
+  - id: shape_unusual
+    points: 2
+    full: >-
+      E: Skewed right with one peak at 8-12 lb AND an unusual feature: the gap at 28-32 lb
+      or the 2 pumpkins at 32-36 lb as possible outliers.
+    partial: >-
+      P (1 of 2): Shape correct without an unusual feature, or the unusual feature without
+      the shape.
+  - id: center_spread
+    points: 1
+    full: >-
+      E: Center (median in 12-16 lb, about 13 lb) and variability (about 4 to 36 lb), in
+      context.

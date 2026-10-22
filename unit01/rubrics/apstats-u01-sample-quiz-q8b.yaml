@@ -1,0 +1,26 @@
+# Sample quiz, Unit 1 (Lessons 1.0-1.4), item 8b. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q8b
+points: 4
+task: >-
+  Describe the distribution of weekly revenue (dollars) of 30 vendors completely, from
+  a dotplot that piles up near $300-$500 with a long tail to the right and one vendor
+  near $1,900.
+criteria:
+  - id: shape_unusual
+    points: 2
+    full: >-
+      E: Shape: skewed right AND unusual features: the gap from about $1,000 to $1,900 and
+      the outlier near $1,900.
+    partial: >-
+      P (1 of 2): Shape correct with no unusual feature named, or the unusual features
+      without the shape.
+  - id: center_variability
+    points: 2
+    full: >-
+      E: Center (about $500 per week) AND variability (values from about $200 to $1,900,
+      or a range about $1,700), in context (weekly revenue, dollars, vendors).
+    partial: >-
+      P (1 of 2): One of center or variability correct, or both given without context or
+      units.

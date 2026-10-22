@@ -1,0 +1,18 @@
+# Actual quiz, Unit 1 (Lessons 1.0-1.4), item 8d. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q8d
+points: 2
+task: >-
+  The director wants to delete the two visitors in the 90-100 minute block before
+  reporting a typical visit, calling them clearly errors. Give one reason that is a
+  poor decision, and say what should be done instead.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Gives a reason (nothing marks them as errors; a visitor really can stay 95
+      minutes) AND says to investigate the two visits and report them as part of the
+      description (or use a resistant center).
+    partial: >-
+      P (1 of 2): Gives a reason or a course of action, not both.

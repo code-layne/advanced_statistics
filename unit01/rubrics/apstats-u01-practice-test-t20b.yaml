@@ -1,0 +1,17 @@
+# Unit 1 practice (sample) test, item 20b. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t20b
+points: 2
+task: >-
+  Egg weights are approximately normal with mean 58 g and SD 4 g. About what percent
+  weigh more than 62 grams?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: About 16%: 62 is 1 SD above the mean, and half of the 32% outside 1 SD lies
+      above.
+    partial: >-
+      P (1 of 2): Identifies 1 SD above the mean but gives a wrong percent (e.g. 32% or
+      34%).

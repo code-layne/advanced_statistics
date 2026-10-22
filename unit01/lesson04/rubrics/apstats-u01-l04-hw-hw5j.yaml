@@ -1,0 +1,15 @@
+# Homework item 5, justification (Unit 1, Lesson 1.4). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  A histogram of the salaries of all 250 employees at one company is strongly skewed
+  to the right, with three salaries far above the rest. Justify in a sentence why (B)
+  "Most of these 250 employees earn near the lower end, while a few earn much more" is
+  best supported.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B): a right skew means most salaries pile up at the low end with a few
+      much larger ones in the tail, and the display describes only these 250 employees
+      (not the industry, not a reason to delete values).
