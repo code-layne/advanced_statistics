@@ -1,0 +1,3 @@
+[submodule "math-shared"]
+	path = math-shared
+	url = https://github.com/code-layne/math-shared

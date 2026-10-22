@@ -31,7 +31,13 @@ UNIT         := $(notdir $(abspath ..))
 LESSON       := $(notdir $(CURDIR))
 
 SHARED_STYS  := $(wildcard $(PROJECT_ROOT)/shared/*.sty)
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+# TeX search path: the course packages (recursive), then math-shared (the
+# submodule at the project root, for grading.sty). math-shared is listed
+# NON-recursively and lives outside shared/ because math-shared/examples holds
+# main.tex files: kpathsea resolves even the main file through TEXINPUTS, so a
+# recursive path reaching them would make a component build compile an
+# example's main.tex instead of its own.
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 LATEXMK      = latexmk
 LATEXFLAGS   = -xelatex \
                -interaction=nonstopmode \
@@ -261,3 +267,77 @@ clean:
 	      $(COMPILED_DIR)/$(LESSON)_student.pdf \
 	      $(COMPILED_DIR)/$(LESSON)_key.pdf \
 	      $(COMPILED_DIR)/$(LESSON)_full.pdf
+
+# ── Grading (math-shared, the submodule at the project root) ──────────────────
+# Per-lesson entry points to math-shared's grading.mk, for ONE component that
+# uses grading.sty (\gradedblank items — ap_practice and homework):
+#
+#   make manifest COMP=homework
+#       blank + key builds, target/<unit>/<lesson>/grading/<COMP>/manifest.json,
+#       and the check that the blank and key agree on every graded item.
+#   make roster-packets COMP=homework ROSTER=~/Rosters/apstats/roster-map.csv [SECTION=…]
+#       one copy of the lesson's student packet per student, in roster order,
+#       with that student's personalized COMP (QR codes carry her tracking id,
+#       the name strip her name) in place of the master copy, paginated by
+#       shared/paginate.sh exactly like `make student`, joined into
+#       target/compiled/<unit>/lessonYY_<COMP>_roster.pdf to print as one
+#       collated job. A COMP that is not in the student packet gets one copy of
+#       the component alone per student, padded to an even page count so each
+#       copy starts on a fresh sheet.
+#
+# The roster packets and the per-student builds carry student names: they stay
+# under target/, which is never committed.
+GRADING_MK  := $(PROJECT_ROOT)/math-shared/grading.mk
+COMP        ?=
+COMPONENT   := $(COMP)
+GRADING_OUT := $(PDF_DIR)/grading/$(COMP)
+
+.PHONY: manifest roster-packets grading-need-comp
+
+ifneq ($(wildcard $(GRADING_MK)),)
+include $(GRADING_MK)
+
+grading-need-comp:
+	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=homework"; exit 1; }
+
+manifest: grading-need-comp
+	@$(MAKE) --no-print-directory grading-manifest
+	@echo "✓  Manifest       → target/$(UNIT)/$(LESSON)/grading/$(COMP)/manifest.json"
+
+# Roster order and tracking ids, read only when ROSTER is given.
+ROSTER_IDS     := $(if $(ROSTER),$(shell $(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py \
+                    "$(ROSTER)" --ids-only $(if $(SECTION),--section "$(SECTION)")))
+ROSTER_PKT_DIR := $(GRADING_OUT)/packets
+ROSTER_PACKETS := $(foreach id,$(ROSTER_IDS),$(ROSTER_PKT_DIR)/$(id).pdf)
+ROSTER_OUT     := $(COMPILED_DIR)/$(LESSON)_$(COMP)_roster.pdf
+
+# The master copy of COMP as it appears in the student packet, if it does.
+COMP_MASTER_PDF := $(PDF_DIR)/$(COMP)/main.pdf
+COMP_IN_PACKET  := $(filter $(COMP_MASTER_PDF),$(STUDENT_PDFS))
+
+roster-packets: grading-need-comp grading-need-roster
+	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)"; exit 1; }
+	@$(MAKE) --no-print-directory $(ROSTER_PACKETS)
+	@mkdir -p $(COMPILED_DIR)
+	@if [ $(words $(ROSTER_PACKETS)) -eq 1 ]; then cp $(ROSTER_PACKETS) $(ROSTER_OUT); \
+	 else pdfunite $(ROSTER_PACKETS) $(ROSTER_OUT); fi
+	@echo "✓  Roster packets → target/compiled/$(UNIT)/$(LESSON)_$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order)"
+
+# One student's packet. grading-personalized (math-shared) compiles every
+# student's COMP into $(GR_STUDENTS)/<id>.pdf; that copy replaces the master in
+# the student packet's PDF list, and the packet is paginated against the same
+# key-packet list `make student` uses, so its page boundaries are identical.
+# Each student gets a paginate.sh scratch dir of its own (see PAGINATE_*_DIR).
+ROSTER_PKT_PDFS = $(if $(COMP_IN_PACKET),$(patsubst $(COMP_MASTER_PDF),$(GR_STUDENTS)/$*.pdf,$(STUDENT_PDFS)),$(GR_STUDENTS)/$*.pdf)
+ROSTER_PKT_PEER = $(if $(COMP_IN_PACKET),$(KEY_PDFS))
+
+$(ROSTER_PKT_DIR)/%.pdf: grading-personalized $(if $(COMP_IN_PACKET),$(ALIGN_STAMPS))
+	@mkdir -p $(dir $@)
+	@set -- $(ROSTER_PKT_PDFS); \
+	if [ $$# -eq 1 ]; then cp "$$1" $@; else pdfunite "$$@" $@; fi
+	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $@ $(ROSTER_PKT_DIR)/.paginate-$* \
+	    $(ROSTER_PKT_PDFS) -- $(ROSTER_PKT_PEER)
+else
+manifest roster-packets grading-need-comp:
+	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
+endif

@@ -22,7 +22,7 @@ PROJECT_ROOT := $(abspath ..)
 UNIT         := $(notdir $(CURDIR))
 COMPILED_DIR := $(PROJECT_ROOT)/target/compiled
 SHARED_STYS  := $(wildcard $(PROJECT_ROOT)/shared/*.sty)
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 LATEXMK      = latexmk
 LATEXFLAGS   = -xelatex \
                -interaction=nonstopmode \
@@ -116,7 +116,7 @@ endif
 _unit_cover:
 ifdef HAS_UNIT_COVER
 	@mkdir -p $(COMPILED_DIR)/$(UNIT)
-	cd unit_cover && TEXINPUTS="$(PROJECT_ROOT)/shared//:" \
+	cd unit_cover && TEXINPUTS="$(TEXINPUTS)" \
 	    latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error \
 	    -outdir="$(PROJECT_ROOT)/target/$(UNIT)/unit_cover" main.tex
 	cp $(PROJECT_ROOT)/target/$(UNIT)/unit_cover/main.pdf $(UNIT_COVER_PDF)
@@ -204,3 +204,19 @@ clean:
 	rm -f $(BINDER_COVER_PDF) $(UNIT_COVER_PDF) $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)
 	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_key.pdf \
 	      $(COMPILED_DIR)/$(UNIT)_full.pdf
+
+# ── Grading (math-shared) ─────────────────────────────────────────────────────
+# The two grading targets, from the unit directory, for any graded component in
+# the unit. COMP is a path below the unit, and the call is handed to the
+# Makefile that builds it (a lesson's shared/lesson.mk, tests/ via
+# shared/tests.mk, quizzes/ via its own Makefile):
+#
+#   make manifest COMP=lesson03/homework
+#   make manifest COMP=tests/actual_test
+#   make roster-packets COMP=quizzes/actual_quiz ROSTER=~/Rosters/apstats/roster-map.csv [SECTION=…]
+.PHONY: manifest roster-packets
+manifest roster-packets:
+	@test -n "$(COMP)" || { echo "!  set COMP=<dir>/<component>, e.g. COMP=lesson03/homework or COMP=tests/actual_test"; exit 1; }
+	@test -f "$(dir $(COMP))Makefile" || { echo "!  no Makefile in $(UNIT)/$(dir $(COMP))"; exit 1; }
+	@$(MAKE) --no-print-directory -C $(dir $(COMP)) $@ COMP=$(notdir $(COMP)) \
+	    $(if $(ROSTER),ROSTER="$(abspath $(ROSTER))") $(if $(SECTION),SECTION="$(SECTION)")

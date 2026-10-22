@@ -7,7 +7,7 @@
 # the actual quiz must never reach a packet at all.
 PROJECT_ROOT := $(abspath ../..)
 UNIT         := $(notdir $(abspath ..))
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 PDF_DIR      := $(PROJECT_ROOT)/target/$(UNIT)/quizzes
 LATEXFLAGS   := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 
@@ -25,3 +25,9 @@ $(DOCS):
 
 clean:
 	rm -rf $(PDF_DIR)
+
+# ── Grading (math-shared) ─────────────────────────────────────────────────────
+# make manifest COMP=<quiz> / make roster-packets COMP=<quiz> ROSTER=<path>.
+# Each quiz's key is ../quiz_keys/<quiz>_key. See shared/assessment-grading.mk.
+ASSESS_KEYS := ../quiz_keys
+include $(PROJECT_ROOT)/shared/assessment-grading.mk
