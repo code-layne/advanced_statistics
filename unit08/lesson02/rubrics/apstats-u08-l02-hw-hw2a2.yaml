@@ -1,0 +1,15 @@
+# Homework item 2a, Ha (Unit 8, Lesson 8.2). Relative to the lesson directory.
+id: hw2a2
+points: 1
+task: >-
+  State the alternative hypothesis for the test of whether commuters use the four
+  transportation modes in equal proportions.
+criteria:
+  - id: alt
+    points: 1
+    full: >-
+      States Ha: at least one mode's proportion is not 0.25 (the proportions are not all
+      equal).
+examples:
+  - response: "None of the proportions are 0.25."
+    scores: {alt: 0}

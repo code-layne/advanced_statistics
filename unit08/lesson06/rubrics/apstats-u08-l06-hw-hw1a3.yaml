@@ -1,0 +1,13 @@
+# Homework item 1a, Ha (Unit 8, Lesson 8.6). Relative to the lesson directory.
+id: hw1a3
+points: 1
+task: >-
+  A counselor randomly selects 180 teenagers and classifies them by grade
+  (9th/10th/11th, 60 each) and sleep amount (<7 hours / 7+ hours). Write Ha.
+criteria:
+  - id: alt
+    points: 1
+    full: >-
+      Ha in context: there is an association between grade level and sleep amount (or,
+      homogeneity form: the distribution of sleep amount differs for at least one grade
+      level).

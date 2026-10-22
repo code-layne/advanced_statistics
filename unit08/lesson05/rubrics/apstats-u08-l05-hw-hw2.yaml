@@ -1,0 +1,22 @@
+# Homework item 2 (Unit 8, Lesson 8.5). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  A student says scenarios (b) and (c) in Problem 1 both involve two categorical
+  variables, so both must be tests for independence. Is the student correct? Explain.
+criteria:
+  - id: conclusion
+    points: 1
+    full: >-
+      Says the conclusion is right (both (b) and (c) are tests for independence) but the
+      reasoning is incomplete/flawed: having two categorical variables does not by itself
+      determine the test.
+  - id: design
+    points: 1
+    full: >-
+      Explains that the study design decides: one random sample with two variables
+      measured on each individual = independence; separate samples from several groups
+      with one variable = homogeneity.
+examples:
+  - response: "Yes, the student is correct because both have two categorical variables."
+    scores: {conclusion: 0, design: 0}

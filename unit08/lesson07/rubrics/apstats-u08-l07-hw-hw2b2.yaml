@@ -1,0 +1,11 @@
+# Homework item 2b, 10% (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw2b2
+points: 1
+task: >-
+  A survey claims 15% of adults read a physical newspaper daily; a researcher suspects
+  fewer and surveys a random sample of 400 adults (48 do). Verify the 10% condition.
+criteria:
+  - id: ten
+    points: 1
+    full: >-
+      Says 400 is at most 10% of all adults (the population of adults is at least 4000).

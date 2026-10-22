@@ -1,0 +1,12 @@
+# Homework item 1b, Random (Unit 8, Lesson 8.6). Relative to the lesson directory.
+id: hw1b2
+points: 1
+task: >-
+  A counselor randomly selects 180 teenagers and classifies them by grade
+  (9th/10th/11th, 60 each) and sleep amount (<7 hours / 7+ hours). Verify the Random
+  condition.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Says the 180 teenagers were randomly selected (stated in the problem).

@@ -1,0 +1,13 @@
+# Homework item 5a (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw5a
+points: 1
+task: >-
+  A counselor randomly selects 40 freshmen, 40 sophomores, 40 juniors and 40 seniors
+  and records whether each participated in an extracurricular activity (yes/no),
+  testing whether the proportion differs across grade levels. Name the procedure.
+criteria:
+  - id: procedure
+    points: 1
+    full: >-
+      Names a chi-square test for homogeneity (four separate samples, one categorical
+      response).

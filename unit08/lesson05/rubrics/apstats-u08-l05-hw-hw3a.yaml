@@ -1,0 +1,21 @@
+# Homework item 3a (Unit 8, Lesson 8.5). Relative to the lesson directory.
+id: hw3a
+points: 3
+task: >-
+  A researcher randomly selects 50 students from each of 3 schools (P, Q, R) and asks
+  which after-school program they prefer (Academic Support, Sports, Arts). Identify
+  the test type and write the hypotheses.
+criteria:
+  - id: type
+    points: 1
+    full: >-
+      Identifies a chi-square test for homogeneity.
+  - id: null
+    points: 1
+    full: >-
+      H0: the distribution of after-school program preference is the same for Schools P,
+      Q, and R.
+  - id: alt
+    points: 1
+    full: >-
+      Ha: the distribution of program preference is not the same for all three schools.

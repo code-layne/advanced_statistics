@@ -1,0 +1,22 @@
+# Homework item 1c (Unit 8, Lesson 8.1). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A bag of 200 candies is supposed to contain 20% of each of 5 colors (observed 45,
+  38, 42, 31, 44). Explain in your own words what question a chi-square
+  goodness-of-fit test would answer about this data.
+criteria:
+  - id: compare
+    points: 1
+    full: >-
+      Says the test compares the observed color counts with the expected counts of 40 per
+      color (the claimed 20%-each distribution).
+  - id: chance
+    points: 1
+    full: >-
+      Says it asks whether the differences are too large to be explained by random
+      (chance) variation, i.e., whether there is convincing evidence the bag does not
+      follow the claimed distribution.
+examples:
+  - response: "It tells us which color has the most candies."
+    scores: {compare: 0, chance: 0}

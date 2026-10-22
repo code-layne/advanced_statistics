@@ -1,0 +1,12 @@
+# Homework item 2a, H0 (Unit 8, Lesson 8.2). Relative to the lesson directory.
+id: hw2a1
+points: 1
+task: >-
+  A government claims commuters use car, bus, bike and walk in equal proportions.
+  State the null hypothesis for a chi-square goodness-of-fit test.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      States H0: p_car = p_bus = p_bike = p_walk = 0.25 (the four modes are used in equal
+      proportions).

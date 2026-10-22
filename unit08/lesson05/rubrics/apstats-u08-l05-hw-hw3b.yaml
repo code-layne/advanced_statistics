@@ -1,0 +1,23 @@
+# Homework item 3b (Unit 8, Lesson 8.5). Relative to the lesson directory.
+id: hw3b
+points: 3
+task: >-
+  For the 3-school program-preference study (50 random students per school), write the
+  two conditions for the chi-square test. Can either be verified without seeing the
+  data table? Explain.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      States the Random/Independence condition: random samples from each school, and 50 is
+      at most 10% of each school's students (each school has at least 500 students).
+  - id: large
+    points: 1
+    full: >-
+      States the Large Counts condition: all expected counts are at least 5.
+  - id: verify
+    points: 1
+    full: >-
+      Explains what can be checked: the 10% part needs the school sizes, and the expected
+      counts depend on the column totals in the data table, so Large Counts cannot be
+      verified without the table.

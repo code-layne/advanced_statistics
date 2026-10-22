@@ -1,0 +1,13 @@
+# Homework item 1(c) reason (Unit 8, Lesson 8.5). Relative to the lesson directory.
+id: hw1c2
+points: 1
+task: >-
+  A simple random sample of 200 high school athletes is classified by sport (Football,
+  Basketball, Soccer) and GPA level (3.0 and above, Below 3.0). Explain the choice of
+  test based on the study design.
+criteria:
+  - id: design
+    points: 1
+    full: >-
+      Says the design is ONE random sample with TWO categorical variables measured on each
+      individual, hence independence.

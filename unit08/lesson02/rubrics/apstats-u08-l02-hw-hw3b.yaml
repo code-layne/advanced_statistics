@@ -1,0 +1,19 @@
+# Homework item 3, explanation (Unit 8, Lesson 8.2). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  True or false, and explain: 'If the sample size is large enough, we only need to
+  check that each observed count is greater than 5 for the chi-square GOF test.'
+  (Answer: False.)
+criteria:
+  - id: expected
+    points: 1
+    full: >-
+      Says the Large Counts condition is about the EXPECTED counts (computed from H0 as n
+      times p0), not the observed counts.
+  - id: why
+    points: 1
+    full: >-
+      Explains that a large sample or large observed counts do not by themselves guarantee
+      every expected count is at least 5, so the expected counts must still be checked
+      (and the Random condition still applies).

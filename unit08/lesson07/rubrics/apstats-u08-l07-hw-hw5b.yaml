@@ -1,0 +1,14 @@
+# Homework item 5b (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw5b
+points: 1
+task: >-
+  A counselor randomly selects 40 freshmen, 40 sophomores, 40 juniors and 40 seniors
+  and records whether each participated in an extracurricular activity (yes/no),
+  testing whether the proportion differs across grade levels. State H0.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      H0: the proportion of students who participate in an extracurricular activity is the
+      same for all four grade levels (equivalently, the participation distribution is the
+      same).

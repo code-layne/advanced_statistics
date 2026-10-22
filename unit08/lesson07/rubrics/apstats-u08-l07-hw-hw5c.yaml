@@ -1,0 +1,13 @@
+# Homework item 5c (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw5c
+points: 1
+task: >-
+  A counselor randomly selects 40 freshmen, 40 sophomores, 40 juniors and 40 seniors
+  and records whether each participated in an extracurricular activity (yes/no),
+  testing whether the proportion differs across grade levels. State Ha.
+criteria:
+  - id: alt
+    points: 1
+    full: >-
+      Ha: the proportion who participate differs for at least one grade level (not 'all
+      differ').

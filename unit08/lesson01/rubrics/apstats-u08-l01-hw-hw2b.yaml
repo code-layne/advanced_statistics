@@ -1,0 +1,18 @@
+# Homework item 2b (Unit 8, Lesson 8.1). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  A fair die rolled 120 times gave counts 18, 22, 19, 25, 16, 20 (expected 20 each).
+  Would you be surprised if a fair die produced these results? Explain without any
+  formal calculation.
+criteria:
+  - id: judgement
+    points: 1
+    full: >-
+      Gives a judgement (expected answer: not surprised / results are consistent with a
+      fair die).
+  - id: reason
+    points: 1
+    full: >-
+      Supports it by the size of the differences: all are small relative to the expected
+      count of 20 (largest is +5 for face 4), the kind of variation chance alone produces.

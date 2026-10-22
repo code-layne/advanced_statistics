@@ -1,0 +1,11 @@
+# Homework item 1(a) Ha (Unit 8, Lesson 8.5). Relative to the lesson directory.
+id: hw1a4
+points: 1
+task: >-
+  Three brands of coffee (X, Y, Z) each recruited a random sample of 50 tasters who
+  rated their experience as Prefer, Neutral, or Dislike. Write Ha in context.
+criteria:
+  - id: alt
+    points: 1
+    full: >-
+      Ha: the distribution of taste ratings is not the same for all three brands.

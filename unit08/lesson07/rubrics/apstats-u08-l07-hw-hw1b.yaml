@@ -1,0 +1,13 @@
+# Homework item 1b (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw1b
+points: 1
+task: >-
+  Name the correct inference procedure: random samples of 80 in-state and 80
+  out-of-state applicants, recording admitted yes/no, to ESTIMATE the difference in
+  admission rates.
+criteria:
+  - id: procedure
+    points: 1
+    full: >-
+      Names a two-sample z-interval for p1 - p2 (a confidence interval, since the goal is
+      to estimate; a test earns 0).
