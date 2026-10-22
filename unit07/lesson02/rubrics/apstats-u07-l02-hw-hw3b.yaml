@@ -1,0 +1,29 @@
+# Homework item 3 (Unit 7, Lesson 7.2). Relative to the lesson directory.
+id: hw3b
+points: 4
+task: >-
+  Twelve participants' reaction-time differences (before - after caffeine, ms): 14,
+  -3, 22, 8, 11, -5, 18, 6, 13, 20, -2, 15. Construct a 90% confidence interval for
+  the mean change (four-step procedure).
+criteria:
+  - id: parameter
+    points: 1
+    full: >-
+      Defines mu_d = true mean difference in reaction time (before - after, ms) due to
+      caffeine.
+  - id: conditions
+    points: 1
+    full: >-
+      Checks Random (random sample / randomized), 10%, and, since n = 12 < 30, no strong
+      skewness or outliers in the differences.
+  - id: calculate
+    points: 1
+    full: >-
+      Paired t interval: df = 11, t* about 1.796, d-bar = 9.75, s_d about 9.13, SE about
+      2.635: 9.75 +/- 4.73, about (5.02, 14.48) ms. (Follow-through from the student's own
+      d-bar and s_d.)
+  - id: conclude
+    points: 1
+    full: >-
+      We are 90% confident the interval captures the true mean change (decrease) in
+      reaction time due to caffeine.

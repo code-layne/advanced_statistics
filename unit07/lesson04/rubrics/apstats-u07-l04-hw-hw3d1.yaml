@@ -1,0 +1,14 @@
+# Homework item 3d Random (Unit 7, Lesson 7.4). Relative to the lesson directory.
+id: hw3d1
+points: 1
+task: >-
+  Ten participants do a reaction-time task before and after two weeks with an app; the
+  differences (before - after) are roughly symmetric with no outliers. Verify the
+  Random/Independence condition.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Notes the participants should be a random sample / randomly assigned (or
+      representative) and that the differences are independent because the participants
+      are independent.

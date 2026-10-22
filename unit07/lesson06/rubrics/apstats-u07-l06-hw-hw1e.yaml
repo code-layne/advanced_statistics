@@ -1,0 +1,19 @@
+# Homework item 1e (Unit 7, Lesson 7.6). Relative to the lesson directory.
+id: hw1e
+points: 2
+task: >-
+  Reaction times: random samples of 30 young adults (mean 285 ms, s = 42) and 35 older
+  adults (mean 324 ms, s = 55); both roughly symmetric, no outliers. The 95% CI for
+  mu_young - mu_older is about (-63.1, -14.9) ms. Interpret in context and state
+  whether 0 is in the interval.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      States 95% confidence that the interval captures the true difference in MEAN
+      reaction time (young - older), in context.
+  - id: zero
+    points: 1
+    full: >-
+      Says 0 is not in the interval (all negative), so there is convincing evidence that
+      young adults have a lower (faster) mean reaction time.

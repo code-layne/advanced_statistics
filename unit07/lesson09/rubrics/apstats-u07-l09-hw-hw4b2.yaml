@@ -1,0 +1,13 @@
+# Homework item 4b conditions (Unit 7, Lesson 7.9). Relative to the lesson directory.
+id: hw4b2
+points: 1
+task: >-
+  Random samples of 25 current-design engines (mean 31.4 mpg, s = 2.8) and 25
+  new-design (mean 33.1 mpg, s = 3.2); dotplots roughly symmetric. Do the mean fuel
+  efficiencies differ? State the conditions briefly.
+criteria:
+  - id: 4b2
+    points: 1
+    full: >-
+      Notes random samples and that both dotplots are roughly symmetric (no outliers),
+      which is needed since both n = 25 < 30.

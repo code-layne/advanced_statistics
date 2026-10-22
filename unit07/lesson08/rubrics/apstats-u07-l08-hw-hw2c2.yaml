@@ -1,0 +1,12 @@
+# Homework item 2c Normal (Unit 7, Lesson 7.8). Relative to the lesson directory.
+id: hw2c2
+points: 1
+task: >-
+  An economist randomly surveys 50 tech-sector workers (Group 1) and 45
+  education-sector workers (Group 2) to see whether mean annual wages differ. Verify
+  the Normal condition.
+criteria:
+  - id: 2c2
+    points: 1
+    full: >-
+      Notes n1 = 50 and n2 = 45 are both at least 30, so the CLT applies to both; met.

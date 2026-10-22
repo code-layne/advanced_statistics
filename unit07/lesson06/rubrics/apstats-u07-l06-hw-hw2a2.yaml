@@ -1,0 +1,13 @@
+# Homework item 2a Normal (Unit 7, Lesson 7.6). Relative to the lesson directory.
+id: hw2a2
+points: 1
+task: >-
+  Plant heights: random samples of 22 plants on Fertilizer A (mean 18.4 cm, s = 3.1)
+  and 20 on Fertilizer B (mean 15.7 cm, s = 2.8); both roughly symmetric, no outliers.
+  Verify the Normal condition.
+criteria:
+  - id: 2a2
+    points: 1
+    full: >-
+      Notes both samples are under 30 (22 and 20) and both distributions are roughly
+      symmetric with no outliers, so the condition is met.

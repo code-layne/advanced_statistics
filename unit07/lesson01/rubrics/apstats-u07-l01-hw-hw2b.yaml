@@ -1,0 +1,17 @@
+# Homework item 2b (Unit 7, Lesson 7.1). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  A district tests H0: mu = 72 vs Ha: mu != 72 (alpha = 0.05) for the mean state exam
+  score of students who used an online learning platform. Describe a Type II error in
+  context.
+criteria:
+  - id: error
+    points: 1
+    full: >-
+      Describes failing to conclude that the mean score of platform users differs from 72.
+  - id: truth
+    points: 1
+    full: >-
+      ... when in fact the mean differs from 72 (the platform has a real effect), in
+      context.

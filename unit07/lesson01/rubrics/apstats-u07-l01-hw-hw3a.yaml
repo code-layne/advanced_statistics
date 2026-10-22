@@ -1,0 +1,17 @@
+# Homework item 3a (Unit 7, Lesson 7.1). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  A water facility tests H0: mu = 10 ppb vs Ha: mu < 10 ppb (alpha = 0.05) for the
+  mean lead concentration in tap water. Describe both error types in context.
+criteria:
+  - id: typeI
+    points: 1
+    full: >-
+      Type I: concluding the mean lead concentration is below 10 ppb when it is actually
+      10 ppb (declaring the water safe when it is not).
+  - id: typeII
+    points: 1
+    full: >-
+      Type II: failing to conclude the mean lead concentration is below 10 ppb when it
+      actually is below 10 ppb.

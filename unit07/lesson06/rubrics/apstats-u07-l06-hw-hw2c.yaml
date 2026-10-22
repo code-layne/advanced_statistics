@@ -1,0 +1,19 @@
+# Homework item 2c (Unit 7, Lesson 7.6). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  Plant heights: random samples of 22 plants on Fertilizer A (mean 18.4 cm, s = 3.1)
+  and 20 on Fertilizer B (mean 15.7 cm, s = 2.8); both roughly symmetric, no outliers.
+  The 95% CI for mu_A - mu_B is about (0.86, 4.54) cm. Interpret, and state whether it
+  gives convincing evidence that Fertilizer A produces taller plants.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      States 95% confidence that the interval captures the true difference in mean plant
+      height (A - B), in context.
+  - id: evidence
+    points: 1
+    full: >-
+      Says yes: the entire interval is above 0, so there is convincing evidence Fertilizer
+      A produces taller plants on average.

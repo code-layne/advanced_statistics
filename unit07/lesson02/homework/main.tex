@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l02-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -22,14 +25,14 @@
         for elementary school students. Verify all conditions.
         \vspace{0.1in}
 
-        \textbf{Step 1:} \writeline
-        \textbf{Step 2 (Conditions):} \writelines{3}
-        \textbf{Step 3:} $df =$ \blank{2cm}, $t^* =$ \blank{2.5cm}, $SE =$ \blank{2.5cm}
+        \textbf{Step 1:} \gradedhide{\gradedhere{\gradedblank[id=hw1a, type=rubric, points=1, display={$\mu$ = true mean screen time}]{2.0in}{0.19in}}\writeline}\ignorespaces
+        \textbf{Step 2 (Conditions):} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b, type=rubric, points=3, display={Random sample; $20 \le 10\%$ of all students; $n<30$, assume no strong skew/outliers.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writeline\\\writeline}
+        \textbf{Step 3:} $df =$ \makebox[2.0cm]{\smash{\gradedblank[id=hw1c1, type=short, points=1, answer=19, check=numeric, tolerance=0]{1.8cm}{0.19in}}}, $t^* =$ \makebox[2.5cm]{\smash{\gradedblank[id=hw1c2, type=short, points=1, answer=2.093, check=numeric, tolerance=0.005]{2.3cm}{0.19in}}}, $SE =$ \makebox[2.5cm]{\smash{\gradedblank[id=hw1c3, type=short, points=1, answer=0.201, check=numeric, tolerance=0.002]{2.3cm}{0.19in}}}
 
-        Interval: \blank{8cm} $= ($ \blank{2cm}$,$ \blank{2cm}$)$ hours
+        Interval: \blank{8cm} $= ($ \makebox[2.0cm]{\smash{\gradedblank[id=hw1d1, type=short, points=1, answer=2.979, check=numeric, tolerance=0.01]{1.8cm}{0.19in}}}$,$ \makebox[2.0cm]{\smash{\gradedblank[id=hw1d2, type=short, points=1, answer=3.821, check=numeric, tolerance=0.01]{1.8cm}{0.19in}}}$)$ hours
         \vspace{0.05in}
 
-        \textbf{Step 4:} \writelines{2}
+        \textbf{Step 4:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1e, type=rubric, points=2, display={95\% confident (2.98, 3.82) hr captures the true mean daily screen time of all elementary students.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 
   \item \textbf{Fuel Efficiency.} A car manufacturer randomly selects 40 vehicles of a
         new model and measures fuel efficiency: $\bar x = 31.7$ mpg, $s = 4.2$ mpg.
@@ -38,9 +41,9 @@
         conditions and interpret in context.
         \vspace{0.1in}
 
-        \textbf{Steps 1--4:} \writelines{8}
+        \textbf{Steps 1--4:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=4, display={$\mu$ = true mean mpg of this model. Random; $40 \le 10\%$; $n = 40 \ge 30$. $df=39$, $t^*=2.708$, $SE=0.664$: $31.7 \pm 1.798$. We are 99\% confident (29.9, 33.5) mpg captures the true mean fuel efficiency of all vehicles of this model.}]{\linewidth+6pt}{\gradedlinesheight{7}}}\writelines{7}}
 
-        Interval: $= ($ \blank{2cm}$,$ \blank{2cm}$)$ mpg
+        Interval: $= ($ \makebox[2.0cm]{\smash{\gradedblank[id=hw2b1, type=short, points=1, answer=29.9, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$,$ \makebox[2.0cm]{\smash{\gradedblank[id=hw2b2, type=short, points=1, answer=33.5, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$)$ mpg
 
   \item \textbf{Matched Pairs: Reaction Time.} A researcher tests whether caffeine
         affects reaction time. Twelve participants are tested before and after consuming
@@ -57,11 +60,11 @@
         Compute $\bar d$ and $s_d$, then construct a 90\% confidence interval for
         the mean change in reaction time due to caffeine.
 
-        $\bar d = $ \blank{3cm} \quad $s_d \approx $ \blank{3cm}
+        $\bar d = $ \makebox[3.0cm]{\smash{\gradedblank[id=hw3a1, type=short, points=1, answer=9.75, check=numeric, tolerance=0.01]{2.8cm}{0.19in}}} \quad $s_d \approx $ \makebox[3.0cm]{\smash{\gradedblank[id=hw3a2, type=short, points=1, answer=9.13, check=numeric, tolerance=0.02]{2.8cm}{0.19in}}}
 
-        \textbf{Steps 1--4:} \writelines{6}
+        \textbf{Steps 1--4:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3b, type=rubric, points=4, display={$\mu_d$ = true mean difference (before $-$ after, ms). Random; $12 \le 10\%$; $n<30$, no strong skew/outliers. $df=11$, $t^*=1.796$, $SE = 9.13/\sqrt{12} = 2.635$: $9.75 \pm 4.73$. 90\% confident (5.02, 14.48) ms captures the true mean change.}]{\linewidth+6pt}{\gradedlinesheight{5}}}\writelines{5}}
 
-        Interval: $= ($ \blank{2cm}$,$ \blank{2cm}$)$ ms
+        Interval: $= ($ \makebox[2.0cm]{\smash{\gradedblank[id=hw3c1, type=short, points=1, answer=5.02, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$,$ \makebox[2.0cm]{\smash{\gradedblank[id=hw3c2, type=short, points=1, answer=14.48, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$)$ ms
 
 \end{enumerate}
 

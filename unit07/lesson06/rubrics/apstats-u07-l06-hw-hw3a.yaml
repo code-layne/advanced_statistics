@@ -1,0 +1,15 @@
+# Homework item 3a (Unit 7, Lesson 7.6). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  Exam scores: random samples, School 1 n = 45, mean 512, s = 68; School 2 n = 40,
+  mean 495, s = 72. State the conditions briefly, one sentence each.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: both are random samples (from each school), independent groups.
+  - id: normal
+    points: 1
+    full: >-
+      Normal/Large Sample: n1 = 45 and n2 = 40 are both at least 30, so the CLT applies.

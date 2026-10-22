@@ -1,0 +1,20 @@
+# Homework item 1a (Unit 7, Lesson 7.3). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A 90% t-interval for the mean hours per week adults exercise is (3.8, 5.6) hours
+  (random sample of 45 adults). Write a correct interpretation of the interval.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 90% confidence that the interval (3.8, 5.6) hours captures (contains) the
+      parameter.
+  - id: parameter
+    points: 1
+    full: >-
+      The parameter is the true MEAN hours per week of exercise for all adults (not
+      individual adults, not the sample mean).
+examples:
+  - response: "90% of adults exercise between 3.8 and 5.6 hours a week."
+    scores: {confidence: 0, parameter: 0}

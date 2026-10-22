@@ -1,0 +1,18 @@
+# Homework item 1d (Unit 7, Lesson 7.5). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  A botanist tests whether a new fertilizer raises mean plant height above 12 cm: 25
+  plants randomly assigned, x-bar = 13.6 cm, s = 3.2 cm, dotplot roughly symmetric
+  with no outliers. t = 2.50, df = 24, p about 0.010. State the conclusion (alpha =
+  0.05).
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.010) to alpha = 0.05 and rejects H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is convincing evidence that the true mean plant height with the new
+      fertilizer is greater than 12 cm (in context, about the population mean).

@@ -1,0 +1,12 @@
+# Homework item 2b explanation (Unit 7, Lesson 7.3). Relative to the lesson directory.
+id: hw2b1
+points: 1
+task: >-
+  A 95% t-interval for the mean textbook price uses x-bar = $87.40, s = $24.00, n = 36
+  (ME = $8.12). How would the margin of error change if n = 144? Compute it.
+criteria:
+  - id: halved
+    points: 1
+    full: >-
+      Says the margin of error is cut in half (about $4.06 instead of $8.12) because SE =
+      s/sqrt(n) and quadrupling n halves 1/sqrt(n).

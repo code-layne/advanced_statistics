@@ -1,0 +1,12 @@
+# Homework item 1, Step 1 (Unit 7, Lesson 7.2). Relative to the lesson directory.
+id: hw1a
+points: 1
+task: >-
+  A pediatrician randomly samples 20 elementary students (mean 3.4 h, s = 0.9 h of
+  daily screen time) to build a 95% CI. Step 1: define the parameter.
+criteria:
+  - id: parameter
+    points: 1
+    full: >-
+      Defines mu as the true mean daily screen time (hours) of ALL elementary school
+      students (a population mean, not the sample mean 3.4).

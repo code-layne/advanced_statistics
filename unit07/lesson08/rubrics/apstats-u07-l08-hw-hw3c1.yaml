@@ -1,0 +1,12 @@
+# Homework item 3c Random (Unit 7, Lesson 7.8). Relative to the lesson directory.
+id: hw3c1
+points: 1
+task: >-
+  Random samples: 18 children with strict screen-time rules (Group 1, mild left skew,
+  no outliers) and 21 with no rules (Group 2, approximately symmetric); she believes
+  Group 1 has lower mean screen time. Verify the Random condition.
+criteria:
+  - id: 3c1
+    points: 1
+    full: >-
+      Says both groups were randomly selected, so the condition is met.

@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l09-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -22,11 +25,11 @@ hours per week on average than commuter students. Random samples of 35 residenti
 $s_2 = 6.1$ h) are selected. Dotplots for both groups are roughly symmetric with no outliers.
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
-  \item \textbf{Plan:} Method: \blank{5cm}, conditions met (state briefly): \writeline
-  \item \textbf{Do:} $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}} \approx$ \blank{2.5cm}
-        \quad $t \approx$ \blank{2cm} \quad Technology: $p \approx$ \blank{2cm}, $df \approx$ \blank{2cm}
-  \item \textbf{Conclude:} At $\alpha = 0.05$: \writelines{2}
+  \item \textbf{State:} $H_0$: \makebox[4cm]{\smash{\gradedblank[id=hw1a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}}} \quad $H_a$: \makebox[4cm]{\smash{\gradedblank[id=hw1a2, type=short, points=1, answer={{mu1 - mu2 > 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 > 0$}]{3.8cm}{0.19in}}}
+  \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw1b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}}, conditions met (state briefly): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries\boldmath random; CLT}]{1.25in}{0.19in}}
+  \item \textbf{Do:} $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}} \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw1c1, type=short, points=1, answer=1.419, check=numeric, tolerance=0.01, display={\boldmath$1.419$}]{2.3cm}{0.19in}}}
+        \quad $t \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw1c2, type=short, points=1, answer=1.76, check=numeric, tolerance=0.02, display={\boldmath$1.76$}]{1.8cm}{0.19in}}} \quad Technology: $p \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw1c3, type=short, points=1, answer=0.042, check=numeric, tolerance=0.003, display={\boldmath$0.042$}]{1.8cm}{0.19in}}}, $df \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw1c4, type=short, points=1, answer=57.4, check=numeric, tolerance=0.6, display={\boldmath$57.4$}]{1.8cm}{0.19in}}}
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.042 < 0.05$: reject $H_0$; convincing evidence residential students study more on average.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{enumerate}
 
 \vspace{0.05in}
@@ -38,11 +41,11 @@ Program B: $n_2 = 38$, $\bar x_2 = 68.7$, $s_2 = 11.2$. Students were randomly a
 to programs; CLT applies.
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
-  \item \textbf{Plan:} Method: \blank{5cm}. Conditions (brief): \writeline
-  \item \textbf{Do:} $SE \approx$ \blank{2.5cm} \quad $t \approx$ \blank{2cm}
-        \quad $p$ (two-sided) $\approx$ \blank{2cm} \quad $df \approx$ \blank{2cm}
-  \item \textbf{Conclude:} \writelines{2}
+  \item \textbf{State:} $H_0$: \makebox[4cm]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}}} \quad $H_a$: \makebox[4cm]{\smash{\gradedblank[id=hw2a2, type=short, points=1, answer={{mu1 - mu2 != 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 \ne 0$}]{3.8cm}{0.19in}}}
+  \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw2b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}}. Conditions (brief): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2b2, type=rubric, points=1, display={\bfseries\boldmath random; $n$'s $\ge 30$}]{1.5in}{0.19in}}
+  \item \textbf{Do:} $SE \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw2c1, type=short, points=1, answer=2.388, check=numeric, tolerance=0.01, display={\boldmath$2.388$}]{2.3cm}{0.19in}}} \quad $t \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw2c2, type=short, points=1, answer=1.51, check=numeric, tolerance=0.02, display={\boldmath$1.51$}]{1.8cm}{0.19in}}}
+        \quad $p$ (two-sided) $\approx$ \makebox[2cm]{\smash{\gradedblank[id=hw2c3, type=short, points=1, answer=0.136, check=numeric, tolerance=0.003, display={\boldmath$0.136$}]{1.8cm}{0.19in}}} \quad $df \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw2c4, type=short, points=1, answer=73.5, check=numeric, tolerance=0.6, display={\boldmath$73.5$}]{1.8cm}{0.19in}}}
+  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.136 > 0.05$: fail to reject $H_0$; no convincing evidence the programs' mean scores differ.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{enumerate}
 
 \vspace{0.05in}
@@ -55,15 +58,15 @@ $\bar x_2 = 17.5$ days, $s_2 = 4.1$ days). Both distributions are roughly symmet
 no outliers.
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
-  \item \textbf{Plan:} Method: \blank{5cm}. Conditions:
+  \item \textbf{State:} $H_0$: \makebox[4cm]{\smash{\gradedblank[id=hw3a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}}} \quad $H_a$: \makebox[4cm]{\smash{\gradedblank[id=hw3a2, type=short, points=1, answer={{mu1 - mu2 < 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 < 0$}]{3.8cm}{0.19in}}}
+  \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw3b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}}. Conditions:
         \begin{itemize}
-          \item Random: \writeline
-          \item Normal ($n < 30$): \writeline
+          \item Random: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3b2, type=rubric, points=1, display={\bfseries\boldmath randomized experiment: random assignment --- met}]{4.6in}{0.19in}}
+          \item Normal ($n < 30$): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3b3, type=rubric, points=1, display={\bfseries\boldmath both roughly symmetric, no outliers --- met}]{4.6in}{0.19in}}
         \end{itemize}
-  \item \textbf{Do:} $SE \approx$ \blank{2.5cm} \quad $t \approx$ \blank{2cm}
-        \quad Technology: $p \approx$ \blank{2cm} \quad $df \approx$ \blank{2cm}
-  \item \textbf{Conclude:} At $\alpha = 0.05$: \writelines{2}
+  \item \textbf{Do:} $SE \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw3c1, type=short, points=1, answer=1.249, check=numeric, tolerance=0.01, display={\boldmath$1.249$}]{2.3cm}{0.19in}}} \quad $t \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw3c2, type=short, points=1, answer=-2.64, check=numeric, tolerance=0.02, display={\boldmath$-2.64$}]{1.8cm}{0.19in}}}
+        \quad Technology: $p \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw3c3, type=short, points=1, answer=0.006, check=numeric, tolerance=0.002, display={\boldmath$0.006$}]{1.8cm}{0.19in}}} \quad $df \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw3c4, type=short, points=1, answer=36.0, check=numeric, tolerance=0.6, display={\boldmath$36.0$}]{1.8cm}{0.19in}}}
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.006 < 0.05$: reject $H_0$; convincing evidence the new protocol lowers mean recovery time.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{enumerate}
 
 \vspace{0.05in}
@@ -75,11 +78,11 @@ $s_1 = 2.8$ mpg. New: $n_2 = 25$, $\bar x_2 = 33.1$ mpg, $s_2 = 3.2$ mpg. Random
 dotplots are roughly symmetric.
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
-  \item \textbf{Plan:} Method: \blank{5cm}. Conditions (brief): \writeline
-  \item \textbf{Do:} $SE \approx$ \blank{2.5cm} \quad $t \approx$ \blank{2cm}
-        \quad $p$ (two-sided) $\approx$ \blank{2cm}
-  \item \textbf{Conclude:} \writelines{2}
+  \item \textbf{State:} $H_0$: \makebox[4cm]{\smash{\gradedblank[id=hw4a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}}} \quad $H_a$: \makebox[4cm]{\smash{\gradedblank[id=hw4a2, type=short, points=1, answer={{mu1 - mu2 != 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 \ne 0$}]{3.8cm}{0.19in}}}
+  \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw4b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}}. Conditions (brief): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw4b2, type=rubric, points=1, display={\bfseries\boldmath random; symmetric}]{1.5in}{0.19in}}
+  \item \textbf{Do:} $SE \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw4c1, type=short, points=1, answer=0.850, check=numeric, tolerance=0.01, display={\boldmath$0.850$}]{2.3cm}{0.19in}}} \quad $t \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw4c2, type=short, points=1, answer=-2.00, check=numeric, tolerance=0.02, display={\boldmath$-2.00$}]{1.8cm}{0.19in}}}
+        \quad $p$ (two-sided) $\approx$ \makebox[2cm]{\smash{\gradedblank[id=hw4c3, type=short, points=1, answer=0.051, check=numeric, tolerance=0.002, display={\boldmath$0.051$}]{1.8cm}{0.19in}}}
+  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw4d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.051 > 0.05$: fail to reject $H_0$; no convincing evidence the mean mpg differs.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{enumerate}
 
 \end{enumerate}
