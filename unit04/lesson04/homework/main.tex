@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l04-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -35,9 +38,9 @@ $B = \{\text{patient has Type O blood}\}$.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
   \item Are events $A$ and $B$ mutually exclusive? Justify in context.\\
-        \writeline\\[1pt]\writeline
-  \item Find $P(A \cap B)$. \blank{4cm}
-  \item Find $P(A)$ and $P(B)$. \blank{6cm}
+        \gradedhide{\gradedhere{\kern\dimexpr\linewidth-4in+3pt\relax\gradedblank[id=hw1a, type=rubric, points=2, display={Yes: each patient has exactly one blood type, so no one is both Type A and Type O.}]{4in}{\gradedlinesheight{2}}}\writeline\\[1pt]\writeline}
+  \item Find $P(A \cap B)$. \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1b, type=short, points=1, answer=0, check=numeric, tolerance=0]{2.4cm}{0.2in}}}}
+  \item Find $P(A)$ and $P(B)$. \makebox[6cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{$P(A) =$~\gradedblank[id=hw1c1, type=short, points=1, answer=0.333, check=numeric, tolerance=0.002, display={$1/3$}]{1.6cm}{0.2in}\quad $P(B) =$~\gradedblank[id=hw1c2, type=short, points=1, answer=0.333, check=numeric, tolerance=0.002, display={$1/3$}]{1.6cm}{0.2in}}}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -45,8 +48,8 @@ $B = \{\text{patient has Type O blood}\}$.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
   \item Are events $C$ and $D$ mutually exclusive? Justify in context.\\
-        \writeline\\[1pt]\writeline
-  \item Find $P(C \cap D)$. Show your work. \blank{5cm}
+        \gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw2a, type=rubric, points=2, display={No: 20 patients have Type B blood and the condition, so both can occur.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{2}}}\writeline\\[1pt]\writeline}
+  \item Find $P(C \cap D)$. Show your work. \makebox[5cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2b, type=short, points=1, answer=0.0833, check=numeric, tolerance=0.002, display={$20/240 \approx 0.083$}]{3.4cm}{0.2in}}}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -54,8 +57,8 @@ $B = \{\text{patient has Type O blood}\}$.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
   \item Are $E$ and $F$ mutually exclusive? Why or why not?\\
-        \writeline\\[1pt]\writeline
-  \item What is $P(E \cap F)$? \blank{4cm}
+        \gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw3a, type=rubric, points=2, display={Yes: a patient cannot both have and not have the condition.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{2}}}\writeline\\[1pt]\writeline}
+  \item What is $P(E \cap F)$? \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3b, type=short, points=1, answer=0, check=numeric, tolerance=0]{2.4cm}{0.2in}}}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -64,10 +67,10 @@ condition present are mutually exclusive events because not everyone with Type A
 has the condition.''
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
   \item Is this claim correct? Use the table to support your answer.\\
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\kern\dimexpr\linewidth-4in+3pt\relax\gradedblank[id=hw4a, type=rubric, points=2, display={Incorrect: 30 patients have Type A blood and the condition, so the events overlap.}]{4in}{\gradedlinesheight{3}}}\writeline\\[1pt]\writeline\\[1pt]\writeline}
   \item Write a correct complete-sentence explanation of whether these events are
         mutually exclusive.\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\kern\dimexpr\linewidth-4in+3pt\relax\gradedblank[id=hw4b, type=rubric, points=2, display={Not mutually exclusive: 30 patients in the sample have both Type A blood and the condition.}]{4in}{\gradedlinesheight{2}}}\writeline\\[1pt]\writeline}
 \end{enumerate}
 
 \vspace{8pt}

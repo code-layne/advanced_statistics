@@ -1,0 +1,19 @@
+# Homework item 1a (Unit 6, Lesson 6.7). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A city health department tests H0: p = 0.10 (10% of adults have high blood pressure)
+  vs Ha: p > 0.10. Describe a Type I error in context.
+criteria:
+  - id: reject
+    points: 1
+    full: >-
+      Describes rejecting H0: concluding that MORE than 10% of the city's adults have high
+      blood pressure.
+  - id: truth
+    points: 1
+    full: >-
+      ...when in fact H0 is true: the true proportion is 10%.
+examples:
+  - response: "Concluding that 10% have high blood pressure when really more do."
+    scores: {reject: 0, truth: 0}

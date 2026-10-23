@@ -1,0 +1,17 @@
+# Homework item 2c (Unit 9, Lesson 9.5). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  Absences (x) vs final course grade (y, %), random sample of 35 intro statistics
+  students: b = -2.3, SE_b = 0.54, t = -4.26, p = 0.000; LINER met. The 95% CI for
+  beta is (-3.40, -1.20). Explain why the CI and the test give consistent conclusions.
+criteria:
+  - id: zero
+    points: 1
+    full: >-
+      Notes that 0 is not in the 95% CI (-3.40, -1.20).
+  - id: match
+    points: 1
+    full: >-
+      Connects this to the two-sided test at alpha = 0.05 rejecting H0: beta = 0: both say
+      beta != 0 (the CI also shows the slope is negative).

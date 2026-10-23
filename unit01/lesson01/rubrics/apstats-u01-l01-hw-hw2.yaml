@@ -1,0 +1,18 @@
+# Homework item 2 (Unit 1, Lesson 1.1).
+id: hw2
+points: 2
+task: >-
+  A pet survey records Number of pets owned and Type of pet owned. Classify each
+  variable, then say what a summary of each column would look like.
+criteria:
+  - id: classify
+    points: 1
+    full: Number of pets owned is quantitative and Type of pet owned is categorical (both correct).
+  - id: summaries
+    points: 1
+    full: >-
+      Says the quantitative column is summarized with an average (or another numerical
+      summary of amounts) and the categorical column with counts or percents in each category.
+examples:
+  - response: "Number of pets is quantitative, type of pet is categorical."
+    scores: {classify: 1, summaries: 0}

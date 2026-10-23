@@ -21,6 +21,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-l06-ap}
+\gradingcourse{advanced_statistics}
 % \bxp{y-center}{half-height}{min}{Q1}{median}{Q3}{max} — the display is PRE-DRAWN.
 % Authored byte-identically in the blank and the key.
 \newcommand{\bxp}[7]{%
@@ -110,6 +113,7 @@ about the context, not just the arithmetic --- read them all before choosing.
                 \$78 and \$88.}
           \item Weekend tips are spread evenly across the whole range from \$60 to \$158.
           \item Most weekend shifts brought in more than \$106.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item For the \textbf{weekday} shifts, the interquartile range of the daily tip totals is
@@ -119,6 +123,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \$28
           \item \$42
           \item \$62
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item The weekend distribution is skewed to the right and has one unusually high value. Which
@@ -130,6 +135,7 @@ about the context, not just the arithmetic --- read them all before choosing.
                 value pull the mean upward.}
           \item The mean is exactly \$88, the value marked inside the box.
           \item Nothing whatever can be said about the mean from these data.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item The manager asks whether weekend tip totals cluster around \emph{two} separate amounts
@@ -141,6 +147,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \ans{This display cannot answer the question --- it reports only five summary
                 numbers, so clusters, gaps, and a second peak are invisible in it.}
           \item No; tip data of this kind is always skewed right with one peak.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=D]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -163,21 +170,21 @@ about the context, not just the arithmetic --- read them all before choosing.
         \vspace{6pt}
         \textbf{(a)} Report the five-number summary for the \textbf{weekday} shifts, and say what
         each of the five numbers marks on the weekday display.\\[4pt]
-        \ansline{Min \$42, $Q_1$ \$55, median \$62, $Q_3$ \$70, max \$84. The two whisker ends}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Min \$42, $Q_1$ \$55, median \$62, $Q_3$ \$70, max \$84. The two whisker ends}\\[1pt]
         \ansline{are \$42 and \$84, the box edges are \$55 and \$70, the inside line is \$62.}
 
         \vspace{6pt}
         \textbf{(b)} For the \textbf{weekend} shifts, $Q_1 = \$78$ and $Q_3 = \$106$. Compute the
         interquartile range and use the $1.5 \times \text{IQR}$ rule to decide whether the \$158
         shift is an outlier. Show the arithmetic.\\[4pt]
-        \ansline{IQR $= 106 - 78 = \$28$, so $1.5 \times \text{IQR} = \$42$.}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{IQR $= 106 - 78 = \$28$, so $1.5 \times \text{IQR} = \$42$.}\\[1pt]
         \ansline{Upper boundary $= Q_3 + 42 = 106 + 42 = \$148$.}\\[1pt]
         \ansline{Since $158 > 148$, the \$158 weekend shift is an outlier.}
 
         \vspace{6pt}
         \textbf{(c)} Compare the weekday and weekend tip totals. Address center, variability, and
         unusual features, in context.\\[4pt]
-        \ansline{Weekend tips were typically higher than weekday tips --- a median of \$88}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{4}}}\ansline{Weekend tips were typically higher than weekday tips --- a median of \$88}\\[1pt]
         \ansline{against \$62. Weekend tips were also far more variable: an IQR of \$28 against}\\[1pt]
         \ansline{\$15, and a much wider overall span. The weekend shifts are skewed right and}\\[1pt]
         \ansline{include one outlier at \$158; the weekday shifts have no outliers.}
@@ -186,7 +193,7 @@ about the context, not just the arithmetic --- read them all before choosing.
         \textbf{(d)} The manager wants to know whether there are two distinct kinds of weekend
         night. Name a display you would ask for instead, and say what it could show that this one
         cannot.\\[4pt]
-        \ansline{Ask for a dotplot or a histogram of the weekend totals. A boxplot reports only}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5d, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Ask for a dotplot or a histogram of the weekend totals. A boxplot reports only}\\[1pt]
         \ansline{five numbers, so a gap between two groups of nights, or a second peak, is}\\[1pt]
         \ansline{hidden inside the box. A dotplot would show every night individually.}
 

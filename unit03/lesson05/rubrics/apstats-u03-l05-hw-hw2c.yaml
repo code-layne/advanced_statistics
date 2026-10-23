@@ -1,0 +1,18 @@
+# Homework item 2, blocking (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  A farmer randomly assigns 30 of 90 plants, all grown in the same greenhouse, to each
+  of 3 fertilizers. Would adding blocks improve this design? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no (or not as described), since all plants share the same greenhouse
+      conditions.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that blocking helps only when there is a nuisance variable that affects
+      growth; with uniform conditions there is nothing to block on (blocking on something
+      like distance from a window would help only if conditions varied).

@@ -1,0 +1,12 @@
+# Homework item 1, Random (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw1b1
+points: 1
+task: >-
+  A random sample of 400 registered voters finds 228 support a park expansion (95% CI
+  for the true proportion). Plan: Random condition.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      Says the data come from a random sample (stated in the problem), so the condition is
+      met.

@@ -1,0 +1,16 @@
+# Homework item 3a (Unit 5, Lesson 5.3). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  A population with mean 100 and SD 25 is uniform (not normal). For n = 4, can the
+  normal model be used for the sample mean? Why or why not?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that the population is not normal and n = 4 is less than 30, so the central
+      limit theorem does not guarantee an approximately normal sampling distribution.

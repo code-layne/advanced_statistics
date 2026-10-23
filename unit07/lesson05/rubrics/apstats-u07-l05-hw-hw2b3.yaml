@@ -1,0 +1,12 @@
+# Homework item 2b conditions (Unit 7, Lesson 7.5). Relative to the lesson directory.
+id: hw2b3
+points: 1
+task: >-
+  A professor tests whether her campus's mean placement score differs from 500: random
+  sample of 45 students, x-bar = 485, s = 60. Briefly verify the conditions.
+criteria:
+  - id: 2b3
+    points: 1
+    full: >-
+      Notes the random sample and that n = 45 >= 30, so the CLT makes the sampling
+      distribution approximately normal (both conditions met).

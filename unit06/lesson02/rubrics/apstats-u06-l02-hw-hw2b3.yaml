@@ -1,0 +1,11 @@
+# Homework item 2, 10% rule (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw2b3
+points: 1
+task: >-
+  A random sample of 80 fish from a lake finds 12 tagged (99% CI for the true
+  proportion tagged). Plan: 10% condition.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      States that 80 is at most 10% of all fish in the lake, so the condition is met.

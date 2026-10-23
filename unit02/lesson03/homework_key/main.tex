@@ -13,6 +13,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u02-l03-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -41,12 +44,12 @@ thousands of dollars, mileage in thousands of miles:
 \boxguard[14]
 \begin{notesbox}{Part A --- Predicting with the Line}
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
-  \item Predict the price of a car with 50 thousand miles. Show your work.
+  \item Predict the price of a car with 50 thousand miles. Show your work.\gradedbelow[r]{5pt}{\textit{Price (\$1000s):}~\gradedblank[id=hw1, type=short, points=1, answer=20.0, check=numeric, tolerance=0.05]{0.9in}{0.2in}}
         \answerspace{0.7cm}{$\widehat{\text{price}} = 32.0 - 0.24(50) = 20.0$, so about \$20{,}000.}
   \item A car with 50 thousand miles is listed at \$22{,}500. Find and interpret its residual.
-        \answerspace{1.2cm}{Residual $= 22.5 - 20.0 = +2.5$: the car is listed \$2{,}500 above the line's prediction --- the line underpredicted its price.}
+        \answerspace{1.2cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw2b, type=rubric, points=2, display={Residual $= 22.5 - 20.0 = +2.5$: the car is listed \$2{,}500 above the line's prediction --- the line underpredicted its price.}]{\linewidth-12.5pt-1.0in-6pt}{1.0cm}\hfill\gradedblank[id=hw2a, type=short, points=1, answer=2.5, check=numeric, tolerance=0.05]{1.0in}{0.9cm}}
   \item Predict the price at 150 thousand miles. What went wrong, and why?
-        \answerspace{1.2cm}{$32.0 - 0.24(150) = -4.0$: a negative price. 150 thousand miles is far outside the 8--95 in the data --- extrapolation.}
+        \answerspace{1.2cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw3b, type=rubric, points=2, display={$32.0 - 0.24(150) = -4.0$: a negative price. 150 thousand miles is far outside the 8--95 in the data --- extrapolation.}]{\linewidth-12.5pt-1.0in-6pt}{1.0cm}\hfill\gradedblank[id=hw3a, type=short, points=1, answer=-4.0, check=numeric, tolerance=0.05]{1.0in}{0.9cm}}
 \end{enumerate}
 \end{notesbox}
 
@@ -58,7 +61,7 @@ thousands of dollars, mileage in thousands of miles:
   \item \begin{minipage}[t]{0.52\linewidth}
         Here is the residual plot for the 18 cars. Is a linear model appropriate for
         predicting price from mileage? Explain.
-        \answerspace{1.2cm}{Yes: random scatter around 0, no pattern.}
+        \answerspace{1.2cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw4, type=rubric, points=2, display={Yes: random scatter around 0, no pattern.}]{\linewidth-12.5pt}{1.0cm}}
         \end{minipage}\hfill
         \begin{minipage}[t]{0.44\linewidth}
         \vspace{-10pt}\centering
@@ -86,9 +89,9 @@ thousands of dollars, mileage in thousands of miles:
         \textcolor{keyred}{\textbf{(B)} Listed \$1{,}800 below the prediction.} \\
         \textbf{(C)} The line predicted \$1{,}800 too low. &
         \textbf{(D)} It has 1{,}800 fewer miles than predicted. \\
-        \textbf{(E)} A linear model does not fit this car. & \\
+        \textbf{(E)} A linear model does not fit this car. & \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}} \\
         \end{tabularx}
-        \answerspace{1.0cm}{Residual $= y - \hat{y} = -1.8$ is negative, so the actual price is \$1{,}800 below the prediction.}
+        \answerspace{1.0cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw5j, type=rubric, points=1, display={Residual $= y - \hat{y} = -1.8$ is negative, so the actual price is \$1{,}800 below the prediction.}]{\linewidth-12.5pt}{0.8cm}}
 \end{enumerate}
 \end{notesbox}
 

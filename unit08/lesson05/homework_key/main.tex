@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l05-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -22,30 +25,30 @@
           \item Three brands of coffee (Brand X, Y, Z) each recruited a random sample of
                 50 coffee tasters who rated their experience as Prefer, Neutral, or Dislike.
 
-                Test type: \ans{homogeneity} \quad Reason: \ansline{Three separate samples (one per brand) each measure one categorical variable (taste rating).}
+                Test type: \ans{homogeneity} \quad Reason: \ansline{Three separate samples (one per brand) each measure one categorical variable (taste rating).}\gradedkey{\smash{\gradedblank[id=hw1a1, type=short, points=1, answer=homogeneity, check=text]{2.2cm}{0.2in}}\quad \gradedblank[id=hw1a2, type=rubric, points=1, display={\bfseries Separate samples, one variable.}]{2.3in}{0.2in}}
 
-                $H_0$: \ansline{The distribution of taste ratings (Prefer/Neutral/Dislike) is the same across Brands X, Y, and Z.}
-                $H_a$: \ansline{The distribution of taste ratings is not the same for all three brands (at least one brand differs).}
+                $H_0$: \ansline{The distribution of taste ratings (Prefer/Neutral/Dislike) is the same across Brands X, Y, and Z.}\gradedkey{\gradedblank[id=hw1a3, type=rubric, points=1, display={\bfseries Same for X, Y, Z.}]{1.8in}{0.2in}}
+                $H_a$: \ansline{The distribution of taste ratings is not the same for all three brands (at least one brand differs).}\gradedkey{\gradedblank[id=hw1a4, type=rubric, points=1, display={\bfseries Not all the same.}]{1.8in}{0.2in}}
 
                 \vspace{0.06in}
 
           \item A simple random sample of 400 shoppers is asked their age group (18--30,
                 31--50, or 51+) and their preferred shopping method (In-store, Online, or Both).
 
-                Test type: \ans{independence} \quad Reason: \ansline{One random sample measures two categorical variables (age group and shopping method) on each individual.}
+                Test type: \ans{independence} \quad Reason: \ansline{One random sample measures two categorical variables (age group and shopping method) on each individual.}\gradedkey{\smash{\gradedblank[id=hw1b1, type=short, points=1, answer=independence, check=text]{2.2cm}{0.2in}}\quad \gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries One sample, two variables.}]{2.3in}{0.2in}}
 
-                $H_0$: \ansline{There is no association between age group and preferred shopping method in the shopper population.}
-                $H_a$: \ansline{There is an association between age group and preferred shopping method in the shopper population.}
+                $H_0$: \ansline{There is no association between age group and preferred shopping method in the shopper population.}\gradedkey{\gradedblank[id=hw1b3, type=rubric, points=1, display={\bfseries No association.}]{1.8in}{0.2in}}
+                $H_a$: \ansline{There is an association between age group and preferred shopping method in the shopper population.}\gradedkey{\gradedblank[id=hw1b4, type=rubric, points=1, display={\bfseries Association.}]{1.8in}{0.2in}}
 
                 \vspace{0.06in}
 
           \item A simple random sample of 200 high school athletes is classified by sport
                 (Football, Basketball, or Soccer) and GPA level (3.0 and above, or Below 3.0).
 
-                Test type: \ans{independence} \quad Reason: \ansline{One random sample measures two categorical variables (sport and GPA level) on each individual.}
+                Test type: \ans{independence} \quad Reason: \ansline{One random sample measures two categorical variables (sport and GPA level) on each individual.}\gradedkey{\smash{\gradedblank[id=hw1c1, type=short, points=1, answer=independence, check=text]{2.2cm}{0.2in}}\quad \gradedblank[id=hw1c2, type=rubric, points=1, display={\bfseries One sample, two variables.}]{2.3in}{0.2in}}
 
-                $H_0$: \ansline{There is no association between sport and GPA level among high school athletes.}
-                $H_a$: \ansline{There is an association between sport and GPA level among high school athletes.}
+                $H_0$: \ansline{There is no association between sport and GPA level among high school athletes.}\gradedkey{\gradedblank[id=hw1c3, type=rubric, points=1, display={\bfseries No association.}]{1.8in}{0.2in}}
+                $H_a$: \ansline{There is an association between sport and GPA level among high school athletes.}\gradedkey{\gradedblank[id=hw1c4, type=rubric, points=1, display={\bfseries Association.}]{1.8in}{0.2in}}
 
         \end{enumerate}
 
@@ -53,7 +56,7 @@
         variables, so both must be tests for independence. Is the student correct?
         Explain your reasoning.
 
-        \ansline{Partially correct. Both scenarios do involve two categorical variables, and both are correctly classified as tests for independence --- so the student's conclusion happens to be right in this case. However, the student's reasoning is incomplete: the presence of two categorical variables alone does not determine the test type. The key factor is the study design: if one random sample is drawn and two variables are measured on each individual, use a test for independence; if separate samples are drawn from multiple groups and one variable is measured, use a test for homogeneity. The student should focus on the sampling structure, not just the number of variables.}
+        \ansline{Partially correct. Both scenarios do involve two categorical variables, and both are correctly classified as tests for independence --- so the student's conclusion happens to be right in this case. However, the student's reasoning is incomplete: the presence of two categorical variables alone does not determine the test type. The key factor is the study design: if one random sample is drawn and two variables are measured on each individual, use a test for independence; if separate samples are drawn from multiple groups and one variable is measured, use a test for homogeneity. The student should focus on the sampling structure, not just the number of variables.}\gradedkeyline{\gradedblank[id=hw2, type=rubric, points=2, display={Conclusion right (both are independence), reasoning wrong: two variables do not decide it --- the design does (one sample, two variables = independence; separate samples, one variable = homogeneity).}]{\linewidth+6pt}{\gradedlinesheight{4}}}
 
   \item A researcher randomly selects 50 students from each of 3 schools
         (School P, Q, R) and asks each student which after-school program they prefer
@@ -62,13 +65,13 @@
         \begin{enumerate}[label=(\alph*)]
           \item Identify the test type and write the hypotheses.
 
-                \ansline{Test for homogeneity. $H_0$: The distribution of after-school program preference is the same across Schools P, Q, and R. $H_a$: The distribution of after-school program preference is not the same for all three schools.}
+                \ansline{Test for homogeneity. $H_0$: The distribution of after-school program preference is the same across Schools P, Q, and R. $H_a$: The distribution of after-school program preference is not the same for all three schools.}\gradedkeyline{\gradedblank[id=hw3a, type=rubric, points=3, display={Homogeneity. $H_0$: program-preference distribution is the same for Schools P, Q, R. $H_a$: not the same for all three.}]{\linewidth+6pt}{\gradedlinesheight{3}}}
 
           \item Write out the two conditions for this chi-square test.
                 Can either condition be verified without seeing the actual data table?
                 Explain.
 
-                \ansline{(1) Independence condition: data come from a stratified random sample (50 students randomly selected from each school); if sampling without replacement, need $50 \le 10\%$ of each school's population (requires each school to have at least 500 students --- cannot verify without knowing school sizes). (2) Large-counts condition: all expected counts must exceed 5 --- cannot be verified without the data table, since expected counts depend on the observed row and column totals.}
+                \ansline{(1) Independence condition: data come from a stratified random sample (50 students randomly selected from each school); if sampling without replacement, need $50 \le 10\%$ of each school's population (requires each school to have at least 500 students --- cannot verify without knowing school sizes). (2) Large-counts condition: all expected counts must exceed 5 --- cannot be verified without the data table, since expected counts depend on the observed row and column totals.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=3, display={Random/10\%: 50 random students per school; need each school $\ge 500$ students (needs school sizes). Large counts: all expected counts $\ge 5$ --- needs the table. Neither can be verified yet.}]{\linewidth+6pt}{\gradedlinesheight{4}}}
         \end{enumerate}
 
   \item \textbf{AP-Style Multiple Choice.} Which of the following scenarios calls for
@@ -84,6 +87,7 @@
                 ($<$2 hrs/$2$--$4$ hrs/$>$4 hrs/day) and their sleep quality (Good/Poor).
           \item A SRS of 300 patients from one hospital is classified by diagnosis
                 (Diabetes/Hypertension/Neither) and insurance type (Private/Public/None).
+                      \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw4, type=choice, points=1, answer=B]{0.4in}{0.2in}}
         \end{enumerate}
 
         \begin{teachernote}

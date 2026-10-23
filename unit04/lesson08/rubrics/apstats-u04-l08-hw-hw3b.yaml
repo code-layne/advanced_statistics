@@ -1,0 +1,15 @@
+# Homework item 3b (Unit 4, Lesson 4.8). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  W = hours a student sleeps on school nights, mu_W = 4.5, sigma_W = 2.1. Interpret
+  sigma_W in context.
+criteria:
+  - id: typical
+    points: 1
+    full: >-
+      Describes sigma as a typical distance (variation) from the mean.
+  - id: context
+    points: 1
+    full: >-
+      Says hours of sleep typically vary from the mean of 4.5 hours by about 2.1 hours.

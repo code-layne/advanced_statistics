@@ -1,0 +1,16 @@
+# Homework item 4, interpretation (Unit 4, Lesson 4.7). Relative to the lesson directory.
+id: hw4c
+points: 2
+task: >-
+  X = hours a student spends on homework per night; P(X <= 2) = 0.80. Interpret in
+  context.
+criteria:
+  - id: value
+    points: 1
+    full: >-
+      Says there is an 80% probability (80% of students / nights).
+  - id: context
+    points: 1
+    full: >-
+      Says the (randomly selected) student spends 2 or fewer hours (at most 2 hours) on
+      homework per night.

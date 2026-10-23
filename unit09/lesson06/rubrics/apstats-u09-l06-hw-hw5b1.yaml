@@ -1,0 +1,12 @@
+# Homework item 5(2), H0 (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw5b1
+points: 1
+task: >-
+  Random samples of 100 urban and 100 rural adults record anxiety in the past year
+  (yes/no); test whether anxiety rates differ between urban and rural adults. State
+  H0.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      H0: p_urban = p_rural (the anxiety rates are the same).

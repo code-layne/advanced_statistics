@@ -1,0 +1,12 @@
+# Homework item 2b, Random (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw2b1
+points: 1
+task: >-
+  A survey claims 15% of adults read a physical newspaper daily; a researcher suspects
+  fewer and surveys a random sample of 400 adults (48 do). Verify the Random
+  condition.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Says the 400 adults are a random sample (stated in the problem).

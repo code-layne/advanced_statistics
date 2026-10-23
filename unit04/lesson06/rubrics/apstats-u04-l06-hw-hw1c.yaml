@@ -1,0 +1,17 @@
+# Homework item 1c (Unit 4, Lesson 4.6). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  300 subscribers by age group and content type. P(Movies) = 110/300 = 0.367 and
+  P(Movies | Under 25) = 50/120 = 0.417. Are Movies and Under 25 independent? Explain
+  in a complete sentence.
+criteria:
+  - id: compare
+    points: 1
+    full: >-
+      Compares the two probabilities (0.367 vs. 0.417) and notes they are not equal.
+  - id: conclude
+    points: 1
+    full: >-
+      Concludes Movies and Under 25 are not independent, in context (e.g. subscribers
+      under 25 are more likely to watch movies than subscribers overall).

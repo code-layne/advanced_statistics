@@ -1,0 +1,16 @@
+# Homework item 3c (Unit 4, Lesson 4.9). Relative to the lesson directory.
+id: hw3c
+points: 2
+task: >-
+  For independent A (SD 18) and B (SD 15), why isn't SD(A - B) = 18 - 15 = 3?
+criteria:
+  - id: variances
+    points: 1
+    full: >-
+      Says variances add for a difference of independent random variables (they are not
+      subtracted), so Var(A - B) = 18^2 + 15^2.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that both variables contribute variability, so the difference is more
+      variable than either one (SD about 23.4, not 3).

@@ -1,0 +1,11 @@
+# Homework item A1, response variable (Unit 2, Lesson 2.2). Relative to the lesson directory.
+id: hw1b
+points: 1
+task: >-
+  A coach recorded each of 14 players' hours of free-throw practice per week and their
+  free-throw percentage for the season; r = 0.60. Name the response variable.
+criteria:
+  - id: response
+    points: 1
+    full: >-
+      Names the season free-throw percentage as the response variable.

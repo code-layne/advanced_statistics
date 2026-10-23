@@ -1,0 +1,16 @@
+# Unit 2 actual test, item 11a. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11a
+points: 1
+task: >-
+  A transit agency surveyed 500 commuters: near a station 200 (transit 96, car 64,
+  bike/walk 40), far from one 300 (transit 54, car 216, bike/walk 30). What proportion
+  of all 500 commuters use transit? Of the commuters who live far from a station, what
+  proportion drive a car?
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Both correct: 150/500 = 0.30 use transit, and 216/300 = 0.72 of far commuters
+      drive.

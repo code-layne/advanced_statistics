@@ -1,0 +1,11 @@
+# Homework item 3a explanation (Unit 6, Lesson 6.7). Relative to the lesson directory.
+id: hw3a2
+points: 1
+task: >-
+  "Reducing alpha from 0.05 to 0.01 always increases power." Write T or F and explain.
+criteria:
+  - id: explain
+    points: 1
+    full: >-
+      Explains that a smaller alpha makes it harder to reject H0, so power DECREASES (and
+      the Type II error probability increases).

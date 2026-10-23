@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l05-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -31,22 +34,22 @@ Show all work clearly.
         \begin{enumerate}[label=\alph*.]
           \item State H$_0$ and H$_a$ in terms of $\beta$. Define $\beta$ in context.
 
-                \writelines{3}
+                \gradedhide{\gradedhere{\gradedblank[id=hw1a, type=rubric, points=3, display={$\beta$ = true slope of the population regression line of max running speed on age (adult recreational runners). $H_0$: $\beta = 0$, $H_a$: $\beta \ne 0$.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
 
           \item Identify the test statistic from the output and verify it by calculation.
                 Assume LINER conditions are met.
 
-                $t = \dfrac{b}{SE_b} = \dfrac{\blank{2cm}}{\blank{2cm}} = \blank{2cm}$
+                $t = \dfrac{b}{SE_b} = \dfrac{\blank{2cm}}{\blank{2cm}} = \hphantom{\blank{2cm}}$\hskip 0pt plus 1fill\smash{$t = $~\gradedblank[id=hw1b1, type=short, points=1, answer=-3.24, check=numeric, tolerance=0.02]{0.9in}{0.2in}}
 
                 \vspace{0.05in}
-                $df = n - 2 = \blank{2cm}$
+                $df = n - 2 = \hphantom{\blank{2cm}}$\hskip 0pt plus 1fill\smash{$df = $~\gradedblank[id=hw1b2, type=short, points=1, answer=26, check=numeric, tolerance=0]{0.9in}{0.2in}}
 
           \item Interpret the $p$-value in context.
-                \writelines{3}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2, display={If $\beta = 0$ (no linear relationship between age and max speed), the probability of a sample slope as extreme as $b = -0.12$ mph per year is 0.003.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
 
           \item State a conclusion at $\alpha = 0.05$. Does the data provide evidence that
                 age is linearly related to maximum running speed?
-                \writelines{3}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={$p = 0.003 < 0.05$: reject $H_0$. Convincing evidence that age is linearly related to maximum running speed ($\beta \ne 0$).}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
         \end{enumerate}
 
   \item \textbf{Absences and Course Grade.} A researcher examines how the number of absences
@@ -65,15 +68,15 @@ Show all work clearly.
 
         \begin{enumerate}[label=\alph*.]
           \item Carry out a complete 4-step significance test at $\alpha = 0.05$.
-                \writelines{10}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=4, display={$\beta$ = true slope, course grade on absences (intro stats students); $H_0$: $\beta = 0$, $H_a$: $\beta \ne 0$. Conditions: LINER given; random sample. $t = -4.26$, $df = 33$, $p \approx 0.000$. $p < 0.05$: reject $H_0$; convincing evidence the true slope is not 0 --- absences are linearly related to course grade.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
 
           \item Construct a 95\% confidence interval for $\beta$ using $t^* = 2.035$
                 ($df = 33$). Show your work.
-                \writelines{3}
+                \gradedhide{\writelines{3}\gradedright{(~\gradedblank[id=hw2b1, type=short, points=1, answer=-3.40, check=numeric, tolerance=0.02]{0.8in}{0.2in},~\gradedblank[id=hw2b2, type=short, points=1, answer=-1.20, check=numeric, tolerance=0.02]{0.8in}{0.2in}~)}}
 
           \item Explain why the confidence interval and the hypothesis test give
                 consistent conclusions.
-                \writelines{3}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={0 is not in $(-3.40, -1.20)$, matching the rejection of $H_0$: $\beta = 0$ at $\alpha = 0.05$; both say $\beta \ne 0$ (and the CI shows it is negative).}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
         \end{enumerate}
 
 \end{enumerate}

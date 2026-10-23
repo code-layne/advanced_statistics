@@ -1,0 +1,16 @@
+# Homework item 4b (Unit 3, Lesson 3.1). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  A researcher mails surveys to a random sample of 2,000 registered voters; only 300
+  respond. What concern arises from the low response rate?
+criteria:
+  - id: name
+    points: 1
+    full: >-
+      Names nonresponse bias.
+  - id: explain
+    points: 1
+    full: >-
+      Explains that the 300 who responded may differ systematically from the 1,700 who did
+      not, so the sample may no longer represent the voters.

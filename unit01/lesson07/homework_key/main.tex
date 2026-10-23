@@ -21,6 +21,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-l07-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -54,26 +57,26 @@ standard here.
   \item Label each summary a \textbf{parameter} or a \textbf{statistic}.
         \begin{enumerate}[label=\textbf{(\roman*)}, leftmargin=2.3em, itemsep=4pt]
           \item The mean weight of all 4,200 loaves a bakery baked last year is 799 g.
-                \ans{parameter}
+                \smash{\gradedblank[id=hw1a, type=short, points=1, answer=parameter, check=text]{3.0cm}{0.2in}}
           \item A health inspector weighs 40 of those loaves and finds a mean weight of 803 g.
-                \ans{statistic}
+                \smash{\gradedblank[id=hw1b, type=short, points=1, answer=statistic, check=text]{3.0cm}{0.2in}}
           \item The standard deviation of the heights of all 1,150 students enrolled at a school
-                is 8.4 cm. \ans{parameter}
+                is 8.4 cm. \smash{\gradedblank[id=hw1c, type=short, points=1, answer=parameter, check=text]{3.0cm}{0.2in}}
           \item Of the school's 400 statistics students, a teacher samples 25 and finds their
-                median quiz score is 18 points. \ans{statistic}
+                median quiz score is 18 points. \smash{\gradedblank[id=hw1d, type=short, points=1, answer=statistic, check=text]{3.0cm}{0.2in}}
         \end{enumerate}
 
   \item Resting heart rate for adult women is approximately normal with $\mu = 74$ beats per
-        minute and $\sigma = 8$ beats per minute. Find the $z$-score of each value.
+        minute and $\sigma = 8$ beats per minute. Find the $z$-score of each value.\gradedbelow[r]{21.6pt}{$z_{90} = $~\gradedblank[id=hw2a, type=short, points=1, answer=2, check=numeric]{0.9in}{0.28in}}\gradedbelow[r]{54.3pt}{$z_{74} = $~\gradedblank[id=hw2b, type=short, points=1, answer=0, check=numeric]{0.9in}{0.28in}}\gradedbelow[r]{87pt}{$z_{62} = $~\gradedblank[id=hw2c, type=short, points=1, answer=-1.5, check=numeric]{0.9in}{0.28in}}
         \begin{work}
         z_{90} &= \frac{90 - 74}{8} = \frac{16}{8} = 2.0 \\[3pt]
         z_{74} &= \frac{74 - 74}{8} = \frac{0}{8} = 0 \\[3pt]
         z_{62} &= \frac{62 - 74}{8} = \frac{-12}{8} = -1.5
         \end{work}
         Interpret the \emph{negative} one in a sentence, in context.
-        \answerspace{2.4cm}{A resting heart rate of 62 beats per minute is 1.5 standard
+        \answerspace{2.4cm}{\normalcolor\mdseries\gradedblank[id=hw2d, type=rubric, points=2, display={A resting heart rate of 62 beats per minute is 1.5 standard
         deviations \emph{below} the mean resting rate of 74 beats per minute for adult women ---
-        a slower resting heart rate than most.}
+        a slower resting heart rate than most.}]{\linewidth}{2.2cm}}
 
   \item Ana scored \textbf{82} on a chemistry test where the class mean was 74 points with a
         standard deviation of 4 points. Ben scored \textbf{88} on a history test where the class
@@ -84,12 +87,12 @@ standard here.
         \end{work}
         Ben's raw score is higher. Who did better \emph{relative to their own class}? Justify
         your answer, and say in one sentence why the raw scores alone cannot settle it.
-        \answerspace{3.6cm}{Ana. She scored 2.0 standard deviations above her chemistry class's
+        \answerspace{3.6cm}{\normalcolor\mdseries\gradedblank[id=hw3, type=rubric, points=2, display={Ana. She scored 2.0 standard deviations above her chemistry class's
         mean, while Ben scored 1.5 standard deviations above his history class's mean, so Ana
         stands further above her own class than Ben does above his. The raw scores cannot settle
         it because 82 and 88 come from two different tests with different means and different
         spreads --- 88 on an easier, more tightly bunched test is not the same achievement as 82
-        on a harder, wider-spread one.}
+        on a harder, wider-spread one.}]{\linewidth}{3.4cm}}
 
   \item A school bus route's travel time is approximately normal with $\mu = 32$ minutes and
         $\sigma = 3$ minutes. The curve is marked at the mean and at one, two, and three standard
@@ -111,18 +114,18 @@ standard here.
         \end{center}
         \vspace{2pt}
 
-        \textbf{(i)} About what percent of trips take between 29 and 35 minutes? \ans{About 68\%}
+        \textbf{(i)} About what percent of trips take between 29 and 35 minutes? \smash{\gradedblank[id=hw4a, type=short, points=1, answer=68, check=numeric, display={About 68\%}]{2.6cm}{0.2in}}
 
         \vspace{4pt}
-        \textbf{(ii)} About what percent take between 26 and 38 minutes? \ans{About 95\%}
+        \textbf{(ii)} About what percent take between 26 and 38 minutes? \smash{\gradedblank[id=hw4b, type=short, points=1, answer=95, check=numeric, display={About 95\%}]{2.6cm}{0.2in}}
 
         \vspace{4pt}
-        \textbf{(iii)} About what percent take \emph{longer than} 38 minutes? \ans{About 2.5\%}
+        \textbf{(iii)} About what percent take \emph{longer than} 38 minutes? \smash{\gradedblank[id=hw4c, type=short, points=1, answer=2.5, check=numeric, display={About 2.5\%}]{2.6cm}{0.2in}}
         \quad Explain how you got it.
-        \answerspace{2.4cm}{38 minutes is two standard deviations above the mean of 32. About
+        \answerspace{2.4cm}{\normalcolor\mdseries\gradedblank[id=hw4d, type=rubric, points=2, display={38 minutes is two standard deviations above the mean of 32. About
         95\% of trips fall within two standard deviations, leaving about 5\% outside; the curve
         is symmetric, so half of that 5\% --- about 2.5\% --- is on the long side, past 38
-        minutes.}
+        minutes.}]{\linewidth}{2.2cm}}
 
   \item \textbf{AP-style multiple choice.} In Race X, finishing times are approximately normal
         with mean 21.0 minutes and standard deviation 1.5 minutes; runner P finished in
@@ -135,12 +138,13 @@ standard here.
                 P's own race, and in a race a lower time is better.}
           \item Runner P, because 18.0 minutes is the smaller raw finishing time.
           \item Runner Q, because Race Y had the larger standard deviation.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}}
           \item Neither, because the two races had different means and cannot be compared.
         \end{enumerate}
-        \answerspace{3.0cm}{(B). Runner P's $z = (18.0 - 21.0)/1.5 = -2.0$ and runner Q's
+        \answerspace{3.0cm}{\normalcolor\mdseries\gradedblank[id=hw5j, type=rubric, points=1, display={(B). Runner P's $z = (18.0 - 21.0)/1.5 = -2.0$ and runner Q's
         $z = (22.0 - 25.0)/2.0 = -1.5$; in a race a lower time is better, so being 2.0 standard
         deviations below your own race's mean is the stronger performance. (C) reaches the same
-        runner by the wrong reasoning --- the two raw times come from different races.}
+        runner by the wrong reasoning --- the two raw times come from different races.}]{\linewidth}{2.8cm}}
 \end{enumerate}
 \end{notesbox}
 

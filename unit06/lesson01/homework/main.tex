@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u06-l01-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -22,26 +25,26 @@
                 support a ballot measure. Researchers want to estimate the true proportion
                 of all registered voters who support it.
                 \begin{itemize}
-                  \item Large Counts: \blank{7cm} \quad Met? \blank{1.5cm}
-                  \item $SE_{\hat p} = $ \blank{6cm}
-                  \item Inference goal: \blank{4cm}
+                  \item Large Counts: \smash{\gradedblank[id=hw1a1, type=rubric, points=1, display={\bfseries $203 \ge 10$ and $147 \ge 10$}]{7cm}{0.17in}} \quad Met? \smash{\gradedblank[id=hw1a2, type=short, points=1, answer=yes, check=text]{1.5cm}{0.17in}}
+                  \item $SE_{\hat p} = $ \smash{\gradedblank[id=hw1a3, type=short, points=1, answer=0.0264, check=numeric, tolerance=0.0005]{6cm}{0.17in}}
+                  \item Inference goal: \smash{\gradedblank[id=hw1a4, type=choice, points=1, answer=CI, display={CI}]{4cm}{0.17in}}
                 \end{itemize}
 
           \item[\textbf{II.}] A nutritionist claims that 30\% of teenagers eat breakfast daily.
                 A researcher surveys 90 randomly selected teenagers and finds $\hat p = 0.24$.
                 She wants to test whether the true proportion is less than 30\%.
                 \begin{itemize}
-                  \item Large Counts (use $p_0 = 0.30$): \blank{5.5cm} \quad Met? \blank{1.5cm}
-                  \item $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n} = $ \blank{5cm}
-                  \item Inference goal: \blank{4cm}
+                  \item Large Counts (use $p_0 = 0.30$): \smash{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries $27 \ge 10$ and $63 \ge 10$}]{5.5cm}{0.17in}} \quad Met? \smash{\gradedblank[id=hw1b2, type=short, points=1, answer=yes, check=text]{1.5cm}{0.17in}}
+                  \item $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n} = $ \smash{\gradedblank[id=hw1b3, type=short, points=1, answer=0.0450, check=numeric, tolerance=0.0005]{5cm}{0.17in}}
+                  \item Inference goal: \smash{\gradedblank[id=hw1b4, type=choice, points=1, answer=Test, display={Significance Test}]{4cm}{0.17in}}
                 \end{itemize}
 
           \item[\textbf{III.}] A manufacturing plant samples 500 units and finds $\hat p = 0.03$
                 are defective. Quality control wants to report a range for the true defect rate.
                 \begin{itemize}
-                  \item Large Counts: \blank{7cm} \quad Met? \blank{1.5cm}
-                  \item $SE_{\hat p} = $ \blank{6cm}
-                  \item Inference goal: \blank{4cm}
+                  \item Large Counts: \smash{\gradedblank[id=hw1c1, type=rubric, points=1, display={\bfseries $15 \ge 10$ and $485 \ge 10$}]{7cm}{0.17in}} \quad Met? \smash{\gradedblank[id=hw1c2, type=short, points=1, answer=yes, check=text]{1.5cm}{0.17in}}
+                  \item $SE_{\hat p} = $ \smash{\gradedblank[id=hw1c3, type=short, points=1, answer=0.0076, check=numeric, tolerance=0.0005]{6cm}{0.17in}}
+                  \item Inference goal: \smash{\gradedblank[id=hw1c4, type=choice, points=1, answer=CI, display={CI}]{4cm}{0.17in}}
                 \end{itemize}
         \end{enumerate}
 
@@ -51,8 +54,8 @@
         \begin{tabular}{@{} >{\bfseries}p{0.24\linewidth} p{0.34\linewidth} p{0.34\linewidth} @{}}
           & \textbf{Confidence Interval} & \textbf{Significance Test} \\
           \hline
-          Research goal & \writeline & \writeline \\
-          Key output    & \writeline & \writeline \\
+          Research goal & \gradedhide{\vspace{1pt}\noindent\gradedhere[0.2in-3pt]{\gradedblank[id=hw2a, type=rubric, points=1, display={Estimate the parameter}]{\linewidth+6pt}{0.2in}}\textcolor{linegray}{\hrulefill}\vspace{3pt}} & \gradedhide{\vspace{1pt}\noindent\gradedhere[0.2in-3pt]{\gradedblank[id=hw2b, type=rubric, points=1, display={Test a claimed parameter value}]{\linewidth+6pt}{0.2in}}\textcolor{linegray}{\hrulefill}\vspace{3pt}} \\
+          Key output    & \gradedhide{\vspace{1pt}\noindent\gradedhere[0.2in-3pt]{\gradedblank[id=hw2c, type=rubric, points=1, display={A range of plausible values}]{\linewidth+6pt}{0.2in}}\textcolor{linegray}{\hrulefill}\vspace{3pt}} & \gradedhide{\vspace{1pt}\noindent\gradedhere[0.2in-3pt]{\gradedblank[id=hw2d, type=rubric, points=1, display={A $p$-value and a decision}]{\linewidth+6pt}{0.2in}}\textcolor{linegray}{\hrulefill}\vspace{3pt}} \\
           Based on      & \multicolumn{2}{l}{Normal sampling distribution of $\hat p$ (when conditions met)} \\
         \end{tabular}
 

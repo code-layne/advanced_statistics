@@ -1,0 +1,20 @@
+# Homework item 1, Conclude (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw1e
+points: 2
+task: >-
+  A random sample of 400 registered voters finds 228 support a park expansion (95% CI
+  for the true proportion). Conclude: interpret the interval (0.521, 0.619).
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      Says we are 95% confident and names the interval (0.521, 0.619) (or the student's
+      own correct interval).
+  - id: context
+    points: 1
+    full: >-
+      Says the interval captures the TRUE proportion of ALL registered voters in the city
+      who support the expansion (the parameter, in context, not the sample).
+examples:
+  - response: "95% of voters support the expansion between 0.521 and 0.619."
+    scores: {confidence: 0, context: 0}

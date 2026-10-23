@@ -1,0 +1,20 @@
+# Homework item 3, Plan (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw3b
+points: 3
+task: >-
+  A bottled water company claims fewer than 5% of bottles exceed a contamination
+  threshold; an environmental group tests 400 randomly selected bottles and 26 exceed
+  it. alpha = 0.01. Plan: verify the conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the sample is random (stated), so the condition is met.
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using p0: 400(0.05) = 20 and 400(0.95) = 380 are both at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: the sample is at most 10% of all the company's bottles.

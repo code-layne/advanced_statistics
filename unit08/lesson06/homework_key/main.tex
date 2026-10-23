@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u08-l06-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -35,20 +38,20 @@
 
 \begin{enumerate}[label=\alph*., itemsep=6pt]
   \item \textbf{State.}
-        Test type: \ans{Homogeneity --- three separate groups (grade levels) each randomly sampled; one variable (sleep amount).}
+        Test type: \ans{Homogeneity --- three separate groups (grade levels) each randomly sampled; one variable (sleep amount).}\gradedkey{\gradedblank[id=hw1a1, type=rubric, points=1, display={\bfseries Independence}]{3.2cm}{0.2in}}
 
-        $H_0$: \ansline{The distribution of sleep amount is the same across all three grade levels.}
-        $H_a$: \ansline{The distribution of sleep amount differs for at least one grade level.}
+        $H_0$: \ansline{The distribution of sleep amount is the same across all three grade levels.}\gradedkey{\gradedblank[id=hw1a2, type=rubric, points=1, display={\bfseries No association.}]{2.4in}{0.2in}}
+        $H_a$: \ansline{The distribution of sleep amount differs for at least one grade level.}\gradedkey{\gradedblank[id=hw1a3, type=rubric, points=1, display={\bfseries Association.}]{2.2in}{0.2in}}
 
   \item \textbf{Plan.} Method: \ans{Chi-square test for homogeneity.}
-        Random: \ansline{Random selection stated in the problem.}
+        Random: \ansline{Random selection stated in the problem.}\gradedkey{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries $\chi^2$ test (same as a.)}]{3.5cm}{0.2in}\quad \gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries Stated.}]{0.85in}{0.2in}}
 
         $E_{\text{9th, }<7} = \dfrac{60 \times 110}{180} = $ \ans{36.67}
-        \quad $E_{\text{9th, }7+} = \dfrac{60 \times 70}{180} = $ \ans{23.33}
+        \quad $E_{\text{9th, }7+} = \dfrac{60 \times 70}{180} = $ \ans{23.33}\gradedkey{$E_{\text{9th, }<7}$~\gradedblank[id=hw1b3, type=short, points=1, answer=36.67, check=numeric, tolerance=0.01]{0.95cm}{0.2in}\quad $E_{\text{9th, }7+}$~\gradedblank[id=hw1b4, type=short, points=1, answer=23.33, check=numeric, tolerance=0.01]{1.6cm}{0.2in}}
 
-        \ans{All three grade levels have the same expected counts (36.67 and 23.33), all $\ge 5$. Condition met.}
+        \ans{All three grade levels have the same expected counts (36.67 and 23.33), all $\ge 5$. Condition met.}\gradedkey{\gradedblank[id=hw1b5, type=short, points=1, answer=yes, check=text]{1.2cm}{0.2in}}
 
-  \item \textbf{Do.} $\text{df} = ($ \ans{3} $-1)($ \ans{2} $-1) = $ \ans{2}
+  \item \textbf{Do.} $\text{df} = ($ \ans{3} $-1)($ \ans{2} $-1) = $ \ans{2}\gradedkey{\gradedblank[id=hw1c1, type=short, points=1, answer=2, check=numeric, tolerance=0]{1.2cm}{0.2in}}
 
         \renewcommand{\arraystretch}{1.6}
         \begin{center}
@@ -64,16 +67,16 @@
         \end{tabular}
         \end{center}
 
-        $\chi^2 = 1.21 + 1.91 + 0.05 + 0.08 + 0.78 + 1.22 \approx $ \ans{5.25}
+        $\chi^2 = 1.21 + 1.91 + 0.05 + 0.08 + 0.78 + 1.22 \approx $ \ans{5.25}\gradedkey{\gradedblank[id=hw1c2, type=short, points=2, answer=5.25, check=numeric, tolerance=0.1]{2.2cm}{0.2in}}
 
         \begin{teachernote}
         Exact: $(30-36.\overline{6})^2/36.\overline{6} + \cdots$. With exact fractions $\chi^2 = 5.25$; rounding intermediate steps may give 5.25--5.33. Using the table: df = 2, $\chi^2 = 5.25$ falls between 4.605 ($p = 0.10$) and 5.991 ($p = 0.05$), so the p-value is between 0.05 and 0.10. Accept $p \approx 0.07$ from technology.
         \end{teachernote}
 
-        p-value: \ans{Between 0.05 and 0.10 (from table, df = 2: $\chi^2 = 5.25$ lies between 4.605 and 5.991); technology gives $p \approx 0.072$.}
+        p-value: \ans{Between 0.05 and 0.10 (from table, df = 2: $\chi^2 = 5.25$ lies between 4.605 and 5.991); technology gives $p \approx 0.072$.}\gradedkey{\gradedblank[id=hw1c3, type=rubric, points=1, display={\bfseries 0.05 to 0.10}]{1.3in}{0.2in}}
 
   \item \textbf{Conclude.} At $\alpha = 0.05$:
-        \ansline{Because $p \approx 0.07 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the distribution of sleep amount differs across grade levels.}
+        \ansline{Because $p \approx 0.07 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the distribution of sleep amount differs across grade levels.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.07 > 0.05$: fail to reject $H_0$; no convincing evidence of an association between grade and sleep.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \ansline{}
 \end{enumerate}
 
@@ -83,9 +86,9 @@
 \item \textbf{Degrees of Freedom.}
 
 \begin{enumerate}[label=\alph*.]
-  \item $\text{df} = (2-1)(4-1) = $ \ans{3}
-  \item Critical value at $\alpha = 0.05$, df $= 3$: \ans{7.815} (from table)
-  \item \ansline{$\chi^2 = 9.21 > 7.815$, so yes, the student can reject $H_0$ at $\alpha = 0.05$. The p-value is less than 0.05 (in fact, between 0.025 and 0.05).}
+  \item $\text{df} = (2-1)(4-1) = $ \ans{3}\gradedkey{\gradedblank[id=hw2a, type=short, points=1, answer=3, check=numeric, tolerance=0]{1.45cm}{0.2in}}
+  \item Critical value at $\alpha = 0.05$, df $= 3$: \ans{7.815} (from table)\gradedkey{\gradedblank[id=hw2b, type=short, points=1, answer=7.815, check=numeric, tolerance=0]{1.45cm}{0.2in}}
+  \item \ansline{$\chi^2 = 9.21 > 7.815$, so yes, the student can reject $H_0$ at $\alpha = 0.05$. The p-value is less than 0.05 (in fact, between 0.025 and 0.05).}\gradedkey{\gradedblank[id=hw2c, type=rubric, points=2, display={\bfseries Yes: $9.21 > 7.815$.}]{1.7in}{0.2in}}
 \end{enumerate}
 
 \vspace{0.1in}
@@ -93,7 +96,7 @@
 %% Problem 3 %%
 \item \textbf{Conceptual Question.}
 
-\ansline{A larger $\chi^2$ value means the observed counts deviate more from the expected counts we would predict if $H_0$ were true. These larger deviations are less likely to occur by random chance alone. In terms of the chi-square distribution, a larger test statistic falls farther in the right tail, resulting in a smaller p-value. A smaller p-value means the data provide stronger evidence against $H_0$, making it more likely that the variables are truly associated (or the distributions differ).}
+\ansline{A larger $\chi^2$ value means the observed counts deviate more from the expected counts we would predict if $H_0$ were true. These larger deviations are less likely to occur by random chance alone. In terms of the chi-square distribution, a larger test statistic falls farther in the right tail, resulting in a smaller p-value. A smaller p-value means the data provide stronger evidence against $H_0$, making it more likely that the variables are truly associated (or the distributions differ).}\gradedkeyline{\gradedblank[id=hw3, type=rubric, points=3, display={Larger $\chi^2$ = observed counts farther from expected under $H_0$; farther into the right tail, so a smaller p-value and stronger evidence against $H_0$.}]{\linewidth+6pt}{\gradedlinesheight{3}}}
 \ansline{}
 \ansline{}
 \ansline{}

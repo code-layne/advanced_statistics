@@ -1,0 +1,16 @@
+# Homework item 1b, problem 1 (Unit 9, Lesson 9.1). Relative to the lesson directory.
+id: hw1b1
+points: 1
+task: >-
+  A least-squares line for daily temperature (x, degrees F) and hot drinks sold (y)
+  from a random sample of 20 days is y-hat = 85 - 1.4x. A student concludes
+  temperature CAUSES fewer hot drinks to be sold because the slope is negative.
+  Identify one problem.
+criteria:
+  - id: problem
+    points: 1
+    full: >-
+      Identifies a valid problem: association/correlation does not imply causation
+      (observational data; a confounding variable such as season could explain both), OR
+      the sample slope could be due to chance if beta = 0 (no test was done). Problem 1
+      and Problem 2 must not be the same point.

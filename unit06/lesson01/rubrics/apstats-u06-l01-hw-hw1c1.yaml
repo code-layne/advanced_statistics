@@ -1,0 +1,12 @@
+# Homework item 1 (III), Large Counts (Unit 6, Lesson 6.1). Relative to the lesson directory.
+id: hw1c1
+points: 1
+task: >-
+  A plant samples 500 units and finds p-hat = 0.03 defective. Verify the Large Counts
+  condition.
+criteria:
+  - id: counts
+    points: 1
+    full: >-
+      Computes n p-hat = 500(0.03) = 15 and n(1 - p-hat) = 500(0.97) = 485 and states that
+      both are at least 10.

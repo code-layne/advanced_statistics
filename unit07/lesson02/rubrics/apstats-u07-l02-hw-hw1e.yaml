@@ -1,0 +1,20 @@
+# Homework item 1, Step 4 (Unit 7, Lesson 7.2). Relative to the lesson directory.
+id: hw1e
+points: 2
+task: >-
+  Screen time: the 95% t interval for the mean is (2.98, 3.82) hours. Step 4: conclude
+  in context.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 95% confidence that the interval (about 2.98 to 3.82 hours) captures the
+      parameter.
+  - id: context
+    points: 1
+    full: >-
+      The parameter is the true MEAN daily screen time of all elementary school students
+      (not individual students or the sample mean).
+examples:
+  - response: "95% of students watch between 2.98 and 3.82 hours a day."
+    scores: {confidence: 0, context: 0}

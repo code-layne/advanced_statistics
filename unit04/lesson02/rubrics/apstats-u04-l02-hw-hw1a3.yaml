@@ -1,0 +1,10 @@
+# Homework item 1a, trial (Unit 4, Lesson 4.2). Relative to the lesson directory.
+id: hw1a3
+points: 1
+task: >-
+  Rain simulation over a 7-day week: say what one trial represents.
+criteria:
+  - id: trial
+    points: 1
+    full: >-
+      One trial = 7 random digits (outcomes), representing one week of 7 days.

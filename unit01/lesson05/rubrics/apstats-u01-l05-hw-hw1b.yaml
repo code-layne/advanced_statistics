@@ -1,0 +1,21 @@
+# Homework item 1(b) (Unit 1, Lesson 1.5). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  Seven commute times in minutes: 16, 12, 60, 15, 19, 14, 18 (mean 22, median 16).
+  Which of the mean and median better represents a typical commute? Use the shape of
+  the data to justify.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      Chooses the median (16 minutes) as the better measure of a typical commute.
+  - id: shape
+    points: 1
+    full: >-
+      Justifies with shape: the distribution is skewed right by the single 60-minute
+      commute, which pulls the nonresistant mean up (22 is above all but one commute)
+      while the resistant median stays with the cluster of six.
+examples:
+  - response: "The median, because it is smaller."
+    scores: {choice: 1, shape: 0}

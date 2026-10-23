@@ -1,0 +1,13 @@
+# Homework item 5, justification of the multiple-choice answer (Unit 1, Lesson 1.5). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  A company's mean salary is $95,000 and its median salary is $58,000. Justify in a
+  sentence why the best conclusion is that the salary distribution is likely skewed
+  right.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B): the mean is nonresistant, so a few very large salaries pull it far
+      above the median, which is the signature of a right-skewed distribution.

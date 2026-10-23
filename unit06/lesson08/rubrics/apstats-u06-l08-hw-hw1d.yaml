@@ -1,0 +1,17 @@
+# Homework item 1d (Unit 6, Lesson 6.8). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  Independent random samples: City X, 168 of 280 adults exercise at least 3 times per
+  week; City Y, 126 of 240. The 95% CI for p_X - p_Y is (-0.010, 0.160). Interpret the
+  interval in context.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 95% confidence and the interval from -0.010 to 0.160.
+  - id: context
+    points: 1
+    full: >-
+      Says it captures the TRUE DIFFERENCE in proportions (City X minus City Y) of adults
+      who exercise at least 3 times per week.

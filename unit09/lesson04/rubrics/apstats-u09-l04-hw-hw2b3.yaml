@@ -1,0 +1,13 @@
+# Homework item 2b, meaning of beta = 0 (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw2b3
+points: 1
+task: >-
+  Explain what beta = 0 means in context: age (years) vs marathon finish time
+  (minutes), random sample of 45 runners; the researcher suspects older runners take
+  longer and considers a one-sided test.
+criteria:
+  - id: meaning
+    points: 1
+    full: >-
+      Says age has no linear relationship with marathon finish time in the population
+      (about the population, not the sample).

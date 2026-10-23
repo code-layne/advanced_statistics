@@ -1,0 +1,15 @@
+# Homework item 1b (Unit 4, Lesson 4.7). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  Verify the two conditions for a valid probability distribution for the spinner (each
+  P(X = x) = 0.20).
+criteria:
+  - id: nonneg
+    points: 1
+    full: >-
+      Every probability is between 0 and 1 (each 0.20 is at least 0).
+  - id: sum
+    points: 1
+    full: >-
+      The probabilities sum to 1 (5 x 0.20 = 1).

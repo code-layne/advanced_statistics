@@ -1,0 +1,19 @@
+# Homework item 2a (Unit 7, Lesson 7.7). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A 90% CI for mu_digital - mu_print (mean reading comprehension score, out of 100) is
+  (3.8, 9.2). Interpret the interval in context.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 90% confidence that the interval captures the true difference.
+  - id: context
+    points: 1
+    full: >-
+      Names the parameter: the difference in MEAN reading comprehension score, digital
+      minus print, between 3.8 and 9.2 points.
+examples:
+  - response: "There is a 95% chance the true difference is in the interval."
+    scores: {confidence: 0, context: 1}

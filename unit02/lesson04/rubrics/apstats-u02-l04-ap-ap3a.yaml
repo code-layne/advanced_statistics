@@ -1,0 +1,19 @@
+# AP Practice item 3, part (a) (Unit 2, Lesson 2.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  A cafe recorded the daily high temperature (F, from 55 to 95) and the iced drinks
+  sold on 40 summer days and regressed drinks sold on temperature: Constant -42.50,
+  Temp 2.350, S = 14.20, R-Sq = 72.3%. Interpret the value of r^2 in context.
+criteria:
+  - id: r2
+    points: 2
+    full: >-
+      E: Says about 72.3% of the variation in iced drinks sold is explained by the linear
+      model (the LSRL) with daily high temperature, in context.
+    partial: >-
+      P (1 of 2): Gives 72.3% of the variation with a flaw: no reference to the linear
+      model / explanatory variable, or describes the percent of drinks (not of the
+      variation) explained, or is not in context.

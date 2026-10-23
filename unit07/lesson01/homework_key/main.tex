@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l01-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -18,11 +21,11 @@
 
         \begin{enumerate}[label=\alph*.]
           \item Describe a Type I error in context.
-                \ansline{Concluding that the mean wait time exceeds 15 minutes when it actually equals 15 minutes --- resources are spent on improvements that were not needed.}
+                \ansline{Concluding that the mean wait time exceeds 15 minutes when it actually equals 15 minutes --- resources are spent on improvements that were not needed.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw1a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}
           \item Describe a Type II error in context.
-                \ansline{Failing to conclude that the mean wait time exceeds 15 minutes when it actually does --- the agency takes no action while travelers endure excessive wait times.}
+                \ansline{Failing to conclude that the mean wait time exceeds 15 minutes when it actually does --- the agency takes no action while travelers endure excessive wait times.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw1b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}
           \item Which error is more consequential for travelers?
-                \ansline{Type II: travelers continue to experience long waits without any corrective action. Type I wastes agency resources but does not directly harm travelers.}
+                \ansline{Type II: travelers continue to experience long waits without any corrective action. Type I wastes agency resources but does not directly harm travelers.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw1c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}
         \end{enumerate}
 
   \item \textbf{Online Learning Platform.}
@@ -30,11 +33,11 @@
 
         \begin{enumerate}[label=\alph*.]
           \item Describe a Type I error in context.
-                \ansline{Concluding that the platform changes mean scores when it actually has no effect --- the district may expand or abandon a neutral program based on a false signal.}
+                \ansline{Concluding that the platform changes mean scores when it actually has no effect --- the district may expand or abandon a neutral program based on a false signal.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}
           \item Describe a Type II error in context.
-                \ansline{Failing to detect a real effect of the platform on mean scores --- a beneficial or harmful platform goes unrecognized.}
+                \ansline{Failing to detect a real effect of the platform on mean scores --- a beneficial or harmful platform goes unrecognized.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}
           \item Effect of lowering $\alpha$ to 0.01:
-                \ansline{The Type I error rate decreases from 5\% to 1\% --- the district is less likely to make a decision based on a false positive. However, the Type II error rate increases --- real effects of the platform are more likely to go undetected. The test requires stronger evidence before concluding the platform makes a difference.}
+                \ansline{The Type I error rate decreases from 5\% to 1\% --- the district is less likely to make a decision based on a false positive. However, the Type II error rate increases --- real effects of the platform are more likely to go undetected. The test requires stronger evidence before concluding the platform makes a difference.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}
         \end{enumerate}
 
   \item \textbf{Environmental Testing.}
@@ -42,14 +45,14 @@
 
         \begin{enumerate}[label=\alph*.]
           \item Both error types:
-                \ansline{Type I: concluding lead levels are below 10 ppb when they are actually at 10 ppb --- the facility declares water safe without sufficient evidence. Type II: failing to conclude lead levels are below 10 ppb when they actually are --- the facility continues expensive treatment unnecessarily.}
+                \ansline{Type I: concluding lead levels are below 10 ppb when they are actually at 10 ppb --- the facility declares water safe without sufficient evidence. Type II: failing to conclude lead levels are below 10 ppb when they actually are --- the facility continues expensive treatment unnecessarily.\gradedbelow[l]{-24pt}{\kern-3pt\gradedblank[id=hw3a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}}
           \item More dangerous error:
                 \begin{teachernote}
                     Note: the alternative here is $\mu < 10$ ppb, meaning the facility
                     \emph{wants} to show the water is safe. A Type I error (incorrectly
                     declaring water safe) is the more dangerous error for public health.
                 \end{teachernote}
-                \ansline{Type I: incorrectly concluding that lead levels are below the safe threshold when they are not puts the public at risk of lead exposure.}
+                \ansline{Type I: incorrectly concluding that lead levels are below the safe threshold when they are not puts the public at risk of lead exposure.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw3b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}
         \end{enumerate}
 
 \end{enumerate}

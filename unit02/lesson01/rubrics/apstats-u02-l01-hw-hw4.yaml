@@ -1,0 +1,27 @@
+# Homework item B2 (Unit 2, Lesson 2.1). Relative to the lesson directory.
+id: hw4
+points: 3
+task: >-
+  A gym's 250 newest members: monthly plan 60 of 150 still attending, annual plan 70
+  of 100. The manager says '70 annual and 60 monthly members still come, so the plan
+  doesn't matter.' Is there an association? Use percents, and say what this study
+  cannot show.
+criteria:
+  - id: percents
+    points: 1
+    full: >-
+      Compares conditional percents: 70% of annual members vs. 40% of monthly members
+      still attend.
+  - id: association
+    points: 1
+    full: >-
+      Concludes there IS an association between plan and still attending, and says the raw
+      counts mislead because the plans have different numbers of members.
+  - id: causation
+    points: 1
+    full: >-
+      Says the study is observational, so it cannot show that the plan causes members to
+      keep attending.
+examples:
+  - response: "Yes, 70 is more than 60 so annual members attend more."
+    scores: {percents: 0, association: 0, causation: 0}

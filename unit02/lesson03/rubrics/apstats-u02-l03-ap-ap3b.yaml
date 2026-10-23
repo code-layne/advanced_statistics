@@ -1,0 +1,21 @@
+# AP Practice item 3, part (b) (Unit 2, Lesson 2.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3b
+points: 2
+task: >-
+  A coffee shop recorded the daily high temperature (F) and the number of hot drinks
+  sold on 40 days with highs from 30 F to 75 F. The regression line is predicted
+  drinks = 210 - 2.4(temperature). On one 60 F day the shop sold 58 hot drinks.
+  Calculate the residual for that day and interpret it in context.
+criteria:
+  - id: residual
+    points: 2
+    full: >-
+      E: Computes residual = actual - predicted = 58 - 66 = -8 AND interprets it in
+      context: on that 60 F day the shop sold 8 fewer hot drinks than the line predicted
+      (the line overpredicted).
+    partial: >-
+      P (1 of 2): Computes -8 correctly with a missing or incorrect interpretation, OR
+      gives a correct interpretation based on a residual with the wrong sign (+8,
+      predicted - actual).

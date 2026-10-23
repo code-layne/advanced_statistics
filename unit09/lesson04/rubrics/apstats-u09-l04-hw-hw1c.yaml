@@ -1,0 +1,23 @@
+# Homework item 1c (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw1c
+points: 3
+task: >-
+  A random sample of 28 college students: hours per week on social media (x) vs GPA
+  (y); the residual plot shows random scatter with no curve and constant spread;
+  residuals approximately normal. Verify each LINER condition using the information
+  given; for each, state whether it is met and explain.
+criteria:
+  - id: le
+    points: 1
+    full: >-
+      Linear and Equal SD met: residual plot shows random scatter with no curve, and
+      constant spread.
+  - id: i
+    points: 1
+    full: >-
+      Independent met: random sample, and 28 is at most 10% of all college students
+      (population at least 280).
+  - id: nr
+    points: 1
+    full: >-
+      Normal met (residuals approximately normal) and Random met (random sample stated).

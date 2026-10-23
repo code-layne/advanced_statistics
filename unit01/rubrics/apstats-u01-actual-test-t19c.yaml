@@ -1,0 +1,21 @@
+# Unit 1 actual test, item 19c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t19c
+points: 3
+task: >-
+  The mean length is 31.07 minutes. Which better describes a typical episode, the mean
+  or the median? Explain.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      E: The median (32 minutes).
+  - id: reason
+    points: 2
+    full: >-
+      E: The median is resistant, so the 4-minute outlier barely moves it, while the mean
+      is dragged down to 31.07 by that one short episode.
+    partial: >-
+      P (1 of 2): Mentions the outlier or skew without explaining resistance, or vice
+      versa.

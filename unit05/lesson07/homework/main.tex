@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l07-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -16,12 +19,12 @@
         and $\sigma = 2{,}000$ steps. A researcher surveys $n = 64$ adults at random.
         \begin{enumerate}[label=\alph*.]
           \item Check all three conditions for the normal model for $\bar{x}$.
-                \writelines{3}
-          \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=3, display={Random sample; $64 \le 10\%$ of all adults; $n = 64 \ge 30$, so the CLT applies despite the skew. Conditions met.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+          \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.\gradedbelow[r]{0.5in-0.33in}{$\mu_{\bar{x}} = $~\gradedblank[id=hw1b1, type=short, points=1, answer=7500, check=numeric, tolerance=0]{0.9in}{0.28in}\quad $\sigma_{\bar{x}} = $~\gradedblank[id=hw1b2, type=short, points=1, answer=250, check=numeric, tolerance=0]{0.9in}{0.28in}}
                 \vspace{0.5in}
-          \item Find $P(\bar{x} < 7{,}000)$.
+          \item Find $P(\bar{x} < 7{,}000)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw1c, type=short, points=2, answer=0.0228, check=numeric, tolerance=0.002]{0.9in}{0.28in}}
                 \vspace{0.9in}
-          \item Find $c$ such that $P(\bar{x} > c) = 0.10$. Interpret in context.
+          \item Find $c$ such that $P(\bar{x} > c) = 0.10$. Interpret in context.\gradedbelow[r]{0.9in-0.45in}{$c = $~\gradedblank[id=hw1d1, type=short, points=2, answer=7821, check=numeric, tolerance=2]{0.9in}{0.28in}\quad \gradedblank[id=hw1d2, type=rubric, points=1, display={In 10\% of samples of 64 adults, the mean daily step count exceeds 7,821.}]{3.2in}{0.4in}}
                 \vspace{0.9in}
         \end{enumerate}
 
@@ -29,17 +32,17 @@
         $\sigma = 12$. A professor randomly selects $n = 9$ exams to grade first.
         \begin{enumerate}[label=\alph*.]
           \item Are conditions met? Identify each condition.
-                \writelines{2}
-          \item Find $P(70 \le \bar{x} \le 78)$.
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=3, display={Random sample; $9 \le 10\%$ of all exams; population is normal, so OK for $n = 9$. Met.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+          \item Find $P(70 \le \bar{x} \le 78)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw2b, type=short, points=2, answer=0.6826, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{0.9in}
         \end{enumerate}
 
   \item For a population with $\mu = 200$ and $\sigma = 40$, a researcher takes samples
         of size $n = 25$, $n = 100$, and $n = 400$.
         \begin{enumerate}[label=\alph*.]
-          \item Find $\sigma_{\bar{x}}$ for each $n$.
+          \item Find $\sigma_{\bar{x}}$ for each $n$.\gradedbelow[r]{0.5in-0.33in}{$n = 25$:~\gradedblank[id=hw3a1, type=short, points=1, answer=8, check=numeric, tolerance=0, display={\boldmath$8$}]{0.8in}{0.28in}\quad $n = 100$:~\gradedblank[id=hw3a2, type=short, points=1, answer=4, check=numeric, tolerance=0, display={\boldmath$4$}]{0.8in}{0.28in}\quad $n = 400$:~\gradedblank[id=hw3a3, type=short, points=1, answer=2, check=numeric, tolerance=0, display={\boldmath$2$}]{0.8in}{0.28in}}
                 \vspace{0.5in}
-          \item For $n = 100$: find $P(195 < \bar{x} < 205)$.
+          \item For $n = 100$: find $P(195 < \bar{x} < 205)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw3b, type=short, points=2, answer=0.7888, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{0.9in}
         \end{enumerate}
 

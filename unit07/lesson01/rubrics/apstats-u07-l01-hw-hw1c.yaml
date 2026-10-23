@@ -1,0 +1,17 @@
+# Homework item 1c (Unit 7, Lesson 7.1). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  An agency tests H0: mu = 15 min vs Ha: mu > 15 min (alpha = 0.05) for the mean wait
+  time at an airport security checkpoint. Which error is more consequential for
+  travelers? Justify your answer.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      Chooses the Type II error.
+  - id: reason
+    points: 1
+    full: >-
+      Justifies in context: travelers keep enduring long waits because no corrective
+      action is taken (a Type I error mainly wastes agency resources).

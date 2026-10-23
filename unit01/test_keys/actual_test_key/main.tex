@@ -54,6 +54,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-actual-test}
+\gradingcourse{advanced_statistics}
 \usepackage{multicol}
 \setlength{\multicolsep}{1pt}
 
@@ -92,11 +95,12 @@ Notes closed. Circle the single best answer.
           \item The new variable is quantitative, because the labels are in order.
           \item Nothing is lost: the speeds can be recovered from the labels.
           \item The median reading speed can still be found exactly from the labels.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t1, type=choice, points=4, answer=A]{0.45in}{0.22in}}
         \end{choices}
 
   \boxguard[8]
   \item In the Lincoln school band, 27 of 90 members play brass. In the Monroe school band, 21 of
-        60 do. Which is best supported?
+        60 do. Which is best supported?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t2, type=choice, points=4, answer=E]{0.45in}{0.22in}}
         \begin{multicols}{2}
         \begin{choices}
           \item Lincoln: 27 is greater than 21
@@ -108,7 +112,7 @@ Notes closed. Circle the single best answer.
         \end{multicols}
 
   \boxguard[6]
-  \item Which of these variables is \textbf{continuous}?
+  \item Which of these variables is \textbf{continuous}?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t3, type=choice, points=4, answer=B]{0.45in}{0.22in}}
         \begin{multicols}{2}
         \begin{choices}
           \item Number of books in a backpack
@@ -129,7 +133,7 @@ Notes closed. Circle the single best answer.
           \item 34 years
           \item \ans{36 years}
           \item 37.9 years
-          \item 39 years
+          \item 39 years\gradedbelow[r]{1pt}{\textit{Letter:}~\gradedblank[id=t4, type=choice, points=4, answer=C]{0.45in}{0.22in}}
         \end{choices}
         \end{multicols}
         \end{minipage}\hfill
@@ -153,6 +157,7 @@ Notes closed. Circle the single best answer.
           \item The wider intervals changed some of the depth measurements.
           \item Only the histogram with fewer bars is a true histogram.
           \item The two peaks show that the data set contains two outliers.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t5, type=choice, points=4, answer=A]{0.45in}{0.22in}}
         \end{choices}
 
   \boxguard[9]
@@ -180,7 +185,7 @@ Notes closed. Circle the single best answer.
           \foreach \x in {20,25,...,50} { \node[below, font=\tiny] at (\x,0) {\x}; }
           \node[font=\tiny] at (36,-4.5) {Quiz score (points)};
           \node[rotate=90, font=\tiny] at (14.5,9) {Count};
-        \end{tikzpicture}
+        \end{tikzpicture}\gradedbelow[r]{0.12in}{\textit{Letter:}~\gradedblank[id=t6, type=choice, points=4, answer=D]{0.45in}{0.22in}}
         \end{minipage}
 
   \boxguard[9]
@@ -205,11 +210,12 @@ Notes closed. Circle the single best answer.
           \item The distribution is bimodal, with peaks at 26 and 44 push-ups.
           \item The gap from 20 to 22 push-ups is the most unusual feature.
           \item \ans{44 push-ups is a possible outlier, set off by a gap; investigate it.}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t7, type=choice, points=4, answer=E]{0.45in}{0.22in}}
         \end{choices}
 
   \boxguard[8]
   \item The ages at which 120 employees of a company retired are strongly \textbf{skewed left}.
-        Which is most likely true?
+        Which is most likely true?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t8, type=choice, points=4, answer=B]{0.45in}{0.22in}}
         \begin{multicols}{2}
         \begin{choices}
           \item Mean $>$ median; report the median
@@ -230,6 +236,7 @@ Notes closed. Circle the single best answer.
           \item The median, but not the mean
           \item None of them: only one time is wrong
           \item Only the IQR
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t9, type=choice, points=4, answer=A]{0.45in}{0.22in}}
         \end{choices}
         \end{multicols}
 
@@ -242,6 +249,7 @@ Notes closed. Circle the single best answer.
           \item The fullest bottle holds 3 mL more than the least full bottle.
           \item \ans{The amounts typically vary by about 3 mL from the mean amount.}
           \item About 3\% of the bottles hold more than the mean amount.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t10, type=choice, points=4, answer=D]{0.45in}{0.22in}}
         \end{choices}
 
   \boxguard[8]
@@ -253,6 +261,7 @@ Notes closed. Circle the single best answer.
           \item about 70\% of babies the same age are this length or shorter.
           \item \ans{about 30\% of babies the same age are this length or shorter.}
           \item the baby is longer than exactly 30 other babies.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t11, type=choice, points=4, answer=D]{0.45in}{0.22in}}
         \end{choices}
 
   \boxguard[9]
@@ -281,6 +290,7 @@ Notes closed. Circle the single best answer.
           \item The mean number of skaters per day was 31.
           \item The range of the counts is 16 skaters.
           \item \ans{About a quarter of the days had 20 to 31, and about a quarter 31 to 36.}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t12, type=choice, points=4, answer=E]{0.45in}{0.22in}}
         \end{choices}
 
   \boxguard[10]
@@ -311,6 +321,7 @@ Notes closed. Circle the single best answer.
           \item \ans{Y has the higher median (52 vs.\ 45 cm) and the smaller IQR (10 vs.\ 14).}
           \item Fertilizer X's plants are taller, because its minimum is smaller.
           \item Every plant given Fertilizer Y is taller than every plant given Fertilizer X.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t13, type=choice, points=4, answer=C]{0.45in}{0.22in}}
         \end{choices}
 
   \boxguard[8]
@@ -323,6 +334,7 @@ Notes closed. Circle the single best answer.
           \item \ans{3.12 is $\mu$; 3.35 is $\bar x$}
           \item Both are statistics, since both are means
           \item 3.35 is $\mu$, since it is larger
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t14, type=choice, points=4, answer=C]{0.45in}{0.22in}}
         \end{choices}
         \end{multicols}
 
@@ -336,6 +348,7 @@ Notes closed. Circle the single best answer.
           \item \ans{Leo: $z = 1.5$ vs.\ Kim's 1.2}
           \item Kim: $z = 1.5$ vs.\ Leo's 1.2
           \item Leo: 62 is greater than 45
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t15, type=choice, points=4, answer=B]{0.45in}{0.22in}}
           \item Can't compare different subjects
         \end{choices}
         \end{multicols}
@@ -372,18 +385,18 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
 
         \vspace{3pt}
         \textbf{(a)} What are the individuals? Is \emph{Sailboat} a variable or a value?\\[2pt]
-        \ansline{The boats docked at the marina (one per row). \emph{Sailboat} is a value of \emph{Boat type}.}
+        \gradedhere{\gradedblank[id=t16a, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t16a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{The boats docked at the marina (one per row). \emph{Sailboat} is a value of \emph{Boat type}.}
 
         \vspace{3pt}
         \textbf{(b)} Classify \emph{Slip \#}, \emph{Length}, and \emph{Passengers allowed} as
         categorical or quantitative. For each quantitative one, say discrete or continuous.\\[2pt]
-        \ansline{Slip \#: categorical (a label). Length: quantitative, continuous.}\\
+        \gradedhere{\gradedblank[id=t16b, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t16b.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Slip \#: categorical (a label). Length: quantitative, continuous.}\\
         \ansline{Passengers allowed: quantitative, discrete (a count).}
 
         \vspace{3pt}
         \textbf{(c)} Is ``How long is the boat in slip 21?'' a statistical question? Explain, then
         write one that is.\\[2pt]
-        \ansline{No: one answer (34.0 ft), read from one row --- no variability. Statistical:}\\
+        \gradedhere{\gradedblank[id=t16c, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t16c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{No: one answer (34.0 ft), read from one row --- no variability. Statistical:}\\
         \ansline{``How much do the lengths of the boats at the marina vary?''}
 
   \boxguard[14]
@@ -423,18 +436,18 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
 
         \vspace{3pt}
         \textbf{(a)} What proportion of each gym's members chose yoga?\\[2pt]
-        \ansline{East: $105/300 = 0.35$. \quad West: $72/180 = 0.40$.}
+        \gradedhere{\gradedblank[id=t17a, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t17a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{East: $105/300 = 0.35$. \quad West: $72/180 = 0.40$.}
 
         \vspace{3pt}
         \textbf{(b)} A manager wrote: ``Yoga is more popular at East Gym --- look how much taller
         its yoga bar is.'' What is wrong with this reasoning?\\[2pt]
-        \ansline{The bars are counts, and East has 300 members to West's 180. Compare}\\
+        \gradedhere{\gradedblank[id=t17b, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t17b.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{The bars are counts, and East has 300 members to West's 180. Compare}\\
         \ansline{relative frequencies: 35\% vs.\ 40\% --- West's share is larger.}
 
         \vspace{3pt}
         \textbf{(c)} Do \emph{most} West members prefer yoga? Do most East members prefer spin?
         Justify.\\[2pt]
-        \ansline{West: no --- 40\% is less than half (most common, not a majority).}\\
+        \gradedhere{\gradedblank[id=t17c, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t17c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{West: no --- 40\% is less than half (most common, not a majority).}\\
         \ansline{East: no --- only $90/300 = 30\%$ chose spin.}
 
   \boxguard[14]
@@ -459,19 +472,19 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
         \begin{minipage}[t]{0.55\linewidth}\raggedright
         \textbf{(a)} How many pumpkins weighed 20 pounds or more? What percent of the row is
         that?\\[2pt]
-        \ansline{$5+3+0+2 = 10$ pumpkins; $10/50 = 20\%$.}
+        \gradedhere{\gradedblank[id=t18a, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t18a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{$5+3+0+2 = 10$ pumpkins; $10/50 = 20\%$.}
 
         \vspace{3pt}
         \textbf{(b)} Can the exact median be found from the histogram? If not, which interval
         holds it? Explain.\\[2pt]
-        \ansline{No --- values are grouped. 20 are}\\
+        \gradedhere{\gradedblank[id=t18b, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t18b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{No --- values are grouped. 20 are}\\
         \ansline{under 12 lb, 32 under 16, so the}\\
         \ansline{25th and 26th are in 12--16 lb.}
         \end{minipage}
 
         \vspace{3pt}
         \textbf{(c)} Describe the distribution of pumpkin weights.\\[2pt]
-        \ansline{Skewed right (a long tail toward heavy pumpkins), one peak at 8--12 lb.}\\
+        \gradedhere{\gradedblank[id=t18c, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t18c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Skewed right (a long tail toward heavy pumpkins), one peak at 8--12 lb.}\\
         \ansline{A gap at 28--32 lb; the 2 pumpkins at 32--36 lb are possible outliers.}\\
         \ansline{Median in 12--16 lb (about 13 lb); weights run from about 4 to 36 lb.}
 
@@ -481,14 +494,14 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
         \ \ 38 \ \ 40 \ \ 41 \ \ 44\hspace*{\fill}
 
         \vspace{2pt}
-        \textbf{(a)} Find the five-number summary.
+        \textbf{(a)} Find the five-number summary.\gradedbelow{2pt}{\gradedblank[id=t19a, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t19a.yaml]{\linewidth}{0.58in}}
         \begin{work}
           \text{Min} = 4, \quad Q_1 = 27, \quad \text{Median} = 32, \quad Q_3 = 38, \quad
           \text{Max} = 44
         \end{work}
 
         \textbf{(b)} Use the $1.5 \times \text{IQR}$ rule to decide whether the 4-minute episode is
-        an outlier. If it is, where does the lower whisker of a modified boxplot end?
+        an outlier. If it is, where does the lower whisker of a modified boxplot end?\gradedbelow{2pt}{\gradedblank[id=t19b, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t19b.yaml]{\linewidth}{0.94in}}
         \begin{work}
           \text{IQR} = 38 - 27 = 11, \qquad Q_1 - 1.5(\text{IQR}) = 27 - 16.5 = 10.5
         \end{work}
@@ -497,7 +510,7 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
         \vspace{3pt}
         \textbf{(c)} The mean length is 31.07 minutes. Which better describes a typical episode,
         the mean or the median? Explain.\\[2pt]
-        \ansline{The median, 32 min: it is resistant, so the 4-minute outlier barely moves it.}\\
+        \gradedhere{\gradedblank[id=t19c, type=rubric, points=3, rubric=../rubrics/apstats-u01-actual-test-t19c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{The median, 32 min: it is resistant, so the 4-minute outlier barely moves it.}\\
         \ansline{The nonresistant mean is dragged down to 31.07 by that one short episode.}
 
   \boxguard[14]
@@ -518,14 +531,14 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
         \end{minipage}\hfill
         \begin{minipage}[t]{0.57\linewidth}\raggedright
         \textbf{(a)} About what percent of cups get between 11.6 and 12.4 ounces?\\[2pt]
-        \ansline{$\pm 1$ SD from 12, so about 68\%.}
+        \gradedhere{\gradedblank[id=t20a, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t20a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{$\pm 1$ SD from 12, so about 68\%.}
 
         \vspace{3pt}
         \textbf{(b)} About what percent get \emph{less than} 11.2 ounces?\\[2pt]
-        \ansline{2 SDs below: half of 5\%, about 2.5\%.}
+        \gradedhere{\gradedblank[id=t20b, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t20b.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{2 SDs below: half of 5\%, about 2.5\%.}
         \end{minipage}
 
-        \textbf{(c)} One cup gets 12.7 ounces. Find its $z$-score and interpret it in context.
+        \textbf{(c)} One cup gets 12.7 ounces. Find its $z$-score and interpret it in context.\gradedbelow{2pt}{\gradedblank[id=t20c, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t20c.yaml]{\linewidth}{1.08in}}
         \begin{work}
           z = \frac{12.7 - 12}{0.4} = 1.75
         \end{work}
@@ -533,7 +546,7 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
 
         \vspace{3pt}
         \textbf{(d)} A second machine pours with mean 16 oz and SD 0.6 oz. Which pour is more
-        unusually large \emph{for its own machine}: 12.7 oz from the first or 17.2 oz from the second?
+        unusually large \emph{for its own machine}: 12.7 oz from the first or 17.2 oz from the second?\gradedbelow{2pt}{\gradedblank[id=t20d, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-test-t20d.yaml]{\linewidth}{1.07in}}
         \begin{work}
           z_{\text{first}} = \frac{12.7 - 12}{0.4} = 1.75, \qquad
           z_{\text{second}} = \frac{17.2 - 16}{0.6} = 2.0

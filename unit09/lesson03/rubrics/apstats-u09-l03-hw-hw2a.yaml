@@ -1,0 +1,18 @@
+# Homework item 2a (Unit 9, Lesson 9.3). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  15 cities: daily temperature (x, F) vs monthly electricity use (y, kWh); 90% CI for
+  the slope (12.3, 31.8). A 60-city study gives (18.1, 26.7). Interpret the first
+  researcher's CI in context.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 90% confidence that the interval captures the TRUE (population) slope.
+  - id: context
+    points: 1
+    full: >-
+      In context with both endpoints and units: the slope relating monthly electricity
+      usage to average daily temperature for cities is between 12.3 and 31.8 kWh per
+      degree F.

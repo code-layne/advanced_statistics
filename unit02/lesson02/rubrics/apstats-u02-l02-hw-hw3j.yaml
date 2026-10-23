@@ -1,0 +1,15 @@
+# Homework item B1, justification of the multiple-choice answer (Unit 2, Lesson 2.2). Relative to the lesson directory.
+id: hw3j
+points: 1
+task: >-
+  Which correlation shows the strongest linear association: (A) r = 0.45, (B) r =
+  -0.91, (C) r = 0, (D) r = 0.78, (E) r = -0.20? Justify the choice in a sentence.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B) because -0.91 is closest to -1 or 1 (largest |r|); the negative sign
+      gives only the direction, not weaker strength.
+examples:
+  - response: "(D) because 0.78 is the biggest positive number"
+    scores: {justify: 0}

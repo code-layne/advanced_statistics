@@ -1,0 +1,21 @@
+# Homework item 1, Conclude (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  A marketing firm claims 40% of a city's adults visited a website in the past month;
+  a competitor believes it is lower. 126 of a random sample of 350 adults visited.
+  alpha = 0.05. Conclude.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares the p-value to alpha: p-value about 0.063 > 0.05, so fail to reject H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes in context: there is not convincing evidence that the true proportion of
+      the city's adults who visited the site is lower than 40% (does not claim H0 is
+      proven).
+examples:
+  - response: "We accept H0, so the claim is true."
+    scores: {decision: 0, context: 0}

@@ -1,0 +1,21 @@
+# Homework item 4a (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw4a
+points: 3
+task: >-
+  20% of a large population carry an allele; a geneticist examines individuals one at
+  a time until the first carrier; X = number examined. Define the distribution of X
+  and check BITS briefly.
+criteria:
+  - id: dist
+    points: 1
+    full: >-
+      States X ~ Geom(0.20).
+  - id: bi
+    points: 1
+    full: >-
+      Binary (carrier or not) and independent individuals (large population /
+      independently chosen).
+  - id: ts
+    points: 1
+    full: >-
+      Trials until the first success, with the same p = 0.20 for every individual.

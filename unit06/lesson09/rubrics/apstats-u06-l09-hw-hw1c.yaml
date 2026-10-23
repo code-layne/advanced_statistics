@@ -1,0 +1,22 @@
+# Homework item 1c (Unit 6, Lesson 6.9). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A 99% CI for p_city - p_suburb, the difference in the proportions of residents who
+  use public transit, is (-0.06, 0.22). Would you reach the same conclusion with an
+  80% CI? Why or why not?
+criteria:
+  - id: narrower
+    points: 1
+    full: >-
+      Explains that an 80% CI is narrower than the 99% CI (smaller critical value z*),
+      with the same center 0.08.
+  - id: conclusion
+    points: 1
+    full: >-
+      Says the conclusion could change because the narrower interval may exclude 0
+      (computed: SE = 0.14/2.576 = 0.0543, 80% CI = 0.08 +/- 1.282(0.0543) = (0.010,
+      0.150), which excludes 0, giving evidence of a higher city rate).
+examples:
+  - response: "Yes, the confidence level does not matter."
+    scores: {narrower: 0, conclusion: 0}

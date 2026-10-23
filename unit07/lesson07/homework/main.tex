@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l07-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,11 +22,11 @@ districts of a city. A 95\% CI for $\mu_{\text{northern}} - \mu_{\text{southern}
 $(-2.37,\; 0.37)$ minutes.
 
 \begin{enumerate}[label=\alph*.]
-  \item Interpret the interval in context. \writelines{2}
+  \item Interpret the interval in context. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=2, display={\bfseries\boldmath 95\% confident $\mu_N - \mu_S$ (mean response time) is in $(-2.37, 0.37)$ min.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
   \item A city official claims northern response times are faster (lower mean) than
-        southern. Does the interval support this claim? Explain. \writelines{2}
+        southern. Does the interval support this claim? Explain. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={\bfseries\boldmath No: 0 is in the interval, so no difference is plausible.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
   \item What does it mean that this is a \emph{95\%} confidence interval? Describe in
-        terms of repeated sampling. \writeline
+        terms of repeated sampling. \gradedhide{\writeline}\gradedbelow[l]{1.5pt}{\kern-3pt\gradedblank[id=hw1c, type=rubric, points=2, display={\bfseries\boldmath About 95\% of intervals from repeated samples capture $\mu_N - \mu_S$.}]{\linewidth+6pt}{0.17in}}
 \end{enumerate}
 
 \vspace{0.06in}
@@ -33,9 +36,9 @@ A 90\% CI for $\mu_{\text{digital}} - \mu_{\text{print}}$ (mean reading comprehe
 out of 100) is $(3.8,\; 9.2)$ points.
 
 \begin{enumerate}[label=\alph*.]
-  \item Interpret the interval in context. \writelines{2}
+  \item Interpret the interval in context. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={\bfseries\boldmath 90\% confident $\mu_D - \mu_P$ (mean score) is in (3.8, 9.2) points.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
   \item A researcher claims that digital readers score higher on average. Does the CI
-        provide convincing evidence? Explain. \writelines{2}
+        provide convincing evidence? Explain. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={\bfseries\boldmath Yes: the whole interval is above 0; digital mean is higher.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{enumerate}
 
 \vspace{0.06in}
@@ -48,15 +51,15 @@ Both use 95\% confidence.
 \begin{enumerate}[label=\alph*.]
   \item Compute the $SE$ for each team.
 
-        Team A: $SE_A = \sqrt{\dfrac{8^2}{25} + \dfrac{8^2}{25}} = $ \blank{3cm}
+        Team A: $SE_A = \sqrt{\dfrac{8^2}{25} + \dfrac{8^2}{25}} = $ \makebox[3cm]{\smash{\gradedblank[id=hw3a1, type=short, points=1, answer=2.263, check=numeric, tolerance=0.005, display={\boldmath$2.263$}]{2.8cm}{0.19in}}}
 
-        Team B: $SE_B = \sqrt{\dfrac{8^2}{100} + \dfrac{8^2}{100}} = $ \blank{3cm}
+        Team B: $SE_B = \sqrt{\dfrac{8^2}{100} + \dfrac{8^2}{100}} = $ \makebox[3cm]{\smash{\gradedblank[id=hw3a2, type=short, points=1, answer=1.131, check=numeric, tolerance=0.005, display={\boldmath$1.131$}]{2.8cm}{0.19in}}}
 
   \item Approximate the margin of error for each team, using $t^* \approx 2.0$.
 
-        Team A: ME $\approx$ \blank{3cm} \qquad Team B: ME $\approx$ \blank{3cm}
+        Team A: ME $\approx$ \makebox[3cm]{\smash{\gradedblank[id=hw3b1, type=short, points=1, answer=4.53, check=numeric, tolerance=0.02, display={\boldmath$4.53$}]{2.8cm}{0.19in}}} \qquad Team B: ME $\approx$ \makebox[3cm]{\smash{\gradedblank[id=hw3b2, type=short, points=1, answer=2.26, check=numeric, tolerance=0.02, display={\boldmath$2.26$}]{2.8cm}{0.19in}}}
 
-  \item By what factor is Team B's interval narrower than Team A's? \writeline
+  \item By what factor is Team B's interval narrower than Team A's? \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3c, type=short, points=1, answer=2, check=numeric, tolerance=0, display={\boldmath$2$ (B's is half as wide)}]{2.3in}{0.19in}}
 \end{enumerate}
 
 \vspace{0.06in}
@@ -67,9 +70,9 @@ $(-1.2,\; 4.8)$ kg.
 
 \begin{enumerate}[label=\alph*.]
   \item Is there convincing evidence that one program produces greater mean weight loss?
-        Explain using the interval. \writelines{2}
+        Explain using the interval. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw4a, type=rubric, points=2, display={\bfseries\boldmath No: 0 is in $(-1.2, 4.8)$, so no difference is plausible.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
   \item If the confidence level were lowered to 90\% (all else equal), would the interval
-        be narrower or wider? Explain. \writeline
+        be narrower or wider? Explain. \gradedhide{\gradedhere{\gradedblank[id=hw4b, type=rubric, points=2, display={\bfseries\boldmath Narrower: smaller $t^*$, so a smaller margin of error.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writeline}
 \end{enumerate}
 
 \end{enumerate}

@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u07-l10-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,19 +22,19 @@
   \item A market researcher randomly selects 80 coffee drinkers and asks whether they prefer
         oat milk over dairy milk. She wants to estimate the proportion who prefer oat milk.
 
-        Procedure: \ans{one-sample $z$-interval for $p$}
+        Procedure: \smash{\gradedblank[id=hw1a, type=short, points=1, answer={{one-sample z-interval for p}}, check=text, display={\boldmath one-sample $z$-interval for $p$}]{8.8cm}{0.19in}}
 
   \item A physical therapist records the number of days until pain relief for 12 randomly
         selected patients treated with a new therapy and 12 treated with a standard therapy.
         She wants to test whether the new therapy leads to faster relief, on average.
 
-        Procedure: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
+        Procedure: \smash{\gradedblank[id=hw1b, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{8.8cm}{0.19in}}
 
   \item A company tracks customer satisfaction scores (0--100) for 40 randomly selected
         customers before and after a new service policy. They want to test whether scores
         increased after the policy change.
 
-        Procedure: \ans{matched-pairs $t$-test for $\mu_d$}
+        Procedure: \smash{\gradedblank[id=hw1c, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={\boldmath matched-pairs $t$-test for $\mu_d$}]{8.8cm}{0.19in}}
 \end{enumerate}
 
 \vspace{0.10in}
@@ -39,20 +42,20 @@
 \item \textbf{Proportions: Hypothesis Test.}
 
       \begin{enumerate}[label=\alph*.]
-        \item \textbf{State:} Procedure: \ans{two-sample $z$-test for $p_1 - p_2$}\\
-              $H_0$: \ans{$p_1 - p_2 = 0$} \quad $H_a$: \ans{$p_1 - p_2 > 0$}
+        \item \textbf{State:} Procedure: \smash{\gradedblank[id=hw2a1, type=short, points=1, answer={{two-sample z-test for p1 - p2}}, check=text, display={\boldmath two-sample $z$-test for $p_1 - p_2$}]{6.8cm}{0.19in}}\\
+              $H_0$: \smash{\gradedblank[id=hw2a2, type=short, points=1, answer={{p1 - p2 = 0}}, check=text, display={\boldmath$p_1 - p_2 = 0$}]{4.8cm}{0.19in}} \quad $H_a$: \smash{\gradedblank[id=hw2a3, type=short, points=1, answer={{p1 - p2 > 0}}, check=text, display={\boldmath$p_1 - p_2 > 0$}]{4.8cm}{0.19in}}
         \item \textbf{Plan:}
               \begin{itemize}
-                \item Random: \ansline{Both samples were randomly selected --- met.}
-                \item 10\%: \ansline{$120 \le 10\%$ of all city residents and $100 \le 10\%$ of all suburban residents (large populations assumed) --- met.}
-                \item Large Counts: \ansline{$120(0.45)=54$, $120(0.55)=66$, $100(0.35)=35$, $100(0.65)=65$ --- all $\ge 10$; met.}
+                \item Random: \ansline{Both samples were randomly selected --- met.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2b1, type=rubric, points=1]{4.4in}{0.19in}}}
+                \item 10\%: \ansline{$120 \le 10\%$ of all city residents and $100 \le 10\%$ of all suburban residents (large populations assumed) --- met.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2b2, type=rubric, points=1]{4.4in}{0.19in}}}
+                \item Large Counts: \ansline{$120(0.45)=54$, $120(0.55)=66$, $100(0.35)=35$, $100(0.65)=65$ --- all $\ge 10$; met.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2b3, type=rubric, points=1]{4.4in}{0.19in}}}
               \end{itemize}
-        \item \textbf{Do:} $\hat p_1 =$ \ans{0.45} \; $\hat p_2 =$ \ans{0.35} \;
-              $\hat p_c = \dfrac{54+35}{120+100} =$ \ans{$89/220 \approx 0.405$}
+        \item \textbf{Do:} $\hat p_1 =$ \smash{\gradedblank[id=hw2c1, type=short, points=1, answer=0.45, check=numeric, tolerance=0.005, display={\boldmath$0.45$}]{1.3cm}{0.19in}} \; $\hat p_2 =$ \smash{\gradedblank[id=hw2c2, type=short, points=1, answer=0.35, check=numeric, tolerance=0.005, display={\boldmath$0.35$}]{1.3cm}{0.19in}} \;
+              $\hat p_c = \dfrac{54+35}{120+100} =$ \smash{\gradedblank[id=hw2c3, type=short, points=1, answer=0.405, check=numeric, tolerance=0.002, display={\boldmath$0.405$}]{1.6cm}{0.19in}}
 
-              $z = \dfrac{(0.45 - 0.35)}{\sqrt{0.405(0.595)(1/120+1/100)}} \approx$ \ans{1.53} \quad $p$-value $\approx$ \ans{0.063}
+              $z = \dfrac{(0.45 - 0.35)}{\sqrt{0.405(0.595)(1/120+1/100)}} \approx$ \smash{\gradedblank[id=hw2c4, type=short, points=1, answer=1.50, check=numeric, tolerance=0.03, display={\boldmath$1.50$}]{1.6cm}{0.19in}} \quad $p$-value $\approx$ \smash{\gradedblank[id=hw2c5, type=short, points=1, answer=0.066, check=numeric, tolerance=0.004, display={\boldmath$0.066$}]{1.8cm}{0.19in}}
 
-        \item \textbf{Conclude:} \ansline{Because $p \approx 0.063 > \alpha = 0.05$, fail to reject $H_0$. There is not sufficient evidence that the proportion of city residents who support transit expansion is higher than the proportion of suburban residents.}
+        \item \textbf{Conclude:} \ansline{Because $p \approx 0.063 > \alpha = 0.05$, fail to reject $H_0$. There is not sufficient evidence that the proportion of city residents who support transit expansion is higher than the proportion of suburban residents.\gradedbelow[r]{-12pt}{\gradedblank[id=hw2d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}}
       \end{enumerate}
 
 \vspace{0.10in}
@@ -60,16 +63,16 @@
 \item \textbf{Means: Confidence Interval.}
 
       \begin{enumerate}[label=\alph*.]
-        \item \textbf{State:} Procedure: \ans{one-sample $t$-interval for $\mu$} \quad
-              Parameter: \ans{$\mu$ = mean daily sodium intake (mg) of all adults}
+        \item \textbf{State:} Procedure: \smash{\gradedblank[id=hw3a1, type=short, points=1, answer={{one-sample t-interval for mu}}, check=text, display={\boldmath one-sample $t$-interval for $\mu$}]{6.8cm}{0.19in}} \quad
+              Parameter: \smash{\gradedblank[id=hw3a2, type=rubric, points=1, display={\bfseries\boldmath $\mu$: mean sodium (mg)}]{4.3cm}{0.19in}}
         \item \textbf{Plan:}
               \begin{itemize}
-                \item Random: \ansline{Random sample of 22 adults --- met.}
-                \item Normal ($n < 30$): \ansline{$n = 22 < 30$; dotplot shows roughly symmetric data with one mild outlier. A single mild outlier in a symmetric distribution is generally acceptable --- Normal condition met, proceed with caution.}
+                \item Random: \ansline{Random sample of 22 adults --- met.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw3b1, type=rubric, points=1]{4.4in}{0.19in}}}
+                \item Normal ($n < 30$): \ansline{$n = 22 < 30$; dotplot shows roughly symmetric data with one mild outlier. A single mild outlier in a symmetric distribution is generally acceptable --- Normal condition met, proceed with caution.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw3b2, type=rubric, points=1]{4.4in}{0.19in}}}
               \end{itemize}
-        \item \textbf{Do:} $t^* =$ \ans{2.080} (df = \ans{21}); \;
-              $ME = 2.080 \cdot \dfrac{310}{\sqrt{22}} \approx$ \ans{137.4}; \; Interval: \ans{$(2442.6,\; 2717.4)$}
-        \item \textbf{Conclude:} \ansline{We are 95\% confident that the mean daily sodium intake of all adults is between 2,443 mg and 2,717 mg.}
+        \item \textbf{Do:} $t^* =$ \smash{\gradedblank[id=hw3c1, type=short, points=1, answer=2.080, check=numeric, tolerance=0.005, display={\boldmath$2.080$}]{1.3cm}{0.19in}} (df = \smash{\gradedblank[id=hw3c2, type=short, points=1, answer=21, check=numeric, tolerance=0, display={\boldmath$21$}]{1.3cm}{0.19in}}); \;
+              $ME = 2.080 \cdot \dfrac{310}{\sqrt{22}} \approx$ \smash{\gradedblank[id=hw3c3, type=short, points=1, answer=137.4, check=numeric, tolerance=0.5, display={\boldmath$137.4$}]{2.8cm}{0.19in}}; \; Interval: \smash{\gradedblank[id=hw3c4, type=rubric, points=1, display={\bfseries\boldmath $(2442.6,\ 2717.4)$}]{3.3cm}{0.19in}}
+        \item \textbf{Conclude:} \ansline{We are 95\% confident that the mean daily sodium intake of all adults is between 2,443 mg and 2,717 mg.\gradedbelow[r]{-12pt}{\gradedblank[id=hw3d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}}
       \end{enumerate}
 
 \vspace{0.10in}
@@ -77,13 +80,13 @@
 \item \textbf{Matched Pairs.}
 
       \begin{enumerate}[label=\alph*.]
-        \item \textbf{State:} Procedure: \ans{matched-pairs $t$-test for $\mu_d$}\\
-              $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+        \item \textbf{State:} Procedure: \smash{\gradedblank[id=hw4a1, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={\boldmath matched-pairs $t$-test for $\mu_d$}]{6.8cm}{0.19in}}\\
+              $H_0$: \smash{\gradedblank[id=hw4a2, type=short, points=1, answer={{mu_d = 0}}, check=text, display={\boldmath$\mu_d = 0$}]{4.3cm}{0.19in}} \quad $H_a$: \smash{\gradedblank[id=hw4a3, type=short, points=1, answer={{mu_d > 0}}, check=text, display={\boldmath$\mu_d > 0$}]{4.3cm}{0.19in}}
               \quad ($\mu_d$ = mean difference in sprint time, before $-$ after)
-        \item \textbf{Plan:} Conditions: Random: \ansline{Randomly selected sprinters --- met.} \quad Normal: \ansline{$n = 10 < 30$; dotplot of differences shows symmetric, no outliers --- met.}
-        \item \textbf{Do:} $t = \dfrac{\bar d - 0}{s_d / \sqrt{n}} = \dfrac{0.31}{0.18/\sqrt{10}} \approx$ \ans{5.45} \quad
-              $p$-value $\approx$ \ans{$0.0002$} ($df =$ \ans{9})
-        \item \textbf{Conclude:} \ansline{Because $p \approx 0.0002 < \alpha = 0.05$, reject $H_0$. There is sufficient evidence that the mean sprint time for all sprinters decreased (improved) after the training program.}
+        \item \textbf{Plan:} Conditions: Random: \gradedhere{\gradedblank[id=hw4b1, type=rubric, points=1]{1.7in}{0.19in}}\ansline{Randomly selected sprinters --- met.} \quad Normal: \ansline{$n = 10 < 30$; dotplot of differences shows symmetric, no outliers --- met.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw4b2, type=rubric, points=1]{1.5in}{0.19in}}}
+        \item \textbf{Do:} $t = \dfrac{\bar d - 0}{s_d / \sqrt{n}} = \dfrac{0.31}{0.18/\sqrt{10}} \approx$ \smash{\gradedblank[id=hw4c1, type=short, points=1, answer=5.45, check=numeric, tolerance=0.03, display={\boldmath$5.45$}]{1.6cm}{0.19in}} \quad
+              $p$-value $\approx$ \smash{\gradedblank[id=hw4c2, type=short, points=1, answer=0.0002, check=numeric, tolerance=0.0002, display={\boldmath$0.0002$}]{1.8cm}{0.19in}} ($df =$ \smash{\gradedblank[id=hw4c3, type=short, points=1, answer=9, check=numeric, tolerance=0, display={\boldmath$9$}]{1.3cm}{0.19in}})
+        \item \textbf{Conclude:} \ansline{Because $p \approx 0.0002 < \alpha = 0.05$, reject $H_0$. There is sufficient evidence that the mean sprint time for all sprinters decreased (improved) after the training program.\gradedbelow[r]{-12pt}{\gradedblank[id=hw4d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}}
       \end{enumerate}
 
 \vspace{0.10in}
@@ -95,6 +98,7 @@
         \item Matched-pairs $t$-test for $\mu_d$
         \item Two-sample $t$-test for $\mu_1 - \mu_2$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
         \item Two-sample $z$-test for $p_1 - p_2$
+              \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.4in}{0.2in}}
       \end{enumerate}
       \begin{itemize}
         \item (C) is correct: two independent groups (study alone vs.\ study in groups); quantitative outcome (exam score) $\to$ means $\to$ two-sample $t$.

@@ -1,0 +1,16 @@
+# Homework item 3 (Unit 1, Lesson 1.1).
+id: hw3
+points: 2
+task: >-
+  A hospital records each patient's exact body temperature in degrees C, then adds a
+  column marking each patient Normal or Fever. Classify both columns, and explain where
+  the second column came from.
+criteria:
+  - id: classify
+    points: 1
+    full: Temperature is quantitative and Normal/Fever is categorical (both correct).
+  - id: origin
+    points: 1
+    full: >-
+      Explains that the second column was made from the first by grouping the measured
+      temperatures at a cutoff, turning amounts into group labels.

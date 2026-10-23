@@ -1,0 +1,15 @@
+# Homework item 2a (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A 99% CI for the proportion of students who own a calculator is (0.71, 0.89). A
+  teacher claims 90% of students own a calculator. Plausible?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no, 90% is not plausible.
+  - id: reason
+    points: 1
+    full: >-
+      Justifies with the interval: 0.90 lies outside (above) (0.71, 0.89).

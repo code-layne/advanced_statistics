@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l07-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -17,16 +20,16 @@
 the spinner lands on.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Write the probability distribution for $X$ as a table.
+  \item Write the probability distribution for $X$ as a table.\gradedbelow[r]{0.03in}{\gradedblank[id=hw1a, type=rubric, points=1, display={$x = 1,2,3,4,5$; each $P(X=x) = 0.20$}]{4in}{0.24in}}
 
         \vspace{0.35in}
 
   \item Verify the two conditions for a valid probability distribution.\\
-        \writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw1b, type=rubric, points=2, display={All $0.20 \ge 0$; sum $= 1$.}]{2.4in}{0.22in}}}
 
-  \item Find $P(X \ge 3)$.  \quad \blank{4cm}
+  \item Find $P(X \ge 3)$.  \quad \makebox[4cm][l]{\hspace{1.3cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1c, type=short, points=1, answer=0.6, check=numeric, tolerance=0.001]{2.4cm}{0.2in}}}}
 
-  \item Find $P(2 \le X \le 4)$. \quad \blank{4cm}
+  \item Find $P(2 \le X \le 4)$. \quad \makebox[4cm][l]{\hspace{1.3cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1d, type=short, points=1, answer=0.6, check=numeric, tolerance=0.001]{2.4cm}{0.2in}}}}
 \end{enumerate}
 
 \vspace{0.14in}
@@ -44,17 +47,17 @@ $P(Y=y)$ & 0.68 & 0.17 & 0.09 & ? & 0.02 \\
 \end{center}
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Find the missing probability $P(Y=3)$.  \quad \blank{4cm}
-  \item Find $P(Y \le 1)$.  \quad \blank{4cm}
-  \item Find $P(Y \ge 1)$.  \quad \blank{4cm}
+  \item Find the missing probability $P(Y=3)$.  \quad \makebox[4cm][l]{\hspace{1.3cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2a, type=short, points=1, answer=0.04, check=numeric, tolerance=0.001]{2.4cm}{0.2in}}}}
+  \item Find $P(Y \le 1)$.  \quad \makebox[4cm][l]{\hspace{1.3cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2b, type=short, points=1, answer=0.85, check=numeric, tolerance=0.001]{2.4cm}{0.2in}}}}
+  \item Find $P(Y \ge 1)$.  \quad \makebox[4cm][l]{\hspace{1.3cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2c, type=short, points=1, answer=0.32, check=numeric, tolerance=0.001]{2.4cm}{0.2in}}}}
   \item Interpret $P(Y = 0) = 0.68$ in context.\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw2d, type=rubric, points=2, display={There is a 68\% probability that a randomly selected carton has no broken eggs.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{2}-5pt}}\writeline\\[1pt]\writeline}
 \end{enumerate}
 
 \vspace{0.14in}
 
 \textbf{3.} Which of the following tables could represent a valid probability distribution?
-Circle the letter(s) of all valid distributions. Explain why the others are not valid.
+Circle the letter(s) of all valid distributions. Explain why the others are not valid.\hfill\gradedright{\smash{\raisebox{-3pt}{\textit{Valid:}~\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.4in}{0.2in}}}}
 
 \vspace{6pt}
 \begin{minipage}[t]{0.3\linewidth}
@@ -91,7 +94,7 @@ $x$ & $P(X=x)$ \\
 \end{minipage}
 
 \vspace{8pt}
-Explanation: \writeline\\[1pt]\writeline
+Explanation: \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw3e, type=rubric, points=2, display={(A) sums to 1.20, not 1. (C) has a negative probability. (B) is valid.}]{3.4in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
 
 \vspace{0.14in}
 
@@ -111,11 +114,11 @@ Build the cumulative distribution, find $P(X \le 2)$, and interpret in context.
 \begin{tabularx}{\linewidth}{@{} l X X X X @{}}
 $x$ & 0 & 1 & 2 & 3 \\
 \hline
-$P(X \le x)$ & \blank{2cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
+$P(X \le x)$ & \makebox[2cm][l]{\hspace{1.2cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4a1, type=short, points=1, answer=0.05, check=numeric, tolerance=0.001]{2cm}{0.2in}}}} & \makebox[2cm][l]{\hspace{0cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4a2, type=short, points=1, answer=0.35, check=numeric, tolerance=0.001]{2cm}{0.2in}}}} & \makebox[2cm][l]{\hspace{0cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4a3, type=short, points=1, answer=0.80, check=numeric, tolerance=0.001]{2cm}{0.2in}}}} & \makebox[2cm][l]{\hspace{0cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4a4, type=short, points=1, answer=1.00, check=numeric, tolerance=0.001]{2cm}{0.2in}}}} \\
 \end{tabularx}
 
 \vspace{6pt}
-$P(X \le 2) = $ \blank{2cm} \quad Interpretation: \writeline
+$P(X \le 2) = $ \makebox[2cm][l]{\hspace{1.5cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4b, type=short, points=1, answer=0.8, check=numeric, tolerance=0.001, display={$0.8$}]{0.85cm}{0.2in}}}} \quad Interpretation: \gradedhide{\writeline}\gradedright{\raisebox{-3pt}{\gradedblank[id=hw4c, type=rubric, points=2, display={80\%: at most 2 hours a night.}]{3.4in}{0.22in}}}
 
 \end{practicebox}
 

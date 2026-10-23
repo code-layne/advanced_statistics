@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l03-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -18,15 +21,15 @@
         based on a random sample of 45 adults.
 
         \begin{enumerate}[label=\alph*.]
-          \item Write a correct interpretation of the interval. \writelines{2}
+          \item Write a correct interpretation of the interval. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 
           \item A fitness organization claims adults exercise a mean of 6 hours per
                 week. Does the interval provide convincing evidence against this
-                claim? Justify. \writelines{2}
+                claim? Justify. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 
           \item A health agency claims adults exercise fewer than 5 hours per week
                 on average. Does the interval provide convincing evidence that the
-                mean is less than 5 hours? Explain. \writelines{2}
+                mean is less than 5 hours? Explain. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
         \end{enumerate}
 
   \item \textbf{Width Relationships.} A researcher constructs a 95\% $t$-interval
@@ -37,16 +40,16 @@
           \item Calculate the margin of error and the interval. Show work.
                 \vspace{0.1in}
 
-                $df = $ \blank{2cm}, $t^* = $ \blank{2.5cm}, $SE = $ \blank{2.5cm}
+                $df = $ \makebox[2cm]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer=35, check=numeric, tolerance=0]{1.8cm}{0.19in}}}, $t^* = $ \makebox[2.5cm]{\smash{\gradedblank[id=hw2a2, type=short, points=1, answer=2.030, check=numeric, tolerance=0.005]{2.3cm}{0.19in}}}, $SE = $ \makebox[2.5cm]{\smash{\gradedblank[id=hw2a3, type=short, points=1, answer=4.00, check=numeric, tolerance=0.01]{2.3cm}{0.19in}}}
 
-                $ME = $ \blank{3cm}, Interval: \blank{5cm} $= ($ \blank{2cm}$,$ \blank{2cm}$)$
+                $ME = $ \makebox[3cm]{\smash{\gradedblank[id=hw2a4, type=short, points=1, answer=8.12, check=numeric, tolerance=0.05]{2.8cm}{0.19in}}}, Interval: \blank{5cm} $= ($ \makebox[2cm]{\smash{\gradedblank[id=hw2a5, type=short, points=1, answer=79.28, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$,$ \makebox[2cm]{\smash{\gradedblank[id=hw2a6, type=short, points=1, answer=95.52, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$)$
 
           \item How would the margin of error change if $n = 144$? Compute it.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b1, type=rubric, points=1]{\linewidth-1.3in}{\gradedlinesheight{1}}\hspace{6pt}$ME =$~\gradedblank[id=hw2b2, type=short, points=1, answer=4.06, check=numeric, tolerance=0.02]{0.8in}{\gradedlinesheight{1}}}\writelines{1}}
 
           \item How would the interval change if the confidence level were raised to
                 99\% (keeping $n = 36$)? Would you expect it to be wider or narrower?
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
         \end{enumerate}
 
   \item \textbf{AP-Style Free Response.} A random sample of 22 employees at a
@@ -55,13 +58,13 @@
 
         \begin{enumerate}[label=\alph*.]
           \item Construct and interpret a 95\% confidence interval for the true mean
-                commute distance for all employees. Verify all conditions. \writelines{7}
+                commute distance for all employees. Verify all conditions. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3a, type=rubric, points=4]{\linewidth+6pt}{\gradedlinesheight{6}}}\writelines{6}}
 
-                Interval: $= ($ \blank{2cm}$,$ \blank{2cm}$)$ miles
+                Interval: $= ($ \makebox[2cm]{\smash{\gradedblank[id=hw3a1, type=short, points=1, answer=10.92, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$,$ \makebox[2cm]{\smash{\gradedblank[id=hw3a2, type=short, points=1, answer=18.28, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}}$)$ miles
 
           \item The company claims the mean commute is 12 miles. Based on your interval,
                 does the data provide convincing evidence that the mean commute exceeds
-                12 miles? \writelines{2}
+                12 miles? \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
         \end{enumerate}
 
 \end{enumerate}

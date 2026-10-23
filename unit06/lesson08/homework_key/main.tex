@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u06-l08-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -16,23 +19,23 @@
 \item \textbf{Exercise Frequency.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \ansline{$p_X$ = true proportion of City X adults who exercise $\ge3\times$/week; $p_Y$ = same for City Y. $\hat p_X = 168/280 = 0.600$; $\hat p_Y = 126/240 = 0.525$; $\hat p_X - \hat p_Y = 0.075$.}
+  \item \ansline{$p_X$ = true proportion of City X adults who exercise $\ge3\times$/week; $p_Y$ = same for City Y. $\hat p_X = 168/280 = 0.600$; $\hat p_Y = 126/240 = 0.525$; $\hat p_X - \hat p_Y = 0.075$.}\gradedkey{\gradedblank[id=hw1a1, type=rubric, points=1, display={\bfseries true proportions}]{1.75in}{0.17in}\quad \gradedblank[id=hw1a2, type=short, points=1, answer=0.075, check=numeric, tolerance=0.001]{0.75in}{0.17in}}
   \item \textbf{Random:} \ansline{Both samples independently and randomly selected --- stated.}
         \textbf{Large Counts:} $280(0.6)=168$, $280(0.4)=112$, $240(0.525)=126$, $240(0.475)=114$ --- \ans{all $\ge10$. \checkmark}\\
-        \textbf{10\%:} \ansline{Assumed both samples are $\le10\%$ of their city populations.}
+        \textbf{10\%:} \ansline{Assumed both samples are $\le10\%$ of their city populations.}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=3, display={Two independent random samples; $168, 112, 126, 114$ all $\ge 10$; each sample $\le 10\%$ of its city's adults.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
   \item $SE = \sqrt{0.600(0.400)/280 + 0.525(0.475)/240} = \sqrt{0.000857 + 0.001039} = \sqrt{0.001896} \approx 0.0435$\\
-        $CI = 0.075 \pm 1.960(0.0435) = 0.075 \pm 0.0853 = (\ans{-0.010}, \ans{0.160})$
-  \item \ansline{We are 95\% confident that the true difference in exercise rates ($p_X - p_Y$) between City X and City Y is between $-0.010$ and $0.160$.}
+        $CI = 0.075 \pm 1.960(0.0435) = 0.075 \pm 0.0853 = (\ans{-0.010}, \ans{0.160})$\gradedkey{$($~\gradedblank[id=hw1c1, type=short, points=2, answer=-0.010, check=numeric, tolerance=0.002, display={\boldmath$-0.010$}]{0.8in}{0.17in}~,~\gradedblank[id=hw1c2, type=short, points=2, answer=0.160, check=numeric, tolerance=0.002]{0.8in}{0.17in}~$)$}
+  \item \ansline{We are 95\% confident that the true difference in exercise rates ($p_X - p_Y$) between City X and City Y is between $-0.010$ and $0.160$.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={95\% confident the true difference $p_X - p_Y$ in exercise rates (City X minus City Y) is between $-0.010$ and $0.160$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \item \textbf{Seat Belt Use.}
 
 \begin{enumerate}[label=\alph*.]
   \item $\hat p_1 = 374/440 = 0.850$; $\hat p_2 = 306/390 = 0.785$.\\
-        $440(0.85)=374$, $440(0.15)=66$, $390(0.785)=306$, $390(0.215)=84$ --- \ans{all $\ge10$. \checkmark}
+        $440(0.85)=374$, $440(0.15)=66$, $390(0.785)=306$, $390(0.215)=84$ --- \ans{all $\ge10$. \checkmark}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={$374, 66$ (State 1) and $306, 84$ (State 2): all $\ge 10$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
   \item $SE = \sqrt{0.850(0.150)/440 + 0.785(0.215)/390} = \sqrt{0.000290 + 0.000432} = \sqrt{0.000722} \approx 0.0269$\\
-        $CI = (0.850-0.785) \pm 2.576(0.0269) = 0.065 \pm 0.0693 = (\ans{-0.004}, \ans{0.134})$
-  \item \ansline{No. Since the 99\% interval $(-0.004, 0.134)$ contains 0, we cannot conclude at the 99\% confidence level that there is a difference in seat belt use between the two states.}
+        $CI = (0.850-0.785) \pm 2.576(0.0269) = 0.065 \pm 0.0693 = (\ans{-0.004}, \ans{0.134})$\gradedkey{$($~\gradedblank[id=hw2b1, type=short, points=2, answer=-0.004, check=numeric, tolerance=0.002, display={\boldmath$-0.004$}]{0.8in}{0.17in}~,~\gradedblank[id=hw2b2, type=short, points=2, answer=0.134, check=numeric, tolerance=0.002]{0.8in}{0.17in}~$)$}
+  \item \ansline{No. Since the 99\% interval $(-0.004, 0.134)$ contains 0, we cannot conclude at the 99\% confidence level that there is a difference in seat belt use between the two states.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={No: the 99\% interval $(-0.004, 0.134)$ contains 0, so no convincing evidence of a difference.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \end{enumerate}

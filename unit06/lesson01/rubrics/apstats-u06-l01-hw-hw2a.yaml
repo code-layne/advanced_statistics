@@ -1,0 +1,11 @@
+# Homework item 2, Research goal of a confidence interval (Unit 6, Lesson 6.1). Relative to the lesson directory.
+id: hw2a
+points: 1
+task: >-
+  Complete the table comparing confidence intervals and significance tests: Research
+  goal of a confidence interval.
+criteria:
+  - id: goal
+    points: 1
+    full: >-
+      Says a confidence interval estimates the value of an unknown population parameter.

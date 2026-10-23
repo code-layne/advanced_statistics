@@ -1,0 +1,13 @@
+# Homework item 1b, method (Unit 8, Lesson 8.6). Relative to the lesson directory.
+id: hw1b1
+points: 1
+task: >-
+  A counselor randomly selects 180 teenagers and classifies them by grade
+  (9th/10th/11th, 60 each) and sleep amount (<7 hours / 7+ hours). Plan: name the
+  method.
+criteria:
+  - id: method
+    points: 1
+    full: >-
+      Names the chi-square test (for independence, or for homogeneity), consistent with
+      the test type in part a.

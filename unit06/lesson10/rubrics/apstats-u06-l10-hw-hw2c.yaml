@@ -1,0 +1,21 @@
+# Homework item 2c (Unit 6, Lesson 6.10). Relative to the lesson directory.
+id: hw2c
+points: 3
+task: >-
+  A manufacturer claims its new production line has a lower defect rate than the old
+  one. Old line: 36 defects in 400 units; new line: 20 defects in 400 units. Verify
+  conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: units are randomly selected from each production line (independent samples).
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using the pooled proportion 0.07: 400(0.07) = 28 and 400(0.93) = 372
+      for each line, all at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: each sample of 400 is at most 10% of all units from that line.

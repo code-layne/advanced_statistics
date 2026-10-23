@@ -1,0 +1,20 @@
+# Unit 1 actual test, item 16c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t16c
+points: 3
+task: >-
+  Is 'How long is the boat in slip 21?' a statistical question? Explain, then write
+  one that is.
+criteria:
+  - id: judge
+    points: 2
+    full: >-
+      E: Says no, because it has one answer (34.0 ft) read from one row (no variability).
+    partial: >-
+      P (1 of 2): Says no without a correct reason.
+  - id: write
+    points: 1
+    full: >-
+      E: Writes a statistical question about the boats that anticipates variability (e.g.
+      how much the lengths of the boats at the marina vary).

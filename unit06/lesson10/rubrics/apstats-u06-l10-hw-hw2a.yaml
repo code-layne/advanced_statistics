@@ -1,0 +1,17 @@
+# Homework item 2a (Unit 6, Lesson 6.10). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A manufacturer claims its new production line has a lower defect rate than the old
+  one. Old line: 36 defects in 400 units; new line: 20 defects in 400 units. Define
+  p_O and p_N, then state H0 and Ha (one-sided).
+criteria:
+  - id: define
+    points: 1
+    full: >-
+      Defines p_O and p_N as the true (long-run) proportions of defective units from the
+      old and new lines.
+  - id: hyp
+    points: 1
+    full: >-
+      H0: p_O = p_N; Ha: p_O > p_N (equivalently p_N < p_O: the new line's rate is lower).

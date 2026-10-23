@@ -1,0 +1,12 @@
+# Homework item 4, second part (Unit 1, Lesson 1.3). Relative to the lesson directory.
+id: hw4b
+points: 1
+task: >-
+  A stem plot has stem 7 with leaves 2 4 4 9 (values 72, 74, 74, 79). Why can a
+  histogram of the same data not give you those four numbers back?
+criteria:
+  - id: grouping
+    points: 1
+    full: >-
+      Explains that a histogram records only how many values fall in each interval, so the
+      individual values are lost when they are grouped.

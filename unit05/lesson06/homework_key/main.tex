@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l06-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -14,16 +17,16 @@
 
   \item Reading for pleasure, men vs.\ women.
         \begin{enumerate}[label=\alph*.]
-          \item \ans{Random: both stated. 10\%: both $\le 10\%$ of national adult population. Independent groups. Large Counts: $200(0.48)=96$, $200(0.52)=104$, $220(0.61)=134.2$, $220(0.39)=85.8$ --- all $\ge 10$. All conditions met.}
-          \item \ans{$\mu = 0.48-0.61 = -0.13$; $\sigma = \sqrt{0.48(0.52)/200 + 0.61(0.39)/220} = \sqrt{0.001248+0.001081} \approx \sqrt{0.002329} \approx 0.04826$.}
-          \item \ans{$z = (-0.20-(-0.13))/0.04826 \approx -1.451$; $P \approx 0.0735$. About 7.4\%.}
-          \item \ansline{There is approximately a 7.4\% chance that, in random samples of 200 men and 220 women, the sample proportion of male readers falls at least 20 percentage points below the sample proportion of female readers --- even if the true difference is only 13 points.}
+          \item \ans{Random: both stated. 10\%: both $\le 10\%$ of national adult population. Independent groups. Large Counts: $200(0.48)=96$, $200(0.52)=104$, $220(0.61)=134.2$, $220(0.39)=85.8$ --- all $\ge 10$. All conditions met.}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=3, display={Both random; each sample $\le 10\%$ of its population; independent groups; counts 96, 104, 134.2, 85.8 all $\ge 10$.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
+          \item \ans{$\mu = 0.48-0.61 = -0.13$; $\sigma = \sqrt{0.48(0.52)/200 + 0.61(0.39)/220} = \sqrt{0.001248+0.001081} \approx \sqrt{0.002329} \approx 0.04826$.}\gradedkey{$\mu = $~\gradedblank[id=hw1b1, type=short, points=1, answer=-0.13, check=numeric, tolerance=0]{0.9in}{0.28in}\quad $\sigma = $~\gradedblank[id=hw1b2, type=short, points=1, answer=0.0483, check=numeric, tolerance=0.0005]{0.9in}{0.28in}}
+          \item \ans{$z = (-0.20-(-0.13))/0.04826 \approx -1.451$; $P \approx 0.0735$. About 7.4\%.}\gradedkey{\gradedblank[id=hw1c, type=short, points=2, answer=0.0735, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
+          \item \ansline{There is approximately a 7.4\% chance that, in random samples of 200 men and 220 women, the sample proportion of male readers falls at least 20 percentage points below the sample proportion of female readers --- even if the true difference is only 13 points.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={About a 7.4\% chance that the men's sample proportion is at least 20 points below the women's.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
   \item Composting.
         \begin{enumerate}[label=\alph*.]
-          \item \ans{$160(0.25)=40$; $160(0.75)=120$; $200(0.18)=36$; $200(0.82)=164$. All $\ge 10$.}
-          \item \ans{$\mu = 0.25-0.18 = 0.07$; $\sigma = \sqrt{0.25(0.75)/160 + 0.18(0.82)/200} = \sqrt{0.001172+0.000738} \approx \sqrt{0.001910} \approx 0.04370$. $z = (0.12-0.07)/0.04370 \approx 1.144$; $P > 0.12 \approx 1-0.8737 = 0.1263 \approx 12.6\%$.}
+          \item \ans{$160(0.25)=40$; $160(0.75)=120$; $200(0.18)=36$; $200(0.82)=164$. All $\ge 10$.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={$160(0.25) = 40$, $160(0.75) = 120$, $200(0.18) = 36$, $200(0.82) = 164$: all $\ge 10$.}]{\linewidth}{0.42in}}
+          \item \ans{$\mu = 0.25-0.18 = 0.07$; $\sigma = \sqrt{0.25(0.75)/160 + 0.18(0.82)/200} = \sqrt{0.001172+0.000738} \approx \sqrt{0.001910} \approx 0.04370$. $z = (0.12-0.07)/0.04370 \approx 1.144$; $P > 0.12 \approx 1-0.8737 = 0.1263 \approx 12.6\%$.}\gradedkey{\gradedblank[id=hw2b, type=short, points=2, answer=0.1263, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
         \end{enumerate}
 
 \end{enumerate}

@@ -1,0 +1,14 @@
+# Homework item 5, justification (Unit 1, Lesson 1.3). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  A researcher has 200 reaction times measured to the nearest thousandth of a second
+  and wants a display that shows the overall shape. Justify in a sentence why (B) a
+  histogram is reasonable.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B): with 200 continuous values a stem plot would be unreadable (or
+      individual values do not matter), and the researcher wants the overall shape, which
+      a histogram shows.

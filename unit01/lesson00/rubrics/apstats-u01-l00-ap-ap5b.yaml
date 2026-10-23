@@ -1,0 +1,22 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.0). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  A school newspaper surveys every senior; for each it records the number of hours
+  worked at a paying job last week and whether the student drives to school. Write one
+  statistical question the newspaper could answer with this data, and state precisely
+  what varies in it.
+criteria:
+  - id: question
+    points: 2
+    full: >-
+      E: Writes a statistical question about the seniors that anticipates variability
+      (e.g., "How do the hours worked last week vary among seniors?") AND states precisely
+      what varies: the variable's value (hours worked, or driving status) from one senior
+      to the next.
+    partial: >-
+      P (1 of 2): Writes a statistical question but does not state what varies (or states
+      it vaguely, "the answers vary"), OR states the variation but the question has a
+      single answer (not statistical).

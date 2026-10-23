@@ -1,0 +1,23 @@
+# Homework item 1, Step 2 (Unit 7, Lesson 7.2). Relative to the lesson directory.
+id: hw1b
+points: 3
+task: >-
+  Screen time: random sample of 20 elementary students, x-bar = 3.4 h, s = 0.9 h. Step
+  2: verify the conditions for a one-sample t interval.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the 20 students are a random sample (stated).
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: 20 is at most 10% of all elementary school students.
+  - id: normal
+    points: 1
+    full: >-
+      Normal/Large Sample: n = 20 < 30, so states the need to assume (or check a graph
+      for) no strong skewness or outliers in the sample data.
+examples:
+  - response: "n = 20 is greater than 10 so the sample is large enough."
+    scores: {random: 0, tenpct: 0, normal: 0}

@@ -1,0 +1,15 @@
+# Unit 1 practice (sample) test, item 19a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t19a
+points: 2
+task: >-
+  Prices (dollars) of 15 used video games: 8 10 12 12 14 15 15 16 18 20 21 22 24 25
+  58. Find the five-number summary.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Min 8, Q1 12, Median 16, Q3 22, Max 58.
+    partial: >-
+      P (1 of 2): Three or four of the five correct.

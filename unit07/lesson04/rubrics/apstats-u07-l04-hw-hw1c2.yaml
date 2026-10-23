@@ -1,0 +1,16 @@
+# Homework item 1c Normal (Unit 7, Lesson 7.4). Relative to the lesson directory.
+id: hw1c2
+points: 1
+task: >-
+  A marine biologist tests whether the mean reef water temperature has risen above 77
+  F using 28 randomly collected readings (slightly right-skewed, no outliers). Verify
+  the Normal condition (n < 30).
+criteria:
+  - id: normal
+    points: 1
+    full: >-
+      Notes n = 28 < 30 and that the sample data show only slight skewness and no
+      outliers, so the Normal condition is met.
+examples:
+  - response: "n = 28 is close to 30 so the CLT applies."
+    scores: {normal: 0}

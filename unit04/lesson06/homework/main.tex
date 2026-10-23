@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l06-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -34,23 +37,23 @@ One subscriber is selected at random.
 \textbf{1.} Test whether ``Movies'' and ``Under 25'' are independent. Show the
 independence check with both probabilities, and write a complete conclusion.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
-  \item $P(\text{Movies}) = $ \blank{5cm}
-  \item $P(\text{Movies} | \text{Under 25}) = $ \blank{5cm}
+  \item $P(\text{Movies}) = $ \makebox[5cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1a, type=short, points=1, answer=0.367, check=numeric, tolerance=0.002, display={$110/300 \approx 0.367$}]{3.2cm}{0.2in}}}}
+  \item $P(\text{Movies} | \text{Under 25}) = $ \makebox[5cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1b, type=short, points=1, answer=0.417, check=numeric, tolerance=0.002, display={$50/120 \approx 0.417$}]{3.2cm}{0.2in}}}}
   \item Are the events independent? Write a complete sentence explanation.\\
-        \writeline\writeline
+        \gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw1c, type=rubric, points=2, display={Not independent: $0.367 \ne 0.417$; under-25s are more likely to watch movies.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{1}+8pt}}\writeline\writeline}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{2.} Use the addition rule to compute $P(\text{TV Series or 25--44})$.
 Show all work.\\
-\writeline\\[1pt]\writeline
+\writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2, type=short, points=2, answer=0.667, check=numeric, tolerance=0.002, display={$200/300 \approx 0.667$}]{1.3in}{0.2in}}}
 
 \vspace{8pt}
 \textbf{3.} Use the addition rule to compute $P(\text{Movies or Documentaries})$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
-  \item Are Movies and Documentaries mutually exclusive? \blank{3cm} Why? \writeline
+  \item Are Movies and Documentaries mutually exclusive? \makebox[3cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a1, type=short, points=1, answer=yes, check=text]{1.3cm}{0.2in}}}} Why? \gradedhide{\writeline}\gradedright{\raisebox{-4pt}{\gradedblank[id=hw3a2, type=rubric, points=1, display={One type each.}]{1.2in}{0.22in}}}
   \item Apply the addition rule (using the correct value of $P(A \cap B)$).\\
-        \writeline\writeline
+        \writeline\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw3b, type=short, points=2, answer=0.567, check=numeric, tolerance=0.002, display={$170/300 \approx 0.567$}]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -58,16 +61,16 @@ Show all work.\\
 being Under 25 doesn't \emph{cause} you to watch TV Series.''
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
   \item Is this reasoning about independence correct? What is the actual test?\\
-        \writeline\writeline
+        \gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw4a, type=rubric, points=2, display={No: independence is not causation; test whether $P(A|B) = P(A)$.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{1}+8pt}}\writeline\writeline}
   \item Use the table to determine whether these events actually are independent.\\
-        \writeline\writeline
+        \gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw4b, type=rubric, points=2, display={$P(\text{TV}) \approx 0.433 \ne P(\text{TV}|\text{Under 25}) = 0.5$: not independent.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{1}+8pt}}\writeline\writeline}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{5.} (AP Free-Response Style) Determine whether ``45+'' age group and
 ``Documentaries'' are independent. Show all calculations and write a complete
 interpretation in context.\\
-\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline
+\gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw5, type=rubric, points=3, display={$P(\text{Docs}) = 0.2$, $P(\text{Docs}|\text{45+}) \approx 0.333$. Not equal, so not independent: 45+ subscribers watch documentaries at a higher rate (33.3\% vs.\ 20\%).}]{\linewidth+6pt-0.4in}{\gradedlinesheight{4}}}\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline}
 
 \vspace{8pt}
 \textbf{6.} (Extension) Prove or disprove: If $P(A) = P(A|B)$, then

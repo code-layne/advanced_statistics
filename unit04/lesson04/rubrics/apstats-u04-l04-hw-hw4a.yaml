@@ -1,0 +1,21 @@
+# Homework item 4a (Unit 4, Lesson 4.4). Relative to the lesson directory.
+id: hw4a
+points: 2
+task: >-
+  A student claims Type A blood and condition present are mutually exclusive because
+  not everyone with Type A blood has the condition. Is the claim correct? Use the
+  table (30 patients have Type A and the condition).
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says the claim is incorrect.
+  - id: evidence
+    points: 1
+    full: >-
+      Uses the table: 30 patients have both Type A blood and the condition present, so the
+      events can occur together (the intersection is not empty); 'not always together' is
+      not the same as 'cannot occur together'.
+examples:
+  - response: "Correct, because 50 Type A patients do not have the condition."
+    scores: {answer: 0, evidence: 0}

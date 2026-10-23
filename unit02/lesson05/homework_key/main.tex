@@ -16,6 +16,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u02-l05-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -42,13 +45,14 @@ $\hat{y} = 1328 - 14.1x$, $r = -0.32$; the 10 without P give $\hat{y} = 1516 - 1
 $r = -0.99$.
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
   \item Is P high-leverage? Is it influential? Justify both with the numbers above.
-        \answerspace{1.1cm}{High-leverage: 9 miles is far beyond 0.5--3.0. Influential: without P the slope is $-130.5$ \$/mile and $r = -0.99$; with P, only $-14.1$ and $-0.32$.}
+        \answerspace{1.1cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw1, type=rubric, points=2, display={High-leverage: 9 miles is far beyond 0.5--3.0. Influential: without P the slope is $-130.5$ \$/mile and $r = -0.99$; with P, only $-14.1$ and $-0.32$.}]{\linewidth-12.5pt}{0.9cm}}
   \item \textbf{AP-style multiple choice.} A new point has an $x$-value far from the rest but lies
         right on their line. Adding it most likely (circle, then justify):\par
         \textbf{(A)} slope changes a lot \hfill \textbf{(B)} $r$ nears 0 \hfill
         \ans{\textbf{(C)} slope barely changes}\par
         \textbf{(D)} it becomes an outlier \hspace{2em} \textbf{(E)} the association disappears
-        \answerspace{0.7cm}{(C): on the line, it keeps the slope; its far-out $x$ only makes $r$ stronger.}
+        \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw2, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+        \answerspace{0.7cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw2j, type=rubric, points=1, display={(C): on the line, it keeps the slope; its far-out $x$ only makes $r$ stronger.}]{\linewidth-12.5pt}{0.55cm}}
 \end{enumerate}
 \end{notesbox}
 
@@ -72,13 +76,13 @@ good model.'' Respond, using the residual plot at the right.
   \node[rotate=90, font=\tiny] at (-0.8,25) {Residual (\$)};
 \end{tikzpicture}
 \end{minipage}
-\answerspace{1.0cm}{Disagree: the residuals form a U, so a line is the wrong form. A strong curve can still give $r$ near $-1$.}
+\answerspace{1.0cm}{\normalcolor\mdseries\hspace*{35.2pt}\gradedblank[id=hw3, type=rubric, points=2, display={Disagree: the residuals form a U, so a line is the wrong form. A strong curve can still give $r$ near $-1$.}]{\linewidth-35.2pt}{0.8cm}}
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt, start=2]
   \item The log of each value gives $\widehat{\log y} = 2.81 - 0.19x$, $r = -0.9997$, and a
-        random residual plot. Predict the value of a 3-year-old phone.
+        random residual plot. Predict the value of a 3-year-old phone.\gradedbelow[r]{5pt}{\textit{Value:}~\gradedblank[id=hw4, type=short, points=2, answer=174, check=numeric, tolerance=2]{0.9in}{0.2in}}
         \answerspace{0.7cm}{$2.81 - 0.19(3) = 2.24$; \ $\hat{y} = 10^{2.24} \approx \$174$.}
   \item Give two pieces of evidence that the log model is more appropriate than the line.
-        \answerspace{0.6cm}{Random residuals (no U), and $r = -0.9997$ is closer to $-1$.}
+        \answerspace{0.6cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={Random residuals (no U), and $r = -0.9997$ is closer to $-1$.}]{\linewidth-12.5pt}{0.5cm}}
 \end{enumerate}
 \end{notesbox}
 

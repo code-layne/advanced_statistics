@@ -1,0 +1,17 @@
+# Homework item 2a (Unit 6, Lesson 6.11). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  Employee turnover: new onboarding program, 18 of 240 left within the first year; old
+  program, 30 of 240. Test whether the new program reduced turnover (one-sided, alpha
+  = 0.05). State H0 and Ha.
+criteria:
+  - id: define
+    points: 1
+    full: >-
+      Defines p_N and p_O as the true proportions of all new-program and old-program
+      employees who leave within the first year (parameters, not sample proportions).
+  - id: hyp
+    points: 1
+    full: >-
+      H0: p_N = p_O; Ha: p_N < p_O (one-sided: the new program has lower turnover).

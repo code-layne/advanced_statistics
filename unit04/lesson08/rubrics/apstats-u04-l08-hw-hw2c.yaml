@@ -1,0 +1,19 @@
+# Homework item 2c (Unit 4, Lesson 4.8). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  X = amount an insurer pays on a policy in a year; mu_X = $400. Interpret mu_X in
+  context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average over many policies (or years), not the payout on
+      a given policy.
+  - id: context
+    points: 1
+    full: >-
+      Says the company pays out about $400 per policy per year on average.
+examples:
+  - response: "The company pays $400 on each claim."
+    scores: {average: 0, context: 0}

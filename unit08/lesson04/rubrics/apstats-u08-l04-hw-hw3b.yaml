@@ -1,0 +1,16 @@
+# Homework item 3b (Unit 8, Lesson 8.4). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A 3 x 4 table with total 300 has all row totals 100 and all column totals 75, so
+  every expected count is 25. Is the large-counts condition met? Justify.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, the large-counts condition is met.
+  - id: justify
+    points: 1
+    full: >-
+      Justifies with the expected counts: every expected count is 25, which is at least 5
+      (uses expected, not observed, counts).

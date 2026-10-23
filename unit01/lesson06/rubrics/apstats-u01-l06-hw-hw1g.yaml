@@ -1,0 +1,17 @@
+# Homework item 1, what is wrong with the other two plots (Unit 1, Lesson 1.6). Relative to the lesson directory.
+id: hw1g
+points: 2
+task: >-
+  Reading minutes 4 6 7 9 12 15 16 18 19 26 34 (five-number summary 4, 7, 15, 19, 34).
+  Plot B matches; Plot A has its median near 11, Plot C has its box from about 12 to
+  26. Say what is wrong with each of the two other plots.
+criteria:
+  - id: plotA
+    points: 1
+    full: >-
+      Says Plot A's median (the line inside the box) is wrong: near 11 instead of 15.
+  - id: plotC
+    points: 1
+    full: >-
+      Says Plot C's box (both quartiles) is wrong: about 12 to 26 instead of Q1 = 7 and Q3
+      = 19.

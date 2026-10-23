@@ -1,0 +1,19 @@
+# Homework item 1c (Unit 9, Lesson 9.1). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A least-squares line for daily temperature (x, degrees F) and hot drinks sold (y)
+  from a random sample of 20 days is y-hat = 85 - 1.4x. A second study with n = 200
+  days also finds b = -1.4. Which study gives more convincing evidence of a real
+  relationship? Explain.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      Chooses the n = 200 study.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that a larger sample reduces the sampling variability of b, so b = -1.4 is
+      much less likely to occur by chance if beta = 0 (stronger evidence against beta =
+      0).

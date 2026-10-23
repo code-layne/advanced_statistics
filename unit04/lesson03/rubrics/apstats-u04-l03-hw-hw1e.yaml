@@ -1,0 +1,20 @@
+# Homework item 1e (Unit 4, Lesson 4.3). Relative to the lesson directory.
+id: hw1e
+points: 2
+task: >-
+  A bag has 5 red, 4 blue and 1 yellow marble; one is drawn at random. Interpret
+  P(red) = 0.5 in a sentence using 'in the long run.'
+criteria:
+  - id: repeat
+    points: 1
+    full: >-
+      Describes repeating the random draw many times (with replacement / under the same
+      conditions).
+  - id: half
+    points: 1
+    full: >-
+      Says that in the long run about half (50%) of the draws will be red (not that
+      exactly every other draw is red, or that 1 of the next 2 draws must be red).
+examples:
+  - response: "If you draw two marbles, one will be red."
+    scores: {repeat: 0, half: 0}

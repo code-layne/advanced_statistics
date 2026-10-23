@@ -1,0 +1,17 @@
+# Homework item 4b (Unit 7, Lesson 7.7). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  A 99% CI for mu_A - mu_B (mean weight loss, kg) for two programs is (-1.2, 4.8). If
+  the confidence level were lowered to 90% (all else equal), would the interval be
+  narrower or wider? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says narrower.
+  - id: reason
+    points: 1
+    full: >-
+      Because a lower confidence level uses a smaller critical value t*, so the margin of
+      error is smaller.

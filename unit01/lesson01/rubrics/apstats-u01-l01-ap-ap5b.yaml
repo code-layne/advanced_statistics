@@ -1,0 +1,18 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  A staff member reports that the average card number is 44,318 and calls it a useful
+  summary of the cardholders. Explain why it is not.
+criteria:
+  - id: explain
+    points: 2
+    full: >-
+      E: Says card numbers identify (label) cardholders rather than record an amount, so
+      their average describes nothing about the cardholders; the answer is in context.
+    partial: >-
+      P (1 of 2): Says card number is categorical (or an identifier) without explaining
+      why that makes its average meaningless, or explains without reference to the
+      context.

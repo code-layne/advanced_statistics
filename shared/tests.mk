@@ -4,7 +4,7 @@
 
 PROJECT_ROOT := $(abspath ../..)
 UNIT         := $(notdir $(abspath ..))
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 PDF_DIR      := $(PROJECT_ROOT)/target/$(UNIT)/tests
 LATEXFLAGS   := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 
@@ -35,3 +35,9 @@ drop: $(DROP_SRC)
 
 clean:
 	rm -rf $(PDF_DIR)
+
+# ── Grading (math-shared) ─────────────────────────────────────────────────────
+# make manifest COMP=<test> / make roster-packets COMP=<test> ROSTER=<path>.
+# Each test's key is ../test_keys/<test>_key. See shared/assessment-grading.mk.
+ASSESS_KEYS := ../test_keys
+include $(PROJECT_ROOT)/shared/assessment-grading.mk

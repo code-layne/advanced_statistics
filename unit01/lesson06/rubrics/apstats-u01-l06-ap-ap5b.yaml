@@ -1,0 +1,22 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.6). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  One server's shift tip totals over three months, shown as side-by-side boxplots.
+  Weekday: min $42, Q1 $55, median $62, Q3 $70, max $84. Weekend: min $60, Q1 $78,
+  median $88, Q3 $106, max $158 (plotted as a separate point; the weekend whisker ends
+  near $130). For the weekend shifts, Q1 = $78 and Q3 = $106. Compute the IQR and use
+  the 1.5 x IQR rule to decide whether the $158 shift is an outlier. Show the
+  arithmetic.
+criteria:
+  - id: rule
+    points: 2
+    full: >-
+      E: Computes IQR = 106 - 78 = $28, 1.5 x IQR = $42, upper boundary 106 + 42 = $148,
+      AND concludes that the $158 shift is an outlier because 158 > 148.
+    partial: >-
+      P (1 of 2): Computes the IQR and boundary with one arithmetic slip and draws the
+      conclusion consistent with it, OR states the correct conclusion with incomplete
+      arithmetic (e.g., no boundary).

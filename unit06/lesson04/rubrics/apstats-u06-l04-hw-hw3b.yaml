@@ -1,0 +1,19 @@
+# Homework item 3b (Unit 6, Lesson 6.4). Relative to the lesson directory.
+id: hw3b
+points: 3
+task: >-
+  A school claims 70% of students do extracurriculars; parents believe it has
+  increased. 135 of a random sample of 180 participate. Verify conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the 180 students are a random sample, so the condition is met.
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using p0: 180(0.70) = 126 and 180(0.30) = 54 are both at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: 180 is at most 10% of all students at the school.

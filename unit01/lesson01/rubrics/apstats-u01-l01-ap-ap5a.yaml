@@ -1,0 +1,21 @@
+# AP Practice item 5, part (a) (Unit 1, Lesson 1.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5a
+points: 2
+task: >-
+  A city library records card number, number of items checked out last year, branch
+  used most often, and age in years for each of its 900 cardholders. Identify the
+  individuals, then classify each of the four variables as categorical or
+  quantitative.
+criteria:
+  - id: classify
+    points: 2
+    full: >-
+      E: Identifies the individuals as the 900 cardholders AND classifies all four
+      variables correctly: card number categorical, number of items quantitative, branch
+      categorical, age in years quantitative.
+    partial: >-
+      P (1 of 2): Identifies the individuals correctly with at most one variable
+      misclassified, OR classifies all four variables correctly but misidentifies the
+      individuals.

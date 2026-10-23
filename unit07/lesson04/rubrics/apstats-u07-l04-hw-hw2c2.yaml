@@ -1,0 +1,12 @@
+# Homework item 2c Normal (Unit 7, Lesson 7.4). Relative to the lesson directory.
+id: hw2c2
+points: 1
+task: >-
+  A consumer group tests whether mean delivery time differs from 3 days using a random
+  audit of 55 orders. Verify the Normal condition.
+criteria:
+  - id: normal
+    points: 1
+    full: >-
+      Says n = 55 >= 30, so by the central limit theorem the sampling distribution of the
+      sample mean is approximately normal regardless of the population's shape; met.

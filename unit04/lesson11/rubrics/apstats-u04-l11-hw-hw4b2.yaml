@@ -1,0 +1,14 @@
+# Homework item 4b interpretation (Unit 4, Lesson 4.11). Relative to the lesson directory.
+id: hw4b2
+points: 2
+task: >-
+  X ~ B(45, 0.62); mu_X = 27.9. Interpret mu_X in context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average over many random samples of 45 adults.
+  - id: context
+    points: 1
+    full: >-
+      Says about 27.9 adults per sample would support the transit plan on average.

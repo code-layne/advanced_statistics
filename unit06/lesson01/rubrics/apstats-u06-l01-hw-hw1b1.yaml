@@ -1,0 +1,12 @@
+# Homework item 1 (II), Large Counts (Unit 6, Lesson 6.1). Relative to the lesson directory.
+id: hw1b1
+points: 1
+task: >-
+  A researcher surveys 90 randomly selected teenagers (claim p0 = 0.30) and finds
+  p-hat = 0.24; use p0 = 0.30 for Large Counts. Verify the Large Counts condition.
+criteria:
+  - id: counts
+    points: 1
+    full: >-
+      Computes n p0 = 90(0.30) = 27 and n(1 - p0) = 90(0.70) = 63 and states that both are
+      at least 10.

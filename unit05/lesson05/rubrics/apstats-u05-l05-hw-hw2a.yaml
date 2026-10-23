@@ -1,0 +1,16 @@
+# Homework item 2a (Unit 5, Lesson 5.5). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  In a large city 15% of residents ride public transit daily (p = 0.15). For n = 40,
+  check the Large Counts condition. Is the normal model appropriate?
+criteria:
+  - id: check
+    points: 1
+    full: >-
+      Computes np = 40(0.15) = 6 (and n(1-p) = 34) and notes that 6 is less than 10.
+  - id: conclude
+    points: 1
+    full: >-
+      Concludes that the Large Counts condition is not met, so the normal model is not
+      appropriate for the sample proportion.

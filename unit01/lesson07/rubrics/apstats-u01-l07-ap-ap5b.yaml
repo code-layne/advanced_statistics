@@ -1,0 +1,20 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.7). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  At one hospital, newborn birth weights are approximately normal with mean 3,300 g
+  and SD 500 g (Record A). Use the empirical rule: approximately what percent of
+  newborns weigh between 2,300 and 4,300 grams, and what percent weigh more than 4,300
+  grams? Show how the second is found.
+criteria:
+  - id: empirical
+    points: 2
+    full: >-
+      E: Says about 95% weigh between 2,300 and 4,300 g (two SDs either side of the mean)
+      AND about 2.5% weigh more than 4,300 g, explained as half of the 5% outside two SDs
+      by symmetry.
+    partial: >-
+      P (1 of 2): Gets 95% correct but the upper tail wrong or unexplained (e.g., 5%), OR
+      gets 2.5% with a correct explanation but not the 95%.

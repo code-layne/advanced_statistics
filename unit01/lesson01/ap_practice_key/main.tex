@@ -6,6 +6,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-l01-ap}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -69,6 +72,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \ans{Time out (min)}
           \item Permit \#
           \item Home ZIP
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item A new ranger argues that \emph{Home ZIP} must be quantitative ``because every entry is
@@ -80,6 +84,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item ZIP codes are categorical, because five digits is too many to average.
           \item ZIP codes are quantitative, because they can be sorted from smallest to largest.
           \item the classification depends on how many parties signed the register.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item The ranger's report states, ``Half the parties in this register hiked with a dog.''
@@ -91,6 +96,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \ans{a numerical summary of a categorical variable, which remains categorical.}
           \item impossible, because a categorical variable cannot be summarized.
           \item a numerical summary of a quantitative variable.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Suppose the ranger stops recording \emph{Time out} in minutes and instead records each
@@ -103,6 +109,7 @@ about the context, not just the arithmetic --- read them all before choosing.
                 the labels.
           \item Neither version of the variable is quantitative.
           \item The change affects the individuals rather than the variable.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -127,28 +134,28 @@ about the context, not just the arithmetic --- read them all before choosing.
         \vspace{6pt}
         \textbf{(a)} Identify the individuals, then classify each of the four variables as
         categorical or quantitative.\\[4pt]
-        \ansline{Individuals: the 900 library cardholders. Card number: categorical.}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Individuals: the 900 library cardholders. Card number: categorical.}\\[1pt]
         \ansline{Number of items checked out: quantitative. Branch used most often:}\\[1pt]
         \ansline{categorical. Age in years: quantitative.}
 
         \vspace{6pt}
         \textbf{(b)} A staff member reports that the average card number is 44{,}318 and calls
         it ``a useful summary of our cardholders.'' Explain why it is not.\\[4pt]
-        \ansline{Card numbers identify cardholders; they do not record an amount of}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{Card numbers identify cardholders; they do not record an amount of}\\[1pt]
         \ansline{anything, so their average measures nothing about the 900 patrons.}
 
         \vspace{6pt}
         \textbf{(c)} The library replaces \emph{age in years} with \emph{age band}
         (child / teen / adult / senior). Explain how this changes the kind of variable, and
         name one thing the library can no longer compute.\\[4pt]
-        \ansline{Age band is categorical: each cardholder now carries a group label}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Age band is categorical: each cardholder now carries a group label}\\[1pt]
         \ansline{instead of a measured amount. The library can still count how many fall}\\[1pt]
         \ansline{in each band, but it can no longer compute the mean age of its patrons.}
 
         \vspace{6pt}
         \textbf{(d)} Write one statistical question the library could answer using a
         \textbf{categorical} variable from this data set, and state what varies in it.\\[4pt]
-        \ansline{``Which branch do cardholders use most often?'' The branch used varies}\\[1pt]
+        \gradedhere{\gradedblank[id=ap5d, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{``Which branch do cardholders use most often?'' The branch used varies}\\[1pt]
         \ansline{from one cardholder to the next, and the library must read every record.}
 
 \end{enumerate}

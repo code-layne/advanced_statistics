@@ -1,0 +1,24 @@
+# Homework item 1b (Unit 6, Lesson 6.4). Relative to the lesson directory.
+id: hw1b
+points: 3
+task: >-
+  CDC: 18% of U.S. adults smoke. A researcher tests whether a county's rate differs; a
+  random sample of 450 county adults has 72 smokers. Verify the conditions for the
+  test.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the sample is random (stated / assumed), so the condition is met.
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using p0: shows n p0 = 450(0.18) = 81 and n(1 - p0) = 450(0.82) = 369
+      are both at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: 450 is at most 10% of all adults in the county.
+examples:
+  - response: "Large counts: n is bigger than 30."
+    scores: {random: 0, largecounts: 0, tenpct: 0}

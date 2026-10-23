@@ -1,0 +1,12 @@
+# Homework item 1a, assignment (Unit 4, Lesson 4.2). Relative to the lesson directory.
+id: hw1a2
+points: 1
+task: >-
+  Rain simulation (P(rain) = 0.4 each day): say how outcomes are assigned to the
+  chance device.
+criteria:
+  - id: assign
+    points: 1
+    full: >-
+      Assigns 40% of the equally likely outcomes to rain and 60% to no rain, e.g. digits
+      0-3 = rain and 4-9 = no rain.

@@ -1,0 +1,19 @@
+# Homework item 1d (Unit 5, Lesson 5.6). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  48% of men and 61% of women read for pleasure at least once a week (p1 = 0.48, p2 =
+  0.61); independent random samples of 200 men and 220 women are selected.
+  P(difference in sample proportions < -0.20) is about 0.0735. Interpret this in
+  context.
+criteria:
+  - id: statement
+    points: 1
+    full: >-
+      Says there is about a 7.4% chance that the men's sample proportion of readers is at
+      least 20 percentage points below the women's (difference less than -0.20).
+  - id: context
+    points: 1
+    full: >-
+      Refers to repeated random samples of 200 men and 220 women (the probability is about
+      the samples, given the true difference of -0.13), not to individuals.

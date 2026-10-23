@@ -1,0 +1,16 @@
+# Unit 2 practice (sample) test, item 11a. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11a
+points: 1
+task: >-
+  A two-way table classifies 400 community-college students by enrollment (full-time
+  240, part-time 160) and travel to campus (drive 244, bus 120, walk/bike 36;
+  walk/bike: 24 full-time, 12 part-time). What proportion of all 400 students ride the
+  bus? Of the students who walk or bike, what proportion attend full-time?
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Both correct: 120/400 = 0.30 of all students ride the bus, and 24/36 = 0.667 of
+      walkers/bikers attend full-time.

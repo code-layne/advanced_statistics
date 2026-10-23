@@ -1,0 +1,17 @@
+# Homework item 3a (Unit 3, Lesson 3.2). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  60 volunteer third-graders from one school are randomly assigned, 30 to a reading
+  intervention and 30 to a control group; the intervention group scores significantly
+  higher. Can we conclude the intervention caused higher scores? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that random assignment to the two groups was used, so the difference can be
+      attributed to the intervention.

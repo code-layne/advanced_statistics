@@ -1,0 +1,16 @@
+# Homework item 1b (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A 95% CI for the proportion of adults who exercise at least 3 days per week is
+  (0.42, 0.54). A fitness organization claims 50% of adults exercise at least 3 days
+  per week. Is this plausible?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, the claim is plausible.
+  - id: reason
+    points: 1
+    full: >-
+      Justifies with the interval: 0.50 lies inside (0.42, 0.54).

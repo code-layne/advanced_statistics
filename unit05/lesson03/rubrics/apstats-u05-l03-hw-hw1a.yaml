@@ -1,0 +1,24 @@
+# Homework item 1a (Unit 5, Lesson 5.3). Relative to the lesson directory.
+id: hw1a
+points: 3
+task: >-
+  Apple weights are approximately normal with mean 182 g and SD 20 g; a sample of 16
+  apples is selected. Verify all three conditions for using the normal model for the
+  sample mean.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: states that the 16 apples are a random sample (stated in the problem).
+  - id: independence
+    points: 1
+    full: >-
+      Independence (10% condition): 16 is at most 10% of all the store's apples.
+  - id: normal
+    points: 1
+    full: >-
+      Normal/Large Sample: the population of apple weights is approximately normal, so the
+      sampling distribution of the sample mean is normal even though n = 16 is small.
+examples:
+  - response: "Random, independent, and n is large enough."
+    scores: {random: 1, independence: 0, normal: 0}

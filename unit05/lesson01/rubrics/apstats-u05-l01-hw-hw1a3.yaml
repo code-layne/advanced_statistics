@@ -1,0 +1,15 @@
+# Homework item 1a, parameter (Unit 5, Lesson 5.1). Relative to the lesson directory.
+id: hw1a3
+points: 1
+task: >-
+  A researcher records the resting heart rate of a random sample of 80 adults; the
+  sample mean is 72 bpm. The researcher wants to estimate the mean heart rate of all
+  adults. Identify the parameter.
+criteria:
+  - id: parameter
+    points: 1
+    full: >-
+      Identifies the true (population) mean resting heart rate of all adults.
+examples:
+  - response: "72 bpm"
+    scores: {parameter: 0}

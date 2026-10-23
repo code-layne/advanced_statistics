@@ -1,0 +1,21 @@
+# AP Practice item 3, part (a) (Unit 2, Lesson 2.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  Twenty teenagers reported their daily screen time and how many hours they slept last
+  night; a scatterplot shows a negative linear pattern and technology gives r = -0.72.
+  Name the explanatory and the response variable, then describe the association in
+  context.
+criteria:
+  - id: describe
+    points: 2
+    full: >-
+      E: Names screen time as explanatory and sleep as response AND describes the
+      association as negative, linear and moderately strong, in context (teens with more
+      screen time tend to sleep less).
+    partial: >-
+      P (1 of 2): Names the variables correctly but the description is missing a feature
+      (direction, form or strength) or is not in context, OR describes the association
+      fully but reverses or omits the variables.

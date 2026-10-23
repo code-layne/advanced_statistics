@@ -1,0 +1,13 @@
+# Homework item 3, the split (Unit 1, Lesson 1.5). Relative to the lesson directory.
+id: hw3e
+points: 1
+task: >-
+  Twelve ordered homework times: 15 25 30 40 45 55 60 70 75 85 100 120. Show how the
+  list is split to get Q1 and Q3.
+criteria:
+  - id: split
+    points: 1
+    full: >-
+      Splits the twelve values into a lower half (15 to 55) and an upper half (60 to 120)
+      of six each and takes the median of each half: Q1 = (30+40)/2 = 35, Q3 = (75+85)/2 =
+      80.

@@ -1,0 +1,16 @@
+# Homework item 4b (Unit 4, Lesson 4.6). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  Use the table (TV Series 130 of 300; 60 of the 120 under-25 subscribers) to
+  determine whether TV Series and Under 25 are independent.
+criteria:
+  - id: compute
+    points: 1
+    full: >-
+      Computes P(TV Series) = 130/300, about 0.433, and P(TV Series | Under 25) = 60/120 =
+      0.5 (or another correct independence check).
+  - id: conclude
+    points: 1
+    full: >-
+      Concludes they are not equal, so the events are not independent.

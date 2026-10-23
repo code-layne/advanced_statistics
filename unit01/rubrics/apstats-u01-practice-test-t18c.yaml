@@ -1,0 +1,21 @@
+# Unit 1 practice (sample) test, item 18c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t18c
+points: 3
+task: >-
+  Describe the distribution of trout lengths (cm) from the histogram of 50 trout.
+criteria:
+  - id: shape_unusual
+    points: 2
+    full: >-
+      E: Skewed left with one peak at 32-36 cm AND an unusual feature: the gap at 16-20 cm
+      or the 2 trout at 12-16 cm as possible outliers.
+    partial: >-
+      P (1 of 2): Shape correct without an unusual feature, or the unusual feature without
+      the shape.
+  - id: center_spread
+    points: 1
+    full: >-
+      E: Center (median in 32-36 cm, about 33 cm) and variability (about 12 to 44 cm), in
+      context.

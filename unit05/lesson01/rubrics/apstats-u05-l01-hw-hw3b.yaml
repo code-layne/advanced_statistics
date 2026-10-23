@@ -1,0 +1,17 @@
+# Homework item 3b (Unit 5, Lesson 5.1). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A simulation takes 500 random samples of size n = 40 from a population with mean 100
+  and plots the 500 sample means. Would you expect the center of the dot-plot to be
+  near 100? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that random sample means vary around the population mean, so the center of
+      the sampling distribution of the sample mean equals (is near) 100.

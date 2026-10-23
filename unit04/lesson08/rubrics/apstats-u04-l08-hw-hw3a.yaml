@@ -1,0 +1,15 @@
+# Homework item 3a (Unit 4, Lesson 4.8). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  W = number of hours a student sleeps on school nights, mu_W = 4.5. Interpret mu_W in
+  context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average (mean over many school nights / students).
+  - id: context
+    points: 1
+    full: >-
+      Says about 4.5 hours of sleep per school night.

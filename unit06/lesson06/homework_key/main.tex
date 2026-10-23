@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u06-l06-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -14,22 +17,22 @@
 \begin{enumerate}
 
   \item Website visitors ($n=350$, 126 visited):
-        \textbf{State:} \ansline{$H_0: p=0.40$; $H_a: p<0.40$; $\alpha=0.05$}
-        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $350(0.40)=140\ge10$, $350(0.60)=210\ge10$ --- met; 10\% met.}
-        \textbf{Do:} $\hat p = $ \ans{$126/350=0.36$} \quad $z \approx$ \ans{$\dfrac{0.36-0.40}{\sqrt{0.40(0.60)/350}}\approx-1.53$} \quad $p$-value $\approx$ \ans{$P(Z\le-1.53)=0.063$}
-        \textbf{Conclude:} \ansline{Because $p$-value $=0.063>\alpha=0.05$, we fail to reject $H_0$. We do not have sufficient evidence that the proportion of adults who visited the site is lower than 40\%.}
+        \textbf{State:} \ansline{$H_0: p=0.40$; $H_a: p<0.40$; $\alpha=0.05$}\gradedkey{\gradedblank[id=hw1a, type=rubric, points=2, display={\bfseries $H_0\colon p = 0.40$; $H_a\colon p < 0.40$}]{2.85in}{0.17in}}
+        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $350(0.40)=140\ge10$, $350(0.60)=210\ge10$ --- met; 10\% met.}\gradedkey{\gradedblank[id=hw1b, type=rubric, points=3, display={\bfseries Random; $140 \ge 10$, $210 \ge 10$; 10\% met}]{2.85in}{0.17in}}
+        \textbf{Do:} $\hat p = $ \ans{$126/350=0.36$} \quad $z \approx$ \ans{$\dfrac{0.36-0.40}{\sqrt{0.40(0.60)/350}}\approx-1.53$} \quad $p$-value $\approx$ \ans{$P(Z\le-1.53)=0.063$}\gradedkey{\gradedblank[id=hw1c1, type=short, points=1, answer=0.36, check=numeric]{2cm}{0.17in}\quad \gradedblank[id=hw1c2, type=short, points=2, answer=-1.53, check=numeric, tolerance=0.02]{2cm}{0.17in}\quad \gradedblank[id=hw1c3, type=short, points=2, answer=0.063, check=numeric, tolerance=0.003]{2cm}{0.17in}}
+        \textbf{Conclude:} \ansline{Because $p$-value $=0.063>\alpha=0.05$, we fail to reject $H_0$. We do not have sufficient evidence that the proportion of adults who visited the site is lower than 40\%.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={$0.063 > 0.05$: fail to reject $H_0$; no convincing evidence fewer than 40\% of the city's adults visited the site.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 
   \item Extracurricular activities ($n=250$, 193 participate):
-        \textbf{State:} \ansline{$H_0: p=0.72$; $H_a: p\ne0.72$; $\alpha=0.05$}
-        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $250(0.72)=180\ge10$, $250(0.28)=70\ge10$ --- met; 10\% met.}
-        \textbf{Do:} $\hat p = $ \ans{$193/250=0.772$} \quad $z \approx$ \ans{$\dfrac{0.772-0.72}{\sqrt{0.72(0.28)/250}}\approx1.81$} \quad $p$-value $\approx$ \ans{$2P(Z\ge1.81)=2(0.035)=0.070$}
-        \textbf{Conclude:} \ansline{Because $p$-value $=0.070>\alpha=0.05$, we fail to reject $H_0$. We do not have sufficient evidence that the participation rate in the district differs from 72\%.}
+        \textbf{State:} \ansline{$H_0: p=0.72$; $H_a: p\ne0.72$; $\alpha=0.05$}\gradedkey{\gradedblank[id=hw2a, type=rubric, points=2, display={\bfseries $H_0\colon p = 0.72$; $H_a\colon p \ne 0.72$}]{2.85in}{0.17in}}
+        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $250(0.72)=180\ge10$, $250(0.28)=70\ge10$ --- met; 10\% met.}\gradedkey{\gradedblank[id=hw2b, type=rubric, points=3, display={\bfseries Random; $180 \ge 10$, $70 \ge 10$; 10\% met}]{2.85in}{0.17in}}
+        \textbf{Do:} $\hat p = $ \ans{$193/250=0.772$} \quad $z \approx$ \ans{$\dfrac{0.772-0.72}{\sqrt{0.72(0.28)/250}}\approx1.81$} \quad $p$-value $\approx$ \ans{$2P(Z\ge1.81)=2(0.035)=0.070$}\gradedkey{\gradedblank[id=hw2c1, type=short, points=1, answer=0.772, check=numeric]{2cm}{0.17in}\quad \gradedblank[id=hw2c2, type=short, points=2, answer=1.83, check=numeric, tolerance=0.03]{2cm}{0.17in}\quad \gradedblank[id=hw2c3, type=short, points=2, answer=0.067, check=numeric, tolerance=0.004]{2cm}{0.17in}}
+        \textbf{Conclude:} \ansline{Because $p$-value $=0.070>\alpha=0.05$, we fail to reject $H_0$. We do not have sufficient evidence that the participation rate in the district differs from 72\%.}\gradedkeyline{\gradedblank[id=hw2d, type=rubric, points=2, display={$0.067 > 0.05$: fail to reject $H_0$; no convincing evidence the district's participation rate differs from 72\%.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 
   \item Bottled water contamination ($n=400$, 26 exceed):
-        \textbf{State:} \ansline{$H_0: p=0.05$; $H_a: p>0.05$; $\alpha=0.01$}
-        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $400(0.05)=20\ge10$, $400(0.95)=380\ge10$ --- met; 10\% met.}
-        \textbf{Do:} $\hat p = $ \ans{$26/400=0.065$} \quad $z \approx$ \ans{$\dfrac{0.065-0.05}{\sqrt{0.05(0.95)/400}}\approx1.38$} \quad $p$-value $\approx$ \ans{$P(Z\ge1.38)=0.084$}
-        \textbf{Conclude:} \ansline{Because $p$-value $=0.084>\alpha=0.01$, we fail to reject $H_0$. We do not have sufficient evidence that the contamination rate exceeds 5\%.}
+        \textbf{State:} \ansline{$H_0: p=0.05$; $H_a: p>0.05$; $\alpha=0.01$}\gradedkey{\gradedblank[id=hw3a, type=rubric, points=2, display={\bfseries $H_0\colon p = 0.05$; $H_a\colon p > 0.05$}]{2.85in}{0.17in}}
+        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $400(0.05)=20\ge10$, $400(0.95)=380\ge10$ --- met; 10\% met.}\gradedkey{\gradedblank[id=hw3b, type=rubric, points=3, display={\bfseries Random; $20 \ge 10$, $380 \ge 10$; 10\% met}]{2.85in}{0.17in}}
+        \textbf{Do:} $\hat p = $ \ans{$26/400=0.065$} \quad $z \approx$ \ans{$\dfrac{0.065-0.05}{\sqrt{0.05(0.95)/400}}\approx1.38$} \quad $p$-value $\approx$ \ans{$P(Z\ge1.38)=0.084$}\gradedkey{\gradedblank[id=hw3c1, type=short, points=1, answer=0.065, check=numeric]{2cm}{0.17in}\quad \gradedblank[id=hw3c2, type=short, points=2, answer=1.38, check=numeric, tolerance=0.02]{2cm}{0.17in}\quad \gradedblank[id=hw3c3, type=short, points=2, answer=0.084, check=numeric, tolerance=0.003]{2cm}{0.17in}}
+        \textbf{Conclude:} \ansline{Because $p$-value $=0.084>\alpha=0.01$, we fail to reject $H_0$. We do not have sufficient evidence that the contamination rate exceeds 5\%.}\gradedkeyline{\gradedblank[id=hw3d, type=rubric, points=2, display={$0.084 > 0.01$: fail to reject $H_0$; no convincing evidence more than 5\% of the bottles exceed the threshold.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 
 \end{enumerate}
 

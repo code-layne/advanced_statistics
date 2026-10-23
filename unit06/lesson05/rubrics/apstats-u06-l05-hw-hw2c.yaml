@@ -1,0 +1,25 @@
+# Homework item 2c (Unit 6, Lesson 6.5). Relative to the lesson directory.
+id: hw2c
+points: 3
+task: >-
+  Claim: 80% of customers satisfied; Ha: p < 0.80. 185 of 250 random customers
+  satisfied (p-hat = 0.74), z = -2.37, p-value = 0.0089. Write a complete contextual
+  interpretation of the p-value.
+criteria:
+  - id: assume
+    points: 1
+    full: >-
+      Conditions on H0: assuming the true proportion of satisfied customers is 0.80.
+  - id: prob
+    points: 1
+    full: >-
+      Gives the probability, about 0.0089 (0.89%), of getting a sample proportion of 0.74
+      or lower (as extreme or more extreme, in the direction of Ha).
+  - id: context
+    points: 1
+    full: >-
+      In context: samples of 250 customers / proportion satisfied, by chance alone (random
+      sampling variation).
+examples:
+  - response: "There is a 0.89% chance that the company's claim is true."
+    scores: {assume: 0, prob: 0, context: 0}

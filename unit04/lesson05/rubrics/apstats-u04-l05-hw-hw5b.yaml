@@ -1,0 +1,18 @@
+# Homework item 5b (Unit 4, Lesson 4.5). Relative to the lesson directory.
+id: hw5b
+points: 2
+task: >-
+  P(GPA 3.5-4.0 | Music On) = 20/80 = 0.25. In a complete sentence, interpret it in
+  context.
+criteria:
+  - id: condition
+    points: 1
+    full: >-
+      Restricts to students who prefer studying with music on.
+  - id: value
+    points: 1
+    full: >-
+      Says 25% of those students have a GPA between 3.5 and 4.0, in a complete sentence.
+examples:
+  - response: "25% of students with high GPAs listen to music."
+    scores: {condition: 0, value: 0}

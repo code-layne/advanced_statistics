@@ -1,0 +1,14 @@
+# Unit 2 practice (sample) test, item 12a. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12a
+points: 1
+task: >-
+  15 refrigerator models: capacity (cubic feet) and annual energy use (kWh/yr), R-Sq =
+  92.4%. Describe the association between capacity and annual energy use.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Strong, positive, linear (direction, form and strength), in context: models with
+      more capacity tend to use more energy per year; no clear outliers (r about 0.96).

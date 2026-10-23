@@ -1,0 +1,15 @@
+# Homework item 5a (Unit 4, Lesson 4.10). Relative to the lesson directory.
+id: hw5a
+points: 2
+task: >-
+  A salesperson visits 8 houses; P(sale) = 0.15 at each, houses independent. Define X
+  and state its distribution; check BINS briefly.
+criteria:
+  - id: define
+    points: 1
+    full: >-
+      Defines X = the number of sales (houses with a sale) among the 8 houses.
+  - id: dist
+    points: 1
+    full: >-
+      Checks BINS (sale/no sale, independent, n = 8, p = 0.15) and states X ~ B(8, 0.15).

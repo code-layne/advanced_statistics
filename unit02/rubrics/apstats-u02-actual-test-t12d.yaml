@@ -1,0 +1,13 @@
+# Unit 2 actual test, item 12d. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12d
+points: 1
+task: >-
+  R-Sq = 91.6%. Interpret the value of R-Sq in context.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: About 91.6% of the variation in wheat yield among these fields is explained by
+      the linear model with growing-season rainfall.

@@ -1,0 +1,19 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  A weather station recorded total rainfall (mm) on 20 rainy days, shown in a stem
+  plot (stems = tens digit): 2 4 5 8 9 | 11 13 13 16 17 18 | 20 22 25 29 | 31 34 38 |
+  42 47. Complete a frequency table using blocks 10 mm wide (0-9, 10-19, 20-29, 30-39,
+  40-49). Give the count for each block.
+criteria:
+  - id: table
+    points: 2
+    full: >-
+      E: Gives all five counts correctly: 0-9: 5, 10-19: 6, 20-29: 4, 30-39: 3, 40-49: 2
+      (total 20).
+    partial: >-
+      P (1 of 2): Gives at least three of the five counts correctly, or all five correct
+      but not matched to their blocks.

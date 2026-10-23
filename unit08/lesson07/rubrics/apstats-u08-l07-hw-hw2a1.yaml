@@ -1,0 +1,11 @@
+# Homework item 2a, procedure (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw2a1
+points: 1
+task: >-
+  A survey claims 15% of adults read a physical newspaper daily; a researcher suspects
+  fewer and surveys a random sample of 400 adults (48 do). State: name the procedure.
+criteria:
+  - id: procedure
+    points: 1
+    full: >-
+      Names a one-sample z-test for a proportion p.

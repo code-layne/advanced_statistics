@@ -1,0 +1,13 @@
+# Homework item 4b Normal (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw4b2
+points: 1
+task: >-
+  10 randomly selected sprinters, 40-m times before and after training: differences
+  (before - after) d-bar = 0.31 s, s_d = 0.18 s, roughly symmetric, no outliers. Did
+  times improve? Verify the Normal condition.
+criteria:
+  - id: 4b2
+    points: 1
+    full: >-
+      Notes n = 10 < 30 and that the dotplot of differences is roughly symmetric with no
+      outliers; met.

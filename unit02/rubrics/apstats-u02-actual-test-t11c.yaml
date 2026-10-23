@@ -1,0 +1,20 @@
+# Unit 2 actual test, item 11c. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11c
+points: 2
+task: >-
+  Is there an association between living near a rail station and commute mode for
+  these 500 commuters? Justify with numbers. Can the agency conclude that living near
+  a station causes people to take transit? Explain.
+criteria:
+  - id: association
+    points: 1
+    full: >-
+      E: Yes, associated: the mode distributions differ (48% of near commuters take
+      transit vs 18% of far commuters).
+  - id: causation
+    points: 1
+    full: >-
+      E: No: this is a survey (observational), not an experiment, so it cannot show cause;
+      for example, people who like transit may choose to live near a station.

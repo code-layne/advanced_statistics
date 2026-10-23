@@ -1,0 +1,20 @@
+# AP Practice item 5, part (a) (Unit 1, Lesson 1.0). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5a
+points: 2
+task: >-
+  A school newspaper surveys every senior; for each it records the number of hours
+  worked at a paying job last week and whether the student drives to school. Identify
+  the individuals and both variables in this data set.
+criteria:
+  - id: identify
+    points: 2
+    full: >-
+      E: Identifies the individuals as the seniors surveyed (the senior class) AND names
+      both variables: hours worked at a paying job last week, and whether the student
+      drives to school.
+    partial: >-
+      P (1 of 2): Identifies the individuals correctly but misses or misnames one
+      variable, OR names both variables but misidentifies the individuals (e.g., as the
+      hours or the newspaper).

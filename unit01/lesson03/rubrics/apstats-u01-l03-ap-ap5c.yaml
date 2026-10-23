@@ -1,0 +1,20 @@
+# AP Practice item 5, part (c) (Unit 1, Lesson 1.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5c
+points: 2
+task: >-
+  A weather station recorded total rainfall (mm) on 20 rainy days, shown in a stem
+  plot (stems = tens digit): 2 4 5 8 9 | 11 13 13 16 17 18 | 20 22 25 29 | 31 34 38 |
+  42 47. State one thing the stem plot shows that the frequency table does not, and
+  one thing the table makes easier to see.
+criteria:
+  - id: compare
+    points: 2
+    full: >-
+      E: States that the stem plot keeps every individual value (e.g., you can read the
+      two 13 mm days) AND names something the table shows more easily (e.g., which block
+      is most common, that light rain days were most common, the counts per block at a
+      glance).
+    partial: >-
+      P (1 of 2): Gives only one of the two correctly.

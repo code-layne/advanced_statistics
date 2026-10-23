@@ -1,0 +1,20 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  A school surveyed its 9th and 12th graders about how they would prefer to spend an
+  activity period. 300 ninth graders: Sports 150, Clubs 90, Study hall 60. 120 twelfth
+  graders: Sports 42, Clubs 30, Study hall 48. Build the relative frequency table for
+  the twelfth graders. Show each calculation.
+criteria:
+  - id: table
+    points: 2
+    full: >-
+      E: Gives all three relative frequencies with the calculation shown: Sports 42/120 =
+      0.35, Clubs 30/120 = 0.25, Study hall 48/120 = 0.40 (adding to 1).
+    partial: >-
+      P (1 of 2): Uses the right method (count divided by 120) with one arithmetic error,
+      OR gives all three correct values without showing calculations, OR divides by the
+      wrong total consistently.

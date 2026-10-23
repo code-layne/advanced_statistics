@@ -1,0 +1,11 @@
+# Homework item 2, Random (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw2b1
+points: 1
+task: >-
+  A random sample of 80 fish from a lake finds 12 tagged (99% CI for the true
+  proportion tagged). Plan: Random condition.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      Says the 80 fish are a random sample (stated), so the condition is met.

@@ -1,0 +1,19 @@
+# Actual quiz, Unit 1 (Lessons 1.0-1.4), item 7c. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q7c
+points: 2
+task: >-
+  A newsletter says Harbor (21 tide-pool tours of 60) is the region's tide-pool
+  aquarium because it ran more tide-pool tours than Bayview (12 of 30). Explain what
+  is wrong with the reasoning and state which aquarium a share comparison favours.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Explains that counts cannot be compared because the aquariums ran different
+      numbers of tours, AND compares shares (21/60 = 35.0% vs 12/30 = 40.0%) to conclude a
+      share comparison favours Bayview.
+    partial: >-
+      P (1 of 2): Gives only one of the two components: the different-size flaw, or the
+      share comparison favouring Bayview.

@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l10-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -15,37 +18,37 @@
 
 \textbf{1.} Basketball free throws, $n=10$, $p=0.72$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{B: each shot is made (success) or missed (failure). I: shots are independent. N: fixed $n=10$. S: same $p=0.72$. All conditions met. $X \sim B(10, 0.72)$.}
-  \item \ans{$P(X=8) = \binom{10}{8}(0.72)^8(0.28)^2 = 45(0.0722)(0.0784) \approx 0.2548$}
+  \item \ans{B: each shot is made (success) or missed (failure). I: shots are independent. N: fixed $n=10$. S: same $p=0.72$. All conditions met. $X \sim B(10, 0.72)$.}\gradedkey{\raisebox{-10pt}{\gradedblank[id=hw1a, type=rubric, points=3, display={B, I, N, S all met (fixed $n = 10$, same $p = 0.72$, independent shots): $X \sim B(10, 0.72)$.}]{3.3in}{\gradedlinesheight{3}-5pt}}}
+  \item \ans{$P(X=8) = \binom{10}{8}(0.72)^8(0.28)^2 = 45(0.0722)(0.0784) \approx 0.2548$}\gradedkey{\smash{\raisebox{-0pt}{\gradedblank[id=hw1b, type=short, points=2, answer=0.2548, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{2.} Survey, $n=200$, $p=0.60$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{B: support (yes) or not (no). I: $200 \le 0.10 \times 500{,}000 = 50{,}000$ so the $10\%$ condition is satisfied. N: fixed $n=200$. S: same $p=0.60$. The $10\%$ condition is relevant because we sample without replacement from the city.}
-  \item \ans{\texttt{binompdf(200, 0.60, 120)} $\approx 0.0553$}
+  \item \ans{B: support (yes) or not (no). I: $200 \le 0.10 \times 500{,}000 = 50{,}000$ so the $10\%$ condition is satisfied. N: fixed $n=200$. S: same $p=0.60$. The $10\%$ condition is relevant because we sample without replacement from the city.}\gradedkey{\raisebox{-6pt}{\gradedblank[id=hw2a, type=rubric, points=2, display={BINS met; yes, the 10\% condition matters (sampling without replacement): $200 \le 50{,}000$.}]{5.2in}{\gradedlinesheight{2}-5pt}}}
+  \item \ans{\texttt{binompdf(200, 0.60, 120)} $\approx 0.0553$}\gradedkey{\smash{\raisebox{-0pt}{\gradedblank[id=hw2b, type=short, points=1, answer=0.0553, check=numeric, tolerance=0.001]{1.3in}{0.2in}}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{3.} Calling on students without replacement, $n=6$, $N=30$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Strictly not binomial because selection is without replacement (the probability of choosing a non-completer changes each draw). However, check the $10\%$ condition.}
-  \item \ans{$n = 6$, $0.10 \times N = 0.10 \times 30 = 3$. Since $6 > 3$, the $10\%$ condition is \emph{not} satisfied --- independence cannot be assumed and this is not approximately binomial.}
+  \item \ans{Strictly not binomial because selection is without replacement (the probability of choosing a non-completer changes each draw). However, check the $10\%$ condition.}\gradedkeyline{\kern0.4in\gradedblank[id=hw3a, type=rubric, points=2, display={Not binomial: drawing without replacement, so $p$ changes from call to call (not independent).}]{6.1in}{\gradedlinesheight{2}-5pt}}
+  \item \ans{$n = 6$, $0.10 \times N = 0.10 \times 30 = 3$. Since $6 > 3$, the $10\%$ condition is \emph{not} satisfied --- independence cannot be assumed and this is not approximately binomial.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3b, type=rubric, points=2, display={$0.10 \times 30 = 3 < 6$: condition fails.}]{3.3in}{0.22in}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{4.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{$\binom{6}{2} = \dfrac{6!}{2! \cdot 4!} = \dfrac{6 \times 5}{2} = 15$}
-  \item \ans{There are 15 different arrangements (orderings) in which exactly 2 successes can occur among 6 independent trials.}
+  \item \ans{$\binom{6}{2} = \dfrac{6!}{2! \cdot 4!} = \dfrac{6 \times 5}{2} = 15$}\gradedkey{\smash{\raisebox{-0pt}{\gradedblank[id=hw4a, type=short, points=1, answer=15, check=numeric, tolerance=0]{1.3cm}{0.2in}}}}
+  \item \ans{There are 15 different arrangements (orderings) in which exactly 2 successes can occur among 6 independent trials.}\gradedkey{\raisebox{-6pt}{\gradedblank[id=hw4b, type=rubric, points=2, display={The number of ways (orderings) to get exactly 2 successes in 6 trials.}]{4.8in}{\gradedlinesheight{2}-5pt}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{5.} Door-to-door salesperson, $n=8$, $p=0.15$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{$X =$ number of sales in 8 houses. B: sale or no sale. I: houses are independent (given). N: fixed $n=8$. S: same $p=0.15$. So $X \sim B(8, 0.15)$.}
-  \item \ans{$P(X=1) = \binom{8}{1}(0.15)^1(0.85)^7 = 8(0.15)(0.3206) \approx 0.3847$}
-  \item \ans{$P(X=0) = \binom{8}{0}(0.15)^0(0.85)^8 = (0.85)^8 \approx 0.2725$. In context: there is about a 27.3\% probability that the salesperson makes no sales at all during an 8-house visit.}
+  \item \ans{$X =$ number of sales in 8 houses. B: sale or no sale. I: houses are independent (given). N: fixed $n=8$. S: same $p=0.15$. So $X \sim B(8, 0.15)$.}\gradedkey{\raisebox{-6pt}{\gradedblank[id=hw5a, type=rubric, points=2, display={$X$ = number of sales in 8 houses; BINS met; $X \sim B(8, 0.15)$.}]{3.6in}{\gradedlinesheight{2}-5pt}}}
+  \item \ans{$P(X=1) = \binom{8}{1}(0.15)^1(0.85)^7 = 8(0.15)(0.3206) \approx 0.3847$}\gradedkey{\smash{\raisebox{-0pt}{\gradedblank[id=hw5b, type=short, points=2, answer=0.3847, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}}
+  \item \ans{$P(X=0) = \binom{8}{0}(0.15)^0(0.85)^8 = (0.85)^8 \approx 0.2725$. In context: there is about a 27.3\% probability that the salesperson makes no sales at all during an 8-house visit.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw5c1, type=short, points=1, answer=0.2725, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}\gradedkeyline{\kern0.4in\gradedblank[id=hw5c2, type=rubric, points=2, display={About a 27.3\% chance the salesperson makes no sales in the 8 houses.}]{6.1in}{0.22in}}
 \end{enumerate}
 
 \vspace{6pt}

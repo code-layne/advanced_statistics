@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l02-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -21,9 +24,9 @@ Show all work clearly.
         \begin{enumerate}[label=\alph*.]
           \item State H$_0$ and H$_a$ for a chi-square goodness of fit test.
 
-                H$_0$: \writelines{2}
+                H$_0$: \gradedhide{\hspace{0.75in}\gradedhere{\gradedblank[id=hw1a1, type=rubric, points=1, display={$p_A = 9/16$, $p_B = p_C = 3/16$, $p_D = 1/16$ (9:3:3:1 ratio holds)}]{\linewidth-1.0in}{\gradedlinesheight{2}}}\writelines{2}}
 
-                H$_a$: \writeline
+                H$_a$: \gradedhide{\hspace{0.75in}\gradedhere{\gradedblank[id=hw1a2, type=rubric, points=1, display={At least one proportion differs from 9:3:3:1.}]{\linewidth-1.0in}{\gradedlinesheight{1}}}\writeline}
 
           \item Calculate the expected count for each phenotype. (\textit{Hint:}
                 Total ratio parts $= 9 + 3 + 3 + 1 = 16$.)
@@ -35,12 +38,12 @@ Show all work clearly.
                     \hline
                     Null proportion & $9/16$ & $3/16$ & $3/16$ & $1/16$ \\
                     \hline
-                    Expected count & \blank{2cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
+                    Expected count & \makebox[2cm][r]{\smash{\raisebox{-3.5pt}{\gradedblank[id=hw1b1, type=short, points=1, answer=90, check=numeric, tolerance=0]{0.8cm}{0.2in}}}} & \makebox[2cm][r]{\smash{\raisebox{-3.5pt}{\gradedblank[id=hw1b2, type=short, points=1, answer=30, check=numeric, tolerance=0]{0.8cm}{0.2in}}}} & \makebox[2cm][r]{\smash{\raisebox{-3.5pt}{\gradedblank[id=hw1b3, type=short, points=1, answer=30, check=numeric, tolerance=0]{0.8cm}{0.2in}}}} & \makebox[2cm][r]{\smash{\raisebox{-3.5pt}{\gradedblank[id=hw1b4, type=short, points=1, answer=10, check=numeric, tolerance=0]{0.8cm}{0.2in}}}} \\
                 \end{tabular}
                 \end{center}
 
           \item Is the Large Counts condition met? Justify.
-                \writelines{1}
+                \gradedhide{\writelines{1}\gradedright{\gradedblank[id=hw1c, type=rubric, points=2, display={Smallest expected 10 $\ge 5$: met.}]{2.6in}{0.19in}}}
         \end{enumerate}
 
   \item \textbf{Transportation Survey.} A local government claims that commuters use four
@@ -50,13 +53,13 @@ Show all work clearly.
         \begin{enumerate}[label=\alph*.]
           \item State H$_0$ and H$_a$ for a test of whether the proportions are equal.
 
-                H$_0$: \writeline
+                H$_0$: \gradedhide{\hspace{0.75in}\gradedhere{\gradedblank[id=hw2a1, type=rubric, points=1, display={$p_\text{car} = p_\text{bus} = p_\text{bike} = p_\text{walk} = 0.25$}]{\linewidth-1.0in}{\gradedlinesheight{1}}}\writeline}
 
-                H$_a$: \writeline
+                H$_a$: \gradedhide{\hspace{0.75in}\gradedhere{\gradedblank[id=hw2a2, type=rubric, points=1, display={At least one mode's proportion is not 0.25.}]{\linewidth-1.0in}{\gradedlinesheight{1}}}\writeline}
 
           \item Calculate the expected count for each transportation mode.
 
-                $E = n \cdot p_0 = $ \blank{6cm}
+                $E = n \cdot p_0 = $ \smash{\gradedblank[id=hw2b, type=short, points=1, answer=50, check=numeric, tolerance=0]{6cm}{0.17in}}
 
                 \begin{center}
                 \renewcommand{\arraystretch}{1.3}
@@ -69,8 +72,8 @@ Show all work clearly.
 
           \item Check both conditions for a chi-square GOF test.
                 \begin{itemize}
-                    \item \textbf{Random:} \blank{7cm}
-                    \item \textbf{Large Counts:} \blank{7cm}
+                    \item \textbf{Random:} \hfill\smash{\gradedblank[id=hw2c1, type=rubric, points=1, display={Random sample stated.}]{7cm}{0.19in}}
+                    \item \textbf{Large Counts:} \hfill\smash{\gradedblank[id=hw2c2, type=rubric, points=1, display={All expected $= 50 \ge 5$.}]{7cm}{0.19in}}
                 \end{itemize}
         \end{enumerate}
 
@@ -80,10 +83,10 @@ Show all work clearly.
         \emph{observed} count is greater than 5 for the chi-square GOF test.''
 
         \begin{center}
-        \textbf{True} \qquad \textbf{False}
+        \textbf{True} \qquad \textbf{False}\rlap{\hspace{0.5in}\textit{T/F:}~\smash{\gradedblank[id=hw3a, type=choice, points=1, answer=F]{0.4in}{0.2in}}}
         \end{center}
 
-        Explanation: \writelines{3}
+        Explanation: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={False: the condition is on \emph{expected} counts ($n p_0 \ge 5$), not observed counts.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
 
 \end{enumerate}
 

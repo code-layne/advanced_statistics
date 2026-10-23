@@ -1,0 +1,15 @@
+# Homework item 2a (Unit 8, Lesson 8.1). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A fair die is rolled 120 times (expected 20 per face); observed counts are 18, 22,
+  19, 25, 16, 20 for faces 1-6. Compute Observed - Expected for each face.
+criteria:
+  - id: expected
+    points: 1
+    full: >-
+      Uses an expected count of 20 for every face (Observed - 20).
+  - id: values
+    points: 1
+    full: >-
+      Gives all six differences with correct signs, in face order: -2, +2, -1, +5, -4, 0.

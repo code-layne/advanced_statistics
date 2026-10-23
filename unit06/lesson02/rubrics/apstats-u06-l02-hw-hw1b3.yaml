@@ -1,0 +1,12 @@
+# Homework item 1, 10% rule (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw1b3
+points: 1
+task: >-
+  A random sample of 400 registered voters finds 228 support a park expansion (95% CI
+  for the true proportion). Plan: 10% condition.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      States that 400 is at most 10% of all registered voters in the city, so the
+      condition is met.

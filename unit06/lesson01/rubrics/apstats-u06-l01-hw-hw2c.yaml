@@ -1,0 +1,11 @@
+# Homework item 2, Key output of a confidence interval (Unit 6, Lesson 6.1). Relative to the lesson directory.
+id: hw2c
+points: 1
+task: >-
+  Complete the table comparing confidence intervals and significance tests: Key output
+  of a confidence interval.
+criteria:
+  - id: goal
+    points: 1
+    full: >-
+      Says the output is an interval (range) of plausible values for the parameter.

@@ -1,0 +1,19 @@
+# Homework item 4 (Unit 1, Lesson 1.5). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  The 90th percentile of birth weight for newborn girls is 3,900 grams. Interpret this
+  value in context.
+criteria:
+  - id: meaning
+    points: 1
+    full: >-
+      Says about 90% of newborn girls weigh 3,900 grams or less at birth (about 10% weigh
+      more).
+  - id: context
+    points: 1
+    full: >-
+      The statement is in context: birth weights of newborn girls, in grams.
+examples:
+  - response: "90% of babies weigh 3,900 grams."
+    scores: {meaning: 0, context: 1}

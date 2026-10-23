@@ -1,0 +1,27 @@
+# Homework item 3a (Unit 7, Lesson 7.3). Relative to the lesson directory.
+id: hw3a
+points: 4
+task: >-
+  A random sample of 22 employees has mean commute 14.6 miles, s = 8.3 miles.
+  Construct and interpret a 95% confidence interval for the true mean commute distance
+  for all employees. Verify all conditions.
+criteria:
+  - id: parameter
+    points: 1
+    full: >-
+      Defines mu = true mean commute distance (miles) for all employees at the company.
+  - id: conditions
+    points: 1
+    full: >-
+      Checks Random (random sample), 10% (22 is at most 10% of all employees), and, since
+      n = 22 < 30, no strong skewness or outliers in the data.
+  - id: calculate
+    points: 1
+    full: >-
+      One-sample t interval: df = 21, t* = 2.080, SE = 8.3/sqrt(22) about 1.770, ME about
+      3.68: about (10.92, 18.28) miles.
+  - id: conclude
+    points: 1
+    full: >-
+      We are 95% confident the interval captures the true mean commute distance of all
+      employees at this company.

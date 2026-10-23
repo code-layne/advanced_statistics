@@ -1,0 +1,16 @@
+# Homework item 1b (Unit 4, Lesson 4.11). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  X ~ B(30, 0.85) = number of 30 planted tomato seeds that germinate; mu_X = 25.5.
+  Interpret mu_X in context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average over many plantings of 30 seeds (not the count in
+      any one planting).
+  - id: context
+    points: 1
+    full: >-
+      Says about 25.5 of the 30 seeds germinate on average.

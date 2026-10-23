@@ -1,0 +1,19 @@
+# Homework item 3 (Unit 8, Lesson 8.3). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  A student writes: 'Because we fail to reject H0, we have proved that the
+  distribution of the population matches the null proportions.' Explain the error in
+  this statement.
+criteria:
+  - id: not_proof
+    points: 1
+    full: >-
+      Says failing to reject H0 does not prove (or accept) H0; a significance test can
+      never prove the null.
+  - id: why
+    points: 1
+    full: >-
+      Explains why: the data are only consistent with H0 / there is not enough evidence
+      against it; the differences could be chance, and a real difference may have gone
+      undetected (Type II error).

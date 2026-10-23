@@ -1,0 +1,17 @@
+# Homework item 1b (Unit 7, Lesson 7.1). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  An agency tests H0: mu = 15 min vs Ha: mu > 15 min (alpha = 0.05) for the mean wait
+  time at an airport security checkpoint. Describe a Type II error in context.
+criteria:
+  - id: error
+    points: 1
+    full: >-
+      Describes failing to reject H0 / not concluding the mean wait time exceeds 15
+      minutes.
+  - id: truth
+    points: 1
+    full: >-
+      ... when in fact the mean wait time is greater than 15 minutes (Ha is true), in
+      context.

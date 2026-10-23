@@ -12,6 +12,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-actual-quiz}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -65,6 +68,7 @@ more than one of them is about the context, not just the arithmetic.
           \item the visitors who took the tours.
           \item the aquarium itself.
           \item the numbers of visitors.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q1, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Which of the following is a \textbf{statistical question} about these tours?
@@ -74,6 +78,7 @@ more than one of them is about the context, not just the arithmetic.
           \item How many tours did the aquarium run last month?
           \item \ans{How much does the number of visitors vary across the 60 tours?}
           \item Does the aquarium have penguins?
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q2, type=choice, points=1, answer=D]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item \textbf{Tour code} is best classified as
@@ -83,6 +88,7 @@ more than one of them is about the context, not just the arithmetic.
           \item quantitative and continuous, because codes could be subdivided.
           \item \ans{categorical, because the code labels a tour rather than recording an amount.}
           \item categorical, because it begins with a letter.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q3, type=choice, points=1, answer=D]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item Bayview Aquarium ran 30 tours last month, 12 of them tide-pool tours. Which statement
@@ -93,6 +99,7 @@ more than one of them is about the context, not just the arithmetic.
           \item The two aquariums are equally tide-pool-focused.
           \item No comparison is possible, because the aquariums ran different numbers of tours.
           \item Harbor is more tide-pool-focused, because it ran more tours overall.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q4, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item \textbf{Number of visitors on a tour} is
@@ -102,6 +109,7 @@ more than one of them is about the context, not just the arithmetic.
           \item \ans{discrete, because it is a count and 24.5 visitors is impossible.}
           \item continuous, because the values are whole numbers.
           \item neither, because a count cannot be graphed.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q5, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item A histogram of tour lengths piles up at the low end and trails off toward the high end,
@@ -112,6 +120,7 @@ more than one of them is about the context, not just the arithmetic.
           \item symmetric, because it has one peak.
           \item uniform, because every tour has some length.
           \item impossible to name without the center.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q6, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -136,27 +145,27 @@ more than one of them is about the context, not just the arithmetic.
         \vspace{6pt}
         \textbf{(a)} Identify the individuals, then name one categorical variable and one
         quantitative variable in the table.\\[4pt]
-        \ansline{Individuals: the 60 guided tours, one per row.}\\
+        \gradedhere{\gradedblank[id=q7a, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-quiz-q7a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Individuals: the 60 guided tours, one per row.}\\
         \ansline{Categorical: theme. Quantitative: number of visitors on the tour.}
 
         \vspace{6pt}
         \textbf{(b)} Give the relative frequency of each of the four themes, to the nearest tenth
         of a percent.\\[4pt]
-        \ansline{Tide pools 35.0\%, Sharks 25.0\%, Penguins 25.0\%, Coral reef 15.0\%.}
+        \gradedhere{\gradedblank[id=q7b, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-quiz-q7b.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\ansline{Tide pools 35.0\%, Sharks 25.0\%, Penguins 25.0\%, Coral reef 15.0\%.}
 
         \vspace{6pt}
         \textbf{(c)} A newsletter writes, ``Harbor is the region's tide-pool aquarium --- it ran
         more tide-pool tours than Bayview did.'' Harbor ran 21 of 60; Bayview ran 12 of 30.
         Explain what is wrong with that reasoning, and state which aquarium a share comparison
         favours.\\[4pt]
-        \ansline{Different sizes, so the counts cannot be compared: 60 tours give Harbor}\\
+        \gradedhere{\gradedblank[id=q7c, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-quiz-q7c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Different sizes, so the counts cannot be compared: 60 tours give Harbor}\\
         \ansline{more of everything. Shares are the fair number: 21/60 = 35.0\% against}\\
         \ansline{12/30 = 40.0\%, so a share comparison favours Bayview.}
 
         \vspace{6pt}
         \textbf{(d)} Write one statistical question that could be answered using these records,
         and say which of your two checks makes it statistical.\\[4pt]
-        \ansline{``How much does the number of visitors vary across the 60 tours?''}\\
+        \gradedhere{\gradedblank[id=q7d, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-quiz-q7d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{``How much does the number of visitors vary across the 60 tours?''}\\
         \ansline{It anticipates variability and is answered by collecting data.}
 
   \item The histogram below shows the \textbf{length of visit}, in minutes, of all 40 visitors
@@ -182,12 +191,12 @@ more than one of them is about the context, not just the arithmetic.
 
         \textbf{(a)} Is length of visit discrete or continuous? Justify from the variable itself,
         not from the display.\\[4pt]
-        \ansline{Continuous --- length of visit is a measured amount of time.}\\
+        \gradedhere{\gradedblank[id=q8a, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-quiz-q8a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Continuous --- length of visit is a measured amount of time.}\\
         \ansline{Between 42 and 43 minutes, 42.4 minutes is possible; rounding changes nothing.}
 
         \vspace{6pt}
         \textbf{(b)} Describe the distribution of length of visit completely.\\[4pt]
-        \ansline{Skewed right: the bars pile up at 40--50 minutes, tail out to the right.}\\
+        \gradedhere{\gradedblank[id=q8b, type=rubric, points=4, rubric=../rubrics/apstats-u01-actual-quiz-q8b.yaml]{\linewidth+6pt}{\gradedlinesheight{4}}}\ansline{Skewed right: the bars pile up at 40--50 minutes, tail out to the right.}\\
         \ansline{A gap at 80--90 minutes, and a cluster of two visitors at 90--100.}\\
         \ansline{Center is in the 40--50 minute block; visits run from about 20 to 100}\\
         \ansline{minutes --- a great deal of variability among the 40 visitors.}
@@ -195,14 +204,14 @@ more than one of them is about the context, not just the arithmetic.
         \vspace{6pt}
         \textbf{(c)} A classmate writes, ``It is skewed left, because most of the bars are on the
         left side.'' Correct the classmate, and say what actually decides the name.\\[4pt]
-        \ansline{A skew is named for the side the longer tail runs out on, not the}\\
+        \gradedhere{\gradedblank[id=q8c, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-quiz-q8c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{A skew is named for the side the longer tail runs out on, not the}\\
         \ansline{side the data piles up on. This tail reaches long, so: skewed right.}
 
         \vspace{6pt}
         \textbf{(d)} The aquarium's director proposes deleting the two visitors in the 90--100
         minute block before reporting a typical visit, calling them ``clearly errors.'' Give one
         reason that is a poor decision, and say what should be done instead.\\[4pt]
-        \ansline{Nothing marks them as errors --- a visitor really can stay 95 minutes.}\\
+        \gradedhere{\gradedblank[id=q8d, type=rubric, points=2, rubric=../rubrics/apstats-u01-actual-quiz-q8d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Nothing marks them as errors --- a visitor really can stay 95 minutes.}\\
         \ansline{Investigate those two visits and report them as part of the description.}
 
 \end{enumerate}

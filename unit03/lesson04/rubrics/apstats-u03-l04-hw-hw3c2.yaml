@@ -1,0 +1,13 @@
+# Homework item 3c, reason (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw3c2
+points: 1
+task: >-
+  Researchers ask college students: "Don't you think the university should invest more
+  in mental health resources?" Direction: the estimate of support will be too high
+  because ...
+criteria:
+  - id: because
+    points: 1
+    full: >-
+      Explains that the phrase "don't you think" signals that agreeing is the expected
+      answer, pushing respondents to say yes.

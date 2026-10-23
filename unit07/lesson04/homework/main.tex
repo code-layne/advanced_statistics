@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l04-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -22,12 +25,12 @@ average of 77$^\circ$F. She randomly collects 28 temperature readings; the data 
 right-skewed with no outliers. The sample standard deviation is 2.3$^\circ$F.
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \blank{5.5cm} \quad $df = $ \blank{1.5cm}
-  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Method: \makebox[5.5cm]{\smash{\gradedblank[id=hw1a1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{5.3cm}{0.19in}}} \quad $df = $ \makebox[1.5cm]{\smash{\gradedblank[id=hw1a2, type=short, points=1, answer=27, check=numeric, tolerance=0]{1.3cm}{0.19in}}}
+  \item $H_0$: \makebox[4.5cm]{\smash{\gradedblank[id=hw1b1, type=short, points=1, answer={{mu = 77}}, check=text, display={\boldmath$\mu = 77$}]{4.3cm}{0.19in}}} \quad $H_a$: \makebox[4.5cm]{\smash{\gradedblank[id=hw1b2, type=short, points=1, answer={{mu > 77}}, check=text, display={\boldmath$\mu > 77$}]{4.3cm}{0.19in}}}
   \item Conditions:
         \begin{itemize}
-          \item Random: \writeline
-          \item Normal ($n < 30$): \writeline
+          \item Random: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw1c1, type=rubric, points=1, display={28 readings randomly collected --- met}]{4.6in}{0.19in}}
+          \item Normal ($n < 30$): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw1c2, type=rubric, points=1, display={$n = 28 < 30$, slight skew, no outliers --- met}]{4.6in}{0.19in}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.1in}
@@ -37,12 +40,12 @@ An online retailer claims the mean delivery time for orders is 3 days. A consume
 believes the true mean is \emph{different} from 3 days. They randomly audit 55 recent orders.
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \blank{5.5cm} \quad $df = $ \blank{1.5cm}
-  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Method: \makebox[5.5cm]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{5.3cm}{0.19in}}} \quad $df = $ \makebox[1.5cm]{\smash{\gradedblank[id=hw2a2, type=short, points=1, answer=54, check=numeric, tolerance=0]{1.3cm}{0.19in}}}
+  \item $H_0$: \makebox[4.5cm]{\smash{\gradedblank[id=hw2b1, type=short, points=1, answer={{mu = 3}}, check=text, display={\boldmath$\mu = 3$}]{4.3cm}{0.19in}}} \quad $H_a$: \makebox[4.5cm]{\smash{\gradedblank[id=hw2b2, type=short, points=1, answer={{mu != 3}}, check=text, display={\boldmath$\mu \ne 3$}]{4.3cm}{0.19in}}}
   \item Conditions:
         \begin{itemize}
-          \item Random: \writeline
-          \item Normal: \writeline
+          \item Random: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2c1, type=rubric, points=1, display={random audit of 55 orders --- met}]{4.6in}{0.19in}}
+          \item Normal: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2c2, type=rubric, points=1, display={$n = 55 \ge 30$, CLT --- met}]{4.6in}{0.19in}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.1in}
@@ -55,14 +58,14 @@ differences (before $-$ after) show a roughly symmetric distribution with no out
 \begin{enumerate}[label=\alph*.]
   \item Define the order of subtraction and the parameter $\mu_d$:
 
-        $d_i = $ \blank{3cm} $-$ \blank{3cm} \quad; \quad $\mu_d = $ \blank{6cm}
+        $d_i = $ \makebox[3cm]{\smash{\gradedblank[id=hw3a1, type=short, points=1, answer=before, check=text]{2.8cm}{0.19in}}} $-$ \makebox[3cm]{\smash{\gradedblank[id=hw3a2, type=short, points=1, answer=after, check=text]{2.8cm}{0.19in}}} \quad; \quad $\mu_d = $ \makebox[6cm]{\smash{\gradedblank[id=hw3a3, type=rubric, points=1, display={true mean difference (before $-$ after)}]{5.8cm}{0.19in}}}
 
-  \item Method: \blank{5cm} \quad $df = $ \blank{1.5cm}
-  \item $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item Method: \makebox[5cm]{\smash{\gradedblank[id=hw3b1, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={matched-pairs $t$-test for $\mu_d$}]{4.8cm}{0.19in}}} \quad $df = $ \makebox[1.5cm]{\smash{\gradedblank[id=hw3b2, type=short, points=1, answer=9, check=numeric, tolerance=0]{1.3cm}{0.19in}}}
+  \item $H_0$: \makebox[4cm]{\smash{\gradedblank[id=hw3c1, type=short, points=1, answer={{mu_d = 0}}, check=text, display={\boldmath$\mu_d = 0$}]{3.8cm}{0.19in}}} \quad $H_a$: \makebox[4cm]{\smash{\gradedblank[id=hw3c2, type=short, points=1, answer={{mu_d > 0}}, check=text, display={\boldmath$\mu_d > 0$}]{3.8cm}{0.19in}}}
   \item Conditions:
         \begin{itemize}
-          \item Random/Independence: \writeline
-          \item Normal ($n < 30$): \writeline
+          \item Random/Independence: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3d1, type=rubric, points=1, display={random assignment / representative sample; participants independent}]{4.6in}{0.19in}}
+          \item Normal ($n < 30$): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3d2, type=rubric, points=1, display={$n = 10 < 30$, differences symmetric, no outliers --- met}]{4.6in}{0.19in}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.1in}
@@ -79,7 +82,7 @@ no outliers. Which of the following best describes the Normal condition?}
   \item The condition cannot be evaluated without knowing the population standard deviation.
 \end{enumerate}
 \vspace{0.06in}
-Answer: \blank{1.5cm} \quad Brief justification: \writeline
+Answer: \makebox[1.5cm]{\smash{\gradedblank[id=hw4a, type=choice, points=1, answer=C]{0.4in}{0.2in}}} \quad Brief justification: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw4b, type=rubric, points=1, display={$n < 30$: moderate skew with no outliers is acceptable}]{4.2in}{0.19in}}
 
 \end{enumerate}
 

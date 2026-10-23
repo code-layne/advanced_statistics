@@ -1,0 +1,21 @@
+# Homework item 1d (Unit 6, Lesson 6.11). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  Students who use social media more than 2 hours a day vs 2 hours or less: high use,
+  54 of 180 had a low GPA; low use, 36 of 200. Test whether high users have a higher
+  proportion of low-GPA outcomes (alpha = 0.05). Conclude in context.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares the p-value to alpha: p-value about 0.003 <= 0.05, so reject H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes in context: there is convincing evidence that the true proportion of
+      low-GPA outcomes is higher for students who use social media more than 2 hours per
+      day.
+examples:
+  - response: "We proved the alternative is true."
+    scores: {decision: 0, context: 0}

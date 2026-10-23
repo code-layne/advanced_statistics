@@ -1,0 +1,17 @@
+# Homework item 2 (Unit 1, Lesson 1.5). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  Books read: 8, 9, 10, 11, 12; the 12 is corrected to 32 (new mean 14, median 10,
+  range 24). Say which summaries moved, which did not, and why.
+criteria:
+  - id: which
+    points: 1
+    full: >-
+      Says the mean and the range changed while the median stayed at 10.
+  - id: why
+    points: 1
+    full: >-
+      Explains that the mean and range use the changed value itself (nonresistant), while
+      the median depends only on the middle (third) value in order, which is still 10
+      (resistant).

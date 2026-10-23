@@ -1,0 +1,13 @@
+# Homework Part C, item 2, justification (Unit 1, Lesson 1.0). Relative to the lesson directory.
+id: hwC2j
+points: 1
+task: >-
+  For 500 hospital patients a researcher records length of stay in days. Of the five
+  questions, (C) How do the lengths of stay vary among these patients? is the
+  statistical one. Justify the choice in one sentence by naming what varies.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Names length of stay as what varies, differing from one patient to the next (so the
+      answer depends on the data across individuals).

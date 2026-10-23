@@ -1,0 +1,13 @@
+# Homework item 3c explain (Unit 7, Lesson 7.8). Relative to the lesson directory.
+id: hw3c4
+points: 1
+task: >-
+  Random samples: 18 children with strict screen-time rules (Group 1, mild left skew,
+  no outliers) and 21 with no rules (Group 2, approximately symmetric); she believes
+  Group 1 has lower mean screen time. Can the test proceed? (Yes.) Explain.
+criteria:
+  - id: 3c4
+    points: 1
+    full: >-
+      Explains that mild skew without outliers is not a severe enough departure from
+      normality to prevent inference with n < 30.

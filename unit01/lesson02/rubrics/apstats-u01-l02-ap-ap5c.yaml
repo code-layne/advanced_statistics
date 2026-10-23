@@ -1,0 +1,22 @@
+# AP Practice item 5, part (c) (Unit 1, Lesson 1.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5c
+points: 2
+task: >-
+  A school surveyed its 9th and 12th graders about how they would prefer to spend an
+  activity period. 300 ninth graders: Sports 150, Clubs 90, Study hall 60. 120 twelfth
+  graders: Sports 42, Clubs 30, Study hall 48. A student newspaper writes: "Ninth
+  graders like sports far more than seniors do --- 150 of them chose it, versus only
+  42 seniors." Explain what is wrong with this comparison, and give the corrected
+  version.
+criteria:
+  - id: correct
+    points: 2
+    full: >-
+      E: Explains that the grades are different sizes (300 vs 120), so raw counts cannot
+      be compared, AND gives the corrected comparison with relative frequencies: 50% of
+      ninth graders vs 35% of seniors chose sports (a real but much smaller gap).
+    partial: >-
+      P (1 of 2): Gives only one of the two: the problem (different group sizes) or the
+      corrected comparison with correct percents.

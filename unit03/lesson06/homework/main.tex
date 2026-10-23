@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l06-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -20,9 +23,9 @@ For each scenario, (a) recommend a design, (b) justify your choice, and
 students. She has 40 students; she knows men and women may respond differently.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Recommended design: \blank{7cm}
-  \item Justify: \writeline\\[1pt]\writeline
-  \item Draw a diagram:
+  \item Recommended design: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw1a, type=short, points=1, answer={randomized block design}, check=text, display={\bfseries block design (by gender)}]{2.2in}{0.2in}}}
+  \item Justify: \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={Gender may affect the response to mindfulness; blocking removes that variability, so the estimate is more precise.}]{5.2in}{\gradedlinesheight{2}}}\hspace{\dimexpr 5.2in-3pt\relax}}\\[1pt]\writeline}
+  \item Draw a diagram:\gradedbelow[r]{0.05in}{\gradedblank[id=hw1c, type=rubric, points=3, display={40 students $\to$ Block 1 (20 men), Block 2 (20 women); within each block randomly assign 10 to mindfulness, 10 to control; compare anxiety.}]{6.1in}{1.2in}}
   \vspace{1.3in}
 \end{enumerate}
 
@@ -32,8 +35,8 @@ patient has many teeth; they use Brand A on one side and Brand B on the other (r
 assigned by coin flip).
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Recommended design: \blank{7cm}
-  \item Why is this the most appropriate design? \writeline\\[1pt]\writeline
+  \item Recommended design: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw2a, type=short, points=1, answer={matched pairs design}, check=text]{2.2in}{0.2in}}}
+  \item Why is this the most appropriate design? \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={Each patient gets both brands, so diet, saliva, and brushing habits are controlled.}]{3.3in}{\gradedlinesheight{2}}}\hspace{\dimexpr 3.3in-3pt\relax}}\\[1pt]\writeline}
 \end{enumerate}
 
 \vspace{8pt}
@@ -41,14 +44,14 @@ assigned by coin flip).
 has 36 seedlings, all from the same variety and grown in the same conditions.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Recommended design: \blank{7cm}
-  \item Why is blocking not needed here? \writeline\\[1pt]\writeline
+  \item Recommended design: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw3a, type=short, points=1, answer={completely randomized design}, check=text, display={\bfseries CRD}]{2.2in}{0.2in}}}
+  \item Why is blocking not needed here? \gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={Seedlings are homogeneous (same variety, same conditions): no nuisance variable to block on.}]{3.8in}{\gradedlinesheight{2}}}\hspace{\dimexpr 3.8in-3pt\relax}}\\[1pt]\writeline}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{4.} Reflection: When is a CRD preferable to a block design, even if you know
 a variable that affects the response?\\[4pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
+\gradedhide{\writeline\gradedright{\gradedhere{\gradedblank[id=hw4, type=rubric, points=2, display={When the variable can't be measured beforehand, is only weakly related to the response, or blocking's complexity outweighs the gain in precision.}]{6.1in}{\gradedlinesheight{3}}}\hspace{\dimexpr 6.1in-3pt\relax}}\\[1pt]\writeline\\[1pt]\writeline}
 \end{practicebox}
 
 \end{document}

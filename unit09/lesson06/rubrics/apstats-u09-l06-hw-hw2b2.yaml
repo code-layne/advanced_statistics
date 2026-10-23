@@ -1,0 +1,11 @@
+# Homework item 2(2), Ha (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw2b2
+points: 1
+task: >-
+  A school randomly surveys 120 sophomores on how they get to school (walk, bus, car,
+  bike); test whether the four options are equally popular. State Ha.
+criteria:
+  - id: alt
+    points: 1
+    full: >-
+      Ha: at least one of the proportions differs from 0.25.

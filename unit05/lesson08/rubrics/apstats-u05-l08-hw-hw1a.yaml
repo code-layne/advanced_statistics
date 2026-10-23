@@ -1,0 +1,23 @@
+# Homework item 1a (Unit 5, Lesson 5.8). Relative to the lesson directory.
+id: hw1a
+points: 3
+task: >-
+  Resting heart rates: adults 20-39 have mean 70 bpm and SD 11 (random sample of 55);
+  adults 60-79 have mean 74 bpm and SD 14 (random sample of 45); both populations
+  approximately normal. Check all conditions for the normal model for the difference
+  in sample means.
+criteria:
+  - id: random_10
+    points: 1
+    full: >-
+      Random: both samples are random (stated); 10%: 55 and 45 are each at most 10% of
+      their age groups.
+  - id: independent
+    points: 1
+    full: >-
+      Says the two samples (groups) are independent.
+  - id: normal
+    points: 1
+    full: >-
+      Normal/Large Sample: both populations are approximately normal (and also both n are
+      at least 30), so the difference in sample means is approximately normal.

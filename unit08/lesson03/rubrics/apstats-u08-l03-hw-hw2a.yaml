@@ -1,0 +1,17 @@
+# Homework item 2a (Unit 8, Lesson 8.3). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  200 college students name the streaming service they use most (Netflix, Hulu,
+  Disney+, Amazon, Other). State H0 and Ha for a chi-square goodness-of-fit test of
+  equal preference.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      H0: the proportions of college students who use each of the 5 services most are all
+      equal (each 0.20).
+  - id: alt
+    points: 1
+    full: >-
+      Ha: at least one of the proportions differs from 0.20.

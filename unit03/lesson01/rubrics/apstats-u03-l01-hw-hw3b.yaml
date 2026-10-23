@@ -1,0 +1,12 @@
+# Homework item 3b (Unit 3, Lesson 3.1). Relative to the lesson directory.
+id: hw3b
+points: 1
+task: >-
+  A company surveys its own employees to determine what the average worker in the city
+  earns. Whose opinion is missing?
+criteria:
+  - id: missing
+    points: 1
+    full: >-
+      Names workers outside this company: employees of other companies, self-employed
+      workers, or people in other industries.

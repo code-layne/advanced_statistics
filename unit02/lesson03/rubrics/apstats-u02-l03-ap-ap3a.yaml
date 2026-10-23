@@ -1,0 +1,19 @@
+# AP Practice item 3, part (a) (Unit 2, Lesson 2.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  A coffee shop recorded the daily high temperature (F) and the number of hot drinks
+  sold on 40 days with highs from 30 F to 75 F. The regression line is predicted
+  drinks = 210 - 2.4(temperature). Predict the number of hot drinks sold on a 60 F
+  day. Show your work.
+criteria:
+  - id: predict
+    points: 2
+    full: >-
+      E: Substitutes 60 into the line and gets 210 - 2.4(60) = 66 hot drinks, with the
+      work shown.
+    partial: >-
+      P (1 of 2): Correct prediction of 66 with no work shown, OR correct substitution
+      with an arithmetic error.

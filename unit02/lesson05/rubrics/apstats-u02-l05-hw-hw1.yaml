@@ -1,0 +1,22 @@
+# Homework item A1 (Unit 2, Lesson 2.5). Relative to the lesson directory.
+id: hw1
+points: 2
+task: >-
+  Ten apartments sit 0.5 to 3.0 miles from campus; apartment P is 9 miles out and
+  rents for $1,300. For rent (y, dollars) against distance (x, miles), all 11 give
+  y-hat = 1328 - 14.1x, r = -0.32; the 10 without P give y-hat = 1516 - 130.5x, r =
+  -0.99. Is P high-leverage? Is it influential? Justify both with the numbers above.
+criteria:
+  - id: leverage
+    points: 1
+    full: >-
+      Says P is high-leverage because its x-value (9 miles) is far from the other x-values
+      (0.5 to 3.0 miles).
+  - id: influential
+    points: 1
+    full: >-
+      Says P is influential, citing the numbers: removing it changes the slope from -14.1
+      to -130.5 dollars per mile and r from -0.32 to -0.99.
+examples:
+  - response: "P is an outlier so it is influential."
+    scores: {leverage: 0, influential: 0}

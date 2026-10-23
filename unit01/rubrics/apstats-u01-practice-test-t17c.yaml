@@ -1,0 +1,19 @@
+# Unit 1 practice (sample) test, item 17c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t17c
+points: 3
+task: >-
+  Do most North seniors plan on a 4-year college? Most South seniors? Justify.
+criteria:
+  - id: north
+    points: 2
+    full: >-
+      E: North: no, because 48% is less than half (the most common plan, but not a
+      majority).
+    partial: >-
+      P (1 of 2): Correct answer for North with no or a weak justification.
+  - id: south
+    points: 1
+    full: >-
+      E: South: yes, because 55% is more than half.

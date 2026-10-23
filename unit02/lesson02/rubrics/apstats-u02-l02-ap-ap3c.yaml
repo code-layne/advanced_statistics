@@ -1,0 +1,21 @@
+# AP Practice item 3, part (c) (Unit 2, Lesson 2.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  Twenty teenagers reported their daily screen time and how many hours they slept last
+  night; a scatterplot shows a negative linear pattern and technology gives r = -0.72.
+  If each teen were recorded only as a 'heavy' or 'light' screen user and as sleeping
+  8+ hours or not, how would you check for an association?
+criteria:
+  - id: method
+    points: 2
+    full: >-
+      E: Makes a two-way table of the two categorical variables AND compares conditional
+      percents: the percent sleeping 8+ hours for heavy users vs. for light users (an
+      association if they differ).
+    partial: >-
+      P (1 of 2): Names a two-way table (or segmented bar graph) without saying which
+      conditional percents to compare, OR compares percents of the wrong kind (such as raw
+      counts).

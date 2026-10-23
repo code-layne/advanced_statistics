@@ -1,0 +1,21 @@
+# Homework item 3 (Unit 1, Lesson 1.7). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  Ana scored 82 on a chemistry test (class mean 74, SD 4); Ben scored 88 on a history
+  test (class mean 79, SD 6). Who did better relative to their own class? Justify, and
+  say in one sentence why the raw scores alone cannot settle it.
+criteria:
+  - id: who
+    points: 1
+    full: >-
+      Chooses Ana, justified by standardized scores: Ana is 2.0 SDs above her class mean,
+      Ben 1.5 SDs above his.
+  - id: raw
+    points: 1
+    full: >-
+      Says the raw scores cannot settle it because they come from different tests with
+      different means and spreads (standard deviations).
+examples:
+  - response: "Ben, because 88 is higher than 82."
+    scores: {who: 0, raw: 0}

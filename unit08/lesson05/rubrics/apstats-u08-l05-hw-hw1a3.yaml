@@ -1,0 +1,12 @@
+# Homework item 1(a) H0 (Unit 8, Lesson 8.5). Relative to the lesson directory.
+id: hw1a3
+points: 1
+task: >-
+  Three brands of coffee (X, Y, Z) each recruited a random sample of 50 tasters who
+  rated their experience as Prefer, Neutral, or Dislike. Write H0 in context.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      H0: the distribution of taste ratings (Prefer/Neutral/Dislike) is the same for
+      Brands X, Y, and Z.

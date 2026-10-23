@@ -1,0 +1,17 @@
+# Homework item 1d (Unit 7, Lesson 7.9). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  Random samples of 35 residential students (mean 18.4 h, s = 5.2) and 30 commuters
+  (mean 15.9 h, s = 6.1); does the residential mean exceed the commuter mean? t about
+  1.76, df about 57, p about 0.042. Conclude at alpha = 0.05.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.04) to alpha = 0.05 and rejects H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is convincing evidence that residential students study more hours
+      per week on average than commuter students.

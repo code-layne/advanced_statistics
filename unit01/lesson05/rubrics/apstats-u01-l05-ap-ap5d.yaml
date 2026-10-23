@@ -1,0 +1,21 @@
+# AP Practice item 5, part (d) (Unit 1, Lesson 1.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5d
+points: 2
+task: >-
+  Fifteen homes' average daily water use (gallons): 110 120 130 140 150 160 180 200
+  220 240 270 310 350 400 620; mean 240, SD 136.6, Q1 140, median 200, Q3 310. A
+  resident says a typical home on this street uses 240 gallons a day. Explain why that
+  overstates typical use, naming a specific feature of the distribution.
+criteria:
+  - id: explain
+    points: 2
+    full: >-
+      E: Says 240 is the mean, pulled upward by the single home at 620 gallons (right skew
+      / outlier), AND notes that most homes use less (ten of 15 use 240 or less; the
+      median, 200, is the typical home).
+    partial: >-
+      P (1 of 2): Names the outlier or right skew without connecting it to the mean being
+      pulled up, OR says the median is more typical without naming a feature of the
+      distribution.

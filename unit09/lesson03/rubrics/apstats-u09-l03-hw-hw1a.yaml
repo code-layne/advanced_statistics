@@ -1,0 +1,19 @@
+# Homework item 1a (Unit 9, Lesson 9.3). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A random sample of 50 college students: hours of sleep (x) vs GPA (y); 95% CI for
+  the slope is (0.08, 0.44). Interpret the confidence interval in context.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 95% confidence that the interval captures the TRUE (population) slope.
+  - id: context
+    points: 1
+    full: >-
+      In context with both endpoints and units: the slope relating GPA to hours of sleep
+      for college students is between 0.08 and 0.44 GPA points per hour of sleep.
+examples:
+  - response: "95% of students gain between 0.08 and 0.44 GPA points per hour of sleep."
+    scores: {confidence: 0, context: 1}

@@ -1,0 +1,20 @@
+# Homework item A2 (Unit 2, Lesson 2.4). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  For 35 car models: weight (x, 1000s of pounds, 2.5 to 5.0) and highway mileage (y,
+  mpg); x-bar = 3.5, s_x = 0.6, y-bar = 30, s_y = 5, r = -0.84. Interpret the slope (b
+  = -7.0) in context.
+criteria:
+  - id: predicted
+    points: 1
+    full: >-
+      Says the PREDICTED (average) highway mileage changes, not the actual mileage of a
+      car.
+  - id: amount
+    points: 1
+    full: >-
+      Says it drops by about 7.0 mpg for each additional 1,000 pounds of weight.
+examples:
+  - response: "Each extra 1,000 lb lowers a car's mpg by 7."
+    scores: {predicted: 0, amount: 1}

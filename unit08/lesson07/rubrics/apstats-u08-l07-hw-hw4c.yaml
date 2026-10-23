@@ -1,0 +1,13 @@
+# Homework item 4c (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw4c
+points: 1
+task: >-
+  A researcher randomly samples 200 male and 200 female voters separately and records
+  party affiliation (Democrat, Republican, Independent). Write H0 for the correct
+  procedure.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      H0: the distribution of party affiliation (Democrat, Republican, Independent) is the
+      same for male and female voters.

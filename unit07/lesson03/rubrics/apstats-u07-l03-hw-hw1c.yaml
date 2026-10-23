@@ -1,0 +1,18 @@
+# Homework item 1c (Unit 7, Lesson 7.3). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A 90% t-interval for the mean hours per week adults exercise is (3.8, 5.6) hours
+  (random sample of 45 adults). An agency claims the mean is less than 5 hours. Does
+  the interval provide convincing evidence that the mean is less than 5 hours?
+  Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no (not convincing).
+  - id: reason
+    points: 1
+    full: >-
+      Because the interval contains plausible values above 5 (up to 5.6) as well as below
+      5, so a mean of 5 or more cannot be ruled out.

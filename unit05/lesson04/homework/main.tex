@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l04-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -16,24 +19,24 @@
         estimator of the corresponding population parameter. If biased, state the direction.
         \begin{enumerate}[label=\alph*.]
           \item Sample mean $\bar{x}$ as an estimator of $\mu$.
-                \writelines{1}
+                \gradedhide{\writelines{1}}\gradedright{\gradedblank[id=hw1a, type=short, points=1, answer=unbiased, check=text]{2.2in}{0.17in}}
           \item Sample proportion $\hat{p}$ as an estimator of $p$.
-                \writelines{1}
+                \gradedhide{\writelines{1}}\gradedright{\gradedblank[id=hw1b, type=short, points=1, answer=unbiased, check=text]{2.2in}{0.17in}}
           \item Sample minimum as an estimator of population minimum.
-                \writelines{1}
+                \gradedhide{\writelines{1}}\gradedright{\gradedblank[id=hw1c, type=short, points=1, answer={biased high}, check=text]{2.2in}{0.17in}}
           \item Sample variance $s^2$ (using $n-1$) as an estimator of $\sigma^2$.
-                \writelines{1}
+                \gradedhide{\writelines{1}}\gradedright{\gradedblank[id=hw1d, type=short, points=1, answer=unbiased, check=text]{2.2in}{0.17in}}
         \end{enumerate}
 
   \item A population of daily step counts has $\mu = 8{,}500$ steps and $\sigma = 2{,}200$.
         \begin{enumerate}[label=\alph*.]
-          \item Find $\sigma_{\bar{x}}$ for $n = 121$.
+          \item Find $\sigma_{\bar{x}}$ for $n = 121$.\gradedbelow[r]{0.5in-0.32in}{$\sigma_{\bar{x}} = $~\gradedblank[id=hw2a, type=short, points=1, answer=200, check=numeric, tolerance=0]{0.9in}{0.27in}}
                 \vspace{0.5in}
           \item How does $\sigma_{\bar{x}}$ change if $n$ increases from 121 to 484?
-                Show calculations.
+                Show calculations.\gradedbelow[r]{0.6in-0.32in}{$\sigma_{\bar{x}} = $~\gradedblank[id=hw2b, type=short, points=2, answer=100, check=numeric, tolerance=0]{0.9in}{0.27in}}
                 \vspace{0.6in}
           \item Interpret the change in part (b) in a sentence.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={Quadrupling $n$ halves the SD of $\bar{x}$, so the estimate of mean daily steps is twice as precise.}]{\linewidth+6pt}{0.2in}}\writelines{1}}
         \end{enumerate}
 
   \item A simulation repeatedly takes samples of size $n = 50$ from a right-skewed
@@ -41,10 +44,10 @@
         After 1000 trials, the average of all the $\bar{x}$ values is 30.1.
         \begin{enumerate}[label=\alph*.]
           \item Is this evidence that $\bar{x}$ is biased? Explain why or why not.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3a, type=rubric, points=2, display={No: the 0.1 difference from 30 is just sampling variability, not evidence of bias.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
           \item What would you expect the average of all $\bar{x}$ values to equal
                 in the long run?
-                \writelines{1}
+                \gradedhide{\writelines{1}}\gradedright{\gradedblank[id=hw3b, type=short, points=1, answer=30, check=numeric, tolerance=0]{1.1in}{0.17in}}
         \end{enumerate}
 
 \end{enumerate}

@@ -1,0 +1,13 @@
+# Homework item 1b, beta (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw1b1
+points: 1
+task: >-
+  A random sample of 28 college students: hours per week on social media (x) vs GPA
+  (y); the residual plot shows random scatter with no curve and constant spread;
+  residuals approximately normal. Define beta in context.
+criteria:
+  - id: beta
+    points: 1
+    full: >-
+      beta = the true slope of the population regression line relating GPA to hours per
+      week on social media for (all) college students.

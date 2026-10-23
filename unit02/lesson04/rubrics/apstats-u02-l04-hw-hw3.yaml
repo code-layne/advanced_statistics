@@ -1,0 +1,17 @@
+# Homework item A3 (Unit 2, Lesson 2.4). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  For 35 car models: weight (x, 1000s of pounds, 2.5 to 5.0) and highway mileage (y,
+  mpg); x-bar = 3.5, s_x = 0.6, y-bar = 30, s_y = 5, r = -0.84. Interpret the
+  intercept (a = 54.5) in context. Does it have a sensible meaning here? Explain.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      Says 54.5 mpg is the predicted highway mileage for a car weighing 0 pounds.
+  - id: sensible
+    points: 1
+    full: >-
+      Says it is not meaningful: no car weighs 0 pounds, far outside the 2.5 to 5.0
+      thousand pounds in the data (extrapolation).

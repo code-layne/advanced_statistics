@@ -1,0 +1,12 @@
+# Homework item 2b (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw2b
+points: 1
+task: >-
+  A phone survey randomly selects households from a list of landline numbers to ask
+  about online shopping habits. Who is excluded?
+criteria:
+  - id: excluded
+    points: 1
+    full: >-
+      Names households without landlines (cell-phone-only households, such as younger
+      adults and lower-income households).

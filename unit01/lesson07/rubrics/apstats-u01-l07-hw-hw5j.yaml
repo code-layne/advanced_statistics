@@ -1,0 +1,13 @@
+# Homework item 5, justification of the multiple-choice answer (Unit 1, Lesson 1.7). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  Race X: mean 21.0, SD 1.5, runner P 18.0 minutes. Race Y: mean 25.0, SD 2.0, runner
+  Q 22.0 minutes. Justify in a sentence why runner P had the better performance.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B): P's z = -2.0 vs Q's z = -1.5, and in a race a lower time is better,
+      so being further below one's own race's mean is better (not just the smaller raw
+      time).

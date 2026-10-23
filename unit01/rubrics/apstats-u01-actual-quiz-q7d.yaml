@@ -1,0 +1,18 @@
+# Actual quiz, Unit 1 (Lessons 1.0-1.4), item 7d. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q7d
+points: 2
+task: >-
+  Write one statistical question that could be answered using these records, and say
+  which of the two checks makes it statistical.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Writes a question about the 60 tours that anticipates variability (e.g. how much
+      the number of visitors varies across the tours) AND names the check: it anticipates
+      variability (and is answered by collecting data).
+    partial: >-
+      P (1 of 2): Writes a statistical question but names no check or the wrong one, OR
+      names the check but the question is about one tour (not statistical).

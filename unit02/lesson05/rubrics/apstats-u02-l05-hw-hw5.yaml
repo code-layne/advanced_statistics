@@ -1,0 +1,19 @@
+# Homework item B3 (Unit 2, Lesson 2.5). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  Resale value (y, dollars) of 11 used phones against age (x, years): y-hat = 518 -
+  95.4x, r = -0.94; the residual plot against age is U-shaped (positive, then
+  negative, then positive). The log of each value gives log(y)-hat = 2.81 - 0.19x, r =
+  -0.9997, and a random residual plot. Give two pieces of evidence that the log model
+  is more appropriate than the line.
+criteria:
+  - id: residual_plot
+    points: 1
+    full: >-
+      The log model's residual plot is randomly scattered (no U), unlike the line's.
+  - id: r_value
+    points: 1
+    full: >-
+      The log model's r = -0.9997 is closer to -1 than the line's r = -0.94 (stronger
+      linear association after the transformation).

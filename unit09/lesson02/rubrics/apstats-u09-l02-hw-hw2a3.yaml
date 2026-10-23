@@ -1,0 +1,17 @@
+# Homework item 2a interpretation (Unit 9, Lesson 9.2). Relative to the lesson directory.
+id: hw2a3
+points: 2
+task: >-
+  18 cities, January high temperature (x, F) vs monthly heating fuel cost (y, $): b =
+  -4.8, SE_b = 1.1, t* = 2.120, 95% CI (-7.13, -2.47). Interpret the interval in
+  context.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      Says 95% confident that the interval captures the true (population) slope.
+  - id: context
+    points: 1
+    full: >-
+      In context with units: the slope relating monthly heating fuel cost to January
+      temperature for all cities is between -$7.13 and -$2.47 per degree F.

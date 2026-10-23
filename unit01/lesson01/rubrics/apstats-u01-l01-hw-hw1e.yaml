@@ -1,0 +1,11 @@
+# Homework item 1, individuals (Unit 1, Lesson 1.1). Relative to the lesson directory.
+id: hw1e
+points: 1
+task: A coffee shop logs every order it fills. Name the individuals in this record.
+criteria:
+  - id: individuals
+    points: 1
+    full: Names the orders (each drink order the shop filled) as the individuals, not the customers, the drinks' sizes, or the variables.
+examples:
+  - response: "the customers"
+    scores: {individuals: 0}

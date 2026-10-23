@@ -1,0 +1,18 @@
+# Unit 1 actual test, item 20d. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t20d
+points: 2
+task: >-
+  A second machine pours with mean 16 oz and SD 0.6 oz. Which pour is more unusually
+  large for its own machine: 12.7 oz from the first (mean 12, SD 0.4) or 17.2 oz from
+  the second?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Computes z = 1.75 for the 12.7-oz pour and z = 2.0 for the 17.2-oz pour AND
+      concludes the 17.2-oz pour is more unusually large for its machine.
+    partial: >-
+      P (1 of 2): Both z-scores correct without a conclusion, or a conclusion based on one
+      correct z-score.

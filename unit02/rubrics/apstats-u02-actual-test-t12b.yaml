@@ -1,0 +1,20 @@
+# Unit 2 actual test, item 12b. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12b
+points: 2
+task: >-
+  Regression output: Constant 24.85, Rainfall 2.062. Write the equation of the
+  least-squares regression line using the variable names, then interpret its slope in
+  context.
+criteria:
+  - id: equation
+    points: 1
+    full: >-
+      E: predicted yield = 24.85 + 2.062(rainfall), with a hat or 'predicted' on the
+      response and variable names.
+  - id: slope
+    points: 1
+    full: >-
+      E: For each additional inch of growing-season rainfall, the predicted wheat yield
+      increases by 2.062 bushels per acre ('predicted' or 'on average' required).

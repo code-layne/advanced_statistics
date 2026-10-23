@@ -1,0 +1,17 @@
+# Unit 1 practice (sample) test, item 20d. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t20d
+points: 2
+task: >-
+  A second farm's eggs have mean 64 g and SD 6 g. Which is heavier relative to its own
+  farm: a 65-g egg from the first farm (mean 58, SD 4) or a 73-g egg from the second?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Computes z = 1.75 for the 65-g egg and z = 1.5 for the 73-g egg AND concludes the
+      65-g egg is heavier relative to its farm.
+    partial: >-
+      P (1 of 2): Both z-scores correct without a conclusion, or a conclusion based on one
+      correct z-score.

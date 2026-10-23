@@ -1,0 +1,16 @@
+# Homework item 4a (Unit 7, Lesson 7.7). Relative to the lesson directory.
+id: hw4a
+points: 2
+task: >-
+  A 99% CI for mu_A - mu_B (mean weight loss, kg) for two programs is (-1.2, 4.8). Is
+  there convincing evidence that one program produces greater mean weight loss?
+  Explain using the interval.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no.
+  - id: reason
+    points: 1
+    full: >-
+      Because 0 is inside the interval (-1.2, 4.8), a difference of 0 is plausible.

@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u06-l08-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,13 +22,13 @@ In City X, 168 of 280 adults met this criterion. In City Y, 126 of 240 adults me
 
 \begin{enumerate}[label=\alph*.]
   \item Define $p_X$ and $p_Y$ and compute the point estimate $\hat p_X - \hat p_Y$.
-        \writeline
+        \gradedhide{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\gradedright{\gradedblank[id=hw1a1, type=rubric, points=1, display={\bfseries true proportions}]{1.75in}{0.17in}\quad \gradedblank[id=hw1a2, type=short, points=1, answer=0.075, check=numeric, tolerance=0.001]{0.75in}{0.17in}}\vspace{3pt}}
   \item Verify all conditions (Random, Large Counts, 10\%).
-        \writelines{3}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b, type=rubric, points=3, display={Two independent random samples; $168, 112, 126, 114$ all $\ge 10$; each sample $\le 10\%$ of its city's adults.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
   \item Construct a 95\% confidence interval for $p_X - p_Y$.
-        \writelines{3}
+        \writelines{2}\\\gradedhide{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\gradedright{$($~\gradedblank[id=hw1c1, type=short, points=2, answer=-0.010, check=numeric, tolerance=0.002, display={\boldmath$-0.010$}]{0.8in}{0.17in}~,~\gradedblank[id=hw1c2, type=short, points=2, answer=0.160, check=numeric, tolerance=0.002]{0.8in}{0.17in}~$)$}\vspace{3pt}}
   \item Interpret the interval in context.
-        \writelines{2}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={95\% confident the true difference $p_X - p_Y$ in exercise rates (City X minus City Y) is between $-0.010$ and $0.160$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{enumerate}
 
 \item \textbf{Seat Belt Use.} A highway safety agency surveyed drivers in two states.
@@ -34,11 +37,11 @@ In State 2, 306 of 390 drivers reported the same.
 
 \begin{enumerate}[label=\alph*.]
   \item Verify the Large Counts condition for both groups.
-        \writelines{2}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={$374, 66$ (State 1) and $306, 84$ (State 2): all $\ge 10$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
   \item Construct a 99\% confidence interval for $p_1 - p_2$.
-        \writelines{3}
+        \writelines{2}\\\gradedhide{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\gradedright{$($~\gradedblank[id=hw2b1, type=short, points=2, answer=-0.004, check=numeric, tolerance=0.002, display={\boldmath$-0.004$}]{0.8in}{0.17in}~,~\gradedblank[id=hw2b2, type=short, points=2, answer=0.134, check=numeric, tolerance=0.002]{0.8in}{0.17in}~$)$}\vspace{3pt}}
   \item Does your interval provide evidence of a difference in seat belt use between the two states? Explain.
-        \writelines{2}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={No: the 99\% interval $(-0.004, 0.134)$ contains 0, so no convincing evidence of a difference.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
 \end{enumerate}
 
 \end{enumerate}

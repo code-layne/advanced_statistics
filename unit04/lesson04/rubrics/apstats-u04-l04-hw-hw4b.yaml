@@ -1,0 +1,17 @@
+# Homework item 4b (Unit 4, Lesson 4.4). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  Write a correct complete-sentence explanation of whether 'Type A blood' and
+  'condition present' are mutually exclusive.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      States the events are not mutually exclusive, in a complete sentence naming both
+      events.
+  - id: reason
+    points: 1
+    full: >-
+      Gives the reason: 30 patients in the sample have both Type A blood and the
+      condition, so both events can occur at the same time.

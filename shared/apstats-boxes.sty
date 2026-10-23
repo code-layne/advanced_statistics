@@ -104,6 +104,133 @@
    \fi
    \par\addvspace{\belowdisplayskip}}
 
+% ── Graded answer boxes — placing \gradedblank (math-shared/grading.sty) ──────
+% A graded component (ap_practice, homework, quizzes, tests) loads grading.sty
+% and marks every final answer with \gradedblank, written identically in the
+% blank and the key. The box must land in the space the page ALREADY reserves —
+% an answer line, a work area, a \writelines block — so no line or page break
+% moves. These helpers place a \gradedblank without changing the layout; the
+% \gradedblank call itself is always written out in full as their argument.
+%
+%   \gradedhide{<markup>}   sets <markup> with every \hrulefill (so every
+%                           \writeline / \writelines rule) drawn invisibly. The
+%                           lines keep their exact metrics — baselines and page
+%                           breaks are untouched — but a box laid over them
+%                           stays empty in the blank, as ingest needs.
+%   \gradedhere[<rise>]{<\gradedblank…>}
+%                           zero width, height and depth: hangs the box with
+%                           its top-left corner <rise> above the current
+%                           baseline (default 0.8\baselineskip) and 3pt left of
+%                           the current point, so a box \linewidth+6pt wide
+%                           frames a full line with room on both sides. Put it
+%                           at the start of the first hidden line to box a block:
+%                             \gradedhide{\gradedhere{\gradedblank[…]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
+%   \gradedbelow[l|r]{<drop>}{<\gradedblank…>}
+%                           zero footprint: hangs the box under the line it is
+%                           written in, its top <drop> below that line's
+%                           bottom, flush left (l, default) or right (r) in the
+%                           current list. For a final-answer box at the foot of
+%                           a work area that is only \vspace.
+%   \gradedright{<…>}       zero footprint at the end of a line, flush right —
+%                           the "Letter:" box of a multiple-choice item, on the
+%                           line of its last option.
+%   \gradedtop{<\gradedblank…>}
+%                           the box in the text, top-aligned with the line and
+%                           hung 3pt left like \gradedhere (it takes real
+%                           space): a key whose layout does not mirror its
+%                           blank (units 3–9), where the box replaces the
+%                           written answer and shows it as display=.
+%   \gradedkeyline{<\gradedblank…>}
+%                           ends the paragraph and sets the box on a row of its
+%                           own, as \gradedtop does (real space; a key that
+%                           does not mirror its blank, after the written answer,
+%                           for a full-width box).
+%   \gradedkey{<\gradedblank…>}
+%                           ends the current paragraph with the box flush right
+%                           — on the last line if it fits, else on a line of its
+%                           own (takes real space; keys that do not mirror
+%                           their blank, after a worked solution).
+%
+%   \gradedlinesheight{<n>}  the height for a box hung with \gradedhere over
+%                           \writelines{<n>} (or the key's <n> \ansline rows):
+%                           0.8\baselineskip above the first rule down to 4pt
+%                           below the last, at the current \baselineskip.
+%
+% Inline, a box that replaces a \blank{w} keeps its width and is \smash-ed so a
+% box taller than the strut never opens the line: \smash{\gradedblank[…]{w}{0.2in}}.
+% Inside \answerspace{H}{…} a box is simply typeset (the minipage's height is
+% fixed); start with \normalcolor\mdseries so the frame is not drawn in keyred.
+\newsavebox{\aps@gradedbox}
+\newcount\aps@sf
+\newcommand{\gradedhide}[1]{{\let\hrulefill\aps@nofill#1}}
+% \hrulefill without the ink: a zero-width strut keeps the rule's 0.4pt height,
+% which decides the spacing where lines meet at \lineskip (after a display). A
+% rule resets the space factor, which leaders and glue do not, so it is put back:
+% a space after the hidden rule keeps its width (after a colon, say).
+\newcommand{\aps@nofill}{\leavevmode\aps@sf\spacefactor
+  \vrule\@width\z@\@height.4\p@\spacefactor\aps@sf\hfill\kern\z@}
+% The zero-footprint helpers also leave the space factor as they found it (a box
+% resets it), so a space after them is exactly the space that was there before.
+\newcommand{\gradedhere}[2][0.8\baselineskip]{%
+  \sbox{\aps@gradedbox}{#2}%
+  \leavevmode\aps@sf\spacefactor
+  \makebox[\z@][l]{\kern-3pt\raisebox{\dimexpr#1-\ht\aps@gradedbox\relax}[\z@][\z@]%
+    {\usebox{\aps@gradedbox}}}\spacefactor\aps@sf}
+\newcommand{\gradedbelow}[3][l]{%
+  \sbox{\aps@gradedbox}{#3}%
+  \vadjust{\vbox to\z@{\vskip\dimexpr#2\relax
+    \hbox to\hsize{\hskip\@totalleftmargin
+      \if r#1\hskip\linewidth\llap{\usebox{\aps@gradedbox}}%
+      \else\usebox{\aps@gradedbox}\fi\hss}%
+    \vss}}}
+\newcommand{\gradedlinesheight}[1]{%
+  \dimexpr0.8\baselineskip+(\baselineskip+5pt)*(#1-1)+4pt\relax}
+\newcommand{\gradedright}[1]{\leavevmode\aps@sf\spacefactor
+  \makebox[\z@][r]{\smash{#1}}\spacefactor\aps@sf}
+\newcommand{\gradedtop}[1]{%
+  \sbox{\aps@gradedbox}{#1}%
+  \leavevmode\kern-3pt\raisebox{\dimexpr\ht\strutbox-\ht\aps@gradedbox\relax}{\usebox{\aps@gradedbox}}\kern-3pt}
+\newcommand{\gradedkeyline}[1]{\par\noindent\gradedtop{#1}\par}
+\newcommand{\gradedkey}[1]{{\unskip\nobreak\hfil\penalty50\hskip1em\hbox{}\nobreak\hfil
+  #1\parfillskip=\z@\par}}
+
+% ── Graded boxes inside tcolorboxes: true positions ───────────────────────────
+% grading.sty records each box's corners with \pdfsavepos, which knows only
+% TeX's own positioning. tcolorbox draws its content with \pgftext inside a pgf
+% picture, and the xetex/dvipdfmx driver moves that content with a `pdf:btrans`
+% special that \pdfsavepos never sees — so a \gradedblank in a notesbox,
+% remindbox or any other tcolorbox was recorded 10–20pt from where it prints.
+% In a document that loads grading.sty, a \pgftext box whose transformation is a
+% pure translation is placed with \kern/\raise from the same point instead:
+% the page looks the same, and the recorded positions are the printed ones.
+% Rotated or scaled text keeps the driver's route. Documents without grading.sty
+% are untouched.
+\def\aps@pgftextpatch{%
+  \ifdefined\pgfsys@dvipdfmx@suspendcontent
+    \let\aps@hboxsynced@orig\pgfsys@hboxsynced
+    \let\pgfsys@hboxsynced\aps@hboxsynced
+  \fi}
+\def\aps@hboxsynced#1{%
+  \ifdim\pgf@pt@aa\p@=\p@ \ifdim\pgf@pt@ab\p@=\z@ \ifdim\pgf@pt@ba\p@=\z@ \ifdim\pgf@pt@bb\p@=\p@
+    \aps@hbox@kern#1\else\aps@hboxsynced@orig#1\fi
+    \else\aps@hboxsynced@orig#1\fi\else\aps@hboxsynced@orig#1\fi\else\aps@hboxsynced@orig#1\fi}
+% \pgfsys@hboxsynced from pgfsys-dvipdfmx.def, with btrans … etrans replaced
+% by TeX positioning from the current point.
+\def\aps@hbox@kern#1{%
+  \pgfsys@begin@idscope
+  \pgfsys@beginscope
+    \setbox#1=\hbox{\box#1}%
+    \wd#1=\z@\ht#1=\z@\dp#1=\z@
+    \pgfsys@dvipdfmx@suspendcontent
+    \pgfsys@invoke{0 J [] 0 d}%
+    \pgfsys@dvipdfmx@start@force@reset@color
+    \hbox to\z@{\kern\pgf@pt@x\raise\pgf@pt@y\box#1\hss}%
+    \pgfsys@dvipdfmx@stop@force@reset@color
+    \pgfsys@dvipdfmx@unsuspendcontent
+  \pgfsys@endscope
+  \pgfsys@end@idscope}
+\AtBeginDocument{\@ifpackageloaded{grading}{\aps@pgftextpatch}{}}
+
 % ── Lesson-plan box ───────────────────────────────────────────────────────────
 % Usage: \begin{skillbox}[Title]{background-color} ... \end{skillbox}
 \newtcolorbox{skillbox}[2][]{

@@ -1,0 +1,16 @@
+# Homework item 1d interpretation (Unit 5, Lesson 5.5). Relative to the lesson directory.
+id: hw1d2
+points: 1
+task: >-
+  38% of high school students play at least one sport (p = 0.38); a random sample of n
+  = 180 students is selected. Interpret c = 0.320, the value with P(sample proportion
+  < c) = 0.05.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      Says that in about 5% of all random samples of 180 students, the sample proportion
+      who play a sport is less than 0.320 (32.0%).
+examples:
+  - response: "5% of students play a sport."
+    scores: {interpret: 0}

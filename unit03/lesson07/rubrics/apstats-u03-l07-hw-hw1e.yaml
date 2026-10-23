@@ -1,0 +1,19 @@
+# Homework item 1, conclusion (Unit 3, Lesson 3.7). Relative to the lesson directory.
+id: hw1e
+points: 2
+task: >-
+  800 adults are randomly selected from a national voter registry and surveyed about
+  political views and social media use; heavier social media users report more
+  polarized views. Write a proper scope-of-inference conclusion.
+criteria:
+  - id: causation
+    points: 1
+    full: >-
+      States that we cannot conclude social media use causes more polarized views, because
+      there was no random assignment (confounding variables such as age or news
+      consumption may explain the association).
+  - id: generalization
+    points: 1
+    full: >-
+      States that the finding can be generalized to all national registered voters,
+      because they were randomly selected.

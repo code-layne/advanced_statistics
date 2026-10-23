@@ -1,0 +1,17 @@
+# Unit 1 actual test, item 16a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t16a
+points: 2
+task: >-
+  A marina records Slip #, Boat type, Length (ft), Passengers allowed and Hull color
+  for the boats docked there. What are the individuals? Is Sailboat a variable or a
+  value?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Individuals are the boats docked at the marina (one per row) AND Sailboat is a
+      value of the variable Boat type.
+    partial: >-
+      P (1 of 2): One of the two correct.

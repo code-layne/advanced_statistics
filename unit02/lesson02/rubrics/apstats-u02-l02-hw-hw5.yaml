@@ -1,0 +1,16 @@
+# Homework item B3 (Unit 2, Lesson 2.2). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  Across 50 towns, r = 0.92 between the number of libraries and the number of crimes.
+  Should a town close libraries to cut crime? Explain.
+criteria:
+  - id: causation
+    points: 1
+    full: >-
+      Says no: a strong correlation does not show that libraries cause crime.
+  - id: lurking
+    points: 1
+    full: >-
+      Names a likely lurking variable, such as town population (bigger towns have more
+      libraries and more crimes).

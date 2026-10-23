@@ -1,0 +1,17 @@
+# Homework item 3b (Unit 7, Lesson 7.1). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A water facility tests H0: mu = 10 ppb vs Ha: mu < 10 ppb (alpha = 0.05) for the
+  mean lead concentration in tap water. In this context, which error type is more
+  dangerous? Explain.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      Chooses the Type I error.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that a Type I error declares the water safe when lead levels are not below
+      the threshold, exposing the public to lead.

@@ -18,6 +18,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l06-ap}
+\gradingcourse{advanced_statistics}
 % \bxp{y-center}{half-height}{min}{Q1}{median}{Q3}{max} — the display is PRE-DRAWN.
 % Authored byte-identically in the blank and the key.
 \newcommand{\bxp}[7]{%
@@ -107,6 +110,7 @@ about the context, not just the arithmetic --- read them all before choosing.
                 \$78 and \$88.
           \item Weekend tips are spread evenly across the whole range from \$60 to \$158.
           \item Most weekend shifts brought in more than \$106.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item For the \textbf{weekday} shifts, the interquartile range of the daily tip totals is
@@ -116,6 +120,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item \$28
           \item \$42
           \item \$62
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item The weekend distribution is skewed to the right and has one unusually high value. Which
@@ -127,6 +132,7 @@ about the context, not just the arithmetic --- read them all before choosing.
                 value pull the mean upward.
           \item The mean is exactly \$88, the value marked inside the box.
           \item Nothing whatever can be said about the mean from these data.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item The manager asks whether weekend tip totals cluster around \emph{two} separate amounts
@@ -138,6 +144,7 @@ about the context, not just the arithmetic --- read them all before choosing.
           \item This display cannot answer the question --- it reports only five summary
                 numbers, so clusters, gaps, and a second peak are invisible in it.
           \item No; tip data of this kind is always skewed right with one peak.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=D]{0.45in}{0.24in}}
         \end{enumerate}
 
 \end{enumerate}
@@ -160,24 +167,24 @@ about the context, not just the arithmetic --- read them all before choosing.
         \vspace{6pt}
         \textbf{(a)} Report the five-number summary for the \textbf{weekday} shifts, and say what
         each of the five numbers marks on the weekday display.\\[4pt]
-        \writelines{2}
+        \gradedhide{\gradedhere{\gradedblank[id=ap5a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
 
         \vspace{6pt}
         \textbf{(b)} For the \textbf{weekend} shifts, $Q_1 = \$78$ and $Q_3 = \$106$. Compute the
         interquartile range and use the $1.5 \times \text{IQR}$ rule to decide whether the \$158
         shift is an outlier. Show the arithmetic.\\[4pt]
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=ap5b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
 
         \vspace{6pt}
         \textbf{(c)} Compare the weekday and weekend tip totals. Address center, variability, and
         unusual features, in context.\\[4pt]
-        \writelines{4}
+        \gradedhide{\gradedhere{\gradedblank[id=ap5c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{4}}}\writelines{4}}
 
         \vspace{6pt}
         \textbf{(d)} The manager wants to know whether there are two distinct kinds of weekend
         night. Name a display you would ask for instead, and say what it could show that this one
         cannot.\\[4pt]
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=ap5d, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
 
 \end{enumerate}
 

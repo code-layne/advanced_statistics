@@ -1,0 +1,11 @@
+# Homework item 1a (Unit 4, Lesson 4.7). Relative to the lesson directory.
+id: hw1a
+points: 1
+task: >-
+  A spinner has 5 equal sections numbered 1-5; X is the number it lands on. Write the
+  probability distribution of X as a table.
+criteria:
+  - id: table
+    points: 1
+    full: >-
+      Lists the values 1, 2, 3, 4, 5 each with probability 0.20 (1/5).

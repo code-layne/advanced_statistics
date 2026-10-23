@@ -1,0 +1,12 @@
+# Homework item 1(b) H0 (Unit 8, Lesson 8.5). Relative to the lesson directory.
+id: hw1b3
+points: 1
+task: >-
+  A simple random sample of 400 shoppers is asked their age group (18-30, 31-50, 51+)
+  and preferred shopping method (In-store, Online, Both). Write H0 in context.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      H0: there is no association between age group and preferred shopping method among
+      shoppers (the variables are independent).

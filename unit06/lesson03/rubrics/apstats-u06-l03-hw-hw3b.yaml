@@ -1,0 +1,18 @@
+# Homework item 3b (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  Correcting errors (95% CI for the proportion of left-handed students, (0.09, 0.17)):
+  identify and correct the error in the statement "95% of all students are left-handed
+  according to our interval."
+criteria:
+  - id: error
+    points: 1
+    full: >-
+      Identifies the error: 95% is the confidence level of the method, not the proportion
+      of students who are left-handed.
+  - id: correction
+    points: 1
+    full: >-
+      Corrects it: we are 95% confident that the true proportion of left-handed students
+      is between 0.09 and 0.17.

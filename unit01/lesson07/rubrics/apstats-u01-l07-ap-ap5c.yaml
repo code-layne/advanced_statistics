@@ -1,0 +1,21 @@
+# AP Practice item 5, part (c) (Unit 1, Lesson 1.7). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5c
+points: 2
+task: >-
+  At one hospital, newborn birth weights are approximately normal with mean 3,300 g
+  and SD 500 g (Record A). At a second hospital, weights are approximately normal with
+  mean 3,150 g and SD 400 g; a newborn there weighs 3,750 g. Compare that newborn's
+  position within its own distribution to the 4,050 g newborn's position within Record
+  A.
+criteria:
+  - id: compare
+    points: 2
+    full: >-
+      E: Computes both standardized scores, z = (3750 - 3150)/400 = 1.5 and z = (4050 -
+      3300)/500 = 1.5, AND concludes that both newborns sit at the same relative position,
+      1.5 standard deviations above their own hospital's mean.
+    partial: >-
+      P (1 of 2): Computes one or both z-scores correctly but draws no comparison or a
+      wrong one, OR compares correctly with one arithmetic slip.

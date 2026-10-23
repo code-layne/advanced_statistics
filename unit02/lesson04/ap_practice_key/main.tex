@@ -12,6 +12,9 @@
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u02-l04-ap}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
@@ -62,9 +65,11 @@ S = 14.20 \quad R-Sq = 72.3\% \quad R-Sq(adj) = 71.6\%\par}
           \item Raising the temperature by 1$^\circ$F causes 2.35 more iced drinks to be sold.
           \item About 2.35\% of the variation in iced drinks sold is explained by temperature.
           \item On a 0$^\circ$F day, the caf\'e is predicted to sell 2.35 iced drinks.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=B]{0.45in}{0.24in}}
         \end{enumerate}
 
   \item What is the correlation between daily high temperature and iced drinks sold?
+        \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=D]{0.45in}{0.24in}}
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
           \item $-0.850$ \hfill \textbf{(B)}\ $0.277$ \hfill \textbf{(C)}\ $0.723$ \hfill
                 \ans{\textbf{(D)}\ $0.850$} \hfill \textbf{(E)}\ $2.350$ \hspace*{2em}
@@ -81,19 +86,19 @@ S = 14.20 \quad R-Sq = 72.3\% \quad R-Sq(adj) = 71.6\%\par}
 \begin{enumerate}[leftmargin=1.9em, resume]
 
   \item \textbf{(a)} Interpret the value of $r^2$ in context.\\[2pt]
-        \ansline{About 72.3\% of the variation in iced drinks sold is explained by the linear}\\[1pt]
+        \gradedhere{\gradedblank[id=ap3a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{About 72.3\% of the variation in iced drinks sold is explained by the linear}\\[1pt]
         \ansline{model with daily high temperature.}
 
         \vspace{2pt}
         \textbf{(b)} Interpret the $y$-intercept in context. Does it have a sensible meaning
         here? Explain.\\[2pt]
-        \ansline{At 0$^\circ$F the predicted sales are $-42.5$ drinks. Not sensible: negative sales are}\\[1pt]
+        \gradedhere{\gradedblank[id=ap3b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{At 0$^\circ$F the predicted sales are $-42.5$ drinks. Not sensible: negative sales are}\\[1pt]
         \ansline{impossible, and 0$^\circ$F is far below the 55--95$^\circ$F days observed.}
 
         \vspace{2pt}
         \textbf{(c)} On an 80$^\circ$F day the caf\'e sold 150 iced drinks. Find and interpret
         that day's residual.\\[2pt]
-        \ansline{$\hat y = -42.50 + 2.350(80) = 145.5$; \ residual $= 150 - 145.5 = 4.5$ drinks.}\\[1pt]
+        \gradedhere{\gradedblank[id=ap3c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{$\hat y = -42.50 + 2.350(80) = 145.5$; \ residual $= 150 - 145.5 = 4.5$ drinks.}\\[1pt]
         \ansline{The caf\'e sold about 4.5 more iced drinks that day than the model predicted.}
 
 \end{enumerate}

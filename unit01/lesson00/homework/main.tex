@@ -10,6 +10,9 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l00-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
   \color{keyred}\bfseries #2\end{minipage}\par}
 
@@ -60,13 +63,14 @@ Pho Sure     & Vietnamese & 11 & 6 & No \\
 \begin{notesbox}{Part A --- Reading the Record}
 \small
 \begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
-  \item The individuals are \blank{4.4cm}. There are \blank{0.9cm} of them, and
-        \blank{0.9cm} variables are recorded about each.
-  \item ``Greek'' is a \blank{2.2cm} of the variable \blank{2.4cm}, and
-        ``19'' is a \blank{2.2cm} of the variable \blank{3.4cm}.
+  \item The individuals are \smash{\gradedblank[id=hwA1a, type=rubric, points=1, display={the food trucks}]{4.4cm}{0.17in}}. There are \smash{\gradedblank[id=hwA1b, type=short, points=1, answer=6, check=numeric, display={6}]{0.9cm}{0.17in}} of them, and
+        \smash{\gradedblank[id=hwA1c, type=short, points=1, answer=4, check=numeric, display={4}]{0.9cm}{0.17in}} variables are recorded about each.
+  \item ``Greek'' is a \smash{\gradedblank[id=hwA2a, type=short, points=1, answer=value, check=text]{2.2cm}{0.17in}} of the variable \smash{\gradedblank[id=hwA2b, type=short, points=1, answer=cuisine, check=text, display={Cuisine}]{2.4cm}{0.17in}}, and
+        ``19'' is a \smash{\gradedblank[id=hwA2c, type=short, points=1, answer=value, check=text]{2.2cm}{0.17in}} of the variable \smash{\gradedblank[id=hwA2d, type=short, points=1, answer={average wait}, check=text, display={Avg.\ wait (min)}]{3.4cm}{0.17in}}.
   \item Write one \textbf{statistical question} the city could answer with this record, and
         state exactly what varies in it.
-        \answerspace{1.4cm}{}
+        \answerspace{1.4cm}{\normalcolor\mdseries\gradedblank[id=hwA3, type=rubric, points=2,
+          display={Answers vary. E.g.\ ``How do the average waits at the trucks in this lot vary?'' The average wait varies from truck to truck (4 min at Gyro Hero, 19 at Nonna's).}]{\linewidth}{1.2cm}}
 \end{enumerate}
 \end{notesbox}
 
@@ -84,11 +88,19 @@ Pho Sure     & Vietnamese & 11 & 6 & No \\
         \hfill
         \emph{(ii)} How do the average waits at these trucks vary?
         \hspace{1.0em}
-        \answerspace{1.8cm}{}
+        \answerspace{1.8cm}{\normalcolor\mdseries\gradedblank[id=hwB1, type=rubric, points=3,
+          display={(ii) is statistical. (i) fails \textbf{check 1}: the number of
+        licensed trucks is one fixed count --- 6 --- and that answer does not differ from one
+        truck to the next. Needing to read the whole record is not the test; variation across
+        individuals is.}]{\linewidth}{1.6cm}}
   \item A classmate says, ``A question can only be statistical if the answer is a number.''
         Give one question about this lot that shows the classmate is wrong, and explain how
         it passes both checks.
-        \answerspace{1.8cm}{}
+        \answerspace{1.8cm}{\normalcolor\mdseries\gradedblank[id=hwB2, type=rubric, points=2,
+          display={Answers vary. For example: ``What kind of cuisine do the trucks in
+        this lot serve?'' Check 1: cuisine differs from truck to truck --- Chinese, Indian,
+        Mexican, Greek. Check 2: you must read the record to answer. Both checks pass, and the
+        answer is a set of category names rather than a number.}]{\linewidth}{1.6cm}}
 \end{enumerate}
 \end{notesbox}
 
@@ -102,7 +114,12 @@ Pho Sure     & Vietnamese & 11 & 6 & No \\
         Name \textbf{two} pieces of context a customer would need before that number means
         anything, and then explain why the sign does not tell one customer how long
         \emph{they} will wait.
-        \answerspace{2.2cm}{}
+        \answerspace{2.2cm}{\normalcolor\mdseries\gradedblank[id=hwC1, type=rubric, points=3,
+          display={Two of: which trucks the average covers (all six, or only some);
+        what time of day or day of week it was measured; how many customers were timed; whether
+        it is a mean or a typical wait. The sign does not predict one customer's wait because it
+        summarizes the whole lot --- actual waits range from about 4 minutes to about 19, and no
+        single customer is guaranteed the group's average.}]{\linewidth}{2.0cm}}
   \item \textbf{AP-style multiple choice.} A researcher records, for each of 500 hospital
         patients, the patient's length of stay in days. Which of the following is a
         \textbf{statistical question} about this data set?
@@ -112,9 +129,12 @@ Pho Sure     & Vietnamese & 11 & 6 & No \\
           \item How do the lengths of stay vary among these patients?
           \item How many variables were recorded?
           \item On what date did the study begin?
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hwC2, type=choice, points=1, answer=C]{0.4in}{0.2in}}
         \end{enumerate}
         Justify your choice in one sentence by naming what varies.
-        \answerspace{1.4cm}{}
+        \answerspace{1.4cm}{\normalcolor\mdseries\gradedblank[id=hwC2j, type=rubric, points=1,
+          display={\textbf{(C).} Length of stay differs from one patient to the next,
+        so the answer varies across individuals and the data must be collected to find it.}]{\linewidth}{1.2cm}}
 \end{enumerate}
 \end{notesbox}
 

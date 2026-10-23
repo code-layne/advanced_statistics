@@ -1,0 +1,11 @@
+# Homework item 1c (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw1c
+points: 1
+task: >-
+  Name the correct inference procedure: one random sample of 500 shoppers classified
+  by age group and shopping channel, asking whether they are associated.
+criteria:
+  - id: procedure
+    points: 1
+    full: >-
+      Names a chi-square test for independence (one sample, two categorical variables).

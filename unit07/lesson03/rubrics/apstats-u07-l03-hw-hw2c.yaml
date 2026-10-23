@@ -1,0 +1,17 @@
+# Homework item 2c (Unit 7, Lesson 7.3). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  A 95% t-interval for the mean textbook price uses x-bar = $87.40, s = $24.00, n = 36
+  (ME = $8.12). How would the interval change if the confidence level were raised to
+  99% (n = 36)? Would you expect it to be wider or narrower?
+criteria:
+  - id: wider
+    points: 1
+    full: >-
+      Says the interval would be wider.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that t* increases (from 2.030 to about 2.724), so the margin of error
+      increases (about $10.90).

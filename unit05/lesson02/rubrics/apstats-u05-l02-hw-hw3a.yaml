@@ -1,0 +1,17 @@
+# Homework item 3a (Unit 5, Lesson 5.2). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  A histogram of 200 students' daily text messages is strongly right-skewed with a
+  long tail toward high values; a student claims the counts follow a normal
+  distribution. Is the normal model appropriate here? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that the distribution is strongly right-skewed, while a normal model
+      requires a symmetric, bell-shaped (single-peaked) distribution.
