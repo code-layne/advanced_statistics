@@ -77,9 +77,11 @@ make -C unit01/quizzes manifest COMP=actual_quiz         # quizzes: quizzes/ (ke
 make -C unit01 manifest COMP=lesson03/homework           # the same, from the unit directory
 ```
 
-`roster-packets` builds one copy per student, in roster order, with that student's name strip and
-QR codes, into `target/compiled/`. Those files carry student names; `target/` is never committed,
-and `roster-map.csv` lives outside the repository (see math-shared's README).
+`roster-packets` builds one run per student, in roster order, into `target/compiled/`: a name
+cover sheet, its blank back, then the student's copy, whose QR codes and id strip carry only her
+tracking id. The cover is removed before the work is turned in and is never scanned. The roster
+PDFs carry student names on the covers; `target/` is never committed, and `roster-map.csv` lives
+outside the repository (see math-shared's README).
 
 ## Downloading Prebuilt PDFs
 
