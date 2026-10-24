@@ -170,8 +170,8 @@ context**; conclusions acknowledge uncertainty. That is what the exam scores.
   `\par` still brackets each `\termblank`/`\termans` inside a `vocabbox` (the vocabpar fix).
 - `\componenttable` / `\componenttablekey{ind}{pop}{samp}{vars}` — the Individual / Population /
   Sample / Variable(s) table, blank and key.
-- Every student component is 12pt; the plan is 10pt. `\namedateperiod` on the cover and the unit
-  tests only.
+- Every student component is 12pt; the plan is 10pt. `\namedateperiod` on the lesson cover only — never
+  on a graded component (§9).
 
 ## 5. Lesson-plan section order
 
@@ -266,7 +266,7 @@ equals its `_key`'s, compared on the compiled components, not the padded packets
 at the old 3-page notes budget; `unit02/lesson01`–`05` at the compact budget, Unit 2 cut from
 nine lessons to five); 1 in the group-activity shape (`unit01/lesson00`);
 **no EFFL lessons remain**; 61 pre-EFFL legacy (units 03–09),
-of which 96 `_key` files still hold teacher notes, `\namedateperiod` appears on every component,
+of which 96 `_key` files still hold teacher notes, `\namedateperiod` appears on every ungraded component,
 and 57 lessons have no deck. Convert lesson by lesson or unit by unit as you review, authoring
 the missing deck as you go, and rebuild the unit packet each time — never the whole course in one
 pass.
@@ -309,3 +309,11 @@ boxes") do that without moving a line: `\gradedhide` + `\gradedhere` over `\writ
 `\gradedbelow` at the foot of a work area, `\gradedright` for the "Letter:" box of a
 multiple-choice item, a box inside `\answerspace`. Then run `make manifest COMP=<dir>` (see
 README) and check that the blank and key manifests agree.
+
+**No name line on a graded page** — not `\namedateperiod`, not `\namepartnerperiod`, not a
+hand-written Name / Date / Period row, in the blank or the key, quizzes and tests included. Graded
+pages are scanned and the scans go to an outside API, so they carry only the tracking id in the
+strip; the student's name goes on the separate cover sheet `make roster-packets` puts in front of
+her copy. A `Score:` field on its own line may stay. `make manifest` and `make roster-packets` run
+`shared/check_namelines.py` first and fail on a name line; `make check-names` at the root checks
+the whole course.

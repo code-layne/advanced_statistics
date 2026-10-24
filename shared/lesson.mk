@@ -288,12 +288,14 @@ clean:
 #
 # Student names are printed only on the cover sheets, so the roster PDFs carry
 # them: they stay under target/, which is never committed.
+# grading-namecheck (shared/check_namelines.py) runs first in both: it fails if
+# COMP or its key loads grading.sty and still carries a name line.
 GRADING_MK  := $(PROJECT_ROOT)/math-shared/grading.mk
 COMP        ?=
 COMPONENT   := $(COMP)
 GRADING_OUT := $(PDF_DIR)/grading/$(COMP)
 
-.PHONY: manifest roster-packets grading-need-comp
+.PHONY: manifest roster-packets grading-need-comp grading-namecheck
 
 ifneq ($(wildcard $(GRADING_MK)),)
 include $(GRADING_MK)
@@ -301,7 +303,10 @@ include $(GRADING_MK)
 grading-need-comp:
 	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=homework"; exit 1; }
 
-manifest: grading-need-comp
+grading-namecheck: grading-need-comp
+	@$(GRADING_PYTHON) $(PROJECT_ROOT)/shared/check_namelines.py $(COMPONENT) $(KEY_COMPONENT)
+
+manifest: grading-namecheck
 	@$(MAKE) --no-print-directory grading-manifest
 	@echo "✓  Manifest       → target/$(UNIT)/$(LESSON)/grading/$(COMP)/manifest.json"
 
@@ -316,7 +321,7 @@ ROSTER_OUT     := $(COMPILED_DIR)/$(LESSON)_$(COMP)_roster.pdf
 COMP_MASTER_PDF := $(PDF_DIR)/$(COMP)/main.pdf
 COMP_IN_PACKET  := $(filter $(COMP_MASTER_PDF),$(STUDENT_PDFS))
 
-roster-packets: grading-need-comp grading-need-roster
+roster-packets: grading-namecheck grading-need-roster
 	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)"; exit 1; }
 	@$(MAKE) --no-print-directory $(ROSTER_PACKETS)
 	@mkdir -p $(COMPILED_DIR)
@@ -350,6 +355,6 @@ $(ROSTER_PKT_DIR)/%.pdf: grading-personalized
 	@cp $(GR_PACKETS)/$*.pdf $@
 endif
 else
-manifest roster-packets grading-need-comp:
+manifest roster-packets grading-need-comp grading-namecheck:
 	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
 endif
