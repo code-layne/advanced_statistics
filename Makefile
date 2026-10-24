@@ -6,6 +6,8 @@
 #   key        build + merge per-unit key packets,     then curriculum_key.pdf
 #   clean      remove compiled output for all units
 #   distclean  clean + remove all build artifacts (target/, .stamps/)
+#   check-names  fail if any document that loads grading.sty carries a name line
+#              (also run by every `make manifest` and `make roster-packets`)
 #
 # Only the student and key packets aggregate to this level. Each lesson's other
 # two products — lessonYY_plan.pdf and lessonYY_slides.pdf — stay in
@@ -16,7 +18,7 @@ COMPILED_DIR := target/compiled
 
 UNITS := $(patsubst %/Makefile,%,$(sort $(wildcard unit*/Makefile)))
 
-.PHONY: all student key full clean distclean $(UNITS)
+.PHONY: all student key full clean distclean check-names $(UNITS)
 
 all: $(UNITS)
 
@@ -49,6 +51,9 @@ full:
 	@echo "     target/compiled/unitXX/lessonYY_plan.pdf" >&2
 	@echo "     target/compiled/unitXX/lessonYY_slides.pdf" >&2
 	@exit 1
+
+check-names:
+	@python3 shared/check_namelines.py $(UNITS) && echo "✓  No name line on any graded document"
 
 clean:
 	@for u in $(UNITS); do $(MAKE) -C $$u clean; done

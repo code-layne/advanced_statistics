@@ -23,6 +23,8 @@
 #
 # Names are printed only on the cover sheets, which are in the roster PDF: it
 # stays under target/.
+# grading-namecheck (shared/check_namelines.py) runs first in both: it fails if
+# COMP or its key loads grading.sty and still carries a name line.
 GRADING_MK    := $(PROJECT_ROOT)/math-shared/grading.mk
 COMPILED_DIR  ?= $(PROJECT_ROOT)/target/compiled/$(UNIT)
 COMP          ?=
@@ -30,7 +32,7 @@ COMPONENT     := $(COMP)
 KEY_COMPONENT := $(ASSESS_KEYS)/$(COMP)_key
 GRADING_OUT   := $(PDF_DIR)/grading/$(COMP)
 
-.PHONY: manifest roster-packets grading-need-comp
+.PHONY: manifest roster-packets grading-need-comp grading-namecheck
 
 ifneq ($(wildcard $(GRADING_MK)),)
 include $(GRADING_MK)
@@ -38,17 +40,20 @@ include $(GRADING_MK)
 grading-need-comp:
 	@test -n "$(COMP)" || { echo "!  set COMP=<assessment directory>, e.g. COMP=actual_test"; exit 1; }
 
-manifest: grading-need-comp
+grading-namecheck: grading-need-comp
+	@$(GRADING_PYTHON) $(PROJECT_ROOT)/shared/check_namelines.py $(COMPONENT) $(KEY_COMPONENT)
+
+manifest: grading-namecheck
 	@$(MAKE) --no-print-directory grading-manifest
 	@echo "✓  Manifest       → $(patsubst $(PROJECT_ROOT)/%,%,$(GRADING_OUT))/manifest.json"
 
 ROSTER_OUT := $(COMPILED_DIR)/$(COMP)_roster.pdf
 
-roster-packets: grading-need-comp grading-personalized
+roster-packets: grading-namecheck grading-personalized
 	@mkdir -p $(COMPILED_DIR)
 	@cp $(GR_OUT)/personalized.pdf $(ROSTER_OUT)
 	@echo "✓  Roster copies  → $(patsubst $(PROJECT_ROOT)/%,%,$(ROSTER_OUT)) (roster order, covers first)"
 else
-manifest roster-packets grading-need-comp:
+manifest roster-packets grading-need-comp grading-namecheck:
 	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
 endif

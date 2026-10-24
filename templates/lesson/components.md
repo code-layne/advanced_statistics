@@ -324,8 +324,9 @@ make -C unitXX/tests all && make -C unitXX/test_keys all
 
 Shape it like the AP exam: **Section I — Multiple Choice** (five options, in context), **Section II
 — Free Response** (2–3 multi-part FRQs, at least one ending in an interpret/justify-in-context
-part). The test carries `\namedateperiod` — it and the packet cover are the only two documents that
-do, because a test is taken in a testing setting.
+part). The test carries **no name line**: it is graded, its scan goes to an outside API, and the name goes
+on the roster cover sheet (LESSON_SHAPE.md §9). The packet cover is the only document with
+`\namedateperiod`.
 
 **The practice test and its key must come out the same number of pages** — the unit pagination pass
 pairs `sample_test` against `sample_test_key` exactly the way it pairs a component against its key.
