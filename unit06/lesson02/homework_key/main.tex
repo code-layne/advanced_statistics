@@ -58,12 +58,12 @@
         with a margin of error of at most 0.05. A pilot survey suggests $\hat p \approx 0.40$.
         \begin{enumerate}[label=\alph*.]
           \item Find the minimum required sample size using the pilot estimate.
-                \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p) = \left(\frac{1.960}{0.05}\right)^2(0.40)(0.60) = 1536.64\]
-                Minimum $n = $ \ans{1537}\gradedkey{\gradedblank[id=hw3a1, type=short, points=1, answer=(1.96/0.05)^2(0.40)(0.60), check=expression, display={$1536.64 \times 0.24$}]{6cm}{0.17in}\quad \gradedblank[id=hw3a2, type=short, points=2, answer=368.79, check=numeric, tolerance=0.5]{2.5cm}{0.17in}\quad \gradedblank[id=hw3a3, type=short, points=1, answer=369, check=numeric, tolerance=0]{2cm}{0.17in}}
+                \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p) = \left(\frac{1.960}{0.05}\right)^2(0.40)(0.60) = 368.79\]
+                Minimum $n = $ \ans{369}\gradedkey{\gradedblank[id=hw3a1, type=short, points=1, answer=(1.96/0.05)^2(0.40)(0.60), check=expression, display={$1536.64 \times 0.24$}]{6cm}{0.17in}\quad \gradedblank[id=hw3a2, type=short, points=2, answer=368.79, check=numeric, tolerance=0.5]{2.5cm}{0.17in}\quad \gradedblank[id=hw3a3, type=short, points=1, answer=369, check=numeric, tolerance=0]{2cm}{0.17in}}
 
           \item How would your answer change if you used $\hat p = 0.50$ instead? Would it be
                 larger or smaller?
-                \ansline{Larger: $n \ge (1.960/0.05)^2(0.50)(0.50) = 1536.64 \to 1537$. Wait --- here $0.5(0.5)=0.25 > 0.40(0.60)=0.24$, so $n$ increases to 1537 (same rounding here, but $n$ is larger with $\hat p=0.5$ in general because $p(1-p)$ is maximized at 0.5).}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={Larger: $1536.64(0.25) = 384.16$, so $n = 385$; $\hat p(1-\hat p)$ is largest at 0.5.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+                \ansline{Larger: $1536.64(0.25) = 384.16$, so $n = 385$; $\hat p(1-\hat p)$ is largest at $\hat p = 0.5$.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={Larger: $1536.64(0.25) = 384.16$, so $n = 385$; $\hat p(1-\hat p)$ is largest at 0.5.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
 \end{enumerate}
