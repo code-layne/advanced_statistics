@@ -133,9 +133,8 @@ in the plan. Key mirrors with `\ans`; multi-step solutions go in `work` blocks.
 `notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 34 minutes**, in the **Main
 Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets, 2026-09-08).
 `\pageheader{Unit X, Lesson Y.Z}{Guided Notes \& Practice}` (no name row — Namestrip), the
-`vocabbox`, then **one `guidednotes` table**. Target **2 pages** at 12pt — the vocabulary box and
-the table — and **12–14 numbered problems** (the compact budget: the whole packet is about six
-pages so the lesson is finished in one period). Set the whole table in `\small`.
+`vocabbox`, then **one `guidednotes` table**. **1–4 pages, never more than 4** (usually 2) at 12pt — the vocabulary box and
+the table — and **12–14 numbered problems** (the compact budget: the lesson is finished in one period). Set the whole table in `\small`.
 
 - `vocabbox` — one `\termblank{Term}` per key term (3–5 of them), each bracketed by `\par` (the
   vocabpar fix). The box says **"Fill in each term as we name it in the notes below"** — it is
@@ -165,7 +164,7 @@ rows**, 3–4 problems in each grid. Each row is `\mainidea[small lead]{Label} &
   `\blank`, `\writelines`, `work` all work inside a cell.
 - **The key mirrors the blank byte for byte** except `-key` for `-boxes`, the header's
   `--- Answer Key`, `\termblank`→`\termans`, `\blank`→`\ans`, and the fourth argument of each
-  `\pcell`. Keep every answer shorter than its space. Prove 2 pages = 2 pages.
+  `\pcell`. Keep every answer shorter than its space. Prove blank pages = key pages, and 4 at most.
 
 ## Group activity — LEGACY ONLY, never author one
 
@@ -198,7 +197,7 @@ construction (1.0cm ≈ 2 handwritten lines, 1.5cm ≈ 3, 2.0cm ≈ 4).
 ## AP practice
 
 `ap_practice/` (+ `ap_practice_key/`) — **assigned but NOT scored.** The cover's score column reads
-`\textbf{NA}`. `\pageheader{...}{AP Practice}` (no name row). **One page.**
+`\textbf{NA}`. `\pageheader{...}{AP Practice}` (no name row). No page limit: the graded boxes set its length.
 
 Open with a `remindbox` stating plainly that the page is not required and not scored and that the
 graded homework is the last section of the packet — authored **byte-identically** in the blank and
@@ -217,7 +216,7 @@ in the key. The next-lesson preview does **not** live here; it closes the packet
 packet**, generated for every lesson. `\pageheader{...}{Homework}` (no name row).
 
 Open with a `remindbox` — "This is your graded homework. It is scored and due the first class after two study halls." —
-authored byte-identically in both files. Then 5–6 items — **one page** — in a **fresh context** the lesson has not
+authored byte-identically in both files. Then 5–6 items — no page limit, the graded boxes set its length — in a **fresh context** the lesson has not
 used, grouped into two or three titled `notesbox`es (Part A / Part B / Part C). Include at least
 one AP-style multiple-choice item with a required one-sentence justification. Close the packet
 with a `spiralbox` previewing the next lesson.
