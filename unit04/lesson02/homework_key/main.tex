@@ -17,7 +17,11 @@
 
 \textbf{1.} Rain simulation.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Chance device: single random digits 0--9. Digits 0--3 = rain (40\%), digits 4--9 = no rain (60\%). One trial = 7 consecutive random digits = one week. Event of interest = 4 or more of the 7 digits are in 0--3.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1a1, type=rubric, points=1, display={Digits 0--9}]{1.3in}{0.22in}}\quad \raisebox{-3pt}{\gradedblank[id=hw1a2, type=rubric, points=1, display={0--3 rain, 4--9 not}]{1.3in}{0.22in}}\quad \raisebox{-3pt}{\gradedblank[id=hw1a3, type=rubric, points=1, display={7 digits = 1 week}]{1.3in}{0.22in}}\quad \raisebox{-3pt}{\gradedblank[id=hw1a4, type=rubric, points=1, display={$\ge 4$ of 7 in 0--3}]{1.3in}{0.22in}}}
+  \item \ans{Chance device: single random digits 0--9. Digits 0--3 = rain (40\%), digits 4--9 = no rain (60\%). One trial = 7 consecutive random digits = one week. Event of interest = 4 or more of the 7 digits are in 0--3.}
+        \par Chance device:\gradedkey{\gradedblank[id=hw1a1, type=short, points=1, answer={random digits 0-9}, check=text, display={Digits 0--9}]{3.6in}{0.3in}}
+        \par How outcomes are assigned:\gradedkey{\gradedblank[id=hw1a2, type=short, points=1, answer={0-3 rain, 4-9 no rain}, check=text, display={0--3 rain, 4--9 not}]{3.6in}{0.3in}}
+        \par What one trial represents:\gradedkey{\gradedblank[id=hw1a3, type=short, points=1, answer={7 digits = 1 week}, check=text, display={7 digits = 1 week}]{3.6in}{0.3in}}
+        \par What the event of interest is:\gradedkey{\gradedblank[id=hw1a4, type=short, points=1, answer={4 or more of the 7 digits are 0-3}, check=text, display={$\ge 4$ of 7 in 0--3}]{3.6in}{0.3in}}
   \item \begin{teachernote}
     Reading the first 140 digits in groups of 7: expected outcome around 5--7 of the 20 trials have $\geq$4 rain days. The true probability is $P(X \geq 4)$ where $X \sim \text{Bin}(7, 0.4) \approx 0.290$.
   \end{teachernote}
@@ -29,13 +33,14 @@
 \textbf{2.} Multiple-choice guessing.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
   \item \ans{$P(\text{correct}) = 1/4 = 0.25$}\gradedkey{\smash{\raisebox{-3.6pt}{\gradedblank[id=hw2a, type=short, points=1, answer=0.25, check=numeric, tolerance=0]{1.8cm}{0.2in}}}}
-  \item \ans{Use digits 1--4 (or 0--3). Digit 1 = correct, digits 2--4 = wrong. One trial = 5 digits. Count how many 1s appear. Event of interest = count $\geq 3$.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw2b, type=rubric, points=3, display={Digit 1 = correct; 5 digits per trial; count $\ge 3$.}]{3.2in}{0.22in}}}
+  \item \ans{Use digits 1--4 (or 0--3). Digit 1 = correct, digits 2--4 = wrong. One trial = 5 digits. Count how many 1s appear. Event of interest = count $\geq 3$.}\gradedkeyline{\gradedblank[id=hw2b, type=rubric, points=3, display={Digit 1 = correct; 5 digits per trial; count $\ge 3$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
   \item \begin{teachernote}Results vary. True probability of $\geq 3$ correct with $n=5$, $p=0.25$: $\approx 0.104$. With 15 trials expect 0--2 successes.\end{teachernote}
-  \item \ans{$\hat{p}$ = (successes) / 15. Reasonable range: 0.00--0.20.}\gradedkey{\smash{\raisebox{-3.6pt}{\gradedblank[id=hw2d, type=rubric, points=1, display={$x/15$}]{2.6cm}{0.2in}}}}
+\tcbbreak
+  \item \ans{$\hat{p}$ = (successes) / 15. Reasonable range: 0.00--0.20.}\gradedkeyline{\gradedblank[id=hw2d, type=rubric, points=1, display={$x/15$}]{\linewidth+6pt}{\gradedlinesheight{10}}}
 \end{enumerate}
 
 \vspace{6pt}
-\textbf{3.} AP-Style: \ans{(B)} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}\gradedkey{\textit{Letter:}~\smash{\raisebox{-4pt}{\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.4in}{0.2in}}}}
+\textbf{3.} AP-Style: \ans{(B)} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}\gradedkey{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.4in}{0.2in}}
 \begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=2pt]
   \item Incorrect --- this flips the numerator and denominator.
   \item \textbf{Correct} --- the empirical probability is (number of times event occurred) $\div$ (total trials) $= 65/500 = 0.13$.
@@ -44,7 +49,7 @@
 \end{enumerate}
 
 \vspace{6pt}
-\textbf{4.} Reflection:\gradedkey{\smash{\raisebox{-5pt}{\gradedblank[id=hw4, type=rubric, points=2, display={Few trials fluctuate wildly; many trials converge (LLN). 5 is too few.}]{\linewidth+6pt-2.1in}{\gradedlinesheight{1}+6pt}}}}
+\textbf{4.} Reflection:\gradedkeyline{\kern2.1in\gradedblank[id=hw4, type=rubric, points=2, display={Few trials fluctuate wildly; many trials converge (LLN). 5 is too few.}]{\linewidth+6pt-2.1in}{\gradedlinesheight{1}+6pt}}
 \begin{teachernote}
 Strong responses should state: (a) With few trials, the relative frequency fluctuates widely --- you might get 0 or 5 heads in 5 flips just by chance, giving estimates of 0 or 1.0. (b) The Law of Large Numbers guarantees that with many trials, these random fluctuations average out and the estimate converges to the true probability. (c) Five trials is too few to trust any estimate.
 \end{teachernote}

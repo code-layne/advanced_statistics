@@ -27,16 +27,22 @@ distribution with no outliers.
   \item \textbf{State:} $H_0$: \makebox[4cm]{\smash{\gradedblank[id=hw1a1, type=short, points=1, answer={{mu = 12}}, check=text, display={\boldmath$\mu = 12$}]{3.8cm}{0.19in}}} \quad $H_a$: \makebox[4cm]{\smash{\gradedblank[id=hw1a2, type=short, points=1, answer={{mu > 12}}, check=text, display={\boldmath$\mu > 12$}]{3.8cm}{0.19in}}}
   \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw1b1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{4.8cm}{0.19in}}}, $df = $ \makebox[1.5cm]{\smash{\gradedblank[id=hw1b2, type=short, points=1, answer=24, check=numeric, tolerance=0, display={\boldmath$24$}]{1.3cm}{0.19in}}}. Conditions:
         \begin{itemize}
-          \item Random: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw1b3, type=rubric, points=1, display={random assignment of 25 plants --- met}]{4.6in}{0.19in}}
-          \item Normal ($n < 30$): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw1b4, type=rubric, points=1, display={$n = 25 < 30$; dotplot symmetric, no outliers --- met}]{4.6in}{0.19in}}
+          \boxguard
+          \item Random: \hfill\makebox[4.6in][l]{\gradedhere{\gradedblank[id=hw1b3, type=rubric, points=1, display={random assignment of 25 plants --- met}]{4.6in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
+          \boxguard
+          \item Normal ($n < 30$): \hfill\makebox[4.6in][l]{\gradedhere{\gradedblank[id=hw1b4, type=rubric, points=1, display={$n = 25 < 30$; dotplot symmetric, no outliers --- met}]{4.6in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
         \end{itemize}
   \item \textbf{Do:} $SE = $ \makebox[3cm]{\smash{\gradedblank[id=hw1c1, type=short, points=1, answer=0.64, check=numeric, tolerance=0.005, display={\boldmath$0.64$}]{2.8cm}{0.19in}}} \quad $t \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw1c2, type=short, points=1, answer=2.50, check=numeric, tolerance=0.02, display={\boldmath$2.50$}]{2.3cm}{0.19in}}} \quad
         $p \approx$ \texttt{tcdf}(\makebox[2cm]{\smash{\gradedblank[id=hw1c3, type=short, points=1, answer=2.50, check=numeric, tolerance=0.02, display={\boldmath$2.50$}]{1.8cm}{0.19in}}}, $10^{99}$, \makebox[2cm]{\smash{\gradedblank[id=hw1c4, type=short, points=1, answer=24, check=numeric, tolerance=0, display={\boldmath$24$}]{1.8cm}{0.19in}}}) $\approx$ \makebox[2cm]{\smash{\gradedblank[id=hw1c5, type=short, points=1, answer=0.010, check=numeric, tolerance=0.002, display={\boldmath$0.010$}]{1.8cm}{0.19in}}}
-  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.010 < 0.05$: reject $H_0$. Convincing evidence the true mean height with the new fertilizer is $> 12$ cm.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+  \boxguard
+  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.010 < 0.05$: reject $H_0$. Convincing evidence the true mean height with the new fertilizer is $> 12$ cm.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \vspace{0.08in}
 
+\newpage
 \item \textbf{Exam Score Study.} \quad
 A university testing center claims the mean score on a standardized placement exam is 500.
 A professor suspects the mean score at her campus is \emph{different} from 500. A random
@@ -44,16 +50,19 @@ sample of 45 students from her campus yields $\bar x = 485$, $s = 60$.
 
 \begin{enumerate}[label=\alph*.]
   \item \textbf{State:} $H_0$: \makebox[4cm]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer={{mu = 500}}, check=text, display={\boldmath$\mu = 500$}]{3.8cm}{0.19in}}} \quad $H_a$: \makebox[4cm]{\smash{\gradedblank[id=hw2a2, type=short, points=1, answer={{mu != 500}}, check=text, display={\boldmath$\mu \ne 500$}]{3.8cm}{0.19in}}}
-  \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw2b1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{4.8cm}{0.19in}}}, $df = $ \makebox[1.5cm]{\smash{\gradedblank[id=hw2b2, type=short, points=1, answer=44, check=numeric, tolerance=0, display={\boldmath$44$}]{1.3cm}{0.19in}}}. Conditions (brief): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2b3, type=rubric, points=1, display={random; $n \ge 30$}]{1.25in}{0.19in}}
+  \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw2b1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{4.8cm}{0.19in}}}, $df = $ \makebox[1.5cm]{\smash{\gradedblank[id=hw2b2, type=short, points=1, answer=44, check=numeric, tolerance=0, display={\boldmath$44$}]{1.3cm}{0.19in}}}. Conditions (brief):\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b3, type=rubric, points=1, display={random; $n \ge 30$}]{\linewidth+6pt}{0.19in}}\writelines{9}}
   \item \textbf{Do:} $SE = $ \makebox[3cm]{\smash{\gradedblank[id=hw2c1, type=short, points=1, answer=8.944, check=numeric, tolerance=0.01, display={\boldmath$8.944$}]{2.8cm}{0.19in}}} \quad $t \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw2c2, type=short, points=1, answer=-1.68, check=numeric, tolerance=0.02, display={\boldmath$-1.68$}]{2.3cm}{0.19in}}}
 
         $p$ (two-sided) $\approx 2 \times \texttt{tcdf}($\makebox[3cm]{\smash{\gradedblank[id=hw2c3, type=short, points=1, answer=1.68, check=numeric, tolerance=0.02, display={\boldmath$1.68$}]{2.8cm}{0.19in}}}, $10^{99}$, \makebox[2cm]{\smash{\gradedblank[id=hw2c4, type=short, points=1, answer=44, check=numeric, tolerance=0, display={\boldmath$44$}]{1.8cm}{0.19in}}}$) \approx$ \makebox[2cm]{\smash{\gradedblank[id=hw2c5, type=short, points=1, answer=0.100, check=numeric, tolerance=0.005, display={\boldmath$0.100$}]{1.8cm}{0.19in}}}
 
-  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2d, type=rubric, points=2, display={$p \approx 0.100 > 0.05$: fail to reject $H_0$. No convincing evidence the campus mean score differs from 500.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+  \boxguard
+  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2d, type=rubric, points=2, display={$p \approx 0.100 > 0.05$: fail to reject $H_0$. No convincing evidence the campus mean score differs from 500.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \vspace{0.08in}
 
+\newpage
 \item \textbf{Matched Pairs: Study Techniques.} \quad
 An educational researcher wants to know whether using flashcards improves quiz scores.
 Ten students each take a quiz on two equivalent topics: once without flashcards and once
@@ -62,18 +71,25 @@ are: $\{4, 7, -1, 5, 9, 3, 6, 2, 8, 5\}$. \quad $\bar d = 4.8$, $s_d = 2.97$.
 A boxplot of the differences is roughly symmetric with no outliers.
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $\mu_d = $ \makebox[6cm]{\smash{\gradedblank[id=hw3a1, type=rubric, points=1, display={true mean diff.\ (flash $-$ none)}]{5.8cm}{0.19in}}}. \quad $H_0$: \makebox[3cm]{\smash{\gradedblank[id=hw3a2, type=short, points=1, answer={{mu_d = 0}}, check=text, display={\boldmath$\mu_d = 0$}]{2.8cm}{0.19in}}} \quad $H_a$: \makebox[3cm]{\smash{\gradedblank[id=hw3a3, type=short, points=1, answer={{mu_d > 0}}, check=text, display={\boldmath$\mu_d > 0$}]{2.8cm}{0.19in}}}
+  \item \textbf{State:} $\mu_d = $\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw3a1, type=rubric, points=1, display={true mean diff.\ (flash $-$ none)}]{\linewidth+6pt}{0.19in}}\writelines{9}}\par
+        $H_0$: \makebox[3cm]{\smash{\gradedblank[id=hw3a2, type=short, points=1, answer={{mu_d = 0}}, check=text, display={\boldmath$\mu_d = 0$}]{2.8cm}{0.19in}}} \quad $H_a$: \makebox[3cm]{\smash{\gradedblank[id=hw3a3, type=short, points=1, answer={{mu_d > 0}}, check=text, display={\boldmath$\mu_d > 0$}]{2.8cm}{0.19in}}}
   \item \textbf{Plan:} Method: \makebox[5cm]{\smash{\gradedblank[id=hw3b1, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={\boldmath matched-pairs $t$-test for $\mu_d$}]{4.8cm}{0.19in}}}, $df = $ \makebox[1.5cm]{\smash{\gradedblank[id=hw3b2, type=short, points=1, answer=9, check=numeric, tolerance=0, display={\boldmath$9$}]{1.3cm}{0.19in}}}. Conditions:
         \begin{itemize}
-          \item Independence: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3b3, type=rubric, points=1, display={students tested independently; differences independent --- met}]{4.6in}{0.19in}}
-          \item Normal ($n < 30$): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3b4, type=rubric, points=1, display={$n = 10 < 30$; boxplot symmetric, no outliers --- met}]{4.6in}{0.19in}}
+          \boxguard
+          \item Independence: \hfill\makebox[4.6in][l]{\gradedhere{\gradedblank[id=hw3b3, type=rubric, points=1, display={students tested independently; differences independent --- met}]{4.6in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
+          \boxguard
+          \item Normal ($n < 30$): \hfill\makebox[4.6in][l]{\gradedhere{\gradedblank[id=hw3b4, type=rubric, points=1, display={$n = 10 < 30$; boxplot symmetric, no outliers --- met}]{4.6in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
         \end{itemize}
   \item \textbf{Do:} $SE_d = \dfrac{s_d}{\sqrt{n}} \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw3c1, type=short, points=1, answer=0.939, check=numeric, tolerance=0.005, display={\boldmath$0.939$}]{2.3cm}{0.19in}}} \quad
         $t = \dfrac{\bar d - 0}{SE_d} \approx$ \makebox[2.5cm]{\smash{\gradedblank[id=hw3c2, type=short, points=1, answer=5.11, check=numeric, tolerance=0.03, display={\boldmath$5.11$}]{2.3cm}{0.19in}}}
 
         $p \approx$ \makebox[4cm]{\smash{\gradedblank[id=hw3c3, type=short, points=1, answer=0.0003, check=numeric, tolerance=0.0002, display={\boldmath$0.0003$}]{3.8cm}{0.19in}}}
 
-  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3d, type=rubric, points=2, display={$p \approx 0.0003 < 0.05$: reject $H_0$. Convincing evidence flashcards raise mean quiz score ($\mu_d > 0$).}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+  \boxguard
+  \item \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3d, type=rubric, points=2, display={$p \approx 0.0003 < 0.05$: reject $H_0$. Convincing evidence flashcards raise mean quiz score ($\mu_d > 0$).}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \end{enumerate}

@@ -14,23 +14,28 @@
 
 \begin{enumerate}
 
+  \boxguard[22]
   \item High school athletes, $p = 0.38$, $n = 180$.
         \begin{enumerate}[label=\alph*.]
           \item \ans{Random: stated. 10\%: $180 \le 10\%$ of high school students nationally --- yes. Large Counts: $np = 180(0.38) = 68.4 \ge 10$; $n(1-p) = 180(0.62) = 111.6 \ge 10$. All conditions met.}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=3, display={Random sample; $180 \le 10\%$ of all high school students; $np = 68.4 \ge 10$ and $n(1-p) = 111.6 \ge 10$. All met.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
           \item \ans{$\mu_{\hat{p}} = 0.38$; $\sigma_{\hat{p}} = \sqrt{0.38(0.62)/180} \approx 0.03619$.}\gradedkey{$\mu_{\hat{p}} = $~\gradedblank[id=hw1b1, type=short, points=1, answer=0.38, check=numeric, tolerance=0]{0.9in}{0.28in}\quad $\sigma_{\hat{p}} = $~\gradedblank[id=hw1b2, type=short, points=1, answer=0.0362, check=numeric, tolerance=0.0005]{0.9in}{0.28in}}
           \item \ans{$z = (0.42-0.38)/0.03619 \approx 1.105$; $P(\hat{p}>0.42) \approx 1 - 0.8654 = 0.1346$. About 13.5\%.}\gradedkey{\gradedblank[id=hw1c, type=short, points=2, answer=0.1346, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
-          \item \ans{$z = \text{invNorm}(0.05) \approx -1.645$; $c = 0.38 + (-1.645)(0.03619) \approx 0.320$. There is a 5\% chance that the sample proportion of athletes is less than 32.0\%.}\gradedkey{$c = $~\gradedblank[id=hw1d1, type=short, points=2, answer=0.320, check=numeric, tolerance=0.002]{0.9in}{0.28in}\quad \gradedblank[id=hw1d2, type=rubric, points=1, display={5\% of samples of 180 have a sample proportion of athletes below 0.320.}]{3.2in}{0.4in}}
+          \boxguard[17]
+          \item \ans{$z = \text{invNorm}(0.05) \approx -1.645$; $c = 0.38 + (-1.645)(0.03619) \approx 0.320$. There is a 5\% chance that the sample proportion of athletes is less than 32.0\%.}\gradedkey{$c = $~\gradedblank[id=hw1d1, type=short, points=2, answer=0.320, check=numeric, tolerance=0.002]{0.9in}{0.28in}}\gradedkeyline{\gradedblank[id=hw1d2, type=rubric, points=1, display={5\% of samples of 180 have a sample proportion of athletes below 0.320.}]{\linewidth+6pt}{\gradedlinesheight{8}}}
         \end{enumerate}
 
+  \boxguard[22]
   \item Public transit, $p = 0.15$.
         \begin{enumerate}[label=\alph*.]
           \item \ans{$np = 40(0.15) = 6 < 10$. Large Counts condition \emph{not} met. Normal model is NOT appropriate for $n = 40$.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={$np = 40(0.15) = 6 < 10$: Large Counts not met, so the normal model is not appropriate.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
-          \item \ans{$n=100$: $np=15 \ge 10$; $n(1-p)=85 \ge 10$; 10\%: yes. Conditions met. $\sigma_{\hat{p}} = \sqrt{0.15(0.85)/100} \approx 0.03571$. $z_1 = (0.10-0.15)/0.03571 \approx -1.400$; $z_2 = (0.20-0.15)/0.03571 \approx 1.400$; $P \approx 0.9192 - 0.0808 = 0.8384$. About 83.8\%.}\gradedkey{\gradedblank[id=hw2b1, type=rubric, points=1, display={$np = 15$, $n(1-p) = 85 \ge 10$; random; 10\%: met.}]{2.6in}{0.4in}\quad $P = $~\gradedblank[id=hw2b2, type=short, points=2, answer=0.8384, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
+          \boxguard[17]
+          \item \ans{$n=100$: $np=15 \ge 10$; $n(1-p)=85 \ge 10$; 10\%: yes. Conditions met. $\sigma_{\hat{p}} = \sqrt{0.15(0.85)/100} \approx 0.03571$. $z_1 = (0.10-0.15)/0.03571 \approx -1.400$; $z_2 = (0.20-0.15)/0.03571 \approx 1.400$; $P \approx 0.9192 - 0.0808 = 0.8384$. About 83.8\%.}\gradedkey{$P = $~\gradedblank[id=hw2b2, type=short, points=2, answer=0.8384, check=numeric, tolerance=0.003]{0.9in}{0.28in}}\gradedkeyline{\gradedblank[id=hw2b1, type=rubric, points=1, display={$np = 15$, $n(1-p) = 85 \ge 10$; random; 10\%: met.}]{\linewidth+6pt}{\gradedlinesheight{8}}}
         \end{enumerate}
 
   \item Red chips, $p = 0.60$.
         \begin{enumerate}[label=\alph*.]
           \item \ans{$n=25$: $\sigma = \sqrt{0.60(0.40)/25} = \sqrt{0.0096} \approx 0.0980$. $n=100$: $\sigma \approx 0.0490$. $n=400$: $\sigma \approx 0.0245$.}\gradedkey{$n = 25$:~\gradedblank[id=hw3a1, type=short, points=1, answer=0.098, check=numeric, tolerance=0.0005]{0.8in}{0.28in}\quad $n = 100$:~\gradedblank[id=hw3a2, type=short, points=1, answer=0.049, check=numeric, tolerance=0.0005]{0.8in}{0.28in}\quad $n = 400$:~\gradedblank[id=hw3a3, type=short, points=1, answer=0.0245, check=numeric, tolerance=0.0005]{0.8in}{0.28in}}
+          \newpage
           \item \ansline{$\sigma_{\hat{p}}$ decreases as $n$ increases (halves when $n$ quadruples). Larger samples give more precise estimates of the true proportion.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={$\sigma_{\hat{p}}$ decreases (halves when $n$ quadruples): larger samples give more precise estimates.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 

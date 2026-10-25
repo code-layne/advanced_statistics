@@ -17,24 +17,26 @@
 
 \textbf{1.} Tennis player: 10 consecutive wins on clay (career rate 65\%).
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Is the probability of winning on clay higher during this streak than her career average, or could 10 consecutive wins occur by chance for a 65\% clay-court player?}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1a, type=rubric, points=2, display={Win rate above 65\%, or chance?}]{2.3in}{0.22in}}}
-  \item \ans{Possibly --- a 65\% win rate means each match is more likely won than lost. $(0.65)^{10} \approx 0.013$, so a streak of 10 in a row is uncommon but not impossible, and over a full season with many opportunities, it can occur.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1b, type=rubric, points=2, display={Yes: $(0.65)^{10} \approx 0.013$, rare but possible.}]{3.5in}{0.22in}}}
+  \item \ans{Is the probability of winning on clay higher during this streak than her career average, or could 10 consecutive wins occur by chance for a 65\% clay-court player?}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=2, display={Win rate above 65\%, or chance?}]{\linewidth+6pt}{\gradedlinesheight{10}}}
+  \item \ans{Possibly --- a 65\% win rate means each match is more likely won than lost. $(0.65)^{10} \approx 0.013$, so a streak of 10 in a row is uncommon but not impossible, and over a full season with many opportunities, it can occur.}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=2, display={Yes: $(0.65)^{10} \approx 0.013$, rare but possible.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{2.} Genetics: 34 purple, 16 white (expected 3:1).
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
   \item \ans{Observed: 34:16 = 2.125:1. \quad Predicted: 3:1.}\gradedkey{\makebox[3cm][r]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer={34:16 = 2.125:1}, check=text]{1.9cm}{0.15in}}}\quad \makebox[3cm][r]{\smash{\gradedblank[id=hw2a2, type=short, points=1, answer=3:1, check=text]{1.9cm}{0.15in}}}}
-  \item \ans{Is the observed flower-color ratio in this sample consistent with the 3:1 ratio predicted by Mendelian genetics, or does it suggest a different inheritance pattern?}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw2b, type=rubric, points=2, display={Is the true ratio 3:1?}]{2.4in}{0.22in}}}
-  \item \ans{The difference is modest. The expected counts under 3:1 are 37.5 purple and 12.5 white. Getting 34 and 16 is not far from expected, and with only 50 plants, random sampling variation could account for the difference. We would need a formal test (chi-square) to decide.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw2c, type=rubric, points=2, display={No: chance explains it.}]{1.7in}{0.22in}}}
+\tcbbreak
+  \item \ans{Is the observed flower-color ratio in this sample consistent with the 3:1 ratio predicted by Mendelian genetics, or does it suggest a different inheritance pattern?}\gradedkeyline{\gradedblank[id=hw2b, type=rubric, points=2, display={Is the true ratio 3:1?}]{\linewidth+6pt}{\gradedlinesheight{10}}}
+  \item \ans{The difference is modest. The expected counts under 3:1 are 37.5 purple and 12.5 white. Getting 34 and 16 is not far from expected, and with only 50 plants, random sampling variation could account for the difference. We would need a formal test (chi-square) to decide.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={No: chance explains it.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{3.} Six consecutive sunny Sundays (historical probability 0.45).
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Is the probability of a sunny Sunday in this city higher than 0.45, or could 6 consecutive sunny Sundays be explained by chance?}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3a, type=rubric, points=2, display={Is $P(\text{sunny Sunday}) > 0.45$, or chance?}]{4.0in}{0.22in}}}
+  \item \ans{Is the probability of a sunny Sunday in this city higher than 0.45, or could 6 consecutive sunny Sundays be explained by chance?}\gradedkeyline{\gradedblank[id=hw3a, type=rubric, points=2, display={Is $P(\text{sunny Sunday}) > 0.45$, or chance?}]{\linewidth+6pt}{\gradedlinesheight{10}}}
+\tcbbreak
   \item \ans{$(0.45)^6 = (0.45)^6 \approx 0.0083$ (about 0.8\%).}\gradedkey{\gradedblank[id=hw3b, type=short, points=2, answer=0.0083, check=numeric, tolerance=0.0003]{0.9in}{0.24in}}
-  \item \ans{Yes --- about a 0.8\% chance makes this streak somewhat surprising if Sundays were independent. However, consecutive days often have correlated weather, which could make the streak more likely than 0.8\%.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3c, type=rubric, points=2, display={Yes: only about a 0.8\% chance.}]{3.6in}{0.22in}}}
+  \item \ans{Yes --- about a 0.8\% chance makes this streak somewhat surprising if Sundays were independent. However, consecutive days often have correlated weather, which could make the streak more likely than 0.8\%.}\gradedkeyline{\gradedblank[id=hw3c, type=rubric, points=2, display={Yes: only about a 0.8\% chance.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
 \end{enumerate}
 
 \vspace{6pt}
@@ -47,7 +49,7 @@
 \end{enumerate}
 
 \vspace{6pt}
-\textbf{5.} Reflection:\gradedkey{\gradedblank[id=hw5, type=rubric, points=2, display={False causes mislead; e.g.\ a chance disease cluster blamed on a vaccine.}]{\linewidth+6pt-2.1in}{\gradedlinesheight{1}+6pt}}
+\textbf{5.} Reflection:\gradedkeyline{\kern2.1in\gradedblank[id=hw5, type=rubric, points=2, display={False causes mislead; e.g.\ a chance disease cluster blamed on a vaccine.}]{\linewidth+6pt-2.1in}{\gradedlinesheight{1}+6pt}}
 \begin{teachernote}
 Answers will vary. Strong responses should (a) explain that assuming a cause leads to false conclusions and wasted resources, and (b) give a concrete harmful example such as: blaming a vaccine for a disease cluster that is actually random variation, pursuing a ``cancer cluster'' that turns out to be chance, or firing a coach after a losing streak that could be random.
 \end{teachernote}

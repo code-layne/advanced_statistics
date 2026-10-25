@@ -24,7 +24,9 @@ confidence interval, and interpret. Show all computations.}
   \item \textbf{Identify:} \ans{two-sample $t$-interval for $\mu_{\text{young}} - \mu_{\text{older}}$}\gradedkey{\gradedblank[id=hw1a, type=short, points=1, answer={{two-sample t-interval for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-interval for $\mu_1 - \mu_2$}]{7.8cm}{0.19in}}
   \item \textbf{Verify:}
         \begin{itemize}
+          \boxguard
           \item Random: \ansline{Random samples of 30 young adults and 35 older adults --- met.}\gradedkey{\gradedblank[id=hw1b1, type=rubric, points=1, display={random samples of 30 young and 35 older adults --- met}]{4.6in}{0.19in}}
+          \boxguard
           \item Normal: \ansline{$n_1 = 30 \ge 30$ and $n_2 = 35 \ge 30$; CLT applies --- met.}\gradedkey{\gradedblank[id=hw1b2, type=rubric, points=1, display={$n_1 = 30,\ n_2 = 35 \ge 30$: CLT --- met}]{4.6in}{0.19in}}
         \end{itemize}
   \item $SE = \sqrt{\dfrac{({\color{keyred}\mathbf{42}})^2}{{\color{keyred}\mathbf{30}}} + \dfrac{({\color{keyred}\mathbf{55}})^2}{{\color{keyred}\mathbf{35}}}} \approx$ \ans{12.22}\gradedkey{$SE=$~\gradedblank[id=hw1c, type=short, points=1, answer=12.05, check=numeric, tolerance=0.2, display={\boldmath$12.05$}]{2.3cm}{0.19in}}
@@ -34,6 +36,8 @@ confidence interval, and interpret. Show all computations.}
         $\bar x_1 - \bar x_2 = 285 - 324 = -39$. $SE = \sqrt{1764/30 + 3025/35} = \sqrt{58.80 + 86.43} = \sqrt{145.23} \approx 12.05$; slight rounding difference from $12.22$ is acceptable. $ME \approx 24.1$. $CI \approx (-63.1, -14.9)$.
         \end{teachernote}
 
+  \newpage
+  \boxguard
   \item \ansline{We are 95\% confident the true difference in mean reaction time (young $-$ older) is between $-63.4$ ms and $-14.6$ ms.}
         \ansline{Since 0 is not in the interval (entirely negative), there is convincing evidence that young adults have faster mean reaction times than older adults.}\gradedkeyline{\gradedblank[id=hw1e, type=rubric, points=2, display={95\% confident $\mu_{young} - \mu_{older}$ is in $(-63.1, -14.9)$ ms; 0 not in it: young adults faster on average.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
@@ -43,9 +47,12 @@ confidence interval, and interpret. Show all computations.}
 \begin{enumerate}[label=\alph*.]
   \item \textbf{Verify:}
         \begin{itemize}
+          \boxguard
           \item Random / Independence: \ansline{Random samples of plants; two independent groups --- met.}\gradedkey{\gradedblank[id=hw2a1, type=rubric, points=1, display={random samples; two independent groups --- met}]{4.6in}{0.19in}}
+          \boxguard
           \item Normal: \ansline{$n_1 = 22 < 30$ and $n_2 = 20 < 30$; both distributions roughly symmetric with no outliers --- met.}\gradedkey{\gradedblank[id=hw2a2, type=rubric, points=1, display={$n$'s $< 30$; both roughly symmetric, no outliers --- met}]{4.6in}{0.19in}}
         \end{itemize}
+  \newpage
   \item $SE \approx$ \ans{0.912}
 
         $CI = ({\color{keyred}\mathbf{2.7}} \pm 2.021 \times {\color{keyred}\mathbf{0.912}}) = ($ \ans{0.857}, \ans{4.543} $)$\gradedkey{$SE=$~\gradedblank[id=hw2b1, type=short, points=1, answer=0.910, check=numeric, tolerance=0.01, display={\boldmath$0.910$}]{2.8cm}{0.19in}\quad \gradedblank[id=hw2b2, type=short, points=1, answer=0.86, check=numeric, tolerance=0.02, display={\boldmath$0.86$}]{2.8cm}{0.19in}\quad \gradedblank[id=hw2b3, type=short, points=1, answer=4.54, check=numeric, tolerance=0.02, display={\boldmath$4.54$}]{2.8cm}{0.19in}}
@@ -55,13 +62,16 @@ confidence interval, and interpret. Show all computations.}
         $ME = 2.021 \times 0.910 \approx 1.839$. $CI = (2.7 - 1.84, 2.7 + 1.84) = (0.86, 4.54)$.
         \end{teachernote}
 
+  \boxguard
   \item \ansline{We are 95\% confident the true difference in mean plant height (Fertilizer A $-$ Fertilizer B) is between about 0.86 cm and 4.54 cm. Since the interval is entirely positive, this provides convincing evidence that Fertilizer A produces taller plants on average.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={95\% confident $\mu_A - \mu_B$ is in (0.86, 4.54) cm; all positive: convincing evidence A grows taller plants.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \item \textbf{Exam Scores.}
 
 \begin{enumerate}[label=\alph*.]
+  \boxguard
   \item \textbf{Conditions:} \ansline{Random samples from each school; $n_1 = 45 \ge 30$ and $n_2 = 40 \ge 30$ so CLT applies --- both conditions met.}\gradedkeyline{\gradedblank[id=hw3a, type=rubric, points=2, display={Random samples from each school; $n_1 = 45,\ n_2 = 40 \ge 30$ so the CLT applies.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+  \newpage
   \item $SE \approx$ \ans{14.47} \quad $ME \approx$ \ans{28.80}\gradedkey{$SE=$~\gradedblank[id=hw3b1, type=short, points=1, answer=15.24, check=numeric, tolerance=0.05, display={\boldmath$15.24$}]{2.8cm}{0.19in}\quad $ME=$~\gradedblank[id=hw3b2, type=short, points=1, answer=30.33, check=numeric, tolerance=0.1, display={\boldmath$30.33$}]{2.8cm}{0.19in}}
 
         \begin{teachernote}
@@ -70,6 +80,7 @@ confidence interval, and interpret. Show all computations.}
         \end{teachernote}
 
   \item $CI = ($ \ans{$-13$}, \ans{$47$} $)$\gradedkey{\gradedblank[id=hw3c1, type=short, points=1, answer=-13.33, check=numeric, tolerance=0.5, display={\boldmath$-13.33$}]{2.8cm}{0.19in}\quad \gradedblank[id=hw3c2, type=short, points=1, answer=47.33, check=numeric, tolerance=0.5, display={\boldmath$47.33$}]{2.8cm}{0.19in}}
+  \boxguard
   \item \ansline{We are 95\% confident the true difference in mean exam scores (School 1 $-$ School 2) is between approximately $-13$ and $47$ points. Since 0 is in the interval, the data do not provide convincing evidence that the mean scores differ between the schools.}\gradedkeyline{\gradedblank[id=hw3d, type=rubric, points=2, display={95\% confident $\mu_1 - \mu_2$ is in $(-13.3, 47.3)$ points; 0 is in it: no convincing evidence the means differ.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 

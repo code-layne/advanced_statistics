@@ -48,9 +48,11 @@ loop; and **the period ends with students starting the homework in class, alone*
 homework *is* the individual practice.
 
 **The packet is sized so the whole lesson is finished in one 55-minute period — the compact
-budget (2026-09-29).** About **six printed pages**: cover 1 · warm-up 1 · notes **2** · AP
-practice **1** · homework **1**. When a component will not fit its budget, cut content rather
-than squeeze it: a lesson that cannot be finished in the period is the defect. Unit 1 (authored
+budget (2026-09-29).** Cover 1 · warm-up 1 · notes **1–4, never more than 4** (2 is the usual
+length) · AP practice and homework **no page limit** (2026-10-24): a graded component is as long as
+its square choice boxes and 2-inch rubric boxes make it, and its length is set by its item count,
+never by a page budget. When the notes will not fit four pages, cut content rather than squeeze
+it: a lesson that cannot be finished in the period is the defect. Unit 1 (authored
 2026-09-08 → 09-25) predates the budget and runs ~12 pages; leave it alone until asked.
 
 | Phase | Minutes | Component |
@@ -68,7 +70,7 @@ and on the right a terse definition the student completes with `\blank{}` fills,
 prompt (`\notesprompt`) and a **grid of short numbered problems** (`probgrid` + `\pcell`) with
 reserved answer space; a numbered procedure uses `\stepnum{n}`. **The last row is Guided
 Practice**, one fresh context worked entirely together. **The notes end there.** Problems are
-numbered 1..N through the whole component; **target 12–14 problems and 2 pages** at 12pt
+numbered 1..N through the whole component; **target 12–14 problems and 1–4 pages (4 at most, usually 2)** at 12pt
 (a vocabulary box of 3–4 terms plus a table of **three or four rows**, the last Guided
 Practice, 3–4 problems a row). No prose exposition, no objective box (the targets
 are on the cover), no red misconception callout: the misconception is *a problem in a grid*,
@@ -78,9 +80,9 @@ teacher fills the definition lines and works the first problem of each grid, the
 the rest (~24 min), then Guided Practice together (~10 min). The plan names, by problem number,
 which problems the teacher works, which is the trap, and which is the crux.
 
-**`ap_practice`** — **one page**: two multiple-choice items (five options, in context) plus one
-short free-response set of two or three parts, AP format. **`homework`** — **one page**, 5–6
-items: the graded individual practice, in a *third* context (instruction, guided practice, and
+**`ap_practice`** — two multiple-choice items (five options, in context) plus one short
+free-response set of two or three parts, AP format; no page limit. **`homework`** — 5–6 items,
+no page limit: the graded individual practice, in a *third* context (instruction, guided practice, and
 homework each use a different one), finishable in the 8 minutes plus one study hall. **`cover`** —
 packet table (Warm-Up · Guided Notes & Practice · AP Practice · Homework), learning targets that
 name the formal term in bold, and a *Keep in Mind* box that carries the lesson's ideas, never the

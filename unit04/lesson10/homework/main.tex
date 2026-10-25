@@ -23,7 +23,7 @@ formula setup.
 throws in a game. Let $X =$ the number she makes.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Check BINS and state the distribution (or explain which condition fails).\\
-        \gradedhide{\writeline\gradedright{\raisebox{-13pt}{\gradedblank[id=hw1a, type=rubric, points=3, display={B, I, N, S all met (fixed $n = 10$, same $p = 0.72$, independent shots): $X \sim B(10, 0.72)$.}]{3.3in}{\gradedlinesheight{3}-5pt}}}\\[1pt]\writeline\\[1pt]\writeline}
+        \gradedhide{\gradedhere{\gradedblank[id=hw1a, type=rubric, points=3, display={B, I, N, S all met (fixed $n = 10$, same $p = 0.72$, independent shots): $X \sim B(10, 0.72)$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Find $P(X = 8)$. Show the formula and the numerical answer.\\
         \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw1b, type=short, points=2, answer=0.2548, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
@@ -34,21 +34,22 @@ whether they support a new recycling program. Historically 60\% support such
 programs. Let $X =$ the number who support the program.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Check BINS. Is the $10\%$ condition relevant here? Explain.\\
-        \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw2a, type=rubric, points=2, display={BINS met; yes, the 10\% condition matters (sampling without replacement): $200 \le 50{,}000$.}]{5.2in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
+        \gradedhide{\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={BINS met; yes, the 10\% condition matters (sampling without replacement): $200 \le 50{,}000$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Find $P(X = 120)$ using \texttt{binompdf}. (No hand calculation required ---
         just set up the calculator notation and record the result.)\\
         \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2b, type=short, points=1, answer=0.0553, check=numeric, tolerance=0.001]{1.3in}{0.2in}}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{8pt}
 \textbf{3.} A class has 30 students. The teacher randomly calls on 6 students without
 replacement. 10 of the 30 students did not complete the homework.
 Let $X =$ the number called on who did not complete the homework.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Is this a binomial setting? Which condition(s), if any, are violated?\\
-        \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw3a, type=rubric, points=2, display={Not binomial: drawing without replacement, so $p$ changes from call to call (not independent).}]{6.1in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
+        \gradedhide{\gradedhere{\gradedblank[id=hw3a, type=rubric, points=2, display={Not binomial: drawing without replacement, so $p$ changes from call to call (not independent).}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Check the $10\%$ condition: is $n \le 0.10 \times N$? Show the calculation.\\
-        \gradedhide{\writeline\gradedright{\raisebox{-1pt}{\gradedblank[id=hw3b, type=rubric, points=2, display={$0.10 \times 30 = 3 < 6$: condition fails.}]{3.3in}{0.22in}}}}
+        \gradedhide{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={$0.10 \times 30 = 3 < 6$: condition fails.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -57,9 +58,11 @@ number represents in the context of a binomial experiment with $n = 6$ trials wh
 you are interested in exactly 2 successes.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item $\binom{6}{2} = $ \makebox[3cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4a, type=short, points=1, answer=15, check=numeric, tolerance=0]{1.3cm}{0.2in}}}}
-  \item Interpretation: \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw4b, type=rubric, points=2, display={The number of ways (orderings) to get exactly 2 successes in 6 trials.}]{4.8in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
+  \item Interpretation:\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw4b, type=rubric, points=2, display={The number of ways (orderings) to get exactly 2 successes in 6 trials.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{8pt}
 \textbf{5.} (AP-Style Free Response) \textit{A door-to-door salesperson visits
 8 houses. Based on past experience, the probability of making a sale at any given
@@ -67,11 +70,12 @@ house is 0.15. Assume houses are independent.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Define the random variable $X$ and state its distribution. Check BINS
         briefly.\\
-        \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw5a, type=rubric, points=2, display={$X$ = number of sales in 8 houses; BINS met; $X \sim B(8, 0.15)$.}]{3.6in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
+        \gradedhide{\gradedhere{\gradedblank[id=hw5a, type=rubric, points=2, display={$X$ = number of sales in 8 houses; BINS met; $X \sim B(8, 0.15)$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Calculate $P(X = 1)$. Show formula setup.\\
         \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw5b, type=short, points=2, answer=0.3847, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
   \item Calculate $P(X = 0)$. Interpret in context.\\
-        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw5c1, type=short, points=1, answer=0.2725, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}\\[1pt]\gradedhide{\writeline\gradedright{\raisebox{-1pt}{\gradedblank[id=hw5c2, type=rubric, points=2, display={About a 27.3\% chance the salesperson makes no sales in the 8 houses.}]{6.1in}{0.22in}}}}
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw5c1, type=short, points=1, answer=0.2725, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw5c2, type=rubric, points=2, display={About a 27.3\% chance the salesperson makes no sales in the 8 houses.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}

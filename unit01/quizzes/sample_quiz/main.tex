@@ -14,6 +14,11 @@
 \gradingassignment{apstats-u01-sample-quiz}
 \gradingcourse{advanced_statistics}
 
+% \letterroom: a zero-width strut beside a flush-right Letter box. A choice box is
+% drawn square (0.45in), so it stands ~0.1in above and below its line; the strut
+% opens the line by that much so the box touches no other line.
+\newcommand{\letterroom}{\rule[-15pt]{0pt}{36pt}}
+
 \begin{document}
 
 \pageheader{Unit 1 \quad Lessons 1.0--1.4}{Sample Quiz}
@@ -68,6 +73,7 @@ more than one of them is about the context, not just the arithmetic.
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
 
+  \boxguard[9]
   \item In the market's records, the \textbf{individuals} are
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
           \item the four stall types.
@@ -75,9 +81,10 @@ more than one of them is about the context, not just the arithmetic.
           \item the weekly revenues.
           \item the market itself.
           \item the shoppers who visit the market.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q1, type=choice, points=1, answer=B]{0.45in}{0.24in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q1, type=choice, points=1, answer=B]{0.45in}{0.24in}}\letterroom
         \end{enumerate}
 
+  \boxguard[9]
   \item Which of the following is a \textbf{statistical question} about these vendors?
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
           \item How much did Hollis Bakehouse earn last week?
@@ -85,9 +92,10 @@ more than one of them is about the context, not just the arithmetic.
           \item What is stall 129's stall type?
           \item How much does weekly revenue vary among the market's 48 vendors?
           \item Is the market open on Saturdays?
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q2, type=choice, points=1, answer=D]{0.45in}{0.24in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q2, type=choice, points=1, answer=D]{0.45in}{0.24in}}\letterroom
         \end{enumerate}
 
+  \boxguard[9]
   \item \textbf{Stall number} is best classified as
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
           \item quantitative, because its values are written in digits.
@@ -95,9 +103,10 @@ more than one of them is about the context, not just the arithmetic.
           \item quantitative and continuous, because 117.5 is a number.
           \item categorical, because the number labels a stall rather than recording an amount.
           \item categorical, because there are only 48 of them.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q3, type=choice, points=1, answer=D]{0.45in}{0.24in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q3, type=choice, points=1, answer=D]{0.45in}{0.24in}}\letterroom
         \end{enumerate}
 
+  \boxguard[9]
   \item Bayview Market has 30 vendors, 15 of them selling produce. Which statement about the
         two markets is correct?
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
@@ -106,9 +115,10 @@ more than one of them is about the context, not just the arithmetic.
           \item The two markets are equally produce-focused.
           \item No comparison is possible, because the markets have different numbers of vendors.
           \item Bayview is more produce-focused, because it has fewer vendors overall.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q4, type=choice, points=1, answer=B]{0.45in}{0.24in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q4, type=choice, points=1, answer=B]{0.45in}{0.24in}}\letterroom
         \end{enumerate}
 
+  \boxguard[9]
   \item \textbf{Pounds of tomatoes sold in a week}, recorded to the nearest whole pound, is
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
           \item categorical, because the amounts were rounded.
@@ -116,9 +126,10 @@ more than one of them is about the context, not just the arithmetic.
           \item continuous, because between any two weights another weight is possible.
           \item discrete, because you can count the tomatoes.
           \item neither, because weight cannot be graphed.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q5, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q5, type=choice, points=1, answer=C]{0.45in}{0.24in}}\letterroom
         \end{enumerate}
 
+  \boxguard[9]
   \item A dotplot of weekly revenue piles up at the low end and trails off toward the high end,
         with a few vendors far to the right. This distribution is
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
@@ -127,7 +138,7 @@ more than one of them is about the context, not just the arithmetic.
           \item symmetric, because it has one peak.
           \item uniform, because every vendor earns something.
           \item impossible to name without the center.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q6, type=choice, points=1, answer=B]{0.45in}{0.24in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=q6, type=choice, points=1, answer=B]{0.45in}{0.24in}}\letterroom
         \end{enumerate}
 
 \end{enumerate}
@@ -136,7 +147,7 @@ more than one of them is about the context, not just the arithmetic.
 
 % No \newpage here: the guard keeps the Section II strip off a page edge, and letting
 % the section flow saves the packet a near-empty final page.
-\boxguard[10]
+\boxguard[18]
 \begin{headlinebox}{goldbg}
 \small
 \textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
@@ -147,30 +158,35 @@ more than one of them is about the context, not just the arithmetic.
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
 
+  \boxguard[16]
   \item Use the Riverside Farmers Market records above.
 
         \vspace{6pt}
         \textbf{(a)} Identify the individuals, then name one categorical variable and one
         quantitative variable in the table.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q7a, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=q7a, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{6pt}
         \textbf{(b)} Give the relative frequency of each of the four stall types, to the nearest
         tenth of a percent.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q7b, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7b.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+        \gradedhide{\gradedhere{\gradedblank[id=q7b, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7b.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{6pt}
         \textbf{(c)} A reporter writes, ``Riverside is the region's produce market --- it has
         more produce vendors than Bayview does.'' Riverside has 18 of 48; Bayview has 15 of 30.
         Explain what is wrong with the reporter's reasoning, and state which market a share
         comparison favours.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q7c, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
+        \gradedhide{\gradedhere{\gradedblank[id=q7c, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{6pt}
         \textbf{(d)} Write one statistical question that could be answered using these records,
         and say which of your two checks makes it statistical.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q7d, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=q7d, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q7d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
+  \boxguard[24]
   \item The dotplot below shows the \textbf{weekly revenue}, in dollars, of all 30 vendors at a
         neighbouring market last week.
 
@@ -189,22 +205,25 @@ more than one of them is about the context, not just the arithmetic.
 
         \textbf{(a)} Is weekly revenue discrete or continuous? Justify from the variable itself,
         not from the display.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q8a, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=q8a, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8a.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{6pt}
         \textbf{(b)} Describe the distribution of weekly revenue completely.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q8b, type=rubric, points=4, rubric=../rubrics/apstats-u01-sample-quiz-q8b.yaml]{\linewidth+6pt}{\gradedlinesheight{4}}}\writelines{4}}
+        \gradedhide{\gradedhere{\gradedblank[id=q8b, type=rubric, points=4, rubric=../rubrics/apstats-u01-sample-quiz-q8b.yaml]{\linewidth+6pt}{\gradedlinesheight{4}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{6pt}
         \textbf{(c)} A classmate writes, ``It is skewed left, because most of the dots are on the
         left side.'' Correct the classmate, and say what actually decides the name.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q8c, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=q8c, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{6pt}
         \textbf{(d)} The market's manager proposes dropping the vendor near \$1{,}900 before
         reporting a typical revenue, calling it ``clearly a mistake.'' Give one reason that is a
         poor decision, and say what should be done with that vendor instead.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=q8d, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=q8d, type=rubric, points=2, rubric=../rubrics/apstats-u01-sample-quiz-q8d.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
 \end{enumerate}
 

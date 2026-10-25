@@ -17,10 +17,11 @@
 
 \textbf{1.} Die rolled until 1 appears; $p = 1/6$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{B: each roll is a 1 (success) or not. I: rolls are independent. T: counting until first 1. S: $p=1/6$ every roll. $X \sim \text{Geom}(1/6)$.}\gradedkey{\raisebox{-10pt}{\gradedblank[id=hw1a, type=rubric, points=3, display={B, I, T, S met (1 or not; independent rolls; until first 1; $p = 1/6$): $X \sim$ Geom$(1/6)$.}]{4.8in}{\gradedlinesheight{3}-5pt}}}
+  \item \ans{B: each roll is a 1 (success) or not. I: rolls are independent. T: counting until first 1. S: $p=1/6$ every roll. $X \sim \text{Geom}(1/6)$.}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=3, display={B, I, T, S met (1 or not; independent rolls; until first 1; $p = 1/6$): $X \sim$ Geom$(1/6)$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
   \item \ans{$P(X=2) = (5/6)^1(1/6) \approx 0.1389$; \quad $P(X=6) = (5/6)^5(1/6) \approx 0.0670$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw1b1, type=short, points=1, answer=0.1389, check=numeric, tolerance=0.002]{0.75in}{0.2in}}}\,\smash{\raisebox{-0pt}{\gradedblank[id=hw1b2, type=short, points=1, answer=0.0670, check=numeric, tolerance=0.002]{0.75in}{0.2in}}}
-  \item \ans{$\mu_X = 6$. On average, a player would need to roll a die 6 times to get the first 1.}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw1c1, type=short, points=1, answer=6, check=numeric, tolerance=0, display={\textbf{6}}]{0.9in}{0.2in}}}
-  \item \ans{$P(X>6) = (5/6)^6 \approx 0.3349$. There is about a 33.5\% probability of needing more than 6 rolls to get the first 1.}\gradedkey{\raisebox{-2pt}{\gradedblank[id=hw1c2, type=rubric, points=2, display={Average of 6 rolls to get the first 1.}]{2.2in}{0.22in}}\,\raisebox{-2pt}{\gradedblank[id=hw1d1, type=short, points=1, answer=0.3349, check=numeric, tolerance=0.002]{0.9in}{0.2in}}\,\raisebox{-2pt}{\gradedblank[id=hw1d2, type=rubric, points=2, display={33.5\%: more than 6 rolls.}]{2.2in}{0.22in}}}
+  \item \ans{$\mu_X = 6$. On average, a player would need to roll a die 6 times to get the first 1.}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw1c1, type=short, points=1, answer=6, check=numeric, tolerance=0, display={\textbf{6}}]{0.9in}{0.2in}}}\gradedkeyline{\gradedblank[id=hw1c2, type=rubric, points=2, display={Average of 6 rolls to get the first 1.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
+\tcbbreak
+  \item \ans{$P(X>6) = (5/6)^6 \approx 0.3349$. There is about a 33.5\% probability of needing more than 6 rolls to get the first 1.}\gradedkey{\raisebox{-2pt}{\gradedblank[id=hw1d1, type=short, points=1, answer=0.3349, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}\gradedkeyline{\gradedblank[id=hw1d2, type=rubric, points=2, display={33.5\%: more than 6 rolls.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
 \end{enumerate}
 
 \vspace{6pt}
@@ -28,26 +29,28 @@
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
   \item \ans{$X \sim \text{Geom}(0.04)$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw2a, type=short, points=1, answer=Geom(0.04), check=text]{3cm}{0.2in}}}
   \item \ans{$P(X=10) = (0.96)^9(0.04) = (0.6925)(0.04) \approx 0.0277$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw2b, type=short, points=2, answer=0.0277, check=numeric, tolerance=0.001]{0.9in}{0.2in}}}
-  \item \ans{$\mu_X = 1/0.04 = 25$. On average, the factory would test 25 bolts before finding the first oversized one.}\gradedkeyline{\kern0.4in\gradedblank[id=hw2c1, type=short, points=1, answer=25, check=numeric, tolerance=0]{0.9in}{0.2in}\hfill \gradedblank[id=hw2c2, type=rubric, points=2, display={On average, 25 bolts are tested to find the first oversized one.}]{5in}{0.22in}}
+  \item \ans{$\mu_X = 1/0.04 = 25$. On average, the factory would test 25 bolts before finding the first oversized one.}\gradedkey{\gradedblank[id=hw2c1, type=short, points=1, answer=25, check=numeric, tolerance=0]{0.9in}{0.2in}}\gradedkeyline{\gradedblank[id=hw2c2, type=rubric, points=2, display={On average, 25 bolts are tested to find the first oversized one.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
   \item \ans{$P(X \le 5) = \texttt{geometcdf(0.04, 5)} \approx 0.1846$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw2d, type=short, points=1, answer=0.1846, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{6pt}
 \textbf{3.} Binomial vs.\ geometric, $p = 0.55$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
   \item \ans{$W \sim \text{Geom}(0.55)$; \quad $\mu_W = 1/0.55 \approx 1.82$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw3a1, type=short, points=1, answer=Geom(0.55), check=text]{3cm}{0.2in}}}\,\smash{\raisebox{-0pt}{\gradedblank[id=hw3a2, type=short, points=1, answer=1.82, check=numeric, tolerance=0.01]{1.4cm}{0.2in}}}
   \item \ans{$V \sim B(10, 0.55)$; \quad $\mu_V = 10(0.55) = 5.5$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw3b1, type=short, points=1, answer={B(10, 0.55)}, check=text]{3cm}{0.2in}}}\,\smash{\raisebox{-0pt}{\gradedblank[id=hw3b2, type=short, points=1, answer=5.5, check=numeric, tolerance=0]{1.4cm}{0.2in}}}
-  \item \ans{$W$ counts how many voters the researcher must interview until finding the first supporter (number of trials is random). $V$ counts how many of exactly 10 interviewed voters support the candidate (number of trials is fixed at 10). They both use the same $p$ but measure completely different things.}\hfill\gradedright{\smash{\raisebox{-13pt}{\gradedblank[id=hw3c, type=rubric, points=2, display={$W$: trials until 1st success (random count); $V$: successes in fixed 10.}]{4.6in}{0.22in}}}}
+  \item \ans{$W$ counts how many voters the researcher must interview until finding the first supporter (number of trials is random). $V$ counts how many of exactly 10 interviewed voters support the candidate (number of trials is fixed at 10). They both use the same $p$ but measure completely different things.}\gradedkeyline{\gradedblank[id=hw3c, type=rubric, points=2, display={$W$: trials until 1st success (random count); $V$: successes in fixed 10.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{4.} Allele carrier; $p = 0.20$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{$X \sim \text{Geom}(0.20)$. B: each person either carries the allele (success) or not. I: individuals are independent (large population). T: examining until the first carrier. S: same $p=0.20$ for every individual.}\gradedkeyline{\kern0.4in\gradedblank[id=hw4a, type=rubric, points=3, display={$X \sim$ Geom$(0.20)$: carrier or not; independent individuals (large population); until the first carrier; same $p = 0.20$.}]{6.1in}{\gradedlinesheight{3}-5pt}}
+  \item \ans{$X \sim \text{Geom}(0.20)$. B: each person either carries the allele (success) or not. I: individuals are independent (large population). T: examining until the first carrier. S: same $p=0.20$ for every individual.}\gradedkeyline{\gradedblank[id=hw4a, type=rubric, points=3, display={$X \sim$ Geom$(0.20)$: carrier or not; independent individuals (large population); until the first carrier; same $p = 0.20$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
   \item \ans{$P(X=4) = (0.80)^3(0.20) = (0.512)(0.20) = 0.1024$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw4b, type=short, points=2, answer=0.1024, check=numeric, tolerance=0.001]{0.9in}{0.2in}}}
-  \item \ans{$\mu_X = 1/0.20 = 5$. On average, the geneticist would need to examine 5 individuals to find the first allele carrier.}\gradedkey{\raisebox{-2pt}{\gradedblank[id=hw4c1, type=short, points=1, answer=5, check=numeric, tolerance=0]{0.9in}{0.2in}}\,\raisebox{-2pt}{\gradedblank[id=hw4c2, type=rubric, points=2, display={On average, 5 individuals examined to find the first carrier.}]{4.2in}{0.22in}}}
+\tcbbreak
+  \item \ans{$\mu_X = 1/0.20 = 5$. On average, the geneticist would need to examine 5 individuals to find the first allele carrier.}\gradedkey{\raisebox{-2pt}{\gradedblank[id=hw4c1, type=short, points=1, answer=5, check=numeric, tolerance=0]{0.9in}{0.2in}}}\gradedkeyline{\gradedblank[id=hw4c2, type=rubric, points=2, display={On average, 5 individuals examined to find the first carrier.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
   \item \ans{$P(X \le 3) = \texttt{geometcdf(0.20, 3)} \approx 0.4880$}\hfill\smash{\raisebox{-0pt}{\gradedblank[id=hw4d, type=short, points=1, answer=0.488, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}\,\smash{\raisebox{-0pt}{\gradedblank[id=hw4e1, type=short, points=1, answer=0.3277, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}
-  \item \ans{$P(X > 5) = (0.80)^5 \approx 0.3277$. There is about a 32.8\% probability that the geneticist must examine more than 5 individuals before finding the first allele carrier.}\gradedkey{\raisebox{-2pt}{\gradedblank[id=hw4e2, type=rubric, points=2, display={32.8\%: more than 5 examined.}]{2.3in}{0.22in}}}
+  \item \ans{$P(X > 5) = (0.80)^5 \approx 0.3277$. There is about a 32.8\% probability that the geneticist must examine more than 5 individuals before finding the first allele carrier.}\gradedkeyline{\gradedblank[id=hw4e2, type=rubric, points=2, display={32.8\%: more than 5 examined.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
 \end{enumerate}
 
 \vspace{6pt}
