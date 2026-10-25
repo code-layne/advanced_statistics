@@ -39,11 +39,18 @@
 
 \boxguard[20]
 \begin{notesbox}{Part A --- Practice and Free Throws}
-\begin{minipage}[c]{0.44\linewidth}\raggedright
-A coach recorded each of 14 players' hours of free-throw practice per week and their
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
+\noindent A coach recorded each of 14 players' hours of free-throw practice per week and their
 free-throw percentage for the season. Technology gives $r = 0.60$.
-\end{minipage}\hfill
-\begin{minipage}[c]{0.54\linewidth}\centering
+\begin{enumerate}[leftmargin=1.9em, itemsep=2pt, topsep=4pt]
+  \item Explanatory variable:
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw1a, type=rubric, points=1, display={hours of practice}]{\linewidth-12.5pt}{0.2in}}
+        \noindent Response:
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw1b, type=rubric, points=1, display={free-throw \%}]{\linewidth-12.5pt}{0.2in}}
+  % The scatterplot sits with Q2, the question that reads it, and moves with its prompt.
+  \item \begin{minipage}[t]{\linewidth}
+        Describe the association in context (direction, unusual point, form, strength).\par
+        \vspace{2pt}\centering
 \begin{tikzpicture}[x=0.52cm, y=0.05cm]
   \foreach \y in {50,60,70,80} {
     \draw[linegray, very thin] (0,\y) -- (13,\y);
@@ -58,11 +65,8 @@ free-throw percentage for the season. Technology gives $r = 0.60$.
   \node[font=\tiny] at (6.5,33.5) {Practice (hours per week)};
   \node[rotate=90, font=\tiny] at (-1.3,64.5) {Free throws (\%)};
 \end{tikzpicture}
-\end{minipage}
-\begin{enumerate}[leftmargin=1.9em, itemsep=2pt, topsep=4pt]
-  \item Explanatory variable: \makebox[0pt][l]{\smash{\gradedblank[id=hw1a, type=rubric, points=1, display={hours of practice}]{3.4cm}{0.2in}}}\phantom{\ans{hours of practice}} \quad Response: \makebox[0pt][l]{\smash{\gradedblank[id=hw1b, type=rubric, points=1, display={free-throw \%}]{4.2cm}{0.2in}}}\phantom{\ans{free-throw \%}}
-  \item Describe the association in context (direction, unusual point, form, strength).
-        \answerspace{1.2cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw2, type=rubric, points=3, display={Moderate, positive, linear: players who practice more tend to make a
+        \end{minipage}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw2, type=rubric, points=3, display={Moderate, positive, linear: players who practice more tend to make a
         higher percent of free throws. One player (11 hours, 50\%) sits far below the pattern.}]{\linewidth-12.5pt}{1.0cm}}
 \end{enumerate}
 \end{notesbox}
@@ -71,19 +75,20 @@ free-throw percentage for the season. Technology gives $r = 0.60$.
 
 \boxguard[14]
 \begin{notesbox}{Part B --- What $r$ Can and Cannot Tell You}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt, topsep=2pt]
   \item \textbf{AP-style multiple choice.} Which correlation shows the \emph{strongest}
-        linear association? Circle one, then justify it in a sentence.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.45in}{0.24in}}\par
+        linear association? Circle one, then justify it in a sentence.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}\par
         \textbf{(A)} $r = 0.45$ \quad \ans{\textbf{(B)} $r = -0.91$} \quad \textbf{(C)} $r = 0$
         \quad \textbf{(D)} $r = 0.78$ \quad \textbf{(E)} $r = -0.20$
-        \answerspace{0.7cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw3j, type=rubric, points=1, display={$-0.91$ is closest to $\pm 1$; the sign gives only the direction.}]{\linewidth-12.5pt}{0.6cm}}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw3j, type=rubric, points=1, display={$-0.91$ is closest to $\pm 1$; the sign gives only the direction.}]{\linewidth-12.5pt}{0.6cm}}
   \item For 40 people aged 5 to 85, age vs.\ reaction time makes a clear U (young adults
         fastest), and $r = 0.05$. Jordan says age and reaction time are unrelated. Is he right?
-        \answerspace{1.1cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw4, type=rubric, points=2, display={No. There is a strong \emph{curved} relationship. $r$ near 0 only
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw4, type=rubric, points=2, display={No. There is a strong \emph{curved} relationship. $r$ near 0 only
         says there is no \emph{linear} association.}]{\linewidth-12.5pt}{0.9cm}}
   \item Across 50 towns, $r = 0.92$ between the number of libraries and the number of crimes.
         Should a town close libraries to cut crime? Explain.
-        \answerspace{1.1cm}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={No. Correlation is not causation. Bigger towns have more of both, so
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{12.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={No. Correlation is not causation. Bigger towns have more of both, so
         population is a likely lurking variable.}]{\linewidth-12.5pt}{0.9cm}}
 \end{enumerate}
 \end{notesbox}

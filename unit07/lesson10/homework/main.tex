@@ -48,24 +48,34 @@
       \textit{Write a complete four-step response.}
 
       \begin{enumerate}[label=\alph*.]
-        \item \textbf{State:} Procedure: \makebox[7cm]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer={{two-sample z-test for p1 - p2}}, check=text, display={\boldmath two-sample $z$-test for $p_1 - p_2$}]{6.8cm}{0.19in}}}\\
+        \item \textbf{State:} Procedure: \makebox[7cm]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer={{two-sample z-test for p1 - p2}}, check=text, display={\boldmath two-sample $z$-test for $p_1 - p_2$}]{6.8cm}{0.19in}}}\\[4pt]
               $H_0$: \makebox[5cm]{\smash{\gradedblank[id=hw2a2, type=short, points=1, answer={{p1 - p2 = 0}}, check=text, display={\boldmath$p_1 - p_2 = 0$}]{4.8cm}{0.19in}}} \quad $H_a$: \makebox[5cm]{\smash{\gradedblank[id=hw2a3, type=short, points=1, answer={{p1 - p2 > 0}}, check=text, display={\boldmath$p_1 - p_2 > 0$}]{4.8cm}{0.19in}}}
         \item \textbf{Plan:} Verify conditions (use numbers):
               \begin{itemize}
-                \item Random: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2b1, type=rubric, points=1]{4.4in}{0.19in}}
-                \item 10\%: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2b2, type=rubric, points=1]{4.4in}{0.19in}}
-                \item Large Counts: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2b3, type=rubric, points=1]{4.4in}{0.19in}}
+                \boxguard
+                \item Random: \hfill\makebox[4.4in][l]{\gradedhere{\gradedblank[id=hw2b1, type=rubric, points=1]{4.4in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
+                \newpage
+                \boxguard
+                \item 10\%: \hfill\makebox[4.4in][l]{\gradedhere{\gradedblank[id=hw2b2, type=rubric, points=1]{4.4in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
+                \boxguard
+                \item Large Counts: \hfill\makebox[4.4in][l]{\gradedhere{\gradedblank[id=hw2b3, type=rubric, points=1]{4.4in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
               \end{itemize}
         \item \textbf{Do:} $\hat p_1 =$ \makebox[1.5cm]{\smash{\gradedblank[id=hw2c1, type=short, points=1, answer=0.45, check=numeric, tolerance=0.005, display={\boldmath$0.45$}]{1.3cm}{0.19in}}} \; $\hat p_2 =$ \makebox[1.5cm]{\smash{\gradedblank[id=hw2c2, type=short, points=1, answer=0.35, check=numeric, tolerance=0.005, display={\boldmath$0.35$}]{1.3cm}{0.19in}}} \;
               $\hat p_c = \dfrac{54+35}{120+100} =$ \makebox[1.8cm]{\smash{\gradedblank[id=hw2c3, type=short, points=1, answer=0.405, check=numeric, tolerance=0.002, display={\boldmath$0.405$}]{1.6cm}{0.19in}}}
 
               $z = \dfrac{(\hat p_1 - \hat p_2)}{\sqrt{\hat p_c(1-\hat p_c)(1/120+1/100)}} \approx$ \makebox[1.8cm]{\smash{\gradedblank[id=hw2c4, type=short, points=1, answer=1.50, check=numeric, tolerance=0.03, display={\boldmath$1.50$}]{1.6cm}{0.19in}}} \quad $p$-value $\approx$ \makebox[2cm]{\smash{\gradedblank[id=hw2c5, type=short, points=1, answer=0.066, check=numeric, tolerance=0.004, display={\boldmath$0.066$}]{1.8cm}{0.19in}}}
 
-        \item \textbf{Conclude:} \gradedhide{\writeline \writeline}\gradedright{\gradedblank[id=hw2d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}
+        \boxguard
+        \item \textbf{Conclude:} \hfill\makebox[\dimexpr\linewidth-0.85in\relax][l]{\gradedhere{\gradedblank[id=hw2d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}}\\
+              \gradedhide{\writelines{9}}
       \end{enumerate}
 
 \vspace{0.10in}
 
+\newpage
 \item \textbf{Means: Confidence Interval.} \;
       A nutritionist randomly samples 22 adults and records their daily sodium intake.
       The sample mean is 2,580 mg and the sample standard deviation is 310 mg. A dotplot
@@ -73,19 +83,31 @@
       for the mean daily sodium intake of all adults. Interpret your interval.
 
       \begin{enumerate}[label=\alph*.]
-        \item \textbf{State:} Procedure: \makebox[7cm]{\smash{\gradedblank[id=hw3a1, type=short, points=1, answer={{one-sample t-interval for mu}}, check=text, display={\boldmath one-sample $t$-interval for $\mu$}]{6.8cm}{0.19in}}} \quad Parameter: \makebox[5cm][l]{\hspace{0.1cm}\smash{\gradedblank[id=hw3a2, type=rubric, points=1, display={\bfseries\boldmath $\mu$: mean sodium (mg)}]{4.3cm}{0.19in}}}
+        \item \textbf{State:} Procedure: \makebox[7cm]{\smash{\gradedblank[id=hw3a1, type=short, points=1, answer={{one-sample t-interval for mu}}, check=text, display={\boldmath one-sample $t$-interval for $\mu$}]{6.8cm}{0.19in}}}\par
+              Parameter:\par
+              \gradedhide{\gradedhere{\gradedblank[id=hw3a2, type=rubric, points=1, display={\bfseries\boldmath $\mu$: mean sodium (mg)}]{\linewidth+6pt}{0.19in}}\writelines{9}}
         \item \textbf{Plan:} Conditions:
               \begin{itemize}
-                \item Random: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3b1, type=rubric, points=1]{4.4in}{0.19in}}
-                \item Normal ($n < 30$): \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3b2, type=rubric, points=1]{4.4in}{0.19in}}
+                \boxguard
+                \item Random: \hfill\makebox[4.4in][l]{\gradedhere{\gradedblank[id=hw3b1, type=rubric, points=1]{4.4in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
+                \boxguard
+                \item Normal ($n < 30$): \hfill\makebox[4.4in][l]{\gradedhere{\gradedblank[id=hw3b2, type=rubric, points=1]{4.4in}{0.19in}}}\\
+                \gradedhide{\writelines{9}}
               \end{itemize}
+        \newpage
         \item \textbf{Do:} $t^* =$ \makebox[1.5cm]{\smash{\gradedblank[id=hw3c1, type=short, points=1, answer=2.080, check=numeric, tolerance=0.005, display={\boldmath$2.080$}]{1.3cm}{0.19in}}} (df = \makebox[1.5cm]{\smash{\gradedblank[id=hw3c2, type=short, points=1, answer=21, check=numeric, tolerance=0, display={\boldmath$21$}]{1.3cm}{0.19in}}}); \;
-              $ME = t^* \cdot \dfrac{s}{\sqrt{n}} =$ \makebox[3cm]{\smash{\gradedblank[id=hw3c3, type=short, points=1, answer=137.4, check=numeric, tolerance=0.5, display={\boldmath$137.4$}]{2.8cm}{0.19in}}}; \; Interval: \makebox[4cm][l]{\hspace{0.1cm}\smash{\gradedblank[id=hw3c4, type=rubric, points=1, display={\bfseries\boldmath $(2442.6,\ 2717.4)$}]{3.3cm}{0.19in}}}
-        \item \textbf{Conclude:} \gradedhide{\writeline \writeline}\gradedright{\gradedblank[id=hw3d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}
+              $ME = t^* \cdot \dfrac{s}{\sqrt{n}} =$ \makebox[3cm]{\smash{\gradedblank[id=hw3c3, type=short, points=1, answer=137.4, check=numeric, tolerance=0.5, display={\boldmath$137.4$}]{2.8cm}{0.19in}}};\par
+              Interval:\par
+              \gradedhide{\gradedhere{\gradedblank[id=hw3c4, type=rubric, points=1, display={\bfseries\boldmath $(2442.6,\ 2717.4)$}]{\linewidth+6pt}{0.19in}}\writelines{9}}
+        \boxguard
+        \item \textbf{Conclude:} \hfill\makebox[\dimexpr\linewidth-0.85in\relax][l]{\gradedhere{\gradedblank[id=hw3d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}}\\
+              \gradedhide{\writelines{9}}
       \end{enumerate}
 
 \vspace{0.10in}
 
+\newpage
 \item \textbf{Matched Pairs.} \;
       A coach records the 40-meter sprint time (seconds) for 10 randomly selected sprinters
       before and after a 4-week speed training program. The differences (before $-$ after)
@@ -95,12 +117,19 @@
       Write a complete four-step response. Use $\alpha = 0.05$.
 
       \begin{enumerate}[label=\alph*.]
-        \item \textbf{State:} Procedure: \makebox[7cm]{\smash{\gradedblank[id=hw4a1, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={\boldmath matched-pairs $t$-test for $\mu_d$}]{6.8cm}{0.19in}}}\\
+        \item \textbf{State:} Procedure: \makebox[7cm]{\smash{\gradedblank[id=hw4a1, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={\boldmath matched-pairs $t$-test for $\mu_d$}]{6.8cm}{0.19in}}}\\[4pt]
               $H_0$: \makebox[4.5cm]{\smash{\gradedblank[id=hw4a2, type=short, points=1, answer={{mu_d = 0}}, check=text, display={\boldmath$\mu_d = 0$}]{4.3cm}{0.19in}}} \quad $H_a$: \makebox[4.5cm]{\smash{\gradedblank[id=hw4a3, type=short, points=1, answer={{mu_d > 0}}, check=text, display={\boldmath$\mu_d > 0$}]{4.3cm}{0.19in}}}
-        \item \textbf{Plan:} Conditions: Random: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw4b1, type=rubric, points=1]{1.7in}{0.19in}}\quad Normal: \gradedhide{\writeline}\gradedright{\gradedblank[id=hw4b2, type=rubric, points=1]{1.5in}{0.19in}}
+        \item \textbf{Plan:} Conditions:\par
+              Random:\par
+              \gradedhide{\gradedhere{\gradedblank[id=hw4b1, type=rubric, points=1]{\linewidth+6pt}{0.19in}}\writelines{9}}\par
+              Normal:\par
+              \gradedhide{\gradedhere{\gradedblank[id=hw4b2, type=rubric, points=1]{\linewidth+6pt}{0.19in}}\writelines{9}}
         \item \textbf{Do:} $t = \dfrac{\bar d - 0}{s_d / \sqrt{n}} = \dfrac{0.31}{0.18/\sqrt{10}} \approx$ \makebox[1.8cm]{\smash{\gradedblank[id=hw4c1, type=short, points=1, answer=5.45, check=numeric, tolerance=0.03, display={\boldmath$5.45$}]{1.6cm}{0.19in}}} \quad
               $p$-value $\approx$ \makebox[2cm]{\smash{\gradedblank[id=hw4c2, type=short, points=1, answer=0.0002, check=numeric, tolerance=0.0002, display={\boldmath$0.0002$}]{1.8cm}{0.19in}}} ($df =$ \makebox[1.5cm]{\smash{\gradedblank[id=hw4c3, type=short, points=1, answer=9, check=numeric, tolerance=0, display={\boldmath$9$}]{1.3cm}{0.19in}}})
-        \item \textbf{Conclude:} \gradedhide{\writeline \writeline}\gradedright{\gradedblank[id=hw4d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}
+        \newpage
+        \boxguard
+        \item \textbf{Conclude:} \hfill\makebox[\dimexpr\linewidth-0.85in\relax][l]{\gradedhere{\gradedblank[id=hw4d, type=rubric, points=2]{\linewidth-0.85in}{0.19in}}}\\
+              \gradedhide{\writelines{9}}
       \end{enumerate}
 
 \vspace{0.10in}
@@ -115,7 +144,7 @@
         \item One-sample $t$-test for $\mu$
         \item Matched-pairs $t$-test for $\mu_d$
         \item Two-sample $t$-test for $\mu_1 - \mu_2$
-        \item Two-sample $z$-test for $p_1 - p_2$
+        \item Two-sample $z$-test for $p_1 - p_2$\rule[-0.17in]{0pt}{0.47in}
               \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.4in}{0.2in}}
       \end{enumerate}
 

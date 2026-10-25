@@ -47,6 +47,7 @@ halls. Start it now, ask about anything that stalls you before you leave, then f
 
 \boxguard[20]
 \begin{notesbox}{Part A --- Reading the Table}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
 \small
 \begin{minipage}[c]{0.34\linewidth}\raggedright
 A gym checked on its 250 newest members six months after they joined.
@@ -74,21 +75,22 @@ A gym checked on its 250 newest members six months after they joined.
 
 \boxguard[14]
 \begin{notesbox}{Part B --- Is There an Association?}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
 \small
 \begin{enumerate}[leftmargin=1.9em, itemsep=2pt]
   \item Find the proportion still attending for each plan. Show the fractions.\gradedbelow[r]{5pt}{\textit{Monthly:}~\gradedblank[id=hw3a, type=short, points=1, answer=0.40, check=numeric, tolerance=0.005]{0.7in}{0.2in}\quad\textit{Annual:}~\gradedblank[id=hw3b, type=short, points=1, answer=0.70, check=numeric, tolerance=0.005]{0.7in}{0.2in}}
         \answerspace{0.7cm}{Monthly: $60/150 = 0.40$. \quad Annual: $70/100 = 0.70$.}
   \item The manager says: ``70 annual and 60 monthly members still come, so the plan doesn't
         matter.'' Is there an association? Use percents, and say what this study \emph{cannot} show.
-        \answerspace{1.3cm}{\normalcolor\mdseries\hspace*{13.7pt}\gradedblank[id=hw4, type=rubric, points=3, display={Yes: the plans differ in size, so compare percents --- 70\% of annual vs.\ 40\% of monthly members still come. Observational data cannot show the plan \emph{causes} it.}]{\linewidth-13.7pt}{1.1cm}}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{13.7pt}\gradedblank[id=hw4, type=rubric, points=3, display={Yes: the plans differ in size, so compare percents --- 70\% of annual vs.\ 40\% of monthly members still come. Observational data cannot show the plan \emph{causes} it.}]{\linewidth-13.7pt}{1.1cm}}
   \item \textbf{AP-style MC.} Which result at another gym shows \textbf{no} association? Circle, then justify.
-        \par\vspace{2pt}
+        \par\nopagebreak\vspace{2pt}
         \begin{tabularx}{\linewidth}{@{} X X @{}}
         \textbf{(A)} 60 of 150 monthly, 60 of 100 annual & \ans{(B) 60 of 150 monthly, 40 of 100 annual} \\
         \textbf{(C)} 90 monthly and 70 annual attend & \textbf{(D)} half of all members attend \\
-        \textbf{(E)} the two plans have equal sizes & \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}} \\
+        \textbf{(E)} the two plans have equal sizes & \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in} \\
         \end{tabularx}
-        \answerspace{0.7cm}{\normalcolor\mdseries\hspace*{13.7pt}\gradedblank[id=hw5j, type=rubric, points=1, display={(B): 40\% of each plan still attends --- the conditional distributions match.}]{\linewidth-13.7pt}{0.6cm}}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{13.7pt}\gradedblank[id=hw5j, type=rubric, points=1, display={(B): 40\% of each plan still attends --- the conditional distributions match.}]{\linewidth-13.7pt}{0.6cm}}
 \end{enumerate}
 \end{notesbox}
 

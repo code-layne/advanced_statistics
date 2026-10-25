@@ -21,11 +21,16 @@ on at least 4 of the 7 days.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Describe your simulation design:
-        \begin{itemize}
-          \item Chance device: \gradedhide{\writeline}\gradedright{\raisebox{-3pt}{\gradedblank[id=hw1a1, type=rubric, points=1, display={Digits 0--9}]{1.3in}{0.22in}}}
-          \item How outcomes are assigned: \gradedhide{\writeline}\gradedright{\raisebox{-3pt}{\gradedblank[id=hw1a2, type=rubric, points=1, display={0--3 rain, 4--9 not}]{1.3in}{0.22in}}}
-          \item What one trial represents: \gradedhide{\writeline}\gradedright{\raisebox{-3pt}{\gradedblank[id=hw1a3, type=rubric, points=1, display={7 digits = 1 week}]{1.3in}{0.22in}}}
-          \item What the event of interest is: \gradedhide{\writeline}\gradedright{\raisebox{-3pt}{\gradedblank[id=hw1a4, type=rubric, points=1, display={$\ge 4$ of 7 in 0--3}]{1.3in}{0.22in}}}
+        \begin{itemize}[itemsep=8pt]
+          \item Chance device:\\
+          \gradedhide{\gradedhere{\gradedblank[id=hw1a1, type=rubric, points=1, display={Digits 0--9}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
+          \item How outcomes are assigned:\\
+          \gradedhide{\gradedhere{\gradedblank[id=hw1a2, type=rubric, points=1, display={0--3 rain, 4--9 not}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
+          \item What one trial represents:\\
+          \gradedhide{\gradedhere{\gradedblank[id=hw1a3, type=rubric, points=1, display={7 digits = 1 week}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
+\tcbbreak
+          \item What the event of interest is:\\
+          \gradedhide{\gradedhere{\gradedblank[id=hw1a4, type=rubric, points=1, display={$\ge 4$ of 7 in 0--3}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
         \end{itemize}
   \item Run 20 trials using random digits below.  (Let 0--3 = rain, 4--9 = no rain.)
 
@@ -65,10 +70,13 @@ A student guesses randomly on every question.
   \item What is the probability of guessing any single question correctly? \makebox[2cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2a, type=short, points=1, answer=0.25, check=numeric, tolerance=0]{1.8cm}{0.2in}}}}
   \item Design a simulation using a single die (or random digits 1--4) to estimate the
         probability that the student gets \textbf{at least 3 correct}.
-        Describe the design: \gradedhide{\writeline\writeline}\gradedright{\raisebox{-10pt}{\gradedblank[id=hw2b, type=rubric, points=3, display={Digit 1 = correct; 5 digits per trial; count $\ge 3$.}]{3.2in}{0.22in}}}
+        Describe the design:\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b, type=rubric, points=3, display={Digit 1 = correct; 5 digits per trial; count $\ge 3$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Run 15 trials. Record the number correct per trial:
         \vspace{20pt}
-  \item Empirical probability of at least 3 correct: $\hat{p} = \makebox[3cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2d, type=rubric, points=1, display={$x/15$}]{2.6cm}{0.2in}}}}$
+\tcbbreak
+  \item Empirical probability of at least 3 correct: $\hat{p} = {}$\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw2d, type=rubric, points=1, display={$x/15$}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -82,14 +90,14 @@ probability?
   \item $65/500 = 0.13$
   \item $500/65 = 0.13$
   \item $65 \times 500 = 32{,}500$
-        \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.4in}{0.2in}}
+        \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=B]{0.4in}{0.2in}}\rule[-14pt]{0pt}{32pt}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{4.} \textit{Reflection:} Explain in your own words why the Law of Large Numbers
 matters when using simulation to estimate probability. What could go wrong if you based
 your estimate on only 5 trials?\\[6pt]
-\gradedhide{\gradedhere{\kern2.1in\gradedblank[id=hw4, type=rubric, points=2, display={Few trials fluctuate wildly; many trials converge (LLN). 5 is too few.}]{\linewidth+6pt-2.1in}{\gradedlinesheight{1}+6pt}}\writeline\writeline\writeline}
+\gradedhide{\gradedhere{\kern2.1in\gradedblank[id=hw4, type=rubric, points=2, display={Few trials fluctuate wildly; many trials converge (LLN). 5 is too few.}]{\linewidth+6pt-2.1in}{\gradedlinesheight{1}+6pt}}\writelines{10}}
 
 \vspace{8pt}
 \textbf{Extension / Preview:} Use a calculator or app to run 50 random trials of a

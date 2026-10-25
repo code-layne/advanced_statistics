@@ -54,14 +54,22 @@ A chi-square table excerpt (right-tail areas):
 \end{center}
 
 \begin{enumerate}[label=\alph*., itemsep=6pt]
+  \boxguard[18]
   \item \textbf{State.} Identify the test type. Write $H_0$ and $H_a$.
 
-        Test type: \makebox[5cm][r]{\smash{\gradedblank[id=hw1a1, type=rubric, points=1, display={\bfseries Independence}]{3.2cm}{0.2in}}}
+        Test type: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a1, type=rubric, points=1, display={\bfseries Independence}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
 
-        $H_0$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw1a2, type=rubric, points=1, display={\bfseries No association.}]{2.4in}{0.2in}}}}%
-        $H_a$: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw1a3, type=rubric, points=1, display={\bfseries Association.}]{2.2in}{0.2in}}}}%
+        \boxguard[14]
+        $H_0$: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a2, type=rubric, points=1, display={\bfseries No association.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
 
-  \item \textbf{Plan.} Method: \makebox[5.5cm][r]{\smash{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries $\chi^2$ test (same as a.)}]{3.5cm}{0.2in}}}. Verify the Random condition: \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries Stated.}]{0.85in}{0.2in}}}}
+        \boxguard[14]
+        $H_a$: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a3, type=rubric, points=1, display={\bfseries Association.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+
+  \boxguard[16]
+  \item \textbf{Plan.} Method: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries $\chi^2$ test (same as a.)}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+
+        \boxguard[14]
+        Verify the Random condition: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries Stated.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
 
         Compute expected counts (each row total = 60):
 
@@ -70,6 +78,7 @@ A chi-square table excerpt (right-tail areas):
 
         Are all expected counts $\ge 5$? \hphantom{\blank{2cm}}\hskip 0pt plus 1fill\smash{\gradedblank[id=hw1b5, type=short, points=1, answer=yes, check=text]{1.2cm}{0.2in}}
 
+  \newpage
   \item \textbf{Do.} $\text{df} = ($ \blank{1.5cm} $-1)($ \blank{1.5cm} $-1) = $ \hphantom{\blank{2cm}}\hskip 0pt plus 1fill\smash{\gradedblank[id=hw1c1, type=short, points=1, answer=2, check=numeric, tolerance=0]{1.2cm}{0.2in}}
 
         Compute $\chi^2$ contributions and sum them below.
@@ -90,14 +99,16 @@ A chi-square table excerpt (right-tail areas):
 
         $\chi^2 = $ \makebox[4cm][r]{\smash{\gradedblank[id=hw1c2, type=short, points=2, answer=5.25, check=numeric, tolerance=0.1]{2.2cm}{0.2in}}}
 
-        Using the table above, the p-value is approximately \hphantom{\blank{3cm}}.\hskip 0pt plus 1fill\smash{\gradedblank[id=hw1c3, type=rubric, points=1, display={\bfseries 0.05 to 0.10}]{1.3in}{0.2in}}
+        \boxguard[14]
+        Using the table above, the p-value is approximately \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1c3, type=rubric, points=1, display={\bfseries 0.05 to 0.10}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
 
   \item \textbf{Conclude.} At $\alpha = 0.05$:
-        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.07 > 0.05$: fail to reject $H_0$; no convincing evidence of an association between grade and sleep.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.07 > 0.05$: fail to reject $H_0$; no convincing evidence of an association between grade and sleep.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \vspace{0.1in}
 
+\newpage
 %% Problem 2 %%
 \item \textbf{Degrees of Freedom.}
 A student computes $\chi^2 = 9.21$ for a $2 \times 4$ contingency table.
@@ -106,9 +117,10 @@ A student computes $\chi^2 = 9.21$ for a $2 \times 4$ contingency table.
   \item What is the degrees of freedom? \makebox[3cm][r]{\smash{\gradedblank[id=hw2a, type=short, points=1, answer=3, check=numeric, tolerance=0]{1.45cm}{0.2in}}}
   \item Using the table in Problem 1, what is the critical value at $\alpha = 0.05$?
         \makebox[3cm][r]{\smash{\gradedblank[id=hw2b, type=short, points=1, answer=7.815, check=numeric, tolerance=0]{1.45cm}{0.2in}}}
+  \boxguard[16]
   \item Based on $\chi^2 = 9.21$, can the student reject $H_0$ at $\alpha = 0.05$?
         Explain.
-        \gradedhide{\writeline\gradedright{\smash{\gradedblank[id=hw2c, type=rubric, points=2, display={\bfseries Yes: $9.21 > 7.815$.}]{1.7in}{0.2in}}}}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={\bfseries Yes: $9.21 > 7.815$.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
 \end{enumerate}
 
 \vspace{0.1in}
@@ -117,7 +129,7 @@ A student computes $\chi^2 = 9.21$ for a $2 \times 4$ contingency table.
 \item \textbf{Conceptual Question.}
 In what sense does a \emph{larger} $\chi^2$ value provide more evidence against $H_0$?
 Use the ideas of expected counts, p-value, and the chi-square distribution in your answer.
-\gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3, type=rubric, points=3, display={Larger $\chi^2$ = observed counts farther from expected under $H_0$; farther into the right tail, so a smaller p-value and stronger evidence against $H_0$.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
+\gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3, type=rubric, points=3, display={Larger $\chi^2$ = observed counts farther from expected under $H_0$; farther into the right tail, so a smaller p-value and stronger evidence against $H_0$.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
 \end{enumerate}
 

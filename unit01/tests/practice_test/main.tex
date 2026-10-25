@@ -2,14 +2,14 @@
 % The practice form of the Unit 1 test. Item for item it is the parallel form of ../actual_test/:
 % the same 15 multiple-choice targets in the same order and the same five free-response
 % questions with the same parts and points (MC 15 x 4 = 60, FRQ 5 x 8 = 40, total 100;
-% 20 questions; 5 pages at most) --- every context different, so working this one teaches the
+% 20 questions; no page limit) --- every context different, so working this one teaches the
 % moves, not the answers.
 % Merged into the unit student packet via ../../sample_test/ (see shared/tests.mk).
 % NAMESTRIP: no name line — this page is graded, and its scan goes to an outside API, so the
 % strip carries only the tracking id; the name goes on the roster cover sheet (make roster-packets).
 % NO SKETCH ITEMS: every display is pre-drawn in TikZ and read.
 % COMPACT LAYOUT: short answer choices run in two columns (multicols), figures sit beside their
-% stems, and each free-response part gets only the lines its answer needs. Keep it to 5 pages.
+% stems, and each free-response part gets only the lines its answer needs. No page limit: every rubric box is 2in tall.
 %
 % BLUEPRINT (the free response carries individuals, classifying variables, statistical
 % questions, relative frequency, and the 1.5 x IQR rule, so the multiple choice does not repeat them)
@@ -67,6 +67,11 @@
   {\begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt, topsep=1pt]}
   {\end{enumerate}}
 
+% \letterroom: a zero-width strut beside a flush-right Letter box. A choice box is
+% drawn square (0.45in), so it stands ~0.1in above and below its line; the strut
+% opens the line by that much so the box touches no other line.
+\newcommand{\letterroom}{\rule[-15pt]{0pt}{36pt}}
+
 \begin{document}
 
 \pageheader{Unit 1 \quad Lessons 1.0--1.7}{Sample Test}
@@ -85,7 +90,7 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=0.03in]
 
-  \boxguard[8]
+  \boxguard[10]
   \item A gym records each member's weekly workout time in minutes, then replaces it with a
         label: \emph{Light} (under 90), \emph{Moderate} (90 to 180), or \emph{Heavy} (over 180).
         Which statement is true?
@@ -95,12 +100,12 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item Nothing is lost: the minutes can be recovered from the labels.
           \item The median workout time can still be found exactly from the labels.
           \item It is now categorical, and the mean workout time can no longer be found.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t1, type=choice, points=4, answer=E]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t1, type=choice, points=4, answer=E]{0.45in}{0.22in}}\letterroom
         \end{choices}
 
-  \boxguard[8]
+  \boxguard[10]
   \item At Camp Alder, 54 of 120 campers named swimming their favorite activity. At Camp Birch,
-        39 of 75 did. Which is best supported?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t2, type=choice, points=4, answer=A]{0.45in}{0.22in}}
+        39 of 75 did. Which is best supported?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t2, type=choice, points=4, answer=A]{0.45in}{0.22in}}\letterroom
         \begin{multicols}{2}
         \begin{choices}
           \item Birch: 52\% is greater than 45\%
@@ -111,8 +116,8 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
         \end{choices}
         \end{multicols}
 
-  \boxguard[6]
-  \item Which of these variables is \textbf{continuous}?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t3, type=choice, points=4, answer=D]{0.45in}{0.22in}}
+  \boxguard[8]
+  \item Which of these variables is \textbf{continuous}?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t3, type=choice, points=4, answer=D]{0.45in}{0.22in}}\letterroom
         \begin{multicols}{2}
         \begin{choices}
           \item Number of siblings
@@ -123,7 +128,7 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
         \end{choices}
         \end{multicols}
 
-  \boxguard[8]
+  \boxguard[10]
   \item \begin{minipage}[t]{0.62\linewidth}\raggedright
         The stem plot shows the daily high temperature ($^\circ$F) in a city on 15 days in
         April. What is the \textbf{median} daily high?
@@ -136,6 +141,7 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item $7^\circ$F\gradedbelow[r]{1pt}{\textit{Letter:}~\gradedblank[id=t4, type=choice, points=4, answer=B]{0.45in}{0.22in}}
         \end{choices}
         \end{multicols}
+        \vspace{0.32in}
         \end{minipage}\hfill
         \begin{minipage}[t]{0.32\linewidth}
         \centering\small
@@ -147,7 +153,7 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
         {\footnotesize Key: $5\,|\,8 = 58^\circ$F}
         \end{minipage}
 
-  \boxguard[8]
+  \boxguard[10]
   \item Two histograms of the \emph{same} 50 battery lifetimes (hours): with 1-hour intervals there
         is a gap from 12 to 14 hours; with 4-hour intervals there is no gap. Which is correct?
         \begin{choices}
@@ -156,10 +162,10 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item Only the histogram with more bars is a true histogram.
           \item The gap shows that the data set contains an outlier.
           \item Both are correct: the interval width changes the picture, not the data.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t5, type=choice, points=4, answer=E]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t5, type=choice, points=4, answer=E]{0.45in}{0.22in}}\letterroom
         \end{choices}
 
-  \boxguard[9]
+  \boxguard[11]
   \item \begin{minipage}[t]{0.56\linewidth}\raggedright
         The histogram shows the prices of 40 used textbooks sold online. Which best describes
         the \textbf{shape}?
@@ -187,7 +193,7 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
         \end{tikzpicture}\gradedbelow[r]{0.12in}{\textit{Letter:}~\gradedblank[id=t6, type=choice, points=4, answer=C]{0.45in}{0.22in}}
         \end{minipage}
 
-  \boxguard[9]
+  \boxguard[11]
   \item \begin{minipage}[t]{0.56\linewidth}\raggedright
         The dotplot shows the lengths (minutes) of the 20 songs on a playlist. Which statement
         is best?
@@ -209,12 +215,12 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item There are no unusual features, because most songs last 3 to 4.5 minutes.
           \item The distribution is bimodal, with peaks at 3.5 and 8 minutes.
           \item The gap from 2.5 to 3 minutes is the most unusual feature.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t7, type=choice, points=4, answer=A]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t7, type=choice, points=4, answer=A]{0.45in}{0.22in}}\letterroom
         \end{choices}
 
-  \boxguard[8]
+  \boxguard[10]
   \item The distribution of 80 home sale prices in a town is strongly \textbf{skewed right}.
-        Which is most likely true?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t8, type=choice, points=4, answer=D]{0.45in}{0.22in}}
+        Which is most likely true?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t8, type=choice, points=4, answer=D]{0.45in}{0.22in}}\letterroom
         \begin{multicols}{2}
         \begin{choices}
           \item Mean $<$ median; report the mean
@@ -225,7 +231,7 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
         \end{choices}
         \end{multicols}
 
-  \boxguard[8]
+  \boxguard[10]
   \item The prices of 9 lunch specials are \$6, 7, 7, 8, 9, 9, 10, 11, and 12. The \$12 price is
         mistakenly entered as \$120. Which summaries change?
         \begin{multicols}{2}
@@ -235,11 +241,11 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item Mean and range; not median or IQR
           \item None of them: only one price is wrong
           \item Only the IQR
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t9, type=choice, points=4, answer=C]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t9, type=choice, points=4, answer=C]{0.45in}{0.22in}}\letterroom
         \end{choices}
         \end{multicols}
 
-  \boxguard[8]
+  \boxguard[10]
   \item For 30 bags of dog food labeled 20 lb, the standard deviation of the weights is 0.3 lb.
         Which is the best interpretation?
         \begin{choices}
@@ -248,10 +254,10 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item The heaviest bag weighs 0.3 lb more than the lightest bag.
           \item About 30\% of the bags weigh more than the mean weight.
           \item The bag weights typically vary by about 0.3 lb from the mean weight.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t10, type=choice, points=4, answer=E]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t10, type=choice, points=4, answer=E]{0.45in}{0.22in}}\letterroom
         \end{choices}
 
-  \boxguard[8]
+  \boxguard[10]
   \item A student's score on a state reading test is at the \textbf{82nd percentile}. This means
         \begin{choices}
           \item about 82\% of the test-takers scored at or below this student.
@@ -259,10 +265,10 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item the student scored 82 points.
           \item about 18\% of the test-takers scored at or below this student.
           \item the student scored higher than exactly 82 other students.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t11, type=choice, points=4, answer=A]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t11, type=choice, points=4, answer=A]{0.45in}{0.22in}}\letterroom
         \end{choices}
 
-  \boxguard[9]
+  \boxguard[11]
   \item \begin{minipage}[t]{0.56\linewidth}\raggedright
         The boxplot shows the points a basketball team scored in each of its 30 games. Which
         statement is true?
@@ -288,10 +294,10 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item About half of the games had scores above 75.
           \item The team's mean score was 64 points.
           \item The range of the scores is 28 points.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t12, type=choice, points=4, answer=B]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t12, type=choice, points=4, answer=B]{0.45in}{0.22in}}\letterroom
         \end{choices}
 
-  \boxguard[10]
+  \boxguard[12]
   \item \begin{minipage}[t]{0.50\linewidth}\raggedright
         The parallel boxplots show patients' waiting times (minutes) at two urgent-care clinics.
         Which comparison is best?
@@ -319,10 +325,10 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item Clinic A's waits are longer, because its maximum is larger.
           \item B has the higher median (30 vs.\ 24 min) and the smaller IQR (8 vs.\ 12).
           \item Every patient at Clinic B waited longer than every patient at Clinic A.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t13, type=choice, points=4, answer=D]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t13, type=choice, points=4, answer=D]{0.45in}{0.22in}}\letterroom
         \end{choices}
 
-  \boxguard[8]
+  \boxguard[10]
   \item A town's records show the mean age of all 4,200 residents is 38.6 years. A reporter
         surveys 50 residents; their mean age is 41.2 years. Which is correct?
         \begin{multicols}{2}
@@ -332,14 +338,14 @@ This is the \textbf{practice} test --- not scored. Circle the single best answer
           \item 38.6 is $\mu$; 41.2 is $\bar x$
           \item Both are statistics, since both are means
           \item 41.2 is $\mu$, since it is larger
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t14, type=choice, points=4, answer=C]{0.45in}{0.22in}}
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=t14, type=choice, points=4, answer=C]{0.45in}{0.22in}}\letterroom
         \end{choices}
         \end{multicols}
 
-  \boxguard[9]
+  \boxguard[11]
   \item Maya scored 84 on a history test (class mean 76, standard deviation 5). Jordan scored 88 on
         a chemistry test (class mean 80, standard deviation 8). Who did better \emph{relative to
-        their own class}?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t15, type=choice, points=4, answer=B]{0.45in}{0.22in}}
+        their own class}?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t15, type=choice, points=4, answer=B]{0.45in}{0.22in}}\letterroom
         \begin{multicols}{2}
         \begin{choices}
           \item Jordan: 88 is greater than 84
@@ -365,7 +371,7 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
 
-  \boxguard[8]
+  \boxguard[22]
   \item \textbf{(8 points)} A city's parks department keeps these records on its playgrounds.
 
         \vspace{3pt}
@@ -382,19 +388,21 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
 
         \vspace{3pt}
         \textbf{(a)} What are the individuals? Is \emph{Eastgate} a variable or a value?\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t16a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t16a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+        \gradedhide{\gradedhere{\gradedblank[id=t16a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t16a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(b)} Classify \emph{Park \#}, \emph{Swings}, and \emph{Area} as categorical or
         quantitative. For each quantitative one, say discrete or continuous.\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t16b, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t16b.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=t16b, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t16b.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(c)} Is ``How many swings does Park 122 have?'' a statistical question? Explain,
         then write one that is.\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t16c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t16c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=t16c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t16c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
-  \boxguard[14]
+  \boxguard[24]
   \item \textbf{(8 points)} Two high schools asked their seniors about their plans after
         graduation.
 
@@ -432,19 +440,21 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
 
         \vspace{3pt}
         \textbf{(a)} What proportion of each school's seniors plan to attend a 4-year college?\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t17a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t17a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+        \gradedhide{\gradedhere{\gradedblank[id=t17a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t17a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(b)} A reporter wrote: ``North sends more of its seniors to 4-year colleges ---
         look how much taller its bar is.'' What is wrong with this reasoning?\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t17b, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t17b.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=t17b, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t17b.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(c)} Do \emph{most} North seniors plan on a 4-year college? Most South seniors?
         Justify.\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t17c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t17c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=t17c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t17c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
-  \boxguard[14]
+  \boxguard[30]
   \item \textbf{(8 points)} A biologist measured the lengths (cm) of 50 trout caught in a lake.
 
         \vspace{3pt}
@@ -465,19 +475,20 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
         \end{minipage}\hfill
         \begin{minipage}[t]{0.55\linewidth}\raggedright
         \textbf{(a)} How many trout were shorter than 28 cm? What percent of the catch is that?\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t18a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t18a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+        \gradedhide{\gradedhere{\gradedblank[id=t18a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t18a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{8}}
 
         \vspace{3pt}
         \textbf{(b)} Can the exact median be found from the histogram? If not, which interval
         holds it? Explain.\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t18b, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t18b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
+        \gradedhide{\gradedhere{\gradedblank[id=t18b, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t18b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{8}}
         \end{minipage}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(c)} Describe the distribution of trout lengths.\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t18c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t18c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
+        \gradedhide{\gradedhere{\gradedblank[id=t18c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t18c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{8}}
 
-  \boxguard[14]
+  \boxguard[17]
   \item \textbf{(8 points)} A resale shop's prices (dollars) for 15 used video games, in order:\\[2pt]
         \hspace*{\fill}8 \ \ 10 \ \ 12 \ \ 12 \ \ 14 \ \ 15 \ \ 15 \ \ 16 \ \ 18 \ \ 20 \ \ 21
         \ \ 22 \ \ 24 \ \ 25 \ \ 58\hspace*{\fill}
@@ -489,6 +500,7 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
           \text{Min} = 8, \quad Q_1 = 12, \quad \text{Median} = 16, \quad Q_3 = 22, \quad
           \text{Max} = 58
         \end{work}
+        \vspace{1.52in}
 
         \textbf{(b)} Use the $1.5 \times \text{IQR}$ rule to decide whether \$58 is an outlier. If
         it is, where does the upper whisker of a modified boxplot end?\gradedbelow{2pt}{\gradedblank[id=t19b, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t19b.yaml]{\linewidth}{0.94in}}
@@ -496,13 +508,15 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
           \text{IQR} = 22 - 12 = 10, \qquad Q_3 + 1.5(\text{IQR}) = 22 + 15 = 37
         \end{work}
         \gradedhide{\writelines{1}}
+        \vspace{1.16in}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(c)} The mean price is \$19.33. Which better describes a typical price, the mean or
         the median? Explain.\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t19c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t19c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{2}}
+        \gradedhide{\gradedhere{\gradedblank[id=t19c, type=rubric, points=3, rubric=../rubrics/apstats-u01-practice-test-t19c.yaml]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
-  \boxguard[14]
+  \boxguard[26]
   \item \textbf{(8 points)} The weights of eggs from a farm are approximately normal, with mean
         $\mu = 58$ grams and standard deviation $\sigma = 4$ grams.
 
@@ -520,20 +534,23 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
         \end{minipage}\hfill
         \begin{minipage}[t]{0.57\linewidth}\raggedright
         \textbf{(a)} About what percent of the eggs weigh between 50 and 66 grams?\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t20a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t20a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+        \gradedhide{\gradedhere{\gradedblank[id=t20a, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t20a.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{8}}
 
         \vspace{3pt}
         \textbf{(b)} About what percent weigh \emph{more than} 62 grams?\\[2pt]
-        \gradedhide{\gradedhere{\gradedblank[id=t20b, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t20b.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{1}}
+        \gradedhide{\gradedhere{\gradedblank[id=t20b, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t20b.yaml]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{8}}
         \end{minipage}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(c)} One egg weighs 51 grams. Find its $z$-score and interpret it in context.\gradedbelow{2pt}{\gradedblank[id=t20c, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t20c.yaml]{\linewidth}{1.08in}}
         \begin{work}
           z = \frac{51 - 58}{4} = -1.75
         \end{work}
         \gradedhide{\writelines{1}}
+        \vspace{1.02in}
 
+        \boxguard[15]
         \vspace{3pt}
         \textbf{(d)} A second farm's eggs have mean 64 g and SD 6 g. Which is heavier \emph{relative
         to its own farm}: a 65-g egg from the first farm or a 73-g egg from the second?\gradedbelow{2pt}{\gradedblank[id=t20d, type=rubric, points=2, rubric=../rubrics/apstats-u01-practice-test-t20d.yaml]{\linewidth}{1.07in}}
@@ -542,6 +559,7 @@ Show your reasoning. Answer \emph{in context} --- name the variables and their u
           z_{\text{second}} = \frac{73 - 64}{6} = 1.5
         \end{work}
         \gradedhide{\writelines{1}}
+        \vspace{1.03in}
 
 \end{enumerate}
 

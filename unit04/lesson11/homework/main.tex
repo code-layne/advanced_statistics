@@ -25,7 +25,7 @@ Assume $X \sim B(30, 0.85)$.
   \item Calculate $\mu_X$ and $\sigma_X$. Show formula setup.\\
         \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{$\mu_X =$~\gradedblank[id=hw1a1, type=short, points=1, answer=25.5, check=numeric, tolerance=0.05]{0.9in}{0.2in}\quad $\sigma_X =$~\gradedblank[id=hw1a2, type=short, points=1, answer=1.96, check=numeric, tolerance=0.01]{0.9in}{0.2in}}}
   \item Interpret $\mu_X$ in context.\\
-        \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw1b, type=rubric, points=2, display={Over many plantings of 30 seeds, an average of 25.5 seeds germinate.}]{6.1in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={Over many plantings of 30 seeds, an average of 25.5 seeds germinate.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Find $P(X \le 22)$. Write the calculator notation.\\
         \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw1c, type=short, points=1, answer=0.0698, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
   \item Find $P(X \ge 28)$. Write the inequality rewrite and the calculator notation.\\
@@ -39,9 +39,11 @@ A student guesses on every question. Let $X =$ the number correct.
   \item State the distribution of $X$: \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2a, type=short, points=1, answer={B(50, 0.20)}, check=text]{2.4cm}{0.2in}}}}
   \item Compute $\mu_X$ and $\sigma_X$.\\
         \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{$\mu_X =$~\gradedblank[id=hw2b1, type=short, points=1, answer=10, check=numeric, tolerance=0, display={\textbf{10}}]{0.9in}{0.2in}\quad $\sigma_X =$~\gradedblank[id=hw2b2, type=short, points=1, answer=2.83, check=numeric, tolerance=0.01]{0.9in}{0.2in}}}
+\tcbbreak
   \item The passing score is 30 out of 50. Find $P(X \ge 30)$.
         Is this likely to happen by guessing?\\
-        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2c1, type=short, points=1, answer=0, check=numeric, tolerance=0.001, display={$\approx 0.0000$}]{1.3in}{0.2in}}}\\[1pt]\gradedhide{\writeline\gradedright{\raisebox{-1pt}{\gradedblank[id=hw2c2, type=rubric, points=2, display={No: 30 is about 7 SDs above the mean of 10; essentially impossible by guessing.}]{6.1in}{0.22in}}}}
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2c1, type=short, points=1, answer=0, check=numeric, tolerance=0.001, display={$\approx 0.0000$}]{1.3in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw2c2, type=rubric, points=2, display={No: 30 is about 7 SDs above the mean of 10; essentially impossible by guessing.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -50,11 +52,13 @@ within 4 hours. On a given day, 120 patients visit the ER.
 Let $X =$ the number discharged within 4 hours. Assume $X \sim B(120, 0.40)$.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item $\mu_X = $ \makebox[2cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a1, type=short, points=1, answer=48, check=numeric, tolerance=0]{0.9cm}{0.2in}}}} \qquad $\sigma_X \approx$ \makebox[2cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a2, type=short, points=1, answer=5.37, check=numeric, tolerance=0.01]{2cm}{0.2in}}}}
-  \item Interpret $\mu_X$: \gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw3b, type=rubric, points=2, display={Over many days with 120 ER patients, an average of 48 are discharged within 4 hours.}]{4.9in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
+  \item Interpret $\mu_X$:\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={Over many days with 120 ER patients, an average of 48 are discharged within 4 hours.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Find $P(40 \le X \le 50)$. Write this as a difference of two \texttt{binomcdf} values.\\
         \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw3c, type=short, points=2, answer=0.6257, check=numeric, tolerance=0.002]{1.3in}{0.2in}}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{8pt}
 \textbf{4.} (AP-Style Free Response) \textit{According to a survey, 62\% of adults in
 a large city support a new public transit plan. A researcher randomly samples
@@ -62,9 +66,10 @@ a large city support a new public transit plan. A researcher randomly samples
 Let $X =$ the number who support the plan.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Define the distribution of $X$ and check all BINS conditions briefly.\\
-        \writeline\\[1pt]\gradedhide{\writeline\gradedright{\raisebox{-5pt}{\gradedblank[id=hw4a, type=rubric, points=3, display={$X \sim B(45, 0.62)$: support/not; sample $< 10\%$ of adults so independent; $n = 45$ fixed; $p = 0.62$ each.}]{6.1in}{\gradedlinesheight{2}-5pt}}}\\[1pt]\writeline}
+        \gradedhide{\gradedhere{\gradedblank[id=hw4a, type=rubric, points=3, display={$X \sim B(45, 0.62)$: support/not; sample $< 10\%$ of adults so independent; $n = 45$ fixed; $p = 0.62$ each.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Calculate and interpret $\mu_X$.\\
-        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4b1, type=short, points=1, answer=27.9, check=numeric, tolerance=0.05]{1.3in}{0.2in}}}\\[1pt]\gradedhide{\writeline\gradedright{\raisebox{-1pt}{\gradedblank[id=hw4b2, type=rubric, points=2, display={In many samples of 45 adults, an average of 27.9 would support the plan.}]{6.1in}{0.22in}}}}
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4b1, type=short, points=1, answer=27.9, check=numeric, tolerance=0.05]{1.3in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw4b2, type=rubric, points=2, display={In many samples of 45 adults, an average of 27.9 would support the plan.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Calculate $\sigma_X$.\\
         \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4c, type=short, points=1, answer=3.26, check=numeric, tolerance=0.01]{1.3in}{0.2in}}}
   \item Find $P(X \ge 30)$. Show the equality rewrite and the calculator expression.\\
