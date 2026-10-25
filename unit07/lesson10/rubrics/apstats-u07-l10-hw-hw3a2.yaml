@@ -1,0 +1,11 @@
+# Homework item 3a parameter (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw3a2
+points: 1
+task: >-
+  A random sample of 22 adults: mean daily sodium 2,580 mg, s = 310 mg; dotplot
+  roughly symmetric with one mild outlier. 95% CI for the mean. Name the parameter.
+criteria:
+  - id: 3a2
+    points: 1
+    full: >-
+      mu = the true mean daily sodium intake (mg) of all adults.
