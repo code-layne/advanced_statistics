@@ -17,7 +17,11 @@
 
 \textbf{1.} Rain simulation.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Chance device: single random digits 0--9. Digits 0--3 = rain (40\%), digits 4--9 = no rain (60\%). One trial = 7 consecutive random digits = one week. Event of interest = 4 or more of the 7 digits are in 0--3.}\gradedkeyline{\gradedblank[id=hw1a1, type=rubric, points=1, display={Digits 0--9}]{\linewidth+6pt}{\gradedlinesheight{10}}}\vspace{4pt}\gradedkeyline{\gradedblank[id=hw1a2, type=rubric, points=1, display={0--3 rain, 4--9 not}]{\linewidth+6pt}{\gradedlinesheight{10}}}\vspace{4pt}\gradedkeyline{\gradedblank[id=hw1a3, type=rubric, points=1, display={7 digits = 1 week}]{\linewidth+6pt}{\gradedlinesheight{10}}}\vspace{4pt}\tcbbreak\gradedkeyline{\gradedblank[id=hw1a4, type=rubric, points=1, display={$\ge 4$ of 7 in 0--3}]{\linewidth+6pt}{\gradedlinesheight{10}}}
+  \item \ans{Chance device: single random digits 0--9. Digits 0--3 = rain (40\%), digits 4--9 = no rain (60\%). One trial = 7 consecutive random digits = one week. Event of interest = 4 or more of the 7 digits are in 0--3.}
+        \par Chance device:\gradedkey{\gradedblank[id=hw1a1, type=short, points=1, answer={random digits 0-9}, check=text, display={Digits 0--9}]{3.6in}{0.3in}}
+        \par How outcomes are assigned:\gradedkey{\gradedblank[id=hw1a2, type=short, points=1, answer={0-3 rain, 4-9 no rain}, check=text, display={0--3 rain, 4--9 not}]{3.6in}{0.3in}}
+        \par What one trial represents:\gradedkey{\gradedblank[id=hw1a3, type=short, points=1, answer={7 digits = 1 week}, check=text, display={7 digits = 1 week}]{3.6in}{0.3in}}
+        \par What the event of interest is:\gradedkey{\gradedblank[id=hw1a4, type=short, points=1, answer={4 or more of the 7 digits are 0-3}, check=text, display={$\ge 4$ of 7 in 0--3}]{3.6in}{0.3in}}
   \item \begin{teachernote}
     Reading the first 140 digits in groups of 7: expected outcome around 5--7 of the 20 trials have $\geq$4 rain days. The true probability is $P(X \geq 4)$ where $X \sim \text{Bin}(7, 0.4) \approx 0.290$.
   \end{teachernote}

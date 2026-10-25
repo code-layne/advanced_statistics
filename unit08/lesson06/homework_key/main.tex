@@ -36,18 +36,15 @@
 \end{center}
 
 \begin{enumerate}[label=\alph*., itemsep=6pt]
-  \boxguard[18]
   \item \textbf{State.}
-        Test type: \ans{Homogeneity --- three separate groups (grade levels) each randomly sampled; one variable (sleep amount).}\gradedkeyline{\gradedblank[id=hw1a1, type=rubric, points=1, display={\bfseries Independence}]{\linewidth+6pt}{\gradedlinesheight{9}}}
+        Test type: \ans{Independence --- one random sample of 180 teens, classified by two variables (grade and sleep amount).}\gradedkey{\gradedblank[id=hw1a1, type=short, points=1, answer={independence}, check=text, display={\bfseries Independence}]{3in}{0.3in}}
 
-        \boxguard[14]
-        $H_0$: \ansline{The distribution of sleep amount is the same across all three grade levels.}\gradedkeyline{\gradedblank[id=hw1a2, type=rubric, points=1, display={\bfseries No association.}]{\linewidth+6pt}{\gradedlinesheight{9}}}
+        $H_0$: \ansline{There is no association between grade level and sleep amount for teens at the school.}\gradedkey{\gradedblank[id=hw1a2, type=short, points=1, answer={no association}, check=text, display={\bfseries No association.}]{2.3in}{0.3in}}
 
-        \boxguard[14]
-        $H_a$: \ansline{The distribution of sleep amount differs for at least one grade level.}\gradedkeyline{\gradedblank[id=hw1a3, type=rubric, points=1, display={\bfseries Association.}]{\linewidth+6pt}{\gradedlinesheight{9}}}
+        $H_a$: \ansline{There is an association between grade level and sleep amount for teens at the school.}\gradedkey{\gradedblank[id=hw1a3, type=short, points=1, answer={association}, check=text, display={\bfseries Association.}]{2.3in}{0.3in}}
 
   \boxguard[16]
-  \item \textbf{Plan.} Method: \ans{Chi-square test for homogeneity.}\gradedkeyline{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries $\chi^2$ test (same as a.)}]{\linewidth+6pt}{\gradedlinesheight{9}}}
+  \item \textbf{Plan.} Method: \ans{Chi-square test for independence.}\gradedkey{\gradedblank[id=hw1b1, type=short, points=1, answer={chi-square test for independence}, check=text, display={\bfseries $\chi^2$ test for independence}]{3.5in}{0.3in}}
 
         \boxguard[14]
         Random: \ansline{Random selection stated in the problem.}\gradedkeyline{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries Stated.}]{\linewidth+6pt}{\gradedlinesheight{9}}}
@@ -80,11 +77,10 @@
         Exact: $(30-36.\overline{6})^2/36.\overline{6} + \cdots$. With exact fractions $\chi^2 = 5.25$; rounding intermediate steps may give 5.25--5.33. Using the table: df = 2, $\chi^2 = 5.25$ falls between 4.605 ($p = 0.10$) and 5.991 ($p = 0.05$), so the p-value is between 0.05 and 0.10. Accept $p \approx 0.07$ from technology.
         \end{teachernote}
 
-        \boxguard[14]
-        p-value: \ans{Between 0.05 and 0.10 (from table, df = 2: $\chi^2 = 5.25$ lies between 4.605 and 5.991); technology gives $p \approx 0.072$.}\gradedkeyline{\gradedblank[id=hw1c3, type=rubric, points=1, display={\bfseries 0.05 to 0.10}]{\linewidth+6pt}{\gradedlinesheight{9}}}
+        p-value: \ans{Between 0.05 and 0.10 (from table, df = 2: $\chi^2 = 5.25$ lies between 4.605 and 5.991); technology gives $p \approx 0.072$.}\gradedkey{\gradedblank[id=hw1c3, type=short, points=1, answer={0.05 to 0.10}, check=text, display={\bfseries 0.05 to 0.10}]{1.8in}{0.3in}}
 
   \item \textbf{Conclude.} At $\alpha = 0.05$:
-        \ansline{Because $p \approx 0.07 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the distribution of sleep amount differs across grade levels.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.07 > 0.05$: fail to reject $H_0$; no convincing evidence of an association between grade and sleep.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+        \ansline{Because $p \approx 0.07 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence of an association between grade level and sleep amount.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.07 > 0.05$: fail to reject $H_0$; no convincing evidence of an association between grade and sleep.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \ansline{}
 \end{enumerate}
 
