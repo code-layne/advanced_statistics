@@ -77,6 +77,10 @@ comp-dep     = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp,$(wildcar
 # `exit_ticket` are pre-EFFL components kept here so the ~78 lessons authored
 # before the redesign still build unchanged; new lessons do not use them.
 #
+# In the legacy lessons that have both, `activity` comes before `notes`: the
+# activity is the experience, and the notes formalize what students found in it.
+# Those lessons' packets therefore put the activity pages ahead of the notes.
+#
 # `ap_practice` and `homework` close the packet, in that order. AP Statistics
 # splits its post-lesson work in two: `ap_practice` is the AP-format rep — MC in
 # context plus a free-response set — assigned but NOT scored, and `homework` is
@@ -84,8 +88,8 @@ comp-dep     = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp,$(wildcar
 # lesson that provides only `homework` builds exactly as before, which is why
 # adding `ap_practice` here is inert for every lesson that does not have the
 # directory.
-STUDENT_ORDER := cover warmup experience notes activity exit_ticket ap_practice homework
-KEYED_PAIRS   := warmup experience notes activity exit_ticket ap_practice homework
+STUDENT_ORDER := cover warmup experience activity notes exit_ticket ap_practice homework
+KEYED_PAIRS   := warmup experience activity notes exit_ticket ap_practice homework
 
 STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(call comp-present,$(c)))
 
