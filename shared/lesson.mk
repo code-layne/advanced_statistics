@@ -280,9 +280,8 @@ clean:
 #       blank + key builds, target/<unit>/<lesson>/grading/<COMP>/manifest.json,
 #       and the check that the blank and key agree on every graded item.
 #   make roster-packets COMP=homework ROSTER=~/Rosters/apstats/roster-map.csv [SECTION=…]
-#       per student, in roster order: her name cover sheet and its blank back
-#       (math-shared's grading-covers), then one copy of the lesson's student
-#       packet with her personalized COMP (QR codes and the id strip carry only
+#       per student, in roster order: one copy of the lesson's student packet
+#       with her name preprinted on the lesson cover and her personalized COMP (QR codes and the id strip carry only
 #       her tracking id) in place of the master copy, paginated by
 #       shared/paginate.sh exactly like `make student`. Joined into
 #       target/compiled/<unit>/lessonYY_<COMP>_roster.pdf to print as one
@@ -290,8 +289,11 @@ clean:
 #       own run per student instead: cover, blank back, then the component
 #       padded to an even page count.
 #
-# Student names are printed only on the cover sheets, so the roster PDFs carry
-# them: they stay under target/, which is never committed.
+# A lesson packet has NO separate name sheet: the lesson cover carries the name
+# (2026-10-26). Tests and quizzes keep math-shared's tear-off name sheet as their
+# first page (shared/assessment-grading.mk). A lesson with no cover/ falls back to
+# that sheet so the name is still somewhere. The roster PDFs carry names, so they
+# stay under target/, which is never committed.
 # grading-namecheck (shared/check_namelines.py) runs first in both: it fails if
 # COMP or its key loads grading.sty and still carries a name line.
 GRADING_MK  := $(PROJECT_ROOT)/math-shared/grading.mk
@@ -339,20 +341,46 @@ roster-packets: grading-namecheck grading-need-roster
 # is $(GR_PACKETS)/<id>.pdf. When COMP is in the student packet, her copy
 # replaces the master in the packet's PDF list, the packet is paginated against
 # the same key-packet list `make student` uses (so its page boundaries are
-# identical, and its page count even), and the cover and blank back go in front.
+# identical, and its page count even).
 # Each student gets a paginate.sh scratch dir of its own (see PAGINATE_*_DIR).
-ROSTER_PKT_PDFS = $(patsubst $(COMP_MASTER_PDF),$(GR_STUDENTS)/$*.pdf,$(STUDENT_PDFS))
+#
+# The lesson cover is personalized too: it is compiled once per student with
+#   \def\StudentName{Preferred Last}
+# ahead of it (roster_tex.py's TeX-safe names, as on math-shared's cover
+# sheet), so \namedateperiod prints her name on the Name line, and her copy
+# replaces the master cover in the packet. Only cover/ is compiled with a
+# name; every graded component is built by math-shared from ids alone.
+COVER_MASTER_PDF := $(if $(wildcard cover/main.tex),$(PDF_DIR)/cover/main.pdf)
+ROSTER_NAME_DIR  := $(ROSTER_PKT_DIR)/covers
+ROSTER_PKT_PDFS = $(patsubst $(COMP_MASTER_PDF),$(GR_STUDENTS)/$*.pdf,$(if $(COVER_MASTER_PDF),\
+                    $(patsubst $(COVER_MASTER_PDF),$(ROSTER_NAME_DIR)/$*.pdf,$(STUDENT_PDFS)),\
+                    $(STUDENT_PDFS)))
 
 ifneq ($(COMP_IN_PACKET),)
 $(ROSTER_PKT_DIR)/%.pdf: grading-personalized $(ALIGN_STAMPS)
 	@mkdir -p $(dir $@)
+ifneq ($(COVER_MASTER_PDF),)
+	@mkdir -p $(ROSTER_NAME_DIR)
+	@set -e; \
+	row=$$($(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py "$(ROSTER)" --id $*); \
+	pref=$$(printf '%s\n' "$$row" | cut -f2); last=$$(printf '%s\n' "$$row" | cut -f3); \
+	( cd cover && TEXINPUTS="$(TEXINPUTS)" $(LATEXMK) $(LATEXFLAGS) -jobname=$* \
+	    -usepretex="\def\StudentName{$$pref $$last}" \
+	    -outdir="$(ROSTER_NAME_DIR)" main.tex > "$(ROSTER_NAME_DIR)/$*.out" 2>&1 ) \
+	  || { echo "!  LaTeX failed for the named cover of $* — see $(ROSTER_NAME_DIR)/$*.log"; \
+	       grep -E "^(!|l\.|.*:[0-9]+: )" "$(ROSTER_NAME_DIR)/$*.log" | head -10; exit 1; }
+endif
 	@set -- $(ROSTER_PKT_PDFS); \
 	if [ $$# -eq 1 ]; then cp "$$1" $(ROSTER_PKT_DIR)/.body-$*.pdf; \
 	else pdfunite "$$@" $(ROSTER_PKT_DIR)/.body-$*.pdf; fi
 	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(ROSTER_PKT_DIR)/.body-$*.pdf \
 	    $(ROSTER_PKT_DIR)/.paginate-$* $(ROSTER_PKT_PDFS) -- $(KEY_PDFS)
+ifneq ($(COVER_MASTER_PDF),)
+	@mv $(ROSTER_PKT_DIR)/.body-$*.pdf $@
+else
 	@pdfunite $(GR_COVERS)/cover-$*.pdf $(GR_BACK) $(ROSTER_PKT_DIR)/.body-$*.pdf $@
 	@rm -f $(ROSTER_PKT_DIR)/.body-$*.pdf
+endif
 else
 $(ROSTER_PKT_DIR)/%.pdf: grading-personalized
 	@mkdir -p $(dir $@)
