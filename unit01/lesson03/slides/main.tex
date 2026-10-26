@@ -1,6 +1,12 @@
 %! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usetikzlibrary{positioning}  % -beamer loads tikz but not this library
+
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
@@ -17,10 +23,340 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% GRADUAL RELEASE deck: title → targets → warm-up hook → I DO (notes frames) → WE DO (guided
+% practice) → spoken debrief → close & START THE HOMEWORK, which is the individual
+% practice — there is no independent practice set in the notes → AP Practice → close.
+% There is NO group activity in this course — the notes carry the whole release. There is no
+% transfer set and no reflection box: the rainfall record lives only in the AP Practice page.
+% Vocabulary is given up front here, not withheld: the notes frames ARE the direct instruction.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 1.3}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item classify a quantitative variable as \textbf{discrete} or \textbf{continuous}.
+    \item read a \textbf{dotplot}, a \textbf{stem plot}, and a \textbf{histogram}, and say what
+          each one keeps.
+    \item explain what grouping data gains --- and what it throws away.
+    \item explain how changing the \textbf{interval width} changes what a histogram shows.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}
+  \begin{center}
+    {\color{skymid}\bfseries\small SAME 24 NUMBERS. TWO PICTURES.}\\[0.9cm]
+    {\color{white}\bfseries\Large One says the class split cleanly in two.\\[0.4cm]
+    The other says nothing happened at all.}\\[0.9cm]
+    {\color{goldacc}\small Both are correct. Only one thing was changed.}
+  \end{center}
+\end{frame}
+}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── DISCRETE VS CONTINUOUS ───────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Two kinds of quantitative variable}
+  \sectionlabel{notes, Discrete \& Continuous $\cdot$ can a value land in between?}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Discrete}
+        A \textbf{countable} number of values (EK UNC-1.F.1).
+      \end{block}
+      \vspace{4pt}
+      {\small Siblings $\cdot$ goals scored $\cdot$ cars in a lot\\[3pt]
+      \emph{15 or 16 --- never 15.3.}}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Continuous}
+        \textbf{Infinitely many} values; between any two there is always another
+        (EK UNC-1.F.2).
+      \end{block}
+      \vspace{4pt}
+      {\small Time $\cdot$ height $\cdot$ rainfall\\[3pt]
+      \emph{15.3 minutes is a real answer.}}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\large A gauge reads 13\,mm and never 13.4. Rainfall is still \redink{continuous.}}\\[6pt]
+    {\small\color{slate} Ask it of the \textbf{variable}, not of the digits somebody wrote down.}
+  \end{center}
+\end{frame}
+
+% ── DISPLAYS THAT KEEP EVERY VALUE ───────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Displays that keep every value}
+  \sectionlabel{notes, Every Value $\cdot$ dotplot and stem plot}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \textbf{\color{navy}Dotplot} --- one dot per observation, stacked above its value.
+      \vspace{4pt}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.82]
+        \draw[->, thick] (-0.2,0) -- (5.4,0);
+        \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10} {
+          \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+        \foreach \x/\n in {0.5/2, 1/3, 1.5/4, 2/3, 2.5/2, 3/1} {
+          \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.22*\k}) circle (0.075); }}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \textbf{\color{navy}Stem plot} --- each value split into a \textbf{stem} (leading digits)
+      and a \textbf{leaf} (last digit).
+      \vspace{4pt}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{@{} r | l @{}}
+        \textbf{1} & 1 \; 2 \; 2 \; 4 \; 5 \\
+        \textbf{2} & 0 \; 3 \; 7 \\
+        \textbf{3} & 4 \; 6 \\
+      \end{tabular}
+      \end{center}
+      \vspace{2pt}
+      {\small Row \textbf{2} is 20, 23, 27.}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{center}
+    {\small They look nothing alike and carry identical information: both let you read
+    \redink{every individual value} straight back off the picture.}
+  \end{center}
+\end{frame}
+
+% ── HISTOGRAM ────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Grouping: the table \emph{is} the histogram}
+  \sectionlabel{notes, Histograms $\cdot$ height = how many fall in that interval}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.8]
+        \foreach \y/\lab in {0/0, 1.4/5, 2.8/10} {
+          \draw[linegray, very thin] (0,\y) -- (5.6,\y);
+          \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+        \foreach \i/\c in {0/4, 1/7, 2/1, 3/0, 4/1, 5/5, 6/5, 7/1} {
+          \fill[navy] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});
+          \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});}
+        \draw[->, thick] (0,0) -- (0,3.6);
+        \draw[->, thick] (0,0) -- (6.0,0);
+        \foreach \x/\lab in {0/10, 1.4/20, 2.8/30, 4.2/40, 5.6/50} {
+          \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item You built this in the interval table. Bar height = how many observations fall in
+              that \textbf{interval} (EK UNC-1.G.1).
+        \item Individual values are \redink{gone}. You know 7 students finished in 15--19
+              minutes, not which minutes.
+        \item \textbf{The bars touch.} The axis is a number line, not a set of categories.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \navyheader{Bar graph or histogram?}
+  \sectionlabel{the gap tells you which}
+  \vspace{10pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Bar graph --- Lesson 1.2}
+        \textbf{Categorical} variable. Bars have \textbf{gaps}: the categories are separate
+        groups with no order and no distance between them.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Histogram --- today}
+        \textbf{Quantitative} variable. Bars \textbf{touch}: the axis is a number line and the
+        intervals are adjacent.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{center}
+    {\large Classify the variable \redink{first}. The variable picks the display.}
+  \end{center}
+\end{frame}
+
+% ── THE CRUX ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Why the two pictures disagreed}
+  \sectionlabel{notes, Drawn Twice $\cdot$ the whole point of today}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item $4+7+1+0+1+5+5+1 = 24$. \quad $12 + 12 = 24$. Nothing added, nothing removed.
+    \item The only change: blocks of \textbf{5} minutes became blocks of \textbf{20}.
+    \item At width 20, the fast group and the slow group land in the same two bars --- and the
+          empty stretch between them \redink{disappears}.
+  \end{itemize}
+  \vspace{10pt}
+  \begin{block}{Essential Knowledge (UNC-1.G.1)}
+    \textbf{Altering the interval widths can change the appearance of the histogram} ---
+    without changing a single data value.
+  \end{block}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \navyheader{But narrower is not automatically better}
+  \sectionlabel{the counterweight --- do not skip this}
+  \vspace{10pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Blocks of 20 minutes}
+        Too wide. The gap between the fast and slow finishers is averaged away.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Blocks of 1 minute}
+        Too narrow. These 24 times barely repeat, so almost every bar is 0 or 1 tall ---
+        every value back, and no shape at all.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{16pt}
+  \begin{center}
+    {\large A histogram is a \redink{choice}, not a fact.}\\[8pt]
+    {\small\color{slate} So before you believe a shape, check what width produced it.}
+  \end{center}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Bus Stop}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  Eighteen riders' waiting times at one bus stop, in minutes --- and a third kind of display.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item How many riders? How many waited longer than 8 minutes?
+    \item Is waiting time discrete or continuous --- and how can you tell from the
+          \emph{variable}?
+    \item Regroup into 5-minute blocks. What happens to the two riders out at 11 and 12?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    Those two riders look unusual because of the \redink{empty stretch} before them. What
+    happens to that empty stretch when the blocks get wider?
+  \end{block}
+\end{frame}
+
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \navyheader{You do: start the homework}
+  \sectionlabel{Last 8 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item Four variables --- cars in a lot, height, goals scored, a 400\,m time. Discrete or
+          continuous?
+    \item 60 test scores drawn twice: blocks of 10, then blocks of 2. Which version is
+          \emph{wrong}?
+    \item Bars that touch and bars with gaps --- what is that telling you about the axis?
+    \item Stem \textbf{7}, leaves \textbf{2 4 4 9} --- and what a histogram cannot give back.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Item 2} is the one I am reading over your shoulder. If you named a version wrong,
+    flag me before you leave.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: both totals were 24}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Nothing was thrown away}
+        Both pictures held all 24 times. So neither one lied.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Only the width changed}
+        And that was enough to make a real gap vanish.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{14pt}
+  \begin{block}{Two things to say out loud}
+    Name a question a \redink{dotplot} answers that a histogram cannot. Then name one where
+    200 values make the histogram the better choice. Neither display wins in general --- the
+    question decides.
+  \end{block}
+\end{frame}
+
+% ── HOMEWORK (started in class, scored) ─────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 exercises $\cdot$ scored $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four variables: discrete or continuous?
+    \item Two histograms of 60 test scores. Which one is \emph{wrong}?
+    \item Bars touch, bars have gaps --- what is that telling you?
+    \item A stem plot row, and what a histogram cannot give back.
+    \item One multiple-choice item, with a one-sentence justification.
+  \end{itemize}
+  \begin{block}{This one is graded}
+    This is your \redink{scored} homework, on paper, due the first class after two study halls. Start with 1, 2, and 5
+    while I am still here to answer questions --- finish the rest at home.
+  \end{block}
+\end{frame}
+
+% ── AP PRACTICE & PREVIEW (assigned, unscored) ──────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{AP Practice \& what's next}
+  \sectionlabel[goldacc]{AP Practice --- assigned, not scored}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Four multiple-choice items on a 20-day rainfall record.
+    \item One free-response set: classify, group, and defend a display choice.
+    \item Optional: find a published histogram and interrogate its interval width.
+  \end{itemize}
+  \begin{block}{Not graded --- but this is what the exam looks like}
+    The AP Practice page is \textbf{not scored}. Work it for the reps, and bring what you
+    get stuck on to study hall or office hours. The \redink{graded} homework is the section
+    behind it.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large A histogram is a choice, not a fact. Check the interval
+    width before you believe the shape.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 1.4 --- putting words to what these displays show.
+    Shape, centre, spread, and the values that sit apart.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

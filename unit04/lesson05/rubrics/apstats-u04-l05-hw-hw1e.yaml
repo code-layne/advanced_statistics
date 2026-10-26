@@ -1,0 +1,19 @@
+# Homework item 1e (Unit 4, Lesson 4.5). Relative to the lesson directory.
+id: hw1e
+points: 2
+task: >-
+  240 students by study environment and GPA. P(GPA 3.5-4.0 | Quiet Room) = 40/90,
+  about 0.444. Interpret in context.
+criteria:
+  - id: condition
+    points: 1
+    full: >-
+      Restricts to students who prefer studying in a quiet room (the given condition).
+  - id: value
+    points: 1
+    full: >-
+      Says about 44.4% of those students have a GPA of 3.5-4.0 (not 44.4% of all students,
+      and not the reverse conditional).
+examples:
+  - response: "44.4% of students with a high GPA study in a quiet room."
+    scores: {condition: 0, value: 0}

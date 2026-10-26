@@ -1,0 +1,16 @@
+# Homework item 1b (Unit 6, Lesson 6.7). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A city health department tests H0: p = 0.10 (10% of adults have high blood pressure)
+  vs Ha: p > 0.10. Describe a Type II error in context.
+criteria:
+  - id: fail
+    points: 1
+    full: >-
+      Describes failing to reject H0: NOT finding convincing evidence that more than 10%
+      of the city's adults have high blood pressure.
+  - id: truth
+    points: 1
+    full: >-
+      ...when in fact Ha is true: the true proportion is greater than 10%.

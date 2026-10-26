@@ -1,0 +1,21 @@
+# Homework item A2, interpretation of the residual (Unit 2, Lesson 2.3). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  A car dealer listed 18 used cars with 8 to 95 thousand miles; price in thousands of
+  dollars, mileage in thousands of miles: predicted price = 32.0 - 0.24(mileage). A
+  car with 50 thousand miles is listed at $22,500. Find and interpret its residual.
+criteria:
+  - id: amount
+    points: 1
+    full: >-
+      Interprets the residual of +2.5 as the car being listed $2,500 (2.5 thousand
+      dollars) ABOVE the price the line predicts (the line underpredicted its price).
+  - id: context
+    points: 1
+    full: >-
+      The interpretation is in context: it is about this car's listed price compared with
+      the predicted price for a car with 50 thousand miles.
+examples:
+  - response: "The residual is 2.5, so the line is off by 2.5."
+    scores: {amount: 0, context: 0}

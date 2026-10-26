@@ -1,25 +1,71 @@
 %! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — Warm-Up
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items, set at 12pt so they fill the page instead of leaving
+% the bottom third empty. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Item 1 is
+% the spiral back to Lesson 1.4 (name the shape of a pre-drawn dotplot from its tail, and the
+% value that stands apart); item 2 averages six numbers and finds the middle one on a set where
+% the two AGREE — notes section 1 breaks that agreement on the nine paychecks; item 3 is the
+% quartile split done by hand before it has a name — notes section 1 names it.
+% NO SKETCH: the item 1 dotplot is pre-drawn; students read it.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Warm-Up}
 
+\vspace{0.22in}
 
-\vspace{0.15in}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.40in]
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
-% when the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
-% the _key: the blank reserves its exact height, the key prints it. That is what keeps
-% this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
-\end{notesbox}
+  \item \textbf{From last lesson.} Twelve students reported how many hours of television they
+        watched last week.
+
+        \vspace{4pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.95]
+          \draw[->, thick] (-0.2,0) -- (7.1,0);
+          \foreach \x/\lab in {0/0, 0.9/2, 1.8/4, 2.7/6, 3.6/8, 4.5/10, 5.4/12, 6.3/14} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\scriptsize] at (\x,-0.1) {\lab};}
+          \foreach \x/\n in {0.45/2, 0.9/3, 1.35/2, 1.8/2, 2.25/1, 2.7/1, 6.3/1} {
+            \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.075); }}
+          \node[font=\scriptsize] at (3.4,-0.55) {Hours of television};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{4pt}
+
+        Describe the \textbf{shape} of this distribution, and name any value that stands apart
+        from the rest.\\[14pt]
+        \writeline\\[14pt]\writeline
+
+  \item Here are six numbers: \quad 4 \quad 9 \quad 6 \quad 12 \quad 7 \quad 10
+
+        \vspace{12pt}
+        Their \textbf{average}: \blank{2.6cm}
+
+        \vspace{12pt}
+        Put them in order and give the value in the \textbf{middle}: \blank{2.6cm}
+
+  \item Here are seven numbers, already in order.
+
+        \vspace{8pt}
+        \begin{center}
+        3 \qquad 5 \qquad 8 \qquad 9 \qquad 12 \qquad 15 \qquad 20
+        \end{center}
+        \vspace{8pt}
+
+        \textbf{(i)} Which one is in the middle? \blank{2.0cm} \quad
+        How many are below it? \blank{1.4cm} \quad Above it? \blank{1.4cm}
+        \vspace{12pt}
+
+        \textbf{(ii)} Look only at the numbers \emph{below} the middle one. Which of
+        \emph{those} is in the middle? \blank{2.0cm}
+        \vspace{12pt}
+
+        \textbf{(iii)} Look only at the numbers \emph{above} the middle one. Which of those
+        is in the middle? \blank{2.0cm}
+
+\end{enumerate}
 
 \end{document}

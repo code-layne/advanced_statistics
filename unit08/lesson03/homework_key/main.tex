@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l03-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.3}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} Show all work for full credit. Write complete sentences for
@@ -27,21 +30,22 @@ interpretations and conclusions.
 
         \begin{enumerate}[label=\alph*.]
           \item Expected counts under 9:3:3:1 (total = 16 parts, $n = 160$):
-                \ansline{Phenotype 1: $160 \times 9/16 = 90$; Phenotype 2: $160 \times 3/16 = 30$; Phenotype 3: $160 \times 3/16 = 30$; Phenotype 4: $160 \times 1/16 = 10$.}
+                \ansline{Phenotype 1: $160 \times 9/16 = 90$; Phenotype 2: $160 \times 3/16 = 30$; Phenotype 3: $160 \times 3/16 = 30$; Phenotype 4: $160 \times 1/16 = 10$.}\gradedkey{\textit{1:}~\gradedblank[id=hw1a1, type=short, points=1, answer=90, check=numeric, tolerance=0]{0.55in}{0.2in}\quad \textit{2:}~\gradedblank[id=hw1a2, type=short, points=1, answer=30, check=numeric, tolerance=0]{0.55in}{0.2in}\quad \textit{3:}~\gradedblank[id=hw1a3, type=short, points=1, answer=30, check=numeric, tolerance=0]{0.55in}{0.2in}\quad \textit{4:}~\gradedblank[id=hw1a4, type=short, points=1, answer=10, check=numeric, tolerance=0]{0.55in}{0.2in}}
 
           \item Chi-square contributions:
-                \ansline{$(89 - 90)^2/90 + (31 - 30)^2/30 + (27 - 30)^2/30 + (13 - 10)^2/10 = 1/90 + 1/30 + 9/30 + 9/10 \approx 0.011 + 0.033 + 0.300 + 0.900 = 1.244$}
+                \ansline{$(89 - 90)^2/90 + (31 - 30)^2/30 + (27 - 30)^2/30 + (13 - 10)^2/10 = 1/90 + 1/30 + 9/30 + 9/10 \approx 0.011 + 0.033 + 0.300 + 0.900 = 1.244$}\gradedkey{$\chi^2 = $~\gradedblank[id=hw1b, type=short, points=2, answer=1.244, check=numeric, tolerance=0.01]{0.9in}{0.2in}}
 
                 \begin{teachernote}
                     Some rounding may yield $\chi^2 \approx 1.24$--$1.25$; accept values in this range.
                     The p-value given in the problem ($\approx 0.81$) corresponds to this statistic.
                 \end{teachernote}
 
-          \item $df =$ \ans{$4 - 1 = 3$}
+          \item $df =$ \ans{$4 - 1 = 3$}\gradedkey{$df = $~\gradedblank[id=hw1c, type=short, points=1, answer=3, check=numeric, tolerance=0]{0.6in}{0.2in}}
 
-          \item \ansline{Because $p \approx 0.81 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the phenotype distribution of offspring differs from the 9:3:3:1 ratio predicted by Mendelian genetics.}
+          \item \gradedtop{\gradedblank[id=hw1d, type=rubric, points=2, display={Because $p \approx 0.81 > 0.05$, fail to reject $H_0$: no convincing evidence the phenotype distribution differs from 9:3:3:1.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
+  \newpage
   \item \textbf{Streaming Services.}
 
         \renewcommand{\arraystretch}{1.4}
@@ -54,21 +58,22 @@ interpretations and conclusions.
         \end{center}
 
         \begin{enumerate}[label=\alph*.]
-          \item \ansline{$H_0$: The distribution of most-used streaming service is equal across all 5 services (each at 20\%). $H_a$: At least one service is used most by a different proportion of college students.}
+          \item \ansline{$H_0$: The distribution of most-used streaming service is equal across all 5 services (each at 20\%). $H_a$: At least one service is used most by a different proportion of college students.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={$H_0$: each service 20\%. $H_a$: at least one proportion differs from 0.20.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 
           \item Expected count for each service: \ans{$200 \times 0.20 = 40$}.
 
                 Chi-square contributions:
-                \ansline{$(78-40)^2/40 + (42-40)^2/40 + (35-40)^2/40 + (28-40)^2/40 + (17-40)^2/40 = 1444/40 + 4/40 + 25/40 + 144/40 + 529/40 = 36.1 + 0.1 + 0.625 + 3.6 + 13.225 = 53.65$}
+                \ansline{$(78-40)^2/40 + (42-40)^2/40 + (35-40)^2/40 + (28-40)^2/40 + (17-40)^2/40 = 1444/40 + 4/40 + 25/40 + 144/40 + 529/40 = 36.1 + 0.1 + 0.625 + 3.6 + 13.225 = 53.65$}\gradedkey{\textit{E:}~\gradedblank[id=hw2b1, type=short, points=1, answer=40, check=numeric, tolerance=0]{0.6in}{0.2in}\quad $\chi^2 = $~\gradedblank[id=hw2b2, type=short, points=2, answer=53.65, check=numeric, tolerance=0.05]{0.9in}{0.2in}}
 
-          \item $df =$ \ans{$5 - 1 = 4$}
+          \item $df =$ \ans{$5 - 1 = 4$}\gradedkey{$df = $~\gradedblank[id=hw2c, type=short, points=1, answer=4, check=numeric, tolerance=0, display={\large 4}]{0.6in}{0.2in}}
 
-          \item \ansline{The probability of obtaining a chi-square statistic of 53.65 or larger, given that all five streaming services are equally popular among college students, is less than 0.001. Because $p < 0.001 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the distribution of most-used streaming service is not equal across all five services.}
+          \item \gradedtop{\gradedblank[id=hw2d, type=rubric, points=3, display={Assuming all five services are equally popular, the probability of a chi-square statistic of 53.65 or larger is less than 0.001. Because $p < 0.05$, we reject $H_0$: convincing evidence the distribution of most-used service is not equal across the five services.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
         \end{enumerate}
 
+  \boxguard[22]
   \item \textbf{Conceptual Question.}
 
-        \ansline{Failing to reject $H_0$ does not prove $H_0$ is true. It means only that the data are consistent with the null model --- the observed discrepancy could reasonably occur by chance if $H_0$ were true. We may have insufficient evidence to detect a real difference (a Type II error). We can never ``prove'' a null hypothesis through a significance test.}
+        \gradedtop{\gradedblank[id=hw3, type=rubric, points=2, display={Failing to reject $H_0$ does not prove $H_0$ is true. It means only that the data are consistent with the null model --- the observed discrepancy could reasonably occur by chance if $H_0$ were true. We may have insufficient evidence to detect a real difference (a Type II error). We can never ``prove'' a null hypothesis through a significance test.}]{\linewidth+6pt}{\gradedlinesheight{3}}}
 
 \end{enumerate}
 

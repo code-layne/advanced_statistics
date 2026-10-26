@@ -1,0 +1,18 @@
+# Homework item 2b (Unit 4, Lesson 4.1). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  In a sample of 50 plants, 34 have purple flowers and 16 white; Mendel's laws predict
+  3:1. Write a statistical question it suggests.
+criteria:
+  - id: question
+    points: 1
+    full: >-
+      Asks whether the population (true) flower-color ratio is 3:1, i.e. whether the
+      observed ratio is consistent with Mendel's prediction or suggests a different
+      inheritance pattern.
+  - id: chance
+    points: 1
+    full: >-
+      Frames it as a question about the population/process that allows for sampling
+      variability (not just 'what is the ratio in this sample').

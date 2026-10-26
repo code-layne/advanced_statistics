@@ -1,0 +1,20 @@
+# Homework item 2 (Unit 1, Lesson 1.3). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  A histogram of 60 test scores with blocks of 10 points shows one tall middle bar;
+  redrawn with blocks of 2 points it shows two separate peaks. Which version is wrong?
+  Explain.
+criteria:
+  - id: neither
+    points: 1
+    full: >-
+      Says neither version is wrong: both are correct displays of the same 60 scores.
+  - id: width
+    points: 1
+    full: >-
+      Explains that the block (interval) width changes what is visible: the narrower
+      2-point blocks reveal two peaks that the 10-point blocks merged (averaged away).
+examples:
+  - response: "The 2-point version is wrong because it has two peaks."
+    scores: {neither: 0, width: 0}

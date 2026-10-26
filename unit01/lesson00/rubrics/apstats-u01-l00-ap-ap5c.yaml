@@ -1,0 +1,19 @@
+# AP Practice item 5, part (c) (Unit 1, Lesson 1.0). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5c
+points: 2
+task: >-
+  The paper prints only the sentence "Seniors work 11 hours a week." Identify two
+  pieces of context a reader would need before this number means anything.
+criteria:
+  - id: context
+    points: 2
+    full: >-
+      E: Names two distinct, relevant pieces of missing context, such as: which seniors
+      and how many were counted; when the hours were counted (which week); what 11
+      summarizes (a mean, a median, typical); whether seniors who do not work are
+      included.
+    partial: >-
+      P (1 of 2): Names only one relevant piece of missing context, or two that are vague
+      or overlap.

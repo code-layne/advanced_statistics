@@ -1,399 +1,265 @@
-%! AP Statistics — Unit 2, Lesson 2.1 — Slides (Beamer)
+%! Two Categorical Variables — Unit 2, Lesson 2.1 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{apstats-beamer}
+\usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
-%=============================================================================
+% The C and Y column types live in apstats-article, which a beamer deck does not
+% load — redeclare them here rather than pulling in the article preamble.
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
 \begin{document}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 1 — LESSON TITLE
-% ─────────────────────────────────────────────────────────────────────────────
+% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navylight] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{2.8cm}
-  \hspace{0.55cm}%
+  \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.1}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Introducing Statistics:\\[0.25cm]
-      Are Variables Related?}\\[1.4cm]
-    {\color{skymid}\small Statistics~$\cdot$~Unit 2: Exploring Two-Variable Data}
+    {\color{white}\bfseries\LARGE Two Categorical Variables}\\[1.2cm]
+    {\color{skymid}\small Statistics~$\cdot$~Unit 2}
   \end{minipage}
 \end{frame}
 }
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 2 — PRIMARY OBJECTIVE
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=sky}
+% GRADUAL RELEASE deck: targets → warm-up → I DO divider → one frame per notes row (Two-way
+% table, Conditional, Association) → WE DO (Texting drivers) → spoken debrief → close & START
+% THE HOMEWORK, which is the individual practice. No group activity, no exit ticket.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navy] (current page.north west)
-      rectangle ([yshift=-0.25cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-
-    \sectionlabel{Primary Objective}
-
-    \normalsize
-    Students will identify statistical questions about possible relationships
-    between two variables and recognize that \textbf{apparent patterns in data
-    may be random} --- not every association is real, and even a real association
-    does not prove causation (Big Idea: VAR, Skill 1.A).
-
-    \vspace{0.6cm}
-
-    \normalsize\textbf{\color{navy}By the end of this lesson, I will be able to:}
-
-    \smallskip
-    \begin{itemize}
-      \setlength{\itemsep}{0.3em}\setlength{\topsep}{0.2em}
-      \item Identify a statistical question about a possible relationship between
-        two variables.
-      \item Explain why an apparent association may be random, not real.
-      \item Explain why association does not imply causation, and give an example
-        of a confounding variable.
-    \end{itemize}
-
-  \end{minipage}
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 2.1}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item ask whether two variables are related, and read a \textbf{two-way table}.
+    \item find \textbf{joint}, \textbf{marginal}, and \textbf{conditional relative
+          frequencies} --- dividing by the right total.
+    \item read a \textbf{segmented bar graph} and decide whether there is an
+          \textbf{association}.
+    \item explain why an association in a survey is not proof of cause.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
-}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 3 — HOOK
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=hookbg}
-\setbeamercolor{itemize item}{fg=white}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-
-    {\color{white}\bfseries\footnotesize\MakeUppercase{Hook}}\par\medskip
-
-    {\color{white}\large\bfseries Two Headlines:}\\[0.3cm]
-    {\color{skymid}\itshape
-      ``Students who eat breakfast score higher on tests.''}\\[0.2cm]
-    {\color{skymid}\itshape
-      ``Shoe size and reading ability are strongly associated in children.''}
-
-    \vspace{0.5cm}
-    {\color{white}\bfseries Discussion questions:}\par\smallskip
-    \begin{itemize}
-      \setlength{\itemsep}{0.4em}\setlength{\topsep}{0.1em}
-      \item {\color{white}Is the breakfast--grades association real? Random? How would you know?}
-      \item {\color{white}Shoe size does not teach children to read.
-        What actually explains this association?}
-      \item {\color{white}These are the questions Unit 2 is designed to answer.}
-    \end{itemize}
-
-  \end{minipage}
+  \navyheader{Warm-Up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item 45 of 180 students walk to school. Relative frequency?
+    \item Section A: 12 of 20 passed. Section B: 18 of 40 passed. \\
+          Which section had \emph{more} students pass? Which section did \emph{better}?
+    \item Phone in bedroom (yes/no) $\cdot$ hours of sleep $\cdot$ plays a sport (yes/no): \\
+          categorical or quantitative? Write a question asking whether two are
+          \emph{related}.
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{center}
+    {\small\color{slate} Keep item 2 in mind: \redink{more} and \redink{better} were different
+    answers.}
+  \end{center}
 \end{frame}
-}
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 4 — FROM ONE VARIABLE TO TWO
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=white}
-\begin{frame}[t, plain]
-  \navyheader{From One-Variable to Two-Variable Questions}
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{0.3cm}
-    \begin{columns}[T]
-
-      \begin{column}{0.48\textwidth}
-        \small
-        \textbf{\color{navy}Unit 1 --- One variable at a time}
-        \begin{itemize}
-          \setlength{\itemsep}{0.35em}
-          \item What is the typical GPA of students at our school?
-          \item How many hours of sleep do students get per night?
-          \item What is the distribution of commute times?
-        \end{itemize}
-      \end{column}
-
-      \begin{column}{0.48\textwidth}
-        \small
-        \textbf{\color{navy}Unit 2 --- Two variables together}
-        \begin{itemize}
-          \setlength{\itemsep}{0.35em}
-          \item Is there a relationship between sleep and GPA?
-          \item Do athletes sleep more or less than non-athletes?
-          \item Does commute time affect job satisfaction?
-        \end{itemize}
-      \end{column}
-
-    \end{columns}
-    \vspace{0.6cm}
-    \small\textbf{The new question:}\enspace
-    Does knowing one variable tell us something about the other?
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 5 — APPARENT ASSOCIATIONS MAY BE RANDOM
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=greenbg}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[greenacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm]
-      at ([yshift=-0.68cm]current page.north west)
-      {Key Idea: Apparent Patterns May Be Random (VAR-1.D.1)};
-  \end{tikzpicture}
-  \vspace{1.05cm}\par
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{1em}
-    \small
-    \begin{columns}[T]
-
-      \begin{column}{0.48\textwidth}
-        \textbf{\color{greenacc}Example}\\[4pt]
-        In a class of 10 students, the 3 who drink coffee
-        all have higher GPAs.\\[8pt]
-        Does this prove coffee helps GPA?\\[4pt]
-        \textbf{No.} With only 10 students, this pattern
-        could easily be random. A larger sample
-        might show no relationship at all.
-      \end{column}
-
-      \begin{column}{0.48\textwidth}
-        \textbf{\color{greenacc}What makes an association more credible?}
-        \begin{itemize}
-          \setlength{\itemsep}{0.3em}
-          \item Larger sample size
-          \item Stronger association
-          \item Consistent across different groups and settings
-        \end{itemize}
-        \vspace{8pt}
-        \textbf{Bottom line:} Statistics gives us the tools to decide
-        whether a pattern is real. We build those tools in Units 5--9.
-      \end{column}
-
-    \end{columns}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 6 — ASSOCIATION vs. CAUSATION
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=white}
-\begin{frame}[t, plain]
-  \navyheader{Association vs.\ Causation}
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{0.3cm}
-    \begin{columns}[T]
-
-      \begin{column}{0.48\textwidth}
-        \small
-        \textbf{\color{navy}Three explanations for an association:}
-        \begin{enumerate}
-          \setlength{\itemsep}{0.4em}
-          \item $X$ causes $Y$
-          \item $Y$ causes $X$ (reverse causation)
-          \item A third variable causes both $X$ and $Y$
-                (\textbf{confounding variable})
-        \end{enumerate}
-        \vspace{8pt}
-        \textbf{\color{navy}Classic example --- fire trucks:}\\
-        \textit{Cities that send more trucks have more property damage.}\\[4pt]
-        Do trucks cause damage?\\
-        \textbf{No.} Larger fires cause both.
-        Fire size is the confounding variable.
-      \end{column}
-
-      \begin{column}{0.48\textwidth}
-        \small
-        \textbf{\color{navy}Shoe size \& reading ability}\\[4pt]
-        Both increase as children \textbf{grow older}.\\
-        Age is the confounding variable.\\[8pt]
-        \textbf{\color{navy}Ice cream \& drowning}\\[4pt]
-        Both increase in \textbf{summer}.\\
-        Season / temperature is the confounding variable.\\[8pt]
-        \textit{The association is real in both cases ---
-        but causation is not.}
-      \end{column}
-
-    \end{columns}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 7 — VOCABULARY
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=greenbg}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[greenacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm]
-      at ([yshift=-0.68cm]current page.north west)
-      {Vocabulary \& Key Concepts};
-  \end{tikzpicture}
-  \vspace{1.05cm}\par
-  \hspace{0.4cm}%
-  \begin{minipage}{0.93\textwidth}
-    \vspace{1em}
-    \footnotesize
-    \begin{multicols}{2}
-      \textbf{\color{greenacc}Association} --- a relationship between two variables
-        such that knowing one gives information about the other\\[4pt]
-      \textbf{\color{greenacc}Apparent association} --- a pattern in a sample that may
-        or may not reflect a real relationship in the population\\[4pt]
-      \textbf{\color{greenacc}Causation} --- one variable directly produces a change in
-        another; requires a controlled experiment to establish\\[4pt]
-
-      \columnbreak
-
-      \textbf{\color{greenacc}Confounding variable} --- a third variable related to both
-        the explanatory and response variable, making an apparent association misleading\\[4pt]
-      \textbf{\color{greenacc}Explanatory variable} --- the variable used to explain or
-        predict the response; placed on the $x$-axis\\[4pt]
-      \textbf{\color{greenacc}Response variable} --- the outcome of interest;
-        placed on the $y$-axis
-    \end{multicols}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 8 — GROUP ACTIVITY
-% ─────────────────────────────────────────────────────────────────────────────
-{
-\setbeamercolor{background canvas}{bg=redbg}
-\setbeamercolor{enumerate item}{fg=redacc}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[redacc] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm, inner ysep=0pt]
-      at ([yshift=-0.675cm]current page.north west)
-      {Group Activity};
-  \end{tikzpicture}
-  \vspace{1.05cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    \vspace{1em}
-    \small
-    \textbf{Evaluating Associations --- Real or Random?}\\[6pt]
-    For each of the 3 scenarios on your activity sheet:
-    \begin{enumerate}
-      \setlength{\itemsep}{0.4em}\setlength{\topsep}{0em}
-      \item Identify the two variables and their types.
-      \item Decide: is this association likely real or possibly random?
-            (Consider the sample size.)
-      \item Name one confounding variable.
-      \item Could this study establish causation?
-    \end{enumerate}
-    \vspace{0.6cm}
-    {\color{redacc}\bfseries\small TIME: 8--10 minutes}
-  \end{minipage}
-\end{frame}
-}
-
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 9 — EXIT TICKET
-% ─────────────────────────────────────────────────────────────────────────────
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
-\setbeamercolor{enumerate item}{fg=white}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navylight] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Exit Ticket}}
-    \vspace{0.4cm}\par
-    {\color{skymid}\small\itshape
-      A researcher surveys 30 high school students and finds that students
-      who drink more coffee tend to have higher GPAs.}\par
-    \vspace{0.4cm}
-    \small
-    \begin{enumerate}
-      \setlength{\itemsep}{0.45em}\setlength{\topsep}{0em}
-      \item {\color{white}What are the two variables? What type is each?}
-      \item {\color{white}Could this association be random? Why does sample size matter?}
-      \item {\color{white}Name one confounding variable.}
-      \item {\color{white}Does this prove coffee causes higher grades? Explain.}
-    \end{enumerate}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Three terms go in the vocabulary box today: two-way table,
+    conditional relative frequency, association.}
   \end{minipage}
 \end{frame}
 }
 
-% ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 10 — CLOSING & UNIT 2 ROAD MAP
-% ─────────────────────────────────────────────────────────────────────────────
+% ── ROW 1: TWO-WAY TABLE ─────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Reading a two-way table}
+  \sectionlabel{notes, Two-Way Table $\cdot$ problems 1--3}
+  200 students: does your phone stay in your bedroom overnight? Do you sleep 8+ hours?
+  \vspace{6pt}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{l | c c | c}
+     & \textbf{8+ hours} & \textbf{Under 8} & \textbf{Total} \\ \hline
+    \textbf{Phone in room} & 48 & 112 & 160 \\
+    \textbf{No phone} & 20 & 20 & 40 \\ \hline
+    \textbf{Total} & 68 & 132 & \textbf{200} \\
+  \end{tabular}
+  \end{center}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Joint relative frequency}
+        One cell $\div$ the \textbf{grand total}: \\
+        phone \emph{and} 8+ $= 48/200 = 0.24$ (UNC-1.P.4)
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Marginal relative frequency}
+        A row or column total $\div$ the \textbf{grand total}: \\
+        8+ hours $= 68/200 = 0.34$ (UNC-1.Q.1)
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: CONDITIONAL ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{``Of those who\ldots'' picks the denominator}
+  \sectionlabel{notes, Conditional $\cdot$ problems 4--6}
+  \vspace{4pt}
+  \begin{block}{Conditional relative frequency (UNC-1.Q.2)}
+    Look inside \textbf{one} row or column only, and divide by \textbf{that group's total}.
+  \end{block}
+  \vspace{8pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \textbf{Of phone-in-room students}, 8+ hours: \\[3pt]
+      \hspace{1em}$48 / \mathbf{160} = 0.30$ \\[8pt]
+      \textbf{Of no-phone students}, 8+ hours: \\[3pt]
+      \hspace{1em}$20 / \mathbf{40} = 0.50$
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \textbf{Of 8+ hour sleepers}, phone in room: \\[3pt]
+      \hspace{1em}$48 / \mathbf{68} \approx 0.71$ \\[8pt]
+      {\small\color{slate} Same 48 on top. A \redink{different group} on the bottom --- so a
+      different question and a different answer.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 3: ASSOCIATION — THE CRUX ────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{48 is bigger than 20. So what?}
+  \sectionlabel{notes, Association $\cdot$ problems 7--10 $\cdot$ the whole point of today}
+  \begin{columns}[c]
+    \begin{column}{0.36\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=1.0cm, y=0.030cm]
+        \fill[navy]    (0.3,0)  rectangle (1.3,30);
+        \fill[goldacc] (0.3,30) rectangle (1.3,100);
+        \fill[navy]    (1.8,0)  rectangle (2.8,50);
+        \fill[goldacc] (1.8,50) rectangle (2.8,100);
+        \draw (0.3,0) rectangle (1.3,100); \draw (1.8,0) rectangle (2.8,100);
+        \node[white, font=\scriptsize\bfseries] at (0.8,15) {30\%};
+        \node[font=\scriptsize\bfseries] at (0.8,65) {70\%};
+        \node[white, font=\scriptsize\bfseries] at (2.3,25) {50\%};
+        \node[font=\scriptsize\bfseries] at (2.3,75) {50\%};
+        \draw[thick] (0,0) -- (3.0,0); \draw[thick] (0,0) -- (0,104);
+        \node[below, font=\tiny, align=center] at (0.8,-2) {Phone in\\room (160)};
+        \node[below, font=\tiny, align=center] at (2.3,-2) {No phone\\(40)};
+        \fill[navy] (0.3,110) rectangle (0.5,118); \node[right, font=\tiny] at (0.5,114) {8+ hours};
+        \fill[goldacc] (1.8,110) rectangle (2.0,118); \node[right, font=\tiny] at (2.0,114) {Under 8};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.60\textwidth}
+      \small
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item ``48 phone students sleep 8+, only 20 no-phone students do.'' True --- and
+              \redink{misleading}: there are 160 phone students and only 40 without.
+        \item Compare \textbf{percents}: 30\% vs.\ 50\%. The bars differ, so the variables are
+              \textbf{associated} (UNC-1.R.1).
+        \item A \textbf{mosaic plot} would also make each bar's \emph{width} show its group's
+              size.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{2pt}
+  \begin{block}{Association is not causation}
+    This is a survey. Students who keep phones out may differ in other ways --- the pattern
+    could even be chance (VAR-1.D.1). It does not show that phones \emph{cause} less sleep.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: Texting drivers}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 11--14 $\cdot$ you hold the pen}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.25}
+      \begin{tabular}{l | c c | c}
+         & \textbf{Texted} & \textbf{Did not} & \textbf{Total} \\ \hline
+        \textbf{16--24} & 20 & 30 & 50 \\
+        \textbf{25+} & 36 & 114 & 150 \\ \hline
+        \textbf{Total} & 56 & 144 & 200 \\
+      \end{tabular}
+      \end{center}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item What proportion of all drivers texted? Joint or marginal?
+        \item What proportion texted in \emph{each} age group?
+        \item ``Older drivers text more --- 36 vs.\ 20.'' Respond.
+        \item Associated? Say it in context.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{block}{The question behind every answer}
+    \emph{Of whom?} Name the group before you divide --- and compare \redink{percents}, never
+    counts, when the groups are different sizes.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: more is not the same as more likely}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{\textwidth}{l Y Y}
+    & \textbf{Count} & \textbf{Percent of the group} \\ \hline
+    Phone in room, 8+ hours & 48 & 30\% \\
+    No phone, 8+ hours & 20 & \textbf{50\%} \\
+    Drivers 25+, texted & 36 & 24\% \\
+    Drivers 16--24, texted & 20 & \textbf{40\%} \\
+  \end{tabularx}
+  \vspace{10pt}
+  \begin{block}{Say it out loud}
+    The bigger count came from the \redink{bigger group}. Association lives in the conditional
+    percents --- and even then, a survey cannot tell us \emph{why}.
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK (the individual practice, scored) ────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 items $\cdot$ scored $\cdot$ due the first class after two study halls}
+  A gym's 250 newest members: monthly or annual plan, still attending or stopped.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{Part A:} a joint relative frequency, and one ``of those who \emph{stopped}.''
+    \item \textbf{Part B:} each plan's attendance rate, the manager's claim, and one
+          multiple-choice item with a justification.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{A2 and B2} are the ones I am reading over your shoulder. The AP Practice page before
+    it is \textbf{not scored} --- work it for the reps and bring questions to study hall.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
-\setbeamercolor{itemize item}{fg=white}
-\begin{frame}[t, plain]
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navylight] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-  \end{tikzpicture}
-  \vspace{0.45cm}\par
-  \hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Closing \& Unit 2 Road Map}}
-    \vspace{0.45cm}\par
-    \begin{columns}[T]
-
-      \begin{column}{0.54\textwidth}
-        \small
-        {\color{goldacc}\bfseries Key Reminders}\\[5pt]
-        \begin{itemize}
-          \setlength{\itemsep}{0.4em}\setlength{\topsep}{0em}
-          \item {\color{white}\textbf{Apparent patterns may be random.}
-            {\color{skymid} Small samples can look like big patterns by chance.}}
-          \item {\color{white}\textbf{Association $\neq$ Causation.}
-            {\color{skymid} A confounding variable may explain both.}}
-          \item {\color{white}\textbf{The question drives the method.}
-            {\color{skymid} Variable types determine which display and analysis to use.}}
-        \end{itemize}
-      \end{column}
-
-      \begin{column}{0.42\textwidth}
-        \small
-        {\color{goldacc}\bfseries Where We Go Next}\\[5pt]
-        \begin{itemize}
-          \setlength{\itemsep}{0.35em}\setlength{\topsep}{0em}
-          \item {\color{white}\textbf{2.2--2.3:} Two categorical variables
-            $\to$ two-way tables, bar charts}
-          \item {\color{white}\textbf{2.4--2.9:} Two quantitative variables
-            $\to$ scatterplots, regression}
-          \item {\color{white}\textbf{Unit 3:} Experimental design
-            $\to$ establishing causation}
-        \end{itemize}
-        \vspace{0.5cm}
-        {\color{skymid}\itshape\small Homework due next class.}
-      \end{column}
-
-    \end{columns}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Ask ``of whom?'' before you divide. Compare percents, not
+    counts.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 2.2 --- Scatterplots and Correlation, when both
+    variables are numbers.}
   \end{minipage}
 \end{frame}
 }

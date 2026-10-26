@@ -1,0 +1,13 @@
+# Homework item 1b Random (Unit 7, Lesson 7.6). Relative to the lesson directory.
+id: hw1b1
+points: 1
+task: >-
+  Reaction times: random samples of 30 young adults (mean 285 ms, s = 42) and 35 older
+  adults (mean 324 ms, s = 55); both roughly symmetric, no outliers. Verify the Random
+  condition.
+criteria:
+  - id: 1b1
+    points: 1
+    full: >-
+      Says both groups are random samples (30 young adults, 35 older adults), so the
+      condition is met.

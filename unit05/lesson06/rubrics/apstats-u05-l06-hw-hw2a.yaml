@@ -1,0 +1,19 @@
+# Homework item 2a (Unit 5, Lesson 5.6). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  25% of households in one region compost (n1 = 160) and 18% in a second region (n2 =
+  200). Check the four Large Counts conditions.
+criteria:
+  - id: counts
+    points: 1
+    full: >-
+      Computes all four counts: 160(0.25) = 40, 160(0.75) = 120, 200(0.18) = 36, 200(0.82)
+      = 164.
+  - id: conclude
+    points: 1
+    full: >-
+      Says all four are at least 10, so the Large Counts condition is met.
+examples:
+  - response: "40 and 36 are at least 10."
+    scores: {counts: 0, conclude: 1}

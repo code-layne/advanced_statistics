@@ -1,0 +1,18 @@
+# Homework item 2d (Unit 7, Lesson 7.9). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  Students randomly assigned to literacy program A (n = 40, mean 72.3, s = 9.8) or B
+  (n = 38, mean 68.7, s = 11.2); do the mean reading scores differ? t about 1.51, df
+  about 73.5, two-sided p about 0.136. Conclude (alpha = 0.05).
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.14) to alpha = 0.05 and fails to reject H0 (does not 'accept'
+      H0).
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is not convincing evidence that the two programs produce different
+      mean reading scores.

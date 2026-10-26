@@ -1,78 +1,85 @@
-%! AP Statistics — Unit 2, Lesson 2.5 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Departures from Linearity — Unit 2, Lesson 2.5 — Warm-Up (Answer Key)
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% ONE PAGE, blank and key. Three items; do not add a fourth.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+%   Item 1 — spiral to Lessons 2.3–2.4: compute and read a residual (the notes lean on residuals
+%            all period).
+%   Item 2 — two residual plots, one random and one curved: which says "a line is right"? Seeds
+%            the Residual Plots row, where r = -0.94 sits beside a U-shaped plot (the crux).
+%   Item 3 — where would one new point move the line most? Seeds leverage and influence in the
+%            Unusual Points row. Leave the class's answer on the board.
+% Every display is pre-drawn; nothing is sketched.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.5}{Warm-Up --- Answer Key}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.2in}
+\vspace{0.28in}
 
-{\large\bfseries\color{navy} Part 1 \quad DOFS Review (Lesson 2.4)}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.42in]
 
-\vspace{0.1in}
+  \item \textbf{From last lesson.} A city's taxi fares follow the line
+        $\hat{y} = 2.50 + 0.80x$, where $x$ is the miles driven and $\hat{y}$ is the predicted
+        fare in dollars. A 10-mile ride cost \$12.00.
 
-\noindent For each scenario, write a complete DOFS description. Use the words
-\textit{strong}, \textit{moderate}, or \textit{weak} and \textit{positive},
-\textit{negative}, or \textit{none}.
+        \vspace{12pt}
+        Predicted fare: \ans{\$10.50} \qquad Residual: \ans{$+$\$1.50}
+        \vspace{16pt}
 
-\vspace{0.08in}
+        Did the line predict too high or too low for this ride? \ans{Too low}
 
-\begin{enumerate}[leftmargin=1.6em, itemsep=0.18in]
+  \item Two residual plots from two different lines. Which one says a line is a good model
+        for its data? Explain.
 
-  \item A scatterplot of hours of sleep ($x$) vs.\ reaction time in milliseconds ($y$)
-        for 20 college students shows points that closely follow a line sloping downward,
-        with no obvious outliers.\\[8pt]
-        \ansline{There is a strong negative linear association between hours of sleep and
-        reaction time (ms) for these 20 college students. As sleep increases, reaction time
-        tends to decrease. There are no obvious outliers.}
+        \vspace{10pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.62]
+          \draw[linegray] (0,0) -- (7,0);
+          \draw[->, thick] (0,-1.8) -- (0,2);
+          \node[left, font=\scriptsize] at (0,0) {0};
+          \foreach \x/\y in {0.5/0.6,1.1/-0.9,1.6/1.2,2.2/-0.3,2.8/0.8,3.3/-1.3,3.9/0.2,
+                             4.4/1.0,5.0/-0.6,5.5/0.4,6.1/-1.1,6.6/0.9}
+            \fill[navy] (\x,\y) circle (0.09);
+          \node[font=\bfseries\small] at (3.5,2.4) {Plot A};
+          \node[font=\scriptsize] at (7.3,0) {$x$};
+          \begin{scope}[xshift=9.5cm]
+            \draw[linegray] (0,0) -- (7,0);
+            \draw[->, thick] (0,-1.8) -- (0,2);
+            \node[left, font=\scriptsize] at (0,0) {0};
+            \foreach \x/\y in {0.5/1.6,1.1/0.8,1.6/0.1,2.2/-0.5,2.8/-0.9,3.3/-1.1,3.9/-1.0,
+                               4.4/-0.7,5.0/-0.2,5.5/0.4,6.1/1.0,6.6/1.7}
+              \fill[navy] (\x,\y) circle (0.09);
+            \node[font=\bfseries\small] at (3.5,2.4) {Plot B};
+            \node[font=\scriptsize] at (7.3,0) {$x$};
+          \end{scope}
+        \end{tikzpicture}
+        \end{center}
+        \vspace{6pt}
+        \ansline{Plot A: random scatter, no pattern. Plot B curves (a U), so a line}\\[18pt]\ansline{misses the pattern there.}
 
-  \item A scatterplot of shoe size ($x$) vs.\ GPA ($y$) for 30 students shows points
-        scattered randomly with no discernible pattern.\\[8pt]
-        \ansline{There is no association between shoe size and GPA for these 30 students.
-        Knowing a student's shoe size gives no information about their GPA.}
+  \item The line below was fit to the six navy points. \textbf{One} more point will be added:
+        either P or Q. Which one would change the \emph{slope} of the line more? Why?
+
+        \vspace{10pt}
+        \begin{center}
+        \begin{tikzpicture}[xscale=0.62, yscale=0.42]
+          \draw[->, thick] (0,0) -- (13.5,0) node[below, font=\scriptsize] {$x$};
+          \draw[->, thick] (0,0) -- (0,5.5) node[left, font=\scriptsize] {$y$};
+          \draw[navy, thick] (0.5,1.0) -- (6.5,4.0);
+          \foreach \x/\y in {1/1.4,2/1.6,3/2.4,4/2.7,5/3.5,6/3.6}
+            \fill[navy] (\x,\y) circle (0.1 and 0.15);
+          \fill[redacc] (3.5,4.9) circle (0.13 and 0.19) node[right, font=\bfseries\small] {\,P};
+          \fill[redacc] (12.5,1.2) circle (0.13 and 0.19) node[right, font=\bfseries\small] {\,Q};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{6pt}
+        \ansline{Q. Its $x$ is far beyond the others, so it pulls the line toward itself;}\\[18pt]\ansline{P sits in the middle and mostly just raises the line.}
 
 \end{enumerate}
-
-\vspace{0.22in}
-
-{\large\bfseries\color{navy} Part 2 \quad Estimating the Correlation}
-
-\vspace{0.1in}
-
-\noindent The \textbf{correlation coefficient} $r$ is a single number between $-1$ and $1$
-that captures the \emph{direction} and \emph{strength} of a linear association.
-
-\vspace{0.1in}
-
-\noindent Match each description to the $r$ value you think fits best.
-
-\vspace{0.1in}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{0.85\linewidth}{@{} l X c @{}}
-\rowcolor{sky}
-\textbf{Description} & \textbf{What you expect} & \textbf{$r$ value} \\
-\midrule
-Strong positive linear association  & points tightly around a rising line  & \ans{$0.92$} \\
-No linear association               & randomly scattered cloud              & \ans{$0$} \\
-Moderate negative linear association & loosely around a falling line       & \ans{$-0.55$} \\
-Perfect positive linear association  & every point exactly on a line       & \ans{$1.0$} \\
-\end{tabularx}
-\end{center}
-
-\vspace{0.1in}
-
-\noindent \textbf{Values to choose from:} $\quad r = 1.0 \qquad r = 0.92 \qquad r = 0 \qquad r = -0.55$
-
-\vspace{0.18in}
-
-\noindent Based on your answers, predict: in Lesson 2.4's sleep vs.\ reaction-time
-scatterplot (Part 1, \#1), would $r$ be closer to $-1$, $0$, or $+1$? Why?\\[8pt]
-\ansline{$r$ would be closer to $-1$ because the association is strong and negative ---
-as sleep increases, reaction time decreases, so the two variables move in opposite directions.}
 
 \end{document}

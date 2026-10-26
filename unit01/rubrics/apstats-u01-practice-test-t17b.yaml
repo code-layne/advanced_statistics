@@ -1,0 +1,21 @@
+# Unit 1 practice (sample) test, item 17b. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t17b
+points: 3
+task: >-
+  A reporter says North sends more of its seniors to 4-year colleges because its bar
+  is taller. What is wrong with this reasoning?
+criteria:
+  - id: flaw
+    points: 2
+    full: >-
+      E: Explains the bars show counts and the schools have different numbers of seniors
+      (250 vs 160), so counts cannot be compared.
+    partial: >-
+      P (1 of 2): Mentions the different sizes or counts without connecting them to the
+      bars.
+  - id: fix
+    points: 1
+    full: >-
+      E: Compares relative frequencies, 48% vs 55%, so South's share is larger.

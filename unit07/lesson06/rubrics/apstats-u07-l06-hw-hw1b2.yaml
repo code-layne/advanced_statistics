@@ -1,0 +1,13 @@
+# Homework item 1b Normal (Unit 7, Lesson 7.6). Relative to the lesson directory.
+id: hw1b2
+points: 1
+task: >-
+  Reaction times: random samples of 30 young adults (mean 285 ms, s = 42) and 35 older
+  adults (mean 324 ms, s = 55); both roughly symmetric, no outliers. Verify the Normal
+  condition.
+criteria:
+  - id: 1b2
+    points: 1
+    full: >-
+      Notes both sample sizes are at least 30 (30 and 35), so the CLT applies (or that
+      both distributions are roughly symmetric with no outliers); met.

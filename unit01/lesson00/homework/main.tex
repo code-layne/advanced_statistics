@@ -1,121 +1,157 @@
 %! Introducing Statistics: What Can We Learn from Data? — Unit 1, Lesson 1.0 — Homework
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Every lesson gets a generated homework; when DeltaMath carries the topic instead, this page
+% is simply not assigned and the cover's score cell is struck through.
+% Started in the closing minutes of the period and finished at home.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro, every
+% \answerspace height, and every \boxguard byte-identical in the blank and the key.
+% The next-lesson preview closes the packet, so it lives here rather than in ../ap_practice/.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l00-hw}
+\gradingcourse{advanced_statistics}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Homework}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\boxguard[30]
-\begin{scenariobox}[The Shelter Data Set]{navy}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
 \small
-A county animal shelter posts this table of the dogs currently available for adoption.
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own. Write every explanation \emph{in the context of the problem} --- that is the
+standard here, and it is what earns credit on the AP exam.
+\end{remindbox}
 
-\vspace{8pt}
-\renewcommand{\arraystretch}{1.3}
+\vspace{0.10in}
+
+\boxguard[24]
+\begin{scenariobox}[The Food Truck Lot]{navy}
+\small
+A city keeps a record of every food truck licensed to park in one downtown lot.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\linewidth}{@{} l Y Y Y Y @{}}
 \rowcolor{sky}
-\textbf{Name} & \textbf{Breed} & \textbf{Age (yr)} & \textbf{Weight (lb)} & \textbf{Days at shelter} \\
+\textbf{Truck} & \textbf{Cuisine} & \textbf{Menu items} & \textbf{Avg.\ wait (min)} & \textbf{Cash only?} \\
 \hline
-Biscuit & Beagle    & 3 & 24 & 12 \\
-Momo    & Terrier   & 1 & 15 & 44 \\
-Ranger  & Shepherd  & 5 & 61 &  6 \\
-Pepper  & Retriever & 2 & 55 & 21 \\
-Sage    & Beagle    & 7 & 27 & 59 \\
-Tuck    & Mixed     & 4 & 38 &  9 \\
-Willow  & Terrier   & 2 & 17 & 33 \\
-Zeke    & Shepherd  & 6 & 70 & 15 \\
+Bao Down     & Chinese & 14 & 11 & No  \\
+Curry Cart   & Indian  &  9 &  7 & Yes \\
+El Farolito  & Mexican & 22 & 15 & No  \\
+Gyro Hero    & Greek   &  6 &  4 & Yes \\
+Nonna's      & Italian & 18 & 19 & No  \\
+Pho Sure     & Vietnamese & 11 & 6 & No \\
 \hline
 \end{tabularx}
 \end{scenariobox}
 
-\vspace{0.14in}
+\vspace{0.10in}
 
-\begin{enumerate}[leftmargin=1.7em, itemsep=0.18in]
-
-  \item \textbf{Individuals and variables.}
-        \vspace{4pt}
-
-        \textbf{(a)} One individual in this data set is \blank{6cm}.
-
-        \vspace{6pt}
-        \textbf{(b)} There are \blank{1.6cm} individuals and \blank{1.6cm} variables.
-
-        \vspace{6pt}
-        \textbf{(c)} ``Shepherd'' is a \blank{3cm} of the variable \blank{3cm}.
-
-        \vspace{6pt}
-        \textbf{(d)} Name one characteristic of these dogs that is \emph{not} recorded
-        here but could have been.\\[4pt]
-        \writeline
-
-  \item \textbf{Statistical or not?} Mark each \textbf{S} or \textbf{N}.
-
-        \vspace{4pt}
-        \renewcommand{\arraystretch}{1.75}
-        \begin{tabularx}{\linewidth}{@{} X C{2.2cm} @{}}
-        \hline
-        \textbf{Question} & \textbf{S or N} \\
-        \hline
-        How much does Zeke weigh?                              & \blank{1.3cm} \\
-        How do the weights of the shelter's dogs vary?         & \blank{1.3cm} \\
-        How many dogs are listed in the table?                 & \blank{1.3cm} \\
-        How long do dogs typically wait to be adopted?         & \blank{1.3cm} \\
-        Is Momo a terrier?                                     & \blank{1.3cm} \\
-        Do heavier dogs tend to wait longer than lighter ones? & \blank{1.3cm} \\
-        \hline
-        \end{tabularx}
-
-        \vspace{8pt}
-        Pick one question you marked \textbf{N} and rewrite it so that it becomes
-        statistical.\\[4pt]
-        \writeline\\[1pt]\writeline
-
-  \item \textbf{A claim with no context.} A flyer on the shelter door reads:
-
-        \vspace{6pt}
-        \begin{center}
-        {\large\bfseries\color{navy} ``Our dogs go home in 25 days.''}
-        \end{center}
-
-        \vspace{6pt}
-        \textbf{(a)} List \textbf{three} W questions the flyer fails to answer.\\[4pt]
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
-
-        \vspace{6pt}
-        \textbf{(b)} Using the table above, give one specific reason a visitor should
-        not expect \emph{their} dog to go home in 25 days.\\[4pt]
-        \writeline\\[1pt]\writeline
-
-  \item \textbf{Write your own.} Write one statistical question about the shelter data
-        set, and say exactly what varies in it.\\[4pt]
-        \writeline\\[1pt]\writeline
-
+\boxguard[18]
+\begin{notesbox}{Part A --- Reading the Record}
+\small
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item There are \smash{\gradedblank[id=hwA1b, type=short, points=1, answer=6, check=numeric, display={6}]{0.9cm}{0.17in}} individuals in this record, and
+        \smash{\gradedblank[id=hwA1c, type=short, points=1, answer=4, check=numeric, display={4}]{0.9cm}{0.17in}} variables are recorded about each. The individuals are:
+        \answerspace{0.42in}{\normalcolor\mdseries\vspace{2pt}\gradedblank[id=hwA1a, type=short, points=1, answer={the food trucks}, check=text, display={the food trucks}]{4cm}{0.3in}}
+  \item ``Greek'' is a \smash{\gradedblank[id=hwA2a, type=short, points=1, answer=value, check=text]{2.2cm}{0.17in}} of the variable \smash{\gradedblank[id=hwA2b, type=short, points=1, answer=cuisine, check=text, display={Cuisine}]{2.4cm}{0.17in}}, and
+        ``19'' is a \smash{\gradedblank[id=hwA2c, type=short, points=1, answer=value, check=text]{2.2cm}{0.17in}} of the variable \rule[-0.06in]{0pt}{0.2in}\smash{\gradedblank[id=hwA2d, type=short, points=1, answer={average wait}, check=text, display={Avg.\ wait (min)}]{3.4cm}{0.17in}}.
+  \item Write one \textbf{statistical question} the city could answer with this record, and
+        state exactly what varies in it.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hwA3, type=rubric, points=2,
+          display={Answers vary. E.g.\ ``How do the average waits at the trucks in this lot vary?'' The average wait varies from truck to truck (4 min at Gyro Hero, 19 at Nonna's).}]{\linewidth}{1.2cm}}
 \end{enumerate}
+\end{notesbox}
 
-\vspace{0.12in}
+\vspace{0.10in}
 
-\boxguard[14]
-\begin{reflectionbox}
+\boxguard[18]
+\begin{notesbox}{Part B --- Statistical or Not?}
 \small
-Statistics exists because values differ. Suppose they did not --- suppose every dog at
-the shelter had the same weight, the same age, and the same wait. What would be left for
-a statistician to do, and why?\\[4pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
-\end{reflectionbox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item \textbf{Same lot, two questions.} Exactly one is statistical. Write (i) or (ii) in the box, then name the
+        check the other one fails and explain why it fails.
 
-\vspace{0.12in}
+        \vspace{4pt}
+        \hspace{1.0em}\emph{(i)} How many trucks are licensed for this lot?
+        \hfill
+        \emph{(ii)} How do the average waits at these trucks vary?
+        \hspace{1.0em}
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hwB1, type=rubric, points=3,
+          display={(ii) is statistical. (i) fails \textbf{check 1}: the number of
+        licensed trucks is one fixed count --- 6 --- and that answer does not differ from one
+        truck to the next. Needing to read the whole record is not the test; variation across
+        individuals is.}]{\linewidth}{1.6cm}}
+  \item A classmate says, ``A question can only be statistical if the answer is a number.''
+        Give one question about this lot that shows the classmate is wrong, and explain how
+        it passes both checks.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hwB2, type=rubric, points=2,
+          display={Answers vary. For example: ``What kind of cuisine do the trucks in
+        this lot serve?'' Check 1: cuisine differs from truck to truck --- Chinese, Indian,
+        Mexican, Greek. Check 2: you must read the record to answer. Both checks pass, and the
+        answer is a set of category names rather than a number.}]{\linewidth}{1.6cm}}
+\end{enumerate}
+\end{notesbox}
 
-\boxguard[12]
-\begin{extensionbox}
+\vspace{0.10in}
+
+\boxguard[18]
+\begin{notesbox}{Part C --- Context and the AP Standard}
 \small
-Find a number reported in a news headline this week. Write down the headline, then list
-every piece of context it leaves out. Finish by writing the statistical question the
-study behind it must have asked.\\[4pt]
-\writeline\\[1pt]\writeline
-\end{extensionbox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item A sign at the entrance to the lot reads only: \textbf{``Average wait: 10 minutes.''}
+        Name \textbf{two} pieces of context a customer would need before that number means
+        anything, and then explain why the sign does not tell one customer how long
+        \emph{they} will wait.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hwC1, type=rubric, points=3,
+          display={Two of: which trucks the average covers (all six, or only some);
+        what time of day or day of week it was measured; how many customers were timed; whether
+        it is a mean or a typical wait. The sign does not predict one customer's wait because it
+        summarizes the whole lot --- actual waits range from about 4 minutes to about 19, and no
+        single customer is guaranteed the group's average.}]{\linewidth}{2.0cm}}
+  \tcbbreak
+  \item \textbf{AP-style multiple choice.} A researcher records, for each of 500 hospital
+        patients, the patient's length of stay in days. Which of the following is a
+        \textbf{statistical question} about this data set? Write the letter of the single best answer in its Letter box.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
+          \item How many patients were included in the study?
+          \item How many days did patient \#307 stay?
+          \item How do the lengths of stay vary among these patients?
+          \item How many variables were recorded?
+          \item On what date did the study begin?
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hwC2, type=choice, points=1, answer=C]{0.4in}{0.2in}}
+        \end{enumerate}
+        Justify your choice in one sentence by naming what varies.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hwC2j, type=rubric, points=1,
+          display={\textbf{(C).} Length of stay differs from one patient to the next,
+        so the answer varies across individuals and the data must be collected to find it.}]{\linewidth}{1.2cm}}
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.10in}
+
+% The next-lesson preview closes the packet.
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: The Language of Variation.} You now know that a variable is a column
+heading and that its values differ from individual to individual. Next time we sort variables
+into two kinds --- the ones that record a \emph{category} and the ones that record an
+\emph{amount} --- and see why that difference decides every graph and every summary we are
+allowed to use for the rest of the course.
+\end{spiralbox}
 
 \end{document}

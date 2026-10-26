@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l04-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.4}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} Show all work. Express expected counts to one decimal place when needed.
@@ -23,9 +26,9 @@
         \begin{tabular}{lcccc}
                      & \textbf{Yes} & \textbf{No} & \textbf{Row Total} \\
             \hline
-            10th grade & \blank{2cm} & \blank{2cm} & 60 \\
-            11th grade & \blank{2cm} & \blank{2cm} & 90 \\
-            12th grade & \blank{2cm} & \blank{2cm} & 90 \\
+            10th grade & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1a, type=short, points=1, answer=24, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1b, type=short, points=1, answer=36, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & 60 \\
+            11th grade & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1c, type=short, points=1, answer=36, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1d, type=short, points=1, answer=54, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & 90 \\
+            12th grade & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1e, type=short, points=1, answer=36, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1f, type=short, points=1, answer=54, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & 90 \\
             \hline
             Col Total  & 96 & 144 & 240 \\
         \end{tabular}
@@ -36,19 +39,19 @@
         \writelines{4}
 
   \item \textbf{True or False.} ``If all row totals in a two-way table are equal, then all
-        expected counts in the table must be equal.'' Circle your answer:
+        expected counts in the table must be equal.'' Write T or F in the T/F box:
 
         \vspace{0.1in}
-        \textbf{TRUE} \hspace{2cm} \textbf{FALSE}
+        \rule{0pt}{0.45in}\textbf{TRUE} \hspace{2cm} \textbf{FALSE}\hspace{0.6in}\textit{T/F:}~\smash{\gradedblank[id=hw2a, type=choice, points=1, answer=F]{0.4in}{0.2in}}
 
         \vspace{0.1in}
         Explain your reasoning in 1--2 sentences.
 
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={False: $E = (RT)(CT)/N$ also depends on the column totals; equal row totals make $E$ proportional to the column totals, not all equal.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
   \item \textbf{Checking the Large-Counts Condition.} A two-way table has 3 rows and
         4 columns with a table total of 300. The large-counts condition is met if all
-        expected counts exceed \blank{1cm}.
+        expected counts exceed \hphantom{\blank{1cm}}.\hskip 0pt plus 1fill\smash{\gradedblank[id=hw3, type=short, points=1, answer=5, check=numeric, tolerance=0]{1cm}{0.2in}}
 
         \vspace{0.1in}
         Suppose all row totals equal 100 and all column totals equal 75.
@@ -56,11 +59,12 @@
         \begin{enumerate}[label=\alph*.]
             \item What is the expected count for every cell? Show the computation.
 
-                  \writelines{2}
+                  \gradedhide{\writelines{2}\gradedright{$E = $~\gradedblank[id=hw3a, type=short, points=1, answer=25, check=numeric, tolerance=0]{0.9in}{0.2in}}}
 
+            \boxguard[16]
             \item Is the large-counts condition met? Justify.
 
-                  \writelines{2}
+                  \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={Yes: every expected count is $25 \ge 5$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
         \end{enumerate}
 
 \end{enumerate}

@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u08-l04-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.4}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} Show all work. Express expected counts to one decimal place when needed.
@@ -23,9 +26,9 @@
         \begin{tabular}{lcccc}
                      & \textbf{Yes} & \textbf{No} & \textbf{Row Total} \\
             \hline
-            10th grade & \ans{24} & \ans{36} & 60 \\
-            11th grade & \ans{36} & \ans{54} & 90 \\
-            12th grade & \ans{36} & \ans{54} & 90 \\
+            10th grade & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1a, type=short, points=1, answer=24, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1b, type=short, points=1, answer=36, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & 60 \\
+            11th grade & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1c, type=short, points=1, answer=36, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1d, type=short, points=1, answer=54, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & 90 \\
+            12th grade & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1e, type=short, points=1, answer=36, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & \makebox[2cm][r]{\smash{\raisebox{-2pt}{\gradedblank[id=hw1f, type=short, points=1, answer=54, check=numeric, tolerance=0]{0.8cm}{0.18in}}}} & 90 \\
             \hline
             Col Total  & 96 & 144 & 240 \\
         \end{tabular}
@@ -37,19 +40,20 @@
             Notice 11th and 12th have equal row totals $\Rightarrow$ identical expected counts.
         \end{teachernote}
 
-  \item \textbf{True or False.} \textcolor{keyred}{\textbf{FALSE}} \quad (TRUE)
+  \item \textbf{True or False.} \textcolor{keyred}{\textbf{FALSE}} \quad (TRUE)\gradedkey{\textit{T/F:}~\gradedblank[id=hw2a, type=choice, points=1, answer=F]{0.4in}{0.2in}}
 
         \vspace{0.1in}
-        \ansline{False --- expected counts also depend on column totals. Equal row totals only guarantee that expected counts are proportional to column totals, not that they are all equal to each other.}
+        \ansline{False --- expected counts also depend on column totals. Equal row totals only guarantee that expected counts are proportional to column totals, not that they are all equal to each other.}\gradedkeyline{\gradedblank[id=hw2b, type=rubric, points=2, display={False: $E = (RT)(CT)/N$ also depends on the column totals; equal row totals make $E$ proportional to the column totals, not all equal.}]{\linewidth+6pt}{\gradedlinesheight{3}}}
 
-  \item \textbf{Checking the Large-Counts Condition.} All expected counts exceed \ans{5}.
+  \item \textbf{Checking the Large-Counts Condition.} All expected counts exceed \ans{5}.\gradedkey{\gradedblank[id=hw3, type=short, points=1, answer=5, check=numeric, tolerance=0]{1cm}{0.2in}}
 
         \begin{enumerate}[label=\alph*.]
             \item Expected count for every cell:
 
-                  \ansline{$E = \dfrac{(100)(75)}{300} = \ans{25}$ for every cell.}
+                  \ansline{$E = \dfrac{(100)(75)}{300} = $ \ans{25} for every cell.}\gradedkey{$E = $~\gradedblank[id=hw3a, type=short, points=1, answer=25, check=numeric, tolerance=0]{0.9in}{0.2in}}
 
-            \item \ansline{Yes --- $25 \ge 5$, so the large-counts condition is satisfied for all 12 cells.}
+            \boxguard[16]
+            \item \ansline{Yes --- $25 \ge 5$, so the large-counts condition is satisfied for all 12 cells.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={Yes: every expected count is $25 \ge 5$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
 \end{enumerate}

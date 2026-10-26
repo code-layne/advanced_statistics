@@ -1,0 +1,19 @@
+# Homework item 1b (Unit 6, Lesson 6.8). Relative to the lesson directory.
+id: hw1b
+points: 3
+task: >-
+  Independent random samples: City X, 168 of 280 adults exercise at least 3 times per
+  week; City Y, 126 of 240. Verify all conditions (Random, Large Counts, 10%).
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: both samples are independent random samples (stated).
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts: 168, 112, 126 and 114 successes/failures are all at least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: 280 is at most 10% of City X's adults and 240 at most 10% of City Y's adults.

@@ -1,25 +1,203 @@
-%! The Language of Variation — Unit 1, Lesson 1.1 — Guided Notes
-\documentclass[10pt]{article}
+%! The Language of Variation — Unit 1, Lesson 1.1 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
+% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right a terse definition the student completes, then a grid of short numbered
+% problems with reserved work space. Problems are numbered 1..N through the whole component.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice, is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last minutes of the period. No independent set, no reflection box, no objectives
+%            box (the targets are on the cover).
+% Vocabulary is GIVEN here, not discovered. The crux is the AMOUNTS row — a column written
+% entirely in digits is not automatically quantitative. Permit numbers, parking spots, and ZIP
+% codes average cleanly and mean nothing (EK VAR-1.C.1, VAR-1.C.2).
+%
+% THE CONTEXTS: three hiking parties (Trail / Time out), two permits with their water bottles,
+% the ranger's Short / Medium / Long regrouping, the five-column digits strip, and the Season
+% Pass for Guided Practice.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
+% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
+% argument. Heights and blank widths are sized to the answers so the two files set identically.
+% The \begin{work} block is authored BYTE-IDENTICALLY in both files. A guidednotes row cannot
+% break across pages, so every idea is split into two sub-rows at its prompt (a `\\` with no
+% \hline, then `& ...`) so the table can break between the definition and its grid.
+% NO SKETCH QUESTIONS: every display is pre-drawn and read.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.1}{Guided Notes}
+\pageheader{Unit 1, Lesson 1.1}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
+\vspace{2pt}
 
-\vspace{0.15in}
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Categorical variable}
+\par
+\termblank{Quantitative variable}
+\par
+\termblank{The amount test}
+\par
+\termblank{Grouping (binning)}
+\par
+\end{vocabbox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
-% when the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
-% the _key: the blank reserves its exact height, the key prints it. That is what keeps
-% this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Guided Notes}
-\writelines{4}
-\end{notesbox}
+\small
+\begin{guidednotes}
+% ── ROW 1: two kinds of variable ─────────────────────────────────────────────
+\mainidea[Two kinds of]{Variable} &
+A \textbf{variable} is any characteristic recorded for each individual; today we split them in
+two. A \textbf{categorical} variable's values are category \blank{1.6cm} or group labels. A
+\textbf{quantitative} variable's values are \blank{2.2cm} for a measured or counted amount.
+
+\vspace{3pt}
+Three hiking parties, two kinds of column:
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{} l l c @{}}
+\rowcolor{sky}
+\textbf{Party} & \textbf{Trail} & \textbf{Time out (min)} \\
+\hline
+Alvarez & Ridge Loop   &  95 \\
+Boone   & Cedar Falls  & 140 \\
+Delgado & Summit Trail & 215 \\
+\hline
+\end{tabular}
+\end{center}
+\emph{Trail} is \blank{2.6cm}: its values name which trail, and Summit Trail is not ``more''
+than Ridge Loop. \emph{Time out} is \blank{2.6cm}: 215 minutes really is more than 95, and the
+difference, 120 minutes, means something.
+\\
+& \notesprompt{The ranger records more about each party. Classify each: C or Q.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Group size (number of hikers)}{0.9cm}{} &
+\pcell{2}{Dog along (Yes / No)}{0.9cm}{} &
+\pcell{3}{Weather at the trailhead}{0.9cm}{} \\ \hline
+\pcell{4}{Pack weight, in pounds}{1.1cm}{} &
+\pcell{5}{Trail difficulty (Easy / Moderate / Hard)}{1.1cm}{} &
+\pcell{6}{Miles hiked}{1.1cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the amount test ───────────────────────────────────────────────────
+\mainidea[The]{Amount test} &
+Do not ask ``does it have digits.'' Ask: \textbf{is the value an \emph{amount} of something ---
+how much, or how many?} If yes, the variable is \blank{2.8cm}. If the value only
+\emph{identifies} or \emph{labels}, it is \blank{2.6cm}.
+
+\vspace{3pt}
+A second way to run the same test: \textbf{does averaging the values produce something real?}
+If the average is \blank{2.2cm}, the variable is categorical no matter how it is written.
+
+\\
+& Two hiking parties hold permits 2041 and 6318 and carry 6 and 2 water bottles. Both columns are
+written entirely in digits. Both averages compute without complaint:
+
+\begin{work}
+\text{average permit \#} &= \frac{2041 + 6318}{2} = 4179.5 \\[4pt]
+\text{average water bottles} &= \frac{6 + 2}{2} = 4
+\end{work}
+\notesprompt{Run the test on both averages.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{7}{Four water bottles --- what real thing does that number describe?}{1.5cm}{} &
+\pcell{8}{Hand me the party whose permit is 4179.5.}{1.5cm}{} &
+\pcell{9}{Which column passes the amount test, and what is it an amount of?}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: grouping runs one way ─────────────────────────────────────────────
+\mainidea[Grouping is]{One way only} &
+A ranger stops recording \emph{Time out} in minutes and records \emph{Short} / \emph{Medium} /
+\emph{Long} instead. Same hikes, same afternoon:
+
+\vspace{2pt}
+\centerline{\emph{Time out} \ 95, 140, 215 \ minutes \quad$\longrightarrow$\quad
+\emph{Length} \ Short, Medium, Long}
+
+\vspace{2pt}
+The new column is \blank{2.6cm}. Replacing measured amounts with group labels is called
+\textbf{grouping} or \textbf{binning}. Once 95, 140, and 215 become labels, the mean time on the
+trail can no longer be \blank{2.1cm} from the column. Grouping runs \blank{1.2cm} way only:
+you can always bin amounts into labels, but you can never \blank{1.8cm} the amounts from the
+labels.
+\\
+& \notesprompt{Use the two columns.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Which column can be averaged? Compute that average.}{1.3cm}{} &
+\pcell{11}{Boone's row now reads \emph{Medium}. Can the ranger get 140 back from it? Why?}{1.3cm}{} \\ \hline
+\pcell{12}{Name one thing the ranger can no longer compute from the new column.}{1.2cm}{} &
+\pcell{13}{A second ranger records \emph{Under 2 hours} / \emph{2 hours or more}. Which kind of
+variable is that column?}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: digits are not amounts — THE CRUX ─────────────────────────────────
+\mainidea[Digits are not]{Amounts} &
+A column written entirely in digits is \blank{1.2cm} automatically quantitative. Permit numbers
+and ZIP codes average without complaint and mean \blank{1.6cm}: their digits \blank{1.7cm} an
+individual, they do not measure anything.
+
+\vspace{3pt}
+Counting a categorical variable also produces numbers. ``62\% of parties hiked with a dog'' is a
+numerical \blank{1.9cm} of the categorical variable \emph{Dog along}. The \emph{summary} is
+numeric; the \emph{variable} is still \blank{2.4cm}.
+\\
+& \notesprompt{Classify each. Write C or Q.}
+\begin{probgrid}{|Y|Y|Y|Y|Y|}
+\pcell{14}{Permit \#}{0.9cm}{} &
+\pcell{15}{Parking spot}{0.9cm}{} &
+\pcell{16}{Home ZIP}{0.9cm}{} &
+\pcell{17}{Water bottles}{0.9cm}{} &
+\pcell{18}{Group size}{0.9cm}{} \\ \hline
+\end{probgrid}
+\notesprompt{Then say why.}
+\begin{probgrid}{|Y|Y|}
+\pcell{19}{Every entry in the \emph{Dog along} column is Yes or No. Where did the 62 come from
+--- and is it a value of the variable?}{1.4cm}{} &
+\pcell{20}{State the amount test in one sentence --- without using the word
+\emph{digits}.}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Season Pass} &
+A ski area records five things about each of its 3{,}400 season-pass holders: \textbf{pass
+number}, \textbf{age} (years), \textbf{pass tier} (Gold / Silver / Bronze), \textbf{miles
+traveled} to the mountain, and \textbf{locker number}.
+
+\vspace{4pt}
+\textbf{21.} The individuals are \blank{3.6cm}.
+
+\vspace{4pt}
+\textbf{22.} Label each variable \textbf{C} or \textbf{Q}:
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} Y Y Y Y Y @{}}
+\textbf{Pass \#} & \textbf{Age} & \textbf{Pass tier} & \textbf{Miles traveled} &
+\textbf{Locker \#} \\
+\blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
+\end{tabularx}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{23}{\emph{Miles traveled} and \emph{Locker \#} are both digits. Say the difference in
+one sentence.}{1.6cm}{} &
+\pcell{24}{The resort stops recording age in years and records \textbf{age group} instead
+(Under 18 / 18--34 / 35--54 / 55+). Which kind is the variable now, and what can the resort no
+longer compute?}{1.6cm}{} &
+\pcell{25}{A report states: \textbf{``The average pass number is 5{,}120.''} Why does that
+number tell you nothing about the pass holders?}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

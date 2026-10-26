@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u06-l09-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 6, Lesson 6.9}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -16,20 +19,21 @@
 \item \textbf{Interpret and Evaluate.} 99\% CI for $p_{\text{city}} - p_{\text{suburb}} = (-0.06, 0.22)$.
 
 \begin{enumerate}[label=\alph*.]
-  \item \ansline{We are 99\% confident that the true difference ($p_{\text{city}} - p_{\text{suburb}}$) in the proportions of city and suburban residents who use public transit is between $-0.06$ and $0.22$.}
-  \item \ansline{No. The interval $(-0.06, 0.22)$ contains 0, so 0 is a plausible value for $p_{\text{city}} - p_{\text{suburb}}$. There is not convincing evidence at the 99\% confidence level that city residents use public transit at a higher rate.}
-  \item \ansline{Possibly. A lower confidence level (80\%) produces a narrower interval, which might or might not contain 0. We cannot be certain without computing the 80\% CI.}
+  \item \ansline{We are 99\% confident that the true difference ($p_{\text{city}} - p_{\text{suburb}}$) in the proportions of city and suburban residents who use public transit is between $-0.06$ and $0.22$.}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=2, display={99\% confident the true difference $p_{\text{city}} - p_{\text{suburb}}$ in transit-use proportions is between $-0.06$ and $0.22$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+  \item \ansline{No. The interval $(-0.06, 0.22)$ contains 0, so 0 is a plausible value for $p_{\text{city}} - p_{\text{suburb}}$. There is not convincing evidence at the 99\% confidence level that city residents use public transit at a higher rate.}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=2, display={No: the interval contains 0, so no difference is plausible; not convincing evidence city residents use transit more.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+  \item \ansline{Possibly. A lower confidence level (80\%) produces a narrower interval, which might or might not contain 0. We cannot be certain without computing the 80\% CI.}\gradedkeyline{\gradedblank[id=hw1c, type=rubric, points=2, display={Not necessarily: the 80\% CI is narrower (smaller $z^*$); here about $(0.010, 0.150)$, which excludes 0.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
+\newpage
 \item \textbf{Full Procedure.} $\hat p_A = 0.73$, $n_1=400$; $\hat p_B = 0.65$, $n_2=350$.
 
 \begin{enumerate}[label=\alph*.]
   \item \textbf{Random:} \ansline{Both samples were independently and randomly selected --- stated.}
         \textbf{Large Counts:} $400(0.73)=292$, $400(0.27)=108$, $350(0.65)=228$, $350(0.35)=123$ --- \ans{all $\ge10$. \checkmark}\\
-        \textbf{10\%:} \ansline{Assumed both samples are $\le10\%$ of their hospital populations.}
+        \textbf{10\%:} \ansline{Assumed both samples are $\le10\%$ of their hospital populations.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=3, display={Independent random samples; $292, 108, 228, 123$ all $\ge 10$; each sample $\le 10\%$ of its hospital's patients.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
   \item $SE = \sqrt{0.73(0.27)/400 + 0.65(0.35)/350} = \sqrt{0.000493 + 0.000650} = \sqrt{0.001143} \approx 0.0338$\\
-        $CI = (0.73-0.65) \pm 1.960(0.0338) = 0.08 \pm 0.0662 = (\ans{0.014}, \ans{0.146})$
-  \item \ansline{We are 95\% confident that the true difference ($p_A - p_B$) in the proportions of patients discharged within 3 days at hospitals A and B is between 0.014 and 0.146. Since the interval is entirely positive and does not contain 0, there is convincing evidence that Hospital A has a higher early discharge rate than Hospital B.}
+        $CI = (0.73-0.65) \pm 1.960(0.0338) = 0.08 \pm 0.0662 = ($\ans{0.014}, \ans{0.146}$)$\gradedkey{$($~\gradedblank[id=hw2b1, type=short, points=2, answer=0.014, check=numeric, tolerance=0.002]{0.8in}{0.17in}~,~\gradedblank[id=hw2b2, type=short, points=2, answer=0.146, check=numeric, tolerance=0.002]{0.8in}{0.17in}~$)$}
+  \item \ansline{We are 95\% confident that the true difference ($p_A - p_B$) in the proportions of patients discharged within 3 days at hospitals A and B is between 0.014 and 0.146. Since the interval is entirely positive and does not contain 0, there is convincing evidence that Hospital A has a higher early discharge rate than Hospital B.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=3, display={95\% confident $p_A - p_B$ (3-day discharge) is in $(0.014, 0.146)$; all positive, so evidence Hospital A's rate is higher.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \end{enumerate}

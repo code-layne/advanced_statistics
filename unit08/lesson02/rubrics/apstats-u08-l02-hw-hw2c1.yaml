@@ -1,0 +1,12 @@
+# Homework item 2c, Random (Unit 8, Lesson 8.2). Relative to the lesson directory.
+id: hw2c1
+points: 1
+task: >-
+  Check the Random condition for a chi-square GOF test on a random sample of 200
+  commuters.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Says the data come from a random sample of 200 commuters (stated in the problem), so
+      Random is met.

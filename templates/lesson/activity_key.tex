@@ -1,0 +1,29 @@
+%! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Group Activity (Answer Key)
+% Copy the blank component VERBATIM, then: swap -boxes for -key, retitle the pageheader,
+% fill each \answerspace{H}{} second argument with the answer, replace \blank{} with \ans{},
+% fill any \begin{work} block, and tag the correct option of any circle-one item with
+% \ans{$\leftarrow$ circle}.
+% The \answerspace macro, every reserved height, every \begin{work} block, and every
+% \boxguard stay BYTE-IDENTICAL to the blank's — that identity is what keeps the key
+% page-for-page with the blank. Keep each answer short enough to fit the height it is given
+% (roughly 2.4 rendered lines per centimetre at 10pt \small).
+% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
+% NO teachernote here — teacher prose goes in the lesson plan.
+\documentclass[10pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit @@UNITINT@@, Lesson @@LESSONID@@}{Group Activity: TODO Activity Title --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.10in}
+
+% TODO: mirror the blank component exactly; example answered item:
+% \item \textbf{TODO: THE CRUX.} ...
+%       \answerspace{1.8cm}{TODO: the answer, printed in the identical reserved space.}
+
+\end{document}

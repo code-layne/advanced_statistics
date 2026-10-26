@@ -1,0 +1,20 @@
+# Homework item 1b (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A radio station asks listeners to call in and answer: "Do you think schools should
+  start later?" 78% of 2,400 callers say yes. Explain how the bias distorts the
+  estimate (direction).
+criteria:
+  - id: direction
+    points: 1
+    full: >-
+      Says the 78% is likely too high (an overestimate of support for later start times).
+  - id: reason
+    points: 1
+    full: >-
+      Explains that only listeners with strong opinions, especially those who favor later
+      start times, choose to call in, so neutral or opposing views are underrepresented.
+examples:
+  - response: "It is biased because people chose to call."
+    scores: {direction: 0, reason: 1}

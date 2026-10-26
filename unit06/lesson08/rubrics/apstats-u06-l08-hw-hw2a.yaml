@@ -1,0 +1,15 @@
+# Homework item 2a (Unit 6, Lesson 6.8). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  Drivers surveyed in two states: State 1, 374 of 440 always wear a seat belt; State
+  2, 306 of 390. Verify the Large Counts condition for both groups.
+criteria:
+  - id: state1
+    points: 1
+    full: >-
+      State 1: 374 successes and 66 failures, both at least 10.
+  - id: state2
+    points: 1
+    full: >-
+      State 2: 306 successes and 84 failures, both at least 10.

@@ -1,0 +1,15 @@
+# Homework item 3b (Unit 4, Lesson 4.9). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  Independent bowling scores A (mean 140) and B (mean 120); mu_{A-B} = 20. Interpret
+  in context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as an average (long-run mean) difference over many games.
+  - id: context
+    points: 1
+    full: >-
+      Says player A scores about 20 pins more than player B per game on average.

@@ -1,0 +1,15 @@
+# Homework item 4c interpretation (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw4c2
+points: 2
+task: >-
+  X ~ Geom(0.20) = individuals examined until the first allele carrier; mu_X = 5.
+  Interpret in context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average.
+  - id: context
+    points: 1
+    full: >-
+      Says about 5 individuals are examined, on average, to find the first carrier.

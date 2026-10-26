@@ -1,0 +1,17 @@
+# Homework item 2c (Unit 5, Lesson 5.4). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  Daily step counts have mean 8,500 and SD 2,200. The SD of the sample mean is 200
+  steps for n = 121 and 100 steps for n = 484. Interpret this change in a sentence.
+criteria:
+  - id: halved
+    points: 1
+    full: >-
+      Says quadrupling the sample size (121 to 484) cuts the standard deviation
+      (variability) of the sample mean in half.
+  - id: context
+    points: 1
+    full: >-
+      Says, in context, that the sample mean daily step count is then a more precise
+      estimate of the population mean (closer to 8,500 on average).

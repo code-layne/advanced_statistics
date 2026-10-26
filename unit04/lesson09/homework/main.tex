@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l09-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 4, Lesson 4.9}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -18,9 +21,9 @@
 Define $W = 3 + 5X$.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item $\mu_W = $ \blank{4cm}
-  \item $\sigma_W = $ \blank{4cm}
-  \item If $\mu_X$ increases by 2, what happens to $\mu_W$? \blank{5cm}
+  \item $\mu_W = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1a, type=short, points=1, answer=103, check=numeric, tolerance=0]{2.4cm}{0.2in}}}}
+  \item $\sigma_W = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1b, type=short, points=1, answer=20, check=numeric, tolerance=0]{2.4cm}{0.2in}}}}
+  \item If $\mu_X$ increases by 2, what happens to $\mu_W$? \makebox[5cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw1c, type=short, points=1, answer=10, check=numeric, tolerance=0, display={increases by 10}]{3.4cm}{0.2in}}}}
 \end{enumerate}
 
 \vspace{0.14in}
@@ -38,16 +41,16 @@ $Y$ & \$3.00  & \$0.75 \\
 \end{center}
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Find $\mu_{X+Y}$ and interpret in context.\\
-        \writeline\\[1pt]\writeline
+  \item Find $\mu_{X+Y}$ and interpret in context.\hfill\gradedright{\smash{\raisebox{2pt}{$\mu_{X+Y} = $~\gradedblank[id=hw2a1, type=short, points=1, answer=15, check=numeric, tolerance=0.01, display={\$15.00}]{0.9in}{0.2in}}}}\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw2a2, type=rubric, points=1, display={On average, a customer spends about \$15.00 on a pizza and soda combined.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 
-  \item Find $\sigma_{X+Y}$. Show all work (add variances first!).
+  \item Find $\sigma_{X+Y}$. Show all work (add variances first!).\gradedbelow[r]{0.3in-0.25in}{$\sigma_{X+Y} = $~\gradedblank[id=hw2b, type=short, points=2, answer=2.14, check=numeric, tolerance=0.01]{0.9in}{0.2in}}
 
         \vspace{0.3in}
 
   \item A customer's friend claims the standard deviation of the total is $\$2.75$.
         Explain the error.\\
-        \writeline
+        \gradedhide{\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={SDs don't add: add variances, then take the square root.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{0.14in}
@@ -56,15 +59,16 @@ $Y$ & \$3.00  & \$0.75 \\
 $B$ with $\mu_B = 120$, $\sigma_B = 15$.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Find $\mu_{A-B}$ and $\sigma_{A-B}$.
+  \item Find $\mu_{A-B}$ and $\sigma_{A-B}$.\gradedbelow[r]{0.3in-0.25in}{$\mu_{A-B} = $~\gradedblank[id=hw3a1, type=short, points=1, answer=20, check=numeric, tolerance=0]{0.9in}{0.2in}\quad $\sigma_{A-B} = $~\gradedblank[id=hw3a2, type=short, points=2, answer=23.4, check=numeric, tolerance=0.1]{0.9in}{0.2in}}
 
         \vspace{0.3in}
 
+\tcbbreak
   \item Interpret $\mu_{A-B}$ in context.\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\kern0.4in\gradedblank[id=hw3b, type=rubric, points=2, display={On average, player A scores about 20 pins more than player B per game.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{2}-5pt}}\writelines{10}}
 
   \item Why isn't $\sigma_{A-B} = \sigma_A - \sigma_B = 3$?\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\gradedblank[id=hw3c, type=rubric, points=2, display={Variances add even for a difference: both add variability, so $\sigma_{A-B} = 23.4$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{0.14in}
@@ -73,8 +77,8 @@ $B$ with $\mu_B = 120$, $\sigma_B = 15$.
 $\mu_Y = 3$, $\sigma_Y = 4$.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item $\mu_{2X-Y} = $ \blank{4cm}
-  \item $\sigma_{2X-Y} = $ \blank{4cm} (show work)
+  \item $\mu_{2X-Y} = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4a, type=short, points=1, answer=7, check=numeric, tolerance=0]{2.4cm}{0.2in}}}}
+  \item $\sigma_{2X-Y} = $ \makebox[4cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw4b, type=short, points=2, answer=5.66, check=numeric, tolerance=0.01]{2.3cm}{0.2in}}}} (show work)
 
         \vspace{0.25in}
 \end{enumerate}

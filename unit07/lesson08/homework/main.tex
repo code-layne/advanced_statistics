@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l08-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.8}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.12in}
 
@@ -23,16 +26,25 @@ and 26 patients to a placebo (Group 2). Researchers believe the new drug produce
 symmetric with no outliers.
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \blank{5.5cm}
-  \item $\mu_1 = $ \blank{5.5cm} \quad $\mu_2 = $ \blank{5.5cm}
+  \item Method: \makebox[5.5cm]{\smash{\gradedblank[id=hw1a, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{5.3cm}{0.19in}}}
+  \item $\mu_1 = $\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries\boldmath mean pain score, new drug}]{\linewidth+6pt}{0.19in}}\writelines{9}}\par
+        $\mu_2 = $\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries\boldmath mean pain score, placebo}]{\linewidth+6pt}{0.19in}}\writelines{9}}
 
-        $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+        $H_0$: \makebox[4.5cm]{\smash{\gradedblank[id=hw1b3, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{4.3cm}{0.19in}}} \quad $H_a$: \makebox[4.5cm]{\smash{\gradedblank[id=hw1b4, type=short, points=1, answer={{mu1 - mu2 < 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 < 0$}]{4.3cm}{0.19in}}}
 
-        Justify the direction of $H_a$: \writeline
+        Justify the direction of $H_a$:\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b5, type=rubric, points=1, display={\bfseries\boldmath researchers expect the drug to lower mean pain: $\mu_1 < \mu_2$}]{\linewidth+6pt}{2in}}\writelines{9}}
+  \newpage
   \item Conditions:
         \begin{itemize}
-          \item Random: \writeline
-          \item Normal ($n_1 = 24 < 30$, $n_2 = 26 < 30$): \writeline
+          \boxguard
+          \item Random:\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw1c1, type=rubric, points=1, display={\bfseries\boldmath patients randomly assigned to the groups --- met}]{\linewidth+6pt}{2in}}\writelines{9}}
+          \boxguard
+          \item Normal ($n_1 = 24 < 30$, $n_2 = 26 < 30$):\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw1c2, type=rubric, points=1, display={\bfseries\boldmath both $n < 30$; both symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}\writelines{9}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.08in}
@@ -43,12 +55,17 @@ in the education sector (Group 2). She wants to determine whether the mean annua
 \emph{differ} between the two sectors.
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \blank{5.5cm}
-  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Method: \makebox[5.5cm]{\smash{\gradedblank[id=hw2a, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{5.3cm}{0.19in}}}
+  \item $H_0$: \makebox[4.5cm]{\smash{\gradedblank[id=hw2b1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{4.3cm}{0.19in}}} \quad $H_a$: \makebox[4.5cm]{\smash{\gradedblank[id=hw2b2, type=short, points=1, answer={{mu1 - mu2 != 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 \ne 0$}]{4.3cm}{0.19in}}}
+  \newpage
   \item Conditions:
         \begin{itemize}
-          \item Random: \writeline
-          \item Normal: \writeline
+          \boxguard
+          \item Random:\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw2c1, type=rubric, points=1, display={\bfseries\boldmath random samples from both sectors --- met}]{\linewidth+6pt}{2in}}\writelines{9}}
+          \boxguard
+          \item Normal:\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw2c2, type=rubric, points=1, display={\bfseries\boldmath $n_1 = 50,\ n_2 = 45 \ge 30$: CLT --- met}]{\linewidth+6pt}{2in}}\writelines{9}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.08in}
@@ -60,18 +77,25 @@ with rules have a \emph{lower} mean daily screen time. A dotplot of Group 1 show
 left skew with no outliers; a dotplot of Group 2 shows approximately symmetric data.
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \blank{5.5cm}
-  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Method: \makebox[5.5cm]{\smash{\gradedblank[id=hw3a, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{5.3cm}{0.19in}}}
+  \item $H_0$: \makebox[4.5cm]{\smash{\gradedblank[id=hw3b1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{4.3cm}{0.19in}}} \quad $H_a$: \makebox[4.5cm]{\smash{\gradedblank[id=hw3b2, type=short, points=1, answer={{mu1 - mu2 < 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 < 0$}]{4.3cm}{0.19in}}}
   \item Conditions:
         \begin{itemize}
-          \item Random: \writeline
-          \item Normal (both $n < 30$): \writeline
+          \boxguard
+          \item Random:\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw3c1, type=rubric, points=1, display={\bfseries\boldmath both groups randomly selected --- met}]{\linewidth+6pt}{2in}}\writelines{9}}
+          \newpage
+          \boxguard
+          \item Normal (both $n < 30$):\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw3c2, type=rubric, points=1, display={\bfseries\boldmath both $n < 30$; mild skew / symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}\writelines{9}}
 
-                Can the test proceed? \blank{1.5cm} \quad Explain: \writeline
+                Can the test proceed? \makebox[1.5cm]{\smash{\gradedblank[id=hw3c3, type=short, points=1, answer=yes, check=text, display={Yes}]{1.3cm}{0.19in}}} \quad Explain:\par\vspace{5pt}
+                \gradedhide{\gradedhere{\gradedblank[id=hw3c4, type=rubric, points=1, display={\bfseries\boldmath mild skew, no outliers: OK}]{\linewidth+6pt}{0.19in}}\writelines{9}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.08in}
 
+\newpage
 \item \textbf{AP-Style.} \quad
 \textit{A researcher randomly assigns 15 subjects to a cold-water immersion group and
 15 subjects to a stretching group. He records recovery time (minutes) after exercise.
@@ -86,7 +110,10 @@ is most accurate?}
   \item The condition applies only to the group with the smaller sample size.
 \end{enumerate}
 \vspace{0.04in}
-Answer: \blank{1.5cm} \quad Brief justification: \writeline
+Answer: \makebox[1.5cm]{\smash{\gradedblank[id=hw4a, type=choice, points=1, answer=C]{0.4in}{0.2in}}}\rule[-0.22in]{0pt}{0.52in}
+
+Brief justification:\par
+\gradedhide{\gradedhere{\gradedblank[id=hw4b, type=rubric, points=1, display={\bfseries\boldmath both $n < 30$ with an outlier in each group}]{\linewidth+6pt}{0.19in}}\writelines{9}}
 
 \end{enumerate}
 

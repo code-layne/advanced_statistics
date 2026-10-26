@@ -1,231 +1,340 @@
-%! AP Statistics — Unit 2, Lesson 5
+%! Departures from Linearity — Unit 2, Lesson 2.5 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
+% homework) at the COMPACT budget: the whole lesson is finished in one 55-minute period.
+% THERE IS NO GROUP ACTIVITY IN THIS COURSE and NO INDEPENDENT PRACTICE SET in the notes — the
+% homework is the individual practice, started in class. Teacher-facing. Every box is `skillbox`
+% (breakable) with a \boxguard ahead of it; no `fixedskillbox`, no tier boxes, no exit ticket.
+% The last lesson of Unit 2: the homework preview points at the unit test and Unit 3.
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\tcbuselibrary{breakable}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
 
-\definecolor{sky}{HTML}{F8F8EE}
-\definecolor{navy}{HTML}{3A3D28}
-\definecolor{redbox}{HTML}{FAEFE7}
-\definecolor{greenbox}{HTML}{F0F4E6}
-\definecolor{goldbox}{HTML}{FCF8E9}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-\newcommand{\CourseName}{Statistics}
-\newcommand{\SchoolYear}{2026--2027}
-\newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 2.5: Correlation}
+\newcommand{\LessonNumberName}{Lesson 2.5: Departures from Linearity}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will calculate and interpret the correlation
-    coefficient $r$ for a linear relationship between two quantitative variables ---
-    understanding that $r$ quantifies the strength and direction of a \emph{linear}
-    association, is unit-free, and does not imply causation (Big Idea: DAT; AP Skills 2.C \& 4.B).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will classify an unusual point in a regression as an
+    outlier, a high-leverage point, or both, decide from regression output whether it is
+    influential, use a residual plot --- not $r$ --- to judge whether a linear model is
+    appropriate, and make a prediction from a log-transformed least-squares line.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 2.9 (with Topic 2.7 carried forward) \quad$\cdot$\quad Big
+    Idea: DAT (Data Analysis) \quad$\cdot$\quad Skills 2.A, 2.C \quad$\cdot$\quad LO DAT-1.I,
+    DAT-1.J (DAT-1.F) \quad$\cdot$\quad EK DAT-1.I.1--1.I.3, DAT-1.J.1, 1.J.2, DAT-1.F.1, 1.F.2
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction row by row in one \emph{Main Ideas / Notes} table --- each
+    idea a definition to complete and a grid of short problems, the first worked by you and the
+    rest by the class; the last row, Guided Practice, is worked together with students holding
+    the pen; \textbf{the homework is the individual practice}, and students start it in class
+    while you circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Compact budget:} the packet is six pages (cover, warm-up, two pages of notes, one
+    of AP Practice, one of homework) so the whole lesson finishes in the period. Every
+    scatterplot and residual plot is \textbf{given}; students read and annotate, never sketch.
 \end{tcolorbox}
 
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can tell a point that is far from the trend from a point that is far out in $x$.
+  \item I can decide from ``with'' and ``without'' output whether a point is influential.
+  \item I can use a residual plot to decide whether a line is the right model, whatever $r$
+        says.
+  \item I can predict from a line fit to $\log y$ and explain why that model fits better.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item An outlier has a large residual; a high-leverage point has an extreme $x$-value; an
+        influential point changes the slope, intercept, or $r$ substantially when removed.
+        Outliers and high-leverage points are \emph{often}, not always, influential
+        (EK DAT-1.I.1--1.I.3).
+  \item Random scatter in a residual plot is evidence of linear form; a pattern says the model
+        is inappropriate (EK DAT-1.F.1, 1.F.2).
+  \item \textbf{Target misconception:} ``$r$ is close to $\pm1$, so the linear model is
+        appropriate.'' $r$ measures the \emph{strength} of a linear association; it does not
+        certify the \emph{form}. The antibiotic data give $r = -0.94$ and a U-shaped residual
+        plot --- a strong curve, and the wrong model.
+  \item \textbf{Second misconception:} ``a point far off the trend always drags the line.''
+        Shop A sits far above the trend and barely moves the slope; shop C, far out in $x$,
+        cuts it by three quarters.
+  \item A transformation such as $\log y$ can make curved data linear; more random residuals
+        and $r$ closer to $\pm1$ are the evidence it worked (EK DAT-1.J.1, 1.J.2).
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skills 2.C \& 4.B --- Data Analysis \& Statistical Argumentation}
     \begin{itemize}
-        \item Calculate $r$ using technology (or the formula) for a bivariate dataset.
-        \item Interpret $r$: state direction (sign), strength (magnitude), and that the
-              association is linear --- in context.
-        \item Explain why a value of $r$ near $\pm 1$ does \emph{not} guarantee that a
-              linear model is appropriate.
-        \item Distinguish association from causation.
+        \item \textbf{Outlier (in regression)} --- does not follow the trend; large residual
+              (EK DAT-1.I.1)
+        \item \textbf{High-leverage point} --- $x$-value much larger or smaller than the rest
+              (EK DAT-1.I.2)
+        \item \textbf{Influential point} --- removing it changes the slope, intercept, and/or
+              $r$ substantially (EK DAT-1.I.3)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item $r$ is always between $-1$ and $1$, inclusive, and is unit-free.
-        \item The sign of $r$ gives direction; the magnitude gives strength of the
-              \emph{linear} association.
-        \item $r = 0$ indicates no \emph{linear} association (curved patterns can still exist).
-        \item A perceived relationship between two variables does not mean one \emph{causes}
-              the other (DAT-1.C.2).
+        \item \textbf{Transformation} --- e.g.\ $\log y$; named in the Residual Plots row, not
+              in the vocabulary box (EK DAT-1.J.1)
+        \item \textbf{Predicting from a log model} --- $\hat{y} = 10^{\,a + bx}$ from
+              $\widehat{\log y} = a + bx$
+        \item \textbf{Carried forward} --- residual $= y - \hat{y}$ and residual plots
+              (Lesson 2.3); $r$, $r^2$, and slope interpretation (Lessons 2.2, 2.4)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & A taxi-fare residual, two residual plots, and P or Q & Debrief item~3 aloud;
+leave ``Q --- it's far out in $x$'' on the board \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--9 row
+by row, then \emph{The Lemonade Stand} (10--13) together, pen in their hand & \textbf{I do}
+each row's definition lines and first problem (1, 5, 8), \textbf{we do} the rest (24)
+$\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Put $r = -0.94$
+(wrong model) beside $r = 0.80$ (right form); open on the almost-right problem~7 \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Circulate on
+Part~B item~1 for your formative read; preview the Unit 2 test and Unit 3 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
     \begin{itemize}
-        \item \textbf{Correlation coefficient ($r$)} --- a number between $-1$ and $1$ that
-              measures the direction and strength of the linear association between two
-              quantitative variables
-        \item \textbf{Positive correlation} ($r > 0$) --- as $x$ increases, $y$ tends to increase
-        \item \textbf{Negative correlation} ($r < 0$) --- as $x$ increases, $y$ tends to decrease
+        \item \textbf{1.} A taxi fare: predicted \$10.50, residual $+\$1.50$, too low.
+              \textbf{Spirals} to Lessons 2.3--2.4; the notes lean on residuals all period.
+        \item \textbf{2.} Two residual plots, one random and one a U. \textbf{Seeds} the
+              Residual Plots row: students say ``B curves, so no line'' here, with no $r$ in
+              sight --- then problem~7 puts $r = -0.94$ next to the same U.
+        \item \textbf{3.} Point P (mid-$x$, above the line) or Q (far right, below). \textbf{Seeds}
+              leverage and influence in the Unusual Points row.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{No linear association} ($r \approx 0$) --- knowing $x$ does not
-              linearly predict $y$
-        \item \textbf{Perfect linear association} ($r = \pm 1$) --- all points lie exactly
-              on a line
-        \item \textbf{Correlation $\neq$ causation} --- a strong $r$ does not mean one
-              variable causes changes in the other
+        \item \textbf{Debrief item~3 aloud} and write the room's reason on the board in their
+              words (``Q is way out to the side''). Row~1 names that idea \emph{high leverage}
+              ten minutes later.
+        \item Expect votes for P on item~3 --- it looks more ``wrong.'' Do not settle it: tell
+              them problem~3 in the notes decides it with numbers.
+        \item Item~1 is mechanical; take 60 seconds on it and move on.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Students describe the direction and strength of three scatterplots (from Lesson 2.4
-    DOFS language). Ask: ``Wouldn't it be useful to have a single number to compare
-    how strong each relationship is?'' --- motivates $r$.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
-    \begin{itemize}
-        \item Lesson 2.4: direction and strength from DOFS --- $r$ puts a number on those words.
-        \item Lessons 2.6--2.7: the regression line relies on $r$ (slope $= r \cdot s_y/s_x$).
-        \item Unit 3: inference for regression uses $r^2$ and the $t$-test for slope.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are one \emph{Main Ideas / Notes} table --- three rows, 13 short problems.
+\textbf{In every row you fill the definition lines and work the first problem of each grid; the
+class works the rest, pen in their hand.} The vocabulary box is filled \emph{as you go}.
+\begin{multicols}{2}
+\textbf{Unusual Points (10 min).} The three definitions, then the coffee-shop plot and its
+four fitted lines. Work \textbf{problem~1} yourself (A: typical seats, far above the trend ---
+an outlier, not high-leverage). Problems 2--4 are theirs. \textbf{Problem~3 is the trap}: A is
+the most visibly ``wrong'' point, and adding it moves the slope only from 4.14 to 4.10 --- it
+lowers $r$, nothing more. Problem~4 lands C as the influential one: slope 4.14 $\to$ 1.01,
+$r$ 0.97 $\to$ 0.48. Point back at P and Q on the board.
+
+\textbf{Residual Plots (14 min) --- the crux.} Put the scatterplot up first and ask how good
+the line looks; let them admire $r = -0.94$. Then the residual plot. Work \textbf{problem~5}
+(a U: positive at both ends, negative in the middle); problem~6 is theirs.
+\textbf{Problem~7 is the crux}: take a hand count on ``agree'' \emph{before} anyone explains.
+Then write the callout --- $r$ measures strength, the residual plot checks \emph{form} ---
+and name the transformation. Work \textbf{problem~8} with them (two pieces of evidence);
+problem~9 is the log prediction, $10^{0.71} \approx 5.1$ mg/L. Keep the transformation light:
+read it from output, predict once, move on.
+
+\columnbreak
+\textbf{We do (about 10 min): The Lemonade Stand.} A fresh context, problems 10--13, worked
+entirely together. Students hold the pen; you hold the questions: \emph{``Show me a curve in
+that plot.''} \quad \emph{``Where is 82\textdegree F on the $x$-axis --- the middle or the
+edge?''} \textbf{Problem~11 is the crux transferred in reverse}: $r = 0.80$ with random
+residuals, so the line is \emph{appropriate} and merely moderate. It is the one to protect
+when time is short --- a student who can answer both 7 and 11 has separated strength from form.
+
+\textbf{The pen must actually change hands.} Put problem~10 on them cold, take a hand count on
+problem~11 before anyone speaks, and make the room defend both answers. Circulate and demand
+the reason:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~11:} ``$r$ went down. Did the \emph{shape} change?''
+  \item \textbf{Problem~12:} ``Is 82\textdegree F unusual? Then is it high-leverage?''
+  \item \textbf{Problem~13:} ``Which number moved --- the slope or $r$?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one \emph{almost}-right
+problem~7 (``disagree, because $r$ isn't 1'') and one that names the curve.
+\textbf{Your formative read comes twice}: here, and again in the last eight minutes as students
+start the homework.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Display four scatterplots on the board. Ask students to rank them from ``strongest
-    relationship'' to ``weakest.'' After discussion, reveal $r$ values and confirm (or
-    surprise!) the class. Debrief: $r$ makes ``strong'' and ``weak'' precise.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item Introduce the formula; emphasize technology is the usual tool (EK DAT-1.B.2).
-        \item Students calculate $r$ for a small dataset by hand once to build intuition.
-        \item Display several $(r, \text{scatterplot})$ pairs; students identify matches.
-        \item Discuss: can $r$ be near $\pm 1$ for a curved dataset? (EK DAT-1.B.3)
-        \item Address causation with a classic lurking-variable example.
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- nothing on the page to fill in.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Open on the almost-right problem~7}: ``disagree, because $r$ is not exactly
+        $-1$.'' Right verdict, wrong reason --- by that logic $r = -0.99$ would rescue the line.
+        Correct it gently and in public: the reason is the U.
+  \item Put the two pairs side by side on the board: antibiotic, $r = -0.94$, \emph{wrong}
+        model; lemonade, $r = 0.80$, \emph{right} form. That board is the lesson.
+  \item Take problem~3 back: why did A barely move the line while C dragged it? Leverage.
+\end{enumerate}
+\columnbreak
+\textbf{The sentence to leave on every desk:} \emph{$r$ tells you how strong; the residual plot
+tells you whether a line is the right shape at all.} Make a student say it, not you.
+
+\textbf{If the debrief runs short}, cut item~3 --- item~1 is the only one that cannot be cut.
+\textbf{Do not let the debrief eat the last eight minutes} --- the homework start is your
+second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Write the formula:
-              $r = \dfrac{1}{n-1}\sum\!\left(\dfrac{x_i - \bar x}{s_x}\right)\!\left(\dfrac{y_i - \bar y}{s_y}\right)$
-        \item Emphasize: $r$ is unit-free (standardized $z$-scores); swapping $x$ and $y$
-              leaves $r$ unchanged.
-        \item Model a full interpretation: ``There is a [strong/moderate/weak]
-              [positive/negative] linear association between [var1] and [var2]; $r = [\ldots]$.''
-        \item Show a dataset with $r \approx 0.9$ but a curved pattern to reinforce
-              EK DAT-1.B.3.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Common errors: forgetting to state ``linear'' in the interpretation; confusing
-              $r$ with $r^2$; concluding causation from a high $r$.
-        \item Prompt: ``Does $r$ tell us the \emph{form} of the relationship? What if
-              the scatterplot is curved?''
-        \item Circulate as students calculate $r$ for the activity dataset; look for
-              sign errors.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- assigned, not scored]{goldbox}
+Two multiple-choice items on a bacteria culture --- \textbf{MC~1 is the crux in AP clothing}
+($r = 0.96$ and a curved residual plot; distractor (A) is the target misconception word for
+word) and MC~2 is a log-model prediction ($10^{1.5} \approx 31.6$; distractor (A) forgets to
+undo the log) --- then one free-response set on 13 used cars: \textbf{(a)} is the
+210{,}000-mile car high-leverage, \textbf{(b)} is it influential (slope $-0.103 \to -0.055$),
+and \textbf{(c)}, \textbf{the spiral}, interpreting the slope in context (Lesson~2.4).
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} It is also the
+best review for the unit test; go over it in the review class. Hold the AP standard out loud:
+\emph{in context or it does not count} --- a part (c) that says ``the price goes down 0.103''
+with no units and no ``predicted'' has not earned the point.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (10 min)}\\
-    Each tier receives a different dataset. Groups:
-    \begin{enumerate}
-        \item Compute $r$ using technology (and verify with formula for Tier E).
-        \item Interpret $r$ in context: direction, strength, linear qualifier.
-        \item Sketch a scatterplot that could match their $r$; compare with the actual plot.
-        \item Respond to: ``Does this $r$ prove one variable causes the other?''
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support (Tier R)}: pre-computed $\bar x$, $\bar y$, $s_x$, $s_y$ provided;
-              students complete the formula with guided steps.
-        \item \textit{Extension (Tier E)}: students generate their own dataset targeting
-              a specified $r$ value, then verify with technology.
-        \item \textit{Misconception check}: provide two scenarios with the same $r$ but
-              different scatterplots (one linear, one curved) --- which model is appropriate?
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored, due the first class after two study halls]{goldbox}
+Five items in a third context. \textbf{Part~A} (apartment rents): \textbf{A1} is P high-leverage
+and influential, from with/without output; \textbf{A2} an AP-style multiple choice (a far-out
+point \emph{on} the line barely moves the slope) with a required justification. \textbf{Part~B}
+(phone resale values): \textbf{B1} the crux restated --- $r = -0.94$ beside a U-shaped
+residual plot; \textbf{B2} a log-model prediction ($10^{2.24} \approx \$174$); \textbf{B3} two
+pieces of evidence that the log model fits better.
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.}
+\textbf{Scoring:} 10 points --- 2 per item. \textbf{B1 is the one to read closely}: a student
+who agrees with the classmate has kept the target misconception, and it will cost them on the
+unit test's free response. The spiralbox previews the Unit~2 test and Unit~3 instead of a next
+lesson.
+
+\textbf{Paper homework is the default for this course} --- assign this page unless you have
+decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
+instead, it replaces this page, you strike through the score cell on the cover, and this page
+stays in the packet as extra practice. Never assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Students are given $r = -0.87$ for a dataset of engine size ($x$, liters) vs.\ fuel
-    efficiency ($y$, mpg) for 30 cars. They write a complete interpretation and answer
-    whether this proves larger engines \emph{cause} lower efficiency.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``Describe the linear association between engine size and fuel efficiency using
-    the correlation coefficient.''}\\[4pt]
-    Model: ``There is a strong negative linear association between engine size and fuel
-    efficiency for these 30 cars ($r = -0.87$). As engine size increases, fuel efficiency
-    tends to decrease. This does not prove that larger engines \emph{cause} lower efficiency ---
-    other factors may be involved.''
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``$r$ is close to $\pm1$, so the line is appropriate''} (notes~7, HW~B1,
+        AP~MC1 --- the target misconception). Probe: \emph{``Read me the residual plot, not
+        $r$. Is there a pattern?''}
+  \item \textbf{The reverse error: ``$r$ is only 0.80, so a line is wrong''} (notes~11).
+        Probe: \emph{``Show me the curve.''}
+  \item \textbf{``Far from the line means influential''} (notes~3, HW~A2). Probe:
+        \emph{``Where is it left to right? Now read the slope with and without it.''}
+  \item \textbf{Calling every unusual point an outlier} (notes~1--2, 12; AP~(a)). Probe:
+        \emph{``Far from the trend, or far out in $x$? Those are different words.''}
+  \item \textbf{Stopping at $\widehat{\log y}$} (notes~9, HW~B2, AP~MC2): reporting 0.71 mg/L
+        or \$2.24. Probe: \emph{``Is 0.71 a blood level or a log? Undo it.''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me a strong association that a line should not model.''} \quad
+\emph{``Where would you put one point to change the slope the most?''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Interpret given $r$ values in 3 contexts; identify direction, strength, and
-              whether causation can be concluded.
-        \item Match five scatterplot sketches to five $r$ values.
-        \item Investigate a real dataset (provided): compute $r$ with technology and write
-              a full interpretation.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Research a famous spurious correlation (e.g., Nicolas Cage
-              films vs.\ drowning deaths). Write a paragraph explaining why the high $r$ is
-              misleading.
-        \item \textit{Preview}: Lesson 2.6 uses $r$ to build the \textbf{least-squares
-              regression line} --- a formula that makes predictions from $x$ values.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Assign (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+five items on paper, scored, due the first class after two study halls --- and point out that
+the AP Practice page is theirs to work before the unit test. Circulate on \textbf{Part~B
+item~1}. Sort what you see into three piles as you walk --- disagreed and named the U (ready);
+disagreed with no reason, or ``because $r$ isn't 1'' (ready, needs the language); agreed with
+the classmate (the misconception survived) --- and open the unit review by reteaching the
+residual-plot row if that third pile ran past a third of the room. Then close on what changed:
+\emph{``You walked in trusting $r$. You walk out checking the residual plot first.''}
+\textbf{Preview:} this is the last lesson of Unit~2 --- next comes the unit test (sample test
+at the back of the unit packet), then Unit~3, \emph{Collecting Data}, where association meets
+the question of cause.
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Item~3 is the seed and item~2 the quiet setup. Give four minutes total. On item~3 many students
+will choose P because it looks further from the line; do not settle it --- write both answers on
+the board and say problem~3 decides it with numbers. On item~2, make someone say \emph{why} B
+rules out a line; that sentence comes back word for word at problem~7, when an impressive $r$
+tries to overrule it. Item~1 is a 60-second spiral.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Three rows, 13
+problems. \textbf{You work 1, 5, and 8}; the class works the rest. Unusual Points must move ---
+ten minutes --- because the time belongs to the Residual Plots row, which carries the crux.
+\textbf{Problem~3 is the trap} (A is far off the trend and barely moves the slope);
+\textbf{problem~7 is the crux} ($r = -0.94$ beside a U). Take a hand count on 7 before any
+explanation, and do not resolve it faster than the room can follow: the callout sentence is the
+resolution. The transformation is deliberately light --- read from output, one prediction; if
+time is short, do problem~9 yourself and keep problem~8. \textbf{The Lemonade Stand is where
+the pen changes hands}; problem~11 is the crux in reverse and the one to protect. If you only
+get through 10, 11, and 12, that is the right trade. \textbf{Your second formative read is
+the homework start}: Part~B item~1, three piles, and reteach the Residual Plots row in the
+unit review if the third pile passes a third of the room.
+\textbf{Debrief (8 min), spoken}, opening on the almost-right problem~7. \textbf{Do not let the
+debrief eat the last eight minutes} --- the homework start is not optional padding.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded practice is the homework
+behind it. It doubles as unit-test review, so go over it in the review class. \textbf{MC~1 is
+the one worth reading closely}: (A) is the target misconception verbatim; if more than a handful
+choose it, return to the antibiotic residual plot before the test. On the free response, part
+(b) must quote numbers from the output --- ``the slope changes'' without $-0.103$ and $-0.055$
+is incomplete --- and part (c) must say \emph{predicted} price and carry units.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored, 10 points (2 per item), due the first class after two study halls.} The eight
+minutes at the end of the period are a \emph{start}: put students on B1 first while you can
+still catch a wrong start, then A1. \textbf{B1 is the item to read first when scoring} --- a
+student who agrees with the classmate has kept the target misconception. On A2, (C) without a
+justification earns 1 of 2; the justification must say the point keeps the slope because it is
+\emph{on} the line. On B2, a final answer of 2.24 (never undoing the log) earns 1 of 2.
+\textbf{Paper is the default.} On the occasions you assign DeltaMath in its place, strike the
+score cell on the cover and tell students this page is now optional practice. Do not assign
+both.
+\end{teachernote}
 \end{document}

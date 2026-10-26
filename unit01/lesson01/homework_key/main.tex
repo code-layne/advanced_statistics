@@ -1,23 +1,111 @@
 %! The Language of Variation — Unit 1, Lesson 1.1 — Homework (Answer Key)
-\documentclass[10pt]{article}
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet,
+% started in the closing minutes of the period and finished at home. The AP Practice component
+% that precedes it stays assigned-but-unscored. When DeltaMath carries this topic instead, that
+% assignment replaces this page and the cover's score cell is struck through.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.%
+% GENERATED FROM homework/main.tex — this file is the blank with answers filled in, so the
+% \answerspace heights and every \boxguard are identical to it.
+% NO teachernote here — teacher prose lives in the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l01-hw}
+\gradingcourse{advanced_statistics}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Homework --- Answer Key}
-
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
+\end{remindbox}
+
+\vspace{0.12in}
+
+% ── The scored practice ──────────────────────────────────────────────────────
+\boxguard[14]
+\begin{notesbox}{Classifying Variables in a New Context}
+Show the arithmetic wherever a question asks for a number, and write every explanation
+\emph{in the context of the problem} --- that is what earns credit on the AP exam, and it is the
+standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=7pt]
+  \item A coffee shop logs every order it fills. Label each variable \textbf{C} or \textbf{Q}.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y @{}}
+        \textbf{Drink size (S/M/L)} & \textbf{Number of shots} & \textbf{Price paid (\$)} &
+        \textbf{Loyalty card \#} \\
+        \rule[-0.86in]{0pt}{1.8in}\smash{\gradedblank[id=hw1a, type=choice, points=1, answer=C]{4cm}{0.2in}} & \smash{\gradedblank[id=hw1b, type=choice, points=1, answer=Q]{4cm}{0.2in}} & \smash{\gradedblank[id=hw1c, type=choice, points=1, answer=Q]{4cm}{0.2in}} & \smash{\gradedblank[id=hw1d, type=choice, points=1, answer=C]{4cm}{0.2in}} \\
+        \end{tabularx}
+
+        The individuals here are:
+        \answerspace{0.42in}{\normalcolor\mdseries\vspace{2pt}\gradedblank[id=hw1e, type=short, points=1, answer={the orders the shop filled}, check=text, display={the orders the shop filled}]{5.5cm}{0.3in}}
+  \tcbbreak
+  \item \textbf{Same survey, two columns.} A pet survey records \emph{Number of pets owned} and
+        \emph{Type of pet owned}. Classify each, then say what a summary of each column would
+        look like.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw2, type=rubric, points=2,
+          display={Number of pets owned is quantitative (a count) --- summarize it with
+        an average, such as 1.8 pets per household. Type of pet owned is categorical ---
+        summarize it with counts or percents, such as 46\% dogs, 31\% cats.}]{\linewidth}{3.2cm}}
+  \item A hospital records each patient's exact body temperature in $^\circ$C. It then adds a
+        second column marking each patient \emph{Normal} or \emph{Fever}. Classify both
+        columns, and explain where the second column came from.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw3, type=rubric, points=2,
+          display={Temperature is quantitative --- a measured amount. Normal/Fever is
+        categorical --- a group label. The second column was built from the first by grouping the
+        measurements at a cutoff, which trades amounts for labels and loses how far above the
+        cutoff each patient was.}]{\linewidth}{3.2cm}}
+  \item Name one variable that is written entirely in digits and is \textbf{not} quantitative,
+        and say what its digits are doing instead of measuring.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw4, type=rubric, points=2,
+          display={A home ZIP code (also: jersey number, phone number, student ID). The
+        digits identify which group a person belongs to rather than recording an amount, so
+        averaging them is meaningless.}]{\linewidth}{2.5cm}}
+  \tcbbreak
+  \item \textbf{AP-style multiple choice.} A survey of high school students records the five variables
+        below. Write the letter of the one that is \textbf{quantitative} in the Letter box, then justify it in one sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=3pt]
+          \item The number on the student's team jersey
+          \item The number of the bus route the student rides
+          \item \ans{The number of minutes the student spent on homework last night}
+          \item The student's home ZIP code
+          \item The student's cafeteria PIN
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+        \end{enumerate}
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw5j, type=rubric, points=1,
+          display={(C). Minutes are a measured amount, so 90 minutes really is twice
+        45. The other four are labels written in digits.}]{\linewidth}{2.5cm}}
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.12in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: Representing a Categorical Variable.} You now know that a categorical
+column is summarized by \emph{counting} rather than averaging. Next time we do that counting
+properly --- frequency and relative frequency tables --- and see how the same counts can be
+made to tell two very different stories.
+\end{spiralbox}
 
 \end{document}

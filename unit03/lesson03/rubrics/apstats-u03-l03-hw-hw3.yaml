@@ -1,0 +1,25 @@
+# Homework item 3 (Unit 3, Lesson 3.3). Relative to the lesson directory.
+id: hw3
+points: 3
+task: >-
+  A state health agency wants to study the physical activity levels of high school
+  students. Describe a stratified random sample: identify the strata, explain why
+  stratifying is appropriate, and describe the selection procedure.
+criteria:
+  - id: strata
+    points: 1
+    full: >-
+      Identifies sensible strata of high school students, such as grade level (9th-12th),
+      gender, or school type/region.
+  - id: why
+    points: 1
+    full: >-
+      Explains why: physical activity is likely to differ between the strata but be
+      similar within a stratum (e.g., 9th graders may have required PE and 12th graders
+      may not), in context.
+  - id: procedure
+    points: 1
+    full: >-
+      Describes the selection: a separate random sample (e.g., with a random number
+      generator from each stratum's enrollment list) taken from every stratum, possibly in
+      proportion to its size.

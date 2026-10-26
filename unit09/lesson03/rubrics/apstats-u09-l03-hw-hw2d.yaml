@@ -1,0 +1,17 @@
+# Homework item 2d (Unit 9, Lesson 9.3). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  15 cities: daily temperature (x, F) vs monthly electricity use (y, kWh); 90% CI for
+  the slope (12.3, 31.8). A 60-city study gives (18.1, 26.7). Do both CIs provide
+  evidence that beta is not 0? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, both.
+  - id: reason
+    points: 1
+    full: >-
+      Because 0 is in neither (12.3, 31.8) nor (18.1, 26.7); both indicate a positive
+      linear relationship.

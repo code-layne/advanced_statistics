@@ -1,23 +1,100 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Homework (Answer Key)
-\documentclass[10pt]{article}
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet,
+% started in the closing minutes of the period and finished at home. The AP Practice component
+% that precedes it stays assigned-but-unscored. When DeltaMath carries this topic instead, that
+% assignment replaces this page and the cover's score cell is struck through.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.%
+% GENERATED FROM homework/main.tex — this file is the blank with answers filled in, so the
+% \answerspace heights and every \boxguard are identical to it.
+% NO teachernote here — teacher prose lives in the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l02-hw}
+\gradingcourse{advanced_statistics}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.2}{Homework --- Answer Key}
-
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% NO teachernote here: teacher prose goes in the lesson plan, \begin{teachernote}[Homework].
-\boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due next class. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
+\end{remindbox}
+
+\vspace{0.12in}
+
+% ── The scored practice ─────────────────────────────────────────────────────
+\boxguard[14]
+\begin{notesbox}{Counts, Percents, and Fair Comparisons}
+Show the arithmetic wherever a question asks for a number, and write every explanation
+\emph{in the context of the problem} --- that is what earns credit on the AP exam, and it is the
+standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+  \item A club of 50 members chose a service project: Park cleanup 22, Food bank 15,
+        Tutoring 13. Park cleanup is \smash{\gradedblank[id=hw1a, type=short, points=1, answer=44, check=numeric, display={44}]{1.8cm}{0.2in}}\% of the club, and the three percents must
+        add to \smash{\gradedblank[id=hw1b, type=short, points=1, answer=100, check=numeric, display={100\%}]{1.4cm}{0.2in}}. Is ``most members chose the park cleanup'' a fair thing to say?
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw1c, type=rubric, points=2,
+          display={No --- 44\% is the largest group but not a majority.}]{\linewidth}{2.2cm}}
+  \item Two hospitals report flu cases: City General had 340 of its 8{,}500 patients, and
+        Ridgeview had 60 of its 1{,}000. Which hospital had more cases, and which had the
+        higher rate? Show the two rates.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw2, type=rubric, points=3,
+          display={City General had more cases (340 vs.\ 60), but Ridgeview had the
+        higher rate: $340/8500 = 4\%$ against $60/1000 = 6\%$.}]{\linewidth}{2.9cm}}
+  \item A bar graph of a school's club memberships has bars of height 40, 25, 20, and 15.
+        A second graph of the same data has bars of height 0.40, 0.25, 0.20, and 0.15.
+        Explain what changed and what did not.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw3, type=rubric, points=2,
+          display={The first plots counts (40+25+20+15 = 100 members), the second the
+        same data as proportions. The bars keep identical relative heights --- only the vertical
+        scale and its units changed.}]{\linewidth}{2.5cm}}
+  \item A survey of 200 people reports these percents: 34\%, 28\%, 22\%, and 11\%. Explain how
+        you can tell, without any other information, that something is wrong.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw4, type=rubric, points=2,
+          display={They add to 95\%, not 100\%. Every person must fall in exactly one
+        category, so a category or 5\% of the responses is missing.}]{\linewidth}{2.2cm}}
+  \tcbbreak
+  \item \textbf{AP-style multiple choice.} Two towns report how residents commute. Brookfield: 900 of
+        3{,}000 residents bike. Ashton: 240 of 600 residents bike. Which statement is
+        \textbf{correct}? Write its letter in the Letter box, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Brookfield has both more bikers and the higher biking rate.
+          \item Ashton has both more bikers and the higher biking rate.
+          \item \ans{Brookfield has more bikers, but Ashton has the higher biking rate.}
+          \item Ashton has more bikers, but Brookfield has the higher biking rate.
+          \item The two towns cannot be compared, because they are different sizes.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+        \end{enumerate}
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw5j, type=rubric, points=1,
+          display={(C). Brookfield: $900/3000 = 30\%$; Ashton: $240/600 = 40\%$.}]{\linewidth}{2.2cm}}
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.12in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: Representing a Quantitative Variable with Graphs.} Counting worked here
+because every value was one of a few category names. Next time the values are numbers that
+barely repeat --- you cannot count how many students scored exactly 73.4 --- so we need a
+different set of displays, and the one you choose changes what you see.
+\end{spiralbox}
 
 \end{document}

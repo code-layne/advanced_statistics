@@ -1,0 +1,15 @@
+# Homework item 3, explanation (Unit 4, Lesson 4.7). Relative to the lesson directory.
+id: hw3e
+points: 2
+task: >-
+  Tables: (A) 0.30, 0.50, 0.40; (B) 0.20, 0.50, 0.30; (C) -0.10, 0.70, 0.40. Explain
+  why the invalid ones are not valid probability distributions.
+criteria:
+  - id: A
+    points: 1
+    full: >-
+      (A) is invalid because its probabilities sum to 1.20, not 1.
+  - id: C
+    points: 1
+    full: >-
+      (C) is invalid because it has a negative probability (-0.10).

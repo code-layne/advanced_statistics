@@ -1,0 +1,17 @@
+# Homework item 3, State (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw3a
+points: 2
+task: >-
+  A bottled water company claims fewer than 5% of bottles exceed a contamination
+  threshold; an environmental group tests 400 randomly selected bottles and 26 exceed
+  it. alpha = 0.01. State: hypotheses.
+criteria:
+  - id: h0
+    points: 1
+    full: >-
+      H0: p = 0.05, p = true proportion of all the company's bottles above the threshold
+      (about the parameter, not p-hat).
+  - id: ha
+    points: 1
+    full: >-
+      Ha: p > 0.05, matching the question's direction.

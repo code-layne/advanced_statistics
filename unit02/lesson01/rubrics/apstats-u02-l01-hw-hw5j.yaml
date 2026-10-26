@@ -1,0 +1,14 @@
+# Homework item B3, justification of the multiple-choice answer (Unit 2, Lesson 2.1). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  Which result at another gym shows no association between plan and attendance? (A) 60
+  of 150 monthly, 60 of 100 annual; (B) 60 of 150 monthly, 40 of 100 annual; (C) 90
+  monthly and 70 annual attend; (D) half of all members attend; (E) the two plans have
+  equal sizes. Justify the choice.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B) by showing 40% of each plan attends (60/150 = 40/100 = 0.40), so the
+      conditional distributions match.

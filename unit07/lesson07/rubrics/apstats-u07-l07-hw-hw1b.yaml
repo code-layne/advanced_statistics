@@ -1,0 +1,16 @@
+# Homework item 1b (Unit 7, Lesson 7.7). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A 95% CI for mu_northern - mu_southern (mean emergency response time, minutes) is
+  (-2.37, 0.37). An official claims northern response times are faster (lower mean).
+  Does the interval support the claim? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no (not convincing).
+  - id: reason
+    points: 1
+    full: >-
+      Because 0 is in the interval, a difference of 0 (no difference) is plausible.

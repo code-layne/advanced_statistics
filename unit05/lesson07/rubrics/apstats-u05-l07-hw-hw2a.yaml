@@ -1,0 +1,23 @@
+# Homework item 2a (Unit 5, Lesson 5.7). Relative to the lesson directory.
+id: hw2a
+points: 3
+task: >-
+  Exam scores at a large university are normally distributed with mean 74 and SD 12; a
+  professor randomly selects 9 exams. Are conditions met? Identify each condition.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the 9 exams are randomly selected (stated).
+  - id: independence
+    points: 1
+    full: >-
+      10% condition: 9 is at most 10% of all exams at the large university.
+  - id: normal
+    points: 1
+    full: >-
+      Normal/Large Sample: the population of scores is normal, so the sample mean is
+      normal even though n = 9 is less than 30; concludes the conditions are met.
+examples:
+  - response: "No, because n = 9 is less than 30."
+    scores: {random: 0, independence: 0, normal: 0}

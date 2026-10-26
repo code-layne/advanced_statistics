@@ -1,0 +1,27 @@
+# Homework item 2a (Unit 9, Lesson 9.5). Relative to the lesson directory.
+id: hw2a
+points: 4
+task: >-
+  Absences (x) vs final course grade (y, %), random sample of 35 intro statistics
+  students: b = -2.3, SE_b = 0.54, t = -4.26, p = 0.000; LINER met. Carry out a
+  complete 4-step significance test at alpha = 0.05.
+criteria:
+  - id: state
+    points: 1
+    full: >-
+      State: defines beta (true slope relating course grade to absences for intro stats
+      students) and gives H0: beta = 0, Ha: beta != 0.
+  - id: plan
+    points: 1
+    full: >-
+      Plan: names the t-test for slope and addresses the conditions (LINER given, random
+      sample).
+  - id: do
+    points: 1
+    full: >-
+      Do: t = -4.26 with df = 33 and p approximately 0 (from output).
+  - id: conclude
+    points: 1
+    full: >-
+      Conclude: p < 0.05, reject H0; convincing evidence that the true slope is not 0,
+      i.e. absences are linearly related to course grade (in context).

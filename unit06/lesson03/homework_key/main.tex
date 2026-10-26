@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u06-l03-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 6, Lesson 6.3}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -16,22 +19,24 @@
   \item A 95\% CI for the proportion of adults who exercise at least 3 days per week is
         $(0.42, 0.54)$.
         \begin{enumerate}[label=\alph*.]
-          \item \ansline{We are 95\% confident that the interval from 0.42 to 0.54 captures the true proportion of all adults who exercise at least 3 days per week.}
-          \item \ansline{Yes --- 0.50 is inside (0.42, 0.54), so a true proportion of 50\% is plausible.}
-          \item \ansline{Not clearly --- 0.45 is inside the interval, so the claim $p<0.45$ is plausible but the interval also includes values above 0.45. The CI does not definitively support the surgeon general's claim.}
+          \item \ansline{We are 95\% confident that the interval from 0.42 to 0.54 captures the true proportion of all adults who exercise at least 3 days per week.}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=2, display={95\% confident (0.42, 0.54) captures the true proportion of all adults who exercise 3+ days a week.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{Yes --- 0.50 is inside (0.42, 0.54), so a true proportion of 50\% is plausible.}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=2, display={Yes: 0.50 is inside (0.42, 0.54), so 50\% is plausible.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{Not clearly --- 0.45 is inside the interval, so the claim $p<0.45$ is plausible but the interval also includes values above 0.45. The CI does not definitively support the surgeon general's claim.}\gradedkeyline{\gradedblank[id=hw1c, type=rubric, points=2, display={No: the interval includes values above 0.45 (and 0.45 itself), so it does not support $p < 0.45$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
+  \newpage
   \item A 99\% CI for the proportion of students who own a calculator is $(0.71, 0.89)$.
         \begin{enumerate}[label=\alph*.]
-          \item \ansline{No --- 0.90 is outside (0.71, 0.89). The data provide evidence against the claim that 90\% of students own a calculator.}
-          \item \ansline{Narrower --- a 95\% CI uses a smaller $z^*$ (1.960 vs.\ 2.576), so the margin of error decreases.}
-          \item \ansline{Width decreases by a factor of $1/\sqrt{2} \approx 0.71$ because $ME \propto 1/\sqrt{n}$; doubling $n$ reduces $SE_{\hat p}$ by $\sqrt{2}$.}
+          \item \ansline{No --- 0.90 is outside (0.71, 0.89). The data provide evidence against the claim that 90\% of students own a calculator.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={No: 0.90 is outside (0.71, 0.89), so the claim is not plausible.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{Narrower --- a 95\% CI uses a smaller $z^*$ (1.960 vs.\ 2.576), so the margin of error decreases.}\gradedkeyline{\gradedblank[id=hw2b, type=rubric, points=2, display={Narrower: smaller $z^*$ (1.960 vs.\ 2.576), so a smaller margin of error.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{Width decreases by a factor of $1/\sqrt{2} \approx 0.71$ because $ME \propto 1/\sqrt{n}$; doubling $n$ reduces $SE_{\hat p}$ by $\sqrt{2}$.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={Narrower: width is multiplied by $1/\sqrt{2} \approx 0.71$, since $ME \propto 1/\sqrt{n}$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
+  \newpage
   \item \textbf{Correcting errors.}
         \begin{enumerate}[label=\alph*.]
-          \item \ansline{Error: ``probability'' implies the interval is random after it's computed. Correction: ``We are 95\% confident that the interval (0.09, 0.17) captures the true proportion of left-handed students.''}
-          \item \ansline{Error: confuses the parameter estimate with individual data values. Correction: The interval estimates the true \emph{proportion}, not the proportion of individual students who are left-handed.}
+          \item \ansline{Error: ``probability'' implies the interval is random after it's computed. Correction: ``We are 95\% confident that the interval (0.09, 0.17) captures the true proportion of left-handed students.''}\gradedkeyline{\gradedblank[id=hw3a, type=rubric, points=2, display={Not a probability: we are 95\% confident (0.09, 0.17) captures the true proportion of left-handed students.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+          \item \ansline{Error: confuses the parameter estimate with individual data values. Correction: The interval estimates the true \emph{proportion}, not the proportion of individual students who are left-handed.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={95\% is the confidence level: we are 95\% confident the true proportion is in (0.09, 0.17).}]{\linewidth+6pt}{\gradedlinesheight{1}}}
         \end{enumerate}
 
 \end{enumerate}

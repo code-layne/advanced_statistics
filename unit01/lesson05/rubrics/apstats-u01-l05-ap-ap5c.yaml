@@ -1,0 +1,18 @@
+# AP Practice item 5, part (c) (Unit 1, Lesson 1.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5c
+points: 2
+task: >-
+  Fifteen homes' average daily water use (gallons): 110 120 130 140 150 160 180 200
+  220 240 270 310 350 400 620; mean 240, SD 136.6, Q1 140, median 200, Q3 310.
+  Interpret Q1 = 140 gallons per day in context.
+criteria:
+  - id: interpret
+    points: 2
+    full: >-
+      E: Says about 25% of these 15 homes use 140 gallons per day or less (about 75% use
+      more), in context (homes on this street, daily water use, gallons).
+    partial: >-
+      P (1 of 2): States the 25% / 75% split correctly but without context, OR gives the
+      context with the wrong percentage or direction.

@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u07-l07-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.7}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -19,28 +22,34 @@ districts of a city. A 95\% CI for $\mu_{\text{northern}} - \mu_{\text{southern}
 $(-2.37,\; 0.37)$ minutes.
 
 \begin{enumerate}[label=\alph*.]
+  \boxguard
   \item Interpret the interval in context.
-        \ansline{We are 95\% confident that the true difference in mean emergency response time (northern $-$ southern) for all calls in these districts is between $-2.37$ and $0.37$ minutes.}
+        \ansline{We are 95\% confident that the true difference in mean emergency response time (northern $-$ southern) for all calls in these districts is between $-2.37$ and $0.37$ minutes.}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=2, display={\bfseries\boldmath 95\% confident $\mu_N - \mu_S$ (mean response time) is in $(-2.37, 0.37)$ min.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+  \boxguard
   \item A city official claims northern response times are faster (lower mean) than
         southern. Does the interval support this claim? Explain.
-        \ansline{No. 0 is inside the interval, so a difference of 0 is plausible. There is insufficient evidence to conclude that northern response times are faster.}
+        \ansline{No. 0 is inside the interval, so a difference of 0 is plausible. There is insufficient evidence to conclude that northern response times are faster.}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=2, display={\bfseries\boldmath No: 0 is in the interval, so no difference is plausible.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+  \boxguard
   \item What does it mean that this is a \emph{95\%} confidence interval? Describe in
         terms of repeated sampling.
-        \ansline{In repeated random sampling with the same sample sizes, approximately 95\% of CIs constructed this way would capture the true difference $\mu_{\text{northern}} - \mu_{\text{southern}}$.}
+        \ansline{In repeated random sampling with the same sample sizes, approximately 95\% of CIs constructed this way would capture the true difference $\mu_{\text{northern}} - \mu_{\text{southern}}$.}\gradedkeyline{\gradedblank[id=hw1c, type=rubric, points=2, display={\bfseries\boldmath About 95\% of intervals from repeated samples capture $\mu_N - \mu_S$.}]{\linewidth+6pt}{0.17in}}
 \end{enumerate}
 
 \vspace{0.06in}
 
+\newpage
 \item \textbf{Textbook Reading Levels.} \quad
 A 90\% CI for $\mu_{\text{digital}} - \mu_{\text{print}}$ (mean reading comprehension score,
 out of 100) is $(3.8,\; 9.2)$ points.
 
 \begin{enumerate}[label=\alph*.]
+  \boxguard
   \item Interpret the interval in context.
-        \ansline{We are 90\% confident that the true difference in mean reading comprehension score (digital $-$ print) for all students in these populations is between $3.8$ and $9.2$ points.}
+        \ansline{We are 90\% confident that the true difference in mean reading comprehension score (digital $-$ print) for all students in these populations is between $3.8$ and $9.2$ points.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={\bfseries\boldmath 90\% confident $\mu_D - \mu_P$ (mean score) is in (3.8, 9.2) points.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+  \boxguard
   \item A researcher claims that digital readers score higher on average. Does the CI
         provide convincing evidence? Explain.
-        \ansline{Yes. The entire interval is positive (above 0), so 0 is not plausible. This provides convincing evidence that digital readers score higher on average.}
+        \ansline{Yes. The entire interval is positive (above 0), so 0 is not plausible. This provides convincing evidence that digital readers score higher on average.}\gradedkeyline{\gradedblank[id=hw2b, type=rubric, points=2, display={\bfseries\boldmath Yes: the whole interval is above 0; digital mean is higher.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \vspace{0.06in}
@@ -53,31 +62,34 @@ Both use 95\% confidence.
 \begin{enumerate}[label=\alph*.]
   \item Compute the $SE$ for each team.
 
-        Team A: $SE_A = \sqrt{\dfrac{8^2}{25} + \dfrac{8^2}{25}} = $ \ans{$\approx 2.263$ pts}
+        Team A: $SE_A = \sqrt{\dfrac{8^2}{25} + \dfrac{8^2}{25}} = $ \ans{$\approx 2.263$ pts}\gradedkey{\gradedblank[id=hw3a1, type=short, points=1, answer=2.263, check=numeric, tolerance=0.005, display={\boldmath$2.263$}]{2.8cm}{0.19in}}
 
-        Team B: $SE_B = \sqrt{\dfrac{8^2}{100} + \dfrac{8^2}{100}} = $ \ans{$\approx 1.131$ pts}
+        Team B: $SE_B = \sqrt{\dfrac{8^2}{100} + \dfrac{8^2}{100}} = $ \ans{$\approx 1.131$ pts}\gradedkey{\gradedblank[id=hw3a2, type=short, points=1, answer=1.131, check=numeric, tolerance=0.005, display={\boldmath$1.131$}]{2.8cm}{0.19in}}
 
   \item Approximate the margin of error for each team, using $t^* \approx 2.0$.
 
-        Team A: ME $\approx$ \ans{4.53 pts} \qquad Team B: ME $\approx$ \ans{2.26 pts}
+        Team A: ME $\approx$ \ans{4.53 pts} \qquad Team B: ME $\approx$ \ans{2.26 pts}\gradedkey{\gradedblank[id=hw3b1, type=short, points=1, answer=4.53, check=numeric, tolerance=0.02, display={\boldmath$4.53$}]{2.8cm}{0.19in}\quad \gradedblank[id=hw3b2, type=short, points=1, answer=2.26, check=numeric, tolerance=0.02, display={\boldmath$2.26$}]{2.8cm}{0.19in}}
 
   \item By what factor is Team B's interval narrower than Team A's?
-        \ansline{Team B's interval is $\approx 2\times$ narrower (factor of $\sqrt{4} = 2$), because sample sizes quadrupled.}
+        \ansline{Team B's interval is $\approx 2\times$ narrower (factor of $\sqrt{4} = 2$), because sample sizes quadrupled.}\gradedkey{\gradedblank[id=hw3c, type=short, points=1, answer=2, check=numeric, tolerance=0, display={\boldmath$2$ (B's is half as wide)}]{2.3in}{0.19in}}
 \end{enumerate}
 
 \vspace{0.06in}
 
+\newpage
 \item \textbf{Comparing Weight-Loss Programs.} \quad
 A 99\% CI for $\mu_{\text{program A}} - \mu_{\text{program B}}$ (mean weight loss, kg) is
 $(-1.2,\; 4.8)$ kg.
 
 \begin{enumerate}[label=\alph*.]
+  \boxguard
   \item Is there convincing evidence that one program produces greater mean weight loss?
         Explain using the interval.
-        \ansline{No. 0 is inside the interval $(-1.2, 4.8)$, so a difference of 0 is plausible; insufficient evidence that the programs differ in mean weight loss.}
+        \ansline{No. 0 is inside the interval $(-1.2, 4.8)$, so a difference of 0 is plausible; insufficient evidence that the programs differ in mean weight loss.}\gradedkeyline{\gradedblank[id=hw4a, type=rubric, points=2, display={\bfseries\boldmath No: 0 is in $(-1.2, 4.8)$, so no difference is plausible.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+  \boxguard
   \item If the confidence level were lowered to 90\% (all else equal), would the interval
         be narrower or wider? Explain.
-        \ansline{Narrower. A lower confidence level requires a smaller $t^*$, which reduces the margin of error.}
+        \ansline{Narrower. A lower confidence level requires a smaller $t^*$, which reduces the margin of error.}\gradedkeyline{\gradedblank[id=hw4b, type=rubric, points=2, display={\bfseries\boldmath Narrower: smaller $t^*$, so a smaller margin of error.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \end{enumerate}

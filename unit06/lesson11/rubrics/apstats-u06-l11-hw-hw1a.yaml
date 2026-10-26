@@ -1,0 +1,18 @@
+# Homework item 1a (Unit 6, Lesson 6.11). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  Students who use social media more than 2 hours a day vs 2 hours or less: high use,
+  54 of 180 had a low GPA; low use, 36 of 200. Test whether high users have a higher
+  proportion of low-GPA outcomes (alpha = 0.05). State H0 and Ha.
+criteria:
+  - id: define
+    points: 1
+    full: >-
+      Defines p_H and p_L as the true proportions of all high-use and low-use students
+      with a low GPA (parameters, not sample proportions).
+  - id: hyp
+    points: 1
+    full: >-
+      H0: p_H = p_L; Ha: p_H > p_L (one-sided: high users have a higher low-GPA
+      proportion).

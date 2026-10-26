@@ -1,0 +1,20 @@
+# Homework item 1c (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A 95% CI for the proportion of adults who exercise at least 3 days per week is
+  (0.42, 0.54). The surgeon general claims fewer than 45% of adults exercise
+  regularly. Does the CI support this claim?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says the CI does not support (does not give convincing evidence for) the claim.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that most of the interval (0.45 to 0.54) lies at or above 0.45, so values
+      of p at or above 45% are plausible.
+examples:
+  - response: "Yes, because 0.42 is less than 0.45."
+    scores: {answer: 0, reason: 0}

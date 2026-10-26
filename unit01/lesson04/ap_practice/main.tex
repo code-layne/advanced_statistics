@@ -1,0 +1,170 @@
+%! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — AP Practice
+% GRADUAL RELEASE: AP-format practice, assigned but NOT scored — the cover's score
+% column reads NA for this component. The graded practice is the `homework` component that
+% follows it at the back of the packet.
+% MC 2 carries the target misconception as distractor (B) ("skewed left because the pile is on
+% the left"); MC 3 carries the EK UNC-1.H.7 over-claim. Free-response (a) spirals to Lesson 1.1
+% (classify the variable first) and (d) to Lesson 1.3 (check the interval width before you
+% believe the shape).
+% Page lockstep with ap_practice_key rests on \writelines{n} in the blank matching a terse
+% \ansline{} in the key — keep key answers short enough not to wrap past the reserved lines.
+% The next-lesson preview is NOT here: it closes the packet, in ../homework/.
+%
+% THE DISPLAY: 40 commute times, 10-minute intervals from 0: 5 12 10 6 4 2 0 0 1 = 40.
+% Right-skewed, with one employee stranded in the 80-90 interval behind a two-interval gap.
+% Regrouped at 30 minutes: 27 / 12 / 1 — the gap vanishes; the long commute is alone in 60-90.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l04-ap}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.4}{AP Practice}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.08in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. These are AP-format reps: work them for the practice, and bring what you get
+stuck on to office hours or study hall.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\boxguard[24]
+\begin{scenariobox}[The Commute Record]{navy}
+\small
+A company recorded the one-way commute time, in minutes, of each of its 40 employees. The
+histogram below groups those 40 commute times into intervals 10 minutes wide.
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.80]
+  \foreach \i/\c in {0/5, 1/12, 2/10, 3/6, 4/4, 5/2, 6/0, 7/0, 8/1} {
+    \fill[navy] ({\i*0.6},0) rectangle ({(\i+1)*0.6},{\c*0.18});
+    \draw[white, very thin] ({\i*0.6},0) rectangle ({(\i+1)*0.6},{\c*0.18});}
+  \draw[->, thick] (0,0) -- (0,2.7);
+  \draw[->, thick] (0,0) -- (5.9,0);
+  \foreach \y/\lab in {0/0, 0.9/5, 1.8/10} {
+    \draw (-0.07,\y) -- (0.07,\y); \node[left, font=\tiny, xshift=-1pt] at (-0.07,\y) {\lab};}
+  \foreach \x/\lab in {0/0, 1.2/20, 2.4/40, 3.6/60, 4.8/80} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \node[font=\tiny] at (2.7,-0.85) {One-way commute time (minutes)};
+  \node[font=\tiny, rotate=90] at (-0.62,1.2) {Employees};
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.11in]
+
+  \item How many of these 40 employees have a one-way commute of 30 minutes or more?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 6
+          \item 10
+          \item 13
+          \item 17
+          \item 27
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+        \end{enumerate}
+
+  \item Which statement best describes the shape of this distribution?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Approximately symmetric and unimodal.
+          \item Skewed to the left, because most of the commutes lie on the left side of the
+                graph.
+          \item Skewed to the right, because the longer commutes trail off to the right.
+          \item Approximately uniform, because every interval contains at least a few employees.
+          \item Bimodal, because two bars are taller than the rest.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+        \end{enumerate}
+
+  \boxguard[10]
+  \item Which conclusion is \textbf{supported} by this display?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Employees at this company commute longer than employees at other companies.
+          \item Commute times for all workers in this city are skewed to the right.
+          \item Most of these 40 employees commute under 30 minutes; one commutes over 80.
+          \item The employee with the longest commute should be removed before the distribution
+                is described.
+          \item Half of these employees commute more than 40 minutes.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+        \end{enumerate}
+
+  \item Before concluding that this distribution is skewed to the right, a careful reader should
+        first check
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item whether commute time is a categorical variable.
+          \item the interval width, because a different width can change the shape.
+          \item whether the bars have gaps between them, as in a bar graph.
+          \item whether any employee was counted twice.
+          \item nothing --- a histogram reports the shape of the data as a fact.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=B]{0.45in}{0.24in}}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.12in, resume]
+
+  \item Use the commute record above.
+
+        \boxguard[17]
+        \vspace{4pt}
+        \textbf{(a)} Classify commute time as categorical or quantitative, and then as discrete
+        or continuous. Justify from the variable itself, not from the display.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap5a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+
+        \boxguard[17]
+        \vspace{4pt}
+        \textbf{(b)} Describe the shape of this distribution and identify any unusual features,
+        in context.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap5b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+
+        \boxguard[17]
+        \vspace{4pt}
+        \textbf{(c)} A manager writes: \emph{``The average commute here is about 25 minutes, so
+        our employees are fine.''} Explain what that single number leaves out, and state what
+        these data can and cannot tell you about employees at other companies.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap5c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
+
+        \boxguard[17]
+        \vspace{4pt}
+        \textbf{(d)} The same 40 commute times are redrawn using intervals 30 minutes wide.
+        Explain what happens to the employee who commutes more than 80 minutes, and why the
+        interval width has to be checked before the shape is believed.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap5d, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+
+\end{enumerate}
+
+
+\end{document}

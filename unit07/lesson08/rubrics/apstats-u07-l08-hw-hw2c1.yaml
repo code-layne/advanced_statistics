@@ -1,0 +1,12 @@
+# Homework item 2c Random (Unit 7, Lesson 7.8). Relative to the lesson directory.
+id: hw2c1
+points: 1
+task: >-
+  An economist randomly surveys 50 tech-sector workers (Group 1) and 45
+  education-sector workers (Group 2) to see whether mean annual wages differ. Verify
+  the Random condition.
+criteria:
+  - id: 2c1
+    points: 1
+    full: >-
+      Says both groups are random samples from their sectors, so the condition is met.

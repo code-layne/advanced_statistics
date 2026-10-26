@@ -1,0 +1,21 @@
+# AP Practice item 3, part (c) (Unit 2, Lesson 2.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  A cafe recorded the daily high temperature (F, from 55 to 95) and the iced drinks
+  sold on 40 summer days and regressed drinks sold on temperature: Constant -42.50,
+  Temp 2.350, S = 14.20, R-Sq = 72.3%. On an 80 F day the cafe sold 150 iced drinks.
+  Find and interpret that day's residual.
+criteria:
+  - id: residual
+    points: 2
+    full: >-
+      E: Computes predicted = -42.50 + 2.350(80) = 145.5 and residual = 150 - 145.5 = 4.5
+      AND interprets it: the cafe sold about 4.5 more iced drinks that day than the model
+      predicted.
+    partial: >-
+      P (1 of 2): Computes the residual 4.5 correctly with a missing or incorrect
+      interpretation, OR interprets correctly from a calculation with one arithmetic or
+      sign error.

@@ -1,0 +1,20 @@
+# Homework item 1a (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw1a
+points: 3
+task: >-
+  A standard die is rolled until a 1 appears; X = number of rolls needed. Check BITS
+  and state the distribution.
+criteria:
+  - id: bi
+    points: 1
+    full: >-
+      Binary (1 or not 1) and independent rolls.
+  - id: ts
+    points: 1
+    full: >-
+      Trials continue until the first success (first 1), with the same p = 1/6 on every
+      roll.
+  - id: dist
+    points: 1
+    full: >-
+      States X ~ Geom(1/6) (geometric with p = 1/6).

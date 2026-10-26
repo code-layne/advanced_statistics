@@ -1,0 +1,17 @@
+# Homework item 4a (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw4a
+points: 2
+task: >-
+  A researcher randomly samples 200 male and 200 female voters separately and records
+  party affiliation (Democrat, Republican, Independent). Name the most appropriate
+  procedure and explain your reasoning.
+criteria:
+  - id: procedure
+    points: 1
+    full: >-
+      Names a chi-square test for homogeneity.
+  - id: reason
+    points: 1
+    full: >-
+      Explains: two separate random samples (male, female) and one categorical response
+      with three categories (party affiliation).

@@ -1,0 +1,21 @@
+# Unit 1 practice (sample) test, item 19c. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t19c
+points: 3
+task: >-
+  The mean price is $19.33. Which better describes a typical price, the mean or the
+  median? Explain.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      E: The median ($16).
+  - id: reason
+    points: 2
+    full: >-
+      E: The median is resistant, so the $58 outlier barely moves it, while the mean is
+      pulled up to $19.33 (above most of the prices).
+    partial: >-
+      P (1 of 2): Mentions the outlier or skew without explaining resistance, or vice
+      versa.

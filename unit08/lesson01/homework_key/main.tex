@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l01-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.1}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} For each problem, show your work and explain your reasoning clearly.
@@ -26,15 +29,16 @@
 
         \begin{enumerate}[label=\alph*.]
           \item Find the expected count for each color. Show your calculation.
-                \ansline{$0.20 \times 200 = 40$ for each color. Expected: Red 40, Orange 40, Yellow 40, Green 40, Blue 40.}
+                \ansline{$0.20 \times 200 = 40$ for each color. Expected: Red 40, Orange 40, Yellow 40, Green 40, Blue 40.}\gradedkey{\textit{each:}~\gradedblank[id=hw1a, type=short, points=1, answer=40, check=numeric, tolerance=0]{0.9in}{0.2in}}
 
           \item Which color shows the largest absolute difference
                 $|\text{Observed} - \text{Expected}|$ from expected?
-                \ansline{Green: $|31 - 40| = 9$. (Red is $|45 - 40| = 5$; Orange $= 2$; Yellow $= 2$; Blue $= 4$.) Green has the largest absolute difference.}
+                \ansline{Green: $|31 - 40| = 9$. (Red is $|45 - 40| = 5$; Orange $= 2$; Yellow $= 2$; Blue $= 4$.) Green has the largest absolute difference.}\gradedkey{\gradedblank[id=hw1b, type=short, points=1, answer=Green, check=text]{1.2in}{0.2in}}
 
+          \boxguard[15]
           \item Explain in your own words what question a chi-square goodness-of-fit
                 test would answer about this data.
-                \ansline{A chi-square GOF test would answer: are the observed differences from 40 (the expected count per color) large enough to conclude that this bag does not follow the claimed 20\%-each distribution, or could these differences plausibly be due to random variation?}
+                \ansline{A chi-square GOF test would answer: are the observed differences from 40 (the expected count per color) large enough to conclude that this bag does not follow the claimed 20\%-each distribution, or could these differences plausibly be due to random variation?}\gradedkeyline{\gradedblank[id=hw1c, type=rubric, points=2, display={Are the gaps from 40 per color too large to be chance, so the bag does not follow 20\% each?}]{\linewidth+6pt}{\gradedlinesheight{2}}}
         \end{enumerate}
 
   \item \textbf{Rolling a Die.} A fair six-sided die is rolled 120 times. You expect
@@ -49,12 +53,14 @@
         \end{tabularx}
 
         \begin{enumerate}[label=\alph*.]
+          \boxguard[15]
           \item Compute the difference (Observed $-$ Expected) for each face.
-                \ansline{Face 1: $-2$; \; Face 2: $+2$; \; Face 3: $-1$; \; Face 4: $+5$; \; Face 5: $-4$; \; Face 6: $0$.}
+                \ansline{Face 1: $-2$; \; Face 2: $+2$; \; Face 3: $-1$; \; Face 4: $+5$; \; Face 5: $-4$; \; Face 6: $0$.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={$-2,\ +2,\ -1,\ +5,\ -4,\ 0$}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 
+          \boxguard[15]
           \item Would you be surprised if a fair die produced these results?
                 Explain without any formal calculation.
-                \ansline{Answers vary. The differences are small relative to an expected count of 20 --- the largest is Face 4 at $+5$. This does not look very surprising; such variation is common with a fair die. A chi-square test would confirm how unusual these gaps are under the assumption of fairness.}
+                \ansline{Answers vary. The differences are small relative to an expected count of 20 --- the largest is Face 4 at $+5$. This does not look very surprising; such variation is common with a fair die. A chi-square test would confirm how unusual these gaps are under the assumption of fairness.}\gradedkeyline{\gradedblank[id=hw2b, type=rubric, points=2, display={Not surprising: all gaps are small next to 20 (largest $+5$); chance variation explains them.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
         \end{enumerate}
 
 \end{enumerate}

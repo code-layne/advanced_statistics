@@ -1,0 +1,15 @@
+# Homework item 1d (Unit 5, Lesson 5.2). Relative to the lesson directory.
+id: hw1d
+points: 1
+task: >-
+  Women's heights are approximately N(64.0, 2.8) inches; the 90th percentile is about
+  67.6 inches. Interpret this in a complete sentence.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      Says about 90% of women are shorter than 67.6 inches (or 10% are taller), in context
+      of women's heights.
+examples:
+  - response: "90% of women are 67.6 inches tall."
+    scores: {interpret: 0}

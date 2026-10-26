@@ -1,0 +1,19 @@
+# Homework item B1 (Unit 2, Lesson 2.3). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  A car dealer listed 18 used cars with 8 to 95 thousand miles; price in thousands of
+  dollars, mileage in thousands of miles: predicted price = 32.0 - 0.24(mileage). The
+  residual plot for the 18 cars shows residuals between about -2.5 and 2.5 scattered
+  above and below 0 across mileage with no pattern. Is a linear model appropriate for
+  predicting price from mileage? Explain.
+criteria:
+  - id: conclusion
+    points: 1
+    full: >-
+      Says yes, a linear model is appropriate.
+  - id: reason
+    points: 1
+    full: >-
+      Justifies it from the residual plot: the residuals are randomly scattered around 0
+      with no curved (or other) pattern.

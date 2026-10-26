@@ -1,73 +1,59 @@
-%! AP Statistics — Unit 2, Lesson 2.1 — Warm-Up KEY
-\documentclass[10pt]{article}
+%! Two Categorical Variables — Unit 2, Lesson 2.1 — Warm-Up (Answer Key)
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% ONE PAGE, blank and key. Three items at 12pt.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+%   Item 1 spirals to Lesson 1.2 (relative frequency = count / total) — the notes' joint and
+%          marginal relative frequencies are this move with a bigger table.
+%   Item 2 SEEDS THE CRUX (notes problem 8): the bigger count is not the better rate when the
+%          groups are different sizes. Leave both answers on the board.
+%   Item 3 seeds Topic 2.1 (VAR-1.D): classify three variables, then ask whether two are related.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.1}{Warm-Up --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.3in}
+\vspace{0.28in}
 
-{\large\bfseries\color{navy} Part 1 \quad Spiral Review}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.80in]
 
-\vspace{0.12in}
+  \item \textbf{From Lesson 1.2.} In a survey of 180 students, 45 said they walk to school.
+        What is the relative frequency of walkers? Give it as a proportion and a percent.
 
-\begin{enumerate}
+        \vspace{16pt}
+        Proportion: \ans{$45/180 = 0.25$} \qquad Percent: \ans{25\%}
 
-    \item Classify each variable.
+  \item Two sections took the same quiz. In Section A, 12 of 20 students passed. In Section B,
+        18 of 40 students passed.
 
-    \vspace{8pt}
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabularx}{\linewidth}{@{} X c c @{}}
-    \textbf{Variable} & \textbf{Categorical} & \textbf{Quantitative} \\
-    \hline
-    Preferred genre of music        & \ans{\checkmark} & \\
-    Hours of sleep per night        & & \ans{\checkmark} \\
-    Whether a student plays a sport & \ans{\checkmark} & \\
-    GPA                             & & \ans{\checkmark} \\
-    \end{tabularx}
+        \vspace{12pt}
+        Which section had \emph{more students} pass? \ans{Section B (18)}
+        \vspace{16pt}
 
-    \vspace{0.18in}
+        Percent who passed: \quad A \ans{60\%} \qquad B \ans{45\%}
+        \vspace{16pt}
 
-    \item \ans{Accept any reasonable research question relating two variables from the table.
-    Example: ``Do students who play sports get more or fewer hours of sleep per night than
-    students who do not play sports?'' or ``Is there a relationship between GPA and hours
-    of sleep per night?''}
+        Which section did \emph{better} on the quiz? \ans{Section A}
+
+  \item A school survey records three things about each student:
+        \vspace{10pt}
+
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y @{}}
+        \textbf{Phone kept in bedroom (yes/no)} & \textbf{Hours of sleep last night} &
+        \textbf{Plays a school sport (yes/no)} \\
+        \ans{categorical} & \ans{quantitative} & \ans{categorical} \\
+        \end{tabularx}
+
+        \vspace{6pt}
+        Label each \textbf{categorical} or \textbf{quantitative}. Then write one question that
+        asks whether two of these variables are \emph{related}.\\[18pt]
+        \ansline{Do students who keep a phone in the bedroom sleep less than students who}\\[18pt]\ansline{do not? Is playing a sport related to keeping a phone in the bedroom?}
 
 \end{enumerate}
-
-\vspace{0.25in}
-
-{\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
-
-\vspace{0.12in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-    \small
-    \begin{itemize}[leftmargin=1.3em, itemsep=8pt]
-  \item An apparent relationship in data may be \textbf{random} --- not every pattern is real.
-  \item Even a real relationship does not mean one variable \textbf{causes} the other.
-  \item The variable types (categorical or quantitative) determine which analysis we use
-        in Lessons 2.2--2.9.
-    \end{itemize}
-\end{tcolorbox}
-
-\vspace{0.2in}
-
-\begin{teachernote}
-\textbf{Part 1 notes:} GPA and hours of sleep are quantitative; music genre and sport
-participation are categorical. Students who mark GPA as categorical are likely thinking of
-letter grades --- clarify that GPA is a number we can average, not a category.
-
-\textbf{Part 2:} No scored answer; check that students wrote something (engagement check).
-Common responses: ``What is a confounding variable?'' or ``What does `association' mean?''
---- both are great previews for today's lesson.
-\end{teachernote}
 
 \end{document}

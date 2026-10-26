@@ -1,0 +1,15 @@
+# Homework item 3c (Unit 4, Lesson 4.1). Relative to the lesson directory.
+id: hw3c
+points: 2
+task: >-
+  If Sundays were independent, the probability of 6 sunny Sundays in a row is about
+  0.0083. Does this make the streak surprising?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes, the streak is surprising (unlikely) if Sundays were independent.
+  - id: reason
+    points: 1
+    full: >-
+      Cites the small probability (about 0.8%, or about 0.0083) as the reason.

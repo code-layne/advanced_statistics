@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u07-l08-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.8}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.12in}
 
@@ -19,17 +22,20 @@ state $H_0$ and $H_a$; (c) verify conditions. Do \textbf{not} compute a test sta
 \item \textbf{Pain Relief.}
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
-  \item $\mu_1 = $ \ans{mean pain score for all patients given the new drug} \quad
-        $\mu_2 = $ \ans{mean pain score for all patients given the placebo}
+  \item Method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}\gradedkey{\gradedblank[id=hw1a, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{5.3cm}{0.19in}}
+  \item $\mu_1 = $ \ans{mean pain score for all patients given the new drug}\gradedkeyline{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries\boldmath mean pain score, new drug}]{\linewidth+6pt}{0.19in}}
+        $\mu_2 = $ \ans{mean pain score for all patients given the placebo}\gradedkeyline{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries\boldmath mean pain score, placebo}]{\linewidth+6pt}{0.19in}}
 
-        $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}
+        $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}\gradedkey{$H_0$:~\gradedblank[id=hw1b3, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{4.3cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw1b4, type=short, points=1, answer={{mu1 - mu2 < 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 < 0$}]{4.3cm}{0.19in}}
 
-        Justify the direction of $H_a$: \ansline{Researchers believe the new drug produces lower mean pain scores, so $\mu_1 < \mu_2$, i.e., $\mu_1 - \mu_2 < 0$.}
+        Justify the direction of $H_a$: \ansline{Researchers believe the new drug produces lower mean pain scores, so $\mu_1 < \mu_2$, i.e., $\mu_1 - \mu_2 < 0$.}\gradedkeyline{\gradedblank[id=hw1b5, type=rubric, points=1, display={\bfseries\boldmath researchers expect the drug to lower mean pain: $\mu_1 < \mu_2$}]{\linewidth+6pt}{2in}}
+  \newpage
   \item Conditions:
         \begin{itemize}
-          \item Random: \ansline{Patients were randomly assigned to the two groups --- Random condition met.}
-          \item Normal ($n_1 = 24 < 30$, $n_2 = 26 < 30$): \ansline{Both $n < 30$; must check both groups. Both distributions are approximately symmetric with no outliers --- Normal condition met.}
+          \boxguard
+          \item Random: \ansline{Patients were randomly assigned to the two groups --- Random condition met.}\gradedkeyline{\gradedblank[id=hw1c1, type=rubric, points=1, display={\bfseries\boldmath patients randomly assigned to the groups --- met}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal ($n_1 = 24 < 30$, $n_2 = 26 < 30$): \ansline{Both $n < 30$; must check both groups. Both distributions are approximately symmetric with no outliers --- Normal condition met.}\gradedkeyline{\gradedblank[id=hw1c2, type=rubric, points=1, display={\bfseries\boldmath both $n < 30$; both symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.06in}
@@ -37,12 +43,15 @@ state $H_0$ and $H_a$; (c) verify conditions. Do \textbf{not} compute a test sta
 \item \textbf{Wages.}
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
-  \item $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}
+  \item Method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}\gradedkey{\gradedblank[id=hw2a, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{5.3cm}{0.19in}}
+  \item $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}\gradedkey{$H_0$:~\gradedblank[id=hw2b1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{4.3cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw2b2, type=short, points=1, answer={{mu1 - mu2 != 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 \ne 0$}]{4.3cm}{0.19in}}
+  \newpage
   \item Conditions:
         \begin{itemize}
-          \item Random: \ansline{Both groups are random samples from their respective sectors --- Random condition met.}
-          \item Normal: \ansline{$n_1 = 50 \ge 30$ and $n_2 = 45 \ge 30$; CLT applies to both --- Normal condition met.}
+          \boxguard
+          \item Random: \ansline{Both groups are random samples from their respective sectors --- Random condition met.}\gradedkeyline{\gradedblank[id=hw2c1, type=rubric, points=1, display={\bfseries\boldmath random samples from both sectors --- met}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal: \ansline{$n_1 = 50 \ge 30$ and $n_2 = 45 \ge 30$; CLT applies to both --- Normal condition met.}\gradedkeyline{\gradedblank[id=hw2c2, type=rubric, points=1, display={\bfseries\boldmath $n_1 = 50,\ n_2 = 45 \ge 30$: CLT --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.06in}
@@ -50,18 +59,23 @@ state $H_0$ and $H_a$; (c) verify conditions. Do \textbf{not} compute a test sta
 \item \textbf{Screen Time.}
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
-  \item $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}
+  \item Method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}\gradedkey{\gradedblank[id=hw3a, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{5.3cm}{0.19in}}
+  \item $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}\gradedkey{$H_0$:~\gradedblank[id=hw3b1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{4.3cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw3b2, type=short, points=1, answer={{mu1 - mu2 < 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 < 0$}]{4.3cm}{0.19in}}
   \item Conditions:
         \begin{itemize}
-          \item Random: \ansline{Both groups were randomly selected --- Random condition met.}
-          \item Normal (both $n < 30$): \ansline{$n_1 = 18$ and $n_2 = 21$ are both $< 30$; must check both. Group 1: mild left skew with no outliers --- acceptable. Group 2: approximately symmetric --- acceptable. Normal condition met for both.}
+          \boxguard
+          \item Random: \ansline{Both groups were randomly selected --- Random condition met.}\gradedkeyline{\gradedblank[id=hw3c1, type=rubric, points=1, display={\bfseries\boldmath both groups randomly selected --- met}]{\linewidth+6pt}{2in}}
+          \newpage
+          \boxguard
+          \item Normal (both $n < 30$): \ansline{$n_1 = 18$ and $n_2 = 21$ are both $< 30$; must check both. Group 1: mild left skew with no outliers --- acceptable. Group 2: approximately symmetric --- acceptable. Normal condition met for both.}\gradedkeyline{\gradedblank[id=hw3c2, type=rubric, points=1, display={\bfseries\boldmath both $n < 30$; mild skew / symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}
 
-                Can the test proceed? \ans{Yes} \quad Explain: \ansline{Mild skew without outliers is generally not a severe enough violation to prevent inference when $n < 30$.}
+                Can the test proceed? \ans{Yes} \quad Explain: \ansline{Mild skew without outliers is generally not a severe enough violation to prevent inference when $n < 30$.}\gradedkey{\gradedblank[id=hw3c3, type=short, points=1, answer=yes, check=text, display={Yes}]{1.3cm}{0.19in}}
+                \gradedkeyline{\gradedblank[id=hw3c4, type=rubric, points=1, display={\bfseries\boldmath mild skew, no outliers: OK}]{\linewidth+6pt}{0.19in}}
         \end{itemize}
 \end{enumerate}
 \vspace{0.06in}
 
+\newpage
 \item \textbf{AP-Style.}
 
 \begin{enumerate}[label=(\Alph*)]
@@ -71,7 +85,9 @@ state $H_0$ and $H_a$; (c) verify conditions. Do \textbf{not} compute a test sta
   \item The condition applies to \emph{both} samples, not just one.
 \end{enumerate}
 \vspace{0.04in}
-Answer: \ans{C is the best answer given the choices, but note the outliers make this borderline.} \quad Brief justification: \ansline{Both $n < 30$; must check both. Moderate skewness can be tolerated, but outliers in both groups raise concern. Proceed with caution.}
+Answer: \ans{C is the best answer given the choices, but note the outliers make this borderline.}\gradedkey{\textit{Letter:}~\gradedblank[id=hw4a, type=choice, points=1, answer=C]{0.4in}{0.2in}}
+
+Brief justification: \ansline{Both $n < 30$; must check both. Moderate skewness can be tolerated, but outliers in both groups raise concern. Proceed with caution.}\gradedkeyline{\gradedblank[id=hw4b, type=rubric, points=1, display={\bfseries\boldmath both $n < 30$ with an outlier in each group}]{\linewidth+6pt}{0.19in}}
 
 \begin{teachernote}
 Question 4 is intentionally nuanced. The AP exam expects students to note that outliers

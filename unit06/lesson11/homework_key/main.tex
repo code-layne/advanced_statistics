@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u06-l11-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 6, Lesson 6.11}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -18,14 +21,15 @@ High use: 54/180. Low use: 36/200. $\alpha=0.05$.
 
 \begin{enumerate}[label=\alph*.]
   \item \ansline{$p_H$ = true proportion of high-use students with low GPA; $p_L$ = same for low-use.\\
-        $H_0: p_H=p_L$; $H_a: p_H>p_L$ (one-sided right).}
+        $H_0: p_H=p_L$; $H_a: p_H>p_L$ (one-sided right).}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=2, display={$p_H, p_L$: true low-GPA proportions (high / low use). $H_0\colon p_H = p_L$; $H_a\colon p_H > p_L$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
   \item $\hat p_H=54/180=0.300$; $\hat p_L=36/200=0.180$; $\hat p_c=(54+36)/(180+200)=90/380\approx0.237$.\\
         Large Counts: $180(0.237)=42.7$, $180(0.763)=137.3$, $200(0.237)=47.4$, $200(0.763)=152.6$ --- \ans{all $\ge10$. \checkmark}\\
-        Random/10\%: \ansline{Assumed both independently randomly sampled.}
+        Random/10\%: \ansline{Assumed both independently randomly sampled.}\gradedkey{$\hat p_c = $~\gradedblank[id=hw1b1, type=short, points=1, answer=0.237, check=numeric, tolerance=0.002]{0.8in}{0.17in}}\gradedkeyline{\gradedblank[id=hw1b2, type=rubric, points=3, display={Independent random samples assumed; with $\hat p_c = 0.237$: $42.7, 137.3, 47.4, 152.6$ all $\ge 10$; samples $\le 10\%$ of all students.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
   \item $SE=\sqrt{0.237(0.763)(1/180+1/200)}=\sqrt{0.18089 \times 0.01056}=\sqrt{0.001911}\approx0.04372$\\
         $z=(0.300-0.180)/0.04372=0.120/0.04372\approx\ans{2.74}$\\
-        $p\text{-value}=P(Z>2.74)\approx\ans{0.003}$
-  \item \ansline{Since $p$-value $= 0.003 \le \alpha = 0.05$, we reject $H_0$. We have convincing evidence that students who use social media more than 2 hours per day have a higher proportion of low-GPA outcomes than those who use it 2 hours or less per day.}
+        $p\text{-value}=P(Z>2.74)\approx\ans{0.003}$\gradedkey{$z = $~\gradedblank[id=hw1c1, type=short, points=2, answer=2.74, check=numeric, tolerance=0.02]{0.8in}{0.17in}\quad $p$-value $=$~\gradedblank[id=hw1c2, type=short, points=2, answer=0.003, check=numeric, tolerance=0.001]{0.8in}{0.17in}}
+  \newpage
+  \item \ansline{Since $p$-value $= 0.003 \le \alpha = 0.05$, we reject $H_0$. We have convincing evidence that students who use social media more than 2 hours per day have a higher proportion of low-GPA outcomes than those who use it 2 hours or less per day.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={$0.003 \le 0.05$: reject $H_0$; convincing evidence heavy (over 2 h) users have a higher low-GPA proportion.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \item \textbf{Employee Turnover.}
@@ -33,14 +37,15 @@ New: 18/240. Old: 30/240. $\alpha=0.05$.
 
 \begin{enumerate}[label=\alph*.]
   \item \ansline{$p_N$ = true proportion of new-program employees who leave within a year; $p_O$ = same for old-program.\\
-        $H_0: p_N=p_O$; $H_a: p_N<p_O$ (one-sided left: new program has lower turnover).}
+        $H_0: p_N=p_O$; $H_a: p_N<p_O$ (one-sided left: new program has lower turnover).}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=2, display={$p_N, p_O$: true first-year turnover proportions. $H_0\colon p_N = p_O$; $H_a\colon p_N < p_O$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
   \item $\hat p_N=18/240=0.075$; $\hat p_O=30/240=0.125$; $\hat p_c=(18+30)/(480)=48/480=0.100$.\\
         Large Counts: $240(0.1)=24$, $240(0.9)=216$ --- \ans{all $\ge10$ for both groups. \checkmark}\\
-        Random/10\%: \ansline{Assumed both samples $\le10\%$ of all employees in each program.}
+        Random/10\%: \ansline{Assumed both samples $\le10\%$ of all employees in each program.}\gradedkey{$\hat p_c = $~\gradedblank[id=hw2b1, type=short, points=1, answer=0.100, check=numeric, tolerance=0.002]{0.8in}{0.17in}}\gradedkeyline{\gradedblank[id=hw2b2, type=rubric, points=3, display={Random samples assumed; with $\hat p_c = 0.1$: $24, 216$ (each group) all $\ge 10$; samples $\le 10\%$ of all employees.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
   \item $SE=\sqrt{0.100(0.900)(1/240+1/240)}=\sqrt{0.090 \times 0.008\overline{3}}=\sqrt{0.000750}\approx0.02739$\\
         $z=(0.075-0.125)/0.02739=-0.050/0.02739\approx\ans{-1.83}$\\
-        $p\text{-value}=P(Z<-1.83)\approx\ans{0.034}$
-  \item \ansline{Since $p$-value $= 0.034 \le \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the new onboarding program reduced employee turnover within the first year compared to the old program.}
+        $p\text{-value}=P(Z<-1.83)\approx\ans{0.034}$\gradedkey{$z = $~\gradedblank[id=hw2c1, type=short, points=2, answer=-1.83, check=numeric, tolerance=0.02, display={\boldmath$-1.83$}]{0.8in}{0.17in}\quad $p$-value $=$~\gradedblank[id=hw2c2, type=short, points=2, answer=0.034, check=numeric, tolerance=0.002]{0.8in}{0.17in}}
+  \newpage
+  \item \ansline{Since $p$-value $= 0.034 \le \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the new onboarding program reduced employee turnover within the first year compared to the old program.}\gradedkeyline{\gradedblank[id=hw2d, type=rubric, points=2, display={$0.034 \le 0.05$: reject $H_0$; convincing evidence the new program has lower first-year turnover.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \end{enumerate}

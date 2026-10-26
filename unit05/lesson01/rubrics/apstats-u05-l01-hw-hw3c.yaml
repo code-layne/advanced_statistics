@@ -1,0 +1,20 @@
+# Homework item 3c (Unit 5, Lesson 5.1). Relative to the lesson directory.
+id: hw3c
+points: 2
+task: >-
+  A simulation takes 500 random samples of size n = 40 from a population with mean 100
+  and plots the 500 sample means. If the sample size were increased to n = 200, how
+  would you expect the spread of the dot-plot to change?
+criteria:
+  - id: direction
+    points: 1
+    full: >-
+      Says the spread (standard deviation) of the dot-plot would decrease.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that larger samples have less sampling variability (averaging more values
+      smooths out extremes).
+examples:
+  - response: "It would get bigger because there is more data."
+    scores: {direction: 0, reason: 0}

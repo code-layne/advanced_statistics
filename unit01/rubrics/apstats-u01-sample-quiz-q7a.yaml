@@ -1,0 +1,18 @@
+# Sample quiz, Unit 1 (Lessons 1.0-1.4), item 7a. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q7a
+points: 2
+task: >-
+  The Riverside Farmers Market keeps one row for each of its 48 vendors (vendor, stall
+  type, stall number, weekly revenue). Identify the individuals, then name one
+  categorical variable and one quantitative variable in the table.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Individuals are the 48 vendors AND names a categorical variable (stall type, or
+      stall number as a label) AND a quantitative variable (weekly revenue, in dollars).
+    partial: >-
+      P (1 of 2): Two of the three components correct (for example, the individuals given
+      as the stalls' products or the shoppers, or stall number named as quantitative).

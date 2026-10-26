@@ -1,0 +1,17 @@
+# Homework item 3b (Unit 7, Lesson 7.3). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A random sample of 22 employees has mean commute 14.6 miles, s = 8.3 miles. The 95%
+  CI is (10.9, 18.3). The company claims the mean commute is 12 miles. Does the data
+  provide convincing evidence that the mean commute exceeds 12 miles?
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no.
+  - id: reason
+    points: 1
+    full: >-
+      Because 12 (and values below 12) lies inside the interval, so 12 is a plausible
+      value for the true mean.

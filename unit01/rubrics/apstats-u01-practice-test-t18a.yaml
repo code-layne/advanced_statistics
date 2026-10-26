@@ -1,0 +1,15 @@
+# Unit 1 practice (sample) test, item 18a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t18a
+points: 2
+task: >-
+  From a histogram of 50 trout lengths (bins 12-16: 2, 16-20: 0, 20-24: 3, 24-28: 5,
+  ...), how many trout were shorter than 28 cm, and what percent of the catch is that?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: 2 + 0 + 3 + 5 = 10 trout AND 10/50 = 20%.
+    partial: >-
+      P (1 of 2): One of the two correct.

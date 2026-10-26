@@ -1,0 +1,18 @@
+# Homework item 1d (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  A random sample of 28 college students: hours per week on social media (x) vs GPA
+  (y); the residual plot shows random scatter with no curve and constant spread;
+  residuals approximately normal. One condition cannot be fully verified from the
+  information given. Which one, and what additional information is needed?
+criteria:
+  - id: which
+    points: 1
+    full: >-
+      Names the 10% part of the Independence condition.
+  - id: info
+    points: 1
+    full: >-
+      Says we would need the size of the college's student population (at least 10 x 28 =
+      280 students).

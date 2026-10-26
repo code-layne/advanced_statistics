@@ -1,0 +1,13 @@
+# Homework item 1b direction (Unit 7, Lesson 7.8). Relative to the lesson directory.
+id: hw1b5
+points: 1
+task: >-
+  24 patients are randomly assigned to a new pain drug (Group 1) and 26 to a placebo
+  (Group 2); researchers believe the drug lowers mean pain score (10-point scale).
+  Both groups approximately symmetric, no outliers. Justify the direction of Ha.
+criteria:
+  - id: 1b5
+    points: 1
+    full: >-
+      Says the researchers believe the new drug produces a lower mean pain score, so mu_1
+      < mu_2 (mu_1 - mu_2 < 0).

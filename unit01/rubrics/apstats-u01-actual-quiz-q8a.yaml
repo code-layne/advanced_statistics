@@ -1,0 +1,19 @@
+# Actual quiz, Unit 1 (Lessons 1.0-1.4), item 8a. Path relative to unit01/quizzes/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: q8a
+points: 2
+task: >-
+  A histogram shows the length of visit (minutes) of 40 visitors on one Saturday. Is
+  length of visit discrete or continuous? Justify from the variable itself, not from
+  the display.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Continuous, justified by the variable: length of visit is a measured amount of
+      time, so any value between two values is possible (rounding to minutes does not
+      change that).
+    partial: >-
+      P (1 of 2): Says continuous with a justification based on the display or a weak
+      reason, or a correct reason with a wrong or missing classification.

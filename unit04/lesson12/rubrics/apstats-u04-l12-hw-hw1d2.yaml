@@ -1,0 +1,16 @@
+# Homework item 1d interpretation (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw1d2
+points: 2
+task: >-
+  X ~ Geom(1/6) = rolls to get the first 1; P(X > 6) = (5/6)^6, about 0.3349.
+  Interpret in one sentence.
+criteria:
+  - id: value
+    points: 1
+    full: >-
+      Says there is about a 33.5% probability.
+  - id: context
+    points: 1
+    full: >-
+      Of needing more than 6 rolls to get the first 1 (equivalently, no 1 in the first 6
+      rolls).

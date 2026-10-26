@@ -1,0 +1,19 @@
+# AP Practice item 5, part (a, interpretation) (Unit 1, Lesson 1.7). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5a2
+points: 2
+task: >-
+  At one hospital, newborn birth weights are approximately normal with mean 3,300 g
+  and SD 500 g (Record A). A newborn weighs 2,550 grams (z = -1.5). Interpret this
+  standardized score in one sentence in context.
+criteria:
+  - id: interpret
+    points: 2
+    full: >-
+      E: Says this newborn's weight is 1.5 standard deviations below the mean birth weight
+      of 3,300 grams, in context (newborn birth weights at this hospital).
+    partial: >-
+      P (1 of 2): Says 1.5 standard deviations below the mean without context, OR gives
+      context but misses the direction (below) or the units of the score (standard
+      deviations).

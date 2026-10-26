@@ -1,0 +1,17 @@
+# Homework item 1b (Unit 9, Lesson 9.3). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A random sample of 50 college students: hours of sleep (x) vs GPA (y); 95% CI for
+  the slope is (0.08, 0.44). Does this CI provide evidence that beta is not 0?
+  Justify.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes.
+  - id: reason
+    points: 1
+    full: >-
+      Because 0 is not in the interval (0.08, 0.44); the relationship between sleep and
+      GPA is positive.

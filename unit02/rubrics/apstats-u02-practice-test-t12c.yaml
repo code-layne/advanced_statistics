@@ -1,0 +1,14 @@
+# Unit 2 practice (sample) test, item 12c. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12c
+points: 1
+task: >-
+  One model has capacity 17.9 cubic feet and uses 539 kWh per year. Find its residual
+  and interpret it in context.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Residual = 539 - (249.70 + 13.811(17.9)) = about +42.1 kWh, AND interprets: this
+      model uses about 42.1 kWh per year more than the line predicts.

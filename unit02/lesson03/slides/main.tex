@@ -1,145 +1,266 @@
-%! AP Statistics — Unit 2, Lesson 2.3 — Slides
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{apstats-beamer}
+\usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% ── TITLE SLIDE ───────────────────────────────────────────────────────────────
+% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.3}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Statistics for Two Categorical Variables}\\[1.2cm]
-    {\color{skymid}\small Statistics~$\cdot$~Unit 2: Exploring Two-Variable Data}
+    {\color{white}\bfseries\LARGE Regression Lines and Residuals}\\[1.2cm]
+    {\color{skymid}\small Statistics~$\cdot$~Unit 2}
   \end{minipage}
 \end{frame}
 }
 
+% GRADUAL RELEASE deck: targets → warm-up → I DO divider → one frame per notes row (The
+% Equation & Prediction, Predicting Beyond the Data, Actual Minus Predicted) → WE DO (Sleep &
+% Reaction) → spoken debrief → close & START THE HOMEWORK. There is no group activity and no
+% independent practice set in the notes: the homework is the individual practice.
+% Slope/intercept interpretation and r^2 are Lesson 2.4 — do not teach them here.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
 % ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Today's Learning Targets}
-  \vspace{0.3cm}
-  By the end of class, I will be able to\dots
-  \begin{itemize}
-    \item compute the \textbf{conditional proportion} ($\hat{p}$) for each group in a two-way table.
-    \item calculate and interpret the \textbf{difference in proportions} in context.
-    \item calculate and interpret \textbf{relative risk} in context.
-    \item compare both statistics and explain which better describes the association.
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 2.3}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item use a \textbf{regression line} $\hat{y}=a+bx$ to find a \textbf{predicted value}
+          $\hat{y}$ --- and tell it apart from the actual $y$.
+    \item recognize \textbf{extrapolation} and say why it is not trustworthy.
+    \item calculate a \textbf{residual}, $y-\hat{y}$, and say whether the line predicted too
+          high or too low.
+    \item read a \textbf{residual plot} and decide whether a linear model is appropriate.
   \end{itemize}
-  \vspace{0.5cm}
-  \textcolor{goldacc}{\small Standards: UNC-1.Q [Skill 2.C] $\cdot$ UNC-1.R [Skill 2.D]}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Hook --- Same Data, Two Stories}
-  \vspace{0.3cm}
-  A clinical study reports:
-  \begin{itemize}
-    \item Drug A group: \textbf{2\%} got the side effect.
-    \item Placebo group: \textbf{1\%} got the side effect.
-  \end{itemize}
-  \vspace{0.5cm}
-  \begin{columns}
-    \column{0.48\textwidth}
-      \textbf{Story 1 (Additive):}\\
-      The drug group's rate is \textbf{1 percentage point higher}.\\[0.4cm]
-      \textit{``Not a big deal\ldots''}
-    \column{0.48\textwidth}
-      \textbf{Story 2 (Multiplicative):}\\
-      Drug group is \textbf{twice as likely} to get the side effect.\\[0.4cm]
-      \textit{``That sounds alarming!''}
-  \end{columns}
-  \vspace{0.6cm}
-  \textcolor{navy}{\small Both statements are mathematically correct. Today we learn the statistics behind each.}
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item Distance vs.\ delivery time rises in a tight, straight band. Explanatory variable?
+          Direction? Form? Is $r$ near $0.3$ or $0.95$?
+    \item On the line $y = 8 + 3x$: find $y$ when $x = 4$ and when $x = 7$.
+    \item Is the point $(5,\ 26)$ above or below $y = 8 + 3x$? By how much? What about
+          $(4,\ 17)$?
+  \end{enumerate}
+  \begin{block}{Hold on to item 3}
+    ``Above the line by 3'' is today's big idea in algebra clothes. Keep your answer ---
+    we are about to give it a name and a sign.
+  \end{block}
 \end{frame}
 
-% ── DIFFERENCE IN PROPORTIONS ────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Statistic 1 --- Difference in Proportions}
-  \vspace{0.3cm}
-  \[
-    \hat{p}_1 - \hat{p}_2 \;=\;
-    \frac{\text{successes in Group 1}}{\text{Group 1 total}}
-    -
-    \frac{\text{successes in Group 2}}{\text{Group 2 total}}
-  \]
-  \vspace{0.3cm}
-  \textbf{Interpretation template:}\\[0.2cm]
-  \textit{``The proportion of [outcome] among [Group 1] was [value] [higher / lower] than the
-  proportion among [Group 2].''}
-
-  \vspace{0.5cm}
-  \textbf{Key properties:}
-  \begin{itemize}
-    \item Value of \textbf{0} $\Rightarrow$ no difference, no association.
-    \item Units are in proportions (or percentage points).
-    \item Sign tells you direction.
-  \end{itemize}
-\end{frame}
-
-% ── RELATIVE RISK ─────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Statistic 2 --- Relative Risk}
-  \vspace{0.3cm}
-  \[
-    \text{RR} \;=\; \frac{\hat{p}_1}{\hat{p}_2}
-  \]
-  Group 2 is the \textbf{baseline} (reference) group.
-
-  \vspace{0.3cm}
-  \textbf{Interpretation template:}\\[0.2cm]
-  \textit{``[Group 1] was [RR] times as likely to [outcome] as [Group 2].''}
-
-  \vspace{0.5cm}
-  \textbf{Key properties:}
-  \begin{itemize}
-    \item Value of \textbf{1} $\Rightarrow$ no difference, no association.
-    \item RR $> 1$: Group 1 higher. \quad RR $< 1$: Group 1 lower.
-    \item \textbf{Not} a percentage-point difference --- RR $= 2$ means ``twice as likely,'' not ``2\% more.''
-  \end{itemize}
-\end{frame}
-
-% ── COMPARING THE STATISTICS ─────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{When Do They Tell Different Stories?}
-  \vspace{0.3cm}
-  \begin{columns}
-    \column{0.48\textwidth}
-      \textbf{Rare outcome:}\\
-      Group 1: $\hat{p}_1 = 0.002$ \\
-      Group 2: $\hat{p}_2 = 0.001$ \\[0.3cm]
-      Difference: $+0.001$ (tiny)\\
-      RR: $2.0$ (striking!)\\[0.3cm]
-      \textit{RR tells a more dramatic story.}
-    \column{0.48\textwidth}
-      \textbf{Common outcome:}\\
-      Group 1: $\hat{p}_1 = 0.60$ \\
-      Group 2: $\hat{p}_2 = 0.40$ \\[0.3cm]
-      Difference: $+0.20$ (meaningful!)\\
-      RR: $1.5$ (moderate)\\[0.3cm]
-      \textit{Absolute difference is more interpretable.}
-  \end{columns}
-  \vspace{0.5cm}
-  \textcolor{navy}{\bfseries Takeaway:} Always report \emph{both} statistics in context.
-  A small absolute difference can correspond to a large relative risk --- and vice versa.
-\end{frame}
-
-% ── CLOSING ──────────────────────────────────────────────────────────────────
+% ── I DO — direct instruction begins ─────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
-  \vspace{3cm}\hspace{0.55cm}%
-  \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\large Exit Ticket}\\[0.6cm]
-    {\color{white} A health survey finds 45 of 150 smokers (30\%) and 18 of 180 non-smokers (10\%)
-    developed a condition.}\\[0.5cm]
-    {\color{skymid}\small
-      (1) Compute the difference in proportions and interpret.\\
-      (2) Compute the relative risk and interpret.\\
-      (3) Which statistic better conveys the strength of association? Why?}
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: THE EQUATION & PREDICTION ─────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{The regression line predicts}
+  \sectionlabel{notes, The Equation \& Prediction $\cdot$ problems 1--3}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      \begin{block}{Regression line}
+        $\hat{y} = a + bx$ uses the explanatory variable $x$ to predict the response $y$
+        (EK DAT-1.D.1--2).
+      \end{block}
+      \vspace{4pt}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item $\hat{y}$ --- \textbf{predicted}, from the line.
+        \item $y$ --- \textbf{actual}, from the data.
+        \item Pizza shop: $\widehat{\text{time}} = 8 + 3(\text{distance})$.\\
+              5 miles: $8 + 3(5) =$ \redink{23} minutes.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[xscale=0.5, yscale=0.085]
+        \foreach \y in {10,20,30,40} {\draw[linegray, very thin] (0,\y) -- (10,\y);
+          \node[left, font=\tiny] at (0,\y) {\y};}
+        \draw[->, thick] (0,0) -- (10.4,0);
+        \draw[->, thick] (0,0) -- (0,43);
+        \foreach \x in {0,2,4,6,8,10} {\draw (\x,-0.8) -- (\x,0.8);
+          \node[below, font=\tiny] at (\x,-0.5) {\x};}
+        \draw[goldacc, very thick] (1,11) -- (9,35);
+        \foreach \x/\y in {1/12, 1.5/11.5, 2/16, 2.5/14.5, 3/17, 3.5/20.5, 4/17, 4.5/22.5,
+                           5/26, 5.5/22.5, 6/24, 6.5/28.5, 7/28, 7.5/32.5, 8/32, 8.5/31.5, 9/36}
+          {\fill[navy] (\x,\y) circle[x radius=0.13, y radius=0.65];}
+        \node[font=\tiny] at (5,-7) {Distance (miles)};
+        \node[rotate=90, font=\tiny] at (-1.9,21) {Time (min)};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    {\small A 6-mile delivery took 24 minutes: $y = 24$, but $\hat{y} =$ \redink{26}.
+    Which one came from the line?}
+  \end{center}
+\end{frame}
+
+% ── ROW 2: EXTRAPOLATION ─────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Predicting beyond the data}
+  \sectionlabel{notes, Predicting Beyond the Data $\cdot$ problems 4--6}
+  \vspace{10pt}
+  \begin{block}{Extrapolation (EK DAT-1.D.3)}
+    Predicting for an $x$-value \textbf{outside} the interval of $x$-values used to build the
+    line. The farther out we go, the \textbf{less} reliable the prediction.
+  \end{block}
+  \vspace{8pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \textbf{\color{navy}Inside 1--9 miles}\\[3pt]
+      3 miles, 8.5 miles --- the line has data on both sides to check against.
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \textbf{\color{navy}Outside 1--9 miles}\\[3pt]
+      30 miles: $8 + 3(30) = 98$ minutes. Highways? A second driver? We have
+      \redink{no deliveries out there} to know.
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\large The equation will always give you a number. \redink{Say whether to trust it.}}
+  \end{center}
+\end{frame}
+
+% ── ROW 3: RESIDUALS — THE CRUX ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Actual minus predicted}
+  \sectionlabel{notes, Actual Minus Predicted $\cdot$ problems 7--10 $\cdot$ the crux is 9}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.54\textwidth}
+      \begin{block}{Residual (EK DAT-1.E.1)}
+        \centering residual $= y - \hat{y}$ \quad = \quad actual $-$ predicted
+      \end{block}
+      \vspace{4pt}
+      {\small The 5-mile delivery took 26 minutes: $26 - 23 =$ \redink{+3}.\\[3pt]
+      \textbf{Positive} $\to$ took \emph{longer} than predicted $\to$ above the line $\to$ the
+      line predicted too \redink{low}.\\[3pt]
+      \textbf{Negative} $\to$ below the line $\to$ the line predicted too high.}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{center}
+      {\scriptsize\bfseries Residual plot}\\[2pt]
+      \begin{tikzpicture}[xscale=0.42, yscale=0.32]
+        \draw[->, thick] (0,-4.6) -- (0,4.8);
+        \draw[thick] (0,-4.6) -- (10.2,-4.6);
+        \draw[dashed, slate] (0,0) -- (10.2,0);
+        \foreach \y in {-4,-2,0,2,4} {\draw (-0.12,\y) -- (0.12,\y);
+          \node[left, font=\tiny] at (0,\y) {\y};}
+        \foreach \x in {0,2,4,6,8,10} {\draw (\x,-4.75) -- (\x,-4.45);
+          \node[below, font=\tiny] at (\x,-4.6) {\x};}
+        \foreach \x/\e in {1/1, 1.5/-2, 2/2, 2.5/-1, 3/0, 3.5/2, 4/-3, 4.5/1, 5/3, 5.5/-2,
+                           6/-2, 6.5/1, 7/-1, 7.5/2, 8/0, 8.5/-2, 9/1}
+          {\fill[navy] (\x,\e) circle[x radius=0.13, y radius=0.17];}
+        \node[font=\tiny] at (5,-6.3) {Distance (miles)};
+      \end{tikzpicture}\\[2pt]
+      {\scriptsize Random scatter around 0, no pattern $\to$ a line is appropriate
+      (EK DAT-1.F.1)}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \begin{center}
+    {\small Jordan: ``$23 - 26 = -3$, so the line predicted too high.'' \quad
+    \redink{Two mistakes. Find both.}}
+  \end{center}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: Sleep \& Reaction}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
+  Twenty adults who slept 4 to 9 hours: \quad
+  $\widehat{\text{RT}} = 430 - 25(\text{sleep})$, reaction time in milliseconds.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Predict the reaction time after 7 hours of sleep.
+    \item One adult slept 7 hours and reacted in 270 ms. Residual? Too high or too low?
+    \item Predict for 12 hours of sleep. Would you trust it?
+    \item Does the residual plot say a line is appropriate?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    A reaction time \emph{above} the prediction is a \emph{slower} reaction. Say what the
+    sign means in \redink{this} context before you say ``good'' or ``bad.''
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: which way does the residual point?}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{The order is the definition}
+        Actual minus predicted. $\hat{y} - y$ flips every sign and every conclusion.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Positive means under}
+        Point above the line $\Rightarrow$ the line guessed too \redink{low}.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{block}{Two things to say out loud}
+    Why is a 12-hour prediction a guess even though the equation gives a number? And what
+    would a residual plot have to look like for us to \emph{stop} trusting the line?
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 8 minutes $\cdot$ alone $\cdot$ scored $\cdot$ due the first class after two study halls}
+  Used cars: $\widehat{\text{price}} = 32.0 - 0.24(\text{mileage})$, 8 to 95 thousand miles.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Part A:} a prediction, a residual in context, and a 150-thousand-mile
+          prediction that goes wrong.
+    \item \textbf{Part B:} a residual plot, and one multiple-choice item with a justification.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{A2} is the one I am reading over your shoulder: $y - \hat{y}$, in that order, and
+    say what the sign means for the car. The AP Practice page before it is \textbf{not
+    scored} --- work it for the reps.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Residual = actual minus predicted. Positive means the
+    line guessed too low.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 2.4, Least-Squares Regression --- where $a$ and $b$
+    come from, and what they mean in context.}
   \end{minipage}
 \end{frame}
 }

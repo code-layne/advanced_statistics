@@ -1,0 +1,22 @@
+# Homework item 1c (Unit 6, Lesson 6.10). Relative to the lesson directory.
+id: hw1c
+points: 3
+task: >-
+  Test whether the proportion of first-generation college students who join a campus
+  club differs from that of non-first-generation students. Sample 1 (first-gen): 48 of
+  160 joined; Sample 2: 72 of 200 joined. Verify all three conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: both samples are random (stated) and independent.
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts using the pooled proportion 1/3: 160(1/3) = 53.3, 160(2/3) = 106.7,
+      200(1/3) = 66.7, 200(2/3) = 133.3, all at least 10 (observed counts 48, 112, 72, 128
+      also accepted).
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: 160 and 200 are at most 10% of all first-gen and non-first-gen students.

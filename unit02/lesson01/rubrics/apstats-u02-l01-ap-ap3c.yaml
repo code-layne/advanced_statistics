@@ -1,0 +1,19 @@
+# AP Practice item 3, part (c) (Unit 2, Lesson 2.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  A grocery chain surveyed 400 households (Urban: 150 in store, 60 delivery, 40
+  curbside pickup, total 250; Rural: 105 in store, 15 delivery, 30 pickup, total 150).
+  Why is a segmented bar graph, not a histogram, the right display here?
+criteria:
+  - id: display
+    points: 2
+    full: >-
+      E: Says both variables are categorical, so a histogram (which needs a quantitative
+      variable on a number line) does not apply, AND says the segmented bar graph compares
+      the distribution of grocery method (percents) for each location.
+    partial: >-
+      P (1 of 2): Gives only one of the two: that the variables are categorical / a
+      histogram needs quantitative data, or what the segmented bar graph compares.

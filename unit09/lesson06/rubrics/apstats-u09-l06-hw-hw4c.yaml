@@ -1,0 +1,17 @@
+# Homework item 4(3) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw4c
+points: 2
+task: >-
+  A pediatrician follows 60 children for 5 years recording daily screen time (x) and
+  reading proficiency (y); test whether screen time is linearly related to reading
+  proficiency. List the key conditions that must be checked.
+criteria:
+  - id: lne
+    points: 1
+    full: >-
+      Lists Linear (residual plot has no pattern), Normal residuals, and Equal SD
+      (constant spread in the residual plot).
+  - id: ir
+    points: 1
+    full: >-
+      Lists Independent observations (10% condition) and Random sample.

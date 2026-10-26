@@ -1,0 +1,20 @@
+# AP Practice item 3, part (a) (Unit 2, Lesson 2.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  A grocery chain surveyed 400 households (Urban: 150 in store, 60 delivery, 40
+  curbside pickup, total 250; Rural: 105 in store, 15 delivery, 30 pickup, total 150).
+  Find the conditional distribution of grocery method for rural households, as
+  percents.
+criteria:
+  - id: distribution
+    points: 2
+    full: >-
+      E: Gives all three rural percents correctly, computed out of the 150 rural
+      households: in store 105/150 = 70%, delivery 15/150 = 10%, curbside pickup 30/150 =
+      20%.
+    partial: >-
+      P (1 of 2): Gives two of the three percents correctly, OR uses a wrong denominator
+      consistently (such as the column totals or 400) with correct arithmetic.

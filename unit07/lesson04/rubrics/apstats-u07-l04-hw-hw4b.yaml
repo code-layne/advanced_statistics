@@ -1,0 +1,13 @@
+# Homework item 4 justification (Unit 7, Lesson 7.4). Relative to the lesson directory.
+id: hw4b
+points: 1
+task: >-
+  A random sample of 12 observations shows moderate right skewness and no outliers.
+  Answer (C): the Normal condition is met. Give a brief justification.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Explains that with n < 30 the condition requires the sample data to show no strong
+      skewness or outliers, and moderate skewness with no outliers is acceptable (n = 12
+      is too small to rely on the CLT alone).

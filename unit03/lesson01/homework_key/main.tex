@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l01-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.1}{Homework — KEY}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -14,32 +17,33 @@
 \small
 \textbf{1.} Online magazine poll.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Not Trustworthy — voluntary response (only motivated readers vote).}
-  \item \ans{Over-represented: people with strong feelings about the regulation. Under-represented: those who are neutral or who don't read the magazine.}
-  \item \ans{The results will over-represent strongly opinionated views; the 10,000 votes do not make the sample representative — more biased data is still biased.}
+  \item \ans{Not Trustworthy — voluntary response (only motivated readers vote).}\gradedkey{\gradedblank[id=hw1a, type=short, points=1, answer={not trustworthy}, check=text]{1.6in}{0.2in}}
+  \item \ans{Over-represented: people with strong feelings about the regulation. Under-represented: those who are neutral or who don't read the magazine.}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=2, display={Over: strong opinions. Under: neutral people, non-readers.}]{\linewidth+6pt}{2in}}
+  \item \ans{The results will over-represent strongly opinionated views; the 10,000 votes do not make the sample representative — more biased data is still biased.}\gradedkeyline{\gradedblank[id=hw1c, type=rubric, points=2, display={Overstates strong views; 10,000 voluntary votes are still biased.}]{\linewidth+6pt}{2in}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{2.} Random sample from hospital database.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Trustworthy — random selection was used.}
-  \item \ans{The 150 patients likely represent the hospital's patient population. However, they may not represent all adults (hospital patients may be less healthy than average), so generalizing beyond this population requires caution.}
+  \item \ans{Trustworthy — random selection was used.}\gradedkey{\gradedblank[id=hw2a, type=short, points=1, answer=trustworthy, check=text]{1.6in}{0.2in}}
+  \item \ans{The 150 patients likely represent the hospital's patient population. However, they may not represent all adults (hospital patients may be less healthy than average), so generalizing beyond this population requires caution.}\gradedkeyline{\gradedblank[id=hw2b, type=rubric, points=2, display={Hospital patients only; may not represent all adults (less healthy).}]{\linewidth+6pt}{2in}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{3.} Company surveys own employees.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Not Trustworthy.}
-  \item \ans{Employees at other companies, self-employed workers, and people in different industries.}
-  \item \ans{If this company pays above or below average, the estimate will be skewed. The company's wage structure may not reflect the broader city workforce.}
+  \item \ans{Not Trustworthy.}\gradedkey{\gradedblank[id=hw3a, type=short, points=1, answer={not trustworthy}, check=text]{1.6in}{0.2in}}
+  \item \ans{Employees at other companies, self-employed workers, and people in different industries.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=1, display={Workers at other companies, self-employed, other industries.}]{\linewidth+6pt}{2in}}
+  \item \ans{If this company pays above or below average, the estimate will be skewed. The company's wage structure may not reflect the broader city workforce.}\gradedkeyline{\gradedblank[id=hw3c, type=rubric, points=2, display={This company's pay may be above or below the city's; estimate skewed.}]{\linewidth+6pt}{2in}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{6pt}
 \textbf{4.} Random mailing, low response.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
-  \item \ans{Yes — the initial selection was random.}
-  \item \ans{Nonresponse bias: the 300 who responded may differ from the 1,700 who did not. If certain groups (e.g., high-income or strongly opinionated voters) are more likely to respond, the sample is no longer representative.}
-  \item \ans{No — a larger non-random sample does not reduce bias; it just produces more of the same biased data. A smaller random sample is more trustworthy.}
+  \item \ans{Yes — the initial selection was random.}\gradedkey{\gradedblank[id=hw4a, type=short, points=1, answer=yes, check=text]{0.55in}{0.2in}}
+  \item \ans{Nonresponse bias: the 300 who responded may differ from the 1,700 who did not. If certain groups (e.g., high-income or strongly opinionated voters) are more likely to respond, the sample is no longer representative.}\gradedkeyline{\gradedblank[id=hw4b, type=rubric, points=2, display={Nonresponse bias: the 300 responders may differ from the 1,700 who did not.}]{\linewidth+6pt}{2in}}
+  \item \ans{No — a larger non-random sample does not reduce bias; it just produces more of the same biased data. A smaller random sample is more trustworthy.}\gradedkeyline{\gradedblank[id=hw4c, type=rubric, points=2, display={No: a bigger non-random sample is still biased; random is better.}]{\linewidth+6pt}{2in}}
 \end{enumerate}
 \end{practicebox}
 

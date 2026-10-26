@@ -2,38 +2,45 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l08-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 5, Lesson 5.8}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
 \begin{enumerate}
 
+  \boxguard[22]
   \item A researcher compares resting heart rates for two age groups.
         Adults 20--39: $\mu_1 = 70$ bpm, $\sigma_1 = 11$ bpm, $n_1 = 55$ (random sample).
         Adults 60--79: $\mu_2 = 74$ bpm, $\sigma_2 = 14$ bpm, $n_2 = 45$ (random sample).
         Both populations approximately normal.
         \begin{enumerate}[label=\alph*.]
           \item Check all conditions.
-                \writelines{3}
-          \item Find $\mu_{\bar{x}_1-\bar{x}_2}$ and $\sigma_{\bar{x}_1-\bar{x}_2}$.
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=3, display={Both random; each $\le 10\%$ of its age group; independent groups; both populations approximately normal. All met.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+          \item Find $\mu_{\bar{x}_1-\bar{x}_2}$ and $\sigma_{\bar{x}_1-\bar{x}_2}$.\gradedbelow[r]{0.5in-0.33in}{$\mu = $~\gradedblank[id=hw1b1, type=short, points=1, answer=-4, check=numeric, tolerance=0, display={\boldmath$-4$}]{0.9in}{0.28in}\quad $\sigma = $~\gradedblank[id=hw1b2, type=short, points=1, answer=2.560, check=numeric, tolerance=0.005]{0.9in}{0.28in}}
                 \vspace{0.5in}
-          \item Find $P(\bar{x}_1 - \bar{x}_2 < -8)$.
+          \item Find $P(\bar{x}_1 - \bar{x}_2 < -8)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw1c, type=short, points=2, answer=0.0591, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{0.9in}
+          \boxguard[17]
           \item Interpret your answer to (c) in context.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={About a 5.9\% chance the younger group's sample mean is more than 8 bpm below the older group's.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
         \end{enumerate}
 
   \item Two brands of light bulbs are tested. Brand X: $\mu_1 = 1{,}200$ hr, $\sigma_1 = 120$ hr, $n_1 = 36$.
         Brand Y: $\mu_2 = 1{,}050$ hr, $\sigma_2 = 150$ hr, $n_2 = 49$.
         \begin{enumerate}[label=\alph*.]
-          \item Find $P(\bar{x}_1 - \bar{x}_2 > 200)$.
+          \item Find $P(\bar{x}_1 - \bar{x}_2 > 200)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw2a, type=short, points=2, answer=0.0440, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{0.9in}
-          \item Find $c$ such that $P(\bar{x}_1 - \bar{x}_2 > c) = 0.05$. Interpret.
-                \vspace{0.9in}
+          \boxguard[17]
+          \item Find $c$ such that $P(\bar{x}_1 - \bar{x}_2 > c) = 0.05$. Interpret.\gradedbelow[r]{0.9in-0.33in}{$c = $~\gradedblank[id=hw2b1, type=short, points=2, answer=198.2, check=numeric, tolerance=0.3]{0.9in}{0.28in}}
+                \vspace{0.9in}\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw2b2, type=rubric, points=1, display={In 5\% of repeated samples, the difference in sample mean lifetimes exceeds 198.2 hours.}]{\linewidth+6pt}{\gradedlinesheight{8}}}\writelines{9}}
         \end{enumerate}
 
 \end{enumerate}

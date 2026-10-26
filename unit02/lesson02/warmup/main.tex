@@ -1,100 +1,58 @@
-%! AP Statistics — Unit 2, Lesson 2.2 — Warm-Up
-\documentclass[10pt]{article}
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — Warm-Up
+% ONE PAGE, blank and key. Three short items.
+% Item 1 spirals to Lesson 2.1 (association between two categorical variables, by comparing
+% conditional percents) and plants the word ASSOCIATION. Item 2 spirals to Unit 1 (the four
+% things every description of a distribution names) and seeds DOFS, today's four-part
+% description. Item 3 seeds explanatory/response and direction with five pairs of numbers.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Warm-Up}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.3in}
+\vspace{0.28in}
 
-% ── SECTION 1: Spiral Review ──────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 1 \quad Frequency Tables (Lesson 1.4 Review)}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.75in]
 
-\vspace{0.12in}
+  \item \textbf{From last lesson.} At one school, 60 of the 80 students who play a sport
+        passed a fitness test, and 72 of the 120 who do not play a sport passed.
 
-\noindent A survey asked 60 students which after-school activity they prefer.
-The results are shown below.
+        \vspace{12pt}
+        Pass rate, sport: \blank{2.4cm} \qquad no sport: \blank{2.4cm}
+        \vspace{16pt}
 
-\vspace{0.1in}
+        Is there an \emph{association} between playing a sport and passing? How can you
+        tell?\\[18pt]
+        \writelines{2}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} l C{2.8cm} C{2.8cm} @{}}
-\rowcolor{sky}
-\textbf{Activity}   & \textbf{Frequency} & \textbf{Relative Frequency} \\
-\hline
-Sports              & 24 & \blank{2.4cm} \\
-Arts / Music        & 18 & \blank{2.4cm} \\
-Academic clubs      & 12 & \blank{2.4cm} \\
-None / Other        &  6 & \blank{2.4cm} \\
-\hline
-\textbf{Total}      & \blank{1.8cm} & \blank{2.4cm} \\
-\end{tabularx}
+  \item \textbf{From Unit 1.} Every description of a distribution of one quantitative
+        variable names four things. List them.
 
-\vspace{0.18in}
+        \vspace{16pt}
+        \blank{3.0cm} \quad \blank{3.0cm} \quad \blank{3.0cm} \quad
+        \blank{3.6cm}
 
-\begin{enumerate}
+  \item Five students reported hours studied and their quiz score.
 
-    \item Complete the \textbf{relative frequency} column. Show your work for the first row.\\[10pt]
-    \writeline
+        \vspace{12pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
+        \rowcolor{sky}
+        \textbf{Hours studied} & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        \textbf{Quiz score} & 62 & 70 & 74 & 81 & 88 \\
+        \end{tabularx}
 
-    \vspace{0.1in}
+        \vspace{16pt}
+        As hours studied go up, what tends to happen to the score? \blank{4.4cm}
+        \vspace{16pt}
 
-    \item What percent of surveyed students preferred sports?\\[8pt]
-    \writeline
-
-    \vspace{0.1in}
-
-    \item If you were to make a bar chart of this data, what would the height of the
-    ``Arts / Music'' bar represent (in relative frequency form)?\\[8pt]
-    \writeline
+        Which variable would you use to \emph{predict} the other? Why?\\[18pt]
+        \writelines{2}
 
 \end{enumerate}
-
-\vspace{0.3in}
-
-% ── SECTION 2: Looking Ahead ──────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 2 \quad Two Variables at Once}
-
-\vspace{0.12in}
-
-\noindent Now suppose we also recorded whether each student is an underclassman
-(9th/10th grade) or upperclassman (11th/12th grade).
-
-\vspace{0.14in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-    \small
-    \textbf{Think about it:} The one-way table above describes one variable at a time.
-    If we want to know \emph{whether grade level is related to activity preference},
-    we need to cross \textbf{two} categorical variables simultaneously.
-    \begin{itemize}[leftmargin=1.3em, itemsep=6pt]
-        \item A \textbf{two-way table} organizes two categorical variables at once
-              --- you will build one in today's guided notes.
-        \item What would the rows represent? What would the columns represent?
-    \end{itemize}
-\end{tcolorbox}
-
-\vspace{0.16in}
-
-\noindent\textbf{Sketch a blank two-way table} with grade level (Under / Upper)
-as rows and activity (Sports / Arts / Clubs / None) as columns. Include a totals row and column.
-
-\vspace{0.15in}
-
-\renewcommand{\arraystretch}{2.2}
-\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y @{}}
-\rowcolor{sky}
-\textbf{Grade} & \textbf{Sports} & \textbf{Arts} & \textbf{Clubs} & \textbf{None} & \textbf{Total} \\
-\hline
-Under          & & & & & \\
-Upper          & & & & & \\
-\hline
-Total          & & & & & \\
-\end{tabularx}
 
 \end{document}

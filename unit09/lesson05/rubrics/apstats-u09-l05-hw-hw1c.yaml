@@ -1,0 +1,21 @@
+# Homework item 1c (Unit 9, Lesson 9.5). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  Age (x, years) vs maximum running speed (y, mph), random sample of 28 adult
+  recreational runners: b = -0.12, SE_b = 0.037, t = -3.24, p = 0.003. Interpret the
+  p-value in context.
+criteria:
+  - id: assume
+    points: 1
+    full: >-
+      Conditional on H0: assuming the true slope is 0 (no linear relationship between age
+      and maximum running speed)...
+  - id: prob
+    points: 1
+    full: >-
+      ...the probability of getting a sample slope at least as extreme as b = -0.12 (or t
+      at least as extreme as -3.24) by chance is 0.003.
+examples:
+  - response: "There is a 0.3% chance that the null hypothesis is true."
+    scores: {assume: 0, prob: 0}

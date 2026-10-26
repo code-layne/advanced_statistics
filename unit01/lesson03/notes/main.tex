@@ -1,25 +1,255 @@
-%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Guided Notes
-\documentclass[10pt]{article}
+%! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1): the
+% vocabulary box, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right a terse definition the student completes, then a grid of short numbered
+% problems with reserved work space. Problems are numbered 1..N through the whole component.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid.
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice, is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last minutes of the period. No independent set, no reflection box, no objectives
+%            box (the targets are on the cover).
+% Vocabulary is GIVEN here, not discovered. The crux is the INTERVAL WIDTH row — the same 24
+% times drawn at two widths tell two different stories, and neither picture is wrong
+% (EK UNC-1.G.1).
+%
+% THE DATA (24 quiz finishing times):
+%   11 12 12 14 15 15 16 17 18 18 19 20 | 34 35 36 36 38 39 40 41 42 43 44 46
+% Width-5 bins from 10: 4, 7, 1, 0, 1, 5, 5, 1  -> two clear clumps with a gap at 25-30.
+% Width-20 bins from 10: 12, 12            -> two equal bars; the gap vanishes completely.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
+% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
+% argument. Heights and blank widths are sized to the answers so the two files set identically.
+% A guidednotes row cannot break across pages — a long idea is split into sub-rows (a `\\` with
+% no \hline, then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.3}{Guided Notes}
+\pageheader{Unit 1, Lesson 1.3}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
+\vspace{2pt}
 
-\vspace{0.15in}
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Discrete variable}
+\par
+\termblank{Continuous variable}
+\par
+\termblank{Histogram}
+\par
+\termblank{Interval width}
+\par
+\end{vocabbox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
-% when the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
-% the _key: the blank reserves its exact height, the key prints it. That is what keeps
-% this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Guided Notes}
-\writelines{4}
-\end{notesbox}
+\small
+\begin{guidednotes}
+% ── ROW 1: discrete vs continuous ────────────────────────────────────────────
+\mainidea[Discrete \&]{Continuous} &
+A \textbf{discrete} variable takes a \blank{1.9cm} number of values --- you can list them, and
+nothing sits between two neighbours. A \textbf{continuous} variable can take \blank{2.0cm} value
+in an interval: between any two values there is always \blank{2.6cm}.
+
+\vspace{3pt}
+\textbf{The test:} ask about the \blank{1.8cm}, not the digits written down.
+\emph{Could a better instrument have split that value?}
+\notesprompt{Classify each variable as discrete (D) or continuous (C).}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Questions a student attempted on a quiz}{0.9cm}{} &
+\pcell{2}{Minutes a student took to finish}{0.9cm}{} &
+\pcell{3}{Number of siblings}{0.9cm}{} \\ \hline
+\pcell{4}{Rainfall, from a gauge that reports whole millimetres}{1.3cm}{} &
+\pcell{5}{Cars in the lot at noon}{1.3cm}{} &
+\pcell{6}{Weight of a backpack}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: displays that keep every value ────────────────────────────────────
+\mainidea[Displays that keep]{Every value} &
+Twenty-four students took a 50-minute quiz. How long each one took, shown two ways:
+
+\vspace{3pt}
+\begin{minipage}[t]{0.36\linewidth}
+\vspace{0pt}
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{} r | l @{}}
+\textbf{1} & 1\,2\,2\,4\,5\,5\,6\,7\,8\,8\,9 \\
+\textbf{2} & 0 \\
+\textbf{3} & 4\,5\,6\,6\,8\,9 \\
+\textbf{4} & 0\,1\,2\,3\,4\,6 \\
+\end{tabular}\\[2pt]
+{\scriptsize Key: 3\,|\,4 means 34 minutes}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.60\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[scale=0.72]
+  \draw[->, thick] (-0.25,0) -- (8.4,0);
+  \foreach \x/\lab in {0/10, 2/20, 4/30, 6/40, 8/50} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \v/\n in {11/1, 12/2, 14/1, 15/2, 16/1, 17/1, 18/2, 19/1, 20/1,
+                     34/1, 35/1, 36/2, 38/1, 39/1, 40/1, 41/1, 42/1, 43/1, 44/1, 46/1} {
+    \foreach \k in {1,...,\n} {
+      \fill[navy] ({(\v-10)*0.2},{0.155*\k}) circle (0.052);}}
+  \node[font=\tiny] at (4.0,-0.52) {Minutes to finish};
+\end{tikzpicture}
+\end{minipage}
+\\
+& On the left is a \textbf{stem plot}: each value is split into a \blank{1.3cm} and a
+\blank{1.3cm}. On the right is a \textbf{dotplot}: one \blank{1.1cm} per observation, stacked
+above its value. Both keep \blank{1.4cm} individual value.
+\notesprompt{Read the displays.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{7}{Students shown}{0.9cm}{} &
+\pcell{8}{Fastest time}{0.9cm}{} &
+\pcell{9}{Slowest time}{0.9cm}{} \\ \hline
+\pcell{10}{Students who took exactly 36 minutes}{1.3cm}{} &
+\pcell{11}{Students who finished in under 20 minutes}{1.3cm}{} &
+\pcell{12}{Could you rebuild either display from the other? Why?}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: histograms ────────────────────────────────────────────────────────
+\mainidea{Histograms} &
+Twenty-four dots is readable; two hundred would not be. So we \textbf{group}.
+
+\vspace{3pt}
+\stepnum{1}\ Choose an \blank{2.6cm} and mark the intervals on a number line.\par
+\stepnum{2}\ \blank{1.4cm} the values that fall in each interval.\par
+\stepnum{3}\ Draw one bar per interval; its \blank{1.4cm} is the count. The bars \blank{1.3cm}.
+
+\vspace{4pt}
+\textbf{13.} Count the 24 times into five-minute intervals:
+
+\vspace{2pt}
+\footnotesize\setlength{\tabcolsep}{2pt}%
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{Minutes} & 10--14 & 15--19 & 20--24 & 25--29 & 30--34 & 35--39 & 40--44 & 45--49 \\
+\hline
+\textbf{Students} & \blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} &
+\blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} \\
+\end{tabularx}\small
+\\
+& \begin{minipage}[c]{0.42\linewidth}
+\centering
+\begin{tikzpicture}[scale=0.62]
+  \foreach \y/\lab in {0/0, 1.4/5, 2.8/10} {
+    \draw[linegray, very thin] (0,\y) -- (5.6,\y);
+    \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+  \foreach \i/\c in {0/4, 1/7, 2/1, 3/0, 4/1, 5/5, 6/5, 7/1} {
+    \fill[navy] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});
+    \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});}
+  \draw[->, thick] (0,0) -- (0,3.9);
+  \draw[->, thick] (0,0) -- (6.0,0);
+  \foreach \x/\lab in {0/10, 1.4/20, 2.8/30, 4.2/40, 5.6/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.12) {\lab};}
+  \node[font=\tiny] at (2.8,-0.78) {Minutes to finish};
+  \node[rotate=90, font=\tiny] at (-0.72,1.6) {Students};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.55\linewidth}\raggedright
+\textbf{That table is already the histogram.} A \textbf{histogram} draws each interval's count
+as a bar. What you give up is the individual values: after grouping they are \blank{1.2cm}.
+A \textbf{cumulative graph} counts how many fall \blank{1.9cm} each value instead; it
+returns in Lesson~1.6.
+\end{minipage}
+\notesprompt{Use the histogram.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{14}{What does the height of the 35--39 bar tell you?}{1.5cm}{} &
+\pcell{15}{Why do these bars touch when a bar graph's do not?}{1.5cm}{} &
+\pcell{16}{Can you tell from the histogram that two students took exactly 36 minutes?}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: interval width — THE CRUX ─────────────────────────────────────────
+\mainidea[The same 24 times,]{Drawn twice} &
+Both pictures were built from the \emph{same} 24 finishing times. Nothing was left out of either.
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  \foreach \y/\lab in {0/0, 1.4/5, 2.8/10} {
+    \draw[linegray, very thin] (0,\y) -- (5.6,\y);
+    \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+  \foreach \i/\c in {0/4, 1/7, 2/1, 3/0, 4/1, 5/5, 6/5, 7/1} {
+    \fill[navy] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});
+    \draw[white, very thin] ({\i*0.7},0) rectangle ({(\i+1)*0.7},{\c*0.28});}
+  \draw[->, thick] (0,0) -- (0,4.0);
+  \draw[->, thick] (0,0) -- (6.0,0);
+  \foreach \x/\lab in {0/10, 1.4/20, 2.8/30, 4.2/40, 5.6/50} {
+    \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.12) {\lab};}
+  \node[font=\tiny] at (2.8,-0.78) {Minutes to finish};
+  \node[font=\bfseries\scriptsize] at (2.8,4.3) {Blocks of 5 minutes};
+  \begin{scope}[xshift=8.0cm]
+    \foreach \y/\lab in {0/0, 1.4/5, 2.8/10} {
+      \draw[linegray, very thin] (0,\y) -- (5.6,\y);
+      \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\lab};}
+    \foreach \i/\c in {0/12, 1/12} {
+      \fill[goldacc] ({\i*2.8},0) rectangle ({(\i+1)*2.8},{\c*0.28});
+      \draw[white, very thin] ({\i*2.8},0) rectangle ({(\i+1)*2.8},{\c*0.28});}
+    \draw[->, thick] (0,0) -- (0,4.0);
+    \draw[->, thick] (0,0) -- (6.0,0);
+    \foreach \x/\lab in {0/10, 2.8/30, 5.6/50} {
+      \draw (\x,-0.08) -- (\x,0.08); \node[below, font=\tiny] at (\x,-0.12) {\lab};}
+    \node[font=\tiny] at (2.8,-0.78) {Minutes to finish};
+    \node[font=\bfseries\scriptsize] at (2.8,4.3) {Blocks of 20 minutes};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\\
+& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Changing the interval width changes the \blank{1.4cm} of a histogram}\\
+--- without changing a single data value.}}
+\notesprompt{Compare the two pictures.}
+\begin{probgrid}{|Y|Y|}
+\pcell{17}{Add the bar heights of each picture. Did either one drop anybody?}{1.5cm}{} &
+\pcell{18}{Which picture shows the class splitting into a fast group and a slow group?}{1.5cm}{} \\ \hline
+\pcell{19}{The teacher wants to know whether the quiz was the right length. Which width does she
+need, and why?}{1.5cm}{} &
+\pcell{20}{Redraw the times in blocks of \emph{one} minute. Why is that not better either?}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Bus Stop} &
+Waiting times, in minutes, for 18 riders at one bus stop on a weekday morning:
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.80]
+  \draw[->, thick] (-0.2,0) -- (7.4,0);
+  \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10, 6/12, 7/14} {
+    \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.1) {\lab};}
+  \foreach \x/\n in {0.5/2, 1/3, 1.5/4, 2/3, 2.5/2, 3/1, 5.5/1, 6/2} {
+    \foreach \k in {1,...,\n} { \fill[navy] (\x,{0.2*\k}) circle (0.07); }}
+  \node[font=\tiny] at (3.6,-0.52) {Minutes waited};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{21}{Which display is this, and how many riders does it show?}{1.8cm}{} &
+\pcell{22}{How many riders waited longer than 8 minutes?}{1.8cm}{} &
+\pcell{23}{Is waiting time discrete or continuous? Say how you can tell from the variable, not
+the picture.}{1.8cm}{} \\ \hline
+\pcell{24}{Count the times into 5-minute blocks: 0--4, 5--9, 10--14.}{1.9cm}{} &
+\pcell{25}{In the grouped picture, do the two riders at 11 and 12 minutes still stand apart from
+everyone else? Why?}{1.9cm}{} &
+\pcell{26}{Which picture would you show the bus company, and what would you tell them?}{1.9cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

@@ -1,0 +1,21 @@
+# Homework item 3 (Unit 8, Lesson 8.6). Relative to the lesson directory.
+id: hw3
+points: 3
+task: >-
+  In what sense does a larger chi-square value provide more evidence against H0? Use
+  expected counts, p-value, and the chi-square distribution.
+criteria:
+  - id: expected
+    points: 1
+    full: >-
+      A larger chi-square means the observed counts are farther from the counts expected
+      if H0 were true.
+  - id: distribution
+    points: 1
+    full: >-
+      Such a value lies farther in the right tail of the chi-square distribution, so it is
+      less likely by chance alone.
+  - id: pvalue
+    points: 1
+    full: >-
+      So the p-value is smaller, which is stronger evidence against H0.

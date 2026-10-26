@@ -1,0 +1,17 @@
+# Homework item 1, placebo (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw1g
+points: 2
+task: >-
+  In the double-blind sleep aid experiment (new pill vs. look-alike sugar pill), why
+  is the placebo important?
+criteria:
+  - id: effect
+    points: 1
+    full: >-
+      Says the placebo controls for the placebo effect: people may sleep better just
+      because they believe they are taking a medication.
+  - id: isolate
+    points: 1
+    full: >-
+      Says that, with both groups believing they took a pill, a difference in sleep
+      quality can be attributed to the drug itself (isolates its true effect).

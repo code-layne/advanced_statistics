@@ -1,0 +1,18 @@
+# Homework item 3 (Unit 1, Lesson 1.6). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  Bus delays: Q1 = 18, Q3 = 30, upper fence 48 minutes; one bus was 52 minutes late
+  (an outlier). On a boxplot, how is the 52-minute bus drawn, and where does the right
+  whisker stop?
+criteria:
+  - id: point
+    points: 1
+    full: >-
+      Says the 52-minute bus is drawn as its own separate point (dot or asterisk) beyond
+      the whisker.
+  - id: whisker
+    points: 1
+    full: >-
+      Says the right whisker stops at the longest delay that is not an outlier (the
+      largest delay of 48 minutes or less), not at 48 itself unless a delay equals 48.

@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u07-l04-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.4}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -19,40 +22,50 @@
 \item \textbf{Water Temperature.}
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{27}
-  \item $H_0$: \ans{$\mu = 77$} \quad $H_a$: \ans{$\mu > 77$}
+  \item Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{27}\gradedkey{\gradedblank[id=hw1a1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{5.3cm}{0.19in}\quad $df=$~\gradedblank[id=hw1a2, type=short, points=1, answer=27, check=numeric, tolerance=0]{1.3cm}{0.19in}}
+  \item $H_0$: \ans{$\mu = 77$} \quad $H_a$: \ans{$\mu > 77$}\gradedkey{$H_0$:~\gradedblank[id=hw1b1, type=short, points=1, answer={{mu = 77}}, check=text, display={\boldmath$\mu = 77$}]{4.3cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw1b2, type=short, points=1, answer={{mu > 77}}, check=text, display={\boldmath$\mu > 77$}]{4.3cm}{0.19in}}
   \item Conditions:
         \begin{itemize}
-          \item Random: \ansline{28 readings were randomly collected --- met.}
-          \item Normal ($n < 30$): \ansline{$n = 28 < 30$; data are slightly right-skewed with no outliers. Slight skewness with no outliers is generally acceptable for small samples --- Normal condition met.}
+          \boxguard
+          \item Random: \ansline{28 readings were randomly collected --- met.}\gradedkeyline{\gradedblank[id=hw1c1, type=rubric, points=1, display={28 readings randomly collected --- met}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal ($n < 30$): \ansline{$n = 28 < 30$; data are slightly right-skewed with no outliers. Slight skewness with no outliers is generally acceptable for small samples --- Normal condition met.}\gradedkeyline{\gradedblank[id=hw1c2, type=rubric, points=1, display={$n = 28 < 30$, slight skew, no outliers --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
 \end{enumerate}
 
+\newpage
 \item \textbf{Delivery Times.}
 
 \begin{enumerate}[label=\alph*.]
-  \item Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{54}
-  \item $H_0$: \ans{$\mu = 3$} \quad $H_a$: \ans{$\mu \ne 3$}
+  \item Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{54}\gradedkey{\gradedblank[id=hw2a1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{5.3cm}{0.19in}\quad $df=$~\gradedblank[id=hw2a2, type=short, points=1, answer=54, check=numeric, tolerance=0]{1.3cm}{0.19in}}
+  \item $H_0$: \ans{$\mu = 3$} \quad $H_a$: \ans{$\mu \ne 3$}\gradedkey{$H_0$:~\gradedblank[id=hw2b1, type=short, points=1, answer={{mu = 3}}, check=text, display={\boldmath$\mu = 3$}]{4.3cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw2b2, type=short, points=1, answer={{mu != 3}}, check=text, display={\boldmath$\mu \ne 3$}]{4.3cm}{0.19in}}
   \item Conditions:
         \begin{itemize}
-          \item Random: \ansline{Random audit of 55 orders --- met.}
-          \item Normal: \ansline{$n = 55 \ge 30$; CLT applies regardless of shape --- met.}
+          \boxguard
+          \item Random: \ansline{Random audit of 55 orders --- met.}\gradedkeyline{\gradedblank[id=hw2c1, type=rubric, points=1, display={random audit of 55 orders --- met}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal: \ansline{$n = 55 \ge 30$; CLT applies regardless of shape --- met.}\gradedkeyline{\gradedblank[id=hw2c2, type=rubric, points=1, display={$n = 55 \ge 30$, CLT --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
 \end{enumerate}
 
+\newpage
 \item \textbf{Matched Pairs: Reaction Time.}
 
 \begin{enumerate}[label=\alph*.]
-  \item $d_i = $ \ans{before} $-$ \ans{after} \quad; \quad $\mu_d = $ \ans{true mean difference in reaction time (before $-$ after) for all participants using the app}
-  \item Method: \ans{matched-pairs $t$-test for $\mu_d$} \quad $df = $ \ans{9}
-  \item $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+  \item $d_i = $ \ans{before} $-$ \ans{after} \quad; \quad $\mu_d = $ \ans{true mean difference in reaction time (before $-$ after) for all participants using the app}\gradedkey{$d_i=$~\gradedblank[id=hw3a1, type=short, points=1, answer=before, check=text]{2.8cm}{0.19in}\,$-$\,\gradedblank[id=hw3a2, type=short, points=1, answer=after, check=text]{2.8cm}{0.19in}}
+        \gradedkeyline{\gradedblank[id=hw3a3, type=rubric, points=1, display={true mean difference (before $-$ after)}]{\linewidth+6pt}{0.19in}}
+  \item Method: \ans{matched-pairs $t$-test for $\mu_d$} \quad $df = $ \ans{9}\gradedkey{\gradedblank[id=hw3b1, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={matched-pairs $t$-test for $\mu_d$}]{4.8cm}{0.19in}\quad $df=$~\gradedblank[id=hw3b2, type=short, points=1, answer=9, check=numeric, tolerance=0]{1.3cm}{0.19in}}
+  \item $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}\gradedkey{$H_0$:~\gradedblank[id=hw3c1, type=short, points=1, answer={{mu_d = 0}}, check=text, display={\boldmath$\mu_d = 0$}]{3.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw3c2, type=short, points=1, answer={{mu_d > 0}}, check=text, display={\boldmath$\mu_d > 0$}]{3.8cm}{0.19in}}
   \item Conditions:
         \begin{itemize}
-          \item Random/Independence: \ansline{10 participants; assume a random assignment or representative sample. Differences are independent if participants are independent.}
-          \item Normal ($n < 30$): \ansline{$n = 10 < 30$; distribution of differences is roughly symmetric with no outliers --- met.}
+          \boxguard
+          \item Random/Independence: \ansline{10 participants; assume a random assignment or representative sample. Differences are independent if participants are independent.}\gradedkeyline{\gradedblank[id=hw3d1, type=rubric, points=1, display={random assignment / representative sample; participants independent}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal ($n < 30$): \ansline{$n = 10 < 30$; distribution of differences is roughly symmetric with no outliers --- met.}\gradedkeyline{\gradedblank[id=hw3d2, type=rubric, points=1, display={$n = 10 < 30$, differences symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
 \end{enumerate}
 
+\newpage
 \item \textbf{AP-Style.}
 
 \begin{enumerate}[label=(\Alph*)]
@@ -61,7 +74,9 @@
   \item The condition is met; moderate skewness with no outliers is acceptable for $n < 30$. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
   \item The condition cannot be evaluated without knowing the population standard deviation.
 \end{enumerate}
-Answer: \ans{C} \quad Brief justification: \ansline{When $n < 30$, we check that the sample shows no strong skewness or outliers. Moderate skewness without outliers is generally acceptable. (A) is wrong because $n = 12$ is not large enough for CLT.}
+Answer: \ans{C}\gradedkey{\textit{Letter:}~\gradedblank[id=hw4a, type=choice, points=1, answer=C]{0.4in}{0.2in}}
+
+Brief justification: \ansline{When $n < 30$, we check that the sample shows no strong skewness or outliers. Moderate skewness without outliers is generally acceptable. (A) is wrong because $n = 12$ is not large enough for CLT.}\gradedkeyline{\gradedblank[id=hw4b, type=rubric, points=1, display={$n < 30$: moderate skew with no outliers is acceptable}]{\linewidth+6pt}{0.19in}}
 
 \end{enumerate}
 

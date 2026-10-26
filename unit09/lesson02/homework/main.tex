@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l02-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.2}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -33,23 +36,28 @@ shown below.
 \vspace{0.1in}
 \begin{enumerate}[label=\alph*.]
 
+    \boxguard[15]
     \item Identify $b$ and $SE_b$ from the output.
-          \writelines{1}
+          \gradedhide{\writelines{1}\gradedright{$b = $~\gradedblank[id=hw1a1, type=short, points=1, answer=-18.6, check=numeric, tolerance=0]{0.75in}{0.2in}\quad $SE_b = $~\gradedblank[id=hw1a2, type=short, points=1, answer=5.3, check=numeric, tolerance=0]{0.75in}{0.2in}}}
 
+    \boxguard[15]
     \item For this problem, assume: the data come from a random sample; the residual plot
           shows random scatter with roughly constant spread; and $n = 22$ is large enough
           for normality (stated). Briefly note how each LINER condition is addressed.
-          \writelines{5}
+          \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b, type=rubric, points=3, display={\textbf{L}: Random scatter in residual plot --- linear condition met. \textbf{I}: Random sample of college students; $n = 22 \le 10\%$ of all students --- independent. \textbf{N}: $n = 22$; problem states conditions are met --- normal condition assumed. \textbf{E}: Roughly constant spread in residual plot --- equal variance met. \textbf{R}: Random sample --- random condition met.}]{\linewidth+6pt}{\gradedlinesheight{4}}}\writelines{9}}
 
+    \boxguard[15]
     \item Construct a 95\% CI for $\beta$ using $t^* = 2.086$ ($df = 20$). Show all work.
-          \writelines{3}
+          \gradedhide{\writelines{3}\gradedright{(~\gradedblank[id=hw1c1, type=short, points=1, answer=-29.7, check=numeric, tolerance=0.1]{0.8in}{0.2in},~\gradedblank[id=hw1c2, type=short, points=1, answer=-7.5, check=numeric, tolerance=0.1]{0.8in}{0.2in}~)}}
 
+    \boxguard[15]
     \item Interpret the CI in context.
-          \writelines{2}
+          \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={95\% confident the true slope (reaction time vs.\ hours of sleep, college students) is between $-29.7$ and $-7.5$ ms per hour.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 
+    \boxguard[15]
     \item Does the CI provide evidence of a negative linear relationship between hours of
           sleep and reaction time? Explain.
-          \writelines{2}
+          \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1e, type=rubric, points=2, display={\bfseries Yes: the whole CI is below 0 (0 not in it), so $\beta < 0$: more sleep, faster reactions.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 
 \end{enumerate}
 
@@ -66,17 +74,20 @@ Use $t^* = 2.120$ ($df = 16$). Assume all LINER conditions are met.
 \vspace{0.1in}
 \begin{enumerate}[label=\alph*.]
 
+    \boxguard[15]
     \item Construct a 95\% CI for the true slope $\beta$. Show all work, then interpret
           the interval in context.
-          \writelines{4}
+          \gradedhide{\writeline\\\writeline\gradedright{(~\gradedblank[id=hw2a1, type=short, points=1, answer=-7.13, check=numeric, tolerance=0.02]{0.8in}{0.2in},~\gradedblank[id=hw2a2, type=short, points=1, answer=-2.47, check=numeric, tolerance=0.02]{0.8in}{0.2in}~)}\\\gradedhere{\gradedblank[id=hw2a3, type=rubric, points=2, display={We are 95\% confident that the true slope of the population regression line relating monthly heating fuel cost to January temperature for all cities is between $-\$7.13$ and $-\$2.47$ per ${}^\circ$F.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
 
+    \boxguard[15]
     \item A utility company claims $\beta = -5$ (each 1${}^\circ$F warmer costs \$5 less
           per month). Is this claim consistent with your CI? Explain.
-          \writelines{2}
+          \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={Yes. The value $\beta = -5$ falls inside the CI $(-7.13,\ -2.47)$, so the utility company's claim is consistent with the data.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 
+    \boxguard[15]
     \item If the study had used 72 cities instead of 18, would you expect the CI to be
           narrower or wider? Explain using the formula for $SE_b$.
-          \writelines{2}
+          \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={\bfseries Narrower: $SE_b = s/(s_x\sqrt{n-1})$ is smaller for larger $n$, so a smaller margin of error.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 
 \end{enumerate}
 

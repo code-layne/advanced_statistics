@@ -2,13 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l04-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.4}{Homework}
-\namedateperiod
-
-\vspace{0.1in}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \textbf{Problem 1.} A random sample of 28 college students was surveyed. The
 explanatory variable is hours per week spent on social media ($x$) and the response
@@ -17,57 +18,74 @@ spread. The residuals appear approximately normal.
 
 \begin{enumerate}[label=\alph*.]
 
-  \item Name the appropriate inference procedure.
+  \boxguard[15]
+  \item Name the appropriate inference procedure.\gradedkey{\gradedblank[id=hw1a, type=short, points=1, answer={t-test for slope}, check=text, display={$t$-test for slope}]{3.2in}{0.3in}}
 
-        \writelines{1}
-
+  \boxguard[15]
   \item Define $\beta$ in context and state H$_0$ and H$_a$.
 
-        $\beta = $ \writeline
+        $\beta = $
 
-        H$_0$: \blank{8cm} \quad H$_a$: \blank{8cm}
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries\boldmath True slope, GPA vs.\ hours/week on social media, all college students.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
 
+        \vspace{4pt}
+        H$_0$: \gradedblank[id=hw1b2, type=short, points=1, answer={beta = 0}, check=text, display={\bfseries\boldmath $\beta = 0$}]{2.2in}{0.3in} \qquad H$_a$: \gradedblank[id=hw1b3, type=short, points=1, answer={beta != 0}, check=text, display={\bfseries\boldmath $\beta \ne 0$}]{2.2in}{0.3in}
+
+  \boxguard[15]
   \item Verify each LINER condition using the information given. For each, state
         whether it is met and explain.
 
-        \writelines{5}
+        \gradedhide{\gradedhere{\gradedblank[id=hw1c, type=rubric, points=3, display={L: Met --- residual plot shows random scatter with no curve. I: Met --- random sample stated; need to assume the college population is at least $10 \times 28 = 280$ students (10\% condition). N: Met --- residuals approximately normal. E: Met --- residual plot shows constant spread. R: Met --- random sample stated.}]{\linewidth+6pt}{\gradedlinesheight{5}}}\writelines{9}}
 
+  \boxguard[15]
   \item One condition cannot be fully verified from the information given. Which
         one, and what additional information would you need?
 
-        \writelines{2}
+        \gradedhide{\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={The 10\% condition for I cannot be fully verified without knowing the total size of the college student population. If the college has fewer than 280 students, the condition would not be met.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
 
 \end{enumerate}
 
-\vspace{0.1in}
+\newpage
 
 \textbf{Problem 2.} For each scenario below, state the appropriate H$_0$ and H$_a$
 in terms of $\beta$, and explain what $\beta = 0$ means in context.
 
 \begin{enumerate}[label=\alph*.]
 
+  \boxguard[15]
   \item $x = $ daily rainfall (inches), $y = $ umbrella sales, $n = 60$ days
         (random sample).
 
-        H$_0$: \blank{7cm} \quad H$_a$: \blank{7cm}
+        H$_0$: \gradedblank[id=hw2a1, type=short, points=1, answer={beta = 0}, check=text, display={\bfseries\boldmath $\beta = 0$}]{2.2in}{0.3in} \qquad H$_a$: \gradedblank[id=hw2a2, type=short, points=1, answer={beta != 0}, check=text, display={\bfseries\boldmath $\beta \ne 0$}]{2.2in}{0.3in}
 
-        $\beta = 0$ means: \writelines{1}
+        \boxguard[15]
+        $\beta = 0$ means:
 
+        \gradedhide{\gradedhere{\gradedblank[id=hw2a3, type=rubric, points=1, display={daily rainfall has no linear effect on umbrella sales in the population.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
+
+  \boxguard[15]
   \item $x = $ age (years), $y = $ marathon finish time (minutes), $n = 45$ runners
         (random sample). The researcher suspects older runners take longer, so she
         considers a one-sided test.
 
-        H$_0$: \blank{7cm} \quad H$_a$: \blank{7cm}
+        H$_0$: \gradedblank[id=hw2b1, type=short, points=1, answer={beta = 0}, check=text, display={\bfseries\boldmath $\beta = 0$}]{2.2in}{0.3in} \qquad H$_a$: \gradedblank[id=hw2b2, type=short, points=1, answer={beta > 0}, check=text, display={\bfseries\boldmath $\beta > 0$}]{2.2in}{0.3in}
 
-        $\beta = 0$ means: \writelines{1}
+        \boxguard[15]
+        $\beta = 0$ means:
 
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b3, type=rubric, points=1, display={age has no linear effect on marathon finish time in the population.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
+
+  \boxguard[15]
   \item $x = $ class size, $y = $ average exam score, $n = 35$ classes (random sample).
         A teacher claims larger classes score lower ($\beta < -1$). State hypotheses
         to test this claim.
 
-        H$_0$: \blank{7cm} \quad H$_a$: \blank{7cm}
+        H$_0$: \gradedblank[id=hw2c1, type=short, points=1, answer={beta = 0}, check=text, display={\bfseries\boldmath $\beta = 0$}]{2.2in}{0.3in} \qquad H$_a$: \gradedblank[id=hw2c2, type=short, points=1, answer={beta < 0}, check=text, display={\bfseries\boldmath $\beta < 0$}]{2.2in}{0.3in}
 
-        $\beta = 0$ means: \writelines{1}
+        \boxguard[15]
+        $\beta = 0$ means:
+
+        \gradedhide{\gradedhere{\gradedblank[id=hw2c3, type=rubric, points=1, display={class size has no linear effect on average exam score in the population.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
 
 \end{enumerate}
 

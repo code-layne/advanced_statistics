@@ -1,0 +1,16 @@
+# Unit 2 actual test, item 11b. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11b
+points: 1
+task: >-
+  Use the segmented bar graph to compare the distributions of commute mode for
+  commuters who live near a station and those who live far from one.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Compares the conditional distributions with percents in context: near commuters
+      take transit far more often (48% vs 18%), far commuters mostly drive (72% vs 32%)
+      and bike or walk less (10% vs 20%); at least two of the three comparisons with
+      numbers.

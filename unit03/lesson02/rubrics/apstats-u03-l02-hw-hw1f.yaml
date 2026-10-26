@@ -1,0 +1,20 @@
+# Homework item 1, explanation (Unit 3, Lesson 3.2). Relative to the lesson directory.
+id: hw1f
+points: 2
+task: >-
+  A nutritionist randomly selects 500 adults from the city directory and asks about
+  fruit and vegetable consumption and blood pressure; high consumers have
+  significantly lower blood pressure. Explain what conclusions are valid (causation?
+  generalization to city adults?).
+criteria:
+  - id: causation
+    points: 1
+    full: >-
+      Says no cause-and-effect conclusion: this is an observational study (no treatment
+      imposed, no random assignment), so confounding variables such as exercise or
+      genetics could explain the association.
+  - id: generalize
+    points: 1
+    full: >-
+      Says the results can be generalized to the adults in the city because they were
+      randomly selected from the city directory.

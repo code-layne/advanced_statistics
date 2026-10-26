@@ -1,0 +1,21 @@
+# AP Practice item 3, part (b) (Unit 2, Lesson 2.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3b
+points: 2
+task: >-
+  Twenty teenagers reported their daily screen time and how many hours they slept last
+  night; a scatterplot shows a negative linear pattern and technology gives r = -0.72.
+  A headline reads: 'Screens steal sleep --- cut screen time and teens will sleep
+  more.' Does this study support that claim? Explain.
+criteria:
+  - id: causation
+    points: 2
+    full: >-
+      E: Says no, because this is an observational study (no treatment was imposed) so
+      correlation does not show causation, AND names a plausible lurking variable in
+      context (homework load, late bedtime, stress) that could affect both screen time and
+      sleep.
+    partial: >-
+      P (1 of 2): Says no with only one of the two: the observational /
+      correlation-is-not-causation reason, or a plausible lurking variable.

@@ -1,0 +1,18 @@
+# Homework item 2c (Unit 9, Lesson 9.1). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  Screen time (x) vs sleep duration (y) for 100 teens shows b = -0.15 with little
+  scatter. State the population question as a hypothesis statement.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      States H0: beta = 0 with beta the POPULATION slope, in context: no linear
+      relationship between screen time and sleep duration in the population.
+  - id: question
+    points: 1
+    full: >-
+      Frames the statistician's question: is the sample slope convincingly different from
+      0, or could it have arisen by chance if beta = 0? (May note that with n = 100 and
+      little scatter a real effect is more likely, but a test is still needed.)

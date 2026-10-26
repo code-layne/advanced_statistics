@@ -1,0 +1,18 @@
+# Homework item 2c (Unit 9, Lesson 9.2). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  18 cities, January high temperature (x, F) vs monthly heating fuel cost (y, $): b =
+  -4.8, SE_b = 1.1, t* = 2.120, 95% CI (-7.13, -2.47). If 72 cities had been used
+  instead of 18, would the CI be narrower or wider? Explain using the formula for
+  SE_b.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says narrower.
+  - id: reason
+    points: 1
+    full: >-
+      Uses SE_b = s / (s_x sqrt(n - 1)): a larger n makes SE_b smaller (and t* slightly
+      smaller), so the margin of error shrinks.

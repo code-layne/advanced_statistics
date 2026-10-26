@@ -1,0 +1,16 @@
+# Homework item 1c (Unit 9, Lesson 9.3). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A random sample of 50 college students: hours of sleep (x) vs GPA (y); 95% CI for
+  the slope is (0.08, 0.44). A professor claims beta = 0.5. Is this consistent with
+  the interval? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no, not consistent.
+  - id: reason
+    points: 1
+    full: >-
+      Because 0.5 is not in (0.08, 0.44) (it is above the upper endpoint).

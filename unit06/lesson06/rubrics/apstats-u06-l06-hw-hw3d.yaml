@@ -1,0 +1,17 @@
+# Homework item 3, Conclude (Unit 6, Lesson 6.6). Relative to the lesson directory.
+id: hw3d
+points: 2
+task: >-
+  A bottled water company claims fewer than 5% of bottles exceed a contamination
+  threshold; an environmental group tests 400 randomly selected bottles and 26 exceed
+  it. alpha = 0.01. Conclude.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares the p-value to alpha: p-value about 0.084 > 0.01, so fail to reject H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes in context: there is not convincing evidence that more than 5% of the
+      company's bottles exceed the threshold (does not claim H0 is proven).

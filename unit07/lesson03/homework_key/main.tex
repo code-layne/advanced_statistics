@@ -2,52 +2,70 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l03-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.3}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \begin{enumerate}
 
   \item \textbf{Interpretation Practice.} 90\% CI: $(3.8, 5.6)$ hr, $n = 45$.
 
         \begin{enumerate}[label=\alph*.]
+          \boxguard
           \item Correct interpretation:
-                \ansline{We are 90\% confident that the interval (3.8, 5.6) hours captures the true mean number of hours per week adults exercise.}
+                \ansline{We are 90\% confident that the interval (3.8, 5.6) hours captures the true mean number of hours per week adults exercise.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw1a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}\par\vspace{1.85in}
+
+          \boxguard
 
           \item Claim: mean $= 6$ hr. Evidence against?
-                \ansline{Yes: 6 hours lies above the entire interval (3.8, 5.6). The data provide convincing evidence that the true mean exercise time differs from (specifically, is less than) 6 hours per week.}
+                \ansline{Yes: 6 hours lies above the entire interval (3.8, 5.6). The data provide convincing evidence that the true mean exercise time differs from (specifically, is less than) 6 hours per week.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw1b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}\par\vspace{1.85in}
+
+          \boxguard
 
           \item Claim: mean $< 5$ hr. Supported?
-                \ansline{Not convincingly: the interval (3.8, 5.6) includes values both below and above 5 hours. Because the upper bound exceeds 5, we cannot conclude that the mean is less than 5. The data do not provide convincing evidence that the mean is below 5 hours.}
+                \ansline{Not convincingly: the interval (3.8, 5.6) includes values both below and above 5 hours. Because the upper bound exceeds 5, we cannot conclude that the mean is less than 5. The data do not provide convincing evidence that the mean is below 5 hours.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw1c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}\par\vspace{1.85in}
         \end{enumerate}
+
+  \newpage
 
   \item \textbf{Width Relationships.} $\bar x = \$87.40$, $s = \$24.00$, $n = 36$, 95\% CI.
 
         \begin{enumerate}[label=\alph*.]
-          \item $df = $ \ans{35}, $t^* = $ \ans{2.030}, $SE = 24/\sqrt{36} = $ \ans{\$4.00}
+          \boxguard
+          \item $df = $ \smash{\gradedblank[id=hw2a1, type=short, points=1, answer=35, check=numeric, tolerance=0]{1.8cm}{0.19in}}, $t^* = $ \smash{\gradedblank[id=hw2a2, type=short, points=1, answer=2.030, check=numeric, tolerance=0.005]{2.3cm}{0.19in}}, $SE = 24/\sqrt{36} = $ \smash{\gradedblank[id=hw2a3, type=short, points=1, answer=4.00, check=numeric, tolerance=0.01]{2.3cm}{0.19in}}
 
-                $ME = 2.030 \times 4.00 = $ \ans{\$8.12}
+                $ME = 2.030 \times 4.00 = $ \smash{\gradedblank[id=hw2a4, type=short, points=1, answer=8.12, check=numeric, tolerance=0.05]{2.8cm}{0.19in}}
 
-                Interval: $87.40 \pm 8.12 = ($ \ans{\$79.28}$,$ \ans{\$95.52}$)$
+                Interval: $87.40 \pm 8.12 = ($ \smash{\gradedblank[id=hw2a5, type=short, points=1, answer=79.28, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}$,$ \smash{\gradedblank[id=hw2a6, type=short, points=1, answer=95.52, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}$)$
 
-          \item For $n = 144$: $SE = 24/\sqrt{144} = $ \ans{\$2.00}.
-                \ansline{$ME = 2.030 \times 2.00 = \$4.06$. The margin of error is halved (from \$8.12 to \$4.06), because quadrupling $n$ halves $1/\sqrt{n}$.}
+          \boxguard
 
-          \item 99\% CI ($n = 36$): $t^*$ increases (from 2.030 to $\approx 2.724$), so the interval is \ans{wider}. \ansline{$ME = 2.724 \times 4.00 = \$10.90$; interval $\approx (\$76.50, \$98.30)$ --- wider than the 95\% CI.}
+          \item For $n = 144$: $SE = 24/\sqrt{144} = $ \ans{\$2.00}.\hfill $ME =$~\gradedblank[id=hw2b2, type=short, points=1, answer=4.06, check=numeric, tolerance=0.02]{0.8in}{\gradedlinesheight{1}}
+                \ansline{$ME = 2.030 \times 2.00 = \$4.06$. The margin of error is halved (from \$8.12 to \$4.06), because quadrupling $n$ halves $1/\sqrt{n}$.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2b1, type=rubric, points=1]{\linewidth+6pt}{\gradedlinesheight{1}}}}\par\vspace{1.85in}
+
+          \boxguard
+
+          \item 99\% CI ($n = 36$): $t^*$ increases (from 2.030 to $\approx 2.724$), so the interval is \ans{wider}. \ansline{$ME = 2.724 \times 4.00 = \$10.90$; interval $\approx (\$76.50, \$98.30)$ --- wider than the 95\% CI.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw2c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}\par\vspace{1.85in}
         \end{enumerate}
+
+  \newpage
 
   \item \textbf{AP-Style.} $n = 22$, $\bar x = 14.6$ mi, $s = 8.3$ mi, 95\% CI.
 
         \begin{enumerate}[label=\alph*.]
-          \item Full procedure:
+          \boxguard
+          \item Full procedure:\gradedbelow[l]{-21pt}{\kern-3pt\gradedblank[id=hw3a, type=rubric, points=4]{\linewidth+6pt}{\gradedlinesheight{6}}}
                 \ansline{Parameter: $\mu = $ true mean commute distance (miles) for all employees at the company.}
                 \ansline{Conditions: Random: random sample of employees. \checkmark \quad 10\%: $22 \le 10\%$ of all employees (assume $N \ge 220$). \checkmark \quad Large Sample: $n = 22 < 30$; must check for no strong skewness or outliers in the data. Assume verified. \checkmark}
-                \ansline{Calculate: $df = 21$; $t^* = 2.080$; $SE = 8.3/\sqrt{22} = 1.770$ mi. $ME = 2.080 \times 1.770 = 3.682$ mi.}
+                \ansline{Calculate: $df = 21$; $t^* = 2.080$; $SE = 8.3/\sqrt{22} = 1.770$ mi. $ME = 2.080 \times 1.770 = 3.682$ mi.}\par\vspace{0.9in}
 
-                Interval: $14.6 \pm 3.682 = ($ \ans{10.918}$,$ \ans{18.282}$)$ miles
+                Interval: $14.6 \pm 3.682 = ($ \smash{\gradedblank[id=hw3a1, type=short, points=1, answer=10.92, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}$,$ \smash{\gradedblank[id=hw3a2, type=short, points=1, answer=18.28, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}$)$ miles
 
                 \ansline{Conclude: We are 95\% confident that the interval (10.9, 18.3) miles captures the true mean commute distance for all employees at this company.}
 
@@ -55,8 +73,10 @@
                     $t^*$ for $df = 21$, 95\% CI is 2.080. $SE = 8.3/\sqrt{22} \approx 1.770$.
                 \end{teachernote}
 
+          \boxguard
+
           \item Claim: mean $> 12$ mi?
-                \ansline{The interval (10.9, 18.3) miles includes values below 12 miles (the lower bound is $\approx 10.9$), so the data do not provide convincing evidence that the true mean commute exceeds 12 miles. The claimed value of 12 miles is inside the interval.}
+                \ansline{The interval (10.9, 18.3) miles includes values below 12 miles (the lower bound is $\approx 10.9$), so the data do not provide convincing evidence that the true mean commute exceeds 12 miles. The claimed value of 12 miles is inside the interval.\gradedbelow[l]{-12pt}{\kern-3pt\gradedblank[id=hw3b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{1}}}}\par\vspace{1.85in}
         \end{enumerate}
 
 \end{enumerate}

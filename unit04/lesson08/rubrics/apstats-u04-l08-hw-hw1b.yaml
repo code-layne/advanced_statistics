@@ -1,0 +1,19 @@
+# Homework item 1b (Unit 4, Lesson 4.8). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  X = number of customer complaints per day at a store; mu_X = 1.20. Interpret mu_X in
+  context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average (mean over many days), not the number expected on
+      any one day.
+  - id: context
+    points: 1
+    full: >-
+      Says about 1.20 complaints per day at the store.
+examples:
+  - response: "The store gets 1.2 complaints every day."
+    scores: {average: 0, context: 1}

@@ -1,0 +1,17 @@
+# Homework item 2b (Unit 6, Lesson 6.7). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  A reading intervention is tested at a school. H0: the intervention does not improve
+  reading scores; Ha: it improves reading scores. The school increases the sample from
+  60 to 240 students. How does this change the power of the test and the Type II error
+  probability?
+criteria:
+  - id: power
+    points: 1
+    full: >-
+      Says power increases (a larger sample gives a smaller standard error).
+  - id: beta
+    points: 1
+    full: >-
+      Says the probability of a Type II error decreases.

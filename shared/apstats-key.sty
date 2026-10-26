@@ -3,6 +3,16 @@
 
 \RequirePackage{apstats-boxes}
 
+% ── Graded items (math-shared/grading.sty) ────────────────────────────────────
+% A graded component is authored identically in the blank and the key; key mode
+% makes each \gradedblank print its answer inside the box. Turn it on only for a
+% document that loads grading.sty itself — before or after this package — and
+% never load grading.sty from here, so every key without graded items compiles
+% exactly as it did before.
+\@ifpackageloaded{grading}
+  {\gradingkeytrue}
+  {\AddToHook{package/grading/after}{\gradingkeytrue}}
+
 % ── Answer macros ─────────────────────────────────────────────────────────────
 % \ans{text}      — inline answer (colored bold); replaces blanks or write lines
 % \ansline{text}  — answer that fills a full write line with a dotted trail
@@ -10,6 +20,16 @@
 \newcommand{\ansline}[1]{%
     \vspace{1pt}\noindent\textcolor{keyred}{\textbf{#1}}%
     \textcolor{linegray}{\dotfill}\vspace{3pt}}
+
+% ── Vocabulary row (key version) ──────────────────────────────────────────────
+% \termans{Term}{definition} — the filled counterpart of \termblank. It reuses
+% \termrowheight, so the row costs exactly what the blank reserved whether the
+% definition sets on one line or two. Keep definitions to two lines at most.
+\newcommand{\termans}[2]{%
+  \noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{navy}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 % ── Component identification table (key version) ──────────────────────────────
 % Usage: \componenttablekey{individual}{population}{sample}{variable(s)}

@@ -1,0 +1,21 @@
+# Homework item 4a (Unit 4, Lesson 4.11). Relative to the lesson directory.
+id: hw4a
+points: 3
+task: >-
+  62% of a city's adults support a transit plan; a random sample of 45 adults (< 10%
+  of the population); X = number who support. Define the distribution of X and check
+  all BINS conditions briefly.
+criteria:
+  - id: dist
+    points: 1
+    full: >-
+      States X ~ B(45, 0.62).
+  - id: bn
+    points: 1
+    full: >-
+      Binary (support or not) and fixed n = 45.
+  - id: is
+    points: 1
+    full: >-
+      Independence justified by the 10% condition (45 < 10% of the city's adults) and the
+      same p = 0.62 for each adult.

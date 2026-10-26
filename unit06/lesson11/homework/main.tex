@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u06-l11-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 6, Lesson 6.11}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -22,10 +25,11 @@ High use: 54 of 180 had a low GPA.
 Low use: 36 of 200 had a low GPA.
 
 \begin{enumerate}[label=\alph*.]
-  \item State $H_0$ and $H_a$ (one-sided). \writelines{2}
-  \item Compute $\hat p_c$ and verify conditions. \writelines{3}
-  \item Compute $z$ and the $p$-value. \writelines{3}
-  \item Conclude in context. \writelines{2}
+  \item State $H_0$ and $H_a$ (one-sided). \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=2, display={$p_H, p_L$: true low-GPA proportions (high / low use). $H_0\colon p_H = p_L$; $H_a\colon p_H > p_L$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
+  \item Compute $\hat p_c$ and verify conditions. \gradedhide{\writeline\gradedright{$\hat p_c = $~\gradedblank[id=hw1b1, type=short, points=1, answer=0.237, check=numeric, tolerance=0.002]{0.8in}{0.17in}}\\\gradedhere{\gradedblank[id=hw1b2, type=rubric, points=3, display={Independent random samples assumed; with $\hat p_c = 0.237$: $42.7, 137.3, 47.4, 152.6$ all $\ge 10$; samples $\le 10\%$ of all students.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+  \item Compute $z$ and the $p$-value. \writelines{2}\\\gradedhide{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\gradedright{$z = $~\gradedblank[id=hw1c1, type=short, points=2, answer=2.74, check=numeric, tolerance=0.02]{0.8in}{0.17in}\quad $p$-value $=$~\gradedblank[id=hw1c2, type=short, points=2, answer=0.003, check=numeric, tolerance=0.001]{0.8in}{0.17in}}\vspace{3pt}}
+  \newpage
+  \item Conclude in context. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={$0.003 \le 0.05$: reject $H_0$; convincing evidence heavy (over 2 h) users have a higher low-GPA proportion.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \item \textbf{Employee Turnover.} A company compares turnover rates for employees who
@@ -35,10 +39,11 @@ Old program: 30 of 240 left within the first year.
 Test whether the new program reduced turnover (one-sided, $\alpha=0.05$).
 
 \begin{enumerate}[label=\alph*.]
-  \item State $H_0$ and $H_a$. \writelines{2}
-  \item Compute $\hat p_c$ and verify conditions. \writelines{3}
-  \item Compute $z$ and the $p$-value. \writelines{3}
-  \item Conclude in context. \writelines{2}
+  \item State $H_0$ and $H_a$. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={$p_N, p_O$: true first-year turnover proportions. $H_0\colon p_N = p_O$; $H_a\colon p_N < p_O$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
+  \item Compute $\hat p_c$ and verify conditions. \gradedhide{\writeline\gradedright{$\hat p_c = $~\gradedblank[id=hw2b1, type=short, points=1, answer=0.100, check=numeric, tolerance=0.002]{0.8in}{0.17in}}\\\gradedhere{\gradedblank[id=hw2b2, type=rubric, points=3, display={Random samples assumed; with $\hat p_c = 0.1$: $24, 216$ (each group) all $\ge 10$; samples $\le 10\%$ of all employees.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+  \item Compute $z$ and the $p$-value. \writelines{2}\\\gradedhide{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\gradedright{$z = $~\gradedblank[id=hw2c1, type=short, points=2, answer=-1.83, check=numeric, tolerance=0.02, display={\boldmath$-1.83$}]{0.8in}{0.17in}\quad $p$-value $=$~\gradedblank[id=hw2c2, type=short, points=2, answer=0.034, check=numeric, tolerance=0.002]{0.8in}{0.17in}}\vspace{3pt}}
+  \newpage
+  \item Conclude in context. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2d, type=rubric, points=2, display={$0.034 \le 0.05$: reject $H_0$; convincing evidence the new program has lower first-year turnover.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \end{enumerate}

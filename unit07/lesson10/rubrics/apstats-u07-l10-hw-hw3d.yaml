@@ -1,0 +1,17 @@
+# Homework item 3d (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw3d
+points: 2
+task: >-
+  A random sample of 22 adults: mean daily sodium 2,580 mg, s = 310 mg; dotplot
+  roughly symmetric with one mild outlier. 95% CI for the mean. The interval is about
+  (2443, 2717) mg. Interpret it.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      States 95% confidence that the interval captures the parameter.
+  - id: context
+    points: 1
+    full: >-
+      The parameter is the true mean daily sodium intake of all adults, between about
+      2,443 and 2,717 mg.

@@ -1,0 +1,16 @@
+# Homework item 1d interpretation (Unit 5, Lesson 5.7). Relative to the lesson directory.
+id: hw1d2
+points: 1
+task: >-
+  Daily steps (mean 7,500, SD 2,000), samples of 64 adults: interpret c = 7,821, the
+  value with P(sample mean > c) = 0.10, in context.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      Says that in about 10% of all random samples of 64 adults, the sample mean daily
+      step count is greater than 7,821 steps (about the sample mean, not one adult's
+      steps).
+examples:
+  - response: "10% of adults walk more than 7,821 steps a day."
+    scores: {interpret: 0}

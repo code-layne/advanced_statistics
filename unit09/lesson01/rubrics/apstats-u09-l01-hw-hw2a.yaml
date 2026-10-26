@@ -1,0 +1,18 @@
+# Homework item 2a (Unit 9, Lesson 9.1). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  Shoe size (x) vs height (y) for 50 adults shows a positive trend with b = 0.62.
+  State the question a statistician would ask about the population as a hypothesis
+  statement.
+criteria:
+  - id: null
+    points: 1
+    full: >-
+      States H0: beta = 0 with beta the POPULATION slope, in context: no linear
+      relationship between shoe size and height for adults in the population.
+  - id: question
+    points: 1
+    full: >-
+      Frames the statistician's question: is the sample slope convincingly different from
+      0, or could it have arisen by chance if beta = 0?

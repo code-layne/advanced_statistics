@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u06-l02-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 6, Lesson 6.2}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -19,47 +22,57 @@
         park expansion. Construct a 95\% confidence interval for the true proportion of all
         registered voters in the city who support the expansion.
 
-        \textbf{State:} \writelines{1}
+        \textbf{State:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=1, display={\bfseries $p$ = true proportion of all registered voters in the city who support the expansion}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+
         \textbf{Plan:}
         \begin{itemize}
-          \item Random: \blank{7cm}
-          \item Large Counts: \blank{7cm}
-          \item 10\% rule: \blank{5cm}
+          \item Random: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries Random sample (stated): met}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
+          \item Large Counts: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries $228 \ge 10$ and $172 \ge 10$: met}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
+          \newpage
+          \item 10\% rule: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b3, type=rubric, points=1, display={\bfseries $400 \le 10\%$ of all voters: met}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
         \end{itemize}
-        \textbf{Do:} $\hat p = $ \blank{2cm}
-        \[
-          CI = \blank{1.5cm} \pm \blank{1.5cm}\sqrt{\frac{\blank{2cm}}{\blank{1.5cm}}}
-             = (\blank{2.5cm},\; \blank{2.5cm})
-        \]
-        \textbf{Conclude:} \writelines{2}
 
+        \textbf{Do:} $\hat p = $ \smash{\gradedblank[id=hw1c1, type=short, points=1, answer=0.57, check=numeric]{2cm}{0.17in}}
+        \[
+          CI = \blank{1.5cm} \pm \smash{\gradedblank[id=hw1c2, type=short, points=1, answer=1.960, check=numeric, tolerance=0.005]{1.5cm}{0.17in}}\sqrt{\frac{\blank{2cm}}{\blank{1.5cm}}}
+             = (\smash{\gradedblank[id=hw1d1, type=short, points=1, answer=0.521, check=numeric, tolerance=0.002]{2.5cm}{0.17in}},\; \smash{\gradedblank[id=hw1d2, type=short, points=1, answer=0.619, check=numeric, tolerance=0.002]{2.5cm}{0.17in}})
+        \]
+
+        \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1e, type=rubric, points=2, display={95\% confident (0.521, 0.619) captures the true proportion of city voters who support the expansion.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
+
+  \newpage
   \item A wildlife biologist tags and releases 600 randomly selected fish from a lake.
         Later, a random sample of 80 fish from the lake is taken, and 12 are tagged.
         Construct a 99\% confidence interval for the true proportion of tagged fish in the lake.
 
-        \textbf{State:} \writelines{1}
+        \textbf{State:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=1, display={\bfseries $p$ = true proportion of fish in the lake that are tagged}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+
         \textbf{Plan:}
         \begin{itemize}
-          \item Random: \blank{6cm}
-          \item Large Counts: \blank{6cm}
-          \item 10\% rule: \blank{5cm}
+          \item Random: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b1, type=rubric, points=1, display={\bfseries Random sample (stated): met}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
+          \item Large Counts: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b2, type=rubric, points=1, display={\bfseries $12 \ge 10$ and $68 \ge 10$: met}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
+          \newpage
+          \item 10\% rule: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b3, type=rubric, points=1, display={\bfseries $80 \le 10\%$ of all fish: met}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
         \end{itemize}
+
         \textbf{Do:}
         \[
-          CI = (\blank{2.5cm},\; \blank{2.5cm})
+          CI = (\smash{\gradedblank[id=hw2c1, type=short, points=1, answer=0.047, check=numeric, tolerance=0.002]{2.5cm}{0.17in}},\; \smash{\gradedblank[id=hw2c2, type=short, points=1, answer=0.253, check=numeric, tolerance=0.002]{2.5cm}{0.17in}})
         \]
-        \textbf{Conclude:} \writelines{2}
 
+        \textbf{Conclude:} \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2d, type=rubric, points=2, display={99\% confident (0.047, 0.253) captures the true proportion of tagged fish in the lake.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
+
+  \newpage
   \item A school district wants to estimate the proportion of families who would use
         an after-school tutoring program. An administrator wants a 95\% confidence interval
         with a margin of error of at most 0.05. A pilot survey suggests $\hat p \approx 0.40$.
         \begin{enumerate}[label=\alph*.]
           \item Find the minimum required sample size using the pilot estimate.
-                \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p) = \blank{6cm} = \blank{2.5cm}\]
-                Minimum $n = $ \blank{2cm}
+                \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p) = \smash{\gradedblank[id=hw3a1, type=short, points=1, answer=(1.96/0.05)^2(0.40)(0.60), check=expression, display={$1536.64 \times 0.24$}]{6cm}{0.17in}} = \smash{\gradedblank[id=hw3a2, type=short, points=2, answer=368.79, check=numeric, tolerance=0.5]{2.5cm}{0.17in}}\]
+                Minimum $n = $ \smash{\gradedblank[id=hw3a3, type=short, points=1, answer=369, check=numeric, tolerance=0]{2cm}{0.17in}}
 
           \item How would your answer change if you used $\hat p = 0.50$ instead? Would it be
-                larger or smaller? \writelines{2}
+                larger or smaller? \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={Larger: $1536.64(0.25) = 384.16$, so $n = 385$; $\hat p(1-\hat p)$ is largest at 0.5.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
         \end{enumerate}
 
 \end{enumerate}

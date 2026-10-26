@@ -1,0 +1,11 @@
+# Homework item 2a (Unit 4, Lesson 4.8). Relative to the lesson directory.
+id: hw2a
+points: 1
+task: >-
+  An insurer pays $10,000 if a claim occurs (probability 0.04 per year), otherwise $0.
+  Write the probability distribution for X = amount paid.
+criteria:
+  - id: dist
+    points: 1
+    full: >-
+      Gives P(X = 0) = 0.96 and P(X = 10,000) = 0.04.

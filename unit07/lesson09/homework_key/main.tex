@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u07-l09-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.9}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -18,61 +21,73 @@
 \item \textbf{Study Hours.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 > 0$}
-  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test for a difference of means}, conditions met: \ansline{Random samples; both $n \ge 30$ so CLT applies.}
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 > 0$}\gradedkey{$H_0$:~\gradedblank[id=hw1a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw1a2, type=short, points=1, answer={{mu1 - mu2 > 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 > 0$}]{3.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test for a difference of means}, conditions met: \ansline{Random samples; both $n \ge 30$ so CLT applies.}\gradedkey{\gradedblank[id=hw1b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}
+        \gradedkeyline{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries\boldmath random; CLT}]{\linewidth+6pt}{0.19in}}
   \item \textbf{Do:} $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}} \approx$ \ans{1.39}
-        \quad $t \approx$ \ans{1.80} \quad Technology: $p \approx$ \ans{0.037}, $df \approx$ \ans{59}
-  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.037 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that residential students study more hours per week on average than commuter students.}
-  \ansline{}
+        \quad $t \approx$ \ans{1.80} \quad Technology: $p \approx$ \ans{0.037}, $df \approx$ \ans{59}\gradedkey{$SE=$~\gradedblank[id=hw1c1, type=short, points=1, answer=1.419, check=numeric, tolerance=0.01, display={\boldmath$1.419$}]{2.3cm}{0.19in}\quad $t=$~\gradedblank[id=hw1c2, type=short, points=1, answer=1.76, check=numeric, tolerance=0.02, display={\boldmath$1.76$}]{1.8cm}{0.19in}\quad $p=$~\gradedblank[id=hw1c3, type=short, points=1, answer=0.042, check=numeric, tolerance=0.003, display={\boldmath$0.042$}]{1.8cm}{0.19in}\quad $df=$~\gradedblank[id=hw1c4, type=short, points=1, answer=57.4, check=numeric, tolerance=0.6, display={\boldmath$57.4$}]{1.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.037 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that residential students study more hours per week on average than commuter students.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.042 < 0.05$: reject $H_0$; convincing evidence residential students study more on average.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \vspace{0.05in}
 
+\newpage
 \item \textbf{Reading Scores.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}
-  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions: \ansline{Random assignment; $n_1 = 40$ and $n_2 = 38 \ge 30$, CLT applies.}
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}\gradedkey{$H_0$:~\gradedblank[id=hw2a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw2a2, type=short, points=1, answer={{mu1 - mu2 != 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 \ne 0$}]{3.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions: \ansline{Random assignment; $n_1 = 40$ and $n_2 = 38 \ge 30$, CLT applies.}\gradedkey{\gradedblank[id=hw2b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}
+        \gradedkeyline{\gradedblank[id=hw2b2, type=rubric, points=1, display={\bfseries\boldmath random; $n$'s $\ge 30$}]{\linewidth+6pt}{0.19in}}
   \item \textbf{Do:} $SE \approx$ \ans{2.31} \quad $t \approx$ \ans{1.56}
-        \quad $p$ (two-sided) $\approx$ \ans{0.122} \quad $df \approx$ \ans{74}
-  \item \textbf{Conclude:} \ansline{Because $p \approx 0.122 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the two literacy programs produce different mean reading scores.}
-  \ansline{}
+        \quad $p$ (two-sided) $\approx$ \ans{0.122} \quad $df \approx$ \ans{74}\gradedkey{$SE=$~\gradedblank[id=hw2c1, type=short, points=1, answer=2.388, check=numeric, tolerance=0.01, display={\boldmath$2.388$}]{2.3cm}{0.19in}\quad $t=$~\gradedblank[id=hw2c2, type=short, points=1, answer=1.51, check=numeric, tolerance=0.02, display={\boldmath$1.51$}]{1.8cm}{0.19in}\quad $p=$~\gradedblank[id=hw2c3, type=short, points=1, answer=0.136, check=numeric, tolerance=0.003, display={\boldmath$0.136$}]{1.8cm}{0.19in}\quad $df=$~\gradedblank[id=hw2c4, type=short, points=1, answer=73.5, check=numeric, tolerance=0.6, display={\boldmath$73.5$}]{1.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.122 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the two literacy programs produce different mean reading scores.}\gradedkeyline{\gradedblank[id=hw2d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.136 > 0.05$: fail to reject $H_0$; no convincing evidence the programs' mean scores differ.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \vspace{0.05in}
 
+\newpage
 \item \textbf{Recovery Time.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}\gradedkey{$H_0$:~\gradedblank[id=hw3a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw3a2, type=short, points=1, answer={{mu1 - mu2 < 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 < 0$}]{3.8cm}{0.19in}}
 
         \begin{teachernote}
         Group 1 = new protocol; Group 2 = standard. Since lower recovery time is better,
         $H_a: \mu_1 < \mu_2$, i.e., $\mu_1 - \mu_2 < 0$.
         \end{teachernote}
 
-  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions:
+  \boxguard
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions:\gradedkey{\gradedblank[id=hw3b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}
         \begin{itemize}
-          \item Random: \ansline{Randomized experiment --- patients randomly assigned to protocols.}
-          \item Normal ($n < 30$): \ansline{Both distributions roughly symmetric, no outliers; normality condition met.}
+          \boxguard
+          \item Random: \ansline{Randomized experiment --- patients randomly assigned to protocols.}\gradedkeyline{\gradedblank[id=hw3b2, type=rubric, points=1, display={\bfseries\boldmath randomized experiment: random assignment --- met}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal ($n < 30$): \ansline{Both distributions roughly symmetric, no outliers; normality condition met.}\gradedkeyline{\gradedblank[id=hw3b3, type=rubric, points=1, display={\bfseries\boldmath both roughly symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
   \item \textbf{Do:} $SE \approx$ \ans{1.21} \quad $t \approx$ \ans{$-2.73$}
-        \quad Technology: $p \approx$ \ans{0.005} \quad $df \approx$ \ans{35}
-  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.005 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the new stretching protocol reduces mean recovery time compared to the standard protocol.}
-  \ansline{}
+        \quad Technology: $p \approx$ \ans{0.005} \quad $df \approx$ \ans{35}\gradedkey{$SE=$~\gradedblank[id=hw3c1, type=short, points=1, answer=1.249, check=numeric, tolerance=0.01, display={\boldmath$1.249$}]{2.3cm}{0.19in}\quad $t=$~\gradedblank[id=hw3c2, type=short, points=1, answer=-2.64, check=numeric, tolerance=0.02, display={\boldmath$-2.64$}]{1.8cm}{0.19in}\quad $p=$~\gradedblank[id=hw3c3, type=short, points=1, answer=0.006, check=numeric, tolerance=0.002, display={\boldmath$0.006$}]{1.8cm}{0.19in}\quad $df=$~\gradedblank[id=hw3c4, type=short, points=1, answer=36.0, check=numeric, tolerance=0.6, display={\boldmath$36.0$}]{1.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.005 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the new stretching protocol reduces mean recovery time compared to the standard protocol.}\gradedkeyline{\gradedblank[id=hw3d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.006 < 0.05$: reject $H_0$; convincing evidence the new protocol lowers mean recovery time.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \vspace{0.05in}
 
+\newpage
 \item \textbf{Fuel Efficiency.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}
-  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions: \ansline{Random samples; both dotplots roughly symmetric with no outliers.}
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}\gradedkey{$H_0$:~\gradedblank[id=hw4a1, type=short, points=1, answer={{mu1 - mu2 = 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 = 0$}]{3.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw4a2, type=short, points=1, answer={{mu1 - mu2 != 0}}, check=text, display={\boldmath$\mu_1 - \mu_2 \ne 0$}]{3.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions: \ansline{Random samples; both dotplots roughly symmetric with no outliers.}\gradedkey{\gradedblank[id=hw4b1, type=short, points=1, answer={{two-sample t-test for mu1 - mu2}}, check=text, display={\boldmath two-sample $t$-test for $\mu_1 - \mu_2$}]{4.8cm}{0.19in}}
+        \gradedkeyline{\gradedblank[id=hw4b2, type=rubric, points=1, display={\bfseries\boldmath random; symmetric}]{\linewidth+6pt}{0.19in}}
   \item \textbf{Do:} $SE \approx$ \ans{0.862} \quad $t \approx$ \ans{$-1.97$}
-        \quad $p$ (two-sided) $\approx$ \ans{0.054}
-  \item \textbf{Conclude:} \ansline{Because $p \approx 0.054 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence (at the 5\% level) that the two engine designs produce different mean fuel efficiencies.}
-  \ansline{}
+        \quad $p$ (two-sided) $\approx$ \ans{0.054}\gradedkey{$SE=$~\gradedblank[id=hw4c1, type=short, points=1, answer=0.850, check=numeric, tolerance=0.01, display={\boldmath$0.850$}]{2.3cm}{0.19in}\quad $t=$~\gradedblank[id=hw4c2, type=short, points=1, answer=-2.00, check=numeric, tolerance=0.02, display={\boldmath$-2.00$}]{1.8cm}{0.19in}\quad $p=$~\gradedblank[id=hw4c3, type=short, points=1, answer=0.051, check=numeric, tolerance=0.002, display={\boldmath$0.051$}]{1.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.054 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence (at the 5\% level) that the two engine designs produce different mean fuel efficiencies.}\gradedkeyline{\gradedblank[id=hw4d, type=rubric, points=2, display={\bfseries\boldmath $p \approx 0.051 > 0.05$: fail to reject $H_0$; no convincing evidence the mean mpg differs.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \end{enumerate}
@@ -86,6 +101,7 @@ when comparing two groups?
 \ansline{}
 \end{reflectionbox}
 
+\newpage
 \begin{extensionbox}
 \textbf{Preview of Lesson 7.10 --- Selecting an Inference Procedure.}
 For each scenario below, identify the correct inference procedure (one-sample $t$-test,

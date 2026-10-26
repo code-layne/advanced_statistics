@@ -1,0 +1,20 @@
+# Homework item 3b (Unit 3, Lesson 3.2). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  Same reading study (60 volunteers from a single school, randomly assigned). Can we
+  generalize to all third-graders? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that the students were volunteers from a single school, not randomly
+      selected from all third-graders, so the results apply only to students like these
+      volunteers.
+examples:
+  - response: "No, because the sample size of 60 is too small."
+    scores: {answer: 1, reason: 0}

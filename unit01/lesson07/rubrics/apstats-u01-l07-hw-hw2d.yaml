@@ -1,0 +1,21 @@
+# Homework item 2, interpretation of the negative z-score (Unit 1, Lesson 1.7). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  Resting heart rate for adult women is approximately normal with mean 74 and SD 8
+  beats per minute. A rate of 62 has z = -1.5. Interpret the negative z-score in a
+  sentence, in context.
+criteria:
+  - id: meaning
+    points: 1
+    full: >-
+      Says 62 beats per minute is 1.5 standard deviations below the mean (74 beats per
+      minute).
+  - id: context
+    points: 1
+    full: >-
+      In context: resting heart rate of adult women, in beats per minute (a slower resting
+      rate than average).
+examples:
+  - response: "It is 1.5 below the mean."
+    scores: {meaning: 0, context: 0}

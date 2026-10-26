@@ -1,0 +1,182 @@
+%! Summary Statistics for a Quantitative Variable — Unit 1, Lesson 1.5 — AP Practice (Answer Key)
+% GRADUAL RELEASE: AP-format practice, assigned but NOT scored — the cover's score
+% column reads NA for this component. The graded practice is the `homework` component that
+% follows it at the back of the packet.
+% Free-response (a) is the spiral to Lesson 1.4 (name the shape from the display) and (b) is
+% Skill 4.B in the form the exam asks it — the CHOICE of summary must be justified by the shape.
+% GENERATED FROM ap_practice/main.tex. Each \writelines{n} in the blank is answered by an
+% \ansline{} terse enough not to wrap past n lines — that keeps the page counts equal.
+% NO teachernote here — scoring guidance lives in the lesson plan.
+%
+% THE DATA (15 households, gallons per day):
+%   110 120 130 140 150 160 180 | 200 | 220 240 270 310 350 400 620
+%   sum 3600 -> mean 240 ; median 200 ; Q1 140 ; Q3 310 ; IQR 170 ; range 510 ; s_x ~ 136.6
+%   Right-skewed with one large value at 620. Both outlier rules flag the 620:
+%   Q3 + 1.5(IQR) = 310 + 255 = 565 < 620, and mean + 2s = 240 + 273.2 = 513.2 < 620.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u01-l05-ap}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.5}{AP Practice --- Answer Key}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.10in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. Work these AP-format reps and bring what stalls you to study hall.
+\end{remindbox}
+
+\vspace{0.08in}
+
+\boxguard[30]
+\begin{scenariobox}[Household Water Use]{navy}
+\small
+A water utility recorded each of 15 homes' average daily water use, in gallons. The stem is
+the \emph{hundreds} digit and each leaf the \emph{tens} digit: row \textbf{3} is 310 and 350.
+
+\vspace{3pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} r | l @{}}
+\textbf{1} & 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 8 \\
+\textbf{2} & 0 \quad 2 \quad 4 \quad 7 \\
+\textbf{3} & 1 \quad 5 \\
+\textbf{4} & 0 \\
+\textbf{5} & \\
+\textbf{6} & 2 \\
+\end{tabular}
+\end{center}
+\vspace{3pt}
+
+Computer output for the same 15 values:
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y Y @{}}
+\rowcolor{sky}
+\textbf{$n$} & \textbf{Mean} & \textbf{SD} & \textbf{Min} & \textbf{$Q_1$} & \textbf{Median} &
+\textbf{$Q_3$} & \textbf{Max} \\
+\hline
+15 & 240.0 & 136.6 & 110 & 140 & 200 & 310 & 620 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box. Every answer choice is
+about the context, not just the arithmetic --- read them all before choosing.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in]
+
+  \item Which pair of summary statistics should be reported for these 15 homes, and why?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The mean and standard deviation, because they use all 15 values.
+          \item The mean and the IQR, because the mean is the more accurate center.
+          \item \ans{The median and the IQR, because the distribution is skewed to the right with one
+                home far above the rest, and both of those summaries are resistant.}
+          \item The median and the standard deviation, because the median is resistant.
+          \item The range and the IQR, because both of them measure variability.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}
+        \end{enumerate}
+
+  \boxguard[9]
+  \item The 620-gallon home is re-metered and its correct figure is 1{,}240 gallons per day
+        --- double the recorded value. Which summary statistic changes \textbf{by the most}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The median
+          \item The interquartile range
+          \item The mean
+          \item \ans{The range \quad (it grows by 620; the mean grows by only about 41)}
+          \item None of them change, because only one home was corrected.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=D]{0.45in}{0.24in}}
+        \end{enumerate}
+
+  \item The utility converts all 15 values to litres by multiplying each by 3.8. Which is
+        true of the summary statistics for the new list?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Only the mean is multiplied by 3.8; the others are unchanged.
+          \item The mean and median are multiplied by 3.8, but the standard deviation is unchanged.
+          \item The mean is multiplied by 3.8 and the standard deviation by $3.8^2$.
+          \item None of them change, because a change of units does not affect a statistic.
+          \item \ans{The mean, median, range, IQR, and standard deviation are all multiplied by 3.8.}
+                \par\rule{0pt}{0.25in}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=E]{0.45in}{0.24in}}
+        \end{enumerate}
+
+  \item A city-wide report states that a household using 350 gallons per day is at the
+        \textbf{90th percentile} of daily water use for the city. This means that
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 90\% of the city's households use more than 350 gallons per day.
+          \item the household uses 90\% of the water in its neighbourhood.
+          \item the household uses 90 gallons per day more than the city average.
+          \item \ans{about 90\% of the city's households use 350 gallons per day or less.}
+          \item 350 gallons is 90\% of the largest amount used by any household in the city.
+                \par\rule{0pt}{0.25in}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=D]{0.45in}{0.24in}}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.10in}
+
+\boxguard[16]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Every answer must be written
+\emph{in the context of the problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.12in, resume]
+
+  \item Use the water-use record above. \textbf{(a)} Describe the shape of this distribution of
+        daily water use, and identify any value that stands apart from the rest.\\[4pt]
+        \gradedhere{\gradedblank[id=ap5a, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Skewed to the right: most homes cluster between 110 and 270 gallons per day,}\\[1pt]
+        \ansline{with a tail running to higher use. The home at 620 gallons stands well apart.}\\
+        \gradedhide{\writelines{7}}
+
+        \boxguard[17]
+        \vspace{4pt}
+        \textbf{(b)} Report \emph{one} measure of center and \emph{one} measure of variability
+        for these 15 homes. Justify your choice of pair using the shape of the distribution.\\[4pt]
+        \gradedhere{\gradedblank[id=ap5b, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{Median 200 and IQR 170 gal/day: skewed right, with one home at 620 far above}\\[1pt]
+        \ansline{the rest; it pulls the mean to 240 and inflates the SD. Median and IQR resist.}\\
+        \gradedhide{\writelines{7}}
+
+        \boxguard[17]
+        \vspace{4pt}
+        \textbf{(c)} Interpret $Q_1 = 140$ gallons per day in the context of this street.\\[4pt]
+        \gradedhere{\gradedblank[id=ap5c, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{About 25\% of these 15 homes used 140 gallons of water per day or less; the}\\[1pt]
+        \ansline{other 75\% used more than that.}\\
+        \gradedhide{\writelines{7}}
+
+        \boxguard[17]
+        \vspace{4pt}
+        \textbf{(d)} A resident tells a neighbour, ``A typical home on this street uses 240
+        gallons a day.'' Explain why that overstates typical use here, naming a specific feature
+        of the distribution.\\[4pt]
+        \gradedhere{\gradedblank[id=ap5d, type=rubric, points=2]{\linewidth+6pt}{\gradedlinesheight{2}}}\ansline{240 is the mean, dragged upward by the single home using 620 gallons per day;}\\[1pt]
+        \ansline{ten of the 15 homes use 240 or less. The median, 200, is the typical home.}\\
+        \gradedhide{\writelines{7}}
+
+\end{enumerate}
+
+
+
+\end{document}

@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l06-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 4, Lesson 4.6}{Homework --- KEY}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -29,32 +32,33 @@ Streaming service $\times$ age group (300 subscribers):
 \vspace{8pt}
 \textbf{1.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{$P(\text{Movies}) = 110/300 \approx 0.367$}
-  \item \ans{$P(\text{Movies}|\text{Under 25}) = 50/120 \approx 0.417$}
-  \item \ans{Since $0.367 \neq 0.417$, Movies and Under 25 are \textbf{not independent} --- subscribers under 25 are more likely to watch movies than the overall subscriber population.}
+  \item \ans{$P(\text{Movies}) = 110/300 \approx 0.367$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1a, type=short, points=1, answer=0.367, check=numeric, tolerance=0.002, display={$110/300 \approx 0.367$}]{3.2cm}{0.2in}}}
+  \item \ans{$P(\text{Movies}|\text{Under 25}) = 50/120 \approx 0.417$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw1b, type=short, points=1, answer=0.417, check=numeric, tolerance=0.002, display={$50/120 \approx 0.417$}]{3.2cm}{0.2in}}}
+  \item \ans{Since $0.367 \neq 0.417$, Movies and Under 25 are \textbf{not independent} --- subscribers under 25 are more likely to watch movies than the overall subscriber population.}\gradedkeyline{\kern0.4in\gradedblank[id=hw1c, type=rubric, points=2, display={Not independent: $0.367 \ne 0.417$; under-25s are more likely to watch movies.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{1}+8pt}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{2.} \ans{$P(\text{TV Series}) = 130/300$; $P(\text{25--44}) = 120/300$; $P(\text{TV Series} \cap \text{25--44}) = 50/300$.\\
-$P(\text{TV Series} \cup \text{25--44}) = 130/300 + 120/300 - 50/300 = 200/300 \approx 0.667$}
+$P(\text{TV Series} \cup \text{25--44}) = 130/300 + 120/300 - 50/300 = 200/300 \approx 0.667$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw2, type=short, points=2, answer=0.667, check=numeric, tolerance=0.002, display={$200/300 \approx 0.667$}]{1.3in}{0.2in}}}
 
 \vspace{6pt}
 \textbf{3.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{Yes, mutually exclusive. Each subscriber has exactly one primary content type; no subscriber is counted in both Movies and Documentaries.}
-  \item \ans{$P(\text{Movies} \cup \text{Docs}) = 110/300 + 60/300 - 0 = 170/300 \approx 0.567$}
+  \item \ans{Yes, mutually exclusive. Each subscriber has exactly one primary content type; no subscriber is counted in both Movies and Documentaries.}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3a1, type=short, points=1, answer=yes, check=text]{1.3cm}{0.2in}}}\gradedkeyline{\gradedblank[id=hw3a2, type=rubric, points=1, display={One type each.}]{\linewidth+6pt}{\gradedlinesheight{10}}}
+\tcbbreak
+  \item \ans{$P(\text{Movies} \cup \text{Docs}) = 110/300 + 60/300 - 0 = 170/300 \approx 0.567$}\gradedkey{\raisebox{-3pt}{\gradedblank[id=hw3b, type=short, points=2, answer=0.567, check=numeric, tolerance=0.002, display={$170/300 \approx 0.567$}]{1.3in}{0.2in}}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{4.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{No, the reasoning is incorrect. Independence is not about causation; it is about whether knowing one event changes the probability of another: the test is $P(A|B) = P(A)$.}
-  \item \ans{$P(\text{TV Series}) = 130/300 \approx 0.433$; $P(\text{TV Series}|\text{Under 25}) = 60/120 = 0.5$. Since $0.433 \neq 0.5$, TV Series and Under 25 are \textbf{not independent}.}
+  \item \ans{No, the reasoning is incorrect. Independence is not about causation; it is about whether knowing one event changes the probability of another: the test is $P(A|B) = P(A)$.}\gradedkeyline{\kern0.4in\gradedblank[id=hw4a, type=rubric, points=2, display={No: independence is not causation; test whether $P(A|B) = P(A)$.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{1}+8pt}}
+  \item \ans{$P(\text{TV Series}) = 130/300 \approx 0.433$; $P(\text{TV Series}|\text{Under 25}) = 60/120 = 0.5$. Since $0.433 \neq 0.5$, TV Series and Under 25 are \textbf{not independent}.}\gradedkeyline{\kern0.4in\gradedblank[id=hw4b, type=rubric, points=2, display={$P(\text{TV}) \approx 0.433 \ne P(\text{TV}|\text{Under 25}) = 0.5$: not independent.}]{\linewidth+6pt-0.4in}{\gradedlinesheight{1}+8pt}}
 \end{enumerate}
 
 \vspace{6pt}
 \textbf{5.} \ans{$P(\text{Docs}) = 60/300 = 0.2$; $P(\text{Docs}|\text{45+}) = 20/60 \approx 0.333$.\\
-Since $0.2 \neq 0.333$, Documentaries and 45+ are \textbf{not independent}. Subscribers aged 45 and older watch documentaries at a higher rate (33.3\%) than the overall subscriber base (20\%), indicating that age and content-type preference are related for this group.}
+Since $0.2 \neq 0.333$, Documentaries and 45+ are \textbf{not independent}. Subscribers aged 45 and older watch documentaries at a higher rate (33.3\%) than the overall subscriber base (20\%), indicating that age and content-type preference are related for this group.}\gradedkeyline{\kern0.4in\gradedblank[id=hw5, type=rubric, points=3, display={$P(\text{Docs}) = 0.2$, $P(\text{Docs}|\text{45+}) \approx 0.333$. Not equal, so not independent: 45+ subscribers watch documentaries at a higher rate (33.3\% vs.\ 20\%).}]{\linewidth+6pt-0.4in}{\gradedlinesheight{4}}}
 
 \vspace{6pt}
 \textbf{6.} \ans{True. If $P(A|B) = P(A)$, then by the definition of conditional probability: $P(A|B) = P(A \cap B)/P(B)$, so $P(A \cap B) = P(A) \cdot P(B)$. Then $P(B|A) = P(A \cap B)/P(A) = P(A) \cdot P(B)/P(A) = P(B)$. So $P(B|A) = P(B)$. Independence is a symmetric relationship: if $A$ is independent of $B$, then $B$ is independent of $A$.}

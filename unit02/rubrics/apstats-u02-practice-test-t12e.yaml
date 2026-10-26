@@ -1,0 +1,13 @@
+# Unit 2 practice (sample) test, item 12e. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12e
+points: 1
+task: >-
+  Is a linear model appropriate for these data? Justify using the residual plot.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Yes, because the residuals scatter randomly above and below 0 with no curved
+      pattern (and no fan), so a linear model of energy use on capacity is appropriate.

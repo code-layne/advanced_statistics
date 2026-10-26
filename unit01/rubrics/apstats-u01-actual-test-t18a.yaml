@@ -1,0 +1,15 @@
+# Unit 1 actual test, item 18a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t18a
+points: 2
+task: >-
+  From a histogram of the weights of 50 pumpkins, how many weighed 20 pounds or more,
+  and what percent of the row is that?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: 5 + 3 + 0 + 2 = 10 pumpkins AND 10/50 = 20%.
+    partial: >-
+      P (1 of 2): One of the two correct.

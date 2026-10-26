@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l03-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.3}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} Show all work for full credit. Write complete sentences for
@@ -29,16 +32,17 @@ interpretations and conclusions.
 
         \begin{enumerate}[label=\alph*.]
           \item Calculate the expected count for each phenotype under the 9:3:3:1 ratio.
-                \writelines{2}
+                \gradedhide{\writelines{2}\gradedright{\textit{1:}~\gradedblank[id=hw1a1, type=short, points=1, answer=90, check=numeric, tolerance=0]{0.55in}{0.2in}\quad \textit{2:}~\gradedblank[id=hw1a2, type=short, points=1, answer=30, check=numeric, tolerance=0]{0.55in}{0.2in}\quad \textit{3:}~\gradedblank[id=hw1a3, type=short, points=1, answer=30, check=numeric, tolerance=0]{0.55in}{0.2in}\quad \textit{4:}~\gradedblank[id=hw1a4, type=short, points=1, answer=10, check=numeric, tolerance=0]{0.55in}{0.2in}}}
           \item Calculate the chi-square test statistic. Show all four
                 $(O - E)^2 / E$ contributions.
-                \writelines{4}
-          \item State the degrees of freedom: $df =$ \blank{2cm}
+                \gradedhide{\writelines{4}\gradedright{$\chi^2 = $~\gradedblank[id=hw1b, type=short, points=2, answer=1.244, check=numeric, tolerance=0.01]{0.9in}{0.2in}}}
+          \item State the degrees of freedom: $df =$\hfill\smash{$df = $~\gradedblank[id=hw1c, type=short, points=1, answer=3, check=numeric, tolerance=0]{0.6in}{0.2in}}
           \item The p-value is approximately 0.81. State a complete conclusion at
                 $\alpha = 0.05$.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={Because $p \approx 0.81 > 0.05$, fail to reject $H_0$: no convincing evidence the phenotype distribution differs from 9:3:3:1.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
         \end{enumerate}
 
+  \newpage
   \item \textbf{Streaming Services.} A survey of 200 college students asks which of
         5 streaming services they use most. If students chose equally among the options,
         each service would account for 20\% of responses. The observed counts are:
@@ -54,23 +58,24 @@ interpretations and conclusions.
 
         \begin{enumerate}[label=\alph*.]
           \item State $H_0$ and $H_a$ for a chi-square goodness-of-fit test.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={$H_0$: each service 20\%. $H_a$: at least one proportion differs from 0.20.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
           \item Calculate the expected count for each service and compute the
                 chi-square test statistic. Show your work.
-                \writelines{5}
-          \item State the degrees of freedom: $df =$ \blank{2cm}
+                \gradedhide{\writelines{5}\gradedright{\textit{E:}~\gradedblank[id=hw2b1, type=short, points=1, answer=40, check=numeric, tolerance=0]{0.6in}{0.2in}\quad $\chi^2 = $~\gradedblank[id=hw2b2, type=short, points=2, answer=53.65, check=numeric, tolerance=0.05]{0.9in}{0.2in}}}
+          \item State the degrees of freedom: $df =$\hfill\smash{$df = $~\gradedblank[id=hw2c, type=short, points=1, answer=4, check=numeric, tolerance=0, display={\large 4}]{0.6in}{0.2in}}
           \item The p-value is less than 0.001. Interpret this p-value in context,
                 then state a complete conclusion at $\alpha = 0.05$.
-                \writelines{3}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2d, type=rubric, points=3, display={Assuming all five services are equally popular, the probability of a chi-square statistic of 53.65 or larger is less than 0.001. Because $p < 0.05$, we reject $H_0$: convincing evidence the distribution of most-used service is not equal across the five services.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
         \end{enumerate}
 
+  \boxguard[22]
   \item \textbf{Conceptual Question.} After completing a chi-square goodness-of-fit test,
         a student writes: \textit{``Because we fail to reject $H_0$, we have proved that
         the distribution of the population matches the null proportions.''}
 
         Explain the error in this statement.
 
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=hw3, type=rubric, points=2, display={Failing to reject $H_0$ does not prove $H_0$ is true. It means only that the data are consistent with the null model --- the observed discrepancy could reasonably occur by chance if $H_0$ were true. We may have insufficient evidence to detect a real difference (a Type II error). We can never ``prove'' a null hypothesis through a significance test.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
 \end{enumerate}
 

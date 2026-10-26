@@ -1,0 +1,16 @@
+# Homework item 4(iii), explanation (Unit 1, Lesson 1.7). Relative to the lesson directory.
+id: hw4d
+points: 2
+task: >-
+  Bus travel time is approximately normal with mean 32 and SD 3 minutes. Explain how
+  to get the percent of trips longer than 38 minutes (about 2.5%).
+criteria:
+  - id: two_sd
+    points: 1
+    full: >-
+      Says 38 minutes is two standard deviations above the mean, and about 95% of trips
+      fall within two SDs, leaving about 5% outside.
+  - id: half
+    points: 1
+    full: >-
+      Uses symmetry: half of that 5% (about 2.5%) is in the upper tail, past 38 minutes.

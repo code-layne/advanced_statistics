@@ -1,0 +1,19 @@
+# Unit 2 practice (sample) test, item 11c. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11c
+points: 2
+task: >-
+  Are enrollment status and travel to campus associated? Justify with numbers. Does
+  this survey show that attending part-time causes a student to drive?
+criteria:
+  - id: association
+    points: 1
+    full: >-
+      E: Yes, associated: the conditional distributions differ (70% of part-time vs 55% of
+      full-time students drive).
+  - id: causation
+    points: 1
+    full: >-
+      E: No: this is an observational survey, not an experiment, so it cannot show cause
+      (a lurking variable such as driving from a job may explain it).

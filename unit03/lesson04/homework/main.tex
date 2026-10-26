@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l04-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.4}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -20,9 +23,11 @@ estimate (direction), and (c) suggest an improvement.
 schools should start later?'' 78\% of 2{,}400 callers say yes.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=7pt]
-  \item Type of bias: \blank{8cm}
-  \item Direction and explanation: \writeline\\[1pt]\writeline
-  \item Improvement: \writeline
+  \item Type of bias: \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw1a, type=short, points=1, answer={voluntary response bias}, check=text]{2.4in}{0.2in}}}
+  \item Direction and explanation:\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={Too high: strong opinions (mostly in favor) call in; neutral or opposing views are underrepresented.}]{\linewidth+6pt}{2in}}\writelines{9}}
+  \item Improvement:\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw1c, type=rubric, points=1, display={Use a random sample of parents and students from school records.}]{\linewidth+6pt}{2in}}\writelines{9}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -30,10 +35,11 @@ schools should start later?'' 78\% of 2{,}400 callers say yes.
 numbers to ask about online shopping habits.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=7pt]
-  \item Type of bias: \blank{8cm}
-  \item Who is excluded? \writeline
+  \item Type of bias: \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw2a, type=short, points=1, answer={undercoverage bias}, check=text]{2.4in}{0.2in}}}
+  \item Who is excluded?\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b, type=rubric, points=1, display={Households without landlines (younger, lower-income).}]{\linewidth+6pt}{2in}}\writelines{9}}
   \item How does this distort the estimate of online shopping frequency?
-        \writeline\\[1pt]\writeline
+        \gradedhide{\writeline\\[1pt]\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={Too low: the excluded younger adults shop online more often.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -41,19 +47,22 @@ numbers to ask about online shopping habits.
 should invest more in mental health resources?''
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=7pt]
-  \item Type of bias: \blank{8cm}
-  \item Rewrite the question to remove the bias: \writeline
-  \item Direction: the estimate of support will be too \blank{3cm} because
-        \blank{7cm}
+  \item Type of bias: \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw3a, type=short, points=1, answer={response bias}, check=text]{2.4in}{0.2in}}}
+  \item Rewrite the question to remove the bias:\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=1, display={Neutral wording, without ``Don't you think''.}]{\linewidth+6pt}{2in}}\writelines{9}}
+  \item Direction: the estimate of support will be too \makebox[3cm][l]{\vphantom{\blank{3cm}}\hspace{30bp}\smash{\gradedblank[id=hw3c1, type=short, points=1, answer=high, check=text]{0.85in}{0.2in}}} because\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw3c2, type=rubric, points=1, display={``don't you think'' implies agreeing is expected.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{8pt}
 \textbf{4.} A researcher randomly selects 800 adults but only 200 complete the survey.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=7pt]
-  \item Was the initial selection biased? \blank{3cm}
-  \item What bias affects the completed surveys? \blank{6cm}
-  \item How could this distort the results? \writeline\\[1pt]\writeline
+  \item Was the initial selection biased? \makebox[3cm][l]{\vphantom{\blank{3cm}}\hspace{46bp}\smash{\gradedblank[id=hw4a, type=short, points=1, answer=no, check=text]{0.9in}{0.2in}}}
+  \item What bias affects the completed surveys? \makebox[6cm][l]{\vphantom{\blank{6cm}}\hspace{46bp}\smash{\gradedblank[id=hw4b, type=short, points=1, answer={nonresponse bias}, check=text]{1.8in}{0.2in}}}
+  \item How could this distort the results?\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw4c, type=rubric, points=2, display={The 200 who responded may differ (e.g., more engaged); the estimate is pulled their way.}]{\linewidth+6pt}{2in}}\writelines{9}}
 \end{enumerate}
 \end{practicebox}
 

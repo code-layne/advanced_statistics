@@ -1,0 +1,17 @@
+# Homework item 4 (Unit 3, Lesson 3.6). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  When is a completely randomized design preferable to a block design, even if you
+  know a variable that affects the response?
+criteria:
+  - id: situation
+    points: 1
+    full: >-
+      Names a situation: the variable cannot be measured before the study begins, it is
+      only weakly related to the response, or blocking adds logistical complexity.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that blocking would then gain little precision (barely reduce variability)
+      relative to its cost.

@@ -1,0 +1,21 @@
+# AP Practice item 5, part (a) (Unit 1, Lesson 1.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5a
+points: 2
+task: >-
+  A weather station recorded total rainfall (mm) on 20 rainy days, shown in a stem
+  plot (stems = tens digit): 2 4 5 8 9 | 11 13 13 16 17 18 | 20 22 25 29 | 31 34 38 |
+  42 47. Classify rainfall as categorical or quantitative, and then as discrete or
+  continuous. Justify from the variable itself, not from the display.
+criteria:
+  - id: classify
+    points: 2
+    full: >-
+      E: Says rainfall is quantitative (a measured amount) AND continuous, justified from
+      the variable: between any two amounts another is possible (e.g., 12.4 mm between 12
+      and 13 mm).
+    partial: >-
+      P (1 of 2): Classifies both correctly without a justification from the variable (or
+      justifies from the whole-number recorded values / the display), OR gets one
+      classification right with a correct reason.

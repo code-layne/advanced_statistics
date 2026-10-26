@@ -1,0 +1,12 @@
+# Homework item 2c Random (Unit 7, Lesson 7.4). Relative to the lesson directory.
+id: hw2c1
+points: 1
+task: >-
+  A consumer group tests whether mean delivery time differs from 3 days using a random
+  audit of 55 orders. Verify the Random condition.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Says the 55 orders were a random audit (random sample), so the Random condition is
+      met.

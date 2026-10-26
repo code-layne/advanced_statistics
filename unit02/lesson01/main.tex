@@ -1,199 +1,361 @@
-%! AP Statistics — Unit 2, Lesson 2.1 — Lesson Plan
+%! Two Categorical Variables — Unit 2, Lesson 2.1 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start homework).
+% THERE IS NO GROUP ACTIVITY IN THIS COURSE — the guided notes carry the release: I do / we do
+% row by row, then Guided Practice together. THERE IS NO INDEPENDENT PRACTICE SET — the homework
+% is the individual practice, and the period ends with students starting it. Teacher-facing.
+% Every box is `skillbox` (breakable) with a \boxguard ahead of it; this course has no
+% `fixedskillbox`, no tier boxes, and no exit ticket.
+% COMPACT BUDGET (2026-09-29): the packet is cover 1 · warm-up 1 · notes 2 · AP practice 1 ·
+% homework 1, finished in one 55-minute period. Unit 2 folds CED Topics 2.1–2.3 into this lesson.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 2.1: Introducing Statistics --- Are Variables Related?}
+\newcommand{\LessonNumberName}{Lesson 2.1: Two Categorical Variables}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify statistical questions that can be
-    answered using two-variable data and recognize that apparent patterns or associations
-    in data may be random or non-random --- making conclusions uncertain (Big Idea: VAR).
+    \textbf{Primary Objective:} Students will read a two-way table of two categorical variables,
+    calculate joint, marginal, and conditional relative frequencies with the correct
+    denominator, and use conditional distributions (in a table or a segmented bar graph) to
+    decide whether the variables are associated --- stated in context, without claiming cause.
+    \\[2pt]
+    \textbf{CED alignment:} Topics 2.1, 2.2, 2.3 \quad$\cdot$\quad Big Ideas: VAR (Variation and
+    Distribution), UNC (Patterns and Uncertainty) \quad$\cdot$\quad Skills 1.A, 2.C, 2.D
+    \quad$\cdot$\quad LO VAR-1.D, UNC-1.P, UNC-1.Q, UNC-1.R \quad$\cdot$\quad EK VAR-1.D.1,
+    UNC-1.P.1--1.P.4, UNC-1.Q.1, 1.Q.2, UNC-1.R.1
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction row by row in one \emph{Main Ideas / Notes} table --- each
+    idea a definition to complete and a grid of short problems, the first worked by you and the
+    rest by the class; the last row, Guided Practice, is worked together with students holding
+    the pen; \textbf{the homework is the individual practice}, and students start it in class
+    while you circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Note on the ``no sketch'' rule:} the segmented bar graph is \textbf{given}. Students
+    construct nothing but fractions from a table; they read the graph and argue from it.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can ask whether two variables are related, and read a two-way table.
+  \item I can find joint, marginal, and conditional relative frequencies, choosing the right
+        total to divide by.
+  \item I can read a segmented bar graph and say whether two variables are associated,
+        with percents, in context.
+  \item I can explain why an association in a survey does not show cause.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item A two-way table summarizes two categorical variables on the same individuals; a
+        joint relative frequency is a cell over the grand total, a marginal one a row or
+        column total over the grand total (EK UNC-1.P.3, 1.P.4, 1.Q.1).
+  \item A conditional relative frequency restricts to one row or column and divides by that
+        group's total (EK UNC-1.Q.2). Segmented, side-by-side, and mosaic bar graphs draw
+        these conditional distributions (EK UNC-1.P.1).
+  \item Variables are associated when the conditional distributions differ across groups
+        (EK UNC-1.P.2, 1.R.1); an apparent pattern may be random or confounded (EK VAR-1.D.1).
+  \item \textbf{Target misconception:} judging a relationship from \emph{counts} or the
+        \emph{wrong total}. ``48 phone-in-room students sleep 8+ hours vs.\ only 20 without''
+        compares groups of 160 and 40; the conditional rates are 30\% vs.\ 50\%, the
+        \emph{opposite} story. Close cousin: dividing by the grand total (joint) or by the
+        wrong group's total when a conditional was asked.
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 1 --- Selecting Statistical Methods}
     \begin{itemize}
-        \item Identify a statistical question that asks about a possible relationship between two variables (Skill 1.A).
-        \item Recognize when an apparent association may be due to chance rather than a real relationship (VAR-1.D).
-        \item Distinguish between a question about one variable (Unit 1) and a question about the relationship between two variables (Unit 2).
+        \item \textbf{Two-way (contingency) table} --- counts for two categorical variables
+              (EK UNC-1.P.3)
+        \item \textbf{Joint relative frequency} --- cell $\div$ grand total (EK UNC-1.P.4)
+        \item \textbf{Marginal relative frequency} --- row or column total $\div$ grand total
+              (EK UNC-1.Q.1)
+        \item \textbf{Conditional relative frequency} --- cell $\div$ its own row or column
+              total (EK UNC-1.Q.2)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item Apparent patterns in data are not always real --- they may be random fluctuation.
-        \item The statistical question determines how we analyze and display data.
-        \item Even a real association does not prove causation.
-        \item Unit 2 builds directly on Unit 1: now we compare two variables across the same individuals.
+        \item \textbf{Segmented bar graph} --- one 100\% bar per group; \textbf{mosaic plot}
+              --- bar widths show group sizes; \textbf{side-by-side bar graph} --- named
+              aloud (EK UNC-1.P.1)
+        \item \textbf{Association} --- conditional distributions differ across groups
+              (EK UNC-1.P.2, 1.R.1)
+        \item \textbf{Carried forward} --- categorical vs.\ quantitative (1.1); relative
+              frequency and bar graphs (1.2)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & A relative frequency, two quiz sections, and a ``related?'' question & Debrief item~2 aloud; leave \emph{more} vs.\ \emph{better} on the board all period \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--10 row by row, then \emph{Texting Drivers} (11--14) together, pen in their hand & \textbf{I do} each row's definition lines and first problem (1, 4, 7), \textbf{we do} the rest of its grid (24) $\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Open on the almost-right problem~8 answer; set counts beside percents for both contexts \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Announce the paper homework, circulate for your formative read on A2 and B2, preview Lesson~2.2 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
     \begin{itemize}
-        \item \textbf{Two-variable data} --- a dataset in which two variables are recorded for each individual
-        \item \textbf{Association} --- a relationship between two variables such that knowing one gives information about the other
-        \item \textbf{Apparent association} --- a pattern visible in a sample that may or may not reflect a real relationship in the population
+        \item \textbf{1.} 45 of 180 walk: a relative frequency. \textbf{Spirals} to Lesson 1.2
+              and is the arithmetic of every joint and marginal in row~1.
+        \item \textbf{2.} Section A 12 of 20, Section B 18 of 40. \textbf{Seeds the crux}:
+              B had \emph{more} pass, A did \emph{better}. That is problem~8 in miniature.
+        \item \textbf{3.} Classify three variables and ask whether two are related.
+              \textbf{Seeds} Topic~2.1 (VAR-1.D) --- and it is the notes' own context.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Causation} --- one variable directly produces a change in another; cannot be established from observational data alone
-        \item \textbf{Confounding variable} --- a third variable related to both, making an apparent association misleading
-        \item \textbf{Explanatory / Response variable} --- preview: the variable used to explain (explanatory) vs.\ the outcome of interest (response)
+        \item \textbf{Debrief item~2 aloud} and write the two answers side by side:
+              \emph{more pass: B} \quad \emph{did better: A}. Leave them up; in row~3 you
+              point back at them.
+        \item Take one student question from item~3 --- ideally ``do students with the phone
+              in the room sleep less?'' --- and tell them that is exactly the question the
+              notes answer.
+        \item Item~1 is 45 seconds. Do not let it expand.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Prior Knowledge Check (3--4 min)}
-    \begin{itemize}
-        \item Quick-fire recall: ``What are the two types of variables from Unit 1?''
-          (categorical, quantitative)
-        \item Transition question: \textit{``Unit 1 described one variable at a time.
-          What would change if we wanted to ask whether two variables are related?''}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections Forward}
-    \begin{itemize}
-        \item Two categorical variables $\to$ Lessons 2.2--2.3 (two-way tables, bar charts)
-        \item Two quantitative variables $\to$ Lessons 2.4--2.9 (scatterplots, regression)
-        \item Establishing causation $\to$ Unit 3 (experimental design)
-        \item Making inferences about associations $\to$ Units 6--9
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are one \emph{Main Ideas / Notes} table --- four rows, 14 short problems, on one data
+set for all three instruction rows (200 students: phone in the bedroom $\times$ 8+ hours of
+sleep). \textbf{In every row you fill the definition lines and work the first problem of the
+grid; the class works the rest, pen in their hand.} The vocabulary box (three terms) is filled
+\emph{as you go}, never in advance.
+\begin{multicols}{2}
+\textbf{Two-Way Table (6 min).} Name the table, then the two ways to divide by the grand
+total. \textbf{You work problem~1} (joint, $48/200$); problems 2--3 are theirs. Problem~3 is
+classification, not arithmetic: \emph{0.80 keep a phone in the room} is a row total over 200 ---
+marginal. Fill \emph{two-way table} in the vocabulary box here.
+
+\textbf{Conditional (8 min) --- the trap.} The rule to land: \emph{the words after ``of'' name
+the denominator.} \textbf{You work problem~4} ($48/160$); they do 5. \textbf{Problem~6 is the
+trap}: ``of 8+ hour sleepers'' flips the group to the \emph{column}, so it is $48/68 \approx 0.71$,
+not $0.30$ and not $48/200$. Take a hand count on the denominator before anyone computes. Fill
+\emph{conditional relative frequency}.
+
+\textbf{Association (10 min) --- the crux.} The segmented bar graph is problem~4 and~5 drawn:
+30\% vs.\ 50\%. Name the mosaic plot in one sentence (bar widths = group sizes) and say aloud
+that a side-by-side bar graph draws the same percents as paired bars. \textbf{You work
+problem~7} (read 70\%). \textbf{Problem~8, in this last instruction row, is the crux}: the claim
+``48 phone students sleep 8+ vs.\ only 20'' is true in counts and backwards in rates. Point at
+the warm-up's \emph{more} vs.\ \emph{better}. Problem~9 states the association with percents;
+problem~10 is the hedge --- a survey, so no cause (and the pattern could even be chance,
+VAR-1.D.1). Fill \emph{association}.
+
+\columnbreak
+\textbf{We do (about 10 min): Texting Drivers.} Problems 11--14, a fresh context, worked
+entirely together. Students hold the pen; you hold the questions: \emph{``Of whom? Say the group
+before you divide.''} \quad \emph{``Which group is bigger --- and does that make its count
+bigger?''} \textbf{Problem~13 is the crux transferred} (36 older vs.\ 20 young texters, from
+groups of 150 and 50) and is the one to protect when time is short; problem~14 must end in
+context with the survey hedge.
+
+\textbf{The pen must actually change hands.} Guided Practice is the only place today where you
+can watch a student decide, so do not narrate it. Put problem~12 on them cold and take a hand
+count on the two denominators (50 and 150) before anyone speaks.
+
+Circulate and demand the reason, not the number:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~11:} ``Is that one cell or a whole row? Then which kind is it?''
+  \item \textbf{Problem~12:} ``Read me your bottom number. Whose total is it?''
+  \item \textbf{Problem~13, the crux:} ``Out of how many? Now say it as a percent.''
+\end{itemize}
+While circulating, pick the papers for the debrief --- one problem~13 that argues from 36 vs.\
+20 (almost right: correct counts, wrong comparison), one that converts to 24\% vs.\ 40\%.
+\textbf{Your formative read comes twice}: here, and again in the last eight minutes as students
+start the homework.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5--7 min)}\\
-    Display two headlines:
-    \begin{itemize}
-        \item \textit{``Students who eat breakfast score higher on tests.''}
-        \item \textit{``Shoe size and reading ability are strongly associated in children.''}
-    \end{itemize}
-    Ask: Are these relationships real? Could they be random? Could something else explain them?
-    Transition: \textit{``These are the questions Unit 2 is designed to answer.''}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15--18 min)}
-    \begin{enumerate}
-        \item Define two-variable data; show a small dataset with two variables per individual.
-        \item Ask: ``Does eating breakfast cause higher scores, or is something else going on?'' Introduce apparent vs.\ real association.
-        \item Shoe-size example: children who wear larger shoes are older --- age is the lurking variable; the association is real but not directly causal.
-        \item Preview Unit 2 road map: the type of analysis depends on the variable types.
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives on the board and in the room.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Open on the \emph{almost}-right problem~8 / 13 answer} you collected --- the
+        one that says ``the older drivers text more, 36 to 20.'' Its counts are right; ask the
+        room what question it answered. Then put the percents beside it.
+  \item Put the four-line table from the debrief slide on the board: counts in one column,
+        conditional percents in the other, for both contexts. The bigger count came from the
+        bigger group both times.
+  \item Take problem~6 back: \emph{``of 8+ hour sleepers''} and \emph{``of phone-in-room
+        students''} use the same 48 and different denominators --- different questions.
+  \item Close on the hedge: associated, yes; caused, not shown --- and with 40 students in one
+        group, chance is not ruled out.
+\end{enumerate}
+\columnbreak
+\textbf{Demand one sentence aloud} in AP form from a volunteer: \emph{``In this survey, 50\% of
+students without a phone in the bedroom sleep 8+ hours, compared with 30\% of students with one,
+so phone location and sleep are associated.''} Every part --- percents, both groups, context,
+``associated'' not ``causes'' --- is what the free response scores.
+
+\textbf{If the debrief runs short}, cut item~3. Item~1 is the only one that cannot be cut.
+\textbf{Do not let the debrief eat the last eight minutes} --- the homework start is not optional
+padding, it is your second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Walk through 3 research questions. For each, ask:
-          (a) What two variables are involved?
-          (b) Is the apparent pattern likely real or possibly random?
-          (c) If real, does it prove causation?
-        \item Emphasize EK VAR-1.D.1: an apparent association may be random.
-          A sample of $n = 10$ can show a pattern that disappears with $n = 1{,}000$.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Circulate as students categorize question types on their guided notes.
-        \item Listen for: students treating any pattern as a real relationship;
-          address with ``could this just be random variation in a small sample?''
-        \item Cold-call on the hook scenarios before moving to group work.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- assigned, not scored]{goldbox}
+One page on a 400-household grocery survey (location $\times$ grocery method, a $2\times3$
+table): \textbf{MC~1} is the denominator trap --- ``of the households that use delivery'' is
+$60/75 = 0.80$, and distractor (B) $0.240$ is the reverse conditional $60/250$; \textbf{MC~2} is
+the crux, with distractor (A) arguing from raw counts (150 vs.\ 105) in groups of 250 and 150 ---
+in rates the rural households actually shop in store \emph{more} (70\% vs.\ 60\%). The free
+response computes the rural conditional distribution, judges association with the urban one,
+and \textbf{part (c) is the spiral} to Lessons 1.2--1.3: a histogram needs a quantitative
+variable; these are categories.
+
+\textbf{Not scored --- the cover's score column reads \textbf{NA} for this page.} Go over it at
+the start of Lesson~2.2 and hold the AP standard out loud: \emph{in context or it does not
+count}. A part~(b) that says ``yes, the numbers are different'' without naming \emph{which}
+percents for \emph{which} groups does not earn the point.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Partner Activity (8--10 min)}\\
-    Provide 4 research questions. Partners decide:
-    \begin{enumerate}
-        \item What two variables are being compared?
-        \item Is this a question about a relationship (Unit 2) or about one variable (Unit 1)?
-        \item Could an apparent association here be due to chance? What would convince you it is real?
-        \item Can this study establish causation? Why or why not?
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide a sentence frame --- ``The two variables are \underline{\hspace{1cm}} and \underline{\hspace{1cm}}. The apparent association may be random because \underline{\hspace{1cm}}.''
-        \item \textit{Extension}: Students write their own research question, identify a potential confounding variable, and explain how they would design a study to eliminate it.
-        \item \textit{ELL}: Pair headline excerpts with a vocabulary anchor chart.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored, due the first class after two study halls]{goldbox}
+Five items in a third context --- a gym's 250 newest members, monthly vs.\ annual plan
+$\times$ still attending after six months. \textbf{Part A:} A1 a joint relative frequency named
+as joint; \textbf{A2 the denominator trap} (``of those who \emph{stopped}'' $= 90/120$).
+\textbf{Part B:} B1 both conditional rates (40\% vs.\ 70\%); \textbf{B2 the crux restated} ---
+the manager argues from 70 vs.\ 60 --- plus the causation hedge; B3 an AP-style multiple-choice
+item (which result shows \emph{no} association) with a one-sentence justification.
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.}
+\textbf{Scoring:} 10 points --- 2 per item. \textbf{B2 is the one to read closely}: it predicts
+Lesson~2.2, where students must again describe a relationship in context and stop short of
+cause.
+
+\textbf{Paper homework is the default for this course} --- assign this page unless you have
+decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
+instead, it replaces this page, you strike through the score cell on the cover, and this page
+stays in the packet as extra practice. Never assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Scenario: \textit{``A study of 30 high school students finds that students who drink
-    more coffee get higher grades.''} Students independently write:
-    \begin{enumerate}
-        \item The two variables being studied
-        \item Whether this association is likely real or possibly random (and why sample size matters)
-        \item One possible confounding variable
-        \item Whether this proves coffee causes higher grades
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``A study found a strong positive association between the number of fire trucks
-    sent to a fire and the amount of property damage. Which of the following is the most
-    plausible explanation?''}
-    \begin{enumerate}[label=(\Alph*)]
-        \item Fire trucks cause property damage
-        \item Property damage attracts more fire trucks
-        \item The size of the fire is a confounding variable
-        \item The association is due to measurement error
-    \end{enumerate}
-    Use student responses to assess readiness for Lesson 2.2.
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{Comparing counts from groups of different sizes} (notes~8, 13; AP~MC2(A);
+        HW~B2 --- the target misconception). Probe: \emph{``Out of how many? Say it as a
+        percent.''}
+  \item \textbf{The wrong denominator for a conditional} --- the grand total, or the other
+        variable's total (notes~6; AP~MC1(B); HW~A2). Probe: \emph{``Read me the words after
+        `of'. That group's total goes on the bottom.''}
+  \item \textbf{Association read as causation} (notes~10, 14; HW~B2). Probe: \emph{``Did anyone
+        assign the phones? Then what else could explain it?''}
+  \item \textbf{``No association because the same category wins in both groups''} (AP~MC2(C)).
+        Probe: \emph{``Do the bars match, or just their tallest piece?''}
+  \item \textbf{Joint and marginal swapped} (notes~3, 11; HW~A1). Probe: \emph{``One cell or a
+        whole row?''}
+\end{itemize}
+Cold-call prompts: \emph{``Of whom?''} \quad \emph{``Give me a pair of groups where the bigger
+count is the smaller rate.''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item For 4 news blurbs reporting associations, identify the two variables, evaluate whether the association is likely real or possibly random, and identify one confounding variable.
-        \item Reflect: \textit{``Why isn't a strong association between two variables enough to prove causation?''}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Look up ``spurious correlations'' (tylervigen.com) and choose one. Explain why the association is almost certainly random, not real.
-        \item \textit{Preview}: Lesson 2.2 begins analyzing relationships between \emph{two categorical} variables using a two-way frequency table --- start thinking about what such a table would look like.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Assign (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+five items on paper, scored, due the first class after two study halls --- and point out that
+the AP Practice page before it is theirs to work and bring to review. Circulate:
+\textbf{A2 and B2 tell you whether rows 2 and 3 landed.} Sort what you see into three piles ---
+divided by 120 and argued B2 from 70\% vs.\ 40\% (ready); right numbers but no percents or no
+hedge in B2 (ready, needs the language); divided by 150 or 250, or argued from 70 vs.\ 60 (the
+misconception survived) --- and open Lesson~2.2 by reteaching row~3 with the warm-up's
+\emph{more} vs.\ \emph{better} if that third pile ran past a third of the room. Then close on
+what changed: \emph{``You walked in comparing counts. You walk out asking `of whom?' and comparing
+percents --- and knowing that an association in a survey is a pattern, not a cause.''}
+\textbf{Preview:} Lesson~2.2, \emph{Scatterplots and Correlation} --- the same question, ``are
+these variables related?'', when both variables are numbers.
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Item~2 is the seed and the only item worth time. Give four minutes total. Expect half the room
+to answer ``Section B'' to \emph{both} questions --- that is the misconception arriving early,
+which is exactly what you want. Do not correct it with a lecture: have a student compute the two
+percents aloud, then write \emph{more pass: B} and \emph{did better: A} side by side and leave
+them on the board all period. Item~3's classification spirals Lesson~1.1; accept any sensible
+``are these related?'' question and keep the phone/sleep one if a student offers it.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 24 / 10, then 8 for the debrief, then 8 for
+the homework start.} Four rows, 14 problems. You work problems 1, 4, and 7; the class works the
+rest of each grid; Guided Practice (11--14) is theirs with you asking. Row~1 is machinery and
+must move --- six minutes. \textbf{Problem~6 is the trap} (the column-conditional $48/68$) and
+\textbf{problem~8 is the crux}, in the last instruction row: the raw-count claim that runs
+backwards once it is converted to rates. Spend the time there. If students need a reason
+\emph{why} counts mislead, ask how many students are in each bar; the graph's labels (160 and 40)
+are there for that.
+
+\textbf{Guided Practice is where the pen changes hands} --- take answers, write what students
+say, and push back rather than working it on the board while they watch. If you only get
+through 12 and 13, that is the right trade.
+
+\textbf{There is no independent practice set, and that is deliberate --- the homework is the
+individual practice.} During the supervised start, read A2 and B2 over shoulders and sort into
+the three piles in \emph{Close \& Assign}. If the third pile is more than a third of the room,
+\textbf{open Lesson~2.2 by reteaching row~3}, and say so plainly.
+
+\textbf{Debrief (8 min), spoken.} The almost-right crux answer first; it is the one move that
+cannot be cut. \textbf{Do not let the debrief eat the last eight minutes.}
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded practice is the homework behind
+it at the back of the packet. Go over it at the start of Lesson~2.2. \textbf{MC~1 is the one
+worth reading closely}: a student who picks (B) 0.240 divided by the urban total when the question
+restricted to delivery users --- the denominator trap in exam form. On the free response, part~(b)
+earns credit only with both groups' percents for the same category, in context; part~(c) is the
+spiral and should name the variable type, not just ``bar graphs are better.''
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored, 10 points (2 per item), due the first class after two study halls.} The eight
+minutes at the end of the period are a \emph{start}: put students on A2 and B2 first while you
+can still catch a wrong start. Scoring: A1 needs both the value and the word \emph{joint};
+A2 earns nothing for $90/150$ or $90/250$; B2 needs both percents, a statement of association,
+\emph{and} the observational-study hedge (1 point without the hedge); B3 needs (B) plus the
+reason (equal conditional rates), not just the letter. \textbf{Paper is the default.} On the
+occasions you assign DeltaMath in its place, strike the score cell on the cover and tell
+students this page is now optional practice. Do not assign both.
+\end{teachernote}
 \end{document}

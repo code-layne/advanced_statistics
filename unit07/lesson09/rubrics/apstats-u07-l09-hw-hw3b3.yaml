@@ -1,0 +1,14 @@
+# Homework item 3b Normal (Unit 7, Lesson 7.9). Relative to the lesson directory.
+id: hw3b3
+points: 1
+task: >-
+  Randomized experiment: new stretching protocol (n = 18, mean 14.2 days, s = 3.6) vs
+  standard (n = 20, mean 17.5 days, s = 4.1); both roughly symmetric, no outliers.
+  Does the new protocol reduce mean recovery time? Verify the Normal condition (n <
+  30).
+criteria:
+  - id: 3b3
+    points: 1
+    full: >-
+      Notes both samples are under 30 and both distributions are roughly symmetric with no
+      outliers; met.

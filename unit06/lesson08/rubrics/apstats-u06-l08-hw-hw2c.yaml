@@ -1,0 +1,20 @@
+# Homework item 2c (Unit 6, Lesson 6.8). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  Drivers surveyed in two states: State 1, 374 of 440 always wear a seat belt; State
+  2, 306 of 390. The 99% CI for p1 - p2 is (-0.004, 0.134). Does the interval provide
+  evidence of a difference in seat belt use between the two states? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no (not convincing evidence of a difference at the 99% level).
+  - id: reason
+    points: 1
+    full: >-
+      Explains that the interval contains 0, so no difference is a plausible value of p1 -
+      p2.
+examples:
+  - response: "Yes, because most of the interval is positive."
+    scores: {answer: 0, reason: 0}

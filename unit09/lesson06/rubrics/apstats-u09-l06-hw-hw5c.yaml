@@ -1,0 +1,18 @@
+# Homework item 5(3) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw5c
+points: 2
+task: >-
+  Random samples of 100 urban and 100 rural adults record anxiety in the past year
+  (yes/no); test whether anxiety rates differ between urban and rural adults. List the
+  key conditions that must be checked.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random samples from each group, and 10% for each group (100 at most 10% of urban and
+      of rural adults).
+  - id: large
+    points: 1
+    full: >-
+      Large Counts for each group: n p-hat and n(1 - p-hat) at least 10 (using the
+      pooled/combined p-hat).

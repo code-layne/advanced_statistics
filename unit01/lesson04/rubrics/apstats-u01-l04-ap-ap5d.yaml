@@ -1,0 +1,22 @@
+# AP Practice item 5, part (d) (Unit 1, Lesson 1.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5d
+points: 2
+task: >-
+  A company recorded the one-way commute time (minutes) of its 40 employees; a
+  histogram with 10-minute intervals has counts 5, 12, 10, 6, 4, 2, 0, 0, 1 for 0-10,
+  10-20, ..., 80-90. The same 40 commute times are redrawn using intervals 30 minutes
+  wide. Explain what happens to the employee who commutes more than 80 minutes, and
+  why the interval width has to be checked before the shape is believed.
+criteria:
+  - id: width
+    points: 2
+    full: >-
+      E: Says the bars become 27, 12, 1 and that employee now sits in a 60-90 bar right
+      beside the 30-60 bar, so the gap disappears and the outlier no longer stands out,
+      AND explains that the shape (and its unusual features) can change with interval
+      width even though the data did not change.
+    partial: >-
+      P (1 of 2): Gives one of the two parts correctly (what happens to the employee, or
+      why the width must be checked).

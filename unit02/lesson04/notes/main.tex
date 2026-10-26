@@ -1,194 +1,137 @@
-%! AP Statistics — Unit 2, Lesson 2.4 — Guided Notes
-\documentclass[10pt]{article}
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1), at the COMPACT
+% budget: the vocabulary box, then ONE guidednotes table of four rows, 14 problems, 2 pages.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice, is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 5 (r from R-Sq: the square root loses the sign). THE CRUX is problem 10,
+% in the last instruction row: "their reaction time goes down 24 ms" — the slope read as a
+% promise about every individual instead of a change in the PREDICTED value (EK DAT-1.H.2).
+%
+% THE DATA (instruction rows): 20 students, sleep x (hr, 4 to 10) vs reaction time y (ms).
+%   xbar 7.2, s_x 1.5, ybar 310, s_y 45, r -0.80  ->  b = -24, a = 482.8, r^2 = 0.64.
+%   Output consistent with n = 20: S = 27.74, SE(b) = 4.243, T = -5.66; SE(a) = 31.17, T = 15.49.
+% GUIDED PRACTICE: 30 used Civics, age (yr, 0 to 10) vs price ($1000s): a = 24.60, b = -1.850,
+%   R-Sq 81.0% -> r = -0.90. Here the intercept IS meaningful (a new car) — the contrast.
+%
+% PAGE LOCKSTEP with notes_key/: \blank -> \ans, \termblank -> \termans, the fourth argument of
+% each \pcell. Nothing else differs. `\\` inside a cell ends the row: use \par.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.4}{Guided Notes}
-\namedateperiod
+\pageheader{Unit 2, Lesson 2.4}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-% ── OBJECTIVE ────────────────────────────────────────────────────────────────
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
-
-\vspace{0.1in}
-
-% ── VOCABULARY ───────────────────────────────────────────────────────────────
+% ── VOCABULARY (I do — students fill each term AS IT IS NAMED, never in advance) ──
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Scatterplot}
-\termblanklong{Explanatory variable}
-\termblanklong{Response variable}
-\termblanklong{Positive association}
-\termblanklong{Negative association}
-\termblanklong{Form (of a scatterplot)}
-\termblanklong{Strength (of a scatterplot)}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Least-squares regression line}
+\par
+\termblank{Slope of the LSRL}
+\par
+\termblank{Coefficient of determination ($r^2$)}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-% ── HOOK ─────────────────────────────────────────────────────────────────────
-\begin{hookbox}
-\small\textbf{Opening Question:} Your teacher displays four scatterplots without labels.
-
-\vspace{6pt}
-Rank them from \textit{most useful for prediction} to \textit{least useful}, and explain why
-you chose that order.\\[8pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\vspace{4pt}
-\textbf{Key idea from the discussion:} The \blank{5cm} of the pattern in a scatterplot
-determines how useful it is for making predictions. Today we learn to describe that pattern precisely.
-\end{hookbox}
-
-\vspace{0.1in}
-
-% ── WHAT IS A SCATTERPLOT ────────────────────────────────────────────────────
-\begin{notesbox}{Step 1 --- What Is a Scatterplot? (UNC-1.S)}
 \small
+\begin{guidednotes}
+% ── ROW 1: the least-squares line from summary statistics ────────────────────
+\mainidea[The best line:]{Least squares} &
+The \textbf{least-squares regression line (LSRL)} is the one line that makes the sum of the
+\blank{1.8cm} residuals as small as possible. It always passes through \blank{1.5cm}.
 
-\noindent A \textbf{scatterplot} displays the relationship between \blank{3.5cm} quantitative
-variables measured on \blank{3.5cm} individuals.
+\vspace{2pt}
+Twenty students: \textbf{sleep} $x$ (hours, 4 to 10) and \textbf{reaction time} $y$ (ms).
+\ $\bar x = 7.2$, \ $s_x = 1.5$, \ $\bar y = 310$, \ $s_y = 45$, \ $r = -0.80$.
+\par\vspace{2pt}
+\stepnum{1}\ Slope: $b = r \cdot s_y / s_x$ --- always the same \blank{1.2cm} as $r$.\par
+\stepnum{2}\ Intercept: $a = \bar y - b\,\bar x$, because the line goes through
+$(\bar x, \bar y)$.\par
+\stepnum{3}\ Write $\hat y = a + bx$ with the \blank{2.8cm} in place of $x$ and $y$.
+\notesprompt{Build the sleep line.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{The slope $b$}{1.3cm}{} &
+\pcell{2}{The intercept $a$}{1.3cm}{} &
+\pcell{3}{The equation, with the variable names}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: computer output and r^2 (split into two sub-rows at the prompt) ───
+\mainidea[Computer output \&]{R-squared} &
+{\centering\footnotesize\ttfamily
+\begin{tabular}{@{} l r r r r @{}}
+Predictor & Coef & SE Coef & T & P \\ \hline
+Constant & 482.8 & 31.17 & 15.49 & 0.000 \\
+Sleep & $-$24.00 & 4.243 & $-$5.66 & 0.000 \\
+\end{tabular}\par
+S = 27.74 \quad R-Sq = 64.0\% \quad R-Sq(adj) = 62.0\%\par}
+\vspace{2pt}
+Software, same 20 students: $a$ is the Coef in the \blank{2.0cm} row, $b$ the Coef in the
+\blank{1.4cm} row. The \textbf{coefficient of determination} $r^2$ is the \blank{2.0cm} of the
+\blank{1.8cm} in $y$ explained by the linear model with $x$.
+\\
+& \notesprompt{Read the output.}
+\begin{probgrid}{|>{\hsize=0.75\hsize\linewidth=\hsize}X|>{\hsize=0.75\hsize\linewidth=\hsize}X|>{\hsize=1.5\hsize\linewidth=\hsize}X|}
+\pcell{4}{Find $a$ and $b$. Do they match 1 and 2?}{1.4cm}{} &
+\pcell{5}{R-Sq is 64.0\%. What is $r$?}{1.4cm}{} &
+\pcell{6}{Interpret $r^2$ in context.}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: interpreting slope and intercept — THE CRUX (two sub-rows) ────────
+\mainidea[In context:]{Slope \& intercept} &
+The \textbf{slope} $b$ is how much the \blank{1.9cm} $y$ changes for each \blank{1.6cm}
+increase in $x$ --- a fact about the line, not a promise about every individual. The
+\textbf{intercept} $a$ is the predicted $y$ when $x =$ \blank{0.7cm}; it means something only
+if $x = 0$ makes sense \emph{and} is \blank{2.4cm}.
+\par\vspace{3pt}
+\fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{For each additional [unit of $x$], the \emph{predicted} [$y$] increases (decreases)
+by [$|b|$ units].}}}
+\\
+& \notesprompt{Interpret the sleep line, $\widehat{\text{time}} = 482.8 - 24(\text{sleep})$.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Interpret the slope in context.}{1.7cm}{} &
+\pcell{8}{Interpret the intercept. Is it meaningful here?}{1.7cm}{} \\ \hline
+\pcell{9}{Jon slept 2 hours more than Ana. How do their \emph{predicted} times
+compare?}{1.7cm}{} &
+\pcell{10}{Maya writes: ``When a student sleeps one more hour, their reaction time goes down
+24~ms.'' What is wrong?}{1.7cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: GUIDED PRACTICE — we do, together, a fresh context ─────────────
+\mainidea[Guided practice]{Used cars} &
+A dealer recorded the \textbf{age} (years, from 0 to 10) and the \textbf{price} (thousands of
+dollars) of 30 used Honda Civics and regressed price on age:
+\par\vspace{2pt}
+{\centering\footnotesize\ttfamily
+\begin{tabular}{@{} l r r r r @{}}
+Predictor & Coef & SE Coef & T & P \\ \hline
+Constant & 24.60 & 0.950 & 25.89 & 0.000 \\
+Age & $-$1.850 & 0.169 & $-$10.93 & 0.000 \\
+\end{tabular}\par
+S = 2.10 \quad R-Sq = 81.0\% \quad R-Sq(adj) = 80.3\%\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Write the LSRL, with the variable names.}{1.7cm}{} &
+\pcell{12}{Interpret the slope in context.}{1.7cm}{} \\ \hline
+\pcell{13}{Interpret the intercept. Is it meaningful here?}{1.7cm}{} &
+\pcell{14}{Find $r$, then interpret $r^2$ in context.}{1.7cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{6pt}
-\textbf{Axis rule:}
-\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item The \blank{3.5cm} variable (explains or predicts) goes on the \blank{1.5cm}-axis.
-  \item The \blank{3.5cm} variable (the outcome) goes on the \blank{1.5cm}-axis.
-\end{itemize}
-
-\vspace{6pt}
-\textbf{Each point} $(x,\, y)$ represents \blank{5.5cm}.
-
-\vspace{6pt}
-\textbf{Class example --- Hours of sleep vs.\ reaction time (ms) for 10 students:}
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} l *{10}{C{0.8cm}} @{}}
-\rowcolor{sky}
-\textbf{Sleep (hr)} & 5 & 6 & 6 & 7 & 7 & 8 & 8 & 8 & 9 & 9 \\
-\textbf{RT (ms)}    & 310 & 290 & 280 & 265 & 250 & 240 & 235 & 220 & 210 & 195 \\
-\end{tabularx}
-
-\vspace{10pt}
-\begin{center}
-\begin{tikzpicture}
-  \draw[very thin, gray!35] (0,0) grid[xstep=0.5,ystep=0.5] (8,5);
-  \draw[->, thick, navy] (0,0) -- (8.4,0)
-        node[right, navy, font=\small] {Sleep (hr)};
-  \draw[->, thick, navy] (0,0) -- (0,5.5)
-        node[above, navy, font=\small] {RT (ms)};
-  \foreach \x/\lbl in {1/5, 2/6, 3/7, 4/8, 5/9, 6/10}
-    \node[below, font=\scriptsize] at (\x*1.33,0) {\lbl};
-  \foreach \y/\lbl in {0/180, 1/210, 2/240, 3/270, 4/300, 5/330}
-    \node[left, font=\scriptsize] at (0,\y) {\lbl};
-\end{tikzpicture}
-\end{center}
-
-\vspace{4pt}
-Plot each point from the table above and label two of them with their coordinates.
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── DOFS FRAMEWORK ───────────────────────────────────────────────────────────
-\begin{notesbox}{Step 2 --- Describing the Relationship: DOFS (UNC-1.T)}
-\small
-
-\noindent To describe a scatterplot fully, use the \textbf{DOFS} framework:
-
-\vspace{6pt}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}l X @{}}
-\textbf{D}irection &
-  \blank{2.2cm} association: as $x$ increases, $y$ tends to \blank{2cm}.\\
-  & \blank{2.2cm} association: as $x$ increases, $y$ tends to \blank{2cm}.\\
-  & \blank{2.2cm} association: knowing $x$ gives no useful information about $y$.\\[6pt]
-\textbf{F}orm &
-  \blank{2cm}: points follow a straight-line pattern.\\
-  & \blank{2cm}: points follow a curved pattern.\\
-  & \blank{2cm}: no discernible pattern.\\[6pt]
-\textbf{S}trength &
-  \blank{2.5cm}: points follow the form very closely.\\
-  & \blank{2.5cm}: points follow the form somewhat closely.\\
-  & \blank{2.5cm}: points are spread loosely around the form.\\[6pt]
-\textbf{O}utliers &
-  A point that \blank{4.5cm} from the overall pattern.
-\end{tabularx}
-
-\vspace{8pt}
-\textbf{Complete DOFS description template (write in context):}\\[6pt]
-``There is a \blank{3cm} \blank{3cm} \blank{3cm} association between
-[explanatory variable] and [response variable] for these [individuals].
-[Outlier sentence if applicable.]''
-
-\vspace{8pt}
-\textbf{Write the DOFS description for the sleep vs.\ reaction time scatterplot:}\\[6pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── ADDITIONAL EXAMPLES ───────────────────────────────────────────────────────
-\begin{notesbox}{Step 3 --- Practice: Describing Four Scatterplots}
-\small
-
-\noindent For each scatterplot your teacher displays, write a complete DOFS description.
-
-\vspace{6pt}
-\textbf{Scatterplot A} ($x$ = age of car in years, $y$ = resale price in \$1000s):\\[6pt]
-\writeline\\[1pt]\writeline
-
-\vspace{6pt}
-\textbf{Scatterplot B} ($x$ = outside temperature in °F, $y$ = hot cocoa sales):\\[6pt]
-\writeline\\[1pt]\writeline
-
-\vspace{6pt}
-\textbf{Scatterplot C} ($x$ = hours of exercise per week, $y$ = resting heart rate):\\[6pt]
-\writeline\\[1pt]\writeline
-
-\vspace{6pt}
-\textbf{Scatterplot D} ($x$ = shoe size, $y$ = GPA):\\[6pt]
-\writeline\\[1pt]\writeline
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── CONNECTIONS ───────────────────────────────────────────────────────────────
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-
-\textbf{How this connects:}
-\begin{itemize}[itemsep=3pt]
-  \item Lesson 2.1: explanatory vs.\ response variable determines which axis each goes on.
-  \item Lesson 2.5 (next): correlation $r$ will quantify the \emph{direction} and \emph{strength}
-        of a \textit{linear} association with a single number.
-  \item Lessons 2.6--2.9: the regression line fits a line to the scatterplot.
-\end{itemize}
-
-\columnbreak
-
-\textbf{Reflection:}\\
-Why is it important to state the \emph{form} of the association (linear vs.\ curved)?
-What might go wrong if we skip it?\\[2pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\end{multicols}
-\end{spiralbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Additional Notes}
-\vspace{0pt}
-\writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline
-\end{notesbox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

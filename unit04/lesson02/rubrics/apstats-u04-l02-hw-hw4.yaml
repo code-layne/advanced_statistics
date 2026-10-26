@@ -1,0 +1,18 @@
+# Homework item 4 (reflection) (Unit 4, Lesson 4.2). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  Explain why the Law of Large Numbers matters when using simulation to estimate
+  probability. What could go wrong with only 5 trials?
+criteria:
+  - id: lln
+    points: 1
+    full: >-
+      Says that with many trials the relative frequency settles down to (converges to) the
+      true probability, so a large number of trials gives a trustworthy estimate.
+  - id: few
+    points: 1
+    full: >-
+      Says that with only 5 trials the relative frequency fluctuates a lot by chance (e.g.
+      0 or 5 heads in 5 flips gives 0 or 1.0), so the estimate could be far from the true
+      probability.

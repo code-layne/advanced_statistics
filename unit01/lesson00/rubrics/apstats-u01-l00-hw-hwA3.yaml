@@ -1,0 +1,23 @@
+# Homework Part A, item 3 (Unit 1, Lesson 1.0). Relative to the lesson directory.
+id: hwA3
+points: 2
+task: >-
+  A city record lists six food trucks licensed for one downtown lot, with Cuisine,
+  Menu items, Avg. wait (min), and Cash only? for each truck (waits range from 4 to 19
+  minutes). Write one statistical question the city could answer with this record, and
+  state exactly what varies in it.
+criteria:
+  - id: question
+    points: 1
+    full: >-
+      Writes a question about the trucks whose answer depends on a variable that differs
+      from truck to truck (e.g., how do the average waits vary?), answered by reading the
+      record.
+  - id: varies
+    points: 1
+    full: >-
+      States exactly what varies: the named variable's value (e.g., the average wait)
+      differs from one truck to the next.
+examples:
+  - response: "How many trucks are in the lot? The number of trucks varies."
+    scores: {question: 0, varies: 0}

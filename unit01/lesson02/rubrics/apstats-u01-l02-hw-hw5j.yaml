@@ -1,0 +1,12 @@
+# Homework item 5, justification (Unit 1, Lesson 1.2). Relative to the lesson directory.
+id: hw5j
+points: 1
+task: >-
+  Brookfield: 900 of 3,000 residents bike. Ashton: 240 of 600 bike. Justify in a
+  sentence why (C) Brookfield has more bikers, but Ashton has the higher biking rate.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies with both rates: Brookfield 900/3000 = 30% and Ashton 240/600 = 40%, while
+      Brookfield has more bikers (900 vs 240).

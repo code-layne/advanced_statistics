@@ -1,0 +1,16 @@
+# Homework item 1a (Unit 6, Lesson 6.9). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  A 99% CI for p_city - p_suburb, the difference in the proportions of residents who
+  use public transit, is (-0.06, 0.22). Interpret this interval.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 99% confidence and the interval from -0.06 to 0.22.
+  - id: context
+    points: 1
+    full: >-
+      Says it captures the TRUE DIFFERENCE (city minus suburb) in the proportions of
+      residents who use public transit.

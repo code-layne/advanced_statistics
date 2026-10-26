@@ -1,0 +1,12 @@
+# Homework item 1b Random (Unit 7, Lesson 7.5). Relative to the lesson directory.
+id: hw1b3
+points: 1
+task: >-
+  A botanist tests whether a new fertilizer raises mean plant height above 12 cm: 25
+  plants randomly assigned, x-bar = 13.6 cm, s = 3.2 cm, dotplot roughly symmetric
+  with no outliers. Verify the Random condition.
+criteria:
+  - id: 1b3
+    points: 1
+    full: >-
+      Says the 25 plants were randomly assigned, so the Random condition is met.

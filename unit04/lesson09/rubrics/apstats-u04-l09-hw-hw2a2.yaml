@@ -1,0 +1,12 @@
+# Homework item 2a interpretation (Unit 4, Lesson 4.9). Relative to the lesson directory.
+id: hw2a2
+points: 1
+task: >-
+  X = cost of a large pizza (mean $12), Y = cost of a 2-liter soda (mean $3); mu_{X+Y}
+  = $15. Interpret in context.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      Says that on average (in the long run) a customer spends about $15.00 on a pizza and
+      a soda combined.

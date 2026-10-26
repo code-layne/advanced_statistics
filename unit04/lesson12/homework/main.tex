@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l12-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 4, Lesson 4.12}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -20,13 +23,16 @@ Write complete-sentence interpretations wherever asked.
 Let $X =$ the number of rolls needed.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Check BITS and state the distribution.\\
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\gradedblank[id=hw1a, type=rubric, points=3, display={B, I, T, S met (1 or not; independent rolls; until first 1; $p = 1/6$): $X \sim$ Geom$(1/6)$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Compute $P(X = 2)$ and $P(X = 6)$ using the formula. Show setup.\\
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{$P(X{=}2) =$~\gradedblank[id=hw1b1, type=short, points=1, answer=0.1389, check=numeric, tolerance=0.002]{0.75in}{0.2in}\quad $P(X{=}6) =$~\gradedblank[id=hw1b2, type=short, points=1, answer=0.0670, check=numeric, tolerance=0.002]{0.75in}{0.2in}}}
   \item Find $\mu_X$ and interpret in context.\\
-        \writeline\\[1pt]\writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw1c1, type=short, points=1, answer=6, check=numeric, tolerance=0, display={\textbf{6}}]{0.9in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw1c2, type=rubric, points=2, display={Average of 6 rolls to get the first 1.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
+\tcbbreak
   \item Find $P(X > 6) = (1 - p)^6$. Interpret in one sentence.\\
-        \writeline\\[1pt]\writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw1d1, type=short, points=1, answer=0.3349, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw1d2, type=rubric, points=2, display={33.5\%: more than 6 rolls.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -35,27 +41,29 @@ of being too large. Bolts are tested one at a time until the first oversized bol
 is found.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item State the distribution of $X$ (the number of bolts tested).\\
-        \blank{5cm}
+        \makebox[5cm][l]{\hspace{0.7cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw2a, type=short, points=1, answer=Geom(0.04), check=text]{3cm}{0.2in}}}}
   \item Compute $P(X = 10)$. Write the formula and answer.\\
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2b, type=short, points=2, answer=0.0277, check=numeric, tolerance=0.001]{0.9in}{0.2in}}}
   \item Find $\mu_X$ and interpret.\\
-        \writeline\\[1pt]\writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2c1, type=short, points=1, answer=25, check=numeric, tolerance=0]{0.9in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw2c2, type=rubric, points=2, display={On average, 25 bolts are tested to find the first oversized one.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Compute $P(X \le 5)$ using \texttt{geometcdf}.\\
-        \writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw2d, type=short, points=1, answer=0.1846, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{8pt}
 \textbf{3.} (Binomial vs.\ Geometric) A researcher samples voters.
 Each voter independently supports a candidate with probability 0.55.
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item The researcher interviews voters until finding the first supporter.
         Let $W =$ the number interviewed. State the distribution of $W$.\\
-        \blank{5cm} \quad $\mu_W = $ \blank{3cm}
+        \makebox[5cm][l]{\hspace{0.7cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a1, type=short, points=1, answer=Geom(0.55), check=text]{3cm}{0.2in}}}} \quad $\mu_W = $ \makebox[3cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3a2, type=short, points=1, answer=1.82, check=numeric, tolerance=0.01]{1.4cm}{0.2in}}}}
   \item The researcher interviews exactly 10 voters.
         Let $V =$ the number of supporters. State the distribution of $V$.\\
-        \blank{5cm} \quad $\mu_V = $ \blank{3cm}
+        \makebox[5cm][l]{\hspace{0.7cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3b1, type=short, points=1, answer={B(10, 0.55)}, check=text]{3cm}{0.2in}}}} \quad $\mu_V = $ \makebox[3cm][l]{\hspace{1.6cm}\smash{\raisebox{-4pt}{\gradedblank[id=hw3b2, type=short, points=1, answer=5.5, check=numeric, tolerance=0]{1.4cm}{0.2in}}}}
   \item Explain the key difference between $W$ and $V$ in one or two sentences.\\
-        \writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\gradedblank[id=hw3c, type=rubric, points=2, display={$W$: trials until 1st success (random count); $V$: successes in fixed 10.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -65,15 +73,18 @@ a large population's individuals. A geneticist examines individuals one at a tim
 Let $X =$ the number of individuals examined.}
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
   \item Define the distribution of $X$. Check BITS briefly.\\
-        \writeline\\[1pt]\writeline\\[1pt]\writeline
+        \gradedhide{\gradedhere{\gradedblank[id=hw4a, type=rubric, points=3, display={$X \sim$ Geom$(0.20)$: carrier or not; independent individuals (large population); until the first carrier; same $p = 0.20$.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Compute $P(X = 4)$. Show formula setup.\\
-        \writeline\\[1pt]\writeline
+        \writeline\\[1pt]\writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4b, type=short, points=2, answer=0.1024, check=numeric, tolerance=0.001]{0.9in}{0.2in}}}
+\tcbbreak
   \item Find $\mu_X$ and interpret in context.\\
-        \writeline\\[1pt]\writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4c1, type=short, points=1, answer=5, check=numeric, tolerance=0]{0.9in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw4c2, type=rubric, points=2, display={On average, 5 individuals examined to find the first carrier.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Find $P(X \le 3)$. Write the calculator expression and the answer.\\
-        \writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4d, type=short, points=1, answer=0.488, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}
   \item Find $P(X > 5)$. Interpret in context.\\
-        \writeline\\[1pt]\writeline
+        \writeline\gradedhide{\hrulefill}\gradedright{\raisebox{-2pt}{\gradedblank[id=hw4e1, type=short, points=1, answer=0.3277, check=numeric, tolerance=0.002]{0.9in}{0.2in}}}\\[6pt]
+        \gradedhide{\gradedhere{\gradedblank[id=hw4e2, type=rubric, points=2, display={32.8\%: more than 5 examined.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}

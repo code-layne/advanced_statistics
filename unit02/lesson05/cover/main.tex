@@ -1,5 +1,5 @@
-%! AP Statistics — Unit 2, Lesson 2.5 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Departures from Linearity — Unit 2, Lesson 2.5 — Student Packet Cover Sheet
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{ltablex}
@@ -7,39 +7,34 @@
 
 \begin{document}
 
-% Full-bleed navy banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 2}{Lesson 2.5 \quad Departures from Linearity}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2: Exploring Two-Variable Data}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.5 \quad Correlation}}
-\end{center}
-
-\vspace{0.22in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objectives (DAT-1.I, DAT-1.J; DAT-1.F carried forward) stay in the
+% teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} calculate the correlation coefficient $r$ for a bivariate dataset using
-        technology. \hfill\textcolor{slate}{\small(DAT-1.B)}
-  \item \ldots{} interpret $r$: state the direction, strength, and linear nature of the
-        association in context. \hfill\textcolor{slate}{\small(DAT-1.C)}
-  \item \ldots{} explain that $r$ is unit-free and always between $-1$ and $1$, inclusive.
-        \hfill\textcolor{slate}{\small(DAT-1.C.1)}
-  \item \ldots{} explain why correlation does not imply causation.
-        \hfill\textcolor{slate}{\small(DAT-1.C.2)}
+  \item \ldots{} tell an \textbf{outlier} from a \textbf{high-leverage point}, and decide from
+        regression output whether a point is \textbf{influential}.
+  \item \ldots{} use a \textbf{residual plot} to decide whether a line is an appropriate model
+        --- even when $r$ is close to $1$ or $-1$.
+  \item \ldots{} explain how a \textbf{transformation} such as taking the log of $y$ can
+        straighten a curved pattern, and make a prediction from the transformed line.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
+\boxguard[14]
 \begin{tocbox}
 \small
 \renewcommand{\arraystretch}{1.5}
@@ -47,11 +42,17 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review --- DOFS and estimating $r$ from scatterplots      & \blank{1.2cm} \\
-2 & Guided Notes   & The correlation coefficient: formula, properties, interpretation  & \blank{1.2cm} \\
-3 & Group Activity & Calculate and interpret $r$ for real-world datasets               & \blank{1.2cm} \\
-4 & Exit Ticket    & Interpret a given $r$ and address causation                       & \blank{1.2cm} \\
-5 & Homework       & Multi-context correlation practice and scatterplot matching        & \blank{1.2cm} \\
+1 & Warm-Up & A taxi-fare residual, two residual plots, and one point that could move a line
+                 & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Three kinds of unusual point, a curve hiding behind
+                 $r = -0.94$, and a lemonade stand's residual plot & \blank{1.2cm} \\
+% AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
+3 & AP Practice & Used cars and a bacteria culture: AP-style multiple choice and one
+                 free-response set --- practice, not a grade & \textbf{NA} \\
+4 & Homework & Apartment rents and phone resale values: influence, residual plots, and a log
+                 model --- \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -59,31 +60,15 @@
 
 \vspace{0.14in}
 
+\boxguard[8]
 \begin{remindbox}
 \small
-The correlation coefficient $r$ measures the \emph{direction} and \emph{strength} of a
-\textbf{linear} association. Keep these ideas in mind.
-
-\vspace{6pt}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
-                                    X @{}}
-\textbf{\large!} &
-\textbf{$r$ only measures \emph{linear} association.}\enspace
-A value of $r \approx 0$ means no linear association ---
-a strong curved relationship could still exist. Always look at the scatterplot. \\[6pt]
-\textbf{\large!} &
-\textbf{$r$ is unit-free and symmetric.}\enspace
-Switching $x$ and $y$ does not change $r$. Multiplying a variable by a positive
-constant does not change $r$. \\[6pt]
-\textbf{\large!} &
-\textbf{Interpret in context.}\enspace
-Always name the variables: ``There is a strong negative linear association between
-engine size and fuel efficiency'' --- not just ``$r = -0.87$.'' \\[6pt]
-\textbf{\large!} &
-\textbf{Correlation $\neq$ causation.}\enspace
-A high $|r|$ does \emph{not} mean one variable causes the other.
-A lurking variable or coincidence may explain the association.
-\end{tabularx}
+A correlation close to $1$ or $-1$ says the points hug \emph{some} line tightly --- it does not
+say a line is the right \emph{shape}. \textbf{Before you trust a line, look at its residual
+plot}: random scatter means a line fits; a curve means it does not, whatever $r$ says. And
+when one point sits apart from the rest, ask two separate questions: is it far from the
+\emph{trend} (an outlier), and is it far out in $x$ (high leverage)? Then check what happens to
+the slope and $r$ \textbf{without it} --- that is what makes a point influential.
 \end{remindbox}
 
 \end{document}

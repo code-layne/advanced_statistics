@@ -1,0 +1,14 @@
+# Homework item 1c Normal (Unit 7, Lesson 7.8). Relative to the lesson directory.
+id: hw1c2
+points: 1
+task: >-
+  24 patients are randomly assigned to a new pain drug (Group 1) and 26 to a placebo
+  (Group 2); researchers believe the drug lowers mean pain score (10-point scale).
+  Both groups approximately symmetric, no outliers. Verify the Normal condition (n1 =
+  24, n2 = 26, both < 30).
+criteria:
+  - id: 1c2
+    points: 1
+    full: >-
+      Notes both samples are under 30 so both must be checked, and both distributions are
+      approximately symmetric with no outliers; met.

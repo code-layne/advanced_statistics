@@ -1,0 +1,18 @@
+# Homework item 1d (Unit 8, Lesson 8.6). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  A counselor randomly selects 180 teenagers and classifies them by grade
+  (9th/10th/11th, 60 each) and sleep amount (<7 hours / 7+ hours). Chi-square = 5.25,
+  df = 2, p is about 0.07. State the conclusion at alpha = 0.05.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.07, or between 0.05 and 0.10) with 0.05 and fails to reject H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is not convincing evidence of an association between grade level and
+      sleep amount (or that the sleep distribution differs across grades); does not claim
+      H0 is proved.

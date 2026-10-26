@@ -1,0 +1,20 @@
+# AP Practice item 5, part (d) (Unit 1, Lesson 1.0). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5d
+points: 2
+task: >-
+  A senior reads "Seniors work 11 hours a week" and concludes, "So I should expect to
+  work about 11 hours next week." Explain why a number that summarizes a whole group
+  does not tell you what to expect for one individual in it.
+criteria:
+  - id: explain
+    points: 2
+    full: >-
+      E: Explains that 11 describes the class as a whole while hours worked vary from
+      senior to senior (some work none, some far more), so the summary hides that spread
+      and cannot predict one student's hours; the answer is in context.
+    partial: >-
+      P (1 of 2): Says individuals differ or that 11 is only an average, without
+      connecting the variability to why the summary cannot predict one senior's hours, or
+      answers without the context.

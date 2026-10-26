@@ -1,0 +1,12 @@
+# Homework item 2b Random (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw2b1
+points: 1
+task: >-
+  Random samples: 54 of 120 city residents and 35 of 100 suburban residents support
+  expanding public transit. Is the proportion higher among city residents? Verify the
+  Random condition.
+criteria:
+  - id: 2b1
+    points: 1
+    full: >-
+      Says both samples were randomly selected, so the condition is met.

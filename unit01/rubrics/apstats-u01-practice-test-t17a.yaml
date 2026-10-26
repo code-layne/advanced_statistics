@@ -1,0 +1,16 @@
+# Unit 1 practice (sample) test, item 17a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t17a
+points: 2
+task: >-
+  North High: 120 of 250 seniors plan a 4-year college; South High: 88 of 160. What
+  proportion of each school's seniors plan to attend a 4-year college?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: North 120/250 = 0.48 AND South 88/160 = 0.55.
+    partial: >-
+      P (1 of 2): One proportion correct, or both set up correctly with an arithmetic
+      slip.

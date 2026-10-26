@@ -1,0 +1,22 @@
+# Homework item 5 (Unit 4, Lesson 4.6). Relative to the lesson directory.
+id: hw5
+points: 3
+task: >-
+  Determine whether '45+' and 'Documentaries' are independent (Documentaries 60 of
+  300; 20 of the 60 subscribers aged 45+). Show calculations and write a complete
+  interpretation in context.
+criteria:
+  - id: compute
+    points: 1
+    full: >-
+      Computes P(Docs) = 60/300 = 0.2 and P(Docs | 45+) = 20/60, about 0.333 (or an
+      equivalent check such as P(45+) vs. P(45+ | Docs)).
+  - id: conclude
+    points: 1
+    full: >-
+      Concludes the events are not independent because the probabilities are not equal.
+  - id: context
+    points: 1
+    full: >-
+      Interprets in context: subscribers aged 45+ watch documentaries at a higher rate
+      (about 33%) than subscribers overall (20%).

@@ -1,0 +1,16 @@
+# Homework item 2b (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  A 99% CI for the proportion of students who own a calculator is (0.71, 0.89). Would
+  a 95% CI using the same data be wider or narrower? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says narrower.
+  - id: reason
+    points: 1
+    full: >-
+      Explains that a lower confidence level uses a smaller critical value z* (1.960
+      instead of 2.576), so the margin of error is smaller.

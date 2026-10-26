@@ -1,0 +1,24 @@
+# Homework item 1a (Unit 5, Lesson 5.5). Relative to the lesson directory.
+id: hw1a
+points: 3
+task: >-
+  38% of high school students play at least one sport (p = 0.38); a random sample of n
+  = 180 students is selected. Check all three conditions for using the normal model
+  for the sample proportion.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the 180 students are a random sample (stated).
+  - id: independence
+    points: 1
+    full: >-
+      10% condition: 180 is at most 10% of all high school students in the nation.
+  - id: large_counts
+    points: 1
+    full: >-
+      Large Counts: np = 180(0.38) = 68.4 and n(1-p) = 180(0.62) = 111.6 are both at least
+      10.
+examples:
+  - response: "Random, 10%, and n is at least 30."
+    scores: {random: 1, independence: 1, large_counts: 0}

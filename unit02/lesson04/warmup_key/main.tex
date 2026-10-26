@@ -1,97 +1,56 @@
-%! AP Statistics — Unit 2, Lesson 2.4 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items, set at 12pt.
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
-%=============================================================================
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Warm-Up --- Answer Key}
-\namedateperiod
-
-\vspace{0.3in}
-
-{\large\bfseries\color{navy} Part 1 \quad Explanatory and Response Variables (Lesson 2.1 Review)}
-
-\vspace{0.12in}
-
-\noindent For each scenario below, identify the \textbf{explanatory variable} and the
-\textbf{response variable}. Then state which axis each belongs on in a scatterplot.
-
-\vspace{0.1in}
-
-\begin{enumerate}[leftmargin=1.6em, itemsep=0.22in]
-
-  \item A researcher wonders whether the number of hours a student studies predicts their
-        score on the next exam.
-
-        \vspace{8pt}
-        Explanatory variable: \ans{hours studied} \quad Response variable: \ans{exam score}
-
-  \item A nutritionist investigates whether a person's daily caloric intake is associated
-        with their body mass index (BMI).
-
-        \vspace{8pt}
-        Explanatory variable: \ans{daily caloric intake} \quad Response variable: \ans{BMI}
-
-  \item A city planner records daily high temperature and daily ice cream sales at a local
-        shop to look for a pattern.
-
-        \vspace{8pt}
-        Explanatory variable: \ans{daily high temperature} \quad Response variable: \ans{ice cream sales}
-
-\end{enumerate}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
 \vspace{0.28in}
 
-{\large\bfseries\color{navy} Part 2 \quad Setting Up for Scatterplots}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.70in]
 
-\vspace{0.12in}
+  \item \textbf{From last lesson.} A pizza shop models delivery time with
+        $\widehat{\text{minutes}} = 8 + 1.5(\text{miles})$.
 
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-    \small
-    \textbf{Think about it:} A scatterplot displays two quantitative variables at once ---
-    one on each axis. Before you can draw one, you need to know \emph{which variable belongs
-    where} and \emph{how to label the axes} completely (variable name \textbf{and} units).
+        \vspace{12pt}
+        Predicted time for a 4-mile delivery: \ans{14 minutes}
+        \vspace{16pt}
 
-    \vspace{6pt}
-    Two questions to consider before the lesson:
-    \begin{itemize}[leftmargin=1.3em, itemsep=4pt]
-        \item \textbf{Axes:} Where does each variable go, and why does it matter?
-        \item \textbf{Pattern:} What does a ``positive'' relationship look like visually?
-              What does a ``negative'' one look like?
-    \end{itemize}
-\end{tcolorbox}
+        That delivery actually took 16 minutes. Its residual: \ans{$16 - 14 = 2$ min}
 
-\vspace{0.16in}
+  \item Two lines were fit to the \emph{same} four points. Here are their residuals.
 
-\noindent Using the temperature vs.\ ice cream sales scenario from \#3 above, sketch what
-you think the scatterplot might look like. Label both axes.
+        \vspace{12pt}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y Y | Y Y @{}}
+        \rowcolor{sky}
+        & \multicolumn{4}{c|}{\textbf{Residuals}} & \textbf{Sum} & \textbf{Sum of squares} \\
+        \hline
+        \textbf{Line A} & 3 & $-3$ & 1 & $-1$ & \ans{0} & \ans{20} \\
+        \textbf{Line B} & 2 & $-2$ & 2 & $-2$ & \ans{0} & \ans{16} \\
+        \end{tabularx}
 
-\begin{teachernote}
-Students should sketch a cloud of points going up and to the right (positive association).
-$x$-axis: Temperature (°F); $y$-axis: Ice cream sales (\$). Accept any reasonable labeling
-as long as temperature is on $x$ and sales on $y$.
-\end{teachernote}
+        \vspace{14pt}
+        Which line fits better? \ans{Line B} \quad Why can't the plain \textbf{Sum} column
+        tell you?\\[18pt]
+        \ansline{Both sums are 0 --- the positive and negative residuals cancel out.}
 
-\vspace{0.12in}
+  \item For 20 students, the correlation between hours of sleep and reaction time is
+        $r = -0.80$.
 
-\begin{center}
-\begin{tikzpicture}
-  \draw[very thin, gray!40] (0,0) grid (8,5);
-  \draw[->, thick, navy] (0,0) -- (8.4,0);
-  \draw[->, thick, navy] (0,0) -- (0,5.4);
-  \node[below=6pt, navy] at (4,0) {\small \ans{Temperature (°F)}};
-  \node[left=6pt, navy, rotate=90] at (0,2.5) {\small \ans{Ice cream sales (\$)}};
-\end{tikzpicture}
-\end{center}
+        \vspace{12pt}
+        Describe the direction and strength: \ans{negative, fairly strong}
+        \vspace{16pt}
 
-\vspace{0.1in}
+        Compute: \quad $(-0.80)^2 =$ \ans{0.64} \qquad
+        $-0.80 \times \dfrac{45}{1.5} =$ \ans{$-24$}
 
-\noindent Based on your sketch, does the association appear to be \textbf{positive} or
-\textbf{negative}? Explain briefly.\\[8pt]
-\ansline{Positive --- as temperature increases, ice cream sales tend to increase as well.}\\[2pt]
-\ansline{Points in the scatterplot should rise from left to right.}
+\end{enumerate}
 
 \end{document}

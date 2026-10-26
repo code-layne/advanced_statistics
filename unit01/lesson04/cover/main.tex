@@ -1,5 +1,5 @@
 %! Describing the Distribution of a Quantitative Variable — Unit 1, Lesson 1.4 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{ltablex}
@@ -7,33 +7,35 @@
 
 \begin{document}
 
-% Full-bleed navy banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 1}{Lesson 1.4 \quad Describing the Distribution of a Quantitative Variable}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.4 \quad Describing the Distribution of a Quantitative Variable}}
-\end{center}
-
-\vspace{0.22in}
 \namedateperiod
 \vspace{0.18in}
 
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objective (UNC-1.H) stays in the teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: learning target 1 (restate a Learning Objective as "I can ...").
-  \item \ldots{} TODO: learning target 2.
+  \item \ldots{} explain why the \textbf{center} of a distribution, reported by itself, is not a
+        description of anything.
+  \item \ldots{} name the \textbf{shape} of a distribution --- \textbf{symmetric},
+        \textbf{skewed left}, or \textbf{skewed right} --- and say why the \emph{tail} decides
+        that name, not the pile.
+  \item \ldots{} point out the \textbf{unusual features} of a display --- \textbf{outliers},
+        \textbf{gaps}, and \textbf{clusters} --- and say why an outlier is investigated, not deleted.
+  \item \ldots{} describe a distribution completely --- \textbf{shape, unusual features,
+        center, variability} --- all four in context, with the variable and its units named.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
+\boxguard[14]
 \begin{tocbox}
 \small
 \renewcommand{\arraystretch}{1.5}
@@ -41,13 +43,34 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up      & TODO & \blank{1.2cm} \\
-2 & Group Activity & TODO & \blank{1.2cm} \\
-3 & Exit Ticket  & TODO & \blank{1.2cm} \\
-4 & Homework     & TODO & \blank{1.2cm} \\
+1 & Warm-Up & Two pictures of one data set, a middle value, and one dot sitting far from
+                 the rest & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Two checkout lines with the same middle wait, three leaning
+                 pictures, and the four things every description says & \blank{1.2cm} \\
+% AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
+3 & AP Practice & Commute times for 40 employees: AP-style multiple choice and one
+                 free-response set --- practice, not a grade & \textbf{NA} \\
+4 & Homework & Match, correct a classmate, describe one distribution in full, and one
+                 multiple-choice item --- \textbf{scored, due the first class after two study
+                 halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+Two checkout lines in these notes have \emph{exactly the same} middle wait, and one of them you
+would never stand in again --- a center by itself is a summary of nothing. A distribution takes
+\textbf{four} things to describe --- shape, unusual features, center, and spread --- each in
+context, with the variable and its units named. \textbf{A skew is named for the side its tail
+runs out on}, not the side the data piles up on. And a value far from the rest is a finding to
+investigate, never an error to delete.
+\end{remindbox}
 
 \end{document}

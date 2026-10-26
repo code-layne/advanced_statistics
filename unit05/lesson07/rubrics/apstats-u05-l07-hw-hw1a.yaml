@@ -1,0 +1,25 @@
+# Homework item 1a (Unit 5, Lesson 5.7). Relative to the lesson directory.
+id: hw1a
+points: 3
+task: >-
+  Adults' daily step counts are right-skewed with mean 7,500 and SD 2,000; a
+  researcher surveys a random sample of 64 adults. Check all three conditions for the
+  normal model for the sample mean.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: the 64 adults are a random sample (stated).
+  - id: independence
+    points: 1
+    full: >-
+      10% condition: 64 is at most 10% of all adults.
+  - id: normal
+    points: 1
+    full: >-
+      Normal/Large Sample: n = 64 is at least 30, so by the central limit theorem the
+      sampling distribution of the sample mean is approximately normal even though the
+      population is skewed.
+examples:
+  - response: "Random, 10%, and the population is normal."
+    scores: {random: 1, independence: 1, normal: 0}

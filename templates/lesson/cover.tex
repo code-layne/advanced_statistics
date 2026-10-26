@@ -1,0 +1,76 @@
+%! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Student Packet Cover Sheet
+\documentclass[12pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+% Full-bleed navy banner.
+% The header text is set INSIDE a tikz node anchored to the page so it can never
+% drift above the paper edge (a negative \vspace here pushes it off the sheet).
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.16in]current page.north east);
+  \node[anchor=north, align=center, inner sep=0pt, text width=\paperwidth]
+    at ([yshift=-0.28in]current page.north) {%
+      {\color{white}\bfseries\LARGE @@COURSENAME@@}\\[4pt]
+      {\color{skymid}\bfseries\large Unit @@UNITINT@@}\\[6pt]
+      {\color{white}\bfseries\large Lesson @@LESSONID@@ \quad @@TITLE@@}%
+    };
+\end{tikzpicture}
+
+% Push the body clear of the 1.16in banner (page top margin is 0.60in).
+\vspace*{0.56in}
+% NAMESTRIP: this is the ONLY component that carries the name row. Everything else
+% is stapled behind it.
+\namedateperiod
+\vspace{0.12in}
+
+% GRADUAL RELEASE: the vocabulary is taught directly in the guided notes, so the targets
+% name it plainly — bold the formal terms students will meet today.
+% The AP Learning Objective belongs in the teacher-facing lesson plan, not here.
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} TODO: learning target 1, naming the \textbf{formal term}.
+  \item \ldots{} TODO: learning target 2.
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up    & TODO & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & TODO --- the vocabulary and the TODO idea, then practice we
+                 work together and practice you work alone & \blank{1.2cm} \\
+3 & Group Activity & \emph{TODO Activity Title} --- TODO scenarios with your group, then the
+                 debrief we fill in together & \blank{1.2cm} \\
+% AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
+% Row 5 is the lesson's GRADED practice; when DeltaMath carries the topic instead, that
+% assignment replaces row 5 and this score cell is struck through.
+4 & AP Practice & TODO --- AP-style multiple choice and one free-response set; practice, not
+                 a grade & \textbf{NA} \\
+5 & Homework   & TODO --- \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.10in}
+
+% Keep in Mind describes the gradual-release PROCESS and the habit the lesson demands.
+\begin{remindbox}
+\small Today runs in three moves: \textbf{I show you}, \textbf{we do one together},
+\textbf{you do it with your group}. The guided notes give you the words; the activity is where
+you use them. TODO: one sentence naming the habit this lesson insists on.
+\end{remindbox}
+
+\end{document}

@@ -1,0 +1,16 @@
+# Homework item 4c (Unit 4, Lesson 4.3). Relative to the lesson directory.
+id: hw4c
+points: 2
+task: >-
+  A bag holds 4 green, 3 yellow and 1 purple marble; one is drawn at random. Write a
+  long-run interpretation of P(yellow).
+criteria:
+  - id: value
+    points: 1
+    full: >-
+      Uses P(yellow) = 3/8 (0.375).
+  - id: longrun
+    points: 1
+    full: >-
+      Says that if a marble is drawn (and replaced) many times, about 3 of every 8 draws
+      (37.5%) will be yellow in the long run.

@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l06-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.6}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -17,81 +20,112 @@
   \item[(3)] List the key conditions that must be checked for this procedure.
 \end{itemize}
 
+\boxguard[15]
 \begin{notesbox}{Problem 1}
+\par\noindent\begin{minipage}{\linewidth}
 A random sample of 45 high school seniors records their SAT scores. The researcher wants
 to estimate the mean SAT score for all seniors at this school with a 95\% confidence interval.
 
 \vspace{0.08in}
-(1) Procedure: \ans{1-sample $t$-interval for a mean}
+(1) Procedure: \ans{1-sample $t$-interval for a mean}\gradedkey{\gradedblank[id=hw1a, type=short, points=1, answer={1-sample t-interval for mu}, check=text, display={\bfseries\boldmath 1-sample $t$-interval for $\mu$}]{3in}{0.3in}}
+\end{minipage}
 
 \vspace{0.08in}
-(2) Parameter being estimated: \ans{$\mu$ = the true mean SAT score of all seniors at this school}
+\par\noindent\begin{minipage}{\linewidth}
+(2) Parameter being estimated: \ans{$\mu$ = the true mean SAT score of all seniors at this school}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=1, display={\bfseries\boldmath $\mu$ = true mean SAT score, all seniors here}]{\linewidth+6pt}{\gradedlinesheight{9}}}
+\end{minipage}
 
 \vspace{0.08in}
-(3) Conditions: \ans{Random sample; Normal/Large Sample ($n = 45 \ge 30$, so the condition is met); 10\% rule: $45 \le 10\%$ of all seniors at the school.}
+\par\noindent\begin{minipage}{\linewidth}
+(3) Conditions: \ans{Random sample; Normal/Large Sample ($n = 45 \ge 30$, so the condition is met); 10\% rule: $45 \le 10\%$ of all seniors at the school.}\gradedkeyline{\gradedblank[id=hw1c, type=rubric, points=2, display={\bfseries\boldmath Random; $n = 45 \ge 30$; $45 \le 10\%$ of seniors.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+\end{minipage}
 \end{notesbox}
 
+\boxguard[15]
 \begin{notesbox}{Problem 2}
+\par\noindent\begin{minipage}{\linewidth}
 A school randomly surveys 120 sophomores about how they get to school (walk, bus, car, or
 bike). The researcher tests whether the four options are equally popular.
 
 \vspace{0.08in}
-(1) Procedure: \ans{Chi-square goodness of fit test}
+(1) Procedure: \ans{Chi-square goodness of fit test}\gradedkey{\gradedblank[id=hw2a, type=short, points=1, answer={chi-square goodness-of-fit test}, check=text, display={\bfseries\boldmath $\chi^2$ goodness-of-fit test}]{3in}{0.3in}}
+\end{minipage}
 
 \vspace{0.08in}
-(2) $H_0$: \ans{$p_{\text{walk}} = p_{\text{bus}} = p_{\text{car}} = p_{\text{bike}} = 0.25$}
-$H_a$: \ans{At least one of the proportions differs from 0.25.}
+\par\noindent\begin{minipage}{\linewidth}
+(2) $H_0$: \gradedblank[id=hw2b1, type=short, points=1, answer={all four p = 0.25}, check=text, display={\bfseries\boldmath All four $p = 0.25$}]{2.2in}{0.3in} \qquad $H_a$: \gradedblank[id=hw2b2, type=short, points=1, answer={at least one p != 0.25}, check=text, display={\bfseries\boldmath Some $p \ne 0.25$}]{2.2in}{0.3in}
+\end{minipage}
 
 \vspace{0.08in}
-(3) Conditions: \ans{Random sample; Large Counts: all expected counts $= 120 \times 0.25 = 30 \ge 5$.}
+\par\noindent\begin{minipage}{\linewidth}
+(3) Conditions: \ans{Random sample; Large Counts: all expected counts $= 120 \times 0.25 = 30 \ge 5$.}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={\bfseries\boldmath Random; all expected $= 30 \ge 5$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+\end{minipage}
 \end{notesbox}
 
+\boxguard[15]
 \begin{notesbox}{Problem 3}
+\par\noindent\begin{minipage}{\linewidth}
 A researcher randomly selects 80 adults in a city and classifies each as a smoker or
 non-smoker. She tests whether the proportion of smokers in the city differs from the
 national rate of 14\%.
 
 \vspace{0.08in}
-(1) Procedure: \ans{1-proportion $z$-test}
+(1) Procedure: \ans{1-proportion $z$-test}\gradedkey{\gradedblank[id=hw3a, type=short, points=1, answer={1-proportion z-test}, check=text, display={\bfseries\boldmath 1-proportion $z$-test}]{3in}{0.3in}}
+\end{minipage}
 
 \vspace{0.08in}
-(2) $H_0$: \ans{$p = 0.14$}
-$H_a$: \ans{$p \ne 0.14$}
+\par\noindent\begin{minipage}{\linewidth}
+(2) $H_0$: \gradedblank[id=hw3b1, type=short, points=1, answer={p = 0.14}, check=text, display={\bfseries\boldmath $p = 0.14$}]{2.2in}{0.3in} \qquad $H_a$: \gradedblank[id=hw3b2, type=short, points=1, answer={p != 0.14}, check=text, display={\bfseries\boldmath $p \ne 0.14$}]{2.2in}{0.3in}
+\end{minipage}
 
 \vspace{0.08in}
-(3) Conditions: \ans{Random sample; 10\% rule: $80 \le 10\%$ of all adults in the city; Large Counts: $np_0 = 80(0.14) = 11.2 \ge 10$ and $n(1-p_0) = 80(0.86) = 68.8 \ge 10$.}
+\par\noindent\begin{minipage}{\linewidth}
+(3) Conditions: \ans{Random sample; 10\% rule: $80 \le 10\%$ of all adults in the city; Large Counts: $np_0 = 80(0.14) = 11.2 \ge 10$ and $n(1-p_0) = 80(0.86) = 68.8 \ge 10$.}\gradedkeyline{\gradedblank[id=hw3c, type=rubric, points=2, display={\bfseries\boldmath Random; $80 \le 10\%$; $11.2, 68.8 \ge 10$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+\end{minipage}
 \end{notesbox}
 
+\boxguard[15]
 \begin{notesbox}{Problem 4}
+\par\noindent\begin{minipage}{\linewidth}
 A pediatrician follows 60 children for 5 years, recording average daily screen time
 (hours/day, $x$) and reading proficiency score ($y$). She wants to test whether screen
 time is linearly related to reading proficiency.
 
 \vspace{0.08in}
-(1) Procedure: \ans{$t$-test for slope}
+(1) Procedure: \ans{$t$-test for slope}\gradedkey{\gradedblank[id=hw4a, type=short, points=1, answer={t-test for slope}, check=text, display={\bfseries\boldmath $t$-test for slope}]{3in}{0.3in}}
+\end{minipage}
 
 \vspace{0.08in}
-(2) $H_0$: \ans{$\beta = 0$ (screen time is not a useful linear predictor of reading proficiency)}
-$H_a$: \ans{$\beta \ne 0$}
+\par\noindent\begin{minipage}{\linewidth}
+(2) $H_0$: \gradedblank[id=hw4b1, type=short, points=1, answer={beta = 0}, check=text, display={\bfseries\boldmath $\beta = 0$}]{2.2in}{0.3in} \qquad $H_a$: \gradedblank[id=hw4b2, type=short, points=1, answer={beta != 0}, check=text, display={\bfseries\boldmath $\beta \ne 0$}]{2.2in}{0.3in}
+\end{minipage}
 
 \vspace{0.08in}
-(3) Conditions: \ans{LINER --- Linear (residual plot shows no pattern); Independent observations; Normal residuals (check histogram/boxplot of residuals); Equal variance (residual plot shows constant spread); Random sample.}
+\par\noindent\begin{minipage}{\linewidth}
+(3) Conditions: \ans{LINER --- Linear (residual plot shows no pattern); Independent observations; Normal residuals (check histogram/boxplot of residuals); Equal variance (residual plot shows constant spread); Random sample.}\gradedkeyline{\gradedblank[id=hw4c, type=rubric, points=2, display={\bfseries\boldmath LINER: Linear, Independent, Normal residuals, Equal SD, Random.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+\end{minipage}
 \end{notesbox}
 
+\boxguard[15]
 \begin{notesbox}{Problem 5}
+\par\noindent\begin{minipage}{\linewidth}
 A study records whether a randomly selected sample of 200 adults (100 from urban areas,
 100 from rural areas) experienced anxiety in the past year (yes/no). The researcher
 tests whether anxiety rates differ between urban and rural adults.
 
 \vspace{0.08in}
-(1) Procedure: \ans{2-proportion $z$-test}
+(1) Procedure: \ans{2-proportion $z$-test}\gradedkey{\gradedblank[id=hw5a, type=short, points=1, answer={2-proportion z-test}, check=text, display={\bfseries\boldmath 2-proportion $z$-test}]{3in}{0.3in}}
+\end{minipage}
 
 \vspace{0.08in}
-(2) $H_0$: \ans{$p_{\text{urban}} = p_{\text{rural}}$ (anxiety rates are the same in both groups)}
-$H_a$: \ans{$p_{\text{urban}} \ne p_{\text{rural}}$}
+\par\noindent\begin{minipage}{\linewidth}
+(2) $H_0$: \gradedblank[id=hw5b1, type=short, points=1, answer={p_urban = p_rural}, check=text, display={\bfseries\boldmath $p_{\text{urban}} = p_{\text{rural}}$}]{2.2in}{0.3in} \qquad $H_a$: \gradedblank[id=hw5b2, type=short, points=1, answer={p_urban != p_rural}, check=text, display={\bfseries\boldmath $p_{\text{urban}} \ne p_{\text{rural}}$}]{2.2in}{0.3in}
+\end{minipage}
 
 \vspace{0.08in}
-(3) Conditions: \ans{Random sample from each group; 10\% rule for each group; Large Counts: $n\hat{p} \ge 10$ and $n(1-\hat{p}) \ge 10$ for each group (using the combined $\hat{p}$).}
+\par\noindent\begin{minipage}{\linewidth}
+(3) Conditions: \ans{Random sample from each group; 10\% rule for each group; Large Counts: $n\hat{p} \ge 10$ and $n(1-\hat{p}) \ge 10$ for each group (using the combined $\hat{p}$).}\gradedkeyline{\gradedblank[id=hw5c, type=rubric, points=2, display={\bfseries\boldmath Random each group; 10\% each; Large Counts (pooled $\hat p$) $\ge 10$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
+\end{minipage}
 \end{notesbox}
 
 \end{document}

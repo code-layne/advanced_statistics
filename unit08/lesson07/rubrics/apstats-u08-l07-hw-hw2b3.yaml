@@ -1,0 +1,13 @@
+# Homework item 2b, Large Counts (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw2b3
+points: 1
+task: >-
+  A survey claims 15% of adults read a physical newspaper daily; a researcher suspects
+  fewer and surveys a random sample of 400 adults (48 do). Verify Large Counts with
+  numbers (np0 and n(1-p0) each at least 10).
+criteria:
+  - id: large
+    points: 1
+    full: >-
+      Computes np0 = 400(0.15) = 60 and n(1 - p0) = 400(0.85) = 340, both at least 10
+      (uses p0 = 0.15, not the sample proportion).

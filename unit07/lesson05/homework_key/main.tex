@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u07-l05-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.5}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -18,44 +21,55 @@
 \item \textbf{Plant Growth.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \ans{$\mu = 12$} \quad $H_a$: \ans{$\mu > 12$}
-  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{24}. Conditions:
+  \item \textbf{State:} $H_0$: \ans{$\mu = 12$} \quad $H_a$: \ans{$\mu > 12$}\gradedkey{$H_0$:~\gradedblank[id=hw1a1, type=short, points=1, answer={{mu = 12}}, check=text, display={\boldmath$\mu = 12$}]{3.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw1a2, type=short, points=1, answer={{mu > 12}}, check=text, display={\boldmath$\mu > 12$}]{3.8cm}{0.19in}}
+  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{24}. Conditions:\gradedkey{\gradedblank[id=hw1b1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{4.8cm}{0.19in}\quad $df=$~\gradedblank[id=hw1b2, type=short, points=1, answer=24, check=numeric, tolerance=0, display={\boldmath$24$}]{1.3cm}{0.19in}}
         \begin{itemize}
-          \item Random: \ansline{Random assignment of 25 plants --- met.}
-          \item Normal ($n < 30$): \ansline{$n = 25 < 30$; dotplot is roughly symmetric, no outliers --- met.}
+          \boxguard
+          \item Random: \ansline{Random assignment of 25 plants --- met.}\gradedkeyline{\gradedblank[id=hw1b3, type=rubric, points=1, display={random assignment of 25 plants --- met}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal ($n < 30$): \ansline{$n = 25 < 30$; dotplot is roughly symmetric, no outliers --- met.}\gradedkeyline{\gradedblank[id=hw1b4, type=rubric, points=1, display={$n = 25 < 30$; dotplot symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
   \item \textbf{Do:} $SE = $ \ans{$3.2/\sqrt{25} = 0.64$} \quad $t \approx$ \ans{$2.50$} \quad
-        $p \approx$ \texttt{tcdf}(\ans{2.50}, $10^{99}$, \ans{24}) $\approx$ \ans{$0.010$}
-  \item \textbf{Conclude:} \ansline{Because $p \approx 0.010 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean plant height under the new fertilizer is greater than 12 cm.}
+        $p \approx$ \texttt{tcdf}(\ans{2.50}, $10^{99}$, \ans{24}) $\approx$ \ans{$0.010$}\gradedkey{$SE=$~\gradedblank[id=hw1c1, type=short, points=1, answer=0.64, check=numeric, tolerance=0.005, display={\boldmath$0.64$}]{2.8cm}{0.19in}\quad $t=$~\gradedblank[id=hw1c2, type=short, points=1, answer=2.50, check=numeric, tolerance=0.02, display={\boldmath$2.50$}]{2.3cm}{0.19in}\quad \texttt{tcdf}(\gradedblank[id=hw1c3, type=short, points=1, answer=2.50, check=numeric, tolerance=0.02, display={\boldmath$2.50$}]{1.8cm}{0.19in},\,\dots,\,\gradedblank[id=hw1c4, type=short, points=1, answer=24, check=numeric, tolerance=0, display={\boldmath$24$}]{1.8cm}{0.19in})\quad $p=$~\gradedblank[id=hw1c5, type=short, points=1, answer=0.010, check=numeric, tolerance=0.002, display={\boldmath$0.010$}]{1.8cm}{0.19in}}
+  \boxguard
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.010 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean plant height under the new fertilizer is greater than 12 cm.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.010 < 0.05$: reject $H_0$. Convincing evidence the true mean height with the new fertilizer is $> 12$ cm.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
+\newpage
 \item \textbf{Exam Score Study.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $H_0$: \ans{$\mu = 500$} \quad $H_a$: \ans{$\mu \ne 500$}
-  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{44}. Conditions (brief): \ansline{Random sample; $n = 45 \ge 30$ (CLT) --- both met.}
-  \item \textbf{Do:} $SE = $ \ans{$60/\sqrt{45} \approx 8.944$} \quad $t \approx$ \ans{$-1.68$}
+  \item \textbf{State:} $H_0$: \ans{$\mu = 500$} \quad $H_a$: \ans{$\mu \ne 500$}\gradedkey{$H_0$:~\gradedblank[id=hw2a1, type=short, points=1, answer={{mu = 500}}, check=text, display={\boldmath$\mu = 500$}]{3.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw2a2, type=short, points=1, answer={{mu != 500}}, check=text, display={\boldmath$\mu \ne 500$}]{3.8cm}{0.19in}}
+  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{44}. Conditions (brief): \ansline{Random sample; $n = 45 \ge 30$ (CLT) --- both met.}\gradedkey{\gradedblank[id=hw2b1, type=short, points=1, answer={{one-sample t-test for mu}}, check=text, display={\boldmath one-sample $t$-test for $\mu$}]{4.8cm}{0.19in}\quad $df=$~\gradedblank[id=hw2b2, type=short, points=1, answer=44, check=numeric, tolerance=0, display={\boldmath$44$}]{1.3cm}{0.19in}}
+        \gradedkeyline{\gradedblank[id=hw2b3, type=rubric, points=1, display={random; $n \ge 30$}]{\linewidth+6pt}{0.19in}}
+  \item \textbf{Do:} $SE = $ \ans{$60/\sqrt{45} \approx 8.944$} \quad $t \approx$ \ans{$-1.68$}\gradedkey{$SE=$~\gradedblank[id=hw2c1, type=short, points=1, answer=8.944, check=numeric, tolerance=0.01, display={\boldmath$8.944$}]{2.8cm}{0.19in}\quad $t=$~\gradedblank[id=hw2c2, type=short, points=1, answer=-1.68, check=numeric, tolerance=0.02, display={\boldmath$-1.68$}]{2.3cm}{0.19in}}
 
-        $p$ (two-sided) $\approx 2 \times \texttt{tcdf}($\ans{1.68}, $10^{99}$, \ans{44}$) \approx$ \ans{$0.100$}
+        $p$ (two-sided) $\approx 2 \times \texttt{tcdf}($\ans{1.68}, $10^{99}$, \ans{44}$) \approx$ \ans{$0.100$}\gradedkey{\texttt{tcdf}(\gradedblank[id=hw2c3, type=short, points=1, answer=1.68, check=numeric, tolerance=0.02, display={\boldmath$1.68$}]{2.8cm}{0.19in},\,\dots,\,\gradedblank[id=hw2c4, type=short, points=1, answer=44, check=numeric, tolerance=0, display={\boldmath$44$}]{1.8cm}{0.19in})\quad $p=$~\gradedblank[id=hw2c5, type=short, points=1, answer=0.100, check=numeric, tolerance=0.005, display={\boldmath$0.100$}]{1.8cm}{0.19in}}
 
-  \item \textbf{Conclude:} \ansline{Because $p \approx 0.100 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the true mean placement score at this campus differs from 500.}
+  \boxguard
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.100 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the true mean placement score at this campus differs from 500.}\gradedkeyline{\gradedblank[id=hw2d, type=rubric, points=2, display={$p \approx 0.100 > 0.05$: fail to reject $H_0$. No convincing evidence the campus mean score differs from 500.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
+\newpage
 \item \textbf{Matched Pairs: Study Techniques.}
 
 \begin{enumerate}[label=\alph*.]
-  \item \textbf{State:} $\mu_d = $ \ans{true mean difference in quiz score (flashcards $-$ no flashcards) for students using this study approach}. \quad $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
-  \item \textbf{Plan:} Method: \ans{matched-pairs $t$-test for $\mu_d$}, $df = $ \ans{9}. Conditions:
+  \item \textbf{State:} $\mu_d = $ \ans{true mean difference in quiz score (flashcards $-$ no flashcards) for students using this study approach}.\gradedkeyline{\gradedblank[id=hw3a1, type=rubric, points=1, display={true mean diff.\ (flash $-$ none)}]{\linewidth+6pt}{0.19in}}
+        $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}\gradedkey{$H_0$:~\gradedblank[id=hw3a2, type=short, points=1, answer={{mu_d = 0}}, check=text, display={\boldmath$\mu_d = 0$}]{2.8cm}{0.19in}\quad $H_a$:~\gradedblank[id=hw3a3, type=short, points=1, answer={{mu_d > 0}}, check=text, display={\boldmath$\mu_d > 0$}]{2.8cm}{0.19in}}
+  \item \textbf{Plan:} Method: \ans{matched-pairs $t$-test for $\mu_d$}, $df = $ \ans{9}. Conditions:\gradedkey{\gradedblank[id=hw3b1, type=short, points=1, answer={{matched-pairs t-test for mu_d}}, check=text, display={\boldmath matched-pairs $t$-test for $\mu_d$}]{4.8cm}{0.19in}\quad $df=$~\gradedblank[id=hw3b2, type=short, points=1, answer=9, check=numeric, tolerance=0, display={\boldmath$9$}]{1.3cm}{0.19in}}
         \begin{itemize}
-          \item Independence: \ansline{10 students independently tested; differences are independent --- met.}
-          \item Normal ($n < 30$): \ansline{$n = 10 < 30$; boxplot of differences is roughly symmetric with no outliers --- met.}
+          \boxguard
+          \item Independence: \ansline{10 students independently tested; differences are independent --- met.}\gradedkeyline{\gradedblank[id=hw3b3, type=rubric, points=1, display={students tested independently; differences independent --- met}]{\linewidth+6pt}{2in}}
+          \boxguard
+          \item Normal ($n < 30$): \ansline{$n = 10 < 30$; boxplot of differences is roughly symmetric with no outliers --- met.}\gradedkeyline{\gradedblank[id=hw3b4, type=rubric, points=1, display={$n = 10 < 30$; boxplot symmetric, no outliers --- met}]{\linewidth+6pt}{2in}}
         \end{itemize}
   \item \textbf{Do:} $SE_d = \dfrac{s_d}{\sqrt{n}} \approx$ \ans{$2.97/\sqrt{10} \approx 0.939$} \quad
-        $t = \dfrac{\bar d - 0}{SE_d} \approx$ \ans{$4.8/0.939 \approx 5.11$}
+        $t = \dfrac{\bar d - 0}{SE_d} \approx$ \ans{$4.8/0.939 \approx 5.11$}\gradedkey{$SE_d=$~\gradedblank[id=hw3c1, type=short, points=1, answer=0.939, check=numeric, tolerance=0.005, display={\boldmath$0.939$}]{2.3cm}{0.19in}\quad $t=$~\gradedblank[id=hw3c2, type=short, points=1, answer=5.11, check=numeric, tolerance=0.03, display={\boldmath$5.11$}]{2.3cm}{0.19in}}
 
-        $p \approx$ \ans{\texttt{tcdf(5.11, $10^{99}$, 9)} $\approx 0.0003$}
+        $p \approx$ \ans{\texttt{tcdf(5.11, $10^{99}$, 9)} $\approx 0.0003$}\gradedkey{$p=$~\gradedblank[id=hw3c3, type=short, points=1, answer=0.0003, check=numeric, tolerance=0.0002, display={\boldmath$0.0003$}]{3.8cm}{0.19in}}
 
-  \item \textbf{Conclude:} \ansline{Because $p \approx 0.0003 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that using flashcards improves quiz scores on average (true mean difference $> 0$).}
+  \boxguard
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.0003 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that using flashcards improves quiz scores on average (true mean difference $> 0$).}\gradedkeyline{\gradedblank[id=hw3d, type=rubric, points=2, display={$p \approx 0.0003 < 0.05$: reject $H_0$. Convincing evidence flashcards raise mean quiz score ($\mu_d > 0$).}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 \end{enumerate}
 
 \end{enumerate}

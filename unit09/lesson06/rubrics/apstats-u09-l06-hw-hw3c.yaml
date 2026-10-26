@@ -1,0 +1,16 @@
+# Homework item 3(3) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw3c
+points: 2
+task: >-
+  A random sample of 80 adults in a city classified as smoker / non-smoker; test
+  whether the city's smoking proportion differs from the national 14%. List the key
+  conditions that must be checked.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random sample and 10%: 80 is at most 10% of the city's adults.
+  - id: large
+    points: 1
+    full: >-
+      Large Counts with p0: np0 = 80(0.14) = 11.2 and n(1 - p0) = 68.8, both at least 10.

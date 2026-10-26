@@ -1,0 +1,13 @@
+# Homework item 2b conditions (Unit 7, Lesson 7.9). Relative to the lesson directory.
+id: hw2b2
+points: 1
+task: >-
+  Students randomly assigned to literacy program A (n = 40, mean 72.3, s = 9.8) or B
+  (n = 38, mean 68.7, s = 11.2); do the mean reading scores differ? State the
+  conditions briefly.
+criteria:
+  - id: 2b2
+    points: 1
+    full: >-
+      Notes random assignment and that both n are at least 30 (40 and 38) so the CLT
+      applies.

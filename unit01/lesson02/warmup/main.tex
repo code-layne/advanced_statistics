@@ -1,25 +1,73 @@
 %! Representing a Categorical Variable — Unit 1, Lesson 1.2 — Warm-Up
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items, set at 12pt so the three items fill the page instead
+% of leaving the bottom third empty. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Item 1 is
+% the spiral back to Lesson 1.1 (categorical vs. quantitative); item 2 does the percent
+% arithmetic the crux needs so it is not the obstacle later; item 3 IS the lesson stated in
+% prior-knowledge terms — comparing two groups of different sizes.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.2}{Warm-Up}
 
+\vspace{0.24in}
 
-\vspace{0.15in}
+\boxguard[16]
+\begin{hookbox}
+A veterinary clinic logs every animal it treats.
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
-% when the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
-% the _key: the blank reserves its exact height, the key prints it. That is what keeps
-% this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
-\end{notesbox}
+\vspace{8pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l c c @{}}
+\rowcolor{sky}
+\textbf{Animal} & \textbf{Species} & \textbf{Weight (kg)} & \textbf{Visit (min)} \\
+\hline
+Rosie & Dog  & 24.0 & 35 \\
+Pip   & Bird &  0.4 & 15 \\
+Milo  & Cat  &  5.2 & 20 \\
+Bruno & Dog  & 31.5 & 40 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{4pt}
+\end{hookbox}
+
+\vspace{0.26in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.34in]
+
+  \item \textbf{From last lesson.} Classify two of the clinic's columns. Write
+        \emph{categorical} or \emph{quantitative} in each blank.
+
+        \vspace{10pt}
+        \hspace{1.0em} Species is \blank{4.4cm} \hfill Weight is \blank{4.4cm}
+        \hspace{1.0em}
+
+  \item Work these out. Write each answer as a percent.
+        \vspace{10pt}
+
+        \hspace{1.0em} 80 out of 400 is \blank{3.0cm}
+        \hfill
+        150 out of 1{,}000 is \blank{3.0cm}
+        \hspace{1.0em}
+        \vspace{12pt}
+
+        Which of those two is the \textbf{larger share}? \blank{3.4cm}
+
+  \item Team A won 9 of its 12 games. Team B won 15 of its 25 games.
+
+        \vspace{8pt}
+        Which team has the better record? \blank{4.6cm}
+        \vspace{10pt}
+
+        Team B won more games than Team A. Explain why that is not what decided your
+        answer.\\[10pt]
+        \writeline\\[10pt]\writeline
+
+\end{enumerate}
 
 \end{document}

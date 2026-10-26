@@ -1,49 +1,38 @@
-%! AP Statistics — Unit 2, Lesson 2.4 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — Student Packet Cover Sheet
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
 
-%=============================================================================
 \begin{document}
 
-% ── Full-bleed navy banner ────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
-
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2: Exploring Two-Variable Data}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.4 \quad Representing the Relationship Between Two Quantitative Variables}}
-\end{center}
-
-\vspace{0.22in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band.
+\coverbanner{Unit 2}{Lesson 2.4 \quad Least-Squares Regression}
 
 \namedateperiod
-
 \vspace{0.18in}
 
-% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objectives (DAT-1.G, DAT-1.H) stay in the teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} identify the explanatory and response variables and place them on the correct
-        axes of a scatterplot. \hfill\textcolor{slate}{\small(UNC-1.S)}
-  \item \ldots{} construct a correctly labeled scatterplot from a two-variable dataset.
-        \hfill\textcolor{slate}{\small(UNC-1.S)}
-  \item \ldots{} describe the \textbf{direction}, \textbf{form}, and \textbf{strength} of the
-        association shown in a scatterplot, and identify any \textbf{outliers}.
-        \hfill\textcolor{slate}{\small(UNC-1.T)}
-  \item \ldots{} write a complete DOFS description in context.
-        \hfill\textcolor{slate}{\small(UNC-1.T)}
+  \item \ldots{} explain what makes the \textbf{least-squares regression line} the best line,
+        and compute its slope and intercept from $\bar x$, $s_x$, $\bar y$, $s_y$, and $r$.
+  \item \ldots{} find the slope, the intercept, and $r^2$ in \textbf{computer regression
+        output}.
+  \item \ldots{} interpret the \textbf{slope} and the \textbf{$y$-intercept} in context ---
+        and say when the intercept has no sensible meaning.
+  \item \ldots{} interpret the \textbf{coefficient of determination} $r^2$ in context.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
-% ── TABLE OF CONTENTS ────────────────────────────────────────────────────────
+\boxguard[14]
 \begin{tocbox}
 \small
 \renewcommand{\arraystretch}{1.5}
@@ -51,11 +40,17 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up       & Spiral review --- explanatory \& response variables              & \blank{1.2cm} \\
-2 & Guided Notes  & Scatterplots and the DOFS framework                              & \blank{1.2cm} \\
-3 & Group Activity & Construct and describe scatterplots from real-world data        & \blank{1.2cm} \\
-4 & Exit Ticket   & Write a complete DOFS description from a given scatterplot       & \blank{1.2cm} \\
-5 & Homework      & Multi-context scatterplot construction and description practice   & \blank{1.2cm} \\
+1 & Warm-Up & A residual, two lines judged by their squared residuals, and the arithmetic
+                 behind today's formula & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Building the least-squares line for sleep and reaction time,
+                 reading it off computer output, and used-car prices together & \blank{1.2cm} \\
+% AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
+3 & AP Practice & Iced drinks and temperature: two multiple-choice items and one
+                 free-response set --- practice, not a grade & \textbf{NA} \\
+4 & Homework & Car weight and highway mileage: build the line, interpret it, and judge it
+                 --- \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -63,31 +58,15 @@
 
 \vspace{0.14in}
 
-% ── KEEP IN MIND ─────────────────────────────────────────────────────────────
+\boxguard[8]
 \begin{remindbox}
 \small
-A scatterplot shows the relationship between two quantitative variables. Here are the key ideas.
-
-\vspace{6pt}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
-                                    X @{}}
-\textbf{\large!} &
-\textbf{Explanatory variable goes on the $x$-axis.}\enspace
-The explanatory variable may help explain or predict the response variable ($y$-axis).
-Axis placement matters for regression in later lessons. \\[6pt]
-\textbf{\large!} &
-\textbf{Describe using DOFS.}\enspace
-\textbf{D}irection (positive/negative/none), \textbf{F}orm (linear/curved/none),
-\textbf{S}trength (strong/moderate/weak), \textbf{O}utliers (any unusual points). \\[6pt]
-\textbf{\large!} &
-\textbf{Always write in context.}\enspace
-Name the variables and the individuals. ``There is a positive association'' is incomplete ---
-say \emph{what} is positively associated and \emph{for whom}. \\[6pt]
-\textbf{\large!} &
-\textbf{Positive does not mean good.}\enspace
-Positive association simply means that as $x$ increases, $y$ tends to increase.
-It has nothing to do with whether the relationship is desirable.
-\end{tabularx}
+Of all the lines you could draw through a scatterplot, the \textbf{least-squares line} is the
+one whose squared residuals add up to the least --- and it always runs through
+$(\bar x, \bar y)$. Its slope describes the \textbf{predicted} value, not a promise about
+every individual: real points scatter around the line, and a line fit to data we only
+observed cannot show that $x$ \emph{causes} $y$. Before you read meaning into the intercept,
+ask whether $x = 0$ makes sense at all.
 \end{remindbox}
 
 \end{document}

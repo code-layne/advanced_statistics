@@ -1,0 +1,17 @@
+# Homework item 1c (Unit 8, Lesson 8.2). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  Expected counts for 160 offspring under the 9:3:3:1 ratio are 90, 30, 30, 10. Is the
+  Large Counts condition met? Justify.
+criteria:
+  - id: expected
+    points: 1
+    full: >-
+      Checks the EXPECTED counts (not the observed counts) against 5, e.g. the smallest
+      expected count is 10.
+  - id: conclusion
+    points: 1
+    full: >-
+      Concludes the Large Counts condition is met because all expected counts are at least
+      5.

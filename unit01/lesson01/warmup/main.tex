@@ -1,25 +1,69 @@
 %! The Language of Variation — Unit 1, Lesson 1.1 — Warm-Up
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items, set at 12pt so the three items fill the page
+% instead of leaving the bottom third empty. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Item 1 is
+% the spiral back to Lesson 1.0 (individual / variable / value); items 2-3 seed the amount test
+% that notes section 2 will name.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Warm-Up}
 
+\vspace{0.26in}
 
-\vspace{0.15in}
+\boxguard[20]
+\begin{hookbox}
+A music teacher keeps this sheet on every student who rents an instrument.
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
-% when the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
-% the _key: the blank reserves its exact height, the key prints it. That is what keeps
-% this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
-\end{notesbox}
+\vspace{10pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{} l l c c @{}}
+\rowcolor{sky}
+\textbf{Student} & \textbf{Instrument} & \textbf{Weeks rented} & \textbf{Locker \#} \\
+\hline
+Ibarra   & Clarinet & 14 & 208 \\
+Okafor   & Trumpet  &  6 & 145 \\
+Petrov   & Clarinet & 22 & 331 \\
+Nakamura & Cello    &  9 & 117 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{4pt}
+\end{hookbox}
+
+\vspace{0.30in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.38in]
+
+  \item In this table, the \textbf{individuals} are \blank{6.4cm}.
+        \vspace{10pt}
+
+        Name one \textbf{variable} \blank{4.6cm} and one of its \textbf{values}
+        \blank{3.6cm}.
+
+  \item Which of these lists could you add up and get something meaningful out of the
+        total? \textbf{Circle} every one that works.
+        \vspace{12pt}
+
+        \begin{tabularx}{\linewidth}{@{\hspace{1.2em}} X X @{}}
+        \textbf{(A)} the prices of five books in a cart &
+        \textbf{(B)} the numbers on five players' jerseys \\[13pt]
+        \textbf{(C)} the ages of five people in a lobby &
+        \textbf{(D)} the house numbers on one street \\
+        \end{tabularx}
+        \vspace{16pt}
+
+        What do the ones you circled have in common that the others do not?\\[10pt]
+        \writeline\\[8pt]\writeline
+
+  \item Your school ID card has a number printed on it. Is that number \emph{measuring}
+        anything about you? If not, say what it is doing instead.\\[10pt]
+        \writeline\\[8pt]\writeline
+
+\end{enumerate}
 
 \end{document}

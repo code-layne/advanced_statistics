@@ -1,25 +1,109 @@
 %! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Homework
-\documentclass[10pt]{article}
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page and strikes its score cell on the cover. Started in the last eight minutes
+% of the period and finished at home. The AP Practice component that precedes it stays
+% assigned-but-unscored.
+% THIRD CONTEXT: the notes teach on 24 quiz finishing times, the AP Practice page runs on a
+% rainfall record, and these items are on fresh data again — recall is not the skill being built.
+% \answerspace{H}{} reserves exactly H in the blank; the key passes the answer as the second
+% argument, so the two files paginate identically by construction. Keep the macro and every
+% \boxguard byte-identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{grading}
+\gradingassignment{apstats-u01-l03-hw}
+\gradingcourse{advanced_statistics}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Homework}
-
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30])
-% when the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in
-% the _key: the blank reserves its exact height, the key prints it. That is what keeps
-% this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Homework}
-\writelines{4}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/ — this box is what keeps the
+% blank and the key the same number of pages.
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored and due the first class after two study halls. You will start it in the
+last minutes of the period, so ask about anything that stalls you before you leave, then finish
+it on your own.
+\end{remindbox}
+
+\vspace{0.12in}
+
+% ── The scored practice — five exercises spanning Topic 1.5 ─────────────────
+\boxguard[14]
+\begin{notesbox}{Reading and Choosing a Quantitative Display}
+Show the arithmetic wherever a question asks for a number, and write every explanation
+\emph{in the context of the problem} --- that is what earns credit on the AP exam, and it is the
+standard here.
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt]
+  \item Label each variable \textbf{discrete} or \textbf{continuous}.
+
+        \vspace{3pt}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y @{}}
+        \textbf{Cars in a lot} & \textbf{Height (cm)} & \textbf{Goals scored} &
+        \textbf{Time to run 400 m} \\
+        \smash{\gradedblank[id=hw1a, type=short, points=1, answer=discrete, check=text]{1.9cm}{0.2in}} & \smash{\gradedblank[id=hw1b, type=short, points=1, answer=continuous, check=text]{1.9cm}{0.2in}} & \smash{\gradedblank[id=hw1c, type=short, points=1, answer=discrete, check=text]{1.9cm}{0.2in}} & \smash{\gradedblank[id=hw1d, type=short, points=1, answer=continuous, check=text]{1.9cm}{0.2in}} \\
+        \end{tabularx}
+  \item A histogram of 60 test scores uses blocks of 10 points and shows one tall middle bar.
+        Redrawn with blocks of 2 points, it shows two separate peaks. Which version is
+        \emph{wrong}? Explain.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw2, type=rubric, points=2,
+          display={Neither. Both are correct displays of the same 60 scores. Changing
+        the block width changed what is visible: the 2-point version reveals two peaks that the
+        10-point version averaged away.}]{\linewidth}{2.9cm}}
+  \tcbbreak
+  \item In a histogram the bars touch; in the bar graph you drew last lesson they did not.
+        Explain what that difference is telling you about the horizontal axis.
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw3, type=rubric, points=2,
+          display={A histogram's axis is a number line, so the intervals are adjacent
+        and the bars must touch. A bar graph's axis holds separate categories with no order and
+        no distance between them, so the gaps say they are not a continuum.}]{\linewidth}{2.9cm}}
+  \item A stem plot has stem \textbf{7} with leaves \textbf{2 4 4 9}. Write out the four values
+        those represent. \smash{\gradedblank[id=hw4a, type=short, points=1, answer={72, 74, 74, 79}, check=set, display={72, \quad 74, \quad 74, \quad 79}]{6.0cm}{0.2in}}
+
+        Why can a histogram of the same data not give you those four numbers back?
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw4b, type=rubric, points=1,
+          display={A histogram records only how many values fall in each interval, so
+        grouping discards the individual numbers.}]{\linewidth}{2.2cm}}
+  \tcbbreak
+  \item \textbf{AP-style multiple choice.} A researcher has 200 reaction times measured to the nearest
+        thousandth of a second and wants a display that shows the overall shape. Which
+        statement is \textbf{correct}? Write its letter in the Letter box, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item A stem plot is best, because it keeps every individual value.
+          \item A histogram is reasonable, because with 200 values the shape matters more than
+                the individual numbers.
+          \item A bar graph is best, because reaction time is measured numerically.
+          \item No display works, because the values are continuous.
+          \item A histogram is wrong, because it changes appearance with the interval width.
+                \par\rule{0pt}{0.25in}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.45in}{0.24in}}
+        \end{enumerate}
+        \answerspace{2.15in}{\normalcolor\mdseries\gradedblank[id=hw5j, type=rubric, points=1,
+          display={(B). A stem plot of 200 continuous values would be unreadable, and
+        the researcher asked about shape, not individual times.}]{\linewidth}{2.2cm}}
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.12in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+\boxguard[10]
+\begin{spiralbox}
+\small
+\textbf{Next lesson: Describing the Distribution of a Quantitative Variable.} You can now build
+and read these displays. Next time we put words to what they show --- where the values pile up,
+how spread out they are, whether the picture leans one way, and which values sit far from the
+rest --- and you will learn the four things every AP answer about a display has to mention.
+\end{spiralbox}
 
 \end{document}

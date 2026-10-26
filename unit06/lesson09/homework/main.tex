@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u06-l09-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 6, Lesson 6.9}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -18,22 +21,23 @@ $p_{\text{city}} - p_{\text{suburb}}$, the difference in the proportions of resi
 who use public transit, is $(-0.06, 0.22)$.
 
 \begin{enumerate}[label=\alph*.]
-  \item Interpret this interval. \writelines{2}
+  \item Interpret this interval. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=2, display={99\% confident the true difference $p_{\text{city}} - p_{\text{suburb}}$ in transit-use proportions is between $-0.06$ and $0.22$.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
   \item Does this interval provide evidence that city residents use public transit at a
-        higher rate than suburban residents? Explain. \writelines{2}
+        higher rate than suburban residents? Explain. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={No: the interval contains 0, so no difference is plausible; not convincing evidence city residents use transit more.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
   \item Would you reach the same conclusion with an 80\% CI? Why or why not?
-        \writelines{2}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2, display={Not necessarily: the 80\% CI is narrower (smaller $z^*$); here about $(0.010, 0.150)$, which excludes 0.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
+\newpage
 \item \textbf{Full Procedure.} Independent random samples were taken from two
 hospitals to compare the proportions of patients discharged within 3 days of admission.
 Hospital A: $n_1=400$, $\hat p_1 = 0.73$. Hospital B: $n_2=350$, $\hat p_2 = 0.65$.
 
 \begin{enumerate}[label=\alph*.]
-  \item Verify all three conditions. \writelines{3}
-  \item Construct a 95\% CI for $p_A - p_B$. \writelines{3}
+  \item Verify all three conditions. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=3, display={Independent random samples; $292, 108, 228, 123$ all $\ge 10$; each sample $\le 10\%$ of its hospital's patients.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+  \item Construct a 95\% CI for $p_A - p_B$. \writelines{2}\\\gradedhide{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\gradedright{$($~\gradedblank[id=hw2b1, type=short, points=2, answer=0.014, check=numeric, tolerance=0.002]{0.8in}{0.17in}~,~\gradedblank[id=hw2b2, type=short, points=2, answer=0.146, check=numeric, tolerance=0.002]{0.8in}{0.17in}~$)$}\vspace{3pt}}
   \item Interpret the interval and evaluate whether there is evidence of a difference
-        in discharge rates. \writelines{2}
+        in discharge rates. \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=3, display={95\% confident $p_A - p_B$ (3-day discharge) is in $(0.014, 0.146)$; all positive, so evidence Hospital A's rate is higher.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \end{enumerate}

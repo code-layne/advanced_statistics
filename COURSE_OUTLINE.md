@@ -1,14 +1,14 @@
 # Statistics — Course Outline
 
-Shepherd · 2026–2027 · **9 units · 80 lessons**
+Shepherd · 2026–2027 · **9 units · 74 lessons**
 
 Titles and focus lines are taken from each unit's cover sheet
 (`unitXX/unit_cover/main.tex`) and each lesson plan (`unitXX/lessonYY/main.tex`).
 
 | Unit | Title | Lessons | Sample test |
 | --- | --- | ---: | --- |
-| 1 | Exploring One-Variable Data | 10 | yes |
-| 2 | Exploring Two-Variable Data | 9 | yes |
+| 1 | Exploring One-Variable Data | 8 | yes |
+| 2 | Exploring Two-Variable Data | 5 | yes |
 | 3 | Collecting Data | 7 | yes |
 | 4 | Probability, Random Variables, and Probability Distributions | 12 | **no** |
 | 5 | Sampling Distributions | 8 | yes |
@@ -19,7 +19,7 @@ Titles and focus lines are taken from each unit's cover sheet
 
 ---
 
-## Unit 1 — Exploring One-Variable Data (10 lessons)
+## Unit 1 — Exploring One-Variable Data (8 lessons)
 
 Introduces the foundational language and tools of statistics: classifying variables,
 organizing and representing categorical and quantitative data, and describing
@@ -28,35 +28,37 @@ statistics, boxplots, comparisons across groups, and the Normal distribution.
 
 | # | Title | Focus |
 | --- | --- | --- |
-| 1.1 | Introducing Statistics | What can we learn from data? Statistical questions, individuals, variables, the data cycle |
-| 1.2 | The Language of Variation | Variables vs. values; categorical vs. quantitative; distribution |
-| 1.3 | Representing a Categorical Variable with Tables | Frequency and relative frequency tables; marginal and joint frequencies |
-| 1.4 | Representing a Categorical Variable with Graphs | Bar graphs, segmented bar graphs, pie charts; comparing displays |
-| 1.5 | Representing a Quantitative Variable with Graphs | Dotplots, stemplots, histograms; choosing a display |
-| 1.6 | Describing the Distribution of a Quantitative Variable | Shape, center, spread, unusual features (SOCS); describing in context |
-| 1.7 | Summary Statistics for a Quantitative Variable | Mean, median, range, IQR, standard deviation; resistance to outliers |
-| 1.8 | Graphical Representations of Summary Statistics | Boxplots and modified boxplots; the 1.5 × IQR outlier rule |
-| 1.9 | Comparing Distributions of a Quantitative Variable | Parallel boxplots, back-to-back stemplots; comparing shape, center, spread |
-| 1.10 | The Normal Distribution and z-Scores | Properties of the Normal curve; 68–95–99.7 rule; standardized scores |
+| 1.0 | Introducing Statistics: What Can We Learn from Data? | Numbers in context; individuals and variables; statistical questions and variability |
+| 1.1 | The Language of Variation | Categorical vs. quantitative variables; measured or counted, not written in digits |
+| 1.2 | Representing a Categorical Variable | Frequency and relative frequency tables; bar graphs; comparing groups of different sizes |
+| 1.3 | Representing a Quantitative Variable with Graphs | Discrete vs. continuous; dotplots, stem plots, histograms; interval width |
+| 1.4 | Describing the Distribution of a Quantitative Variable | Shape, unusual features, center, variability; every description in context |
+| 1.5 | Summary Statistics for a Quantitative Variable | Mean, median, quartiles, percentiles, range, IQR, standard deviation; resistance |
+| 1.6 | Boxplots and Comparing Distributions | Five-number summary; boxplots; comparing groups on center, variability, unusual features |
+| 1.7 | The Normal Distribution and z-Scores | Parameter vs. statistic; z-scores; the empirical rule; relative position |
 
-## Unit 2 — Exploring Two-Variable Data (9 lessons)
+**Mid-unit quiz (Lessons 1.0–1.4).** `unit01/quizzes/` holds `study_guide/` (a reference
+sheet — no key by design), `sample_quiz/`, and `actual_quiz/`; `unit01/quiz_keys/` holds
+`sample_quiz_key/` and `actual_quiz_key/`. The two quizzes are parallel forms — same sections,
+same six multiple-choice targets in order, same two free-response sets — in different contexts.
+Build with `make -C unit01/quizzes all && make -C unit01/quiz_keys all`. Nothing here is merged
+into the unit student or key packet, so the actual quiz never reaches a packet.
+
+## Unit 2 — Exploring Two-Variable Data (5 lessons)
 
 Extends statistical thinking to relationships between two variables: two-way tables and
 conditional distributions for categorical pairs, then scatterplots, correlation, linear
-regression, and residual analysis for quantitative pairs. Closes with power and
-exponential transformations that linearize curved patterns.
+regression, and residual analysis for quantitative pairs. Closes with departures from
+linearity — curved residual plots, influential points, transformations. Compressed from the
+CED's nine Topics to five lessons (2026-09-29), each sized to finish in one period.
 
-| # | Title | Focus |
-| --- | --- | --- |
-| 2.1 | Introducing Statistics: Are Variables Related? | Statistical questions about relationships; apparent vs. real associations |
-| 2.2 | Representing Two Categorical Variables | Two-way tables; joint, marginal, and conditional relative frequencies |
-| 2.3 | Statistics for Two Categorical Variables | Comparing conditional distributions; segmented bar charts; association |
-| 2.4 | Representing Two Quantitative Variables | Scatterplots; direction, form, strength; explanatory vs. response |
-| 2.5 | Correlation | Pearson's *r*; properties and interpretation; correlation ≠ causation |
-| 2.6 | Linear Regression Models | Least-squares line ŷ = a + bx; interpreting slope and intercept |
-| 2.7 | Residuals | Calculating residuals; residual plots; assessing linearity |
-| 2.8 | Least Squares Regression | b = r·s_y/s_x and a = ȳ − bx̄; *s* and *r*²; influential points |
-| 2.9 | Analyzing Departures from Linearity | Power and exponential transformations; evaluating linearized models |
+| # | Title | CED Topics | Focus |
+| --- | --- | --- | --- |
+| 2.1 | Two Categorical Variables | 2.1–2.3 | Two-way tables; joint, marginal, conditional relative frequencies; association |
+| 2.2 | Scatterplots and Correlation | 2.4–2.5 | Explanatory vs. response; direction, form, strength; correlation *r* |
+| 2.3 | Regression Lines and Residuals | 2.6–2.7 | Predicting with ŷ = a + bx; extrapolation; residual = y − ŷ |
+| 2.4 | Least-Squares Regression | 2.8 | b = r·s_y/s_x, a = ȳ − bx̄; slope and intercept in context; *r*² and *s* |
+| 2.5 | Departures from Linearity | 2.9 | Residual plots; outliers, leverage, influence; transformations |
 
 ## Unit 3 — Collecting Data (7 lessons)
 
@@ -192,12 +194,14 @@ course-wide procedure-selection synthesis.
 Every lesson lives in `unitXX/lessonYY/` with the plan at `main.tex` and one
 subdirectory per component: `cover`, `warmup`/`_key`, `notes`/`_key`,
 `activity`/`_key`, `exit_ticket`/`_key`, `homework`/`_key`, `slides`. Units add
-`unit_cover/`, `binder_cover/`, and `sample_test`/`sample_test_key`.
+`unit_cover/`, `binder_cover/`, and `sample_test`/`sample_test_key`. A unit may also carry
+mid-unit `quizzes/` and `quiz_keys/` directories, which stay out of both packets (Unit 1 has
+them; see above).
 
 ## Gaps found while compiling this outline
 
-- **Slide decks exist for 24 of 80 lessons.** All of Unit 1 and Unit 3 have `slides/`;
-  Unit 2 is missing 2.5, 2.8, and 2.9. Units 4–9 have no `slides/` directory at all
+- **Slide decks exist for 20 of 74 lessons.** All of Unit 1 and Unit 3 have `slides/`;
+  Unit 2's five lessons all have one. Units 4–9 have no `slides/` directory at all
   (56 lessons).
 - **Unit 4 has no `sample_test` / `sample_test_key`** — the only unit without one.
 - **Title drift between lesson plans and unit covers** in three places; the cover text is

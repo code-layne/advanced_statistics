@@ -1,0 +1,19 @@
+# Homework item 2a (Unit 6, Lesson 6.7). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A reading intervention is tested at a school. H0: the intervention does not improve
+  reading scores; Ha: it improves reading scores. From the perspective of a school
+  principal, which error would be more costly? Explain.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      Names an error and describes it correctly in context (Type II: concluding the
+      intervention does not help when it really does; or Type I: adopting an intervention
+      that does not really help). The key's answer is Type II.
+  - id: consequence
+    points: 1
+    full: >-
+      Explains the consequence that makes it more costly, in context (e.g. students miss a
+      real improvement; or money and time wasted on an ineffective program).

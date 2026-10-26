@@ -1,0 +1,23 @@
+# Homework item 2c (Unit 6, Lesson 6.9). Relative to the lesson directory.
+id: hw2c
+points: 3
+task: >-
+  Independent random samples from two hospitals: Hospital A, n1 = 400, p-hat1 = 0.73;
+  Hospital B, n2 = 350, p-hat2 = 0.65 (proportion discharged within 3 days). The 95%
+  CI for p_A - p_B is (0.014, 0.146). Interpret the interval and evaluate whether
+  there is evidence of a difference in discharge rates.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      States 95% confidence and the interval (0.014, 0.146).
+  - id: context
+    points: 1
+    full: >-
+      Says it captures the TRUE DIFFERENCE (A minus B) in the proportions of patients
+      discharged within 3 days.
+  - id: evaluate
+    points: 1
+    full: >-
+      Concludes there is convincing evidence of a difference (Hospital A higher) because
+      the interval lies entirely above 0.

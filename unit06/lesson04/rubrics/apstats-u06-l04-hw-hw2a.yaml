@@ -1,0 +1,21 @@
+# Homework item 2a (Unit 6, Lesson 6.4). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  A seed company claims 85% germinate; a researcher believes the rate is lower. 162 of
+  200 randomly selected seeds germinate. State hypotheses and justify the direction of
+  Ha.
+criteria:
+  - id: hyp
+    points: 1
+    full: >-
+      States H0: p = 0.85 and Ha: p < 0.85, with p the true germination proportion of the
+      company's seeds.
+  - id: direction
+    points: 1
+    full: >-
+      Justifies the one-sided (less than) alternative: the researcher suspects the rate is
+      LOWER than claimed (decided before seeing data).
+examples:
+  - response: "H0: p-hat = 0.85, Ha: p-hat < 0.85"
+    scores: {hyp: 0, direction: 0}

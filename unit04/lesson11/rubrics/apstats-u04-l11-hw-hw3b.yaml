@@ -1,0 +1,15 @@
+# Homework item 3b (Unit 4, Lesson 4.11). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  X ~ B(120, 0.40) = number of 120 ER patients discharged within 4 hours; mu_X = 48.
+  Interpret mu_X.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average over many days with 120 ER patients.
+  - id: context
+    points: 1
+    full: >-
+      Says about 48 patients are discharged within 4 hours on average.

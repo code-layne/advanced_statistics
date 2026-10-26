@@ -1,0 +1,19 @@
+# Homework item 2, explanation (Unit 8, Lesson 8.4). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  True or false (answer: FALSE): 'If all row totals in a two-way table are equal, then
+  all expected counts in the table must be equal.' Explain your reasoning in 1-2
+  sentences.
+criteria:
+  - id: column
+    points: 1
+    full: >-
+      Says expected counts also depend on the column totals (E = row total x column total
+      / table total).
+  - id: why
+    points: 1
+    full: >-
+      Explains that with equal row totals the expected counts are equal only within a
+      column (proportional to the column totals), so they are all equal only if the column
+      totals are also equal; a counterexample also earns this point.

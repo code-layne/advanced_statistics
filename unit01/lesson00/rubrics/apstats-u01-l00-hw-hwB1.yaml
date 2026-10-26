@@ -1,0 +1,28 @@
+# Homework Part B, item 1 (Unit 1, Lesson 1.0). Relative to the lesson directory.
+id: hwB1
+points: 3
+task: >-
+  A city record lists six food trucks licensed for one downtown lot, with Cuisine,
+  Menu items, Avg. wait (min), and Cash only? for each truck (waits range from 4 to 19
+  minutes). Of (i) How many trucks are licensed for this lot? and (ii) How do the
+  average waits at these trucks vary?, exactly one is statistical. Circle it, then
+  name the check the other one fails and explain why it fails.
+criteria:
+  - id: choice
+    points: 1
+    full: >-
+      Identifies (ii) as the statistical question (circled or stated).
+  - id: check
+    points: 1
+    full: >-
+      Says (i) fails the variability check (check 1): its answer does not vary across the
+      individuals (trucks).
+  - id: why
+    points: 1
+    full: >-
+      Explains that the number of licensed trucks is one fixed count (6) that does not
+      differ from truck to truck; needing to read the record is not what makes a question
+      statistical.
+examples:
+  - response: "(ii). (i) is not statistical because you can answer it without data."
+    scores: {choice: 1, check: 0, why: 0}

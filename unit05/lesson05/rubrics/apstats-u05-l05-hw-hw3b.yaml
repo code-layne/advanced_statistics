@@ -1,0 +1,18 @@
+# Homework item 3b (Unit 5, Lesson 5.5). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  Red chips, p = 0.60: the SD of the sample proportion is 0.098 for n = 25, 0.049 for
+  n = 100, and 0.0245 for n = 400. Describe how it changes as n increases. What does
+  this mean for estimation?
+criteria:
+  - id: change
+    points: 1
+    full: >-
+      Says the standard deviation of the sample proportion decreases as n increases (it
+      halves each time n quadruples).
+  - id: meaning
+    points: 1
+    full: >-
+      Says larger samples give more precise estimates of the true proportion (sample
+      proportions cluster more closely around p).

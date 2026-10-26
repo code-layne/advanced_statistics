@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l01-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.1}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} For each problem, show your work and explain your reasoning clearly.
@@ -26,15 +29,16 @@
 
         \begin{enumerate}[label=\alph*.]
           \item Find the expected count for each color. Show your calculation.
-                \writelines{2}
+                \gradedhide{\writelines{2}\gradedright{\textit{each:}~\gradedblank[id=hw1a, type=short, points=1, answer=40, check=numeric, tolerance=0]{0.9in}{0.2in}}}
 
           \item Which color shows the largest absolute difference
                 $|\text{Observed} - \text{Expected}|$ from expected?
-                \writelines{2}
+                \gradedhide{\writelines{2}\gradedright{\gradedblank[id=hw1b, type=short, points=1, answer=Green, check=text]{1.2in}{0.2in}}}
 
+          \boxguard[15]
           \item Explain in your own words what question a chi-square goodness-of-fit
                 test would answer about this data.
-                \writelines{3}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2, display={Are the gaps from 40 per color too large to be chance, so the bag does not follow 20\% each?}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
         \end{enumerate}
 
   \item \textbf{Rolling a Die.} A fair six-sided die is rolled 120 times. You expect
@@ -49,12 +53,14 @@
         \end{tabularx}
 
         \begin{enumerate}[label=\alph*.]
+          \boxguard[15]
           \item Compute the difference (Observed $-$ Expected) for each face.
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={$-2,\ +2,\ -1,\ +5,\ -4,\ 0$}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 
+          \boxguard[15]
           \item Would you be surprised if a fair die produced these results?
                 Explain without any formal calculation.
-                \writelines{3}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={Not surprising: all gaps are small next to 20 (largest $+5$); chance variation explains them.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
         \end{enumerate}
 
 \end{enumerate}

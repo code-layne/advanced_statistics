@@ -1,0 +1,12 @@
+# Homework item 4 justification (Unit 7, Lesson 7.8). Relative to the lesson directory.
+id: hw4b
+points: 1
+task: >-
+  Two groups of 15 subjects; both dotplots show moderate skewness with one outlier
+  each. Answer (C): the Normal condition is not met. Give a brief justification.
+criteria:
+  - id: 4b
+    points: 1
+    full: >-
+      Explains that both samples are under 30 so each distribution must be checked, and
+      outliers in small samples violate (or seriously threaten) the Normal condition.

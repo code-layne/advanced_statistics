@@ -1,152 +1,181 @@
-%! AP Statistics — Unit 2, Lesson 2.3 — Guided Notes (Answer Key)
-\documentclass[10pt]{article}
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — Guided Notes & Practice (Answer Key)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1), at the COMPACT
+% budget: the vocabulary box, then ONE two-column guidednotes table of four rows, 14 problems,
+% two pages. Problems are numbered 1..N through the whole component.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice, is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 3 (which number is y and which is y-hat). THE CRUX is problem 9, in the
+% last instruction row: a residual computed as y-hat minus y, and a positive residual read as
+% "the line was too high" (EK DAT-1.E.1).
+%
+% THE DATA (instruction rows): 17 pizza deliveries, 1 to 9 miles; line time-hat = 8 + 3(distance).
+%   (x, residual): (1,1) (1.5,-2) (2,2) (2.5,-1) (3,0) (3.5,2) (4,-3) (4.5,1) (5,3) (5.5,-2)
+%                  (6,-2) (6.5,1) (7,-1) (7.5,2) (8,0) (8.5,-2) (9,1)   — sum 0, no pattern.
+% GUIDED PRACTICE: 20 adults, 4 to 9 hours of sleep; RT-hat = 430 - 25(sleep); the 7-hour
+%   adult at 270 ms has residual +15.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} becomes an \ans{}, every \termblank a \termans,
+% and every \pcell gets its answer in the fourth argument. Nothing else differs.
+% Slope/intercept INTERPRETATION and r^2 are Lesson 2.4 — the equation is only USED here.
+% NO SKETCH QUESTIONS: the scatterplot and both residual plots are pre-drawn in TikZ.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.3}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+\pageheader{Unit 2, Lesson 2.3}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no name row here — it lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ansline{compute the conditional proportion for each group in a two-way table,}\\[1pt]
-\ansline{calculate and interpret the difference in proportions and relative risk,}\\[1pt]
-\ansline{compare both statistics to assess the strength of an association.}
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Conditional proportion ($\hat{p}$)}
-\hfill\ans{the proportion of successes within a given group: $\hat{p} = \frac{\text{successes}}{\text{group total}}$}
-
-\termblanklong{Difference in proportions}
-\hfill\ans{$\hat{p}_1 - \hat{p}_2$; additive comparison between two groups' rates}
-
-\termblanklong{Relative risk (risk ratio)}
-\hfill\ans{$\hat{p}_1 / \hat{p}_2$; multiplicative comparison; how many times as likely}
-
-\termblanklong{Baseline group}
-\hfill\ans{the reference group in the denominator of the relative risk}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termans{Regression line}{a line $\hat{y}=a+bx$ that uses the explanatory variable $x$ to predict the response variable $y$.}
+\par
+\termans{Predicted value ($\hat{y}$)}{the $y$-value the line gives for a particular $x$; the actual $y$ usually differs from it.}
+\par
+\termans{Extrapolation}{predicting for an $x$ outside the range of $x$-values used to build the line --- unreliable.}
+\par
+\termans{Residual}{actual minus predicted, $y-\hat{y}$; positive means the point lies above the line.}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{hookbox}
-\small\textbf{Scenario:} 400 vaccinated, 32 flu cases; 400 unvaccinated, 80 flu cases.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item Vaccinated: $\hat{p}_V = \ans{32/400 = 0.08}$ \quad Unvaccinated: $\hat{p}_U = \ans{80/400 = 0.20}$
-  \item \ansline{We need a statistic --- either the difference (additive) or the ratio (multiplicative).}
-\end{enumerate}
-\end{hookbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Step 1 --- Difference in Proportions (UNC-1.Q, UNC-1.R)}
 \small
+\begin{guidednotes}
+% ── ROW 1: the equation and prediction ───────────────────────────────────────
+\mainidea[The equation \&]{Prediction} &
+A \textbf{regression line} $\hat{y}=a+bx$ models how the \ans{response} variable $y$ changes
+as the \ans{explanatory} variable $x$ changes. $\hat{y}$ (``$y$-hat'') is the \ans{predicted}
+value; $y$ is the \ans{actual} value. To predict, \ans{substitute} $x$ into the equation.
 
-\[
-  \hat{p}_V - \hat{p}_U = \frac{\ans{32}}{\ans{400}} - \frac{\ans{80}}{\ans{400}}
-  = \ans{0.08} - \ans{0.20} = \ans{-0.12}
-\]
+\begin{minipage}[c]{0.60\linewidth}\raggedright
+A pizza shop timed 17 deliveries, 1 to 9 miles out (time in minutes, distance in miles):\par
+\vspace{3pt}
+\centering $\widehat{\text{time}} = 8 + 3(\text{distance})$\par
+\end{minipage}\hfill
+\begin{minipage}[c]{0.38\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.34, yscale=0.048]
+  \foreach \y in {10,20,30,40} {\draw[linegray, very thin] (0,\y) -- (10,\y);
+    \node[left, font=\tiny] at (0,\y) {\y};}
+  \draw[->, thick] (0,0) -- (10.4,0);
+  \draw[->, thick] (0,0) -- (0,43);
+  \foreach \x in {0,2,4,6,8,10} {\draw (\x,-0.8) -- (\x,0.8);
+    \node[below, font=\tiny] at (\x,-0.5) {\x};}
+  \draw[goldacc, very thick] (1,11) -- (9,35);
+  \foreach \x/\y in {1/12, 1.5/11.5, 2/16, 2.5/14.5, 3/17, 3.5/20.5, 4/17, 4.5/22.5, 5/26,
+                     5.5/22.5, 6/24, 6.5/28.5, 7/28, 7.5/32.5, 8/32, 8.5/31.5, 9/36}
+    {\fill[navy] (\x,\y) circle[x radius=0.15, y radius=1.06];}
+  \node[font=\tiny] at (5,-11.5) {Distance (miles)};
+  \node[rotate=90, font=\tiny] at (-2.3,21) {Time (min)};
+\end{tikzpicture}
+\end{minipage}
+\notesprompt{Use the line.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Predict the time for a 5-mile delivery.}{1.0cm}{$8+3(5)=23$ minutes} &
+\pcell{2}{Predict the time for a 2.5-mile delivery.}{1.0cm}{$8+3(2.5)=15.5$ minutes} &
+\pcell{3}{A 6-mile delivery took 24 minutes. Give $y$ and $\hat{y}$.}{1.0cm}{$y=24$ (actual), $\hat{y}=26$ (predicted)} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: extrapolation ─────────────────────────────────────────────────────
+\mainidea[Predicting beyond]{The data} &
+\textbf{Extrapolation} is predicting for an $x$-value \ans{outside} the interval of $x$-values
+used to build the line --- the farther out, the \ans{less} reliable. Say so every time.
+\notesprompt{The shop's line was built from deliveries of 1 to 9 miles.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{4}{Predict the time for a 30-mile delivery. Trust it?}{1.2cm}{$98$ min --- no: far outside 1--9 mi} &
+\pcell{5}{Which are extrapolation: 3 miles, 8.5 miles, 12 miles?}{1.2cm}{Only 12 miles (outside 1--9)} &
+\pcell{6}{Could the line be wrong for 15 miles? Why can't we check?}{1.2cm}{Yes --- no data past 9 mi to check} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: residuals — THE CRUX ──────────────────────────────────────────────
+\mainidea[Actual minus]{Predicted} &
+A \textbf{residual} is actual minus predicted: \quad
+residual $=$ \ans{$y$} $-$ \ans{$\hat{y}$}
 
-\textbf{Interpretation:}\\[4pt]
-\ansline{The proportion of vaccinated participants who got the flu (8\%) was 0.12 (12 percentage points) \emph{lower} than the proportion of unvaccinated participants who got the flu (20\%).}
+\vspace{2pt}
+\begin{minipage}[c]{0.60\linewidth}\raggedright
+\textbf{Positive:} the actual value is \ans{larger} than predicted --- the point sits above
+the line, so the line predicted too \ans{low}.
 
-\vspace{4pt}
-\textbf{Key properties:}
-\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item Value of \ans{0} $\to$ no difference.
-  \item Positive $\to$ Group 1 rate is \ans{higher}; Negative $\to$ Group 1 rate is \ans{lower}.
-  \item Units: \ans{proportion (or percentage points)}.
-\end{itemize}
-\end{notesbox}
+\vspace{3pt}
+A \textbf{residual plot} graphs each residual against $x$. Points scattered \ans{randomly}
+around 0, with no pattern, say a linear model is \ans{appropriate}.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.38\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.34, yscale=0.30]
+  \draw[->, thick] (0,-4.6) -- (0,4.8);
+  \draw[thick] (0,-4.6) -- (10.2,-4.6);
+  \draw[dashed, slate] (0,0) -- (10.2,0);
+  \foreach \y in {-4,-2,0,2,4} {\draw (-0.12,\y) -- (0.12,\y);
+    \node[left, font=\tiny] at (0,\y) {\y};}
+  \foreach \x in {0,2,4,6,8,10} {\draw (\x,-4.75) -- (\x,-4.45);
+    \node[below, font=\tiny] at (\x,-4.6) {\x};}
+  \foreach \x/\e in {1/1, 1.5/-2, 2/2, 2.5/-1, 3/0, 3.5/2, 4/-3, 4.5/1, 5/3, 5.5/-2,
+                     6/-2, 6.5/1, 7/-1, 7.5/2, 8/0, 8.5/-2, 9/1}
+    {\fill[navy] (\x,\e) circle[x radius=0.15, y radius=0.17];}
+  \node[font=\tiny] at (5,-6.2) {Distance (miles)};
+  \node[rotate=90, font=\tiny] at (-2.1,0) {Residual (min)};
+\end{tikzpicture}
+\end{minipage}
+\\
+& \notesprompt{Residuals for the pizza deliveries.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{The 5-mile delivery took 26 minutes. Find its residual.}{1.4cm}{$26-23=+3$ minutes} &
+\pcell{8}{A 4-mile delivery took 17 minutes. Find its residual and say what it means.}{1.4cm}{$17-20=-3$: faster than predicted; the line overpredicted} \\ \hline
+\pcell{9}{Jordan says the 5-mile residual is $23-26=-3$, ``so the line predicted too high.''
+Fix both mistakes.}{1.5cm}{$y-\hat{y}=26-23=+3$. It took longer than predicted: the line predicted too \emph{low}.} &
+\pcell{10}{Does the residual plot show a pattern? Is a linear model appropriate?}{1.5cm}{No pattern --- random scatter around 0. Yes, linear is appropriate.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{Sleep \& Reaction} &
+\begin{minipage}[c]{0.60\linewidth}\raggedright
+A researcher measured hours of sleep and reaction time, in milliseconds, for 20 adults who
+slept 4 to 9 hours:\par
+\centering $\widehat{\text{RT}} = 430 - 25(\text{sleep})$\par
+\raggedright
+Its residual plot is at right.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.38\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.55, yscale=0.050]
+  \draw[->, thick] (3.5,-27) -- (3.5,28);
+  \draw[thick] (3.5,-27) -- (9.5,-27);
+  \draw[dashed, slate] (3.5,0) -- (9.5,0);
+  \foreach \y in {-20,0,20} {\draw (3.42,\y) -- (3.58,\y);
+    \node[left, font=\tiny] at (3.5,\y) {\y};}
+  \foreach \x in {4,5,6,7,8,9} {\draw (\x,-28) -- (\x,-26);
+    \node[below, font=\tiny] at (\x,-27) {\x};}
+  \foreach \x/\e in {4/10, 4.5/-15, 4.5/5, 5/-20, 5/15, 5.5/0, 6/20, 6/-10, 6.5/-5, 6.5/12,
+                     7/15, 7/-18, 7.5/5, 7.5/-8, 8/-12, 8/18, 8.5/3, 8.5/-15, 9/10, 9/-10}
+    {\fill[navy] (\x,\e) circle[x radius=0.09, y radius=1.0];}
+  \node[font=\tiny] at (6.5,-37) {Sleep (hours)};
+  \node[rotate=90, font=\tiny] at (2.35,0) {Residual (ms)};
+\end{tikzpicture}
+\end{minipage}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Predict the reaction time after 7 hours of sleep.}{1.4cm}{$430-25(7)=255$ ms} &
+\pcell{12}{An adult who slept 7 hours reacted in 270 ms. Find the residual and say what it
+means.}{1.4cm}{$270-255=+15$ ms: slower than predicted; the line underpredicted} \\ \hline
+\pcell{13}{Predict the reaction time after 12 hours of sleep. Trust it?}{1.5cm}{$130$ ms. No --- 12 h is outside 4--9 h (extrapolation)} &
+\pcell{14}{Is a linear model appropriate here? Use the residual plot.}{1.5cm}{Yes: the residuals scatter randomly around 0, no pattern} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-\begin{notesbox}{Step 2 --- Relative Risk (UNC-1.Q, UNC-1.R)}
-\small
-
-The denominator is the \textbf{\ans{baseline (unvaccinated)}} group.
-
-\[
-  \text{RR} = \frac{\hat{p}_V}{\hat{p}_U} = \frac{\ans{0.08}}{\ans{0.20}} = \ans{0.40}
-\]
-
-\textbf{Interpretation:}\\[4pt]
-\ansline{Vaccinated participants were 0.40 times as likely to get the flu as unvaccinated
-participants --- i.e., vaccination reduced the likelihood of flu to 40\% of the unvaccinated rate.}
-
-\vspace{4pt}
-\textbf{Key properties:}
-\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item Value of \ans{1} $\to$ no difference.
-  \item RR $> 1$ $\to$ Group 1 rate is \ans{higher}; RR $< 1$ $\to$ Group 1 rate is \ans{lower}.
-  \item Not a percentage-point difference.
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Step 3 --- When Do They Tell Different Stories?}
-\small
-\begin{multicols}{2}
-
-\textbf{Context A: Rare outcome}\\
-Difference in proportions: \ans{0.001}\\
-Relative risk: \ans{2}
-
-\vspace{4pt}
-\ansline{RR is more striking --- ``twice as likely'' sounds alarming even though the absolute difference is tiny.}
-
-\columnbreak
-
-\textbf{Context B: Common outcome}\\
-Difference in proportions: \ans{0.20}\\
-Relative risk: \ans{1.5}
-
-\vspace{4pt}
-\ansline{The absolute difference (20 percentage points) is more striking here.}
-
-\end{multicols}
-
-\vspace{4pt}
-\textbf{Takeaway:} A small \ans{absolute difference} can correspond to a large \ans{relative risk}.
-Always report \ans{both statistics in context}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-\textbf{How this connects:} [same as student version]
-
-\columnbreak
-
-\ansline{Relative risk is preferred when the outcome is rare, because the multiplicative
-comparison is more interpretable than a tiny absolute difference. In medical research, both
-are routinely reported together.}
-\end{multicols}
-\end{spiralbox}
-
-\begin{teachernote}
-\textbf{Hook item 1:} Students should recall that $\hat{p} = \text{successes}/\text{group total}$
-from Lesson 2.2. Circulate to check that they divide by 400, not by the grand total 800.
-
-\textbf{Step 2 RR $< 1$:} Many students expect RR to always be $>1$. Emphasize that which group
-is Group 1 is arbitrary --- swapping gives RR $= 1/0.40 = 2.5$ (unvaccinated are 2.5 times as
-likely to get flu). Both are correct; direction must be stated.
-
-\textbf{Step 3:} Context A is the classic ``scary headline'' situation (drug doubles cancer risk
-from 0.001 to 0.002). Use to discuss media literacy and statistical communication.
-\end{teachernote}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

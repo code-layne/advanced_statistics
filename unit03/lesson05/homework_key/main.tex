@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l05-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.5}{Homework — KEY}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -14,27 +17,28 @@
 \small
 \textbf{1.}
 
-Experimental units: \ans{100 adults}\\[3pt]
-Factor: \ans{Sleep aid type}\\[3pt]
-Treatments: \ans{New sleep pill; look-alike sugar pill (placebo)}\\[3pt]
-Response variable: \ans{Sleep quality rating}\\[3pt]
-Design type: \ans{CRD} \quad Blinding: \ans{Double-blind}\\[3pt]
-\ans{The placebo controls for the placebo effect — some participants might sleep better simply because they believe they are taking a medication. Without the placebo, we couldn't isolate the drug's true effect.}
+Experimental units: \ans{100 adults}\hfill\smash{\gradedblank[id=hw1a, type=short, points=1, answer={100 adults}, check=text]{2.4in}{0.17in}}\\[3pt]
+Factor: \ans{Sleep aid type}\hfill\smash{\gradedblank[id=hw1b, type=short, points=1, answer={type of sleep aid}, check=text]{2.4in}{0.17in}}\\[3pt]
+Treatments: \ans{New sleep pill; look-alike sugar pill (placebo)}\gradedkey{\gradedblank[id=hw1c, type=short, points=1, answer={new pill; sugar pill}, check=text, display={\bfseries new pill; sugar pill}]{3.2in}{0.3in}}\vspace{5pt}
+Response variable: \ans{Sleep quality rating}\hfill\smash{\gradedblank[id=hw1d, type=short, points=1, answer={sleep quality rating}, check=text]{2.4in}{0.17in}}\\[3pt]
+Design type: \ans{CRD} \quad Blinding: \ans{Double-blind}\hfill\smash{\gradedblank[id=hw1e, type=short, points=1, answer={completely randomized design}, check=text, display={\bfseries CRD}]{1.05in}{0.17in}}\quad \smash{\gradedblank[id=hw1f, type=short, points=1, answer=double-blind, check=text]{1.4in}{0.17in}}\\[3pt]
+\ans{The placebo controls for the placebo effect — some participants might sleep better simply because they believe they are taking a medication. Without the placebo, we couldn't isolate the drug's true effect.}\gradedkeyline{\gradedblank[id=hw1g, type=rubric, points=2, display={Controls the placebo effect (believing you took a pill); isolates the drug's true effect.}]{\linewidth+6pt}{2in}}
 
+\tcbbreak
 \vspace{6pt}
 \textbf{2.}
 
 Design type: \ans{CRD (all plants in same greenhouse, no known blocking variable)} \quad Blocking variable: \ans{None identified}\\[3pt]
-\ans{If all plants are in the same greenhouse with similar conditions, blocking would not improve the design — there is no nuisance variable to block on. If plants varied by location (e.g., proximity to the window), blocking by location could help.}
+\ans{If all plants are in the same greenhouse with similar conditions, blocking would not improve the design — there is no nuisance variable to block on. If plants varied by location (e.g., proximity to the window), blocking by location could help.}\gradedkey{\mbox{Design~\gradedblank[id=hw2a, type=short, points=1, answer={completely randomized design}, check=text, display={\bfseries CRD}]{1.05in}{0.17in}\quad Blocking~\gradedblank[id=hw2b, type=short, points=1, answer=none, check=text]{1.4in}{0.17in}}}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={No: same greenhouse, no nuisance variable to block on.}]{\linewidth+6pt}{2in}}
 
 \vspace{6pt}
 \textbf{3.}
 
-Design type: \ans{Matched pairs design}\\[3pt]
-\ans{Current weight likely affects weight-loss outcomes. By pairing on current weight, the researcher removes individual weight differences from the comparison, producing a more precise estimate of the diet effect.}
+Design type: \ans{Matched pairs design}\hfill\smash{\gradedblank[id=hw3a, type=short, points=1, answer={matched pairs design}, check=text]{2in}{0.17in}}\\[3pt]
+\ans{Current weight likely affects weight-loss outcomes. By pairing on current weight, the researcher removes individual weight differences from the comparison, producing a more precise estimate of the diet effect.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=2, display={Current weight affects weight loss; pairing removes it, so the diet comparison is more precise.}]{\linewidth+6pt}{2in}}
 
 \vspace{6pt}
-\textbf{4.} \ans{Random assignment distributes all potential confounding variables (motivation, health, habits, genetics) roughly equally across the treatment groups by chance. This means any difference in the response variable can be attributed to the treatment rather than to a pre-existing group difference. Without random assignment, a confounding variable could explain the observed difference.}
+\textbf{4.} \ans{Random assignment distributes all potential confounding variables (motivation, health, habits, genetics) roughly equally across the treatment groups by chance. This means any difference in the response variable can be attributed to the treatment rather than to a pre-existing group difference. Without random assignment, a confounding variable could explain the observed difference.}\gradedkeyline{\gradedblank[id=hw4, type=rubric, points=2, display={Random assignment spreads confounders (motivation, health, habits) roughly evenly across groups, so a difference in response can be attributed to the treatment.}]{\linewidth+6pt}{2in}}
 \end{practicebox}
 
 \end{document}

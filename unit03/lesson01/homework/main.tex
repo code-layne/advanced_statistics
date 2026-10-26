@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l01-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.1}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -21,9 +24,11 @@ For each survey below, (a) classify it as trustworthy or not trustworthy,
 a new environmental regulation. Over 10{,}000 people vote.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Trustworthy / Not Trustworthy \quad \writeline
-  \item Over/under-represented: \writeline
-  \item Distortion: \writeline\\[1pt]\writeline
+  \item Trustworthy / Not Trustworthy \quad \gradedhide{\writeline}\gradedright{\gradedblank[id=hw1a, type=short, points=1, answer={not trustworthy}, check=text]{1.6in}{0.2in}}
+  \item Over/under-represented:\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={Over: strong opinions. Under: neutral people, non-readers.}]{\linewidth+6pt}{2in}}\writelines{9}}
+  \item Distortion:\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2, display={Overstates strong views; 10,000 voluntary votes are still biased.}]{\linewidth+6pt}{2in}}\writelines{9}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -31,8 +36,9 @@ a new environmental regulation. Over 10{,}000 people vote.
 database and asks about their exercise habits.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Trustworthy / Not Trustworthy \quad \writeline
-  \item Who is included, and is there any concern? \writeline\\[1pt]\writeline
+  \item Trustworthy / Not Trustworthy \quad \gradedhide{\writeline}\gradedright{\gradedblank[id=hw2a, type=short, points=1, answer=trustworthy, check=text]{1.6in}{0.2in}}
+  \item Who is included, and is there any concern?\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={Hospital patients only; may not represent all adults (less healthy).}]{\linewidth+6pt}{2in}}\writelines{9}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -40,19 +46,24 @@ database and asks about their exercise habits.
 in the city earns.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Trustworthy / Not Trustworthy \quad \writeline
-  \item Whose opinion is missing? \writeline
-  \item How might the result be distorted? \writeline\\[1pt]\writeline
+  \item Trustworthy / Not Trustworthy \quad \gradedhide{\writeline}\gradedright{\gradedblank[id=hw3a, type=short, points=1, answer={not trustworthy}, check=text]{1.6in}{0.2in}}
+  \item Whose opinion is missing?\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=1, display={Workers at other companies, self-employed, other industries.}]{\linewidth+6pt}{2in}}\writelines{9}}
+  \item How might the result be distorted?\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw3c, type=rubric, points=2, display={This company's pay may be above or below the city's; estimate skewed.}]{\linewidth+6pt}{2in}}\writelines{9}}
 \end{enumerate}
 
+\tcbbreak
 \vspace{8pt}
 \textbf{4.} A researcher mails surveys to a random sample of 2{,}000 registered
 voters. Only 300 respond.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Was the initial selection trustworthy? \blank{3cm}
-  \item What concern arises from the low response rate? \writeline\\[1pt]\writeline
-  \item Is a bigger (non-random) sample better? Explain. \writeline\\[1pt]\writeline
+  \item Was the initial selection trustworthy? \makebox[3cm][r]{\smash{\gradedblank[id=hw4a, type=short, points=1, answer=yes, check=text]{0.55in}{0.2in}}}
+  \item What concern arises from the low response rate?\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw4b, type=rubric, points=2, display={Nonresponse bias: the 300 responders may differ from the 1,700 who did not.}]{\linewidth+6pt}{2in}}\writelines{9}}
+  \item Is a bigger (non-random) sample better? Explain.\par
+        \gradedhide{\gradedhere{\gradedblank[id=hw4c, type=rubric, points=2, display={No: a bigger non-random sample is still biased; random is better.}]{\linewidth+6pt}{2in}}\writelines{9}}
 \end{enumerate}
 \end{practicebox}
 

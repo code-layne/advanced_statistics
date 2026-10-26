@@ -1,0 +1,16 @@
+# Homework item 2a (Unit 4, Lesson 4.4). Relative to the lesson directory.
+id: hw2a
+points: 2
+task: >-
+  Same table. C = condition present, D = Type B blood. Are C and D mutually exclusive?
+  Justify in context.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no, C and D are not mutually exclusive.
+  - id: reason
+    points: 1
+    full: >-
+      Cites the table: 20 patients have Type B blood and the condition present, so both
+      events can happen to the same patient.

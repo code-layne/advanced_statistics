@@ -31,7 +31,13 @@ UNIT         := $(notdir $(abspath ..))
 LESSON       := $(notdir $(CURDIR))
 
 SHARED_STYS  := $(wildcard $(PROJECT_ROOT)/shared/*.sty)
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+# TeX search path: the course packages (recursive), then math-shared (the
+# submodule at the project root, for grading.sty). math-shared is listed
+# NON-recursively and lives outside shared/ because math-shared/examples holds
+# main.tex files: kpathsea resolves even the main file through TEXINPUTS, so a
+# recursive path reaching them would make a component build compile an
+# example's main.tex instead of its own.
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 LATEXMK      = latexmk
 LATEXFLAGS   = -xelatex \
                -interaction=nonstopmode \
@@ -59,13 +65,31 @@ comp-stamp   = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp)
 comp-dep     = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp,$(wildcard $1/main.pdf))
 
 # ── Component discovery (in pedagogical order) ────────────────────────────────
-# EFFL — experience first, formalize later: the activity comes BEFORE the notes.
-# Students meet an unfamiliar situation with the tools they already own, and the
-# class debrief then attaches vocabulary and notation to what they found. Formal
-# notes are the product of the lesson, not its starting point, so the packet must
-# not hand them out first.
-STUDENT_ORDER := cover warmup activity notes exit_ticket homework
-KEYED_PAIRS   := warmup activity notes exit_ticket homework
+#
+# `experience` is the EFFL centrepiece (Math Medic "experience first, formalize
+# later"): one document carrying the group Activity, the QuickNotes the debrief
+# fills, the Application, and Check Your Understanding. Students and teachers
+# read it as "Experience & Formalize"; the DIRECTORY name stays `experience`
+# because it is a build identifier — these two lists — and renaming it would
+# mean editing the build system.
+#
+# It sits after `warmup` and before the legacy names. `notes`, `activity`, and
+# `exit_ticket` are pre-EFFL components kept here so the ~78 lessons authored
+# before the redesign still build unchanged; new lessons do not use them.
+#
+# In the legacy lessons that have both, `activity` comes before `notes`: the
+# activity is the experience, and the notes formalize what students found in it.
+# Those lessons' packets therefore put the activity pages ahead of the notes.
+#
+# `ap_practice` and `homework` close the packet, in that order. AP Statistics
+# splits its post-lesson work in two: `ap_practice` is the AP-format rep — MC in
+# context plus a free-response set — assigned but NOT scored, and `homework` is
+# the graded practice, the last pages of the packet. Both names are optional; a
+# lesson that provides only `homework` builds exactly as before, which is why
+# adding `ap_practice` here is inert for every lesson that does not have the
+# directory.
+STUDENT_ORDER := cover warmup experience activity notes exit_ticket ap_practice homework
+KEYED_PAIRS   := warmup experience activity notes exit_ticket ap_practice homework
 
 STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(call comp-present,$(c)))
 
@@ -247,3 +271,94 @@ clean:
 	      $(COMPILED_DIR)/$(LESSON)_student.pdf \
 	      $(COMPILED_DIR)/$(LESSON)_key.pdf \
 	      $(COMPILED_DIR)/$(LESSON)_full.pdf
+
+# ── Grading (math-shared, the submodule at the project root) ──────────────────
+# Per-lesson entry points to math-shared's grading.mk, for ONE component that
+# uses grading.sty (\gradedblank items — ap_practice and homework):
+#
+#   make manifest COMP=homework
+#       blank + key builds, target/<unit>/<lesson>/grading/<COMP>/manifest.json,
+#       and the check that the blank and key agree on every graded item.
+#   make roster-packets COMP=homework ROSTER=~/Rosters/apstats/roster-map.csv [SECTION=…]
+#       per student, in roster order: her name cover sheet and its blank back
+#       (math-shared's grading-covers), then one copy of the lesson's student
+#       packet with her personalized COMP (QR codes and the id strip carry only
+#       her tracking id) in place of the master copy, paginated by
+#       shared/paginate.sh exactly like `make student`. Joined into
+#       target/compiled/<unit>/lessonYY_<COMP>_roster.pdf to print as one
+#       collated job. A COMP that is not in the student packet gets math-shared's
+#       own run per student instead: cover, blank back, then the component
+#       padded to an even page count.
+#
+# Student names are printed only on the cover sheets, so the roster PDFs carry
+# them: they stay under target/, which is never committed.
+# grading-namecheck (shared/check_namelines.py) runs first in both: it fails if
+# COMP or its key loads grading.sty and still carries a name line.
+GRADING_MK  := $(PROJECT_ROOT)/math-shared/grading.mk
+COMP        ?=
+COMPONENT   := $(COMP)
+GRADING_OUT := $(PDF_DIR)/grading/$(COMP)
+
+.PHONY: manifest roster-packets grading-need-comp grading-namecheck
+
+ifneq ($(wildcard $(GRADING_MK)),)
+include $(GRADING_MK)
+
+grading-need-comp:
+	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=homework"; exit 1; }
+
+grading-namecheck: grading-need-comp
+	@$(GRADING_PYTHON) $(PROJECT_ROOT)/shared/check_namelines.py $(COMPONENT) $(KEY_COMPONENT)
+
+manifest: grading-namecheck
+	@$(MAKE) --no-print-directory grading-manifest
+	@echo "✓  Manifest       → target/$(UNIT)/$(LESSON)/grading/$(COMP)/manifest.json"
+
+# Roster order and tracking ids, read only when ROSTER is given.
+ROSTER_IDS     := $(if $(ROSTER),$(shell $(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py \
+                    "$(ROSTER)" --ids-only $(if $(SECTION),--section "$(SECTION)")))
+ROSTER_PKT_DIR := $(GRADING_OUT)/roster
+ROSTER_PACKETS := $(foreach id,$(ROSTER_IDS),$(ROSTER_PKT_DIR)/$(id).pdf)
+ROSTER_OUT     := $(COMPILED_DIR)/$(LESSON)_$(COMP)_roster.pdf
+
+# The master copy of COMP as it appears in the student packet, if it does.
+COMP_MASTER_PDF := $(PDF_DIR)/$(COMP)/main.pdf
+COMP_IN_PACKET  := $(filter $(COMP_MASTER_PDF),$(STUDENT_PDFS))
+
+roster-packets: grading-namecheck grading-need-roster
+	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)"; exit 1; }
+	@$(MAKE) --no-print-directory $(ROSTER_PACKETS)
+	@mkdir -p $(COMPILED_DIR)
+	@if [ $(words $(ROSTER_PACKETS)) -eq 1 ]; then cp $(ROSTER_PACKETS) $(ROSTER_OUT); \
+	 else pdfunite $(ROSTER_PACKETS) $(ROSTER_OUT); fi
+	@echo "✓  Roster packets → target/compiled/$(UNIT)/$(LESSON)_$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order)"
+
+# One student's run. grading-personalized (math-shared) compiles every student's
+# COMP into $(GR_STUDENTS)/<id>.pdf, her cover into $(GR_COVERS)/cover-<id>.pdf
+# and the blank back into $(GR_BACK); its own run per student, for COMP alone,
+# is $(GR_PACKETS)/<id>.pdf. When COMP is in the student packet, her copy
+# replaces the master in the packet's PDF list, the packet is paginated against
+# the same key-packet list `make student` uses (so its page boundaries are
+# identical, and its page count even), and the cover and blank back go in front.
+# Each student gets a paginate.sh scratch dir of its own (see PAGINATE_*_DIR).
+ROSTER_PKT_PDFS = $(patsubst $(COMP_MASTER_PDF),$(GR_STUDENTS)/$*.pdf,$(STUDENT_PDFS))
+
+ifneq ($(COMP_IN_PACKET),)
+$(ROSTER_PKT_DIR)/%.pdf: grading-personalized $(ALIGN_STAMPS)
+	@mkdir -p $(dir $@)
+	@set -- $(ROSTER_PKT_PDFS); \
+	if [ $$# -eq 1 ]; then cp "$$1" $(ROSTER_PKT_DIR)/.body-$*.pdf; \
+	else pdfunite "$$@" $(ROSTER_PKT_DIR)/.body-$*.pdf; fi
+	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(ROSTER_PKT_DIR)/.body-$*.pdf \
+	    $(ROSTER_PKT_DIR)/.paginate-$* $(ROSTER_PKT_PDFS) -- $(KEY_PDFS)
+	@pdfunite $(GR_COVERS)/cover-$*.pdf $(GR_BACK) $(ROSTER_PKT_DIR)/.body-$*.pdf $@
+	@rm -f $(ROSTER_PKT_DIR)/.body-$*.pdf
+else
+$(ROSTER_PKT_DIR)/%.pdf: grading-personalized
+	@mkdir -p $(dir $@)
+	@cp $(GR_PACKETS)/$*.pdf $@
+endif
+else
+manifest roster-packets grading-need-comp grading-namecheck:
+	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
+endif

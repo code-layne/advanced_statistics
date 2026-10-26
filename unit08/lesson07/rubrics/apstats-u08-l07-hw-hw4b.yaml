@@ -1,0 +1,19 @@
+# Homework item 4b (Unit 8, Lesson 8.7). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  A researcher randomly samples 200 male and 200 female voters separately and records
+  party affiliation (Democrat, Republican, Independent). A classmate says a two-sample
+  z-test for p1 - p2 should be used because there are only two groups. Identify the
+  error.
+criteria:
+  - id: binary
+    points: 1
+    full: >-
+      Says the two-sample z-test for p1 - p2 needs a binary (two-category) response
+      variable.
+  - id: three
+    points: 1
+    full: >-
+      Points out party affiliation has three categories, so it does not apply (the number
+      of groups is not the issue); a chi-square test for homogeneity is needed.

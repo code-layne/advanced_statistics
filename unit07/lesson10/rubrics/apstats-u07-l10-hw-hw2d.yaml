@@ -1,0 +1,17 @@
+# Homework item 2d (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  Random samples: 54 of 120 city residents and 35 of 100 suburban residents support
+  expanding public transit. Is the proportion higher among city residents? z about
+  1.50, p-value about 0.066. Conclude at alpha = 0.05.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.066) to alpha = 0.05 and fails to reject H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is not convincing evidence that the proportion of city residents who
+      support expansion is higher than that of suburban residents.

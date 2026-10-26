@@ -1,0 +1,21 @@
+# Homework Part B, item 2 (Unit 1, Lesson 1.0). Relative to the lesson directory.
+id: hwB2
+points: 2
+task: >-
+  A city record lists six food trucks licensed for one downtown lot, with Cuisine,
+  Menu items, Avg. wait (min), and Cash only? for each truck (waits range from 4 to 19
+  minutes). A classmate says, "A question can only be statistical if the answer is a
+  number." Give one question about this lot that shows the classmate is wrong, and
+  explain how it passes both checks.
+criteria:
+  - id: question
+    points: 1
+    full: >-
+      Gives a statistical question about the trucks whose answer is not a number, such as
+      one about a categorical variable (e.g., what cuisines do the trucks serve? which
+      trucks are cash only?).
+  - id: checks
+    points: 1
+    full: >-
+      Explains both checks: the variable's value differs from truck to truck (check 1),
+      and the record must be read to answer it (check 2).

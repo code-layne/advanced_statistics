@@ -1,0 +1,27 @@
+# Homework item 2d (Unit 8, Lesson 8.3). Relative to the lesson directory.
+id: hw2d
+points: 3
+task: >-
+  The chi-square GOF test of equal preference for 5 streaming services (statistic
+  53.65, df = 4) gives p < 0.001. Interpret this p-value in context, then state a
+  complete conclusion at alpha = 0.05.
+criteria:
+  - id: assume
+    points: 1
+    full: >-
+      The interpretation is conditional on H0: assuming all five services are equally
+      popular (each 20%)...
+  - id: prob
+    points: 1
+    full: >-
+      ...the probability of getting a chi-square statistic of 53.65 or larger (as large or
+      larger than observed) by chance is less than 0.001.
+  - id: conclude
+    points: 1
+    full: >-
+      Since p < 0.05, rejects H0 and concludes there is convincing evidence that the
+      distribution of most-used streaming service among college students is not equal
+      across the five services.
+examples:
+  - response: "There is less than a 0.1% chance that H0 is true, so reject H0."
+    scores: {assume: 0, prob: 0, conclude: 1}

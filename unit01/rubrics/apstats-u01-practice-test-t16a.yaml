@@ -1,0 +1,16 @@
+# Unit 1 practice (sample) test, item 16a. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t16a
+points: 2
+task: >-
+  A parks department records Park #, Neighborhood, Swings, Area (sq ft) and Surface
+  for its playgrounds. What are the individuals? Is Eastgate a variable or a value?
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: Individuals are the city's playgrounds (one per row) AND Eastgate is a value of
+      the variable Neighborhood.
+    partial: >-
+      P (1 of 2): One of the two correct.

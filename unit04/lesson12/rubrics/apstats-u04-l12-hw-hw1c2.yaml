@@ -1,0 +1,15 @@
+# Homework item 1c interpretation (Unit 4, Lesson 4.12). Relative to the lesson directory.
+id: hw1c2
+points: 2
+task: >-
+  X ~ Geom(1/6) = number of die rolls to get the first 1; mu_X = 6. Interpret mu_X in
+  context.
+criteria:
+  - id: average
+    points: 1
+    full: >-
+      Describes it as a long-run average (over many repetitions).
+  - id: context
+    points: 1
+    full: >-
+      Says it takes about 6 rolls on average to get the first 1.

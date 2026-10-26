@@ -1,0 +1,16 @@
+# Homework item 4b (Unit 4, Lesson 4.3). Relative to the lesson directory.
+id: hw4b
+points: 2
+task: >-
+  A bag holds 4 green, 3 yellow and 1 purple marble. A student claims P(purple) = 0
+  because it almost never happens. Explain the error.
+criteria:
+  - id: value
+    points: 1
+    full: >-
+      Gives P(purple) = 1/8 (0.125), not 0.
+  - id: meaning
+    points: 1
+    full: >-
+      Explains that probability 0 means impossible, and drawing purple is possible (just
+      uncommon): rare is not impossible.

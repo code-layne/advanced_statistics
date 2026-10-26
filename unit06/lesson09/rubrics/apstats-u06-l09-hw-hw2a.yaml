@@ -1,0 +1,21 @@
+# Homework item 2a (Unit 6, Lesson 6.9). Relative to the lesson directory.
+id: hw2a
+points: 3
+task: >-
+  Independent random samples from two hospitals: Hospital A, n1 = 400, p-hat1 = 0.73;
+  Hospital B, n2 = 350, p-hat2 = 0.65 (proportion discharged within 3 days). Verify
+  all three conditions.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random: both samples are independent random samples (stated).
+  - id: largecounts
+    points: 1
+    full: >-
+      Large Counts: 292, 108, 228 and 122.5 (about 123) successes/failures are all at
+      least 10.
+  - id: tenpct
+    points: 1
+    full: >-
+      10%: 400 and 350 are at most 10% of all patients at hospitals A and B.

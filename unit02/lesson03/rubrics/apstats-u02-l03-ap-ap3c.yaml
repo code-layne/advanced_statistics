@@ -1,0 +1,20 @@
+# AP Practice item 3, part (c) (Unit 2, Lesson 2.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  A coffee shop recorded the daily high temperature (F) and the number of hot drinks
+  sold on 40 days with highs from 30 F to 75 F. The regression line is predicted
+  drinks = 210 - 2.4(temperature). Describe the direction of the association. Does
+  warm weather cause lower sales? Explain.
+criteria:
+  - id: direction_cause
+    points: 2
+    full: >-
+      E: Says the association is negative (warmer days tend to go with fewer hot drinks
+      sold) AND says the data cannot show causation because they are observational (an
+      association alone does not show cause and effect).
+    partial: >-
+      P (1 of 2): Gives only one of the two components correctly: the negative direction
+      in context, or the observational / no-causation explanation.

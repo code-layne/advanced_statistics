@@ -1,0 +1,21 @@
+# Homework item 2 (Unit 1, Lesson 1.6). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  A boxplot of 100 employees' commute times has a very short left whisker and a very
+  long right whisker. Correct the student who says the long right whisker means most
+  commute times are large.
+criteria:
+  - id: quarter
+    points: 1
+    full: >-
+      Says the right whisker holds only about a quarter of the employees (25 of 100), the
+      same number as the short left whisker.
+  - id: length
+    points: 1
+    full: >-
+      Says the whisker's length shows those times are spread out over a wide range, not
+      that there are more of them (half the commutes are below the median).
+examples:
+  - response: "The long whisker just means the data is skewed right."
+    scores: {quarter: 0, length: 0}

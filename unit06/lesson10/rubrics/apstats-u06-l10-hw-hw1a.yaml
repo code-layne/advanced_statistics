@@ -1,0 +1,20 @@
+# Homework item 1a (Unit 6, Lesson 6.10). Relative to the lesson directory.
+id: hw1a
+points: 2
+task: >-
+  Test whether the proportion of first-generation college students who join a campus
+  club differs from that of non-first-generation students. Sample 1 (first-gen): 48 of
+  160 joined; Sample 2: 72 of 200 joined. State H0 and Ha.
+criteria:
+  - id: h0
+    points: 1
+    full: >-
+      H0: p1 = p2 (or p1 - p2 = 0), with p1, p2 the true proportions of all first-gen and
+      non-first-gen students who join a club.
+  - id: ha
+    points: 1
+    full: >-
+      Ha: p1 != p2 (two-sided, since the question asks whether they differ).
+examples:
+  - response: "H0: p-hat1 = p-hat2; Ha: p-hat1 > p-hat2"
+    scores: {h0: 0, ha: 0}

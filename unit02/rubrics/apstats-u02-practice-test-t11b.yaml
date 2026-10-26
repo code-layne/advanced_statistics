@@ -1,0 +1,15 @@
+# Unit 2 practice (sample) test, item 11b. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11b
+points: 1
+task: >-
+  Use the segmented bar graph to compare how full-time and part-time students get to
+  campus.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Compares conditional percents in context: part-time students drive more (70% vs
+      55%), full-time students ride the bus more (35% vs 22.5%) and walk/bike slightly
+      more (10% vs 7.5%); at least the drive and bus comparisons with numbers.

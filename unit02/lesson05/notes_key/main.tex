@@ -1,183 +1,203 @@
-%! AP Statistics — Unit 2, Lesson 2.5 — Guided Notes (Answer Key)
-\documentclass[10pt]{article}
+%! Departures from Linearity — Unit 2, Lesson 2.5 — Guided Notes & Practice (Answer Key)
+% MIRROR of ../notes/main.tex: -key in place of -boxes, \termblank -> \termans, \blank -> \ans, and the
+% fourth argument of every \pcell filled. Nothing else differs — keep it that way.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
+% COMPACT budget: the vocabulary box, then ONE guidednotes table of THREE rows (two instruction
+% rows + Guided Practice), 13 problems, 2 pages.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 5, 8 — 8 opens the "Straighten the curve" sub-row).
+%   WE DO  : the class works the rest; the last row, Guided Practice, is worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 3 (an outlier far off the trend need not move the slope).
+% THE CRUX is problem 7, in the last instruction row: "r = -0.94 is close to -1, so the line is
+% a good model" — while the residual plot is a clear U (EK DAT-1.F.2; Topic 2.9 DAT-1.J.2).
+%
+% THE DATA
+%  Row 1 — ten coffee shops, seats (x) vs Saturday customers (y):
+%    x: 20 24 28 30 35 38 42 45 50 55   y: 160 170 205 190 240 225 265 250 300 295
+%    10 shops: yhat = 77.9 + 4.14x, r = 0.97.   + A(36,300): 86.0 + 4.10x, r = 0.87
+%    + B(100,490): 78.9 + 4.12x, r = 0.99.      + C(100,230): 187.1 + 1.01x, r = 0.48
+%  Row 2 — antibiotic concentration (mg/L) at hours 0..10:
+%    20.2 14.9 11.7 9.0 6.5 4.9 3.9 2.9 2.1 1.7 1.2
+%    linear: yhat = 15.9 - 1.74x, r = -0.94; residuals 4.3 .8 -.7 -1.7 -2.4 -2.3 -1.5 -.8 .1 1.5 2.7
+%    log10(conc): 1.31 - 0.12x, r = -0.9996; residuals (x1000) 0 -11 5 13 -7 -9 13 6 -13 17 -13
+%  Row 3 (GP) — 13 days, high temperature (F) vs cups of lemonade:
+%    T: 72 75 77 78 80 82 83 85 87 88 90 93 95   L: 70 82 71 90 85 128 96 92 110 98 116 112 125
+%    yhat = -81.6 + 2.15x, r = 0.80; without the 82F fair day: -91.7 + 2.24x, r = 0.94
+%
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
+% TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
+% sub-rows (a bare `\\` then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.5}{Guided Notes --- Answer Key}
-\namedateperiod
+\pageheader{Unit 2, Lesson 2.5}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.1in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ansline{calculate $r$ using technology and interpret the formula}\\[1pt]
-\ansline{interpret $r$ in context: direction, strength, linear qualifier}\\[1pt]
-\ansline{explain why correlation does not imply causation}
-\end{objectivebox}
-
-\vspace{0.08in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Correlation coefficient ($r$)}
-\ansline{a number between $-1$ and $1$ that measures the direction and strength of the
-\emph{linear} association between two quantitative variables}
-\termblanklong{Positive correlation}
-\ansline{$r > 0$; as $x$ increases, $y$ tends to increase}
-\termblanklong{Negative correlation}
-\ansline{$r < 0$; as $x$ increases, $y$ tends to decrease}
-\termblanklong{No linear association}
-\ansline{$r \approx 0$; knowing $x$ does not linearly predict $y$}
-\termblanklong{Lurking variable}
-\ansline{a variable not included in the analysis that may explain the association between $x$ and $y$}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termans{Outlier (in regression)}{a point that does not follow the trend of the rest; it has a large residual.}
+\par
+\termans{High-leverage point}{a point whose $x$-value is much larger or smaller than the other $x$-values.}
+\par
+\termans{Influential point}{a point that, if removed, changes the slope, $y$-intercept, or $r$ a lot.}
+\par
 \end{vocabbox}
 
-\vspace{0.08in}
-
-\begin{hookbox}
-\small\textbf{Opening Question:} Your teacher displays four scatterplots.
-
-\vspace{6pt}
-Rank them from \textit{strongest} linear association to \textit{weakest} and explain.\\[8pt]
-\ansline{Answers vary; look for students connecting tightness of points to strength.}\\[1pt]
-\ansline{Accept any reasonable ranking with a justification referencing how closely points
-follow the pattern.}
-\vspace{4pt}
-\textbf{Key idea:} A single number called the \ans{correlation coefficient $r$} lets us compare
-strengths precisely.
-\end{hookbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Step 1 --- What Is the Correlation Coefficient? (DAT-1.B)}
 \small
+\begin{guidednotes}
+% ── ROW 1: outliers, high leverage, influence ────────────────────────────────
+\mainidea[Three kinds of]{Unusual points} &
+An \textbf{outlier} does not follow the trend: it has a large \ans{residual}. A
+\textbf{high-leverage point} has an \ans{$x$-value} far larger or smaller than the rest. An
+\textbf{influential point} is one that, if \ans{removed}, changes the slope, the $y$-intercept,
+or $r$ a lot. Ten coffee shops: seats ($x$) and Saturday customers ($y$). Shops A, B, and C are each added to
+the ten, \emph{one at a time}, and the line is refit.
 
-\noindent The \textbf{correlation coefficient} $r$ measures the \ans{direction} and \ans{strength}
-of the \ans{linear} association between two quantitative variables.
-
-\vspace{8pt}
-\textbf{Properties of $r$:}
-\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
-  \item $r$ is always between \ans{$-1$} and \ans{$1$}, inclusive.
-  \item The \ans{sign} (positive/negative) of $r$ gives the \ans{direction} of the association.
-  \item The \ans{magnitude} (size) of $r$ gives the \ans{strength} of the linear association.
-  \item $r$ is \ans{unit-free} --- it does not change when units change.
-  \item Swapping $x$ and $y$ \ans{does not change} the value of $r$.
-\end{itemize}
-
-\vspace{8pt}
-\textbf{The formula (for reference):}
-\[
-  r = \frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_i - \bar{x}}{s_x}\right)\!\left(\frac{y_i - \bar{y}}{s_y}\right)
-\]
-Each term is the product of two \ans{$z$-scores} --- that is why $r$ is unit-free.
-In practice, we use \ans{technology (calculator or software)}.
-
-\vspace{8pt}
-\textbf{Correlation strength guidelines (approximate):}
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}C{2.5cm} X @{}}
+\vspace{3pt}
+\begin{minipage}[c]{0.46\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.041, yscale=0.0052]
+  \foreach \y in {100,200,...,500} {
+    \draw[linegray, very thin] (0,\y) -- (110,\y);
+    \node[left, font=\tiny] at (0,\y) {\y};}
+  \draw[->, thick] (0,100) -- (0,560);
+  \draw[->, thick] (0,100) -- (112,100);
+  \foreach \x in {0,20,...,100} {
+    \draw (\x,95) -- (\x,105); \node[below, font=\tiny] at (\x,97) {\x};}
+  \draw[navy, dashed] (15,140) -- (105,512.6);
+  \foreach \x/\y in {20/160, 24/170, 28/205, 30/190, 35/240, 38/225, 42/265, 45/250, 50/300, 55/295}
+    \fill[navy] (\x,\y) circle (1.25 and 9.4);
+  \foreach \x/\y/\l in {36/300/A, 100/490/B, 100/230/C} {
+    \fill[redacc] (\x-1.6,\y-12) rectangle (\x+1.6,\y+12);
+    \node[right, font=\scriptsize\bfseries, text=redacc] at (\x+1,\y) {\l};}
+  \node[font=\tiny] at (55,5) {Seats};
+  \node[rotate=90, font=\tiny] at (-17,330) {Customers};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.52\linewidth}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l l c @{}}
 \rowcolor{sky}
-$|r|$ range & Interpretation \\
-\midrule
-$0.9$ to $1.0$ & \ans{very strong} linear association \\
-$0.7$ to $0.9$ & \ans{strong} linear association \\
-$0.5$ to $0.7$ & \ans{moderate} linear association \\
-$0$ to $0.5$   & \ans{weak} linear association \\
-\end{tabularx}
-\end{notesbox}
+\textbf{Line fit to} & \textbf{Equation} & $\boldsymbol{r}$ \\
+\hline
+10 shops & $\hat{y} = 77.9 + 4.14x$ & 0.97 \\
+10 + A & $\hat{y} = 86.0 + 4.10x$ & 0.87 \\
+10 + B & $\hat{y} = 78.9 + 4.12x$ & 0.99 \\
+10 + C & $\hat{y} = 187.1 + 1.01x$ & 0.48 \\
+\end{tabular}\\[3pt]
+{\scriptsize Dashed line: the fit to the 10 shops.}
+\end{minipage}
+\\
+& \notesprompt{Use the plot and the table.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Which added shop is an outlier but \emph{not} high-leverage? Why?}{1.3cm}{A: 36 seats is typical, but it sits far above the trend.} &
+\pcell{2}{Which added shops are high-leverage? Why?}{1.3cm}{B and C: 100 seats, far beyond the others' 20--55.} \\ \hline
+\pcell{3}{A sits far off the trend. Does adding A move the slope much?}{1.3cm}{No: slope $4.14 \to 4.10$. Only $r$ drops ($0.97 \to 0.87$).} &
+\pcell{4}{Which shop is influential? Justify it with numbers from the table.}{1.3cm}{C: slope $4.14 \to 1.01$ and $r$ $0.97 \to 0.48$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: is a line appropriate? — THE CRUX ─────────────────────────────────
+\mainidea[Is a line right?]{Residual plots} &
+\textbf{Random scatter} in a residual plot says a line fits; a \ans{curved} pattern says a
+line is the wrong model. An antibiotic's level in a patient's blood ($y$, mg/L), each hour ($x$)
+after one dose: \ $\hat{y} = 15.9 - 1.74x$, \ $r = -0.94$.
+\begin{center}
+\begin{tikzpicture}[xscale=0.40, yscale=0.065]
+  \draw[->, thick] (0,0) -- (10.6,0);
+  \draw[->, thick] (0,0) -- (0,22);
+  \foreach \x in {0,2,...,10} {
+    \draw (\x,-0.5) -- (\x,0.5); \node[below, font=\tiny] at (\x,-0.3) {\x};}
+  \foreach \y in {0,10,20} { \node[left, font=\tiny] at (0,\y) {\y}; }
+  \draw[navy, thick] (0,15.9) -- (9.14,0);
+  \foreach \x/\y in {0/20.2,1/14.9,2/11.7,3/9.0,4/6.5,5/4.9,6/3.9,7/2.9,8/2.1,9/1.7,10/1.2}
+    \fill[navy] (\x,\y) circle (0.14 and 0.7);
+  \node[font=\tiny] at (5.3,-6.5) {Hours after the dose};
+  \node[rotate=90, font=\tiny] at (-1.9,11) {mg/L};
+  \node[font=\bfseries\scriptsize] at (5.3,25) {Scatterplot and line};
+  \begin{scope}[xshift=14cm, yscale=2.9]
+    \draw[linegray] (0,0) -- (10.6,0);
+    \draw[->, thick] (0,-3) -- (0,5);
+    \draw[thick] (0,-3) -- (10.6,-3);
+    \foreach \y in {-2,0,2,4} { \node[left, font=\tiny] at (0,\y) {\y}; }
+    \foreach \x in {0,2,...,10} { \node[below, font=\tiny] at (\x,-3) {\x}; }
+    \foreach \x/\y in {0/4.3,1/0.8,2/-0.7,3/-1.7,4/-2.4,5/-2.3,6/-1.5,7/-0.8,8/0.1,9/1.5,10/2.7}
+      \fill[navy] (\x,\y) circle (0.14 and 0.23);
+    \node[font=\tiny] at (5.3,-5.2) {Hours after the dose};
+    \node[rotate=90, font=\tiny] at (-1.9,1) {Residual};
+    \node[font=\bfseries\scriptsize] at (5.3,5.9) {Residual plot};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{Read the residual plot.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{5}{Describe the pattern in the residuals.}{1.4cm}{A U-shape: $+$ at both ends, $-$ in the middle.} &
+\pcell{6}{At 0 and 10 hours, does the line predict too high or too low?}{1.4cm}{Too low --- the residuals there are positive.} &
+\pcell{7}{``$r = -0.94$ is close to $-1$, so the line is a good model.'' Agree? Why?}{1.4cm}{No --- the residuals curve, so a line is the wrong form.} \\ \hline
+\end{probgrid}
+\\
+& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{$r$ measures strength. The residual plot checks \ans{form}.}}}
 
-\vspace{0.08in}
+\vspace{3pt}
+A \textbf{transformation} can straighten a curve. Take the \ans{log} of each level and fit a
+line to $\log y$: \ $\widehat{\log y} = 1.31 - 0.12x$, \ $r = -0.9996$, and its residual plot
+is random scatter.
+\notesprompt{Straighten the curve.}
+\begin{probgrid}{|Y|Y|}
+\pcell{8}{Give two pieces of evidence that the log model fits better than the line.}{1.0cm}{Its residuals are random, and $r = -0.9996$ is closer to $-1$.} &
+\pcell{9}{Use the log model to predict the level 5 hours after the dose.}{1.0cm}{$1.31 - 0.12(5) = 0.71$; \ $10^{0.71} \approx 5.1$ mg/L.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Lemonade Stand} &
+\begin{minipage}[c]{0.46\linewidth}\raggedright
+A lemonade stand recorded the high temperature (\textdegree F) and cups sold on 13 summer
+days.\par
+\vspace{2pt}
+$\hat{y} = -81.6 + 2.15x$, \ $r = 0.80$
+\end{minipage}\hfill
+\begin{minipage}[c]{0.52\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.17, yscale=0.032]
+  \draw[linegray] (70,0) -- (97,0);
+  \draw[->, thick] (70,-18) -- (70,40);
+  \foreach \y in {-15,0,15,30} { \node[left, font=\tiny] at (70,\y) {\y}; }
+  \foreach \x in {70,75,...,95} { \node[below, font=\tiny] at (\x,-18) {\x}; }
+  \foreach \x/\y in {72/-3.4,75/2.1,77/-13.2,78/3.7,80/-5.6,83/-1.1,85/-9.4,87/4.3,88/-9.8,90/3.8,93/-6.6,95/2.1}
+    \fill[navy] (\x,\y) circle (0.25 and 1.35);
+  \fill[redacc] (82,33.1) circle (0.3 and 1.6);
+  \node[right, font=\tiny, text=redacc] at (82.5,33.1) {street fair};
+  \node[font=\tiny] at (83.5,-35) {High temperature (\textdegree F)};
+  \node[rotate=90, font=\tiny] at (63.5,11) {Residual (cups)};
+\end{tikzpicture}
+\end{minipage}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Describe the residual plot.}{1.0cm}{Random scatter, no curve; one big $+$ residual at 82\textdegree F.} &
+\pcell{11}{$r$ is only 0.80. Is a linear model appropriate here? Why?}{1.0cm}{Yes --- no curve, so a line fits. It is just moderate.} \\ \hline
+\pcell{12}{The street-fair day: outlier, high-leverage, or both? Why?}{1.0cm}{Outlier only: 82\textdegree F is a typical $x$, but its residual is $+33$.} &
+\pcell{13}{Without that day, $\hat{y} = -91.7 + 2.24x$ and $r = 0.94$. What changed
+most?}{1.0cm}{$r$ ($0.80$ vs.\ $0.94$); the slope barely moved ($2.15$ vs.\ $2.24$).} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\begin{notesbox}{Step 2 --- Interpreting $r$ in Context (DAT-1.C)}
-\small
-
-\noindent \textbf{Interpretation template:}\\[6pt]
-``There is a \ans{strong/moderate/weak} \ans{positive/negative} \textbf{linear} association between
-[explanatory variable] and [response variable] for these [individuals] ($r = \ans{\text{value}}$).''
-
-\vspace{8pt}
-\textbf{Class example --- Hours of sleep ($x$) vs.\ reaction time in ms ($y$):}
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} l *{8}{C{1cm}} @{}}
-\rowcolor{sky}
-\textbf{Sleep (hr)} & 5 & 6 & 7 & 7 & 8 & 8 & 9 & 9 \\
-\textbf{RT (ms)}    & 310 & 285 & 260 & 250 & 235 & 220 & 205 & 195 \\
-\end{tabularx}
-
-\vspace{6pt}
-Technology gives $r = \ans{-0.998}$.
-
-\vspace{6pt}
-Write the full interpretation in context:\\[6pt]
-\ansline{There is a very strong negative linear association between hours of sleep and reaction
-time (ms) for these 8 students ($r \approx -1.00$). As hours of sleep increase, reaction time
-tends to decrease.}\\[1pt]
-\ansline{}\\[1pt]
-\ansline{}
-
-\vspace{6pt}
-\textbf{Caution --- $r$ near $\pm1$ does NOT guarantee a linear model is appropriate.}\\
-A dataset following a perfect \ans{curved} pattern can have $r$ close to $1$ if the
-curve rises consistently. Always check the \ans{scatterplot} before reporting $r$.
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Step 3 --- Correlation Does Not Imply Causation (DAT-1.C.2)}
-\small
-
-\noindent A strong $r$ tells us two variables are \ans{associated} --- it does \emph{not} tell
-us that one \ans{causes} the other.
-
-\vspace{6pt}
-\textbf{Classic example:} Cities with more \ans{firefighters} tend to have more \ans{fire damage}.
-Does that mean one causes the other? No --- both are caused by a \ans{lurking} variable: \ans{fire size}.
-
-\vspace{6pt}
-A \textbf{lurking variable} is a variable that is \ans{not included in the study} and may explain the
-relationship between $x$ and $y$.
-
-\vspace{6pt}
-\textbf{Practice --- For each pair, identify a possible lurking variable:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item Ice cream sales and drowning deaths (strong positive): \ans{hot weather / season}
-  \item Shoe size and reading level in elementary school (positive): \ans{age of the child}
-\end{enumerate}
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-\textbf{Connections:}
-\begin{itemize}[itemsep=3pt]
-  \item Lesson 2.4: DOFS described direction and strength in words --- $r$ assigns a number.
-  \item Lesson 2.6: slope of regression line $= r \cdot \dfrac{s_y}{s_x}$.
-  \item Lessons 2.8--2.9: $r^2$ measures how much variability in $y$ is explained by $x$.
-\end{itemize}
-
-\columnbreak
-
-\textbf{Reflection:}\\
-Why must you \emph{always} look at the scatterplot even after computing $r$?\\[2pt]
-\ansline{$r$ only captures the strength of a \emph{linear} pattern; a curved relationship,}\\[1pt]
-\ansline{outliers, or clusters can distort $r$ without obvious warning.}\\[1pt]
-\ansline{The scatterplot reveals what $r$ alone cannot.}
-\end{multicols}
-\end{spiralbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Additional Notes}
-\vspace{0pt}
-\writeline\\\writeline\\\writeline\\\writeline\\\writeline
-\end{notesbox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

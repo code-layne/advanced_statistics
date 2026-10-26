@@ -1,206 +1,334 @@
-%! AP Statistics — Unit 2, Lesson 4
+%! Least-Squares Regression — Unit 2, Lesson 2.4 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
+% homework). Teacher-facing — use the formal AP vocabulary freely.
+% THERE IS NO GROUP ACTIVITY in this course, and NO INDEPENDENT PRACTICE SET in the notes:
+% the notes are one Main Ideas / Notes table: I do / we do row by row, then the Guided
+% Practice row together, and stop. The HOMEWORK is the individual practice, started in class
+% in the last 8 minutes. Every box is `skillbox` (breakable) with a \boxguard ahead of it; this
+% course has no `fixedskillbox`, no tier boxes, and no exit ticket.
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\tcbuselibrary{breakable}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
 
-\definecolor{sky}{HTML}{F8F8EE}
-\definecolor{navy}{HTML}{3A3D28}
-\definecolor{redbox}{HTML}{FAEFE7}
-\definecolor{greenbox}{HTML}{F0F4E6}
-\definecolor{goldbox}{HTML}{FCF8E9}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-\newcommand{\CourseName}{Statistics}
-\newcommand{\SchoolYear}{2026--2027}
-\newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 2.4: Representing the Relationship Between Two Quantitative Variables}
+\newcommand{\LessonNumberName}{Lesson 2.4: Least-Squares Regression}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct and interpret scatterplots for two
-    quantitative variables. Students will describe the relationship using the DOFS framework:
-    \textbf{D}irection, \textbf{F}orm, \textbf{S}trength, and \textbf{O}utliers, in context
-    (Big Idea: UNC, DAT; AP Skills 2 \& 4).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will compute the least-squares regression line from
+    summary statistics, read its slope, intercept, and $r^2$ from computer output, and interpret
+    each in context --- the slope as a change in the \emph{predicted} response, the intercept
+    only when $x = 0$ is sensible, and $r^2$ as the share of the variation in $y$ explained by
+    the linear model.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 2.8 \quad$\cdot$\quad Big Idea: DAT (Data Analysis)
+    \quad$\cdot$\quad Skills 2.C, 4.B \quad$\cdot$\quad LO DAT-1.G, DAT-1.H \quad$\cdot$\quad
+    EK DAT-1.G.1--1.G.4, DAT-1.H.1--1.H.3
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do.} There is no group
+    activity. The guided notes deliver the vocabulary and the core idea directly, row by row
+    in one \emph{Main Ideas / Notes} table --- each idea a definition to complete and a grid of
+    short problems, the first worked by you and the rest by the class; the last row, Guided
+    Practice, is worked together with students holding the pen;
+    \textbf{the homework is the individual practice}, and students start it in class while you
+    circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Compact budget:} the packet is six pages --- cover, warm-up, two pages of notes (14
+    problems), one page of AP Practice, one page of homework --- so the whole lesson finishes in
+    one period. Every display (two regression outputs) is \textbf{given}; students compute and
+    interpret, they never draw.
 \end{tcolorbox}
 
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can explain what makes the least-squares line the best line, and compute its slope
+        and intercept from $\bar x$, $s_x$, $\bar y$, $s_y$, and $r$.
+  \item I can find the slope, the intercept, and $r^2$ in computer regression output.
+  \item I can interpret the slope and the $y$-intercept in context, and say when the intercept
+        means nothing.
+  \item I can interpret $r^2$ in context.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item The LSRL minimizes the sum of the squared residuals and passes through
+        $(\bar x, \bar y)$; $b = r\,s_y/s_x$ and $a = \bar y - b\bar x$ (EK DAT-1.G.1, 1.G.2,
+        1.H.3).
+  \item \textbf{Target misconception:} reading the slope as a promise about every individual
+        --- ``when a student sleeps one more hour, their reaction time goes down 24~ms.'' The
+        slope is the change in the \emph{predicted} $y$ per unit of $x$ (EK DAT-1.H.2); real
+        points scatter around the line, and observational data show no cause.
+  \item \textbf{Second misconception:} interpreting the intercept when $x = 0$ is outside the
+        data or impossible (EK DAT-1.G.3). Sleep: meaningless. Used Civics: age 0 is a new car,
+        so it means something.
+  \item \textbf{Third misconception:} taking $r = +\sqrt{r^2}$. The sign of $r$ is the sign of
+        the slope; $r^2$ is a proportion of \emph{variation} explained (EK DAT-1.G.4).
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skills 2 \& 4 --- Data Analysis \& Statistical Argumentation}
     \begin{itemize}
-        \item Construct a correctly labeled scatterplot with the explanatory variable on the $x$-axis.
-        \item Describe the relationship using direction (positive/negative/none), form (linear/curved), strength (strong/moderate/weak), and outliers.
-        \item Write a complete description in context.
+        \item \textbf{Least-squares regression line (LSRL)} --- minimizes $\sum(y - \hat y)^2$;
+              contains $(\bar x, \bar y)$ (EK DAT-1.G.1)
+        \item \textbf{Slope} $b = r\,\dfrac{s_y}{s_x}$ --- the change in predicted $y$ for each
+              1-unit increase in $x$ (EK DAT-1.G.2, 1.H.2)
+        \item \textbf{Intercept} $a = \bar y - b\bar x$ --- predicted $y$ at $x = 0$; sometimes
+              no logical meaning (EK DAT-1.G.3, 1.H.3)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item A scatterplot shows the relationship between two quantitative variables for the same set of individuals.
-        \item ``Positive association'' means as $x$ increases, $y$ tends to increase (not that the relationship is good).
-        \item The form of the relationship (linear vs.\ curved) determines which model is appropriate.
-        \item An outlier in a scatterplot is a point that does not follow the overall pattern.
+        \item \textbf{Coefficient of determination} $r^2$ --- the proportion of the variation in
+              $y$ explained by the linear model with $x$ (EK DAT-1.G.4)
+        \item \textbf{Computer output} --- Constant row $= a$; the $x$ row $= b$; R-Sq $= r^2$
+              (EK DAT-1.H.1). $S$ is printed but not taught today.
+        \item \textbf{Carried forward} --- $r$ (2.2); $\hat y = a + bx$, residual
+              $= y - \hat y$, extrapolation (2.3)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & A residual, two lines' residuals summed and squared, and the arithmetic of
+$b = r\,s_y/s_x$ & Debrief item~2 aloud; leave ``both sums are 0'' on the board \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and problems 1--10 row by row, then
+\emph{Used Cars} (11--14) together, pen in their hand & \textbf{I do} each row's definition lines
+and problems 1, 4, 7; \textbf{we do} the rest (24) $\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down --- answer aloud, nothing to fill in & Open on an \emph{almost}-right
+problem~10; then the two intercepts side by side \\
+Close \& Start the Homework & 8 & \textbf{Start the homework in class}, alone and silent &
+Circulate for the second formative read (A2); preview Lesson~2.5 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The three items and what each seeds}
     \begin{itemize}
-        \item \textbf{Scatterplot} --- a graph of ordered pairs $(x, y)$ for two quantitative variables measured on the same individual
-        \item \textbf{Positive association} --- as $x$ increases, $y$ tends to increase
-        \item \textbf{Negative association} --- as $x$ increases, $y$ tends to decrease
-        \item \textbf{No association} --- knowing $x$ gives no information about $y$
+        \item \textbf{1.} Predict, then a residual. \textbf{Spirals} to Lesson 2.3: residual
+              $=$ actual $-$ predicted $= 16 - 14 = 2$.
+        \item \textbf{2.} Two lines, both residual sums 0, squares 20 and 16. \textbf{Seeds} the
+              least-squares criterion in the first row of the notes.
+        \item \textbf{3.} $(-0.80)^2 = 0.64$ and $-0.80 \times 45/1.5 = -24$. \textbf{Seeds}
+              problems 1 and 5 --- the numbers are the notes' numbers, before they have names.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Form} --- the overall shape of the pattern: linear, curved, or none
-        \item \textbf{Strength} --- how closely the points follow the form; strong, moderate, or weak
-        \item \textbf{Outlier (bivariate)} --- a point that deviates from the overall pattern; may have extreme $x$, extreme $y$, or both
-        \item \textbf{Influential point} --- an outlier whose removal would substantially change the line of best fit (preview for Lesson 2.8)
+        \item \textbf{Debrief item~2 aloud.} Ask why the plain sum cannot pick the better
+              line; write ``both sums are 0'' on the board and leave it up --- the first row
+              of the notes points back at it.
+        \item Do not name $r^2$ or the slope formula on item~3. Just say ``remember these two
+              numbers'' --- they reappear in problems 1 and 5 within fifteen minutes.
+        \item Item~1 is a 60-second spiral. If the room is quick, move on.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Recall: in a scatterplot from prior math courses, what goes on the $x$-axis vs.\ the $y$-axis?
-    Connect to today: the \textit{explanatory} variable always goes on $x$, the \textit{response} on $y$.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
-    \begin{itemize}
-        \item Lesson 2.1: explanatory vs.\ response variable determines axis placement.
-        \item Lesson 2.5: correlation measures the strength and direction of a \textit{linear} association numerically.
-        \item Lessons 2.6--2.9: linear regression fits a line to the scatterplot.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} The notes are one \emph{Main Ideas / Notes} table --- three
+instruction rows and a Guided Practice row, 14 short problems. \textbf{In every instruction row
+you fill the definition lines and work the first problem (1, 4, 7); the class works the rest,
+pen in their hand.} The vocabulary box is filled \emph{as you go}, never in advance.
+\begin{multicols}{2}
+\textbf{Least Squares (7 min).} Point at the warm-up's ``both sums are 0'': that is why we
+square. Fill the two blanks, then the three steps. Work problem~1 yourself ($b = -24$); let the
+class do 2 and 3. Insist problem~3 uses the \emph{variable names} ---
+$\widehat{\text{time}} = 482.8 - 24(\text{sleep})$ --- not $x$ and $y$.
+
+\textbf{Computer Output \& R-Squared (7 min).} Same line, now as software prints it. Do
+problem~4 (find $a$ and $b$) yourself and point out that they match 1 and 2. \textbf{Problem~5
+is the trap}: R-Sq $= 64\%$, so $r = \pm 0.80$ --- take a hand count before anyone speaks; the
+room that says $+0.80$ forgot the negative slope. Problem~6 sets the $r^2$ sentence they will
+reuse all unit.
+
+\textbf{Slope \& Intercept (10 min) --- the crux.} Fill the definitions and the template box,
+then work problem~7 aloud, stressing \emph{predicted}. Problem~8 is the intercept that means
+nothing (0 hours is outside 4--10). Problem~9 makes them use the slope as a difference of
+predictions. \textbf{Problem~10 is the crux}: Maya's sentence has the right number and the wrong
+claim. Ask \emph{``Did every student who slept an extra hour get exactly 24 ms faster?''}, then
+\emph{``Who decided how much each student slept?''}
+
+\columnbreak
+\textbf{We do (about 10 min): Used Cars.} A fresh context, fresh output, problems 11--14,
+worked entirely together. Students hold the pen; you hold the questions: \emph{``Which row is
+the slope?''} \quad \emph{``Is a 0-year-old Civic a real car?''} \quad \emph{``Which sign does
+$r$ get?''} \textbf{Problem~12 is the crux transferred} --- if a student writes ``the price
+drops \$1,850,'' make the room supply the missing word. \textbf{Problem~13 is the contrast}:
+this intercept \emph{does} mean something, so students who learned ``intercepts are always
+meaningless'' get caught here.
+
+Circulate and demand the reason, not the number:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~11:} ``Where did the 24.60 come from --- which row?''
+  \item \textbf{Problem~12:} ``Every car? Or the prediction?''
+  \item \textbf{Problem~14:} ``$\sqrt{0.81}$ is 0.90. Is $r$ positive?''
+\end{itemize}
+While circulating, pick the papers for the debrief --- one \emph{almost}-right problem~10 or 12
+(right number, no ``predicted''), one fully correct. \textbf{Formative read, and reteach
+trigger:} if more than a third of the room writes problem~12 without ``predicted,'' reteach the
+template box at the start of Lesson~2.5. Your second read comes in the last eight minutes, on
+homework A2.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Display four unlabeled scatterplots: strong positive linear, weak negative linear, curved, and
-    no association. Ask: ``Rank these from most useful for prediction to least useful.'' Debrief:
-    the clearer the pattern, the better our predictions --- and today we learn the language to
-    describe these patterns precisely.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
-    \begin{enumerate}
-        \item Construct a scatterplot from a small dataset (10 points) together on the board.
-        \item Describe the plot using direction, form, strength, and outliers in complete sentences with context.
-        \item Examine 3--4 additional scatterplots; students practice describing each.
-        \item Discuss: what does it mean for a point to be an ``outlier'' in a bivariate context?
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class, spoken (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is nothing on the page to fill in.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Open on the \emph{almost}-right problem~10 (or 12)} you picked: right number,
+        missing ``predicted.'' Ask the room what is true and what is overclaimed. Land two
+        things --- the line describes \emph{predictions}, and data we only observed cannot show
+        cause.
+  \item \textbf{Two intercepts side by side:} 482.8~ms at 0 hours of sleep (no meaning ---
+        outside the data) and \$24{,}600 at age 0 (a new Civic --- meaningful). The rule is
+        not ``intercepts are meaningless''; it is ``ask whether $x = 0$ makes sense.''
+  \item \textbf{The trap:} $r$ from R-Sq. The square root forgets the sign; the slope remembers
+        it.
+\end{enumerate}
+\columnbreak
+\textbf{Demand one sentence aloud:} a student states $r^2$ for the Civics in the template ---
+``About 81\% of the variation in price is explained by the linear model with age.'' Reject
+``81\% of the points are on the line'' and ``the model is 81\% accurate'' out loud.
+
+\textbf{If time is short}, cut item~3 --- item~1 is the one that cannot be cut. \textbf{Do not
+let the debrief eat the last eight minutes}; the homework start is the second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Model response template: ``There is a [strong/moderate/weak] [positive/negative] [linear/curved] association between [explanatory variable] and [response variable] for these [individuals]. [Outlier sentence if applicable.]''
-        \item Discuss that ``linear'' is an important qualifier --- correlation and regression (Lessons 2.5--2.8) only apply to linear relationships.
-        \item Emphasize: always include context (name the variables and population).
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Common errors: swapping $x$ and $y$ axes; saying ``the data is positive'' instead of naming the association.
-        \item Prompt: ``Is the form \textit{linear}? Is the strength \textit{strong}? Both matter for what we do next.''
-        \item Ask students to estimate: ``If $x = 50$, what would you predict for $y$?'' --- motivates the need for a model.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- assigned, not scored]{goldbox}
+A fresh context (a caf\'e's daily high temperature and iced drinks sold, with computer output).
+\textbf{MC~1} is the crux in AP clothing --- the correct slope interpretation (B) against a
+deterministic (A), a causal (C), an $r^2$ (D), and an intercept (E) distractor. \textbf{MC~2}
+is the trap: $r = +0.850$ (D) from R-Sq $= 72.3\%$ and a positive slope, with $-0.850$ waiting
+for students who guess the sign. \textbf{FRQ} (a) interpret $r^2$; (b) the intercept,
+$-42.5$ drinks at 0$^\circ$F --- impossible and far outside 55--95$^\circ$F; \textbf{(c) is the
+spiral} to Lesson 2.3: $\hat y = 145.5$, residual $= +4.5$ drinks. \textbf{Not scored --- the
+cover reads NA.} Go over it at the start of Lesson~2.5.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Groups each receive a dataset (e.g., car age vs.\ price; temperature vs.\ ice cream sales;
-    study time vs.\ test score). Groups:
-    \begin{enumerate}
-        \item Construct the scatterplot on graph paper.
-        \item Write a full DOFS description.
-        \item Identify any outliers and speculate on explanations.
-        \item Share with the class and compare relationships across datasets.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Provide pre-drawn axes; students only plot points and write the description.
-        \item \textit{Extension}: Give a dataset where the relationship is curved (e.g., age vs.\ reaction time). Students explain why a straight line would be a poor model.
-        \item \textit{Technology}: Plot using Desmos or a graphing calculator and compare to the hand-drawn version.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored, due the first class after two study halls]{goldbox}
+Five items on car weight and highway mileage (a third context): \textbf{A1} compute $b = -7.0$
+and $a = 54.5$ and write the line; \textbf{A2} interpret the slope; \textbf{A3} the intercept
+(a 0-pound car --- meaningless); \textbf{B1} $r^2 \approx 0.71$ in context; \textbf{B2} an
+AP-style multiple choice (B) with a required justification. \textbf{Scoring:} 10 points, 2 per
+item. \textbf{A2 predicts next-lesson performance}: a student who drops ``predicted'' here has
+not left the misconception behind. \textbf{Paper is the default.} \textbf{DeltaMath override
+(occasional):} when DeltaMath carries this topic, assign it instead, strike the score cell on
+the cover, and leave this page as optional practice --- never assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Display a scatterplot of hours of TV per day vs.\ GPA for 25 students. Students write a
-    complete DOFS description in 3--4 sentences, including context and any notable outliers.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``Describe the relationship between [x-variable] and [y-variable] shown in the scatterplot.''}\\[4pt]
-    Model: ``There is a moderate negative linear association between daily TV hours and GPA for
-    these 25 students. As TV hours increase, GPA tends to decrease. One student who watches
-    7 hours daily but has a 3.8 GPA appears to be an outlier.''
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{The slope read as a promise about every individual} (notes~10, 12; AP~MC1;
+        HW~A2, B2 --- the target misconception). ``Their reaction time goes down 24 ms.'' Probe:
+        \emph{``Every student? Or the prediction?''}
+  \item \textbf{Cause read into the slope} (notes~10; AP~MC1(C); HW~B2(E)). Probe: \emph{``Who
+        assigned the sleep?''}
+  \item \textbf{Intercept interpreted outside the data --- or dismissed when it is sensible}
+        (notes~8, 13; AP~(b); HW~A3). Probe: \emph{``Is $x = 0$ a real case here? Is it near
+        the data?''}
+  \item \textbf{$r = +\sqrt{r^2}$} (notes~5, 14; AP~MC2). Probe: \emph{``Which way does the
+        line go?''}
+  \item \textbf{$r^2$ as ``percent of points on the line'' or ``percent accurate''} (notes~6;
+        HW~B1). Probe: \emph{``Percent of \emph{what}?''}
+  \item \textbf{$x$ and $y$ swapped in $b = r\,s_y/s_x$} (notes~1; HW~A1). Probe:
+        \emph{``Which variable is the response? Its $s$ goes on top.''}
+\end{itemize}
+Cold-call prompts: \emph{``Say the slope sentence without the word `predicted' --- now tell me
+what is wrong with it.''} \quad \emph{``Name an $x$ where the intercept would mean something.''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item Construct and describe scatterplots for 2 provided datasets.
-        \item Match 4 DOFS descriptions to 4 scatterplot images.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Find a published scatterplot in a scientific article or news report.
-              Write a DOFS description and assess whether the authors' conclusions are supported by the graph.
-        \item \textit{Preview}: Lesson 2.5 quantifies the strength and direction of a \textit{linear}
-              association with a single number --- the correlation coefficient $r$. Predict: what value
-              would $r$ have for each of today's scatterplots?
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Start the Homework (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice.} Hand the launch first --- five items on paper, scored, due the first class after two
+study halls --- and point out that the AP Practice page before it is theirs to work and bring to
+review. Put students on A1 and A2 while you can still catch a wrong start. \textbf{A2 is the
+column that tells you whether the crux landed.} Sort as you walk: said ``predicted'' in context
+(ready); right number, no ``predicted'' (ready, needs the language); wrote a promise or a cause
+(the misconception survived) --- and open Lesson~2.5 by reteaching the template box if that
+third pile runs past a third of the room. Then close on what changed: \emph{``You came in
+thinking a line tells you what will happen. You leave knowing it tells you what to
+\emph{predict} --- and how much of the variation it explains.''} \textbf{Preview:}
+Lesson~2.5, \emph{Departures from Linearity} --- what one unusual point can do to $b$, $a$, and
+$r^2$.
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Four minutes. Item~2 is the seed: both residual sums are 0, so the plain sum is useless and
+squaring is what separates the lines --- say it once and leave ``both sums are 0'' on the board.
+Item~3's numbers ($0.64$ and $-24$) are the notes' numbers on purpose; do not name them yet.
+Item~1 is a 60-second spiral to Lesson~2.3 --- do not let it expand.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Rows 1 and 2 are
+machinery and must move --- seven minutes each. You work problems 1, 4, and 7; the class works
+the rest of each grid. \textbf{Problem~5 is the trap} (the sign of $r$), and \textbf{problem~10
+is the crux}: Maya's sentence has the right number and claims too much. Do not resolve it too
+fast --- let a student defend it, then ask whether \emph{every} student who slept an extra hour
+got exactly 24~ms faster. The fix is one word, \emph{predicted}, plus the reminder that nobody
+assigned the sleep.
+
+\textbf{Used Cars is where the pen changes hands.} Problem~12 is the crux transferred;
+problem~13 is the contrast --- an intercept that \emph{does} mean something. If you only get
+through 11, 12, and 13, that is the right trade. The output prints $S$; if a student asks, it is
+the typical size of a residual --- it is not tested in this lesson.
+
+\textbf{Debrief (8 min), spoken.} Open on the almost-right problem~10 or 12. \textbf{Do not let
+the debrief eat the last eight minutes} --- the homework start is your second formative read.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is not required and not scored} --- the graded practice is the homework behind
+it. Go over it at the start of Lesson~2.5. \textbf{MC~2 is the one worth reading closely}:
+students who choose (A) $-0.850$ are guessing the sign, and students who choose (C) $0.723$
+have confused $r$ with $r^2$. On the free response, part (b) is the highest-value part: a
+negative number of drinks is the cleanest possible case of an intercept with no meaning, and
+students must say \emph{why} (impossible, and 0$^\circ$F is far outside the data).
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored, 10 points (2 per item), due the first class after two study halls.} The eight
+minutes at the end of the period are a \emph{start}: A1 and A2 while you can still catch a wrong
+start; A3, B1, and B2 go home. Read A2 first when scoring --- ``predicted'' in context earns the
+2; a correct number without it earns 1. On A1, a student with $b = -0.84 \cdot 0.6/5$ swapped
+the standard deviations; that is worth a one-line comment, not a reteach. B2 requires the
+justification --- a bare (B) earns 1 point. If more than a third miss A2, reopen the template
+box in the Lesson~2.5 warm-up debrief. \textbf{Paper is the default.} On the occasions you assign
+DeltaMath in its place, strike the score cell on the cover and tell students this page is now
+optional practice. Do not assign both.
+\end{teachernote}
 \end{document}

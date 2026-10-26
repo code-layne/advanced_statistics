@@ -1,0 +1,12 @@
+# Homework item 5, justification of the multiple-choice answer (Unit 1, Lesson 1.1).
+id: hw5j
+points: 1
+task: >-
+  Of jersey number, bus route number, minutes spent on homework, home ZIP code, and
+  cafeteria PIN, justify in one sentence why the chosen one is quantitative.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (C), minutes on homework, as a measured amount (arithmetic on it makes
+      sense), or says the other four are labels written in digits.

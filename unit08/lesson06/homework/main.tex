@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l06-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.6}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.08in}
 
@@ -54,21 +57,25 @@ A chi-square table excerpt (right-tail areas):
 \begin{enumerate}[label=\alph*., itemsep=6pt]
   \item \textbf{State.} Identify the test type. Write $H_0$ and $H_a$.
 
-        Test type: \blank{5cm}
+        Test type: \gradedblank[id=hw1a1, type=short, points=1, answer={independence}, check=text, display={\bfseries Independence}]{3in}{0.3in}
 
-        $H_0$: \writeline
-        $H_a$: \writeline
+        $H_0$: \gradedblank[id=hw1a2, type=short, points=1, answer={no association}, check=text, display={\bfseries No association.}]{2.3in}{0.3in} \quad $H_a$: \gradedblank[id=hw1a3, type=short, points=1, answer={association}, check=text, display={\bfseries Association.}]{2.3in}{0.3in}
 
-  \item \textbf{Plan.} Method: \blank{5.5cm}. Verify the Random condition: \writeline
+  \boxguard[16]
+  \item \textbf{Plan.} Method: \gradedblank[id=hw1b1, type=short, points=1, answer={chi-square test for independence}, check=text, display={\bfseries $\chi^2$ test for independence}]{3.5in}{0.3in}
+
+        \boxguard[14]
+        Verify the Random condition: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries Stated.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
 
         Compute expected counts (each row total = 60):
 
-        $E_{\text{9th, }<7} = \dfrac{60 \times 110}{180} = $ \blank{2.5cm}
-        \quad $E_{\text{9th, }7+} = \dfrac{60 \times 70}{180} = $ \blank{2.5cm}
+        $E_{\text{9th, }<7} = \dfrac{60 \times 110}{180} = $ \makebox[2.5cm][r]{\smash{\gradedblank[id=hw1b3, type=short, points=1, answer=36.67, check=numeric, tolerance=0.01]{0.95cm}{0.2in}}}
+        \quad $E_{\text{9th, }7+} = \dfrac{60 \times 70}{180} = $ \hphantom{\blank{2.5cm}}\hskip 0pt plus 1fill\smash{\gradedblank[id=hw1b4, type=short, points=1, answer=23.33, check=numeric, tolerance=0.01]{1.6cm}{0.2in}}
 
-        Are all expected counts $\ge 5$? \blank{2cm}
+        Are all expected counts $\ge 5$? \hphantom{\blank{2cm}}\hskip 0pt plus 1fill\smash{\gradedblank[id=hw1b5, type=short, points=1, answer=yes, check=text]{1.2cm}{0.2in}}
 
-  \item \textbf{Do.} $\text{df} = ($ \blank{1.5cm} $-1)($ \blank{1.5cm} $-1) = $ \blank{2cm}
+  \newpage
+  \item \textbf{Do.} $\text{df} = ($ \blank{1.5cm} $-1)($ \blank{1.5cm} $-1) = $ \hphantom{\blank{2cm}}\hskip 0pt plus 1fill\smash{\gradedblank[id=hw1c1, type=short, points=1, answer=2, check=numeric, tolerance=0]{1.2cm}{0.2in}}
 
         Compute $\chi^2$ contributions and sum them below.
 
@@ -86,27 +93,29 @@ A chi-square table excerpt (right-tail areas):
         \end{tabular}
         \end{center}
 
-        $\chi^2 = $ \blank{4cm}
+        $\chi^2 = $ \makebox[4cm][r]{\smash{\gradedblank[id=hw1c2, type=short, points=2, answer=5.25, check=numeric, tolerance=0.1]{2.2cm}{0.2in}}}
 
-        Using the table above, the p-value is approximately \blank{3cm}.
+        Using the table above, the p-value is approximately \gradedblank[id=hw1c3, type=short, points=1, answer={0.05 to 0.10}, check=text, display={\bfseries 0.05 to 0.10}]{1.8in}{0.3in}
 
   \item \textbf{Conclude.} At $\alpha = 0.05$:
-        \writelines{2}
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={$p \approx 0.07 > 0.05$: fail to reject $H_0$; no convincing evidence of an association between grade and sleep.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 \end{enumerate}
 
 \vspace{0.1in}
 
+\newpage
 %% Problem 2 %%
 \item \textbf{Degrees of Freedom.}
 A student computes $\chi^2 = 9.21$ for a $2 \times 4$ contingency table.
 
 \begin{enumerate}[label=\alph*.]
-  \item What is the degrees of freedom? \blank{3cm}
+  \item What is the degrees of freedom? \makebox[3cm][r]{\smash{\gradedblank[id=hw2a, type=short, points=1, answer=3, check=numeric, tolerance=0]{1.45cm}{0.2in}}}
   \item Using the table in Problem 1, what is the critical value at $\alpha = 0.05$?
-        \blank{3cm}
+        \makebox[3cm][r]{\smash{\gradedblank[id=hw2b, type=short, points=1, answer=7.815, check=numeric, tolerance=0]{1.45cm}{0.2in}}}
+  \boxguard[16]
   \item Based on $\chi^2 = 9.21$, can the student reject $H_0$ at $\alpha = 0.05$?
         Explain.
-        \writeline
+        \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={\bfseries Yes: $9.21 > 7.815$.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
 \end{enumerate}
 
 \vspace{0.1in}
@@ -115,7 +124,7 @@ A student computes $\chi^2 = 9.21$ for a $2 \times 4$ contingency table.
 \item \textbf{Conceptual Question.}
 In what sense does a \emph{larger} $\chi^2$ value provide more evidence against $H_0$?
 Use the ideas of expected counts, p-value, and the chi-square distribution in your answer.
-\writelines{4}
+\gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3, type=rubric, points=3, display={Larger $\chi^2$ = observed counts farther from expected under $H_0$; farther into the right tail, so a smaller p-value and stronger evidence against $H_0$.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
 \end{enumerate}
 

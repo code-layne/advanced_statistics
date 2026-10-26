@@ -1,236 +1,173 @@
-%! AP Statistics — Unit 2, Lesson 2.2 — Guided Notes KEY
-\documentclass[10pt]{article}
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — Guided Notes & Practice (Answer Key)
+% MIRROR of ../notes/main.tex: -key in place of -boxes, \termblank -> \termans, \blank -> \ans, and the
+% fourth argument of every \pcell filled. Nothing else differs — keep it that way.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1), at the COMPACT
+% budget (2026-09-29): the vocabulary box, then ONE guidednotes table of four rows, 13 problems,
+% two pages. Each row is one idea — a label on the left; on the right a terse definition the
+% student completes, then a grid of short numbered problems with reserved answer space.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 7).
+%   WE DO  : the class works the rest of each grid; the last row, Guided Practice (11–13), is
+%            worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% TRAP  : problem 6 — the heaviest car is extreme in x but FOLLOWS the pattern; the hybrid is the
+%         unusual point (EK DAT-1.A.6).
+% CRUX  : problem 9 — r = 0.03 for speed vs. mpg, and the pattern is a strong CURVE. r near 0
+%         means no LINEAR association, not no relationship (EK DAT-1.B.1, DAT-1.C.1).
+%
+% THE DATA
+%   Cars (weight, 1000 lb / highway mpg), 12 models, r = -0.86:
+%     2.5/38 2.8/36 3.0/35 3.2/48 (hybrid) 3.3/32 3.5/31 3.6/29 3.9/28 4.1/26 4.4/24 4.8/21 5.4/17
+%   One car driven at 12 speeds (mph / mpg), r = 0.03:
+%     20/23 25/27 30/30 35/32 40/34 45/35 50/35 55/34 60/32 65/30 70/27 75/24
+%   Pool (high temp °F / visitors), 14 days, r = 0.90:
+%     72/140 75/120 77/170 79/150 80/220 82/160 84/200 85/250 87/210 89/280 90/230 92/300
+%     95/260 98/330
+%
+% NO SKETCH QUESTIONS: every scatterplot is pre-drawn in TikZ and read.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.2}{Guided Notes --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+\pageheader{Unit 2, Lesson 2.2}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ans{construct a two-way (contingency) table and identify joint and marginal frequencies;}\\[1pt]
-\ans{compute joint and conditional relative frequencies from a two-way table and explain the difference;}\\[1pt]
-\ans{construct and interpret a segmented bar chart to determine whether two categorical variables are associated.}
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Two-way table (contingency table)}\hfill\ans{a table that organizes counts for two categorical variables simultaneously; rows = one variable, columns = the other}\\
-\termblanklong{Joint frequency}\hfill\ans{the count in a single interior cell; describes both variables at once}\\
-\termblanklong{Marginal frequency}\hfill\ans{a row or column total; describes one variable ignoring the other}\\
-\termblanklong{Joint relative frequency}\hfill\ans{a cell count divided by the grand total of the entire table (UNC-1.P.4)}\\
-\termblanklong{Conditional relative frequency}\hfill\ans{a cell count divided by a row or column total; holds one variable fixed}\\
-\termblanklong{Association (two categorical variables)}\hfill\ans{present when conditional distributions differ across groups; if they are the same, there is no evidence of association}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termans{Scatterplot}{a graph of two quantitative variables on the same individuals; one dot per individual.}
+\par
+\termans{Explanatory \& response}{the explanatory variable ($x$-axis) helps explain or predict the response ($y$-axis), the outcome.}
+\par
+\termans{Correlation $r$}{a number from $-1$ to $1$ giving the direction and strength of a LINEAR association.}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{hookbox}
 \small
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item \ans{A single bar chart shows the distribution of one variable. To compare
-  lunch preferences across grade levels we need to show both variables at once --- a
-  two-way table does that.}
-
-  \item \ans{A two-way (contingency) table, or a segmented bar chart built from it.}
-\end{enumerate}
-\end{hookbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Step 1 --- Build the Two-Way Table (UNC-1.P.3)}
-\small
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} l C{2.4cm} C{2.4cm} C{2.2cm} C{2.2cm} @{}}
-\rowcolor{sky}
-\textbf{Grade Level}
-  & \textbf{Cafeteria} & \textbf{Off-campus} & \textbf{Home}
-  & \textbf{\color{navy}Row Total} \\
-\hline
-Underclassman & 54 & 18 & 48 & \ans{120} \\
-Upperclassman & 36 & 42 & 42 & \ans{120} \\
-\hline
-\textbf{Column Total} & \ans{90} & \ans{60} & \ans{90} & \ans{240} \\
-\end{tabularx}
-
-\vspace{10pt}
-
-\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
-  \item Row totals: 120 and 120; column totals: 90, 60, 90.
-        These are called \ans{marginal} frequencies.
-
-  \item The count in any interior cell is called a \ans{joint} frequency because
-        it describes \ans{both variables simultaneously (e.g., students who are
-        underclassmen AND prefer the cafeteria)}.
-
-  \item Grand total = \ans{240}. Verify: $\ans{120} + \ans{120} = \ans{240}$ \checkmark
-\end{enumerate}
-
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Step 2 --- Relative Frequencies (UNC-1.P.4)}
-\small
-\begin{multicols}{2}
-
-\textbf{Joint relative frequency}\\[3pt]
-Formula: $\dfrac{\text{cell count}}{\ans{\text{grand total}}}$
-
-\vspace{6pt}
-\[
-  \frac{\ans{54}}{\ans{240}} = \ans{0.225} \approx 22.5\%
-\]
-
-\columnbreak
-
-\textbf{Conditional relative frequency}\\[3pt]
-Formula: $\dfrac{\text{cell count}}{\ans{\text{row (or column) total}}}$
-
-\vspace{6pt}
-Among underclassmen:
-\[
-  \frac{\ans{54}}{\ans{120}} = \ans{0.45 = 45\%}
-\]
-
-\end{multicols}
-
-\vspace{6pt}
-\textbf{Key distinction:} Joint uses the \ans{grand} total;
-conditional uses a \ans{row} or \ans{column} total.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Step 3 --- Conditional Distribution Table}
-\small
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} l C{2.8cm} C{2.8cm} C{2.8cm} C{1.6cm} @{}}
-\rowcolor{sky}
-\textbf{Grade Level}
-  & \textbf{Cafeteria} & \textbf{Off-campus} & \textbf{Home}
-  & \textbf{Total} \\
-\hline
-Underclassman & \ans{45\%} & \ans{15\%} & \ans{40\%} & 100\% \\
-Upperclassman & \ans{30\%} & \ans{35\%} & \ans{35\%} & 100\% \\
-\end{tabularx}
-
-\vspace{10pt}
-\ans{The two rows look different: underclassmen are much more likely to eat in the
-cafeteria (45\% vs.\ 30\%) and much less likely to go off-campus (15\% vs.\ 35\%).
-This suggests there \textbf{is} evidence of an association between grade level and
-lunch preference.}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Step 4 --- Segmented Bar Chart (UNC-1.P.1, UNC-1.P.2)}
-\small
-\begin{multicols}{2}
-
-\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-  \item Each bar reaches \ans{100}\%.
-  \item Divide each bar by \ans{conditional} relative frequencies.
-  \item Label each segment (Cafeteria / Off-campus / Home).
-\end{enumerate}
-
-\vspace{6pt}
-\textbf{Reading the chart:}\\
-If the two bars look \textbf{the same} $\to$ \ans{no association}\\
-If the two bars look \textbf{different} $\to$ \ans{evidence of association}
-
-\columnbreak
-
-\vspace{4pt}
-\textbf{Segmented bar chart (key sketch):}
-
-\vspace{0.5in}
-
-\begin{tikzpicture}[x=1.4cm, y=0.035cm]
-  \draw[thick,->] (0,0) -- (2.8,0);
-  \draw[thick,->] (0,0) -- (0,115) node[above,font=\tiny] {\%};
-  \foreach \y in {0,25,50,75,100}{
-    \draw (0,\y) -- (-0.08,\y) node[left,font=\tiny] {\y};
-  }
-  \node[below,font=\small] at (0.7,0) {Under};
-  \node[below,font=\small] at (2.1,0) {Upper};
-  % Underclassman bar: Cafeteria 0-45, Off-campus 45-60, Home 60-100
-  \fill[navy!70]   (0.2,  0) rectangle (1.2, 45);
-  \fill[sky!80!navy] (0.2, 45) rectangle (1.2, 60);
-  \fill[greenbg!80] (0.2, 60) rectangle (1.2,100);
-  \draw (0.2,0) rectangle (1.2,100);
-  % Upperclassman bar: Cafeteria 0-30, Off-campus 30-65, Home 65-100
-  \fill[navy!70]   (1.6,  0) rectangle (2.6, 30);
-  \fill[sky!80!navy] (1.6, 30) rectangle (2.6, 65);
-  \fill[greenbg!80] (1.6, 65) rectangle (2.6,100);
-  \draw (1.6,0) rectangle (2.6,100);
-  % legend
-  \fill[navy!70]   (0.0,108) rectangle (0.18,116); \node[right,font=\tiny] at (0.2,112) {Cafe};
-  \fill[sky!80!navy] (0.55,108) rectangle (0.73,116); \node[right,font=\tiny] at (0.75,112) {Off};
-  \fill[greenbg!80] (1.0,108) rectangle (1.18,116); \node[right,font=\tiny] at (1.2,112) {Home};
+\begin{guidednotes}
+% ── ROW 1: scatterplots, explanatory and response ────────────────────────────
+\mainidea[Two quantitative]{Variables} &
+\begin{minipage}[c]{0.49\linewidth}\raggedright
+A \textbf{scatterplot} shows two \ans{quantitative} variables on the same individuals,
+one dot per \ans{individual}.\par\vspace{3pt}
+The \textbf{explanatory} variable (\ans{$x$}-axis) helps \ans{explain/predict} the
+\textbf{response} (\ans{$y$}-axis).
+\end{minipage}\hfill
+\begin{minipage}[c]{0.49\linewidth}\centering
+\begin{tikzpicture}[x=1.2cm, y=0.075cm]
+  \foreach \y in {20,30,40,50} {
+    \draw[linegray, very thin] (2,\y) -- (6,\y);
+    \node[left, font=\tiny] at (2,\y) {\y};}
+  \draw[thick] (2,15) -- (6.1,15);
+  \draw[thick] (2,15) -- (2,52);
+  \foreach \x in {2,3,4,5,6} {
+    \draw (\x,14.3) -- (\x,15.7); \node[below, font=\tiny] at (\x,14.5) {\x};}
+  \foreach \w/\m in {2.5/38, 2.8/36, 3.0/35, 3.2/48, 3.3/32, 3.5/31, 3.6/29, 3.9/28,
+                     4.1/26, 4.4/24, 4.8/21, 5.4/17}
+    \fill[navy] (\w,\m) circle (1.6pt);
+  \node[font=\tiny] at (4,6.5) {Weight (1000 lb)};
+  \node[rotate=90, font=\tiny] at (1.45,33) {Highway mpg};
+  \node[font=\scriptsize\bfseries] at (4,56) {12 car models};
 \end{tikzpicture}
+\end{minipage}
+\notesprompt{Read the scatterplot.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Name the explanatory and the response variable.}{1.2cm}{Expl.: weight\par Resp.: mpg} &
+\pcell{2}{What does one dot stand for?}{1.2cm}{One car model} &
+\pcell{3}{About how many mpg does the heaviest car get?}{1.2cm}{About 17 mpg} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: describing an association (DOFS, in context) ──────────────────────
+\mainidea[Describing the]{Pattern} &
+Describe a scatterplot with \textbf{DOFS}, always in context:\par\vspace{2pt}
+\textbf{D}irection --- \textbf{positive}: as $x$ increases, $y$ tends to \ans{increase};
+\textbf{negative}: $y$ tends to \ans{decrease}.\par
+\textbf{O}utliers \& unusual features --- points far from the \ans{pattern}, or clusters.\par
+\textbf{F}orm --- \ans{linear} (a straight-line pattern) or curved.\par
+\textbf{S}trength --- how closely the points follow the \ans{form}: strong, moderate, or
+weak.
+\\
+& \notesprompt{Describe the 12 cars above.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{4}{Direction --- and what it means for these cars.}{1.5cm}{Negative: heavier cars tend to get lower mpg.} &
+\pcell{5}{Form and strength.}{1.5cm}{Linear; fairly strong.} &
+\pcell{6}{The heaviest car sits far right. Is it the unusual point?}{1.5cm}{No, it fits the pattern. The hybrid (48 mpg) is.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: correlation — THE CRUX (problem 9) ────────────────────────────────
+\mainidea[Correlation]{Reading $r$} &
+\begin{minipage}[c]{0.58\linewidth}\raggedright
+The \textbf{correlation} $r$ measures the direction and strength of the \ans{linear}
+association between two quantitative variables. It is always between \ans{$-1$} and
+\ans{$1$}; its sign gives the \ans{direction}, and closer to $\pm 1$ means a
+\ans{stronger} linear pattern. $r$ has no \ans{units}, and correlation does not prove
+\ans{causation}.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.40\linewidth}\centering
+\begin{tikzpicture}[x=0.068cm, y=0.15cm]
+  \foreach \y in {20,25,30,35} {
+    \draw[linegray, very thin] (15,\y) -- (80,\y);
+    \node[left, font=\tiny] at (15,\y) {\y};}
+  \draw[thick] (15,20) -- (81,20);
+  \draw[thick] (15,20) -- (15,37);
+  \foreach \x in {20,40,60,80} {
+    \draw (\x,19.7) -- (\x,20.3); \node[below, font=\tiny] at (\x,19.8) {\x};}
+  \foreach \s/\m in {20/23, 25/27, 30/30, 35/32, 40/34, 45/35, 50/35, 55/34, 60/32,
+                     65/30, 70/27, 75/24}
+    \fill[navy] (\s,\m) circle (1.6pt);
+  \node[font=\tiny] at (47.5,15.8) {Speed (mph)};
+  \node[rotate=90, font=\tiny] at (6.5,28) {mpg};
+  \node[font=\scriptsize\bfseries] at (47.5,39.5) {One car, 12 speeds: $r = 0.03$};
+\end{tikzpicture}
+\end{minipage}
+\notesprompt{Interpret $r$.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{For the 12 cars, $r = -0.86$. What do its sign and size tell you?}{1.1cm}{Negative; a fairly strong linear association.} &
+\pcell{8}{Weigh the cars in kilograms and swap the axes. Now what is $r$?}{1.1cm}{Still $-0.86$: no units, and $x$/$y$ order does not matter.} \\ \hline
+\pcell{9}{For the speed plot, $r = 0.03$. A student says, ``So speed has no relationship with fuel economy.'' Respond.}{1.5cm}{Wrong: a strong \emph{curved} relationship. $r$ measures only \emph{linear} association.} &
+\pcell{10}{In 40 countries, $r = 0.81$ between cars per 1000 people and life expectancy. Do cars make people live longer?}{1.5cm}{Not shown --- correlation is not causation; national wealth drives both.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The City Pool} &
+\begin{minipage}[c]{0.45\linewidth}\raggedright
+A city pool recorded the day's high temperature ($^\circ$F) and the number of visitors on 14
+summer days. Technology gives $r = 0.90$.
+\notesprompt{We work these together.}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.53\linewidth}\centering
+\begin{tikzpicture}[x=0.17cm, y=0.0105cm]
+  \foreach \y in {100,200,300} {
+    \draw[linegray, very thin] (70,\y) -- (100,\y);
+    \node[left, font=\tiny] at (70,\y) {\y};}
+  \draw[thick] (70,100) -- (100.5,100);
+  \draw[thick] (70,100) -- (70,345);
+  \foreach \x in {70,80,90,100} {
+    \draw (\x,96) -- (\x,104); \node[below, font=\tiny] at (\x,97) {\x};}
+  \foreach \t/\v in {72/140, 75/120, 77/170, 79/150, 80/220, 82/160, 84/200, 85/250,
+                     87/210, 89/280, 90/230, 92/300, 95/260, 98/330}
+    \fill[navy] (\t,\v) circle (1.6pt);
+  \node[font=\tiny] at (85,50) {High temperature ($^\circ$F)};
+  \node[rotate=90, font=\tiny] at (64.5,222) {Visitors};
+\end{tikzpicture}
+\end{minipage}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{11}{Name the explanatory and the response variable.}{1.6cm}{Expl.: temperature\par Resp.: visitors} &
+\pcell{12}{Describe the association in context (DOFS and $r$).}{1.6cm}{Strong, positive, linear: hotter days tend to bring more visitors.} &
+\pcell{13}{Snack-bar ice-cream sales and visitors: $r = 0.88$. Does ice cream bring swimmers?}{1.6cm}{No --- hot weather drives both.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\end{multicols}
-
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Step 5 --- State the Association Conclusion}
-\small
-
-\ans{There \textbf{is} evidence of an association between grade level and lunch
-preference. Among underclassmen, 45\% prefer the cafeteria, compared to 30\%
-among upperclassmen. The conditional distributions \textbf{differ}, suggesting
-that upperclassmen are more likely to eat off-campus and less likely to use the
-cafeteria than underclassmen.}
-
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-
-\textbf{How this connects:}
-\begin{itemize}[itemsep=3pt]
-  \item Lesson 2.1: association question $\to$ today: displays
-  \item Lesson 2.3: quantify with statistics
-  \item Unit 8: chi-square significance test
-\end{itemize}
-
-\columnbreak
-
-\ans{We use conditional relative frequencies because we want to compare
-lunch preferences \emph{within} each grade level. Joint relative frequencies
-include differences in group size, which can mislead --- for example, both
-grade levels have the same number of students here, but in general they might not.
-Conditional frequencies put each group on the same ``100\%'' scale.}
-
-\end{multicols}
-\end{spiralbox}
-
-\begin{teachernote}
-\textbf{Common errors:}
-\begin{itemize}[itemsep=3pt]
-  \item Dividing by the grand total (240) to get conditional frequencies --- redirect: ``that gives you the joint relative frequency, not the conditional.''
-  \item Confusing rows and columns --- ask: ``which variable is explanatory? Condition on that one.''
-  \item In the bar chart, bars that do not reach exactly 100\% --- rounding issues; accept $\pm$1\%.
-  \item Stating ``there is an association'' without citing specific values --- require the comparison of conditional percentages as evidence.
-\end{itemize}
-\end{teachernote}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

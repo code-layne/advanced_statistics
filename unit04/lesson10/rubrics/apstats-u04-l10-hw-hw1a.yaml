@@ -1,0 +1,19 @@
+# Homework item 1a (Unit 4, Lesson 4.10). Relative to the lesson directory.
+id: hw1a
+points: 3
+task: >-
+  A basketball player makes 72% of her free throws and shoots 10; X = number made.
+  Check BINS and state the distribution.
+criteria:
+  - id: bn
+    points: 1
+    full: >-
+      Binary (make/miss) and fixed number of trials n = 10.
+  - id: is
+    points: 1
+    full: >-
+      Independent shots and the same probability of success p = 0.72 on each shot.
+  - id: dist
+    points: 1
+    full: >-
+      States X ~ B(10, 0.72) (binomial with n = 10, p = 0.72).

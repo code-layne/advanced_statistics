@@ -1,0 +1,20 @@
+# Homework item 1b (Unit 6, Lesson 6.9). Relative to the lesson directory.
+id: hw1b
+points: 2
+task: >-
+  A 99% CI for p_city - p_suburb, the difference in the proportions of residents who
+  use public transit, is (-0.06, 0.22). Does this interval provide evidence that city
+  residents use public transit at a higher rate than suburban residents? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says no (not convincing evidence).
+  - id: reason
+    points: 1
+    full: >-
+      Explains that the interval contains 0 (and negative values), so a difference of 0 is
+      plausible.
+examples:
+  - response: "Yes, because most of the interval is positive."
+    scores: {answer: 0, reason: 0}

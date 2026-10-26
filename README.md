@@ -32,6 +32,20 @@ never the products.
 Units aggregate the last two into `unitXX_student.pdf` / `unitXX_key.pdf`, renumbered
 unit-wide; the root does the same into `curriculum_student.pdf` / `curriculum_key.pdf`.
 
+## Getting the Source
+
+`math-shared/` is a git submodule, [code-layne/math-shared](https://github.com/code-layne/math-shared),
+which holds the grading package shared across the courses. It sits at the project root, not under
+`shared/`: the build searches `shared/` recursively, and `math-shared/examples` holds `main.tex`
+files a component build would pick up. Clone with it:
+
+```bash
+git clone --recurse-submodules https://github.com/code-layne/advanced_statistics
+```
+
+In a clone made without `--recurse-submodules`, run `git submodule update --init` once. Ordinary
+builds still work without the submodule. Only the grading targets below need it.
+
 ## Building from Source
 
 Requires [XeLaTeX](https://tug.org/xetex/), `latexmk`, poppler (`pdfunite`, `pdftoppm`,
@@ -49,6 +63,25 @@ make clean | make distclean
 
 Output lands in `target/`: per-component PDFs under `target/unitXX/lessonYY/<comp>/`,
 products and packets under `target/compiled/`.
+
+### Grading
+
+The graded components (AP Practice, homework, quizzes and tests) mark each answer with
+`\gradedblank` from `math-shared/grading.sty`. Two targets work on one graded component at a time:
+
+```bash
+make -C unit01/lesson03 manifest COMP=homework           # blank + key, manifest.json, blank/key check
+make -C unit01/lesson03 roster-packets COMP=homework ROSTER=~/Rosters/apstats/roster-map.csv
+make -C unit01/tests manifest COMP=actual_test           # unit tests: tests/ (keys in test_keys/)
+make -C unit01/quizzes manifest COMP=actual_quiz         # quizzes: quizzes/ (keys in quiz_keys/)
+make -C unit01 manifest COMP=lesson03/homework           # the same, from the unit directory
+```
+
+`roster-packets` builds one run per student, in roster order, into `target/compiled/`: a name
+cover sheet, its blank back, then the student's copy, whose QR codes and id strip carry only her
+tracking id. The cover is removed before the work is turned in and is never scanned. The roster
+PDFs carry student names on the covers; `target/` is never committed, and `roster-map.csv` lives
+outside the repository (see math-shared's README).
 
 ## Downloading Prebuilt PDFs
 

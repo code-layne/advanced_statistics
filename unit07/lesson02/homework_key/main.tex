@@ -2,28 +2,32 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u07-l02-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.2}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \begin{enumerate}
 
   \item \textbf{Screen Time.} $n = 20$, $\bar x = 3.4$ hr, $s = 0.9$ hr, 95\% CI.
 
-        \textbf{Step 1:} \ansline{$\mu = $ true mean daily screen time (hours) for all elementary school students.}
+        \textbf{Step 1:} \ansline{$\mu = $ true mean daily screen time (hours) for all elementary school students.}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=1, display={$\mu$ = true mean screen time}]{\linewidth+6pt}{2in}}
 
         \textbf{Step 2:}
-        \ansline{Random: random sample of students. \checkmark \quad 10\%: $20 \le 10\%$ of all elementary students (large population). \checkmark \quad Large Sample: $n = 20 < 30$; assume no strong skewness or outliers in the data. \checkmark}
+        \ansline{Random: random sample of students. \checkmark \quad 10\%: $20 \le 10\%$ of all elementary students (large population). \checkmark \quad Large Sample: $n = 20 < 30$; assume no strong skewness or outliers in the data. \checkmark}\gradedkeyline{\gradedblank[id=hw1b, type=rubric, points=3, display={Random sample; $20 \le 10\%$ of all students; $n<30$, assume no strong skew/outliers.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 
-        \textbf{Step 3:} $df = $ \ans{19}, $t^* = $ \ans{2.093}, $SE = 0.9/\sqrt{20} = $ \ans{0.201} hr
+        \textbf{Step 3:} $df = $ \ans{19}, $t^* = $ \ans{2.093}, $SE = 0.9/\sqrt{20} = $ \ans{0.201} hr\gradedkey{$df=$~\gradedblank[id=hw1c1, type=short, points=1, answer=19, check=numeric, tolerance=0]{1.8cm}{0.19in}\quad $t^*=$~\gradedblank[id=hw1c2, type=short, points=1, answer=2.093, check=numeric, tolerance=0.005]{2.3cm}{0.19in}\quad $SE=$~\gradedblank[id=hw1c3, type=short, points=1, answer=0.201, check=numeric, tolerance=0.002]{2.3cm}{0.19in}}
 
-        Interval: $3.4 \pm 2.093 \times 0.201 = 3.4 \pm 0.421 = ($ \ans{2.979} $,$ \ans{3.821} $)$ hours
+        Interval: $3.4 \pm 2.093 \times 0.201 = 3.4 \pm 0.421 = ($ \ans{2.979} $,$ \ans{3.821} $)$ hours\gradedkey{\gradedblank[id=hw1d1, type=short, points=1, answer=2.979, check=numeric, tolerance=0.01]{1.8cm}{0.19in}\quad \gradedblank[id=hw1d2, type=short, points=1, answer=3.821, check=numeric, tolerance=0.01]{1.8cm}{0.19in}}
 
-        \textbf{Step 4:} \ansline{We are 95\% confident that the interval (2.98, 3.82) hours captures the true mean daily screen time for all elementary school students.}
+        \textbf{Step 4:} \ansline{We are 95\% confident that the interval (2.98, 3.82) hours captures the true mean daily screen time for all elementary school students.}\gradedkeyline{\gradedblank[id=hw1e, type=rubric, points=2, display={95\% confident (2.98, 3.82) hr captures the true mean daily screen time of all elementary students.}]{\linewidth+6pt}{\gradedlinesheight{1}}}
 
+  \newpage
   \item \textbf{Fuel Efficiency.} $n = 40$, $\bar x = 31.7$ mpg, $s = 4.2$ mpg, 99\% CI.
 
         \textbf{Steps 1--4:}
@@ -31,30 +35,31 @@
         \ansline{Conditions: Random: random sample. \checkmark \quad 10\%: $40 \le 10\%$ of all vehicles (large production). \checkmark \quad Large Sample: $n = 40 \ge 30$. \checkmark}
         \ansline{Calculate: $df = 39$; $t^* = 2.708$ (99\% CI); $SE = 4.2/\sqrt{40} = 0.664$ mpg. Interval: $31.7 \pm 2.708 \times 0.664 = 31.7 \pm 1.798$.}
 
-        Interval: $= ($ \ans{29.9} $,$ \ans{33.5} $)$ mpg
+        \ansline{Conclude: We are 99\% confident that the interval (29.9, 33.5) mpg captures the true mean fuel efficiency for all vehicles of this model.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=4, display={$\mu$ = true mean mpg of this model. Random; $40 \le 10\%$; $n = 40 \ge 30$. $df=39$, $t^*=2.708$, $SE=0.664$: $31.7 \pm 1.798$. We are 99\% confident (29.9, 33.5) mpg captures the true mean fuel efficiency of all vehicles of this model.}]{\linewidth+6pt}{\gradedlinesheight{7}}}
 
-        \ansline{Conclude: We are 99\% confident that the interval (29.9, 33.5) mpg captures the true mean fuel efficiency for all vehicles of this model.}
+        Interval: $= ($ \ans{29.9} $,$ \ans{33.5} $)$ mpg\gradedkey{\gradedblank[id=hw2b1, type=short, points=1, answer=29.9, check=numeric, tolerance=0.05]{1.8cm}{0.19in}\quad \gradedblank[id=hw2b2, type=short, points=1, answer=33.5, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}
 
         \begin{teachernote}
             $t^*$ for $df = 39$, 99\% CI is approximately 2.708.
             ME $= 2.708 \times 0.664 = 1.798$ mpg.
         \end{teachernote}
 
+  \newpage
   \item \textbf{Matched Pairs: Reaction Time.}
 
         Differences (before $-$ after): 14, $-$3, 22, 8, 11, $-$5, 18, 6, 13, 20, $-$2, 15.
         Sum $= 117$, $n = 12$.
 
-        $\bar d = $ \ans{$117/12 = 9.75$} ms \quad $s_d \approx $ \ans{8.71} ms
+        $\bar d = $ \ans{$117/12 = 9.75$} ms \quad $s_d \approx $ \ans{8.71} ms\gradedkey{$\bar d=$~\gradedblank[id=hw3a1, type=short, points=1, answer=9.75, check=numeric, tolerance=0.01]{2.8cm}{0.19in}\quad $s_d=$~\gradedblank[id=hw3a2, type=short, points=1, answer=9.13, check=numeric, tolerance=0.02]{2.8cm}{0.19in}}
 
         \textbf{Steps 1--4:}
         \ansline{Parameter: $\mu_d = $ true mean difference in reaction time (ms) for caffeine (before $-$ after).}
         \ansline{Conditions: Random: assume random sample or randomized design. \checkmark \quad 10\%: $12 \le 10\%$ of all participants. \checkmark \quad Large Sample: $n = 12 < 30$; check for no strong skewness or outliers. \checkmark (assume verified).}
         \ansline{Calculate: $df = 11$; $t^* = 1.796$ (90\% CI); $SE = 8.71/\sqrt{12} = 2.514$ ms. Interval: $9.75 \pm 1.796 \times 2.514 = 9.75 \pm 4.515$.}
 
-        Interval: $= ($ \ans{5.235} $,$ \ans{14.265} $)$ ms
+        \ansline{Conclude: We are 90\% confident that the interval (5.24, 14.27) ms captures the true mean decrease in reaction time due to caffeine consumption.}\gradedkeyline{\gradedblank[id=hw3b, type=rubric, points=4, display={$\mu_d$ = true mean difference (before $-$ after, ms). Random; $12 \le 10\%$; $n<30$, no strong skew/outliers. $df=11$, $t^*=1.796$, $SE = 9.13/\sqrt{12} = 2.635$: $9.75 \pm 4.73$. 90\% confident (5.02, 14.48) ms captures the true mean change.}]{\linewidth+6pt}{\gradedlinesheight{5}}}
 
-        \ansline{Conclude: We are 90\% confident that the interval (5.24, 14.27) ms captures the true mean decrease in reaction time due to caffeine consumption.}
+        Interval: $= ($ \ans{5.235} $,$ \ans{14.265} $)$ ms\gradedkey{\gradedblank[id=hw3c1, type=short, points=1, answer=5.02, check=numeric, tolerance=0.05]{1.8cm}{0.19in}\quad \gradedblank[id=hw3c2, type=short, points=1, answer=14.48, check=numeric, tolerance=0.05]{1.8cm}{0.19in}}
 
         \begin{teachernote}
             $s_d$: compute from the differences. Sum $= 117$; $\sum d_i^2 = 14^2+3^2+22^2+8^2+11^2+5^2+18^2+6^2+13^2+20^2+2^2+15^2 = 1937$. $s_d = \sqrt{(1937 - 117^2/12)/11} \approx \sqrt{(1937-1140.75)/11} \approx \sqrt{72.39} \approx 8.51$. Slight rounding: use calculator for precision. $t^*$ for $df = 11$, 90\%: 1.796.

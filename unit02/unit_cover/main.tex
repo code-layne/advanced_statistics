@@ -25,14 +25,14 @@
 \begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
     left=4mm,right=4mm,top=3mm,bottom=3mm]
   \textbf{Unit Overview.}\quad
-  Unit 2 extends statistical thinking to the relationship between two variables.
-  Students begin with two-variable categorical data, building two-way tables and
-  comparing conditional distributions to assess association. They then shift to two
-  quantitative variables, constructing scatterplots and describing association using
-  direction, form, and strength. The unit develops correlation, simple linear
-  regression, and residual analysis as tools for modeling and evaluating linear
-  relationships, and closes with power and exponential transformations to linearize
-  curved patterns.
+  Unit 2 extends statistical thinking to the relationship between two variables, in
+  five lessons. Students begin with two categorical variables, reading two-way tables and
+  comparing conditional distributions to decide whether an association exists. They then
+  turn to two quantitative variables: reading scatterplots, describing direction, form,
+  and strength, and measuring linear strength with the correlation $r$. The unit builds the
+  least-squares regression line for prediction, uses residuals to judge its fit, and closes
+  by asking when a line is the wrong model --- curved residual plots, outliers, and
+  influential points.
 \end{tcolorbox}
 
 \vspace{0.22in}
@@ -43,32 +43,20 @@
 \begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.42\linewidth} X @{}}
   \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
   \hline
-  2.1 & Introducing Statistics: Are Variables Related?
-    & Statistical questions about relationships; apparent vs.\ real associations. \\
+  2.1 & Two Categorical Variables
+    & Two-way tables; joint, marginal, and conditional relative frequencies; association. \\
   \hline
-  2.2 & Representing Two Categorical Variables
-    & Two-way tables; joint, marginal, and conditional relative frequencies. \\
+  2.2 & Scatterplots and Correlation
+    & Explanatory vs.\ response; direction, form, strength; the correlation $r$. \\
   \hline
-  2.3 & Statistics for Two Categorical Variables
-    & Comparing conditional distributions; segmented bar charts; assessing association. \\
+  2.3 & Regression Lines and Residuals
+    & Predicting with $\hat{y}=a+bx$; extrapolation; residual $=y-\hat{y}$. \\
   \hline
-  2.4 & Representing Two Quantitative Variables
-    & Scatterplots; direction, form, and strength; explanatory vs.\ response variable. \\
+  2.4 & Least-Squares Regression
+    & $b = r\,s_y/s_x$, $a = \bar{y}-b\bar{x}$; slope and intercept in context; $r^2$ and $s$. \\
   \hline
-  2.5 & Correlation
-    & Pearson's $r$; properties and interpretation; correlation $\ne$ causation. \\
-  \hline
-  2.6 & Linear Regression Models
-    & Least-squares line $\hat{y}=a+bx$; writing and interpreting slope and intercept. \\
-  \hline
-  2.7 & Residuals
-    & Calculating residuals; residual plots; assessing linearity. \\
-  \hline
-  2.8 & Least Squares Regression
-    & Computing $b = r\,s_y/s_x$ and $a = \bar{y}-b\bar{x}$; $s$ and $r^2$; influential points. \\
-  \hline
-  2.9 & Analyzing Departures from Linearity
-    & Power and exponential transformations; choosing and evaluating linearized models. \\
+  2.5 & Departures from Linearity
+    & Residual plots; outliers, high-leverage and influential points; transformations. \\
   \hline
 \end{tabularx}
 \end{skillbox}
@@ -78,22 +66,17 @@
 % ── Standards covered ─────────────────────────────────────────────────────────
 \begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 2]{greenbox}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} X @{}}
-  VAR-1.D & Identify when an apparent association between two variables may be due
-            to chance rather than a real relationship. \\
-  UNC-1.P & Construct and interpret two-way tables; compute joint, marginal, and
-            conditional relative frequencies to determine whether an association exists. \\
-  DAT-1.I & Construct and interpret scatterplots for two quantitative variables;
-            describe direction, form, and strength. \\
-  DAT-1.J & Calculate and interpret the correlation coefficient $r$; understand its
-            properties and limitations. \\
-  DAT-1.K & Determine the least-squares regression line; interpret slope and
-            $y$-intercept in context; use the line for prediction. \\
-  DAT-1.L & Calculate and interpret residuals; use residual plots to assess whether a
-            linear model is appropriate. \\
-  DAT-1.M & Interpret the standard deviation of the residuals $s$ and the coefficient
-            of determination $r^2$; identify outliers and influential points. \\
-  DAT-1.N & Apply power or exponential transformations to achieve linearity; choose
-            and evaluate the better model using residual plots and $r^2$. \\
+  VAR-1.D & Identify questions about possible relationships in data; apparent
+            associations may be random. \\
+  UNC-1.P--S & Compare, calculate, and represent statistics for two categorical variables
+            (two-way tables, conditional distributions) and bivariate quantitative data. \\
+  DAT-1.A--C & Describe a scatterplot; determine and interpret the correlation for a linear
+            relationship. \\
+  DAT-1.D--F & Predict with a linear regression model; calculate residuals; use residual
+            plots to describe form. \\
+  DAT-1.G--H & Estimate and interpret the least-squares regression line's slope,
+            intercept, and $r^2$. \\
+  DAT-1.I--J & Identify influential points; predict using transformed variables. \\
 \end{tabularx}
 \end{skillbox}
 

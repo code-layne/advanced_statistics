@@ -1,46 +1,41 @@
-%! AP Statistics — Unit 2, Lesson 2.1 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Two Categorical Variables — Unit 2, Lesson 2.1 — Student Packet Cover Sheet
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
 
-%=============================================================================
 \begin{document}
 
-% ── Full-bleed navy banner ────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 2}{Lesson 2.1 \quad Two Categorical Variables}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2: Exploring Two-Variable Data}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.1 \quad Introducing Statistics: Are Variables Related?}}
-\end{center}
-
-\vspace{0.22in}
-
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
-
 \vspace{0.18in}
 
-% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objectives (VAR-1.D, UNC-1.P, UNC-1.Q, UNC-1.R) stay in the plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} identify a statistical question that asks about a possible relationship
-        between two variables.
-  \item \ldots{} explain why an apparent pattern or association in data may be random and
-        not a real relationship.
-  \item \ldots{} explain why association does not imply causation, and give an example of
-        a confounding variable.
+  \item \ldots{} ask whether two variables are related, and read a \textbf{two-way table} of
+        two categorical variables.
+  \item \ldots{} find \textbf{joint}, \textbf{marginal}, and \textbf{conditional relative
+        frequencies}, choosing the right total to divide by.
+  \item \ldots{} read a \textbf{segmented bar graph} and decide whether two variables show an
+        \textbf{association}, justified with percents in context.
+  \item \ldots{} explain why an association in a survey does not show that one variable causes
+        the other.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
-% ── TABLE OF CONTENTS ────────────────────────────────────────────────────────
+\boxguard[14]
 \begin{tocbox}
 \small
 \renewcommand{\arraystretch}{1.5}
@@ -48,11 +43,17 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up       & Spiral review + two-variable thinking   & \blank{1.2cm} \\
-2 & Guided Notes  & Statistical questions, association, causation & \blank{1.2cm} \\
-3 & Group Activity & Evaluating real vs.\ random associations & \blank{1.2cm} \\
-4 & Exit Ticket   & Analyze a study for association and confounding & \blank{1.2cm} \\
-5 & Homework      & News blurbs + association analysis        & \blank{1.2cm} \\
+1 & Warm-Up & A relative frequency, two quiz sections, and a question about related
+                 variables & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Phones and sleep in a two-way table: joint, marginal, and
+                 conditional relative frequencies, then texting drivers together & \blank{1.2cm} \\
+% AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
+3 & AP Practice & A grocery survey: two multiple-choice items and one free-response set ---
+                 practice, not a grade & \textbf{NA} \\
+4 & Homework & A gym's membership records: read the table, then judge the association ---
+                 \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -60,31 +61,13 @@
 
 \vspace{0.14in}
 
-% ── KEEP IN MIND ─────────────────────────────────────────────────────────────
+\boxguard[8]
 \begin{remindbox}
 \small
-These are the big ideas of Unit 2 --- and of AP Statistics. Start building them now.
-
-\vspace{6pt}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
-                                    X @{}}
-\textbf{\large!} &
-\textbf{Apparent patterns may be random.}\enspace
-A pattern visible in a small sample might disappear if you collected more data.
-Statistics gives us tools to judge whether a pattern is real. \\[6pt]
-\textbf{\large!} &
-\textbf{Association $\neq$ Causation.}\enspace
-Two variables can move together without one causing the other.
-A third variable --- a \emph{confounding variable} --- may explain both. \\[6pt]
-\textbf{\large!} &
-\textbf{The question determines the method.}\enspace
-Two categorical variables call for a different display than two quantitative variables.
-Choosing the right method starts with identifying the right question. \\[6pt]
-\textbf{\large!} &
-\textbf{Unit 2 builds on Unit 1.}\enspace
-Everything you learned about describing one variable now applies to each variable in a pair.
-The new question is: \emph{do they move together?} \\
-\end{tabularx}
+Before you divide, ask \textbf{``of whom?''} The words after \emph{of those who} name the group,
+and that group's total goes on the bottom. When two groups are different sizes, the bigger count
+can hide the smaller rate --- \textbf{compare percents, not counts}. And a real association in a
+survey still is not proof that one variable \emph{causes} the other.
 \end{remindbox}
 
 \end{document}

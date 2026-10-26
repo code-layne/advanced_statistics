@@ -1,0 +1,17 @@
+# Homework item 1c (Unit 6, Lesson 6.7). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A city health department tests H0: p = 0.10 (10% of adults have high blood pressure)
+  vs Ha: p > 0.10. If the true proportion is 12%, would power be higher or lower than
+  if the true proportion were 20%? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says power is lower when the true proportion is 12% (higher at 20%).
+  - id: reason
+    points: 1
+    full: >-
+      Explains that 0.12 is closer to the null value 0.10 than 0.20 is, so the test is
+      less likely to detect the difference (reject H0).

@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l03-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.3}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} Show all reasoning clearly. When interpreting a CI, include all
@@ -15,32 +18,38 @@ population.
 
 \begin{enumerate}
 
+  \boxguard[15]
   \item \textbf{Sleep and GPA.} A random sample of 50 college students was used to study
         the relationship between average hours of sleep per night ($x$) and GPA ($y$).
         Computer output gives a 95\% confidence interval for the slope: $(0.08,\ 0.44)$.
 
         \begin{enumerate}[label=\alph*.]
 
+          \boxguard[15]
           \item Interpret the confidence interval in context.
 
-                \writelines{3}
+                \gradedhide{\gradedhere{\gradedblank[id=hw1a, type=rubric, points=2, display={We are 95\% confident that the true slope of the population regression line relating GPA to average hours of sleep per night for college students is between 0.08 and 0.44 GPA points per hour of sleep.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
+          \boxguard[15]
           \item Does this CI provide evidence that $\beta \ne 0$? Justify.
 
-                \writelines{2}
+                \gradedhide{\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={Yes. Since 0 is not contained in $(0.08,\ 0.44)$, this provides evidence that $\beta \ne 0$; there is a positive linear relationship between sleep and GPA for college students.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
 
+          \boxguard[15]
           \item A professor claims the true slope is $\beta = 0.5$.
                 Is this claim consistent with the interval? Explain.
 
-                \writelines{2}
+                \gradedhide{\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2, display={No. Since 0.5 is not contained in $(0.08,\ 0.44)$, the professor's claim that $\beta = 0.5$ is not consistent with the data.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
 
+          \boxguard[15]
           \item A colleague claims the true slope is $\beta = 0.2$.
                 Is this claim consistent with the interval? Explain.
 
-                \writelines{2}
+                \gradedhide{\gradedhere{\gradedblank[id=hw1d, type=rubric, points=2, display={Yes. Since 0.2 is contained in $(0.08,\ 0.44)$, the colleague's claim that $\beta = 0.2$ is consistent with the data.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
 
         \end{enumerate}
 
+  \boxguard[15]
   \item \textbf{Temperature and Electricity Use.} A researcher collects data from 15 cities
         on average daily temperature ($^\circ$F, $x$) and monthly electricity usage
         (kWh, $y$). A 90\% CI for the slope is $(12.3,\ 31.8)$.
@@ -50,22 +59,26 @@ population.
 
         \begin{enumerate}[label=\alph*.]
 
+          \boxguard[15]
           \item Interpret the first researcher's CI in context.
 
-                \writelines{3}
+                \gradedhide{\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={We are 90\% confident that the true slope of the population regression line relating monthly electricity usage to average daily temperature for cities is between 12.3 and 31.8 kWh per degree Fahrenheit.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
+          \boxguard[15]
           \item Compare the widths of the two CIs. Which is narrower?
                 Show your calculations.
 
-                \writelines{3}
+                \gradedhide{\writelines{3}\gradedright{\textit{first:}~\gradedblank[id=hw2b1, type=short, points=1, answer=19.5, check=numeric, tolerance=0]{0.9in}{0.2in}\quad\textit{second:}~\gradedblank[id=hw2b2, type=short, points=1, answer=8.6, check=numeric, tolerance=0]{0.9in}{0.2in}}}
 
+          \boxguard[15]
           \item Explain why the second CI is narrower, using the concept of standard error.
 
-                \writelines{3}
+                \gradedhide{\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={The second study used $n = 60$ cities, a larger sample than the first study's $n = 15$ cities. A larger sample size reduces the standard error $SE_b$, which decreases the margin of error $t^* \cdot SE_b$. The result is a narrower confidence interval, all else remaining the same.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
+          \boxguard[15]
           \item Do both CIs provide evidence that $\beta \ne 0$? Explain.
 
-                \writelines{2}
+                \gradedhide{\gradedhere{\gradedblank[id=hw2d, type=rubric, points=2, display={Yes --- both intervals. Since 0 is not contained in either $(12.3,\ 31.8)$ or $(18.1,\ 26.7)$, both CIs provide evidence that $\beta \ne 0$; there is a positive linear relationship between daily temperature and monthly electricity usage.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
 
         \end{enumerate}
 

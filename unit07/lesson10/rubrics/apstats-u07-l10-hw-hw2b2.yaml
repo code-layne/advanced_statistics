@@ -1,0 +1,13 @@
+# Homework item 2b 10% (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw2b2
+points: 1
+task: >-
+  Random samples: 54 of 120 city residents and 35 of 100 suburban residents support
+  expanding public transit. Is the proportion higher among city residents? Verify the
+  10% condition (use numbers).
+criteria:
+  - id: 2b2
+    points: 1
+    full: >-
+      120 is at most 10% of all city residents and 100 is at most 10% of all suburban
+      residents; met.

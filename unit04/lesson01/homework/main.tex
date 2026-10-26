@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u04-l01-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 4, Lesson 4.1}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -20,8 +23,10 @@ whether chance alone is a plausible explanation.
 Her overall win rate on clay is 65\%.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Statistical question: \writeline\writeline
-  \item Could chance alone explain this streak? \writeline\writeline
+  \item Statistical question:\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw1a, type=rubric, points=2, display={Win rate above 65\%, or chance?}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
+  \item Could chance alone explain this streak?\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw1b, type=rubric, points=2, display={Yes: $(0.65)^{10} \approx 0.013$, rare but possible.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -30,11 +35,14 @@ purple flowers and 16 have white flowers. The theoretical ratio predicted by Men
 laws is 3:1 (purple to white).
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item What is the observed ratio? \blank{3cm} \quad
-        What ratio does Mendelian genetics predict? \blank{3cm}
-  \item Statistical question: \writeline\writeline
+  \item What is the observed ratio? \makebox[3cm][r]{\smash{\gradedblank[id=hw2a1, type=short, points=1, answer={34:16 = 2.125:1}, check=text]{1.9cm}{0.15in}}} \quad
+        What ratio does Mendelian genetics predict? \makebox[3cm][r]{\smash{\gradedblank[id=hw2a2, type=short, points=1, answer=3:1, check=text]{1.9cm}{0.15in}}}
+\tcbbreak
+  \item Statistical question:\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={Is the true ratio 3:1?}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
   \item Is the difference between the observed and expected counts large enough to doubt
-        the 3:1 ratio? Explain your reasoning. \writeline\writeline
+        the 3:1 ratio? Explain your reasoning.\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={No: chance explains it.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
@@ -42,16 +50,20 @@ laws is 3:1 (purple to white).
 sunny. The historical probability of a sunny Sunday in that city is 0.45.
 
 \begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Statistical question: \writeline\writeline
+  \item Statistical question:\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw3a, type=rubric, points=2, display={Is $P(\text{sunny Sunday}) > 0.45$, or chance?}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
+\tcbbreak
   \item If Sundays were independent, what is the approximate probability of 6 sunny
-        Sundays in a row? (Hint: multiply the probabilities.) Show your work.
+        Sundays in a row? (Hint: multiply the probabilities.) Show your work.\gradedbelow[r]{0.02in}{\gradedblank[id=hw3b, type=short, points=2, answer=0.0083, check=numeric, tolerance=0.0003]{0.9in}{0.24in}}
         \vspace{20pt}
-  \item Does this make the streak surprising? \writeline
+  \item Does this make the streak surprising?\\
+        \gradedhide{\gradedhere{\gradedblank[id=hw3c, type=rubric, points=2, display={Yes: only about a 0.8\% chance.}]{\linewidth+6pt}{\gradedlinesheight{10}}}\writelines{10}}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{4.} (AP-Style) A coin is flipped 40 times and lands heads 26 times. Which
 of the following best explains why this does NOT necessarily mean the coin is unfair?
+Write the letter of the single best answer in its Letter box.
 
 \begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=4pt]
   \item 26 heads in 40 flips is impossible with a fair coin.
@@ -59,13 +71,14 @@ of the following best explains why this does NOT necessarily mean the coin is un
         fair coin.
   \item The coin must be flipped at least 100 times before conclusions can be drawn.
   \item A heads proportion of 0.65 is within 0.01 of 0.50, so it is close enough.
+        \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw4, type=choice, points=1, answer=B]{0.4in}{0.2in}}\rule[-14pt]{0pt}{32pt}
 \end{enumerate}
 
 \vspace{8pt}
 \textbf{5.} Reflection: Why is it dangerous to assume every pattern in data has a
 non-random cause? Give one real-world example where this mistake could have harmful
 consequences.\\[6pt]
-\writeline\writeline\writeline
+\gradedhide{\gradedhere{\kern2.1in\gradedblank[id=hw5, type=rubric, points=2, display={False causes mislead; e.g.\ a chance disease cluster blamed on a vaccine.}]{\linewidth+6pt-2.1in}{\gradedlinesheight{1}+6pt}}\writelines{10}}
 
 \vspace{8pt}
 \textbf{Extension / Preview:} Find one news headline that describes a ``surprising''

@@ -1,0 +1,21 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  A company recorded the one-way commute time (minutes) of its 40 employees; a
+  histogram with 10-minute intervals has counts 5, 12, 10, 6, 4, 2, 0, 0, 1 for 0-10,
+  10-20, ..., 80-90. Describe the shape of this distribution and identify any unusual
+  features, in context.
+criteria:
+  - id: shape
+    points: 2
+    full: >-
+      E: Describes the shape as skewed right (most of the 40 employees commute under 30
+      minutes, with a tail of longer commutes) AND identifies the unusual feature: one
+      employee at 80-90 minutes, an apparent outlier separated by a gap (60-80 empty); in
+      context.
+    partial: >-
+      P (1 of 2): Gives the correct shape but misses the outlier/gap, OR identifies the
+      outlier but misstates the shape, OR is correct but not in context.

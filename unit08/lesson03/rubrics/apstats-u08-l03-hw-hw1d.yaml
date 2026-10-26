@@ -1,0 +1,20 @@
+# Homework item 1d (Unit 8, Lesson 8.3). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  Chi-square GOF test of a 9:3:3:1 Mendelian ratio for 160 offspring gives a p-value
+  of about 0.81. State a complete conclusion at alpha = 0.05.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares the p-value to alpha (0.81 > 0.05) and fails to reject H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes in context: there is NOT convincing evidence that the phenotype
+      distribution differs from the 9:3:3:1 ratio (does not claim the ratio is proved or
+      accepted).
+examples:
+  - response: "p > 0.05 so we accept H0; the offspring follow the 9:3:3:1 ratio."
+    scores: {decision: 0, context: 0}

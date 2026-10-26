@@ -1,0 +1,27 @@
+# Homework item 2 (Unit 7, Lesson 7.2). Relative to the lesson directory.
+id: hw2a
+points: 4
+task: >-
+  A random sample of 40 vehicles of a new model gives x-bar = 31.7 mpg, s = 4.2 mpg.
+  Construct a 99% confidence interval for the true mean fuel efficiency, verifying
+  conditions and interpreting in context (four-step procedure).
+criteria:
+  - id: parameter
+    points: 1
+    full: >-
+      Defines mu = true mean fuel efficiency (mpg) of all vehicles of this model.
+  - id: conditions
+    points: 1
+    full: >-
+      Checks Random (random sample), 10% (40 is at most 10% of all vehicles), and Large
+      Sample (n = 40 >= 30).
+  - id: calculate
+    points: 1
+    full: >-
+      Uses a one-sample t interval with df = 39, t* about 2.708, SE = 4.2/sqrt(40) about
+      0.664: 31.7 +/- 1.80, about (29.9, 33.5) mpg.
+  - id: conclude
+    points: 1
+    full: >-
+      We are 99% confident the interval captures the true mean fuel efficiency of all
+      vehicles of this model.

@@ -1,0 +1,12 @@
+# Homework item 2c, Large Counts (Unit 8, Lesson 8.2). Relative to the lesson directory.
+id: hw2c2
+points: 1
+task: >-
+  Check the Large Counts condition for a chi-square GOF test with n = 200 and four
+  modes claimed at 25% each.
+criteria:
+  - id: large
+    points: 1
+    full: >-
+      Says all expected counts are 200(0.25) = 50, which is at least 5, so Large Counts is
+      met (uses expected, not observed, counts).

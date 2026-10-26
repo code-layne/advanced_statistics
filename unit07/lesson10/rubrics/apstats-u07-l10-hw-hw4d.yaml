@@ -1,0 +1,17 @@
+# Homework item 4d (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw4d
+points: 2
+task: >-
+  10 randomly selected sprinters, 40-m times before and after training: differences
+  (before - after) d-bar = 0.31 s, s_d = 0.18 s, roughly symmetric, no outliers. Did
+  times improve? t about 5.45, df = 9, p about 0.0002. Conclude at alpha = 0.05.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.0002) to alpha = 0.05 and rejects H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is convincing evidence that the true mean sprint time decreased
+      (improved) after the training program.

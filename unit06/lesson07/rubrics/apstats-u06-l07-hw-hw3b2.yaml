@@ -1,0 +1,11 @@
+# Homework item 3b explanation (Unit 6, Lesson 6.7). Relative to the lesson directory.
+id: hw3b2
+points: 1
+task: >-
+  "A Type II error can only occur if H0 is rejected." Write T or F and explain.
+criteria:
+  - id: explain
+    points: 1
+    full: >-
+      Explains that a Type II error happens only when we FAIL to reject H0 (while Ha is
+      true); rejecting H0 can only lead to a Type I error.

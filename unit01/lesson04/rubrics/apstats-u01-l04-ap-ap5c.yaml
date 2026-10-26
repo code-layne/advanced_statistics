@@ -1,0 +1,21 @@
+# AP Practice item 5, part (c) (Unit 1, Lesson 1.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5c
+points: 2
+task: >-
+  A company recorded the one-way commute time (minutes) of its 40 employees; a
+  histogram with 10-minute intervals has counts 5, 12, 10, 6, 4, 2, 0, 0, 1 for 0-10,
+  10-20, ..., 80-90. A manager writes: "The average commute here is about 25 minutes,
+  so our employees are fine." Explain what that single number leaves out, and state
+  what these data can and cannot tell you about employees at other companies.
+criteria:
+  - id: leaves_out
+    points: 2
+    full: >-
+      E: Says the single number leaves out the shape, spread, and unusual values (commutes
+      run from under 10 to over 80 minutes; one employee travels more than 80 minutes) AND
+      states the data describe only these 40 employees and tell nothing about workers at
+      other companies.
+    partial: >-
+      P (1 of 2): Gives only one of the two parts correctly.

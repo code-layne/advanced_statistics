@@ -1,0 +1,21 @@
+# AP Practice item 5, part (b) (Unit 1, Lesson 1.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5b
+points: 2
+task: >-
+  Fifteen homes' average daily water use (gallons): 110 120 130 140 150 160 180 200
+  220 240 270 310 350 400 620; mean 240, SD 136.6, Q1 140, median 200, Q3 310. Report
+  one measure of center and one measure of variability for these 15 homes. Justify the
+  choice of pair using the shape of the distribution.
+criteria:
+  - id: pair
+    points: 2
+    full: >-
+      E: Reports the median (200 gallons per day) and the IQR (170 gallons per day) AND
+      justifies with shape: the distribution is skewed right with a high outlier (620)
+      that pulls the mean and inflates the SD, while the median and IQR are resistant.
+    partial: >-
+      P (1 of 2): Reports median and IQR without a shape-based justification (or with
+      values wrong), OR gives a correct shape-based resistance argument but reports a
+      mismatched pair.

@@ -1,0 +1,18 @@
+# Homework item 2d (Unit 7, Lesson 7.5). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  A professor tests whether her campus's mean placement score differs from 500: random
+  sample of 45 students, x-bar = 485, s = 60. t about -1.68, df = 44, two-sided p
+  about 0.100. State the conclusion (alpha = 0.05).
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.100) to alpha = 0.05 and fails to reject H0 (does not 'accept'
+      H0).
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is not convincing evidence that the true mean placement score at
+      this campus differs from 500.

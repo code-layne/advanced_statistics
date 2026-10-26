@@ -1,0 +1,18 @@
+# Homework item 1c (Unit 7, Lesson 7.7). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A 95% CI for mu_northern - mu_southern (mean emergency response time, minutes) is
+  (-2.37, 0.37). What does it mean that this is a 95% confidence interval? Describe in
+  terms of repeated sampling.
+criteria:
+  - id: repeated
+    points: 1
+    full: >-
+      Refers to repeated random samples (of the same sizes) and intervals built the same
+      way.
+  - id: capture
+    points: 1
+    full: >-
+      About 95% of those intervals would capture the true difference mu_northern -
+      mu_southern.

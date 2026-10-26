@@ -1,191 +1,173 @@
-%! AP Statistics — Unit 2, Lesson 2.1 — Student Guided Notes
-\documentclass[10pt]{article}
+%! Two Categorical Variables — Unit 2, Lesson 2.1 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, then ONE two-column guidednotes table. Each row is one idea — a label on the left; on the
+% right a terse definition the student completes, then a grid of short numbered problems with
+% reserved answer space. Problems are numbered 1..N through the whole component (14 here).
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (problems 1, 4, 7).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (11–14), is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last minutes of the period.
+% COMPACT BUDGET (2026-09-29): 2 pages at 12pt, blank = key.
+% THE TRAP is problem 6 (a conditional whose "of those who…" group is the COLUMN, not the row).
+% THE CRUX is problem 8 (48 vs 20 raw counts from groups of 160 and 40 — compare percents).
+%
+% INSTRUCTION DATA (200 students, phone kept in the bedroom overnight × sleep on school nights):
+%                 8+ hours   Under 8   Total
+%   Phone in room     48        112      160     -> 30% get 8+
+%   No phone          20         20       40     -> 50% get 8+
+%   Total             68        132      200
+% GUIDED PRACTICE DATA (200 drivers, age group × texted while driving in the past month):
+%                 Texted   Did not   Total
+%   16–24            20        30       50     -> 40%
+%   25 and older     36       114      150     -> 24%
+%   Total            56       144      200
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} here becomes a short \ans{} there, every
+% \termblank becomes a \termans, and every \pcell{n}{...}{H}{} gets its answer in the fourth
+% argument. Nothing else differs between the two files.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: long ideas are split at a seam with a bare `\\` and continued with `& ...`.
+% NO SKETCH QUESTIONS: the segmented bar graph is pre-drawn in TikZ and read.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.1}{Guided Notes}
-\namedateperiod
+\pageheader{Unit 2, Lesson 2.1}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-% ── OBJECTIVE ────────────────────────────────────────────────────────────────
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
-
-\vspace{0.1in}
-
-% ── VOCABULARY ───────────────────────────────────────────────────────────────
+% ── VOCABULARY (I do — students fill each term AS IT IS NAMED, never in advance) ──
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Two-variable data}
-\termblanklong{Association}
-\termblanklong{Apparent association}
-\termblanklong{Causation}
-\termblanklong{Confounding variable}
-\termblanklong{Explanatory variable}
-\termblanklong{Response variable}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Two-way table}
+\par
+\termblank{Conditional relative frequency}
+\par
+\termblank{Association}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-% ── HOOK ─────────────────────────────────────────────────────────────────────
-\begin{hookbox}
-\small\textbf{Headlines:}
-\begin{itemize}[leftmargin=1.3em, itemsep=2pt]
-  \item \textit{``Students who eat breakfast score higher on tests.''}
-  \item \textit{``Shoe size and reading ability are strongly associated in children.''}
-\end{itemize}
-
-\vspace{6pt}
-\textbf{Discussion --- write your thoughts:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item Could the breakfast--grades relationship be real? Could it be random? What would make you sure?\\
-        \writeline\\[1pt]\writeline
-
-  \item Shoe size and reading ability are correlated in children. But shoe size does not teach children to read.
-        What might actually explain this relationship?\\
-        \writeline\\[1pt]\writeline
-\end{enumerate}
-\end{hookbox}
-
-\vspace{0.1in}
-
-% ── FROM ONE VARIABLE TO TWO ──────────────────────────────────────────────────
-\begin{notesbox}{From One-Variable to Two-Variable Questions}
 \small
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\columncolor{sky}\bfseries\color{navy}}p{0.36\linewidth}
-                                    X @{}}
-\textbf{Unit 1 question (one variable)} & \textbf{Unit 2 question (two variables)} \\
-\hline
-What is the typical GPA of students at our school?
-  & Is there a relationship between sleep and GPA? \\
-How many hours of sleep do students get?
-  & Do students who play sports sleep more or less than those who don't? \\
-\end{tabularx}
+\begin{guidednotes}
+% ── ROW 1: two-way tables, joint and marginal ────────────────────────────────
+\mainidea[Reading a]{Two-way table} &
+\begin{minipage}[c]{0.40\linewidth}\raggedright
+200 students: does your phone stay in your bedroom overnight? Do you sleep 8+ hours on a
+school night?
+\end{minipage}\hfill
+\begin{minipage}[c]{0.58\linewidth}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{} l | c c | c @{}}
+ & \textbf{8+ hrs} & \textbf{Under 8} & \textbf{Total} \\ \hline
+\textbf{Phone in room} & 48 & 112 & 160 \\
+\textbf{No phone} & 20 & 20 & 40 \\ \hline
+\textbf{Total} & 68 & 132 & 200 \\
+\end{tabular}
+\end{minipage}
 
-\vspace{8pt}
-\textbf{The shift:} Unit 2 asks whether two variables \blank{3cm} --- whether knowing
-one variable tells us something about the \blank{3cm}.
-\end{notesbox}
+\vspace{4pt}
+A \textbf{two-way table} summarizes two \blank{2.3cm} variables on the same individuals. A
+\textbf{joint} relative frequency is one cell $\div$ the \blank{1.9cm} total. A
+\textbf{marginal} relative frequency is a row or column total $\div$ the \blank{1.9cm} total.
+\notesprompt{Answer as a proportion of all 200 students.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Phone in room \emph{and} 8+ hours}{0.9cm}{} &
+\pcell{2}{Students who sleep 8+ hours}{0.9cm}{} &
+\pcell{3}{``0.80 keep a phone in the room'' --- joint or marginal?}{0.9cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: conditional relative frequency — pick the denominator ─────────────
+\mainidea[Of those who\ldots]{Conditional} &
+A \textbf{conditional} relative frequency looks inside \blank{1.1cm} row or column only: divide by
+that group's \blank{1.3cm}. In ``of those who \ldots'', the words after \emph{of} name the
+\blank{2.2cm}.
+\notesprompt{Find each conditional relative frequency. Show the fraction.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{4}{Of phone-in-room students: proportion with 8+ hours?}{1.0cm}{} &
+\pcell{5}{Of no-phone students: proportion with 8+ hours?}{1.0cm}{} &
+\pcell{6}{Of 8+ hour sleepers: proportion with a phone in the room?}{1.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: association from a segmented bar graph — THE CRUX ─────────────────
+\mainidea[Comparing groups:]{Association} &
+\begin{minipage}[c]{0.40\linewidth}
+\centering
+\begin{tikzpicture}[x=1cm, y=0.03cm]
+  \foreach \y in {0,50,100} {
+    \draw (-0.08,\y) -- (0.08,\y) node[left, font=\tiny, xshift=-2pt] {\y\%};}
+  \fill[navy]    (0.3,0)  rectangle (1.3,30);
+  \fill[goldacc] (0.3,30) rectangle (1.3,100);
+  \fill[navy]    (1.8,0)  rectangle (2.8,50);
+  \fill[goldacc] (1.8,50) rectangle (2.8,100);
+  \draw (0.3,0) rectangle (1.3,100);
+  \draw (1.8,0) rectangle (2.8,100);
+  \node[white, font=\scriptsize\bfseries] at (0.8,15) {30\%};
+  \node[font=\scriptsize\bfseries] at (0.8,65) {70\%};
+  \node[white, font=\scriptsize\bfseries] at (2.3,25) {50\%};
+  \node[font=\scriptsize\bfseries] at (2.3,75) {50\%};
+  \draw[thick] (0,0) -- (0,104);
+  \draw[thick] (0,0) -- (3.0,0);
+  \node[below, font=\tiny, align=center] at (0.8,-2) {Phone in\\room (160)};
+  \node[below, font=\tiny, align=center] at (2.3,-2) {No phone\\(40)};
+  \fill[navy] (0.3,112) rectangle (0.5,120); \node[right, font=\tiny] at (0.5,116) {8+ hours};
+  \fill[goldacc] (1.8,112) rectangle (2.0,120); \node[right, font=\tiny] at (2.0,116) {Under 8};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.57\linewidth}\raggedright
+A \textbf{segmented bar graph} draws each group's conditional distribution as one bar that
+totals \blank{1.3cm}. (A \textbf{mosaic plot} also makes each bar's width show the group's
+\blank{1.1cm}.)\par\vspace{3pt}
+Two variables are \textbf{associated} when the conditional distributions \blank{1.6cm} from
+group to group. Groups of different sizes: compare \blank{1.7cm}, not counts.
+\end{minipage}
+\\
+& \notesprompt{Use the graph and the table above.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{What percent of phone-in-room students sleep under 8 hours?}{0.9cm}{} &
+\pcell{8}{A student says: ``48 phone-in-room students sleep 8+ hours, but only 20 no-phone
+students do --- phones go with \emph{more} sleep.'' What is wrong?}{1.6cm}{} \\ \hline
+\pcell{9}{Are phone location and sleep associated? Justify with percents.}{1.6cm}{} &
+\pcell{10}{Does this survey show that a phone in the room \emph{causes} less sleep? Why?}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: GUIDED PRACTICE — we do, together, a fresh context ─────────────
+\mainidea[Guided practice]{Texting drivers} &
+\begin{minipage}[c]{0.40\linewidth}\raggedright
+A county survey asked 200 drivers their age and whether they had texted while driving in the
+past month.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.58\linewidth}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{} l | c c | c @{}}
+ & \textbf{Texted} & \textbf{Did not} & \textbf{Total} \\ \hline
+\textbf{Age 16--24} & 20 & 30 & 50 \\
+\textbf{Age 25+} & 36 & 114 & 150 \\ \hline
+\textbf{Total} & 56 & 144 & 200 \\
+\end{tabular}
+\end{minipage}
+\notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{What proportion of all 200 drivers texted? Joint or marginal?}{1.2cm}{} &
+\pcell{12}{Find the proportion who texted in each age group.}{1.2cm}{} \\ \hline
+\pcell{13}{A headline reads: ``Older drivers text more --- 36 admitted it, versus 20 young
+drivers.'' Respond.}{1.7cm}{} &
+\pcell{14}{Are age and texting associated in this survey? Answer in context.}{1.7cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-% ── APPARENT VS. REAL ASSOCIATION ────────────────────────────────────────────
-\begin{notesbox}{Apparent Associations May Be Random (VAR-1.D.1)}
-\small
-\begin{multicols}{2}
-
-\textbf{Key idea:}\\
-A pattern visible in a \blank{2cm} may disappear when
-we collect \blank{2cm} data.
-An apparent association is \textbf{not} guaranteed to
-be a real relationship in the \blank{2cm}.
-
-\vspace{6pt}
-\textbf{Example:} Suppose in a class of 10 students,
-the 3 who drink coffee all have higher GPAs.
-Does that prove coffee helps GPA?\\[4pt]
-\writeline\\[1pt]\writeline
-
-\columnbreak
-
-\textbf{What makes an association ``real'' vs.\ ``random''?}
-\begin{itemize}[itemsep=3pt]
-  \item Larger \blank{2.5cm} $\to$ less likely to be random
-  \item Stronger \blank{2.5cm} $\to$ less likely to be random
-  \item Consistent across \blank{2cm} groups $\to$ more credible
-\end{itemize}
-
-\vspace{6pt}
-\textbf{Bottom line:} Statistics gives us tools to decide.
-We'll build those tools in Units 5--9.
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── ASSOCIATION vs. CAUSATION ─────────────────────────────────────────────────
-\begin{notesbox}{Association vs.\ Causation}
-\small
-\begin{multicols}{2}
-
-\textbf{Three explanations for an observed association:}
-\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
-  \item $X$ \blank{2.5cm} $Y$
-  \item $Y$ \blank{2.5cm} $X$
-  \item A third variable \blank{2cm} both $X$ and $Y$
-        (this is called a \blank{3cm} variable)
-\end{enumerate}
-
-\columnbreak
-
-\textbf{Classic example --- fire trucks:}\\
-\textit{Cities that send more fire trucks to a fire have
-more property damage.}\\[6pt]
-Does this mean fire trucks \emph{cause} damage?\\
-\writeline\\[1pt]\writeline\\[1pt]
-What is the confounding variable?\\
-\writeline
-
-\end{multicols}
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── GUIDED PRACTICE ──────────────────────────────────────────────────────────
-\begin{practicebox}
-\small\textbf{Research Question Analysis}
-
-\vspace{5pt}
-\textit{Question: ``Do students who spend more time on social media report lower
-levels of life satisfaction?''}
-
-\vspace{6pt}
-\begin{tabularx}{\linewidth}{@{} l X @{}}
-\textbf{Two variables:}           & \blank{9cm} \\[6pt]
-\textbf{Types (cat/quant):}       & \blank{9cm} \\[6pt]
-\textbf{Could the pattern be random?} & \blank{9cm} \\[6pt]
-\textbf{One confounding variable:} & \blank{9cm} \\[6pt]
-\textbf{Proves causation?}         & \blank{9cm} \\[6pt]
-\end{tabularx}
-\end{practicebox}
-
-\vspace{0.1in}
-
-% ── UNIT 2 ROAD MAP ──────────────────────────────────────────────────────────
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-
-\textbf{Where we go from here:}
-\begin{itemize}[itemsep=3pt]
-  \item Both categorical $\to$ \textbf{Lessons 2.2--2.3} (two-way tables, bar charts)
-  \item Both quantitative $\to$ \textbf{Lessons 2.4--2.9} (scatterplots, regression)
-  \item \textit{Establishing causation} $\to$ \textbf{Unit 3} (experimental design)
-\end{itemize}
-
-\columnbreak
-
-\textbf{Big Idea --- write it in your own words:}\\
-\textit{Why can't we always trust an apparent association?}\\[2pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\end{multicols}
-\end{spiralbox}
-
-\vspace{0.1in}
-
-% ── EXTRA NOTES ──────────────────────────────────────────────────────────────
-\begin{notesbox}{Additional Notes}
-\vspace{0pt}
-\writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline
-\end{notesbox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

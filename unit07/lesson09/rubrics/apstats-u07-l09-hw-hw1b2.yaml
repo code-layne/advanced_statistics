@@ -1,0 +1,13 @@
+# Homework item 1b conditions (Unit 7, Lesson 7.9). Relative to the lesson directory.
+id: hw1b2
+points: 1
+task: >-
+  Random samples of 35 residential students (mean 18.4 h, s = 5.2) and 30 commuters
+  (mean 15.9 h, s = 6.1); does the residential mean exceed the commuter mean? State
+  briefly that the conditions are met.
+criteria:
+  - id: 1b2
+    points: 1
+    full: >-
+      Notes random samples and that both n are at least 30 (35 and 30) so the CLT applies
+      (or that both dotplots are roughly symmetric with no outliers).

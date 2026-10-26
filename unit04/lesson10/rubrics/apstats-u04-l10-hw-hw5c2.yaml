@@ -1,0 +1,15 @@
+# Homework item 5c interpretation (Unit 4, Lesson 4.10). Relative to the lesson directory.
+id: hw5c2
+points: 2
+task: >-
+  X ~ B(8, 0.15) = number of sales in 8 houses; P(X = 0) is about 0.2725. Interpret in
+  context.
+criteria:
+  - id: value
+    points: 1
+    full: >-
+      Says there is about a 27.3% probability (or 27% of 8-house visits in the long run).
+  - id: context
+    points: 1
+    full: >-
+      Says the salesperson makes no sales at all in the 8 houses.

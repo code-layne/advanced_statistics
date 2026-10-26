@@ -1,0 +1,15 @@
+# Homework item 2d (Unit 4, Lesson 4.7). Relative to the lesson directory.
+id: hw2d
+points: 2
+task: >-
+  Y = number of broken eggs in a randomly selected carton of 12. Interpret P(Y = 0) =
+  0.68 in context.
+criteria:
+  - id: value
+    points: 1
+    full: >-
+      Says there is a 68% probability (or 68% of cartons in the long run).
+  - id: context
+    points: 1
+    full: >-
+      Refers to a randomly selected carton (of 12 eggs) having no (zero) broken eggs.

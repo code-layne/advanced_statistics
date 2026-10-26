@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l05-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Homework --- Answer Key}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 \textbf{Directions:} For each problem, carry out a significance test for slope as directed.
@@ -14,6 +17,7 @@ Show all work clearly.
 
 \begin{enumerate}
 
+  \boxguard[15]
   \item \textbf{Age and Running Speed.} A sports scientist studies the relationship between
         age (years, $x$) and maximum running speed (mph, $y$) in adult recreational runners
         (random sample, $n = 28$).
@@ -29,36 +33,41 @@ Show all work clearly.
         \end{center}
 
         \begin{enumerate}[label=\alph*.]
+          \boxguard[15]
           \item State H$_0$ and H$_a$ in terms of $\beta$. Define $\beta$ in context.
 
                 \ans{Let $\beta =$ the true slope of the population regression line relating
                 maximum running speed to age for adult recreational runners.\\[3pt]
-                H$_0$: $\beta = 0$ \quad H$_a$: $\beta \ne 0$}
+                H$_0$: $\beta = 0$ \quad H$_a$: $\beta \ne 0$}\gradedkeyline{\gradedblank[id=hw1a, type=rubric, points=3, display={$\beta$ = true slope of the population regression line of max running speed on age (adult recreational runners). $H_0$: $\beta = 0$, $H_a$: $\beta \ne 0$.}]{\linewidth+6pt}{\gradedlinesheight{3}}}
 
+          \boxguard[15]
           \item Identify the test statistic from the output and verify it by calculation.
                 Assume LINER conditions are met.
 
-                $t = \dfrac{b}{SE_b} = \dfrac{{\color{keyred}\mathbf{-0.12}}}{{\color{keyred}\mathbf{0.037}}} = \ans{-3.24}$
+                $t = \dfrac{b}{SE_b} = \dfrac{{\color{keyred}\mathbf{-0.12}}}{{\color{keyred}\mathbf{0.037}}} = $ \ans{$-3.24$}
 
                 \vspace{0.05in}
-                $df = n - 2 = \ans{26}$
+                $df = n - 2 = $ \ans{26}
 
-                \ans{The calculated value $t = -3.24$ matches the value in the output table.}
+                \ans{The calculated value $t = -3.24$ matches the value in the output table.}\gradedkey{$t = $~\gradedblank[id=hw1b1, type=short, points=1, answer=-3.24, check=numeric, tolerance=0.02]{0.9in}{0.2in}\quad $df = $~\gradedblank[id=hw1b2, type=short, points=1, answer=26, check=numeric, tolerance=0]{0.9in}{0.2in}}
 
+          \boxguard[15]
           \item Interpret the $p$-value in context.
 
                 \ans{Assuming the true slope is 0 (no linear relationship between age and
                 maximum running speed), there is a 0.003 probability of obtaining a sample
-                slope as extreme as $b = -0.12$ mph per year just by chance.}
+                slope as extreme as $b = -0.12$ mph per year just by chance.}\gradedkeyline{\gradedblank[id=hw1c, type=rubric, points=2, display={If $\beta = 0$ (no linear relationship between age and max speed), the probability of a sample slope as extreme as $b = -0.12$ mph per year is 0.003.}]{\linewidth+6pt}{\gradedlinesheight{2}}}
 
+          \boxguard[15]
           \item State a conclusion at $\alpha = 0.05$.
 
                 \ans{Since $p = 0.003 < 0.05 = \alpha$, we reject H$_0$. There is convincing
                 evidence that the true slope of the population regression line relating maximum
                 running speed to age for adult recreational runners is not zero. The data support
-                the claim that age is linearly related to maximum running speed.}
+                the claim that age is linearly related to maximum running speed.}\gradedkeyline{\gradedblank[id=hw1d, type=rubric, points=2, display={$p = 0.003 < 0.05$: reject $H_0$. Convincing evidence that age is linearly related to maximum running speed ($\beta \ne 0$).}]{\linewidth+6pt}{\gradedlinesheight{2}}}
         \end{enumerate}
 
+  \boxguard[15]
   \item \textbf{Absences and Course Grade.} A researcher examines how the number of absences
         ($x$) relates to final course grade ($\%$, $y$) in an introductory statistics course
         (random sample, $n = 35$). Assume LINER conditions are met.
@@ -74,6 +83,7 @@ Show all work clearly.
         \end{center}
 
         \begin{enumerate}[label=\alph*.]
+          \boxguard[15]
           \item Carry out a complete 4-step significance test at $\alpha = 0.05$.
 
                 \ans{\textbf{Step 1 --- Hypotheses.} Let $\beta =$ the true slope of the
@@ -86,14 +96,18 @@ Show all work clearly.
                 \textbf{Step 4 --- Conclusion.} Since $p \approx 0 < 0.05 = \alpha$, we
                 reject H$_0$. There is convincing evidence that the true slope of the
                 population regression line relating final course grade to number of absences
-                for intro statistics students is not zero.}
+                for intro statistics students is not zero.}\gradedkeyline{\gradedblank[id=hw2a, type=rubric, points=4, display={$\beta$ = true slope, course grade on absences (intro stats students); $H_0$: $\beta = 0$, $H_a$: $\beta \ne 0$. Conditions: LINER given; random sample. $t = -4.26$, $df = 33$, $p \approx 0.000$. $p < 0.05$: reject $H_0$; convincing evidence the true slope is not 0 --- absences are linearly related to course grade.}]{\linewidth+6pt}{\gradedlinesheight{9}}}
 
+          \newpage
+
+          \boxguard[15]
           \item Construct a 95\% confidence interval for $\beta$ using $t^* = 2.035$
                 ($df = 33$). Show your work.
 
                 \ans{$b \pm t^* \cdot SE_b = -2.3 \pm 2.035(0.54) = -2.3 \pm 1.099
-                = (-3.40,\ -1.20)$}
+                = (-3.40,\ -1.20)$}\gradedkey{(~\gradedblank[id=hw2b1, type=short, points=1, answer=-3.40, check=numeric, tolerance=0.02]{0.8in}{0.2in},~\gradedblank[id=hw2b2, type=short, points=1, answer=-1.20, check=numeric, tolerance=0.02]{0.8in}{0.2in}~)}
 
+          \boxguard[15]
           \item Explain why the confidence interval and the hypothesis test give
                 consistent conclusions.
 
@@ -101,7 +115,7 @@ Show all work clearly.
                 consistent with rejecting H$_0$: $\beta = 0$ at $\alpha = 0.05$. Both
                 procedures agree that $\beta \ne 0$; the interval further indicates that
                 the true slope is negative (each additional absence is associated with a
-                decrease in course grade).}
+                decrease in course grade).}\gradedkeyline{\gradedblank[id=hw2c, type=rubric, points=2, display={0 is not in $(-3.40, -1.20)$, matching the rejection of $H_0$: $\beta = 0$ at $\alpha = 0.05$; both say $\beta \ne 0$ (and the CI shows it is negative).}]{\linewidth+6pt}{\gradedlinesheight{2}}}
         \end{enumerate}
 
 \end{enumerate}

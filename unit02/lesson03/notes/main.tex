@@ -1,195 +1,181 @@
-%! AP Statistics — Unit 2, Lesson 2.3 — Student Guided Notes
-\documentclass[10pt]{article}
+%! Regression Lines and Residuals — Unit 2, Lesson 2.3 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1), at the COMPACT
+% budget: the vocabulary box, then ONE two-column guidednotes table of four rows, 14 problems,
+% two pages. Problems are numbered 1..N through the whole component.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice, is worked entirely together in a fresh context.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 3 (which number is y and which is y-hat). THE CRUX is problem 9, in the
+% last instruction row: a residual computed as y-hat minus y, and a positive residual read as
+% "the line was too high" (EK DAT-1.E.1).
+%
+% THE DATA (instruction rows): 17 pizza deliveries, 1 to 9 miles; line time-hat = 8 + 3(distance).
+%   (x, residual): (1,1) (1.5,-2) (2,2) (2.5,-1) (3,0) (3.5,2) (4,-3) (4.5,1) (5,3) (5.5,-2)
+%                  (6,-2) (6.5,1) (7,-1) (7.5,2) (8,0) (8.5,-2) (9,1)   — sum 0, no pattern.
+% GUIDED PRACTICE: 20 adults, 4 to 9 hours of sleep; RT-hat = 430 - 25(sleep); the 7-hour
+%   adult at 270 ms has residual +15.
+%
+% PAGE LOCKSTEP with notes_key/: every \blank{} becomes an \ans{}, every \termblank a \termans,
+% and every \pcell gets its answer in the fourth argument. Nothing else differs.
+% Slope/intercept INTERPRETATION and r^2 are Lesson 2.4 — the equation is only USED here.
+% NO SKETCH QUESTIONS: the scatterplot and both residual plots are pre-drawn in TikZ.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
-%=============================================================================
 \begin{document}
 
-\pageheader{Unit 2, Lesson 2.3}{Guided Notes}
-\namedateperiod
+\pageheader{Unit 2, Lesson 2.3}{Guided Notes \& Practice}
+% NAMESTRIP: no name row here — it lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-% ── OBJECTIVE ────────────────────────────────────────────────────────────────
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
-
-\vspace{0.1in}
-
-% ── VOCABULARY ───────────────────────────────────────────────────────────────
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Conditional proportion ($\hat{p}$)}
-\termblanklong{Difference in proportions}
-\termblanklong{Relative risk (risk ratio)}
-\termblanklong{Baseline group}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Regression line}
+\par
+\termblank{Predicted value ($\hat{y}$)}
+\par
+\termblank{Extrapolation}
+\par
+\termblank{Residual}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-% ── HOOK ─────────────────────────────────────────────────────────────────────
-\begin{hookbox}
-\small\textbf{Scenario:} A clinical trial tested a new vaccine. Of 400 vaccinated participants,
-32 contracted the flu. Of 400 unvaccinated participants, 80 contracted the flu.
-
-\vspace{6pt}
-\textbf{Statistical question:} \textit{How much does vaccination reduce the likelihood of getting the flu?}
-
-\vspace{6pt}
-\textbf{Discussion:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item We already know the conditional proportions from Lesson 2.2. What are they here?\\
-        Vaccinated: $\hat{p}_V = \blank{2cm}$ \quad Unvaccinated: $\hat{p}_U = \blank{2cm}$
-  \item The proportions differ --- but \emph{how} do we describe that difference with a single number?\\
-        \writeline
-\end{enumerate}
-\end{hookbox}
-
-\vspace{0.1in}
-
-% ── DIFFERENCE IN PROPORTIONS ────────────────────────────────────────────────
-\begin{notesbox}{Step 1 --- Difference in Proportions (UNC-1.Q, UNC-1.R)}
 \small
+\begin{guidednotes}
+% ── ROW 1: the equation and prediction ───────────────────────────────────────
+\mainidea[The equation \&]{Prediction} &
+A \textbf{regression line} $\hat{y}=a+bx$ models how the \blank{1.7cm} variable $y$ changes
+as the \blank{2.1cm} variable $x$ changes. $\hat{y}$ (``$y$-hat'') is the \blank{1.8cm}
+value; $y$ is the \blank{1.3cm} value. To predict, \blank{1.9cm} $x$ into the equation.
 
-\noindent\textbf{Formula:}
-\[
-  \hat{p}_1 - \hat{p}_2 = \frac{\text{successes in Group 1}}{\text{Group 1 total}} -
-                           \frac{\text{successes in Group 2}}{\text{Group 2 total}}
-\]
+\begin{minipage}[c]{0.60\linewidth}\raggedright
+A pizza shop timed 17 deliveries, 1 to 9 miles out (time in minutes, distance in miles):\par
+\vspace{3pt}
+\centering $\widehat{\text{time}} = 8 + 3(\text{distance})$\par
+\end{minipage}\hfill
+\begin{minipage}[c]{0.38\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.34, yscale=0.048]
+  \foreach \y in {10,20,30,40} {\draw[linegray, very thin] (0,\y) -- (10,\y);
+    \node[left, font=\tiny] at (0,\y) {\y};}
+  \draw[->, thick] (0,0) -- (10.4,0);
+  \draw[->, thick] (0,0) -- (0,43);
+  \foreach \x in {0,2,4,6,8,10} {\draw (\x,-0.8) -- (\x,0.8);
+    \node[below, font=\tiny] at (\x,-0.5) {\x};}
+  \draw[goldacc, very thick] (1,11) -- (9,35);
+  \foreach \x/\y in {1/12, 1.5/11.5, 2/16, 2.5/14.5, 3/17, 3.5/20.5, 4/17, 4.5/22.5, 5/26,
+                     5.5/22.5, 6/24, 6.5/28.5, 7/28, 7.5/32.5, 8/32, 8.5/31.5, 9/36}
+    {\fill[navy] (\x,\y) circle[x radius=0.15, y radius=1.06];}
+  \node[font=\tiny] at (5,-11.5) {Distance (miles)};
+  \node[rotate=90, font=\tiny] at (-2.3,21) {Time (min)};
+\end{tikzpicture}
+\end{minipage}
+\notesprompt{Use the line.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Predict the time for a 5-mile delivery.}{1.0cm}{} &
+\pcell{2}{Predict the time for a 2.5-mile delivery.}{1.0cm}{} &
+\pcell{3}{A 6-mile delivery took 24 minutes. Give $y$ and $\hat{y}$.}{1.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: extrapolation ─────────────────────────────────────────────────────
+\mainidea[Predicting beyond]{The data} &
+\textbf{Extrapolation} is predicting for an $x$-value \blank{1.5cm} the interval of $x$-values
+used to build the line --- the farther out, the \blank{1.1cm} reliable. Say so every time.
+\notesprompt{The shop's line was built from deliveries of 1 to 9 miles.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{4}{Predict the time for a 30-mile delivery. Trust it?}{1.2cm}{} &
+\pcell{5}{Which are extrapolation: 3 miles, 8.5 miles, 12 miles?}{1.2cm}{} &
+\pcell{6}{Could the line be wrong for 15 miles? Why can't we check?}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: residuals — THE CRUX ──────────────────────────────────────────────
+\mainidea[Actual minus]{Predicted} &
+A \textbf{residual} is actual minus predicted: \quad
+residual $=$ \blank{0.9cm} $-$ \blank{0.9cm}
 
-\vspace{4pt}
-\textbf{Vaccine example} (Group 1 = Vaccinated, Group 2 = Unvaccinated):
-\[
-  \hat{p}_V - \hat{p}_U = \frac{\blank{1cm}}{\blank{1cm}} - \frac{\blank{1cm}}{\blank{1cm}}
-  = \blank{2cm} - \blank{2cm} = \blank{2.4cm}
-\]
+\vspace{2pt}
+\begin{minipage}[c]{0.60\linewidth}\raggedright
+\textbf{Positive:} the actual value is \blank{1.5cm} than predicted --- the point sits above
+the line, so the line predicted too \blank{1.1cm}.
 
-\vspace{6pt}
-\textbf{Interpretation template:}\\
-\textit{``The proportion of [outcome] among [Group 1] was \underline{\hspace{2cm}} [higher / lower]
-than the proportion among [Group 2].''}
+\vspace{3pt}
+A \textbf{residual plot} graphs each residual against $x$. Points scattered \blank{1.7cm}
+around 0, with no pattern, say a linear model is \blank{2.4cm}.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.38\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.34, yscale=0.30]
+  \draw[->, thick] (0,-4.6) -- (0,4.8);
+  \draw[thick] (0,-4.6) -- (10.2,-4.6);
+  \draw[dashed, slate] (0,0) -- (10.2,0);
+  \foreach \y in {-4,-2,0,2,4} {\draw (-0.12,\y) -- (0.12,\y);
+    \node[left, font=\tiny] at (0,\y) {\y};}
+  \foreach \x in {0,2,4,6,8,10} {\draw (\x,-4.75) -- (\x,-4.45);
+    \node[below, font=\tiny] at (\x,-4.6) {\x};}
+  \foreach \x/\e in {1/1, 1.5/-2, 2/2, 2.5/-1, 3/0, 3.5/2, 4/-3, 4.5/1, 5/3, 5.5/-2,
+                     6/-2, 6.5/1, 7/-1, 7.5/2, 8/0, 8.5/-2, 9/1}
+    {\fill[navy] (\x,\e) circle[x radius=0.15, y radius=0.17];}
+  \node[font=\tiny] at (5,-6.2) {Distance (miles)};
+  \node[rotate=90, font=\tiny] at (-2.1,0) {Residual (min)};
+\end{tikzpicture}
+\end{minipage}
+\\
+& \notesprompt{Residuals for the pizza deliveries.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{The 5-mile delivery took 26 minutes. Find its residual.}{1.4cm}{} &
+\pcell{8}{A 4-mile delivery took 17 minutes. Find its residual and say what it means.}{1.4cm}{} \\ \hline
+\pcell{9}{Jordan says the 5-mile residual is $23-26=-3$, ``so the line predicted too high.''
+Fix both mistakes.}{1.5cm}{} &
+\pcell{10}{Does the residual plot show a pattern? Is a linear model appropriate?}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{Sleep \& Reaction} &
+\begin{minipage}[c]{0.60\linewidth}\raggedright
+A researcher measured hours of sleep and reaction time, in milliseconds, for 20 adults who
+slept 4 to 9 hours:\par
+\centering $\widehat{\text{RT}} = 430 - 25(\text{sleep})$\par
+\raggedright
+Its residual plot is at right.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.38\linewidth}
+\centering
+\begin{tikzpicture}[xscale=0.55, yscale=0.050]
+  \draw[->, thick] (3.5,-27) -- (3.5,28);
+  \draw[thick] (3.5,-27) -- (9.5,-27);
+  \draw[dashed, slate] (3.5,0) -- (9.5,0);
+  \foreach \y in {-20,0,20} {\draw (3.42,\y) -- (3.58,\y);
+    \node[left, font=\tiny] at (3.5,\y) {\y};}
+  \foreach \x in {4,5,6,7,8,9} {\draw (\x,-28) -- (\x,-26);
+    \node[below, font=\tiny] at (\x,-27) {\x};}
+  \foreach \x/\e in {4/10, 4.5/-15, 4.5/5, 5/-20, 5/15, 5.5/0, 6/20, 6/-10, 6.5/-5, 6.5/12,
+                     7/15, 7/-18, 7.5/5, 7.5/-8, 8/-12, 8/18, 8.5/3, 8.5/-15, 9/10, 9/-10}
+    {\fill[navy] (\x,\e) circle[x radius=0.09, y radius=1.0];}
+  \node[font=\tiny] at (6.5,-37) {Sleep (hours)};
+  \node[rotate=90, font=\tiny] at (2.35,0) {Residual (ms)};
+\end{tikzpicture}
+\end{minipage}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Predict the reaction time after 7 hours of sleep.}{1.4cm}{} &
+\pcell{12}{An adult who slept 7 hours reacted in 270 ms. Find the residual and say what it
+means.}{1.4cm}{} \\ \hline
+\pcell{13}{Predict the reaction time after 12 hours of sleep. Trust it?}{1.5cm}{} &
+\pcell{14}{Is a linear model appropriate here? Use the residual plot.}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{6pt}
-\textbf{Write the interpretation for the vaccine example:}\\[6pt]
-\writeline\\[1pt]\writeline
-
-\vspace{6pt}
-\textbf{Key properties:}
-\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item Value of \blank{1cm} $\to$ no difference (no association).
-  \item Positive $\to$ Group 1 rate is \blank{3cm}; Negative $\to$ Group 1 rate is \blank{3cm}.
-  \item Units: \blank{3cm} (same units as the proportions themselves).
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── RELATIVE RISK ─────────────────────────────────────────────────────────────
-\begin{notesbox}{Step 2 --- Relative Risk (UNC-1.Q, UNC-1.R)}
-\small
-
-\noindent\textbf{Formula:}
-\[
-  \text{Relative Risk} = \frac{\hat{p}_1}{\hat{p}_2}
-\]
-The denominator $\hat{p}_2$ is the \textbf{\blank{3cm} group} (the comparison baseline).
-
-\vspace{4pt}
-\textbf{Vaccine example} (Group 1 = Vaccinated, Group 2 = Unvaccinated):
-\[
-  \text{RR} = \frac{\hat{p}_V}{\hat{p}_U} = \frac{\blank{2cm}}{\blank{2cm}} = \blank{2.4cm}
-\]
-
-\vspace{6pt}
-\textbf{Interpretation template:}\\
-\textit{``[Group 1] was \underline{\hspace{2cm}} times as likely to [outcome] as [Group 2].''}
-
-\vspace{6pt}
-\textbf{Write the interpretation for the vaccine example:}\\[6pt]
-\writeline\\[1pt]\writeline
-
-\vspace{6pt}
-\textbf{Key properties:}
-\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-  \item Value of \blank{1cm} $\to$ no difference (no association).
-  \item RR $> 1$ $\to$ Group 1 rate is \blank{3cm}; RR $< 1$ $\to$ Group 1 rate is \blank{3cm}.
-  \item \textbf{Not} a percentage-point difference --- RR $= 2$ means ``twice as likely,'' not ``2\% more.''
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── COMPARING THE TWO STATISTICS ─────────────────────────────────────────────
-\begin{notesbox}{Step 3 --- When Do They Tell Different Stories?}
-\small
-\begin{multicols}{2}
-
-\textbf{Context A: Rare outcome}\\
-Group 1: 2 of 1000 ($\hat{p}_1 = 0.002$)\\
-Group 2: 1 of 1000 ($\hat{p}_2 = 0.001$)
-
-\vspace{4pt}
-Difference in proportions: \blank{3cm}\\
-Relative risk: \blank{3cm}
-
-\vspace{6pt}
-Which statistic is more striking?\\
-\writeline\\[1pt]\writeline
-
-\columnbreak
-
-\textbf{Context B: Common outcome}\\
-Group 1: 600 of 1000 ($\hat{p}_1 = 0.60$)\\
-Group 2: 400 of 1000 ($\hat{p}_2 = 0.40$)
-
-\vspace{4pt}
-Difference in proportions: \blank{3cm}\\
-Relative risk: \blank{3cm}
-
-\vspace{6pt}
-Which statistic is more striking?\\
-\writeline\\[1pt]\writeline
-
-\end{multicols}
-
-\vspace{4pt}
-\textbf{Takeaway:} Fill in the blanks.\\
-A small \blank{3cm} can correspond to a large \blank{3cm}, and vice versa.
-Always report \blank{5cm} in context.
-\end{notesbox}
-
-\vspace{0.1in}
-
-% ── CONNECTIONS ───────────────────────────────────────────────────────────────
-\begin{spiralbox}
-\small
-\begin{multicols}{2}
-
-\textbf{How this connects:}
-\begin{itemize}[itemsep=3pt]
-  \item Lesson 2.2: conditional frequencies show \emph{whether} groups differ.
-  \item Lesson 2.3 (today): difference in proportions and relative risk \emph{quantify} how much.
-  \item Unit 6: formal inference tests whether the observed difference is statistically significant.
-\end{itemize}
-
-\columnbreak
-
-\textbf{In your own words:}\\
-Why do researchers sometimes prefer relative risk over the difference in proportions?\\[2pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
-
-\end{multicols}
-\end{spiralbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Additional Notes}
-\vspace{0pt}
-\writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline
-\end{notesbox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

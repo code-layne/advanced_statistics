@@ -104,6 +104,133 @@
    \fi
    \par\addvspace{\belowdisplayskip}}
 
+% ── Graded answer boxes — placing \gradedblank (math-shared/grading.sty) ──────
+% A graded component (ap_practice, homework, quizzes, tests) loads grading.sty
+% and marks every final answer with \gradedblank, written identically in the
+% blank and the key. The box must land in the space the page ALREADY reserves —
+% an answer line, a work area, a \writelines block — so no line or page break
+% moves. These helpers place a \gradedblank without changing the layout; the
+% \gradedblank call itself is always written out in full as their argument.
+%
+%   \gradedhide{<markup>}   sets <markup> with every \hrulefill (so every
+%                           \writeline / \writelines rule) drawn invisibly. The
+%                           lines keep their exact metrics — baselines and page
+%                           breaks are untouched — but a box laid over them
+%                           stays empty in the blank, as ingest needs.
+%   \gradedhere[<rise>]{<\gradedblank…>}
+%                           zero width, height and depth: hangs the box with
+%                           its top-left corner <rise> above the current
+%                           baseline (default 0.8\baselineskip) and 3pt left of
+%                           the current point, so a box \linewidth+6pt wide
+%                           frames a full line with room on both sides. Put it
+%                           at the start of the first hidden line to box a block:
+%                             \gradedhide{\gradedhere{\gradedblank[…]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{3}}
+%   \gradedbelow[l|r]{<drop>}{<\gradedblank…>}
+%                           zero footprint: hangs the box under the line it is
+%                           written in, its top <drop> below that line's
+%                           bottom, flush left (l, default) or right (r) in the
+%                           current list. For a final-answer box at the foot of
+%                           a work area that is only \vspace.
+%   \gradedright{<…>}       zero footprint at the end of a line, flush right —
+%                           the "Letter:" box of a multiple-choice item, on the
+%                           line of its last option.
+%   \gradedtop{<\gradedblank…>}
+%                           the box in the text, top-aligned with the line and
+%                           hung 3pt left like \gradedhere (it takes real
+%                           space): a key whose layout does not mirror its
+%                           blank (units 3–9), where the box replaces the
+%                           written answer and shows it as display=.
+%   \gradedkeyline{<\gradedblank…>}
+%                           ends the paragraph and sets the box on a row of its
+%                           own, as \gradedtop does (real space; a key that
+%                           does not mirror its blank, after the written answer,
+%                           for a full-width box).
+%   \gradedkey{<\gradedblank…>}
+%                           ends the current paragraph with the box flush right
+%                           — on the last line if it fits, else on a line of its
+%                           own (takes real space; keys that do not mirror
+%                           their blank, after a worked solution).
+%
+%   \gradedlinesheight{<n>}  the height for a box hung with \gradedhere over
+%                           \writelines{<n>} (or the key's <n> \ansline rows):
+%                           0.8\baselineskip above the first rule down to 4pt
+%                           below the last, at the current \baselineskip.
+%
+% Inline, a box that replaces a \blank{w} keeps its width and is \smash-ed so a
+% box taller than the strut never opens the line: \smash{\gradedblank[…]{w}{0.2in}}.
+% Inside \answerspace{H}{…} a box is simply typeset (the minipage's height is
+% fixed); start with \normalcolor\mdseries so the frame is not drawn in keyred.
+\newsavebox{\aps@gradedbox}
+\newcount\aps@sf
+\newcommand{\gradedhide}[1]{{\let\hrulefill\aps@nofill#1}}
+% \hrulefill without the ink: a zero-width strut keeps the rule's 0.4pt height,
+% which decides the spacing where lines meet at \lineskip (after a display). A
+% rule resets the space factor, which leaders and glue do not, so it is put back:
+% a space after the hidden rule keeps its width (after a colon, say).
+\newcommand{\aps@nofill}{\leavevmode\aps@sf\spacefactor
+  \vrule\@width\z@\@height.4\p@\spacefactor\aps@sf\hfill\kern\z@}
+% The zero-footprint helpers also leave the space factor as they found it (a box
+% resets it), so a space after them is exactly the space that was there before.
+\newcommand{\gradedhere}[2][0.8\baselineskip]{%
+  \sbox{\aps@gradedbox}{#2}%
+  \leavevmode\aps@sf\spacefactor
+  \makebox[\z@][l]{\kern-3pt\raisebox{\dimexpr#1-\ht\aps@gradedbox\relax}[\z@][\z@]%
+    {\usebox{\aps@gradedbox}}}\spacefactor\aps@sf}
+\newcommand{\gradedbelow}[3][l]{%
+  \sbox{\aps@gradedbox}{#3}%
+  \vadjust{\vbox to\z@{\vskip\dimexpr#2\relax
+    \hbox to\hsize{\hskip\@totalleftmargin
+      \if r#1\hskip\linewidth\llap{\usebox{\aps@gradedbox}}%
+      \else\usebox{\aps@gradedbox}\fi\hss}%
+    \vss}}}
+\newcommand{\gradedlinesheight}[1]{%
+  \dimexpr0.8\baselineskip+(\baselineskip+5pt)*(#1-1)+4pt\relax}
+\newcommand{\gradedright}[1]{\leavevmode\aps@sf\spacefactor
+  \makebox[\z@][r]{\smash{#1}}\spacefactor\aps@sf}
+\newcommand{\gradedtop}[1]{%
+  \sbox{\aps@gradedbox}{#1}%
+  \leavevmode\kern-3pt\raisebox{\dimexpr\ht\strutbox-\ht\aps@gradedbox\relax}{\usebox{\aps@gradedbox}}\kern-3pt}
+\newcommand{\gradedkeyline}[1]{\par\noindent\gradedtop{#1}\par}
+\newcommand{\gradedkey}[1]{{\unskip\nobreak\hfil\penalty50\hskip1em\hbox{}\nobreak\hfil
+  #1\parfillskip=\z@\par}}
+
+% ── Graded boxes inside tcolorboxes: true positions ───────────────────────────
+% grading.sty records each box's corners with \pdfsavepos, which knows only
+% TeX's own positioning. tcolorbox draws its content with \pgftext inside a pgf
+% picture, and the xetex/dvipdfmx driver moves that content with a `pdf:btrans`
+% special that \pdfsavepos never sees — so a \gradedblank in a notesbox,
+% remindbox or any other tcolorbox was recorded 10–20pt from where it prints.
+% In a document that loads grading.sty, a \pgftext box whose transformation is a
+% pure translation is placed with \kern/\raise from the same point instead:
+% the page looks the same, and the recorded positions are the printed ones.
+% Rotated or scaled text keeps the driver's route. Documents without grading.sty
+% are untouched.
+\def\aps@pgftextpatch{%
+  \ifdefined\pgfsys@dvipdfmx@suspendcontent
+    \let\aps@hboxsynced@orig\pgfsys@hboxsynced
+    \let\pgfsys@hboxsynced\aps@hboxsynced
+  \fi}
+\def\aps@hboxsynced#1{%
+  \ifdim\pgf@pt@aa\p@=\p@ \ifdim\pgf@pt@ab\p@=\z@ \ifdim\pgf@pt@ba\p@=\z@ \ifdim\pgf@pt@bb\p@=\p@
+    \aps@hbox@kern#1\else\aps@hboxsynced@orig#1\fi
+    \else\aps@hboxsynced@orig#1\fi\else\aps@hboxsynced@orig#1\fi\else\aps@hboxsynced@orig#1\fi}
+% \pgfsys@hboxsynced from pgfsys-dvipdfmx.def, with btrans … etrans replaced
+% by TeX positioning from the current point.
+\def\aps@hbox@kern#1{%
+  \pgfsys@begin@idscope
+  \pgfsys@beginscope
+    \setbox#1=\hbox{\box#1}%
+    \wd#1=\z@\ht#1=\z@\dp#1=\z@
+    \pgfsys@dvipdfmx@suspendcontent
+    \pgfsys@invoke{0 J [] 0 d}%
+    \pgfsys@dvipdfmx@start@force@reset@color
+    \hbox to\z@{\kern\pgf@pt@x\raise\pgf@pt@y\box#1\hss}%
+    \pgfsys@dvipdfmx@stop@force@reset@color
+    \pgfsys@dvipdfmx@unsuspendcontent
+  \pgfsys@endscope
+  \pgfsys@end@idscope}
+\AtBeginDocument{\@ifpackageloaded{grading}{\aps@pgftextpatch}{}}
+
 % ── Lesson-plan box ───────────────────────────────────────────────────────────
 % Usage: \begin{skillbox}[Title]{background-color} ... \end{skillbox}
 \newtcolorbox{skillbox}[2][]{
@@ -287,6 +414,93 @@
 %   \steprel{p\text{-value}}{\blank{0.9cm} $\alpha$}{\blank{6.0cm}}
 %   \steprel{p\text{-value}}{\ans{$<$} $\alpha$}{\ans{Reject $H_0$}}
 \newcommand{\steprel}[3]{$#1$ & #2 & #3 \\}
+
+% ── Guided notes: the Main Ideas / Notes table ────────────────────────────────
+% The guided-notes component is ONE two-column table — the "Main Ideas /
+% Questions" column on the left, the "Notes" column on the right — modelled on
+% the Algebra 2 guided-notes worksheets. Each ROW is one idea: a big label on the
+% left, and on the right a terse definition with \blank{} fills, then a bold
+% prompt and a GRID of short numbered problems with reserved work space. The
+% teacher works the first problem or two of each grid (I do), the class works the
+% rest with students holding the pen (we do); the last row is the Guided Practice.
+% There is no prose exposition: every sentence on the page is one the student
+% completes, and every idea is immediately practised in the grid under it.
+%
+%   \begin{guidednotes}
+%     \mainidea[Two kinds of]{Variable} &
+%       A \textbf{discrete} variable takes a \blank{2cm} number of values.
+%       \notesprompt{Classify each variable.}
+%       \begin{probgrid}{|Y|Y|Y|}
+%         \pcell{1}{Siblings}{1.3cm}{} & \pcell{2}{Height}{1.3cm}{} & \pcell{3}{Minutes}{1.3cm}{} \\ \hline
+%       \end{probgrid}
+%       \\ \hline
+%     \mainidea{Guided practice} & ... \\ \hline
+%   \end{guidednotes}
+%
+% Mechanics:
+%   * The table is an xltabular (longtable + tabularx): it breaks BETWEEN rows
+%     across pages by itself — no \boxguard, no \newpage. A row must fit on one
+%     page, so keep each idea to well under a page; split a long idea into two rows.
+%     The head prints once; every page after a break re-opens with the row's own
+%     top rule, and the foot closes each page with a rule. Both columns are
+%     m-columns, so the label sits vertically centred beside its notes.
+%   * Every row ends `\\ \hline`. The first row after the head needs no top rule.
+%   * \mainidea[lead]{Label} — the left cell: an optional small italic lead
+%     ("Two kinds of") over the label, set bold sans in navy and UPPERCASED.
+%   * \notesprompt{...} — the bold instruction line that introduces a grid.
+%   * probgrid{colspec} — a nested grid flush with the row's rules; colspec is
+%     any tabularx spec, usually |Y|Y|Y| (three across, short answers) or |Y|Y|
+%     (two across, work space). Rows end `\\ \hline`; the grid draws its own top
+%     rule. Number problems continuously through the whole component, 1..N.
+%   * \pcell{n}{statement}{H}{answer} — one grid cell: bold number, the statement
+%     at its natural height, then the answer in keyred bold inside a FIXED-HEIGHT
+%     box of H below it. The BLANK passes {} as the answer and the KEY passes the
+%     answer text — that is the whole difference, and because H is fixed the two
+%     files cannot drift (the work rule, applied to grid cells). Argument 4 is
+%     TEXT MODE: wrap math in $...$. H is the ANSWER space only — size it to the
+%     answer: 0.9cm for a word or a number, 1.2–1.6cm for a sentence or a short
+%     computation (a keyred line is ~0.5cm). An answer longer than H overflows
+%     the cell silently: keep key answers short.
+%   * \stepnum{n} — a numbered step marker (white digit on a navy disc) for a
+%     procedure listed in the Notes column: \stepnum{1}\ Choose an interval width.
+%
+% \pageheader, then the vocabbox, then ONE guidednotes table — that is the
+% component. Objectives live on the cover; the notes do not repeat them.
+\RequirePackage{xltabular}
+\newlength{\mainideawidth} \setlength{\mainideawidth}{0.27\linewidth}
+\newcommand{\mainidea}[2][]{%
+  \begin{minipage}{\linewidth}\centering
+    \ifx\relax#1\relax\else{\itshape\small #1}\\[3pt]\fi
+    {\sffamily\bfseries\large\color{navy}\MakeUppercase{#2}}%
+  \end{minipage}}
+\newcommand{\notesprompt}[1]{\par\vspace{5pt}\noindent\textbf{#1}\par\vspace{3pt}}
+\newcommand{\pcell}[4]{%
+  {\raggedright\textbf{#1.}\ #2\par}%
+  \noindent\begin{minipage}[t][#3][t]{\linewidth}\raggedright
+    \vspace{2pt}{\color{keyred}\bfseries #4}%
+  \end{minipage}}
+\newcommand{\stepnum}[1]{\tikz[baseline=(c.base)]\node[circle, fill=navy, text=white,
+  inner sep=1.2pt, minimum size=1.1em, font=\bfseries\scriptsize] (c) {#1};}
+\NewDocumentEnvironment{probgrid}{m +b}
+  {\par\noindent\renewcommand{\tabularxcolumn}[1]{p{##1}}%
+   \makebox[\linewidth][l]{\hspace*{-\tabcolsep}%
+   \begin{tabularx}{\dimexpr\linewidth+2\tabcolsep\relax}[b]{#1}
+   \hline
+   #2
+   \end{tabularx}}\par}
+  {}
+\NewDocumentEnvironment{guidednotes}{+b}
+  {\renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}m{##1}}%
+   \setlength{\LTpre}{6pt}\setlength{\LTpost}{6pt}%
+   \begin{xltabular}{\linewidth}{|>{\centering\arraybackslash}m{\mainideawidth}|X|}
+   \hline
+   \multicolumn{1}{|c|}{\textbf{Main Ideas / Questions}} & \textbf{Notes} \\ \hline
+   \endfirsthead
+   \hline \endfoot
+   \endlastfoot
+   #1
+   \end{xltabular}}
+  {}
 
 % ── Teacher notes ─────────────────────────────────────────────────────────────
 % TEACHER NOTES LIVE IN THE LESSON PLAN, one per component, titled for it:

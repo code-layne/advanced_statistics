@@ -1,0 +1,18 @@
+# Homework item 3d (Unit 7, Lesson 7.9). Relative to the lesson directory.
+id: hw3d
+points: 2
+task: >-
+  Randomized experiment: new stretching protocol (n = 18, mean 14.2 days, s = 3.6) vs
+  standard (n = 20, mean 17.5 days, s = 4.1); both roughly symmetric, no outliers.
+  Does the new protocol reduce mean recovery time? t about -2.64, df about 36, p about
+  0.006. Conclude at alpha = 0.05.
+criteria:
+  - id: decision
+    points: 1
+    full: >-
+      Compares p (about 0.006) to alpha = 0.05 and rejects H0.
+  - id: context
+    points: 1
+    full: >-
+      Concludes there is convincing evidence that the new protocol reduces mean recovery
+      time compared with the standard protocol.

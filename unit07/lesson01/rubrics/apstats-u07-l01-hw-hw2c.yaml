@@ -1,0 +1,21 @@
+# Homework item 2c (Unit 7, Lesson 7.1). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  A district tests H0: mu = 72 vs Ha: mu != 72 (alpha = 0.05) for the mean state exam
+  score of students who used an online learning platform. The administrator wants to
+  lower alpha to 0.01. Explain the trade-off this creates.
+criteria:
+  - id: typeI
+    points: 1
+    full: >-
+      Says the probability of a Type I error drops (from 5% to 1%): fewer false
+      conclusions that the platform makes a difference.
+  - id: typeII
+    points: 1
+    full: >-
+      Says the probability of a Type II error rises: a real effect of the platform is more
+      likely to go undetected (lower power).
+examples:
+  - response: "Lowering alpha makes the test more accurate."
+    scores: {typeI: 0, typeII: 0}

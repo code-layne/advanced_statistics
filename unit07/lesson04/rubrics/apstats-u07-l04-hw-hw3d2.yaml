@@ -1,0 +1,13 @@
+# Homework item 3d Normal (Unit 7, Lesson 7.4). Relative to the lesson directory.
+id: hw3d2
+points: 1
+task: >-
+  Ten participants do a reaction-time task before and after two weeks with an app; the
+  differences (before - after) are roughly symmetric with no outliers. Verify the
+  Normal condition (n < 30).
+criteria:
+  - id: normal
+    points: 1
+    full: >-
+      Notes n = 10 < 30 and that the distribution of the differences is roughly symmetric
+      with no outliers, so the condition is met.

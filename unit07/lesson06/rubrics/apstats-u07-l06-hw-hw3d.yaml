@@ -1,0 +1,18 @@
+# Homework item 3d (Unit 7, Lesson 7.6). Relative to the lesson directory.
+id: hw3d
+points: 2
+task: >-
+  Exam scores: random samples, School 1 n = 45, mean 512, s = 68; School 2 n = 40,
+  mean 495, s = 72. The 95% CI for mu_1 - mu_2 is about (-13.3, 47.3) points.
+  Interpret the interval and state whether 0 is in it.
+criteria:
+  - id: interpret
+    points: 1
+    full: >-
+      States 95% confidence that the interval captures the true difference in mean exam
+      scores (School 1 - School 2), in context.
+  - id: zero
+    points: 1
+    full: >-
+      Says 0 is in the interval, so there is not convincing evidence that the mean scores
+      differ.

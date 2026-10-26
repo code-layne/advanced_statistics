@@ -1,0 +1,21 @@
+# Unit 1 actual test, item 19b. Path relative to unit01/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t19b
+points: 3
+task: >-
+  Use the 1.5 x IQR rule to decide whether the 4-minute episode is an outlier. If it
+  is, where does the lower whisker of a modified boxplot end?
+criteria:
+  - id: rule
+    points: 2
+    full: >-
+      E: IQR = 38 - 27 = 11, fence Q1 - 1.5(IQR) = 10.5, and 4 < 10.5 so the 4-minute
+      episode is an outlier.
+    partial: >-
+      P (1 of 2): Computes the fence with one error but draws the matching conclusion, or
+      concludes correctly without showing the fence.
+  - id: whisker
+    points: 1
+    full: >-
+      E: The lower whisker ends at 22, the smallest length that is not an outlier.

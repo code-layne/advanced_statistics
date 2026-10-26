@@ -1,0 +1,12 @@
+# Homework item 1, State (Unit 6, Lesson 6.2). Relative to the lesson directory.
+id: hw1a
+points: 1
+task: >-
+  A random sample of 400 registered voters finds 228 support a park expansion (95% CI
+  for the true proportion). State: define the parameter.
+criteria:
+  - id: c
+    points: 1
+    full: >-
+      Defines p as the true (population) proportion of ALL registered voters in the city
+      who support the park expansion (not the sample proportion).

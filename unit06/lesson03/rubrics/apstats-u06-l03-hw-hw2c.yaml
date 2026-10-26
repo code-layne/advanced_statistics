@@ -1,0 +1,20 @@
+# Homework item 2c (Unit 6, Lesson 6.3). Relative to the lesson directory.
+id: hw2c
+points: 2
+task: >-
+  A 99% CI for the proportion of students who own a calculator is (0.71, 0.89). If the
+  sample size doubled (holding p-hat constant), how would the width of the 99% CI
+  change?
+criteria:
+  - id: direction
+    points: 1
+    full: >-
+      Says the interval gets narrower.
+  - id: factor
+    points: 1
+    full: >-
+      Says the width is multiplied by 1/sqrt(2), about 0.71 (because the standard error is
+      proportional to 1/sqrt(n)).
+examples:
+  - response: "It would be half as wide."
+    scores: {direction: 1, factor: 0}

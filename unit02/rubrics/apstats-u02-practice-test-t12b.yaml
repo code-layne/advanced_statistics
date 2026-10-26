@@ -1,0 +1,20 @@
+# Unit 2 practice (sample) test, item 12b. Path relative to unit02/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12b
+points: 2
+task: >-
+  Regression output: Constant 249.70, Capacity 13.811. Write the equation of the
+  least-squares regression line using the variable names, then interpret the slope in
+  context.
+criteria:
+  - id: equation
+    points: 1
+    full: >-
+      E: predicted energy = 249.70 + 13.811(capacity), with a hat or 'predicted' on the
+      response and variable names (not x and y alone).
+  - id: slope
+    points: 1
+    full: >-
+      E: For each additional cubic foot of capacity, the predicted annual energy use
+      increases by about 13.8 kWh per year ('predicted' or 'on average' required).

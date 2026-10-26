@@ -1,0 +1,12 @@
+# Homework item 2c, meaning of beta = 0 (Unit 9, Lesson 9.4). Relative to the lesson directory.
+id: hw2c3
+points: 1
+task: >-
+  Explain what beta = 0 means in context: class size vs average exam score, random
+  sample of 35 classes; a teacher claims larger classes score lower (beta < -1).
+criteria:
+  - id: meaning
+    points: 1
+    full: >-
+      Says class size has no linear relationship with average exam score in the population
+      (about the population, not the sample).

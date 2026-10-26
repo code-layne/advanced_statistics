@@ -1,0 +1,17 @@
+# Homework item 2b (Unit 7, Lesson 7.7). Relative to the lesson directory.
+id: hw2b
+points: 2
+task: >-
+  A 90% CI for mu_digital - mu_print (mean reading comprehension score, out of 100) is
+  (3.8, 9.2). A researcher claims digital readers score higher on average. Does the CI
+  provide convincing evidence? Explain.
+criteria:
+  - id: answer
+    points: 1
+    full: >-
+      Says yes.
+  - id: reason
+    points: 1
+    full: >-
+      Because the entire interval is above 0 (0 is not plausible), so the mean for digital
+      readers is higher.

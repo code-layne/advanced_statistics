@@ -1,0 +1,19 @@
+# AP Practice item 5, part (c) (Unit 1, Lesson 1.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap5c
+points: 2
+task: >-
+  The library replaces age in years with age band (child / teen / adult / senior).
+  Explain how this changes the kind of variable, and name one thing the library can no
+  longer compute.
+criteria:
+  - id: change
+    points: 2
+    full: >-
+      E: Says the variable becomes categorical (each cardholder carries a group label
+      instead of a measured amount) AND names a quantity that can no longer be computed,
+      such as the mean (or median, or standard deviation) age.
+    partial: >-
+      P (1 of 2): Gives one of the two components correctly: the change to categorical
+      with a reason, or a correct quantity that can no longer be computed.

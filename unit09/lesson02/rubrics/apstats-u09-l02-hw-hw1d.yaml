@@ -1,0 +1,19 @@
+# Homework item 1d (Unit 9, Lesson 9.2). Relative to the lesson directory.
+id: hw1d
+points: 2
+task: >-
+  Sleep (x, hours) vs reaction time (y, ms) for a random sample of 22 college
+  students: b = -18.6, SE_b = 5.3, 95% CI (-29.7, -7.5). Interpret the CI in context.
+criteria:
+  - id: confidence
+    points: 1
+    full: >-
+      Says 95% confident that the interval captures the TRUE (population) slope.
+  - id: context
+    points: 1
+    full: >-
+      In context with units: the slope relating reaction time to hours of sleep for
+      college students is between -29.7 and -7.5 ms per hour of sleep.
+examples:
+  - response: "95% of students' reaction times fall between -29.7 and -7.5 ms."
+    scores: {confidence: 0, context: 0}

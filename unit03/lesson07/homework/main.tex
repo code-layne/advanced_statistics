@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l07-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.7}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -21,9 +24,11 @@ surveyed about their political views and social media use. Heavier social media 
 report more polarized political views.
 
 \vspace{4pt}
-Random assignment? \blank{2cm} \quad Random selection? \blank{2cm}\\[4pt]
-Causation? \blank{2cm} \quad Generalize to? \blank{7cm}\\[4pt]
-Conclusion: \writeline\\[1pt]\writeline
+Random assignment? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{43bp}\smash{\gradedblank[id=hw1a, type=short, points=1, answer=no, check=text]{0.33in}{0.17in}}} \quad Random selection? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{46bp}\smash{\gradedblank[id=hw1b, type=short, points=1, answer=yes, check=text]{0.6in}{0.17in}}}\\[4pt]
+Causation? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{43bp}\smash{\gradedblank[id=hw1c, type=short, points=1, answer=no, check=text]{0.33in}{0.17in}}}\\[4pt]
+\rule{0pt}{0.3in}Generalize to? \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw1d, type=short, points=1, answer={all national registered voters}, check=text, display={\bfseries all national registered voters}]{3.6in}{0.3in}}}\\[14pt]
+Conclusion:\par
+\gradedhide{\gradedhere{\gradedblank[id=hw1e, type=rubric, points=2, display={No random assignment: can't say social media causes polarization (confounding). Random sample: generalize to all national registered voters.}]{\linewidth+6pt}{2in}}\writelines{9}}
 
 \vspace{8pt}
 \textbf{2.} 60 student volunteers are randomly assigned to either an active-learning
@@ -31,24 +36,29 @@ classroom or a traditional lecture. Students in the active-learning group score
 significantly higher on the final exam.
 
 \vspace{4pt}
-Random assignment? \blank{2cm} \quad Random selection? \blank{2cm}\\[4pt]
-Causation? \blank{2cm} \quad Generalize to? \blank{7cm}\\[4pt]
-Conclusion: \writeline\\[1pt]\writeline
+Random assignment? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{43bp}\smash{\gradedblank[id=hw2a, type=short, points=1, answer=yes, check=text]{0.33in}{0.17in}}} \quad Random selection? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{46bp}\smash{\gradedblank[id=hw2b, type=short, points=1, answer=no, check=text]{0.6in}{0.17in}}}\\[4pt]
+Causation? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{43bp}\smash{\gradedblank[id=hw2c, type=short, points=1, answer=yes, check=text]{0.33in}{0.17in}}}\\[4pt]
+\rule{0pt}{0.3in}Generalize to? \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw2d, type=short, points=1, answer={similar volunteers only}, check=text, display={\bfseries similar volunteers only}]{3.6in}{0.3in}}}\\[14pt]
+Conclusion:\par
+\gradedhide{\gradedhere{\gradedblank[id=hw2e, type=rubric, points=2, display={Random assignment: active learning caused the higher scores. Volunteers: generalize only to students like them.}]{\linewidth+6pt}{2in}}\writelines{9}}
 
+\tcbbreak
 \vspace{8pt}
 \textbf{3.} A drug company randomly selects 500 patients from all patients at 10 major
 hospitals and randomly assigns them to a new drug or a placebo. The drug group shows
 a statistically significant improvement.
 
 \vspace{4pt}
-Random assignment? \blank{2cm} \quad Random selection? \blank{2cm}\\[4pt]
-Causation? \blank{2cm} \quad Generalize to? \blank{7cm}\\[4pt]
-Conclusion: \writeline\\[1pt]\writeline\\[1pt]\writeline
+Random assignment? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{43bp}\smash{\gradedblank[id=hw3a, type=short, points=1, answer=yes, check=text]{0.33in}{0.17in}}} \quad Random selection? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{46bp}\smash{\gradedblank[id=hw3b, type=short, points=1, answer=yes, check=text]{0.6in}{0.17in}}}\\[4pt]
+Causation? \makebox[2cm][l]{\vphantom{\blank{2cm}}\hspace{43bp}\smash{\gradedblank[id=hw3c, type=short, points=1, answer=yes, check=text]{0.33in}{0.17in}}}\\[4pt]
+\rule{0pt}{0.3in}Generalize to? \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw3d, type=short, points=1, answer={patients at these 10 hospitals}, check=text, display={\bfseries patients at these 10 hospitals}]{3.6in}{0.3in}}}\\[14pt]
+Conclusion:\par
+\gradedhide{\gradedhere{\gradedblank[id=hw3e, type=rubric, points=2, display={Random assignment: the drug caused the improvement. Random selection: generalize to patients at these 10 hospitals.}]{\linewidth+6pt}{2in}}\writelines{9}}
 
 \vspace{8pt}
 \textbf{4.} Reflection: Explain the difference between \emph{statistical significance}
 and \emph{practical importance}. Give an example.\\[4pt]
-\writeline\\[1pt]\writeline\\[1pt]\writeline
+\gradedhide{\gradedhere{\gradedblank[id=hw4, type=rubric, points=2, display={Significance: too large to be chance. Practical importance: large enough to matter. E.g., a 1 mm Hg drop with n = 100,000 is significant but not clinically important.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
 \end{practicebox}
 
 \end{document}

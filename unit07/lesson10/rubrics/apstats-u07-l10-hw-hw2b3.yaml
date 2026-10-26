@@ -1,0 +1,13 @@
+# Homework item 2b Large Counts (Unit 7, Lesson 7.10). Relative to the lesson directory.
+id: hw2b3
+points: 1
+task: >-
+  Random samples: 54 of 120 city residents and 35 of 100 suburban residents support
+  expanding public transit. Is the proportion higher among city residents? Verify the
+  Large Counts condition (use numbers).
+criteria:
+  - id: 2b3
+    points: 1
+    full: >-
+      Shows all four counts are at least 10: 54 and 66 (city), 35 and 65 (suburban) (or
+      the pooled expected counts); met.

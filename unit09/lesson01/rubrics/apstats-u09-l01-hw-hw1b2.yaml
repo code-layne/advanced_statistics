@@ -1,0 +1,15 @@
+# Homework item 1b, problem 2 (Unit 9, Lesson 9.1). Relative to the lesson directory.
+id: hw1b2
+points: 1
+task: >-
+  A least-squares line for daily temperature (x, degrees F) and hot drinks sold (y)
+  from a random sample of 20 days is y-hat = 85 - 1.4x. Identify a second, different
+  problem with the student's causal conclusion.
+criteria:
+  - id: problem
+    points: 1
+    full: >-
+      Identifies the other valid problem: the sample slope b = -1.4 may not reflect the
+      population slope beta; it could arise by chance even if beta = 0, so a significance
+      test is needed (or, if Problem 1 gave this, that association does not imply
+      causation).

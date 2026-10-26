@@ -1,0 +1,13 @@
+# Homework item 3b Normal (Unit 7, Lesson 7.5). Relative to the lesson directory.
+id: hw3b4
+points: 1
+task: >-
+  Ten students' quiz-score differences (flashcards - no flashcards): d-bar = 4.8, s_d
+  = 2.97; boxplot roughly symmetric, no outliers. Verify the Normal condition (n <
+  30).
+criteria:
+  - id: 3b4
+    points: 1
+    full: >-
+      Notes n = 10 < 30 and that the boxplot of the differences is roughly symmetric with
+      no outliers (met).

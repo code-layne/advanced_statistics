@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u08-l07-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 8, Lesson 8.7}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.10in}
 
@@ -19,25 +22,25 @@
   \item A meteorologist records weather outcomes (Sunny, Cloudy, Rainy, Snowy) for a random
         sample of 365 days and wants to test whether the four outcomes are equally likely.
 
-        Procedure: \blank{9cm}
+        Procedure: \gradedblank[id=hw1a, type=short, points=1, answer={chi-square goodness-of-fit test}, check=text, display={\bfseries $\chi^2$ goodness-of-fit test}]{3.5in}{0.3in}
 
   \item A university admissions office randomly samples 80 applicants from in-state and 80
         applicants from out-of-state and records whether each was admitted (yes or no). They
         want to estimate the difference in admission rates.
 
-        Procedure: \blank{9cm}
+        Procedure: \gradedblank[id=hw1b, type=short, points=1, answer={two-sample z-interval for p1 - p2}, check=text, display={\bfseries Two-sample $z$-interval for $p_1 - p_2$}]{3.5in}{0.3in}
 
   \item A market researcher takes one random sample of 500 shoppers and records each shopper's
         age group (Under 30, 30--50, Over 50) and preferred shopping channel (Online, In-Store,
         Both). She wants to know whether shopping channel preference is associated with age group.
 
-        Procedure: \blank{9cm}
+        Procedure: \gradedblank[id=hw1c, type=short, points=1, answer={chi-square test for independence}, check=text, display={\bfseries $\chi^2$ test for independence}]{3.5in}{0.3in}
 
   \item A nutrition researcher randomly samples students from four different dining halls and
         records each student's beverage choice (Water, Soda, Juice, Other). She wants to test
         whether the distribution of beverage choice is the same across all four dining halls.
 
-        Procedure: \blank{9cm}
+        Procedure: \gradedblank[id=hw1d, type=short, points=1, answer={chi-square test for homogeneity}, check=text, display={\bfseries $\chi^2$ test for homogeneity}]{3.5in}{0.3in}
 \end{enumerate}
 
 \vspace{0.10in}
@@ -48,19 +51,26 @@
       and finds that 48 of them read a physical newspaper daily.
 
       \begin{enumerate}[label=\alph*.]
-        \item \textbf{State:} Procedure: \blank{7cm}\\
-              $H_0$: \blank{5cm} \quad $H_a$: \blank{5cm}
+        \item \textbf{State:} Procedure: \gradedblank[id=hw2a1, type=short, points=1, answer={one-sample z-test for p}, check=text, display={\bfseries One-sample $z$-test for $p$}]{3in}{0.3in}
+
+              $H_0$: \gradedblank[id=hw2a2, type=short, points=1, answer={p = 0.15}, check=text, display={\bfseries $p = 0.15$}]{2.2in}{0.3in}
+              \quad $H_a$: \gradedblank[id=hw2a3, type=short, points=1, answer={p < 0.15}, check=text, display={\bfseries $p < 0.15$}]{2.2in}{0.3in}
+
+        \boxguard[16]
         \item \textbf{Plan:} Verify conditions (use numbers):
               \begin{itemize}
-                \item Random: \writeline
-                \item 10\%: \writeline
-                \item Large Counts ($np_0$ and $n(1-p_0)$ each $\ge 10$): \writeline
+                \item Random: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b1, type=rubric, points=1, display={\bfseries Random sample of 400 adults (stated).}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+                \boxguard[14]
+                \item 10\%: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b2, type=rubric, points=1, display={\bfseries $400 \le 10\%$ of all adults.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+                \boxguard[14]
+                \item Large Counts ($np_0$ and $n(1-p_0)$ each $\ge 10$): \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2b3, type=rubric, points=1, display={\bfseries $60, 340 \ge 10$}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
               \end{itemize}
       \end{enumerate}
 
 \vspace{0.10in}
 
-\item \textbf{AP-Style Multiple Choice.} \;
+\boxguard[12]
+\item \textbf{AP-Style Multiple Choice.} Write the letter of the single best answer in its Letter box. \;
       \textit{A researcher takes a random sample of 250 households from a large city and records
       each household's neighborhood type (Urban, Suburban, Rural) and internet connection type
       (Broadband, Satellite, None). He wants to test whether there is an association between
@@ -71,29 +81,35 @@
         \item Chi-square test for homogeneity
         \item Chi-square test for independence
         \item Two-sample $z$-test for $p_1 - p_2$
+              \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=C]{0.4in}{0.2in}}
       \end{enumerate}
 
 \vspace{0.10in}
 
+\newpage
 \item \textbf{Compare Two Procedures.} \;
       A researcher studies whether political party affiliation (Democrat, Republican, Independent)
       differs between male and female voters. She randomly samples 200 male voters and 200 female
       voters separately.
 
       \begin{enumerate}[label=\alph*.]
+        \boxguard[16]
         \item Name the most appropriate procedure and explain your reasoning in two sentences.
-              \writeline \writeline
+              \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw4a, type=rubric, points=2, display={\bfseries Homogeneity}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
 
+        \boxguard[16]
         \item A classmate argues that a two-sample $z$-test for $p_1 - p_2$ should be used
               because there are only two groups. Identify the error in this reasoning.
-              \writeline \writeline
+              \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw4b, type=rubric, points=2, display={\bfseries 3 categories}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
 
+        \boxguard[16]
         \item Write $H_0$ for the correct procedure.
-              $H_0$: \writeline
+              $H_0$: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw4c, type=rubric, points=1, display={\bfseries Party distribution same for men and women.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
       \end{enumerate}
 
 \vspace{0.10in}
 
+\boxguard[22]
 \item \textbf{Conditions and Hypotheses.} \;
       A high school counselor randomly selects 40 freshmen, 40 sophomores, 40 juniors, and
       40 seniors. She records whether each student has participated in at least one extracurricular
@@ -101,10 +117,13 @@
       differs across grade levels.
 
       \begin{enumerate}[label=\alph*.]
-        \item Name the procedure: \blank{9cm}
-        \item $H_0$: \writeline
-        \item $H_a$: \writeline
-        \item State the key condition that must be checked (beyond Random and 10\%): \writeline
+        \item Name the procedure: \gradedblank[id=hw5a, type=short, points=1, answer={chi-square test for homogeneity}, check=text, display={\bfseries $\chi^2$ test for homogeneity}]{3in}{0.3in}
+        \boxguard[14]
+        \item $H_0$: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw5b, type=rubric, points=1, display={\bfseries Proportion who participate is the same for all four grades.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+        \boxguard[14]
+        \item $H_a$: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw5c, type=rubric, points=1, display={\bfseries Proportion differs for at least one grade.}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{10}}
+        \boxguard[16]
+        \item State the key condition that must be checked (beyond Random and 10\%): \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw5d, type=rubric, points=1, display={\bfseries All expected $\ge 5$}]{\linewidth+6pt}{\gradedlinesheight{9}}}\writelines{9}}
       \end{enumerate}
 
 \end{enumerate}

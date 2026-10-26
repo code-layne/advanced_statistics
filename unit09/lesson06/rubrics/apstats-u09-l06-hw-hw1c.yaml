@@ -1,0 +1,17 @@
+# Homework item 1(3) (Unit 9, Lesson 9.6). Relative to the lesson directory.
+id: hw1c
+points: 2
+task: >-
+  A random sample of 45 high school seniors' SAT scores; estimate the mean SAT score
+  for all seniors at the school with a 95% CI. List the key conditions that must be
+  checked.
+criteria:
+  - id: random
+    points: 1
+    full: >-
+      Random sample (stated) and 10%: 45 is at most 10% of all seniors at the school.
+  - id: normal
+    points: 1
+    full: >-
+      Normal/Large Sample: n = 45 >= 30 (so the sampling distribution of the mean is
+      approximately normal).

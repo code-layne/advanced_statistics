@@ -1,0 +1,18 @@
+# Homework item A3, explanation (Unit 2, Lesson 2.3). Relative to the lesson directory.
+id: hw3b
+points: 2
+task: >-
+  A car dealer listed 18 used cars with 8 to 95 thousand miles; price in thousands of
+  dollars, mileage in thousands of miles: predicted price = 32.0 - 0.24(mileage).
+  Predict the price at 150 thousand miles. What went wrong, and why?
+criteria:
+  - id: impossible
+    points: 1
+    full: >-
+      Says the prediction (-4.0, a negative price of -$4,000) is impossible / makes no
+      sense.
+  - id: extrapolation
+    points: 1
+    full: >-
+      Explains it is extrapolation: 150 thousand miles is far outside the 8 to 95 thousand
+      miles in the data, so the linear pattern cannot be trusted there.

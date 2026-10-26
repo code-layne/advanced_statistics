@@ -1,5 +1,5 @@
 %! Representing a Quantitative Variable with Graphs — Unit 1, Lesson 1.3 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{ltablex}
@@ -7,33 +7,34 @@
 
 \begin{document}
 
-% Full-bleed navy banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 1}{Lesson 1.3 \quad Representing a Quantitative Variable with Graphs}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.3 \quad Representing a Quantitative Variable with Graphs}}
-\end{center}
-
-\vspace{0.22in}
 \namedateperiod
 \vspace{0.18in}
 
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objectives (UNC-1.F, UNC-1.G) stay in the teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: learning target 1 (restate a Learning Objective as "I can ...").
-  \item \ldots{} TODO: learning target 2.
+  \item \ldots{} classify a quantitative variable as \textbf{discrete} or \textbf{continuous},
+        and say why rounding the recorded values does not change the answer.
+  \item \ldots{} read a \textbf{dotplot}, a \textbf{stem plot}, and a \textbf{histogram}, and
+        say exactly what each one keeps and what it throws away.
+  \item \ldots{} explain why the bars of a histogram touch when the bars of last lesson's bar
+        graph did not.
+  \item \ldots{} explain how changing the \textbf{interval width} changes what a histogram
+        shows --- without changing a single data value.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
+\boxguard[14]
 \begin{tocbox}
 \small
 \renewcommand{\arraystretch}{1.5}
@@ -41,13 +42,32 @@
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up      & TODO & \blank{1.2cm} \\
-2 & Group Activity & TODO & \blank{1.2cm} \\
-3 & Exit Ticket  & TODO & \blank{1.2cm} \\
-4 & Homework     & TODO & \blank{1.2cm} \\
+1 & Warm-Up & Shares, a tally, and four things that might come out to 7.5 & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Two kinds of quantitative variable, three ways to draw one, and
+                 the same 24 finishing times telling two different stories & \blank{1.2cm} \\
+% AP Practice is assigned but NOT scored: its score cell prints NA, never a \blank{}.
+% Row 4 is the lesson's GRADED practice. Paper homework is the DEFAULT for this course; on the
+% occasions DeltaMath is assigned instead, that replaces row 4 and its score cell is struck.
+3 & AP Practice & A rainfall record: AP-style multiple choice and one free-response set ---
+                 practice, not a grade & \textbf{NA} \\
+4 & Homework & Discrete vs.\ continuous, two histograms of one data set, a stem plot, and
+                 one multiple-choice item --- \textbf{scored, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+The same 24 finishing times are drawn twice in these notes, and the two histograms tell two
+different stories. \textbf{Both are correct.} When two pictures of one data set disagree, do not
+pick a favourite --- work out what was changed, because a histogram shows you the data \emph{and}
+a choice somebody made about it. And a value written as a whole number is not automatically a
+count: ask whether the thing was \textbf{counted} or \textbf{measured}, not how it was written
+down.
+\end{remindbox}
 
 \end{document}

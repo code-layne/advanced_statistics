@@ -2,12 +2,15 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u05-l05-hw}
+\gradingcourse{advanced_statistics}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 5, Lesson 5.5}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.15in}
 
@@ -15,36 +18,43 @@ For each problem, check all conditions before computing probabilities.
 
 \begin{enumerate}
 
+  \boxguard[22]
   \item According to a national survey, 38\% of high school students participate in at
         least one sport ($p = 0.38$). A random sample of $n = 180$ high school students
         is selected.
         \begin{enumerate}[label=\alph*.]
           \item Check all three conditions for using the normal model for $\hat{p}$.
-                \writelines{3}
-          \item Find $\mu_{\hat{p}}$ and $\sigma_{\hat{p}}$.
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1a, type=rubric, points=3, display={Random sample; $180 \le 10\%$ of all high school students; $np = 68.4 \ge 10$ and $n(1-p) = 111.6 \ge 10$. All met.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
+          \item Find $\mu_{\hat{p}}$ and $\sigma_{\hat{p}}$.\gradedbelow[r]{0.5in-0.33in}{$\mu_{\hat{p}} = $~\gradedblank[id=hw1b1, type=short, points=1, answer=0.38, check=numeric, tolerance=0]{0.9in}{0.28in}\quad $\sigma_{\hat{p}} = $~\gradedblank[id=hw1b2, type=short, points=1, answer=0.0362, check=numeric, tolerance=0.0005]{0.9in}{0.28in}}
                 \vspace{0.5in}
-          \item Find $P(\hat{p} > 0.42)$.
+          \item Find $P(\hat{p} > 0.42)$.\gradedbelow[r]{0.9in-0.33in}{\gradedblank[id=hw1c, type=short, points=2, answer=0.1346, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
                 \vspace{0.9in}
-          \item Find the value $c$ such that $P(\hat{p} < c) = 0.05$. Interpret.
-                \vspace{0.9in}
+          \boxguard[17]
+          \item Find the value $c$ such that $P(\hat{p} < c) = 0.05$. Interpret.\gradedbelow[r]{0.9in-0.33in}{$c = $~\gradedblank[id=hw1d1, type=short, points=2, answer=0.320, check=numeric, tolerance=0.002]{0.9in}{0.28in}}
+                \vspace{0.9in}\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw1d2, type=rubric, points=1, display={5\% of samples of 180 have a sample proportion of athletes below 0.320.}]{\linewidth+6pt}{\gradedlinesheight{8}}}\writelines{9}}
         \end{enumerate}
 
+  \boxguard[22]
   \item In a large city, 15\% of residents ride public transit daily ($p = 0.15$).
         \begin{enumerate}[label=\alph*.]
           \item For $n = 40$: check the Large Counts condition. Is the normal model appropriate?
-                \writelines{2}
-          \item For $n = 100$: check all conditions and find $P(0.10 \le \hat{p} \le 0.20)$.
-                \vspace{1.0in}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={$np = 40(0.15) = 6 < 10$: Large Counts not met, so the normal model is not appropriate.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
+          \boxguard[17]
+          \item For $n = 100$: check all conditions and find $P(0.10 \le \hat{p} \le 0.20)$.\gradedbelow[r]{1.0in-0.33in}{$P = $~\gradedblank[id=hw2b2, type=short, points=2, answer=0.8384, check=numeric, tolerance=0.003]{0.9in}{0.28in}}
+                \vspace{1.0in}\par
+                \gradedhide{\gradedhere{\gradedblank[id=hw2b1, type=rubric, points=1, display={$np = 15$, $n(1-p) = 85 \ge 10$; random; 10\%: met.}]{\linewidth+6pt}{\gradedlinesheight{8}}}\writelines{9}}
         \end{enumerate}
 
   \item A bag contains 60\% red chips and 40\% blue chips ($p = 0.60$ red). Random samples
         of $n$ chips are drawn with replacement.
         \begin{enumerate}[label=\alph*.]
-          \item Find $\sigma_{\hat{p}}$ for $n = 25$, $n = 100$, and $n = 400$.
+          \item Find $\sigma_{\hat{p}}$ for $n = 25$, $n = 100$, and $n = 400$.\gradedbelow[r]{0.7in-0.33in}{$n = 25$:~\gradedblank[id=hw3a1, type=short, points=1, answer=0.098, check=numeric, tolerance=0.0005]{0.8in}{0.28in}\quad $n = 100$:~\gradedblank[id=hw3a2, type=short, points=1, answer=0.049, check=numeric, tolerance=0.0005]{0.8in}{0.28in}\quad $n = 400$:~\gradedblank[id=hw3a3, type=short, points=1, answer=0.0245, check=numeric, tolerance=0.0005]{0.8in}{0.28in}}
                 \vspace{0.7in}
+          \newpage
           \item Describe how $\sigma_{\hat{p}}$ changes as $n$ increases. What does this
                 mean for estimation?
-                \writelines{2}
+                \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={$\sigma_{\hat{p}}$ decreases (halves when $n$ quadruples): larger samples give more precise estimates.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
         \end{enumerate}
 
 \end{enumerate}

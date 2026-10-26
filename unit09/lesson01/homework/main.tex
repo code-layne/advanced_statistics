@@ -2,11 +2,14 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u09-l01-hw}
+\gradingcourse{advanced_statistics}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.1}{Homework}
-\namedateperiod
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
 \vspace{0.1in}
 
@@ -16,21 +19,24 @@ random sample of 20 days. The equation is $\hat{y} = 85 - 1.4x$.
 
 \begin{enumerate}[label=\alph*.]
 
+  \boxguard[15]
   \item Interpret the slope in context.
 
-        \writelines{2}
+        \gradedhide{\gradedhere{\gradedblank[id=hw1a, type=rubric, points=2, display={For each 1$^\circ$F increase in daily temperature, the predicted number of hot drinks sold decreases by 1.4.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{9}}
 
+  \boxguard[15]
   \item The student concludes: ``Temperature causes fewer hot drinks to be sold because
         the slope is negative.'' Identify \textbf{two} problems with this conclusion.
 
-        Problem 1: \writelines{2}
+        Problem 1: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b1, type=rubric, points=1, display={\bfseries Association is not causation (e.g. season confounds).}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 
-        Problem 2: \writelines{2}
+        Problem 2: \gradedhide{\writeline\\\gradedhere{\gradedblank[id=hw1b2, type=rubric, points=1, display={\bfseries $b = -1.4$ could be chance even if $\beta = 0$; needs a test.}]{\linewidth+6pt}{\gradedlinesheight{1}}}\writelines{9}}
 
+  \boxguard[15]
   \item A second study using $n = 200$ days finds $b = -1.4$ as well. In which study
         would the slope be more convincing evidence of a real relationship? Explain.
 
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=hw1c, type=rubric, points=2, display={The study with $n = 200$ would be more convincing. Larger sample sizes reduce sampling variability in $b$, so obtaining $b = -1.4$ from 200 days is much less likely to be due to chance alone than from just 20 days. The same slope value is stronger evidence against $\beta = 0$ when $n$ is large.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
 \end{enumerate}
 
@@ -42,20 +48,23 @@ statement (e.g., ``$H_0\colon \beta = 0$ means \ldots'').
 
 \begin{enumerate}[label=\alph*.]
 
+  \boxguard[15]
   \item A scatter plot of shoe size ($x$) vs.\ height (inches, $y$) for 50 adults shows
         a positive trend with $b = 0.62$.
 
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={$H_0\colon \beta = 0$ --- there is no linear relationship between shoe size and height for adults in the population. The statistician asks: is the observed slope $b = 0.62$ convincingly different from 0, or could it have arisen by chance even if $\beta = 0$?}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
+  \boxguard[15]
   \item A scatter plot of study hours ($x$) vs.\ exam score ($y$) for 8 students shows
         $b = 4.5$, but the points are very scattered around the line.
 
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={$H_0\colon \beta = 0$ --- there is no linear relationship between study hours and exam score in the population. With only $n = 8$ and high scatter, the slope $b = 4.5$ may not be statistically significant; a test is needed to determine whether this $b$ is larger than expected by chance.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
+  \boxguard[15]
   \item A scatter plot of screen time (hours, $x$) vs.\ sleep duration (hours, $y$) for
         100 teens shows $b = -0.15$ with little scatter around the line.
 
-        \writelines{3}
+        \gradedhide{\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={$H_0\colon \beta = 0$ --- there is no linear relationship between screen time and sleep duration in the population. With $n = 100$ and little scatter, the slope $b = -0.15$ is more likely to represent a real effect, but a significance test is still needed to formally conclude $\beta \ne 0$.}]{\linewidth+6pt}{\gradedlinesheight{3}}}\writelines{9}}
 
 \end{enumerate}
 
