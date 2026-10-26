@@ -1,0 +1,21 @@
+# Homework item A3 (Unit 3, Lesson 3.1) — the crux restated. Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  Method 1 (voluntary QR-code ratings) has 3,200 ratings with 41% excellent; Method 2
+  (300 customers picked at random and called) has 63% excellent. A manager says,
+  'Method 1 has more than ten times as many ratings as Method 2, so it is the one to
+  report.' Respond.
+criteria:
+  - id: size
+    points: 1
+    full: >-
+      Disagrees and explains that a larger sample from a non-chance (voluntary) method is
+      still biased; more responses do not remove the bias.
+  - id: report
+    points: 1
+    full: >-
+      Says to report Method 2's result (63%) because it came from a chance-based method.
+examples:
+  - response: "Agree, more data is always more accurate."
+    scores: {size: 0, report: 0}

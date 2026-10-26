@@ -77,9 +77,11 @@ make -C unit01/quizzes manifest COMP=actual_quiz         # quizzes: quizzes/ (ke
 make -C unit01 manifest COMP=lesson03/homework           # the same, from the unit directory
 ```
 
-`roster-packets` builds one run per student, in roster order, into `target/compiled/`: a name
-cover sheet, its blank back, then the student's copy, whose QR codes and id strip carry only her
-tracking id. The cover is removed before the work is turned in and is never scanned. The roster
+`roster-packets` builds one copy of the packet per student, in roster order, into
+`target/compiled/`: her name is preprinted on the lesson cover's Name line, and the QR codes and
+id strip on graded pages carry only her tracking id. Lesson packets have no separate name sheet.
+Tests and quizzes do: their first page is a name cover sheet that is torn off and fed into the
+grading system, and is never scanned with the work. The roster
 PDFs carry student names on the covers; `target/` is never committed, and `roster-map.csv` lives
 outside the repository (see math-shared's README).
 

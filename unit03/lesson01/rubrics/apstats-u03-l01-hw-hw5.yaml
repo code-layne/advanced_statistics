@@ -1,0 +1,19 @@
+# Homework item B2 (Unit 3, Lesson 3.1). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  A gym owner wants to know whether members want the gym to stay open later at night.
+  She surveys the members who are working out at 6 a.m. Name a group this survey
+  over-represents and a group it likely misses, and say which way the result probably
+  leans.
+criteria:
+  - id: groups
+    points: 1
+    full: >-
+      Names early-morning exercisers as over-represented AND members who work out in the
+      evening (or cannot come early) as likely missed.
+  - id: direction
+    points: 1
+    full: >-
+      Says the survey probably understates support for later hours (the result leans
+      against staying open later).

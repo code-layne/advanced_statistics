@@ -1,0 +1,21 @@
+# Homework item A1 (Unit 3, Lesson 3.1). Relative to the lesson directory.
+id: hw1
+points: 2
+task: >-
+  A restaurant chain wants to know what percent of its customers rate their last meal
+  excellent. Method 1: a QR code on every receipt invites customers to rate their meal
+  online; 3,200 do, and 41% choose excellent. Method 2: the chain picks 300 orders at
+  random from its list of all last month's orders and calls those customers; 63% say
+  excellent. Which method used chance to decide who answered? In the other method, who
+  decided?
+criteria:
+  - id: chance_method
+    points: 1
+    full: >-
+      Identifies Method 2 as the chance-based method (the 300 orders were picked at
+      random).
+  - id: who_decided
+    points: 1
+    full: >-
+      Says that in Method 1 the customers themselves decided, by choosing whether to scan
+      the code and rate (voluntary response).

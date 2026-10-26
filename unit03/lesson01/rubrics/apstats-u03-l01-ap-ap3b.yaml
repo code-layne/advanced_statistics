@@ -1,0 +1,19 @@
+# AP Practice item 3, part (b) (Unit 3, Lesson 3.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3b
+points: 2
+task: >-
+  A school librarian surveys the 40 students who come to the library at lunch on
+  Monday; their mean is 3.2 books per month. Is 3.2 books per month likely too high
+  or too low for all students at the school? Explain in context.
+criteria:
+  - id: direction
+    points: 2
+    full: >-
+      E: Says too high AND explains in context that students who spend lunch in the
+      library are likely to read more than students who do not, so heavier readers are
+      over-represented.
+    partial: >-
+      P (1 of 2): Says too high with a reason that is not tied to who visits the library,
+      OR explains the over-representation correctly without stating the direction.

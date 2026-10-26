@@ -1,0 +1,18 @@
+# AP Practice item 3, part (c) (Unit 3, Lesson 3.1) — the spiral to Unit 1. Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  The librarian's 40 responses (books per month) are strongly skewed to the right.
+  Which better describes a typical student among these 40, the mean or the median?
+  Explain.
+criteria:
+  - id: center
+    points: 2
+    full: >-
+      E: Chooses the median AND explains that the few students who read many books pull
+      the mean toward the right tail, while the median is resistant to them.
+    partial: >-
+      P (1 of 2): Chooses the median with a vague reason (for example, "the data are
+      skewed") that does not say how the skew affects the mean.

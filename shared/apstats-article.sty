@@ -108,9 +108,22 @@
 }
 
 % ── Student name rows ─────────────────────────────────────────────────────────
+% A per-student packet (`make roster-packets`) compiles the lesson cover with
+% \def\StudentName{…} ahead of it, and the name prints on the Name line, which
+% grows to fit it. Without \StudentName the line is the usual blank. Only the
+% cover carries \namedateperiod, so a name never reaches a graded page.
+\newlength{\aps@namewd}
+\newcommand{\aps@nameline}{%
+  \ifdefined\StudentName
+    \settowidth{\aps@namewd}{\StudentName}%
+    \ifdim\aps@namewd<4.0cm \setlength{\aps@namewd}{4.0cm}\fi
+    \underline{\makebox[\aps@namewd][l]{\StudentName}}%
+  \else
+    \blank{4.0cm}%
+  \fi}
 \newcommand{\namedateperiod}{%
     \begin{tabularx}{\linewidth}{X X X}
-    Name:\;\blank{4.0cm} & Date:\;\blank{2.6cm} & Period:\;\blank{1.5cm}
+    Name:\;\aps@nameline & Date:\;\blank{2.6cm} & Period:\;\blank{1.5cm}
     \end{tabularx}}
 
 \newcommand{\namepartnerperiod}{%

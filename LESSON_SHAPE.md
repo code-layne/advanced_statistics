@@ -84,7 +84,9 @@ which problems the teacher works, which is the trap, and which is the crux.
 free-response set of two or three parts, AP format; no page limit. **`homework`** — 5–6 items,
 no page limit: the graded individual practice, in a *third* context (instruction, guided practice, and
 homework each use a different one), finishable in the 8 minutes plus one study hall. **`cover`** —
-packet table (Warm-Up · Guided Notes & Practice · AP Practice · Homework), learning targets that
+packet table (Warm-Up · Guided Notes & Practice · AP Practice · Homework) that **lists the
+contents only** — #, Component, Description; **no Score column and no Total row** (2026-10-26,
+every course), learning targets that
 name the formal term in bold, and a *Keep in Mind* box that carries the lesson's ideas, never the
 lesson's process. **`slides`** — the Beamer deck, ordered targets → warm-up → I-do divider → one
 instruction frame per notes row → we-do → debrief → close & start the homework.
@@ -110,13 +112,12 @@ usage, pacing, and tone; the live lesson overrides every document, this one incl
 
 Every lesson carries **both** back-of-packet components, authored every time:
 
-- **`ap_practice` — assigned but NOT scored.** The cover's score column prints `\textbf{NA}`.
-  Students keep it and bring it to review.
+- **`ap_practice` — assigned but NOT scored.** Students keep it and bring it to review. The
+  cover's packet table says so in its description ("practice, not a grade").
 - **`homework` — the lesson's GRADED practice**, last in the packet. **Paper homework is the
   default** and is generated for every lesson. DeltaMath is an *occasional* override the teacher
   may choose on a given day — never the default, never assumed by the author. When used, it
-  replaces the page, the cover's score cell is struck, and the page stays in the packet as extra
-  practice. The plan carries the DeltaMath-override note.
+  replaces the page, and the page stays in the packet as extra practice. The plan carries the DeltaMath-override note.
 - **Homework is due the first class after two study halls** — never "due next class." Write it
   that way on the cover and in the plan.
 
@@ -250,8 +251,8 @@ current shape.
 4. Delete `experience`, `experience_key`.
 5. If the lesson has no `ap_practice/`, split the existing homework: AP-format items to
    `ap_practice/` (unscored), and author a **new scored homework** in a fresh context.
-6. Rewrite the cover's packet table (Warm-Up · Guided Notes & Practice · AP Practice with `NA` ·
-   Homework) and re-voice its learning targets with the formal vocabulary.
+6. Rewrite the cover's packet table (Warm-Up · Guided Notes & Practice · AP Practice · Homework
+   --- a contents list, no Score column) and re-voice its learning targets with the formal vocabulary.
 7. Rewrite the plan in gradual-release order; re-cut its teacher notes to four.
 8. Reorder the deck: targets → warm-up → I-do divider → two instruction frames → we-do →
    debrief → close & start the homework.
@@ -315,7 +316,9 @@ README) and check that the blank and key manifests agree.
 **No name line on a graded page** — not `\namedateperiod`, not `\namepartnerperiod`, not a
 hand-written Name / Date / Period row, in the blank or the key, quizzes and tests included. Graded
 pages are scanned and the scans go to an outside API, so they carry only the tracking id in the
-strip; the student's name goes on the separate cover sheet `make roster-packets` puts in front of
-her copy. A `Score:` field on its own line may stay. `make manifest` and `make roster-packets` run
+strip; the student's name goes, for a lesson packet, on the Name line of the lesson cover, which
+`make roster-packets` preprints — there is no separate name sheet (2026-10-26); for a quiz or
+test, on the tear-off name cover sheet `roster-packets` puts in front of it, which is fed into
+the grading system. A `Score:` field on its own line may stay. `make manifest` and `make roster-packets` run
 `shared/check_namelines.py` first and fail on a name line; `make check-names` at the root checks
 the whole course.

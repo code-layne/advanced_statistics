@@ -1,0 +1,19 @@
+# Homework item A2 (Unit 3, Lesson 3.1). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  Method 1: a QR code on every receipt invites customers to rate their meal online;
+  3,200 do, and 41% choose excellent. Method 2 (random calls to 300 customers) found
+  63% excellent. Who is most likely to scan the code and rate a meal? Explain why
+  Method 1's 41% is likely too low.
+criteria:
+  - id: who
+    points: 1
+    full: >-
+      Says customers with strong feelings (especially those with a bad or disappointing
+      experience) are the most motivated to scan and rate.
+  - id: direction
+    points: 1
+    full: >-
+      Explains that because unhappy customers are over-represented, the share rating the
+      meal excellent is pulled below the truth for all customers.

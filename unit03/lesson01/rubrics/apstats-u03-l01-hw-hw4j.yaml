@@ -1,0 +1,16 @@
+# Homework item B1, justification of the multiple-choice answer (Unit 3, Lesson 3.1). Relative to the lesson directory.
+id: hw4j
+points: 1
+task: >-
+  A state wants to estimate the percent of its high school seniors who plan to attend
+  college. Which method relies on chance? (A) seniors at a college fair (B) each
+  counselor picks ten seniors (C) a survey on the state education website (D) randomly
+  select 600 seniors from the state's list of all enrolled seniors (E) every senior in
+  an AP class. Justify the choice.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (D): a random process chooses the 600 from a list of all seniors; in the
+      other methods people (the students, counselors, or the class schedule) decide who
+      is surveyed.

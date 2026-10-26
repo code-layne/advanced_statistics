@@ -79,7 +79,7 @@ vocabulary freely. Canonical section order:
    the *almost*-right crux answer, then the Debrief-box walkthrough and what to cut if time is
    short (item 1 is the one that cannot be cut).
 10. **AP Practice — assigned, not scored** — `skillbox{goldbox}`: what each item targets, the
-    spiral item, the part worth reading closely, and when to go over it. The cover reads **NA**.
+    spiral item, the part worth reading closely, and when to go over it.
 11. **Homework — scored, due the first class after two study halls** — `skillbox{goldbox}`: the assignment, the scoring
     breakdown, the item that predicts next-lesson performance, and the **DeltaMath override**.
 12. **Watch For** — `skillbox{redbox}`: misconceptions keyed to item numbers; cold-call prompts.
@@ -106,12 +106,12 @@ Activity / Debrief / Application / CYU order. Leave them alone unless regenerati
 - `\namedateperiod` — **the only component that carries it** (Namestrip).
 - `learningtargetbox` — an "I can…" list. **Name the formal vocabulary** and bold it; the notes
   teach it today. The AP Learning Objective code still belongs in the lesson plan, not here.
-- `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score) with a
-  Total row: Warm-Up, Guided Notes & Practice, **AP Practice**, Homework — four rows; there is
-  no group activity. Keep the rows aligned with the components you actually scaffolded.
-  **AP Practice's score cell prints `\textbf{NA}`, never a `\blank{}`** — it is assigned but
-  unscored. Homework carries a blank (the teacher strikes it through when DeltaMath is
-  assigned instead).
+- `tocbox` — a `tabularx` that **lists the contents only**: three columns (#, Component,
+  Description), one row per packet component — Warm-Up, Guided Notes & Practice, **AP Practice**,
+  Homework — four rows; there is no group activity. **No Score column and no Total row**
+  (removed 2026-10-26, in every course). Keep the rows aligned with the components you actually
+  scaffolded. Whether a component counts belongs in its description: AP Practice is
+  "practice, not a grade"; Homework is "scored, due the first class after two study halls"
 - `remindbox` ("Keep in Mind") — **the notes that matter for this lesson**, in the student's
   language: the hook the notes open on, and the habit the lesson insists on ("when a single
   number and a picture disagree, believe the picture"). **Do not narrate the gradual-release
@@ -196,8 +196,8 @@ construction (1.0cm ≈ 2 handwritten lines, 1.5cm ≈ 3, 2.0cm ≈ 4).
 
 ## AP practice
 
-`ap_practice/` (+ `ap_practice_key/`) — **assigned but NOT scored.** The cover's score column reads
-`\textbf{NA}`. `\pageheader{...}{AP Practice}` (no name row). No page limit: the graded boxes set its length.
+`ap_practice/` (+ `ap_practice_key/`) — **assigned but NOT scored.**
+`\pageheader{...}{AP Practice}` (no name row). No page limit: the graded boxes set its length.
 
 Open with a `remindbox` stating plainly that the page is not required and not scored and that the
 graded homework is the last section of the packet — authored **byte-identically** in the blank and
@@ -226,7 +226,7 @@ across separate `tcolorbox`es — items restart at 1 in each part, so reference 
 the plan rather than as a single running sequence.
 
 Scoring guidance, the item that predicts next-lesson performance, and the **DeltaMath override**
-("when DeltaMath carries this topic, assign it instead, strike the score cell on the cover, and
+("when DeltaMath carries this topic, assign it instead and
 leave this page as optional practice — do not assign both") all go in the lesson plan's
 `\begin{teachernote}[Homework]`, **not** in the key.
 

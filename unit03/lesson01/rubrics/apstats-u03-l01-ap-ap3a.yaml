@@ -1,0 +1,18 @@
+# AP Practice item 3, part (a) (Unit 3, Lesson 3.1). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  A school librarian wants to know how many books per month the students at her
+  school read. On Monday she surveys the 40 students who come to the library at lunch.
+  Did chance decide which students were surveyed? Explain who decided.
+criteria:
+  - id: chance
+    points: 2
+    full: >-
+      E: Says no AND explains that people decided: the students chose to come to the
+      library at lunch and the librarian surveyed whoever was there (convenience).
+    partial: >-
+      P (1 of 2): Says no but does not say who decided, or gives a vague reason (for
+      example, "it is not random") with no reference to how the 40 ended up surveyed.
