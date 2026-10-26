@@ -17,10 +17,224 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% GRADUAL-RELEASE deck: targets → warm-up → I DO divider → one frame per instruction row of the
+% notes (Ask How; Who Is Missing?; Sample Size, which carries the crux) → WE DO (The Step
+% Challenge) → spoken debrief → close & START THE HOMEWORK, which is the individual practice.
+% There is no group activity and no independent practice set in the notes.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 3.1}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item ask the questions that decide whether data can be trusted: who is in the data, and
+          who decided they would be in it?
+    \item tell a \textbf{chance-based method} from a \textbf{non-chance method}.
+    \item explain how a non-chance method creates \textbf{bias}, and why a bigger sample does
+          not fix it.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
+
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item More sleep, higher test scores. Explanatory? Response? Does it show \emph{cause}?
+    \item A news site's online poll: 2{,}400 students respond, \textbf{85\%} want a later start.
+          Who answers a poll like this?
+    \item Which would you trust more: (A) those 2{,}400, or (B) 80 students drawn at random
+          from the roster?
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Keep item 3 in mind}
+    We vote now. The notes decide it --- problem 10.
+  \end{block}
+\end{frame}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes. Fill each blank as we name it
+    --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today: data collection method,
+    chance-based method, non-chance method, bias.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: ASK HOW ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Before you trust a number, ask how}
+  \sectionlabel{notes, Ask How $\cdot$ problems 1--3}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Data collection method}
+        \textbf{How} the individuals in the data were chosen and measured.
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Chance-based method}
+        A \textbf{random} process decides who is in the data.
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Non-chance method}
+        \textbf{People} decide --- the researcher takes whoever is handy, or respondents
+        volunteer.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\small\textbf{The four questions}}
+      \begin{enumerate}\setlength{\itemsep}{3pt}\small
+        \item Who is in the data?
+        \item Who decided they were in it --- \redink{chance} or people?
+        \item Who is left out, and who is over-represented?
+        \item So can the result be trusted for \emph{everyone}?
+      \end{enumerate}
+      \vspace{6pt}
+      {\small Radio call-in vote? A coach's varsity players? 60 IDs picked by computer?}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: WHO IS MISSING? ───────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Who is missing?}
+  \sectionlabel{notes, Who Is Missing? $\cdot$ problems 4--7}
+  \vspace{2pt}
+  A method has \textbf{bias} if it \redink{consistently} overestimates or underestimates the
+  truth. \quad Does the city support a skate park?
+  \vspace{6pt}
+  \begin{center}
+  {\small\renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{} c l r @{}}
+    & \textbf{Method} & \textbf{Support} \\ \hline
+    A & Online poll on a local skate shop's website (900 votes) & 88\% \\
+    B & 150 people at the public library, Tuesday at 10 a.m. & 34\% \\
+    C & 400 households picked at random from the city's list & 52\% \\
+  \end{tabular}}
+  \end{center}
+  \vspace{4pt}
+  \begin{block}{Ask it every time}
+    Who decided who answered? Who does that favor --- and which way does it push the number?
+    \quad 88\% describes \redink{who chose to vote}, not the city.
+  \end{block}
+\end{frame}
+
+% ── ROW 3: SAMPLE SIZE — THE CRUX ────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Big is not the same as trustworthy}
+  \sectionlabel{notes, Sample Size $\cdot$ problems 8--10 $\cdot$ the whole point of today}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{News-site poll}
+        \textbf{2{,}400} students chose to respond.\\
+        \textbf{85\%} want a later start.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Random sample}
+        \textbf{80} students drawn at random from the roster.\\
+        \textbf{58\%} want a later start.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  ``2{,}400 is 30 times as many as 80, so the 85\% is more trustworthy.'' \emph{Agree?}
+  \vspace{8pt}
+  \begin{block}{Say it, write it in the box}
+    A bigger sample from a non-chance method is still \redink{biased}. More volunteers are just
+    more of the same volunteers.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Step Challenge}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
+  A fitness app wants the average steps per day for \emph{all} its users.
+  \vspace{4pt}
+  \begin{center}
+  {\small\renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{} l r @{}}
+    \textbf{Method} & \textbf{Mean steps/day} \\ \hline
+    Leaderboard: the 12{,}000 users who joined the step challenge & 11{,}200 \\
+    Random: 500 accounts picked at random from all users & 6{,}900 \\
+  \end{tabular}}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Which method used chance? Who decided in the other?
+    \item Who is over-represented on the leaderboard? Is 11{,}200 too high or too low?
+    \item ``24 times as many users, so report 11{,}200.'' Respond.
+  \end{itemize}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: who, not how many}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{People decided}
+        2{,}400 volunteers: \textbf{85\%}.\\
+        12{,}000 on a leaderboard: \textbf{11{,}200} steps.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Chance decided}
+        80 at random: \textbf{58\%}.\\
+        500 at random: \textbf{6{,}900} steps.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{block}{Two things to say out loud}
+    Why is ``80 is plenty'' the \emph{wrong} reason to trust the random sample? And did the
+    skate-shop poll tell us about the city, or about \redink{who chose to vote}?
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 items $\cdot$ scored $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Part A: restaurant ratings --- 3{,}200 QR-code volunteers against 300 random calls.
+          Chance or not? Who rates a meal? Which result to report?
+    \item Part B: one multiple-choice item, with a sentence of justification, and a 6 a.m.\
+          gym survey about staying open later.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Part A, item 3} is the one I am reading over your shoulder. The AP Practice page is
+    \textbf{not scored} --- work it for the reps.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Before you trust a number, ask who decided who is in the data.
+    If people decided, more of them does not help.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 3.2 --- Planning a Study: the population, the sample, and
+    the difference between watching and experimenting.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

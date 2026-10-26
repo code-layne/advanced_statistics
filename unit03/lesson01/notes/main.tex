@@ -1,108 +1,146 @@
-%! AP Statistics — Unit 3, Lesson 3.1 — Student Guided Notes
-\documentclass[10pt]{article}
+%! Introducing Statistics: Do the Data We Collected Tell the Truth? — Unit 3, Lesson 3.1 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
+% COMPACT budget: the vocabulary box, then ONE guidednotes table of FOUR rows (three instruction
+% rows + Guided Practice), 14 problems, 2 pages.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 8).
+%   WE DO  : the class works the rest; the last row, Guided Practice, is worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 6 (the skate-shop poll's 88% reads as "most people want it").
+% THE CRUX is problem 10, in the last instruction row: "2,400 responses is 30 times as many as
+% 80, so the 85% is more trustworthy" — size does not repair a non-chance method (EK VAR-1.E.1).
+%
+% THE CONTEXTS (instruction, guided practice, and homework each use a different one)
+%  Row 1 — three one-line methods: radio call-in, a coach's varsity players, 60 random IDs.
+%  Row 2 — a city skate park: skate-shop web poll (900 votes, 88%), library on a Tuesday
+%          morning (150 people, 34%), 400 random households from the city list (52%).
+%  Row 3 — the warm-up's later-start poll comes back: news-site poll, 2,400 responses, 85% yes;
+%          80 students drawn at random from the full roster, 58% yes.
+%  Row 4 (GP) — a fitness app: step-challenge leaderboard (12,000 users, mean 11,200 steps/day)
+%          vs 500 accounts drawn at random from all users (mean 6,900 steps/day).
+%
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
+% TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
+% sub-rows (a bare `\\` then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: every display is a given table, read and compared.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \begin{document}
 
-\pageheader{Unit 3, Lesson 3.1}{Guided Notes}
-\namedateperiod
+\pageheader{Unit 3, Lesson 3.1}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Data collection method}
-\termblanklong{Chance-based method}
-\termblanklong{Non-chance method}
-\termblanklong{Bias}
-\termblanklong{Anecdotal evidence}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Data collection method}
+\par
+\termblank{Chance-based method}
+\par
+\termblank{Non-chance method}
+\par
+\termblank{Bias}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{hookbox}
-\small\textbf{Three surveys:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item A grocery store comment card near the exit: 12 responses, all complaints.
-  \item A news website polls online visitors about a school bond.
-  \item A researcher randomly dials 400 phone numbers.
-\end{enumerate}
-\textbf{Which would you trust most? Why?}\\[4pt]
-\writeline\\[1pt]\writeline
-\end{hookbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{The Trustworthiness of Data}
 \small
-\textbf{Key Principle (VAR-1.E.1):} Methods for data collection that do \textbf{not}
-rely on \blank{3cm} result in \blank{3cm} conclusions.
+\begin{guidednotes}
+% ── ROW 1: who decided who is in the data? ───────────────────────────────────
+\mainidea[Before you trust it]{Ask how} &
+The \textbf{data collection method} is \blank{1.0cm} the individuals in the data were chosen and
+measured. In a \textbf{chance-based method}, a \blank{1.6cm} process decides who is in the data.
+In a \textbf{non-chance method}, \blank{1.4cm} decide --- the researcher picks whoever is
+convenient, or the respondents volunteer themselves.
 
-\vspace{10pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.3\linewidth} X @{}}
-Chance-based method & \blank{8cm} \\
-Non-chance method & \blank{8cm} \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{Counter-intuitive fact:} A \blank{3cm} non-random sample is \textbf{not} more
-trustworthy than a \blank{3cm} random sample.
-
-\vspace{8pt}
-\textbf{The 1936 Literary Digest Poll:}
-\begin{itemize}[itemsep=2pt]
-  \item Contacted \blank{2cm} people --- one of the largest polls ever.
-  \item Predicted \blank{4cm} would win the presidential election.
-  \item Actual winner: \blank{4cm}
-  \item Why it failed: \blank{7cm}
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Evaluating a Data Collection Method}
-\small
-For any data collection scenario, ask these questions:
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} l X @{}}
-\textbf{Question} & \textbf{My answer} \\
+\vspace{3pt}
+\stepnum{1}\ Who is in the data?\par
+\stepnum{2}\ Who decided they were in it --- \blank{1.4cm} or people?\par
+\stepnum{3}\ Who is left out, and who is over-represented?\par
+\stepnum{4}\ So can the result be trusted for \emph{everyone} we want to know about?
+\notesprompt{Who decided who is in the data: chance or people?}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{A radio host asks listeners to call in and vote on a new stadium.}{1.3cm}{} &
+\pcell{2}{A coach asks the varsity players if the school should spend more on sports.}{1.3cm}{} &
+\pcell{3}{A computer randomly picks 60 ID numbers from the full student roster.}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the method decides whose voice is in the data — THE TRAP ──────────
+\mainidea[The method decides]{Who is missing?} &
+When people decide who is in the data, some groups are over-represented and others are left
+out, so the result is pushed the same way every time. A method has \textbf{bias} if it
+\blank{2.6cm} overestimates or underestimates the truth.
+\\
+& The city council wants to know what percent of residents support building a skate park.
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\centering\footnotesize
+\setlength{\tabcolsep}{4pt}%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} c p{0.58\linewidth} r @{}}
+\rowcolor{sky}
+& \textbf{Method} & \textbf{Support} \\
 \hline
-Was chance used to select individuals? & \blank{8cm} \\
-Whose opinions/data are represented? & \blank{8cm} \\
-Who is \emph{not} represented? & \blank{8cm} \\
-Can conclusions be trusted for the whole population? & \blank{8cm} \\
-\end{tabularx}
-\end{notesbox}
+A & Online poll on a local skate shop's website: 900 votes & 88\% \\
+B & 150 people asked at the public library, Tuesday at 10 a.m. & 34\% \\
+C & 400 addresses picked at random from the city's list of all households & 52\% \\
+\end{tabular}
+\end{minipage}
+\\
+& \notesprompt{Use the table.}
+\begin{probgrid}{|Y|Y|}
+\pcell{4}{Who is likely over-represented in Method A?}{1.5cm}{} &
+\pcell{5}{Who is likely missing from Method B?}{1.5cm}{} \\ \hline
+\pcell{6}{Is Method A's 88\% likely too high or too low? Why?}{1.5cm}{} &
+\pcell{7}{Which result would you report to the council? Why?}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: size does not fix the method — THE CRUX ───────────────────────────
+\mainidea[Big is not the same as]{Sample size} &
+The warm-up's poll is back. A news site asked, \emph{``Should the school day start later?''}
+2{,}400 students responded and \textbf{85\%} said yes. The district then had a computer pick
+\textbf{80} students at random from the roster of all students: \textbf{58\%} said yes.
+\notesprompt{Compare the two results.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{8}{Which result came from a chance-based method?}{2.0cm}{} &
+\pcell{9}{Why might the news site's 85\% be too high?}{2.0cm}{} &
+\pcell{10}{``2{,}400 is 30 times as many as 80, so the 85\% is more trustworthy.'' Agree? Why?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{A bigger sample from a non-chance method is still \blank{1.4cm}.}}}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Step Challenge} &
+A fitness app wants the average number of steps per day for \emph{all} of its users.
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\centering\footnotesize
+\setlength{\tabcolsep}{4pt}%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} p{0.56\linewidth} r @{}}
+\rowcolor{sky}
+\textbf{Method} & \textbf{Mean steps/day} \\
+\hline
+Leaderboard: the 12{,}000 users who joined the app's step challenge & 11{,}200 \\
+Random: 500 accounts picked at random from all users & 6{,}900 \\
+\end{tabular}
+\end{minipage}
+\notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Which method used chance? Who decided in the other one?}{1.5cm}{} &
+\pcell{12}{Who is over-represented on the leaderboard?}{1.5cm}{} \\ \hline
+\pcell{13}{Is 11{,}200 likely too high or too low for all users? Why?}{1.5cm}{} &
+\pcell{14}{``The leaderboard has 24 times as many users, so report 11{,}200.'' Respond.}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-\begin{practicebox}
-\small Classify each as more trustworthy (\checkmark) or less trustworthy ($\times$).
-Explain your reasoning in one phrase.
-
-\vspace{6pt}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item A radio station invites listeners to text in their opinion about a new law.
-        \blank{1cm} \quad \blank{9cm}
-
-  \item A researcher uses a random number table to select 200 voters from the
-        registered voter list. \blank{1cm} \quad \blank{8cm}
-
-  \item A teacher surveys her own class to find out how all students in the school
-        feel about homework. \blank{1cm} \quad \blank{7cm}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

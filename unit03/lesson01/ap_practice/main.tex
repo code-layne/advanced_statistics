@@ -1,0 +1,111 @@
+%! Introducing Statistics: Do the Data We Collected Tell the Truth? — Unit 3, Lesson 3.1 — AP Practice
+% GRADUAL RELEASE: AP-format practice, assigned but NOT scored — the cover says "practice, not a grade";
+% the graded practice is the `homework` component that follows it.
+% Two multiple-choice items (MC1: pick the chance-based method for a bus-line survey; MC2 is the
+% crux in AP clothing — 50,000 streaming-poll responses, distractor (A) is "large, so close to
+% the truth"), then one free-response set on a library lunch survey: (a) chance or not,
+% (b) direction of the bias in context, (c) the SPIRAL — mean or median for a right-skewed
+% distribution (Unit 1).
+% Every rubric box is full width on its own line under its part, hung with \gradedhere over
+% \writelines{8} (about 2.1in, room for the drawn 2in box). Each \gradedblank line, display=
+% included, is BYTE-IDENTICAL in ap_practice_key/; key mode prints the display. The
+% next-lesson preview is NOT here: it closes the packet, in ../homework/.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l01-ap}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.1}{AP Practice}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.06in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{not required and not scored} --- your graded homework is the last section
+of this packet. Work these AP-format reps for practice and bring questions to study hall.
+\end{remindbox}
+
+\vspace{0.06in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in]
+
+  \item A city wants to estimate the percent of its residents who would support a new bus
+        line. Which method is most likely to give a trustworthy estimate?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item Survey riders waiting at the main bus station.
+          \item Post a poll on the city transit department's website.
+          \item Survey the people who attend a city council meeting about transit.
+          \item Randomly select 400 households from a list of all city addresses.
+          \item Survey the first 2{,}000 people who call a transit hotline.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=D]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \item A streaming service posts a poll on its home screen. Of the 50{,}000 subscribers who
+        respond, 68\% say they want more reality shows. Which statement is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item Because 50{,}000 is so large, 68\% must be very close to the truth for all
+                subscribers.
+          \item The 68\% cannot be trusted for all subscribers: the people who chose to respond
+                may differ from those who did not.
+          \item The 68\% is trustworthy because every respondent is a subscriber.
+          \item The 68\% would be trustworthy if 100{,}000 subscribers had responded.
+          \item The poll shows that reality shows cause people to subscribe.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[27]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Every answer must be written \emph{in the context of the
+problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
+
+  \item A school librarian wants to know how many books per month the students at her school
+        read. On Monday she surveys the 40 students who come to the library at lunch. Their
+        mean is 3.2 books per month.
+
+        \vspace{6pt}
+
+        \boxguard[30]
+        \textbf{(a)} Did chance decide which students were surveyed? Explain who decided.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3a, type=rubric, points=2, display={No. The students chose to come to the library at lunch; the librarian surveyed whoever was there.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(b)} Is 3.2 books per month likely too high or too low for all students at the
+        school? Explain in context.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3b, type=rubric, points=2, display={Too high. Students who spend lunch in the library are likely heavier readers than students who do not, so they are over-represented.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(c)} The 40 responses are strongly skewed to the right. Which better describes a
+        typical student among these 40, the mean or the median? Explain.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3c, type=rubric, points=2, display={The median. A few students who read many books pull the mean up; the median is resistant to them.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+\end{enumerate}
+
+\end{document}
