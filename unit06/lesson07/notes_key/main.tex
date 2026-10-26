@@ -34,27 +34,35 @@ affect the power of a hypothesis test.
 \end{notesbox}
 
 \begin{notesbox}{Describing Errors in Context}
-Templates are context-dependent — use the specific scenario details. No fill-in needed; see worked examples in class.
+Always write in terms of the \emph{specific} scenario, not just abstract $H_0$ and $H_a$.\\[4pt]
+\textbf{Template --- Type I:} ``A Type I error would mean concluding \ans{$H_a$ is true (in context)} [restate $H_a$ in plain language] when in fact \ans{$H_0$ is true} [restate $H_0$].''\\[4pt]
+\textbf{Template --- Type II:} ``A Type II error would mean failing to detect that \ans{$H_a$ is true (in context)} [restate $H_a$] even though it is true.''
 \end{notesbox}
 
 \begin{notesbox}{Power and Factors That Affect It}
-Power $= 1 - \beta$. \textbf{Power increases when:}
+Power $= 1 - \beta = P(\text{reject } H_0 \mid H_a \text{ true})$.\\[4pt]
+\textbf{Power increases when:}
 \begin{enumerate}[leftmargin=1.5em]
   \item $n$ \ans{increases} (reduces $SE$, easier to detect true effect)
   \item $\alpha$ \ans{increases} (wider rejection region, but more Type I errors)
   \item True effect size \ans{increases} (true $p$ farther from $p_0$)
 \end{enumerate}
 
-\textbf{Trade-off:} Decreasing $\alpha$ \ans{decreases} power (increases \ans{Type II} errors).
+\vspace{4pt}
+\textbf{Trade-off:} Decreasing $\alpha$ (reducing Type I errors) \ans{decreases} power (increases \ans{Type II} errors).
 \end{notesbox}
 
 \begin{practicebox}
-Drug testing: $H_0$: drug is no more effective than placebo; $H_a$: drug is more effective.
+A pharmaceutical company tests a new pain drug. $H_0$: the drug is no more effective than a
+placebo ($p = 0.50$); $H_a$: the drug is more effective ($p > 0.50$).
 
 \begin{enumerate}[label=\alph*.]
-  \item \ansline{Type I error: concluding the drug is more effective than the placebo when it actually isn't. The drug would be approved even though it provides no real benefit.}
-  \item \ansline{Type II error: failing to detect that the drug is more effective than the placebo, even though it truly is. A beneficial drug would not be approved.}
-  \item \ansline{Both matter: Type I could harm patients (ineffective drug approved); Type II could deny patients a useful treatment. Context determines which is worse. Many regulatory contexts prioritize controlling Type I (set low $\alpha$), but may sacrifice power.}
+  \item Describe a Type I error in this context. \ansline{Concluding the drug beats the placebo when it actually does not.}\\
+        \ansline{An ineffective drug would be approved and sold.}
+  \item Describe a Type II error in this context. \ansline{Failing to find the drug better when it truly is.}\\
+        \ansline{A helpful drug would not be approved for patients.}
+  \item In the drug testing context, which error is more problematic? Explain. \ansline{Usually Type I.}\\
+        \ansline{Patients would pay for (and risk side effects of) a drug that does not work.}
 \end{enumerate}
 \end{practicebox}
 

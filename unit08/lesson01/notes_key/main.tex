@@ -1,7 +1,7 @@
 %! AP Statistics — Unit 8, Lesson 8.1 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
@@ -11,24 +11,21 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to:
 \begin{itemize}
-    \item[$\square$] \ansline{Explain what expected counts are and how to compute them from a claimed distribution.}
+    \item[$\square$] \ansline{Explain expected counts and compute them from a claimed distribution.}
     \item[$\square$] \ansline{Describe what it means for observed and expected counts to differ.}
-    \item[$\square$] \ansline{Identify the statistical question that chi-square tests address about categorical data.}
+    \item[$\square$] \ansline{Identify the question chi-square tests ask about categorical data.}
 \end{itemize}
 \end{objectivebox}
 
 \begin{vocabbox}
-\termblanklong{Observed counts}
-\ansline{The actual frequencies recorded from data in each category.}
-
-\termblanklong{Expected counts}
-\ansline{The frequencies we would predict if a specified distribution were true; computed as $n \times p_{\text{category}}$.}
-
-\termblanklong{Chi-square test}
-\ansline{A significance test that compares observed and expected counts across all categories of a categorical variable to decide whether differences are due to chance.}
-
-\termblanklong{Distribution of a categorical variable}
-\ansline{The list of all possible categories and the proportion (or count) of observations in each.}
+\noindent\textbf{\textcolor{navy}{Observed counts:}}\\[1pt]%
+\ansline{The actual frequencies recorded in each category of the data.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Expected counts:}}\\[1pt]%
+\ansline{The counts we would predict if a specified distribution were true;}\\[1pt]\ansline{computed as $n \times p_{\text{category}}$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Chi-square test:}}\\[1pt]%
+\ansline{A significance test comparing observed and expected counts across all}\\[1pt]\ansline{categories, to decide whether the differences are bigger than chance.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Distribution of a categorical variable:}}\\[1pt]%
+\ansline{The list of all possible categories and the proportion (or count) of}\\[1pt]\ansline{observations in each.}\\[3pt]
 \end{vocabbox}
 
 \begin{hookbox}
@@ -36,13 +33,7 @@ By the end of this lesson, I will be able to:
 and count: Red 14, Orange 8, Yellow 12, Green 9, Blue 7 (total = 50). Is your bag unusual,
 or is this just normal variation? How would you decide?
 
-\begin{teachernote}
-    Expected count per color $= 0.20 \times 50 = 10$. Gaps: Red $+4$, Orange $-2$,
-    Yellow $+2$, Green $-1$, Blue $-3$. These are small relative to 10.
-    Most students will say this does not look unusual, which is good --- this bag
-    is fairly consistent with the claimed distribution. The hook is designed to
-    prime students for cases where the gaps \emph{are} large.
-\end{teachernote}
+\ansline{Expected: $0.20 \times 50 = 10$ per color. Gaps: $+4, -2, +2, -1, -3$.}\\\ansline{Small next to 10 --- compare observed to expected; this bag looks typical.}
 \end{hookbox}
 
 \begin{notesbox}{What Are Expected Counts?}
@@ -53,59 +44,58 @@ If we \emph{assume} a categorical variable follows a specific distribution, the
     \text{Expected count} = n \times p_{\text{category}}
 \]
 
-where $n$ is the \ans{total sample size} and $p_{\text{category}}$ is the
-\ans{claimed (hypothesized) proportion for that category}.
+where $n$ is the \makebox[3cm][l]{\ans{sample size}} and $p_{\text{category}}$ is the \makebox[5cm][l]{\ans{claimed proportion}}.
 
 \vspace{0.1in}
 \textbf{Example:} A coffee shop sells 200 drinks. If each of 4 flavors is equally popular
-(25\% each), the expected count for each flavor is $200 \times 0.25 = $ \ans{50}.
+(25\% each), the expected count for each flavor is $200 \times 0.25 = $ \makebox[2cm][l]{\ans{50}}.
 
 \vspace{0.1in}
-Expected counts represent what we would see \ans{on average in the long run}
+Expected counts represent what we would see \makebox[6cm][l]{\ans{on average (long run)}}
 if the assumed distribution were true. They are not necessarily whole numbers.
 \end{notesbox}
 
 \begin{notesbox}{What Does ``Surprising'' Mean Statistically?}
-After computing expected counts, we compare them to the \ans{observed} counts.
+After computing expected counts, we compare them to the \makebox[3cm][l]{\ans{observed}} counts.
 
 \vspace{0.1in}
-\textbf{The gap} for a single category $= $ \ans{Observed $-$ Expected}.
+\textbf{The gap} for a single category $= $ \makebox[4cm][l]{\ans{Observed $-$ Expected}}.
 
 \vspace{0.1in}
-A gap of \ans{0} means perfect agreement. Larger gaps indicate that the data
-\ans{are farther from what the assumed distribution would predict}.
+A gap of \makebox[1cm][l]{\ans{0}} means perfect agreement. Larger gaps indicate that the data
+\makebox[6cm][l]{\ans{are far from the claimed distribution}}.
 
 \vspace{0.1in}
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{Xcc}
     \textbf{Category} & \textbf{Observed} & \textbf{Gap (Obs $-$ Exp)} \\
     \hline
-    Espresso   & 48 & \ans{$48 - 50 = -2$} \\
-    Latte      & 72 & \ans{$72 - 50 = +22$} \\
-    Cappuccino & 36 & \ans{$36 - 50 = -14$} \\
-    Cold Brew  & 44 & \ans{$44 - 50 = -6$} \\
+    Espresso   & 48 & \makebox[2cm][l]{\ans{$-2$}} \\
+    Latte      & 72 & \makebox[2cm][l]{\ans{$+22$}} \\
+    Cappuccino & 36 & \makebox[2cm][l]{\ans{$-14$}} \\
+    Cold Brew  & 44 & \makebox[2cm][l]{\ans{$-6$}} \\
 \end{tabularx}
 
 \vspace{0.1in}
-Which category has the largest gap? \ans{Latte} \quad
-Is the gap positive or negative? \ans{Positive ($+22$)}
+Which category has the largest gap? \makebox[3cm][l]{\ans{Latte}} \quad
+Is the gap positive or negative? \makebox[3cm][l]{\ans{positive ($+22$)}}
 \end{notesbox}
 
 \begin{notesbox}{Preview: The Chi-Square Idea}
 Looking at one gap at a time is useful, but a chi-square test considers
-\ans{all} categories simultaneously.
+\makebox[4cm][l]{\ans{all}} categories simultaneously.
 
 \vspace{0.1in}
-The general idea: we \ans{add up} the gaps across all categories (after adjusting
+The general idea: we \makebox[4cm][l]{\ans{add up}} the gaps across all categories (after adjusting
 each gap for the size of the expected count). The resulting number is called the
 \textbf{chi-square statistic}, denoted $\chi^2$ (``chi-square'').
 
 \begin{itemize}
-    \item A $\chi^2$ value close to \ans{0} means observed counts closely match
+    \item A $\chi^2$ value close to \makebox[2cm][l]{\ans{0}} means observed counts closely match
           expected counts.
-    \item A \ans{large} $\chi^2$ value means the observed counts differ substantially
+    \item A \makebox[2cm][l]{\ans{large}} $\chi^2$ value means the observed counts differ substantially
           from expected.
-    \item We will learn the formula in Lesson \ans{8.2}.
+    \item We will learn the formula in Lesson \makebox[2cm][l]{\ans{8.2}}.
 \end{itemize}
 \end{notesbox}
 
@@ -113,10 +103,10 @@ each gap for the size of the expected count). The resulting number is called the
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{lX}
     \textbf{Lesson 8.1} & Framing: what question does Unit 8 ask? \\
-    \textbf{Lesson 8.2} & Setting up the chi-square \ans{goodness-of-fit (GOF)} test \\
+    \textbf{Lesson 8.2} & Setting up the chi-square \makebox[4cm][l]{\ans{goodness-of-fit}} test \\
     \textbf{Lesson 8.3} & Carrying out the chi-square GOF test \\
-    \textbf{Lessons 8.4--8.5} & Chi-square test for \ans{homogeneity} (two-way tables, multiple groups) \\
-    \textbf{Lesson 8.6} & Chi-square test for \ans{independence} (two categorical variables, one sample) \\
+    \textbf{Lessons 8.4--8.5} & Chi-square test for \makebox[4cm][l]{\ans{homogeneity}} (two-way tables, multiple groups) \\
+    \textbf{Lesson 8.6} & Chi-square test for \makebox[4cm][l]{\ans{independence}} (two categorical variables, one sample) \\
     \textbf{Lesson 8.7} & Synthesis: choosing the right chi-square procedure \\
 \end{tabularx}
 \end{notesbox}
@@ -128,14 +118,14 @@ environment. Results: Library 38, Home 52, Caf\'e 18, Classroom 12.
 \begin{enumerate}
   \item If preference were equally distributed among 4 options, what is the
         expected count for each category?
-        \ansline{$120 \div 4 = 30$ students expected in each category.}
+        \ansline{}\\\ansline{$120 \div 4 = 30$ students expected in each category.}
 
   \item Compute the gap (Observed $-$ Expected) for each category.
-        \ansline{Library: $38 - 30 = +8$; \quad Home: $52 - 30 = +22$; \quad Caf\'e: $18 - 30 = -12$; \quad Classroom: $12 - 30 = -18$.}
+        \ansline{Library $+8$; \quad Home $+22$;}\\\ansline{Caf\'e $-12$; \quad Classroom $-18$.}
 
   \item Without any formal calculation, does this data suggest students do
         \emph{not} have equal preferences? Explain.
-        \ansline{Answers vary. Home ($+22$) and Classroom ($-18$) show large differences from expected; this pattern suggests students may not have equal preferences, but a chi-square test is needed to quantify how surprising these gaps are.}
+        \ansline{}\\\ansline{Likely yes: Home ($+22$), Classroom ($-18$) are far from 30; a test would confirm.}
 \end{enumerate}
 \end{practicebox}
 

@@ -13,11 +13,23 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
-\textbf{Context: Baby weights.} $N(7.5, 1.1)$
+\textbf{Context: Baby weights.} Newborn birth weights in the U.S. are approximately
+normal with mean $\mu = 7.5$ lb and standard deviation $\sigma = 1.1$ lb.
+
 \begin{enumerate}
-  \item \ans{$\mu \pm 2\sigma = 7.5 \pm 2(1.1) = 7.5 \pm 2.2$; the range is $(5.3, 9.7)$ lb.}
-  \item \ans{$z = (6.0 - 7.5)/1.1 \approx -1.36$. This is about 1.4 SD below the mean --- not extremely unusual (within 2 SD), but below average.}
-  \item \ansline{There is approximately an 8.6\% chance that a randomly selected newborn weighs less than 6.0 lb. In other words, about 8.6\% of newborns in the U.S. weigh less than 6 pounds.}
+  \item Use the 68--95--99.7 rule to find the range of birth weights for the middle
+        95\% of newborns. Show your calculation.
+        \ansline{$7.5 \pm 2(1.1) = 7.5 \pm 2.2$}\\
+        \ansline{Middle 95\% of newborns: 5.3 lb to 9.7 lb.}
+  \item A newborn weighs 6.0 lb. Compute the z-score and determine whether this weight
+        is unusually low. Show work.
+        \ansline{$z = (6.0 - 7.5)/1.1 \approx -1.36$}\\
+        \ansline{About 1.4 SD below the mean --- below average,}\\
+        \ansline{but not unusually low (it is within 2 SD of the mean).}
+  \item Using the z-score from part (b), the probability of a birth weight \emph{below}
+        6.0 lb is approximately 0.086. Interpret this probability in context.
+        \ansline{}\\
+        \ansline{About 8.6\% of U.S. newborns weigh less than 6.0 lb.}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -25,12 +37,25 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
-\textbf{Context: State exam.} $N(72, 9)$
+\textbf{Context: Standardized test.} Scores on a state exam are approximately normal
+with $\mu = 72$ and $\sigma = 9$.
+
 \begin{enumerate}
-  \item \ans{$z = (85-72)/9 \approx 1.44$; $P(X>85) = 1 - 0.9251 = 0.0749$. About 7.5\% of students score above 85.}
-  \item \ans{$z_1 = (60-72)/9 \approx -1.33$, $z_2 = (80-72)/9 \approx 0.89$; $P(60<X<80) = P(-1.33<Z<0.89) = 0.8133 - 0.0918 = 0.7215$. About 72\%.}
-  \item \ans{$P(X > x) = 0.10 \Rightarrow z = 1.28$; $x = 72 + 1.28(9) \approx 83.5$. The minimum score is approximately 83.5 (or 84).}
-  \item \ansline{A student must score at least 83.5 on the state exam to be in the top 10\% and qualify for the scholarship.}
+  \item Find $P(X > 85)$. Sketch, compute z-score, and use table/technology.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.1in][t]{\linewidth}\vspace*{2pt}\ans{Shade the right tail above 85.}\\
+        \ans{$z = (85-72)/9 \approx 1.44$}\\
+        \ans{$P(X>85) = P(Z>1.44) = 1 - 0.9251 \approx 0.075$}\end{minipage}
+  \item Find $P(60 < X < 80)$. Show all steps.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.1in][t]{\linewidth}\vspace*{2pt}\ans{$z_1 = (60-72)/9 \approx -1.33$, \quad $z_2 = (80-72)/9 \approx 0.89$}\\
+        \ans{$P(-1.33<Z<0.89) = 0.8133 - 0.0918$}\\
+        \ans{$P(60<X<80) \approx 0.72$}\end{minipage}
+  \item The top 10\% of scores earn a scholarship. What is the minimum score needed?
+        Use inverse normal.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.9in][t]{\linewidth}\vspace*{2pt}\ans{Area to the left $= 0.90$, so $z \approx 1.28$}\\
+        \ans{$x = 72 + 1.28(9) \approx 83.5$ --- a score of about 84}\end{minipage}
+  \item Write a complete sentence interpreting your answer to part (c) in context.
+        \ansline{}\\
+        \ansline{A student must score at least about 83.5 (84) to earn the scholarship.}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -38,12 +63,29 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
-\textbf{Context: Daily rainfall.} $N(1.2, 0.4)$
+\textbf{Context: Daily rainfall.} A weather model predicts that daily rainfall in a
+city follows $N(1.2\text{ cm}, 0.4\text{ cm})$ during summer.
+
 \begin{enumerate}
-  \item \ans{$z_1 = (0.8-1.2)/0.4 = -1.00$, $z_2 = (2.0-1.2)/0.4 = 2.00$; $P(0.8<X<2.0) = 0.9772 - 0.1587 = 0.8185$. About 81.9\%.}
-  \item \ans{5th percentile: $z = -1.645$; $x = 1.2 + (-1.645)(0.4) \approx 0.54$ cm. 95th percentile: $z = 1.645$; $x \approx 1.86$ cm. On 5\% of days it rains less than 0.54 cm and on 5\% of days it rains more than 1.86 cm.}
-  \item \ans{Most extreme 2\%: split into $1\%$ in each tail. $z = \pm 2.326$; lower: $1.2 - 2.326(0.4) \approx 0.27$ cm; upper: $1.2 + 2.326(0.4) \approx 2.13$ cm. Days with rainfall below 0.27 cm or above 2.13 cm trigger weather alerts.}
-  \item \ansline{Rainfall data is often right-skewed (many low-rain days and occasional high-rain days), so the normal model may not be appropriate. To check: examine a histogram or normal probability plot for symmetry and bell shape. If the data are skewed, a different model (e.g., exponential or gamma) might be better.}
+  \item Find the probability that a randomly selected summer day has rainfall between
+        0.8 cm and 2.0 cm.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.9in][t]{\linewidth}\vspace*{2pt}\ans{$z_1 = (0.8-1.2)/0.4 = -1$, \quad $z_2 = (2.0-1.2)/0.4 = 2$}\\
+        \ans{$P(-1<Z<2) = 0.9772 - 0.1587 \approx 0.819$}\end{minipage}
+  \item Find the 5th and 95th percentiles. What do these values mean in context?
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.9in][t]{\linewidth}\vspace*{2pt}\ans{$z = \pm 1.645$: \quad $1.2 - 1.645(0.4) \approx 0.54$ cm, \quad $1.2 + 1.645(0.4) \approx 1.86$ cm}\\
+        \ans{On 5\% of summer days rainfall is below 0.54 cm;}\\
+        \ans{on 5\% of summer days it is above 1.86 cm.}\end{minipage}
+  \item The most extreme 2\% of rainfall days (highest and lowest) trigger weather
+        alerts. Find the boundary values. (\textit{Hint:} split 2\% into two tails ---
+        VAR-6.B.2d.)
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.9in][t]{\linewidth}\vspace*{2pt}\ans{1\% in each tail: $z = \pm 2.326$}\\
+        \ans{Lower: $1.2 - 2.326(0.4) \approx 0.27$ cm; \quad upper: $1.2 + 2.326(0.4) \approx 2.13$ cm}\\
+        \ans{Alerts for days below 0.27 cm or above 2.13 cm.}\end{minipage}
+  \item Is the normal model appropriate for daily rainfall? What features of the data
+        would you check before applying this model?
+        \ansline{}\\
+        \ansline{Probably not: rainfall is right-skewed and can't go below 0 cm.}\\
+        \ansline{Check a histogram or normal probability plot for symmetry/bell shape.}
 \end{enumerate}
 \end{tcolorbox}
 

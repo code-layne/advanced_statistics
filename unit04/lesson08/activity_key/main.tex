@@ -14,6 +14,15 @@
 \begin{tcolorbox}[colback=sky!60, colframe=navy, title=\textbf{Tier R --- Remediate},
     arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
 \small
+$X$ = number of text messages a student sends per class period.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}ccccc@{}}
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X=x)$ & 0.40 & 0.35 & 0.15 & 0.10 \\
+\end{tabular}
+\end{center}
 
 \renewcommand{\arraystretch}{1.9}
 \begin{tabularx}{\linewidth}{@{} c c X @{}}
@@ -28,11 +37,13 @@ $x$ & $P(X=x)$ & $x \cdot P(X=x)$ \\
 \end{tabularx}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item See table.
+  \item Fill in the computation table and find $\mu_X$.
 
-  \item \ansline{On average, a student sends about 0.95 text messages per class period in the long run.}
+  \item Interpret $\mu_X$ in context.\\
+        \ansline{Over many class periods, students send an average of about}\\[1pt]\ansline{0.95 text messages per class period.}
 
-  \item \ansline{No. You cannot send 0.95 texts; $\mu_X$ is a long-run average, not a single outcome.}
+  \item Is $\mu_X$ a possible value of $X$? Explain.\\
+        \ansline{No. $X$ takes whole numbers only; 0.95 is a long-run average.}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -41,15 +52,24 @@ $x$ & $P(X=x)$ & $x \cdot P(X=x)$ \\
 \begin{tcolorbox}[colback=goldbg!60, colframe=goldacc, title=\textbf{Tier A --- Approaching Proficiency},
     arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
 \small
+$Y$ = number of hours a student exercises per week.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}ccccc@{}}
+$y$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(Y=y)$ & 0.20 & 0.35 & 0.30 & 0.15 \\
+\end{tabular}
+\end{center}
 
 \renewcommand{\arraystretch}{2.0}
 \begin{tabularx}{\linewidth}{@{} c c c c X @{}}
 $y$ & $P$ & $y \cdot P$ & $(y - \mu_Y)^2$ & $(y-\mu_Y)^2 \cdot P$ \\
 \hline
-0 & 0.20 & \ans{0.00} & \ans{$(0-1.40)^2=1.96$} & \ans{0.392} \\
-1 & 0.35 & \ans{0.35} & \ans{$(1-1.40)^2=0.16$} & \ans{0.056} \\
-2 & 0.30 & \ans{0.60} & \ans{$(2-1.40)^2=0.36$} & \ans{0.108} \\
-3 & 0.15 & \ans{0.45} & \ans{$(3-1.40)^2=2.56$} & \ans{0.384} \\
+0 & 0.20 & \ans{0.00} & \ans{1.96} & \ans{0.392} \\
+1 & 0.35 & \ans{0.35} & \ans{0.16} & \ans{0.056} \\
+2 & 0.30 & \ans{0.60} & \ans{0.36} & \ans{0.108} \\
+3 & 0.15 & \ans{0.45} & \ans{2.56} & \ans{0.384} \\
 \hline
 & & $\mu_Y=$ \ans{1.40} & & $\sigma^2_Y=$ \ans{0.940} \\
 \end{tabularx}
@@ -58,9 +78,11 @@ $y$ & $P$ & $y \cdot P$ & $(y - \mu_Y)^2$ & $(y-\mu_Y)^2 \cdot P$ \\
 $\sigma_Y = $ \ans{$\sqrt{0.940} \approx 0.970$ hours}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item \ansline{On average, a student exercises about 1.40 hours per week in the long run.}
+  \item Interpret $\mu_Y$ in context.\\
+        \ansline{Over many randomly selected students, the average amount of}\\[1pt]\ansline{exercise is about 1.40 hours per week.}
 
-  \item \ansline{The number of hours exercised per week typically varies from the mean of 1.40 hours by about 0.97 hours.}
+  \item Interpret $\sigma_Y$ in context.\\
+        \ansline{Hours of exercise per week typically vary from the mean of}\\[1pt]\ansline{1.40 hours by about 0.97 hours.}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -69,25 +91,49 @@ $\sigma_Y = $ \ans{$\sqrt{0.940} \approx 0.970$ hours}
 \begin{tcolorbox}[colback=greenbg!60, colframe=greenacc, title=\textbf{Tier E --- Extension},
     arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
 \small
+Two carnival games each cost \$3 to play.
+
+\textbf{Game A:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}cccc@{}}
+Prize ($x$) & \$0 & \$3 & \$10 \\
+\hline
+$P(X=x)$ & 0.60 & 0.30 & 0.10 \\
+\end{tabular}
+\end{center}
+
+\textbf{Game B:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}cccc@{}}
+Prize ($y$) & \$0 & \$2 & \$6 \\
+\hline
+$P(Y=y)$ & 0.40 & 0.40 & 0.20 \\
+\end{tabular}
+\end{center}
+
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item \ans{$\mu_X = \$0(0.60)+\$3(0.30)+\$10(0.10) = \$0+\$0.90+\$1.00=\$1.90$}\\
-        \ans{$\mu_Y = \$0(0.40)+\$2(0.40)+\$6(0.20) = \$0+\$0.80+\$1.20=\$2.00$}
+  \item Compute $\mu_X$ and $\mu_Y$.
 
-  \item \ans{$\sigma_X \approx \$2.84$; \quad $\sigma_Y \approx \$2.19$}
+        \noindent\begin{minipage}[t][0.4in][t]{\linewidth}\ans{$\mu_X = 0(0.60)+3(0.30)+10(0.10) = 0.90 + 1.00 = \$1.90$}\\
+        \ans{$\mu_Y = 0(0.40)+2(0.40)+6(0.20) = 0.80 + 1.20 = \$2.00$}\end{minipage}
 
-        \begin{teachernote}
-        Game A: $\sigma^2_X=0.60(0-1.90)^2+0.30(3-1.90)^2+0.10(10-1.90)^2 \approx 8.09$; $\sigma_X \approx 2.84$.
-        Game B: $\sigma^2_Y=0.40(0-2.00)^2+0.40(2-2.00)^2+0.20(6-2.00)^2=1.60+0+3.20=4.80$; $\sigma_Y \approx 2.19$.
-        \end{teachernote}
+  \item Compute $\sigma_X$ and $\sigma_Y$. (You may use a calculator for the arithmetic.)
 
-  \item \ansline{Game B has the higher expected prize (\$2.00 vs.\ \$1.90).}
+        \noindent\begin{minipage}[t][0.5in][t]{\linewidth}\ans{$\sigma^2_X = 0.60(0-1.90)^2+0.30(3-1.90)^2+0.10(10-1.90)^2 = 9.09$; $\sigma_X \approx \$3.02$}\\
+        \ans{$\sigma^2_Y = 0.40(0-2)^2+0.40(2-2)^2+0.20(6-2)^2 = 4.80$; $\sigma_Y \approx \$2.19$}\end{minipage}
 
-  \item \ansline{Game A is riskier ($\sigma_X \approx \$2.84 > \sigma_Y \approx \$2.19$).}
+  \item Which game has the higher expected prize? \ans{Game B (\$2.00 vs.\ \$1.90)}
 
-  \item \ansline{Net winnings A: $\$1.90 - \$3 = -\$1.10$ per play. Net winnings B: $\$2.00-\$3=-\$1.00$ per play.}
+  \item Which game is riskier (higher $\sigma$)? \ans{Game A (\$3.02 vs.\ \$2.19)}
 
-  \item \ansline{Game B is slightly better: higher expected net winnings ($-\$1.00$) and lower risk. However,}\\
-        \ansline{both games have negative expected net winnings, so neither is a good long-run bet.}
+  \item Define net winnings for each game (prize $-$ \$3). What is the expected
+        \emph{net} winnings per play for each game?\\
+        \ansline{Game A: $\$1.90 - \$3 = -\$1.10$ per play.}\\[1pt]\ansline{Game B: $\$2.00 - \$3 = -\$1.00$ per play.}
+
+  \item Which game would you choose? Justify using both $\mu$ and $\sigma$.\\
+        \ansline{Game B: higher expected net winnings ($-\$1.00$ vs.\ $-\$1.10$) and less}\\[1pt]\ansline{variability ($\sigma_Y \approx \$2.19 < \sigma_X \approx \$3.02$). Both lose money}\\[1pt]\ansline{in the long run, so neither is a good bet.}
 \end{enumerate}
 \end{tcolorbox}
 

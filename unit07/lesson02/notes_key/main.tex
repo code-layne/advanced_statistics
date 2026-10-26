@@ -12,61 +12,61 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to:
 \begin{itemize}
-    \item[$\square$] \ansline{Describe the $t$-distribution and explain how it differs from the standard normal.}
-    \item[$\square$] \ansline{Identify and verify the conditions for a one-sample $t$-interval.}
+    \item[$\square$] \ansline{Describe the $t$-distribution and how it differs from $N(0,1)$.}
+    \item[$\square$] \ansline{Verify the conditions for a one-sample $t$-interval.}
     \item[$\square$] \ansline{Calculate a one-sample $t$-interval: $\bar x \pm t^* \cdot s/\sqrt{n}$.}
-    \item[$\square$] \ansline{Apply the one-sample $t$-interval to a matched-pairs design using differences.}
+    \item[$\square$] \ansline{Apply the one-sample $t$-interval to matched-pairs differences.}
 \end{itemize}
 \end{objectivebox}
 
 \begin{vocabbox}
-\termblanklong{$t$-distribution}
-\ansline{A symmetric, bell-shaped family of distributions with heavier tails than $N(0,1)$; used when $\sigma$ is unknown and $s$ is substituted; indexed by degrees of freedom.}
-
-\termblanklong{Degrees of freedom ($df$)}
-\ansline{For a one-sample $t$-procedure: $df = n - 1$.}
-
-\termblanklong{Standard error of $\bar x$ ($SE_{\bar x}$)}
-\ansline{$SE_{\bar x} = s/\sqrt{n}$; estimates the standard deviation of the sampling distribution of $\bar x$.}
-
-\termblanklong{Critical value $t^*$}
-\ansline{The positive value such that the area between $-t^*$ and $t^*$ under the $t$-curve equals $C$; found from the $t$-table with $df = n - 1$.}
-
-\termblanklong{One-sample $t$-interval}
-\ansline{$\bar x \pm t^* \cdot s/\sqrt{n}$; the appropriate CI for a population mean when $\sigma$ is unknown.}
-
-\termblanklong{Matched-pairs design}
-\ansline{A design where each observation in one group is paired with an observation in the other; analyzed by computing differences and applying a one-sample $t$-procedure.}
+\noindent\textbf{\textcolor{navy}{$t$-distribution:}}\\[1pt]%
+\ansline{Symmetric, bell-shaped curve with heavier tails than $N(0,1)$; used when $s$}\\[1pt]\ansline{replaces an unknown $\sigma$. Indexed by degrees of freedom.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Degrees of freedom ($df$):}}\\[1pt]%
+\ansline{The parameter that picks out one $t$-curve. One-sample $t$: $df = n - 1$.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Standard error of $\bar x$ ($SE_{\bar x}$):}}\\[1pt]%
+\ansline{$SE_{\bar x} = s/\sqrt{n}$; estimates the SD of the sampling distribution of $\bar x$.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Critical value $t^*$:}}\\[1pt]%
+\ansline{Value with area $C$ between $-t^*$ and $t^*$ under the $t$-curve;}\\[1pt]\ansline{found from the $t$-table (or invT) with $df = n - 1$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{One-sample $t$-interval:}}\\[1pt]%
+\ansline{$\bar x \pm t^* \cdot s/\sqrt{n}$; a CI for a population mean $\mu$ when $\sigma$ is unknown.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Matched-pairs design:}}\\[1pt]%
+\ansline{Each observation is paired with another (same subject or matched subjects);}\\[1pt]\ansline{analyze the differences with a one-sample $t$-procedure.}\\[3pt]
 \end{vocabbox}
 
 \begin{hookbox}
-Why can't we use a $z$-interval for the sodium example?
-\ansline{$\sigma$ (the true population standard deviation of sodium intake) is unknown. A $z$-interval requires $\sigma$; substituting $s$ changes the distribution of the standardized statistic from $z$ to $t$.}
+A nutritionist records daily sodium intake for a random sample of 20 college students:
+$\bar x = 2840$ mg, $s = 480$ mg. The recommended maximum is 2300 mg.
+
+Why can't we use a $z$-interval to estimate the true mean sodium intake? \ansline{$\sigma$ is unknown.}\\
+\ansline{Using $s$ in place of $\sigma$ makes the standardized statistic follow a $t$, not $z$.}
 \end{hookbox}
 
 \begin{notesbox}{The $t$-Distribution (VAR-7.A)}
 When we substitute $s$ for $\sigma$, the statistic $t = \dfrac{\bar x - \mu}{s/\sqrt{n}}$
 follows a \ans{$t$}-distribution.
 
+\vspace{0.1in}
 \textbf{Properties:}
 \begin{itemize}
     \item Bell-shaped, \ans{symmetric}, centered at \ans{0}.
-    \item Heavier tails than the standard normal.
-    \item Degrees of freedom: $df = n - $ \ans{1}.
+    \item Heavier tails than the standard normal (because $s$ adds variability).
+    \item Indexed by \textbf{degrees of freedom}: $df = n - $ \ans{1}.
     \item As $df$ \ans{increases}, the $t$-distribution approaches $N(0, 1)$.
 \end{itemize}
 
-For 95\% CI with $n = 20$: $df = $ \ans{19}, $t^* = $ \ans{2.093}.
+\textbf{Finding $t^*$:} For 95\% CI with $n = 20$: $df = $ \ans{19}, $t^* = $ \ans{2.093}.
 \end{notesbox}
 
 \begin{notesbox}{Conditions for a One-Sample $t$-Interval (UNC-4.P)}
 \begin{enumerate}
     \item \textbf{Random:} Data come from a \ans{random sample} or randomized experiment.
-    \item \textbf{10\%:} $n \le $ \ans{10}\%$ \cdot N$ (if sampling w/o replacement).
+    \item \textbf{10\%:} If sampling w/o replacement: $n \le $ \ans{10}$\% \cdot N$.
     \item \textbf{Large Sample:}
           \begin{itemize}
-              \item $n \ge $ \ans{30}: condition met.
-              \item $n < $ \ans{30}: data show no strong \ans{skewness} or \ans{outliers}.
+              \item $n \ge $ \ans{30}: CLT applies $\to$ condition met.
+              \item $n < $ \ans{30}: check that the data show no strong
+                    \ans{skewness} or \ans{outliers}.
           \end{itemize}
 \end{enumerate}
 \end{notesbox}
@@ -75,34 +75,39 @@ For 95\% CI with $n = 20$: $df = $ \ans{19}, $t^* = $ \ans{2.093}.
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{lX}
     Point estimate & $\bar x$ \\
-    Standard error & $SE_{\bar x} = s/\sqrt{n}$ \\
-    Margin of error & $ME = t^* \cdot s/\sqrt{n}$ \\
-    \textbf{Interval} & $\bar x \pm t^* \cdot s/\sqrt{n}$ \\
+    Standard error & $SE_{\bar x} = \dfrac{s}{\sqrt{n}}$ \\
+    Margin of error & $ME = t^* \cdot \dfrac{s}{\sqrt{n}}$ \quad ($t^*$ from table, $df = n - 1$) \\
+    \textbf{Interval} & $\bar x \pm t^* \cdot \dfrac{s}{\sqrt{n}}$ \\
 \end{tabularx}
 
-\textbf{Sodium example:} $df = $ \ans{19}, $t^* = $ \ans{2.093},
-$SE = 480/\sqrt{20} = $ \ans{107.3} mg
+\vspace{0.1in}
+\textbf{Sodium example:} $n = 20$, $\bar x = 2840$, $s = 480$, 95\% CI.
 
-Interval: $2840 \pm 2.093 \cdot 107.3 = 2840 \pm 224.6
-= ($ \ans{2615} $,$ \ans{3065} $)$ mg
+$df = $ \ans{19}, \quad $t^* = $ \ans{2.093}, \quad $SE = 480/\sqrt{20} = $ \ans{107.3} mg
+
+Interval: $2840 \pm $ \ans{2.093} $\cdot$ \ans{107.3} $= 2840 \pm$ \ans{224.6}
+$= ($ \ans{2615.4}$,$ \ans{3064.6}$)$ mg
 \end{notesbox}
 
 \begin{notesbox}{The Four-Step Procedure (PCCF)}
 \begin{enumerate}
-    \item \textbf{Parameter:} \ansline{$\mu = $ the true mean [quantity] for [population].}
-    \item \textbf{Conditions:} Random, 10\%, Large Sample --- all verified.
+    \item \textbf{Parameter:} Let $\mu = $ the true mean \ans{[quantity]} for \ans{[population]}.
+    \item \textbf{Conditions:} State and verify all three (Random, 10\%, Large Sample).
     \item \textbf{Calculate:} $\bar x \pm t^* \cdot s/\sqrt{n}$
-    \item \textbf{Conclude:} ``We are \ans{$C$}\% confident that the interval captures
-          the true mean \ans{[quantity]} for \ans{[population]}.''
+    \item \textbf{Conclude:} ``We are \ans{$C$}\% confident that the interval
+          $(\rule{1.5cm}{0.4pt},\ \rule{1.5cm}{0.4pt})$ captures the true mean
+          \ans{[quantity]} for \ans{[population]}.''
 \end{enumerate}
 \end{notesbox}
 
 \begin{notesbox}{Matched-Pairs Design (UNC-4.O.3)}
+When data come in pairs (before/after, two treatments on same subject):
 \begin{enumerate}
-    \item Compute $d_i = x_{i,1} - x_{i,2}$.
-          Order of subtraction: \ansline{Define clearly (e.g., after $-$ before), and use consistently.}
-    \item $\bar d = $ \ans{mean of the differences} \quad $s_d = $ \ans{SD of the differences}.
-    \item Interval: $\bar d \pm t^* \cdot s_d/\sqrt{n}$, $df = n - 1$,
+    \item Compute differences $d_i = x_{i,1} - x_{i,2}$ for each pair.
+          (State the order of subtraction: \ansline{e.g., after $-$ before; use it consistently.})
+    \item Find $\bar d = $ \ans{mean of the $d_i$} and $s_d = $ \ans{SD of the $d_i$}.
+    \item Apply the one-sample $t$-interval to the differences:
+          $\bar d \pm t^* \cdot \dfrac{s_d}{\sqrt{n}}$, \quad $df = n - 1$,
           where $n = $ number of \ans{pairs}.
 \end{enumerate}
 \end{notesbox}

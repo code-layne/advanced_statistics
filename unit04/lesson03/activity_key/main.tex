@@ -15,6 +15,7 @@
 A standard deck of 52 playing cards has 4 suits (hearts, diamonds, clubs, spades),
 13 cards per suit (Ace, 2--10, Jack, Queen, King). Hearts and diamonds are red;
 clubs and spades are black. Face cards = Jack, Queen, King (3 per suit, 12 total).
+Work through the tier your teacher assigns.
 \end{scenariobox}
 
 \vspace{0.1in}
@@ -25,10 +26,13 @@ clubs and spades are black. Face cards = Jack, Queen, King (3 per suit, 12 total
     title={\bfseries Tier R \enspace Remediate --- Building Sample Spaces}]
 \small
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item \ans{52 total outcomes.}
+One card is drawn at random from a standard 52-card deck.
 
-  \item
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item How many total outcomes are in the sample space? \ans{52}
+
+  \item Calculate each probability. Show work as a fraction.
+        \vspace{4pt}
         \renewcommand{\arraystretch}{1.8}
         \begin{tabularx}{\linewidth}{@{} l X @{}}
         Event & $P(E) =$ \\
@@ -39,13 +43,14 @@ clubs and spades are black. Face cards = Jack, Queen, King (3 per suit, 12 total
         Drawing the Ace of Spades & \ans{$1/52 \approx 0.019$} \\
         \end{tabularx}
 
-  \item
+  \item Apply the complement rule:
         \begin{enumerate}[label=(\alph*), itemsep=6pt]
-          \item \ans{$P(\text{not a heart}) = 1 - 1/4 = 3/4 = 0.75$}
-          \item \ans{$P(\text{not a face card}) = 1 - 3/13 = 10/13 \approx 0.769$}
+          \item $P(\text{not a heart}) = $ \ans{$1 - 1/4 = 3/4 = 0.75$}
+          \item $P(\text{not a face card}) = $ \ans{$1 - 3/13 = 10/13 \approx 0.769$}
         \end{enumerate}
 
-  \item \ans{$P = 0$: drawing a card with 7 suits (impossible). $P = 1$: drawing any card at all (certain, since every draw produces a card). Both are possible to state but the only realistic example from this deck is $P(\text{draw a valid card}) = 52/52 = 1$.}
+  \item Is it possible to draw a card with probability 0? Probability 1? Explain.\\
+        \ansline{Yes: $P = 0$ for an impossible draw (a ``7 of Stars''); $P = 1$ for a certain one (any card, $52/52$).}
 \end{enumerate}
 
 \end{tcolorbox}
@@ -58,26 +63,35 @@ clubs and spades are black. Face cards = Jack, Queen, King (3 per suit, 12 total
     title={\bfseries Tier A \enspace Approaching Proficiency --- Probability and Interpretation}]
 \small
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item
+One card is drawn at random from a standard 52-card deck.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Calculate and interpret each probability in the context of the card draw.
+        \vspace{4pt}
         \renewcommand{\arraystretch}{1.8}
         \begin{tabularx}{\linewidth}{@{} l p{2.5cm} X @{}}
         Event & $P(E)$ & Long-run interpretation \\
         \hline
-        Drawing a club & \ans{$13/52 = 1/4$} & \ans{If a card is drawn and replaced many times, about 25\% of draws will be clubs.} \\
-        Drawing a King & \ans{$4/52 = 1/13$} & \ans{In the long run, about 1 in every 13 draws will be a King.} \\
-        Drawing a red face card & \ans{$6/52 = 3/26$} & \ans{About 3 out of every 26 draws will be a red face card in the long run.} \\
+        Drawing a club & \ans{$13/52 = 1/4$} & \ansline{Over many draws, about 25\% are clubs.} \\
+        Drawing a King & \ans{$4/52 = 1/13$} & \ansline{Over many draws, about 1 in 13 is a King.} \\
+        Drawing a red face card & \ans{$6/52 = 3/26$} & \ansline{Over many draws, about 11.5\% are red face cards.} \\
         \end{tabularx}
 
-  \item \ans{The error is confusing the \emph{outcome} of one specific draw with the \emph{probability} of the event. The probability is a long-run measure, not a statement about what just happened. One draw of a heart does not change the theoretical probability $P(\text{heart}) = 1/4$.}
+  \item A friend says: ``I drew a heart, so the probability of drawing a heart is 1.''
+        Explain the error in this reasoning.\\
+        \ansline{One draw is not a long-run proportion; $P(\text{heart})$ is still $13/52 = 1/4$.}
 
-  \item
+  \item Use the complement rule to find:
         \begin{enumerate}[label=(\alph*), itemsep=6pt]
-          \item \ans{$P(\text{not a King}) = 1 - 4/52 = 48/52 = 12/13 \approx 0.923$}
-          \item \ans{$P(\text{not a red face card}) = 1 - 6/52 = 46/52 = 23/26 \approx 0.885$}
+          \item $P(\text{not a King}) = $ \ans{$1 - 4/52 = 12/13 \approx 0.923$}
+          \item $P(\text{not a red face card}) = $ \ans{$1 - 6/52 = 23/26 \approx 0.885$}
         \end{enumerate}
 
-  \item \begin{teachernote}Tree: Color branch first (Red/Black), then suit branch (H, D for Red; C, S for Black). Each of the 4 equally-likely suit branches represents 1/4 of the deck. $P(\text{red}) = P(\text{heart}) + P(\text{diamond}) = 1/4 + 1/4 = 1/2$.\end{teachernote}
+  \item Use a \textbf{tree diagram} to list the sample space for drawing the suit and
+        color of one card. (Hint: there are 2 colors and 4 suits; which suits go with
+        which color?) Label each branch and compute $P(\text{red})$ from the tree.
+        \par\noindent\begin{minipage}[t][50pt][t]{\linewidth}\ans{Red $\to$ Hearts, Diamonds;\ Black $\to$ Clubs, Spades. Each suit branch has probability 1/4.}\\
+        \ans{$P(\text{red}) = P(\text{heart}) + P(\text{diamond}) = 1/4 + 1/4 = 1/2$}\end{minipage}
 \end{enumerate}
 
 \end{tcolorbox}
@@ -90,13 +104,25 @@ clubs and spades are black. Face cards = Jack, Queen, King (3 per suit, 12 total
     title={\bfseries Tier E \enspace Extension --- Multi-Stage Sample Spaces}]
 \small
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item \ans{$10 \times 10 = 100$ outcomes.}
-  \item \ans{Spin 1 and Spin 2 each land on sections 1--5 (red). Number of outcomes: $5 \times 5 = 25$.}
-  \item \ans{$P(\text{both red}) = 25/100 = 1/4 = 0.25$.}
-  \item \ans{$P(\text{no blue on either spin}) = P(\text{not blue on spin 1}) \times P(\text{not blue on spin 2})$. Sections NOT blue: 7 out of 10 each spin. $P(\text{no blue}) = (7/10)^2 = 49/100$. So $P(\text{at least one blue}) = 1 - 49/100 = 51/100 = 0.51$.}
-  \item \ans{If the spinner is spun twice many times, about 51\% of the time at least one of the two spins will land on a blue section.}
-  \item \ans{No --- the two spins are independent. Knowing the first spin was red provides no information about the second spin's outcome. The probability that spin 2 is red remains $5/10 = 0.5$ regardless of what spin 1 showed.}
+A spinner has 10 equally likely sections: sections 1--5 are red, sections 6--8 are
+blue, and sections 9--10 are green. The spinner is spun \textbf{twice}.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item How many outcomes are in the sample space for two spins? \ans{$10 \times 10 = 100$}
+  \item Use a tree diagram or organized list to count the number of outcomes in which
+        \textbf{both spins land on red}.
+        \par\noindent\begin{minipage}[t][40pt][t]{\linewidth}\ans{Each spin has 5 red sections (1--5): $5 \times 5 = 25$ outcomes.}\end{minipage}
+  \item Calculate $P(\text{both red}) = $ \ans{$25/100 = 0.25$}
+  \item Calculate $P(\text{at least one blue spin}) $ using the complement rule:\\
+        Hint: first find $P(\text{no blue on either spin})$.
+        \par\noindent\begin{minipage}[t][40pt][t]{\linewidth}\ans{Not blue: 7 of 10 sections. $P(\text{no blue}) = (7/10)^2 = 0.49$.}\\
+        \ans{$P(\text{at least one blue}) = 1 - 0.49 = 0.51$}\end{minipage}
+  \item Interpret $P(\text{at least one blue spin})$ in one sentence using the phrase
+        ``in the long run.''\\
+        \ansline{In the long run, about 51\% of pairs of spins have at least one blue spin.}
+  \item (Challenge) If you know that the first spin was red, does the probability that
+        the second spin is also red change? Why or why not?\\
+        \ansline{No. The spins are independent, so $P(\text{2nd red}) = 5/10 = 0.5$ regardless.}
 \end{enumerate}
 
 \end{tcolorbox}

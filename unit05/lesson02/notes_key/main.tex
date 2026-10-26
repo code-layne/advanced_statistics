@@ -14,32 +14,28 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to:
 \begin{enumerate}
-  \item \ansline{calculate the probability that a normally distributed variable falls in a given interval using z-scores and/or technology}
-  \item \ansline{determine the boundary value(s) of a normal interval associated with a given area (inverse normal)}
-  \item \ansline{assess whether the normal distribution is an appropriate model for a given distribution}
+  \item \ansline{find normal probabilities for an interval using z-scores or technology.}
+  \item \ansline{find the boundary value for a given area (inverse normal).}
+  \item \ansline{decide whether a normal model is appropriate for a distribution.}
 \end{enumerate}
 \end{objectivebox}
 
 \vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{Continuous random variable}
-\ansline{A variable that can take any value within a specified domain; every interval within the domain has a probability associated with it.}
-\termblanklong{Normal distribution}
-\ansline{A symmetric, bell-shaped probability distribution described by mean $\mu$ and standard deviation $\sigma$.}
-\termblanklong{z-score}
-\ansline{$z = (x-\mu)/\sigma$ --- the number of standard deviations $x$ is above or below the mean.}
-\termblanklong{Standard normal distribution}
-\ansline{The normal distribution with mean 0 and standard deviation 1; $Z \sim N(0,1)$.}
+\noindent\textbf{\textcolor{navy}{Continuous random variable:}}\\[1pt]\ansline{A variable that can take any value in an interval;}\\[1pt]\ansline{probabilities are areas under a density curve.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Normal distribution:}}\\[1pt]\ansline{A symmetric, unimodal, bell-shaped distribution}\\[1pt]\ansline{described by its mean $\mu$ and standard deviation $\sigma$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{z-score:}}\\[1pt]\ansline{$z = (x-\mu)/\sigma$: the number of standard deviations}\\[1pt]\ansline{that $x$ lies above or below the mean.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Standard normal distribution:}}\\[1pt]\ansline{The normal distribution with mean 0 and standard deviation 1:}\\[1pt]\ansline{$Z \sim N(0, 1)$.}\\[3pt]
 \end{vocabbox}
 
 \vspace{0.1in}
 
 \begin{hookbox}
 Adult male heights $\sim N(69.2, 3.6)$. Estimate the fraction of adult males taller
-than 6 feet (72 in) from the histogram, then we will calculate exactly.
+than 6 feet (72 in) from the histogram (shown on board), then we will calculate exactly.
 
-My estimate: \textit{(varies)} \qquad Calculated answer: \ans{$\approx 0.22$ (22\%)}
+My estimate: \ans{(varies)} \qquad Calculated answer: \ans{$\approx 0.22$ (22\%)}
 \end{hookbox}
 
 \vspace{0.1in}
@@ -48,7 +44,7 @@ My estimate: \textit{(varies)} \qquad Calculated answer: \ans{$\approx 0.22$ (22
 Notation: $X \sim N(\mu, \sigma)$ means $X$ is normally distributed with mean
 \ans{$\mu$} and standard deviation \ans{$\sigma$}.
 
-The \textbf{area} under the curve over an interval equals \ans{the probability that $X$ falls in that interval} (VAR-6.A.3).
+The \textbf{area} under the curve over an interval equals \ans{the probability for that interval} (VAR-6.A.3).
 
 \textbf{z-score formula:} $z = $ \ans{$(x - \mu)/\sigma$} \hfill
 means $z$ is the number of \ans{standard deviations} that $x$ is from the mean.
@@ -66,16 +62,16 @@ means $z$ is the number of \ans{standard deviations} that $x$ is from the mean.
 \begin{notesbox}{Calculating Normal Probabilities}
 \textbf{Forward probability} (area given a boundary):
 \begin{enumerate}
-  \item Sketch and shade the curve. Label \ans{$\mu$} and \ans{$x$}.
-  \item Compute the z-score: $z = \frac{x - \mu}{\sigma} = $ \ans{$(x - \mu)/\sigma$}
-  \item Use table or \texttt{normalcdf(lower, upper, $\mu$, $\sigma$)} $=$ \ans{result from table/tech}
-  \item Interpret in context: ``The probability that \ldots'' \ansline{[full contextual sentence]}
+  \item Sketch and shade the curve. Label \ans{$\mu$} and \ans{the boundary $x$}.
+  \item Compute the z-score: $z = \frac{x - \mu}{\sigma} = $ \ans{standardized boundary}
+  \item Use table or \texttt{normalcdf(lower, upper, $\mu$, $\sigma$)} $=$ \ans{the probability}
+  \item Interpret in context: ``The probability that \ldots'' \ansline{(context sentence)}
 \end{enumerate}
 
 \vspace{0.06in}
 \textbf{Example:} $X \sim N(69.2, 3.6)$. Find $P(X > 72)$.\\[4pt]
 $z = \frac{72 - 69.2}{3.6} = $ \ans{$0.78$} \qquad
-$P(X > 72) = 1 - P(Z < \ans{0.78}) = 1 - $ \ans{$0.7823$} $\approx$ \ans{$0.2177$}
+$P(X > 72) = 1 - P(Z < {\color{keyred}\mathbf{0.78}}) = 1 - $ \ans{$0.7823$} $\approx$ \ans{$0.2177$}
 \end{notesbox}
 
 \vspace{0.1in}
@@ -85,25 +81,26 @@ $P(X > 72) = 1 - P(Z < \ans{0.78}) = 1 - $ \ans{$0.7823$} $\approx$ \ans{$0.2177
 \begin{enumerate}
   \item Sketch and shade the curve. Label the given \ans{area/percentile}.
   \item Find the z-score: $z^* = $ \ans{invNorm(area)} (from table or \texttt{invNorm}).
-  \item Solve for $x$: $x = \mu + z^*\sigma = $ \ans{specific calculation}
+  \item Solve for $x$: $x = \mu + z^*\sigma = $ \ans{$\mu + z^*\sigma$ with the numbers}
 \end{enumerate}
 
 \vspace{0.06in}
 \textbf{Example:} $X \sim N(69.2, 3.6)$. Find the 90th percentile.\\[4pt]
 $z^* = $ \ans{$1.28$} \qquad
-$x = 69.2 + (\ans{1.28})(3.6) = $ \ans{$73.8$} inches
+$x = 69.2 + ({\color{keyred}\mathbf{1.28}})(3.6) = $ \ans{$73.8$} inches
 \end{notesbox}
 
 \vspace{0.1in}
 
 \begin{notesbox}{When Is the Normal Model Appropriate? (VAR-6.C)}
 The normal model is appropriate when the distribution is \ans{approximately symmetric}
-and \ans{bell-shaped (unimodal, with tails tapering off evenly on both sides)}.
+and \ans{unimodal and bell-shaped}.
 
+Circle the correct answer for each:
 \begin{itemize}
-  \item Heights of adult males \hfill \ans{appropriate} (approximately / not appropriate)
-  \item Number of heads in 5 coin flips \hfill \ans{not appropriate} (discrete / skewed)
-  \item Average of 100 random observations (by CLT) \hfill \ans{appropriate} (CLT applies)
+  \item Heights of adult males \hfill (\ans{appropriate} / not appropriate)
+  \item Number of heads in 5 coin flips \hfill (appropriate / \ans{not appropriate})
+  \item Average of 100 random observations (by CLT) \hfill (\ans{appropriate} / not appropriate)
 \end{itemize}
 \end{notesbox}
 
@@ -112,15 +109,16 @@ and \ans{bell-shaped (unimodal, with tails tapering off evenly on both sides)}.
 \begin{practicebox}
 $X \sim N(500, 100)$ (SAT Math scores).
 \begin{enumerate}
-  \item Find $P(X > 650)$. Show all steps including a sketch.\\[4pt]
-        \ans{$z = (650-500)/100 = 1.50$; $P(X>650) = 1 - 0.9332 = 0.0668$. About 6.7\% of students score above 650.}
+  \item Find $P(X > 650)$. Show all steps including a sketch.
 
-        \vspace{1.0in}
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.0in][t]{\linewidth}\vspace*{2pt}\ans{Sketch: shade the right tail above 650.}\\
+        \ans{$z = (650-500)/100 = 1.50$}\\
+        \ans{$P(X>650) = 1 - 0.9332 = 0.0668$ --- about 6.7\% score above 650.}\end{minipage}
 
-  \item Find the SAT Math score at the 25th percentile.\\[4pt]
-        \ans{$z = \text{invNorm}(0.25) \approx -0.674$; $x = 500 + (-0.674)(100) \approx 433$.}
+  \item Find the SAT Math score at the 25th percentile.
 
-        \vspace{0.8in}
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.8in][t]{\linewidth}\vspace*{2pt}\ans{$z^* = \text{invNorm}(0.25) \approx -0.674$}\\
+        \ans{$x = 500 + (-0.674)(100) \approx 433$}\end{minipage}
 \end{enumerate}
 \end{practicebox}
 

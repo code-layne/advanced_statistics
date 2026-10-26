@@ -13,29 +13,29 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to:
 \begin{itemize}
-  \item \ansline{Identify the correct categorical inference procedure for a given scenario.}
-  \item \ansline{Distinguish between z-procedures and chi-square procedures.}
-  \item \ansline{State $H_0$ in the appropriate language for each categorical procedure.}
+  \item \ansline{Identify the correct categorical inference procedure for a scenario.}
+  \item \ansline{Distinguish between $z$-procedures and chi-square procedures.}
+  \item \ansline{State $H_0$ in the right language for each categorical procedure.}
 \end{itemize}
 \end{objectivebox}
 
 \begin{vocabbox}
 \begin{description}
   \item[\termblanklong{Categorical inference procedure}]
-        Any inference method applied to \ans{categorical} data. The first diagnostic question is:
-        does the outcome have \ans{two} categories or \ans{three or more}?
+        Any inference method applied to \makebox[4cm][l]{\ans{categorical}} data. The first diagnostic question is:
+        does the outcome have \makebox[2cm][l]{\ans{two}} categories or \makebox[3cm][l]{\ans{three or more}}?
 
   \item[\termblanklong{Chi-square goodness-of-fit (GOF) test}]
-        Used when there is \ans{one} sample and \ans{three} or more categories. Tests
-        whether the observed distribution matches a \ans{claimed (hypothesized)} distribution.
+        Used when there is \makebox[2cm][l]{\ans{one}} sample and \makebox[2cm][l]{\ans{three}} or more categories. Tests
+        whether the observed distribution matches a \makebox[5cm][l]{\ans{claimed}} distribution.
 
   \item[\termblanklong{Chi-square test for homogeneity}]
-        Used when there are \ans{two} or more \ans{independent} samples and one categorical
-        variable. Tests whether the \ans{distribution of the variable} is the same across groups.
+        Used when there are \makebox[2.5cm][l]{\ans{two}} or more \makebox[3cm][l]{\ans{independent}} samples and one categorical
+        variable. Tests whether the \makebox[4.5cm][l]{\ans{variable's distribution}} is the same across groups.
 
   \item[\termblanklong{Chi-square test for independence}]
-        Used when there is \ans{one} sample and \ans{two} categorical variables recorded
-        for each subject. Tests whether there is an \ans{association} between the variables.
+        Used when there is \makebox[2cm][l]{\ans{one}} sample and \makebox[2cm][l]{\ans{two}} categorical variables recorded
+        for each subject. Tests whether there is an \makebox[4cm][l]{\ans{association}} between the variables.
 \end{description}
 \end{vocabbox}
 
@@ -44,13 +44,13 @@ A researcher surveys students about their transportation to school (Walk, Bus, C
 \begin{enumerate}
   \item \textit{Scenario A:} She surveys students at one school and wants to test whether
         walking, bus, car, and biking are equally common.\\
-        What procedure? \ans{chi-square goodness-of-fit test}
+        What procedure? \makebox[8cm][l]{\ans{chi-square goodness-of-fit test}}
   \item \textit{Scenario B:} She surveys students at two schools (separate random samples)
         and wants to test whether the distribution of transportation modes is the same at both.\\
-        What procedure? \ans{chi-square test for homogeneity}
+        What procedure? \makebox[8cm][l]{\ans{chi-square test for homogeneity}}
   \item \textit{Scenario C:} She takes one random sample and records both transportation mode
         and whether each student arrives on time (yes/no). She tests for association.\\
-        What procedure? \ans{chi-square test for independence}
+        What procedure? \makebox[8cm][l]{\ans{chi-square test for independence}}
 \end{enumerate}
 \end{hookbox}
 
@@ -63,13 +63,13 @@ A researcher surveys students about their transportation to school (Walk, Bus, C
   \rowcolor{sky}
   \textbf{Data Structure} & \textbf{Number of Categories} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{Key Condition} \\
   \hline
-  One proportion, one sample & Two (binary) & CI & \ans{one-sample $z$-interval for $p$} & \ans{Large Counts: $n\hat{p} \ge 10$, $n(1{-}\hat{p}) \ge 10$} \\
-  One proportion, one sample & Two (binary) & Test & \ans{one-sample $z$-test for $p$} & \ans{Large Counts: $np_0 \ge 10$, $n(1{-}p_0) \ge 10$} \\
-  Difference in proportions, two samples & Two (binary) & CI & \ans{two-sample $z$-interval for $p_1{-}p_2$} & \ans{Large Counts: all four $\ge 10$} \\
-  Difference in proportions, two samples & Two (binary) & Test & \ans{two-sample $z$-test for $p_1{-}p_2$} & \ans{Large Counts: all four $\ge 10$} \\
-  One sample, claimed distribution & Three or more & Test & \ans{chi-square goodness-of-fit test} & \ans{Expected counts $\ge 5$} \\
-  Two or more groups (sep.\ samples), one variable & Three or more & Test & \ans{chi-square test for homogeneity} & \ans{Expected counts $\ge 5$} \\
-  One sample, two variables & Any & Test & \ans{chi-square test for independence} & \ans{Expected counts $\ge 5$} \\
+  One proportion, one sample & Two (binary) & CI & \ans{1-sample $z$-interval for $p$} & \ans{Large Counts: $n\hat p, n(1{-}\hat p) \ge 10$} \\
+  One proportion, one sample & Two (binary) & Test & \ans{1-sample $z$-test for $p$} & \ans{Large Counts: $np_0, n(1{-}p_0) \ge 10$} \\
+  Difference in proportions, two samples & Two (binary) & CI & \ans{2-sample $z$-interval for $p_1{-}p_2$} & \ans{Large Counts: all four $\ge 10$} \\
+  Difference in proportions, two samples & Two (binary) & Test & \ans{2-sample $z$-test for $p_1{-}p_2$} & \ans{Large Counts (pooled) $\ge 10$} \\
+  One sample, claimed distribution & Three or more & Test & \ans{$\chi^2$ goodness-of-fit test} & \ans{All expected counts $\ge 5$} \\
+  Two or more groups (sep.\ samples), one variable & Three or more & Test & \ans{$\chi^2$ test for homogeneity} & \ans{All expected counts $\ge 5$} \\
+  One sample, two variables & Any & Test & \ans{$\chi^2$ test for independence} & \ans{All expected counts $\ge 5$} \\
 \end{tabularx}
 \end{notesbox}
 
@@ -78,10 +78,10 @@ A researcher surveys students about their transportation to school (Walk, Bus, C
 \begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X X @{}}
   \rowcolor{sky}
   & \textbf{Homogeneity} & \textbf{Independence} \\ \hline
-  \textbf{Sampling design} & \ans{separate random samples, one per group} & \ans{one random sample} \\
-  \textbf{Number of variables} & \ans{one} & \ans{two} \\
-  \textbf{$H_0$ language} & ``The \ans{distribution} is the same across all \ans{groups}.'' & ``There is no \ans{association} between [var 1] and [var 2].'' \\
-  \textbf{Same $\chi^2$ statistic?} & \ans{yes} & \ans{yes} \\
+  \textbf{Sampling design} & \ans{separate random samples} & \ans{one random sample} \\
+  \textbf{Number of variables} & \makebox[3cm][l]{\ans{one}} & \makebox[3cm][l]{\ans{two}} \\
+  \textbf{$H_0$ language} & ``The \makebox[2.5cm][l]{\ans{distribution}} is the same across all \makebox[2cm][l]{\ans{groups}}.'' & ``There is no \makebox[3cm][l]{\ans{association}} between [var 1] and [var 2].'' \\
+  \textbf{Same $\chi^2$ statistic?} & \makebox[2cm][l]{\ans{yes}} & \makebox[2cm][l]{\ans{yes}} \\
 \end{tabularx}
 \end{notesbox}
 
@@ -92,10 +92,10 @@ each person to rate their social media use as Low, Moderate, or High. He wants t
 the distribution of social media use is the same for both age groups.
 
 \begin{enumerate}
-  \item Binary or multi-category outcome? \ans{multi-category (3 levels)} \quad Number of groups: \ans{2}
-  \item Procedure name: \ans{chi-square test for homogeneity}
-  \item Form of $H_0$: \ansline{The distribution of social media use (Low, Moderate, High) is the same for adults aged 18--34 and adults aged 35--54.}
-  \item Key condition to check (beyond Random and 10\%): \ansline{Expected counts: all expected cell counts must be at least 5.}
+  \item Binary or multi-category outcome? \makebox[4cm][l]{\ans{multi-category}} \quad Number of groups: \makebox[2cm][l]{\ans{2}}
+  \item Procedure name: \makebox[9cm][l]{\ans{chi-square test for homogeneity}}
+  \item Form of $H_0$: \ansline{Use is distributed the same for ages 18--34 and 35--54.}
+  \item Key condition to check (beyond Random and 10\%): \ansline{All expected counts $\ge 5$.}
 \end{enumerate}
 \end{practicebox}
 

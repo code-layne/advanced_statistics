@@ -2,6 +2,10 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+% \workans{H}{answer} — fills a blank \vspace{H} work area in the same height:
+% the answer is smashed onto the next line and the space below is trimmed by it.
+\newcommand{\workans}[2]{\newline\smash{\raisebox{-2pt}{\parbox[t]{\linewidth}{\raggedright\ans{#2}}}}%
+  \vspace{\dimexpr#1-\baselineskip\relax}}
 
 \begin{document}
 
@@ -12,35 +16,62 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
+\textbf{Context: Seatbelt use by age group.}
+Among adults 18--34, 82\% always wear a seatbelt ($p_1 = 0.82$, $n_1 = 150$).
+Among adults 35--54, 88\% always wear a seatbelt ($p_2 = 0.88$, $n_2 = 150$).
+
 \begin{enumerate}
-  \item \ans{$n_1 p_1=123$, $n_1(1-p_1)=27$, $n_2 p_2=132$, $n_2(1-p_2)=18$. All $\ge 10$.}
-  \item \ans{$\mu = 0.82 - 0.88 = -0.06$; $\sigma = \sqrt{0.82(0.18)/150 + 0.88(0.12)/150} = \sqrt{0.000984+0.000704} \approx \sqrt{0.001688} \approx 0.04108$.}
-  \item \ans{$z = (-0.10-(-0.06))/0.04108 \approx -0.973$; $P < -0.10 \approx 0.1653$. About 16.5\%.}
+  \item Check the four Large Counts conditions.
+        \workans{0.7in}{$n_1 p_1 = 123$, \ $n_1(1-p_1) = 27$, \ $n_2 p_2 = 132$, \ $n_2(1-p_2) = 18$. All $\ge 10$.}
+  \item Find $\mu_{\hat{p}_1-\hat{p}_2}$ and $\sigma_{\hat{p}_1-\hat{p}_2}$.
+        \workans{0.6in}{$\mu = 0.82 - 0.88 = -0.06$\\ $\sigma = \sqrt{0.82(0.18)/150 + 0.88(0.12)/150} = \sqrt{0.000984+0.000704} = \sqrt{0.001688} \approx 0.04108$}
+  \item Find $P(\hat{p}_1 - \hat{p}_2 < -0.10)$.
+        \workans{0.9in}{$z = (-0.10-(-0.06))/0.04108 \approx -0.973$\\ $P(\hat{p}_1 - \hat{p}_2 < -0.10) \approx 0.1653$. About 16.5\%.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
+\textbf{Context: Online vs.\ in-store shopping.}
+In a large metro area, 55\% of millennials prefer online shopping ($p_1 = 0.55$,
+$n_1 = 200$) and 40\% of Gen X prefer online shopping ($p_2 = 0.40$, $n_2 = 180$).
+
 \begin{enumerate}
-  \item \ans{Random: both stated. 10\%: both $\le 10\%$ of large metro population. Independent groups. Large Counts: $110, 90, 72, 108$ --- all $\ge 10$. Normal model appropriate.}
-  \item \ans{$\mu = 0.55 - 0.40 = 0.15$; $\sigma = \sqrt{0.55(0.45)/200 + 0.40(0.60)/180} = \sqrt{0.001238 + 0.001333} \approx 0.05070$.}
-  \item \ans{$z = (0.20-0.15)/0.05070 \approx 0.986$; $P > 0.20 \approx 1 - 0.8379 = 0.1621 \approx 16.2\%$.}
-  \item \ans{$z = (0-0.15)/0.05070 \approx -2.959$; $P < 0 \approx 0.0015$. A negative difference would mean the Gen X sample proportion exceeds the millennial proportion --- very unlikely but possible due to sampling variability.}
+  \item Check all conditions. Is the normal model appropriate?
+        \ansline{Random: both stated.}\\\ansline{10\%: both $\le 10\%$ of a large metro population; independent groups.}\\\ansline{Large Counts: $110, 90, 72, 108$ --- all $\ge 10$. Normal model appropriate.}
+  \item Find $\mu$ and $\sigma$ for the sampling distribution of $\hat{p}_1 - \hat{p}_2$.
+        \workans{0.5in}{$\mu = 0.55 - 0.40 = 0.15$; \quad $\sigma = \sqrt{0.55(0.45)/200 + 0.40(0.60)/180} = \sqrt{0.001238 + 0.001333} \approx 0.05070$}
+  \item Find $P(\hat{p}_1 - \hat{p}_2 > 0.20)$.
+        \workans{0.9in}{$z = (0.20-0.15)/0.05070 \approx 0.986$\\ $P(\hat{p}_1 - \hat{p}_2 > 0.20) \approx 1 - 0.8379 = 0.1621 \approx 16.2\%$}
+  \item Find the probability that the difference in sample proportions is less than 0.
+        What would this mean in context?
+        \workans{0.9in}{$z = (0-0.15)/0.05070 \approx -2.959$; \quad $P(\hat{p}_1 - \hat{p}_2 < 0) \approx 0.0015$\\ A negative difference means the Gen X sample proportion exceeds the millennial one ---\\ very unlikely, but possible due to sampling variability.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
+\textbf{Context: Clinical trial --- treatment vs.\ placebo.}
+In a clinical trial, 30\% of placebo patients improved ($p_2 = 0.30$, $n_2 = 100$)
+and 50\% of treatment patients improved ($p_1 = 0.50$, $n_1 = 100$).
+
 \begin{enumerate}
-  \item \ans{Random: stated (random assignment). Independence: subjects assigned independently. Large Counts: $50, 50, 30, 70$ --- all $\ge 10$. Conditions met.}
-  \item \ans{$\mu = 0.50 - 0.30 = 0.20$; $\sigma = \sqrt{0.50(0.50)/100 + 0.30(0.70)/100} = \sqrt{0.0025+0.0021} = \sqrt{0.0046} \approx 0.06782$.}
-  \item \ans{$z = (0.30-0.20)/0.06782 \approx 1.475$; $P > 0.30 \approx 1 - 0.9299 = 0.0701 \approx 7.0\%$.}
-  \item \ans{$z = (0-0.20)/0.06782 \approx -2.950$; $P < 0 \approx 0.0016$. A negative difference would mean the placebo group had a higher improvement rate than treatment --- strong evidence (if observed) that the treatment may be harmful, not helpful.}
-  \item \ans{$\sigma = \sqrt{0.50(0.50)/400 + 0.30(0.70)/400} = \sqrt{0.000625+0.000525} = \sqrt{0.00115} \approx 0.03391$. Approximately halved (from 0.06782 to 0.03391) when $n$ quadrupled.}
+  \item Check all conditions.
+        \ansline{Random assignment: stated.}\\\ansline{Independence: subjects assigned independently. Large Counts: $50, 50, 30, 70$ --- all $\ge 10$. Met.}
+  \item Compute $\mu$ and $\sigma$ for $\hat{p}_1 - \hat{p}_2$.
+        \workans{0.5in}{$\mu = 0.50 - 0.30 = 0.20$; \quad $\sigma = \sqrt{0.50(0.50)/100 + 0.30(0.70)/100} = \sqrt{0.0046} \approx 0.06782$}
+  \item Find $P(\hat{p}_1 - \hat{p}_2 > 0.30)$.
+        \workans{0.8in}{$z = (0.30-0.20)/0.06782 \approx 1.475$\\ $P(\hat{p}_1 - \hat{p}_2 > 0.30) \approx 1 - 0.9299 = 0.0701 \approx 7.0\%$}
+  \item Find $P(\hat{p}_1 - \hat{p}_2 < 0)$ and interpret. What does it mean if the
+        observed difference is negative in this study?
+        \workans{0.9in}{$z = (0-0.20)/0.06782 \approx -2.950$; \quad $P(\hat{p}_1 - \hat{p}_2 < 0) \approx 0.0016$\\ A negative difference means the placebo group improved at a higher rate than treatment ---\\ if observed, evidence that the treatment may be harmful, not helpful.}
+  \item If the trial is repeated with $n_1 = n_2 = 400$, how does $\sigma$ change?
+        Show your calculation.
+        \workans{0.7in}{$\sigma = \sqrt{0.50(0.50)/400 + 0.30(0.70)/400} = \sqrt{0.00115} \approx 0.03391$\\ About halved (0.06782 to 0.03391) when $n$ is quadrupled.}
 \end{enumerate}
 \end{tcolorbox}
 

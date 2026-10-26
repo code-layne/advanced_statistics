@@ -14,44 +14,45 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to:
 \begin{itemize}
-  \item \ansline{Identify when a one-sample $t$-test (vs.\ $z$-test) is appropriate for a population mean, including matched pairs.}
-  \item \ansline{State null and alternative hypotheses for a $t$-test in terms of $\mu$ or $\mu_d$.}
-  \item \ansline{Verify the Random/Independence and Normal conditions for the test.}
+  \item \ansline{Identify when a one-sample $t$-test (incl.\ matched pairs) fits.}
+  \item \ansline{State $H_0$ and $H_a$ for a $t$-test in terms of $\mu$ or $\mu_d$.}
+  \item \ansline{Verify the Random, 10\%, and Normal conditions.}
 \end{itemize}
 \end{objectivebox}
 
 \begin{vocabbox}
 \begin{description}
   \item[\termblanklong{One-sample $t$-test for $\mu$}]
-        Used when \ans{$\sigma$ is unknown}; uses the $t$-distribution with $df = $ \ans{$n-1$}.
+        Used when \makebox[6cm][l]{\ans{$\sigma$ is unknown}}; uses the $t$-distribution with $df = $ \makebox[1.5cm][l]{\ans{$n-1$}}.
   \item[\termblanklong{Null hypothesis ($H_0$)}]
-        States that $\mu = $ \ans{$\mu_0$} (the \ans{hypothesized / null} value). Written \emph{before} seeing data.
+        States that $\mu = $ \makebox[2cm][l]{\ans{$\mu_0$}} (the \makebox[4cm][l]{\ans{hypothesized}} value). Written \emph{before} seeing data.
   \item[\termblanklong{Alternative hypothesis ($H_a$)}]
-        States the \ans{direction of the claim / what the researcher seeks evidence for}. Can be one-sided ($<$ or $>$) or two-sided ($\ne$).
+        States the \makebox[6cm][l]{\ans{claim we seek evidence for}}. Can be one-sided ($<$ or $>$) or two-sided ($\ne$).
   \item[\termblanklong{Matched pairs}]
-        Data collected in \ans{pairs (same subject or matched subjects)}. We compute \ans{differences $d_i$} and apply a one-sample $t$-test to the differences; $\mu_d$ is
+        Data collected in \makebox[5cm][l]{\ans{pairs}} (e.g., before/after, two treatments on the same subject).
+        We compute \makebox[5cm][l]{\ans{differences $d_i$}} and apply a one-sample $t$-test to the differences; $\mu_d$ is
         the parameter.
 \end{description}
 \end{vocabbox}
 
 \begin{hookbox}
 A consumer group weighs a random sample of 25 cereal boxes labeled ``Net weight: 18 oz'' and
-finds $\bar x = 17.6$ oz, $s = 0.8$ oz. The population SD $\sigma$ is \ans{unknown}.
+finds $\bar x = 17.6$ oz, $s = 0.8$ oz. The population SD $\sigma$ is \makebox[5cm][l]{\ans{unknown}}.
 
-Question: Does the data give evidence that boxes are being \ans{under-filled}?
+Question: Does the data give evidence that boxes are being \makebox[4cm][l]{\ans{under-filled}}?
 \end{hookbox}
 
 \begin{notesbox}{Step 1: Choose the Inference Method}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\linewidth}{@{} p{0.42\linewidth} X @{}}
   \textbf{Situation} & \textbf{Method} \\ \hline
-  Testing a claim about $\mu$; $\sigma$ is \emph{known} & one-sample \ans{$z$}-test (rare) \\
-  Testing a claim about $\mu$; $\sigma$ is \emph{unknown} & one-sample \ans{$t$}-test \\
-  Data in pairs (before/after); testing $\mu_d$ & \ans{matched-pairs} $t$-test \\
+  Testing a claim about $\mu$; $\sigma$ is \emph{known} & one-sample \makebox[2cm][l]{\ans{$z$}}-test (rare) \\
+  Testing a claim about $\mu$; $\sigma$ is \emph{unknown} & one-sample \makebox[2cm][l]{\ans{$t$}}-test \\
+  Data in pairs (before/after); testing $\mu_d$ & \makebox[5cm][l]{\ans{matched-pairs}} $t$-test \\
 \end{tabularx}
 
 \medskip
-\textit{Cereal boxes: $\sigma$ unknown, $n = 25$ $\Rightarrow$ use a} \ans{$t$}\textit{-test with $df = $} \ans{24}.
+\textit{Cereal boxes: $\sigma$ unknown, $n = 25$ $\Rightarrow$ use a} \makebox[3cm][l]{\ans{$t$}}\textit{-test with $df = $} \makebox[2cm][l]{\ans{24}}.
 \end{notesbox}
 
 \begin{notesbox}{Step 2: Write Hypotheses}
@@ -61,32 +62,32 @@ Always use the \emph{population} parameter ($\mu$ or $\mu_d$), not $\bar x$ or $
 \renewcommand{\arraystretch}{2.0}
 \begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
   \textbf{Research Question} & \textbf{Hypotheses} \\ \hline
-  Is $\mu$ \emph{less than} $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \ans{$<$} $\mu_0$ \\
-  Is $\mu$ \emph{greater than} $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \ans{$>$} $\mu_0$ \\
-  Has $\mu$ \emph{changed} from $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \ans{$\ne$} $\mu_0$ \\
+  Is $\mu$ \emph{less than} $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \makebox[2cm][l]{\ans{$<$}} $\mu_0$ \\
+  Is $\mu$ \emph{greater than} $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \makebox[2cm][l]{\ans{$>$}} $\mu_0$ \\
+  Has $\mu$ \emph{changed} from $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \makebox[2cm][l]{\ans{$\ne$}} $\mu_0$ \\
 \end{tabularx}
 
 \medskip
-\textit{Cereal:} $H_0$: \ans{$\mu = 18$} \qquad $H_a$: \ans{$\mu < 18$} \quad
-Direction: \ans{one-sided, left} because \ans{the claim is that boxes are under-filled (below 18 oz)}.
+\textit{Cereal:} $H_0$: \makebox[4cm][l]{\ans{$\mu = 18$}} \qquad $H_a$: \makebox[4cm][l]{\ans{$\mu < 18$}} \quad
+Direction: \makebox[3cm][l]{\ans{one-sided ($<$)}} because \makebox[5cm][l]{\ans{suspect under-filling}}.
 \end{notesbox}
 
 \begin{notesbox}{Step 3: Verify Conditions (VAR-7.D)}
 \renewcommand{\arraystretch}{2.0}
 \begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.28\linewidth} @{}}
   \textbf{Condition} & \textbf{How to verify} & \textbf{Note} \\ \hline
-  \textbf{Random} & Data from a \ans{random} sample or \ans{randomized} experiment. & Same for all tests \\
-  \textbf{10\% rule} & When sampling without replacement: \ans{$n$} $\le 10\%$ of $N$. & Same for all tests \\
+  \textbf{Random} & Data from a \makebox[4cm][l]{\ans{random}} sample or \makebox[5cm][l]{\ans{randomized}} experiment. & Same for all tests \\
+  \textbf{10\% rule} & When sampling without replacement: \makebox[2cm][l]{\ans{$n$}} $\le 10\%$ of $N$. & Same for all tests \\
   \textbf{Normal} ($n \ge 30$) & CLT applies; sampling distribution of $\bar x$ is approximately normal. & Use when $n \ge 30$ \\
-  \textbf{Normal} ($n < 30$) & Examine a dotplot/boxplot: sample distribution should have no \ans{strong skewness} or \ans{outliers}. & Use when $n < 30$ \\
+  \textbf{Normal} ($n < 30$) & Examine a dotplot/boxplot: sample distribution should have no \makebox[5cm][l]{\ans{strong skewness}} or \makebox[4cm][l]{\ans{outliers}}. & Use when $n < 30$ \\
 \end{tabularx}
 
 \medskip
 \textit{Cereal ($n = 25$):}
 \begin{itemize}
-  \item Random: \ansline{Given as a random sample --- condition met.}
-  \item 10\% rule: \ansline{Assuming more than 250 cereal boxes exist --- condition met ($25 \le 10\%$ of all boxes produced).}
-  \item Normal: \ansline{$n = 25 < 30$; we must inspect a dotplot/boxplot for strong skewness and outliers before proceeding.}
+  \item Random: \ansline{Random sample of 25 boxes is stated --- met.}
+  \item 10\% rule: \ansline{$25 \le 10\%$ of all such boxes (more than 250 exist) --- met.}
+  \item Normal: \ansline{$n = 25 < 30$: check a dotplot for strong skew or outliers.}
 \end{itemize}
 \end{notesbox}
 
@@ -95,16 +96,16 @@ Eight athletes record their resting heart rate (bpm) \emph{before} and \emph{aft
 12-week training program. We want to know whether training \emph{reduced} resting heart rate.
 
 \begin{enumerate}
-  \item Define the order of subtraction (before data): \quad $d_i = $ \ans{before} $-$ \ans{after}
+  \item Define the order of subtraction (before data): \quad $d_i = $ \makebox[4cm][l]{\ans{before}} $-$ \makebox[4cm][l]{\ans{after}}
 
   \item Compute differences $d_i$ for each athlete, then find $\bar d$ and $s_d$.
         (Instructor will fill in data in class.)
 
-  \item Parameter: $\mu_d = $ \ans{true mean difference in resting heart rate (before $-$ after) for all athletes following this training program}
+  \item Parameter: $\mu_d = $ \makebox[7cm][l]{\ans{true mean (before $-$ after) resting HR}}
 
-  \item Hypotheses: $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+  \item Hypotheses: $H_0$: \makebox[3.5cm][l]{\ans{$\mu_d = 0$}} \quad $H_a$: \makebox[3.5cm][l]{\ans{$\mu_d > 0$}}
 
-  \item Method: one-sample $t$-test on the \ans{differences $d_i$} with $df = $ \ans{7}.
+  \item Method: one-sample $t$-test on the \makebox[8cm][l]{\ans{differences $d_i$}} with $df = $ \makebox[1.5cm][l]{\ans{7}}.
 \end{enumerate}
 \end{notesbox}
 
@@ -114,11 +115,11 @@ believes it is \emph{higher}. She surveys 35 randomly selected adults and record
 intake; the dotplot shows no strong skewness or outliers.
 
 \begin{itemize}
-  \item Name the inference method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{34}
-  \item $H_0$: \ans{$\mu = 2400$} \quad $H_a$: \ans{$\mu > 2400$}
-  \item Random: \ans{random sample of adults --- condition met}
-  \item 10\% rule: \ans{$35 \le 10\%$ of all adults --- condition met}
-  \item Normal: \ans{$n = 35 \ge 30$; CLT applies --- condition met}
+  \item Name the inference method: \makebox[5cm][l]{\ans{one-sample $t$-test}} \quad $df = $ \makebox[1.5cm][l]{\ans{34}}
+  \item $H_0$: \makebox[4cm][l]{\ans{$\mu = 2400$}} \quad $H_a$: \makebox[4cm][l]{\ans{$\mu > 2400$}}
+  \item Random: \makebox[6cm][l]{\ans{random sample of 35 adults --- met}}
+  \item 10\% rule: \makebox[6cm][l]{\ans{$35 \le 10\%$ of all adults --- met}}
+  \item Normal: \makebox[6cm][l]{\ans{$n = 35 \ge 30$, CLT --- met}}
 \end{itemize}
 \end{practicebox}
 

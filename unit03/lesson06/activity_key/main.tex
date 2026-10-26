@@ -10,58 +10,88 @@
 
 \vspace{0.1in}
 
-\textbf{Scenario 1:} Math curriculum, grade-level split.
+\begin{scenariobox}[Context]{sky}
+\small
+For each research scenario, your group will (1) choose the most appropriate
+experimental design (CRD, block design, or matched pairs), (2) justify your
+choice, (3) identify any blocking variable, and (4) draw a diagram of the design.
+There may be more than one defensible answer --- justify thoroughly.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\textbf{Scenario 1:} A researcher wants to test whether a new math curriculum improves
+student test scores. She has 60 students who are evenly split between students who
+are grade-level and students who are below grade-level in math.
+
 \begin{practicebox}
 \small
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ans{Block design}
-  \item \ans{Math level (grade-level vs.\ below grade-level)}
-  \item \ans{Math proficiency level is likely to affect test scores. Blocking removes this source of variability, giving a more precise estimate of the curriculum's effect. With 30 in each block, random assignment within blocks is straightforward.}
-  \item Diagram: 60 students $\to$ Block 1 (grade-level, 30) / Block 2 (below grade-level, 30); within each block, random assign 15 to new curriculum, 15 to traditional.
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Recommended design: \makebox[6cm][l]{\ans{Block design}}
+  \item Blocking variable (if any): \makebox[6cm][l]{\ans{Math level (grade-level vs.\ below)}}
+  \item Justify your choice: \makebox[9cm][l]{\ans{Math level likely affects test scores, so}}\\
+        \ansline{blocking removes that variability and sharpens the comparison.}
+  \item \makebox[0pt][l]{\raisebox{-2\baselineskip}[0pt][0pt]{\parbox[t]{0.9\linewidth}{\ans{60 students $\to$ Block 1: grade-level (30) and Block 2: below grade-level (30).\\
+        Within each block, randomly assign 15 to the new curriculum and 15 to the\\
+        traditional curriculum $\to$ compare test scores within each block.}}}}Draw a diagram of your design:
+  \vspace{1.4in}
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
-\textbf{Scenario 2:} Acne treatment, same patient both cheeks.
+\textbf{Scenario 2:} A dermatologist wants to compare two acne treatments (Gel A
+vs.\ Gel B). She has 40 patients; each has two clearly affected areas (left cheek
+and right cheek) with equal severity.
+
 \begin{practicebox}
 \small
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ans{Matched pairs design}
-  \item \ans{Each patient serves as their own block; both cheeks are the same person's skin, controlling for all individual factors (genetics, hygiene, etc.).}
-  \item \ans{Randomly assign (e.g., coin flip) which cheek gets Gel A and which gets Gel B.}
-  \item Diagram: 40 patients $\to$ each person: left cheek / right cheek; random assignment (coin flip) $\to$ Gel A or Gel B.
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Recommended design: \makebox[6cm][l]{\ans{Matched pairs}}
+  \item Explain why this design is ideal here: \makebox[9cm][l]{\ans{Each patient is their own pair: both cheeks}}\\
+        \ansline{share genetics, diet, and hygiene, so those are controlled.}
+  \item How would you assign treatments to left vs.\ right cheek?\\
+        \ansline{For each patient, flip a coin: heads $\to$ Gel A on the left cheek,}\\[1pt]\ansline{Gel B on the right; tails $\to$ the reverse.}
+  \item \makebox[0pt][l]{\raisebox{-2\baselineskip}[0pt][0pt]{\parbox[t]{0.9\linewidth}{\ans{40 patients $\to$ for each patient, coin flip assigns Gel A to one cheek and\\
+        Gel B to the other $\to$ compare improvement (A $-$ B) within each patient.}}}}Draw a diagram:
+  \vspace{1.2in}
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
-\textbf{Scenario 3:} Three corn seeds, 4 fields.
+\textbf{Scenario 3:} A seed company tests three types of corn seed (A, B, C) on
+48 plots. The plots are spread across 4 fields with different soil quality.
+There is no way to use the same plot for multiple treatments.
+
 \begin{practicebox}
 \small
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ans{Block design}
-  \item \ans{Field (soil quality)}
-  \item \ans{4 plots per treatment per block (48 plots / 4 fields / 3 treatments = 4)}
-  \item Diagram: 4 blocks (fields), each with 12 plots; within each block randomly assign 4 plots to Seed A, 4 to Seed B, 4 to Seed C.
-  \item \ans{Removes the field-to-field variability in soil quality from the error, so differences between seeds are estimated more precisely.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Recommended design: \makebox[6cm][l]{\ans{Block design}}
+  \item Blocking variable: \makebox[6cm][l]{\ans{Field (soil quality)}}
+  \item How many plots per treatment per block? \makebox[3cm][l]{\ans{4}}
+  \item \makebox[0pt][l]{\raisebox{-2\baselineskip}[0pt][0pt]{\parbox[t]{0.9\linewidth}{\ans{4 blocks (fields) of 12 plots each. Within each field, randomly assign\\
+        4 plots to Seed A, 4 to Seed B, 4 to Seed C $\to$ compare yields within each field.}}}}Draw a diagram showing all 48 plots:
+  \vspace{1.4in}
+  \item One advantage of this design over a CRD: \makebox[9cm][l]{\ans{Removes field-to-field soil variability.}}
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.08in}
+\vspace{0.12in}
 
 \begin{practicebox}
 \small
-\textbf{Decision Chart:}
+\textbf{Decision Chart:} Complete the chart your group can use on the AP exam.
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\linewidth}{@{} X c @{}}
 \textbf{Situation} & \textbf{Best design} \\
 \hline
-Homogeneous units; no nuisance variable. & \ans{CRD} \\
-Nuisance variable known; cannot pair. & \ans{Block design} \\
-Units can be paired 1-to-1. & \ans{Matched pairs} \\
-Same unit can receive both treatments. & \ans{Matched pairs} \\
+Units are homogeneous; no known nuisance variable. & \ans{CRD} \\
+A known variable affects the response; units cannot be paired. & \ans{Block design} \\
+Units can be paired 1-to-1 on a key variable. & \ans{Matched pairs} \\
+Same unit can receive both treatments in sequence. & \ans{Matched pairs} \\
 \end{tabularx}
 \end{practicebox}
 

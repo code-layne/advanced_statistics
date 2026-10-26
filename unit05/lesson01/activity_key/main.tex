@@ -13,25 +13,52 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
-\textbf{Scenario A.}
+\textbf{Directions:} Read each scenario and answer the questions. Use the sentence
+frames if helpful.
+
+\textbf{Scenario A.} A food scientist tests 30 apples from a large orchard and finds
+a mean sugar content of 11.2 g. A colleague tests a different 30 apples and gets 10.8 g.
+
 \begin{enumerate}
-  \item Is either mean the true mean? \ans{No} \quad ($\square$ Yes \quad \textcolor{keyred}{\textbf{$\checkmark$}} No)
-  \item The values 11.2 and 10.8 are called \ans{statistics} because they come from a sample.
-  \item The true mean is called a \ans{parameter}.
-  \item ``The two sample means differ because of'' \ansline{sampling variability --- different random samples from the same orchard will contain different apples, producing different sample means by chance.}
+  \item Is either mean the true mean sugar content of all apples in the orchard?
+        \begin{itemize}
+          \item[$\square$] Yes \quad \ans{$\checkmark$} No
+        \end{itemize}
+  \item The values 11.2 and 10.8 are called \ans{statistics} because they come from a
+        sample.
+  \item The true mean sugar content of all apples in the orchard is called a
+        \ans{parameter}.
+  \item Complete: ``The two sample means differ because \ldots'' \ansline{of sampling variability.}
 \end{enumerate}
+
+\vspace{0.06in}
+\textit{Sentence frame:} ``The sample means differ because of \ans{sampling variability}, which is the
+natural variation in statistics from sample to sample.''
 \end{tcolorbox}
 
 \vspace{0.1in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
-\textbf{Scenario B.}
+\textbf{Scenario B.} A city planner surveys 50 households in each of two
+neighborhoods about daily commute time. Neighborhood 1 mean: 28.4 min.
+Neighborhood 2 mean: 31.1 min.
+
 \begin{enumerate}
-  \item \ansline{Statistic: the sample mean commute time (28.4 min or 31.1 min). Parameter: the true mean commute time of all households in each neighborhood.}
-  \item \ansline{The 2.7-minute difference could easily be due to sampling variability with samples of only 50 households. To decide, we would need to know more about the spread (standard deviation) of commute times and the true population sizes. A formal significance test (Unit 7) would be needed to rule out chance.}
-  \item \textit{(Dot-plot should be roughly symmetric, centered near 28.4 min, with some spread.)}
-  \item \ans{sampling distribution (of the sample mean)}
+  \item Identify the statistic and the parameter in each neighborhood's study.
+        \ansline{Stats: 28.4 \& 31.1 min.}\\
+        \ansline{Parameters: true mean commute time of all households in each.}
+  \item Explain whether the 2.7-minute difference is likely due to sampling variability
+        or a true population difference. What additional information would help you
+        decide? \ansline{Could be chance alone.}\\
+        \ansline{Samples of 50 vary, so a 2.7-min gap may be sampling variability.}\\
+        \ansline{Need the SD of commute times (or a significance test) to decide.}
+  \item Sketch a rough dot-plot showing what you would expect if you took 20 samples of
+        size 50 from Neighborhood 1 and plotted each sample mean.
+
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.0in][t]{\linewidth}\vspace*{2pt}\ans{Dot plot of 20 sample means: roughly symmetric, centered near 28.4 min,}\\
+        \ans{with much less spread than individual commute times.}\end{minipage}
+  \item What is the name of the distribution you just sketched? \ans{sampling distribution of $\bar{x}$}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -39,18 +66,28 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
-\textbf{Scenario C.}
+\textbf{Scenario C.} A public health researcher draws repeated random samples of size
+$n = 25$ from a population whose mean daily sodium intake is $\mu = 3{,}400$ mg with
+standard deviation $\sigma = 800$ mg. She records the sample mean $\bar{x}$ for each
+sample.
+
 \begin{enumerate}
-  \item \ansline{Parameter: the population mean daily sodium intake, $\mu = 3{,}400$ mg.}
-  \item \ansline{Shape: approximately symmetric (bell-shaped), by the Central Limit Theorem (preview). Center: near 3,400 mg, because samples from this population should average around the population mean on average. Spread: smaller than the population SD of 800 mg, because averaging 25 values reduces variability.}
-  \item \ansline{The spread (standard deviation) of the sampling distribution would decrease --- more values in each sample smooth out the extremes, so sample means cluster more tightly around the population mean.}
-  \item \ansline{Sample question: ``Is the mean daily sodium intake of adults in a given region different from the national mean of 3,400 mg?'' (Other valid questions accepted.)}
+  \item What is the parameter of interest? What notation describes it? \ansline{Population mean intake, $\mu$.}\\
+        \ansline{$\mu = 3{,}400$ mg, the mean daily sodium intake of all people.}
+  \item If she collected 10,000 sample means, predict the shape, center, and
+        spread of the resulting distribution. Justify each prediction with reasoning
+        (not formulas --- those come in Lesson 5.7). \ansline{Shape: symmetric.}\\
+        \ansline{Center: near 3,400 mg --- sample means average out to $\mu$.}\\
+        \ansline{Spread: much less than 800 mg --- averaging 25 values cancels extremes.}\\
+        \ansline{So the 10,000 means pile up tightly around 3,400 mg.}
+  \item How would the distribution change if she increased her sample size to $n = 100$?
+        Predict the direction of change in the spread. \ansline{The spread would decrease.}\\
+        \ansline{With 100 values per sample, extremes cancel out even more,}\\
+        \ansline{so sample means cluster more tightly around 3,400 mg (same center).}
+  \item Write one statistical question that this sampling scenario suggests about
+        sodium intake in the population. \ansline{}\\
+        \ansline{``Is mean daily sodium intake in our region different from 3,400 mg?''}
 \end{enumerate}
 \end{tcolorbox}
-
-\begin{teachernote}
-Tier E prediction about shape may anticipate the CLT (Lesson 5.3). That's fine ---
-encourage the reasoning without formally introducing the theorem yet.
-\end{teachernote}
 
 \end{document}

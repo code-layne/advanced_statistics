@@ -10,72 +10,117 @@
 
 \vspace{0.1in}
 
+\begin{scenariobox}[Directions]{sky}
+\small
+Work through all three tiers. Show all formula setup. Use complete sentences
+when interpreting parameters.
+\end{scenariobox}
+
+\vspace{0.1in}
+
 % ── TIER R ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier R --- Key},
+    title={\bfseries Tier R \quad Remediate: Identifying the Distribution},
     fonttitle=\small]
 \small
 
-\textbf{Scenario 1:} Flipping until tails.
-\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{Geometric}
-  \item \ans{$n$ is not fixed --- flipping continues until tails appears.}
-  \item \ans{$X \sim \text{Geom}(0.5)$; $p = 0.5$}
+For each scenario, (a) identify the distribution (binomial, geometric, or neither),
+(b) state the key distinction, and (c) if geometric or binomial, state $X$ and the
+parameters.
+
+\vspace{10pt}
+\textbf{Scenario 1:} A coin is flipped until tails appears.
+$X =$ the number of flips.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
+  \item Distribution: \ans{Geometric}
+  \item Key distinction: \ansline{$n$ is not fixed --- flip until the first tails.}
+  \item Parameters: \ans{$X \sim \text{Geom}(0.5)$, $p = 0.5$}
 \end{enumerate}
 
-\textbf{Scenario 2:} Flipping 10 times.
-\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{Binomial}
-  \item \ans{$n = 10$ is fixed in advance; $X$ counts the total number of tails.}
-  \item \ans{$X \sim B(10, 0.5)$; $n = 10$, $p = 0.5$}
+\vspace{10pt}
+\textbf{Scenario 2:} A coin is flipped 10 times.
+$X =$ the number of tails.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
+  \item Distribution: \ans{Binomial}
+  \item Key distinction: \ansline{$n = 10$ is fixed in advance; $X$ counts tails.}
+  \item Parameters: \ans{$X \sim B(10, 0.5)$, $n = 10$, $p = 0.5$}
 \end{enumerate}
 
-\textbf{Scenario 3:} Number of first roll of a fair tetrahedral die.
-\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
-  \item \ans{Neither --- $X$ takes values $\{1, 2, 3, 4\}$ each with probability $1/4$. There is only one trial, so it is not binomial or geometric.}
-  \item \ans{It is simply a discrete uniform distribution, not a repeated-trials distribution.}
+\vspace{10pt}
+\textbf{Scenario 3:} A tetrahedral die (4 sides) is rolled. The die is fair.
+$X =$ the number of the first roll.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
+  \item Distribution: \ans{Neither}
+  \item Key distinction: \ansline{One roll only, values 1--4 each with prob.\ $1/4$ (uniform).}
 \end{enumerate}
+\vspace{4pt}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
 % ── TIER A ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier A --- Key},
+    title={\bfseries Tier A \quad Approaching Proficiency: Full Geometric Analysis},
     fonttitle=\small]
 \small
 
-Archer, $p = 0.30$.
+\textbf{Context:} An archer hits the bullseye 30\% of the time. She shoots arrows
+one at a time until hitting the bullseye.
+Let $X =$ the number of arrows shot until (and including) the first bullseye.
 
-(a) BITS:
-\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X @{}}
-B: & \ans{Binary --- each arrow either hits the bullseye (success) or misses (failure).} \\[4pt]
-I: & \ans{Independent --- the outcome of one shot does not affect the next.} \\[4pt]
-T: & \ans{Trials until first success --- shooting continues until the first bullseye.} \\[4pt]
-S: & \ans{Same $p = 0.30$ on every shot.} \\[4pt]
-\end{tabularx}
-$X \sim \text{Geom}(0.30)$
+\vspace{8pt}
+(a) Check BITS. Write one sentence per condition.
 
-(b) $P(X=5) = (0.70)^4(0.30) = (0.2401)(0.30) \approx \ans{0.0720}$
+\vspace{4pt}
+B: \ansline{Each arrow hits the bullseye (success) or misses (failure).}
 
-(c) $\mu_X = 1/0.30 \approx \ans{3.33}$
+I: \ansline{One shot does not affect the next.}
 
-\ans{If the archer shoots arrows until hitting the bullseye many times, she will average about 3.33 arrows per bullseye.}
+T: \ansline{She shoots until the first bullseye.}
 
-(d) $P(X \le 4) = \texttt{geometcdf(0.30, 4)} \approx \ans{0.7599}$
+S: \ansline{Same $p = 0.30$ on every shot.}
 
-\ans{There is about a 76.0\% probability that the archer hits the bullseye within the first 4 shots.}
+\vspace{6pt}
+State the distribution: $X \sim $ \ans{Geom(0.30)}
+
+\vspace{8pt}
+(b) Compute $P(X = 5)$. Show the formula and the numerical answer.
+\[
+  P(X = 5) = ({\color{keyred}\mathbf{0.70}})^{4}({\color{keyred}\mathbf{0.30}}) = {\color{keyred}\mathbf{(0.2401)(0.30)}} \hspace{2cm} \approx {\color{keyred}\mathbf{0.0720}}
+\]
+
+\vspace{8pt}
+(c) Compute $\mu_X$ and interpret in context.
+\vspace{4pt}
+$\mu_X = $ \ans{$1/p = 1/0.30$} $= $ \ans{3.33}
+
+\vspace{4pt}
+Interpretation: \ansline{Over many rounds, she averages}\\[1pt]\ansline{about 3.33 arrows to get her first bullseye.}
+
+\vspace{8pt}
+(d) Find $P(X \le 4)$ using \texttt{geometcdf}. What does this represent?
+\vspace{4pt}
+$P(X \le 4) = \texttt{geometcdf(}{\color{keyred}\mathbf{0.30}}\texttt{,}\;4\texttt{)} \approx $ \ans{0.7599}
+
+\vspace{4pt}
+Interpretation: \ansline{About a 76\% chance she hits}\\[1pt]\ansline{her first bullseye within her first 4 arrows.}
+\vspace{4pt}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
 % ── TIER E ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier E --- Key},
+    title={\bfseries Tier E \quad Extension: Distribution Table and Shape},
     fonttitle=\small]
 \small
 
-(a)
+\textbf{Context (same archer):} $X \sim \text{Geom}(0.30)$.
+
+\vspace{8pt}
+(a) Build the partial distribution table for $X = 1, 2, 3, 4, 5$.
+
+\vspace{4pt}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X X @{}}
 $k$ & 1 & 2 & 3 & 4 & 5 \\
@@ -83,9 +128,19 @@ $k$ & 1 & 2 & 3 & 4 & 5 \\
 $P(X=k)$ & \ans{0.3000} & \ans{0.2100} & \ans{0.1470} & \ans{0.1029} & \ans{0.0720} \\
 \end{tabularx}
 
-(b) \ans{The probabilities decrease as $k$ increases --- the distribution is strongly right-skewed with the highest probability at $k=1$. This contrasts sharply with a binomial distribution for the same $p$, which is roughly mound-shaped (bell-shaped) centered near $\mu_X = np$.}
+\vspace{8pt}
+(b) Describe the shape of the geometric distribution based on your table.
+Does it look like the binomial distribution for the same $p$?
+\vspace{4pt}
+\ansline{Strictly decreasing --- strongly right-skewed, peak at $k = 1$.}\\[1pt]\ansline{No: a binomial with the same $p$ is mound-shaped near $np$.}
 
-(c) \ans{$P(X=5) \approx 0.0720$: the probability that the archer needs exactly 5 shots to get the first bullseye. $P(Y=5) = \binom{5}{5}(0.30)^5(0.70)^0 = (0.30)^5 \approx 0.0024$: the probability of getting exactly 5 bullseyes in 5 independent shots. They are different because $X=5$ (geometric) means 4 misses then a hit, while $Y=5$ (binomial) means all 5 shots are hits. Both use $p=0.30$ but count completely different events.}
+\vspace{8pt}
+(c) Now consider $Y \sim B(5, 0.30)$ (same $p$, fixed $n = 5$).
+Compare $P(X = 5)$ and $P(Y = 5)$. Explain why they are different,
+and state what each probability means in context.
+\vspace{4pt}
+\ansline{$P(X=5) \approx 0.0720$: 1st bullseye on arrow 5.}\\[1pt]\ansline{$P(Y=5) = (0.30)^5 \approx 0.0024$: all 5 of 5 arrows hit the bullseye.}\\[1pt]\ansline{Different events: $X=5$ is 4 misses then a hit; $Y=5$ is 5 hits.}
+\vspace{4pt}
 \end{tcolorbox}
 
 \end{document}

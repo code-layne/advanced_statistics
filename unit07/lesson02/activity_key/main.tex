@@ -1,7 +1,7 @@
 %! AP Statistics — Unit 7, Lesson 7.2 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,79 +9,101 @@
 \pageheader{Unit 7, Lesson 7.2}{Group Activity --- Answer Key}
 \namepartnerperiod
 
+\vspace{0.1in}
+\textbf{Directions:} For each problem, use the full four-step procedure (Parameter,
+Conditions, Calculate, Conclude). Show all work.
+
 \begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Sleep Study.} $n = 25$, $\bar x = 6.8$ hr, $s = 1.2$ hr, 90\% CI.
+\textbf{Sleep Study.} A school counselor wants to estimate the mean nightly sleep
+duration for students at her school. A random sample of 25 students yields
+$\bar x = 6.8$ hours and $s = 1.2$ hours.
 
-\textbf{Step 1:} \ansline{$\mu = $ true mean nightly sleep duration (hours) for all students at the school.}
+Construct a 90\% confidence interval for the true mean nightly sleep duration.
 
-\textbf{Step 2:} Conditions pre-verified. \checkmark
+\textbf{Step 1 --- Parameter:} $\mu = $ \ansline{true mean nightly sleep (hours) for all students at the school}
 
-\textbf{Step 3:}
+\textbf{Step 2 --- Conditions:} (conditions are pre-verified for you)
+\begin{itemize}
+    \item Random: random sample of students. \checkmark
+    \item 10\%: $25 \le 10\%$ of all students at the school. \checkmark
+    \item Large Sample: $n = 25 < 30$; assume counselor verified no strong skewness or
+          outliers in the data. \checkmark
+\end{itemize}
 
-$df = $ \ans{24} \quad $t^* = $ \ans{1.711}
+\textbf{Step 3 --- Calculate:}
 
-$SE = 1.2/\sqrt{25} = $ \ans{0.240} hr
+$df = $ \makebox[2cm][l]{\ans{24}} \quad $t^* = $ \makebox[2.5cm][l]{\ans{1.711}} (from $t$-table, 90\% CI)
 
-$ME = 1.711 \times 0.240 = $ \ans{0.411} hr
+$SE = s/\sqrt{n} = 1.2/\sqrt{25} = $ \makebox[2.5cm][l]{\ans{0.240}}
 
-Interval: $6.8 \pm 0.411 = ($ \ans{6.389} $,$ \ans{7.211} $)$ hours
+$ME = t^* \cdot SE = $ \makebox[4cm][l]{\ans{$1.711(0.240) = 0.411$}}
 
-\textbf{Step 4:} \ansline{We are 90\% confident that the interval (6.39, 7.21) hours captures the true mean nightly sleep duration for all students at this school.}
+Interval: $\bar x \pm ME = 6.8 \pm $ \makebox[2cm][l]{\ans{0.411}} $= ($ \makebox[2cm][l]{\ans{6.389}} $,$ \makebox[2cm][l]{\ans{7.211}} $)$ hours
 
-\begin{teachernote}
-    $t^*$ for $df = 24$, 90\% CI is 1.711 (from table). Some calculators give 1.7109.
-\end{teachernote}
+\textbf{Step 4 --- Conclude:} \ansline{We are 90\% confident that the interval (6.39, 7.21) hours captures}\\\ansline{the true mean nightly sleep duration for all students at this school.}
 
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Commute Times.} $n = 36$, $\bar x = 28.4$ min, $s = 9.6$ min, 95\% CI.
+\textbf{Commute Times.} A city planner wants to estimate the mean commute time for
+workers in a downtown district. A random sample of 36 workers is taken; summary
+statistics: $\bar x = 28.4$ min, $s = 9.6$ min.
 
-\textbf{Step 1:} \ansline{$\mu = $ true mean commute time (minutes) for all workers in the downtown district.}
+Construct a 95\% confidence interval for the true mean commute time. Use all four
+steps and verify conditions explicitly.
 
-\textbf{Step 2:}
-\ansline{Random: random sample of workers. \checkmark \quad 10\%: $36 \le 10\%$ of all downtown workers (assuming $N \ge 360$). \checkmark \quad Large Sample: $n = 36 \ge 30$, so CLT applies. \checkmark}
+\vspace{0.1in}
+\textbf{Step 1:} \ansline{$\mu$ = true mean commute time (min) for all downtown workers.}
+
+\textbf{Step 2 --- Conditions:} \ansline{Random: random sample of 36 workers. \checkmark}\\\ansline{10\%: $36 \le 10\%$ of all downtown workers. \checkmark}\\\ansline{Large Sample: $n = 36 \ge 30$, so the CLT applies. \checkmark}\\\ansline{}
 
 \textbf{Step 3:}
 
-$df = $ \ans{35} \quad $t^* = $ \ans{2.030} \quad $SE = 9.6/\sqrt{36} = $ \ans{1.60} min
+$df = $ \makebox[2cm][l]{\ans{35}} \quad $t^* = $ \makebox[2.5cm][l]{\ans{2.030}} \quad $SE = $ \makebox[2.5cm][l]{\ans{1.60}}
 
-Interval: $28.4 \pm 2.030 \times 1.60 = 28.4 \pm 3.25 = ($ \ans{25.15} $,$ \ans{31.65} $)$ min
+Interval: \makebox[10cm][l]{\ans{$28.4 \pm 2.030(1.60) = 28.4 \pm 3.25$}} $= ($ \makebox[2cm][l]{\ans{25.15}} $,$ \makebox[2cm][l]{\ans{31.65}} $)$ min
 
-\textbf{Step 4:} \ansline{We are 95\% confident that the interval (25.15, 31.65) minutes captures the true mean commute time for all workers in the downtown district.}
+\textbf{Step 4:} \ansline{We are 95\% confident that the interval (25.15, 31.65) minutes captures}\\\ansline{the true mean commute time for all workers in the downtown district.}
 
-\textbf{Bonus:} \ansline{Width $= 2 \times 3.25 = 6.50$ min. To halve the margin of error, quadruple the sample size: from $n = 36$ to $n = 144$.}
+\vspace{0.05in}
+\textbf{Bonus:} How wide must the interval be? How could the planner halve the margin
+of error? \ansline{}\\\ansline{Width $= 2(3.25) = 6.50$ min. To halve the ME, quadruple $n$ (36 to 144).}
 
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Matched-Pairs: Step-Count Intervention.}
+\textbf{Matched-Pairs: Step-Count Intervention.} A fitness researcher measured daily
+step counts for 12 participants before and after a 4-week intervention. The differences
+(after $-$ before, in thousands of steps) are:
 
-Differences: 1.2, 0.8, $-$0.3, 2.1, 1.5, 0.6, 1.8, $-$0.1, 2.4, 0.9, 1.3, 1.7
+\medskip
+\begin{center}
+\begin{tabular}{cccccccccccc}
+1.2 & 0.8 & $-0.3$ & 2.1 & 1.5 & 0.6 & 1.8 & $-0.1$ & 2.4 & 0.9 & 1.3 & 1.7
+\end{tabular}
+\end{center}
+\medskip
 
-$\bar d = $ \ans{$13.9/12 \approx 1.158$} thousands \quad $s_d \approx $ \ans{0.784} thousands \quad $n = $ \ans{12}
+Compute $\bar d$ and $s_d$, verify conditions, and construct a 95\% CI for the mean
+change in daily step count. Then interpret the interval and assess whether the data
+provide convincing evidence that the intervention increased step counts on average.
 
-\textbf{Step 2:} \ansline{Random: random sample of participants (or assume randomized assignment to before/after design). \checkmark \quad 10\%: $12 \le 10\%$ of all potential participants. \checkmark \quad Large Sample: $n = 12 < 30$; must check for strong skewness or outliers in the differences. With no extreme values visible, condition is approximately met. \checkmark}
+$\bar d = $ \makebox[3cm][l]{\ans{1.158}} \quad $s_d = $ \makebox[3cm][l]{\ans{0.784}} \quad $n = $ \makebox[2cm][l]{\ans{12}}
 
-\textbf{Step 3:} $df = $ \ans{11} \quad $t^* = $ \ans{2.201}
+\vspace{0.1in}
+\textbf{Step 2 --- Conditions:} \ansline{Random: random sample of participants. \checkmark}\\\ansline{10\%: $12 \le 10\%$ of all such people. \checkmark}\\\ansline{$n = 12 < 30$: differences show no strong skew or outliers. \checkmark}
 
-Interval: $1.158 \pm 2.201 \times 0.784/\sqrt{12} = 1.158 \pm 2.201 \times 0.226
-= 1.158 \pm 0.498 = ($ \ans{0.660} $,$ \ans{1.656} $)$ thousands of steps
+\textbf{Step 3:} $df = $ \makebox[2cm][l]{\ans{11}} \quad $t^* = $ \makebox[2.5cm][l]{\ans{2.201}}
 
-\textbf{Step 4 and claim:} \ansline{We are 95\% confident that the true mean change in daily step count for participants is between 0.660 and 1.656 thousand steps. Because the entire interval lies above 0, the data provide convincing evidence that the intervention increased step counts on average.}
+Interval: $\bar d \pm t^* \cdot s_d/\sqrt{n} = $ \makebox[8cm][l]{\ans{$1.158 \pm 2.201(0.784/\sqrt{12}) = 1.158 \pm 0.498$}} $= ($ \makebox[2cm][l]{\ans{0.660}} $,$ \makebox[2cm][l]{\ans{1.656}} $)$ thousands of steps
 
-\begin{teachernote}
-    $\bar d$: sum $= 1.2+0.8-0.3+2.1+1.5+0.6+1.8-0.1+2.4+0.9+1.3+1.7 = 13.9$;
-    $\bar d = 13.9/12 \approx 1.1583$.
-    $s_d$: compute via calculator; approximately 0.784.
-    $t^*$ for $df = 11$, 95\%: 2.201.
-\end{teachernote}
+\textbf{Step 4 and claim assessment:} \ansline{95\% confident the true mean change is}\\\ansline{between 0.660 and 1.656 thousand steps per day. The whole interval is above 0,}\\\ansline{so there is convincing evidence the intervention increased step counts.}
 
 \end{tcolorbox}
 

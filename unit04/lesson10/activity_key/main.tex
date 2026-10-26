@@ -10,88 +10,140 @@
 
 \vspace{0.1in}
 
+\begin{scenariobox}[Directions]{sky}
+\small
+Work through the three tiers below. All group members should complete Tier A.
+Tier R provides extra support; Tier E is a challenge extension.
+Show all formula setup --- do not just write a calculator answer.
+\end{scenariobox}
+
+\vspace{0.1in}
+
 % ── TIER R ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier R --- Key},
+    title={\bfseries Tier R \quad Remediate: Identifying Binomial Settings},
     fonttitle=\small]
 \small
+For each scenario, check each BINS condition. Write a brief reason.
+Circle \textbf{Binomial} or \textbf{Not Binomial}.
 
-\textbf{Scenario 1:} Flip until 3 heads.
+\vspace{8pt}
+\textbf{Scenario 1:} You flip a fair coin until you get 3 heads.
+Let $X =$ the number of flips needed.
 
+\vspace{4pt}
 \begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X p{2.8cm} @{}}
-B: & \ans{Binary: each flip is heads (success) or tails (failure).} & \ans{Met} \\[4pt]
-I: & \ans{Independent: flips do not affect each other.} & \ans{Met} \\[4pt]
-N: & \ans{\textbf{Not met} --- $n$ is not fixed; you keep flipping until 3 heads.} & \ans{Not Met} \\[4pt]
-S: & \ans{Same: $p = 0.5$ on every flip.} & \ans{Met} \\[4pt]
+B: & \ans{Binary: heads or tails on each flip.} & \ans{Met} \;/\; Not Met \\[6pt]
+I: & \ans{Independent: flips do not affect each other.} & \ans{Met} \;/\; Not Met \\[6pt]
+N: & \ans{No fixed $n$ --- flip until 3 heads.} & Met \;/\; \ans{Not Met} \\[6pt]
+S: & \ans{Same: $p = 0.5$ on every flip.} & \ans{Met} \;/\; Not Met \\[6pt]
 \end{tabularx}
-Verdict: \ans{Not Binomial --- $n$ is not fixed (this is a geometric-type setting).}
+\vspace{4pt}
+Verdict: \quad \textbf{Binomial} \qquad / \qquad \ans{Not Binomial}
 
-\vspace{10pt}
-\textbf{Scenario 2:} 5 draws with replacement.
+\vspace{14pt}
+\textbf{Scenario 2:} A bag holds 3 red and 7 blue chips. You draw 5 chips
+\emph{with replacement}. Let $X =$ the number of red chips.
 
+\vspace{4pt}
 \begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X p{2.8cm} @{}}
-B: & \ans{Binary: red (success) or blue (failure).} & \ans{Met} \\[4pt]
-I: & \ans{Independent: replacement makes each draw independent.} & \ans{Met} \\[4pt]
-N: & \ans{Fixed: $n = 5$ draws set in advance.} & \ans{Met} \\[4pt]
-S: & \ans{Same: $p = 3/10 = 0.3$ on every draw.} & \ans{Met} \\[4pt]
+B: & \ans{Binary: red or blue on each draw.} & \ans{Met} \;/\; Not Met \\[6pt]
+I: & \ans{Independent: replacement resets the bag.} & \ans{Met} \;/\; Not Met \\[6pt]
+N: & \ans{Fixed: $n = 5$ draws.} & \ans{Met} \;/\; Not Met \\[6pt]
+S: & \ans{Same: $p = 3/10 = 0.3$ every draw.} & \ans{Met} \;/\; Not Met \\[6pt]
 \end{tabularx}
-Verdict: \ans{Binomial --- $X \sim B(5, 0.3)$.}
+\vspace{4pt}
+Verdict: \quad \ans{Binomial} \qquad / \qquad \textbf{Not Binomial}
+\vspace{4pt}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
 % ── TIER A ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier A --- Key},
+    title={\bfseries Tier A \quad Approaching Proficiency: Computing Binomial Probabilities},
     fonttitle=\small]
 \small
 
-\textbf{Scenario 3:} Smartphone defects, $n=12$, $p=0.05$.
+\textbf{Scenario 3:} A factory produces smartphones. Historically, 5\% of phones
+are defective. A quality inspector selects 12 phones at random from a large shipment
+(population size is in the thousands).
 
-(a) BINS check:
+\vspace{6pt}
+(a) Check BINS. For each condition, write a sentence from this context.
+
+\vspace{4pt}
 \begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X @{}}
-B: & \ans{Each phone is either defective (success) or not defective (failure).} \\[4pt]
-I: & \ans{The population is in the thousands; $12 \le 0.10 \times \text{thousands}$, so the $10\%$ condition is satisfied and independence is approximately met.} \\[4pt]
-N: & \ans{Fixed: $n = 12$ phones selected in advance.} \\[4pt]
-S: & \ans{Same: $p = 0.05$ for every phone.} \\[4pt]
+B: & \ansline{Each phone is defective (success) or not (failure).} \\[4pt]
+I: & \ansline{$12 < 10\%$ of thousands, so treat picks as independent.} \\[4pt]
+N: & \ansline{Fixed: $n = 12$ phones chosen in advance.} \\[4pt]
+S: & \ansline{Same: $p = 0.05$ for every phone.} \\[4pt]
 \end{tabularx}
 
-$X \sim B(12,\;0.05)$
+\vspace{4pt}
+State the distribution: $X \sim$ \ans{$B(12,\;0.05)$}
 
-(b) $P(X = 1) = \binom{12}{1}(0.05)^1(0.95)^{11} = 12(0.05)(0.5688) \approx \ans{0.3413}$
+\vspace{10pt}
+(b) Find $P(X = 1)$ --- the probability that exactly 1 phone is defective.
+Show the formula setup.
 
-(c) $P(X = 0) = \binom{12}{0}(0.05)^0(0.95)^{12} = 1(1)(0.5404) \approx \ans{0.5404}$
+\vspace{4pt}
+\[
+P(X=1) = \binom{{\color{keyred}\mathbf{12}}}{{\color{keyred}\mathbf{1}}} ({\color{keyred}\mathbf{0.05}})^1 ({\color{keyred}\mathbf{0.95}})^{11} = {\color{keyred}\mathbf{12(0.05)(0.5688) \approx 0.3413}} \hspace{4cm}
+\]
 
-Calculator check: \texttt{binompdf(12, 0.05, 0)} $\approx \ans{0.5404}$
+\vspace{14pt}
+(c) Find $P(X = 0)$ --- no defective phones.
+
+\vspace{4pt}
+\[
+P(X=0) = {\color{keyred}\mathbf{(0.95)^{12} \approx 0.5404}} \hspace{5cm}
+\]
+
+\vspace{6pt}
+Calculator check: \texttt{binompdf(}\ans{12}\texttt{,}\;\ans{0.05}\texttt{,}\;\texttt{0)} $= $ \ans{0.5404}
+\vspace{4pt}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
 % ── TIER E ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier E --- Key},
+    title={\bfseries Tier E \quad Extension: The 10\% Condition and a Partial Distribution},
     fonttitle=\small]
 \small
 
-\textbf{Scenario 4:} 10 students from 80, $p = 0.20$.
+\textbf{Scenario 4:} A small school has 80 students. A class of 10 is selected
+at random without replacement. Suppose 20\% of all students own a graphing calculator.
+Let $X =$ the number of students in the class who own a graphing calculator.
 
-(a) \ans{$10\%$ condition: $n = 10 \le 0.10 \times 80 = 8$. \textbf{Not satisfied} --- $10 > 8$, so strict independence does not hold. However, in practice many textbooks and the AP exam still proceed with the binomial approximation here; students should note the caveat.}
+\vspace{6pt}
+(a) Is the $10\%$ condition satisfied? Show the calculation and interpret.
 
-\begin{teachernote}
-Note: $10 > 8$ so the $10\%$ condition technically fails. A good answer acknowledges this but proceeds with the approximation as the problem instructs.
-\end{teachernote}
+\vspace{4pt}
+\ansline{$0.10 \times 80 = 8$ and $n = 10 > 8$, so the condition is \textbf{not} met.}\\[1pt]\ansline{Draws are not quite independent; the binomial is only an approximation.}
 
-(b) $X \approx B(10,\;0.20)$; \quad $P(X = 3) = \binom{10}{3}(0.20)^3(0.80)^7 = 120(0.008)(0.2097) \approx \ans{0.2013}$
+\vspace{8pt}
+(b) Assuming the $10\%$ condition allows you to proceed, state the approximate
+distribution of $X$ and compute $P(X = 3)$.
 
-(c)
+\vspace{4pt}
+$X \approx B({\color{keyred}\mathbf{10}},\;{\color{keyred}\mathbf{0.20}})$ \hspace{1cm}
+$P(X = 3) = $ \ans{$\binom{10}{3}(0.20)^3(0.80)^7$} $\approx$ \ans{0.2013}
+
+\vspace{10pt}
+(c) Build the partial distribution table for $X = 0, 1, 2, 3$ and verify the
+probabilities are increasing then decreasing (the typical bell-shape pattern for
+a binomial with $p = 0.2$, $n = 10$).
+
+\vspace{6pt}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X @{}}
 $k$ & 0 & 1 & 2 & 3 \\
 \hline
 $P(X=k)$ & \ans{0.1074} & \ans{0.2684} & \ans{0.3020} & \ans{0.2013} \\
 \end{tabularx}
-\vspace{2pt}
-\ans{Probabilities increase from $k=0$ to $k=2$ then decrease, consistent with the expected shape.}
+\vspace{4pt}
 \end{tcolorbox}
 
 \end{document}

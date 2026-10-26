@@ -3,6 +3,12 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% \blankans{W}{answer} — the key's \blank{W}: same width and rule, answer on it.
+\newcommand{\blankans}[2]{\underline{\makebox[#1][c]{\ans{#2}}}}
+% \workans{H}{answer} — fills a blank \vspace{H} work area in the same height:
+% the answer is smashed onto the next line and the space below is trimmed by it.
+\newcommand{\workans}[2]{\newline\smash{\raisebox{-2pt}{\parbox[t]{\linewidth}{\raggedright\ans{#2}}}}%
+  \vspace{\dimexpr#1-\baselineskip\relax}}
 
 \begin{document}
 
@@ -11,41 +17,62 @@
 
 \vspace{0.1in}
 
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state the center and spread of the sampling distribution of $\bar{x}_1 - \bar{x}_2$.
+  \item I can check conditions for using the normal model.
+  \item I can compute probabilities for $\bar{x}_1 - \bar{x}_2$.
+\end{enumerate}
+\end{objectivebox}
+
 \begin{notesbox}
-\textbf{Formulas}
-\begin{itemize}
-  \item Center: \ans{$\mu_1 - \mu_2$}
-  \item Spread: \ans{$\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}$}
-  \item Shape: normal when both groups satisfy \ans{Normal/Large Sample} condition.
-\end{itemize}
+\textbf{Sampling Distribution of $\bar{x}_1 - \bar{x}_2$} (UNC-3.T, U, V)
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.72\linewidth} @{}}
+\textbf{Center:} & $\mu_{\bar{x}_1-\bar{x}_2} = $ \blankans{1.5in}{$\mu_1 - \mu_2$} \\[12pt]
+\textbf{Spread:} & $\sigma_{\bar{x}_1-\bar{x}_2} = $ \TallMath{\sqrt{\dfrac{\blankans{0.5in}{$\sigma_1$}^2}{\blankans{0.4in}{$n_1$}} + \dfrac{\blankans{0.5in}{$\sigma_2$}^2}{\blankans{0.4in}{$n_2$}}}} \\[16pt]
+\textbf{Shape:} & Normal/approximately normal when both groups satisfy the \blankans{2.0in}{Normal/Large Sample} condition. \\
+\end{tabular}
 \end{notesbox}
 
 \begin{notesbox}
-\textbf{Conditions}
+\textbf{Conditions for $\bar{x}_1 - \bar{x}_2$}
+
 \begin{enumerate}
-  \item Random: both stated.
-  \item 10\%: both $\le 10\%$ of respective populations.
-  \item Independent groups: the two samples are \ans{drawn separately / independent of each other}.
-  \item Normal/Large Sample for each group: $n \ge$ \ans{30}.
+  \item \textbf{Random (both groups):} each sample is a random sample.
+  \item \textbf{10\% condition (both groups):} $n_1 \le 0.10 N_1$ and $n_2 \le 0.10 N_2$.
+  \item \textbf{Independence between groups:} the two samples are \blankans{1.5in}{independent}.
+  \item \textbf{Normal/Large Sample (each group):} each population is normal OR each $n \ge$ \blankans{0.4in}{30}.
 \end{enumerate}
 \end{notesbox}
 
 \begin{notesbox}
-\textbf{Worked Example: Sleep hours}
-\ans{Random: both stated. 10\%: both $\le 10\%$ of all women/men. Independent: separate samples. Normal/Large: both $n=50\ge30$. All conditions met.}
+\textbf{Worked Example.} Sleep hours: Women $\mu_1 = 7.1$, $\sigma_1 = 1.2$, $n_1 = 50$.
+Men: $\mu_2 = 6.8$, $\sigma_2 = 1.4$, $n_2 = 50$.
 
-$\mu = $ \ans{$7.1 - 6.8 = 0.3$ hr}
+\medskip
+\textit{Check conditions:} \ansline{Random: both stated.}\\\ansline{10\%: both $\le 10\%$ of all women/men. \quad Independent: separate samples.}\\\ansline{Normal/Large: both $n = 50 \ge 30$. All conditions met.}
 
-$\sigma = $ \ans{$\sqrt{1.2^2/50 + 1.4^2/50} = \sqrt{0.0288+0.0392} = \sqrt{0.0680} \approx 0.2608$ hr}
+$\mu_{\bar{x}_1-\bar{x}_2} = $ \blankans{0.5in}{0.3 hr}
 
-$P > 1.0$: \ans{$z = (1.0-0.3)/0.2608 \approx 2.684$; $P \approx 1-0.9964 = 0.0036 \approx 0.4\%$.}
+$\sigma_{\bar{x}_1-\bar{x}_2} = $ \blankans{2.5in}{$\sqrt{1.2^2/50 + 1.4^2/50} \approx 0.2608$ hr}
+
+$P(\bar{x}_1 - \bar{x}_2 > 1.0) = $ \ansline{$z = (1.0-0.3)/0.2608 \approx 2.684$}\\\ansline{$P \approx 1 - 0.9964 = 0.0036 \approx 0.4\%$}
 \end{notesbox}
 
 \begin{practicebox}
-\textbf{Quick Check: Batteries}
+\textbf{Quick Check}
+
+Brand A batteries: $\mu_1 = 480$ hr, $\sigma_1 = 60$, $n_1 = 36$.
+Brand B batteries: $\mu_2 = 450$ hr, $\sigma_2 = 80$, $n_2 = 49$.
+
 \begin{enumerate}
-  \item \ans{$\mu = 480-450 = 30$ hr; $\sigma = \sqrt{60^2/36 + 80^2/49} = \sqrt{100 + 130.61} \approx \sqrt{230.61} \approx 15.19$ hr.}
-  \item \ans{$z = (40-30)/15.19 \approx 0.658$; $P > 40 \approx 1-0.7449 = 0.2551 \approx 25.5\%$.}
+  \item Find $\mu_{\bar{x}_1-\bar{x}_2}$ and $\sigma_{\bar{x}_1-\bar{x}_2}$.
+        \workans{0.6in}{$\mu = 480 - 450 = 30$ hr\\ $\sigma = \sqrt{60^2/36 + 80^2/49} = \sqrt{100 + 130.61} = \sqrt{230.61} \approx 15.19$ hr}
+  \item Find $P(\bar{x}_1 - \bar{x}_2 > 40)$.
+        \workans{0.8in}{$z = (40-30)/15.19 \approx 0.658$\\ $P(\bar{x}_1 - \bar{x}_2 > 40) \approx 1 - 0.7449 = 0.2551 \approx 25.5\%$}
 \end{enumerate}
 \end{practicebox}
 

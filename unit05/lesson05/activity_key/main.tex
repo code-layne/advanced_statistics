@@ -2,6 +2,10 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+% \workans{H}{answer} — fills a blank \vspace{H} work area in the same height:
+% the answer is smashed onto the next line and the space below is trimmed by it.
+\newcommand{\workans}[2]{\newline\smash{\raisebox{-2pt}{\parbox[t]{\linewidth}{\raggedright\ans{#2}}}}%
+  \vspace{\dimexpr#1-\baselineskip\relax}}
 
 \begin{document}
 
@@ -12,34 +16,59 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
+\textbf{Context: Lefties.}
+About 10\% of people are left-handed ($p = 0.10$). A random sample of $n = 200$ people
+is selected from a large population.
+
 \begin{enumerate}
-  \item \ans{Random: stated. 10\%: $200 \le 10\%$ of large population --- yes. Large Counts: $np = 200(0.10) = 20 \ge 10$; $n(1-p) = 200(0.90) = 180 \ge 10$. All conditions met.}
-  \item \ans{$\mu_{\hat{p}} = 0.10$; $\sigma_{\hat{p}} = \sqrt{0.10(0.90)/200} = \sqrt{0.00045} \approx 0.02121$.}
-  \item \ans{$z = (0.08 - 0.10)/0.02121 \approx -0.943$; $P(\hat{p} < 0.08) \approx 0.1729$. About 17.3\%.}
+  \item Check all three conditions for using the normal model for $\hat{p}$.
+        \ansline{Random: stated (random sample).}\\\ansline{10\%: $200 \le 10\%$ of a large population --- yes.}\\\ansline{Large Counts: $np = 200(0.10) = 20 \ge 10$; $n(1-p) = 200(0.90) = 180 \ge 10$.}\\\ansline{All three conditions are met.}
+  \item Find $\mu_{\hat{p}}$ and $\sigma_{\hat{p}}$.
+        \workans{0.6in}{$\mu_{\hat{p}} = 0.10$; \quad $\sigma_{\hat{p}} = \sqrt{0.10(0.90)/200} = \sqrt{0.00045} \approx 0.02121$}
+  \item Find $P(\hat{p} < 0.08)$.
+        \workans{0.9in}{$z = (0.08 - 0.10)/0.02121 \approx -0.943$\\ $P(\hat{p} < 0.08) \approx 0.1729$. About 17.3\%.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
+\textbf{Context: Vaccination rates.}
+In a large county, 72\% of adults are vaccinated ($p = 0.72$). A public health researcher
+surveys $n = 250$ randomly selected adults.
+
 \begin{enumerate}
-  \item \ans{Random: stated. 10\%: $250 \le 10\%$ of large county adults --- yes. Large Counts: $np=180 \ge 10$; $n(1-p)=70 \ge 10$. All met; normal model appropriate.}
-  \item \ans{$\mu_{\hat{p}} = 0.72$; $\sigma_{\hat{p}} = \sqrt{0.72(0.28)/250} \approx 0.02840$.}
-  \item \ans{$z_1 = (0.68-0.72)/0.02840 \approx -1.408$; $z_2 = (0.76-0.72)/0.02840 \approx 1.408$; $P \approx 0.9204 - 0.0796 = 0.8408$. About 84.1\%.}
-  \item \ans{$z = \text{invNorm}(0.90) \approx 1.282$; $\hat{p} = 0.72 + 1.282(0.02840) \approx 0.756$. In 10\% of random samples of 250 adults, more than 75.6\% will be vaccinated.}
+  \item Check all three conditions and conclude whether the normal model is appropriate.
+        \ansline{Random: stated.}\\\ansline{10\%: $250 \le 10\%$ of the county's adults --- yes. \quad Large Counts: $np = 180 \ge 10$; $n(1-p) = 70 \ge 10$.}\\\ansline{All conditions met; the normal model is appropriate.}
+  \item Find $\mu_{\hat{p}}$ and $\sigma_{\hat{p}}$.
+        \workans{0.5in}{$\mu_{\hat{p}} = 0.72$; \quad $\sigma_{\hat{p}} = \sqrt{0.72(0.28)/250} \approx 0.02840$}
+  \item Find $P(0.68 \le \hat{p} \le 0.76)$.
+        \workans{0.9in}{$z_1 = (0.68-0.72)/0.02840 \approx -1.408$; \quad $z_2 = (0.76-0.72)/0.02840 \approx 1.408$\\ $P \approx 0.9204 - 0.0796 = 0.8408$. About 84.1\%.}
+  \item What sample proportion is at the 90th percentile of the sampling distribution?
+        Interpret in context.
+        \workans{0.9in}{$z = \text{invNorm}(0.90) \approx 1.282$; \quad $\hat{p} = 0.72 + 1.282(0.02840) \approx 0.756$\\ In 10\% of random samples of 250 adults, more than 75.6\% will be vaccinated.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
+\textbf{Context: Defective products.}
+A factory has a 5\% defect rate ($p = 0.05$). An auditor plans to inspect a random
+sample to estimate $\hat{p}$.
+
 \begin{enumerate}
-  \item \ans{$np = 60(0.05) = 3 < 10$. Large Counts not met --- the normal model is \emph{not} appropriate for $n = 60$.}
-  \item \ans{$n=200$: $np=10 \ge 10$; $n(1-p)=190 \ge 10$ --- barely met. $\sigma_{\hat{p}} = \sqrt{0.05(0.95)/200} \approx 0.01541$. $z = (0.08-0.05)/0.01541 \approx 1.947$; $P(\hat{p}>0.08) \approx 1-0.9742 = 0.0258 \approx 2.6\%$.}
-  \item \ans{$\sqrt{0.05(0.95)/n} \le 0.01 \Rightarrow 0.0475/n \le 0.0001 \Rightarrow n \ge 475$.}
-  \item \ansline{As $n$ increases: shape becomes more approximately normal (Large Counts more easily satisfied); center stays at $p = 0.05$ (unbiased); spread decreases ($\sigma_{\hat{p}}$ shrinks as $n$ grows). The distribution becomes narrower and more bell-shaped.}
+  \item For $n = 60$: check the Large Counts condition. Is the normal model appropriate?
+        \ansline{$np = 3 < 10$.}\\\ansline{Large Counts is not met --- the normal model is \emph{not} appropriate for $n = 60$.}
+  \item For $n = 200$: check conditions and compute $P(\hat{p} > 0.08)$.
+        \workans{0.9in}{Random, 10\% OK; $np = 10 \ge 10$, $n(1-p) = 190 \ge 10$ --- barely met.\\ $\sigma_{\hat{p}} = \sqrt{0.05(0.95)/200} \approx 0.01541$; \quad $z = (0.08-0.05)/0.01541 \approx 1.947$\\ $P(\hat{p} > 0.08) \approx 1 - 0.9742 = 0.0258 \approx 2.6\%$}
+  \item How large must $n$ be so that $\sigma_{\hat{p}} \le 0.01$?
+        \workans{0.7in}{$\sqrt{0.05(0.95)/n} \le 0.01 \Rightarrow 0.0475/n \le 0.0001 \Rightarrow n \ge 475$}
+  \item Describe how the sampling distribution of $\hat{p}$ changes as $n$ increases from
+        60 to 200 to 500 in terms of shape, center, and spread.
+        \ansline{Shape: more approximately normal.}\\\ansline{Center: stays at $p = 0.05$ (unbiased). \quad Spread: decreases ($\sigma_{\hat{p}}$ shrinks as $n$ grows).}\\\ansline{The distribution becomes narrower and more bell-shaped.}
 \end{enumerate}
 \end{tcolorbox}
 

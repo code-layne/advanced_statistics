@@ -6,28 +6,35 @@
 \begin{document}
 
 \pageheader{Unit 4, Lesson 4.11}{Warm-Up --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+\namedateperiod
 
-\vspace{0.3in}
+\vspace{0.1in}
 
+% ── SECTION 1: Spiral Review ──────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 1 \quad Spiral Review}
 
-\vspace{0.12in}
+\vspace{0.08in}
 
 \begin{enumerate}
 
-    \item $X \sim B(10, 0.3)$.
-    \begin{enumerate}[label=(\alph*), itemsep=8pt]
-        \item \ans{B: each trial is a success (probability 0.3) or failure. I: trials are independent. N: fixed $n=10$. S: same $p=0.3$ every trial.}
-        \item \ans{$P(X=4) = \binom{10}{4}(0.3)^4(0.7)^6 = 210(0.0081)(0.1176) \approx 0.2001$}
+    \item Let $X \sim B(10, 0.3)$.
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+        \item Verify that this is a binomial setting by listing all four BINS conditions.\\
+        \ansline{B: each trial is a success (prob.\ 0.3) or a failure.}\\[1pt]\ansline{I: trials are independent of one another.}\\[1pt]\ansline{N: fixed number of trials, $n = 10$.}\\[1pt]\ansline{S: same $p = 0.3$ on every trial.}
+        \item Compute $P(X = 4)$. Show the formula setup.\\
+        \ansline{$P(X=4) = \binom{10}{4}(0.3)^4(0.7)^6$}\\[1pt]\ansline{$= 210(0.0081)(0.1176) \approx 0.2001$}
     \end{enumerate}
 
-    \vspace{0.18in}
+    \vspace{0.1in}
 
-    \item $X \sim B(3, 0.5)$.
-    \renewcommand{\arraystretch}{1.8}
+    \item Recall the mean of a \emph{general} discrete random variable:
+    $\mu_X = \sum x_i \cdot P(X = x_i)$.
+
+    The table below shows part of the distribution of $X \sim B(3, 0.5)$.
+    Complete the table and find $\mu_X$ using the general formula.
+
+    \vspace{4pt}
+    \renewcommand{\arraystretch}{1.5}
     \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.4cm} X X X X @{}}
     $x$ & 0 & 1 & 2 & 3 \\
     \hline
@@ -36,30 +43,34 @@ Name:\;\ans{Key} & Date:\; & Period:\;
     $x \cdot P(X=x)$ & \ans{0} & \ans{0.375} & \ans{0.750} & \ans{0.375} \\
     \end{tabularx}
 
-    \vspace{8pt}
-    $\mu_X = 0 + 0.375 + 0.750 + 0.375 = \ans{1.5}$
+    \vspace{4pt}
+    $\mu_X = \sum x_i P(x_i) = $ \ans{0 + 0.375 + 0.750 + 0.375 = 1.5}
 
-    \vspace{0.18in}
+    \vspace{0.1in}
 
-    \item \ans{$np = 3(0.5) = 1.5$. Yes --- the general formula and the shortcut $np$ give the same answer. The formula $\mu_X = np$ is simply an efficient way to compute the mean of any binomial distribution without summing every term.}
+    \item Recall that for any discrete random variable, $\sigma_X = \sqrt{\sum(x_i - \mu_X)^2 P(x_i)}$.
+    Based on your answer to Problem 2, what would you \emph{predict} for $\mu_X$ using
+    the formula $np$? Do your two answers agree?\\
+    \ansline{$np = 3(0.5) = 1.5$.}\\[1pt]\ansline{Yes --- both methods give $\mu_X = 1.5$; $np$ is the shortcut.}
 
 \end{enumerate}
 
-\vspace{0.2in}
+\vspace{0.08in}
 
+% ── SECTION 2: Looking Ahead ──────────────────────────────────────────────────
 {\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
 
-\vspace{0.12in}
+\vspace{0.08in}
 
 \noindent Today we replace the long summation in Problem 2 with two simple formulas:
 $\mu_X = np$ and $\sigma_X = \sqrt{np(1-p)}$.
 
-\vspace{0.14in}
+\vspace{0.1in}
 
 \begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
     left=4mm, right=4mm, top=3mm, bottom=3mm]
     \small
-    \begin{itemize}[leftmargin=1.3em, itemsep=8pt]
+    \begin{itemize}[leftmargin=1.3em, itemsep=4pt]
   \item $\mu_X = np$ is the expected (average) number of successes per experiment.
   \item Always interpret $\mu_X$ with a sentence that references the context.
   \item \texttt{binomcdf} gives cumulative probabilities --- useful when the event
@@ -67,8 +78,9 @@ $\mu_X = np$ and $\sigma_X = \sqrt{np(1-p)}$.
     \end{itemize}
 \end{tcolorbox}
 
-\vspace{0.18in}
+\vspace{0.1in}
 
-\noindent\textcolor{slate}{\small Student responses will vary.}
+\noindent\textcolor{slate}{\small Write one question you have about today's lesson:}\\[4pt]
+\ansline{Student responses will vary.}\\[2pt]\ansline{}
 
 \end{document}

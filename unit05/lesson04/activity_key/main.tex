@@ -12,35 +12,85 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
+\textbf{Concept Check: Bias and Unbiasedness.}
+
+Match each description to the correct term: \textit{unbiased}, \textit{biased (high)}, or \textit{biased (low)}.
+
 \begin{enumerate}
-  \item \ans{Unbiased}
-  \item \ans{Biased (low)}
-  \item \ans{Biased (high)}
-  \item \ans{$\mu_{\bar{x}} = 74$; $\sigma_{\bar{x}} = 12/\sqrt{9} = 4$.}
-  \item \ans{$\sigma_{\bar{x}} = 12/\sqrt{36} = 2$. Spread decreased by a factor of $1/2$ (or: standard error halved when $n$ quadrupled).}
+  \item A statistic whose long-run average equals the population parameter.
+        \ans{unbiased}
+  \item The sample range consistently \emph{underestimates} the population range.
+        \ans{biased (low)}
+  \item An estimator whose sampling distribution is centered \emph{above} the parameter.
+        \ans{biased (high)}
+\end{enumerate}
+
+\medskip
+A population of test scores has $\mu = 74$ and $\sigma = 12$.
+\begin{enumerate}[resume]
+  \item For $n = 9$: find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$. \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.5in][t]{\linewidth}\vspace*{2pt}\ans{$\mu_{\bar{x}} = 74$; \quad $\sigma_{\bar{x}} = 12/\sqrt{9} = 4$}\end{minipage}
+  \item For $n = 36$: find $\sigma_{\bar{x}}$. By what factor did the spread decrease?
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.5in][t]{\linewidth}\vspace*{2pt}\ans{$\sigma_{\bar{x}} = 12/\sqrt{36} = 2$}\\
+        \ans{The spread was cut in half (a factor of $1/2$) when $n$ quadrupled.}\end{minipage}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
+\textbf{Context: Estimating salmon length.}
+Biologists want to estimate the mean length $\mu$ of salmon in a river. They record the
+lengths of random samples and compute both the sample mean $\bar{x}$ and the sample
+\emph{minimum} for each sample.
+
 \begin{enumerate}
-  \item \ansline{$\bar{x}$ is an unbiased estimator of $\mu$. The sampling distribution of $\bar{x}$ is centered at $\mu = 62$ cm, meaning that on average, $\bar{x}$ neither over- nor under-estimates $\mu$.}
-  \item \ansline{Biased --- biased high. The sample minimum averages 48 cm but the population minimum is 40 cm. On average, the sample minimum overestimates (is higher than) the population minimum.}
-  \item \ans{$n=16$: $\sigma_{\bar{x}} = 8/\sqrt{16} = 2$ cm. $n=64$: $\sigma_{\bar{x}} = 8/\sqrt{64} = 1$ cm. With the larger sample, estimates cluster twice as tightly around the true mean --- the estimate is more precise.}
+  \item The sampling distribution of $\bar{x}$ (from many samples of size $n = 40$) has a
+        mean of 62 cm. The population mean is also 62 cm. What does this tell you about
+        $\bar{x}$ as an estimator of $\mu$?
+        \ansline{$\bar{x}$ is unbiased:}\\
+        \ansline{its sampling distribution is centered at $\mu = 62$ cm.}
+  \item The sampling distribution of the sample minimum has a mean of 48 cm. The population
+        minimum is 40 cm. Is the sample minimum a biased or unbiased estimator of the
+        population minimum? In which direction is it biased?
+        \ansline{Biased high:}\\
+        \ansline{on average it gives 48 cm, above the population minimum of 40 cm.}
+  \item Population: $\mu = 62$ cm, $\sigma = 8$ cm. For $n = 16$ vs.\ $n = 64$:
+        compute $\sigma_{\bar{x}}$ for each and explain the practical implication.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.8in][t]{\linewidth}\vspace*{2pt}\ans{$n=16$: $\sigma_{\bar{x}} = 8/\sqrt{16} = 2$ cm; \quad $n=64$: $\sigma_{\bar{x}} = 8/\sqrt{64} = 1$ cm}\\
+        \ans{With $n = 64$, sample means cluster twice as tightly around $\mu$:}\\
+        \ans{the estimate is more precise.}\end{minipage}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
+\textbf{Context: Evaluating two competing estimators.}
+Two researchers estimate the same population mean $\mu = 100$.
+\begin{itemize}
+  \item Estimator A: sampling distribution has mean = 100 and $\sigma = 12$.
+  \item Estimator B: sampling distribution has mean = 97 and $\sigma = 4$.
+\end{itemize}
+
 \begin{enumerate}
-  \item \ans{Estimator A is unbiased (centered at 100). Estimator B is biased low (centered at 97 $<$ 100).}
-  \item \ansline{Not necessarily. Lower variability means estimates are more consistent (precise), but if they systematically miss the true value by 3 units, they are less accurate. In AP Statistics, unbiasedness is generally preferred; a biased estimator with lower variability might win on mean squared error, but the College Board emphasizes unbiasedness.}
-  \item \ans{$z_1 = (95-100)/12 \approx -0.417$; $z_2 = (105-100)/12 \approx 0.417$; $P(-0.417<Z<0.417) \approx 0.6772 - 0.3228 = 0.3232 \approx 32.3\%$.}
-  \item \ans{$z_1 = (95-97)/4 = -0.50$; $z_2 = (105-97)/4 = 2.00$; $P = 0.9772 - 0.3085 = 0.6687 \approx 66.9\%$. Estimator B actually has a higher probability of landing within 5 units of $\mu$ despite being biased --- illustrating the bias-variance trade-off.}
+  \item Which estimator is unbiased? Which is biased, and in which direction?
+        \ansline{A is unbiased.}\\
+        \ansline{B is biased low (centered at 97, below 100).}
+  \item Estimator B has lower variability. Does that make it the better estimator?
+        Discuss the trade-off between bias and variability.
+        \ansline{Not necessarily.}\\
+        \ansline{B is more precise, but it misses $\mu$ by 3 units on average (biased).}\\
+        \ansline{A is accurate on average but spread out; ideally low bias AND low variability.}
+  \item For Estimator A, find the probability that a single estimate is within 5 units
+        of the true value (i.e., $P(95 < \hat{\theta} < 105)$).
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.8in][t]{\linewidth}\vspace*{2pt}\ans{$z = (95-100)/12 \approx -0.417$, \quad $z = (105-100)/12 \approx 0.417$}\\
+        \ans{$P(-0.417<Z<0.417) \approx 0.6617 - 0.3383 \approx 0.323$}\end{minipage}
+  \item For Estimator B, find $P(95 < \hat{\theta} < 105)$. Compare to part (c).
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.8in][t]{\linewidth}\vspace*{2pt}\ans{$z = (95-97)/4 = -0.5$, \quad $z = (105-97)/4 = 2$; \quad $P = 0.9772 - 0.3085 \approx 0.669$}\\
+        \ans{B lands within 5 units more often (0.669 vs.\ 0.323) despite its bias ---}\\
+        \ans{the bias--variability trade-off.}\end{minipage}
 \end{enumerate}
 \end{tcolorbox}
 
