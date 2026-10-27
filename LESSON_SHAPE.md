@@ -112,9 +112,10 @@ usage, pacing, and tone; the live lesson overrides every document, this one incl
 
 Every lesson carries **both** back-of-packet components, authored every time:
 
-- **`ap_practice` — assigned but NOT scored.** Students keep it and bring it to review. The
-  cover's packet table says so in its description ("practice, not a grade").
-- **`homework` — the lesson's GRADED practice**, last in the packet. **Paper homework is the
+- **`ap_practice` — extra credit, scored 1 to 5.** The score is added to the student's grade as
+  extra-credit points, so a full score is +5. Students tear it out and turn it in with the
+  homework. The cover's packet table says so in its description ("extra credit, scored 1 to 5").
+- **`homework` — the lesson's GRADED practice, scored 1 to 5**, last in the packet. **Paper homework is the
   default** and is generated for every lesson. DeltaMath is an *occasional* override the teacher
   may choose on a given day — never the default, never assumed by the author. When used, it
   replaces the page, and the page stays in the packet as extra practice. The plan carries the DeltaMath-override note.
@@ -183,7 +184,7 @@ Understandings (the target misconception named) → Vocabulary, Concepts & Theor
 Glance (55-min phase table **5 / 34 / 8 / 8**) → Warm-Up → **Guided Notes & Practice — I do, we
 do** (the must-land section; the questions asked while students hold the pen; the formative
 read and its reteach trigger) → **Debrief — whole class, spoken** (open on the *almost*-right crux
-answer) → **AP Practice — assigned, not scored** → **Homework — scored, due the first class after
+answer) → **AP Practice — extra credit, scored 1 to 5** → **Homework — scored 1 to 5, due the first class after
 two study halls** (with the DeltaMath override) → Watch For (the misconception again) → Close &
 Start the Homework → Teacher Notes, **four** of them in packet order: `[Warm-Up]`,
 `[Guided Notes \& Practice]`, `[AP Practice]`, `[Homework]`.
@@ -250,7 +251,7 @@ current shape.
 3. The debrief is spoken and lives in the plan; no `reflectionbox`.
 4. Delete `experience`, `experience_key`.
 5. If the lesson has no `ap_practice/`, split the existing homework: AP-format items to
-   `ap_practice/` (unscored), and author a **new scored homework** in a fresh context.
+   `ap_practice/` (extra credit), and author a **new scored homework** in a fresh context.
 6. Rewrite the cover's packet table (Warm-Up · Guided Notes & Practice · AP Practice · Homework
    --- a contents list, no Score column) and re-voice its learning targets with the formal vocabulary.
 7. Rewrite the plan in gradual-release order; re-cut its teacher notes to four.
