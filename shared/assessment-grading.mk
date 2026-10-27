@@ -49,7 +49,7 @@ manifest: grading-namecheck
 
 ROSTER_OUT := $(COMPILED_DIR)/$(COMP)_roster.pdf
 
-roster-packets: grading-namecheck grading-personalized
+roster-packets: grading-namecheck grading-manifest grading-personalized
 	@mkdir -p $(COMPILED_DIR)
 	@cp $(GR_OUT)/personalized.pdf $(ROSTER_OUT)
 	@echo "✓  Roster copies  → $(patsubst $(PROJECT_ROOT)/%,%,$(ROSTER_OUT)) (roster order, covers first)"
