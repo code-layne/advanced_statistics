@@ -68,11 +68,14 @@ products and packets under `target/compiled/`.
 
 The graded components (AP Practice, homework, quizzes and tests) mark each answer with
 `\gradedblank` from `math-shared/grading.sty`. `manifest` works on one graded component at a
-time; a lesson's `roster-packets` covers every graded component in its packet:
+time; a lesson's `roster-packets` covers every graded component in its packet. Both run from the
+root, a unit, or the component's own directory, and `ROSTER` may start with `~/`:
 
 ```bash
 make -C unit01/lesson03 manifest COMP=homework           # blank + key, manifest.json, blank/key check
-make -C unit01/lesson03 roster-packets ROSTER=~/Mathematics/rosters/roster-map.csv SECTION="Advanced Statistical Analysis"
+make roster-packets LESSON=unit01/lesson03 ROSTER=~/Mathematics/rosters/roster-map.csv SECTION="Advanced Statistical Analysis"
+make roster-packets COMP=unit01/tests/actual_test ROSTER=~/Mathematics/rosters/roster-map.csv SECTION="Advanced Statistical Analysis"
+make manifest COMP=unit01/lesson03/homework              # the first line, from the root
 make -C unit01/tests manifest COMP=actual_test           # unit tests: tests/ (keys in test_keys/)
 make -C unit01/quizzes manifest COMP=actual_quiz         # quizzes: quizzes/ (keys in quiz_keys/)
 make -C unit01 manifest COMP=lesson03/homework           # the same, from the unit directory

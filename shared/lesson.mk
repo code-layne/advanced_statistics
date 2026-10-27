@@ -27,8 +27,10 @@
 # Either form is discovered and merged into the packet by pdfunite.
 
 PROJECT_ROOT := $(abspath ../..)
-UNIT         := $(notdir $(abspath ..))
-LESSON       := $(notdir $(CURDIR))
+# override: a LESSON= given to the root or unit `make roster-packets` reaches
+# this make through MAKEFLAGS, and must not replace the lesson's own name.
+override UNIT   := $(notdir $(abspath ..))
+override LESSON := $(notdir $(CURDIR))
 
 SHARED_STYS  := $(wildcard $(PROJECT_ROOT)/shared/*.sty)
 # TeX search path: the course packages (recursive), then math-shared (the
@@ -322,6 +324,11 @@ grading-namecheck: grading-need-comp
 manifest: grading-namecheck
 	@$(MAKE) --no-print-directory grading-manifest
 	@echo "✓  Manifest       → target/$(UNIT)/$(LESSON)/grading/$(COMP)/manifest.json"
+
+# ROSTER may start with ~/ (make does not expand it) and may be relative.
+ifneq ($(ROSTER),)
+override ROSTER := $(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))
+endif
 
 # Roster order and tracking ids, read only when ROSTER is given.
 ROSTER_IDS := $(if $(ROSTER),$(shell $(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py \
