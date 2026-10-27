@@ -3,8 +3,9 @@
 
 A document is graded when it loads grading.sty (math-shared). Its pages are
 scanned and the scans go to an outside API, so they carry only the tracking id
-in the strip; the student's name goes on the separate cover sheet that
-`make roster-packets` prints. A name line on a graded page invites a student to
+in the strip. `make roster-packets` prints the student's name on the lesson
+cover (lesson packets) or on math-shared's tear-off name sheet (tests and
+quizzes), never on a graded page. A name line on a graded page invites a student to
 write her name where the scan will pick it up.
 
     python3 shared/check_namelines.py unit02/tests/actual_test unit02/test_keys/actual_test_key
@@ -16,6 +17,12 @@ document, comments stripped, it reports each use of \\namedateperiod or
 \\namepartnerperiod and each hand-written "Name:", "Date:" or "Period:" field.
 Documents that do not load grading are not checked: they keep their name line.
 Exits 1 on any hit.
+
+    python3 shared/check_namelines.py --graded cover warmup notes ap_practice homework
+
+With --graded, each argument is a component directory, and the script prints,
+in the order given, the ones whose main.tex loads grading. lesson.mk uses it to
+find every graded component of a lesson packet.
 """
 from __future__ import annotations
 
@@ -39,7 +46,17 @@ def documents(args: list[str]) -> list[Path]:
     return found
 
 
+def loads_grading(doc: Path) -> bool:
+    lines = [COMMENT.sub("", l) for l in doc.read_text(encoding="utf-8").splitlines()]
+    return bool(LOADS_GRADING.search("\n".join(lines)))
+
+
 def main(argv: list[str]) -> int:
+    if argv[:1] == ["--graded"]:
+        graded = [d for d in argv[1:] if (Path(d) / "main.tex").is_file()
+                  and loads_grading(Path(d) / "main.tex")]
+        print(" ".join(graded))
+        return 0
     hits = 0
     for doc in documents(argv):
         lines = [COMMENT.sub("", l) for l in doc.read_text(encoding="utf-8").splitlines()]
@@ -51,7 +68,7 @@ def main(argv: list[str]) -> int:
                 hits += 1
     if hits:
         print(f"!  {hits} name line(s) on graded pages — remove them; the name goes on the "
-              "roster cover sheet only", file=sys.stderr)
+              "lesson cover or the test's name sheet only", file=sys.stderr)
         return 1
     return 0
 

@@ -67,19 +67,23 @@ products and packets under `target/compiled/`.
 ### Grading
 
 The graded components (AP Practice, homework, quizzes and tests) mark each answer with
-`\gradedblank` from `math-shared/grading.sty`. Two targets work on one graded component at a time:
+`\gradedblank` from `math-shared/grading.sty`. `manifest` works on one graded component at a
+time; a lesson's `roster-packets` covers every graded component in its packet:
 
 ```bash
 make -C unit01/lesson03 manifest COMP=homework           # blank + key, manifest.json, blank/key check
-make -C unit01/lesson03 roster-packets COMP=homework ROSTER=~/Rosters/apstats/roster-map.csv
+make -C unit01/lesson03 roster-packets ROSTER=~/Mathematics/rosters/roster-map.csv SECTION="Advanced Statistical Analysis"
 make -C unit01/tests manifest COMP=actual_test           # unit tests: tests/ (keys in test_keys/)
 make -C unit01/quizzes manifest COMP=actual_quiz         # quizzes: quizzes/ (keys in quiz_keys/)
 make -C unit01 manifest COMP=lesson03/homework           # the same, from the unit directory
 ```
 
-`roster-packets` builds one copy of the packet per student, in roster order, into
-`target/compiled/`: her name is preprinted on the lesson cover's Name line, and the QR codes and
-id strip on graded pages carry only her tracking id. Lesson packets have no separate name sheet.
+A lesson's `roster-packets` builds one copy of the student packet per student, in roster order,
+into `target/compiled/<unit>/lessonYY_roster.pdf`: her name is preprinted on the lesson cover's
+Name line, and every graded component in the packet (AP Practice, homework, or both) is her
+personalized copy, whose QR codes and id strip carry only her tracking id. Each component starts
+on a fresh sheet, so she tears the graded sheets out and turns them in without her name; the
+cover stays in her packet. Lesson packets have no separate name sheet.
 Tests and quizzes do: their first page is a name cover sheet that is torn off and fed into the
 grading system, and is never scanned with the work. The roster
 PDFs carry student names on the covers; `target/` is never committed, and `roster-map.csv` lives
