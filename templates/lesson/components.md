@@ -78,7 +78,7 @@ vocabulary freely. Canonical section order:
 9. **Debrief — whole class (8 min)** — `skillbox{sky}`: the ordered report-out moves, opening on
    the *almost*-right crux answer, then the Debrief-box walkthrough and what to cut if time is
    short (item 1 is the one that cannot be cut).
-10. **AP Practice — assigned, not scored** — `skillbox{goldbox}`: what each item targets, the
+10. **AP Practice — extra credit, scored 1 to 5** — `skillbox{goldbox}`: what each item targets, the
     spiral item, the part worth reading closely, and when to go over it.
 11. **Homework — scored, due the first class after two study halls** — `skillbox{goldbox}`: the assignment, the scoring
     breakdown, the item that predicts next-lesson performance, and the **DeltaMath override**.
@@ -111,7 +111,7 @@ Activity / Debrief / Application / CYU order. Leave them alone unless regenerati
   Homework — four rows; there is no group activity. **No Score column and no Total row**
   (removed 2026-10-26, in every course). Keep the rows aligned with the components you actually
   scaffolded. Whether a component counts belongs in its description: AP Practice is
-  "practice, not a grade"; Homework is "scored, due the first class after two study halls"
+  "extra credit, scored 1 to 5"; Homework is "scored 1 to 5, due the first class after two study halls"
 - `remindbox` ("Keep in Mind") — **the notes that matter for this lesson**, in the student's
   language: the hook the notes open on, and the habit the lesson insists on ("when a single
   number and a picture disagree, believe the picture"). **Do not narrate the gradual-release
@@ -196,10 +196,11 @@ construction (1.0cm ≈ 2 handwritten lines, 1.5cm ≈ 3, 2.0cm ≈ 4).
 
 ## AP practice
 
-`ap_practice/` (+ `ap_practice_key/`) — **assigned but NOT scored.**
+`ap_practice/` (+ `ap_practice_key/`) — **extra credit, scored 1 to 5.** The score is added as
+extra-credit points (a full score is +5); students tear it out and turn it in with the homework.
 `\pageheader{...}{AP Practice}` (no name row). No page limit: the graded boxes set its length.
 
-Open with a `remindbox` stating plainly that the page is not required and not scored and that the
+Open with a `remindbox` stating plainly that the page is extra credit, scored 1 to 5, and that the
 graded homework is the last section of the packet — authored **byte-identically** in the blank and
 the key. Then shape it like the exam: a `headlinebox{goldbg}` "Section I — Multiple Choice" with
 **two** items (five options each, in context), and a `headlinebox{goldbg}` "Section II — Free
@@ -248,7 +249,7 @@ Two older shapes are still in the tree and still build:
 bullets into the **two** notes sections' fills and the Application into the `practicebox`; fold
 Check Your Understanding and the old Activity into the **homework**, re-voiced to *use* the
 vocabulary rather than discover it; delete `experience` and `experience_key`; split the old
-homework into an unscored `ap_practice` plus a **new scored homework** in a fresh context;
+homework into an extra-credit `ap_practice` plus a **new scored homework** in a fresh context;
 rewrite the cover table, the plan, and the deck order. The debrief is spoken — do not add a
 `reflectionbox`.
 

@@ -83,8 +83,8 @@ comp-dep     = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp,$(wildcar
 #
 # `ap_practice` and `homework` close the packet, in that order. AP Statistics
 # splits its post-lesson work in two: `ap_practice` is the AP-format rep — MC in
-# context plus a free-response set — assigned but NOT scored, and `homework` is
-# the graded practice, the last pages of the packet. Both names are optional; a
+# context plus a free-response set — extra credit, scored 1 to 5, and `homework` is
+# the graded practice (also 1 to 5), the last pages of the packet. Both names are optional; a
 # lesson that provides only `homework` builds exactly as before, which is why
 # adding `ap_practice` here is inert for every lesson that does not have the
 # directory.
