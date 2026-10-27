@@ -317,7 +317,8 @@ README) and check that the blank and key manifests agree.
 hand-written Name / Date / Period row, in the blank or the key, quizzes and tests included. Graded
 pages are scanned and the scans go to an outside API, so they carry only the tracking id in the
 strip; the student's name goes, for a lesson packet, on the Name line of the lesson cover, which
-`make roster-packets` preprints — there is no separate name sheet (2026-10-26); for a quiz or
+`make roster-packets` preprints — there is no separate name sheet (2026-10-26). The student tears
+the graded sheets out of her packet and turns them in, so they carry no name; for a quiz or
 test, on the tear-off name cover sheet `roster-packets` puts in front of it, which is fed into
 the grading system. A `Score:` field on its own line may stay. `make manifest` and `make roster-packets` run
 `shared/check_namelines.py` first and fail on a name line; `make check-names` at the root checks

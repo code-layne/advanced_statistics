@@ -273,35 +273,42 @@ clean:
 	      $(COMPILED_DIR)/$(LESSON)_full.pdf
 
 # ── Grading (math-shared, the submodule at the project root) ──────────────────
-# Per-lesson entry points to math-shared's grading.mk, for ONE component that
-# uses grading.sty (\gradedblank items — ap_practice and homework):
+# A component is graded when its main.tex loads grading.sty (\gradedblank items).
+# In a lesson that is ap_practice, homework, or both; check_namelines.py --graded
+# finds them, so nothing here names them.
 #
 #   make manifest COMP=homework
 #       blank + key builds, target/<unit>/<lesson>/grading/<COMP>/manifest.json,
 #       and the check that the blank and key agree on every graded item.
-#   make roster-packets COMP=homework ROSTER=~/Rosters/apstats/roster-map.csv [SECTION=…]
+#   make roster-packets ROSTER=~/Mathematics/rosters/roster-map.csv [SECTION=…]
 #       per student, in roster order: one copy of the lesson's student packet
-#       with her name preprinted on the lesson cover and her personalized COMP (QR codes and the id strip carry only
-#       her tracking id) in place of the master copy, paginated by
-#       shared/paginate.sh exactly like `make student`. Joined into
-#       target/compiled/<unit>/lessonYY_<COMP>_roster.pdf to print as one
-#       collated job. A COMP that is not in the student packet gets math-shared's
-#       own run per student instead: cover, blank back, then the component
-#       padded to an even page count.
+#       with her name printed on the lesson cover and EVERY graded component
+#       replaced by her personalized copy (QR codes and the id strip carry only
+#       her tracking id). Paginated by shared/paginate.sh exactly like
+#       `make student`, so each component starts on a recto and fills whole
+#       sheets: she tears the graded sheets out and turns them in, and the
+#       cover with her name stays in the packet. Joined into
+#       target/compiled/<unit>/lessonYY_roster.pdf to print duplex as one
+#       collated job. Every packet has an even page count, so each student's
+#       cover starts on an odd page.
+#   make roster-packets COMP=<graded component not in the packet> ROSTER=…
+#       math-shared's own run per student (name sheet, blank back, the
+#       component padded to even) → lessonYY_<COMP>_roster.pdf. A COMP that IS
+#       in the packet is ignored: the packet build personalizes every graded
+#       component.
 #
 # A lesson packet has NO separate name sheet: the lesson cover carries the name
-# (2026-10-26). Tests and quizzes keep math-shared's tear-off name sheet as their
-# first page (shared/assessment-grading.mk). A lesson with no cover/ falls back to
-# that sheet so the name is still somewhere. The roster PDFs carry names, so they
-# stay under target/, which is never committed.
-# grading-namecheck (shared/check_namelines.py) runs first in both: it fails if
-# COMP or its key loads grading.sty and still carries a name line.
+# (2026-10-27). Only tests and quizzes get math-shared's tear-off name sheet
+# (shared/assessment-grading.mk). A lesson with graded components and no
+# cover/main.tex is an error. The roster PDFs carry names, so they stay under
+# target/, which is never committed.
 GRADING_MK  := $(PROJECT_ROOT)/math-shared/grading.mk
 COMP        ?=
 COMPONENT   := $(COMP)
 GRADING_OUT := $(PDF_DIR)/grading/$(COMP)
+NAMELINES   := $(PROJECT_ROOT)/shared/check_namelines.py
 
-.PHONY: manifest roster-packets grading-need-comp grading-namecheck
+.PHONY: manifest roster-packets roster-copies roster-force grading-need-comp grading-namecheck
 
 ifneq ($(wildcard $(GRADING_MK)),)
 include $(GRADING_MK)
@@ -310,56 +317,75 @@ grading-need-comp:
 	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=homework"; exit 1; }
 
 grading-namecheck: grading-need-comp
-	@$(GRADING_PYTHON) $(PROJECT_ROOT)/shared/check_namelines.py $(COMPONENT) $(KEY_COMPONENT)
+	@$(GRADING_PYTHON) $(NAMELINES) $(COMPONENT) $(KEY_COMPONENT)
 
 manifest: grading-namecheck
 	@$(MAKE) --no-print-directory grading-manifest
 	@echo "✓  Manifest       → target/$(UNIT)/$(LESSON)/grading/$(COMP)/manifest.json"
 
 # Roster order and tracking ids, read only when ROSTER is given.
-ROSTER_IDS     := $(if $(ROSTER),$(shell $(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py \
-                    "$(ROSTER)" --ids-only $(if $(SECTION),--section "$(SECTION)")))
-ROSTER_PKT_DIR := $(GRADING_OUT)/roster
-ROSTER_PACKETS := $(foreach id,$(ROSTER_IDS),$(ROSTER_PKT_DIR)/$(id).pdf)
-ROSTER_OUT     := $(COMPILED_DIR)/$(LESSON)_$(COMP)_roster.pdf
+ROSTER_IDS := $(if $(ROSTER),$(shell $(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py \
+                "$(ROSTER)" --ids-only $(if $(SECTION),--section "$(SECTION)")))
 
-# The master copy of COMP as it appears in the student packet, if it does.
-COMP_MASTER_PDF := $(PDF_DIR)/$(COMP)/main.pdf
-COMP_IN_PACKET  := $(filter $(COMP_MASTER_PDF),$(STUDENT_PDFS))
+# The graded components of the student packet, in packet order.
+PACKET_GRADED = $(shell $(GRADING_PYTHON) $(NAMELINES) --graded $(STUDENT_COMPS))
 
-roster-packets: grading-namecheck grading-need-roster
-	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)"; exit 1; }
+# A COMP outside the packet takes math-shared's run; anything else, the packet.
+COMP_OUTSIDE := $(if $(COMP),$(if $(filter $(COMP),$(STUDENT_COMPS)),,$(COMP)))
+
+ifneq ($(COMP_OUTSIDE),)
+roster-packets: grading-namecheck grading-personalized
+	@mkdir -p $(COMPILED_DIR)
+	@cp "$(GR_OUT)/personalized.pdf" $(COMPILED_DIR)/$(LESSON)_$(COMP)_roster.pdf
+	@echo "✓  Roster runs    → target/compiled/$(UNIT)/$(LESSON)_$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order)"
+else
+ROSTER_PKT_DIR  := $(PDF_DIR)/grading/roster
+ROSTER_NAME_DIR := $(ROSTER_PKT_DIR)/covers
+ROSTER_PACKETS  := $(foreach id,$(ROSTER_IDS),$(ROSTER_PKT_DIR)/$(id).pdf)
+ROSTER_OUT      := $(COMPILED_DIR)/$(LESSON)_roster.pdf
+
+roster-packets: grading-need-roster
+	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)$(if $(SECTION), for section $(SECTION))"; exit 1; }
+	@test -f cover/main.tex || { echo "!  $(UNIT)/$(LESSON) has no cover/main.tex: a lesson packet prints the name on its cover"; exit 1; }
+	@graded="$(PACKET_GRADED)"; \
+	test -n "$$graded" || { echo "!  $(UNIT)/$(LESSON) has no graded component in its packet"; exit 1; }; \
+	$(if $(COMP),echo "   COMP=$(COMP) ignored: the packet personalizes every graded component";) \
+	for c in $$graded; do \
+	  echo "   graded component: $$c"; \
+	  $(MAKE) --no-print-directory roster-copies COMP=$$c || exit 1; \
+	done
 	@$(MAKE) --no-print-directory $(ROSTER_PACKETS)
 	@mkdir -p $(COMPILED_DIR)
 	@if [ $(words $(ROSTER_PACKETS)) -eq 1 ]; then cp $(ROSTER_PACKETS) $(ROSTER_OUT); \
 	 else pdfunite $(ROSTER_PACKETS) $(ROSTER_OUT); fi
-	@echo "✓  Roster packets → target/compiled/$(UNIT)/$(LESSON)_$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order)"
+	@echo "✓  Roster packets → target/compiled/$(UNIT)/$(LESSON)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order; graded: $(PACKET_GRADED))"
 
-# One student's run. grading-personalized (math-shared) compiles every student's
-# COMP into $(GR_STUDENTS)/<id>.pdf, her cover into $(GR_COVERS)/cover-<id>.pdf
-# and the blank back into $(GR_BACK); its own run per student, for COMP alone,
-# is $(GR_PACKETS)/<id>.pdf. When COMP is in the student packet, her copy
-# replaces the master in the packet's PDF list, the packet is paginated against
-# the same key-packet list `make student` uses (so its page boundaries are
-# identical, and its page count even).
-# Each student gets a paginate.sh scratch dir of its own (see PAGINATE_*_DIR).
+# Every student's copy of ONE graded component (COMP), from her tracking id
+# alone, into $(GR_STUDENTS)/<id>.pdf; then math-shared's check that no roster
+# name reached a graded build.
+roster-copies: grading-namecheck grading-need-component grading-need-roster
+	@mkdir -p "$(GR_STUDENTS)"
+	@set -e; for id in $(ROSTER_IDS); do \
+	  echo "   $(COMP) $$id"; \
+	  $(grading-one-student); \
+	done
+	@$(GRADING_PYTHON) "$(GRADING_SCRIPTS)/check_names.py" "$(GR_OUT)" "$(ROSTER)"
+
+# One student's packet: the student packet's PDF list with the master cover
+# replaced by her named cover and each graded master by her copy, paginated
+# against the same key-packet list `make student` uses, so its page boundaries
+# are identical to the printed key's.
 #
-# The lesson cover is personalized too: it is compiled once per student with
+# The cover is compiled with
 #   \def\StudentName{Preferred Last}
-# ahead of it (roster_tex.py's TeX-safe names, as on math-shared's cover
-# sheet), so \namedateperiod prints her name on the Name line, and her copy
-# replaces the master cover in the packet. Only cover/ is compiled with a
-# name; every graded component is built by math-shared from ids alone.
-COVER_MASTER_PDF := $(if $(wildcard cover/main.tex),$(PDF_DIR)/cover/main.pdf)
-ROSTER_NAME_DIR  := $(ROSTER_PKT_DIR)/covers
-ROSTER_PKT_PDFS = $(patsubst $(COMP_MASTER_PDF),$(GR_STUDENTS)/$*.pdf,$(if $(COVER_MASTER_PDF),\
-                    $(patsubst $(COVER_MASTER_PDF),$(ROSTER_NAME_DIR)/$*.pdf,$(STUDENT_PDFS)),\
-                    $(STUDENT_PDFS)))
+# ahead of it (roster_tex.py's TeX-safe names, as on math-shared's name sheet),
+# so \namedateperiod prints her name on the Name line. Only cover/ is compiled
+# with a name; every graded component is built from ids alone.
+roster-pdf = $(if $(filter cover,$1),$(ROSTER_NAME_DIR)/$2.pdf,$(if $(filter $1,$(PACKET_GRADED_NOW)),$(PDF_DIR)/grading/$1/students/$2.pdf,$(call comp-pdf,$1)))
+ROSTER_PKT_PDFS = $(foreach c,$(STUDENT_COMPS),$(call roster-pdf,$c,$*))
 
-ifneq ($(COMP_IN_PACKET),)
-$(ROSTER_PKT_DIR)/%.pdf: grading-personalized $(ALIGN_STAMPS)
-	@mkdir -p $(dir $@)
-ifneq ($(COVER_MASTER_PDF),)
+$(ROSTER_PKT_DIR)/%.pdf: PACKET_GRADED_NOW := $(PACKET_GRADED)
+$(ROSTER_PKT_DIR)/%.pdf: roster-force $(ALIGN_STAMPS)
 	@mkdir -p $(ROSTER_NAME_DIR)
 	@set -e; \
 	row=$$($(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py "$(ROSTER)" --id $*); \
@@ -369,24 +395,15 @@ ifneq ($(COVER_MASTER_PDF),)
 	    -outdir="$(ROSTER_NAME_DIR)" main.tex > "$(ROSTER_NAME_DIR)/$*.out" 2>&1 ) \
 	  || { echo "!  LaTeX failed for the named cover of $* — see $(ROSTER_NAME_DIR)/$*.log"; \
 	       grep -E "^(!|l\.|.*:[0-9]+: )" "$(ROSTER_NAME_DIR)/$*.log" | head -10; exit 1; }
-endif
-	@set -- $(ROSTER_PKT_PDFS); \
-	if [ $$# -eq 1 ]; then cp "$$1" $(ROSTER_PKT_DIR)/.body-$*.pdf; \
-	else pdfunite "$$@" $(ROSTER_PKT_DIR)/.body-$*.pdf; fi
+	@for f in $(ROSTER_PKT_PDFS); do test -f "$$f" || { echo "!  missing $$f"; exit 1; }; done
+	@pdfunite $(ROSTER_PKT_PDFS) $(ROSTER_PKT_DIR)/.body-$*.pdf
 	@TEXINPUTS="$(TEXINPUTS)" $(PAGINATE_SH) $(ROSTER_PKT_DIR)/.body-$*.pdf \
 	    $(ROSTER_PKT_DIR)/.paginate-$* $(ROSTER_PKT_PDFS) -- $(KEY_PDFS)
-ifneq ($(COVER_MASTER_PDF),)
 	@mv $(ROSTER_PKT_DIR)/.body-$*.pdf $@
-else
-	@pdfunite $(GR_COVERS)/cover-$*.pdf $(GR_BACK) $(ROSTER_PKT_DIR)/.body-$*.pdf $@
-	@rm -f $(ROSTER_PKT_DIR)/.body-$*.pdf
 endif
+
+roster-force:
 else
-$(ROSTER_PKT_DIR)/%.pdf: grading-personalized
-	@mkdir -p $(dir $@)
-	@cp $(GR_PACKETS)/$*.pdf $@
-endif
-else
-manifest roster-packets grading-need-comp grading-namecheck:
+manifest roster-packets roster-copies grading-need-comp grading-namecheck:
 	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
 endif
