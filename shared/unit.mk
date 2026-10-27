@@ -213,10 +213,22 @@ clean:
 #
 #   make manifest COMP=lesson03/homework
 #   make manifest COMP=tests/actual_test
-#   make roster-packets COMP=quizzes/actual_quiz ROSTER=~/Rosters/apstats/roster-map.csv [SECTION=…]
+#   make roster-packets LESSON=lesson03 ROSTER=~/Mathematics/rosters/roster-map.csv [SECTION=…]
+#   make roster-packets COMP=quizzes/actual_quiz ROSTER=… [SECTION=…]
+# A lesson's roster-packets covers every graded component in its packet, so it
+# takes the lesson alone: LESSON=lesson03 (COMP=lesson03 works the same).
 .PHONY: manifest roster-packets
+UNIT_GR_PATH   = $(patsubst %/,%,$(or $(LESSON),$(COMP)))
+UNIT_GR_LESSON = $(if $(wildcard $(UNIT_GR_PATH)/Makefile),$(UNIT_GR_PATH))
+UNIT_GR_ROSTER = $(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))
 manifest roster-packets:
-	@test -n "$(COMP)" || { echo "!  set COMP=<dir>/<component>, e.g. COMP=lesson03/homework or COMP=tests/actual_test"; exit 1; }
-	@test -f "$(dir $(COMP))Makefile" || { echo "!  no Makefile in $(UNIT)/$(dir $(COMP))"; exit 1; }
-	@$(MAKE) --no-print-directory -C $(dir $(COMP)) $@ COMP=$(notdir $(COMP)) \
-	    $(if $(ROSTER),ROSTER="$(abspath $(ROSTER))") $(if $(SECTION),SECTION="$(SECTION)")
+	@test -n "$(UNIT_GR_PATH)" || { echo "!  set LESSON=lessonYY (roster-packets) or COMP=<dir>/<component>, e.g. COMP=lesson03/homework or COMP=tests/actual_test"; exit 1; }
+ifneq ($(UNIT_GR_LESSON),)
+	@test "$@" = roster-packets || { echo "!  manifest works on one component: COMP=$(UNIT_GR_LESSON)/homework"; exit 1; }
+	@$(MAKE) --no-print-directory -C $(UNIT_GR_LESSON) roster-packets COMP= \
+	    $(if $(ROSTER),ROSTER="$(UNIT_GR_ROSTER)") $(if $(SECTION),SECTION="$(SECTION)")
+else
+	@test -f "$(dir $(UNIT_GR_PATH))Makefile" || { echo "!  no Makefile in $(UNIT)/$(dir $(UNIT_GR_PATH))"; exit 1; }
+	@$(MAKE) --no-print-directory -C $(dir $(UNIT_GR_PATH)) $@ COMP=$(notdir $(UNIT_GR_PATH)) \
+	    $(if $(ROSTER),ROSTER="$(UNIT_GR_ROSTER)") $(if $(SECTION),SECTION="$(SECTION)")
+endif
