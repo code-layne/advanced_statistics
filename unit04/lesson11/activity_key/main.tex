@@ -10,73 +10,137 @@
 
 \vspace{0.1in}
 
+\begin{scenariobox}[Directions]{sky}
+\small
+Work through all three tiers. Show all formula setup before computing. Write
+complete-sentence interpretations where asked --- the AP exam requires this.
+\end{scenariobox}
+
+\vspace{0.1in}
+
 % ── TIER R ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier R --- Key},
+    title={\bfseries Tier R \quad Remediate: Computing Mean and SD},
     fonttitle=\small]
 \small
 
-\textbf{(a)} $X \sim B(25, 0.40)$
-
-$\mu_X = 25(0.40) = \ans{10}$
-
-$\sigma_X = \sqrt{25(0.40)(0.60)} = \sqrt{6} \approx \ans{2.45}$
-
-\ans{If this binomial experiment were repeated many times, the average number of successes would be 10.}
+For each binomial distribution, compute $\mu_X$ and $\sigma_X$, then write a
+one-sentence interpretation of $\mu_X$.
 
 \vspace{10pt}
+\textbf{(a)} $X \sim B(25, 0.40)$
+
+\vspace{4pt}
+$\mu_X = np = $ \ans{25(0.40)} $= $ \ans{10}
+
+$\sigma_X = \sqrt{np(1-p)} = \sqrt{{\color{keyred}\mathbf{25(0.40)(0.60)}}} \approx$ \ans{2.45}
+
+Interpretation of $\mu_X$: \ansline{Over many repetitions,}\\[1pt]\ansline{the average number of successes would be 10.}
+
+\vspace{12pt}
 \textbf{(b)} $X \sim B(100, 0.08)$
 
-$\mu_X = 100(0.08) = \ans{8}$
+\vspace{4pt}
+$\mu_X = $ \ans{100(0.08)} $= $ \ans{8}
 
-$\sigma_X = \sqrt{100(0.08)(0.92)} = \sqrt{7.36} \approx \ans{2.71}$
+$\sigma_X = \sqrt{{\color{keyred}\mathbf{100(0.08)(0.92)}}} \approx$ \ans{2.71}
 
-\ans{In many repetitions of this 100-trial experiment, the average number of successes would be 8.}
+Interpretation of $\mu_X$: \ansline{Over many repetitions,}\\[1pt]\ansline{the average number of successes would be 8.}
+\vspace{4pt}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
 % ── TIER A ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier A --- Key},
+    title={\bfseries Tier A \quad Approaching Proficiency: A Full Binomial Analysis},
     fonttitle=\small]
 \small
 
-Call center: $n=80$, $p=0.22$.
+\textbf{Context:} A call center reports that 22\% of customer calls are resolved
+on the first attempt. On a busy afternoon, 80 calls come in. Assume $X \sim B(80, 0.22)$.
 
-(a) $\mu_X = 80(0.22) = \ans{17.6}$; \quad $\sigma_X = \sqrt{80(0.22)(0.78)} = \sqrt{13.728} \approx \ans{3.71}$
+\vspace{8pt}
+(a) Calculate $\mu_X$ and $\sigma_X$. Show formula setup.
 
-(b) \ans{If the call center handles many afternoons of 80 calls each, it would average 17.6 first-attempt resolutions per afternoon.}
+\vspace{4pt}
+$\mu_X = $ \ans{80(0.22)} $= $ \ans{17.6}
 
-(c) $P(X \le 15) = \texttt{binomcdf(80, 0.22, 15)} \approx \ans{0.2752}$
+$\sigma_X = $ \ans{$\sqrt{80(0.22)(0.78)} = \sqrt{13.728}$} $\approx$ \ans{3.71}
 
-(d) $P(X \ge 20) = 1 - P(X \le 19) = 1 - \texttt{binomcdf(80, 0.22, 19)} \approx \ans{1 - 0.7305 = 0.2695}$
+\vspace{8pt}
+(b) Interpret $\mu_X$ in context.
 
-(e) \ans{$\mu_X + 2\sigma_X = 17.6 + 2(3.71) = 25.02$. Since 20 is within two standard deviations of the mean, it is not unusually high. It is about 0.65 standard deviations above the mean.}
+\vspace{4pt}
+\ansline{Over many afternoons of 80 calls, the center would average}\\[1pt]\ansline{about 17.6 calls resolved on the first attempt per afternoon.}
+
+\vspace{8pt}
+(c) Find $P(X \le 15)$. Write the calculator notation and the answer.
+
+\vspace{4pt}
+$P(X \le 15) = \texttt{binomcdf(}{\color{keyred}\mathbf{80}}\texttt{,}\;{\color{keyred}\mathbf{0.22}}\texttt{,}\;15\texttt{)} \approx $ \ans{0.2752}
+
+\vspace{8pt}
+(d) Find $P(X \ge 20)$. Write the inequality rewrite, then the calculator notation.
+
+\vspace{4pt}
+$P(X \ge 20) = 1 - P(X \le {\color{keyred}\mathbf{19}}) = 1 - \texttt{binomcdf(}{\color{keyred}\mathbf{80}}\texttt{,}\;{\color{keyred}\mathbf{0.22}}\texttt{,}\;{\color{keyred}\mathbf{19}}\texttt{)} \approx $ \ans{0.2695}
+
+\vspace{8pt}
+(e) Is 20 or more resolved calls on the first attempt \emph{unusually high}?
+Use $\mu_X$ and $\sigma_X$ to support your answer.
+
+\vspace{4pt}
+\ansline{No. $\mu_X + 2\sigma_X = 17.6 + 2(3.71) \approx 25.0$; 20 is only about}\\[1pt]\ansline{$0.65\sigma_X$ above the mean, so it is not unusually high.}
+\vspace{4pt}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
 % ── TIER E ────────────────────────────────────────────────────────────────────
 \begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
-    title={\bfseries Tier E --- Key},
+    title={\bfseries Tier E \quad Extension: Comparing Two Binomials},
     fonttitle=\small]
 \small
 
-(a)
+\textbf{Context:} Two quality-control processes are being evaluated.
+\begin{itemize}[itemsep=3pt]
+  \item Process A: $n = 200$ items inspected, defect rate $p = 0.05$.
+  \item Process B: $n = 100$ items inspected, defect rate $p = 0.10$.
+\end{itemize}
+
+\vspace{6pt}
+(a) Compute $\mu_X$ and $\sigma_X$ for both processes.
+
+\vspace{4pt}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2cm} X X @{}}
  & Process A & Process B \\
 \hline
-$\mu_X$ & \ans{$200(0.05)=10$} & \ans{$100(0.10)=10$} \\
+$\mu_X$ & \ans{$200(0.05) = 10$} & \ans{$100(0.10) = 10$} \\
 $\sigma_X$ & \ans{$\sqrt{200(0.05)(0.95)} \approx 3.08$} & \ans{$\sqrt{100(0.10)(0.90)} = 3.00$} \\
 \end{tabularx}
 
-(b) \ans{Both have $\mu_X = 10$ because $np$ is the same: $200 \times 0.05 = 100 \times 0.10 = 10$. A lower defect rate with more trials can produce the same expected count as a higher defect rate with fewer trials.}
+\vspace{8pt}
+(b) Both processes have the same mean. Explain why in terms of the formulas.
 
-(c) \ans{Process A has slightly more variability ($\sigma_X \approx 3.08$ vs.\ $3.00$). Practically, the counts of defects in Process A will fluctuate slightly more from batch to batch, making quality control marginally harder to predict.}
+\vspace{4pt}
+\ansline{$\mu_X = np$ and $200(0.05) = 100(0.10) = 10$:}\\[1pt]\ansline{more trials at a lower rate give the same expected count.}
 
-(d) \ans{$\sigma_X = \sqrt{np(1-p)}$ is maximized when $p(1-p)$ is maximized. Taking the derivative: $\frac{d}{dp}[p(1-p)] = 1-2p = 0 \Rightarrow p = 0.5$. At $p=0.5$, $p(1-p) = 0.25$ is its maximum, so $\sigma_X$ is maximized at $p = 0.5$.}
+\vspace{8pt}
+(c) Which process has more variability? What does this mean practically for the
+quality-control engineer?
+
+\vspace{4pt}
+\ansline{Process A ($\sigma_X \approx 3.08$ vs.\ $3.00$), slightly more.}\\[1pt]\ansline{Its defect counts fluctuate a bit more from batch to batch.}
+
+\vspace{8pt}
+(d) Challenge: For a fixed $n$, what value of $p$ maximizes $\sigma_X$?
+Show a brief algebraic or numerical argument.
+
+\vspace{4pt}
+\ansline{$\sigma_X = \sqrt{np(1-p)}$ is largest when $p(1-p)$ is largest.}\\[1pt]\ansline{$p(1-p)$: 0.09 at $p=0.1$, 0.21 at 0.3, 0.25 at 0.5, 0.21 at 0.7.}\\[1pt]\ansline{Symmetric peak at $p = 0.5$, so $\sigma_X$ is maximized at $p = 0.5$.}
+\vspace{4pt}
 \end{tcolorbox}
 
 \end{document}

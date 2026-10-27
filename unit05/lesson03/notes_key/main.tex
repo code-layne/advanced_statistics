@@ -22,48 +22,69 @@
 
 \begin{vocabbox}
 \begin{description}
-  \item[Central Limit Theorem] \ansline{approximately normal when $n$ is sufficiently large ($n \ge 30$).}
-  \item[Standard error of $\bar{x}$] $\sigma_{\bar{x}} = \sigma/\sqrt{n}$.
-  \item[Independence condition] \ansline{$n \le 10\%$ of the population.}
+  \item[\termblanklong{Central Limit Theorem}] states that when a random sample of size $n$ is drawn from \emph{any} population with mean $\mu$ and standard deviation $\sigma$, the sampling distribution of $\bar{x}$ is approximately \ans{normal} when $n$ is sufficiently large.
+  \item[\termblanklong{Standard error of $\bar{x}$}] the standard deviation of the sampling distribution: $\sigma_{\bar{x}} = \sigma/\sqrt{n}$.
+  \item[\termblanklong{Independence condition}] each observation must be independent; when sampling without replacement, $n \le$ \ans{10}\% of the population.
 \end{description}
 \end{vocabbox}
 
 \begin{hookbox}
-\textbf{Hook:}
+\textbf{Hook — Candy Machine:} A machine fills bags with $\mu = 50$ candies and $\sigma = 12$.
 \begin{itemize}
-  \item Single bag: \ans{12}
-  \item Mean of 36 bags: \ans{$12/\sqrt{36} = 2$}
+  \item Single bag: standard deviation = \ans{12}
+  \item Mean of $n = 36$ bags: $\sigma_{\bar{x}} = 12/\sqrt{36} = $ \ans{2}
 \end{itemize}
-\ansline{Averaging cancels out individual extremes. Large values pair with small values, so the mean fluctuates much less than any single observation.}
+Why does averaging reduce variability?
+\ansline{Averaging cancels out extremes:}\\
+\ansline{large and small values offset, so $\bar{x}$ varies much less than single values.}
 \end{hookbox}
 
 \begin{notesbox}
-\textbf{CLT Three Key Facts}
+\textbf{Central Limit Theorem — Three Key Facts}
 
+\medskip
 \begin{tabular}{@{} p{0.3\linewidth} p{0.6\linewidth} @{}}
-Center: & \ans{$\mu$} \\[8pt]
-Spread: & \ans{$\sigma/\sqrt{n}$} \\[8pt]
-Shape: & \ans{normal; normal} \\
+\textbf{Center:} & $\mu_{\bar{x}} = $ \ans{$\mu$} \\[8pt]
+\textbf{Spread:} & $\sigma_{\bar{x}} = $ \ans{$\sigma/\sqrt{n}$} \\[8pt]
+\textbf{Shape:} & Approximately \ans{normal} when $n \ge 30$ OR when the population is \ans{normal} \\
 \end{tabular}
 \end{notesbox}
 
 \begin{notesbox}
-\textbf{Conditions — Worked Example}
+\textbf{Conditions for Using the Normal Model for $\bar{x}$} (UNC-3.H.3--H.5)
 
-\ans{(1) Random: assumed. (2) Independence: $49 \le 10\%$ of all households (millions) --- yes. (3) Large sample: $n = 49 \ge 30$ --- yes. All conditions met.}
+Check \emph{all three}:
+\begin{enumerate}
+  \item \textbf{Random:} the sample is a \ans{random sample (or randomized experiment)}.
+  \item \textbf{Independence (10\% condition):} $n \le 10\%$ of \ans{the population}.
+  \item \textbf{Normal/Large Sample:} population is normal, OR \ans{$n \ge 30$}.
+\end{enumerate}
 
-$\mu_{\bar{x}} = $ \ans{\$58{,}000} \hspace{1cm} $\sigma_{\bar{x}} = $ \ans{$21000/\sqrt{49} = \$3{,}000$}
+\medskip
+\textit{Worked Example.} Household incomes: $\mu = \$58{,}000$, $\sigma = \$21{,}000$.
+Sample of $n = 49$ households. Are conditions met?
+
+\ansline{Random: assumed random sample of households.}\\
+\ansline{10\%: 49 is less than 10\% of all households --- met.}\\
+\ansline{Large sample: $n = 49 \ge 30$ --- met. All conditions are met.}
+
+$\mu_{\bar{x}} = $ \ans{\$58{,}000} \hspace{1cm} $\sigma_{\bar{x}} = $ \ans{$21{,}000/\sqrt{49} = \$3{,}000$}
 \end{notesbox}
 
 \begin{practicebox}
 \textbf{Quick Check}
 \begin{enumerate}
-  \item
+  \item A population has $\mu = 80$, $\sigma = 15$, and is heavily left-skewed. For $n = 40$:
         \begin{enumerate}[label=\alph*.]
-          \item \ans{$\mu_{\bar{x}} = 80$}; \ans{$\sigma_{\bar{x}} = 15/\sqrt{40} \approx 2.37$}
-          \item \ansline{Yes. $n = 40 \ge 30$, so by CLT the sampling distribution of $\bar{x}$ is approximately normal even though the population is left-skewed.}
+          \item $\mu_{\bar{x}} = $ \ans{80} \hspace{1cm} $\sigma_{\bar{x}} = $ \ans{$15/\sqrt{40} \approx 2.37$}
+          \item Is the sampling distribution of $\bar{x}$ approximately normal? Why?
+                \ansline{Yes: $n = 40 \ge 30$, so the CLT}\\
+                \ansline{applies even though the population is left-skewed.}
         \end{enumerate}
-  \item \ansline{Not necessarily. $n = 9 < 30$, and the population is not normal (it is left-skewed). We cannot use the normal model for $\bar{x}$ here.}
+  \item Same population, now $n = 9$. Is the sampling distribution of $\bar{x}$ approximately
+        normal? Why or why not?
+        \ansline{}\\
+        \ansline{No: $n = 9 < 30$ and the population is left-skewed, so the CLT does not apply.}
 \end{enumerate}
 \end{practicebox}
 

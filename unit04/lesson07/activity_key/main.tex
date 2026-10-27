@@ -13,6 +13,7 @@
 \begin{tcolorbox}[colback=sky!60, colframe=navy, title=\textbf{Tier R --- Remediate},
     arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
 \small
+A survey of 50 students asked how many siblings each student has. Results:
 \begin{center}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{@{}cccc@{}}
@@ -26,15 +27,24 @@
 \end{center}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Divide each frequency by 50.
+  \item Fill in the $P(X=x)$ column. Divide each frequency by the total.
 
-  \item \ansline{Valid: all values $\ge 0$ and $0.16+0.40+0.30+0.14=1.00$ \checkmark}
+        \vspace{0.1in}
 
-  \item See table above.
+  \item Do these probabilities form a valid distribution? Check both conditions.\\
+        \ansline{Valid: every value is $\ge 0$ and $0.16+0.40+0.30+0.14 = 1.00$.}
 
-  \item \ansline{$P(X \ge 2) = P(2)+P(3) = 0.30+0.14 = 0.44$}
+  \item Fill in the $P(X \le x)$ column.
 
-  \item \ansline{0 siblings: $P=0.16$; 3 siblings: $P=0.14$. More likely 0 siblings.}
+        \vspace{0.05in}
+
+  \item Using your table, find $P(X \ge 2)$. Show your work.
+
+        \noindent\begin{minipage}[t][0.3in][t]{\linewidth}\ans{$P(X \ge 2) = 0.30 + 0.14 = 0.44$ \quad (or $1 - 0.56 = 0.44$)}\end{minipage}
+
+  \item Is it more likely that a randomly chosen student has 0 siblings or 3 siblings?
+        Explain.\\
+        \ansline{0 siblings: $P(X=0) = 0.16 > P(X=3) = 0.14$.}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -43,6 +53,7 @@
 \begin{tcolorbox}[colback=goldbg!60, colframe=goldacc, title=\textbf{Tier A --- Approaching Proficiency},
     arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
 \small
+$X$ = number of books a student reads during summer break. The probability distribution is:
 \begin{center}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{@{}cccccc@{}}
@@ -53,15 +64,20 @@ $P(X=x)$ & 0.05 & 0.20 & 0.35 & 0.25 & 0.15 \\
 \end{center}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item \ansline{$0.05+0.20+0.35+0.25+0.15=1.00$; all values $\ge 0$. Valid. \checkmark}
+  \item Verify this is a valid probability distribution.\\
+        \ansline{All values $\ge 0$ and $0.05+0.20+0.35+0.25+0.15 = 1.00$. Valid.}
 
-  \item \ansline{$P(1 \le X \le 3)=0.20+0.35+0.25=0.80$. There is an 80\% chance a student reads 1–3 books.}
+  \item Find $P(1 \le X \le 3)$. Interpret your answer in context.\\
+        \ansline{$P(1 \le X \le 3) = 0.20+0.35+0.25 = 0.80$.}\\[1pt]\ansline{About 80\% of students read between 1 and 3 books over summer break.}
 
-  \item \ansline{$P(X \ge 3)=0.25+0.15=0.40$. There is a 40\% chance a student reads 3 or more books.}
+  \item Find $P(X \ge 3)$. Interpret your answer in context.\\
+        \ansline{$P(X \ge 3) = 0.25 + 0.15 = 0.40$.}\\[1pt]\ansline{About 40\% of students read 3 or more books over summer break.}
 
-  \item \ansline{Slightly right-skewed (tail toward 4). Centered around 2 books.}
+  \item Describe the shape of this distribution. Where is it centered?\\
+        \ansline{Single peak at 2; roughly symmetric (slightly heavier toward 3--4).}\\[1pt]\ansline{Centered near 2 books (mean $= 2.25$).}
 
-  \item \ansline{The distribution is slightly right-skewed. Most students read 2 books (35\%); reading 0 is rare (5\%). The values are moderately spread from 0 to 4 books.}
+  \item Write an interpretation of this distribution in context (shape, center, spread).\\
+        \ansline{Summer reading is roughly symmetric with a peak at 2 books, centered}\\[1pt]\ansline{near 2 books, and spread from 0 to 4 books; reading 0 is rare (5\%).}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -70,16 +86,48 @@ $P(X=x)$ & 0.05 & 0.20 & 0.35 & 0.25 & 0.15 \\
 \begin{tcolorbox}[colback=greenbg!60, colframe=greenacc, title=\textbf{Tier E --- Extension},
     arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
 \small
+Two classes were surveyed about the number of after-school activities they participate in.
+
+\textbf{Class A:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}ccccc@{}}
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X=x)$ & 0.40 & 0.35 & 0.20 & 0.05 \\
+\end{tabular}
+\end{center}
+
+\textbf{Class B:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}ccccc@{}}
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X=x)$ & 0.10 & 0.25 & 0.40 & 0.25 \\
+\end{tabular}
+\end{center}
+
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item \ansline{Class A: $0.40+0.35+0.20+0.05=1.00$ \checkmark. Class B: $0.10+0.25+0.40+0.25=1.00$ \checkmark.}
+  \item Verify both distributions are valid.
 
-  \item \ansline{Class B tends to participate in more activities. Its probabilities are concentrated at higher values (2 and 3), while Class A is concentrated at 0 and 1.}
+        \noindent\begin{minipage}[t][0.2in][t]{\linewidth}\ans{A: $0.40+0.35+0.20+0.05 = 1$; B: $0.10+0.25+0.40+0.25 = 1$; all values $\ge 0$.}\end{minipage}
 
-  \item \ansline{Class A: $P(X \ge 2)=0.20+0.05=0.25$. Class B: $P(X \ge 2)=0.40+0.25=0.65$. Class B has a much higher probability.}
+  \item Compare the two distributions: which class tends to participate in \emph{more}
+        activities? Support your answer using probabilities.\\
+        \ansline{Class B. B puts 0.65 on 2--3 activities; A puts 0.75 on 0--1.}\\[1pt]\ansline{So Class B students tend to do more activities.}
 
-  \item \ansline{The most common value in Class B is $x=2$. $P(X \ge 2)$ in Class A $= 0.25$.}
+  \item For each class, find $P(X \ge 2)$ and compare.
 
-  \item \ansline{Class A is right-skewed (most students participate in 0–1 activities). Class B is left-skewed (most students participate in 2–3 activities).}
+        \noindent\begin{minipage}[t][0.25in][t]{\linewidth}\ans{A: $0.20+0.05 = 0.25$; B: $0.40+0.25 = 0.65$. Class B is much higher.}\end{minipage}
+
+  \item If a student is chosen at random from Class A, what is the probability they
+        participate in \emph{at least} as many activities as the most common value in
+        Class B? Show your work.\\
+        \ansline{Most common value in Class B is $x = 2$ ($P = 0.40$).}\\[1pt]\ansline{Class A: $P(X \ge 2) = 0.20 + 0.05 = 0.25$.}
+
+  \item Describe the difference in shape between the two distributions.\\
+        \ansline{Class A is skewed right (peak at 0, tail toward 3).}\\[1pt]\ansline{Class B is skewed left (peak at 2, tail toward 0).}
 \end{enumerate}
 \end{tcolorbox}
 

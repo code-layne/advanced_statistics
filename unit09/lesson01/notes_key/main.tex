@@ -1,7 +1,7 @@
 %! AP Statistics — Unit 9, Lesson 9.1 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
@@ -11,24 +11,21 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to:
 \begin{itemize}
-    \item[$\square$] \ansline{Explain why the sample slope $b$ is a statistic that varies from sample to sample.}
-    \item[$\square$] \ansline{State the null hypothesis for slope and explain what $\beta = 0$ means in context.}
-    \item[$\square$] \ansline{Identify the central question of Unit 9: is the observed slope statistically significant evidence that $\beta \ne 0$?}
+    \item[$\square$] \ansline{Explain why the sample slope $b$ is a statistic that varies by sample.}
+    \item[$\square$] \ansline{State $H_0\colon \beta = 0$ and explain what it means in context.}
+    \item[$\square$] \ansline{\smash{Ask whether an observed slope is convincing evidence that $\beta \ne 0$.}}
 \end{itemize}
 \end{objectivebox}
 
 \begin{vocabbox}
-\termblanklong{Population slope ($\beta$)}
-\ansline{The true rate of change in the linear relationship between two quantitative variables in the population; a fixed (unknown) parameter.}
-
-\termblanklong{Sample slope ($b$)}
-\ansline{The slope of the LSRL computed from sample data; a statistic that varies from sample to sample.}
-
-\termblanklong{Sampling variability}
-\ansline{The natural variation in a statistic (such as $b$) across different random samples drawn from the same population.}
-
-\termblanklong{Null hypothesis for slope}
-\ansline{$H_0\colon \beta = 0$ --- the population has no linear relationship between $x$ and $y$; any observed non-zero $b$ is due to chance.}
+\noindent\textbf{\textcolor{navy}{Population slope ($\beta$):}}\\[1pt]%
+\ansline{The true rate of change of $y$ with $x$ in the population;}\\[1pt]\ansline{a fixed, unknown parameter.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Sample slope ($b$):}}\\[1pt]%
+\ansline{The slope of the LSRL computed from sample data;}\\[1pt]\ansline{a statistic that varies from sample to sample.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Sampling variability:}}\\[1pt]%
+\ansline{The natural variation in a statistic (such as $b$) across different}\\[1pt]\ansline{random samples from the same population.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Null hypothesis for slope:}}\\[1pt]%
+\ansline{$H_0\colon \beta = 0$ --- no linear relationship between $x$ and $y$ in the}\\[1pt]\ansline{\smash{population; any non-zero $b$ is due to chance.}}\\[3pt]
 \end{vocabbox}
 
 \begin{hookbox}
@@ -36,33 +33,28 @@ By the end of this lesson, I will be able to:
 positive LSRL with slope $b > 0$. One has tightly clustered points; the other
 has widely scattered points. Which trend are you more confident is real? Why?
 
-\begin{teachernote}
-    The tightly clustered plot provides stronger evidence of a real relationship.
-    Large scatter means $b$ could vary widely from sample to sample, so a non-zero
-    $b$ from scattered data is less surprising under $H_0\colon \beta = 0$.
-    This discussion primes students for the role of variability in inference.
-\end{teachernote}
+\ansline{The tightly clustered one: with little scatter, a slope that big}\\\ansline{\smash{is unlikely to come from chance alone.}}
 \end{hookbox}
 
 \begin{notesbox}{The Sample Slope Is a Statistic}
 In Units 2--3 we fit an LSRL $\hat{y} = a + bx$ to sample data and computed
-the slope $b$. The slope $b$ is a \ans{statistic}, not a parameter.
+the slope $b$. The slope $b$ is a \makebox[4cm][l]{\ans{statistic}}, not a parameter.
 
 \vspace{0.1in}
 \textbf{Key idea:} Different random samples from the same population produce
-\ans{different (varying)} values of $b$.
+\makebox[5cm][l]{\ans{different}} values of $b$.
 
 \vspace{0.1in}
 The true (unknown) rate of change in the population is called the
-\textbf{population slope}, denoted \ans{$\beta$} (``beta'').
+\textbf{population slope}, denoted \makebox[1.5cm][l]{\ans{$\beta$}}.
 
 \vspace{0.1in}
 \renewcommand{\arraystretch}{1.6}
 \begin{tabularx}{\linewidth}{Xcc}
     & \textbf{Symbol} & \textbf{Parameter or Statistic?} \\
     \hline
-    True population slope       & $\beta$ & \ans{Parameter} \\
-    Estimated slope from sample & $b$     & \ans{Statistic} \\
+    True population slope       & $\beta$ & \makebox[4cm][l]{\ans{parameter}} \\
+    Estimated slope from sample & $b$     & \makebox[4cm][l]{\ans{statistic}} \\
 \end{tabularx}
 \end{notesbox}
 
@@ -70,20 +62,20 @@ The true (unknown) rate of change in the population is called the
 When we see a non-zero slope $b$ in sample data, two explanations are possible:
 
 \begin{enumerate}
-  \item The true population slope $\beta$ \ans{is not zero ($\beta \ne 0$)} --- the trend is real.
-  \item The true population slope $\beta = $ \ans{0} --- there is no real
-        linear relationship, and the non-zero $b$ is due to \ans{random chance / sampling variability}.
+  \item The true population slope $\beta$ \makebox[4cm][l]{\ans{$\ne 0$}} --- the trend is real.
+  \item The true population slope $\beta = $ \makebox[1cm][l]{\ans{0}} --- there is no real
+        linear relationship, and the non-zero $b$ is due to \makebox[4cm][l]{\ans{chance}}.
 \end{enumerate}
 
 \vspace{0.1in}
-\textbf{The null hypothesis for slope:} $H_0\colon \beta = $ \ans{0}
+\textbf{The null hypothesis for slope:} $H_0\colon \beta = $ \makebox[1cm][l]{\ans{0}}
 
 \vspace{0.08in}
-This says: in the population, there is \ans{no linear relationship}
-between $x$ and $y$. Any non-zero $b$ we observe is just \ans{random variation}.
+This says: in the population, there is \makebox[5cm][l]{\ans{no linear relationship}}
+between $x$ and $y$. Any non-zero $b$ we observe is just \makebox[4cm][l]{\ans{chance variation}}.
 
 \vspace{0.1in}
-\textbf{Unit 9 asks:} Is the sample slope $b$ we observed \ans{statistically significant}
+\textbf{Unit 9 asks:} Is the sample slope $b$ we observed \makebox[5cm][l]{\ans{convincing}}
 evidence that $\beta \ne 0$ in the population?
 \end{notesbox}
 
@@ -92,14 +84,14 @@ Two factors influence how surprising a non-zero $b$ is under $H_0\colon \beta = 
 
 \begin{enumerate}
   \item \textbf{Sample size ($n$):} A slope of $b = 3.4$ from $n = 200$ observations
-        is \ans{stronger} evidence than the same slope from $n = 10$ observations.
+        is \makebox[3cm][l]{\ans{stronger}} evidence than the same slope from $n = 10$ observations.
   \item \textbf{Scatter around the line:} The more tightly points cluster around the
-        LSRL, the \ans{more reliable / precise} our estimate of $\beta$.
+        LSRL, the \makebox[3cm][l]{\ans{more precise}} our estimate of $\beta$.
 \end{enumerate}
 
 \vspace{0.1in}
 This is why we can't just look at $b$ and declare the relationship real --- we need
-\ans{a formal significance test (inference)} to quantify how likely $b$ is under $H_0$.
+\makebox[6cm][l]{\ans{a significance test}} to quantify how likely $b$ is under $H_0$.
 \end{notesbox}
 
 \begin{notesbox}{Unit 9 Arc Overview}
@@ -107,10 +99,10 @@ This is why we can't just look at $b$ and declare the relationship real --- we n
 \begin{tabularx}{\linewidth}{lX}
     \textbf{Lesson 9.1} & Framing: what question does Unit 9 ask? \\
     \textbf{Lesson 9.2} & Sampling distribution of $b$; conditions for inference \\
-    \textbf{Lesson 9.3} & Confidence interval for \ans{$\beta$ (slope)} \\
-    \textbf{Lesson 9.4} & Significance test for \ans{$\beta$} ($t$-test for slope) \\
-    \textbf{Lesson 9.5} & Reading \ans{computer} output for regression \\
-    \textbf{Lesson 9.6} & Synthesis: \ans{choosing and applying inference procedures for slopes} \\
+    \textbf{Lesson 9.3} & Confidence interval for \makebox[2cm][l]{\ans{$\beta$}} \\
+    \textbf{Lesson 9.4} & Significance test for \makebox[2cm][l]{\ans{$\beta$}} ($t$-test for slope) \\
+    \textbf{Lesson 9.5} & Reading \makebox[4cm][l]{\ans{computer}} output for regression \\
+    \textbf{Lesson 9.6} & Synthesis: \makebox[5cm][l]{\ans{choosing a procedure}} \\
 \end{tabularx}
 \end{notesbox}
 
@@ -121,14 +113,14 @@ $\hat{y} = -82.4 + 3.4x$ with $r = 0.87$.
 
 \begin{enumerate}
   \item Interpret the slope in context.
-        \ansline{For each additional degree (Fahrenheit) in daily high temperature, the predicted number of ice cream cones sold increases by 3.4.}
+        \ansline{Each additional $1^\circ$F,}\\\ansline{the predicted number of cones sold increases by about 3.4.}
 
   \item Suppose the true population slope were $\beta = 0$. What would that mean
         about the relationship between temperature and ice cream sales?
-        \ansline{There is no real linear relationship between temperature and ice cream sales in the population. Any non-zero sample slope $b$ would be due to random variation in the sample.}
+        \ansline{No real linear relationship;}\\\ansline{temperature would not help predict sales; $b \ne 0$ only by chance.}
 
   \item Does $r = 0.87$ alone prove that $\beta \ne 0$? Explain.
-        \ansline{No. $r = 0.87$ is a sample statistic; it could be non-zero by chance even if $\beta = 0$. We need a significance test to determine how likely a sample correlation this large is under $H_0\colon \beta = 0$.}
+        \ansline{No. $r$ is a statistic;}\\\ansline{it can be large by chance even if $\beta = 0$. A test is needed.}
 \end{enumerate}
 \end{practicebox}
 

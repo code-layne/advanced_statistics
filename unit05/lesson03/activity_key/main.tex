@@ -13,36 +13,71 @@
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
 \textbf{Context: Granola bar weights.}
+A factory produces granola bars with $\mu = 45$ g and $\sigma = 4$ g.
+A quality inspector randomly selects $n = 16$ bars each hour.
+
 \begin{enumerate}
-  \item \ans{Random: stated. Independence: $16 \le 10\%$ of all bars produced --- yes. Normal/Large Sample: population is approximately normal --- yes. All conditions met.}
-  \item \ans{$\mu_{\bar{x}} = 45$ g; $\sigma_{\bar{x}} = 4/\sqrt{16} = 1$ g.}
-  \item \ans{$z_1 = (43-45)/1 = -2.00$; $z_2 = (47-45)/1 = 2.00$; $P(-2<Z<2) = 0.9772 - 0.0228 = 0.9544$. About 95.4\%.}
+  \item Check the three conditions for using the normal model for $\bar{x}$. State whether
+        each is met and why.
+        \ansline{}\\
+        \ansline{Random: stated. \quad 10\%: 16 is less than 10\% of all bars produced --- met.}\\
+        \ansline{Normal: the population is approximately normal --- met.}\\
+        \ansline{All three conditions are met, so $\bar{x}$ is normal.}
+  \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.6in][t]{\linewidth}\vspace*{2pt}\ans{$\mu_{\bar{x}} = 45$ g; \quad $\sigma_{\bar{x}} = 4/\sqrt{16} = 1$ g}\end{minipage}
+  \item What is the probability that the inspector's sample mean weight is between 43 g
+        and 47 g? (The population is approximately normal.)
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.0in][t]{\linewidth}\vspace*{2pt}\ans{$z_1 = (43-45)/1 = -2$, \quad $z_2 = (47-45)/1 = 2$}\\
+        \ans{$P(43 < \bar{x} < 47) = P(-2<Z<2) = 0.9772 - 0.0228 \approx 0.954$}\end{minipage}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.15in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
 \textbf{Context: Commute times.}
+Commute times in a large city are right-skewed with $\mu = 32$ min and $\sigma = 11$ min.
+A researcher surveys $n = 50$ randomly selected commuters.
+
 \begin{enumerate}
-  \item \ans{Random: stated. Independence: $50 \le 10\%$ of commuters in a large city --- yes. Large Sample: $n = 50 \ge 30$ --- yes. Appropriate to model $\bar{x}$ as normal (by CLT).}
-  \item \ans{$\mu_{\bar{x}} = 32$ min; $\sigma_{\bar{x}} = 11/\sqrt{50} \approx 1.556$ min.}
-  \item \ans{$z = (35-32)/1.556 \approx 1.93$; $P(\bar{x}>35) = 1 - 0.9732 = 0.0268$. About 2.7\%.}
-  \item \ans{$z = \text{invNorm}(0.10) \approx -1.282$; $c = 32 + (-1.282)(1.556) \approx 30.0$ min. There is a 10\% chance that the sample mean commute time for 50 commuters is less than 30.0 minutes.}
+  \item Check all three conditions. Is it appropriate to model $\bar{x}$ as normal?
+        \ansline{Random: stated.}\\
+        \ansline{10\%: 50 is less than 10\% of commuters in a large city --- met.}\\
+        \ansline{Large sample: $n = 50 \ge 30$ --- met. Yes, $\bar{x}$ is approx.\ normal (CLT).}
+  \item Compute $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.5in][t]{\linewidth}\vspace*{2pt}\ans{$\mu_{\bar{x}} = 32$ min; \quad $\sigma_{\bar{x}} = 11/\sqrt{50} \approx 1.556$ min}\end{minipage}
+  \item Find $P(\bar{x} > 35)$.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.0in][t]{\linewidth}\vspace*{2pt}\ans{$z = (35-32)/1.556 \approx 1.93$}\\
+        \ans{$P(\bar{x}>35) = 1 - 0.9732 \approx 0.027$}\end{minipage}
+  \item Find the value $c$ such that $P(\bar{x} < c) = 0.10$. Interpret in context.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.0in][t]{\linewidth}\vspace*{2pt}\ans{$z = \text{invNorm}(0.10) \approx -1.282$; \quad $c = 32 - 1.282(1.556) \approx 30.0$ min}\\
+        \ans{There is a 10\% chance the mean commute time of 50 randomly}\\
+        \ans{selected commuters is less than 30.0 minutes.}\end{minipage}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.15in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
-\textbf{Context: ATM withdrawals.}
+\textbf{Context: ATM withdrawal amounts.}
+ATM withdrawals at a campus ATM are right-skewed with $\mu = \$65$ and $\sigma = \$30$.
+
 \begin{enumerate}
-  \item \ans{No. $n = 9 < 30$ and the population is right-skewed (not normal). The CLT does not apply; we cannot use the normal model for $\bar{x}$.}
-  \item \ans{$\mu_{\bar{x}} = \$65$; $\sigma_{\bar{x}} = 30/\sqrt{64} = \$3.75$. $z = (70-65)/3.75 = 1.33$; $P(\bar{x}>70) = 1 - 0.9082 = 0.0918$. About 9.2\%.}
-  \item \ans{$30/\sqrt{n} \le 3 \Rightarrow \sqrt{n} \ge 10 \Rightarrow n \ge 100$. Need at least 100 observations.}
-  \item \ansline{No, the claim is incorrect. The CLT says the \emph{sampling distribution of the mean} becomes approximately normal with large $n$ --- not that individual values change. The individual withdrawal amounts remain right-skewed regardless of sample size.}
+  \item For $n = 9$: can we use the normal model for $\bar{x}$? Explain.
+        \ansline{No: $n = 9 < 30$ and the}\\
+        \ansline{population is right-skewed, so the CLT does not apply.}
+  \item For $n = 64$: compute $\mu_{\bar{x}}$, $\sigma_{\bar{x}}$, and $P(\bar{x} > 70)$.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][1.0in][t]{\linewidth}\vspace*{2pt}\ans{$\mu_{\bar{x}} = \$65$; \quad $\sigma_{\bar{x}} = 30/\sqrt{64} = \$3.75$}\\
+        \ans{$z = (70-65)/3.75 \approx 1.33$; \quad $P(\bar{x}>70) = 1 - 0.9082 \approx 0.092$}\end{minipage}
+  \item How large must $n$ be for $\sigma_{\bar{x}} \le \$3$? Show work.
+        \par\vspace{-\parskip}\nointerlineskip\noindent\begin{minipage}[t][0.8in][t]{\linewidth}\vspace*{2pt}\ans{$30/\sqrt{n} \le 3 \Rightarrow \sqrt{n} \ge 10 \Rightarrow n \ge 100$}\end{minipage}
+  \item A bank manager claims: ``If we take enough samples, the individual withdrawal amounts
+        will become normally distributed.'' Is this claim correct? Explain.
+        \ansline{No.}\\
+        \ansline{The CLT is about the sampling distribution of $\bar{x}$, not individual values.}\\
+        \ansline{Individual withdrawals stay right-skewed no matter how many samples.}
 \end{enumerate}
 \end{tcolorbox}
 

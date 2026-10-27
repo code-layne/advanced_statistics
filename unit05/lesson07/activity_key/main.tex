@@ -2,6 +2,10 @@
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}
+% \workans{H}{answer} — fills a blank \vspace{H} work area in the same height:
+% the answer is smashed onto the next line and the space below is trimmed by it.
+\newcommand{\workans}[2]{\newline\smash{\raisebox{-2pt}{\parbox[t]{\linewidth}{\raggedright\ans{#2}}}}%
+  \vspace{\dimexpr#1-\baselineskip\relax}}
 
 \begin{document}
 
@@ -12,34 +16,59 @@
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
+\textbf{Context: Vitamin C content in oranges.}
+Oranges in a large shipment have vitamin C content distributed approximately normally
+with $\mu = 70$ mg and $\sigma = 8$ mg. A grocery store tests a random sample of
+$n = 16$ oranges.
+
 \begin{enumerate}
-  \item \ans{Random: stated. 10\%: $16 \le 10\%$ of large shipment. Normal/Large: population is approximately normal. All conditions met.}
-  \item \ans{$\mu_{\bar{x}} = 70$ mg; $\sigma_{\bar{x}} = 8/\sqrt{16} = 2$ mg.}
-  \item \ans{$z = (73-70)/2 = 1.50$; $P(\bar{x}>73) = 1-0.9332 = 0.0668$. About 6.7\%.}
+  \item Check all three conditions.
+        \ansline{Random: stated.}\\\ansline{10\%: $16 \le 10\%$ of a large shipment --- yes.}\\\ansline{Normal/Large: population is approximately normal. All conditions met.}
+  \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+        \workans{0.5in}{$\mu_{\bar{x}} = 70$ mg; \quad $\sigma_{\bar{x}} = 8/\sqrt{16} = 2$ mg}
+  \item Find $P(\bar{x} > 73)$.
+        \workans{0.8in}{$z = (73-70)/2 = 1.50$\\ $P(\bar{x} > 73) = 1 - 0.9332 = 0.0668$. About 6.7\%.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
+\textbf{Context: Customer wait times.}
+Wait times at a bank branch are right-skewed with $\mu = 8.2$ min and $\sigma = 3.5$ min.
+A manager monitors a random sample of $n = 50$ customers on a given day.
+
 \begin{enumerate}
-  \item \ans{Random: stated. 10\%: $50 \le 10\%$ of all customers. Normal/Large: $n=50\ge30$ --- yes. All conditions met; normal model appropriate by CLT.}
-  \item \ans{$\mu_{\bar{x}} = 8.2$ min; $\sigma_{\bar{x}} = 3.5/\sqrt{50} \approx 0.4950$ min.}
-  \item \ans{$z = (9-8.2)/0.4950 \approx 1.616$; $P > 9 \approx 1-0.9469 = 0.0531 \approx 5.3\%$.}
-  \item \ans{$z = \text{invNorm}(0.95) \approx 1.645$; $c = 8.2 + 1.645(0.4950) \approx 9.01$ min. In 5\% of samples of 50 customers, the mean wait time exceeds 9.01 minutes.}
+  \item Check all conditions and justify whether the normal model is appropriate.
+        \ansline{Random: stated.}\\\ansline{10\%: $50 \le 10\%$ of all customers. \quad Normal/Large: $n = 50 \ge 30$ --- yes.}\\\ansline{All conditions met; the normal model is appropriate by the CLT.}
+  \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+        \workans{0.5in}{$\mu_{\bar{x}} = 8.2$ min; \quad $\sigma_{\bar{x}} = 3.5/\sqrt{50} \approx 0.4950$ min}
+  \item Find $P(\bar{x} > 9)$.
+        \workans{0.8in}{$z = (9-8.2)/0.4950 \approx 1.616$\\ $P(\bar{x} > 9) \approx 1 - 0.9469 = 0.0531 \approx 5.3\%$}
+  \item Find the 95th percentile of the sampling distribution. Interpret in context.
+        \workans{0.8in}{$z = \text{invNorm}(0.95) \approx 1.645$; \quad $c = 8.2 + 1.645(0.4950) \approx 9.01$ min\\ In 5\% of samples of 50 customers, the mean wait time exceeds 9.01 minutes.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
+\textbf{Context: Battery lifetime.}
+Battery lifetimes for a certain brand are right-skewed with $\mu = 480$ hours and
+$\sigma = 60$ hours.
+
 \begin{enumerate}
-  \item \ans{No. $n=4<30$ and the population is right-skewed. Neither the Normal nor Large Sample condition is met.}
-  \item \ans{Random: stated. 10\%: yes. Large: $n=36\ge30$. $\sigma_{\bar{x}} = 60/\sqrt{36}=10$ hr. $z=(490-480)/10=1.00$; $P>490\approx1-0.8413=0.1587\approx15.9\%$.}
-  \item \ans{$z=\text{invNorm}(0.025)\approx-1.960$; $c=480+(-1.960)(10)\approx460.4$ hr. In 2.5\% of samples of 36 batteries, the sample mean lifetime is less than 460.4 hours.}
-  \item \ans{$P(|\bar{x}-480|>15) = P(\bar{x}<465) + P(\bar{x}>495)$. $z = \pm15/10 = \pm1.50$; $P = 2(0.0668) = 0.1336$. About 13.4\%.}
+  \item For $n = 4$: can we use the normal model for $\bar{x}$? Explain.
+        \ansline{No.}\\\ansline{$n = 4 < 30$ and the population is right-skewed: Normal/Large Sample is not met.}
+  \item For $n = 36$: check conditions, find $\sigma_{\bar{x}}$, and compute $P(\bar{x} > 490)$.
+        \workans{0.9in}{Random: stated. 10\%: yes. Large: $n = 36 \ge 30$.\\ $\sigma_{\bar{x}} = 60/\sqrt{36} = 10$ hr; \quad $z = (490-480)/10 = 1.00$\\ $P(\bar{x} > 490) \approx 1 - 0.8413 = 0.1587 \approx 15.9\%$}
+  \item Find the value $c$ such that $P(\bar{x} < c) = 0.025$ for $n = 36$. Interpret.
+        \workans{0.8in}{$z = \text{invNorm}(0.025) \approx -1.960$; \quad $c = 480 + (-1.960)(10) \approx 460.4$ hr\\ In 2.5\% of samples of 36 batteries, the sample mean lifetime is less than 460.4 hours.}
+  \item For $n = 36$, find $P(|\bar{x} - 480| > 15)$ (probability that the sample mean
+        is more than 15 hours away from the true mean).
+        \workans{0.9in}{$P(|\bar{x}-480| > 15) = P(\bar{x} < 465) + P(\bar{x} > 495)$\\ $z = \pm 15/10 = \pm 1.50$; \quad $P = 2(0.0668) = 0.1336$. About 13.4\%.}
 \end{enumerate}
 \end{tcolorbox}
 

@@ -3,6 +3,12 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% \blankans{W}{answer} — the key's \blank{W}: same width and rule, answer on it.
+\newcommand{\blankans}[2]{\underline{\makebox[#1][c]{\ans{#2}}}}
+% \workans{H}{answer} — fills a blank \vspace{H} work area in the same height:
+% the answer is smashed onto the next line and the space below is trimmed by it.
+\newcommand{\workans}[2]{\newline\smash{\raisebox{-2pt}{\parbox[t]{\linewidth}{\raggedright\ans{#2}}}}%
+  \vspace{\dimexpr#1-\baselineskip\relax}}
 
 \begin{document}
 
@@ -11,38 +17,65 @@
 
 \vspace{0.1in}
 
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state the formulas for center and spread of the sampling distribution of $\hat{p}_1 - \hat{p}_2$.
+  \item I can check all four Large Counts conditions.
+  \item I can compute probabilities for $\hat{p}_1 - \hat{p}_2$ using the normal model.
+\end{enumerate}
+\end{objectivebox}
+
 \begin{notesbox}
-\textbf{Formulas}
-\begin{itemize}
-  \item Center: \ans{$p_1 - p_2$}
-  \item Spread: \ans{$\sqrt{p_1(1-p_1)/n_1 + p_2(1-p_2)/n_2}$}
-  \item Shape: approximately normal when all \ans{four} Large Counts conditions are met.
-\end{itemize}
+\textbf{Sampling Distribution of $\hat{p}_1 - \hat{p}_2$} (UNC-3.N, O, P)
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.72\linewidth} @{}}
+\textbf{Center:} & $\mu_{\hat{p}_1 - \hat{p}_2} = $ \blankans{1.5in}{$p_1 - p_2$} \\[12pt]
+\textbf{Spread:} & $\sigma_{\hat{p}_1-\hat{p}_2} = $ \TallMath{\sqrt{\dfrac{\blankans{1.2in}{$p_1(1-p_1)$}}{\blankans{0.5in}{$n_1$}} + \dfrac{\blankans{1.2in}{$p_2(1-p_2)$}}{\blankans{0.5in}{$n_2$}}}} \\[16pt]
+\textbf{Shape:} & Approximately normal when all \blankans{0.3in}{4} Large Counts conditions are met. \\
+\end{tabular}
 \end{notesbox}
 
 \begin{notesbox}
-\textbf{Conditions}
+\textbf{Conditions for $\hat{p}_1 - \hat{p}_2$}
 
-Large Counts: $n_1 p_1 \ge$ \ans{10}; $n_1(1-p_1) \ge$ \ans{10}; $n_2 p_2 \ge$ \ans{10}; $n_2(1-p_2) \ge$ \ans{10}
+\begin{enumerate}
+  \item \textbf{Random (Group 1):} sample 1 is a \blankans{2.0in}{random sample}.
+  \item \textbf{Random (Group 2):} sample 2 is a \blankans{2.0in}{random sample}.
+  \item \textbf{10\% (Independence within each group):} $n_1 \le 0.10 N_1$ and $n_2 \le 0.10 N_2$.
+  \item \textbf{Independence between groups:} the two samples are \blankans{2.0in}{independent}.
+  \item \textbf{Large Counts (all four):}
+        $n_1 p_1 \ge $ \blankans{0.3in}{10},\quad $n_1(1-p_1) \ge $ \blankans{0.3in}{10},\quad
+        $n_2 p_2 \ge $ \blankans{0.3in}{10},\quad $n_2(1-p_2) \ge $ \blankans{0.3in}{10}
+\end{enumerate}
 \end{notesbox}
 
 \begin{notesbox}
-\textbf{Worked Example: Rural/Urban policy support}
-\ans{Random: both stated. 10\%: both $\le 10\%$ of respective populations. Independent groups: stated. Large Counts: $200(0.58)=116$, $200(0.42)=84$, $250(0.44)=110$, $250(0.56)=140$ --- all $\ge 10$.}
+\textbf{Worked Example.}
+A polling firm surveys 200 rural adults ($n_1 = 200$, $p_1 = 0.58$ support a policy)
+and 250 urban adults ($n_2 = 250$, $p_2 = 0.44$). Let $D = \hat{p}_1 - \hat{p}_2$.
 
-$\mu_D = $ \ans{$0.58 - 0.44 = 0.14$}
+\medskip
+\textit{Check conditions:} \ansline{Random: both samples stated as random.}\\\ansline{10\%: $200 \le 10\%$ of rural adults; $250 \le 10\%$ of urban adults.}\\\ansline{Independent groups: rural and urban samples are separate.}\\\ansline{Large Counts: $116$, $84$, $110$, $140$ --- all $\ge 10$.}
 
-$\sigma_D = $ \ans{$\sqrt{0.58(0.42)/200 + 0.44(0.56)/250} = \sqrt{0.001218 + 0.000985} \approx \sqrt{0.002203} \approx 0.04693$}
+$\mu_D = $ \blankans{1in}{$0.14$} \hspace{1cm} $\sigma_D = $ \blankans{2.2in}{$\sqrt{0.002203} \approx 0.04693$}
 
-$P(D > 0.20)$: \ans{$z = (0.20 - 0.14)/0.04693 \approx 1.278$; $P \approx 1 - 0.8993 = 0.1007 \approx 10.1\%$.}
+\medskip
+$P(D > 0.20) = $ \ansline{$z = (0.20 - 0.14)/0.04693 \approx 1.278$}\\\ansline{$P(D > 0.20) \approx 1 - 0.8993 = 0.1007 \approx 10.1\%$}
 \end{notesbox}
 
 \begin{practicebox}
-\textbf{Quick Check: Teens}
+\textbf{Quick Check}
+
+Male teens: $p_1 = 0.72$, $n_1 = 120$. Female teens: $p_2 = 0.65$, $n_2 = 140$.
 \begin{enumerate}
-  \item \ans{$n_1 p_1 = 86.4$; $n_1(1-p_1) = 33.6$; $n_2 p_2 = 91$; $n_2(1-p_2) = 49$. All $\ge 10$. Conditions met.}
-  \item \ans{$\mu = 0.72-0.65 = 0.07$; $\sigma = \sqrt{0.72(0.28)/120 + 0.65(0.35)/140} = \sqrt{0.001680+0.001625} \approx \sqrt{0.003305} \approx 0.05749$.}
-  \item \ans{$z = (0.10-0.07)/0.05749 \approx 0.522$; $P > 0.10 \approx 1 - 0.6991 = 0.3009 \approx 30.1\%$.}
+  \item Check the four Large Counts conditions.
+        \workans{0.5in}{$n_1 p_1 = 86.4$; \ $n_1(1-p_1) = 33.6$; \ $n_2 p_2 = 91$; \ $n_2(1-p_2) = 49$. All $\ge 10$. Conditions met.}
+  \item Find $\mu_{\hat{p}_1 - \hat{p}_2}$ and $\sigma_{\hat{p}_1 - \hat{p}_2}$.
+        \workans{0.5in}{$\mu = 0.72-0.65 = 0.07$; \quad $\sigma = \sqrt{0.72(0.28)/120 + 0.65(0.35)/140} = \sqrt{0.003305} \approx 0.05749$}
+  \item Find $P(\hat{p}_1 - \hat{p}_2 > 0.10)$.
+        \workans{0.8in}{$z = (0.10-0.07)/0.05749 \approx 0.522$\\ $P(\hat{p}_1 - \hat{p}_2 > 0.10) \approx 1 - 0.6991 = 0.3009 \approx 30.1\%$}
 \end{enumerate}
 \end{practicebox}
 

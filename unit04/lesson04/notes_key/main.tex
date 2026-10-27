@@ -12,18 +12,22 @@
 
 \begin{objectivebox}
 \small By the end of this lesson, I will be able to\dots\\[4pt]
-\ans{Explain what mutually exclusive (disjoint) events are and how to identify them.}\\[1pt]
-\ans{Determine whether two events are mutually exclusive by checking whether any outcome belongs to both.}\\[1pt]
-\ans{Justify whether two events are mutually exclusive in context using a complete sentence.}
+\ansline{Define joint probability and the intersection $A \cap B$.}\\[1pt]
+\ansline{Determine whether two events are mutually exclusive.}\\[1pt]
+\ansline{Justify in context whether two events are mutually exclusive.}
 \end{objectivebox}
 
 \vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{Joint probability $P(A \cap B)$} \ans{The probability that both event $A$ and event $B$ occur simultaneously.}
-\termblanklong{Intersection $A \cap B$} \ans{The set of all outcomes that belong to both event $A$ and event $B$.}
-\termblanklong{Mutually exclusive (disjoint) events} \ans{Two events that cannot both occur at the same time; they share no outcomes, so $P(A \cap B) = 0$.}
-\termblanklong{Sample space} \ans{The set of all possible outcomes of a chance process.}
+\noindent\textbf{\textcolor{navy}{Joint probability $P(A \cap B)$:}}\\[1pt]%
+\ansline{The probability that both $A$ and $B$ occur.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Intersection $A \cap B$:}}\\[1pt]%
+\ansline{All outcomes that belong to both event $A$ and event $B$.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Mutually exclusive (disjoint) events:}}\\[1pt]%
+\ansline{Events that cannot occur at the same time (no shared outcomes),}\\[1pt]\ansline{so $P(A \cap B) = 0$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Sample space:}}\\[1pt]%
+\ansline{The set of all possible outcomes of a chance process.}\\[1pt]\ansline{}\\[3pt]
 \end{vocabbox}
 
 \vspace{0.1in}
@@ -36,7 +40,7 @@
   \item A randomly selected card from a standard deck is both a heart and a spade.
 \end{enumerate}
 \textbf{Which is impossible? Why?}\\[4pt]
-\ans{Scenario 2 is impossible. A card belongs to exactly one suit, so no card can be both a heart and a spade simultaneously. Scenario 1 is entirely possible --- a student can be enrolled in both courses at once.}
+\ansline{Scenario 2. A card has exactly one suit, so it cannot be both a heart and a spade.}\\[1pt]\ansline{Scenario 1 is possible: a student can take both courses.}
 \end{hookbox}
 
 \vspace{0.1in}
@@ -90,15 +94,15 @@ outcomes in \ans{both $A$ and $B$}.
 \begin{notesbox}{Mutually Exclusive Events}
 \small
 \textbf{Definition (VAR-4.C.2):} Two events $A$ and $B$ are \textbf{mutually exclusive}
-(also called \textbf{disjoint}) if \ans{they cannot occur at the same time (they share no outcomes)}.\\[6pt]
+(also called \textbf{disjoint}) if \ans{they share no outcomes}.\\[6pt]
 Therefore, $P(A \cap B) = $ \ans{$0$}.
 
 \vspace{10pt}
 \textbf{How to check:}
 \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item List the outcomes in event $A$: \ans{(list all elements of $A$)}
-  \item List the outcomes in event $B$: \ans{(list all elements of $B$)}
-  \item Ask: does any single outcome appear in \ans{both}?\\
+  \item List the outcomes in event $A$: \ans{(every outcome in $A$)}
+  \item List the outcomes in event $B$: \ans{(every outcome in $B$)}
+  \item Ask: does any single outcome appear in \ans{both $A$ and $B$}?\\
         If YES $\to$ \ans{NOT mutually exclusive} \quad If NO $\to$ \ans{mutually exclusive}
 \end{enumerate}
 
@@ -112,8 +116,8 @@ Therefore, $P(A \cap B) = $ \ans{$0$}.
 \small
 \textbf{Example 1:} Roll a fair die. $A = \{\text{odd}\}$, $B = \{\text{even}\}$.
 \begin{itemize}[itemsep=3pt]
-  \item Outcomes in $A$: \ans{$\{1,3,5\}$}
-  \item Outcomes in $B$: \ans{$\{2,4,6\}$}
+  \item Outcomes in $A$: \ans{$\{1, 3, 5\}$}
+  \item Outcomes in $B$: \ans{$\{2, 4, 6\}$}
   \item $A \cap B = $ \ans{$\varnothing$} \quad So: mutually exclusive? \ans{Yes}
   \item $P(A \cap B) = $ \ans{$0$}
 \end{itemize}
@@ -121,30 +125,35 @@ Therefore, $P(A \cap B) = $ \ans{$0$}.
 \vspace{8pt}
 \textbf{Example 2:} Draw a card. $A = \{\text{heart}\}$, $B = \{\text{face card}\}$.
 \begin{itemize}[itemsep=3pt]
-  \item Outcomes in both: \ans{Jack of hearts, Queen of hearts, King of hearts}
+  \item Outcomes in both: \ans{Jack, Queen, King of hearts} (name them)
   \item $A \cap B = \varnothing$? \ans{No} \quad So: mutually exclusive? \ans{No}
   \item $P(A \cap B) = $ \ans{$3/52$}
 \end{itemize}
 
 \vspace{8pt}
 \textbf{AP Exam tip:} Always write a complete sentence justification:\\[4pt]
-``Events $A$ and $B$ \ans{are not} mutually exclusive because \ans{(state the shared outcome(s) in context)}.''
+``Events $A$ and $B$ \ans{are / are not} mutually exclusive because \ans{(shared outcome or none)}.''
 \end{notesbox}
 
 \vspace{0.1in}
 
 \begin{practicebox}
-\small
+\small For each pair, (1) list any shared outcomes, (2) state whether the events are
+mutually exclusive, (3) justify your answer in context.
+
 \vspace{6pt}
 \begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item \ans{Shared outcomes: a sophomore who is on the honor roll.} \quad ME? \ans{No}\\
-        \ans{A student can be both a sophomore and on the honor roll simultaneously, so the events are not mutually exclusive.}
+  \item A student is randomly selected. $A = \{\text{sophomore}\}$, $B = \{\text{on the honor roll}\}$.\\
+        Shared outcomes: \ans{honor-roll sophomores} \quad ME? \ans{No}\\
+        Justification: \ansline{A sophomore can be on the honor roll; both can happen at once.}
 
-  \item \ans{Shared outcomes: July, August (31 days and in summer).} \quad ME? \ans{No}\\
-        \ans{July and August both have 31 days and are summer months, so the events share outcomes and are not mutually exclusive.}
+  \item A month is randomly chosen. $A = \{\text{has 31 days}\}$, $B = \{\text{is in summer}\}$.\\
+        Shared outcomes: \ans{July, August} \quad ME? \ans{No}\\
+        Justification: \ansline{July and August have 31 days and are in summer.}
 
-  \item \ans{Shared outcomes: $\{15\}$ --- but 15 is not in 1--10. So $\{$ none $\}$.} \quad ME? \ans{Yes}\\
-        \ans{No integer from 1--10 is a multiple of both 3 and 5 (15 is out of range), so the events are mutually exclusive.}
+  \item An integer from 1--10 is chosen. $A = \{\text{multiple of 3}\}$, $B = \{\text{multiple of 5}\}$.\\
+        Shared outcomes: \ans{None} \quad ME? \ans{Yes}\\
+        Justification: \ansline{No integer 1--10 is a multiple of both 3 and 5 (15 is too big).}
 \end{enumerate}
 \end{practicebox}
 

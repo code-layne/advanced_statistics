@@ -3,6 +3,12 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% \blankans{W}{answer} — the key's \blank{W}: same width and rule, answer on it.
+\newcommand{\blankans}[2]{\underline{\makebox[#1][c]{\ans{#2}}}}
+% \workans{H}{answer} — fills a blank \vspace{H} work area in the same height:
+% the answer is smashed onto the next line and the space below is trimmed by it.
+\newcommand{\workans}[2]{\newline\smash{\raisebox{-2pt}{\parbox[t]{\linewidth}{\raggedright\ans{#2}}}}%
+  \vspace{\dimexpr#1-\baselineskip\relax}}
 
 \begin{document}
 
@@ -12,44 +18,75 @@
 \vspace{0.1in}
 
 \begin{objectivebox}
-\textbf{Learning Targets} (same as student version)
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state $\mu_{\hat{p}} = p$ and $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$.
+  \item I can check the conditions for using the normal model for $\hat{p}$.
+  \item I can find probabilities involving $\hat{p}$ using the normal approximation.
+\end{enumerate}
 \end{objectivebox}
 
 \begin{vocabbox}
 \begin{description}
-  \item[Sampling distribution of $\hat{p}$] all possible values of \ans{$\hat{p}$} from samples of size \ans{$n$}.
-  \item[Large Counts condition] $np \ge$ \ans{10} and $n(1-p) \ge$ \ans{10}.
-  \item[10\% condition] $n \le$ \ans{10\%} of the population.
+  \item[\termblanklong{Sampling distribution of $\hat{p}$}] the distribution of all possible values of \blankans{0.5in}{$\hat{p}$} from all possible samples of size \blankans{0.3in}{$n$}.
+  \item[\termblanklong{Large Counts condition}] $np \ge$ \blankans{0.4in}{10} \textbf{and} $n(1-p) \ge$ \blankans{0.4in}{10}; ensures the normal model is appropriate.
+  \item[\termblanklong{10\% condition}] $n \le$ \blankans{0.4in}{10}\% of the population; ensures approximate independence when sampling without replacement.
 \end{description}
 \end{vocabbox}
 
 \begin{notesbox}
-\textbf{Sampling Distribution of $\hat{p}$}
-\begin{itemize}
-  \item Center: \ans{$p$}
-  \item Spread: \ans{$\sqrt{p(1-p)/n}$}
-  \item Shape: approximately normal when \ans{$np \ge 10$} and \ans{$n(1-p) \ge 10$}
-\end{itemize}
+\textbf{Sampling Distribution of $\hat{p}$} (UNC-3.K, L, M)
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.7\linewidth} @{}}
+\textbf{Center:} & $\mu_{\hat{p}} = $ \blankans{1.0in}{$p$} \\[10pt]
+\textbf{Spread:} & $\sigma_{\hat{p}} = $ \TallMath{\sqrt{\dfrac{\blankans{1.5in}{$p(1-p)$}}{\blankans{0.5in}{$n$}}}} \\[14pt]
+\textbf{Shape:} & Approximately normal when \blankans{1.2in}{$np \ge 10$} and \blankans{1.2in}{$n(1-p) \ge 10$} \\
+\end{tabular}
 \end{notesbox}
 
 \begin{notesbox}
-\textbf{Worked Example: Library cards, $p = 0.62$, $n = 150$}
-\begin{enumerate}
-  \item \ans{Random: stated.}
-  \item \ans{10\%: $150 \le 10\%$ of adults in a large city (thousands) --- yes.}
-  \item \ans{$np = 150(0.62) = 93 \ge 10$; $n(1-p) = 150(0.38) = 57 \ge 10$. Both met.}
-\end{enumerate}
-$\mu_{\hat{p}} = $ \ans{0.62}; $\sigma_{\hat{p}} = $ \ans{$\sqrt{0.62(0.38)/150} \approx 0.03965$}
+\textbf{Conditions for Using the Normal Model for $\hat{p}$}
 
-$P(\hat{p} > 0.65)$: \ans{$z = (0.65-0.62)/0.03965 \approx 0.757$; $P(Z>0.757) \approx 1-0.7754 = 0.2246 \approx 22.5\%$.}
+Check all three before computing any probability:
+\begin{enumerate}
+  \item \textbf{Random:} \blankans{2.5in}{random sample or experiment}
+  \item \textbf{10\% condition (Independence):} $n \le 0.10 \cdot N$ where $N$ = \blankans{1.5in}{population size}
+  \item \textbf{Large Counts:} $np \ge $ \blankans{0.4in}{10} \textbf{and} $n(1-p) \ge$ \blankans{0.4in}{10}
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example.} In a large city, 62\% of adults have a library card ($p = 0.62$).
+A random sample of $n = 150$ adults is selected.
+
+\medskip
+\textit{Check conditions:}
+\begin{enumerate}
+  \item Random: \ansline{stated --- a random sample of 150 adults.}
+  \item 10\%: \ansline{$150 \le 10\%$ of all adults in a large city --- yes.}
+  \item Large Counts: $np = $ \blankans{0.8in}{93}; $n(1-p) = $ \blankans{0.8in}{57} Both $\ge 10$?~\blankans{0.3in}{Yes}
+\end{enumerate}
+
+\medskip
+$\mu_{\hat{p}} = $ \blankans{0.6in}{0.62} \hspace{1cm} $\sigma_{\hat{p}} = $ \blankans{1.5in}{$\approx 0.03965$}
+
+\medskip
+$P(\hat{p} > 0.65) = $ \ansline{$z = (0.65-0.62)/0.03965 \approx 0.757$}\\\ansline{$P(Z > 0.757) \approx 1 - 0.7754 = 0.2246 \approx 22.5\%$}
 \end{notesbox}
 
 \begin{practicebox}
-\textbf{Quick Check: Bus riders, $p = 0.40$, $n = 80$}
+\textbf{Quick Check}
+
+In a large school, 40\% of students take the bus ($p = 0.40$). A random sample of
+$n = 80$ students is selected.
 \begin{enumerate}
-  \item \ans{Random: stated. 10\%: $80 \le 10\%$ of large school enrollment. Large Counts: $np = 32 \ge 10$; $n(1-p) = 48 \ge 10$. All conditions met.}
-  \item \ans{$\mu_{\hat{p}} = 0.40$; $\sigma_{\hat{p}} = \sqrt{0.40(0.60)/80} = \sqrt{0.003} \approx 0.05477$.}
-  \item \ans{$z = (0.50 - 0.40)/0.05477 \approx 1.826$; $P(\hat{p} \ge 0.50) \approx 1 - 0.9660 = 0.0340$. About 3.4\%.}
+  \item Check all three conditions.
+        \ansline{Random: stated.}\\\ansline{10\%: $80 \le 10\%$ of a large school's enrollment --- yes.}\\\ansline{Large Counts: $np = 32 \ge 10$; $n(1-p) = 48 \ge 10$. All conditions met.}
+  \item Find $\mu_{\hat{p}}$ and $\sigma_{\hat{p}}$.
+        \workans{0.5in}{$\mu_{\hat{p}} = 0.40$; \quad $\sigma_{\hat{p}} = \sqrt{0.40(0.60)/80} = \sqrt{0.003} \approx 0.05477$}
+  \item Find $P(\hat{p} \ge 0.50)$.
+        \workans{0.8in}{$z = (0.50 - 0.40)/0.05477 \approx 1.826$\\ $P(\hat{p} \ge 0.50) \approx 1 - 0.9660 = 0.0340$. About 3.4\%.}
 \end{enumerate}
 \end{practicebox}
 

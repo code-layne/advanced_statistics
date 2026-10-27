@@ -15,36 +15,62 @@
 two-sided and justify, (c) verify conditions, and (d) calculate the test statistic $z$.}
 
 \begin{scenariobox}[Scenario 1 --- Voter Turnout]{sky}
+A political analyst claims that voter turnout in a city is 40\%. A civic group believes
+turnout has \emph{changed} from 40\%. They survey 300 randomly selected registered voters
+and find 105 voted in the last election.
+
 \begin{enumerate}[label=\alph*.]
   \item $H_0$: \ans{$p = 0.40$} \quad $H_a$: \ans{$p \ne 0.40$} \quad One-sided or two-sided? \ans{Two-sided (``changed'')}
   \item Conditions:
         \begin{itemize}
-          \item Random: \ans{SRS stated --- met}
+          \item Random: \ans{random sample stated --- met}
           \item Large Counts: \ans{$300(0.40)=120\ge10$; $300(0.60)=180\ge10$ --- met}
-          \item 10\%: \ans{$300 \le 0.10\times$(all registered voters) --- met}
+          \item 10\%: \ans{$300 \le 10\%$ of all registered voters --- met}
         \end{itemize}
-  \item $\hat p = $ \ans{$105/300=0.35$} \quad $z = \dfrac{\ans{0.35} - \ans{0.40}}{\sqrt{\ans{0.40(0.60)}/\ans{300}}} = \dfrac{-0.05}{0.02828} \approx$ \ans{$-1.77$}
+  \item $\hat p = $ \ans{$0.35$} \quad $z = \dfrac{{\color{keyred}\mathbf{0.35}} - {\color{keyred}\mathbf{0.40}}}{\sqrt{{\color{keyred}\mathbf{0.40(0.60)}}/{\color{keyred}\mathbf{300}}}} = $ \ans{$-1.77$}
 \end{enumerate}
 \end{scenariobox}
 
 \begin{scenariobox}[Scenario 2 --- Medication Effectiveness]{sky}
+A pharmaceutical company states that 75\% of patients improve with their medication. An
+independent researcher thinks the true rate is \emph{lower}. She randomly selects 160
+patients from clinical records and finds 108 improved.
+
 \begin{enumerate}[label=\alph*.]
   \item $H_0$: \ans{$p = 0.75$} \quad $H_a$: \ans{$p < 0.75$} \quad One-sided or two-sided? \ans{One-sided (``lower'')}
-  \item Conditions: \ansline{Random (SRS from records --- met); Large Counts: $160(0.75)=120\ge10$, $160(0.25)=40\ge10$ --- met; 10\%: met.}
-  \item $\hat p = $ \ans{$108/160=0.675$} \quad $z = \dfrac{0.675-0.75}{\sqrt{0.75(0.25)/160}} = \dfrac{-0.075}{0.03423} \approx$ \ans{$-2.19$}
+  \item Conditions (check all three): \ansline{Random: random sample of patients from records --- met.}\\
+        \ansline{Large Counts: $160(0.75)=120\ge10$ and $160(0.25)=40\ge10$ --- met.}\\
+        \ansline{10\%: 160 is less than 10\% of all patients on record --- met.}
+  \item $\hat p = $ \ans{$0.675$} \quad $z = $ \ans{$\frac{0.675-0.75}{\sqrt{0.75(0.25)/160}}$} $\approx$ \ans{$-2.19$}
 \end{enumerate}
 \end{scenariobox}
 
 \begin{scenariobox}[Scenario 3 --- Organic Milk]{sky}
+Industry data suggest 30\% of households buy organic milk. A grocery chain manager believes
+more than 30\% of \emph{her} store's shoppers buy organic milk. She randomly selects 90
+shoppers and finds 34 buy organic milk.
+
 \begin{enumerate}[label=\alph*.]
-  \item \ansline{$H_0: p=0.30$; $H_a: p>0.30$ (one-sided). The manager believes her store has a \emph{higher} rate, so the direction is ``greater than.''}
-  \item \ansline{Random (SRS of shoppers --- met); Large Counts: $90(0.30)=27\ge10$, $90(0.70)=63\ge10$ --- met; 10\% met.}
-  \item $\hat p = 34/90 \approx 0.378$ \quad \ansline{$z = (0.378-0.30)/\sqrt{0.30(0.70)/90} = 0.078/0.04830 \approx 1.61$}
+  \item State hypotheses and justify the direction of $H_a$.
+        \ansline{$H_0: p=0.30$; \quad $H_a: p>0.30$ (one-sided)}\\
+        \ansline{She suspects her store's rate is \emph{higher}, so $H_a$ uses ``$>$.''}
+  \item Verify conditions.
+        \ansline{Random: random sample of shoppers --- met.}\\
+        \ansline{Large Counts: $90(0.30)=27\ge10$ and $90(0.70)=63\ge10$ --- met.}\\
+        \ansline{10\%: 90 is less than 10\% of all her store's shoppers --- met.}
+  \item Compute $z$.
+        \ansline{$\hat p = 34/90 \approx 0.378$}\\
+        \ansline{$z = (0.378-0.30)/\sqrt{0.30(0.70)/90} = 0.078/0.0483 \approx 1.61$}
 \end{enumerate}
 \end{scenariobox}
 
 \begin{reflectionbox}
-\ansline{Choose a one-sided $H_a$ when the research question asks specifically whether $p$ is \emph{greater than} or \emph{less than} $p_0$. Choose two-sided when asking whether $p$ is \emph{different} from $p_0$, with no prior direction. Choosing after seeing the data is data snooping --- it inflates the probability of a false rejection because you are selecting the direction most favorable to rejecting $H_0$.}
+Scenarios 1--3 cover all three possible directions for $H_a$. In your own words, explain the
+rule for choosing a one-sided vs.\ two-sided alternative. When might a researcher be tempted
+to choose the direction \emph{after} seeing the data, and why is that a problem?
+\ansline{One-sided if the question asks ``greater than'' or ``less than''; two-sided if ``different.''}\\
+\ansline{Tempting once $\hat p$ is seen to fall on one side of $p_0$ (to get a smaller P-value).}\\
+\ansline{That is data snooping: it inflates the chance of a false rejection of $H_0$.}
 \end{reflectionbox}
 
 \end{document}

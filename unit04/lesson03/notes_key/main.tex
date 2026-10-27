@@ -12,20 +12,26 @@
 
 \begin{objectivebox}
 \small By the end of this lesson, I will be able to\dots\\[4pt]
-\ans{Calculate the probability of an event using sample spaces and the classical definition.}\\[1pt]
-\ans{Apply the complement rule to find $P(E^c) = 1 - P(E)$.}\\[1pt]
-\ans{Interpret a probability as the long-run relative frequency of an event.}
+\ansline{Calculate a probability using a sample space and the classical definition.}\\[1pt]
+\ansline{Apply the complement rule: $P(E^c) = 1 - P(E)$.}\\[1pt]
+\ansline{Interpret a probability as a long-run relative frequency.}
 \end{objectivebox}
 
 \vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{Sample space ($S$)} \ans{The set of all possible non-overlapping outcomes of a random process.}
-\termblanklong{Event} \ans{A subset of the sample space --- one or more outcomes.}
-\termblanklong{Equally likely outcomes} \ans{Each outcome in the sample space has the same probability of occurring.}
-\termblanklong{Classical probability} \ans{$P(E) = \dfrac{\text{number of outcomes in }E}{\text{total number of outcomes in }S}$, when all outcomes are equally likely.}
-\termblanklong{Complement ($E^c$)} \ans{The event that $E$ does NOT occur; consists of all outcomes in $S$ that are not in $E$.}
-\termblanklong{Complement rule} \ans{$P(E^c) = 1 - P(E)$.}
+\noindent\textbf{\textcolor{navy}{Sample space ($S$):}}\\[1pt]%
+\ansline{The set of all possible non-overlapping outcomes of a random process.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Event:}}\\[1pt]%
+\ansline{An outcome or set of outcomes (a subset of the sample space).}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Equally likely outcomes:}}\\[1pt]%
+\ansline{Every outcome in the sample space has the same probability.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Classical probability:}}\\[1pt]%
+\ansline{$P(E) = $ (number of outcomes in $E$) / (total number of outcomes in $S$),}\\[1pt]\ansline{used when all outcomes are equally likely.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Complement ($E^c$):}}\\[1pt]%
+\ansline{The event that $E$ does NOT occur: all outcomes in $S$ not in $E$.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Complement rule:}}\\[1pt]%
+\ansline{$P(E^c) = 1 - P(E)$}\\[1pt]\ansline{}\\[3pt]
 \end{vocabbox}
 
 \vspace{0.1in}
@@ -33,10 +39,10 @@
 \begin{hookbox}
 \small A bag holds 3 red and 5 blue poker chips.
 \begin{itemize}[itemsep=3pt]
-  \item $S = \{$ \ans{R1, R2, R3, B1, B2, B3, B4, B5 (or simply: red, blue treated as 8 equally likely chips)} $\}$
-  \item Total outcomes: \ans{8}
-  \item Outcomes that are ``red'': \ans{3}
-  \item $P(\text{red}) = \ans{3/8} = \ans{0.375}$
+  \item List the sample space for one draw: $S = \{$\ \ans{R1, R2, R3, B1, B2, B3, B4, B5}\ $\}$
+  \item How many total outcomes? \ans{8}
+  \item How many outcomes are ``red''? \ans{3}
+  \item Probability of drawing red: $P(\text{red}) = $ \ans{$3/8$} $=$ \ans{$0.375$}
 \end{itemize}
 \end{hookbox}
 
@@ -44,28 +50,29 @@
 
 \begin{notesbox}{The Classical Definition of Probability}
 \small
-\textbf{Sample Space:} The sample space is the set of all possible \ans{non-overlapping} outcomes
-(no outcome counted \ans{more than once}).
+\textbf{VAR-4.A.1 --- Sample Space:} The sample space is the set of all possible
+\ans{non-overlapping} outcomes (no outcome counted \ans{more than once}).
 
 \vspace{8pt}
-\textbf{Classical Probability Formula:}
+\textbf{VAR-4.A.2 --- Classical Probability Formula} (equally likely outcomes):
 \[
-  P(E) = \frac{\ans{\text{number of outcomes in }E}}{\ans{\text{total number of equally likely outcomes in }S}}
+  P(E) = \frac{\color{keyred}\textbf{number of outcomes in } \mathbf{E}}{\color{keyred}\textbf{total number of outcomes in } \mathbf{S}}
 \]
 
 \vspace{6pt}
-\textbf{Probability Range:} $\ans{0} \le P(E) \le \ans{1}$
+\textbf{VAR-4.A.3 --- Probability Range:} For any event $E$:
+\ans{$0$} $\le P(E) \le$ \ans{$1$}
 
 \vspace{10pt}
-\textbf{Worked Example:} $S = \{1, 2, 3, 4, 5, 6\}$
+\textbf{Worked Example:} Roll one fair die. $S = \{1, 2, 3, 4, 5, 6\}$
 \vspace{4pt}
 \renewcommand{\arraystretch}{1.6}
 \begin{tabularx}{\linewidth}{@{} l X @{}}
-Event & Probability \\
+Event & Probability (show work) \\
 \hline
-$E_1$: roll a 5 & \ans{$P(E_1) = 1/6 \approx 0.167$} \\
-$E_2$: roll an even number & \ans{$P(E_2) = 3/6 = 1/2 = 0.5$} \\
-$E_3$: roll a number greater than 4 & \ans{$P(E_3) = 2/6 = 1/3 \approx 0.333$} \\
+$E_1$: roll a 5 & $P(E_1) = $ \ans{$1/6 \approx 0.167$} \\
+$E_2$: roll an even number & $P(E_2) = $ \ans{$3/6 = 1/2$} \\
+$E_3$: roll a number greater than 4 & $P(E_3) = $ \ans{$2/6 = 1/3$} \\
 \end{tabularx}
 \end{notesbox}
 
@@ -73,15 +80,18 @@ $E_3$: roll a number greater than 4 & \ans{$P(E_3) = 2/6 = 1/3 \approx 0.333$} \
 
 \begin{notesbox}{The Complement Rule}
 \small
-The complement of $E$ is the event that $E$ \ans{does not occur}.\\[6pt]
-\textbf{Complement Rule:} $P(E^c) = \ans{1 - P(E)}$\\[6pt]
-$P(E) + P(E^c) = \ans{1}$ because $E$ and $E^c$ together include \ans{every outcome} in $S$.
+\textbf{VAR-4.A.4 --- Complement:}\\
+The complement of $E$ (written $E^c$ or $E'$) is the event that $E$ \ans{does not occur}.\\[6pt]
+\textbf{Complement Rule:} $P(E^c) = $ \ans{$1 - P(E)$}\\[6pt]
+\textit{Why it works:} $P(E) + P(E^c) = $ \ans{$1$} because $E$ and $E^c$ together
+include \ans{every outcome} in $S$.
 
 \vspace{10pt}
+\textbf{Worked Example:} Roll one fair die.
 \begin{itemize}[itemsep=4pt]
-  \item $P(\text{NOT a 5}) = \ans{1 - 1/6 = 5/6}$
-  \item $P(\text{odd}) = \ans{1 - 1/2 = 1/2}$
-  \item $P(\text{roll} \le 4) = \ans{1 - 1/3 = 2/3}$
+  \item $P(\text{roll a 5}) = 1/6$, so $P(\text{NOT a 5}) = $ \ans{$1 - 1/6 = 5/6$}
+  \item $P(\text{even}) = 1/2$, so $P(\text{odd}) = $ \ans{$1 - 1/2 = 1/2$}
+  \item $P(\text{roll} > 4) = 1/3$, so $P(\text{roll} \le 4) = $ \ans{$1 - 1/3 = 2/3$}
 \end{itemize}
 \end{notesbox}
 
@@ -89,32 +99,50 @@ $P(E) + P(E^c) = \ans{1}$ because $E$ and $E^c$ together include \ans{every outc
 
 \begin{notesbox}{Interpreting Probability --- Long Run}
 \small
-\textbf{VAR-4.B.1:} Probabilities of events in \ans{repeatable} situations can be
+\textbf{VAR-4.B.1:} Probabilities of events in \ans{repeatable random} situations can be
 interpreted as the relative frequency with which the event will occur \ans{in the long run}.
 
 \vspace{8pt}
-``If this random process is repeated many times, the event \blank{4cm} will occur in
-approximately \blank{3cm} of the repetitions.''
+\textbf{How to write a long-run interpretation:}\\
+``If this random process is repeated many times, the event \ans{(in context)} will occur in
+approximately \ans{$P(E) \times 100\%$} of the repetitions.''
 
 \vspace{10pt}
+\textbf{Practice:} Write a long-run interpretation for each:
 \begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item \ans{If a fair die is rolled many times, about 1 out of every 6 rolls will land on 5.}
-  \item \ans{If we observe many days with similar weather conditions, about 40\% of them will have rain.}
+  \item $P(\text{rolling a 5}) = 1/6$:\\
+        \ansline{If a fair die is rolled many times, about 1 in 6 rolls will be a 5.}
+  \item A weather forecast says $P(\text{rain tomorrow}) = 0.40$:\\
+        \ansline{Over many days with conditions like tomorrow's, about 40\% have rain.}
 \end{enumerate}
 \end{notesbox}
 
 \vspace{0.1in}
 
 \begin{practicebox}
-\small
+\small Two dice are rolled. The $6 \times 6$ outcome table is provided.
 
 \vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} c | *{6}{>{\centering\arraybackslash}X} @{}}
+\textbf{Die 1 $\setminus$ Die 2} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+\hline
+\textbf{1} & (1,1) & (1,2) & (1,3) & (1,4) & (1,5) & (1,6) \\
+\textbf{2} & (2,1) & (2,2) & (2,3) & (2,4) & (2,5) & (2,6) \\
+\textbf{3} & (3,1) & (3,2) & (3,3) & (3,4) & (3,5) & (3,6) \\
+\textbf{4} & (4,1) & (4,2) & (4,3) & (4,4) & (4,5) & (4,6) \\
+\textbf{5} & (5,1) & (5,2) & (5,3) & (5,4) & (5,5) & (5,6) \\
+\textbf{6} & (6,1) & (6,2) & (6,3) & (6,4) & (6,5) & (6,6) \\
+\end{tabularx}
+
+\vspace{6pt}
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item \ans{36 total outcomes (6 $\times$ 6).}
-  \item \ans{Sum = 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 outcomes. $P = 6/36 = 1/6$.}
-  \item \ans{Sum $\geq$ 10: (4,6),(5,5),(6,4),(5,6),(6,5),(6,6) → 6 outcomes. $P = 6/36 = 1/6$.}
-  \item \ans{$P(\text{NOT sum} \geq 10) = 1 - 1/6 = 5/6$.}
-  \item \ans{If two fair dice are rolled many times, about 1 in every 6 rolls will produce a sum of 7.}
+  \item Total outcomes: \ans{$6 \times 6 = 36$}
+  \item $P(\text{sum} = 7)$: circle the outcomes, then calculate. $=$ \ans{$6/36 = 1/6$}
+  \item $P(\text{sum} \geq 10) = $ \ans{$6/36 = 1/6$}
+  \item $P(\text{NOT sum} \geq 10)$ using complement: $=$ \ans{$1 - 1/6 = 5/6$}
+  \item Interpret $P(\text{sum} = 7) = 1/6$ in one sentence:
+        \ansline{If two dice are rolled many times, about 1 in 6 rolls sum to 7.}
 \end{enumerate}
 \end{practicebox}
 

@@ -13,18 +13,22 @@
 
 \begin{objectivebox}
 \small By the end of this lesson, I will be able to\dots\\[4pt]
-\ans{Compute the expected value of a discrete random variable using $\mu_X = \sum x \cdot P(X=x)$.}\\[1pt]
-\ans{Compute the standard deviation using $\sigma_X = \sqrt{\sum (x-\mu_X)^2 \cdot P(X=x)}$.}\\[1pt]
-\ans{Interpret $\mu_X$ and $\sigma_X$ in context.}
+\ansline{Compute the expected value: $\mu_X = \sum x \cdot P(X=x)$.}\\[1pt]
+\ansline{Compute the standard deviation $\sigma_X$ of a discrete random variable.}\\[1pt]
+\ansline{Interpret $\mu_X$ and $\sigma_X$ in context.}
 \end{objectivebox}
 
 \vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{Expected value ($\mu_X$)} \ans{The long-run average of a random variable; a weighted average of all possible values.}
-\termblanklong{Variance ($\sigma^2_X$)} \ans{The average squared deviation from $\mu_X$, weighted by probabilities: $\sum (x-\mu_X)^2 P(X=x)$.}
-\termblanklong{Standard deviation ($\sigma_X$)} \ans{$\sqrt{\sigma^2_X}$; measures typical deviation from the mean in original units.}
-\termblanklong{Long-run average} \ans{The value the sample mean approaches over many independent repetitions of the random process.}
+\noindent\textbf{\textcolor{navy}{Expected value ($\mu_X$):}}\\[1pt]%
+\ansline{The long-run average value of $X$: a weighted average of its possible values.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Variance ($\sigma^2_X$):}}\\[1pt]%
+\ansline{The probability-weighted average squared deviation from the mean:}\\[1pt]\ansline{$\sigma^2_X = \sum (x-\mu_X)^2 \cdot P(X=x)$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Standard deviation ($\sigma_X$):}}\\[1pt]%
+\ansline{$\sigma_X = \sqrt{\sigma^2_X}$: the typical distance of $X$ from $\mu_X$, in the units of $X$.}\\[1pt]\ansline{}\\[3pt]
+\noindent\textbf{\textcolor{navy}{Long-run average:}}\\[1pt]%
+\ansline{The value the mean of the outcomes approaches over many repetitions.}\\[1pt]\ansline{}\\[3pt]
 \end{vocabbox}
 
 \vspace{0.1in}
@@ -40,8 +44,8 @@ Prize ($x$) & \$0 & \$5 \\
 Probability & 0.70 & 0.30 \\
 \end{tabular}
 \end{center}
-Expected prize per play: \ans{$\$0(0.70)+\$5(0.30) = \$1.50$. In 100 plays, expect $\approx\$150$.}\\
-Is playing worth \$2? \ans{No --- the expected prize (\$1.50) is less than the cost (\$2.00).}
+If you play 100 times, what do you expect to win in total? \ans{$100(\$1.50) = \$150$}\\
+Is playing worth the \$2 entry fee? \ans{No: \$1.50 per play $<$ \$2}
 \end{hookbox}
 
 \vspace{0.1in}
@@ -49,7 +53,8 @@ Is playing worth \$2? \ans{No --- the expected prize (\$1.50) is less than the c
 \begin{notesbox}{Mean (Expected Value) of a Random Variable}
 \small
 
-The \textbf{expected value} of $X$ is a \ans{weighted} average of all possible values.
+The \textbf{expected value} of $X$ is a \ans{weighted} average of all possible values,
+weighted by their probabilities:
 
 \vspace{8pt}
 \begin{center}
@@ -57,22 +62,23 @@ The \textbf{expected value} of $X$ is a \ans{weighted} average of all possible v
 \end{center}
 
 \vspace{8pt}
-\textbf{Computation Table Example:}
+\textbf{Computation Table Example:} $X$ = prize from carnival game.
 
 \vspace{4pt}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\linewidth}{@{} c c X @{}}
 $x$ & $P(X=x)$ & $x \cdot P(X=x)$ \\
 \hline
-\$0 & 0.70 & \ans{$\$0 \times 0.70 = \$0.00$} \\
-\$5 & 0.30 & \ans{$\$5 \times 0.30 = \$1.50$} \\
+\$0 & 0.70 & \ans{$0(0.70) = \$0.00$} \\
+\$5 & 0.30 & \ans{$5(0.30) = \$1.50$} \\
 \end{tabularx}
 
 \vspace{6pt}
-$\mu_X = $ \ans{$\$1.50$}
+$\mu_X = \sum x \cdot P(X=x) = $ \ans{$\$0 + \$1.50 = \$1.50$}
 
 \vspace{6pt}
-\textbf{Interpret:} \ans{long run} means that over many plays, the average prize per play is approximately \ans{\$1.50}.
+\textbf{Interpret} $\mu_X$ in context: \ans{$\mu_X = \$1.50$} means that in the \ans{long run (many plays)},\\
+the average prize per play is approximately \ans{\$1.50}.
 
 \end{notesbox}
 
@@ -81,10 +87,18 @@ $\mu_X = $ \ans{$\$1.50$}
 \begin{notesbox}{Standard Deviation of a Random Variable}
 \small
 
+The \textbf{variance} measures how spread out the values of $X$ are:
+
+\vspace{6pt}
+\begin{center}
+\TallMath{\sigma^2_X = \sum (x - \mu_X)^2 \cdot P(X=x)}
+\end{center}
+
+\vspace{6pt}
 The \textbf{standard deviation} is $\sigma_X = $ \ans{$\sqrt{\sigma^2_X}$}.
 
 \vspace{8pt}
-\textbf{Full Computation Table:} $X$ = cars per household ($\mu_X = 1.55$).
+\textbf{Full Computation Table:} $X$ = number of cars per household ($\mu_X = 1.55$).
 
 \vspace{4pt}
 \renewcommand{\arraystretch}{2.0}
@@ -96,14 +110,15 @@ $x$ & $P(X=x)$ & $x \cdot P(X=x)$ & $(x - \mu_X)^2$ & $(x-\mu_X)^2 \cdot P(X=x)$
 2 & 0.35 & \ans{0.70} & \ans{0.2025} & \ans{0.0709} \\
 3 & 0.15 & \ans{0.45} & \ans{2.1025} & \ans{0.3154} \\
 \hline
-\textbf{Sum} & & $\mu_X =$ \ans{1.55} & & $\sigma^2_X =$ \ans{0.7476} \\
+\textbf{Sum} & & $\mu_X =$ \ans{1.55} & & $\sigma^2_X =$ \ans{0.7475} \\
 \end{tabularx}
 
 \vspace{6pt}
-$\sigma_X = $ \ans{$\sqrt{0.7476} \approx 0.865$ cars}
+$\sigma_X = \sqrt{\sigma^2_X} = $ \ans{$\sqrt{0.7475} \approx 0.865$ cars}
 
 \vspace{6pt}
-\textbf{Interpret:} \ansline{The number of cars per household typically varies from the mean of 1.55 cars by about 0.87 cars.}
+\textbf{Interpret} $\sigma_X$ in context:\\
+\ansline{Cars per household typically vary from the mean of 1.55 cars by about 0.86 cars.}
 
 \end{notesbox}
 
@@ -111,27 +126,35 @@ $\sigma_X = $ \ans{$\sqrt{0.7476} \approx 0.865$ cars}
 
 \begin{practicebox}
 \small
-$X$ = number of goals per game.
+$X$ = number of goals scored per soccer game.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}cccc@{}}
+$x$ & 0 & 1 & 2 \\
+\hline
+$P(X=x)$ & 0.30 & 0.50 & 0.20 \\
+\end{tabular}
+\end{center}
 
 \renewcommand{\arraystretch}{2.0}
 \begin{tabularx}{\linewidth}{@{} c c c c X @{}}
 $x$ & $P(X=x)$ & $x \cdot P(X=x)$ & $(x - \mu_X)^2$ & $(x-\mu_X)^2 \cdot P(X=x)$ \\
 \hline
-0 & 0.30 & \ans{0.00} & \ans{$(0-0.90)^2=0.81$} & \ans{0.243} \\
-1 & 0.50 & \ans{0.50} & \ans{$(1-0.90)^2=0.01$} & \ans{0.005} \\
-2 & 0.20 & \ans{0.40} & \ans{$(2-0.90)^2=1.21$} & \ans{0.242} \\
+0 & 0.30 & \ans{0.00} & \ans{0.81} & \ans{0.243} \\
+1 & 0.50 & \ans{0.50} & \ans{0.01} & \ans{0.005} \\
+2 & 0.20 & \ans{0.40} & \ans{1.21} & \ans{0.242} \\
 \hline
 \textbf{Sum} & & $\mu_X =$ \ans{0.90} & & $\sigma^2_X =$ \ans{0.490} \\
 \end{tabularx}
 
 \vspace{6pt}
-$\sigma_X = $ \ans{$\sqrt{0.490} \approx 0.700$ goals}
+$\sigma_X = $ \ans{$\sqrt{0.490} \approx 0.70$ goals}
 
 \vspace{6pt}
-\ansline{$\mu_X$: On average, this team scores 0.90 goals per game in the long run.}
+Interpret $\mu_X$ in context: \ansline{Over many games, the team averages 0.90 goals per game.}
 
 \vspace{2pt}
-\ansline{$\sigma_X$: The number of goals per game typically varies from 0.90 by about 0.70 goals.}
+Interpret $\sigma_X$ in context: \ansline{Goals per game typically vary from 0.90 by about 0.70 goals.}
 \end{practicebox}
 
 \end{document}

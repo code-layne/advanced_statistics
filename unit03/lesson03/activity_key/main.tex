@@ -10,62 +10,89 @@
 
 \vspace{0.1in}
 
+\begin{scenariobox}[Context]{sky}
+\small
+A large urban school district has 8{,}000 students across 4 grade levels (9--12),
+16 schools, and classes averaging 30 students each. The district wants to survey
+students about their satisfaction with the school lunch program.
+Your group will design a sampling plan using each method and evaluate which is best.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\textbf{Part 1: Design a sampling plan using each method.}
+
 \begin{practicebox}
 \small
-\textbf{A. SRS}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \ans{Assign each student a unique number 1--8{,}000.}
-  \item \ans{Random number table, calculator randInt, or random number generator.}
-  \item \ans{Every group of 200 students has the same chance; no systematic exclusion.}
-  \item \ans{Could under-represent smaller grade levels if sizes differ substantially.}
+\textbf{A. Simple Random Sample (SRS) --- Target: 200 students}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item How would you number the students? \makebox[9cm][l]{\ans{Give each a unique number 1--8{,}000.}}
+  \item What device would you use to select 200? \makebox[9cm][l]{\ans{Calculator randInt or a random number table.}}
+  \item One advantage of SRS here: \makebox[9cm][l]{\ans{Every group of 200 has the same chance.}}
+  \item One disadvantage: \makebox[9cm][l]{\ans{Could under-represent a grade level by chance.}}
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
 \begin{practicebox}
 \small
-\textbf{B. Stratified}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \ans{Four grade levels (9, 10, 11, 12).}
-  \item \ans{50 from each grade (assuming equal grade sizes); adjust proportionally if sizes differ.}
-  \item \ans{Ensures each grade is fairly represented; useful if satisfaction varies across grade levels.}
+\textbf{B. Stratified Random Sample --- Target: 200 students}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item What are the natural strata in this district? \makebox[8cm][l]{\ans{The four grade levels (9, 10, 11, 12).}}
+  \item How many students would you sample from each stratum (be proportional)?\\
+        Grade 9: \makebox[2cm][l]{\ans{50}} \quad Grade 10: \makebox[2cm][l]{\ans{50}} \quad Grade 11: \makebox[2cm][l]{\ans{50}}
+        \quad Grade 12: \makebox[2cm][l]{\ans{50}}
+  \item Why is stratifying by grade level useful here?\\
+        \ansline{Each grade is fairly represented; lunch satisfaction may}\\[1pt]\ansline{differ by grade, so stratifying reduces variability.}
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
 \begin{practicebox}
 \small
-\textbf{C. Cluster}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \ans{Approx. 4 schools $\times$ 500 students/school = 2{,}000 students.}
-  \item \ans{Yes — each school contains students from all grade levels, making it a heterogeneous cluster.}
-  \item \ans{Logistically easy — survey whole schools rather than tracking down individuals.}
+\textbf{C. Cluster Sample --- Target: all students in selected schools}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item The district has 16 schools. If you randomly select 4 schools, how many
+        students would be in your sample (approximately)? \makebox[4cm][l]{\ans{$4 \times 500 = 2{,}000$}}
+  \item Is a school a reasonable cluster? Explain.\\
+        \ansline{Yes --- each school has students from all grade levels,}\\[1pt]\ansline{so each cluster looks like a mini-district.}
+  \item One practical advantage of cluster sampling here: \makebox[9cm][l]{\ans{Survey whole schools, not scattered students.}}
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
 \begin{practicebox}
 \small
-\textbf{D. Systematic}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \ans{$k = 8{,}000 / 200 = 40$}
-  \item \ans{Randomly pick a number between 1--40; select that student, then every 40th student after.}
-  \item \ans{If the list is organized in a pattern (e.g., alphabetical by grade), some grades may be over-represented.}
+\textbf{D. Systematic Random Sample --- Target: approximately 200 students}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item The district has 8{,}000 students on a master list. To get 200, your sampling
+        interval $k$ is: $k = $ \makebox[2cm][l]{\ans{40}}
+  \item How do you choose your random start? \makebox[9cm][l]{\ans{Random number 1--40, then every 40th.}}
+  \item A potential problem with systematic sampling here: \makebox[9cm][l]{\ans{A patterned list could over-represent some grades.}}
 \end{enumerate}
 \end{practicebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
+
+\textbf{Part 2: Compare and recommend.}
 
 \begin{practicebox}
 \small
-\textbf{Part 2:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \ans{Stratified — ensures each grade level is proportionally represented.}
-  \item \ans{Systematic or cluster — easier logistically.}
-  \item \ans{Stratified random sample by grade level best balances statistical accuracy (proportional representation) with the district's interest in comparing across grades. Cluster sampling is practical but may miss grade-level nuance.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Which method best ensures that each grade level is fairly represented?
+        \makebox[4cm][l]{\ans{Stratified}} \quad Explain: \makebox[7cm][l]{\ans{Samples every grade proportionally.}}
+  \item Which method would be easiest to implement in a school setting?
+        \makebox[4cm][l]{\ans{Cluster}} \quad Explain: \makebox[7cm][l]{\ans{Survey a few whole schools.}}
+  \item Which method would your group recommend for this district? Justify in 2--3
+        sentences.\\
+        \ansline{Stratified by grade level: it guarantees each grade is}\\[1pt]\ansline{proportionally represented and allows comparing grades.}\\[1pt]\ansline{Cluster sampling is practical but may miss grade-level differences.}
 \end{enumerate}
 \end{practicebox}
 

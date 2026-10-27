@@ -3,6 +3,12 @@
 \usepackage{apstats-article}
 \usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% \blankans{W}{answer} — the key's \blank{W}: same width and rule, answer on it.
+\newcommand{\blankans}[2]{\underline{\makebox[#1][c]{\ans{#2}}}}
+% \workans{H}{answer} — fills a blank \vspace{H} work area in the same height:
+% the answer is smashed onto the next line and the space below is trimmed by it.
+\newcommand{\workans}[2]{\newline\smash{\raisebox{-2pt}{\parbox[t]{\linewidth}{\raggedright\ans{#2}}}}%
+  \vspace{\dimexpr#1-\baselineskip\relax}}
 
 \begin{document}
 
@@ -11,41 +17,76 @@
 
 \vspace{0.1in}
 
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state $\mu_{\bar{x}} = \mu$ and $\sigma_{\bar{x}} = \sigma/\sqrt{n}$.
+  \item I can check the Normal/Large Sample condition for $\bar{x}$.
+  \item I can compute probabilities for $\bar{x}$ using the normal model.
+\end{enumerate}
+\end{objectivebox}
+
 \begin{vocabbox}
-\begin{itemize}
-  \item Sampling distribution of $\bar{x}$: values of \ans{$\bar{x}$} from samples of size \ans{$n$}.
-  \item Standard error: measures the \ans{spread/variability} of the sampling distribution.
-  \item Normal/Large Sample: population normal OR $n \ge$ \ans{30}.
-\end{itemize}
+\begin{description}
+  \item[\termblanklong{Sampling distribution of $\bar{x}$}] the distribution of all possible values of \blankans{0.5in}{$\bar{x}$} from samples of size \blankans{0.3in}{$n$}.
+  \item[\termblanklong{Standard error of $\bar{x}$}] $\sigma_{\bar{x}} = \sigma/\sqrt{n}$; measures the \blankans{1.5in}{spread (variability)} of the sampling distribution.
+  \item[\termblanklong{Normal/Large Sample condition}] population is normal OR $n \ge$ \blankans{0.4in}{30}.
+\end{description}
 \end{vocabbox}
 
 \begin{notesbox}
-\textbf{Formulas}
-\begin{itemize}
-  \item Center: \ans{$\mu$}
-  \item Spread: \ans{$\sigma/\sqrt{n}$}
-  \item Shape: \ans{normally distributed; 30}
-\end{itemize}
+\textbf{Sampling Distribution of $\bar{x}$} (UNC-3.Q, R, S)
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.72\linewidth} @{}}
+\textbf{Center:} & $\mu_{\bar{x}} = $ \blankans{1.0in}{$\mu$} \\[12pt]
+\textbf{Spread:} & $\sigma_{\bar{x}} = $ \TallMath{\dfrac{\blankans{0.6in}{$\sigma$}}{\blankans{0.6in}{$\sqrt{n}$}}} \\[14pt]
+\textbf{Shape:} & Normal if population is \blankans{1.2in}{normal}, OR approximately normal if $n \ge$ \blankans{0.4in}{30}. \\
+\end{tabular}
 \end{notesbox}
 
 \begin{notesbox}
-\textbf{Worked Example: Cereal boxes, $\mu=500$, $\sigma=15$, $n=36$}
-\begin{enumerate}
-  \item \ans{Random: stated.}
-  \item \ans{10\%: $36 \le 10\%$ of all boxes produced --- yes.}
-  \item \ans{Normal/Large: $n = 36 \ge 30$ --- yes.}
-\end{enumerate}
-$\mu_{\bar{x}} = $ \ans{500 g}; $\sigma_{\bar{x}} = $ \ans{$15/\sqrt{36} = 2.5$ g}
+\textbf{Conditions for Using the Normal Model for $\bar{x}$}
 
-$P(\bar{x}<495)$: \ans{$z = (495-500)/2.5 = -2.00$; $P(Z<-2.00) = 0.0228$. About 2.3\% of the time.}
+\begin{enumerate}
+  \item \textbf{Random:} \blankans{2.5in}{random sample or experiment}
+  \item \textbf{10\% condition:} $n \le 0.10 \cdot N$ (ensures independence when sampling WOR)
+  \item \textbf{Normal/Large Sample:} population is normal OR $n \ge $ \blankans{0.4in}{30}
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example.} Cereal box weights: $\mu = 500$ g, $\sigma = 15$ g, $n = 36$.
+The machine is recalibrated if $\bar{x} < 495$ g.
+
+\medskip
+\textit{Check conditions:}
+\begin{enumerate}
+  \item Random: \ansline{stated --- a random sample of 36 boxes.}
+  \item 10\%: \ansline{$36 \le 10\%$ of all boxes produced --- yes.}
+  \item Normal/Large Sample: \ansline{$n = 36 \ge 30$ --- yes.}
+\end{enumerate}
+
+$\mu_{\bar{x}} = $ \blankans{0.5in}{500 g} \hspace{1cm} $\sigma_{\bar{x}} = $ \blankans{1.2in}{$15/\sqrt{36} = 2.5$ g}
+
+\medskip
+$P(\bar{x} < 495) = $ \ansline{$z = (495-500)/2.5 = -2.00$}\\\ansline{$P(Z < -2.00) = 0.0228$}
+
+How often is the machine recalibrated by chance alone? \ansline{About 2.3\% of the time.}
 \end{notesbox}
 
 \begin{practicebox}
-\textbf{Quick Check: Blood pressure, $N(120,18)$, $n=9$}
+\textbf{Quick Check}
+
+Blood pressure readings for adults are approximately normal with $\mu = 120$ mmHg and
+$\sigma = 18$ mmHg. A clinic measures a random sample of $n = 9$ patients.
 \begin{enumerate}
-  \item \ans{Random: stated. 10\%: yes. Normal/Large: population is approximately normal --- yes. All conditions met.}
-  \item \ans{$\mu_{\bar{x}} = 120$; $\sigma_{\bar{x}} = 18/\sqrt{9} = 6$ mmHg.}
-  \item \ans{$z_1 = (115-120)/6 \approx -0.833$; $z_2 = (125-120)/6 \approx 0.833$; $P \approx 0.7977 - 0.2023 = 0.5954 \approx 59.5\%$.}
+  \item Check conditions for using the normal model for $\bar{x}$.
+        \ansline{Random: stated. 10\%: yes.}\\\ansline{Normal/Large: population is approximately normal --- yes. All conditions met.}
+  \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+        \workans{0.5in}{$\mu_{\bar{x}} = 120$ mmHg; \quad $\sigma_{\bar{x}} = 18/\sqrt{9} = 6$ mmHg}
+  \item Find $P(115 \le \bar{x} \le 125)$.
+        \workans{0.8in}{$z_1 = (115-120)/6 \approx -0.833$; \quad $z_2 = (125-120)/6 \approx 0.833$\\ $P \approx 0.7977 - 0.2023 = 0.5954 \approx 59.5\%$}
 \end{enumerate}
 \end{practicebox}
 
