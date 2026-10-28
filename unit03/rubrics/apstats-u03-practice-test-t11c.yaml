@@ -1,0 +1,22 @@
+# Unit 3 practice (sample) test, item 11c. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11c
+points: 2
+task: >-
+  The library e-mails the survey to the 200 cardholders in its SRS and only 74 reply.
+  Name the bias, explain who is over-represented, and say whether the estimate is likely
+  too high or too low.
+criteria:
+  - id: name
+    points: 1
+    full: >-
+      E: Nonresponse bias, with the reason: chosen cardholders who did not reply may
+      differ from those who did (e.g. people comfortable with e-mail and phones are more
+      likely to answer).
+  - id: direction
+    points: 1
+    full: >-
+      E: Likely app users are over-represented, so the estimate of the proportion who
+      would use the app is likely too high; the direction must follow from who answers,
+      in context.

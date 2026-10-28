@@ -1,0 +1,14 @@
+# Unit 3 actual test, item 12a. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12a
+points: 1
+task: >-
+  New vs. standard fertilizer; 36 tomato plants; weight of tomatoes after ten weeks.
+  Identify the experimental units, the treatments, and the response variable.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Units: the 36 tomato plants. Treatments: new fertilizer; standard fertilizer.
+      Response: weight (kg) of tomatoes each plant produces in ten weeks.

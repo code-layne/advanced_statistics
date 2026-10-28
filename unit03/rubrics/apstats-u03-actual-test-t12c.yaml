@@ -1,0 +1,15 @@
+# Unit 3 actual test, item 12c. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12c
+points: 1
+task: >-
+  Half the plants are on the sunny side and half on the shady side; sunlight affects
+  yield. Explain how to block on location, and what chance must still decide inside each
+  block.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Form a sunny block and a shady block, then randomly assign the fertilizers (9
+      new, 9 standard) within each block, comparing within blocks.

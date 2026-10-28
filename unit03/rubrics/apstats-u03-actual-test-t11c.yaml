@@ -1,0 +1,21 @@
+# Unit 3 actual test, item 11c. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11c
+points: 2
+task: >-
+  The district phones the homes of the 150 students in its SRS between 5 and 8 p.m. and
+  reaches only 96. Name the bias, explain who is under-represented, and say whether the
+  estimate is likely too high or too low.
+criteria:
+  - id: name
+    points: 1
+    full: >-
+      E: Nonresponse bias, with the reason: chosen students who could not be reached may
+      differ from those who were (e.g. students working evening shifts are not home).
+  - id: direction
+    points: 1
+    full: >-
+      E: Students with jobs are under-represented, so the estimate of the proportion
+      with a part-time job is likely too low; the direction must follow from who is
+      missed, in context.

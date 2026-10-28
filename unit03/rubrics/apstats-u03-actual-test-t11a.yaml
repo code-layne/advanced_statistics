@@ -1,0 +1,15 @@
+# Unit 3 actual test, item 11a. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11a
+points: 1
+task: >-
+  A district has 6,000 high school students. Describe how to use a random number
+  generator to choose a simple random sample of 150 students.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Label the students 1 to 6,000; generate random integers from 1 to 6,000,
+      ignoring repeats, until 150 different labels are chosen; survey those students.
+      All three steps (label, randomize, select with repeats skipped) are needed.

@@ -1,0 +1,16 @@
+# Unit 3 practice (sample) test, item 11b. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11b
+points: 1
+task: >-
+  Plan A: randomly choose 2 of the 8 branches and survey every cardholder there. Plan B:
+  split the cardholders into three age groups and take an SRS from each. Name each
+  method and explain why Plan B should give a more precise estimate.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Plan A is a cluster sample and Plan B a stratified random sample, AND app use
+      is likely related to age, so each age group is alike inside (or: every age group
+      is represented), giving a less variable estimate.

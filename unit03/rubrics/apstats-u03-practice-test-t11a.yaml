@@ -1,0 +1,15 @@
+# Unit 3 practice (sample) test, item 11a. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11a
+points: 1
+task: >-
+  A city library system has 12,000 cardholders. Describe how to use a random number
+  generator to choose a simple random sample of 200 cardholders.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Label the cardholders 1 to 12,000; generate random integers from 1 to 12,000,
+      ignoring repeats, until 200 different labels are chosen; survey those cardholders.
+      All three steps (label, randomize, select with repeats skipped) are needed.

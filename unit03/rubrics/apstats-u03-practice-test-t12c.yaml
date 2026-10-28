@@ -1,0 +1,15 @@
+# Unit 3 practice (sample) test, item 12c. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12c
+points: 1
+task: >-
+  Reading level (advanced or regular) affects quiz scores. Explain how to block on
+  reading level, and what chance must still decide inside each block.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Separate the students into an advanced block and a regular block, then randomly
+      assign the treatments (music or silence) within each block, comparing within
+      blocks.

@@ -1,0 +1,343 @@
+%! Unit 3, Lessons 3.1–3.5 — ACTUAL Unit Test (Answer Key)
+% The scored unit test. Item for item it is the parallel form of ../practice_test/: same two
+% sections, the same ten multiple-choice targets in the same order, the same two free-response
+% questions with the same parts and point values — every context different, so a student who
+% worked the practice test has practised the moves and not memorised the answers.
+% BLUEPRINT (1 pt per MC, FRQ 1 = 4, FRQ 2 = 6, total 20; one 55-minute period):
+%  MC1  3.1 observational vs experiment — careful measurement is not a treatment (the crux)
+%  MC2  3.1 generalize only to the population sampled
+%  MC3  3.2 name the sampling method (cluster here; stratified on the practice test)
+%  MC4  3.2 equal chance for each individual is not an SRS (one whole row at random)
+%  MC5  3.3 a random sample can still be biased (response bias: leading wording)
+%  MC6  3.3 a larger sample does not fix bias (voluntary response)
+%  MC7  3.4 why random assignment: balance confounding variables
+%  MC8  3.4 placebo and blinding (single-blind here; double-blind on the practice test)
+%  MC9  3.4 matched pairs — chance still decides the order for every subject
+%  MC10 3.5 scope of inference: random selection, no random assignment
+%  FRQ1 3.2/3.3 SRS by random number generator; cluster vs stratified; nonresponse + direction
+%  FRQ2 3.4/3.5 units/treatments/response; random assignment; blocking; reading a reshuffle
+%       dotplot (NOT significant here, unlike the practice test); cause and to whom.
+% THE DATA
+%  FRQ2(d) 100 reshuffles, difference in mean yield (kg, new - standard), step 0.25:
+%    -1.25:1 -1.0:1 -0.75:5 -0.5:11 -0.25:20 0:24 0.25:20 0.5:11 0.75:5 1.0:1 1.25:1
+%    (sum 100). Observed 0.5: 11+5+1+1 = 18 of 100 at or above -> not significant.
+% NAMESTRIP: no name line — mirrors the blank (a graded page; the name is on the cover sheet only).
+% NO teachernote here — scoring guidance lives in ../../rubrics/, never in a key.
+% GENERATED FROM the blank: the correct MC options wrapped in \ans{}, each
+% \gradedhide{...\writelines{n}} turned into the box plus n \ansline{}.
+% PAGINATION: each item carries a \boxguard sized to its height so no stem or option list
+% splits across a page; the Section II strip is guarded to travel with FRQ 1.
+% NO SKETCH ITEMS: the one display (the reshuffle dotplot) is pre-drawn in TikZ and read.
+% PAGE LOCKSTEP with ../../test_keys/actual_test_key/: every \writelines{n} here is answered by
+% exactly n \ansline{} there, each terse enough not to wrap. Nothing else differs except the
+% preamble, the header, and the \ans{} marks on the correct MC options.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u03-actual-test}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 3 \quad Lessons 3.1--3.5}{Unit Test --- Answer Key}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+
+\hfill\small Score:\;\blank{1.3cm}\;/\;20\normalsize
+\vspace{0.06in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice} (1 point each). Write the letter of the single best answer in its Letter box. Read all
+five options --- several name a real idea from the unit, but only one fits \emph{this} study.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  \boxguard[11]
+  \item A nutrition team gave 250 office workers a food-logging app that recorded every meal they
+        ate for three months, and weighed each worker every week. Workers who ate more fast food
+        tended to gain more weight. Which statement is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item It is an experiment, because every meal was recorded precisely.
+          \item \ans{It is an observational study, because the team did not assign what anyone ate.}
+          \item It is an experiment, because the team gave every worker the app.
+          \item It is an observational study, because the workers were weighed every week.
+          \item It is a census, because every meal was recorded.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t1, type=choice, points=1, answer=B]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[11]
+  \item A gym chain randomly selected 300 of the 18{,}000 members at its \textbf{Ohio} locations
+        and asked whether they would pay more for longer weekend hours. To which group can the
+        result be generalized?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item All adults who live in Ohio.
+          \item All members of the gym chain, in every state.
+          \item Only the 300 members who were asked.
+          \item No one, because a sample is not a census.
+          \item \ans{All members of the gym chain's Ohio locations.}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t2, type=choice, points=1, answer=E]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[12]
+  \item On a holiday weekend an airline randomly selects 6 of its 150 flights and surveys
+        \textbf{every} passenger on those 6 flights about the boarding process. Which best
+        describes this sample?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item A stratified random sample, because the passengers are split into flights.
+          \item A simple random sample, because every passenger had a chance to be chosen.
+          \item \ans{A cluster sample: everyone on a few random flights is surveyed.}
+          \item A stratified random sample, because every passenger on a chosen flight is surveyed.
+          \item A convenience sample, because passengers on a plane are easy to reach.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t3, type=choice, points=1, answer=C]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[13]
+  \item A teacher's 30 students sit in 6 rows of 5. To choose 5 students, she rolls a die,
+        picks the row that matches the number, and takes all 5 students in that row. Every
+        student has the same $\tfrac{1}{6}$ chance of being chosen. Is this a simple random
+        sample of 5 students from the class?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{No, because two students who sit in different rows can never both be chosen.}
+          \item Yes, because every student has the same 1-in-6 chance of being chosen.
+          \item Yes, because a die is a fair chance device.
+          \item No, because a simple random sample must be chosen with replacement.
+          \item No, because the rows are different sizes.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t4, type=choice, points=1, answer=A]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[14]
+  \item A school district takes a simple random sample of 300 parents and asks, ``Given the many
+        studies showing that later start times improve students' health, do you support moving
+        the school day to start at 8:30?'' Which problem is most likely in this survey?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Undercoverage bias: some parents were left off the list.
+          \item Voluntary response bias: the parents decide whether to be in the sample.
+          \item No bias, because the 300 parents were chosen at random.
+          \item \ans{Response bias: the wording leads parents toward ``yes,'' so the estimate is
+                probably too high.}
+          \item Nonresponse bias, because the parents were chosen at random.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t5, type=choice, points=1, answer=D]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[14]
+  \item A radio station asked listeners to call in about a proposed new stadium: 9{,}000 called,
+        and 68\% opposed it. A polling firm asked a random sample of 600 of the city's
+        registered voters the same question, and 45\% opposed it. Which statement is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The call-in poll is more trustworthy, because its sample is 15 times larger.
+          \item \ans{The random sample is more trustworthy: the call-in poll has voluntary response
+                bias, and a larger sample does not fix bias.}
+          \item The two results differ only because of sampling variability.
+          \item Averaging the two, about 56\% of voters oppose the stadium.
+          \item Neither result is useful, because neither one is a census.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t6, type=choice, points=1, answer=B]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[14]
+  \item A school wants to know whether a free after-school tutoring program raises math grades.
+        It will randomly assign 90 student volunteers to the tutoring program or to no tutoring
+        for one semester. What is the main purpose of the random assignment?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{To make the two groups roughly balanced on variables such as motivation and prior
+                grades, so a difference in grades can be traced to the tutoring.}
+          \item So the results can be generalized to all students in the state.
+          \item To make sure each group has exactly 45 students.
+          \item To remove the need for a group that gets no tutoring.
+          \item To guarantee that the tutored group earns higher grades.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t7, type=choice, points=1, answer=A]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[15]
+  \item To test whether a vitamin~D supplement reduces colds, 200 adults are randomly assigned to
+        a vitamin~D pill or to an identical-looking pill with no active ingredient. The adults
+        do not know which pill they got, but the nurses who record their colds do. Which
+        statement is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The identical pill is a placebo, and the experiment is double-blind.
+          \item The identical-pill group is not needed, because the nurses record colds carefully.
+          \item The experiment is double-blind because it compares two pills.
+          \item The identical pill is a confounding variable.
+          \item \ans{It is a placebo, and the study is single-blind.}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t8, type=choice, points=1, answer=E]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[15]
+  \item Each of 20 athletes will run a 100-meter sprint twice, on different days: once after a
+        sports drink and once after water. Athletes often run faster the second time, once they
+        know the course. Which plan is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Every athlete drinks water before the first sprint and the sports drink before the
+                second.
+          \item Let each athlete choose which drink comes first.
+          \item \ans{For each athlete, flip a coin: heads, the sports drink comes first; tails, water.}
+          \item Each athlete gets both drinks, so no randomization is needed.
+          \item Randomly assign 10 athletes to each drink, both days.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t9, type=choice, points=1, answer=C]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \boxguard[15]
+  \item A researcher randomly selects 600 adults from a state's list of registered voters and
+        asks how many hours a week they volunteer and how satisfied they are with life. Adults
+        who volunteer more report higher satisfaction, and the difference is statistically
+        significant. Which conclusion is most appropriate?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Volunteering causes higher life satisfaction for all registered voters in the state.
+          \item Volunteering causes higher life satisfaction, but only for these 600 adults.
+          \item No conclusion is possible, because this was not an experiment.
+          \item \ans{Among the state's registered voters, those who volunteer more tend to be more
+                satisfied, but we cannot conclude that volunteering causes it.}
+          \item Volunteering causes higher life satisfaction for all adults in the country.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t10, type=choice, points=1, answer=D]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+% No \newpage here: the guard keeps the Section II strip off a page edge.
+\boxguard[30]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response} \hfill \textbf{10 points}\\
+Show your reasoning. Answer \emph{in context} --- name the people or things studied and the
+variable measured.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  \boxguard[26]
+  \item \textbf{(4 points)} A school district has 6{,}000 high school students in grades 9
+        through 12, in 240 homerooms. It wants to estimate the proportion of its students who
+        have a part-time job.
+
+        \vspace{6pt}
+        \textbf{(a)} Describe how to use a random number generator to choose a simple random
+        sample of 150 students.\\[4pt]
+        \gradedhere{\gradedblank[id=t11a, type=rubric, points=1, rubric=../rubrics/apstats-u03-actual-test-t11a.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Label the students 1 to 6{,}000. Use the generator to produce random}\\
+        \ansline{integers from 1 to 6{,}000, skipping any repeat, until 150 different labels}\\
+        \ansline{are chosen. Survey the 150 students with those labels.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \boxguard[16]
+        \vspace{6pt}
+        \textbf{(b)} \emph{Plan A:} randomly choose 5 of the 240 homerooms and survey every
+        student in them. \emph{Plan B:} take a simple random sample of students from each of the
+        four grades. Name the sampling method each plan uses, and explain why Plan B should give
+        a more precise estimate.\\[4pt]
+        \gradedhere{\gradedblank[id=t11b, type=rubric, points=1, rubric=../rubrics/apstats-u03-actual-test-t11b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Plan A is a cluster sample; Plan B is a stratified random sample.}\\
+        \ansline{Having a job is likely related to grade (older students work more), so each}\\
+        \ansline{grade is alike inside. An SRS from every grade represents each one, so the}\\
+        \ansline{estimate varies less. Five random homerooms could be mostly one grade.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \boxguard[16]
+        \vspace{6pt}
+        \textbf{(c)} The district phones the homes of the 150 students in its simple random
+        sample between 5 and 8 p.m., and reaches only 96 of them. Name the bias this creates.
+        Explain who is likely to be under-represented, and whether the estimate is likely too
+        high or too low.\\[4pt]
+        \gradedhere{\gradedblank[id=t11c, type=rubric, points=2, rubric=../rubrics/apstats-u03-actual-test-t11c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Nonresponse bias: 54 of the 150 chosen students' homes were not reached.}\\
+        \ansline{Students who work evening shifts are likely not home from 5 to 8 p.m., so}\\
+        \ansline{students with jobs are under-represented. The estimate of the proportion}\\
+        \ansline{with a part-time job is likely too low.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+  \boxguard[24]
+  \item \textbf{(6 points)} A grower wants to know whether a new fertilizer increases the yield
+        of tomato plants. Thirty-six young plants in her greenhouse will be randomly assigned,
+        18 to the new fertilizer and 18 to the standard fertilizer. After ten weeks she weighs
+        the tomatoes each plant has produced (kg).
+
+        \vspace{6pt}
+        \textbf{(a)} Identify the experimental units, the treatments, and the response
+        variable.\\[4pt]
+        \gradedhere{\gradedblank[id=t12a, type=rubric, points=1, rubric=../rubrics/apstats-u03-actual-test-t12a.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Units: the 36 tomato plants.}\\
+        \ansline{Treatments: the new fertilizer; the standard fertilizer.}\\
+        \ansline{Response: the weight of tomatoes each plant produces in ten weeks (kg).}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \boxguard[14]
+        \vspace{6pt}
+        \textbf{(b)} Describe how the grower could use 36 identical slips of paper to carry out
+        the random assignment.\\[4pt]
+        \gradedhere{\gradedblank[id=t12b, type=rubric, points=1, rubric=../rubrics/apstats-u03-actual-test-t12b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Number the plants 1 to 36 and write each number on one of 36 identical}\\
+        \ansline{slips. Mix them in a hat and draw 18 without replacement: those plants get}\\
+        \ansline{the new fertilizer, and the other 18 get the standard fertilizer.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \boxguard[15]
+        \vspace{6pt}
+        \textbf{(c)} Half the plants sit on the sunny side of the greenhouse and half on the shady
+        side, and sunlight affects yield. Explain how to block on location, and what chance must
+        still decide inside each block.\\[4pt]
+        \gradedhere{\gradedblank[id=t12c, type=rubric, points=1, rubric=../rubrics/apstats-u03-actual-test-t12c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Make two blocks: the 18 plants on the sunny side and the 18 on the shady side.}\\
+        \ansline{Inside each block, chance (slips in a hat) assigns 9 plants to the new}\\
+        \ansline{fertilizer and 9 to the standard. Compare the fertilizers within each block.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \boxguard[30]
+        \vspace{6pt}
+        \textbf{(d)} The new-fertilizer plants produced a mean of \textbf{0.5 kg more} tomatoes
+        than the standard plants. A computer reshuffled the 36 yields into two new groups of 18,
+        100 times, as if the fertilizer made no difference. How many reshuffles gave a
+        difference of 0.5 kg or more? Is the observed difference statistically significant?
+        Explain.
+        \begin{center}
+        \begin{tikzpicture}[x=0.95cm, y=0.1cm]
+          \draw[thick] (-5.5,0) -- (5.5,0);
+          \foreach \x/\l in {-5/-1.25,-4/-1.00,-3/-0.75,-2/-0.50,-1/-0.25,0/0,
+                             1/0.25,2/0.50,3/0.75,4/1.00,5/1.25} {
+            \draw (\x,0) -- (\x,-1.4); \node[below, font=\tiny] at (\x,-1.2) {$\l$};}
+          \foreach \x/\n in {-5/1,-4/1,-3/5,-2/11,-1/20,0/24,1/20,2/11,3/5,4/1,5/1}
+            \foreach \k in {1,...,\n} \fill[navy] (\x,\k) circle (1.3pt);
+          \draw[redacc, dashed, thick] (2,12) -- (2,22);
+          \node[font=\tiny\bfseries, redacc, above] at (2,22) {observed 0.5};
+          \node[font=\tiny] at (0,-7) {Simulated difference in mean yield (kg), new $-$ standard};
+          \node[font=\scriptsize\bfseries] at (0,29) {100 random reshuffles};
+        \end{tikzpicture}
+        \end{center}
+        \gradedhere{\gradedblank[id=t12d, type=rubric, points=2, rubric=../rubrics/apstats-u03-actual-test-t12d.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{18 of the 100 reshuffles gave a difference of 0.5 kg or more.}\\
+        \ansline{No, it is not significant: a difference this large happens about 18\% of}\\
+        \ansline{the time from the luck of the random assignment alone, as if the fertilizer}\\
+        \ansline{did nothing. Chance easily explains a 0.5 kg difference.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \boxguard[15]
+        \vspace{6pt}
+        \textbf{(e)} The grower says, ``The plants were randomly assigned, so this proves the new
+        fertilizer increases yield for all tomato plants.'' Explain what is wrong with this
+        claim, both about cause and about \emph{all tomato plants}.\\[4pt]
+        \gradedhere{\gradedblank[id=t12e, type=rubric, points=1, rubric=../rubrics/apstats-u03-actual-test-t12e.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Cause: random assignment allows a cause conclusion only for a significant}\\
+        \ansline{difference, and 0.5 kg is not, so there is no convincing evidence of any}\\
+        \ansline{effect. All plants: these 36 were not randomly selected from all tomato}\\
+        \ansline{plants, so a result would apply only to plants like these, in her greenhouse.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+\end{enumerate}
+
+\end{document}

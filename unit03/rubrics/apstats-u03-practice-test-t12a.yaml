@@ -1,0 +1,14 @@
+# Unit 3 practice (sample) test, item 12a. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12a
+points: 1
+task: >-
+  Classical music vs. silence while studying; 40 student volunteers; 20-word vocabulary
+  quiz. Identify the experimental units, the treatments, and the response variable.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Units: the 40 student volunteers. Treatments: studying with classical music;
+      studying in silence. Response: score on the 20-word vocabulary quiz.

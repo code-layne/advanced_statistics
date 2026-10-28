@@ -1,0 +1,15 @@
+# Unit 3 actual test, item 12b. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12b
+points: 1
+task: >-
+  Describe how the grower could use 36 identical slips of paper to randomly assign 18
+  plants to each fertilizer.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Number the plants 1-36 and write each number on a slip, mix the slips in a hat,
+      draw 18 without replacement; those plants get the new fertilizer and the other 18
+      the standard.
