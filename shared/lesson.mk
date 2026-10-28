@@ -292,7 +292,9 @@ clean:
 #       cover with her name stays in the packet. Joined into
 #       target/compiled/<unit>/lessonYY_roster.pdf to print duplex as one
 #       collated job. Every packet has an even page count, so each student's
-#       cover starts on an odd page.
+#       cover starts on an odd page. It first builds each graded component's
+#       manifest.json (as `make manifest` does), which `grading ingest` reads,
+#       so the packets and the answer keys the grader uses come from one build.
 #   make roster-packets COMP=<graded component not in the packet> ROSTER=…
 #       math-shared's own run per student (name sheet, blank back, the
 #       component padded to even) → lessonYY_<COMP>_roster.pdf. A COMP that IS
@@ -341,7 +343,7 @@ PACKET_GRADED = $(shell $(GRADING_PYTHON) $(NAMELINES) --graded $(STUDENT_COMPS)
 COMP_OUTSIDE := $(if $(COMP),$(if $(filter $(COMP),$(STUDENT_COMPS)),,$(COMP)))
 
 ifneq ($(COMP_OUTSIDE),)
-roster-packets: grading-namecheck grading-personalized
+roster-packets: grading-namecheck grading-manifest grading-personalized
 	@mkdir -p $(COMPILED_DIR)
 	@cp "$(GR_OUT)/personalized.pdf" $(COMPILED_DIR)/$(LESSON)_$(COMP)_roster.pdf
 	@echo "✓  Roster runs    → target/compiled/$(UNIT)/$(LESSON)_$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order)"
@@ -359,6 +361,7 @@ roster-packets: grading-need-roster
 	$(if $(COMP),echo "   COMP=$(COMP) ignored: the packet personalizes every graded component";) \
 	for c in $$graded; do \
 	  echo "   graded component: $$c"; \
+	  $(MAKE) --no-print-directory manifest COMP=$$c || exit 1; \
 	  $(MAKE) --no-print-directory roster-copies COMP=$$c || exit 1; \
 	done
 	@$(MAKE) --no-print-directory $(ROSTER_PACKETS)

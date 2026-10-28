@@ -86,7 +86,10 @@ into `target/compiled/<unit>/lessonYY_roster.pdf`: her name is preprinted on the
 Name line, and every graded component in the packet (AP Practice, homework, or both) is her
 personalized copy, whose QR codes and id strip carry only her tracking id. Each component starts
 on a fresh sheet, so she tears the graded sheets out and turns them in without her name; the
-cover stays in her packet. Lesson packets have no separate name sheet.
+cover stays in her packet. Lesson packets have no separate name sheet. `roster-packets`, for a
+lesson or a test, also builds each graded component's `manifest.json`, the answer key
+`grading ingest` reads, so after `make distclean` the packet build is the only grading step
+needed.
 Tests and quizzes do: their first page is a name cover sheet that is torn off and fed into the
 grading system, and is never scanned with the work. The roster
 PDFs carry student names on the covers; `target/` is never committed, and `roster-map.csv` lives
