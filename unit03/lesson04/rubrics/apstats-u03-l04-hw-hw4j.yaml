@@ -1,0 +1,16 @@
+# Homework item B1, justification of the multiple-choice answer (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw4j
+points: 1
+task: >-
+  A company wants to know whether its new pillow improves a sleep-quality score compared
+  with a standard pillow; 40 volunteers. Which plan is a matched pairs design that uses
+  chance correctly? (C) each volunteer sleeps one week on each pillow, and a coin flip
+  decides which pillow comes first. Justify the choice.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (C): each volunteer gets both pillows (so each is their own comparison),
+      and chance decides the order, so getting used to the study or a change over time
+      does not always favor one pillow. (B) pairs but never randomizes the order; (A),
+      (D), and (E) do not pair.

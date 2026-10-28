@@ -1,86 +1,147 @@
-%! AP Statistics — Unit 3, Lesson 3.3 — Guided Notes KEY
-\documentclass[10pt]{article}
+%! Problems with Sampling — Unit 3, Lesson 3.3 — Guided Notes & Practice (Answer Key)
+% MIRROR of ../notes/main.tex: -key for -boxes, the header, and the answers. Nothing else differs.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
+% COMPACT budget: the vocabulary box, then ONE guidednotes table of FOUR rows (three instruction
+% rows + Guided Practice), 14 problems.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 7).
+%   WE DO  : the class works the rest; the last row, Guided Practice, is worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE AP HABIT, every problem: name the bias, say who is over- or under-represented and why,
+% and give the DIRECTION (too high / too low) in context.
+% THE TRAP is problem 3 (comment cards: voluntary response bias pushes the estimate DOWN —
+% the direction comes from who cares enough to answer, not from the name of the bias).
+% THE CRUX is problem 9, in the last instruction row: 48,000 forum replies "must be close to
+% the truth" — a larger sample reduces variability, not bias (EK DAT-2.E.2, DAT-2.E.6).
+%
+% THE CONTEXTS (instruction, guided practice, and homework each use a different one)
+%  Row 1 — one-line surveys: a news-site traffic poll, an AP Calculus class, comment cards.
+%  Row 2 — a landline phone book, a mailed work-hours survey, after-school club rosters.
+%  Row 3 — a turf-field question, self-reported study time, a video-game forum survey (crux)
+%          against 600 players emailed at random.
+%  Row 4 (GP) — a university's survey of students' paid work hours: dorm list, advisor
+%          meetings, a face-to-face question, and "email all 30,000".
+%
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
+% TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
+% sub-rows (a bare `\\` then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: every display is given and read.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
-\pageheader{Unit 3, Lesson 3.3}{Guided Notes — KEY}
-\namedateperiod
+\pageheader{Unit 3, Lesson 3.3}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ans{Describe and distinguish SRS, stratified, cluster, systematic random sampling, and census.}\\[1pt]
-\ans{Identify the sampling method used in a given scenario.}\\[1pt]
-\ans{Explain when each method is most appropriate.}
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Simple random sample (SRS)} \ans{Every group of size $n$ has an equal chance of being selected; individuals chosen using a random device.}
-\termblanklong{Stratified random sample} \ans{Divide population into homogeneous strata; take an SRS from each stratum.}
-\termblanklong{Cluster sample} \ans{Divide population into heterogeneous clusters; randomly select clusters and survey all individuals in them.}
-\termblanklong{Systematic random sample} \ans{Choose a random start; select every $k$th individual from a list.}
-\termblanklong{Census} \ans{Measure every individual in the population.}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termans{Voluntary response bias}{people choose to respond; those with strong opinions are over-represented.}
+\par
+\termans{Undercoverage bias}{part of the population has a reduced (or no) chance of being chosen.}
+\par
+\termans{Nonresponse bias}{chosen individuals can't be reached or refuse, and differ from those who answer.}
+\par
+\termans{Response bias}{the question, or how it is asked, pushes the answers one way.}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{notesbox}{Sampling Methods Reference}
 \small
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth}
-    >{\raggedright\arraybackslash}p{0.38\linewidth}
-    >{\raggedright\arraybackslash}X @{}}
-\textbf{Method} & \textbf{How to do it} & \textbf{Best when \ldots} \\
+\begin{guidednotes}
+% ── ROW 1: who chose to be in the sample? — THE TRAP (problem 3) ─────────────
+\mainidea[Who chose?]{Volunteers} &
+In a \textbf{voluntary response sample}, people \ans{choose} themselves, and those with
+\ans{strong} opinions answer most, so the result leans their way: \textbf{voluntary response
+bias}. A \textbf{convenience sample} takes whoever is \ans{easiest} to reach. Neither uses
+\ans{chance} to pick who is in the sample.
+
+\vspace{3pt}
+\textbf{A complete answer, every time:}\par
+\stepnum{1}\ Name the bias.\par
+\stepnum{2}\ Say who is over- or under-represented, and why, in context.\par
+\stepnum{3}\ Give the \ans{direction}: is the estimate too high or too low?
+\notesprompt{Name the bias. Too high or too low? Why?}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{A news site asks, ``Is traffic in our town a serious problem?'' 79\% of 2{,}100 readers who vote say yes.}{1.9cm}{Voluntary response: angry drivers vote. Too high.} &
+\pcell{2}{To estimate nightly homework time at her school, Ana asks the 30 students in her AP Calculus class.}{1.9cm}{Convenience: AP students work more. Too high.} &
+\pcell{3}{A restaurant leaves comment cards on its tables. 40 of 600 diners return one; 55\% say they were satisfied.}{1.9cm}{Voluntary response: unhappy diners write. Too low.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: who was left out, and who never answered? ─────────────────────────
+\mainidea[Who is missing?]{Coverage and response} &
+\textbf{Undercoverage}: part of the population has a \ans{reduced} chance --- or no chance
+--- of being chosen, often because the \ans{list} we sample from leaves them out.
+\textbf{Nonresponse}: individuals \ans{chosen} for the sample can't be reached or
+\ans{refuse}, and they may differ from those who answer. Either one can spoil a
+\ans{random} sample.
+
+\vspace{3pt}
+\textbf{The test:} Could they ever have been picked? \emph{No} $\to$ undercoverage.
+\emph{Picked, but no answer} $\to$ nonresponse.
+\notesprompt{Name the bias. Too high or too low? Why?}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{4}{To estimate residents' hours online per day, a town calls 500 numbers picked at random from the landline phone book.}{1.9cm}{Undercoverage: cell-only users missed. Too low.} &
+\pcell{5}{A city mails a long survey on weekly hours worked to 1{,}000 random addresses; 310 come back.}{1.9cm}{Nonresponse: the busiest workers don't reply. Too low.} &
+\pcell{6}{To estimate the percent of students with a part-time job, a principal picks 80 at random from the after-school club rosters.}{1.9cm}{Undercoverage: students at jobs miss clubs. Too low.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: how the question was asked — and THE CRUX (problem 9) ─────────────
+\mainidea[How was it asked?]{Response bias} &
+\textbf{Response bias} comes from \ans{how} the data are gathered, not from who is chosen:
+a \ans{leading} or confusing question, or an answer people won't give
+\ans{honestly} about themselves (self-reported data).
+\notesprompt{Name the bias. Too high or too low? Why?}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Students are asked, ``Would you support a new turf field so athletes can play safely in any weather?'' 74\% say yes.}{1.6cm}{Response (wording) bias: the safety reason leads students to yes. Too high.} &
+\pcell{8}{A teacher asks each student, out loud, ``How many hours did you study for the test?''}{1.6cm}{Response bias (self-report): students overstate to look good. Too high.} \\ \hline
+\end{probgrid}
+\\
+& A game company posts a survey about its new update on its forum: \textbf{48{,}000} players
+reply and \textbf{81\%} dislike the update. It also emails \textbf{600} players picked at random
+from all 3 million accounts: \textbf{47\%} dislike it.
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{``48{,}000 replies is so many that 81\% must be close to the truth for all players.'' Agree? Why?}{1.6cm}{No: still volunteers --- angry players chose to reply. Size doesn't fix bias.} &
+\pcell{10}{Which estimate would you report for all 3 million players? Why?}{1.6cm}{The 47\%: chance chose the 600, so no group got a head start.} \\ \hline
+\end{probgrid}
+\par\vspace{4pt}
+\fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{A larger sample reduces \ans{variability}, not \ans{bias}.}}}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Work-Hours Survey} &
+A university wants the mean number of hours per week its students work at paid jobs.
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\centering\footnotesize
+\setlength{\tabcolsep}{4pt}%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} c p{0.82\linewidth} @{}}
+\rowcolor{sky}
+\textbf{Step} & \textbf{The plan} \\
 \hline
-Simple Random Sample &
-Number all; randomly select $n$. Every group of size $n$ has \ans{equal} chance. &
-The population is \ans{relatively homogeneous} \\
-Stratified Random Sample &
-Divide into \ans{homogeneous} groups called \ans{strata}. SRS within each stratum. &
-You want to ensure representation of \ans{subgroups} \\
-Cluster Sample &
-Divide into \ans{clusters} (heterogeneous). Randomly select clusters; survey
-\ans{everyone} in selected clusters. &
-Individuals are \ans{spread out} geographically \\
-Systematic Random Sample &
-Choose a \ans{random} start; select every \ans{$k$}th individual. &
-You have a complete \ans{ordered} list \\
-Census &
-Measure \ans{every individual} in the population. &
-Population is \ans{small} and manageable \\
-\end{tabularx}
-\end{notesbox}
+1 & Pick 500 students at random from the list of students who live in campus dorms. \\
+2 & Ask each to meet with their academic advisor; only 140 show up. \\
+3 & In the meeting, the advisor asks, ``How many hours a week do you work at a paid job?'' \\
+\end{tabular}
+\end{minipage}
+\notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Step 1: who can never be picked? Name the bias. Too high or too low?}{1.6cm}{Undercoverage: off-campus students, who tend to work more. Too low.} &
+\pcell{12}{Step 2: only 140 of 500 come. Name the bias. Which way? Why?}{1.6cm}{Nonresponse: students busy at jobs skip the meeting. Too low.} \\ \hline
+\pcell{13}{Step 3: why might the answers be off? Name the bias and its direction.}{1.6cm}{Response bias: students under-report work to an advisor. Too low.} &
+\pcell{14}{``Next year we'll email all 30{,}000 students and get 6{,}000 replies. That fixes the bias.'' Respond.}{1.6cm}{No: 6{,}000 volunteers are still biased. Size cuts variability, not bias.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-\begin{notesbox}{Stratified vs. Cluster --- KEY Distinction}
-\small
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.3\linewidth} X @{}}
-Strata are \ldots & \ans{homogeneous} (same type within each group) \\
-Clusters are \ldots & \ans{heterogeneous} (mixed types within each group) \\
-In stratified: survey & \ans{some} from \ans{every} stratum \\
-In cluster: survey & \ans{everyone} from \ans{randomly selected} clusters \\
-\end{tabularx}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{practicebox}
-\small
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item A researcher numbers all 2{,}000 employees and uses a random number table to select 100. \ans{Simple random sample (SRS)}
-
-  \item A school divides students into 4 grade levels, then randomly selects 25 students from each grade. \ans{Stratified random sample}
-
-  \item A city randomly selects 6 of its 60 neighborhoods; surveys every household in the selected neighborhoods. \ans{Cluster sample}
-
-  \item A manager randomly picks a start between 1--10, then surveys every 10th customer. \ans{Systematic random sample}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

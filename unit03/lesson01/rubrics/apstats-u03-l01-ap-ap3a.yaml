@@ -4,15 +4,17 @@
 id: ap3a
 points: 2
 task: >-
-  A school librarian wants to know how many books per month the students at her
-  school read. On Monday she surveys the 40 students who come to the library at lunch.
-  Did chance decide which students were surveyed? Explain who decided.
+  A health researcher reviews survey records for 1,500 adults in one county. Adults who
+  drink two or more energy drinks a day report sleeping fewer hours per night, on
+  average, than adults who drink none. Is this an observational study or an experiment?
+  Explain.
 criteria:
-  - id: chance
+  - id: type
     points: 2
     full: >-
-      E: Says no AND explains that people decided: the students chose to come to the
-      library at lunch and the librarian surveyed whoever was there (convenience).
+      E: Says observational study AND explains that no treatment was imposed: the
+      researcher only examined records of what the adults already did, and no one was
+      assigned to drink or not drink energy drinks.
     partial: >-
-      P (1 of 2): Says no but does not say who decided, or gives a vague reason (for
-      example, "it is not random") with no reference to how the 40 ended up surveyed.
+      P (1 of 2): Says observational study with a vague or generic reason (for example,
+      "they just collected data") that does not say no treatment was assigned.

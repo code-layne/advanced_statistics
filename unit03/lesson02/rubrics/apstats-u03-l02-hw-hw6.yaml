@@ -1,0 +1,22 @@
+# Homework item B3 — the crux restated (Unit 3, Lesson 3.2). Relative to the lesson directory.
+id: hw6
+points: 2
+task: >-
+  A supervisor says, "Use the shifts as clusters: randomly pick one shift and survey all
+  240 nurses on it." Explain why this is a poor plan, and say how the shifts should be
+  used instead.
+criteria:
+  - id: why-poor
+    points: 1
+    full: >-
+      Explains that a shift does not look like the whole hospital: sleep differs by shift,
+      so one shift gives an estimate far off (too low if the night shift is picked) or
+      leaves the night shift out entirely.
+  - id: strata
+    points: 1
+    full: >-
+      Says the shifts should be strata: take a random sample from EVERY shift and combine
+      them.
+examples:
+  - response: "It's fine because the shift is chosen at random."
+    scores: {why-poor: 0, strata: 0}

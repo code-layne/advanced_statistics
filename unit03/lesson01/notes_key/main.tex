@@ -1,30 +1,29 @@
-%! Introducing Statistics: Do the Data We Collected Tell the Truth? — Unit 3, Lesson 3.1 — Guided Notes & Practice (Answer Key)
+%! Planning a Study — Unit 3, Lesson 3.1 — Guided Notes & Practice (Answer Key)
 % MIRROR of ../notes/main.tex: -key in place of -boxes, \termblank -> \termans, \blank -> \ans, and the
 % fourth argument of every \pcell filled. Nothing else differs — keep it that way.
 % THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
 % COMPACT budget: the vocabulary box, then ONE guidednotes table of FOUR rows (three instruction
 % rows + Guided Practice), 14 problems, 2 pages.
 %   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
-%            (1, 4, 8).
+%            (1, 4, 7).
 %   WE DO  : the class works the rest; the last row, Guided Practice, is worked together.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice.
-% THE TRAP is problem 6 (the skate-shop poll's 88% reads as "most people want it").
-% THE CRUX is problem 10, in the last instruction row: "2,400 responses is 30 times as many as
-% 80, so the 85% is more trustworthy" — size does not repair a non-chance method (EK VAR-1.E.1).
+% THE TRAP is problem 2 (the coach's varsity players sound reasonable, but the coach chose them).
+% THE CRUX is problem 10, in the last instruction row: "the sleep lab measured everything so
+% carefully that it is an experiment" — careful measurement is not a treatment (DAT-2.A.3/4).
 %
 % THE CONTEXTS (instruction, guided practice, and homework each use a different one)
 %  Row 1 — three one-line methods: radio call-in, a coach's varsity players, 60 random IDs.
-%  Row 2 — a city skate park: skate-shop web poll (900 votes, 88%), library on a Tuesday
-%          morning (150 people, 34%), 400 random households from the city list (52%).
-%  Row 3 — the warm-up's later-start poll comes back: news-site poll, 2,400 responses, 85% yes;
-%          80 students drawn at random from the full roster, 58% yes.
-%  Row 4 (GP) — a fitness app: step-challenge leaderboard (12,000 users, mean 11,200 steps/day)
-%          vs 500 accounts drawn at random from all users (mean 6,900 steps/day).
+%  Row 2 — a principal's homework-hours survey: 100 of the school's 1,200 students at random.
+%  Row 3 — four one-line studies: coffee records, paper vs laptop quizzes, music and GPA, a
+%          sleep lab's wrist monitors (the crux).
+%  Row 4 (GP) — a university's 20,000 students: a random survey of 250, then a flashcard-app
+%          study with random assignment.
 %
 % PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
 % TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
 % sub-rows (a bare `\\` then `& ...`) so the table can break between them.
-% NO SKETCH QUESTIONS: every display is a given table, read and compared.
+% NO SKETCH QUESTIONS: nothing is drawn by the student.
 \documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -41,13 +40,13 @@
 \small
 Fill in each term \textbf{as we name it} in the notes below.
 \par
-\termans{Data collection method}{how the individuals in the data were chosen and measured.}
+\termans{Population}{the entire group of individuals we want to know about.}
 \par
-\termans{Chance-based method}{a random process decides who is in the data.}
+\termans{Sample}{the part (subset) of the population we actually measure.}
 \par
-\termans{Non-chance method}{people decide who is in the data --- the researcher or the respondents.}
+\termans{Observational study}{observe and measure, without imposing a treatment.}
 \par
-\termans{Bias}{a method that consistently overestimates or underestimates the truth.}
+\termans{Experiment}{researchers assign treatments and measure the response.}
 \par
 \end{vocabbox}
 
@@ -55,88 +54,61 @@ Fill in each term \textbf{as we name it} in the notes below.
 \begin{guidednotes}
 % ── ROW 1: who decided who is in the data? ───────────────────────────────────
 \mainidea[Before you trust it]{Ask how} &
-The \textbf{data collection method} is \ans{how} the individuals in the data were chosen and
-measured. In a \textbf{chance-based method}, a \ans{random} process decides who is in the data.
-In a \textbf{non-chance method}, \ans{people} decide --- the researcher picks whoever is
-convenient, or the respondents volunteer themselves.
-
-\vspace{3pt}
-\stepnum{1}\ Who is in the data?\par
-\stepnum{2}\ Who decided they were in it --- \ans{chance} or people?\par
-\stepnum{3}\ Who is left out, and who is over-represented?\par
-\stepnum{4}\ So can the result be trusted for \emph{everyone} we want to know about?
+Before you trust a number, ask \emph{how the data were collected}. In a
+\textbf{chance-based method}, a \ans{random} process decides who is in the data. In a
+\textbf{non-chance method}, \ans{people} decide --- the researcher takes whoever is convenient,
+or the respondents volunteer. Methods that do not rely on chance give \ans{untrustworthy}
+conclusions.
 \notesprompt{Who decided who is in the data: chance or people?}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{1}{A radio host asks listeners to call in and vote on a new stadium.}{1.3cm}{People: the callers chose themselves.} &
-\pcell{2}{A coach asks the varsity players if the school should spend more on sports.}{1.3cm}{People: the coach chose.} &
-\pcell{3}{A computer randomly picks 60 ID numbers from the full student roster.}{1.3cm}{Chance: a random pick.} \\ \hline
+\pcell{1}{A radio host asks listeners to call in and vote on a new stadium.}{1.1cm}{People: the callers chose themselves.} &
+\pcell{2}{A coach asks the varsity players if the school should spend more on sports.}{1.1cm}{People: the coach picked his players.} &
+\pcell{3}{A computer randomly picks 60 ID numbers from the full student roster.}{1.1cm}{Chance: a random pick.} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 2: the method decides whose voice is in the data — THE TRAP ──────────
-\mainidea[The method decides]{Who is missing?} &
-When people decide who is in the data, some groups are over-represented and others are left
-out, so the result is pushed the same way every time. A method has \textbf{bias} if it
-\ans{consistently} overestimates or underestimates the truth.
-\\
-& The city council wants to know what percent of residents support building a skate park.
-\par\vspace{3pt}
-\begin{minipage}{\linewidth}\centering\footnotesize
-\setlength{\tabcolsep}{4pt}%
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{} c p{0.58\linewidth} r @{}}
-\rowcolor{sky}
-& \textbf{Method} & \textbf{Support} \\
-\hline
-A & Online poll on a local skate shop's website: 900 votes & 88\% \\
-B & 150 people asked at the public library, Tuesday at 10 a.m. & 34\% \\
-C & 400 addresses picked at random from the city's list of all households & 52\% \\
-\end{tabular}
-\end{minipage}
-\\
-& \notesprompt{Use the table.}
-\begin{probgrid}{|Y|Y|}
-\pcell{4}{Who is likely over-represented in Method A?}{1.5cm}{Skaters and skate-shop fans --- people who want the park.} &
-\pcell{5}{Who is likely missing from Method B?}{1.5cm}{People at work or school on a weekday morning.} \\ \hline
-\pcell{6}{Is Method A's 88\% likely too high or too low? Why?}{1.5cm}{Too high: fans of the shop chose to vote.} &
-\pcell{7}{Which result would you report to the council? Why?}{1.5cm}{C's 52\%: chance picked the households.} \\ \hline
-\end{probgrid}
-\\ \hline
-% ── ROW 3: size does not fix the method — THE CRUX ───────────────────────────
-\mainidea[Big is not the same as]{Sample size} &
-The warm-up's poll is back. A news site asked, \emph{``Should the school day start later?''}
-2{,}400 students responded and \textbf{85\%} said yes. The district then had a computer pick
-\textbf{80} students at random from the roster of all students: \textbf{58\%} said yes.
-\notesprompt{Compare the two results.}
+% ── ROW 2: who we want to know about vs who we measure ───────────────────────
+\mainidea[Who we ask]{Sample} &
+The \textbf{population} is \ans{all} the individuals we want to know about; a
+\textbf{sample} is the \ans{subset} of it we actually measure; a \textbf{census} measures
+\ans{every} individual. Generalize only to the \ans{population} the sample came from, and only
+when chance chose it.\par\vspace{3pt}
+A principal asks about weekly homework hours. A computer picks \textbf{100} of her school's
+\textbf{1{,}200} students at random from the roster.
+\notesprompt{Name the parts of her study.}
 \begin{probgrid}{|Y|Y|Y|}
-\pcell{8}{Which result came from a chance-based method?}{2.0cm}{The 80 picked at random (58\%).} &
-\pcell{9}{Why might the news site's 85\% be too high?}{2.0cm}{Students who want a later start chose to answer.} &
-\pcell{10}{``2{,}400 is 30 times as many as 80, so the 85\% is more trustworthy.'' Agree? Why?}{2.0cm}{No: volunteers are still biased. Size does not fix the method.} \\ \hline
+\pcell{4}{Name the population and the sample.}{1.4cm}{Pop.: her school's 1{,}200 students. Sample: the 100.} &
+\pcell{5}{Why might she not take a census?}{1.4cm}{Asking all 1{,}200 takes too much time.} &
+\pcell{6}{Does her result describe all high schoolers in the state?}{1.4cm}{No: only her school was sampled.} \\ \hline
 \end{probgrid}
+\\ \hline
+% ── ROW 3: imposing a treatment — THE CRUX ───────────────────────────────────
+\mainidea[Watch or do]{Study type} &
+In an \textbf{observational study}, researchers observe and measure but do not
+\ans{impose} a treatment; a sample survey is one kind. In an \textbf{experiment},
+researchers \ans{assign} treatments to the individuals and measure the response. Only a
+well-designed \ans{experiment} can show cause and effect; an observational study shows only an
+\ans{association}.
 \\
-& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{A bigger sample from a non-chance method is still \ans{biased}.}}}
+& \notesprompt{Observational study or experiment? Say why.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Researchers read the medical records of 2{,}000 adults and compare heart disease in coffee drinkers and non-drinkers.}{1.5cm}{Observational: no treatment; records only.} &
+\pcell{8}{A teacher randomly assigns half her classes to take quizzes on paper and half on laptops, then compares scores.}{1.5cm}{Experiment: the teacher assigned paper or laptop.} \\ \hline
+\pcell{9}{Of 300 teens surveyed, those who play an instrument have higher GPAs. Does playing an instrument raise GPA?}{1.5cm}{No: observational. Teens chose to play; association only.} &
+\pcell{10}{A sleep lab fits 50 adults with wrist monitors and records their exact sleep and caffeine for a month. ``It was measured so carefully that it is an experiment.'' Agree?}{1.5cm}{No: nothing was imposed. Watching carefully is still observational.} \\ \hline
+\end{probgrid}
 \\ \hline
 % ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
-\mainidea[Guided practice]{The Step Challenge} &
-A fitness app wants the average number of steps per day for \emph{all} of its users.
-\par\vspace{3pt}
-\begin{minipage}{\linewidth}\centering\footnotesize
-\setlength{\tabcolsep}{4pt}%
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{} p{0.56\linewidth} r @{}}
-\rowcolor{sky}
-\textbf{Method} & \textbf{Mean steps/day} \\
-\hline
-Leaderboard: the 12{,}000 users who joined the app's step challenge & 11{,}200 \\
-Random: 500 accounts picked at random from all users & 6{,}900 \\
-\end{tabular}
-\end{minipage}
+\mainidea[Guided practice]{The Study App} &
+A university wants to know about study habits of \emph{all} \textbf{20{,}000} of its students.
+\textbf{Study A:} a computer picks 250 students at random from the registrar's list, and an app logs each one's
+weekly study hours to the minute. \textbf{Study B:} 120 intro-biology students are randomly assigned
+to use a flashcard app or not, and their exam scores are compared.
 \notesprompt{We work these together.}
 \begin{probgrid}{|Y|Y|}
-\pcell{11}{Which method used chance? Who decided in the other one?}{1.5cm}{The random 500. Users chose to join the leaderboard.} &
-\pcell{12}{Who is over-represented on the leaderboard?}{1.5cm}{Very active users who like to compete.} \\ \hline
-\pcell{13}{Is 11{,}200 likely too high or too low for all users? Why?}{1.5cm}{Too high: the most active walkers joined the challenge.} &
-\pcell{14}{``The leaderboard has 24 times as many users, so report 11{,}200.'' Respond.}{1.5cm}{No: size does not fix a non-chance method. Report 6{,}900.} \\ \hline
+\pcell{11}{Study A: name the population and the sample.}{1.5cm}{Pop.: all 20{,}000 students. Sample: the 250 picked.} &
+\pcell{12}{Is Study A chance-based? Can its result describe all 20{,}000 students?}{1.5cm}{Yes: random from the full list, so it can describe all 20{,}000, with some uncertainty.} \\ \hline
+\pcell{13}{Study A's hours were logged to the minute. Does that make it an experiment?}{1.5cm}{No: no treatment was imposed, so it is still observational.} &
+\pcell{14}{Is Study B observational or an experiment? What could it show that A cannot?}{1.5cm}{Experiment: the app was assigned, so it can show cause.} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

@@ -1,0 +1,17 @@
+# Homework item A1 (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw1
+points: 2
+task: >-
+  An agronomist compares two corn varieties, Early Gold and Prairie, on 24 plots: 12 in
+  the low, wet river bottom and 12 on the dry hillside. Soil moisture strongly affects
+  yield. At harvest she measures the yield of each plot in bushels per acre. Name the
+  experimental units, the treatments, and the response variable.
+criteria:
+  - id: units_treatments
+    points: 1
+    full: >-
+      Units are the 24 plots; the treatments are the two varieties, Early Gold and Prairie.
+  - id: response
+    points: 1
+    full: >-
+      The response is the corn yield of each plot (bushels per acre).

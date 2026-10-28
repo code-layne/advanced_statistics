@@ -1,4 +1,4 @@
-%! Random Sampling and Data Collection — Unit 3, Lesson 3.3 — Slides (Beamer)
+%! Problems with Sampling — Unit 3, Lesson 3.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
@@ -11,16 +11,233 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.3}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Random Sampling and Data Collection}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Problems with Sampling}\\[1.2cm]
     {\color{skymid}\small Statistics~$\cdot$~Unit 3}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% GRADUAL-RELEASE deck: targets → warm-up → I DO divider → one frame per instruction row of the
+% notes (Volunteers; Coverage and Response; Response Bias, which carries the crux) → WE DO (The
+% Work-Hours Survey) → spoken debrief → close & START THE HOMEWORK, which is the individual
+% practice. There is no group activity and no independent practice set in the notes.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 3.3}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item identify \textbf{voluntary response bias} and the bias in a \textbf{convenience
+          sample}, and say which way each pushes the estimate.
+    \item tell \textbf{undercoverage bias} from \textbf{nonresponse bias}, even in a random
+          sample.
+    \item explain how wording or a self-reported answer creates \textbf{response bias}.
+    \item explain why a larger sample reduces variability but does not fix bias.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
+
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item Name the method: a computer picks 60 of 1{,}200 students; then 15 at random from each
+          of four grades.
+    \item Maya asks the 12 friends at her lunch table how many hours they work. Did chance
+          decide? Who is left out?
+    \item Which gets more ``yes''? (A) \emph{Should our school ban phones in class?} \quad
+          (B) \emph{\ldots\ so that students can focus and learn?}
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Keep items 2 and 3 on the board}
+    Each one is a different way a survey goes wrong. The notes name both.
+  \end{block}
+\end{frame}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes. Fill each blank as we name it
+    --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today: voluntary response bias,
+    undercoverage bias, nonresponse bias, response bias.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: VOLUNTEERS ────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Who chose to be in the sample?}
+  \sectionlabel{notes, Volunteers $\cdot$ problems 1--3}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Voluntary response sample}
+        People \textbf{choose} themselves; those with \textbf{strong} opinions answer most, so
+        the result leans their way.
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Convenience sample}
+        Whoever is \textbf{easiest} to reach. Neither one uses \textbf{chance}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\small\textbf{A complete answer, every time}}
+      \begin{enumerate}\setlength{\itemsep}{3pt}\small
+        \item Name the bias.
+        \item Who is over- or under-represented, and why --- in context.
+        \item The \redink{direction}: too high or too low?
+      \end{enumerate}
+      \vspace{6pt}
+      {\small A traffic poll? An AP Calculus class? Comment cards --- \redink{which way} do
+      those lean?}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: COVERAGE AND RESPONSE ─────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Who is missing?}
+  \sectionlabel{notes, Coverage and Response $\cdot$ problems 4--6}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Undercoverage}
+        Part of the population has a \textbf{reduced} chance --- or none --- of being chosen,
+        often because the \textbf{list} leaves them out.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Nonresponse}
+        Individuals \textbf{chosen} for the sample can't be reached or \textbf{refuse}, and
+        they may differ from those who answer.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{block}{The test}
+    Could they ever have been picked? \emph{No} $\to$ undercoverage. \quad \emph{Picked, but no
+    answer} $\to$ nonresponse. \quad Either one can spoil a \redink{random} sample.
+  \end{block}
+\end{frame}
+
+% ── ROW 3: RESPONSE BIAS — AND THE CRUX ──────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{How was it asked --- and does size help?}
+  \sectionlabel{notes, Response Bias $\cdot$ problems 7--10 $\cdot$ the whole point of today}
+  \vspace{2pt}
+  \textbf{Response bias} comes from \emph{how} the data are gathered: a \textbf{leading} question,
+  or an answer people won't give \textbf{honestly}.
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Game forum survey}
+        \textbf{48{,}000} players chose to reply.\\
+        \textbf{81\%} dislike the update.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Random sample}
+        \textbf{600} players picked at random.\\
+        \textbf{47\%} dislike the update.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  ``48{,}000 is so many that 81\% must be close to the truth.'' \emph{Agree?}
+  \vspace{6pt}
+  \begin{block}{Say it, write it in the box}
+    A larger sample reduces \redink{variability}, not \redink{bias}. More volunteers are just
+    more of the same volunteers.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Work-Hours Survey}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
+  A university wants the mean hours per week its students work at paid jobs.
+  \vspace{4pt}
+  \begin{center}
+  {\small\renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{} c l @{}}
+    \textbf{Step} & \textbf{The plan} \\ \hline
+    1 & 500 students picked at random from the list of students in campus dorms \\
+    2 & Each is asked to meet their advisor; only 140 show up \\
+    3 & The advisor asks, ``How many hours a week do you work at a paid job?'' \\
+  \end{tabular}}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item For each step: name the bias, say who it misses or misleads, and give the direction.
+    \item ``Email all 30{,}000 and get 6{,}000 replies --- that fixes it.'' Respond.
+  \end{itemize}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: name it, aim it, and don't count on size}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Big but biased}
+        48{,}000 forum replies: \textbf{81\%}.\\
+        6{,}000 emailed volunteers: still biased.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Small but random}
+        600 at random: \textbf{47\%}.\\
+        Chance gave no group a head start.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{block}{Two things to say out loud}
+    Why is ``it's biased'' not a complete answer? And why did the comment cards lean
+    \redink{low} when the traffic poll leaned \redink{high}?
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 items $\cdot$ scored 1 to 5 $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Part A: teen drivers and phones --- a social-media poll, a trooper's random phone
+          survey, and the teens who never pick up. Name each bias and its direction.
+    \item Part B: one multiple-choice item, with a sentence of justification, and a reporter
+          who trusts the bigger poll.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Part B, item 2} is the one I am reading over your shoulder. The AP Practice page is
+    \textbf{extra credit, scored 1 to 5} --- work it for the reps.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Name the bias, say who it favors, and say which way it
+    pushes. A larger sample reduces variability --- not bias.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 3.4 --- Designing Experiments: treatments, random
+    assignment, and why only an experiment can show cause.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

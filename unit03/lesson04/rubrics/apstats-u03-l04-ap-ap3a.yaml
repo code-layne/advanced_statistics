@@ -1,0 +1,21 @@
+# AP Practice item 3, part (a) (Unit 3, Lesson 3.4). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  A school district wants to know whether a math-practice app raises unit-test scores
+  more than paper worksheets do. 100 ninth graders take part: 40 in honors math and 60
+  in standard math. Identify the experimental units, the treatments, and the response
+  variable.
+criteria:
+  - id: components
+    points: 2
+    full: >-
+      E: Names all three in context: the units are the 100 ninth graders; the treatments
+      are the math-practice app and paper worksheets; the response is each student's
+      unit-test score.
+    partial: >-
+      P (1 of 2): Two of the three are correct and in context, or all three are named
+      only generically (for example, "students, the app, scores" with the worksheets
+      missing as a treatment).

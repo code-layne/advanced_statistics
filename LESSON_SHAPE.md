@@ -130,7 +130,9 @@ the user before authoring (`references/ap-workflow.md` in the skill). The units 
 the CED by choice (Unit 1 is 8 lessons; Unit 2 folds nine Topics into five lessons — 2.1 two
 categorical variables = CED 2.1–2.3 · 2.2 scatterplots & correlation = 2.4–2.5 · 2.3 regression
 line & residuals = 2.6–2.7 · 2.4 least-squares regression = 2.8 · 2.5 departures from linearity =
-2.9); **trust the live `unit*/lesson*` directories, not
+2.9; Unit 3 folds seven Topics into five (2026-10-28) — 3.1 planning a study = CED 3.1–3.2 ·
+3.2 sampling methods = 3.3 · 3.3 sampling problems = 3.4 · 3.4 designing experiments = 3.5–3.6 ·
+3.5 inference and experiments = 3.7); **trust the live `unit*/lesson*` directories, not
 `COURSE_OUTLINE.md`**, for what exists. `COURSE_OUTLINE.md` is the unit → lesson index; update its
 row after authoring a lesson.
 
@@ -266,10 +268,11 @@ Either way, delete stale stamps — `rm -rf .stamps/unitXX/lessonYY target/unitX
 evidence per lesson: `make -C unitXX/lessonYY all` exits 0 and every component's page count
 equals its `_key`'s, compared on the compiled components, not the padded packets.
 
-**Scoreboard (2026-09-29):** 12 of 74 lessons are in the current shape (`unit01/lesson01`–`07`
-at the old 3-page notes budget; `unit02/lesson01`–`05` at the compact budget, Unit 2 cut from
-nine lessons to five); 1 in the group-activity shape (`unit01/lesson00`);
-**no EFFL lessons remain**; 61 pre-EFFL legacy (units 03–09),
+**Scoreboard (2026-10-28):** 17 of 72 lessons are in the current shape (`unit01/lesson01`–`07`
+at the old 3-page notes budget; `unit02/lesson01`–`05` and `unit03/lesson01`–`05` at the compact
+budget, Unit 2 cut from nine lessons to five and Unit 3 from seven to five); 1 in the
+group-activity shape (`unit01/lesson00`);
+**no EFFL lessons remain**; 54 pre-EFFL legacy (units 04–09; counts below are as of 2026-09-29),
 of which 96 `_key` files still hold teacher notes, `\namedateperiod` appears on every ungraded component,
 and 57 lessons have no deck. Convert lesson by lesson or unit by unit as you review, authoring
 the missing deck as you go, and rebuild the unit packet each time — never the whole course in one

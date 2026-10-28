@@ -1,0 +1,22 @@
+# AP Practice item 3, part (b) (Unit 3, Lesson 3.4). Relative to the lesson directory.
+# College Board style: E / P / I.
+id: ap3b
+points: 2
+task: >-
+  The district plans to block the 100 ninth graders by math level (40 honors, 60
+  standard); honors students tend to score higher on unit tests. Explain why blocking is
+  a good idea here, and describe how the treatments should be assigned.
+criteria:
+  - id: why_block
+    points: 1
+    full: >-
+      Explains that math level is related to the response (honors students score higher),
+      so blocking compares the app and worksheets among similar students and removes the
+      honors/standard difference from the comparison.
+  - id: assign_within
+    points: 1
+    full: >-
+      Describes random assignment WITHIN each block: in the honors block, randomly assign
+      20 to the app and 20 to worksheets; in the standard block, 30 and 30 (a named
+      method such as drawing names from a hat or a random number generator). A response
+      that blocks but assigns by choice, by class period, or without chance earns 0 here.

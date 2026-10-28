@@ -1,4 +1,4 @@
-%! Introduction to Experimental Design — Unit 3, Lesson 3.5 — Slides (Beamer)
+%! Inference and Experiments — Unit 3, Lesson 3.5 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
@@ -11,16 +11,207 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.5}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Introduction to Experimental Design}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Inference and Experiments}\\[1.2cm]
     {\color{skymid}\small Statistics~$\cdot$~Unit 3}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% GRADUAL-RELEASE deck: targets → warm-up → I DO divider → one frame per instruction row of the
+% notes (Significant; Scope of Inference; Association or Cause?, which carries the crux) → WE DO
+% (The Reading App) → spoken debrief → close & START THE HOMEWORK, which is the individual
+% practice. There is no group activity and no independent practice set in the notes.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 3.5}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item read a simulation and decide whether a difference is \textbf{statistically
+          significant}.
+    \item use the \textbf{scope of inference}: does the study show cause, and to whom can it
+          be \textbf{generalized}?
+    \item explain why a random sample, without random assignment, cannot show cause.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
+
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item 50 names drawn from the roster; a coin flip for each of 30 volunteers. Random
+          \emph{selection} or random \emph{assignment}? What is each one \emph{for}?
+    \item Breakfast eaters earn higher grades. Why can't we say breakfast \emph{causes} it?
+    \item 24 volunteers, randomly assigned: silence beats music by \textbf{2.5 words}. Could
+          the luck of the assignment alone do that?
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Keep item 3 in mind}
+    We vote now. A simulation decides it --- notes problem 3.
+  \end{block}
+\end{frame}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes. Fill each blank as we name it
+    --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today: statistical inference,
+    statistically significant, scope of inference, generalize.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: SIGNIFICANT ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Could chance alone do it?}
+  \sectionlabel{notes, Significant $\cdot$ problems 1--4}
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Statistically significant}
+        A difference so large it would \redink{rarely} happen by chance alone.
+      \end{block}
+      \vspace{4pt}
+      {\small Silence beat music by \textbf{2.5 words}. The computer reshuffled the 24 scores
+      100 times \emph{as if music made no difference}. Each dot is one reshuffle.}
+      \vspace{4pt}
+      {\small How many dots reach 2.5? \quad What if the difference were only 1.0?}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.85cm, y=0.1cm]
+        \draw[thick] (-3.4,0) -- (3.4,0);
+        \foreach \x in {-3,-2,-1,0,1,2,3} {
+          \draw (\x,0) -- (\x,-1.4); \node[below, font=\tiny] at (\x,-1.2) {$\x$};}
+        \foreach \x/\n in {-3/1,-2.5/1,-2/3,-1.5/7,-1/11,-0.5/16,0/22,0.5/16,1/11,1.5/7,2/3,2.5/1,3/1}
+          \foreach \k in {1,...,\n} \fill[navy] (\x,\k) circle (1.3pt);
+        \draw[redacc, dashed, thick] (2.5,2) -- (2.5,14);
+        \node[font=\tiny\bfseries, redacc, above] at (2.5,14) {observed 2.5};
+        \node[font=\tiny] at (0,-7) {Simulated difference, silence $-$ music (words)};
+        \node[font=\scriptsize\bfseries] at (0,26) {100 random reshuffles};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: SCOPE OF INFERENCE ────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{The scope of inference}
+  \sectionlabel{notes, Scope of Inference $\cdot$ problems 5--7}
+  Random \redink{assignment} $\to$ cause and effect. \quad Random \redink{selection} $\to$
+  generalize to the population.
+  \vspace{8pt}
+  \begin{center}
+  {\small\renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|l|c|c|}
+    \hline
+    & \textbf{Selected at random} & \textbf{Not selected at random} \\ \hline
+    \textbf{Assigned at random} & Cause \textbf{and} generalize & Cause, for units like these \\ \hline
+    \textbf{Not assigned} & Generalize the association & Association, these units only \\ \hline
+  \end{tabular}}
+  \end{center}
+  \vspace{4pt}
+  {\small 300 picked at random, then assigned? \quad 200 picked at random and asked? \quad
+  The 24 volunteers?}
+\end{frame}
+
+% ── ROW 3: ASSOCIATION OR CAUSE? — THE CRUX ──────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{A random sample is not a random assignment}
+  \sectionlabel{notes, Association or Cause? $\cdot$ problems 8--10 $\cdot$ the whole point of today}
+  \vspace{4pt}
+  \begin{block}{500 teens, picked at random from the state}
+    Teens who study with music have lower GPAs, on average. \textbf{No one was assigned to
+    anything.}
+  \end{block}
+  \vspace{6pt}
+  ``The 500 were chosen at random, so this proves music lowers GPA.'' \emph{Agree?}
+  \vspace{8pt}
+  \begin{block}{Say it, write it in the box}
+    Random selection $\to$ generalize. Only random \redink{assignment} $\to$ cause and effect.
+    A confounding variable (phone use while studying?) can still explain it.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Reading App}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
+  A district picks \textbf{40 ninth graders at random} and randomly assigns 20 to a reading app,
+  20 to no app. The app group gains \textbf{6 points more}. In 100 random reshuffles, only
+  \textbf{1} reached 6 points.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item Is the 6-point difference statistically significant?
+    \item Did the app \emph{cause} the higher gains? To whom can we generalize?
+    \item A second district: 200 picked at random, app users score higher. ``Random sample,
+          so the app works.'' Respond.
+  \end{itemize}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: two questions, two kinds of randomness}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Assigned at random?}
+        Then a significant difference is evidence the treatment \redink{caused} it.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Selected at random?}
+        Then the result \redink{generalizes} to the population they came from.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{block}{Two things to say out loud}
+    Why does ``the 500 were random'' answer the \emph{wrong} question? And why was a 1.0-word
+    difference not significant, even though 1.0 is bigger than 0?
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 items $\cdot$ scored 1 to 5 $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Part A: a fruit-first lunch line --- read the simulation, decide whether the
+          difference is significant, then cause and to whom.
+    \item Part B: a city walking survey --- one multiple-choice item with a sentence of
+          justification, and a council member's claim to answer.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Part B, item 2} is the one I am reading over your shoulder. The AP Practice page is
+    \textbf{extra credit, scored 1 to 5} --- work it for the reps.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Random selection lets you generalize. Only random assignment
+    lets you say ``caused.''}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 4.1 --- Random and Non-Random Patterns? Is a pattern
+    real, or just chance?}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

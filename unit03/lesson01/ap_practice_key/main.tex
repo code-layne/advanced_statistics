@@ -1,14 +1,15 @@
-%! Introducing Statistics: Do the Data We Collected Tell the Truth? — Unit 3, Lesson 3.1 — AP Practice (Answer Key)
+%! Planning a Study — Unit 3, Lesson 3.1 — AP Practice (Answer Key)
 % MIRROR of ../ap_practice/main.tex: -key for -boxes, the header, and the correct MC option wrapped
 % in \ans{}. Every \gradedblank line is identical; key mode prints each answer and display.
 % NO teachernote here — guidance lives in the lesson plan.
 % GRADUAL RELEASE: AP-format practice, extra credit, scored 1 to 5;
 % the graded practice is the `homework` component that follows it.
-% Two multiple-choice items (MC1: pick the chance-based method for a bus-line survey; MC2 is the
-% crux in AP clothing — 50,000 streaming-poll responses, distractor (A) is "large, so close to
-% the truth"), then one free-response set on a library lunch survey: (a) chance or not,
-% (b) direction of the bias in context, (c) the SPIRAL — mean or median for a right-skewed
-% distribution (Unit 1).
+% Two multiple-choice items (MC1: pick the experiment for a reading program — the distractors
+% are careful observational designs; MC2: the appropriate generalization from a random sample
+% of Ohio adults — only to the population sampled), then one free-response set on energy drinks
+% and sleep: (a) observational or experiment, (b) does the study support "energy drinks cause
+% insomnia" (no — no treatment imposed; a third variable could drive both), (c) the SPIRAL —
+% name the display for two quantitative variables and the pattern to expect (Unit 2).
 % Every rubric box is full width on its own line under its part, hung with \gradedhere over
 % \writelines{8} (about 2.1in, room for the drawn 2in box). Each \gradedblank line, display=
 % included, is BYTE-IDENTICAL in ap_practice_key/; key mode prints the display. The
@@ -48,27 +49,28 @@ of this packet. Work these AP-format reps for practice and bring questions to st
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=0.10in]
 
-  \item A city wants to estimate the percent of its residents who would support a new bus
-        line. Which method is most likely to give a trustworthy estimate?
+  \item A school district wants to know whether a new reading program \emph{causes} higher
+        reading scores for second graders. Which plan is an experiment?
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
-          \item Survey riders waiting at the main bus station.
-          \item Post a poll on the city transit department's website.
-          \item Survey the people who attend a city council meeting about transit.
-          \item \ans{Randomly select 400 households from a list of all city addresses.}
-          \item Survey the first 2{,}000 people who call a transit hotline.
-                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=D]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+          \item Compare the scores of students whose parents enrolled them in the program with
+                the scores of students who did not enroll.
+          \item Survey second-grade teachers about whether the program seems to work.
+          \item \ans{Randomly assign 60 second graders to the new program or the current one, then
+                compare their scores.}
+          \item Record the reading scores of every second grader in the district for a year.
+          \item Review records from schools that already chose to use the program.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=C]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
         \end{enumerate}
 
-  \item A streaming service posts a poll on its home screen. Of the 50{,}000 subscribers who
-        respond, 68\% say they want more reality shows. Which statement is best?
+  \item A polling firm selects 500 adults at random from a list of all adults in Ohio. Of
+        them, 62\% say they support a new state park. Which conclusion is most appropriate?
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
-          \item Because 50{,}000 is so large, 68\% must be very close to the truth for all
-                subscribers.
-          \item \ans{The 68\% cannot be trusted for all subscribers: the people who chose to respond
-                may differ from those who did not.}
-          \item The 68\% is trustworthy because every respondent is a subscriber.
-          \item The 68\% would be trustworthy if 100{,}000 subscribers had responded.
-          \item The poll shows that reality shows cause people to subscribe.
+          \item About 62\% of all adults in the United States support the park.
+          \item \ans{About 62\% of all adults in Ohio support the park, give or take some
+                sampling variability.}
+          \item Exactly 62\% of all adults in Ohio support the park.
+          \item The result describes only the 500 adults who were asked.
+          \item Living in Ohio causes people to support new parks.
                 \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
         \end{enumerate}
 
@@ -87,27 +89,27 @@ problem} --- that is what earns credit on the AP exam.
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
 
-  \item A school librarian wants to know how many books per month the students at her school
-        read. On Monday she surveys the 40 students who come to the library at lunch. Their
-        mean is 3.2 books per month.
+  \item A health researcher reviews survey records for 1{,}500 adults in one county. Adults who
+        drink two or more energy drinks a day report sleeping fewer hours per night, on average,
+        than adults who drink none.
 
         \vspace{6pt}
 
-        \boxguard[30]
-        \textbf{(a)} Did chance decide which students were surveyed? Explain who decided.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=ap3a, type=rubric, points=2, display={No. The students chose to come to the library at lunch; the librarian surveyed whoever was there.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+        \boxguard[16]
+        \textbf{(a)} Is this an observational study or an experiment? Explain.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3a, type=rubric, points=2, display={Observational study. The researcher only looked at records of what the adults already did; no one was assigned to drink or not drink energy drinks.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
         \vspace{4pt}
-        \boxguard[30]
-        \textbf{(b)} Is 3.2 books per month likely too high or too low for all students at the
-        school? Explain in context.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=ap3b, type=rubric, points=2, display={Too high. Students who spend lunch in the library are likely heavier readers than students who do not, so they are over-represented.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+        \boxguard[16]
+        \textbf{(b)} A headline reads, \emph{``Energy drinks cause sleepless nights.''} Does this
+        study support the headline? Explain in context.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3b, type=rubric, points=2, display={No. Without an imposed treatment the study shows only an association. Something else, such as night-shift work or stress, could lead people both to drink more energy drinks and to sleep less.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
         \vspace{4pt}
-        \boxguard[30]
-        \textbf{(c)} The 40 responses are strongly skewed to the right. Which better describes a
-        typical student among these 40, the mean or the median? Explain.\\[4pt]
-        \gradedhide{\gradedhere{\gradedblank[id=ap3c, type=rubric, points=2, display={The median. A few students who read many books pull the mean up; the median is resistant to them.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+        \boxguard[16]
+        \textbf{(c)} Name a graph that displays the relationship between energy drinks per day and
+        hours of sleep, and describe the pattern you would expect.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3c, type=rubric, points=2, display={A scatterplot (drinks per day on the x-axis, hours of sleep on the y-axis). Expect a negative association: adults who drink more energy drinks tend to sleep fewer hours.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
 
 \end{enumerate}
 

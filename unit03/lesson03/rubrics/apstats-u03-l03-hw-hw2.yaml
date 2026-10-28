@@ -1,0 +1,18 @@
+# Homework item A2 (Unit 3, Lesson 3.3). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  Plan 2: the DOT selects 1,000 teens at random from the state's list of licensed teen
+  drivers, and a state trooper phones each one to ask whether they use a phone while
+  driving. The sample is random, yet the result may still be biased. Name the bias, give its
+  direction, and explain in context.
+criteria:
+  - id: name
+    points: 1
+    full: >-
+      Names response bias (self-reported answers to a trooper; question-asking process).
+  - id: direction
+    points: 1
+    full: >-
+      Says the estimate is likely too low, because teens are unlikely to admit an illegal or
+      unsafe behavior to a state trooper.

@@ -1,0 +1,20 @@
+# Homework item B2 (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  A vet tests whether a joint chew helps older dogs move more easily. Owners rate their
+  dog's mobility after 8 weeks. Explain why the control group should get a look-alike
+  chew with no supplement, and say who should be kept blind.
+criteria:
+  - id: placebo
+    points: 1
+    full: >-
+      Explains the placebo in context: an owner who knows the dog got a treatment may
+      expect and report better mobility, so a look-alike chew lets the vet separate the
+      supplement's effect from that expectation (placebo effect).
+  - id: blind
+    points: 1
+    full: >-
+      Says the owners (who give the ratings) and the vet staff who interact with the dogs
+      or record the ratings should not know which chew each dog got (double-blind). The
+      dogs being "blind" alone does not earn this point.

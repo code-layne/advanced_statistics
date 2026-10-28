@@ -1,0 +1,118 @@
+%! Inference and Experiments — Unit 3, Lesson 3.5 — AP Practice
+% GRADUAL RELEASE: AP-format practice, extra credit, scored 1 to 5;
+% the graded practice is the `homework` component that follows it.
+% Two multiple-choice items (MC1: the scope of inference for a randomized experiment on
+% volunteers — distractor (A) generalizes to all runners; MC2: reading a simulation — 46 of 200
+% reshuffles reach the observed difference, so it is NOT statistically significant; distractor
+% (C) is "proves no effect"), then one free-response set on green tea and blood pressure (a random
+% sample, no random assignment): (a) THE CRUX in AP clothing — cause or not, with a confounder;
+% (b) to whom the result generalizes; (c) the SPIRAL — design an experiment (Lesson 3.4).
+% Every rubric box is full width on its own line under its part, hung with \gradedhere over
+% \writelines{8} (about 2.1in, room for the drawn 2in box). Each \gradedblank line, display=
+% included, is BYTE-IDENTICAL in ap_practice_key/; key mode prints the display. The
+% next-lesson preview is NOT here: it closes the packet, in ../homework/.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l05-ap}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.5}{AP Practice}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.06in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{extra credit, scored 1 to 5} --- your graded homework is the last section
+of this packet. Work these AP-format reps for practice and bring questions to study hall.
+\end{remindbox}
+
+\vspace{0.06in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in]
+
+  \item A sports-drink company recruits 80 runners who volunteer for a study and randomly
+        assigns 40 to drink its new sports drink and 40 to drink water before a 5K race. The
+        sports-drink group's mean time is faster, and the difference is statistically
+        significant. Which conclusion is most appropriate?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item The sports drink causes faster 5K times for all runners.
+          \item The sports drink causes faster 5K times for runners like these volunteers, but
+                the result cannot be generalized to all runners.
+          \item The sports drink is associated with faster times, but cause and effect cannot
+                be concluded because the runners were not randomly selected.
+          \item The result applies to all runners, but cause and effect cannot be concluded.
+          \item Nothing can be concluded, because the runners were volunteers.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \item A gardener randomly assigns 20 tomato plants to a new fertilizer or her usual one, 10
+        each. The new-fertilizer plants produce 0.6 kg more fruit on average. In 200 random
+        reshuffles of the 20 harvests, as if the fertilizer made no difference, 46 gave a
+        difference of 0.6 kg or more. Which statement is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item The difference is statistically significant, because 0.6 kg is greater than 0.
+          \item The difference is not statistically significant: chance alone produced a
+                difference this large fairly often, so chance is a plausible explanation.
+          \item The simulation proves that the new fertilizer has no effect.
+          \item The difference is statistically significant, because 46 is less than half of 200.
+          \item No conclusion is possible, because the plants were not a random sample.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[27]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Every answer must be written \emph{in the context of the
+problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
+
+  \item Researchers selected 1{,}000 adults at random from a list of all adult residents of a
+        state. Each adult reported how many cups of green tea he or she drinks a day, and a
+        nurse measured each adult's blood pressure. Adults who drink green tea every day had a
+        statistically significantly lower mean blood pressure than adults who do not.
+
+        \vspace{6pt}
+
+        \boxguard[30]
+        \textbf{(a)} Can the researchers conclude that drinking green tea \emph{causes} lower
+        blood pressure? Explain, and name a variable that could confound the result.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3a, type=rubric, points=2, display={No. The adults chose how much tea to drink; no one was randomly assigned. Tea drinkers may exercise more or eat healthier diets, which could lower blood pressure.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(b)} To what group can the researchers generalize their result? Explain.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3b, type=rubric, points=2, display={All adult residents of the state: the 1,000 were selected at random from that list. The generalized result is an association, not a cause.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(c)} Describe how researchers could design an experiment to test whether
+        drinking green tea causes lower blood pressure.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3c, type=rubric, points=2, display={Randomly assign volunteers to drink green tea daily or a look-alike tea with no green tea for 8 weeks; compare the groups' mean change in blood pressure.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+\end{enumerate}
+
+\end{document}

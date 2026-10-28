@@ -1,236 +1,359 @@
-%! AP Statistics — Unit 3, Lesson 3.5 — Lesson Plan
+%! Inference and Experiments — Unit 3, Lesson 3.5 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
+% homework) at the COMPACT budget: the whole lesson is finished in one 55-minute period.
+% THERE IS NO GROUP ACTIVITY IN THIS COURSE and NO INDEPENDENT PRACTICE SET in the notes — the
+% homework is the individual practice, started in class. Teacher-facing. Every box is `skillbox`
+% (breakable) with a \boxguard ahead of it; no `fixedskillbox`, no tier boxes, no exit ticket.
+% The last lesson of Unit 3: it closes the unit's two halves — sampling (3.2–3.3) and
+% experiments (3.4) — on one question: what does this study let us conclude, and about whom?
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
-\newcommand{\LessonNumberName}{Lesson 3.5: Introduction to Experimental Design}
+\newcommand{\LessonNumberName}{Lesson 3.5: Inference and Experiments}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify the components of a well-designed
-    experiment, describe the four principles of experimental design, and compare
-    completely randomized, block, and matched-pairs designs (Big Idea: VAR).
+    \textbf{Primary Objective:} Students will read a given simulation of random reshuffles to
+    decide whether a difference between treatment groups is statistically significant, use the
+    scope of inference to say whether a study supports a cause-and-effect conclusion and to
+    whom its result generalizes, and reject a causal claim drawn from a random sample with no
+    random assignment.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 3.7 \quad$\cdot$\quad Big Idea: VAR (Variation and
+    Distribution) \quad$\cdot$\quad Skill 4.B \quad$\cdot$\quad LO VAR-3.E \quad$\cdot$\quad
+    EK VAR-3.E.1 (inference attributes conclusions to the distribution the data came from),
+    VAR-3.E.2 (random assignment lets us call a change too large for chance --- statistically
+    significant), VAR-3.E.3 (significant differences between treatment groups are evidence
+    the treatments caused the effect), VAR-3.E.4 (random selection of units supports
+    generalizing to a larger group)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction row by row in one \emph{Main Ideas / Notes} table --- each
+    idea a definition to complete and a grid of short problems, the first worked by you and the
+    rest by the class; the last row, Guided Practice, is worked together with students holding
+    the pen; \textbf{the homework is the individual practice}, and students start it in class
+    while you circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Compact budget:} the notes are three pages, 14 problems. The simulation is
+    \emph{given} as a pre-drawn dotplot: students read it, they never set it up or run it
+    (Unit 4 builds simulations; Units 6--9 make significance formal with P-values).
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can read a simulation of random reshuffles and decide whether a difference between
+        treatment groups is statistically significant.
+  \item I can say whether a study supports a cause-and-effect conclusion, and to whom its
+        result can be generalized.
+  \item I can explain why a random sample, without random assignment, cannot show cause and
+        effect.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item Even a useless treatment leaves the groups a little different, from the luck of the
+        random assignment. A difference too large to be explained by that luck is
+        \emph{statistically significant} (EK VAR-3.E.2), and in a randomized experiment it is
+        evidence the treatment caused it (VAR-3.E.3).
+  \item Random \emph{assignment} earns the word ``caused''; random \emph{selection} earns
+        the population (VAR-3.E.4). They answer different questions.
+  \item \textbf{Target misconception:} ``the sample was random, so the study proves cause.''
+        A random sample of 500 teens says music-studiers have lower GPAs \emph{in the
+        state}; it says nothing about \emph{why}. Only random assignment of the treatment
+        rules out confounding.
+  \item \textbf{Second misconception:} ``any difference counts.'' A 1.0-word gap is reached
+        by 23 of 100 reshuffles --- chance does it all the time.
+  \item This lesson closes Unit 3. Unit 4 opens on the same question --- real pattern or
+        chance? --- and builds the simulations we only read today.
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 1 --- Selecting Statistical Methods}
     \begin{itemize}
-        \item Identify the components of an experiment (VAR-3.A, Skill 1.C).
-        \item Describe elements of a well-designed experiment (VAR-3.B, Skill 1.B).
-        \item Compare experimental designs: CRD, block, matched pairs (VAR-3.C,
-              Skill 1.C).
+        \item \textbf{Statistical inference} --- using data to draw conclusions beyond the
+              individuals measured (EK VAR-3.E.1)
+        \item \textbf{Statistically significant} --- a result too large to be explained by
+              chance alone (EK VAR-3.E.2)
+        \item \textbf{Simulation of random reshuffles} --- re-randomize the observed results
+              many times as if the treatment did nothing; the dotplot shows what chance alone
+              produces (read, never run, today)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item Four principles: comparison, random assignment, replication, control.
-        \item Random \emph{assignment} (not selection) is what allows causal conclusions.
-        \item Completely randomized design: all units randomly assigned to treatments.
-        \item Block design: units grouped by a blocking variable; randomize within
-              blocks to reduce variability.
-        \item Matched pairs: a special block design with pairs of similar units.
+        \item \textbf{Scope of inference} --- what a study lets us conclude: cause and
+              effect, and about whom (the $2\times2$ of random selection $\times$ random
+              assignment)
+        \item \textbf{Generalize} --- apply the result to the population the individuals
+              were randomly selected from (EK VAR-3.E.4)
+        \item \textbf{Carried forward} --- random sampling (3.2), confounding and
+              observational studies (3.1), random assignment and experimental designs (3.4)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Selection or assignment, breakfast and grades, and ``could chance alone give
+2.5 words?'' & Hand count on item~3; leave ``2.5 words --- chance?'' and the tally on the
+board \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--10 row
+by row, then \emph{The Reading App} (11--14) together, pen in their hand & \textbf{I do}
+each row's definition lines and first problem (1, 5, 8), \textbf{we do} the rest (24)
+$\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Open on the
+almost-right problem~10; put \emph{assigned $\to$ cause, selected $\to$ population} on the
+board \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Circulate on
+Part~B item~2 for your formative read; preview Lesson 4.1 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The items and what each seeds}
     \begin{itemize}
-        \item \textbf{Experimental unit} --- the individual assigned to a treatment
-        \item \textbf{Factor (explanatory variable)} --- a variable whose levels are
-              intentionally manipulated
-        \item \textbf{Treatment} --- a specific level or combination of levels of the
-              factor(s)
-        \item \textbf{Response variable} --- the outcome measured after treatments
-        \item \textbf{Confounding variable} --- related to factor and response; can
-              create a false perception of association
-        \item \textbf{Control group} --- receives no treatment or a placebo
-        \item \textbf{Placebo} --- an inactive treatment; controls for the placebo effect
+        \item \textbf{1.} Random selection or random assignment, and what each is
+              \emph{for}. \textbf{Spirals} to 3.2 and 3.4; \textbf{seeds} the Scope of
+              Inference row --- selection $\to$ population, assignment $\to$ cause.
+        \item \textbf{2.} Breakfast and grades: why an observational study cannot show
+              cause. \textbf{Spirals} to 3.1; \textbf{seeds} the crux row.
+        \item \textbf{3.} 24 volunteers, silence beats music by 2.5 words: could the luck of
+              the assignment do that? \textbf{Seeds} row~1 --- the given simulation answers it
+              in problems 2--3.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Random assignment} --- experimental units assigned to treatments
-              by chance; balances confounding variables
-        \item \textbf{Replication} --- more than one experimental unit per treatment group
-        \item \textbf{Single-blind} --- subjects don't know which treatment they receive
-        \item \textbf{Double-blind} --- neither subjects nor evaluators know which
-              treatment subjects receive
-        \item \textbf{Block design} --- experimental units grouped by a blocking
-              variable; treatments assigned randomly within each block
-        \item \textbf{Matched pairs} --- a block design with two units per block (or
-              same unit receives both treatments)
+        \item \textbf{Debrief item~1 aloud} and write the two purposes on the board in the
+              room's words (``so it's like everybody,'' ``so the groups are fair''). Row~2
+              points back at them.
+        \item \textbf{Take a hand count on item~3 and do not settle it.} Expect a split:
+              ``2.5 is a lot'' against ``anything can happen.'' Both are guesses; the dotplot
+              replaces the guess with a count. Write \emph{2.5 words --- chance?} and the tally
+              on the board.
+        \item Item~2 is a spiral; take 60 seconds and name the confounder.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Prior Knowledge Check (3--4 min)}
-    \begin{itemize}
-        \item Recall: ``What is the difference between an observational study and an
-              experiment?'' (Lesson 3.2)
-        \item Recall: ``What is a confounding variable?'' (Unit 2, Lesson 3.2)
-        \item Transition: ``Experiments are designed to \emph{eliminate} confounding.
-              Today we learn how.''
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections Forward}
-    \begin{itemize}
-        \item Choosing the right design for a given situation $\to$ Lesson 3.6
-        \item Interpreting experiment results; statistical significance $\to$ Lesson 3.7
-        \item Significance testing for experiments $\to$ Units 6--9
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are one \emph{Main Ideas / Notes} table --- four rows, 14 short problems.
+\textbf{In every row you fill the definition lines and work the first problem of each grid; the
+class works the rest, pen in their hand.} The vocabulary box is filled \emph{as you go}.
+\begin{multicols}{2}
+\textbf{Significant (9 min).} Fill the three blanks (individuals / assignment / rarely) and
+name \textbf{statistical inference} and \textbf{statistically significant}. Then read the
+dotplot \emph{before} anyone writes: one dot is one reshuffle of the 24 real scores into two
+new groups, as if music did nothing. Work \textbf{problem~1} yourself. Problems 2 and 3 are
+theirs and settle the warm-up vote: 2 of 100. \textbf{Problem~4 is the trap}: ``1.0 is still
+more words'' --- make them count the 23 dots at 1.0 or beyond.
+
+\textbf{Scope of Inference (7 min).} Fill the sentence and the $2\times2$ \emph{with} the
+class, cell by cell: \emph{was it assigned? was it selected?} Work \textbf{problem~5} (both).
+Problems 6 and 7 are theirs; 7 is the volunteers from row~1 --- cause, but only for volunteers
+like these.
+
+\textbf{Association or Cause? (8 min) --- the crux.} Fill the three blanks (confounding /
+associated / caused). Work \textbf{problem~8}: yes, the association generalizes to all teens in
+the state --- the random sample bought that much. Problem~9 is theirs (phone use, study time).
+\textbf{Problem~10 is the crux}: take a hand count on ``agree'' \emph{before} anyone explains.
+Then fill the callout --- \emph{only random assignment $\to$ cause} --- and make the room say
+it back.
+
+\columnbreak
+\textbf{We do (about 10 min): The Reading App.} A fresh context, problems 11--14, worked
+entirely together. Students hold the pen; you hold the questions: \emph{``How many reshuffles
+reached 6?''} \quad \emph{``Who decided who got the app?''} \quad \emph{``Picked from whom?''}
+\textbf{Problem~14 is the crux transferred}: a second district's random sample of app users.
+It is the one to protect when time is short --- a student who answers both 10 and 14 has
+separated \emph{selected} from \emph{assigned}.
+
+\textbf{The pen must actually change hands.} Put problem~11 on them cold, take a hand count on
+problem~14 before anyone speaks, and make the room defend the answer. Circulate and demand the
+reason:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~11:} ``How often does chance alone get there?''
+  \item \textbf{Problem~13:} ``Picked at random \emph{from whom}?''
+  \item \textbf{Problem~14:} ``Who decided which students use the app?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one \emph{almost}-right
+problem~10 (``no, because 500 isn't enough'' or ``no, because it isn't random'') and one that
+names the missing random assignment. \textbf{Your formative read comes twice}: here, and again
+in the last eight minutes as students start the homework.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5--7 min)}\\
-    Scenario: \textit{``I want to test whether a new study app improves test scores.
-    I let students choose whether to use it. App users score 8 points higher. Can I
-    conclude the app works?''}\\[4pt]
-    Students discuss: ``What's wrong with this study?'' (Selection bias: motivated
-    students choose to use the app.)\\[4pt]
-    Transition: \textit{``An experiment randomly assigns which students use the app,
-    eliminating that problem.''}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15--18 min)}
-    \begin{enumerate}
-        \item Identify components: experimental units, factor, treatments, response,
-              confounding variable.
-        \item Four principles of well-designed experiments (VAR-3.B.1):
-              (a) comparison, (b) random assignment, (c) replication,
-              (d) control of confounding.
-        \item Completely randomized design: all units randomly assigned to treatments;
-              diagram.
-        \item Blinding: single-blind and double-blind; placebo effect.
-        \item Block design: reduce variability by blocking on a variable (e.g., gender);
-              randomize within blocks.
-        \item Matched pairs: pairs of similar units; one per treatment. OR same unit
-              gets both treatments in random order.
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- nothing on the page to fill in.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Open on the almost-right problem~10}: ``disagree, because 500 isn't enough''
+        or ``because it wasn't random.'' Right verdict, wrong reason --- the sample \emph{was}
+        random, and its size is fine. What is missing is random \emph{assignment}. Correct it
+        gently and in public.
+  \item Write two columns on the board: \emph{Assigned at random? $\to$ caused} and
+        \emph{Selected at random? $\to$ the population}. Place the music volunteers, the 500
+        teens, and the reading app in them. That board is the lesson.
+  \item Take problem~4 back: why is 1.0 word ``not significant'' when 1.0 is bigger than 0?
+\end{enumerate}
+\columnbreak
+\textbf{The sentence to leave on every desk:} \emph{Random selection lets you speak for the
+population. Only random assignment lets you say ``caused.''} Make a student say it, not you.
+
+\textbf{If the debrief runs short}, cut item~3 --- item~1 is the only one that cannot be cut.
+\textbf{Do not let the debrief eat the last eight minutes} --- the homework start is your
+second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Worked example: testing a new fertilizer on corn plants. Identify
-              units, factor, treatments, response, and potential confounds. Design a
-              CRD, then a block design blocking on soil type.
-        \item Key distinction: blocking variable is a known source of variability that
-              we want to \emph{remove} from the error, not a treatment we are testing.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Listen for: confusing random \emph{assignment} with random \emph{selection}.
-        \item Cold-call: ``If I don't randomly assign, which principle of good
-              experimental design am I violating?''
-        \item Check that students can draw a diagram of the design (units $\to$ random
-              assignment $\to$ treatment groups $\to$ response).
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- extra credit, scored 1 to 5]{goldbox}
+Two multiple-choice items --- \textbf{MC~1} is the scope of inference for a randomized
+experiment on 80 volunteer runners (B: cause, but only for runners like these; (A)
+over-generalizes and (C) swaps the two kinds of randomness), and \textbf{MC~2} reads a
+simulation in words (46 of 200 reshuffles reach 0.6~kg, so \emph{not} significant; (C) ``proves
+no effect'' is the overreach to name) --- then one free-response set on green tea and blood
+pressure from a random sample of 1{,}000 adults: \textbf{(a)} the crux in AP clothing (no
+cause; name a confounder), \textbf{(b)} generalize the \emph{association} to the state's adults,
+and \textbf{(c)}, \textbf{the spiral}, design an experiment (Lesson 3.4). 8 points: 1 per MC,
+2 per part.
+
+\textbf{Extra credit, scored 1 to 5, turned in with the homework.} Go over it at the start of
+Lesson 4.1 or in the unit review. Hold the AP standard out loud: \emph{in context or it does
+not count} --- a part (a) that says ``no, correlation isn't causation'' without saying no one
+was assigned to drink tea, and without a confounder tied to both variables, has not earned
+both points.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Partner Activity (8--10 min)}\\
-    Three experiment descriptions. Partners:
-    \begin{enumerate}
-        \item Identify experimental units, factor(s), treatments, and response.
-        \item Identify the design type (CRD, block, or matched pairs).
-        \item Identify whether blinding is used and what type.
-        \item State one potential confounding variable and how the design controls it.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Diagram template --- boxes for units, random
-              assignment arrow, treatment boxes, response measurement.
-        \item \textit{Extension}: Design a double-blind experiment to test whether a
-              new energy drink improves reaction time. Explain each design choice.
-        \item \textit{ELL}: Visual experiment diagram with labels in both English and
-              L1 if available.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored 1 to 5, due the first class after two study halls]{goldbox}
+Five items in a third context. \textbf{Part~A} (a fruit-first lunch line: 60 students picked at
+random, randomly assigned; a given dotplot of 100 reshuffles): \textbf{A1} count the reshuffles
+at 0.4 or more (3); \textbf{A2} significant, in context; \textbf{A3} cause \emph{and} to whom
+(all 1{,}200 students at the school). \textbf{Part~B} (a city survey of 400 residents picked at
+random: walkers report lower stress): \textbf{B1} an AP-style multiple choice (C) with a
+required justification; \textbf{B2} the crux restated --- ``chosen at random, so this proves
+walking lowers stress.''
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.}
+\textbf{Scoring:} 9 points --- A1 1, A2 2, A3 2, B1 1 for the letter and 1 for the
+justification, B2 2. \textbf{B2 is the one to read closely}: a student who agrees with the
+council member has kept the target misconception into Unit 4. The spiralbox previews Lesson 4.1.
+
+\textbf{Paper homework is the default for this course} --- assign this page unless you have
+decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
+instead, it replaces this page, and this page stays in the packet as extra practice. Never
+assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Scenario: \textit{``Researchers recruit 60 volunteers to test a new headache
-    medication. Half receive the drug; half receive a sugar pill. Neither group
-    knows which they received. Researchers measure headache severity after 1 hour.''}
-    \begin{enumerate}
-        \item Identify: experimental units, treatment(s), response variable.
-        \item What design is this? (CRD, block, or matched pairs?)
-        \item What type of blinding is used?
-        \item Why is random assignment essential?
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``In an experiment testing whether music improves focus, students are
-    randomly assigned to study with music or in silence for 30 minutes, then take
-    a quiz. Researchers block by grade level (9th vs.\ 12th). What is the purpose
-    of blocking?''}
-    \begin{enumerate}[label=(\Alph*)]
-        \item To create larger treatment groups
-        \item To reduce variability due to grade-level differences
-        \item To ensure all students take the same quiz
-        \item To prevent the placebo effect
-    \end{enumerate}
-    Answer: (B)
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``It was a random sample, so it shows cause''} (notes~10 and 14, HW~B2,
+        AP~(a) --- the target misconception). Probe: \emph{``Who decided which teens study with
+        music? Then what else could be different about them?''}
+  \item \textbf{``Any difference counts''} (notes~4, AP~MC2). Probe: \emph{``Count the dots
+        at least that big. Does chance get there often?''}
+  \item \textbf{Generalizing from volunteers} (notes~7, AP~MC1). Probe: \emph{``Picked at
+        random from whom? Then who can you speak for?''}
+  \item \textbf{``Not significant means no effect''} (AP~MC2 (C)). Probe: \emph{``Did the
+        simulation show the fertilizer does nothing --- or only that chance could explain
+        this result?''}
+\end{itemize}
+Cold-call prompts: \emph{``Which randomness buys the word `caused'?''} \quad
+\emph{``Give me a study that can generalize but cannot conclude cause.''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item For 4 experiment descriptions: identify units/factor/treatments/response,
-              classify the design, identify type of blinding, and evaluate whether the
-              four principles of good design are met.
-        \item Reflection: \textit{``Why does random \emph{assignment} (not just random
-              selection) allow us to conclude causation?''}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Research a famous clinical trial (e.g., Salk
-              polio vaccine, 1954). Identify the components of the experimental design
-              and explain why it was double-blind.
-        \item \textit{Preview}: Lesson 3.6 asks you to choose the \emph{best} design
-              for a given situation --- think about what factors matter when choosing
-              between CRD, block, and matched pairs.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Assign (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+five items on paper, scored, due the first class after two study halls --- and point out that
+the AP Practice page is extra credit, turned in with the homework. Circulate on \textbf{Part~B
+item~2}. Sort what you see into three piles as you walk --- disagreed and said no one was
+assigned to walk, with a confounder (ready); disagreed with ``correlation isn't causation'' and
+nothing more (ready, needs the language); agreed with the council member (the misconception
+survived) --- and open the Unit 3 review by returning to the two-column board if that third
+pile ran past a third of the room. Then close on what changed: \emph{``You walked in asking
+whether 2.5 words could be luck. You walk out knowing which randomness lets you say
+`caused.'\,''} \textbf{Preview:} Lesson 4.1, \emph{Random and Non-Random Patterns?} --- Unit 4
+starts with the question the dotplot answered today: is a pattern real, or just chance?
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Item~3 is the seed and item~1 the quiet setup. Give five minutes total and spend at most 60
+seconds on item~2. On item~3 do not settle the vote --- write \emph{2.5 words --- chance?} and
+the tally on the board, and say the notes count it. On item~1, the purposes in the room's
+words are what row~2 points back at; write them down.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Four rows, 14
+problems. \textbf{You work 1, 5, and 8}; the class works the rest. The dotplot is
+\emph{given}: explain once what one dot is and move on --- do not build or run the simulation
+(that is Unit 4's job). Scope of Inference must move, seven minutes, because the time belongs
+to Association or Cause?, which carries the crux. \textbf{Problem~4 is the trap} (1.0 word
+reads as ``a difference''); \textbf{problem~10 is the crux} (a random sample read as proof of
+cause). Take a hand count on 10 before any explanation; the callout sentence is the
+resolution. \textbf{The Reading App is where the pen changes hands}; problem~14 is the crux
+transferred and the one to protect. If you only get through 11, 12, and 14, that is the right
+trade. \textbf{Your second formative read is the homework start}: Part~B item~2, three piles.
+\textbf{Debrief (8 min), spoken}, opening on the almost-right problem~10. \textbf{Do not let the
+debrief eat the last eight minutes} --- the homework start is not optional padding.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is extra credit, scored 1 to 5} --- the graded practice is the homework
+behind it. \textbf{FRQ part (a) is the one worth reading closely}: ``no'' alone, or ``no,
+correlation is not causation,'' earns at most half; full credit says no one was assigned to
+drink tea and names a confounder linked to both tea and blood pressure. On MC~1, (C) is the
+swap of the two randomnesses --- if more than a handful choose it, return to the two-column
+board. Part (c) is a Lesson 3.4 spiral: random assignment to tea or a comparison drink, and a
+named response.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored 1 to 5 (9 points), due the first class after two study halls.} The eight
+minutes at the end of the period are a \emph{start}: put students on A1 and B2 first while you
+can still catch a wrong start. \textbf{B2 is the item to read first when scoring} --- a student
+who sides with the council member has kept the target misconception. On A2, ``yes'' with no
+reference to the 3 of 100 reshuffles earns 1 of 2. On A3, both halves are needed: cause (random
+assignment) and the school's 1{,}200 students (random selection) --- ``all students'' is an
+over-generalization. On B1, (C) with no justification earns 1 of 2. \textbf{Paper is the
+default.} On the occasions you assign DeltaMath in its place, tell students this page is now
+optional practice. Do not assign both.
+\end{teachernote}
 \end{document}

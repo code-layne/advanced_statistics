@@ -1,4 +1,4 @@
-%! Introduction to Planning a Study — Unit 3, Lesson 3.2 — Slides (Beamer)
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
@@ -11,16 +11,229 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.2}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Introduction to Planning a Study}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Random Sampling Methods}\\[1.2cm]
     {\color{skymid}\small Statistics~$\cdot$~Unit 3}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% GRADUAL-RELEASE deck: targets → warm-up → I DO divider → one frame per instruction row of the
+% notes (SRS; Strata & Clusters; Choosing, which carries the crux) → WE DO (Parking at
+% Riverside) → spoken debrief → close & START THE HOMEWORK, which is the individual practice.
+% There is no group activity and no independent practice set in the notes.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 3.2}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item describe how to choose a \textbf{simple random sample}, and tell sampling
+          \textbf{with replacement} from \textbf{without replacement}.
+    \item identify a \textbf{stratified random sample} and a \textbf{cluster sample}.
+    \item explain, in context, why one sampling method is a better choice than another.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
+
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  Lakeview High: 1{,}200 students, 300 per grade. The principal will survey 80 about hours
+  worked at a paid job.
+  \begin{enumerate}\setlength{\itemsep}{6pt}
+    \item Population? Sample?
+    \item All 1{,}200 names in a hat, draw 80. Same chance for everyone?
+    \item The hat could give very few seniors --- and seniors work more. So? How could you make
+          sure every grade is in?
+    \item Why might surveying 2 whole advisory groups be \emph{easier}?
+  \end{enumerate}
+  \begin{block}{Keep items 3 and 4 in mind}
+    Item 3 is a \emph{stratified} sample. Item 4 is a \emph{cluster} sample. The notes name
+    them.
+  \end{block}
+\end{frame}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes. Fill each blank as we name it
+    --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today: simple random sample,
+    without replacement, stratified random sample, cluster sample.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: SRS ───────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{The simple random sample}
+  \sectionlabel{notes, SRS $\cdot$ problems 1--3}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Simple random sample (SRS)}
+        Every \redink{group} of $n$ individuals has an \redink{equal} chance of being the
+        sample.
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Without / with replacement}
+        Without: each individual can be chosen only \redink{once}. With: it can be chosen
+        again.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\small\textbf{How to choose one}}
+      \begin{enumerate}\setlength{\itemsep}{3pt}\small
+        \item \textbf{Label} each individual 1 to $N$.
+        \item \textbf{Randomize} with a random number generator or a random digit table.
+        \item \textbf{Select}: skip numbers out of range and \redink{repeats} until you have
+              $n$.
+      \end{enumerate}
+      \vspace{6pt}
+      {\small Digits, four at a time, students 0001--1200:\\
+      \texttt{0738 1195 9661 0738 0452}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: STRATA & CLUSTERS ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Strata and clusters}
+  \sectionlabel{notes, Strata \& Clusters $\cdot$ problems 4--6}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Stratified random sample}
+        Split into \textbf{strata}, groups \redink{alike} inside. Take an SRS from
+        \redink{every} stratum; combine.\\[2pt]
+        {\small Lakeview: 20 from each grade.}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Cluster sample}
+        Split into \textbf{clusters}, groups that each look like the \redink{population}.
+        Randomly choose some; measure \redink{everyone} in them.\\[2pt]
+        {\small Lakeview: 2 of the 48 mixed advisory groups.}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  {\small Named only: a \textbf{systematic random sample} takes a random start, then every
+  $k$th individual on a list.}
+  \vspace{6pt}
+  \begin{block}{Problem 6}
+    Pick 1 grade at random, survey all 300. Each student has a 1-in-4 chance. Is it an SRS?
+  \end{block}
+\end{frame}
+
+% ── ROW 3: CHOOSING — THE CRUX ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Choosing a method}
+  \sectionlabel{notes, Choosing $\cdot$ problems 7--10 $\cdot$ the whole point of today}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Stratify when\ldots}
+        the response \redink{differs} between groups. Alike inside $\Rightarrow$ the estimate
+        varies less than an SRS.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Cluster when\ldots}
+        reaching scattered people is \redink{expensive}. Cheaper --- best when each cluster
+        looks like the whole.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  Jalen: ``Use the grades as clusters --- randomly pick 2 grades and survey everyone in
+  them.'' \emph{What is wrong?}
+  \vspace{8pt}
+  \begin{block}{Say it, write it in the box}
+    Strata are alike inside: sample from \redink{every} one. Clusters each look like the whole:
+    take \redink{all} of \redink{some} of them.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: Parking at Riverside}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
+  480 apartments in 40 buildings. Every building: 4 one-bedroom, 4 two-bedroom, 4 three-bedroom.
+  Mean number of cars per household?
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item Describe an SRS of 60 apartments with a random number generator.
+    \item Plan B: 5 random buildings, every apartment. Name it; one advantage.
+    \item Plan C: an SRS of 20 of each apartment type. Name it. Why might it beat an SRS?
+    \item Plan D: ``The three types are clusters --- pick one type, survey all 160.'' Respond.
+  \end{itemize}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: alike inside, or like the whole?}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Strata --- sample from every one}
+        Lakeview's grades.\\
+        Riverside's apartment types.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Clusters --- all of some}
+        Lakeview's advisory groups.\\
+        Riverside's buildings.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{block}{Two things to say out loud}
+    Why is picking 2 whole grades a bad cluster sample? And why do mixed advisory groups make
+    useless strata?
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{6 items $\cdot$ scored 1 to 5 $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Part A: a hospital's 720 nurses on three shifts and 12 floors --- name each plan, then
+          an AP-style multiple choice with a sentence of justification.
+    \item Part B: describe a simple random sample, give an advantage of the floor plan, and
+          answer a supervisor who wants the shifts as clusters.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Part B, item 3} is the one I am reading over your shoulder. The AP Practice page is
+    \textbf{extra credit, scored 1 to 5} --- work it for the reps.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Strata are alike inside: sample from every one. Clusters
+    each look like the whole: take all of some.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 3.3 --- Problems with Sampling: who never gets a chance,
+    who will not answer, and how wording pushes the answers.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

@@ -1,0 +1,18 @@
+# AP Practice item 3, part (b) (Unit 3, Lesson 3.3). Relative to the lesson directory.
+# College Board style: E (full points), P (partial points given) or I (0).
+id: ap3b
+points: 2
+task: >-
+  The sleep survey asks: "Doctors say teens need 8 to 10 hours of sleep. How many hours do
+  you usually sleep on a school night?" Explain how the wording of the question could bias
+  the estimate, and say whether the estimate is likely too high or too low.
+criteria:
+  - id: wording
+    points: 2
+    full: >-
+      E: Explains that stating the recommended 8 to 10 hours leads students to report more
+      sleep than they actually get (response bias / question-wording bias) AND concludes the
+      estimate of the mean is likely too high.
+    partial: >-
+      P (1 of 2): Says the wording is leading or biased without explaining how it shifts the
+      reported hours, or explains the push but gives no direction or the wrong direction.

@@ -1,222 +1,354 @@
-%! AP Statistics — Unit 3, Lesson 3.3 — Lesson Plan
+%! Problems with Sampling — Unit 3, Lesson 3.3 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
+% homework) at the COMPACT budget: the whole lesson is finished in one 55-minute period.
+% THERE IS NO GROUP ACTIVITY IN THIS COURSE and NO INDEPENDENT PRACTICE SET in the notes — the
+% homework is the individual practice, started in class. Teacher-facing. Every box is `skillbox`
+% (breakable) with a \boxguard ahead of it; no `fixedskillbox`, no tier boxes, no exit ticket.
+% CED Topic 3.4. Lesson 3.2 taught the random sampling methods; this lesson names what goes
+% wrong anyway. Lesson 3.4 turns to experiments.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
-\newcommand{\LessonNumberName}{Lesson 3.3: Random Sampling and Data Collection}
+\newcommand{\LessonNumberName}{Lesson 3.3: Problems with Sampling}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify and describe the major random
-    sampling methods --- SRS, stratified, cluster, systematic, and census --- and
-    explain why a particular method is or is not appropriate for a given study
-    (Big Idea: DAT).
+    \textbf{Primary Objective:} Students will identify voluntary response, convenience,
+    undercoverage, nonresponse, and response bias in a described sampling method; for each,
+    explain in context who is over- or under-represented and whether the estimate is likely
+    too high or too low; and reject the claim that a larger sample repairs a biased method.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 3.4 (Potential Problems with Sampling) \quad$\cdot$\quad Big
+    Idea: DAT (Data-Based Inferences) \quad$\cdot$\quad Skill 1.C \quad$\cdot$\quad LO DAT-2.E
+    \quad$\cdot$\quad EK DAT-2.E.1 (bias: responses systematically favored), DAT-2.E.2
+    (voluntary response), DAT-2.E.3 (undercoverage), DAT-2.E.4 (nonresponse), DAT-2.E.5
+    (response bias: question wording, self-report), DAT-2.E.6 (convenience and voluntary
+    response samples do not use chance)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction row by row in one \emph{Main Ideas / Notes} table --- each
+    idea a definition to complete and a grid of short problems, the first worked by you and the
+    rest by the class; the last row, Guided Practice, is worked together with students holding
+    the pen; \textbf{the homework is the individual practice}, and students start it in class
+    while you circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Compact budget:} the notes are three pages, 14 problems. Every problem asks the same
+    three things --- name the bias, say who it favors, give the direction --- so the habit is
+    built by repetition. SRS, stratified, and cluster samples are Lesson 3.2's: assume them, do
+    not reteach them.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can identify voluntary response bias and the bias in a convenience sample, and say
+        which way each pushes the estimate.
+  \item I can tell undercoverage bias from nonresponse bias, even when the sample was chosen
+        at random.
+  \item I can explain how a question's wording or a self-reported answer creates response
+        bias.
+  \item I can explain why a larger sample reduces variability but does not fix bias.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item Bias occurs when certain responses are systematically favored over others
+        (DAT-2.E.1). Volunteers and convenience samples do not use chance, so they invite it
+        (DAT-2.E.2, DAT-2.E.6).
+  \item A random sample can still be biased: the list can leave people out (undercoverage,
+        DAT-2.E.3), the chosen can fail to answer (nonresponse, DAT-2.E.4), and the question
+        or the asker can push the answers (response bias, DAT-2.E.5).
+  \item \textbf{The AP habit:} naming the bias is half an answer. A full answer says who is
+        over- or under-represented and whether the estimate is too high or too low, in
+        context. The direction comes from \emph{who} answers, not from the bias's name ---
+        voluntary response can push an estimate down (problem~3).
+  \item \textbf{Target misconception:} ``a huge sample fixes bias.'' A larger sample reduces
+        variability, not bias. 48{,}000 forum volunteers said 81\%; 600 players at random
+        said 47\%. The 600 win.
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 1 --- Selecting Statistical Methods}
     \begin{itemize}
-        \item Identify a sampling method given a study description (DAT-2.C, Skill 1.C).
-        \item Explain why a method is or is not appropriate (DAT-2.D, Skill 1.C).
-        \item Distinguish sampling with and without replacement (DAT-2.C.1).
+        \item \textbf{Voluntary response bias} --- people choose to respond; those with strong
+              opinions are over-represented (DAT-2.E.2)
+        \item \textbf{Convenience sample} --- whoever is easiest to reach; like a voluntary
+              response sample, it does not use chance (DAT-2.E.6)
+        \item \textbf{Undercoverage bias} --- part of the population has a reduced or no chance
+              of being chosen (DAT-2.E.3)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item Simple random sample: every group of size $n$ has equal chance of selection.
-        \item Stratified: population divided into homogeneous strata; SRS within each.
-        \item Cluster: population divided into heterogeneous clusters; SRS of clusters,
-              then all individuals in selected clusters.
-        \item Systematic: every $k$th individual after a random start.
-        \item Census: every individual in the population is measured.
+        \item \textbf{Nonresponse bias} --- chosen individuals can't be reached or refuse, and
+              may differ from those who answer (DAT-2.E.4)
+        \item \textbf{Response bias} --- the question or the way it is asked pushes answers:
+              leading or confusing wording, self-reported answers (DAT-2.E.5)
+        \item \textbf{Size vs.\ bias} --- a larger sample reduces variability, not bias
+        \item \textbf{Carried forward} --- SRS, stratified, and cluster samples (Lesson 3.2)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Name two methods from 3.2, Maya's lunch-table survey, and two wordings of one
+question & Leave ``who is left out?'' (item~2) and ``(B) gets more yes'' (item~3) on the
+board \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--10 row
+by row, then \emph{The Work-Hours Survey} (11--14) together, pen in their hand & \textbf{I do}
+each row's definition lines and first problem (1, 4, 7), \textbf{we do} the rest (24)
+$\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Put 81\% (48{,}000
+volunteers) beside 47\% (600 at random); open on the almost-right problem~9 \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Circulate on
+Part~B item~2 for your formative read; preview Lesson 3.4 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The items and what each seeds}
     \begin{itemize}
-        \item \textbf{Simple random sample (SRS)} --- every group of size $n$ has an
-              equal chance of being chosen
-        \item \textbf{Stratified random sample} --- population divided into strata
-              (homogeneous groups); SRS within each stratum
-        \item \textbf{Cluster sample} --- population divided into heterogeneous clusters;
-              a random sample of clusters is selected; all individuals in chosen
-              clusters are surveyed
+        \item \textbf{1.} Name two methods: a computer picks 60 of 1{,}200 (SRS); 15 at random
+              from each grade (stratified). \textbf{Spirals} to Lesson 3.2 and sets up the
+              point that a random method is the baseline today's biases spoil.
+        \item \textbf{2.} Maya asks the 12 friends at her lunch table. \textbf{Seeds} rows 1
+              and 2: the room's ``she just asked her friends'' becomes a \emph{convenience
+              sample}, and ``who is left out'' becomes \emph{undercoverage}.
+        \item \textbf{3.} Two wordings of a phone-ban question. \textbf{Seeds} row~3: same
+              students, different wording, different answer --- \emph{response bias}.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Systematic random sample} --- random start, then every $k$th
-              individual
-        \item \textbf{Census} --- all items/subjects in a population are measured
-        \item \textbf{Sampling with/without replacement} --- whether a selected
-              individual can be chosen again
-        \item \textbf{Sampling frame} --- the list from which the sample is drawn
+        \item \textbf{Item~1 is a 60-second spiral}; take answers and move on. If the room
+              cannot name stratified, note it for Lesson 3.2's reteach, not today.
+        \item \textbf{Debrief item~2 aloud} and write the room's answer to ``who is left out?''
+              on the board in their words. Rows 1 and 2 name those ideas.
+        \item \textbf{Take a hand count on item~3} and leave ``(B) gets more yes --- why?'' on
+              the board. Row~3 points back at it.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Prior Knowledge Check (3--4 min)}
-    \begin{itemize}
-        \item Recall: ``What's the difference between an observational study and an
-              experiment?'' (Lesson 3.2)
-        \item Recall: ``Why does random selection make data more trustworthy?''
-              (Lesson 3.1)
-        \item Transition: ``Today we get specific about HOW to randomly select
-              individuals.''
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections Forward}
-    \begin{itemize}
-        \item When random sampling fails or isn't used $\to$ Lesson 3.4 (bias)
-        \item Random \emph{assignment} in experiments $\to$ Lesson 3.5
-        \item Scope of inference (generalization) $\to$ Lesson 3.7
-        \item Inference for proportions (Unit 7) uses SRS assumptions
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are one \emph{Main Ideas / Notes} table --- four rows, 14 short problems.
+\textbf{In every row you fill the definition lines and work the first problem of each grid; the
+class works the rest, pen in their hand.} The vocabulary box is filled \emph{as you go}.
+\begin{multicols}{2}
+\textbf{Volunteers (7 min).} Fill the definitions (choose / strong / easiest / chance) and the
+three-step \emph{complete answer} --- it is the procedure for every problem today. Work
+\textbf{problem~1} yourself, out loud, all three steps: voluntary response, frustrated drivers
+vote, too high. Problem~2 is theirs. \textbf{Problem~3 is the trap}: students who have just
+heard ``too high'' will say it again. Press: \emph{``Who bothers to fill out a comment card?''}
+Unhappy diners --- so the satisfied share is too \emph{low}. The direction comes from who
+answers, not from the name of the bias.
+
+\textbf{Coverage and Response (7 min).} Fill the definitions and read \emph{the test} aloud:
+never on the list $\to$ undercoverage; picked but silent $\to$ nonresponse. Work
+\textbf{problem~4} (the landline book misses cell-only residents). Problems 5 and 6 are
+theirs; 6 is the quiet one --- the principal picked \emph{at random}, but from a list that
+leaves out students at work. Say it: \emph{random is not a vaccine}.
+
+\textbf{Response Bias (10 min) --- the crux.} Point back at warm-up item~3 on the board, fill
+the definition, and work \textbf{problem~7} (the turf field's safety reason). Problem~8 is
+theirs. Then read the game-forum context and \textbf{take a hand count on problem~9
+\emph{before} anyone explains} --- that is the crux. Problem~10 resolves it: chance picked the
+600. Fill the callout --- \emph{a larger sample reduces variability, not bias} --- and make the
+room say it back.
+
+\columnbreak
+\textbf{We do (about 10 min): The Work-Hours Survey.} A fresh context, problems 11--14, worked
+entirely together. One plan, three steps, three different biases --- all pushing the same way.
+Students hold the pen; you hold the questions: \emph{``Could an off-campus student ever be
+picked?''} \quad \emph{``Who skips a meeting with their advisor?''} \quad \emph{``Would you
+tell your advisor you work 30 hours?''} \textbf{Problem~14 is the crux transferred}: 6{,}000
+emailed replies against the rest. It is the one to protect when time is short.
+
+\textbf{The pen must actually change hands.} Put problem~11 on them cold, take a hand count on
+problem~14 before anyone speaks, and make the room defend the answer. Circulate and demand the
+direction:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~11:} ``Too high or too low --- and who is missing?''
+  \item \textbf{Problem~12:} ``Were these 500 chosen at random? Then why is it still biased?''
+  \item \textbf{Problem~14:} ``If all 30{,}000 replied, would we be done? And if 6{,}000
+        chose to?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one \emph{almost}-right
+problem~9 (``disagree, because 600 is enough'') and one that names a bias with no direction.
+\textbf{Your formative read comes twice}: here, and again in the last eight minutes as students
+start the homework.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5--7 min)}\\
-    Challenge: ``I need to survey 50 of the 400 students in this school. How would
-    you do it?'' Collect 3--4 student ideas (pull names from a hat, ask friends,
-    survey every 8th person in the hallway, etc.). Classify each as random or not.\\[4pt]
-    Transition: \textit{``Statisticians have developed several principled methods --- all
-    relying on chance --- that work better than asking your friends.''}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15--18 min)}
-    \begin{enumerate}
-        \item SRS: define; show numbering + random number table or calculator.
-        \item Stratified: define strata (homogeneous); SRS within each; advantage ---
-              guarantees representation of each group.
-        \item Cluster: define cluster (heterogeneous); random selection of clusters;
-              advantage --- practical when individuals are spread out geographically.
-        \item Systematic: random start, every $k$th individual; caution about periodic
-              patterns in the list.
-        \item Census: everyone; when practical, eliminates sampling variability.
-        \item Pros/cons table comparing all methods.
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- nothing on the page to fill in.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Open on the almost-right problem~9}: ``disagree, because 600 is enough.'' Right
+        verdict, wrong reason --- it argues about size, the one thing that does not matter.
+        Correct it in public: the forum is still volunteers; size shrinks variability, it
+        does not move the center.
+  \item Put a bias-with-no-direction answer up (``it's undercoverage''). Ask the room to finish
+        it: who is missing, and too high or too low? That is the AP standard.
+  \item Take problem~3 back: why did the comment cards lean \emph{low} when the traffic poll
+        leaned \emph{high}? Same bias, different people who care.
+\end{enumerate}
+\columnbreak
+\textbf{The sentence to leave on every desk:} \emph{Name the bias, say who it favors, and say
+which way it pushes. A larger sample reduces variability, not bias.} Make a student say it,
+not you.
+
+\textbf{If the debrief runs short}, cut item~3 --- item~1 is the only one that cannot be cut.
+\textbf{Do not let the debrief eat the last eight minutes} --- the homework start is your
+second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Worked example: a school of 600 students (100 per grade 9--12, plus
-              100 each in two elective tracks). Choose 60 students using SRS, stratified
-              by grade, cluster by homeroom, and systematic.
-        \item Emphasize: stratified $\neq$ cluster --- strata are homogeneous (same
-              grade), clusters are heterogeneous (mixed grades/backgrounds).
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Listen for: confusing stratified and cluster (most common error).
-        \item Cold-call: ``If I want to compare grades 9 and 11 specifically, which
-              method ensures I have students from each grade?'' (stratified)
-        \item Check that students can describe the procedure, not just name the method.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- extra credit, scored 1 to 5]{goldbox}
+Two multiple-choice items --- \textbf{MC~1} names undercoverage \emph{and} its direction in a
+transit survey drawn from vehicle owners (B; C has the right name with the wrong direction, E
+is ``random, so no bias''), and \textbf{MC~2} is a leading speed-limit question (B: response
+bias, too high; A is ``random, so unbiased'' and E is the crux --- ``2{,}000 would remove the
+bias'') --- then one free-response set on a county sleep survey: \textbf{(a)} a source of bias
+other than wording (nonresponse: 95 of 400, busy students sleep less and reply less, so the mean
+is too high), \textbf{(b)} the wording's push (``doctors say 8 to 10 hours'' inflates reports),
+and \textbf{(c)}, \textbf{the crux}: emailing all 9{,}000 does not fix either bias.
+
+\textbf{Extra credit, scored 1 to 5, turned in with the homework.} Go over it at
+the start of Lesson 3.4. Hold the AP standard out loud: \emph{a bias with no direction has not
+earned the point} --- part (a) needs who is missing, why they differ, and too high or too low.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Partner Activity (8--10 min)}\\
-    Four scenario cards (hospital, city block, school, factory). Partners:
-    \begin{enumerate}
-        \item Name the sampling method described.
-        \item Explain one advantage of using that method in this context.
-        \item Identify one disadvantage or situation where a different method would
-              be better.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Comparison table with columns: Method / Key feature /
-              When to use / One advantage.
-        \item \textit{Extension}: Design two different sampling plans for a citywide
-              health survey of 1{,}000 residents. Justify which is better and why.
-        \item \textit{ELL}: Visual diagrams of each method (color-coded circles
-              representing strata/clusters).
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored 1 to 5, due the first class after two study halls]{goldbox}
+Five items in a third context: the state DOT estimating how many licensed teen drivers use a
+phone while driving. \textbf{Part~A}: \textbf{A1} a social-media poll (voluntary response; the
+safety-minded answer, so 22\% is too low); \textbf{A2} a trooper phoning a random sample
+(response bias in a random sample, too low); \textbf{A3} 390 of 1{,}000 never pick up
+(nonresponse, and how they differ). \textbf{Part~B}: \textbf{B1} an AP-style multiple choice ---
+which change reduces A2's bias (B: an anonymous form; A, a bigger sample, is the distractor) ---
+with a required justification; \textbf{B2} the crux restated: ``3{,}000 responses, three times
+as many, so Plan~1 is more trustworthy.''
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.}
+\textbf{Scoring:} 10 points --- A1, A2, A3, B2 at 2 each; B1 1 for the letter and 1 for the
+justification. \textbf{B2 is the one to read closely}: a student who sides with the reporter has
+kept the target misconception. The spiralbox previews Lesson 3.4.
+
+\textbf{Paper homework is the default for this course} --- assign this page unless you have
+decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
+instead, it replaces this page, and this page stays in the packet as extra practice. Never
+assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Scenario: \textit{``A researcher wants to survey 80 of 500 registered voters in
-    a county. She divides them into 5 districts (100 per district) and randomly
-    selects 2 districts. She then surveys all 100 voters in each selected
-    district.''}
-    \begin{enumerate}
-        \item Name the sampling method.
-        \item What is one advantage of this method?
-        \item What is one disadvantage?
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``A magazine surveys its subscribers by sending a questionnaire to every
-    25th name on the subscriber list, starting from a randomly chosen name between 1
-    and 25. This is an example of a:''}
-    \begin{enumerate}[label=(\Alph*)]
-        \item Simple random sample
-        \item Stratified random sample
-        \item Cluster sample
-        \item Systematic random sample
-    \end{enumerate}
-    Answer: (D)
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``A huge sample fixes bias''} (notes~9 and 14, HW~B2, AP~MC2 (E) and (c) --- the
+        target misconception). Probe: \emph{``If 48{,}000 people volunteered, who would they
+        be? The same kind of people, only more of them.''}
+  \item \textbf{A bias named with no direction} (every problem; HW~A1--A3, AP~(a)). Probe:
+        \emph{``Too high or too low --- and who pushed it there?''}
+  \item \textbf{``Voluntary response always makes it too high''} (notes~3, HW~A1). Probe:
+        \emph{``Who cares enough to answer? Which way do \emph{they} lean?''}
+  \item \textbf{``It was random, so it can't be biased''} (notes~6 and 12, HW~A2, AP~MC1 (E)
+        and MC2 (A)). Probe: \emph{``Random from which list? And did everyone chosen answer,
+        honestly?''}
+  \item \textbf{Mixing up undercoverage and nonresponse} (notes~4--6, 11--12). Probe:
+        \emph{``Could this person ever have been picked?''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me a random sample that is still biased.''} \quad
+\emph{``Would you rather have 600 at random or 48{,}000 volunteers? Why?''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item For 4 sampling scenarios: identify the method, justify whether it is
-              appropriate, and state what population results can be generalized to.
-        \item Comparison question: ``In what situation would stratified random sampling
-              be better than SRS?''
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Design a sampling plan for a national political poll.
-              Explain which method you would use and why.
-        \item \textit{Preview}: Lesson 3.4 examines what goes wrong when random
-              sampling is not used or is poorly executed --- start thinking about
-              whose voices get missed.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Assign (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+five items on paper, scored, due the first class after two study halls --- and point out that
+the AP Practice page is extra credit, turned in with the homework. Circulate on \textbf{Part~B
+item~2}, then glance at A1's direction. Sort what you see into three piles as you walk ---
+disagreed and said 3{,}000 volunteers are still volunteers (ready); disagreed with no reason,
+or ``because 1{,}000 is enough'' (ready, needs the language); agreed with the reporter (the
+misconception survived) --- and open Lesson 3.4 by returning to the 81\%/47\% board if that
+third pile ran past a third of the room. Then close on what changed: \emph{``You came in
+naming methods. You leave able to say how a method goes wrong --- and which way.''}
+\textbf{Preview:} Lesson 3.4, \emph{Designing Experiments} --- treatments, random assignment,
+control, and why only an experiment can show cause.
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Five minutes total. Item~1 is a 60-second spiral to Lesson 3.2 --- do not reteach the methods
+here. Items 2 and 3 are the seeds: write the room's answers to ``who is left out?'' and ``why
+does (B) get more yes?'' on the board in their words; rows 1--3 of the notes name both ideas
+and point back at them.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Four rows, 14
+problems. \textbf{You work 1, 4, and 7}; the class works the rest. Volunteers and Coverage must
+move --- seven minutes each --- because the time belongs to the Response Bias row, which
+carries the crux. \textbf{Problem~3 is the trap} (voluntary response pushing an estimate
+\emph{down}); \textbf{problem~9 is the crux} (48{,}000 forum volunteers ``must be close to the
+truth''). Take a hand count on 9 before any explanation; problem~10 and the callout are the
+resolution. \textbf{The Work-Hours Survey is where the pen changes hands}; problem~14 is the
+crux transferred and the one to protect. If you only get through 11, 12, and 14, that is the
+right trade. \textbf{Your second formative read is the homework start}: Part~B item~2, three
+piles. \textbf{Debrief (8 min), spoken}, opening on the almost-right problem~9.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is extra credit, scored 1 to 5} --- the graded practice is the homework
+behind it. \textbf{MC~1 is the one worth reading closely}: (C) has the right bias with the
+wrong direction, which is exactly the AP habit this lesson builds; if many choose it, open
+Lesson 3.4 with problem~3's comment cards. On the free response, part (a) must name the bias,
+say how the non-responders differ, \emph{and} give a direction; part (c) must say why a bigger
+sample leaves the bias in place, not just ``it's still biased.''
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored 1 to 5 (10 points), due the first class after two study halls.} The eight minutes
+at the end of the period are a \emph{start}: put students on B2 and A1 first while you can
+still catch a wrong start. \textbf{B2 is the item to read first when scoring} --- a student who
+sides with the reporter has kept the target misconception. On A1, accept a well-argued ``too
+high,'' but a direction with no reason about who answers a DOT poll earns 1 of 2. On A2, the
+bias must be response bias (the sample is random) with the direction too low. On A3, the way
+the 390 differ must bear on phone use while driving. On B1, (B) with no justification earns
+1 of 2. \textbf{Paper is the default.} On the occasions you assign DeltaMath in its place, tell
+students this page is now optional practice. Do not assign both.
+\end{teachernote}
 \end{document}

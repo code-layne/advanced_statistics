@@ -1,62 +1,119 @@
-%! AP Statistics — Unit 3, Lesson 3.5 — Homework
-\documentclass[10pt]{article}
+%! Inference and Experiments — Unit 3, Lesson 3.5 — Homework
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page. Started in the last eight minutes of the period and finished after two
+% study halls. The AP Practice component before it is extra credit, scored 1 to 5.
+% THIRD CONTEXT: the notes teach on studying with music, Guided Practice runs on a reading app,
+% AP Practice on sports drinks, tomatoes, and green tea; these items are on a cafeteria
+% "fruit first" experiment and a city walking survey.
+% Part A (Fruit First — random selection AND random assignment, a GIVEN simulation dotplot):
+%   A1 read the dotplot (3 of 100 at 0.4 or more), A2 significant in context, A3 cause and to whom.
+%   Simulated differences (fruit first − usual line), 100 reshuffles:
+%   -0.5:1 -0.4:2 -0.3:6 -0.2:11 -0.1:17 0:26 0.1:17 0.2:11 0.3:6 0.4:2 0.5:1
+% Part B (Walking and Stress — a random sample, NO random assignment): B1 the AP-style multiple
+%   choice with a required justification, B2 THE CRUX restated — "chosen at random, so this
+%   proves walking lowers stress". 9 points.
+% \answerspace{H}{} reserves exactly H; each \gradedblank inside it is BYTE-IDENTICAL in the key,
+% where key mode prints its display. Keep every \boxguard identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{grading}
 \gradingassignment{apstats-u03-l05-hw}
 \gradingcourse{advanced_statistics}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.5}{Homework}
 {\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.1in}
+\vspace{0.04in}
 
-\begin{practicebox}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
 \small
-For each experiment, identify units, factor(s), treatments, response variable, design
-type, and blinding used.
+\textbf{This is your graded homework.} It is scored 1 to 5 and due the first class after two study
+halls. Start it now; ask about anything that stalls you before you leave.
+\end{remindbox}
 
-\vspace{8pt}
-\textbf{1.} A study tests whether a new sleep aid improves sleep quality. 100 adults
-are randomly assigned: 50 take the pill nightly; 50 take a look-alike sugar pill.
-Participants don't know which pill they take. A sleep technician, also unaware of
-treatment, rates sleep quality.
+\vspace{0.04in}
 
-\vspace{4pt}
-Experimental units: \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw1a, type=short, points=1, answer={100 adults}, check=text]{2.4in}{0.17in}}}\\[4pt]
-Factor: \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw1b, type=short, points=1, answer={type of sleep aid}, check=text]{2.4in}{0.17in}}}\\[4pt]
-\rule{0pt}{0.3in}Treatments: \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw1c, type=short, points=1, answer={new pill; sugar pill}, check=text, display={\bfseries new pill; sugar pill}]{3.2in}{0.3in}}}\\[8pt]
-Response variable: \makebox[8cm][l]{\vphantom{\blank{8cm}}\hspace{46bp}\smash{\gradedblank[id=hw1d, type=short, points=1, answer={sleep quality rating}, check=text]{2.4in}{0.17in}}}\\[4pt]
-Design type: \makebox[4cm][l]{\vphantom{\blank{4cm}}\hspace{44bp}\smash{\gradedblank[id=hw1e, type=short, points=1, answer={completely randomized design}, check=text, display={\bfseries CRD}]{1.05in}{0.17in}}} \quad Blinding: \makebox[4cm][l]{\vphantom{\blank{4cm}}\hspace{46bp}\smash{\gradedblank[id=hw1f, type=short, points=1, answer=double-blind, check=text]{1.4in}{0.17in}}}\\[4pt]
-Why is the placebo important?\par
-\gradedhide{\gradedhere{\gradedblank[id=hw1g, type=rubric, points=2, display={Controls the placebo effect (believing you took a pill); isolates the drug's true effect.}]{\linewidth+6pt}{2in}}\writelines{9}}
+\boxguard[30]
+\begin{notesbox}{Part A --- Fruit First}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
+\small
+A nutrition researcher picks \textbf{60 students at random} from the 1{,}200 students at a high
+school and randomly assigns 30 to a lunch line with the fruit placed \emph{first} and 30 to the
+usual line, with the fruit at the end. The fruit-first group takes \textbf{0.4 more pieces of
+fruit} per student, on average. A computer reshuffled the 60 results into two new groups of 30,
+100 times, as if the order of the line made no difference.
+\begin{center}
+\begin{tikzpicture}[x=0.95cm, y=0.1cm]
+  \draw[thick] (-5.4,0) -- (5.4,0);
+  \foreach \x/\l in {-5/-0.5,-4/-0.4,-3/-0.3,-2/-0.2,-1/-0.1,0/0,1/0.1,2/0.2,3/0.3,4/0.4,5/0.5} {
+    \draw (\x,0) -- (\x,-1.4); \node[below, font=\tiny] at (\x,-1.2) {$\l$};}
+  \foreach \x/\n in {-5/1,-4/2,-3/6,-2/11,-1/17,0/26,1/17,2/11,3/6,4/2,5/1}
+    \foreach \k in {1,...,\n} \fill[navy] (\x,\k) circle (1.3pt);
+  \draw[redacc, dashed, thick] (4,3) -- (4,14);
+  \node[font=\tiny\bfseries, redacc, above] at (4,14) {observed 0.4};
+  \node[font=\tiny] at (0,-7) {Simulated difference in mean pieces of fruit, fruit first $-$ usual};
+  \node[font=\scriptsize\bfseries] at (0,30) {100 random reshuffles};
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item How many of the 100 reshuffles gave a difference of 0.4 pieces or more?
+        \hfill\rule[-0.17in]{0pt}{0.43in}\smash{\gradedblank[id=hw1, type=short, points=1, answer=3]{1.6cm}{0.3in}}
+  \item Is the observed difference of 0.4 pieces of fruit statistically significant? Explain in
+        context.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw2, type=rubric, points=2, display={Yes. Only 3 of 100 reshuffles gave 0.4 or more, so a difference this large would rarely happen by chance alone if the order of the line did not matter.}]{\linewidth-10.5pt}{0.95cm}}
+  \item Can the researcher conclude that putting fruit first \emph{caused} students to take more
+        fruit? To whom can she generalize the result? Explain both.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw3, type=rubric, points=2, display={Yes: the lines were randomly assigned and the difference is significant. Generalize to all 1,200 students at this school, because the 60 were picked at random from them.}]{\linewidth-10.5pt}{0.95cm}}
+\end{enumerate}
+\end{notesbox}
 
-\tcbbreak
-\vspace{8pt}
-\textbf{2.} A farmer wants to compare 3 fertilizers. He has 90 plants all grown in
-the same greenhouse. He randomly assigns 30 plants to each fertilizer.
+\vspace{0.04in}
 
-\vspace{4pt}
-Design type: \makebox[4cm][l]{\vphantom{\blank{4cm}}\hspace{44bp}\smash{\gradedblank[id=hw2a, type=short, points=1, answer={completely randomized design}, check=text, display={\bfseries CRD}]{1.05in}{0.17in}}} \quad Blocking variable (if any): \makebox[4cm][l]{\vphantom{\blank{4cm}}\hspace{46bp}\smash{\gradedblank[id=hw2b, type=short, points=1, answer=none, check=text]{1.4in}{0.17in}}}\\[4pt]
-Would adding blocks improve this design? Explain.\par
-\gradedhide{\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={No: same greenhouse, no nuisance variable to block on.}]{\linewidth+6pt}{2in}}\writelines{9}}
+\boxguard[30]
+\begin{notesbox}{Part B --- Walking and Stress}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
+\small
+A city health department picks \textbf{400 adult residents at random} from a list of all adult
+residents. Residents who say they walk at least 30 minutes a day report lower stress, on
+average, than residents who do not, and the difference is statistically significant.
+\begin{enumerate}[label=\textbf{B\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item \textbf{AP-style.} Which conclusion is most appropriate? Write its letter in the Letter
+        box, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item Walking causes lower stress for all adults in the city.
+          \item Walking causes lower stress, but only for these 400 residents.
+          \item Among all adults in the city, walkers tend to report lower stress, but we cannot
+                conclude that walking causes it.
+          \item No conclusion is possible, because this was not an experiment.
+          \item Walking causes lower stress for all adults in the country.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw4, type=choice, points=1, answer=C]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw4j, type=rubric, points=1, display={(C): the random sample lets us generalize the association to the city's adults, but no one was assigned to walk, so we cannot conclude cause.}]{\linewidth-10.5pt}{0.7cm}}
+  \item A council member says, ``The 400 residents were chosen at random, so this proves that
+        walking lowers stress.'' Respond, and name a variable that could explain the result
+        instead.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={Disagree. Random selection lets us generalize, but only random assignment shows cause. Residents chose whether to walk; walkers may have more free time or less stressful jobs.}]{\linewidth-10.5pt}{0.95cm}}
+\end{enumerate}
+\end{notesbox}
 
-\vspace{8pt}
-\textbf{3.} A researcher tests two diets on 60 participants. She pairs participants
-by current weight (closest pairs); one in each pair gets Diet A, one gets Diet B
-(randomly assigned).
+\vspace{0.04in}
 
-\vspace{4pt}
-Design type: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw3a, type=short, points=1, answer={matched pairs design}, check=text]{2in}{0.17in}}}\\[4pt]
-Why is pairing by weight appropriate here?\par
-\gradedhide{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={Current weight affects weight loss; pairing removes it, so the diet comparison is more precise.}]{\linewidth+6pt}{2in}}\writelines{9}}
-
-\vspace{8pt}
-\textbf{4.} Reflection: Why does random \emph{assignment} (not just random selection)
-allow us to conclude causation from an experiment?\\[4pt]
-\gradedhide{\gradedhere{\gradedblank[id=hw4, type=rubric, points=2, display={Random assignment spreads confounders (motivation, health, habits) roughly evenly across groups, so a difference in response can be attributed to the treatment.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
-\end{practicebox}
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+% A one-line, unbreakable box: guard it by its own height so it moves whole.
+\boxguard[4]
+\begin{spiralbox}
+\small
+\textbf{Next: Lesson 4.1, Random and Non-Random Patterns?} Today a simulation told us what
+chance alone looks like. Unit 4 opens on that question: is a pattern real, or just chance?
+\end{spiralbox}
 
 \end{document}

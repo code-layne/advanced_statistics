@@ -1,49 +1,63 @@
-%! AP Statistics — Unit 3, Lesson 3.3 — Warm-Up KEY
-\documentclass[10pt]{article}
+%! Problems with Sampling — Unit 3, Lesson 3.3 — Warm-Up (Answer Key)
+% MIRROR of ../warmup/main.tex: -key for -boxes, the header, and the answers. Nothing else differs.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% ONE PAGE, blank and key. Three items; do not add a fourth.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+%   Item 1 — spiral to Lesson 3.2: name two random sampling methods (SRS, stratified).
+%   Item 2 — Maya's lunch-table survey: did chance decide, and who is left out? Seeds row 1
+%            (convenience) and row 2 (who can never be picked).
+%   Item 3 — two wordings of one question: which gets more "yes"? Seeds row 3 (response bias).
+% Every display is given; nothing is sketched.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.3}{Warm-Up --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.3in}
+\vspace{0.28in}
 
-{\large\bfseries\color{navy} Part 1 \quad Spiral Review}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.42in]
 
-\vspace{0.12in}
+  \item \textbf{From Lesson 3.2.} A principal wants to survey 60 of her school's 1{,}200
+        students. Name each sampling method.
 
-\begin{enumerate}
+        \vspace{12pt}
+        \textbf{(a)} She numbers all 1{,}200 students and has a computer pick 60 at random.
 
-    \item
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabularx}{\linewidth}{@{} X p{2.8cm} p{2.4cm} @{}}
-    \textbf{Study} & \textbf{Type} & \textbf{Causal?} \\
-    \hline
-    Randomly assign 80 students to two test-prep programs. & \ans{Experiment} & \ans{Yes} \\
-    Survey 500 adults about diet and health outcomes. & \ans{Observational} & \ans{No} \\
-    \end{tabularx}
+        \vspace{8pt}
+        Method: \ans{simple random sample (SRS)}
 
-    \vspace{0.18in}
+        \vspace{12pt}
+        \textbf{(b)} She picks 15 students at random from each of the four grades.
 
-    \item
-    \begin{enumerate}[label=(\alph*), itemsep=4pt]
-        \item \ans{Simple random sample (SRS)}
-        \item \ans{Every group of 100 students has an equal chance of being selected;
-        results are likely to be representative of the whole school.}
-    \end{enumerate}
+        \vspace{8pt}
+        Method: \ans{stratified random sample}
+
+  \item Maya wants to know how many hours a week the students at her school work at paid jobs.
+        She asks the 12 friends at her lunch table. Did chance decide who was asked? Which
+        students might her sample leave out?
+
+        \vspace{12pt}
+        \ansline{No --- Maya asked whoever was handy. Students who aren't her friends had no}\\[18pt]\ansline{chance, such as students who work and eat lunch elsewhere.}
+
+  \item Which version of this question would get more ``yes'' answers? Write A or B, then
+        explain.
+
+        \vspace{10pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{@{} c p{0.72\linewidth} @{}}
+        \textbf{(A)} & ``Should our school ban phones in class?'' \\
+        \textbf{(B)} & ``Should our school ban phones in class so that students can focus and
+                       learn?'' \\
+        \end{tabular}
+        \end{center}
+        \vspace{6pt}
+        \ansline{(B). It hands students a reason to agree, so it pushes the answers toward}\\[18pt]\ansline{``yes.'' The wording, not the students, changed the result.}\\[18pt]\ansline{}
 
 \end{enumerate}
-
-\vspace{0.35in}
-
-{\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
-
-\vspace{0.14in}
-
-\noindent\textcolor{slate}{\small Student responses will vary.}
 
 \end{document}

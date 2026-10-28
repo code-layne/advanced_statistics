@@ -1,18 +1,18 @@
-# AP Practice item 3, part (c) (Unit 3, Lesson 3.1) — the spiral to Unit 1. Relative to the lesson directory.
+# AP Practice item 3, part (c) (Unit 3, Lesson 3.1) — the spiral to Unit 2. Relative to the lesson directory.
 # College Board style: each component is scored E (essentially correct, full
 # points), P (partially correct, the partial points given) or I (incorrect, 0).
 id: ap3c
 points: 2
 task: >-
-  The librarian's 40 responses (books per month) are strongly skewed to the right.
-  Which better describes a typical student among these 40, the mean or the median?
-  Explain.
+  Name a graph that displays the relationship between energy drinks per day and hours
+  of sleep for the 1,500 adults, and describe the pattern you would expect.
 criteria:
-  - id: center
+  - id: display
     points: 2
     full: >-
-      E: Chooses the median AND explains that the few students who read many books pull
-      the mean toward the right tail, while the median is resistant to them.
+      E: Names a scatterplot (either variable on either axis, ideally drinks on x and
+      sleep on y) AND describes a negative association in context: adults who drink more
+      energy drinks tend to sleep fewer hours.
     partial: >-
-      P (1 of 2): Chooses the median with a vague reason (for example, "the data are
-      skewed") that does not say how the skew affects the mean.
+      P (1 of 2): Names a scatterplot but gives no pattern or the wrong direction, or
+      describes the negative pattern correctly but names an inappropriate graph.

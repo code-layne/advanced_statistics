@@ -1,0 +1,17 @@
+# Homework item B2 (Unit 3, Lesson 3.3). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  A reporter writes, "Plan 1 had 3,000 responses, three times as many as Plan 2, so Plan 1
+  gives the more trustworthy estimate." Respond.
+criteria:
+  - id: disagree_reason
+    points: 1
+    full: >-
+      Disagrees because Plan 1 is a voluntary response sample: 3,000 volunteers are still
+      a biased, non-random group.
+  - id: size_not_bias
+    points: 1
+    full: >-
+      States that a larger sample reduces variability, not bias, so having more responses
+      does not fix how Plan 1 got its teens.

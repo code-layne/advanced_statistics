@@ -1,101 +1,146 @@
-%! AP Statistics — Unit 3, Lesson 3.2 — Student Guided Notes
-\documentclass[10pt]{article}
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
+% COMPACT budget: the vocabulary box, then ONE guidednotes table of FOUR rows (three instruction
+% rows + Guided Practice), 14 problems.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 7).
+%   WE DO  : the class works the rest; the last row, Guided Practice (11–14), is worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 6 (one grade picked at random: every student has a 1-in-4 chance, but it
+% is not an SRS — a group that mixes grades can never be chosen; EK DAT-2.C.2).
+% THE CRUX is problem 10, in the last instruction row: "use the grades as clusters" — strata are
+% groups alike inside on something related to the response, and we sample from EVERY one;
+% clusters each look like the whole population, and we take ALL of SOME (EK DAT-2.C.3, C.4).
+% Systematic random sampling gets one line in row 2 and no problems (teacher's decision).
+%
+% THE CONTEXTS (instruction, guided practice, and homework each use a different one)
+%  Rows 1–3 — Lakeview High: 1,200 students, 300 in each of grades 9–12, and 48 advisory groups
+%          that each mix all four grades. Question: mean hours per week worked at a paid job
+%          (seniors work far more than freshmen, so the grades differ on the response).
+%  Row 4 (GP) — Riverside Apartments: 480 apartments in 40 buildings, each building holding
+%          4 one-, 4 two-, and 4 three-bedroom apartments. Question: mean cars per household.
+%  Homework — a hospital's nurses (shifts and floors). AP Practice — farms, textbooks, an airplane.
+%
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
+% TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
+% sub-rows (a bare `\\` then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: every display is given, read and used.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \begin{document}
 
-\pageheader{Unit 3, Lesson 3.2}{Guided Notes}
-\namedateperiod
+\pageheader{Unit 3, Lesson 3.2}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Population}
-\termblanklong{Sample}
-\termblanklong{Observational study}
-\termblanklong{Experiment}
-\termblanklong{Generalizability}
-\termblanklong{Causal relationship}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Simple random sample}
+\par
+\termblank{Without replacement}
+\par
+\termblank{Stratified random sample}
+\par
+\termblank{Cluster sample}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{hookbox}
-\small\textbf{Two headlines:}
-\begin{itemize}[itemsep=2pt]
-  \item \textit{``Study: People who own dogs live longer.''}
-  \item \textit{``Clinical Trial: New drug extends life expectancy by 3 years.''}
-\end{itemize}
-\textbf{Which headline tells us the variable \emph{caused} the effect? How do you know?}\\[4pt]
-\writeline\\[1pt]\writeline
-\end{hookbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Population vs. Sample}
 \small
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-Population & All \blank{5cm} of interest. \\
-Sample & A \blank{3cm} of the population selected for study. \\
-\end{tabularx}
+\begin{guidednotes}
+% ── ROW 1: the simple random sample ──────────────────────────────────────────
+\mainidea[Chance chooses]{SRS} &
+In a \textbf{simple random sample (SRS)} of size $n$, every \blank{1.4cm} of $n$ individuals
+has an \blank{1.3cm} chance of being the sample. Sampling \textbf{without replacement}: an
+individual can be chosen only \blank{1.2cm}. \textbf{With replacement}: an individual can be
+chosen more than once.
 
-\vspace{10pt}
-\textbf{Example:} A researcher surveys 500 randomly chosen U.S. adults about their
-exercise habits.
-\begin{itemize}[itemsep=2pt]
-  \item Population: \blank{9cm}
-  \item Sample: \blank{9cm}
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Observational Study vs. Experiment}
-\small
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-Observational study & Researchers \blank{3cm} without \blank{4cm} treatments.
-Includes surveys, retrospective and prospective studies. \\[4pt]
-Experiment & Researchers \blank{3cm} treatments to \blank{4cm} units. \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{Conclusion Rules (DAT-2.B):}
-\begin{enumerate}[itemsep=4pt]
-  \item Can only generalize to the \blank{5cm} from which the sample was \blank{3cm} selected.
-  \item \textbf{Observational study} $\to$ \blank{4cm} establish causation (DAT-2.B.3).
-  \item \textbf{Experiment with random assignment} $\to$ \blank{4cm} establish causation.
-\end{enumerate}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{practicebox}
-\small Classify each study. Then answer: can we generalize? Can we conclude causation?
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} X p{2.4cm} p{2cm} p{2cm} @{}}
-\textbf{Study} & \textbf{Type} & \textbf{Generalize?} & \textbf{Causation?} \\
+\vspace{3pt}
+\stepnum{1}\ \textbf{Label:} give each individual a different number, 1 to $N$.\par
+\stepnum{2}\ \textbf{Randomize:} use a random number generator or a table of random digits.\par
+\stepnum{3}\ \textbf{Select:} skip numbers out of range and \blank{1.6cm} until you have $n$.
+\\
+& Lakeview High has 1{,}200 students: 300 in each of grades 9--12. The principal wants the mean
+number of hours per week Lakeview students work at a paid job.
+\notesprompt{Choose an SRS of Lakeview students.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Describe how to use a random number generator to choose an SRS of 80 students.}{2.8cm}{} &
+\pcell{2}{Students are numbered 0001--1200. Use these digits, four at a time, to pick the first three students:\par
+\texttt{0738 1195 9661 0738 0452}}{2.8cm}{} &
+\pcell{3}{A teacher draws a name from a hat of all 1{,}200, puts it back, then draws again. With or without replacement?}{2.8cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: strata and clusters — THE TRAP ────────────────────────────────────
+\mainidea[Groups first]{Strata \& clusters} &
+\textbf{Stratified random sample:} split the population into \textbf{strata}, groups whose
+members are \blank{1.2cm} each other; take an \blank{1.0cm} from \blank{1.1cm} stratum and
+combine them.\par\vspace{3pt}
+\textbf{Cluster sample:} split the population into \textbf{clusters}, groups that each look like
+a small copy of the \blank{2.0cm}; randomly choose some clusters and measure \blank{1.2cm}
+individual in them.\par\vspace{3pt}
+{\footnotesize (One more, named only: a \textbf{systematic random sample} picks a random starting
+point on a list, then every $k$th individual.)}
+\\
+& \notesprompt{Lakeview's 48 advisory groups each mix students from all four grades. Name each method.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{4}{Randomly choose 20 students from each of grades 9, 10, 11, and 12.}{1.4cm}{} &
+\pcell{5}{Randomly choose 2 of the 48 advisory groups; survey every student in them.}{1.4cm}{} &
+\pcell{6}{Randomly choose 1 grade; survey all 300 in it. Each student has a 1-in-4 chance. Is it an SRS?}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: choosing a method — THE CRUX ──────────────────────────────────────
+\mainidea[Which plan?]{Choosing} &
+\textbf{Stratify} when the response \blank{1.4cm} from group to group: strata alike inside give
+an estimate that \blank{1.6cm} less from sample to sample than an SRS of the same size.
+\textbf{Cluster} when reaching scattered individuals is \blank{2.0cm}: it is cheaper and more
+practical, and it works best when each cluster looks like the population.
+\notesprompt{Seniors at Lakeview work far more hours than freshmen. Choose and defend a plan.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Why would 20 from each grade beat an SRS of 80 for estimating mean hours worked?}{1.6cm}{} &
+\pcell{8}{Give one advantage of the advisory-group cluster sample over the plan in problem~7.}{1.6cm}{} \\ \hline
+\pcell{9}{Should the principal use the 48 advisory groups as \emph{strata}? Why or why not?}{1.9cm}{} &
+\pcell{10}{Jalen: ``Use the grades as clusters --- randomly pick 2 grades and survey everyone in them.'' What is wrong with his plan?}{1.9cm}{} \\ \hline
+\end{probgrid}
+\\
+& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\bfseries Strata are alike inside: sample from \blank{1.2cm} one.\par
+Clusters each look like the whole: take \blank{0.8cm} of \blank{1.1cm} of them.}}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{Parking at Riverside} &
+Riverside Apartments has 480 apartments in 40 buildings. The manager wants the mean number of
+cars per household to plan new parking.
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\centering\footnotesize
+\setlength{\tabcolsep}{4pt}%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l c c @{}}
+\rowcolor{sky}
+\textbf{Apartment type} & \textbf{In each building} & \textbf{In the complex} \\
 \hline
-Researchers randomly assign 100 patients to drug or placebo; measure recovery time. &
-\blank{2.2cm} & Yes\ \ \ No & Yes\ \ \ No \\
-A survey of 500 randomly selected adults asks about screen time and sleep quality. &
-\blank{2.2cm} & Yes\ \ \ No & Yes\ \ \ No \\
-A teacher asks the 30 students in her class whether they like the new homework policy. &
-\blank{2.2cm} & Yes\ \ \ No & Yes\ \ \ No \\
-\end{tabularx}
-\end{practicebox}
+One-bedroom   & 4 & 160 \\
+Two-bedroom   & 4 & 160 \\
+Three-bedroom & 4 & 160 \\
+\end{tabular}
+\end{minipage}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Describe how to choose an SRS of 60 apartments with a random number generator.}{2.2cm}{} &
+\pcell{12}{Plan B: randomly choose 5 buildings and survey every apartment in them. Name it; give one advantage.}{2.2cm}{} \\ \hline
+\pcell{13}{Plan C: an SRS of 20 apartments of each type. Name it. Why might it beat an SRS of 60?}{2.2cm}{} &
+\pcell{14}{Plan D: ``Treat the three types as clusters: pick one type at random and survey all 160.'' Respond.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

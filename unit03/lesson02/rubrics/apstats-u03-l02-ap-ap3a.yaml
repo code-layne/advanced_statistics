@@ -1,0 +1,21 @@
+# AP Practice item 3, part (a) (Unit 3, Lesson 3.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  A full flight has 240 passengers in 40 rows of 6 seats. The airline will survey 24 of
+  the 240 passengers about seat comfort. Describe how to use a random number generator
+  to select a simple random sample of 24 passengers.
+criteria:
+  - id: srs
+    points: 2
+    full: >-
+      E: Labels the 240 passengers (or seats) with distinct numbers 1 to 240, uses a
+      random number generator to pick integers from 1 to 240, says repeats are skipped
+      (or that 24 different numbers are needed), and says the passengers with those 24
+      numbers are surveyed.
+    partial: >-
+      P (1 of 2): Gives the labeling and the random number generator but omits how
+      repeats are handled, or omits which passengers are surveyed, or gives a range that
+      does not match the labels.

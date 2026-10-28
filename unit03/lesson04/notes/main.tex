@@ -1,91 +1,180 @@
-%! AP Statistics — Unit 3, Lesson 3.4 — Student Guided Notes
-\documentclass[10pt]{article}
+%! Designing Experiments — Unit 3, Lesson 3.4 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
+% COMPACT budget: the vocabulary box, then ONE guidednotes table of FOUR rows (three instruction
+% rows + Guided Practice), 14 problems, 3 pages.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 5, 8).
+%   WE DO  : the class works the rest; the last row, Guided Practice, is worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 7 (block on birth month — a variable unrelated to the response).
+% THE CRUX is problem 10, in the last instruction row: "each runner wears both soles, so the
+% pairing already controls everything — skip the coin flip." Blocking/pairing does not replace
+% random assignment (EK VAR-3.C.7, VAR-3.C.9).
+%
+% THE CONTEXTS (instruction, guided practice, and homework each use a different one)
+%  Row 1 — gum and memory: 60 volunteers, mint gum / fruit gum / no gum, words recalled.
+%  Row 2 — a sports drink and mile times, blocked on varsity vs gym-class runners (pre-drawn).
+%  Row 3 — a new shoe sole (each runner wears one of each) and typists with/without music.
+%  Row 4 (GP) — a zinc lozenge for colds, placebo control, blocked on age (pre-drawn).
+% Inference and scope of inference belong to Lesson 3.5 — not taught here.
+%
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
+% TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
+% sub-rows (a bare `\\` then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: every design diagram is pre-drawn in TikZ and read, never drawn.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
+\tikzset{dbox/.style={draw=navy, fill=sky, rounded corners=2pt, align=center,
+  inner sep=2.5pt, font=\scriptsize}, darr/.style={->, >=stealth, navy, thick}}
+
 \begin{document}
 
-\pageheader{Unit 3, Lesson 3.4}{Guided Notes}
-\namedateperiod
+\pageheader{Unit 3, Lesson 3.4}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Bias}
-\termblanklong{Voluntary response bias}
-\termblanklong{Undercoverage bias}
-\termblanklong{Nonresponse bias}
-\termblanklong{Response bias}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Confounding variable}
+\par
+\termblank{Control group}
+\par
+\termblank{Placebo}
+\par
+\termblank{Single- / double-blind}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{notesbox}{Types of Bias in Sampling}
 \small
-\textbf{Bias} occurs when certain responses are systematically \blank{5cm} over others
-(DAT-2.E.1).
+\begin{guidednotes}
+% ── ROW 1: the parts and the four principles ─────────────────────────────────
+\mainidea[What makes it an]{Experiment} &
+In an experiment the researcher \blank{1.2cm} treatments. The \textbf{experimental units} are
+the individuals that are \blank{1.8cm} the treatments (\emph{subjects} when they are people).
+A \textbf{factor} is an explanatory variable whose levels are set on purpose; each level (or
+combination of levels) is a \textbf{treatment}. The \textbf{response variable} is measured
+\blank{1.2cm} the treatments.
+\par\vspace{4pt}
+\textbf{Four principles of a well-designed experiment}\par\vspace{2pt}
+\stepnum{1}\ \textbf{Comparison} of at least \blank{1.0cm} treatment groups (one may be a
+\textbf{control group}).\par
+\stepnum{2}\ \textbf{Random assignment}: \blank{1.4cm} decides which unit gets which treatment,
+so \textbf{confounding variables} tend to balance out across the groups.\par
+\stepnum{3}\ \textbf{Replication}: more than \blank{1.0cm} unit in each treatment group.\par
+\stepnum{4}\ \textbf{Control}: keep every other variable the \blank{1.3cm} for all groups.
+\\
+& A psychologist recruits 60 student volunteers. A computer randomly assigns 20 to chew mint
+gum, 20 to chew fruit gum, and 20 to chew no gum while they study a list of 30 words. Then
+she records how many words each student recalls.
+\notesprompt{Name the parts, then the principles.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Name the experimental units and the response variable.}{1.3cm}{} &
+\pcell{2}{Name the factor and the treatments.}{1.3cm}{} \\ \hline
+\pcell{3}{Why should a computer, not the psychologist, decide who chews gum?}{1.5cm}{} &
+\pcell{4}{The students know if they chew gum. Who could still be kept blind? Which kind of blinding is that?}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: completely randomized vs randomized block — THE TRAP ──────────────
+\mainidea[Two designs]{Block it?} &
+In a \textbf{completely randomized design}, treatments are assigned to all the units
+completely \blank{1.6cm}. In a \textbf{randomized block design}, units are first sorted into
+\textbf{blocks} of units that are similar on a variable that affects the \blank{1.6cm}; then
+treatments are assigned at random \blank{1.4cm} each block. Blocking takes the differences
+between blocks out of the comparison of treatments.
+\\
+& A company tests a sports drink against water on mile times. Varsity runners are much faster
+than gym-class runners, so it blocks:
+\par\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=0.62cm]
+\node[dbox] (all) at (0,0) {40\\runners};
+\node[dbox] (v) at (2.2,1) {Varsity\\20};
+\node[dbox] (g) at (2.2,-1) {Gym class\\20};
+\node[dbox] (r1) at (4.4,1) {Random\\assignment};
+\node[dbox] (r2) at (4.4,-1) {Random\\assignment};
+\node[dbox] (v1) at (6.9,1.55) {10: sports drink};
+\node[dbox] (v2) at (6.9,0.45) {10: water};
+\node[dbox] (g1) at (6.9,-0.45) {10: sports drink};
+\node[dbox] (g2) at (6.9,-1.55) {10: water};
+\node[dbox] (c1) at (9.5,1) {Compare\\mile times};
+\node[dbox] (c2) at (9.5,-1) {Compare\\mile times};
+\draw[darr] (all) -- (v); \draw[darr] (all) -- (g);
+\draw[darr] (v) -- (r1); \draw[darr] (g) -- (r2);
+\draw[darr] (r1) -- (v1.west); \draw[darr] (r1) -- (v2.west);
+\draw[darr] (r2) -- (g1.west); \draw[darr] (r2) -- (g2.west);
+\draw[darr] (v1.east) -- (c1); \draw[darr] (v2.east) -- (c1);
+\draw[darr] (g1.east) -- (c2); \draw[darr] (g2.east) -- (c2);
+\end{tikzpicture}
+\end{center}
+\notesprompt{Read the diagram.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{5}{Why block on varsity vs.\ gym class?}{1.9cm}{} &
+\pcell{6}{In each block, who decides which 10 runners get the sports drink?}{1.9cm}{} &
+\pcell{7}{A coach says, ``Block on birth month instead.'' Useful? Why?}{1.9cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: matched pairs — THE CRUX ──────────────────────────────────────────
+\mainidea[A block of two]{Matched pairs} &
+A \textbf{matched pairs design} is a block design whose blocks have \blank{1.0cm} units.
+Either pair up units that are alike on a variable related to the response, and let
+\blank{1.4cm} decide which member of each pair gets which treatment; or give each unit
+\blank{1.2cm} treatments, in a random \blank{1.2cm}.
+\par\vspace{3pt}
+A company tests a new shoe sole that may wear more slowly. Each of 15 runners wears one shoe
+with the new sole and one with the old sole for a month; a coin flip decides which foot gets
+the new sole. Then the tread wear on each shoe is measured.
+\notesprompt{Pairs, order, and chance.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{8}{Why is this better than giving 15 runners new soles and 15 others old soles?}{2.1cm}{} &
+\pcell{9}{Each of 12 typists types once with music and once without. How should the order be decided? Why?}{2.1cm}{} &
+\pcell{10}{``Each runner wears both soles, so the pairing controls everything. Skip the coin --- put the new sole on every right foot.'' Agree? Why?}{2.1cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Zinc Lozenge} &
+A pharmacist tests whether a zinc lozenge shortens colds. 120 adults with a new cold
+volunteer; 40 are age 60 or older. Older adults tend to have longer colds. The control group
+gets a look-alike lozenge with no zinc.
+\par\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=0.62cm]
+\node[dbox] (all) at (0,0) {120\\adults};
+\node[dbox] (v) at (2.2,1) {60 or older\\40};
+\node[dbox] (g) at (2.2,-1) {Under 60\\80};
+\node[dbox] (r1) at (4.5,1) {Random\\assignment};
+\node[dbox] (r2) at (4.5,-1) {Random\\assignment};
+\node[dbox] (v1) at (6.9,1.55) {20: zinc};
+\node[dbox] (v2) at (6.9,0.45) {20: placebo};
+\node[dbox] (g1) at (6.9,-0.45) {40: zinc};
+\node[dbox] (g2) at (6.9,-1.55) {40: placebo};
+\node[dbox] (c1) at (9.4,1) {Compare\\days of cold};
+\node[dbox] (c2) at (9.4,-1) {Compare\\days of cold};
+\draw[darr] (all) -- (v); \draw[darr] (all) -- (g);
+\draw[darr] (v) -- (r1); \draw[darr] (g) -- (r2);
+\draw[darr] (r1) -- (v1.west); \draw[darr] (r1) -- (v2.west);
+\draw[darr] (r2) -- (g1.west); \draw[darr] (r2) -- (g2.west);
+\draw[darr] (v1.east) -- (c1); \draw[darr] (v2.east) -- (c1);
+\draw[darr] (g1.east) -- (c2); \draw[darr] (g2.east) -- (c2);
+\end{tikzpicture}
+\end{center}
+\notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Name the experimental units, the treatments, and the response variable.}{1.5cm}{} &
+\pcell{12}{Why block on age?}{1.5cm}{} \\ \hline
+\pcell{13}{Why give the control group a placebo instead of nothing?}{1.5cm}{} &
+\pcell{14}{How could this experiment be double-blind?}{1.5cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{8pt}
-\renewcommand{\arraystretch}{2.2}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.26\linewidth}
-    >{\raggedright\arraybackslash}p{0.38\linewidth}
-    >{\raggedright\arraybackslash}X @{}}
-\textbf{Bias type} & \textbf{What causes it} & \textbf{Example} \\
-\hline
-Voluntary response & Only \blank{4cm} respond --- usually those with strong opinions. &
-\blank{5cm} \\
-Undercoverage & Part of the population has a \blank{3cm} chance of being included. &
-\blank{5cm} \\
-Nonresponse & Selected individuals who \blank{3cm} to respond differ from those who do. &
-\blank{5cm} \\
-Response / question-wording & The \blank{3cm} instrument or \blank{3cm} context
-distorts answers. &
-\blank{5cm} \\
-\end{tabularx}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Diagnosing Bias on the AP Exam}
-\small
-A complete answer on the AP exam must:
-\begin{enumerate}[itemsep=4pt]
-  \item \textbf{Name} the type of bias: \blank{7cm}
-  \item \textbf{Explain the mechanism}: who is over- or under-represented and why:
-        \blank{7cm}
-  \item \textbf{State the direction}: the estimate is too \blank{2cm} because
-        \blank{5cm}
-\end{enumerate}
-
-\vspace{8pt}
-\textbf{Key fact:} A \blank{2cm} non-random sample does \textbf{not} fix bias.
-More responses of a biased type just give more of the same \blank{3cm}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{practicebox}
-\small For each survey, identify the bias type and state the direction of distortion.
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item A news channel asks viewers to text ``YES'' or ``NO'' on a political issue.\\
-        Bias type: \blank{5cm} \quad Direction: \blank{6cm}
-
-  \item A political poll only calls landlines (no cell phones). Young adults are
-        primarily cell-phone-only.\\
-        Bias type: \blank{5cm} \quad Direction: \blank{6cm}
-
-  \item A survey asks: ``Would you support cutting wasteful government spending?''\\
-        Bias type: \blank{5cm} \quad Direction: \blank{6cm}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

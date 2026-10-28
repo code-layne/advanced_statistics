@@ -1,0 +1,25 @@
+# AP Practice item 3, part (b) (Unit 3, Lesson 3.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3b
+points: 2
+task: >-
+  Comfort ratings likely depend on whether a passenger sits by a window, in a middle
+  seat, or on the aisle. Describe a stratified random sample of 24 passengers, and
+  explain why it might give a better estimate than a simple random sample.
+criteria:
+  - id: design
+    points: 1
+    full: >-
+      Names window, middle, and aisle seats as the strata and takes a simple random
+      sample from EACH stratum (for example, 8 from each of the three groups of 80).
+  - id: why
+    points: 1
+    full: >-
+      Explains in context that comfort ratings are alike within a seat type (and differ
+      between types), so the stratified estimate varies less from sample to sample /
+      guarantees every seat type is represented, while an SRS could by chance draw
+      mostly one seat type.
+examples:
+  - response: "Pick 4 rows at random and survey all 6 people in each row."
+    scores: {design: 0, why: 0}

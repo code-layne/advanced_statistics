@@ -1,0 +1,17 @@
+# Homework item B1 (Unit 3, Lesson 3.2). Relative to the lesson directory.
+id: hw4
+points: 2
+task: >-
+  Mercy Valley Hospital has 720 nurses. Describe how to use a random number generator to
+  choose a simple random sample of 36 of the 720 nurses.
+criteria:
+  - id: label
+    points: 1
+    full: >-
+      Labels the nurses with distinct numbers 1 to 720 (from a list of all nurses) and
+      uses a random number generator to pick integers in that range.
+  - id: select
+    points: 1
+    full: >-
+      Skips repeats (or requires 36 different numbers) and says the 36 nurses whose
+      numbers come up are surveyed.

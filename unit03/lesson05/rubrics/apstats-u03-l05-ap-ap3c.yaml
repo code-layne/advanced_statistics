@@ -1,0 +1,22 @@
+# AP Practice item 3, part (c) — the spiral to Lesson 3.4 (Unit 3, Lesson 3.5). Relative to the
+# lesson directory. College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  Describe how researchers could design an experiment to test whether drinking green tea
+  causes lower blood pressure.
+criteria:
+  - id: random_assignment
+    points: 1
+    full: >-
+      E: Randomly assigns the subjects to (at least) two treatment groups, one that drinks
+      green tea and a comparison group (no tea or a look-alike placebo tea), describing how
+      the random assignment is carried out or naming it explicitly.
+  - id: response
+    points: 1
+    full: >-
+      E: Names the response measured (blood pressure, or its change) and says the groups'
+      results are compared after a set period.
+    partial: >-
+      P (0.5): Mentions comparing the groups without naming the response variable.

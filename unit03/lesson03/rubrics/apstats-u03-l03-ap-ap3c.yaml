@@ -1,0 +1,18 @@
+# AP Practice item 3, part (c) (Unit 3, Lesson 3.3). Relative to the lesson directory.
+# College Board style: E (full points), P (partial points given) or I (0).
+id: ap3c
+points: 2
+task: >-
+  A board member says, "Email the survey to all 9,000 students instead. With that many
+  replies, the bias goes away." Do you agree? Explain.
+criteria:
+  - id: size_not_bias
+    points: 2
+    full: >-
+      E: Disagrees AND explains that a larger sample reduces variability but not bias:
+      the same kind of students would still fail to reply and/or the same wording would
+      still push answers up, so the estimate would still be off in the same direction.
+    partial: >-
+      P (1 of 2): Disagrees with a vague reason ("it is still biased") that does not say why
+      more replies leave the bias in place, or names only that size reduces variability with
+      no link to this survey's nonresponse or wording.

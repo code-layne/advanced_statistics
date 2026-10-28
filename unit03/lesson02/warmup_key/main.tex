@@ -1,48 +1,57 @@
-%! AP Statistics — Unit 3, Lesson 3.2 — Warm-Up KEY
-\documentclass[10pt]{article}
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Warm-Up (Answer Key)
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% ONE PAGE, blank and key. Four short items; do not add a fifth.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+%   Item 1 — spiral to Lesson 3.1: the population and the sample in the Lakeview survey.
+%   Item 2 — names in a hat: does everyone have the same chance? Seeds the SRS row (row 1).
+%   Item 3 — the hat could, by chance, draw few seniors; seniors work more. Seeds STRATA (row 2/3).
+%   Item 4 — surveying two whole advisory groups is easier. Seeds CLUSTERS and the "cheaper"
+%            advantage (row 3).
+% Every display is given; nothing is sketched.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.2}{Warm-Up --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.3in}
+\vspace{0.22in}
 
-{\large\bfseries\color{navy} Part 1 \quad Spiral Review}
+The principal of Lakeview High (1{,}200 students, 300 in each of grades 9--12) wants to know how
+many hours per week her students work at a paid job. She plans to survey 80 students.
 
-\vspace{0.12in}
+\vspace{0.16in}
 
-\begin{enumerate}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.34in]
 
-    \item
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabularx}{\linewidth}{@{} X p{2.2cm} p{2.8cm} @{}}
-    \textbf{Scenario} & \textbf{Chance?} & \textbf{Trustworthy?} \\
-    \hline
-    A school randomly selects 50 students. & \ans{Yes} & \ans{Yes} \\
-    A researcher asks all of her friends. & \ans{No} & \ans{No} \\
-    A website invites all visitors to vote. & \ans{No} & \ans{No} \\
-    \end{tabularx}
+  \item \textbf{From Lesson 3.1.} Name the population and the sample.
 
-    \vspace{0.18in}
+        \vspace{12pt}
+        Population: \ans{All 1{,}200 Lakeview students} \qquad Sample: \ans{The 80 surveyed}
 
-    \item \ans{No. The study is observational --- researchers did not randomly assign
-    students to eat or skip breakfast. Students who eat breakfast may differ in other
-    ways (e.g., family income, sleep habits) that also affect GPA. Causation requires
-    an experiment with random assignment.}
+  \item She puts all 1{,}200 names in a hat and draws 80. Does every student have the same
+        chance of being picked? Explain.
+
+        \vspace{12pt}
+        \ansline{Yes. Every name is in the hat once, so each student has the same chance.}\\[18pt]\ansline{(Mixing the names well matters.)}
+
+  \item Seniors usually work many more hours than freshmen. Just by chance, the hat could give
+        her very few seniors. What would that do to her estimate? Suggest a way to choose the 80
+        that makes sure every grade is in the sample.
+
+        \vspace{12pt}
+        \ansline{Too few seniors would make her estimate too low. Split the students by grade}\\[18pt]\ansline{and draw 20 names at random from each grade, so every grade}\\[18pt]\ansline{is in the sample.}
+
+  \item Lakeview's 48 advisory groups each have students from all four grades. Why might it be
+        \emph{easier} to survey every student in 2 advisory groups than to find 80 students
+        scattered across the building?
+
+        \vspace{12pt}
+        \ansline{She visits just 2 rooms and surveys everyone there, instead of tracking down}\\[18pt]\ansline{80 students one at a time all over the school.}
 
 \end{enumerate}
-
-\vspace{0.35in}
-
-{\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
-
-\vspace{0.14in}
-
-\noindent\textcolor{slate}{\small Student responses will vary.}
 
 \end{document}

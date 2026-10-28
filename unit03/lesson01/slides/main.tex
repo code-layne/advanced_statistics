@@ -1,4 +1,4 @@
-%! Introducing Statistics: Do the Data We Collected Tell the Truth? — Unit 3, Lesson 3.1 — Slides (Beamer)
+%! Planning a Study — Unit 3, Lesson 3.1 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
@@ -11,15 +11,15 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.1}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Introducing Statistics: Do the Data We Collected Tell the Truth?}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Planning a Study}\\[1.2cm]
     {\color{skymid}\small Statistics~$\cdot$~Unit 3}
   \end{minipage}
 \end{frame}
 }
 
 % GRADUAL-RELEASE deck: targets → warm-up → I DO divider → one frame per instruction row of the
-% notes (Ask How; Who Is Missing?; Sample Size, which carries the crux) → WE DO (The Step
-% Challenge) → spoken debrief → close & START THE HOMEWORK, which is the individual practice.
+% notes (Ask How; Sample; Study Type, which carries the crux) → WE DO (The Study App) → spoken
+% debrief → close & START THE HOMEWORK, which is the individual practice.
 % There is no group activity and no independent practice set in the notes.
 \newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
@@ -28,12 +28,12 @@
   \navyheader{Today's targets}
   \sectionlabel{Lesson 3.1}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item ask the questions that decide whether data can be trusted: who is in the data, and
-          who decided they would be in it?
+  \begin{itemize}\setlength{\itemsep}{4pt}
     \item tell a \textbf{chance-based method} from a \textbf{non-chance method}.
-    \item explain how a non-chance method creates \textbf{bias}, and why a bigger sample does
-          not fix it.
+    \item name the \textbf{population} and the \textbf{sample}, say what a \textbf{census} is,
+          and generalize only to the population sampled.
+    \item classify a study as an \textbf{observational study} or an \textbf{experiment}.
+    \item explain why only a well-designed experiment can show \textbf{cause and effect}.
   \end{itemize}
   \begin{block}{How today works}
     Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
@@ -46,15 +46,15 @@
   \navyheader{Warm-up}
   \sectionlabel{5 minutes $\cdot$ on your own}
   \begin{enumerate}\setlength{\itemsep}{8pt}
-    \item More sleep, higher test scores. Explanatory? Response? Does it show \emph{cause}?
     \item A news site's online poll: 2{,}400 students respond, \textbf{85\%} want a later start.
-          Who answers a poll like this?
-    \item Which would you trust more: (A) those 2{,}400, or (B) 80 students drawn at random
-          from the roster?
+          Who answers a poll like this? Does 85\% describe \emph{all} students?
+    \item 900 students, one lunch question. One reason to ask all 900 --- and one reason to ask
+          only some.
+    \item More sleep, higher test scores. Explanatory? Response? Does it show \emph{cause}?
   \end{enumerate}
   \vspace{6pt}
-  \begin{block}{Keep item 3 in mind}
-    We vote now. The notes decide it --- problem 10.
+  \begin{block}{Each one comes back}
+    Item 1 is Row 1 of the notes, item 2 is Row 2, item 3 is Row 3.
   \end{block}
 \end{frame}
 
@@ -67,8 +67,8 @@
     {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
     {\color{white}\bfseries\Large Open to your Guided Notes. Fill each blank as we name it
     --- not before.}\\[0.9cm]
-    {\color{skymid}\small Four terms go in the vocabulary box today: data collection method,
-    chance-based method, non-chance method, bias.}
+    {\color{skymid}\small Four terms go in the vocabulary box today: population, sample,
+    observational study, experiment.}
   \end{minipage}
 \end{frame}
 }
@@ -80,10 +80,6 @@
   \vspace{2pt}
   \begin{columns}[t]
     \begin{column}{0.48\textwidth}
-      \begin{block}{Data collection method}
-        \textbf{How} the individuals in the data were chosen and measured.
-      \end{block}
-      \vspace{3pt}
       \begin{block}{Chance-based method}
         A \textbf{random} process decides who is in the data.
       \end{block}
@@ -94,115 +90,115 @@
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
-      {\small\textbf{The four questions}}
+      Methods that do not rely on chance give \redink{untrustworthy} conclusions.
+      \vspace{8pt}
+
+      {\small\textbf{Who decided --- chance or people?}}
       \begin{enumerate}\setlength{\itemsep}{3pt}\small
-        \item Who is in the data?
-        \item Who decided they were in it --- \redink{chance} or people?
-        \item Who is left out, and who is over-represented?
-        \item So can the result be trusted for \emph{everyone}?
+        \item A radio call-in vote on a new stadium.
+        \item A coach asks his varsity players about sports spending.
+        \item A computer picks 60 IDs from the full roster.
       \end{enumerate}
-      \vspace{6pt}
-      {\small Radio call-in vote? A coach's varsity players? 60 IDs picked by computer?}
     \end{column}
   \end{columns}
 \end{frame}
 
-% ── ROW 2: WHO IS MISSING? ───────────────────────────────────────────────────
+% ── ROW 2: POPULATION, SAMPLE, CENSUS ────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Who is missing?}
-  \sectionlabel{notes, Who Is Missing? $\cdot$ problems 4--7}
+  \navyheader{Who we want to know about, and who we ask}
+  \sectionlabel{notes, Sample $\cdot$ problems 4--6}
   \vspace{2pt}
-  A method has \textbf{bias} if it \redink{consistently} overestimates or underestimates the
-  truth. \quad Does the city support a skate park?
-  \vspace{6pt}
-  \begin{center}
-  {\small\renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} c l r @{}}
-    & \textbf{Method} & \textbf{Support} \\ \hline
-    A & Online poll on a local skate shop's website (900 votes) & 88\% \\
-    B & 150 people at the public library, Tuesday at 10 a.m. & 34\% \\
-    C & 400 households picked at random from the city's list & 52\% \\
-  \end{tabular}}
-  \end{center}
-  \vspace{4pt}
-  \begin{block}{Ask it every time}
-    Who decided who answered? Who does that favor --- and which way does it push the number?
-    \quad 88\% describes \redink{who chose to vote}, not the city.
-  \end{block}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Population}
+        \textbf{All} the individuals we want to know about.
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Sample}
+        The \textbf{subset} of the population we actually measure.
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Census}
+        Measures \textbf{every} individual in the population.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      A principal asks about weekly homework hours. A computer picks \textbf{100} of her
+      school's \textbf{1{,}200} students at random.
+      \vspace{8pt}
+
+      Population? Sample? Why not a census?
+      \vspace{8pt}
+
+      A sample speaks only for \redink{the population it came from} --- her school, not the
+      state.
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% ── ROW 3: SAMPLE SIZE — THE CRUX ────────────────────────────────────────────
+% ── ROW 3: STUDY TYPE — THE CRUX ─────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Big is not the same as trustworthy}
-  \sectionlabel{notes, Sample Size $\cdot$ problems 8--10 $\cdot$ the whole point of today}
-  \vspace{6pt}
+  \navyheader{Watching or doing?}
+  \sectionlabel{notes, Study Type $\cdot$ problems 7--10 $\cdot$ the whole point of today}
+  \vspace{2pt}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
-      \begin{block}{News-site poll}
-        \textbf{2{,}400} students chose to respond.\\
-        \textbf{85\%} want a later start.
+      \begin{block}{Observational study}
+        Observe and measure. \textbf{No treatment imposed.} A sample survey is one kind.
+        Shows only an \textbf{association}.
       \end{block}
     \end{column}
     \begin{column}{0.46\textwidth}
-      \begin{block}{Random sample}
-        \textbf{80} students drawn at random from the roster.\\
-        \textbf{58\%} want a later start.
+      \begin{block}{Experiment}
+        Researchers \textbf{assign treatments} and measure the response. Only a well-designed
+        experiment can show \textbf{cause}.
       \end{block}
     \end{column}
   \end{columns}
   \vspace{8pt}
-  ``2{,}400 is 30 times as many as 80, so the 85\% is more trustworthy.'' \emph{Agree?}
-  \vspace{8pt}
-  \begin{block}{Say it, write it in the box}
-    A bigger sample from a non-chance method is still \redink{biased}. More volunteers are just
-    more of the same volunteers.
+  A sleep lab fits 50 adults with wrist monitors and records their exact sleep and caffeine for
+  a month. ``It was measured so carefully that it is an experiment.'' \emph{Agree?}
+  \vspace{6pt}
+  \begin{block}{The one question that decides it}
+    Did the researchers \redink{impose a treatment}? Careful measuring is still watching.
   \end{block}
 \end{frame}
 
 % ── WE DO ────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Guided Practice: The Step Challenge}
+  \navyheader{Guided Practice: The Study App}
   \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
-  A fitness app wants the average steps per day for \emph{all} its users.
+  A university wants to know about the study habits of \emph{all} \textbf{20{,}000} of its
+  students.
   \vspace{4pt}
-  \begin{center}
-  {\small\renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} l r @{}}
-    \textbf{Method} & \textbf{Mean steps/day} \\ \hline
-    Leaderboard: the 12{,}000 users who joined the step challenge & 11{,}200 \\
-    Random: 500 accounts picked at random from all users & 6{,}900 \\
-  \end{tabular}}
-  \end{center}
   \begin{itemize}\setlength{\itemsep}{3pt}
-    \item Which method used chance? Who decided in the other?
-    \item Who is over-represented on the leaderboard? Is 11{,}200 too high or too low?
-    \item ``24 times as many users, so report 11{,}200.'' Respond.
+    \item \textbf{Study A:} a computer picks 250 students at random from the registrar's list;
+          each reports weekly study hours.
+    \item \textbf{Study B:} 120 intro-biology students are randomly assigned to use a flashcard
+          app or not; exam scores are compared.
   \end{itemize}
+  \vspace{4pt}
+  \begin{block}{Ask it every time}
+    Who is the population? Did chance choose the sample? Was a treatment
+    \redink{imposed}?
+  \end{block}
 \end{frame}
 
 % ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Debrief: who, not how many}
+  \navyheader{Debrief: three questions to ask any study}
   \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
   \vspace{6pt}
-  \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
-      \begin{block}{People decided}
-        2{,}400 volunteers: \textbf{85\%}.\\
-        12{,}000 on a leaderboard: \textbf{11{,}200} steps.
-      \end{block}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \begin{block}{Chance decided}
-        80 at random: \textbf{58\%}.\\
-        500 at random: \textbf{6{,}900} steps.
-      \end{block}
-    \end{column}
-  \end{columns}
-  \vspace{12pt}
-  \begin{block}{Two things to say out loud}
-    Why is ``80 is plenty'' the \emph{wrong} reason to trust the random sample? And did the
-    skate-shop poll tell us about the city, or about \redink{who chose to vote}?
+  \begin{enumerate}\setlength{\itemsep}{6pt}
+    \item \textbf{Who decided who is in the data?} Chance, or people?
+    \item \textbf{Who does the sample speak for?} Only the population it was drawn from.
+    \item \textbf{Was a treatment imposed?} If not, it is an observational study --- an
+          association, never proof of cause.
+  \end{enumerate}
+  \vspace{8pt}
+  \begin{block}{Say it out loud}
+    Why is ``they measured it so carefully'' the \emph{wrong} reason to call the sleep lab an
+    experiment? \quad Measuring carefully is still \redink{watching}.
   \end{block}
 \end{frame}
 
@@ -211,13 +207,13 @@
   \navyheader{Homework --- start it now}
   \sectionlabel[goldacc]{5 items $\cdot$ scored 1 to 5 $\cdot$ due the first class after two study halls}
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item Part A: restaurant ratings --- 3{,}200 QR-code volunteers against 300 random calls.
-          Chance or not? Who rates a meal? Which result to report?
-    \item Part B: one multiple-choice item, with a sentence of justification, and a 6 a.m.\
-          gym survey about staying open later.
+    \item Part A: Riverside's dog-park survey --- a social-media poll against 400 households
+          picked at random. Chance or not? Population and sample? Why not a census?
+    \item Part B: one multiple-choice item, with a sentence of justification, and a step-counter
+          study the paper calls an experiment.
   \end{itemize}
   \begin{block}{Silent and alone --- I am circulating}
-    \emph{Part A, item 3} is the one I am reading over your shoulder. The AP Practice page is
+    \emph{Part B, item 2} is the one I am reading over your shoulder. The AP Practice page is
     \textbf{extra credit, scored 1 to 5} --- work it for the reps.
   \end{block}
 \end{frame}
@@ -229,10 +225,10 @@
   \vspace{1.5cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
-    {\color{white}\bfseries\Large Before you trust a number, ask who decided who is in the data.
-    If people decided, more of them does not help.}\\[0.9cm]
-    {\color{skymid}\small Next: Lesson 3.2 --- Planning a Study: the population, the sample, and
-    the difference between watching and experimenting.}
+    {\color{white}\bfseries\Large Ask who decided who is in the data, who the sample speaks for,
+    and whether anyone imposed a treatment.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 3.2 --- Random Sampling Methods: simple random,
+    stratified, and cluster samples.}
   \end{minipage}
 \end{frame}
 }
