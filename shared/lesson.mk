@@ -390,7 +390,9 @@ roster-copies: grading-namecheck grading-need-component grading-need-roster
 #   \def\StudentName{Preferred Last}
 # ahead of it (roster_tex.py's TeX-safe names, as on math-shared's name sheet),
 # so \namedateperiod prints her name on the Name line. Only cover/ is compiled
-# with a name; every graded component is built from ids alone.
+# with a name; every graded component is built from ids alone. roster-force runs
+# this rule on every build and -g makes latexmk recompile: latexmk does not track
+# -usepretex, so without it a changed name would leave the old cover in place.
 roster-pdf = $(if $(filter cover,$1),$(ROSTER_NAME_DIR)/$2.pdf,$(if $(filter $1,$(PACKET_GRADED_NOW)),$(PDF_DIR)/grading/$1/students/$2.pdf,$(call comp-pdf,$1)))
 ROSTER_PKT_PDFS = $(foreach c,$(STUDENT_COMPS),$(call roster-pdf,$c,$*))
 
@@ -400,7 +402,7 @@ $(ROSTER_PKT_DIR)/%.pdf: roster-force $(ALIGN_STAMPS)
 	@set -e; \
 	row=$$($(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py "$(ROSTER)" --id $*); \
 	pref=$$(printf '%s\n' "$$row" | cut -f2); last=$$(printf '%s\n' "$$row" | cut -f3); \
-	( cd cover && TEXINPUTS="$(TEXINPUTS)" $(LATEXMK) $(LATEXFLAGS) -jobname=$* \
+	( cd cover && TEXINPUTS="$(TEXINPUTS)" $(LATEXMK) $(LATEXFLAGS) -g -jobname=$* \
 	    -usepretex="\def\StudentName{$$pref $$last}" \
 	    -outdir="$(ROSTER_NAME_DIR)" main.tex > "$(ROSTER_NAME_DIR)/$*.out" 2>&1 ) \
 	  || { echo "!  LaTeX failed for the named cover of $* — see $(ROSTER_NAME_DIR)/$*.log"; \
