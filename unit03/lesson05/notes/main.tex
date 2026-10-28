@@ -1,101 +1,160 @@
-%! AP Statistics — Unit 3, Lesson 3.5 — Student Guided Notes
-\documentclass[10pt]{article}
+%! Inference and Experiments — Unit 3, Lesson 3.5 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
+% COMPACT budget: the vocabulary box, then ONE guidednotes table of FOUR rows (three instruction
+% rows + Guided Practice), 14 problems.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 5, 8).
+%   WE DO  : the class works the rest; the last row, Guided Practice, is worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 4 (an observed difference of 1.0 "is still a difference" — but 23 of 100
+% reshuffles reach it, so chance explains it).
+% THE CRUX is problem 10, in the last instruction row: "the 500 teens were chosen at random, so
+% this proves music while studying lowers GPA" — random SELECTION lets us generalize; only
+% random ASSIGNMENT lets us conclude cause (EK VAR-3.E.2–E.4).
+%
+% THE CONTEXTS (instruction, guided practice, and homework each use a different one)
+%  Rows 1–3 — studying with music: 24 volunteers randomly assigned to silence or music, silence
+%          recalls 2.5 more words on average; a GIVEN dotplot of 100 random reshuffles
+%          (2 of 100 at 2.5 or more; 23 of 100 at 1.0 or more). Row 3: a random sample of 500
+%          teens, music-studiers have lower GPAs (observational).
+%  Row 4 (GP) — a reading app: 40 ninth graders picked at random from the district, randomly
+%          assigned app / no app; 1 of 100 reshuffles reaches the 6-point difference.
+%
+%   Simulated differences (silence − music), 100 reshuffles:
+%   -3:1 -2.5:1 -2:3 -1.5:7 -1:11 -0.5:16 0:22 0.5:16 1:11 1.5:7 2:3 2.5:1 3:1
+%
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
+% TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
+% sub-rows (a bare `\\` then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: the simulation dotplot is given and read; students never run it.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \begin{document}
 
-\pageheader{Unit 3, Lesson 3.5}{Guided Notes}
-\namedateperiod
+\pageheader{Unit 3, Lesson 3.5}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\writeline\\[1pt]
-\writeline\\[1pt]
-\writeline
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Experimental unit}
-\termblanklong{Factor (explanatory variable in an experiment)}
-\termblanklong{Treatment}
-\termblanklong{Response variable}
-\termblanklong{Control group / Placebo}
-\termblanklong{Random assignment}
-\termblanklong{Blocking variable}
-\termblanklong{Matched pairs design}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termblank{Statistical inference}
+\par
+\termblank{Statistically significant}
+\par
+\termblank{Scope of inference}
+\par
+\termblank{Generalize}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{notesbox}{Components of an Experiment (VAR-3.A)}
 \small
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.3\linewidth} X @{}}
-Experimental units & The \blank{6cm} assigned to treatments. \\
-Factor & The \blank{3cm} variable whose levels are \blank{3cm} intentionally. \\
-Treatment & A specific \blank{3cm} (or combination of levels) of the factor. \\
-Response variable & The \blank{3cm} measured after treatments are applied. \\
-Confounding variable & Related to both the \blank{3cm} and the \blank{3cm};
-may create a false association. \\
-\end{tabularx}
-\end{notesbox}
+\begin{guidednotes}
+% ── ROW 1: could chance alone do this? ────────────────────────────────────────
+\mainidea[Could chance do it?]{Significant} &
+\textbf{Statistical inference} uses data to draw conclusions beyond the \blank{2.6cm} we
+measured. In an experiment, even if the treatment does nothing, the luck of the random
+\blank{2.0cm} makes the groups differ a little. A difference so large that it would
+\blank{1.4cm} happen by chance alone is \textbf{statistically significant}.
+\\
+& \begin{minipage}[c]{0.44\linewidth}\raggedright
+24 volunteers were randomly assigned to study a word list in silence or with music, 12 each.
+The silence group recalled \textbf{2.5 more words} on average.\par\vspace{3pt}
+A computer then reshuffled the 24 scores into two new groups of 12, \textbf{100 times}, as if
+music made no difference.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.54\linewidth}\centering
+\begin{tikzpicture}[x=0.78cm, y=0.1cm]
+  \draw[thick] (-3.4,0) -- (3.4,0);
+  \foreach \x in {-3,-2,-1,0,1,2,3} {
+    \draw (\x,0) -- (\x,-1.4); \node[below, font=\tiny] at (\x,-1.2) {$\x$};}
+  \foreach \x/\n in {-3/1,-2.5/1,-2/3,-1.5/7,-1/11,-0.5/16,0/22,0.5/16,1/11,1.5/7,2/3,2.5/1,3/1}
+    \foreach \k in {1,...,\n} \fill[navy] (\x,\k) circle (1.3pt);
+  \draw[redacc, dashed, thick] (2.5,2) -- (2.5,14);
+  \node[font=\tiny\bfseries, redacc, above] at (2.5,14) {observed 2.5};
+  \node[font=\tiny] at (0,-7) {Simulated difference in means, silence $-$ music (words)};
+  \node[font=\scriptsize\bfseries] at (0,26) {100 random reshuffles};
+\end{tikzpicture}
+\end{minipage}
+\\
+& \notesprompt{Read the simulation. Each dot is one reshuffle.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{What does one dot stand for?}{1.2cm}{} &
+\pcell{2}{How many of the 100 reshuffles gave a difference of 2.5 words or more?}{1.2cm}{} \\ \hline
+\pcell{3}{Is the observed 2.5-word difference statistically significant? Why?}{1.2cm}{} &
+\pcell{4}{Suppose the silence group had recalled only 1.0 more word. Significant? Why?}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the scope of inference ─────────────────────────────────────────────
+\mainidea[What can we say?]{Scope of inference} &
+The \textbf{scope of inference} says what a study lets us conclude. Random \blank{2.4cm}
+of treatments lets us conclude \textbf{cause and effect}. Random \blank{2.0cm} of the
+individuals from a population lets us \textbf{generalize} to that \blank{2.2cm}.
+\par\vspace{4pt}
+\begin{minipage}{\linewidth}\centering\footnotesize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|>{\centering\arraybackslash}m{2.7cm}|>{\raggedright\arraybackslash}m{3.6cm}|>{\raggedright\arraybackslash}m{3.6cm}|}
+\hline
+& \multicolumn{1}{c|}{\cellcolor{sky}\textbf{Selected at random}}
+  & \multicolumn{1}{c|}{\cellcolor{sky}\textbf{Not selected at random}} \tabularnewline
+\hline
+\cellcolor{sky}\textbf{Assigned at random} & Cause? \blank{0.9cm}\newline Generalize? \blank{0.9cm}
+  & Cause? \blank{0.9cm}\newline Generalize? \blank{0.9cm} \tabularnewline
+\hline
+\cellcolor{sky}\textbf{Not assigned} & Cause? \blank{0.9cm}\newline Generalize? \blank{0.9cm}
+  & Cause? \blank{0.9cm}\newline Generalize? \blank{0.9cm} \tabularnewline
+\hline
+\end{tabular}
+\end{minipage}
+\\
+& \notesprompt{Cause? Generalize to whom?}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{5}{300 students picked at random from the district are randomly assigned to music or silence.}{2.0cm}{} &
+\pcell{6}{200 students picked at random from the school are asked if they study with music, and their GPA.}{2.0cm}{} &
+\pcell{7}{The 24 volunteers above, randomly assigned to music or silence.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: cause or only association — THE CRUX ───────────────────────────────
+\mainidea[Association or]{Cause?} &
+With no random assignment, a \blank{2.4cm} variable may explain an association, so we can
+say only that the variables are \blank{2.2cm}. A statistically significant difference in an
+experiment with random assignment is evidence that the treatment \blank{1.6cm} it.
+\par\vspace{3pt}
+A random sample of \textbf{500 teens} from across the state: teens who study with music have
+lower GPAs, on average, than teens who study in silence.
+\notesprompt{No one was assigned to anything.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{8}{Can we say the association holds for all teens in the state? Why?}{2.2cm}{} &
+\pcell{9}{Name a variable that could explain the lower GPAs instead of music.}{2.2cm}{} &
+\pcell{10}{``The 500 were chosen at random, so this proves music lowers GPA.'' Agree? Why?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Random selection $\to$ generalize. Only random \blank{2.4cm} $\to$ cause and effect.}}}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{The Reading App} &
+A district picks \textbf{40 ninth graders at random} from all of its ninth graders and randomly
+assigns 20 to use a reading app for 10 minutes a day and 20 to no app. After 8 weeks the app
+group's mean reading-score gain is \textbf{6 points higher}. In 100 random reshuffles of the 40
+gains (as if the app did nothing), only \textbf{1} gave a difference of 6 points or more.
+\notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Is the 6-point difference statistically significant? Why?}{2.0cm}{} &
+\pcell{12}{Can we conclude the app caused the higher gains? Why?}{2.0cm}{} \\ \hline
+\pcell{13}{To whom can we generalize the result? Why?}{2.0cm}{} &
+\pcell{14}{A second district picks 200 ninth graders at random; those who already use the app score higher. ``Random sample, so the app works.'' Respond.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-\begin{notesbox}{Principles of a Well-Designed Experiment (VAR-3.B.1)}
-\small
-A well-designed experiment must include:
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-  \item \textbf{Comparison:} at least \blank{2cm} treatment groups (one may be a \blank{3cm}).
-  \item \textbf{Random assignment:} units assigned to treatments \blank{4cm}; this \blank{3cm}
-        confounding variables and allows \blank{3cm} conclusions.
-  \item \textbf{Replication:} more than \blank{2cm} unit per treatment group.
-  \item \textbf{Control:} potential \blank{4cm} variables are managed (by design or by
-        holding constant).
-\end{enumerate}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Experimental Designs (VAR-3.C)}
-\small
-\renewcommand{\arraystretch}{1.9}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.26\linewidth}
-    >{\raggedright\arraybackslash}X @{}}
-Completely randomized (CRD) &
-All units randomly assigned to treatments --- \blank{4cm}. \\
-Block design &
-Units grouped into \blank{4cm} based on a blocking variable; treatments assigned
-\blank{3cm} within each block. Reduces \blank{3cm} due to the blocking variable. \\
-Matched pairs &
-A special block design; blocks of \blank{2cm} matched on a key variable (or same unit
-gets \blank{3cm} treatments in random order). \\
-Single-blind &
-\blank{4cm} don't know which treatment they received. \\
-Double-blind &
-Neither \blank{4cm} nor \blank{5cm} know treatment assignments. \\
-\end{tabularx}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{practicebox}
-\small A study tests a new energy drink on reaction time. 60 college students are
-randomly assigned: 30 drink the energy drink, 30 drink a look-alike water.
-Neither students nor the researcher measuring reaction time know which was which.
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-  \item Experimental units: \blank{8cm}
-  \item Factor: \blank{8cm}
-  \item Treatments: \blank{8cm}
-  \item Response variable: \blank{8cm}
-  \item Type of blinding: \blank{8cm}
-  \item Design type: \blank{8cm}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

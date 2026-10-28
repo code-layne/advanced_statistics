@@ -1,0 +1,20 @@
+# Homework item A2 (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  A researcher randomly assigns 60 randomly selected students to a fruit-first lunch line or
+  the usual line; the fruit-first group takes 0.4 more pieces of fruit per student on
+  average. In 100 random reshuffles of the results, as if the order of the line made no
+  difference, 3 gave a difference of 0.4 or more. Is the observed difference statistically
+  significant? Explain in context.
+criteria:
+  - id: verdict
+    points: 1
+    full: >-
+      Says yes, the difference is statistically significant, citing the simulation (only 3 of
+      the 100 reshuffles reached 0.4).
+  - id: reasoning
+    points: 1
+    full: >-
+      Explains in context that a difference of 0.4 pieces of fruit would rarely happen by
+      chance alone if the order of the line did not matter.

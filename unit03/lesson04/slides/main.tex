@@ -1,4 +1,4 @@
-%! Potential Problems with Sampling — Unit 3, Lesson 3.4 — Slides (Beamer)
+%! Designing Experiments — Unit 3, Lesson 3.4 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{apstats-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
@@ -11,16 +11,231 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.4}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Potential Problems with Sampling}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Designing Experiments}\\[1.2cm]
     {\color{skymid}\small Statistics~$\cdot$~Unit 3}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% GRADUAL-RELEASE deck: targets → warm-up → I DO divider → one frame per instruction row of the
+% notes (Experiment; Block It?; Matched Pairs, which carries the crux) → WE DO (The Zinc
+% Lozenge) → spoken debrief → close & START THE HOMEWORK, which is the individual practice.
+% There is no group activity and no independent practice set in the notes.
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Today's targets}
+  \sectionlabel{Lesson 3.4}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item name the \textbf{experimental units}, \textbf{factors}, \textbf{treatments}, and
+          \textbf{response variable} of an experiment.
+    \item explain \textbf{comparison}, \textbf{random assignment}, \textbf{replication}, and
+          \textbf{control} --- with a \textbf{control group}, a \textbf{placebo}, and
+          \textbf{blinding}.
+    \item choose a \textbf{completely randomized}, \textbf{randomized block}, or
+          \textbf{matched pairs} design, and say why chance still assigns inside every block.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
+
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Warm-up}
+  \sectionlabel{5 minutes $\cdot$ on your own}
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item Teens who eat breakfast have higher GPAs. Observational study or experiment? Does it
+          show \emph{cause}?
+    \item A review game in 1st period, none in 6th; 1st period scores higher. Name one
+          \emph{other} reason.
+    \item Use 20 slips of paper to split 20 students into two groups of 10 \emph{by chance}.
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Keep item 2 in mind}
+    ``Morning'' and ``stronger class'' have a name today: \redink{confounding variables}.
+  \end{block}
+\end{frame}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes. Fill each blank as we name it
+    --- not before.}\\[0.9cm]
+    {\color{skymid}\small Four terms go in the vocabulary box today: confounding variable,
+    control group, placebo, single- and double-blind.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1: EXPERIMENT ────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{What makes it an experiment}
+  \sectionlabel{notes, Experiment $\cdot$ problems 1--4}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{The parts}
+        \textbf{Experimental units} are \redink{assigned} the treatments.
+        A \textbf{factor}'s levels are set on purpose; each level is a \textbf{treatment}.
+        The \textbf{response} is measured \redink{after}.
+      \end{block}
+      \vspace{3pt}
+      {\small 60 volunteers: mint gum, fruit gum, or no gum --- chosen by computer --- then
+      count the words recalled.}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\small\textbf{The four principles}}
+      \begin{enumerate}\setlength{\itemsep}{3pt}\small
+        \item \textbf{Comparison} --- at least \redink{two} groups (a control group counts).
+        \item \textbf{Random assignment} --- \redink{chance} decides who gets what, so
+              confounding variables balance out.
+        \item \textbf{Replication} --- more than \redink{one} unit per group.
+        \item \textbf{Control} --- everything else the \redink{same}.
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2: BLOCK IT? ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Block it?}
+  \sectionlabel{notes, Block It? $\cdot$ problems 5--7}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Completely randomized design}
+        Treatments assigned to all units completely \redink{at random}.
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Randomized block design}
+        Sort units into blocks alike on a variable that affects the \redink{response}; then
+        randomize \redink{within} each block.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\small Sports drink vs.\ water on mile times, 40 runners:}
+      \begin{itemize}\setlength{\itemsep}{3pt}\small
+        \item Varsity (20) $\to$ random: 10 drink, 10 water
+        \item Gym class (20) $\to$ random: 10 drink, 10 water
+        \item Compare mile times \emph{within} each block.
+      \end{itemize}
+      \vspace{6pt}
+      {\small ``Block on birth month instead.'' Useful? Does birth month affect a mile time?}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 3: MATCHED PAIRS — THE CRUX ──────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Matched pairs: a block of two}
+  \sectionlabel{notes, Matched Pairs $\cdot$ problems 8--10 $\cdot$ the whole point of today}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Two ways to pair}
+        Pair alike units; \redink{chance} picks who gets which treatment.\\
+        Or each unit gets \redink{both} treatments, in a random \redink{order}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{The shoe sole}
+        15 runners, one new sole and one old sole each. A coin flip picks the foot.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  ``Each runner wears both soles, so the pairing controls everything. Skip the coin --- new
+  sole on every right foot.'' \emph{Agree?}
+  \vspace{8pt}
+  \begin{block}{Say it, write it in the box}
+    Blocking and pairing make the comparison fairer. They \redink{never replace} the coin flip.
+  \end{block}
+\end{frame}
+
+% ── WE DO ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Guided Practice: The Zinc Lozenge}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen $\cdot$ problems 11--14}
+  120 adults with a new cold; 40 are 60 or older, and older adults have longer colds. The
+  control group gets a look-alike lozenge with no zinc.
+  \vspace{4pt}
+  \begin{center}
+  {\small\renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{} l l l @{}}
+    \textbf{Block} & \textbf{Random assignment} & \textbf{Response} \\ \hline
+    60 or older (40) & 20 zinc, 20 placebo & days of cold \\
+    Under 60 (80) & 40 zinc, 40 placebo & days of cold \\
+  \end{tabular}}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Units, treatments, response? Why block on age?
+    \item Why a placebo instead of nothing? How could it be double-blind?
+  \end{itemize}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Debrief: block what matters, then flip the coin}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{6pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Block on it}
+        Runner experience, a person's age, the runner's own two feet: each \redink{affects the
+        response}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Then randomize}
+        Who drinks, who gets zinc, which foot gets the new sole: \redink{chance decides},
+        inside every block.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{block}{Two things to say out loud}
+    Why is ``the pairs are matched, so we can skip the coin'' wrong? And why does birth month
+    make a useless block?
+  \end{block}
+\end{frame}
+
+% ── CLOSE & START THE HOMEWORK ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Homework --- start it now}
+  \sectionlabel[goldacc]{5 items $\cdot$ scored 1 to 5 $\cdot$ due the first class after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Part A: two corn varieties on wet and dry fields --- the parts, why block, and a
+          farmhand who wants to skip the randomizing.
+    \item Part B: one multiple-choice item on a new pillow, with a sentence of justification,
+          and a joint chew for older dogs: placebo and blinding.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating}
+    \emph{Part A, item 3} is the one I am reading over your shoulder. The AP Practice page is
+    \textbf{extra credit, scored 1 to 5} --- work it for the reps.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Block on what affects the response. Then let chance assign
+    the treatments --- inside every block, every pair.}\\[0.9cm]
+    {\color{skymid}\small Next: Lesson 3.5 --- Inference and Experiments: when is a difference
+    between treatment groups too big to be chance alone?}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

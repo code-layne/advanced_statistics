@@ -1,0 +1,119 @@
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — AP Practice (Answer Key)
+% MIRROR of ../ap_practice/main.tex: -key for -boxes, the header, and the correct MC option wrapped
+% in \ans{}. Every \gradedblank line is identical; key mode prints each answer and display.
+% NO teachernote here — guidance lives in the lesson plan.
+% GRADUAL RELEASE: AP-format practice, extra credit, scored 1 to 5;
+% the graded practice is the `homework` component that follows it.
+% Two multiple-choice items (MC1: name the method — 8 of 90 counties, every farm in them, is a
+% CLUSTER sample (B); MC2 is the crux in AP clothing — why stratify textbook spending by college:
+% distractors (D) "cheaper, only some colleges visited" and (E) "survey everyone in each college"
+% are cluster ideas wearing a stratified label), then one free-response set on an airplane:
+% (a) describe an SRS with a random number generator, (b) a stratified sample by seat position
+% and why it beats an SRS, (c) the SPIRAL — population and sample (Lesson 3.1).
+% Every rubric box is full width on its own line under its part, hung with \gradedhere over
+% \writelines{8} (about 2.1in, room for the drawn 2in box). Each \gradedblank line, display=
+% included, is BYTE-IDENTICAL in ap_practice_key/; key mode prints the display. The
+% next-lesson preview is NOT here: it closes the packet, in ../homework/.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u03-l02-ap}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.2}{AP Practice --- Answer Key}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
+\vspace{0.06in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{extra credit, scored 1 to 5} --- your graded homework is the last section
+of this packet. Work these AP-format reps for practice and bring questions to study hall.
+\end{remindbox}
+
+\vspace{0.06in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in]
+
+  \item A state agriculture department wants to estimate the mean size, in acres, of the farms
+        in the state. It randomly selects 8 of the state's 90 counties and records the size of
+        every farm in those 8 counties. Which sampling method did the department use?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item A simple random sample of farms
+          \item \ans{A cluster sample, with counties as clusters}
+          \item A stratified random sample, with counties as strata
+          \item A census of the state's farms
+          \item A convenience sample of farms
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \item A university wants to estimate the mean amount its students spend on textbooks in a
+        semester. Students in the College of Engineering spend much more than students in the
+        College of Arts. Why would a random sample stratified by college be better than a simple
+        random sample of the same size?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item It guarantees that the sample mean equals the mean for all students.
+          \item It removes every chance of bias from the survey.
+          \item \ans{Spending is similar within a college, so the estimate will vary less from
+                sample to sample.}
+          \item It is cheaper, because only a few colleges need to be visited.
+          \item It lets the university survey every student in each chosen college.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=C]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[27]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Every answer must be written \emph{in the context of the
+problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
+
+  \item A full flight has 240 passengers in 40 rows of 6 seats. In every row, seats A and F
+        are window seats, B and E are middle seats, and C and D are aisle seats. The airline
+        wants to know how comfortable passengers found their seats, on a scale of 1 to 10, and
+        will survey 24 of the 240 passengers.
+
+        \vspace{6pt}
+
+        \boxguard[18]
+        \textbf{(a)} Describe how to use a random number generator to select a simple random
+        sample of 24 passengers.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3a, type=rubric, points=2, display={Number the 240 passengers (seats) 1 to 240. Use a random number generator to pick integers from 1 to 240, skipping repeats, until there are 24 different numbers. Survey the passengers in those 24 seats.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[18]
+        \textbf{(b)} Comfort ratings likely depend on whether a passenger sits by a window, in a
+        middle seat, or on the aisle. Describe a stratified random sample of 24 passengers, and
+        explain why it might give a better estimate than a simple random sample.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3b, type=rubric, points=2, display={Strata: window, middle, and aisle seats (80 each). Take an SRS of 8 from each stratum. Ratings are alike within a seat type, so the estimate varies less than an SRS of 24, which could by chance draw mostly one seat type.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[18]
+        \textbf{(c)} Identify the population and the sample in this study.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3c, type=rubric, points=2, display={Population: all 240 passengers on this flight. Sample: the 24 passengers who are surveyed.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+\end{enumerate}
+
+\end{document}

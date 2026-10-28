@@ -1,223 +1,355 @@
-%! AP Statistics — Unit 3, Lesson 3.4 — Lesson Plan
+%! Designing Experiments — Unit 3, Lesson 3.4 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
+% homework) at the COMPACT budget: the whole lesson is finished in one 55-minute period.
+% THERE IS NO GROUP ACTIVITY IN THIS COURSE and NO INDEPENDENT PRACTICE SET in the notes — the
+% homework is the individual practice, started in class. Teacher-facing. Every box is `skillbox`
+% (breakable) with a \boxguard ahead of it; no `fixedskillbox`, no tier boxes, no exit ticket.
+% CED Topics 3.5 + 3.6 folded into one lesson (Unit 3 runs five lessons). Inference, statistical
+% significance, and the scope-of-inference table belong to Lesson 3.5 — not taught here.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
-\newcommand{\LessonNumberName}{Lesson 3.4: Potential Problems with Sampling}
+\newcommand{\LessonNumberName}{Lesson 3.4: Designing Experiments}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify and explain the major sources
-    of bias in sampling --- voluntary response, undercoverage, nonresponse, and
-    response bias --- and recognize that non-random methods introduce these problems
-    (Big Idea: DAT).
+    \textbf{Primary Objective:} Students will name the experimental units, factors, treatments,
+    and response variable of an experiment; explain the four principles of a well-designed
+    experiment (comparison, random assignment, replication, control) with a control group,
+    placebo, and blinding; and choose among a completely randomized, a randomized block, and a
+    matched pairs design --- blocking on a variable that affects the response, and still
+    randomizing inside every block and pair.
+    \\[2pt]
+    \textbf{CED alignment:} Topics 3.5 (Introduction to Experimental Design) and 3.6 (Selecting
+    an Experimental Design) \quad$\cdot$\quad Big Idea: VAR (Variation and Distribution)
+    \quad$\cdot$\quad Skills 1.B, 1.C \quad$\cdot$\quad LO VAR-3.A, VAR-3.B, VAR-3.C, VAR-3.D
+    \quad$\cdot$\quad EK VAR-3.A.1--4 (units, factors and treatments, response, confounding),
+    VAR-3.B.1 (the four principles), VAR-3.C.1--9 (completely randomized design, random
+    assignment methods, single- and double-blind, control group, placebo effect, randomized
+    block design, matched pairs), VAR-3.D.1 (advantages of each design)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction row by row in one \emph{Main Ideas / Notes} table --- each
+    idea a definition to complete and a grid of short problems, the first worked by you and the
+    rest by the class; the last row, Guided Practice, is worked together with students holding
+    the pen; \textbf{the homework is the individual practice}, and students start it in class
+    while you circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Compact budget:} the notes are three pages, 14 problems --- the densest lesson of
+    the unit, two CED Topics in one period. Both design diagrams are pre-drawn and read;
+    nothing is sketched. Whether a difference between groups is \emph{statistically
+    significant}, and what an experiment lets us conclude about whom, waits for Lesson 3.5.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can name the experimental units, factor(s), treatments, and response variable of an
+        experiment (VAR-3.A).
+  \item I can explain comparison, random assignment, replication, and control in context, and
+        say why a control group gets a placebo and who is kept blind (VAR-3.B, VAR-3.C).
+  \item I can choose a completely randomized, randomized block, or matched pairs design and
+        explain why it fits (VAR-3.C, VAR-3.D).
+  \item I can explain why chance must still assign the treatments inside every block or pair.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item An experiment \emph{imposes} treatments on experimental units and measures a response
+        afterward (EK VAR-3.A.1--3). Random assignment tends to balance confounding variables,
+        so a difference in responses can be traced to the treatments (EK VAR-3.C.1).
+  \item A block holds units alike on a variable that \emph{affects the response}; treatments
+        are then assigned at random within each block (EK VAR-3.C.7--8). Matched pairs is a
+        block of two, or each unit receiving both treatments in random order (EK VAR-3.C.9).
+  \item \textbf{Target misconception:} ``blocking (or pairing) replaces random assignment.''
+        The pairing removes runner-to-runner differences, not foot-to-foot ones: a new sole on
+        every right foot is confounded with the right foot. Chance still decides.
+  \item \textbf{Second misconception:} ``any variable makes a good block.'' Birth month does
+        not affect a mile time, so blocking on it buys nothing.
+  \item The design depends on the question, the resources, and the units (EK VAR-3.D.1).
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 1 --- Selecting Statistical Methods}
     \begin{itemize}
-        \item Identify potential sources of bias in a sampling method (DAT-2.E,
-              Skill 1.C).
-        \item Explain how each bias type causes systematic over- or under-estimation.
-        \item Distinguish the four main bias types by cause and mechanism.
+        \item \textbf{Experimental units / subjects}, \textbf{factor}, \textbf{levels},
+              \textbf{treatments}, \textbf{response variable} (VAR-3.A)
+        \item \textbf{Confounding variable} --- related to the explanatory variable and
+              affects the response, so their effects are mixed up (VAR-3.A.4)
+        \item \textbf{Four principles} --- comparison, random assignment, replication,
+              control (VAR-3.B.1)
+        \item \textbf{Control group}, \textbf{placebo}, \textbf{placebo effect}
+              (VAR-3.C.5--6)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item Bias: certain responses are systematically favored over others.
-        \item Voluntary response bias: only those with strong opinions respond.
-        \item Undercoverage: parts of the population are excluded from the sampling
-              frame.
-        \item Nonresponse: selected individuals decline to participate.
-        \item Response bias: question wording, interviewer effects, or self-reporting
-              distort answers.
+        \item \textbf{Single-blind / double-blind} (VAR-3.C.3--4)
+        \item \textbf{Completely randomized design} (VAR-3.C.1--2)
+        \item \textbf{Randomized block design}, \textbf{block}, \textbf{blocking variable}
+              (VAR-3.C.7--8)
+        \item \textbf{Matched pairs design} --- pairs, or each unit gets both treatments in
+              random order (VAR-3.C.9)
+        \item \textbf{Carried forward} --- observational study vs.\ experiment (Lesson 3.1);
+              random selection by slips and a hat (Lesson 3.2)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Breakfast and GPAs, a review game in 1st vs.\ 6th period, splitting 20
+students by slips of paper & Leave item~2's ``other reasons'' on the board --- Row~1 names them
+confounding variables \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--10 row
+by row, then \emph{The Zinc Lozenge} (11--14) together, pen in their hand & \textbf{I do}
+each row's definition lines and first problem (1, 5, 8), \textbf{we do} the rest (24)
+$\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Open on the
+almost-right problem~10; ``block on what matters, then flip the coin'' \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Circulate on
+Part~A item~3 for your formative read; preview Lesson 3.5 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The items and what each seeds}
     \begin{itemize}
-        \item \textbf{Bias} --- a systematic tendency for the sample to misrepresent
-              the population
-        \item \textbf{Voluntary response bias} --- only volunteers (usually those with
-              strong opinions) respond
-        \item \textbf{Undercoverage bias} --- part of the population has a reduced
-              chance of being included
+        \item \textbf{1.} Breakfast and GPA: observational study, so no cause.
+              \textbf{Spirals} to Lesson 3.1 and sets up why we impose treatments today.
+        \item \textbf{2.} A review game in 1st period, none in 6th. \textbf{Seeds}
+              \emph{confounding variable} and \emph{comparison} --- time of day and the class
+              itself are tangled with the game.
+        \item \textbf{3.} Splitting 20 students into two groups of 10 with slips of paper.
+              \textbf{Seeds} \emph{random assignment} (EK VAR-3.C.2), the move in every
+              design in the notes.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Nonresponse bias} --- selected individuals who do not respond
-              may differ systematically from those who do
-        \item \textbf{Response bias} --- survey instrument or context causes
-              systematically inaccurate answers (question wording, leading questions,
-              self-reporting)
-        \item \textbf{Convenience sample} --- individuals chosen because they are
-              easy to reach; introduces potential for all bias types
+        \item \textbf{Collect item~2's answers on the board} in their words (``morning
+              brains,'' ``smarter class''). Row~1 names them confounding variables, and
+              random assignment is the fix.
+        \item \textbf{Item~3 is the mechanism}: names in a hat, draw 10 without replacement.
+              Say it once; problems 3, 6, 9, and 10 all lean on it.
+        \item Item~1 is a spiral; take 60 seconds and move on.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Prior Knowledge Check (3--4 min)}
-    \begin{itemize}
-        \item Recall: ``From Lesson 3.3, what makes a simple random sample
-              trustworthy?'' (every group has equal chance)
-        \item Transition: ``But even well-intentioned surveys can go wrong. Today we
-              look at the ways sampling can fail.''
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections Forward}
-    \begin{itemize}
-        \item Bias in experiments (confounding) $\to$ Lesson 3.5
-        \item How experiments eliminate bias with random assignment $\to$ Lessons 3.5--3.6
-        \item Interpreting survey results on the AP exam $\to$ Unit 9
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are one \emph{Main Ideas / Notes} table --- four rows, 14 short problems.
+\textbf{In every row you fill the definition lines and work the first problem of each grid; the
+class works the rest, pen in their hand.} The vocabulary box is filled \emph{as you go}:
+confounding variable and control group in Row~1, placebo and blinding at problem~4 and again
+in Guided Practice.
+\begin{multicols}{2}
+\textbf{Experiment (9 min).} Fill the parts (assigns / assigned / after) and the four
+principles; point at the warm-up board as you fill \emph{confounding}. Work
+\textbf{problem~1} yourself (60 volunteers; words recalled). Problem~2 is theirs --- three
+treatments, one of them \emph{no gum}, the control group. Problem~4 is where blinding lands:
+the students cannot be blind, but the scorer can --- single-blind.
+
+\textbf{Block It? (7 min).} Fill the two designs, then read the diagram left to right before
+anyone writes. Work \textbf{problem~5} (experience affects mile time). Problem~6 is the
+mechanism inside a block. \textbf{Problem~7 is the trap}: birth month sounds like a variable,
+so it sounds like a block. Ask, ``Does birth month change a mile time?''
+
+\textbf{Matched Pairs (8 min) --- the crux.} Fill the two forms. Work \textbf{problem~8}
+(each runner is their own comparison). Problem~9 is the second form --- each typist gets both
+treatments, so chance sets the order. \textbf{Problem~10 is the crux}: take a hand count on
+``agree'' \emph{before} anyone explains. Then ask, ``Is everyone's right foot the same as
+their left?'' --- the dominant foot is a confounding variable the coin flip would have
+balanced.
+
+\columnbreak
+\textbf{We do (about 10 min): The Zinc Lozenge.} A fresh context, problems 11--14, worked
+entirely together. Students hold the pen; you hold the questions: \emph{``What does the
+pharmacist actually measure?''} \quad \emph{``Why would someone on a sugar lozenge feel
+better?''} \textbf{Problem~12 carries the blocking idea forward} and \textbf{problem~14} the
+double-blind; protect 12 and 13 when time is short.
+
+\textbf{The pen must actually change hands.} Put problem~11 on them cold, and make the room
+defend each answer. Circulate and demand the reason:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~12:} ``Does age affect how long a cold lasts?''
+  \item \textbf{Problem~13:} ``What would happen to the no-lozenge group's reports?''
+  \item \textbf{Problem~14:} ``Who hands out the lozenges, and who records the days?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one \emph{almost}-right
+problem~10 (``no, because it isn't random'' with no reason why the right foot matters) and
+one that names the dominant foot. \textbf{Your formative read comes twice}: here, and again
+in the last eight minutes as students start the homework.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5--7 min)}\\
-    Show this survey question: \textit{``Don't you agree that the new cafeteria food
-    is terrible?''}\\[4pt]
-    Ask: ``What's wrong with this question?'' Then show a second version: ``How would
-    you rate the new cafeteria food? Excellent / Good / Fair / Poor.''\\[4pt]
-    Transition: \textit{``Even if we use a perfect random sample, the question itself
-    can bias the results.''}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15--18 min)}
-    \begin{enumerate}
-        \item Define bias: systematic error, not random.
-        \item Voluntary response: call-in polls, online votes --- who responds?
-        \item Undercoverage: landline phone surveys miss cell-phone-only households.
-        \item Nonresponse: people who are selected but refuse to participate may have
-              systematically different opinions.
-        \item Response/question-wording bias: leading questions, sensitive topics,
-              self-reporting errors.
-        \item Non-random sampling methods (convenience, judgment) introduce all of
-              these problems without a chance to correct them.
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- nothing on the page to fill in.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, itemsep=3pt]
+  \item \textbf{Open on the almost-right problem~10}: ``no, it should be random.'' Right
+        verdict, missing reason. Ask the room to finish it: \emph{what} could the right foot
+        do to the result? (Dominant feet push off harder and wear soles faster; the new sole
+        would look worse than it is.)
+  \item Put the three blocks side by side: varsity / gym class, 60+ / under 60, a runner's own
+        two feet. Each affects the response. Then birth month: it does not.
+  \item Which design for which job: units alike $\to$ completely randomized; one variable
+        that matters $\to$ block; units that pair naturally or can take both $\to$ matched
+        pairs.
+\end{enumerate}
+\columnbreak
+\textbf{The sentence to leave on every desk:} \emph{Block on what affects the response. Then
+let chance assign the treatments --- inside every block, every pair.} Make a student say it,
+not you.
+
+\textbf{If the debrief runs short}, cut item~3 --- item~1 is the only one that cannot be cut.
+\textbf{Do not let the debrief eat the last eight minutes} --- the homework start is your
+second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Walk through 4 flawed surveys. For each: (a) identify the bias type,
-              (b) explain the mechanism (which direction does it push the estimate?),
-              (c) suggest a fix.
-        \item Emphasize: ``bias'' on the AP exam means \emph{systematic}
-              over- or under-estimation --- not just ``unfair.''
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Listen for: students identifying bias without explaining the direction
-              of distortion.
-        \item Cold-call: ``If only people who hate the policy call in, is the estimate
-              too high or too low? Why?''
-        \item Check activity work for precision: ``nonresponse'' is not the same as
-              ``no one responded.''
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- extra credit, scored 1 to 5]{goldbox}
+Two multiple-choice items --- \textbf{MC~1} counts the treatments in a two-factor tomato
+experiment (D: $3 \times 2 = 6$; (C) adds the levels, (E) counts the plants), and
+\textbf{MC~2 is the crux in AP clothing}: two sunscreens on 30 volunteers' arms, with
+distractor (A) pairing without randomizing, (E) blocking on eye color without randomizing,
+and (D) assigning by burn risk --- then one free-response set on a math-practice app blocked by
+math level: \textbf{(a)} units, treatments, response; \textbf{(b)} why block and how to assign
+within blocks (20/20 honors, 30/30 standard); and \textbf{(c)}, \textbf{the spiral},
+nonresponse bias in an emailed survey (Lesson 3.3).
+
+\textbf{Extra credit, scored 1 to 5, turned in with the homework.} Go over it at
+the start of Lesson 3.5. Hold the AP standard out loud: \emph{in context or it does not count}
+--- a part (b) that says ``block so it's fair'' without saying that math level affects test
+scores, or that never randomizes inside the blocks, has not earned the point.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Partner Activity (8--10 min)}\\
-    Four flawed survey descriptions. Partners:
-    \begin{enumerate}
-        \item Identify the type of bias (may be more than one).
-        \item Explain how the bias would distort the estimate (too high / too low /
-              in a specific direction).
-        \item Suggest a redesign that would reduce the bias.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Bias identification card --- definition + one example
-              for each type.
-        \item \textit{Extension}: Find a real survey in the news. Identify at least one
-              potential source of bias and explain how it could affect the results.
-        \item \textit{ELL}: Sentence frame --- ``This survey has \underline{\hspace{1cm}}
-              bias because \underline{\hspace{2cm}}, which means the estimate is probably
-              too \underline{\hspace{1cm}}.''
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored 1 to 5, due the first class after two study halls]{goldbox}
+Five items in a third context. \textbf{Part~A} (two corn varieties on 24 plots, 12 wet river
+bottom and 12 dry hillside): \textbf{A1} units, treatments, response; \textbf{A2} why the
+block design beats a completely randomized one; \textbf{A3} the crux restated --- ``already
+blocked, so plant Early Gold on the 6 plots nearest the road.'' \textbf{Part~B}: \textbf{B1}
+an AP-style multiple choice (a new pillow; C, each volunteer gets both with a coin flip for
+order) with a required justification; \textbf{B2} a placebo chew and blinding for older dogs.
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.}
+\textbf{Scoring:} 10 points --- A1, A2, A3, B2 at 2 each; B1 1 for the letter and 1 for the
+justification. \textbf{A3 is the one to read closely}: a student who sides with the farmhand
+has kept the target misconception, and Lesson 3.5's inference rests on random assignment.
+The spiralbox previews Lesson 3.5.
+
+\textbf{Paper homework is the default for this course} --- assign this page unless you have
+decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
+instead, it replaces this page, and this page
+stays in the packet as extra practice. Never assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Scenario: \textit{``A researcher mails surveys to 1{,}000 randomly selected
-    adults to ask about their annual income. Only 120 return the survey, and most
-    are from high-income households.''}
-    \begin{enumerate}
-        \item Identify the type(s) of bias present.
-        \item Explain how this bias distorts the estimate of average income.
-        \item Was the original selection (1{,}000 random adults) biased?
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``A political poll asks: `Are you in favor of wasteful government
-    spending?' Which type of bias is most likely introduced by this question?''}
-    \begin{enumerate}[label=(\Alph*)]
-        \item Undercoverage bias
-        \item Voluntary response bias
-        \item Nonresponse bias
-        \item Response bias (question wording)
-    \end{enumerate}
-    Answer: (D)
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``Blocking or pairing replaces random assignment''} (notes~10, HW~A3, AP~MC2
+        (A) and (E), AP~(b) --- the target misconception). Probe: \emph{``Inside this block,
+        who decided which units got the treatment? Could that choice be tangled with the
+        response?''}
+  \item \textbf{Blocking on anything} (notes~7, AP~MC2 (E)). Probe: \emph{``Does this variable
+        change the response? If not, the block does nothing.''}
+  \item \textbf{Treatments vs.\ factors} (notes~2, AP~MC1). Students count levels instead of
+        combinations. Probe: \emph{``List every combination a single plant could get.''}
+  \item \textbf{``The subjects are blind'' when they cannot be} (notes~4). Probe: \emph{``Who
+        else touches the data --- the scorer, the nurse, the owner?''}
+\end{itemize}
+Cold-call prompts: \emph{``Name a block that would help in the shoe study, and one that would
+not.''} \quad \emph{``Why give a placebo instead of nothing at all?''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item For 4 flawed surveys: identify the bias type, explain the direction of
-              distortion, and suggest an improvement.
-        \item Reflection: \textit{``Can you have a large, biased sample and a small,
-              unbiased sample at the same time? Which is better?''}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Write two versions of the same survey question ---
-              one with response bias and one without. Explain how the wording
-              affects responses.
-        \item \textit{Preview}: Lesson 3.5 shifts to experiments. Think about how
-              random \emph{assignment} (not selection) eliminates confounding.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Assign (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+five items on paper, scored, due the first class after two study halls --- and point out that
+the AP Practice page is extra credit, turned in with the homework. Circulate on \textbf{Part~A
+item~3}. Sort what you see into three piles as you walk --- disagreed and named something about
+the road plots (ready); disagreed with ``it has to be random'' and no reason (ready, needs the
+confounding language); agreed with the farmhand (the misconception survived) --- and open
+Lesson 3.5 by returning to the right-foot problem if that third pile ran past a third of the
+room. Then close on what changed: \emph{``Blocks make the comparison fair. Chance makes it
+honest.''} \textbf{Preview:} Lesson 3.5, \emph{Inference and Experiments} --- when a
+difference between treatment groups is too big to be chance alone.
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Item~2 is the seed and item~3 the mechanism. Give five minutes total and spend at most 60
+seconds on item~1. On item~2, collect two or three ``other reasons'' and leave them on the
+board under \emph{why did 1st period win?}; Row~1 names them confounding variables and
+random assignment as the fix. On item~3, accept any chance method (slips in a hat, a random
+number generator), but insist on ``without replacement'' so each group has exactly 10.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Four rows, 14
+problems --- two CED Topics, so Row~1 must move: nine minutes, no more. \textbf{You work 1, 5,
+and 8}; the class works the rest. \textbf{Problem~7 is the trap} (birth month as a block);
+\textbf{problem~10 is the crux} (the pairing replaces the coin flip). Take a hand count on 10
+before any explanation, and resolve it with the dominant foot, not with the rule. \textbf{The
+Zinc Lozenge is where the pen changes hands}; protect 12 and 13 if time is short.
+\textbf{Do not teach} whether the zinc ``worked'' or how big a difference would count --- that
+is Lesson 3.5. \textbf{Your second formative read is the homework start}: Part~A item~3, three
+piles. \textbf{Debrief (8 min), spoken}, opening on the almost-right problem~10.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is extra credit, scored 1 to 5} --- the graded practice is the homework
+behind it. \textbf{MC~2 is the one worth reading closely}: (A) is the crux verbatim and (E)
+adds the trap; if more than a handful choose either, return to the right-foot problem before
+Lesson 3.5. On the free response, part (b) needs both moves --- why math level matters
+\emph{and} random assignment within each block; part (c) is a Lesson 3.3 spiral and must say
+which way the nonresponse pushes the 80\%.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored 1 to 5 (10 points), due the first class after two study halls.} The eight minutes at the
+end of the period are a \emph{start}: put students on A1 and A3 first while you can still catch
+a wrong start. \textbf{A3 is the item to read first when scoring} --- a student who sides with
+the farmhand has kept the target misconception. On A2, the response must say the field affects
+yield; ``blocking is more accurate'' alone earns 1 of 2. On B1, (C) with no justification earns
+1 of 2. On B2, the placebo reason and who is blind are needed for full credit; ``the dogs are
+blind'' does not earn the blinding point.
+\textbf{Paper is the default.} On the occasions you assign DeltaMath in its place, tell
+students this page is now optional practice. Do not assign
+both.
+\end{teachernote}
 \end{document}

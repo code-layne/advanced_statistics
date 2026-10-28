@@ -4,16 +4,20 @@
 id: ap3b
 points: 2
 task: >-
-  A school librarian surveys the 40 students who come to the library at lunch on
-  Monday; their mean is 3.2 books per month. Is 3.2 books per month likely too high
-  or too low for all students at the school? Explain in context.
+  For the energy-drink records study (an observational study of 1,500 adults), a
+  headline reads, "Energy drinks cause sleepless nights." Does this study support the
+  headline? Explain in context.
 criteria:
-  - id: direction
+  - id: cause
     points: 2
     full: >-
-      E: Says too high AND explains in context that students who spend lunch in the
-      library are likely to read more than students who do not, so heavier readers are
-      over-represented.
+      E: Says no AND explains that because no treatment was imposed (observational
+      study), the study shows only an association between energy drinks and sleep, not
+      cause; ideally names a plausible other variable (night-shift work, stress, long
+      work hours) that could lead to both more energy drinks and less sleep.
     partial: >-
-      P (1 of 2): Says too high with a reason that is not tied to who visits the library,
-      OR explains the over-representation correctly without stating the direction.
+      P (1 of 2): Says no with only a slogan ("correlation is not causation") and no
+      reference to the study's design or the context.
+examples:
+  - response: "Yes, the people who drank more slept less, so the drinks caused it."
+    scores: {cause: 0}

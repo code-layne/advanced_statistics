@@ -1,0 +1,16 @@
+# Homework item B1, justification of the multiple-choice answer (Unit 3, Lesson 3.3). Relative to the lesson directory.
+id: hw4j
+points: 1
+task: >-
+  Which change to Plan 2 would do the most to reduce the response bias named in A2?
+  (A) call 5,000 teens instead of 1,000 (B) let each selected teen answer on an anonymous
+  online form with no name attached (C) ask "Do you put lives at risk by using your phone
+  while driving?" (D) call only teens who completed driver's education (E) ask the question
+  in person during each teen's road test. Justify the choice.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (B): an anonymous form removes the trooper and the name, so teens have no
+      reason to hide phone use and answer more honestly. (Noting that a larger sample, A,
+      does not reduce bias is welcome but not required.)

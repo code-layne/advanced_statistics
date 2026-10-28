@@ -1,0 +1,18 @@
+# Homework item A2 (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw2
+points: 2
+task: >-
+  Explain why a randomized block design (blocking on river bottom vs hillside) is better
+  here than a completely randomized design.
+criteria:
+  - id: related
+    points: 1
+    full: >-
+      Says the blocking variable (field location / soil moisture) affects the response,
+      corn yield.
+  - id: benefit
+    points: 1
+    full: >-
+      Explains the benefit in context: comparing the varieties within each field removes
+      the wet/dry difference, whereas a completely randomized design could by chance put
+      more of one variety in the wet field and mix the field's effect into the comparison.

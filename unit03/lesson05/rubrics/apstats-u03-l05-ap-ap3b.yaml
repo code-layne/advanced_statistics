@@ -1,0 +1,18 @@
+# AP Practice item 3, part (b) (Unit 3, Lesson 3.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3b
+points: 2
+task: >-
+  Researchers selected 1,000 adults at random from a list of all adult residents of a
+  state and found that daily green-tea drinkers had lower mean blood pressure. To what
+  group can the researchers generalize their result? Explain.
+criteria:
+  - id: generalize
+    points: 2
+    full: >-
+      E: Says all adult residents of the state AND explains that the 1,000 adults were
+      selected at random from that population.
+    partial: >-
+      P (1 of 2): Names the right population with no reason, OR gives random selection as
+      the reason but names the wrong group (all adults everywhere, only the 1,000).

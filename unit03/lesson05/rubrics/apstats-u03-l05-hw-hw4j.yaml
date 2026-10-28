@@ -1,0 +1,18 @@
+# Homework item B1, justification of the multiple-choice answer (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw4j
+points: 1
+task: >-
+  A city health department picks 400 adult residents at random; residents who walk at least
+  30 minutes a day report significantly lower stress. Which conclusion is most appropriate?
+  (A) walking causes lower stress for all adults in the city (B) walking causes lower stress,
+  but only for these 400 (C) among all adults in the city, walkers tend to report lower
+  stress, but we cannot conclude walking causes it (D) no conclusion is possible because this
+  was not an experiment (E) walking causes lower stress for all adults in the country.
+  Justify the choice.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (C): the random sample lets the association be generalized to the city's
+      adults, but no one was randomly assigned to walk, so cause and effect cannot be
+      concluded.

@@ -1,0 +1,23 @@
+# AP Practice item 3, part (a) (Unit 3, Lesson 3.3). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  A county health department selects 400 high school students at random from the
+  enrollment list and emails each a link to an online sleep survey; 95 respond. Other than
+  the wording of the question, identify one potential source of bias and explain how it
+  could affect the estimate of the mean hours of sleep.
+criteria:
+  - id: bias_direction
+    points: 2
+    full: >-
+      E: Names a plausible source of bias other than wording (nonresponse is expected:
+      only 95 of 400 replied; voluntary response or a self-report concern described as
+      such is acceptable) AND explains in context how the students who answered may differ
+      from those who did not, with a direction for the estimate of the mean that follows
+      from that explanation (for example, the busiest students sleep least and reply least,
+      so the mean is too high).
+    partial: >-
+      P (1 of 2): Names the bias correctly but gives no direction, or gives a direction with
+      no context-based reason, or describes the mechanism in context without naming a bias.

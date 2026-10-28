@@ -1,72 +1,101 @@
-%! AP Statistics — Unit 3, Lesson 3.3 — Homework
-\documentclass[10pt]{article}
+%! Problems with Sampling — Unit 3, Lesson 3.3 — Homework
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page. Started in the last eight minutes of the period and finished after two
+% study halls. The AP Practice component before it is extra credit, scored 1 to 5.
+% THIRD CONTEXT: the notes teach on one-line surveys and a game forum, Guided Practice runs on a
+% university work-hours survey, AP Practice on transit, speed limits, and sleep; these items are
+% on a state DOT survey of teen drivers who use a phone while driving.
+% Part A: A1 voluntary response with direction, A2 response bias in a RANDOM sample (a trooper
+% asks), A3 nonresponse with how the non-answerers differ. Part B: B1 the AP-style multiple
+% choice (which change reduces A2's bias) with a required justification, B2 THE CRUX restated —
+% "3,000 responses, three times as many, so Plan 1 is more trustworthy". 10 points.
+% \answerspace{H}{} reserves exactly H; each \gradedblank inside it is BYTE-IDENTICAL in the key,
+% where key mode prints its display. Keep every \boxguard identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{grading}
 \gradingassignment{apstats-u03-l03-hw}
 \gradingcourse{advanced_statistics}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.3}{Homework}
 {\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.1in}
+\vspace{0.04in}
 
-\begin{practicebox}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
 \small
-\textbf{1.} Identify the sampling method in each scenario.
+\textbf{This is your graded homework.} It is scored 1 to 5 and due the first class after two study
+halls. Start it now; ask about anything that stalls you before you leave. For every bias you
+name, say \textbf{who} is over- or under-represented and whether the estimate is
+\textbf{too high or too low}.
+\end{remindbox}
 
-\vspace{6pt}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item A university has 20{,}000 students. A researcher assigns each student a
-        number and uses a random number generator to select 400.\\
-        Method: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw1a, type=short, points=1, answer={simple random sample}, check=text]{2.4in}{0.2in}}}
+\vspace{0.04in}
 
-  \item A county divides its population into 10 geographic zones. Researchers
-        randomly select 3 zones and survey every household in those zones.\\
-        Method: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw1b, type=short, points=1, answer={cluster sample}, check=text]{2.4in}{0.2in}}}
-
-  \item A polling agency calls every 50th person on a voter registration list,
-        starting with a randomly selected number between 1 and 50.\\
-        Method: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw1c, type=short, points=1, answer={systematic random sample}, check=text]{2.4in}{0.2in}}}
-
-  \item A car manufacturer divides its workers into three job categories (assembly,
-        quality control, shipping), then randomly selects 20 workers from each.\\
-        Method: \makebox[7cm][l]{\vphantom{\blank{7cm}}\hspace{46bp}\smash{\gradedblank[id=hw1d, type=short, points=1, answer={stratified random sample}, check=text]{2.4in}{0.2in}}}
+\boxguard[14]
+\begin{notesbox}{Part A --- Teen Drivers and Phones}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
+\small
+The state Department of Transportation (DOT) wants to estimate the percent of the state's
+licensed teen drivers who use a phone while driving. \textbf{Plan 1:} the DOT posts a poll on
+its social media page; 3{,}000 teens answer, and \textbf{22\%} say they use a phone while
+driving. \textbf{Plan 2:} the DOT selects 1{,}000 teens at random from the state's list of
+licensed teen drivers, and a state trooper phones each one to ask the same question.
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item Plan 1: name the bias that comes from \emph{who chose} to answer. Is 22\% likely too
+        high or too low? Explain in context.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw1, type=rubric, points=2, display={Voluntary response bias. Teens who follow the DOT and choose to answer are likely the most safety-minded, so phone users are under-represented: 22\% is likely too low.}]{\linewidth-10.5pt}{0.95cm}}
+  \item Plan 2's sample is random, yet its result may still be biased. Name the bias, give its
+        direction, and explain in context.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw2, type=rubric, points=2, display={Response bias. Using a phone while driving is against the law, and teens are unlikely to admit it to a state trooper, so the estimate is likely too low.}]{\linewidth-10.5pt}{0.95cm}}
+  \item Only 610 of the 1{,}000 teens in Plan 2 pick up the call. Name this bias, and explain
+        how the 390 who did not answer might differ from the 610 who did.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw3, type=rubric, points=2, display={Nonresponse bias. Teens who let an unknown call ring --- often because they are busy or driving --- may be more likely to use a phone at the wheel, so the estimate is likely too low.}]{\linewidth-10.5pt}{0.95cm}}
 \end{enumerate}
-\end{practicebox}
+\end{notesbox}
 
-\vspace{0.1in}
+\vspace{0.04in}
 
-\begin{practicebox}
+\boxguard[30]
+\begin{notesbox}{Part B --- Fixing the Survey}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
 \small
-\textbf{2.} Stratified vs.\ Cluster
-
-A school district has 5 elementary schools (each with about 400 students).
-A researcher wants to sample 100 students to ask about their reading habits.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Describe how to use a \emph{stratified} sample (strata = schools):
-        \gradedhide{\writeline\\[1pt]\gradedhere{\gradedblank[id=hw2a, type=rubric, points=2, display={One stratum per school: an SRS of 20 students from each of the 5 schools.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
-  \item Describe how to use a \emph{cluster} sample (clusters = schools):
-        \gradedhide{\writeline\\[1pt]\gradedhere{\gradedblank[id=hw2b, type=rubric, points=2, display={Randomly select 1 school (or enough for about 100 students); survey every student in it.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
-  \item Are the schools better described as strata or clusters? Explain.
-        \gradedhide{\writeline\\[1pt]\gradedhere{\gradedblank[id=hw2c, type=rubric, points=2, display={Clusters: each school is a mix of all kinds of students (heterogeneous), not a homogeneous group.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
+\begin{enumerate}[label=\textbf{B\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item \textbf{AP-style.} Which change to Plan 2 would do the most to reduce the bias you
+        named in A2? Write its letter in the Letter box, then justify it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item Call 5{,}000 teens instead of 1{,}000.
+          \item Let each selected teen answer on an anonymous online form with no name attached.
+          \item Ask, ``Do you put lives at risk by using your phone while driving?''
+          \item Call only teens who have completed a driver's education course.
+          \item Ask the question in person during each teen's road test.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw4, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw4j, type=rubric, points=1, display={(B): with no name and no trooper, a teen has no reason to hide phone use, so answers are more honest. A bigger sample (A) does not fix response bias.}]{\linewidth-10.5pt}{0.7cm}}
+  \item A reporter writes, ``Plan 1 had 3{,}000 responses --- three times as many as Plan 2
+        --- so Plan 1 gives the more trustworthy estimate.'' Respond.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={Disagree. Plan 1 is a voluntary response sample, and 3,000 volunteers are still biased. A larger sample reduces variability, not bias, so size cannot fix how Plan 1 got its teens.}]{\linewidth-10.5pt}{0.95cm}}
 \end{enumerate}
-\end{practicebox}
+\end{notesbox}
 
-\vspace{0.1in}
+\vspace{0.04in}
 
-\begin{practicebox}
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+% A one-line, unbreakable box: guard it by its own height so it moves whole.
+\boxguard[3]
+\begin{spiralbox}
 \small
-\textbf{3.} Free Response:\\
-A state health agency wants to study the physical activity levels of high school
-students. Describe a \emph{stratified random sample} you could use. Identify the
-strata, explain why stratifying is appropriate, and describe the selection procedure.
-
-\vspace{6pt}
-\gradedhide{\gradedhere{\gradedblank[id=hw3, type=rubric, points=3, display={Strata: grade levels 9--12, since activity likely differs by grade (e.g., required PE in 9th). From each grade's enrollment list, randomly select students in proportion to its size.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
-\end{practicebox}
+\textbf{Next: Designing Experiments} --- from watching to doing: treatments, random
+assignment, control, and why only an experiment can show cause.
+\end{spiralbox}
 
 \end{document}

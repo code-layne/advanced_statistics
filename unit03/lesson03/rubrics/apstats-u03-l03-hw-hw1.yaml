@@ -1,0 +1,21 @@
+# Homework item A1 (Unit 3, Lesson 3.3). Relative to the lesson directory.
+id: hw1
+points: 2
+task: >-
+  The state DOT wants to estimate the percent of licensed teen drivers who use a phone
+  while driving. Plan 1: the DOT posts a poll on its social media page; 3,000 teens answer
+  and 22% say they use a phone while driving. Name the bias that comes from who chose to
+  answer. Is 22% likely too high or too low? Explain in context.
+criteria:
+  - id: name
+    points: 1
+    full: >-
+      Names voluntary response bias (the teens chose themselves).
+  - id: direction
+    points: 1
+    full: >-
+      Gives a direction with a context-based reason about who chooses to answer a DOT poll.
+      Expected: too low, because safety-minded teens who follow the DOT are
+      over-represented and phone users are less likely to volunteer. A well-argued "too
+      high" (for example, teens with strong feelings about phone laws respond) also earns
+      the point; a direction with no reason does not.

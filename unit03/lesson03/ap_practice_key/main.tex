@@ -1,0 +1,121 @@
+%! Problems with Sampling — Unit 3, Lesson 3.3 — AP Practice (Answer Key)
+% MIRROR of ../ap_practice/main.tex: -key for -boxes, the header, and the answers. Nothing else differs.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% GRADUAL RELEASE: AP-format practice, extra credit, scored 1 to 5;
+% the graded practice is the `homework` component that follows it.
+% Two multiple-choice items (MC1: undercoverage in a transit survey drawn from a vehicle-owner
+% list — the distractors swap the bias name or the direction; MC2: a leading speed-limit
+% question, with (A) "random, so unbiased" and (E) "a bigger sample removes the bias"), then one
+% free-response set on a county sleep survey: (a) a source of bias other than wording —
+% nonresponse, with direction; (b) the wording's effect, with direction; (c) THE CRUX — would
+% emailing all 9,000 students fix it?
+% Every rubric box is full width on its own line under its part, hung with \gradedhere over
+% \writelines{8} (about 2.1in, room for the drawn 2in box). Each \gradedblank line, display=
+% included, is BYTE-IDENTICAL in ap_practice_key/; key mode prints the display. The
+% next-lesson preview is NOT here: it closes the packet, in ../homework/.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-u03-l03-ap}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.3}{AP Practice --- Answer Key}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.06in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{extra credit, scored 1 to 5} --- your graded homework is the last section
+of this packet. Work these AP-format reps for practice and bring questions to study hall.
+\end{remindbox}
+
+\vspace{0.06in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in]
+
+  \item A city wants to estimate the percent of its adult residents who ride public transit at
+        least once a week. It selects 500 adults at random from the state's list of registered
+        vehicle owners in the city and calls each one. Which statement best describes the most
+        likely bias?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item Voluntary response bias; the estimate is likely too high.
+          \item \ans{Undercoverage; the estimate is likely too low, because residents without a
+                vehicle, who are more likely to ride transit, cannot be selected.}
+          \item Undercoverage; the estimate is likely too high, because vehicle owners ride
+                transit more often than other residents.
+          \item Nonresponse bias; the estimate is likely too high.
+          \item There is no bias, because the 500 adults were selected at random.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \item A town mails a survey to 500 randomly selected residents. It asks, ``Given the
+        dangerous speeding on Main Street, do you support lowering the speed limit there?''
+        Of the residents who respond, 77\% say yes. Which statement is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item Because the residents were chosen at random, 77\% is an unbiased estimate.
+          \item \ans{The wording is likely to cause response bias that makes 77\% too high.}
+          \item The wording is likely to cause response bias that makes 77\% too low.
+          \item The survey has undercoverage, because residents who do not drive cannot
+                answer it.
+          \item Mailing the same question to 2{,}000 residents would remove the bias.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[27]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Every answer must be written \emph{in the context of the
+problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
+
+  \item A county health department wants to estimate the mean number of hours of sleep its
+        high school students get on a school night. It selects 400 students at random from the
+        county's enrollment list and emails each one a link to an online survey; 95 respond.
+        The survey asks: \emph{``Doctors say teens need 8 to 10 hours of sleep. How many hours
+        do you usually sleep on a school night?''}
+
+        \vspace{6pt}
+
+        \boxguard[30]
+        \textbf{(a)} Other than the wording of the question, identify one potential source of
+        bias in this survey. Explain how it could affect the estimate of the mean.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3a, type=rubric, points=2, display={Nonresponse bias: only 95 of the 400 replied. The busiest students, who likely sleep the least, are the least likely to answer, so the mean is likely too high.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(b)} Explain how the wording of the question could bias the estimate. Say
+        whether the estimate is likely too high or too low.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3b, type=rubric, points=2, display={Response bias: hearing that doctors recommend 8 to 10 hours pushes students to report more sleep than they get, so the mean is likely too high.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(c)} A board member says, ``Email the survey to all 9{,}000 students instead.
+        With that many replies, the bias goes away.'' Do you agree? Explain.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3c, type=rubric, points=2, display={Disagree. A larger sample reduces variability, not bias: the same kind of students would skip the email and the same wording would push answers up, so the mean would still be too high.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+\end{enumerate}
+
+\end{document}

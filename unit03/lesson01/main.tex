@@ -1,17 +1,18 @@
-%! Introducing Statistics: Do the Data We Collected Tell the Truth? — Unit 3, Lesson 3.1 — Lesson Plan
+%! Planning a Study — Unit 3, Lesson 3.1 — Lesson Plan
 % GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
 % homework) at the COMPACT budget: the whole lesson is finished in one 55-minute period.
 % THERE IS NO GROUP ACTIVITY IN THIS COURSE and NO INDEPENDENT PRACTICE SET in the notes — the
 % homework is the individual practice, started in class. Teacher-facing. Every box is `skillbox`
 % (breakable) with a \boxguard ahead of it; no `fixedskillbox`, no tier boxes, no exit ticket.
-% The first lesson of Unit 3: it opens the unit's question — can we trust how the data were
-% collected? — and hands the vocabulary of sampling (3.2–3.4) a reason to exist.
+% The first lesson of Unit 3 (CED Topics 3.1 + 3.2): can we trust how the data were collected,
+% whom does a sample speak for, and did anyone impose a treatment? Sampling methods (3.2), the
+% kinds of bias (3.3), experimental design (3.4) and the scope of inference (3.5) come later.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
-\newcommand{\LessonNumberName}{Lesson 3.1: Introducing Statistics --- Do the Data We Collected Tell the Truth?}
+\newcommand{\LessonNumberName}{Lesson 3.1: Planning a Study}
 
 \begin{document}
 \begin{center}
@@ -21,15 +22,17 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will ask who is in a set of data and who decided they
-    would be in it, classify a data collection method as chance-based or not, explain in
-    context which way a non-chance method pushes a result, and reject the claim that a larger
-    sample repairs a non-chance method.
+    \textbf{Primary Objective:} Students will classify a data collection method as chance-based
+    or not, name the population and the sample in a study (and say what a census is),
+    generalize a sample's result only to the population it was drawn from, and classify a study
+    as an observational study or an experiment by asking whether a treatment was imposed ---
+    rejecting the claim that careful measurement makes a study an experiment.
     \\[2pt]
-    \textbf{CED alignment:} Topic 3.1 \quad$\cdot$\quad Big Idea: VAR (Variation and
-    Distribution) \quad$\cdot$\quad Skill 1.A \quad$\cdot$\quad LO VAR-1.E \quad$\cdot$\quad
-    EK VAR-1.E.1 (methods for data collection that do not rely on chance result in
-    untrustworthy conclusions)
+    \textbf{CED alignment:} Topics 3.1 (Introducing Statistics: Do the Data We Collected Tell
+    the Truth?) and 3.2 (Introduction to Planning a Study) \quad$\cdot$\quad Big Ideas: VAR
+    (Variation and Distribution), DAT (Data Analysis) \quad$\cdot$\quad Skills 1.A, 1.C, 4.A
+    \quad$\cdot$\quad LO VAR-1.E, DAT-2.A, DAT-2.B \quad$\cdot$\quad EK VAR-1.E.1, DAT-2.A.1--4,
+    DAT-2.B.1--3; census from DAT-2.C.6 (named here, used again in Lesson 3.2)
     \\[2pt]
     \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
     the guided notes.} There is no group activity. The notes name the vocabulary as they teach
@@ -39,10 +42,10 @@
     the pen; \textbf{the homework is the individual practice}, and students start it in class
     while you circulate. The whole-class debrief is \emph{spoken}.
     \\[2pt]
-    \textbf{Compact budget:} the notes are three pages, 14 problems. Every display is a given
-    table of methods and results, read and compared; nothing is sketched. The sampling
-    vocabulary (population, census, SRS, the named biases) is held back for Lessons 3.2--3.4:
-    today the only test is \emph{who decided who is in the data --- chance or people?}
+    \textbf{Compact budget:} the notes are two pages, 14 problems. Nothing is sketched; every
+    study is a one- or two-sentence description, read and classified. Held back on purpose: the
+    named sampling methods (3.2), the named biases and ``bigger is not better'' (3.3), the
+    principles of experimental design (3.4), and the scope-of-inference grid (3.5).
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
@@ -53,28 +56,31 @@
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item I can ask the questions that decide whether data can be trusted: who is in the data,
-        and who decided they would be in it?
-  \item I can tell a chance-based method from a non-chance method of collecting data.
-  \item I can explain in context who a non-chance method over-represents and which way it
-        pushes the result.
-  \item I can explain why a bigger sample does not fix a non-chance method.
+  \item I can tell a chance-based method of collecting data from a non-chance method, and
+        explain why only chance earns our trust.
+  \item I can name the population and the sample in a study, say what a census is, and
+        generalize only to the population that was sampled.
+  \item I can classify a study as an observational study or an experiment by asking whether a
+        treatment was imposed.
+  \item I can explain why only a well-designed experiment can show cause and effect.
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
   \item Methods for data collection that do not rely on chance result in untrustworthy
-        conclusions (EK VAR-1.E.1). When people --- the researcher or the respondents ---
-        decide who is in the data, some groups are over-represented.
-  \item Bias is \emph{consistent}: a non-chance method pushes the result the same direction
-        every time it is used, so a careful student can say which way.
-  \item \textbf{Target misconception:} ``a bigger sample is a more trustworthy sample.'' Size
-        does nothing about \emph{who} is in the data. The news site's 2{,}400 volunteers said
-        85\% yes; 80 students chosen at random said 58\%. The 80 win.
-  \item \textbf{Second misconception:} ``a lopsided result must mean most people agree.'' The
-        skate-shop poll's 88\% says who chose to vote, not what the city thinks.
-  \item This lesson sets up the unit: Lessons 3.2--3.4 name the sampling methods and the kinds
-        of bias; 3.5--3.7 do the same for experiments.
+        conclusions (VAR-1.E.1).
+  \item A population is all the individuals of interest; a sample is a subset of it
+        (DAT-2.A.1--2); a census measures them all (DAT-2.C.6). A sample generalizes only to
+        the population it was randomly selected from (DAT-2.B.1--2).
+  \item An observational study imposes no treatment --- a sample survey is one kind, and it
+        may look back (retrospective) or follow forward (prospective); an experiment assigns
+        treatments to experimental units (DAT-2.A.3--4). Observational data cannot establish
+        cause (DAT-2.B.3).
+  \item \textbf{Target misconception:} ``a study is an experiment because the data were
+        collected or measured carefully.'' Precision is not a treatment. The sleep lab that
+        records every minute of sleep and every cup of coffee is still \emph{watching}.
+  \item \textbf{Second misconception:} ``a reasonable-sounding person picking the sample is
+        as good as random'' --- the coach and his varsity players (problem~2).
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
@@ -83,23 +89,29 @@
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-        \item \textbf{Data collection method} --- how the individuals in the data were chosen
-              and measured
         \item \textbf{Chance-based method} --- a random process decides who is in the data
-              (EK VAR-1.E.1)
+              (VAR-1.E.1)
         \item \textbf{Non-chance method} --- people decide: the researcher takes whoever is
               convenient, or respondents volunteer
+        \item \textbf{Population} --- all the individuals of interest (DAT-2.A.1)
+        \item \textbf{Sample} --- the subset of the population actually measured
+              (DAT-2.A.2)
+        \item \textbf{Census} --- measures every individual in the population (DAT-2.C.6)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-        \item \textbf{Bias} --- a method that consistently overestimates or underestimates the
-              truth (named here informally; Lesson 3.4 names its kinds)
-        \item \textbf{The four questions} --- who is in the data? who decided? who is left
-              out or over-represented? can it be trusted for everyone?
-        \item \textbf{Carried forward} --- explanatory and response variables, and why an
-              association is not a cause (Unit 2)
+        \item \textbf{Observational study} --- observe and measure without imposing a
+              treatment; a \textbf{sample survey} is one kind (DAT-2.A.3)
+        \item \textbf{Experiment} --- treatments are assigned to experimental units and the
+              response is measured (DAT-2.A.4)
+        \item \textbf{Generalizing} --- only to the population the sample was randomly drawn
+              from (DAT-2.B.1--2)
+        \item \textbf{Cause} --- only a well-designed experiment; an observational study shows
+              an association (DAT-2.B.3)
+        \item \textbf{Carried forward} --- explanatory and response variables; association is
+              not causation (Unit 2)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -111,16 +123,17 @@
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & A sleep-and-scores spiral, the news site's later-start poll, and 2{,}400 or 80
-& Hand count on item~3; leave ``2{,}400 --- trustworthy?'' and the tally on the board \\
+Warm-Up & 5 & The news site's later-start poll, a 900-student lunch question, and sleep and
+scores & Leave ``who answers?'', ``all 900 or some?'' and ``cause?'' on the board --- one per
+notes row \\
 Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--10 row
-by row, then \emph{The Step Challenge} (11--14) together, pen in their hand & \textbf{I do}
-each row's definition lines and first problem (1, 4, 8), \textbf{we do} the rest (24)
+by row, then \emph{The Study App} (11--14) together, pen in their hand & \textbf{I do}
+each row's definition lines and first problem (1, 4, 7), \textbf{we do} the rest (24)
 $\to$ \textbf{we do} Guided Practice (10) \\
-Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Put 85\% (2{,}400
-volunteers) beside 58\% (80 at random); open on the almost-right problem~10 \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Open on the
+almost-right problem~10; leave the three questions on the board \\
 Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Circulate on
-Part~A item~3 for your formative read; preview Lesson 3.2 \\
+Part~B item~2 for your formative read; preview Lesson 3.2 \\
 \end{tabularx}
 \end{skillbox}
 
@@ -129,27 +142,28 @@ Part~A item~3 for your formative read; preview Lesson 3.2 \\
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{The items and what each seeds}
     \begin{itemize}
-        \item \textbf{1.} Sleep and test scores: explanatory and response variables, and
-              whether an observed association shows cause. \textbf{Spirals} to Unit 2 and
-              points ahead to the experiments half of Unit 3.
-        \item \textbf{2.} A news site's online poll: 2{,}400 responses, 85\% want a later
-              school start. Who answers a poll like this? \textbf{Seeds} the Ask How row ---
-              the room's answer becomes \emph{non-chance method}.
-        \item \textbf{3.} Trust (A) the 2{,}400 or (B) 80 drawn at random from the roster?
-              \textbf{Seeds the crux}: the same pair returns as notes problem~10.
+        \item \textbf{1.} A news site's online poll: 2{,}400 responses, 85\% want a later
+              start. Who answers, and does 85\% describe everyone? \textbf{Seeds} the Ask How
+              row --- the room's answer becomes \emph{non-chance method}.
+        \item \textbf{2.} 900 students and one lunch question: a reason to ask all of them,
+              and a reason to ask only some. \textbf{Seeds} the Sample row --- the word for
+              ``all of them'' is \emph{census}.
+        \item \textbf{3.} Sleep and test scores: explanatory and response, and whether an
+              observed association shows cause. \textbf{Spirals} to Unit 2 and seeds the
+              Study Type row.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Debrief item~2 aloud} and write the room's answer to ``who responds?'' on
+        \item \textbf{Debrief item~1 aloud} and write the room's answer to ``who responds?'' on
               the board in their words (``people who care,'' ``people who want it''). Row~1
-              names that idea a \emph{non-chance method} ten minutes later.
-        \item \textbf{Take a hand count on item~3 and do not settle it.} Expect votes for (A)
-              --- ``2{,}400 is a lot.'' Write the tally beside \emph{2{,}400 --- trustworthy?}
-              on the board and say problem~10 decides it.
-        \item Item~1 is a spiral; take 90 seconds and move on.
+              names that a \emph{non-chance method} two minutes later.
+        \item On item~2, collect one reason each way and leave them up: \emph{everyone counted}
+              vs.\ \emph{time and cost}. Row~2 names the trade-off.
+        \item On item~3, take the ``no, it doesn't show cause'' and ask \emph{what would?}
+              Leave the question on the board; Row~3 answers it --- impose a treatment.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -160,45 +174,45 @@ Part~A item~3 for your formative read; preview Lesson 3.2 \\
 practice set on this page: \textbf{the homework is the individual practice}, started in class.
 The notes are one \emph{Main Ideas / Notes} table --- four rows, 14 short problems.
 \textbf{In every row you fill the definition lines and work the first problem of each grid; the
-class works the rest, pen in their hand.} The vocabulary box is filled \emph{as you go}.
+class works the rest, pen in their hand.} The vocabulary box (population, sample,
+observational study, experiment) is filled \emph{as you go}.
 \begin{multicols}{2}
-\textbf{Ask How (6 min).} Fill the three definitions (how / random / people) and read the four
-questions aloud --- they are the lesson's procedure, and every later problem is one of them.
-Work \textbf{problem~1} yourself (the radio callers chose themselves). Problems 2 and 3 are
-theirs; 2 is the quiet one --- the coach is a \emph{researcher} choosing who is handy, which is
-still people deciding.
+\textbf{Ask How (5 min).} Fill \emph{random}, \emph{people}, \emph{untrustworthy}. Work
+\textbf{problem~1} yourself (the callers chose themselves). Problems 2 and 3 are theirs.
+\textbf{Problem~2 is the trap}: the coach sounds fair, but a person still chose --- and chose
+the players most likely to want sports money. Keep this row moving; Lesson 3.3 names the bias.
 
-\textbf{Who Is Missing? (8 min).} Fill \emph{consistently} and name \textbf{bias}. Read the
-skate-park table top to bottom before anyone writes. Work \textbf{problem~4} (skate-shop fans
-are over-represented). \textbf{Problem~6 is the trap}: 88\% looks like a landslide; press for
-\emph{why} it is too high --- the fans chose to vote. Problem~7 lands C's 52\% because chance
-picked the households, not because it is in the middle.
+\textbf{Sample (7 min).} Fill \emph{all}, \emph{subset}, \emph{every}, \emph{population} and
+name the two vocabulary terms. Work \textbf{problem~4} (population: the school's 1{,}200
+students; sample: the 100). Problem~5 is the census trade-off from the warm-up board.
+Problem~6 is DAT-2.B.2 in one line: her school, not the state.
 
-\textbf{Sample Size (10 min) --- the crux.} Point back at the warm-up on the board. Work
-\textbf{problem~8} (the 80 at random). Problem~9 is theirs. \textbf{Problem~10 is the crux}:
-take a hand count on ``agree'' \emph{before} anyone explains. Then fill the callout --- a bigger
-sample from a non-chance method is still \emph{biased} --- and make the room say it back.
+\textbf{Study Type (12 min) --- the crux.} Fill \emph{impose}, \emph{assign},
+\emph{experiment}, \emph{association} and finish the vocabulary box. Work \textbf{problem~7}
+(records only --- observational; note it looks back). 8 and 9 are theirs; 9 closes the loop on
+warm-up item~3. \textbf{Problem~10 is the crux}: take a hand count on ``agree'' \emph{before}
+anyone explains. The sleep lab measured everything and assigned nothing. Make the room say the
+test back: \emph{did anyone impose a treatment?}
 
 \columnbreak
-\textbf{We do (about 10 min): The Step Challenge.} A fresh context, problems 11--14, worked
-entirely together. Students hold the pen; you hold the questions: \emph{``Who decided who is
-on the leaderboard?''} \quad \emph{``Would a couch-sitter join a step challenge?''}
-\textbf{Problem~14 is the crux transferred}: 12{,}000 against 500, and the 500 win. It is the
-one to protect when time is short --- a student who answers both 10 and 14 has separated
-\emph{how many} from \emph{who}.
+\textbf{We do (about 10 min): The Study App.} A fresh context, problems 11--14, worked
+entirely together. Students hold the pen; you hold the questions: \emph{``Who is the
+population?''} \quad \emph{``Who chose the 250?''} \quad \emph{``Who decided who got the
+app?''} \textbf{Problem~13 is the crux transferred} --- hours logged to the minute, still
+observational --- and the one to protect when time is short; problem~14 is its counterweight,
+the study that \emph{did} impose a treatment.
 
-\textbf{The pen must actually change hands.} Put problem~11 on them cold, take a hand count on
-problem~14 before anyone speaks, and make the room defend the answer. Circulate and demand the
-reason:
+\textbf{The pen must actually change hands.} Put problem~11 on them cold and take a hand count
+on 13 before anyone speaks. Circulate and demand the reason:
 \begin{itemize}[leftmargin=1.1em, nosep]
-  \item \textbf{Problem~12:} ``Who \emph{wants} to be on a leaderboard?''
-  \item \textbf{Problem~13:} ``Too high or too low --- and say who pushed it there.''
-  \item \textbf{Problem~14:} ``If 50{,}000 joined the challenge, would it get better?''
+  \item \textbf{Problem~12:} ``Could the 250 have been anyone on the list?''
+  \item \textbf{Problem~13:} ``Precise --- fine. Who \emph{assigned} anything?''
+  \item \textbf{Problem~14:} ``What did Study B do that Study A never did?''
 \end{itemize}
 While circulating, pick the papers to put up in the debrief --- one \emph{almost}-right
-problem~10 (``disagree, because 80 is enough'') and one that names who volunteered.
-\textbf{Your formative read comes twice}: here, and again in the last eight minutes as students
-start the homework.
+problem~10 (``disagree, because 50 people is too few'') and one that names the missing
+treatment. \textbf{Your formative read comes twice}: here, and again in the last eight minutes
+as students start the homework.
 \end{multicols}
 \end{skillbox}
 
@@ -207,20 +221,19 @@ start the homework.
 Pens down, papers up. \textbf{This debrief is spoken} --- nothing on the page to fill in.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item \textbf{Open on the almost-right problem~10}: ``disagree, because 80 students is
-        plenty.'' Right verdict, wrong reason --- it argues about size, which is the very
-        thing that does not matter. Correct it gently and in public: the reason is \emph{who
-        decided}.
-  \item Put the two pairs side by side on the board: 2{,}400 volunteers, 85\%; 80 at random,
-        58\%. Then 12{,}000 on a leaderboard, 11{,}200 steps; 500 at random, 6{,}900. That
-        board is the lesson.
-  \item Take problem~6 back: did the skate-shop poll tell us about skate parks or about
-        skate-shop customers?
+  \item \textbf{Open on the almost-right problem~10}: ``disagree, because 50 people is too
+        few.'' Right verdict, wrong reason --- size has nothing to do with study type. Correct
+        it gently and in public: the reason is that \emph{no treatment was imposed}.
+  \item Put the three questions on the board, one per row: \emph{Who decided who is in the
+        data? Whom does the sample speak for? Was a treatment imposed?} That board is the
+        lesson.
+  \item Take problem~2 back: the coach is a reasonable person --- why is his pick still not
+        chance?
 \end{enumerate}
 \columnbreak
-\textbf{The sentence to leave on every desk:} \emph{Before you trust a number, ask who decided
-who is in the data. If people decided, more of them does not help.} Make a student say it,
-not you.
+\textbf{The sentence to leave on every desk:} \emph{An experiment is something the researchers
+do to the subjects, not how carefully they measure. If no one imposed a treatment, it is an
+observational study, and it cannot show cause.} Make a student say it, not you.
 
 \textbf{If the debrief runs short}, cut item~3 --- item~1 is the only one that cannot be cut.
 \textbf{Do not let the debrief eat the last eight minutes} --- the homework start is your
@@ -230,59 +243,64 @@ second formative read.
 
 \boxguard
 \begin{skillbox}[AP Practice --- extra credit, scored 1 to 5]{goldbox}
-Two multiple-choice items --- \textbf{MC~1} picks the chance-based method for a city bus-line
-survey (D: 400 random households; the station, website, meeting, and hotline are all people
-deciding), and \textbf{MC~2 is the crux in AP clothing}: 50{,}000 streaming-poll responses,
-with distractor (A) the target misconception word for word and (D) its cousin --- then one
-free-response set on a library lunch survey: \textbf{(a)} did chance decide (no --- the
-students chose to be in the library), \textbf{(b)} is 3.2 books too high or too low (too high:
-library regulars read more), and \textbf{(c)}, \textbf{the spiral}, mean or median for a
-right-skewed distribution (Unit~1).
+Two multiple-choice items --- \textbf{MC~1} picks the experiment for a reading program (C: 60
+second graders randomly assigned; the distractors are observational designs, including a
+year of careful score records and schools that chose the program), and \textbf{MC~2} picks the
+appropriate generalization from 500 randomly selected Ohio adults (B: Ohio adults, with
+sampling variability; (A) over-reaches to the U.S., (D) under-reaches to the 500) --- then one
+free-response set on energy drinks and sleep from 1{,}500 survey records: \textbf{(a)}
+observational or experiment (observational --- nothing assigned), \textbf{(b)} does it support
+``energy drinks cause sleepless nights'' (no --- association only; night-shift work or stress
+could drive both), and \textbf{(c)}, \textbf{the spiral}, name the display for two
+quantitative variables and the pattern to expect (a scatterplot, negative association;
+Unit~2).
 
-\textbf{Extra credit, scored 1 to 5, turned in with the homework.} Go over it at
-the start of Lesson 3.2. Hold the AP standard out loud: \emph{in context or it does not count}
---- a part (b) that says ``too high because it's biased'' without naming who visits the library
-at lunch has not earned the point.
+\textbf{Extra credit, scored 1 to 5, turned in with the homework.} Go over it at the start of
+Lesson 3.2. Hold the AP standard out loud: \emph{in context or it does not count} --- a part (b)
+that says only ``correlation is not causation'' without naming the design or a plausible
+other variable has not earned full credit.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Homework --- scored 1 to 5, due the first class after two study halls]{goldbox}
-Five items in a third context. \textbf{Part~A} (restaurant ratings: 3{,}200 QR-code volunteers
-say 41\% excellent, 300 random calls say 63\%): \textbf{A1} which method used chance and who
-decided in the other; \textbf{A2} who rates a meal and why 41\% is too low; \textbf{A3} the crux
-restated --- ``ten times as many ratings, so report it.'' \textbf{Part~B}: \textbf{B1} an
-AP-style multiple choice (the random 600 seniors) with a required justification; \textbf{B2} a
-6~a.m.\ gym survey about later hours --- who is over-represented, who is missed, which way it
-leans.
+Five items in a third context, a city's parks. \textbf{Part~A} (Riverside's dog-park survey: a
+social-media poll against 400 households picked at random from 40{,}000): \textbf{A1} which
+plan used chance and who decides in the other; \textbf{A2} the population and the sample;
+\textbf{A3} what asking all 40{,}000 is called and why the city might not. \textbf{Part~B}:
+\textbf{B1} an AP-style multiple choice (which park-lighting plan is an experiment; (C), the
+rangers' careful log, is the crux distractor) with a required justification; \textbf{B2} the
+crux restated --- 600 step counters, every step recorded, and a newspaper calling it an
+experiment.
 
 \textbf{Start it in the last eight minutes of the period, in class and alone.}
 \textbf{Scoring:} 10 points --- A1, A2, A3, B2 at 2 each; B1 1 for the letter and 1 for the
-justification. \textbf{A3 is the one to read closely}: a student who sides with the manager has
-kept the target misconception, and Lessons 3.3--3.4 build on its absence. The spiralbox
-previews Lesson 3.2.
+justification. \textbf{B2 is the one to read closely}: a student who agrees with the paper has
+kept the target misconception, and Lesson 3.4's experimental design assumes its absence. The
+spiralbox previews Lesson 3.2.
 
 \textbf{Paper homework is the default for this course} --- assign this page unless you have
 decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
-instead, it replaces this page, and this page
-stays in the packet as extra practice. Never assign both.
+instead, it replaces this page, and this page stays in the packet as extra practice. Never
+assign both.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item \textbf{``A bigger sample is more trustworthy''} (notes~10 and 14, HW~A3, AP~MC2 --- the
-        target misconception). Probe: \emph{``If 50{,}000 people volunteered, who would they
-        be? The same kind of people, only more of them.''}
-  \item \textbf{``A lopsided result means most people agree''} (notes~6, AP~(b)). Probe:
-        \emph{``Who chose to answer? Does 88\% describe the city or the people who voted?''}
-  \item \textbf{Calling any reasonable-sounding method ``random''} (notes~2, HW~B1). The coach
-        and the counselors are \emph{people choosing}. Probe: \emph{``Could the result change
-        depending on who did the picking? Then it was not chance.''}
-  \item \textbf{``Biased'' with no direction} (notes~6 and 13, HW~A2, B2). Probe: \emph{``Too
-        high or too low --- and who pushed it there?''}
+  \item \textbf{``Measured carefully, so it is an experiment''} (notes~10 and 13, HW~B1(C) and
+        B2 --- the target misconception). Probe: \emph{``What did the researchers \emph{do} to
+        anyone? If the answer is `nothing but watch,' it is observational.''}
+  \item \textbf{Calling any reasonable-sounding pick ``random''} (notes~2). Probe: \emph{``Could
+        the result change depending on who did the picking? Then it was not chance.''}
+  \item \textbf{Generalizing past the population} (notes~6, AP~MC2). Probe: \emph{``Who was on
+        the list the sample came from? That is who it speaks for.''}
+  \item \textbf{Naming the sample as a number} (``Sample: 100'') or the population as the
+        sample (notes~4 and 11, HW~A2). Probe: \emph{``100 \emph{what}? Name the
+        individuals.''}
 \end{itemize}
-Cold-call prompts: \emph{``Name a method where people decide, but it sounds fair.''} \quad
-\emph{``Would you rather have 100 people picked at random or 10{,}000 volunteers? Why?''}
+Cold-call prompts: \emph{``Name a study that measures very carefully but is not an
+experiment.''} \quad \emph{``What would you have to change to make the sleep lab an
+experiment?''}
 \end{skillbox}
 
 \boxguard
@@ -290,58 +308,54 @@ Cold-call prompts: \emph{``Name a method where people decide, but it sounds fair
 \textbf{Students start the homework here, in class, alone and silent --- this is the individual
 practice, and the first minutes of it are your best formative read.} Hand the launch first ---
 five items on paper, scored, due the first class after two study halls --- and point out that
-the AP Practice page is extra credit, turned in with the homework. Circulate on \textbf{Part~A item~3}. Sort
-what you see into three piles as you walk --- disagreed and said the volunteers are still
-volunteers (ready); disagreed with no reason, or ``because 300 is enough'' (ready, needs the
-language); agreed with the manager (the misconception survived) --- and open Lesson 3.2 by
-returning to the 85\%/58\% board if that third pile ran past a third of the room. Then close on
-what changed: \emph{``You walked in impressed by 2{,}400. You walk out asking who decided.''}
-\textbf{Preview:} Lesson 3.2, \emph{Introduction to Planning a Study} --- the group we want to
-know about (the population), the group we actually measure (the sample), and the difference
-between watching and experimenting.
+the AP Practice page is extra credit, turned in with the homework. Circulate on \textbf{Part~B
+item~2}. Sort what you see into three piles as you walk --- said observational because no one
+was assigned a dog (ready); said ``not an experiment'' with no reason, or ``because 600 is too
+few'' (ready, needs the language); agreed with the paper (the misconception survived) --- and
+open Lesson 3.2 by returning to the sleep lab if that third pile ran past a third of the room.
+Then close on what changed: \emph{``You walked in asking whether a result is true. You walk out
+asking how it was collected.''} \textbf{Preview:} Lesson 3.2, \emph{Random Sampling Methods}
+--- how to let chance pick the sample: simple random, stratified, and cluster samples.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order (four: there is no activity) ──
 \begin{teachernote}[Warm-Up]
-Item~3 is the seed and item~2 the quiet setup. Give five minutes total and spend at most 90
-seconds on item~1. On item~3 many students will choose (A) because so many people answered; do
-not settle it --- take the hand count, write \emph{2{,}400 --- trustworthy?} and the tally on
-the board, and say problem~10 decides it. On item~2, write the room's answer to ``who
-answers?'' in their words; Row~1 names it a non-chance method ten minutes later.
+Five minutes total; each item seeds one notes row, so do not resolve any of them --- leave
+them on the board. On item~1, write the room's answer to ``who answers?'' in their words. On
+item~2, one reason each way is enough. Item~3 is a Unit~2 spiral; take 90 seconds, get ``no,
+it doesn't show cause,'' and ask \emph{what would?} Row~3 answers it.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes \& Practice]
 \textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Four rows, 14
-problems. \textbf{You work 1, 4, and 8}; the class works the rest. Ask How must move --- six
-minutes --- because the time belongs to the Sample Size row, which carries the crux.
-\textbf{Problem~6 is the trap} (88\% reads as consensus); \textbf{problem~10 is the crux}
-(2{,}400 volunteers against 80 at random). Take a hand count on 10 before any explanation, and
-do not resolve it faster than the room can follow: the callout sentence is the resolution.
-\textbf{The Step Challenge is where the pen changes hands}; problem~14 is the crux transferred
-and the one to protect. If you only get through 11, 13, and 14, that is the right trade.
-\textbf{Your second formative read is the homework start}: Part~A item~3, three piles.
+problems. \textbf{You work 1, 4, and 7}; the class works the rest. Ask How (5 min) and Sample (7
+min) must move, because the time belongs to Study Type (12 min), which carries the crux.
+\textbf{Problem~2 is the trap} (a reasonable person is still a person); \textbf{problem~10 is the
+crux} (a carefully measured sleep lab is still observational). Take a hand count on 10 before
+any explanation. \textbf{The Study App is where the pen changes hands}; problem~13 is the crux
+transferred and the one to protect. If you only get through 11, 13, and 14, that is the right
+trade. \textbf{Your second formative read is the homework start}: Part~B item~2, three piles.
 \textbf{Debrief (8 min), spoken}, opening on the almost-right problem~10. \textbf{Do not let the
 debrief eat the last eight minutes} --- the homework start is not optional padding.
 \end{teachernote}
 
 \begin{teachernote}[AP Practice]
 \textbf{This page is extra credit, scored 1 to 5} --- the graded practice is the homework
-behind it. \textbf{MC~2 is the one worth reading closely}: (A) is the target misconception
-verbatim and (D) is the same idea in a different coat; if more than a handful choose either,
-return to the 85\%/58\% board before Lesson 3.3. On the free response, part (b) must give a
-direction \emph{and} say who visits the library at lunch; part (c) is a Unit~1 spiral and
-should cite the right tail pulling the mean.
+behind it. \textbf{MC~1 is the one worth reading closely}: (D), a year of careful records, is
+the target misconception in AP clothing; if more than a handful choose it or (A), return to
+the sleep lab before Lesson 3.4. On MC~2, (D) is the over-cautious answer --- a random sample
+\emph{does} speak for the population it came from. On the free response, part (b) needs the
+design (nothing imposed) \emph{and} the context; part (c) is a Unit~2 spiral.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-\textbf{Scored 1 to 5 (10 points), due the first class after two study halls.} The eight minutes at the
-end of the period are a \emph{start}: put students on A1 and A3 first while you can still catch
-a wrong start. \textbf{A3 is the item to read first when scoring} --- a student who sides with
-the manager has kept the target misconception. On A2, accept any well-argued account of who is
-motivated to rate, but the answer must give the direction (too low). On B1, (D) with no
-justification earns 1 of 2. On B2, both groups and a direction are needed for full credit.
-\textbf{Paper is the default.} On the occasions you assign DeltaMath in its place, tell
-students this page is now optional practice. Do not assign
-both.
+\textbf{Scored 1 to 5 (10 points), due the first class after two study halls.} The eight
+minutes at the end of the period are a \emph{start}: put students on A1 and B2 first while you
+can still catch a wrong start. \textbf{B2 is the item to read first when scoring} --- a student
+who agrees with the paper has kept the target misconception. On A2, ``Sample: 400'' without
+naming households earns 1 of 2; the population must be all 40{,}000 Riverside households, not
+``dog owners.'' On B1, (D) with no justification earns 1 of 2. \textbf{Paper is the default.}
+On the occasions you assign DeltaMath in its place, tell students this page is now optional
+practice. Do not assign both.
 \end{teachernote}
 \end{document}

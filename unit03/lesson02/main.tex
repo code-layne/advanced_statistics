@@ -1,222 +1,359 @@
-%! AP Statistics — Unit 3, Lesson 3.2 — Lesson Plan
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Lesson Plan
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / debrief / close and start the
+% homework) at the COMPACT budget: the whole lesson is finished in one 55-minute period.
+% THERE IS NO GROUP ACTIVITY IN THIS COURSE and NO INDEPENDENT PRACTICE SET in the notes — the
+% homework is the individual practice, started in class. Teacher-facing. Every box is `skillbox`
+% (breakable) with a \boxguard ahead of it; no `fixedskillbox`, no tier boxes, no exit ticket.
+% CED Topic 3.3 only. Systematic sampling is named in one line, with no problems on it; census
+% belongs to Lesson 3.1; the kinds of bias belong to Lesson 3.3.
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
-\newcommand{\LessonNumberName}{Lesson 3.2: Introduction to Planning a Study}
+\newcommand{\LessonNumberName}{Lesson 3.2: Random Sampling Methods}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\Large\bfseries \CourseName \\
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will distinguish observational studies from
-    experiments, identify populations and samples, and determine what conclusions are
-    appropriate for each study type (Big Idea: DAT).
+    \textbf{Primary Objective:} Students will describe how to select a simple random sample
+    with a random number generator or a table of random digits, identify stratified random and
+    cluster samples from the description of a study, and explain in context why one sampling
+    method suits a situation better than another --- in particular, that strata must be alike
+    inside and clusters must each look like the population.
+    \\[2pt]
+    \textbf{CED alignment:} Topic 3.3 (Random Sampling and Data Collection) \quad$\cdot$\quad
+    Big Idea: DAT (Data-Based Predictions, Decisions, and Conclusions) \quad$\cdot$\quad Skill
+    1.C \quad$\cdot$\quad LO DAT-2.C, DAT-2.D \quad$\cdot$\quad EK DAT-2.C.1 (with and without
+    replacement), DAT-2.C.2 (SRS and its mechanisms), DAT-2.C.3 (stratified), DAT-2.C.4
+    (cluster), DAT-2.C.5 (systematic, named only), DAT-2.D.1 (advantages and disadvantages
+    depend on the question and the population)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction row by row in one \emph{Main Ideas / Notes} table --- each
+    idea a definition to complete and a grid of short problems, the first worked by you and the
+    rest by the class; the last row, Guided Practice, is worked together with students holding
+    the pen; \textbf{the homework is the individual practice}, and students start it in class
+    while you circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Compact budget:} the notes are three pages, 14 problems. Every display is given.
+    Census (Lesson 3.1) is not re-taught; the named kinds of bias (voluntary response,
+    undercoverage, nonresponse, response) are held for Lesson 3.3.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can describe how to choose a simple random sample with a random number generator or
+        a table of random digits: label, randomize, select, skipping repeats.
+  \item I can tell sampling with replacement from sampling without replacement.
+  \item I can identify a stratified random sample and a cluster sample from the description of
+        a study.
+  \item I can explain in context why a stratified or a cluster sample is the better choice.
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item In an SRS every \emph{group} of size $n$ has an equal chance to be the sample (EK
+        DAT-2.C.2) --- an equal chance for each \emph{individual} is not enough: picking one
+        whole grade at random gives each student a 1-in-4 chance and is not an SRS.
+  \item Strata are homogeneous; take an SRS from each (DAT-2.C.3). Clusters are heterogeneous,
+        each like the population; take all of a random few (DAT-2.C.4).
+  \item Stratifying on a variable related to the response gives a less variable estimate;
+        clustering is cheaper and more practical (DAT-2.D.1).
+  \item \textbf{Target misconception:} confusing stratified with cluster --- ``the grades are
+        clusters, so pick two grades and survey everyone.'' Groups alike inside on something
+        related to the response are \emph{strata} (sample from every one); groups that each
+        look like the whole are \emph{clusters} (all of some).
+\end{itemize}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skill 1 --- Selecting Statistical Methods}
     \begin{itemize}
-        \item Identify the type of study: observational or experiment (DAT-2.A).
-        \item Identify appropriate generalizations from observational studies (DAT-2.B).
-        \item Explain when causal conclusions can and cannot be drawn (DAT-2.B.3).
+        \item \textbf{Simple random sample (SRS)} --- every group of $n$ individuals has an equal
+              chance to be the sample; chosen by label / randomize / select
+        \item \textbf{Without replacement} --- an individual can be chosen only once;
+              \textbf{with replacement} --- it can be chosen again (DAT-2.C.1)
+        \item \textbf{Stratified random sample} --- split into strata, groups alike inside; an
+              SRS from every stratum, combined
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Key Understandings}
     \begin{itemize}
-        \item Observational study: no treatment imposed; cannot establish causation.
-        \item Experiment: treatments assigned; can establish causation with random
-              assignment.
-        \item A sample is only generalizable to the population from which it was
-              randomly selected.
-        \item Population $\neq$ sample --- always identify both.
+        \item \textbf{Cluster sample} --- split into clusters, each like the population;
+              randomly choose some and measure everyone in them
+        \item \textbf{Systematic random sample} --- a random start, then every $k$th individual
+              on a list (named only; no problems)
+        \item \textbf{Carried forward} --- population, sample, and census (Lesson 3.1)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+% A tabularx never splits, so guard generously ahead of it.
+\boxguard[30]
+\begin{skillbox}[Lesson at a Glance --- \MeetingLength]{sky}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Lakeview's survey of 80: population and sample, names in a hat, too few seniors,
+two whole advisory groups & Leave ``20 from each grade'' and ``2 whole advisory groups'' on the
+board, unnamed \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and the notes table: problems 1--10 row
+by row, then \emph{Parking at Riverside} (11--14) together, pen in their hand & \textbf{I do}
+each row's definition lines and first problem (1, 4, 7), \textbf{we do} the rest (24)
+$\to$ \textbf{we do} Guided Practice (10) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Two columns on the
+board, \emph{strata} and \emph{clusters}; open on the almost-right problem~10 \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Circulate on
+Part~B item~3 for your formative read; preview Lesson 3.3 \\
+\end{tabularx}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{sky}
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{The items and what each seeds}
     \begin{itemize}
-        \item \textbf{Population} --- all items or subjects of interest
-        \item \textbf{Sample} --- a subset of the population selected for study
-        \item \textbf{Observational study} --- researchers observe without imposing
-              treatments; includes retrospective and prospective designs
-        \item \textbf{Sample survey} --- a type of observational study
+        \item \textbf{1.} Population and sample for Lakeview's survey of 80. \textbf{Spirals}
+              to Lesson 3.1.
+        \item \textbf{2.} Names in a hat: does everyone have the same chance? \textbf{Seeds}
+              the SRS row (problems 1--3).
+        \item \textbf{3.} The hat could give very few seniors, and seniors work more.
+              \textbf{Seeds strata} --- the room's fix (``some from each grade'') is problem~4.
+        \item \textbf{4.} Two whole advisory groups are easier to survey. \textbf{Seeds
+              clusters} and the ``cheaper'' advantage (problems 5 and 8).
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
+    \textbf{Running it}
     \begin{itemize}
-        \item \textbf{Experiment} --- researchers assign treatments to experimental units
-        \item \textbf{Generalizability} --- the ability to apply sample results to the
-              broader population; requires random selection
-        \item \textbf{Causal relationship} --- one variable directly produces a change in
-              another; requires an experiment with random assignment
-        \item \textbf{Anecdotal evidence} --- informal, non-systematic reports
+        \item \textbf{Debrief items 3 and 4 aloud} and write the room's two plans on the board in
+              their words --- ``some from every grade'' and ``two whole advisory groups.'' Do not
+              name them. Row~2 names them ten minutes later; point back.
+        \item On item~3, press for a \emph{direction}: too few seniors makes the estimate too
+              low. That is the reason stratifying helps, and it returns in problem~7.
+        \item Item~1 is a spiral; take 60 seconds and move on.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Prior Knowledge Check (3--4 min)}
-    \begin{itemize}
-        \item Recall: ``From Lesson 3.1, what makes a data collection method
-              trustworthy?'' (chance-based selection)
-        \item Preview: ``I found that students who drink coffee have higher GPAs. Can I
-              conclude that coffee causes higher GPAs? What would it take to conclude
-              that?''
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Connections Forward}
-    \begin{itemize}
-        \item Choosing among random sampling methods $\to$ Lesson 3.3
-        \item Sources of bias in sampling $\to$ Lesson 3.4
-        \item Designing a proper experiment $\to$ Lessons 3.5--3.6
-        \item Using experiments to make causal claims $\to$ Lesson 3.7
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{sky}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are one \emph{Main Ideas / Notes} table --- four rows, 14 short problems.
+\textbf{In every row you fill the definition lines and work the first problem of each grid; the
+class works the rest, pen in their hand.} The vocabulary box is filled \emph{as you go}.
+\begin{multicols}{2}
+\textbf{SRS (8 min).} Fill \emph{group}, \emph{equal}, \emph{once}, and the three steps; say
+\emph{label, randomize, select} out loud. Work \textbf{problem~1} yourself --- a full
+description: what is numbered, the range, skipping repeats, who is surveyed. Problem~2 is
+theirs: two numbers get skipped for two different reasons (9661 is out of range, the second
+0738 is a repeat). Problem~3 is the only with-replacement case today.
+
+\textbf{Strata \& Clusters (7 min).} Fill the two definitions and read the systematic line
+aloud \emph{once} --- it gets no problems. Work \textbf{problem~4} (20 from each grade:
+stratified) and point at the warm-up's board. \textbf{Problem~6 is the trap}: every student
+has a 1-in-4 chance, so it \emph{sounds} like an SRS. Ask: ``Could the 300 be 150 sophomores
+and 150 seniors?'' No --- so not every group of 300 is possible.
+
+\textbf{Choosing (9 min) --- the crux.} Fill \emph{differs}, \emph{varies}, \emph{expensive}.
+Work \textbf{problem~7} (each grade is covered, and hours are alike within a grade).
+Problems 8 and 9 are theirs; 9 is the mirror of the crux --- mixed advisory groups make
+useless strata. \textbf{Problem~10 is the crux}: take a hand count on ``Jalen's plan is fine''
+\emph{before} anyone explains. Then fill the callout --- \emph{every} one; \emph{all} of
+\emph{some} --- and make the room say it back.
+
+\columnbreak
+\textbf{We do (about 10 min): Parking at Riverside.} A fresh context, problems 11--14, worked
+entirely together. Read the table first: every building holds every apartment type --- so a
+building is a small copy of the complex. Students hold the pen; you hold the questions:
+\emph{``Are the households in one building alike, or a mix?''} \quad \emph{``Who owns more
+cars, a one-bedroom or a three-bedroom?''} \textbf{Problem~14 is the crux transferred}: the
+apartment types offered as clusters. It is the one to protect when time is short --- a student
+who answers both 10 and 14 has separated \emph{alike inside} from \emph{like the whole}.
+
+\textbf{The pen must actually change hands.} Put problem~11 on them cold (it is problem~1 again
+with new numbers), take a hand count on problem~14 before anyone speaks, and make the room
+defend the answer. Circulate and demand the reason:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem~12:} ``Why is one trip to 5 buildings cheaper than 60 doors?''
+  \item \textbf{Problem~13:} ``What do apartments of one type have in common?''
+  \item \textbf{Problem~14:} ``If you got only the one-bedrooms, would the mean be too high or
+        too low?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one \emph{almost}-right
+problem~10 (``wrong, those are strata,'' with no reason) and one that names what a cluster
+must look like. \textbf{Your formative read comes twice}: here, and again in the last eight
+minutes as students start the homework.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Hook \& Lesson]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5--7 min)}\\
-    Display two news headlines:
-    \begin{itemize}
-        \item \textit{``Study: People who own dogs live longer.''}
-        \item \textit{``Trial: New drug extends life expectancy by 3 years.''}
-    \end{itemize}
-    Ask: Which headline tells us the variable \emph{caused} the effect? How do you
-    know?\\[4pt]
-    Transition: \textit{``The difference is in how the data were collected --- and that
-    determines what we can conclude.''}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15--18 min)}
-    \begin{enumerate}
-        \item Define population and sample; distinguish the two for each headline.
-        \item Define observational study: researchers do \emph{not} impose treatments;
-              they observe what happens naturally.
-        \item Define experiment: researchers \emph{assign} treatments to experimental
-              units.
-        \item Key conclusion rule (DAT-2.B.3): observational data cannot establish
-              causation --- only random experiments can.
-        \item Generalizability rule (DAT-2.B.1--2): results generalize only to the
-              population from which the sample was randomly selected.
-    \end{enumerate}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Debrief --- whole class (8 min)]{sky}
+Pens down, papers up. \textbf{This debrief is spoken} --- nothing on the page to fill in.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Open on the almost-right problem~10}: ``Jalen is wrong --- grades are strata.''
+        Right label, no reason. Ask the room for the reason: grades differ on hours worked, so
+        two whole grades could leave out the seniors and the estimate is too low. Correct it
+        gently and in public: the label follows from \emph{alike inside} versus \emph{like the
+        whole}.
+  \item Two columns on the board: \emph{Strata --- sample from every one}: Lakeview's grades,
+        Riverside's apartment types. \emph{Clusters --- all of some}: advisory groups,
+        buildings. That board is the lesson.
+  \item Take problem~6 back: why is ``everyone had a 1-in-4 chance'' not enough for an SRS?
+\end{enumerate}
+\columnbreak
+\textbf{The sentence to leave on every desk:} \emph{Strata are alike inside --- sample from
+every one. Clusters each look like the whole --- take all of some.} Make a student say it, not
+you.
+
+\textbf{If the debrief runs short}, cut item~3 --- item~1 is the only one that cannot be cut.
+\textbf{Do not let the debrief eat the last eight minutes} --- the homework start is your
+second formative read.
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Direct Instruction (10 min)}
-    \begin{itemize}
-        \item Work through 3 study descriptions. For each: (a) Is this observational or
-              experimental? (b) What is the population? (c) Can we generalize?
-              (d) Can we conclude causation?
-        \item Emphasize: the \emph{same} association can be found in either study
-              type --- but only the experiment allows a causal conclusion.
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Active Monitoring}
-    \begin{itemize}
-        \item Listen for: students saying observational studies ``prove'' causation.
-        \item Cold-call: ``In the dog-owner study, could a confounding variable explain
-              the longer lifespans? Name one.''
-        \item Check guided notes classification table for accuracy.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[AP Practice --- extra credit, scored 1 to 5]{goldbox}
+Two multiple-choice items --- \textbf{MC~1} names the method (8 of 90 counties at random, every
+farm in them: a cluster sample, \textbf{B}; the distractor C calls the counties strata), and
+\textbf{MC~2 is the crux in AP clothing}: why stratify textbook spending by college
+(\textbf{C}, less variability), with (D) ``cheaper, only a few colleges visited'' and (E)
+``survey everyone in each chosen college'' both cluster ideas wearing a stratified label ---
+then one free-response set on a full flight: \textbf{(a)} describe an SRS of 24 with a random
+number generator, \textbf{(b)} a stratified sample by window / middle / aisle and why it beats
+an SRS, and \textbf{(c)}, \textbf{the spiral}, the population and the sample (Lesson 3.1).
+
+\textbf{Extra credit, scored 1 to 5, turned in with the homework.} Go over it at the start of
+Lesson 3.3. Hold the AP standard out loud: \emph{in context or it does not count} --- a part (b)
+that says ``stratified is more accurate'' without saying comfort is alike within a seat type
+has not earned the point, and a part (a) without ``skip repeats'' or without saying who is
+surveyed is partial.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Partner Activity (8--10 min)}\\
-    Four study descriptions (mix of observational and experimental). Partners:
-    \begin{enumerate}
-        \item Identify the type of study.
-        \item Identify the population and sample.
-        \item State whether results can be generalized and to whom.
-        \item State whether a causal conclusion is justified.
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Differentiation}
-    \begin{itemize}
-        \item \textit{Support}: Decision flowchart --- ``Were treatments assigned?
-              YES $\to$ experiment. NO $\to$ observational.''
-        \item \textit{Extension}: Design a study to determine whether sleep affects
-              GPA. Write an observational version and an experimental version; explain
-              what each can and cannot conclude.
-        \item \textit{ELL}: Use visual icons for ``observe only'' vs.\ ``assign
-              treatment.''
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Homework --- scored 1 to 5, due the first class after two study halls]{goldbox}
+Six items in a third context: Mercy Valley Hospital's 720 nurses, on three shifts and twelve
+floors, each floor staffed from every shift; the question is hours of sleep, and night-shift
+nurses sleep less. \textbf{Part~A}: \textbf{A1} name the floor plan (cluster); \textbf{A2} name
+the shift plan (stratified); \textbf{A3} an AP-style multiple choice --- which plan is most
+precise (C, stratify by shift) --- with a required justification. \textbf{Part~B}: \textbf{B1}
+describe an SRS of 36 with a random number generator; \textbf{B2} a practical advantage of the
+floor (cluster) plan; \textbf{B3} the crux restated --- a supervisor wants the shifts as
+clusters.
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.}
+\textbf{Scoring:} 10 points --- A1, A2, A3's letter, and A3's justification 1 each; B1, B2, B3
+2 each. \textbf{B3 is the one to read closely}: a student who accepts the supervisor's plan has
+kept the target misconception, and Lessons 3.4--3.5 (blocking is stratifying for experiments)
+build on its absence. The spiralbox previews Lesson 3.3.
+
+\textbf{Paper homework is the default for this course} --- assign this page unless you have
+decided otherwise. \textbf{DeltaMath override (occasional):} on the days you assign DeltaMath
+instead, it replaces this page, and this page stays in the packet as extra practice. Never
+assign both.
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Exit Ticket (5 min)}\\
-    Scenario: \textit{``Researchers randomly select 500 adults and ask them how
-    many hours of TV they watch per day and whether they have been diagnosed with
-    diabetes.''}
-    \begin{enumerate}
-        \item Observational study or experiment?
-        \item Can researchers conclude that watching TV causes diabetes?
-        \item To whom can results be generalized?
-    \end{enumerate}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP-Style Check}\\
-    \textit{``A study found that students who take notes by hand score higher on
-    tests than students who type notes. Which conclusion is best supported by
-    these results?''}
-    \begin{enumerate}[label=(\Alph*)]
-        \item Taking notes by hand causes higher test scores.
-        \item There is an association between note-taking method and test scores.
-        \item Students should always take notes by hand.
-        \item The study proves that typing is harmful to learning.
-    \end{enumerate}
-    Answer: (B) --- this is an observational finding; causation is not established.
-\end{minipage}
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{Strata and clusters swapped} (notes~9, 10, 14; HW~B3; AP~MC1, MC2 --- the target
+        misconception). Probe: \emph{``Are the people inside one group alike, or a mix? If
+        alike, sample from every group. If each group looks like the whole, take all of a
+        few.''}
+  \item \textbf{``Everyone had the same chance, so it is an SRS''} (notes~6). Probe:
+        \emph{``Could the sample be half sophomores and half seniors? Then not every group was
+        possible.''}
+  \item \textbf{An SRS description with no mechanics} (notes~1 and 11, HW~B1, AP~(a)): ``pick 80
+        at random.'' Probe: \emph{``What gets numbered? What range? What about a repeat? Who is
+        surveyed?''}
+  \item \textbf{``Stratified is better'' with no reason} (notes~7 and 13, HW~A3, AP~(b)).
+        Probe: \emph{``Better how --- and what is alike inside each stratum?''}
+\end{itemize}
+Cold-call prompts: \emph{``Name a group at our school that would make a good stratum for
+`hours of sleep' --- and one that would make a good cluster.''} \quad \emph{``Why does a cluster
+sample save money?''}
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Homework / Practice}
-    \begin{itemize}
-        \item For 4 study descriptions: classify type, identify population/sample,
-              state generalizability, and determine whether a causal conclusion is valid.
-        \item Reflection: \textit{``What is the key difference between an observational
-              study and an experiment?''}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-    \textbf{Extension / Preview}
-    \begin{itemize}
-        \item \textit{Extension}: Find a news article reporting an observational study.
-              Identify the population, sample, and explain why causation cannot be
-              concluded.
-        \item \textit{Preview}: Lesson 3.3 develops the specific random sampling
-              methods that make a sample representative of the population.
-    \end{itemize}
-\end{minipage}
+\boxguard
+\begin{skillbox}[Close \& Assign (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+six items on paper, scored, due the first class after two study halls --- and point out that
+the AP Practice page is extra credit, turned in with the homework. Circulate on \textbf{Part~B
+item~3}. Sort what you see into three piles as you walk --- rejected the supervisor's plan and
+said shifts should be strata, with the reason (ready); rejected it with no reason, or only
+``that's stratified'' (ready, needs the language); accepted it because the shift is picked at
+random (the misconception survived) --- and open Lesson 3.3 by returning to the
+strata / clusters board if that third pile ran past a third of the room. Then close on what
+changed: \emph{``You walked in with one kind of random sample. You walk out asking whether the
+groups are alike inside or each like the whole.''} \textbf{Preview:} Lesson 3.3, \emph{Problems
+with Sampling} --- even a random method can go wrong when part of the population is left out
+or people will not answer.
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order (four: there is no activity) ──
+\begin{teachernote}[Warm-Up]
+Item~3 is the seed for strata and item~4 the seed for clusters. Give five minutes total and
+spend at most a minute on item~1. Write the room's two plans on the board in their words and
+\emph{do not name them}: the notes name them, and the point-back is the payoff. On item~2,
+accept ``yes, if the names are mixed well''; the deeper point (equal chance for every
+\emph{group}) comes in problem~6.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 24 / 10, then 8 for the debrief, then 8 for the homework start.} Four rows, 14
+problems. \textbf{You work 1, 4, and 7}; the class works the rest. The SRS row must move ---
+eight minutes --- because the time belongs to the Choosing row, which carries the crux.
+\textbf{Problem~6 is the trap} (a 1-in-4 chance for every student is not an SRS);
+\textbf{problem~10 is the crux} (the grades offered as clusters). Take a hand count on 10
+before any explanation; the callout sentence is the resolution. The systematic line is read
+once and left --- do not build problems on it. \textbf{Parking at Riverside is where the pen
+changes hands}; problem~14 is the crux transferred and the one to protect. If you only get
+through 11, 13, and 14, that is the right trade. \textbf{Your second formative read is the
+homework start}: Part~B item~3, three piles. \textbf{Debrief (8 min), spoken}, opening on the
+almost-right problem~10. \textbf{Do not let the debrief eat the last eight minutes} --- the
+homework start is not optional padding.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+\textbf{This page is extra credit, scored 1 to 5} --- the graded practice is the homework
+behind it. \textbf{MC~2 is the one worth reading closely}: (D) and (E) describe a cluster
+sample's features; if more than a handful choose either, return to the strata / clusters board
+before Lesson 3.3. On the free response, part (a) needs the labels, the range, skipping
+repeats, and who is surveyed; part (b) needs the three strata, a sample from \emph{each}, and
+the reason in context (comfort is alike within a seat type); part (c) is a Lesson 3.1 spiral ---
+the population is the 240 passengers on this flight, not ``airline passengers.''
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+\textbf{Scored 1 to 5 (10 points), due the first class after two study halls.} The eight
+minutes at the end of the period are a \emph{start}: put students on A1, A2, and B3 first while
+you can still catch a wrong start. \textbf{B3 is the item to read first when scoring} --- a
+student who accepts the supervisor's plan has kept the target misconception. On A1 and A2,
+accept ``cluster'' and ``stratified'' with or without ``sample.'' On A3, (C) with no
+justification earns 1 of 2. On B1, both the labeling and the skip-repeats / who-is-surveyed
+step are needed for 2 points. On B2, the advantage must be practical (cost, time, travel), not
+``more accurate.'' \textbf{Paper is the default.} On the occasions you assign DeltaMath in its
+place, tell students this page is now optional practice. Do not assign both.
+\end{teachernote}
 \end{document}

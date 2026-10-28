@@ -1,0 +1,26 @@
+# AP Practice item 3, part (a) (Unit 3, Lesson 3.5). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3a
+points: 2
+task: >-
+  Researchers selected 1,000 adults at random from a list of all adult residents of a
+  state. Adults who drink green tea every day had a statistically significantly lower
+  mean blood pressure than adults who do not. Can the researchers conclude that drinking
+  green tea causes lower blood pressure? Explain, and name a variable that could confound
+  the result.
+criteria:
+  - id: no_cause
+    points: 1
+    full: >-
+      E: Says no, because the adults chose how much tea to drink: no treatment was randomly
+      assigned (an observational study). A random sample does not make a cause-and-effect
+      conclusion valid.
+  - id: confounder
+    points: 1
+    full: >-
+      E: Names a plausible confounding variable in context (exercise, diet, income, smoking,
+      stress) and links it to both tea drinking and blood pressure.
+    partial: >-
+      P (0.5): Names a plausible variable without linking it to both tea drinking and blood
+      pressure.

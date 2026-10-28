@@ -1,14 +1,16 @@
-%! Introducing Statistics: Do the Data We Collected Tell the Truth? — Unit 3, Lesson 3.1 — Homework
+%! Planning a Study — Unit 3, Lesson 3.1 — Homework
 % GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
 % Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
-% replaces this page. Started in the last eight minutes
-% of the period and finished after two study halls. The AP Practice component before it is extra credit,
-% scored 1 to 5.
-% THIRD CONTEXT: the notes teach on a skate-park vote and the school-start poll, Guided Practice
-% runs on a fitness app, and these items are on restaurant ratings, college plans, and a gym.
-% Part A (restaurant ratings): A1 chance or not, A2 who rates and which way it leans, A3 THE
-% CRUX restated — "ten times as many ratings, so report it". Part B: B1 the AP-style multiple
-% choice with a required justification, B2 a gym survey's bias in context. 10 points.
+% replaces this page. Started in the last eight minutes of the period and finished after two
+% study halls. The AP Practice component before it is extra credit, scored 1 to 5.
+% THIRD CONTEXT: the notes teach on one-line methods, a principal's homework survey and four
+% one-line studies; Guided Practice runs on a university study app; AP Practice on reading
+% scores, an Ohio park poll and energy drinks. These items are on a city's parks — a dog park
+% survey and park lighting.
+% Part A (the dog-park survey): A1 chance or not, A2 population and sample, A3 census and why
+% not. Part B (parks and people): B1 the AP-style multiple choice (which plan is an experiment)
+% with a required justification, B2 THE CRUX restated — step counters measured every step, so
+% the paper calls it an experiment. 10 points.
 % \answerspace{H}{} reserves exactly H; each \gradedblank inside it is BYTE-IDENTICAL in the key,
 % where key mode prints its display. Keep every \boxguard identical in the blank and the key.
 \documentclass[12pt]{article}
@@ -39,50 +41,49 @@ halls. Start it now; ask about anything that stalls you before you leave.
 \vspace{0.04in}
 
 \boxguard[14]
-\begin{notesbox}{Part A --- Restaurant Ratings}
+\begin{notesbox}{Part A --- The Dog Park Survey}
 \interlinepenalty=10000 % keep each prompt whole when the box breaks
 \small
-A restaurant chain wants to know what percent of its customers rate their last meal
-``excellent.'' \textbf{Method 1:} a QR code on every receipt invites customers to rate their
-meal online; 3{,}200 do, and \textbf{41\%} choose ``excellent.'' \textbf{Method 2:} the chain
-picks 300 orders at random from its list of all last month's orders and calls those customers;
-\textbf{63\%} say ``excellent.''
+The city of Riverside has 40{,}000 households and wants to know what percent of them support
+building a dog park. \textbf{Plan 1:} post a poll on the city's social media page and count the
+votes. \textbf{Plan 2:} a computer picks 400 households at random from the city's list of all
+addresses, and each one is asked.
 \begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=2.2em, itemsep=2pt]
-  \item Which method used chance to decide who answered? In the other method, who decided?
-        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw1, type=rubric, points=2, display={Method 2: the 300 orders were picked at random. In Method 1 the customers decided, by choosing to scan the code.}]{\linewidth-10.5pt}{0.95cm}}
-  \item Who is most likely to scan the code and rate a meal? Explain why Method 1's 41\% is
-        likely too low.
-        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw2, type=rubric, points=2, display={Customers with strong feelings, especially an unhappy one, are most motivated to rate, so they are over-represented and pull the ``excellent'' share down.}]{\linewidth-10.5pt}{0.95cm}}
-  \item A manager says, ``Method 1 has more than ten times as many ratings as Method 2, so it is
-        the one to report.'' Respond.
-        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw3, type=rubric, points=2, display={Disagree. 3,200 volunteers are still a biased, non-chance sample; more of them does not remove the bias. Report Method 2's 63\%.}]{\linewidth-10.5pt}{0.95cm}}
+  \item Which plan uses chance to decide who answers? In the other plan, who decides?
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw1, type=rubric, points=2, display={Plan 2: a computer picks the 400 households at random. In Plan 1 the residents decide, by choosing to see the post and vote.}]{\linewidth-10.5pt}{0.95cm}}
+  \item For Plan 2, name the population and the sample.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw2, type=rubric, points=2, display={Population: all 40,000 Riverside households. Sample: the 400 households the computer picked.}]{\linewidth-10.5pt}{0.95cm}}
+  \item A council member asks, ``Why not just ask every one of the 40{,}000 households?'' What is
+        that plan called, and give one reason the city might not use it.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw3, type=rubric, points=2, display={A census. Reaching all 40,000 households would take far more time and money, and a random sample of 400 can estimate the percent well.}]{\linewidth-10.5pt}{0.95cm}}
 \end{enumerate}
 \end{notesbox}
 
 \vspace{0.04in}
 
 \boxguard[30]
-\begin{notesbox}{Part B --- Chance or Not?}
+\begin{notesbox}{Part B --- Parks and People}
 \interlinepenalty=10000 % keep each prompt whole when the box breaks
 \small
 \begin{enumerate}[label=\textbf{B\arabic*.}, leftmargin=2.2em, itemsep=2pt]
-  \item \textbf{AP-style.} A state wants to estimate the percent of its high school seniors who
-        plan to attend college. Which method relies on chance to choose who is surveyed? Write
-        its letter in the Letter box, then justify it in a sentence.
+  \item \textbf{AP-style.} The parks department wants to know whether adding lights to a park
+        \emph{reduces} evening vandalism. Which plan is an experiment? Write its letter in the
+        Letter box, then justify it in a sentence.
         \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
-          \item Survey the seniors who attend a statewide college fair.
-          \item Let each school counselor pick ten seniors to survey.
-          \item Post the survey on the state education department's website.
-          \item Randomly select 600 seniors from the state's list of all enrolled seniors.
-          \item Survey every senior enrolled in an AP class.
+          \item Compare vandalism in parks that already have lights with parks that do not.
+          \item Survey residents about whether lights would make parks safer.
+          \item Ask park rangers to keep a careful daily log of all vandalism for a year.
+          \item Randomly choose 10 of the city's 20 parks to get new lights, then compare
+                vandalism in the two groups.
+          \item Review police reports from cities that chose to light their parks.
                 \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw4, type=choice, points=1, answer=D]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
         \end{enumerate}
-        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw4j, type=rubric, points=1, display={(D): a random process picks the 600 from the list of all seniors. In the others, people decide.}]{\linewidth-10.5pt}{0.7cm}}
-  \item A gym owner wants to know whether members want the gym to stay open later at night. She
-        surveys the members who are working out at 6 a.m. Name a group this survey
-        over-represents and a group it likely misses, and say which way the result probably
-        leans.
-        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={Over-represents early-morning exercisers; misses members who work out in the evening. Support for later hours is likely too low.}]{\linewidth-10.5pt}{0.95cm}}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw4j, type=rubric, points=1, display={(D): the department imposes the treatment (lights) on parks chosen at random. In the others, it only observes what already happens.}]{\linewidth-10.5pt}{0.7cm}}
+  \item Researchers gave 600 Riverside adults step counters and recorded every step they took for
+        a month. Dog owners walked more minutes a day than non-owners. The local paper wrote,
+        ``Because every step was measured so carefully, this was an experiment --- getting a dog
+        will make you walk more.'' Is the paper right? Explain in context.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={No. No one was assigned to get a dog, so it is an observational study, however carefully steps were measured. It shows an association, not that dogs cause walking; people who already like to walk may be the ones who get dogs.}]{\linewidth-10.5pt}{0.95cm}}
 \end{enumerate}
 \end{notesbox}
 
@@ -93,8 +94,8 @@ picks 300 orders at random from its list of all last month's orders and calls th
 \boxguard[3]
 \begin{spiralbox}
 \small
-\textbf{Next: Introduction to Planning a Study} --- populations and samples, a census, and the
-difference between an observational study and an experiment.
+\textbf{Next: Random Sampling Methods} --- how to let chance choose the sample: simple random
+samples, stratified samples, and cluster samples.
 \end{spiralbox}
 
 \end{document}

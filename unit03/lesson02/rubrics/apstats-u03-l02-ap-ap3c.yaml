@@ -1,0 +1,18 @@
+# AP Practice item 3, part (c) — the spiral to Lesson 3.1 (Unit 3, Lesson 3.2). Relative to the lesson directory.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: ap3c
+points: 2
+task: >-
+  Identify the population and the sample in this study (240 passengers on a full flight;
+  the airline surveys 24 of them about seat comfort).
+criteria:
+  - id: population
+    points: 1
+    full: >-
+      Population: all 240 passengers on this flight (in context; not "the plane" or
+      "people").
+  - id: sample
+    points: 1
+    full: >-
+      Sample: the 24 passengers who are selected and surveyed.

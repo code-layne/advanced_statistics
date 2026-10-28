@@ -2,15 +2,16 @@
 id: hw4j
 points: 1
 task: >-
-  A state wants to estimate the percent of its high school seniors who plan to attend
-  college. Which method relies on chance? (A) seniors at a college fair (B) each
-  counselor picks ten seniors (C) a survey on the state education website (D) randomly
-  select 600 seniors from the state's list of all enrolled seniors (E) every senior in
-  an AP class. Justify the choice.
+  The parks department wants to know whether adding lights to a park reduces evening
+  vandalism. Which plan is an experiment? (A) compare parks that already have lights
+  with parks that do not (B) survey residents (C) rangers keep a careful daily log of
+  vandalism for a year (D) randomly choose 10 of the city's 20 parks to get new lights,
+  then compare vandalism (E) review police reports from cities that chose to light their
+  parks. Justify the choice.
 criteria:
   - id: justify
     points: 1
     full: >-
-      Justifies (D): a random process chooses the 600 from a list of all seniors; in the
-      other methods people (the students, counselors, or the class schedule) decide who
-      is surveyed.
+      Justifies (D): the department imposes the treatment (new lights) on parks it
+      chooses at random; every other plan only observes what already happens, however
+      carefully it records it.

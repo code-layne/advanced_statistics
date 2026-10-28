@@ -1,5 +1,5 @@
-%! Potential Problems with Sampling — Unit 3, Lesson 3.4 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Designing Experiments — Unit 3, Lesson 3.4 — Student Packet Cover Sheet
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{ltablex}
@@ -7,49 +7,67 @@
 
 \begin{document}
 
-% Full-bleed navy banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 3}{Lesson 3.4 \quad Designing Experiments}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3: Collecting Data}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.4 \quad Potential Problems with Sampling}}
-\end{center}
-
-\vspace{0.22in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objectives (VAR-3.A--D) stay in the teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} identify and name the major types of bias in sampling: voluntary response, undercoverage, nonresponse, and response bias.
-  \item \ldots{} explain how each bias type distorts the estimate (which direction).
-  \item \ldots{} suggest a redesign that would reduce a specific source of bias.
+  \item \ldots{} name the \textbf{experimental units}, \textbf{factors}, \textbf{treatments},
+        and \textbf{response variable} of an experiment.
+  \item \ldots{} explain the four principles of a well-designed experiment ---
+        \textbf{comparison}, \textbf{random assignment}, \textbf{replication}, and
+        \textbf{control} --- including a \textbf{control group}, a \textbf{placebo}, and
+        \textbf{blinding}.
+  \item \ldots{} choose between a \textbf{completely randomized design}, a
+        \textbf{randomized block design}, and a \textbf{matched pairs design}, and explain
+        why chance must still assign the treatments inside every block or pair.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
+\boxguard[14]
 \begin{tocbox}
-% A CONTENTS LIST ONLY: no Score column and no Total row. Whether a component counts is said in
-% its description.
 \small
+% A CONTENTS LIST ONLY: no Score column and no Total row. Whether a component counts is said in
+% its description: AP Practice is extra credit, scored 1 to 5; the Homework is scored.
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up & Spiral review + leading question identification \\
-2 & Guided Notes & Voluntary response, undercoverage, nonresponse, response bias \\
-3 & Group Activity & Diagnosing bias in flawed surveys \\
-4 & Exit Ticket & Income survey with nonresponse scenario \\
-5 & Homework & Four flawed surveys; identify bias and suggest fixes \\
+1 & Warm-Up & Breakfast and GPAs, a review game in two class periods, and splitting a class by
+                 chance \\
+2 & Guided Notes \& Practice & Gum and memory, a sports drink blocked by runner, a shoe sole
+                 tested on both feet, and a zinc lozenge for colds \\
+3 & AP Practice & Tomato plants, two sunscreens, and a math-practice app: AP-style multiple
+                 choice and one free-response set --- extra credit, scored 1 to 5 \\
+4 & Homework & Corn on two kinds of field, a new pillow, and a joint chew for older dogs ---
+                 \textbf{scored 1 to 5, due the first class after two study halls} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+An experiment \textbf{does something} to its units and watches what happens, so it can show
+cause and effect --- but only if \textbf{chance} decides who gets which treatment. Blocking
+and pairing put alike units side by side so the comparison is sharper; they do \emph{not}
+replace the coin flip. \textbf{Block on something that affects the response}, then randomize
+inside every block. A placebo and blinding keep what people expect from posing as a treatment
+effect.
+\end{remindbox}
 
 \end{document}

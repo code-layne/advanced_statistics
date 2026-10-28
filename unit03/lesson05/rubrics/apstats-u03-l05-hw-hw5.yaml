@@ -1,0 +1,17 @@
+# Homework item B2 — the lesson's crux restated (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  A council member says, "The 400 residents were chosen at random, so this proves that
+  walking lowers stress." Respond, and name a variable that could explain the result instead.
+criteria:
+  - id: rebuttal
+    points: 1
+    full: >-
+      Disagrees, explaining that random selection only lets us generalize; showing cause
+      requires random assignment of the treatment, and the residents chose whether to walk.
+  - id: confounder
+    points: 1
+    full: >-
+      Names a plausible confounding variable in context (free time, job stress, health,
+      income, age) that could affect both walking and stress.

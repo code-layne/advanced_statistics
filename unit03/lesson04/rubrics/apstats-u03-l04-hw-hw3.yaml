@@ -1,0 +1,19 @@
+# Homework item A3 — the crux restated (Unit 3, Lesson 3.4). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  A farmhand says, "The plots are already blocked by field, so we do not need to
+  randomize. In each field, just plant Early Gold on the 6 plots nearest the road."
+  Respond.
+criteria:
+  - id: disagree
+    points: 1
+    full: >-
+      Disagrees: blocking does not replace random assignment; chance must still decide
+      which 6 plots in each field get Early Gold.
+  - id: why
+    points: 1
+    full: >-
+      Explains in context what could go wrong: plots near the road may differ (dust,
+      traffic, drainage, sunlight), so Early Gold's yield would be mixed up with being
+      near the road (confounding).

@@ -1,0 +1,20 @@
+# Homework item A3 (Unit 3, Lesson 3.5). Relative to the lesson directory.
+id: hw3
+points: 2
+task: >-
+  A nutrition researcher picks 60 students at random from the 1,200 students at a high school
+  and randomly assigns 30 to a fruit-first lunch line and 30 to the usual line; the
+  difference is statistically significant. Can the researcher conclude that putting fruit
+  first caused students to take more fruit? To whom can she generalize the result? Explain
+  both.
+criteria:
+  - id: cause
+    points: 1
+    full: >-
+      Says yes, cause and effect can be concluded, because the students were randomly
+      assigned to the two lines (and the difference is statistically significant).
+  - id: generalize
+    points: 1
+    full: >-
+      Generalizes to all 1,200 students at this high school, because the 60 were selected at
+      random from them (not to all students everywhere).

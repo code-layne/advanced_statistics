@@ -1,0 +1,114 @@
+%! Designing Experiments — Unit 3, Lesson 3.4 — AP Practice
+% GRADUAL RELEASE: AP-format practice, extra credit, scored 1 to 5;
+% the graded practice is the `homework` component that follows it.
+% Two multiple-choice items (MC1: count the treatments in a two-factor tomato experiment; MC2 is
+% the crux in AP clothing — two sunscreens on 30 volunteers' arms, distractor (A) pairs without
+% randomizing and (E) blocks on eye color), then one free-response set on a math-practice app
+% blocked by honors/standard math: (a) units, treatments, response; (b) why block and how to
+% assign within blocks; (c) the SPIRAL — nonresponse bias in an emailed survey (Lesson 3.3).
+% Every rubric box is full width on its own line under its part, hung with \gradedhere over
+% \writelines{8} (about 2.1in, room for the drawn 2in box). Each \gradedblank line, display=
+% included, is BYTE-IDENTICAL in ap_practice_key/; key mode prints the display. The
+% next-lesson preview is NOT here: it closes the packet, in ../homework/.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{grading}
+\gradingassignment{apstats-u03-l04-ap}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.4}{AP Practice}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.06in}
+
+% Authored BYTE-IDENTICALLY in ap_practice/ and ap_practice_key/.
+\boxguard[8]
+\begin{remindbox}
+\small
+This page is \textbf{extra credit, scored 1 to 5} --- your graded homework is the last section
+of this packet. Work these AP-format reps for practice and bring questions to study hall.
+\end{remindbox}
+
+\vspace{0.06in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in]
+
+  \item A botanist studies how the hours of light per day (8, 12, or 16) and the type of
+        fertilizer (organic or synthetic) affect the height of tomato plants. She has 36
+        plants. How many treatments does this experiment have?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item 2
+          \item 3
+          \item 5
+          \item 6
+          \item 36
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=D]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  \item A dermatologist wants to compare how well two sunscreens, A and B, prevent sunburn.
+        She has 30 volunteers, whose skin burns at very different rates. Which plan is best?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=1pt]
+          \item Put sunscreen A on every volunteer's right arm and B on the left arm.
+          \item Let each volunteer choose the sunscreen he or she prefers.
+          \item For each volunteer, flip a coin to decide which arm gets A; the other arm
+                gets B.
+          \item Have the 15 volunteers who burn most easily use A and the other 15 use B.
+          \item Block by eye color; give A to one block and B to the other.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=C]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[27]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Every answer must be written \emph{in the context of the
+problem} --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.10in, resume]
+
+  \item A school district wants to know whether a math-practice app raises unit-test scores
+        more than paper worksheets do. 100 ninth graders take part: 40 are in honors math and
+        60 are in standard math. Honors students tend to score higher on unit tests.
+
+        \vspace{6pt}
+
+        \boxguard[30]
+        \textbf{(a)} Identify the experimental units, the treatments, and the response
+        variable.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3a, type=rubric, points=2, display={Units: the 100 ninth graders. Treatments: the math-practice app and paper worksheets. Response: each student's unit-test score.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(b)} The district plans to block by math level (honors or standard). Explain why
+        blocking is a good idea here, and describe how the treatments should be assigned.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3b, type=rubric, points=2, display={Math level affects test scores, so blocking compares app and worksheets among similar students. Within each block, randomly assign half to the app and half to worksheets (20 and 20 honors; 30 and 30 standard), e.g., names drawn from a hat.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+        \vspace{4pt}
+        \boxguard[30]
+        \textbf{(c)} Before the study, the district emailed a survey to all 2{,}000 ninth-grade
+        families asking whether they would support buying the app. Only 300 replied, and 80\%
+        of them said yes. Name the most likely kind of bias, and explain how it could make the
+        80\% misleading.\\[4pt]
+        \gradedhide{\gradedhere{\gradedblank[id=ap3c, type=rubric, points=2, display={Nonresponse bias. The 300 families who replied may care more about the app (likely the ones in favor) than the 1,700 who did not, so 80\% probably overstates support among all families.}]{\linewidth+6pt}{\gradedlinesheight{2}}}\writelines{8}}
+
+\end{enumerate}
+
+\end{document}

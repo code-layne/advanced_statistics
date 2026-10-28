@@ -2,18 +2,19 @@
 id: hw2
 points: 2
 task: >-
-  Method 1: a QR code on every receipt invites customers to rate their meal online;
-  3,200 do, and 41% choose excellent. Method 2 (random calls to 300 customers) found
-  63% excellent. Who is most likely to scan the code and rate a meal? Explain why
-  Method 1's 41% is likely too low.
+  Plan 2: a computer picks 400 households at random from Riverside's list of all 40,000
+  addresses, and each one is asked whether it supports a dog park. Name the population
+  and the sample.
 criteria:
-  - id: who
+  - id: population
     points: 1
     full: >-
-      Says customers with strong feelings (especially those with a bad or disappointing
-      experience) are the most motivated to scan and rate.
-  - id: direction
+      Population: all 40,000 Riverside households (the whole group the city wants to know
+      about).
+  - id: sample
     points: 1
     full: >-
-      Explains that because unhappy customers are over-represented, the share rating the
-      meal excellent is pulled below the truth for all customers.
+      Sample: the 400 households the computer picked (the households actually asked).
+examples:
+  - response: "Population: dog owners. Sample: 400."
+    scores: {population: 0, sample: 0}

@@ -1,0 +1,18 @@
+# Homework item B2 (Unit 3, Lesson 3.2). Relative to the lesson directory.
+id: hw5
+points: 2
+task: >-
+  Plan 1: randomly choose 3 of the 12 floors and survey every nurse on them. Plan 2: a
+  simple random sample of 12 nurses from each of the three shifts. Give one practical
+  advantage of Plan 1 over Plan 2 for the person running the survey.
+criteria:
+  - id: advantage
+    points: 1
+    full: >-
+      Names a practical advantage: cheaper, faster, or easier to carry out.
+  - id: context
+    points: 1
+    full: >-
+      Explains it in context: the surveyor goes to only 3 floors and surveys everyone
+      there, instead of tracking down 36 individual nurses spread across all 12 floors
+      and three shifts.

@@ -1,6 +1,6 @@
 # Statistics — Course Outline
 
-Shepherd · 2026–2027 · **9 units · 74 lessons**
+Shepherd · 2026–2027 · **9 units · 72 lessons**
 
 Titles and focus lines are taken from each unit's cover sheet
 (`unitXX/unit_cover/main.tex`) and each lesson plan (`unitXX/lessonYY/main.tex`).
@@ -60,22 +60,20 @@ CED's nine Topics to five lessons (2026-09-29), each sized to finish in one peri
 | 2.4 | Least-Squares Regression | 2.8 | b = r·s_y/s_x, a = ȳ − bx̄; slope and intercept in context; *r*² and *s* |
 | 2.5 | Departures from Linearity | 2.9 | Residual plots; outliers, leverage, influence; transformations |
 
-## Unit 3 — Collecting Data (7 lessons)
+## Unit 3 — Collecting Data (5 lessons)
 
 Examines how data are collected and why the collection method determines what conclusions
 can validly be drawn — observational studies vs. experiments, sampling methods and their
 bias sources, the principles of well-designed experiments, and the logic that lets random
-assignment support causal claims.
+assignment support causal claims. Condensed from seven CED Topics to five lessons (2026-10-28).
 
-| # | Title | Focus |
-| --- | --- | --- |
-| 3.1 | Introducing Statistics: Do the Data We Collected Tell the Truth? | Questioning collection methods; chance vs. non-chance data |
-| 3.2 | Introduction to Planning a Study | Population vs. sample; observational study vs. experiment; generalization |
-| 3.3 | Random Sampling and Data Collection | SRS, stratified, cluster, systematic, census; choosing a method |
-| 3.4 | Potential Problems with Sampling | Voluntary response, undercoverage, nonresponse, question-wording bias |
-| 3.5 | Introduction to Experimental Design | Components of experiments; principles of good design; blocking |
-| 3.6 | Selecting an Experimental Design | Completely randomized, block, and matched-pairs designs |
-| 3.7 | Inference and Experiments | Statistically significant results; causal conclusions; scope of inference |
+| # | Title | CED | Focus |
+| --- | --- | --- | --- |
+| 3.1 | Planning a Study | 3.1 + 3.2 | Chance vs. non-chance data; population, sample, census; observational study vs. experiment |
+| 3.2 | Random Sampling Methods | 3.3 | SRS, stratified, cluster (systematic in passing); choosing a method |
+| 3.3 | Problems with Sampling | 3.4 | Voluntary response, undercoverage, nonresponse, response bias; large n does not fix bias |
+| 3.4 | Designing Experiments | 3.5 + 3.6 | Principles of experiments; completely randomized, randomized block, matched-pairs designs |
+| 3.5 | Inference and Experiments | 3.7 | Statistical significance from a simulation; scope of inference; cause vs. association |
 
 ## Unit 4 — Probability, Random Variables, and Probability Distributions (12 lessons)
 
@@ -200,7 +198,7 @@ them; see above).
 
 ## Gaps found while compiling this outline
 
-- **Slide decks exist for 20 of 74 lessons.** All of Unit 1 and Unit 3 have `slides/`;
+- **Slide decks exist for 18 of 72 lessons.** All of Unit 1 and Unit 3 have `slides/`;
   Unit 2's five lessons all have one. Units 4–9 have no `slides/` directory at all
   (56 lessons).
 - **Unit 4 has no `sample_test` / `sample_test_key`** — the only unit without one.

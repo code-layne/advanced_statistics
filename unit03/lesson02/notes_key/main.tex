@@ -1,93 +1,148 @@
-%! AP Statistics — Unit 3, Lesson 3.2 — Guided Notes KEY
-\documentclass[10pt]{article}
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Guided Notes & Practice (Answer Key)
+% MIRROR of ../notes/main.tex: -key in place of -boxes, \termblank -> \termans, \blank -> \ans, and the
+% fourth argument of every \pcell filled. Nothing else differs — keep it that way.
+% THE in-class document, in the MAIN IDEAS / NOTES shape (see LESSON_SHAPE.md §1), at the
+% COMPACT budget: the vocabulary box, then ONE guidednotes table of FOUR rows (three instruction
+% rows + Guided Practice), 14 problems.
+%   I DO   : the teacher fills the definition lines and works the FIRST problem of each grid
+%            (1, 4, 7).
+%   WE DO  : the class works the rest; the last row, Guided Practice (11–14), is worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP is problem 6 (one grade picked at random: every student has a 1-in-4 chance, but it
+% is not an SRS — a group that mixes grades can never be chosen; EK DAT-2.C.2).
+% THE CRUX is problem 10, in the last instruction row: "use the grades as clusters" — strata are
+% groups alike inside on something related to the response, and we sample from EVERY one;
+% clusters each look like the whole population, and we take ALL of SOME (EK DAT-2.C.3, C.4).
+% Systematic random sampling gets one line in row 2 and no problems (teacher's decision).
+%
+% THE CONTEXTS (instruction, guided practice, and homework each use a different one)
+%  Rows 1–3 — Lakeview High: 1,200 students, 300 in each of grades 9–12, and 48 advisory groups
+%          that each mix all four grades. Question: mean hours per week worked at a paid job
+%          (seniors work far more than freshmen, so the grades differ on the response).
+%  Row 4 (GP) — Riverside Apartments: 480 apartments in 40 buildings, each building holding
+%          4 one-, 4 two-, and 4 three-bedroom apartments. Question: mean cars per household.
+%  Homework — a hospital's nurses (shifts and floors). AP Practice — farms, textbooks, an airplane.
+%
+% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, 4th arg of \pcell.
+% TABLE MECHANICS: inside a cell `\\` ENDS THE ROW — use \par. Long rows are split into
+% sub-rows (a bare `\\` then `& ...`) so the table can break between them.
+% NO SKETCH QUESTIONS: every display is given, read and used.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
-\pageheader{Unit 3, Lesson 3.2}{Guided Notes — KEY}
-\namedateperiod
+\pageheader{Unit 3, Lesson 3.2}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.12in}
+\vspace{2pt}
 
-\begin{objectivebox}
-\small By the end of this lesson, I will be able to\dots\\[4pt]
-\ans{Distinguish between a population and a sample.}\\[1pt]
-\ans{Classify a study as an observational study or an experiment.}\\[1pt]
-\ans{Determine when generalizations and causal conclusions are valid based on the study type.}
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard[16]
 \begin{vocabbox}
-\termblanklong{Population} \ans{The entire group of individuals about whom we want information.}
-\termblanklong{Sample} \ans{A subset of the population selected for study.}
-\termblanklong{Observational study} \ans{Researchers observe without imposing treatments.}
-\termblanklong{Experiment} \ans{Researchers deliberately impose treatments on experimental units.}
-\termblanklong{Generalizability} \ans{Whether conclusions from a sample can be extended to the population.}
-\termblanklong{Causal relationship} \ans{One variable causes a change in another; requires an experiment with random assignment.}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\par
+\termans{Simple random sample}{every group of $n$ individuals has an equal chance to be the sample.}
+\par
+\termans{Without replacement}{an individual can be chosen only once.}
+\par
+\termans{Stratified random sample}{an SRS from every stratum (groups alike inside), combined.}
+\par
+\termans{Cluster sample}{randomly choose some clusters; measure everyone in them.}
+\par
 \end{vocabbox}
 
-\vspace{0.1in}
-
-\begin{hookbox}
 \small
-\ans{The drug trial headline — researchers randomly assigned patients, so they can conclude the drug \emph{caused} the effect. The dog-owner headline is an observational study — an association, not causation (confounding variables could explain the link).}
-\end{hookbox}
+\begin{guidednotes}
+% ── ROW 1: the simple random sample ──────────────────────────────────────────
+\mainidea[Chance chooses]{SRS} &
+In a \textbf{simple random sample (SRS)} of size $n$, every \ans{group} of $n$ individuals
+has an \ans{equal} chance of being the sample. Sampling \textbf{without replacement}: an
+individual can be chosen only \ans{once}. \textbf{With replacement}: an individual can be
+chosen more than once.
 
-\vspace{0.1in}
-
-\begin{notesbox}{Population vs. Sample}
-\small
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-Population & All \ans{individuals or units} of interest. \\
-Sample & A \ans{subset} of the population selected for study. \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{Example:}
-\begin{itemize}[itemsep=2pt]
-  \item Population: \ans{All U.S. adults}
-  \item Sample: \ans{The 500 randomly chosen adults surveyed}
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Observational Study vs. Experiment}
-\small
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-Observational study & Researchers \ans{observe} without \ans{imposing} treatments. Includes surveys, retrospective and prospective studies. \\[4pt]
-Experiment & Researchers \ans{impose} treatments to \ans{experimental} units. \\
-\end{tabularx}
-
-\vspace{10pt}
-\textbf{Conclusion Rules (DAT-2.B):}
-\begin{enumerate}[itemsep=4pt]
-  \item Can only generalize to the \ans{population} from which the sample was \ans{randomly} selected.
-  \item \textbf{Observational study} $\to$ \ans{cannot} establish causation (DAT-2.B.3).
-  \item \textbf{Experiment with random assignment} $\to$ \ans{can} establish causation.
-\end{enumerate}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{practicebox}
-\small
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} X p{2.4cm} p{2cm} p{2cm} @{}}
-\textbf{Study} & \textbf{Type} & \textbf{Generalize?} & \textbf{Causation?} \\
+\vspace{3pt}
+\stepnum{1}\ \textbf{Label:} give each individual a different number, 1 to $N$.\par
+\stepnum{2}\ \textbf{Randomize:} use a random number generator or a table of random digits.\par
+\stepnum{3}\ \textbf{Select:} skip numbers out of range and \ans{repeats} until you have $n$.
+\\
+& Lakeview High has 1{,}200 students: 300 in each of grades 9--12. The principal wants the mean
+number of hours per week Lakeview students work at a paid job.
+\notesprompt{Choose an SRS of Lakeview students.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{1}{Describe how to use a random number generator to choose an SRS of 80 students.}{2.8cm}{Number them 1--1{,}200. Generate random integers 1--1{,}200; skip repeats until 80 differ. Survey them.} &
+\pcell{2}{Students are numbered 0001--1200. Use these digits, four at a time, to pick the first three students:\par
+\texttt{0738 1195 9661 0738 0452}}{2.8cm}{738, 1195, 452 (skip 9661 and the repeat 0738).} &
+\pcell{3}{A teacher draws a name from a hat of all 1{,}200, puts it back, then draws again. With or without replacement?}{2.8cm}{With replacement: a student could be picked twice.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: strata and clusters — THE TRAP ────────────────────────────────────
+\mainidea[Groups first]{Strata \& clusters} &
+\textbf{Stratified random sample:} split the population into \textbf{strata}, groups whose
+members are \ans{like} each other; take an \ans{SRS} from \ans{every} stratum and
+combine them.\par\vspace{3pt}
+\textbf{Cluster sample:} split the population into \textbf{clusters}, groups that each look like
+a small copy of the \ans{population}; randomly choose some clusters and measure \ans{every}
+individual in them.\par\vspace{3pt}
+{\footnotesize (One more, named only: a \textbf{systematic random sample} picks a random starting
+point on a list, then every $k$th individual.)}
+\\
+& \notesprompt{Lakeview's 48 advisory groups each mix students from all four grades. Name each method.}
+\begin{probgrid}{|Y|Y|Y|}
+\pcell{4}{Randomly choose 20 students from each of grades 9, 10, 11, and 12.}{1.4cm}{Stratified (grades are strata).} &
+\pcell{5}{Randomly choose 2 of the 48 advisory groups; survey every student in them.}{1.4cm}{Cluster (groups are clusters).} &
+\pcell{6}{Randomly choose 1 grade; survey all 300 in it. Each student has a 1-in-4 chance. Is it an SRS?}{1.4cm}{No: a mixed-grade group can never be chosen.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: choosing a method — THE CRUX ──────────────────────────────────────
+\mainidea[Which plan?]{Choosing} &
+\textbf{Stratify} when the response \ans{differs} from group to group: strata alike inside give
+an estimate that \ans{varies} less from sample to sample than an SRS of the same size.
+\textbf{Cluster} when reaching scattered individuals is \ans{expensive}: it is cheaper and more
+practical, and it works best when each cluster looks like the population.
+\notesprompt{Seniors at Lakeview work far more hours than freshmen. Choose and defend a plan.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Why would 20 from each grade beat an SRS of 80 for estimating mean hours worked?}{1.6cm}{Hours are alike within a grade, so each grade is covered and the estimate varies less.} &
+\pcell{8}{Give one advantage of the advisory-group cluster sample over the plan in problem~7.}{1.6cm}{Cheaper and easier: visit 2 rooms instead of finding 80 students all over the school.} \\ \hline
+\pcell{9}{Should the principal use the 48 advisory groups as \emph{strata}? Why or why not?}{1.9cm}{No. Each group is a mix like the whole school, so stratifying by them gains nothing.} &
+\pcell{10}{Jalen: ``Use the grades as clusters --- randomly pick 2 grades and survey everyone in them.'' What is wrong with his plan?}{1.9cm}{Grades are not like the whole school; 2 grades could miss the seniors. Use grades as strata.} \\ \hline
+\end{probgrid}
+\\
+& \fcolorbox{navy}{sky}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\bfseries Strata are alike inside: sample from \ans{every} one.\par
+Clusters each look like the whole: take \ans{all} of \ans{some} of them.}}
+\\ \hline
+% ── ROW 4: guided practice — WE DO, together, fresh context ──────────────────
+\mainidea[Guided practice]{Parking at Riverside} &
+Riverside Apartments has 480 apartments in 40 buildings. The manager wants the mean number of
+cars per household to plan new parking.
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\centering\footnotesize
+\setlength{\tabcolsep}{4pt}%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l c c @{}}
+\rowcolor{sky}
+\textbf{Apartment type} & \textbf{In each building} & \textbf{In the complex} \\
 \hline
-Researchers randomly assign 100 patients to drug or placebo; measure recovery time. &
-\ans{Experiment} & \ans{No} & \ans{Yes} \\
-A survey of 500 randomly selected adults asks about screen time and sleep quality. &
-\ans{Observ. study} & \ans{Yes} & \ans{No} \\
-A teacher asks the 30 students in her class whether they like the new homework policy. &
-\ans{Observ. study} & \ans{No} & \ans{No} \\
-\end{tabularx}
-\end{practicebox}
+One-bedroom   & 4 & 160 \\
+Two-bedroom   & 4 & 160 \\
+Three-bedroom & 4 & 160 \\
+\end{tabular}
+\end{minipage}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Describe how to choose an SRS of 60 apartments with a random number generator.}{2.2cm}{Number apartments 1--480. Generate random integers 1--480, skipping repeats, until 60 differ. Survey those 60.} &
+\pcell{12}{Plan B: randomly choose 5 buildings and survey every apartment in them. Name it; give one advantage.}{2.2cm}{Cluster sample. Cheaper: the surveyor visits only 5 buildings.} \\ \hline
+\pcell{13}{Plan C: an SRS of 20 apartments of each type. Name it. Why might it beat an SRS of 60?}{2.2cm}{Stratified. Cars are alike within a type (bigger homes, more cars), so the estimate varies less.} &
+\pcell{14}{Plan D: ``Treat the three types as clusters: pick one type at random and survey all 160.'' Respond.}{2.2cm}{No: one type is not like the complex. Three-bedrooms would run high, one-bedrooms low. Use the types as strata.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last 8 minutes while the teacher circulates.
 
 \end{document}

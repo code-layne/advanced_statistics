@@ -1,53 +1,60 @@
-%! AP Statistics — Unit 3, Lesson 3.5 — Warm-Up KEY
-\documentclass[10pt]{article}
+%! Inference and Experiments — Unit 3, Lesson 3.5 — Warm-Up (Answer Key)
+% Mirrors the blank exactly apart from the package swap, the pageheader, and the answers.
+% NO teachernote here — teacher prose lives in the lesson plan.
+% ONE PAGE, blank and key. Three items; do not add a fourth.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+%   Item 1 — spiral to Lessons 3.2 and 3.4: random selection or random assignment, and what each
+%            one is for. Seeds the Scope of Inference row (selection -> generalize,
+%            assignment -> cause).
+%   Item 2 — spiral to Lesson 3.1: why an observational study cannot show cause (confounding).
+%            Seeds the crux row (Association or Cause?).
+%   Item 3 — the music experiment: could a 2.5-word difference come from the luck of the random
+%            assignment alone? A vote, not a verdict — leave the room's answer on the board; the
+%            simulation dotplot in notes row 1 decides it.
+% Every display is given; nothing is sketched.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.5}{Warm-Up --- Answer Key}
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\ans{Key} & Date:\; & Period:\;
-\end{tabularx}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.3in}
+\vspace{0.28in}
 
-{\large\bfseries\color{navy} Part 1 \quad Spiral Review}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.42in]
 
-\vspace{0.12in}
+  \item \textbf{From Lessons 3.2 and 3.4.} Name the kind of randomness used in each: random
+        \emph{selection} or random \emph{assignment}.
 
-\begin{enumerate}
+        \vspace{10pt}
+        (a) 50 names are drawn at random from the school roster to survey. \hfill \ans{Random selection}
 
-    \item
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabularx}{\linewidth}{@{} X p{2.8cm} p{2.4cm} @{}}
-    \textbf{Survey} & \textbf{Bias type} & \textbf{Too high/low?} \\
-    \hline
-    Radio station asks listeners to call in if they support the new mayor. &
-    \ans{Voluntary response} & \ans{Depends; people with strong opinions skew result} \\
-    Phone survey uses only landline numbers. &
-    \ans{Undercoverage} & \ans{Misses cell-phone-only households} \\
-    \end{tabularx}
+        \vspace{10pt}
+        (b) A coin flip decides which of 30 volunteers get a new drug. \hfill \ans{Random assignment}
 
-    \vspace{0.18in}
+        \vspace{12pt}
+        What is each kind of randomness \emph{for}?
+        \vspace{12pt}
 
-    \item
-    \begin{enumerate}[label=(\alph*), itemsep=4pt]
-        \item \ans{Observational study --- students chose whether to use the app.}
-        \item \ans{Motivation or study habits --- students who choose to use the app
-        may already be more motivated and earn higher scores regardless.}
-        \item \ans{Randomly assign students to use the app or not, so that motivation
-        and other confounding variables are balanced between groups.}
-    \end{enumerate}
+        \ansline{Selection makes the sample represent the population. Assignment makes}\\[18pt]\ansline{the groups alike, so the treatment is the only planned difference.}
+
+  \item \textbf{From Lesson 3.1.} An observational study finds that students who eat breakfast
+        tend to earn higher grades. Why can't we conclude that eating breakfast \emph{causes}
+        higher grades?
+
+        \vspace{12pt}
+        \ansline{No one was assigned breakfast. A confounding variable, such as a steady}\\[18pt]\ansline{home routine, could lead to both breakfast and higher grades.}
+
+  \item 24 volunteers were randomly assigned to study a word list in silence or with music, 12
+        in each group. The silence group recalled \textbf{2.5 more words} on average. Could a
+        difference this big happen just from the luck of \emph{which} volunteers landed in
+        which group, even if music makes no difference at all? Explain your thinking.
+
+        \vspace{12pt}
+        \ansline{Possibly. By luck the random assignment might put stronger memorizers in}\\[18pt]\ansline{the silence group. We need to know how often chance alone gives 2.5 or}\\[18pt]\ansline{more --- the notes find out.}
 
 \end{enumerate}
-
-\vspace{0.25in}
-
-{\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
-
-\vspace{0.14in}
-
-\noindent\textcolor{slate}{\small Student responses will vary.}
 
 \end{document}

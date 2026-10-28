@@ -2,20 +2,18 @@
 id: hw1
 points: 2
 task: >-
-  A restaurant chain wants to know what percent of its customers rate their last meal
-  excellent. Method 1: a QR code on every receipt invites customers to rate their meal
-  online; 3,200 do, and 41% choose excellent. Method 2: the chain picks 300 orders at
-  random from its list of all last month's orders and calls those customers; 63% say
-  excellent. Which method used chance to decide who answered? In the other method, who
-  decided?
+  Riverside (40,000 households) wants to know what percent support a dog park. Plan 1:
+  post a poll on the city's social media page and count the votes. Plan 2: a computer
+  picks 400 households at random from the city's list of all addresses, and each one is
+  asked. Which plan uses chance to decide who answers? In the other plan, who decides?
 criteria:
-  - id: chance_method
+  - id: chance_plan
     points: 1
     full: >-
-      Identifies Method 2 as the chance-based method (the 300 orders were picked at
+      Identifies Plan 2 as the chance-based plan (the 400 households are picked at
       random).
   - id: who_decided
     points: 1
     full: >-
-      Says that in Method 1 the customers themselves decided, by choosing whether to scan
-      the code and rate (voluntary response).
+      Says that in Plan 1 the residents themselves decide, by choosing to see the post
+      and vote (voluntary response).

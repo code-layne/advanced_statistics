@@ -1,76 +1,58 @@
-%! AP Statistics — Unit 3, Lesson 3.5 — Warm-Up
-\documentclass[10pt]{article}
+%! Inference and Experiments — Unit 3, Lesson 3.5 — Warm-Up
+% ONE PAGE, blank and key. Three items; do not add a fourth.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes.
+%   Item 1 — spiral to Lessons 3.2 and 3.4: random selection or random assignment, and what each
+%            one is for. Seeds the Scope of Inference row (selection -> generalize,
+%            assignment -> cause).
+%   Item 2 — spiral to Lesson 3.1: why an observational study cannot show cause (confounding).
+%            Seeds the crux row (Association or Cause?).
+%   Item 3 — the music experiment: could a 2.5-word difference come from the luck of the random
+%            assignment alone? A vote, not a verdict — leave the room's answer on the board; the
+%            simulation dotplot in notes row 1 decides it.
+% Every display is given; nothing is sketched.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.5}{Warm-Up}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.3in}
+\vspace{0.28in}
 
-% ── SECTION 1: Spiral Review ──────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 1 \quad Spiral Review}
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.42in]
 
-\vspace{0.12in}
+  \item \textbf{From Lessons 3.2 and 3.4.} Name the kind of randomness used in each: random
+        \emph{selection} or random \emph{assignment}.
 
-\begin{enumerate}
+        \vspace{10pt}
+        (a) 50 names are drawn at random from the school roster to survey. \hfill \blank{3.8cm}
 
-    \item From Lesson 3.4 --- for each flawed survey, identify the type of bias and
-    state whether the estimate is too high or too low.
+        \vspace{10pt}
+        (b) A coin flip decides which of 30 volunteers get a new drug. \hfill \blank{3.8cm}
 
-    \vspace{8pt}
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabularx}{\linewidth}{@{} X p{3cm} p{2.2cm} @{}}
-    \textbf{Survey} & \textbf{Bias type} & \textbf{Too high/low?} \\
-    \hline
-    A radio station asks listeners to call in if they support the new mayor. &
-    \blank{2.8cm} & \blank{2cm} \\
-    A phone survey uses only landline numbers. &
-    \blank{2.8cm} & \blank{2cm} \\
-    \end{tabularx}
+        \vspace{12pt}
+        What is each kind of randomness \emph{for}?
+        \vspace{12pt}
 
-    \vspace{0.18in}
+        \writeline\\[18pt]\writeline
 
-    \item A researcher wants to know whether a new study app improves test scores.
-    She lets students choose whether to use the app, then compares scores.
-    \begin{enumerate}[label=(\alph*), itemsep=4pt]
-        \item Is this an observational study or an experiment? \blank{4cm}
-        \item What confounding variable might explain a difference in scores?\\
-        \writeline
-        \item What would the researcher need to change to establish that the app
-        \emph{causes} higher scores?\\
-        \writeline\writeline
-    \end{enumerate}
+  \item \textbf{From Lesson 3.1.} An observational study finds that students who eat breakfast
+        tend to earn higher grades. Why can't we conclude that eating breakfast \emph{causes}
+        higher grades?
+
+        \vspace{12pt}
+        \writeline\\[18pt]\writeline
+
+  \item 24 volunteers were randomly assigned to study a word list in silence or with music, 12
+        in each group. The silence group recalled \textbf{2.5 more words} on average. Could a
+        difference this big happen just from the luck of \emph{which} volunteers landed in
+        which group, even if music makes no difference at all? Explain your thinking.
+
+        \vspace{12pt}
+        \writeline\\[18pt]\writeline\\[18pt]\writeline
 
 \end{enumerate}
-
-\vspace{0.25in}
-
-% ── SECTION 2: Looking Ahead ──────────────────────────────────────────────────
-{\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
-
-\vspace{0.12in}
-
-\noindent Today we learn the components and principles of well-designed experiments.
-
-\vspace{0.14in}
-
-\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=4mm, right=4mm, top=3mm, bottom=3mm]
-    \small
-    \begin{itemize}[leftmargin=1.3em, itemsep=8pt]
-  \item A well-designed experiment: comparison, random assignment, replication, control.
-  \item Random \emph{assignment} (not just selection) is what allows causal conclusions.
-  \item Blocking groups similar units together to reduce variability.
-    \end{itemize}
-\end{tcolorbox}
-
-\vspace{0.2in}
-
-\noindent\textcolor{slate}{\small Write one thing you already know about how experiments
-work:}\\[8pt]
-\writeline\\[2pt]\writeline
 
 \end{document}

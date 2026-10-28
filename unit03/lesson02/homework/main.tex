@@ -1,66 +1,101 @@
-%! AP Statistics — Unit 3, Lesson 3.2 — Homework
-\documentclass[10pt]{article}
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Homework
+% GRADUAL RELEASE: this is the lesson's SCORED practice and the LAST component in the packet.
+% Paper homework is the DEFAULT for this course; DeltaMath is an occasional override that
+% replaces this page. Started in the last eight minutes of the period and due the first class
+% after two study halls. The AP Practice component before it is extra credit, scored 1 to 5.
+% THIRD CONTEXT: the notes teach on Lakeview High, Guided Practice runs on Riverside Apartments,
+% and these items are on a hospital's 720 nurses (three shifts, twelve floors).
+% Part A (name and compare): A1 floors = CLUSTER, A2 shifts = STRATIFIED, A3 the AP-style
+% multiple choice with a required justification (stratify by shift for precision).
+% Part B (plans in practice): B1 describe an SRS with a random number generator, B2 the practical
+% advantage of the cluster plan, B3 THE CRUX restated — "use the shifts as clusters". 10 points.
+% \answerspace{H}{} reserves exactly H; each \gradedblank inside it is BYTE-IDENTICAL in the key,
+% where key mode prints its display. Keep every \boxguard identical in the blank and the key.
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{grading}
 \gradingassignment{apstats-u03-l02-hw}
 \gradingcourse{advanced_statistics}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.2}{Homework}
 {\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
 
-\vspace{0.1in}
+\vspace{0.04in}
 
-\begin{practicebox}
+% Authored BYTE-IDENTICALLY in homework/ and homework_key/.
+\boxguard[8]
+\begin{remindbox}
 \small
-For each study, classify it as an observational study or an experiment, identify
-whether random selection and/or random assignment were used, and state what
-conclusions are valid.
+\textbf{This is your graded homework.} It is scored 1 to 5 and due the first class after two study
+halls. Start it now; ask about anything that stalls you before you leave.
+\end{remindbox}
 
-\vspace{8pt}
-\textbf{1.} A nutritionist randomly selects 500 adults from the city directory and
-asks each one about fruit and vegetable consumption and blood pressure. High consumers
-have significantly lower blood pressure.
+\vspace{0.04in}
 
-\vspace{6pt}
-Study type: \makebox[5cm][r]{\smash{\gradedblank[id=hw1a, type=short, points=1, answer={observational study}, check=text]{1.3in}{0.2in}}} \quad Random selection? \makebox[2cm][l]{\hspace{31bp}\smash{\gradedblank[id=hw1b, type=short, points=1, answer=yes, check=text]{0.45in}{0.2in}}}\\[6pt]
-Random assignment? \makebox[2cm][l]{\hspace{0.6in}\smash{\gradedblank[id=hw1c, type=short, points=1, answer=no, check=text]{0.8in}{0.2in}}}\\[6pt]
-Can we conclude diet \emph{causes} lower BP? \makebox[3cm][l]{\hspace{44bp}\smash{\gradedblank[id=hw1d, type=short, points=1, answer=no, check=text]{0.65in}{0.2in}}} \quad Generalize to city adults? \makebox[3cm][l]{\hspace{46bp}\smash{\gradedblank[id=hw1e, type=short, points=1, answer=yes, check=text]{0.9in}{0.2in}}}\\[6pt]
-Explain:\par
-\gradedhide{\gradedhere{\gradedblank[id=hw1f, type=rubric, points=2, display={Observational: confounding (exercise, genetics), so no causation. Random selection: generalize to city adults.}]{\linewidth+6pt}{2in}}\writelines{9}}
-
-\vspace{8pt}
-\textbf{2.} A tech company recruits 80 employees and randomly assigns 40 to a
-standing-desk program and 40 to regular desks. After 3 months, the standing-desk
-group reports significantly less back pain.
-
-\vspace{6pt}
-Study type: \makebox[5cm][r]{\smash{\gradedblank[id=hw2a, type=short, points=1, answer=experiment, check=text]{1.3in}{0.2in}}} \quad Random selection? \makebox[2cm][l]{\hspace{31bp}\smash{\gradedblank[id=hw2b, type=short, points=1, answer=no, check=text]{0.45in}{0.2in}}}\\[6pt]
-Random assignment? \makebox[2cm][l]{\hspace{0.6in}\smash{\gradedblank[id=hw2c, type=short, points=1, answer=yes, check=text]{0.8in}{0.2in}}}\\[6pt]
-Can we conclude standing desks \emph{caused} less pain? \makebox[3cm][l]{\hspace{46bp}\smash{\gradedblank[id=hw2d, type=short, points=1, answer=yes, check=text]{1in}{0.2in}}}\\[6pt]
-Can we generalize to all office workers? \makebox[3cm][l]{\hspace{46bp}\smash{\gradedblank[id=hw2e, type=short, points=1, answer=no, check=text]{1in}{0.2in}}}\\[6pt]
-Explain:\par
-\gradedhide{\gradedhere{\gradedblank[id=hw2f, type=rubric, points=2, display={Random assignment, so causation. Volunteers, not randomly selected: no generalizing beyond this company.}]{\linewidth+6pt}{2in}}\writelines{9}}
-
-\tcbbreak
-\vspace{8pt}
-\textbf{3.} Free Response Practice:\\
-\textit{A researcher wants to determine whether a new reading intervention improves
-comprehension. She has 60 third-grade students from a single school who volunteer
-to participate. She randomly assigns 30 to the intervention and 30 to a control
-group. After 6 weeks, students in the intervention group score significantly higher.}
-
-\vspace{6pt}
-\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
-  \item Can we conclude the intervention caused higher scores? Explain.\\
-        \gradedhide{\gradedhere{\gradedblank[id=hw3a, type=rubric, points=2, display={Yes: random assignment, so the intervention caused the higher scores.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
-  \item Can we generalize to all third-graders? Explain.\\
-        \gradedhide{\gradedhere{\gradedblank[id=hw3b, type=rubric, points=2, display={No: volunteers from one school, not a random sample of all third-graders.}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
-  \item What change to the study design would allow generalization?\\
-        \gradedhide{\gradedhere{\gradedblank[id=hw3c, type=rubric, points=2, display={Randomly select students from all third-graders (e.g., a district registry).}]{\linewidth+6pt}{2in}}\writeline\\[1pt]\writelines{9}}
+\boxguard[14]
+\begin{notesbox}{Part A --- Name and Compare the Plans}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
+\small
+Mercy Valley Hospital has 720 nurses. Each nurse works the day, evening, or night shift (240 on
+each), and each of the hospital's 12 floors has 60 nurses: 20 from each shift. The
+administrator wants to estimate the mean hours of sleep the nurses get before a work shift.
+Night-shift nurses usually sleep much less than the others.
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item \textbf{Plan 1:} randomly choose 3 of the 12 floors and survey every nurse on those
+        floors. Name the sampling method.
+        \answerspace{0.42in}{\normalcolor\mdseries\vspace{2pt}\gradedblank[id=hw1, type=short, points=1, answer={cluster sample}, check=text, display={cluster sample}]{6cm}{0.3in}}
+  \item \textbf{Plan 2:} take a simple random sample of 12 nurses from each of the three shifts.
+        Name the sampling method.
+        \answerspace{0.42in}{\normalcolor\mdseries\vspace{2pt}\gradedblank[id=hw2, type=short, points=1, answer={stratified random sample}, check=text, display={stratified random sample}]{6cm}{0.3in}}
+  \item \textbf{AP-style.} Which plan is most likely to give the most precise estimate of the
+        mean hours of sleep for all 720 nurses? Write its letter in the Letter box, then justify
+        it in a sentence.
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=0pt]
+          \item A simple random sample of 36 nurses from the hospital's list of all nurses.
+          \item Plan 1: every nurse on 3 floors chosen at random.
+          \item Plan 2: a simple random sample of 12 nurses from each shift.
+          \item The first 36 nurses who arrive on Monday morning.
+          \item Every nurse on 3 floors the administrator chooses.
+                \hfill\gradedright{\textit{Letter:}~\gradedblank[id=hw3, type=choice, points=1, answer=C]{0.45in}{0.24in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw3j, type=rubric, points=1, display={(C): sleep is alike within a shift, so stratifying by shift guarantees night-shift nurses are included and the estimate varies less than an SRS of the same size.}]{\linewidth-10.5pt}{0.7cm}}
 \end{enumerate}
-\end{practicebox}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\boxguard[16]
+\begin{notesbox}{Part B --- Plans in Practice}
+\interlinepenalty=10000 % keep each prompt whole when the box breaks
+\small
+\begin{enumerate}[label=\textbf{B\arabic*.}, leftmargin=2.2em, itemsep=2pt]
+  \item Describe how to use a random number generator to choose a simple random sample of 36 of
+        the 720 nurses.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw4, type=rubric, points=2, display={Number the nurses 1 to 720 on the hospital's list. Generate random integers from 1 to 720, skipping repeats, until there are 36 different numbers. Survey those 36 nurses.}]{\linewidth-10.5pt}{0.95cm}}
+  \item Give one practical advantage of Plan 1 over Plan 2 for the person running the survey.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw5, type=rubric, points=2, display={Plan 1 is cheaper and easier: the surveyor visits only 3 floors and surveys everyone there, instead of finding 36 nurses spread over all 12 floors and three shifts.}]{\linewidth-10.5pt}{0.95cm}}
+  \item A supervisor says, ``Use the shifts as clusters: randomly pick one shift and survey all
+        240 nurses on it.'' Explain why this is a poor plan, and say how the shifts should be
+        used instead.
+        \answerspace{2.1in}{\normalcolor\mdseries\hspace*{10.5pt}\gradedblank[id=hw6, type=rubric, points=2, display={A shift is not like the whole hospital: if the night shift is picked the mean is far too low, and if not, night-shift nurses are left out. Shifts are alike inside, so use them as strata and sample from every shift.}]{\linewidth-10.5pt}{0.95cm}}
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.04in}
+
+% The next-lesson preview closes the packet, so it lives here rather than in AP Practice.
+% A one-line, unbreakable box: guard it by its own height so it moves whole.
+\boxguard[3]
+\begin{spiralbox}
+\small
+\textbf{Next: Problems with Sampling} --- even a random method can go wrong. Who never gets a
+chance to be chosen, who refuses to answer, and how a question's wording can push the answers.
+\end{spiralbox}
 
 \end{document}

@@ -1,5 +1,5 @@
-%! Introduction to Experimental Design — Unit 3, Lesson 3.5 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Inference and Experiments — Unit 3, Lesson 3.5 — Student Packet Cover Sheet
+\documentclass[12pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
 \usepackage{ltablex}
@@ -7,49 +7,65 @@
 
 \begin{document}
 
-% Full-bleed navy banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed navy banner. \coverbanner MEASURES the title block and sizes the
+% band to it, so a lesson title long enough to wrap grows the band rather than
+% running out the bottom of it.
+\coverbanner{Unit 3}{Lesson 3.5 \quad Inference and Experiments}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistics}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3: Collecting Data}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.5 \quad Introduction to Experimental Design}}
-\end{center}
-
-\vspace{0.22in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+\boxguard[14]
 \begin{learningtargetbox}
 \small
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The AP Learning Objective (VAR-3.E) stays in the teacher-facing plan.
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} identify the experimental units, factor(s), treatments, response variable, and confounding variables in an experiment.
-  \item \ldots{} describe the four principles of a well-designed experiment: comparison, random assignment, replication, and control.
-  \item \ldots{} compare completely randomized, block, and matched-pairs designs.
+  \item \ldots{} read a simulation of random reshuffles and decide whether a difference
+        between treatment groups is \textbf{statistically significant}.
+  \item \ldots{} use the \textbf{scope of inference} to say whether a study shows cause and
+        effect, and to whom its result can be \textbf{generalized}.
+  \item \ldots{} explain why a random sample, without random assignment, cannot show cause
+        and effect.
 \end{enumerate}
 \end{learningtargetbox}
 
 \vspace{0.14in}
 
+\boxguard[14]
 \begin{tocbox}
-% A CONTENTS LIST ONLY: no Score column and no Total row. Whether a component counts is said in
-% its description.
 \small
+% A CONTENTS LIST ONLY: no Score column and no Total row. Whether a component counts is said in
+% its description: AP Practice is extra credit, scored 1 to 5; the Homework is scored.
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
 \rowcolor{sky}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up & Spiral review + experiment vs.\ observational study \\
-2 & Guided Notes & Components of experiments; CRD, block, matched pairs \\
-3 & Group Activity & Identifying components and design type \\
-4 & Exit Ticket & Headache medication experiment \\
-5 & Homework & Four experiment descriptions; components and design \\
+1 & Warm-Up & Random selection or random assignment, breakfast and grades, and a music
+                 experiment: could chance alone do it? \\
+2 & Guided Notes \& Practice & Studying with music: a simulation, the scope of inference, and
+                 cause or only association --- then a reading app together \\
+3 & AP Practice & A sports drink, tomato plants, and green tea: AP-style multiple choice and
+                 one free-response set --- extra credit, scored 1 to 5 \\
+4 & Homework & A fruit-first lunch line and a city walking survey: significant or not, cause
+                 or not, and to whom --- \textbf{scored 1 to 5, due the first class after two study halls} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+Even when a treatment does nothing, the luck of random assignment makes groups differ a
+little. A difference is \textbf{statistically significant} only when chance alone would
+rarely produce one that large. Then ask two separate questions: was the treatment
+\emph{assigned} at random? That is what lets you say it \emph{caused} the difference. Were the
+individuals \emph{selected} at random? That is what lets you speak for the whole population.
+\textbf{A random sample is not a random assignment}: it lets you generalize, never conclude
+cause.
+\end{remindbox}
 
 \end{document}

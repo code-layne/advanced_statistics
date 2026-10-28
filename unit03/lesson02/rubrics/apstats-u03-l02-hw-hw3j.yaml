@@ -1,0 +1,16 @@
+# Homework item A3, justification of the multiple-choice answer (Unit 3, Lesson 3.2). Relative to the lesson directory.
+id: hw3j
+points: 1
+task: >-
+  Mercy Valley Hospital's 720 nurses work the day, evening, or night shift (240 each);
+  night-shift nurses usually sleep much less. Which plan is most likely to give the most
+  precise estimate of mean hours of sleep? (A) an SRS of 36 nurses (B) every nurse on 3
+  random floors (C) an SRS of 12 nurses from each shift (D) the first 36 nurses to arrive
+  Monday (E) every nurse on 3 floors the administrator picks. Justify the choice.
+criteria:
+  - id: justify
+    points: 1
+    full: >-
+      Justifies (C) in context: sleep is alike within a shift (and differs between
+      shifts), so stratifying by shift guarantees every shift, including the night
+      shift, is represented and the estimate varies less than an SRS of the same size.

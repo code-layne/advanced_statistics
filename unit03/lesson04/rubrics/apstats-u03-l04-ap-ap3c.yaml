@@ -1,0 +1,19 @@
+# AP Practice item 3, part (c) — the spiral to Lesson 3.3 (Unit 3, Lesson 3.4). Relative to the lesson directory.
+# College Board style: E / P / I.
+id: ap3c
+points: 2
+task: >-
+  Before the study, the district emailed a survey to all 2,000 ninth-grade families
+  asking whether they would support buying the app. Only 300 replied, and 80% said yes.
+  Name the most likely kind of bias, and explain how it could make the 80% misleading.
+criteria:
+  - id: bias
+    points: 2
+    full: >-
+      E: Names nonresponse bias AND explains in context that the 300 families who replied
+      may differ from the 1,700 who did not (for example, families who favor the app were
+      more motivated to answer), so 80% likely overstates support among all families.
+    partial: >-
+      P (1 of 2): Names nonresponse bias with no explanation in context, or explains that
+      the repliers differ from the non-repliers without naming the bias (voluntary
+      response accepted with a sound explanation).
