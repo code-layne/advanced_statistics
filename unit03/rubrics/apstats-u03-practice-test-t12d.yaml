@@ -1,0 +1,20 @@
+# Unit 3 practice (sample) test, item 12d. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12d
+points: 2
+task: >-
+  The music group's mean score was 1.8 words higher. A dotplot of 100 random reshuffles
+  is given. How many reshuffles gave a difference of 1.8 or more? Is the observed
+  difference statistically significant? Explain.
+criteria:
+  - id: count
+    points: 1
+    full: >-
+      E: 2 of the 100 reshuffles gave a difference of 1.8 words or more.
+  - id: conclusion
+    points: 1
+    full: >-
+      E: Yes, statistically significant, because a difference that large rarely (about
+      2% of the time) happens from the random assignment alone, in context (music vs.
+      silence quiz scores). A conclusion with no link to the simulation is I.

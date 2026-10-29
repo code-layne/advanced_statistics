@@ -1,0 +1,16 @@
+# Unit 3 actual test, item 11b. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t11b
+points: 1
+task: >-
+  Plan A: randomly choose 5 of the 240 homerooms and survey every student in them. Plan
+  B: take an SRS from each of the four grades. Name each method and explain why Plan B
+  should give a more precise estimate.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Plan A is a cluster sample and Plan B a stratified random sample, AND having a
+      job is likely related to grade (older students work more), so each grade is alike
+      inside (or: every grade is represented), giving a less variable estimate.

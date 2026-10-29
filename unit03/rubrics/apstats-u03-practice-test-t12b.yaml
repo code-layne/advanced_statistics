@@ -1,0 +1,14 @@
+# Unit 3 practice (sample) test, item 12b. Path relative to unit03/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t12b
+points: 1
+task: >-
+  Describe how the teacher could use 40 identical slips of paper to randomly assign 20
+  students to music and 20 to silence.
+criteria:
+  - id: part
+    points: 1
+    full: >-
+      E: Write each student's name (or number) on a slip, mix the slips in a hat, draw
+      20 without replacement; those 20 get music and the other 20 silence.
