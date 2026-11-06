@@ -1,0 +1,69 @@
+%! Unit 2 Test --- Reference Sheet --- half page, printed two-up
+% STANDALONE handout for the Unit 2 actual test (Lessons 2.1--2.5). Merged into no packet ---
+% see ../Makefile. One letter page holds the sheet twice; cut on the dashed line, one half per
+% student. No key, no name row: it is a reference, not graded work.
+% It gives definitions, formulas, and sentence frames only --- never a worked test item.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+% The sheet, set once and printed twice.
+\newcommand{\cheatsheet}{%
+\noindent\colorbox{navy}{\parbox{\dimexpr\linewidth-2\fboxsep}{\vspace{3pt}%
+  \color{white}\textbf{Statistics \hfill Unit 2 Test}\par
+  {\color{skymid}\footnotesize\textbf{Reference Sheet --- Exploring Two-Variable Data}}\vspace{3pt}}}%
+\par\vspace{5pt}\footnotesize\setlength{\parskip}{2pt}%
+\noindent
+\begin{minipage}[t]{0.485\linewidth}\raggedright
+{\color{navy}\textbf{TWO-WAY TABLES}}\par
+\textbf{Marginal:} a row or column total $\div$ the grand total.\par
+\textbf{Joint:} one cell $\div$ the grand total.\par
+\textbf{Conditional:} one cell $\div$ the total of the \emph{given} group.
+``Of the walk-ins, \ldots'' $\Rightarrow$ divide by the walk-in total.\par
+\textbf{Association:} the conditional distributions \emph{differ} across groups.
+Compare the \emph{same} percent for each group --- percents, not counts.\par
+\textbf{Association is not causation} --- observational data cannot show cause.\par\vspace{4pt}
+{\color{navy}\textbf{SCATTERPLOTS}}\par
+\textbf{Explanatory} variable on $x$ (predicts); \textbf{response} on $y$.\par
+\textbf{Describe:} direction (positive / negative), form (linear / curved),
+strength (strong / moderate / weak), and unusual points --- \emph{in context}.\par\vspace{4pt}
+{\color{navy}\textbf{CORRELATION $r$}}\par
+$-1 \le r \le 1$: sign = direction, size = strength. \textbf{Linear} association only;
+a high $r$ does \emph{not} prove a line fits.\par
+No units; unchanged by new units or by swapping $x$ and $y$. Not resistant to unusual points.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\linewidth}\raggedright
+{\color{navy}\textbf{LEAST-SQUARES REGRESSION LINE}}\par
+$\hat{y} = a + bx$ \qquad $b = r\,\dfrac{s_y}{s_x}$ \qquad $a = \bar{y} - b\bar{x}$\par
+The line always passes through $(\bar{x}, \bar{y})$.\par
+\textbf{Computer output:} \texttt{Constant} Coef $= a$; the $x$-variable's Coef $= b$;
+\texttt{R-Sq} $= r^2$; \texttt{S} $= s$.\par
+\textbf{Residual} $= y - \hat{y}$ (actual $-$ predicted). Positive: the point is above the
+line, so the line \emph{under}-predicted.\par\vspace{4pt}
+{\color{navy}\textbf{SENTENCE FRAMES}}\par
+\textbf{Slope:} For each additional [unit] of [$x$], the \emph{predicted} [$y$]
+increases / decreases by [$b$] [units].\par
+\textbf{Intercept:} When [$x$] is 0, the predicted [$y$] is [$a$].\par
+\textbf{$r^2$:} About [\%] of the variation in [$y$] is explained by the linear model
+with [$x$].\par
+\textbf{$s$:} Actual [$y$] values are typically about [$s$] [units] from the predicted values.\par\vspace{4pt}
+{\color{navy}\textbf{IS A LINE APPROPRIATE?}}\par
+\textbf{Residual plot:} random scatter around 0 $\Rightarrow$ a line fits.
+A curve $\Rightarrow$ a line does not fit, whatever $r$ is.\par
+\textbf{Extrapolation:} predicting outside the data's $x$-range is unreliable.\par
+\textbf{Outlier:} a large residual. \textbf{High leverage:} an $x$ far from the rest.
+\textbf{Influential:} removing it changes the line a lot.
+\end{minipage}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\noindent\parbox[t][4.45in][t]{\linewidth}{\cheatsheet}
+
+\vfill
+\noindent{\color{slate}\tiny cut here\ \dotfill}\par
+\vfill
+
+\noindent\parbox[t][4.45in][t]{\linewidth}{\cheatsheet}
+
+\end{document}
