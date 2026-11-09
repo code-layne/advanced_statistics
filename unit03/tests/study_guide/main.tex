@@ -1,0 +1,329 @@
+%! Unit 3, Lessons 3.1–3.5 — Unit Test Study Guide (reference sheet; no answer key by design)
+% This is a REFERENCE sheet, not a worksheet: every definition, every worked move, and every
+% trap is already filled in, so there is nothing to answer and therefore no _key sibling.
+% The practice a student does before the test is ../practice_test/, which HAS a key.
+% NAMESTRIP: no \namedateperiod — the name row lives on a packet cover only.
+% NOT GRADED: a study guide carries no \gradedblank and does not load grading (LESSON_SHAPE §9).
+% Vocabulary below is quoted from the five lessons' own vocabulary boxes and notes rows
+% (notes_key \termans entries) so a student reading this reads the same words twice.
+% The full-credit sentences follow the test rubrics in ../../rubrics/.
+% Worked contexts (camping festival shuttle; band warm-up; the car-sensor study) are deliberately
+% NOT used in any Unit 3 lesson, AP practice, homework, or test.
+%
+% THE DATA (Move 8) 100 reshuffles, difference in mean seconds (drill - scales), step 0.5:
+%   -2:1 -1.5:3 -1:10 -0.5:21 0:30 0.5:21 1:11 1.5:2 2:1  (sum 100).
+%   Observed 1.5: 2+1 = 3 of 100 at or above -> significant.
+%   Observed 0.5: 21+11+2+1 = 35 of 100 at or above -> not significant.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+% One tabularx per group of lessons rather than one long table: a tabularx with X
+% columns is an unbreakable box, so a single long table floats whole to a fresh page
+% and strands most of page 1. Short tables flow, and each carries its lesson tag.
+
+% Optional arg: the \boxguard size (lines kept with the strip).
+\newcommand{\sghead}[2][10]{%
+  \vspace{0.13in}
+  \boxguard[#1]
+  \begin{headlinebox}{navy}\color{white}\bfseries\small #2\end{headlinebox}
+  \vspace{0.09in}}
+
+\begin{document}
+
+\pageheader{Unit 3 \quad Lessons 3.1--3.5}{Unit Test Study Guide}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+The test covers \textbf{Lesson 3.1} through \textbf{Lesson 3.5} --- how data are collected and
+what they let you conclude. Ten multiple-choice items (two per lesson), then two free-response
+questions: one on \textbf{a survey sample}, one on \textbf{an experiment} with a reshuffle
+dotplot already drawn. 20 points. Every answer must be \textbf{in context} --- name the people or
+things studied and the variable measured.
+\end{remindbox}
+
+\sghead{1. Vocabulary you are expected to use, not just recognize}
+
+\small
+\renewcommand{\arraystretch}{1.15}
+
+\textbf{From Lesson 3.1 --- planning a study}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Population & the entire group of individuals we want to know about. \\
+Sample & the part (subset) of the population we actually measure. \\
+Census & data from \textbf{every} individual in the population. \\
+Observational study & observe and measure, without imposing a treatment. \\
+Experiment & researchers assign treatments and measure the response. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\textbf{From Lesson 3.2 --- sampling methods}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Simple random sample & every \textbf{group} of $n$ individuals has an equal chance to be the sample. \\
+Without replacement & an individual can be chosen only once. \\
+Stratified random sample & an SRS from \textbf{every} stratum (groups alike inside), combined. \\
+Cluster sample & randomly choose \textbf{some} clusters (groups that each look like the
+                   whole); measure \textbf{everyone} in them. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\textbf{From Lesson 3.3 --- what goes wrong}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Convenience sample & whoever is easiest to reach. No chance is involved. \\
+Voluntary response bias & people choose to respond; those with strong opinions are
+                   over-represented. \\
+Undercoverage bias & part of the population has a reduced (or no) chance of being chosen. \\
+Nonresponse bias & chosen individuals can't be reached or refuse, and differ from those who
+                   answer. \\
+Response bias & the question, or how it is asked, pushes the answers one way. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[6]
+\textbf{From Lesson 3.4 --- the parts of an experiment}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Experimental units & the individuals that are assigned the treatments (\emph{subjects} if people). \\
+Treatment & a level (or combination of levels) of a factor, set on purpose. \\
+Response variable & what is measured \emph{after} the treatments. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[12]
+\textbf{Also from Lesson 3.4 --- what makes the design work}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Confounding variable & a variable tied to the explanatory variable that also affects the
+                   response, so the two effects get mixed up. \\
+Control group & units given no treatment or a placebo, as a baseline to compare against. \\
+Placebo & an inactive look-alike treatment; the \emph{placebo effect} is a response to it. \\
+Single- / double-blind & single: one side does not know who gets which treatment; double:
+                   neither subjects nor staff know. \\
+Four principles & \textbf{comparison}, \textbf{random assignment}, \textbf{replication},
+                   \textbf{control}. \\
+Randomized block & sort units into blocks alike on something that affects the response, then
+                   randomly assign \emph{within} each block. \\
+Matched pairs & a block design whose blocks have two units: chance picks who gets which, or
+                   each unit gets both in a random order. \\
+\end{tabularx}
+
+\vspace{7pt}
+\boxguard[9]
+\textbf{From Lesson 3.5 --- inference and experiments}
+\par\vspace{3pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X @{}}
+\rowcolor{sky}
+\textbf{Term} & \textbf{What it means} \\
+\midrule
+Statistical inference & drawing conclusions beyond the individuals we measured. \\
+Statistically significant & a result too large to be explained by chance alone. \\
+Scope of inference & what a study lets us conclude: cause and effect, and about whom. \\
+Generalize & apply the results to the population the individuals were picked from. \\
+\end{tabularx}
+
+\normalsize
+
+\sghead{2. The moves the test will ask you to make}
+
+\small
+\textbf{Move 1 --- Observational study or experiment? (3.1)} Ask one question: \emph{did the
+researchers impose a treatment?} \emph{Worked:} an insurer puts a sensor in 2{,}000 cars and
+logs every hard stop for a year; drivers who use their phones more have more hard stops. The
+measuring is precise, but nobody was assigned phone use, so it is \textbf{observational}.
+
+\vspace{3pt}
+\textbf{Move 2 --- A sample speaks only for its population (3.1).} \emph{Worked:} if those 2{,}000
+drivers were picked at random from the insurer's \textbf{Texas} customers, the result speaks for
+the insurer's Texas customers --- not all drivers, and not just the 2{,}000.
+
+\vspace{3pt}
+\textbf{Move 3 --- Choose an SRS, and test whether a plan is one (3.2).} A camping festival has
+12{,}000 attendees, in 300 rows of 40 tents, and wants the proportion who would pay for a shuttle
+to town. \emph{Worked:} \textbf{label} the attendees 1 to 12{,}000; \textbf{randomize} with a
+random number generator; \textbf{select} 200 different labels, skipping repeats. Picking 5 rows at
+random instead gives everyone the same $\tfrac{5}{300}$ chance, but it is \textbf{not} an SRS: a
+group of 200 spread across more than 5 rows can never be the sample.
+
+\vspace{3pt}
+\boxguard[9]
+\textbf{Move 4 --- Stratified or cluster? (3.2)} Are the groups alike inside, or does each one
+look like the whole?
+
+\vspace{2pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X X @{}}
+\rowcolor{sky}
+ & \textbf{Stratified} & \textbf{Cluster} \\
+\midrule
+The groups & alike inside (age groups) & each a mix (rows of tents) \\
+What you do & an SRS from \textbf{every} group & \textbf{all} of a few random groups \\
+Why & more precise when the variable differs across groups & cheaper and easier to reach \\
+\end{tabularx}
+
+\vspace{5pt}
+\boxguard[6]
+\textbf{Move 5 --- Name the bias, then give its direction (3.3).} Three parts, every time: the
+\textbf{name}; \textbf{who} is over- or under-represented, in context; \textbf{too high or too
+low}. \emph{Worked,} all estimating the proportion who would pay for the shuttle:
+
+\vspace{2pt}
+\noindent\begin{tabularx}{\linewidth}{@{} l X l @{}}
+\rowcolor{sky}
+\textbf{Bias} & \textbf{What happened, and who it favors} & \textbf{Estimate} \\
+\midrule
+Voluntary response & An online poll: 4{,}000 vote. Those fed up with parking vote most. & too high \\
+Undercoverage & The list holds only app buyers. Older attendees bought at the gate, and they
+                want a ride more. & too low \\
+Nonresponse & Of an SRS of 200, 90 reply. Those without cars have the most reason to. & too high \\
+Response & ``Wouldn't a shuttle end the dangerous parking chaos?'' leads people to yes. & too high \\
+\end{tabularx}
+
+\vspace{3pt}
+None of these is cured by size: \textbf{a larger sample reduces variability, not bias.} The
+200-person SRS beats the 4{,}000 votes.
+
+\vspace{3pt}
+\textbf{Move 6 --- Lay out an experiment (3.4).} A director tests whether a 10-minute breathing
+drill lengthens how long band students can hold a note. 48 volunteers are randomly assigned, 24
+to the drill and 24 to a 10-minute scales warm-up. \emph{Worked:} \textbf{units:} the 48
+students. \textbf{Treatments:} drill, scales. \textbf{Response:} seconds the note is held.
+Random assignment balances variables like practice habits, so a difference can be traced to the
+drill. If the students know what they did but the person timing does not, it is
+\textbf{single-blind}.
+
+\vspace{3pt}
+\textbf{Move 7 --- Block or pair, and keep the chance (3.4).} Block only on what affects the
+response. \emph{Worked:} brass and woodwind players hold notes differently, so form two blocks and
+\textbf{randomly assign within each}. Birth month would be a useless block. In a matched pairs
+version, each student does both warm-ups on different days and \textbf{a coin flip decides which
+comes first} --- otherwise a practice effect always favors one treatment.
+
+\vspace{3pt}
+\boxguard[14]
+\textbf{Move 8 --- Read the reshuffle dotplot (3.5).} Each dot is one reshuffle: one difference
+that chance alone produced, as if the treatment did nothing.
+
+\vspace{2pt}
+\noindent\begin{minipage}[c]{0.43\linewidth}\raggedright
+\emph{Worked:} the drill group's mean was \textbf{1.5 seconds longer}. Count the dots at 1.5 or
+more: $2+1=$ \textbf{3 of 100}. Chance rarely does that: \textbf{statistically significant}. Had
+it been only 0.5 seconds, $21+11+2+1=$ \textbf{35 of 100} reach it: chance could easily explain
+it, so \textbf{not} significant.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.54\linewidth}\centering
+\begin{tikzpicture}[x=0.9cm, y=0.105cm]
+  \draw[thick] (-4.5,0) -- (4.5,0);
+  \foreach \x/\l in {-4/-2.0,-3/-1.5,-2/-1.0,-1/-0.5,0/0,1/0.5,2/1.0,3/1.5,4/2.0} {
+    \draw (\x,0) -- (\x,-1.6); \node[below, font=\tiny] at (\x,-1.4) {$\l$};}
+  \foreach \x/\n in {-4/1,-3/3,-2/10,-1/21,0/30,1/21,2/11,3/2,4/1}
+    \foreach \k in {1,...,\n} \fill[navy] (\x,\k) circle (1.05pt);
+  \draw[redacc, dashed, thick] (3,3.5) -- (3,13);
+  \node[font=\tiny\bfseries, redacc, above] at (3,13) {observed 1.5};
+  \node[font=\tiny] at (0,-7.5) {Simulated difference in mean seconds, drill $-$ scales};
+  \node[font=\scriptsize\bfseries] at (0,34) {100 random reshuffles};
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{5pt}
+\boxguard[12]
+\textbf{Move 9 --- Scope of inference: two separate questions (3.5).} Was the treatment
+\emph{assigned} at random? That gives \textbf{cause}. Were the individuals \emph{selected} at
+random? That lets you \textbf{generalize}.
+
+\vspace{3pt}
+{\centering\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|}
+\hline
+ & \cellcolor{sky}\textbf{Selected at random} & \cellcolor{sky}\textbf{Not selected at random} \\
+\hline
+\cellcolor{sky}\textbf{Assigned at random} & Cause: yes \quad Generalize: yes & Cause: yes \quad Generalize: no \\
+\hline
+\cellcolor{sky}\textbf{Not assigned} & Cause: no \quad Generalize: yes & Cause: no \quad Generalize: no \\
+\hline
+\end{tabular}\par}
+\normalsize
+
+\vspace{0.10in}
+\boxguard[20]
+\begin{scenariobox}[The sentences that earn full credit]{navy}
+\small
+\textbf{Choose an SRS:} ``Label the attendees 1 to 12{,}000. Generate random integers from 1 to
+12{,}000, ignoring repeats, until 200 different labels are chosen. Survey those 200
+attendees.''\par\vspace{3pt}
+\textbf{Why stratified is more precise:} ``Interest in a shuttle is likely related to age, so each
+age group is alike inside and every age group is represented, giving a less variable
+estimate.''\par\vspace{3pt}
+\textbf{Bias and direction:} ``Nonresponse bias. Attendees without cars have the most reason to
+reply, so they are over-represented, and the estimated proportion who would pay is likely too
+high.''\par\vspace{3pt}
+\textbf{Random assignment with slips:} ``Write each student's name on one of 48 identical slips,
+mix them in a hat, and draw 24 without replacement. Those 24 do the drill; the other 24 do
+scales.''\par\vspace{3pt}
+\textbf{Blocking:} ``Separate the students into a brass block and a woodwind block. Within each
+block, randomly assign half to the drill and half to scales, and compare within blocks.''
+\par\vspace{3pt}
+\textbf{Significance:} ``Only 3 of the 100 reshuffles gave a difference of 1.5 seconds or more, so
+a difference that large rarely happens from the random assignment alone. It is statistically
+significant.''\par\vspace{3pt}
+\textbf{Cause and to whom:} ``Yes, the drill caused the longer notes, because the treatments were
+randomly assigned and the difference is significant. But the students were volunteers, not
+randomly selected, so the result applies only to students like these.''\par\vspace{3pt}
+Each names the people, the treatment, and the variable. Without context, it is not an answer.
+\end{scenariobox}
+
+\sghead{3. Eight traps that cost points}
+
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Careful measuring is not a treatment.} Trackers, apps, and sensors make a study
+        precise; only \emph{imposing} a treatment makes it an experiment.
+  \item \textbf{Equal chance for each person is not an SRS.} Every \emph{group} of $n$ must have
+        an equal chance.
+  \item \textbf{Stratified: some from every group. Cluster: all from some groups.} Groups alone
+        settle nothing.
+  \item \textbf{Random samples can still be biased.} A random sample from a bad list, with people
+        who never answer, or with a leading question is still wrong.
+  \item \textbf{A bigger sample does not fix bias.} Size reduces variability only. Tens of
+        thousands of volunteers are still volunteers.
+  \item \textbf{Blocking and pairing do not replace chance.} Randomize inside every block, and
+        for every pair. Never let a fixed rule or the subject choose.
+  \item \textbf{Not every difference is significant.} Count the dots at or beyond the observed
+        value, on its side of the plot. Many dots means chance can explain it.
+  \item \textbf{A random sample is not a random assignment.} Selection lets you generalize;
+        only assignment lets you say cause. Volunteers can show cause, but only for those like
+        them.
+\end{enumerate}
+\normalsize
+
+\sghead[6]{4. Before you walk in}
+
+\small
+Work the \textbf{sample test} without notes, then check it against its key. A free-response
+answer shorter than the key's is usually missing the context. Re-read each \textbf{Keep in Mind} box.
+\normalsize
+
+\end{document}
