@@ -1,0 +1,93 @@
+%! Unit 2 Review — Warm-Up
+% STANDALONE warm-up for the Unit 2 review day (5 min). Merged into no packet — see ../Makefile.
+% ONE PAGE, blank and key. Three items at 12pt. Do not add a fourth.
+% One item per stretch of the unit, each on the mistake the test punishes: item 1 (2.1) the
+% conditional denominator and comparing percents, not counts; item 2 (2.3-2.4) slope with
+% "predicted" and the residual's sign; item 3 (2.4-2.5) the crux, a high r with a curved
+% residual plot. Debrief item 3 first, and ask aloud what r^2 = 0.914 says.
+% The contexts are in no Unit 2 test.
+% Item 3 data (weeks, wpm), n = 14; the LSRL, r and the plotted residuals are computed from it:
+% (1,25) (2,34) (2,32) (3,39) (4,42) (5,47) (5,45) (6,51) (7,51) (8,55) (9,55) (10,57) (11,58) (12,60)
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 2 \quad Lessons 2.1--2.5}{Review Warm-Up}
+
+\vspace{0.12in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.2in]
+
+  \item \begin{minipage}[t]{0.46\linewidth}\raggedright
+        A school asked 200 students whether they have a part-time job and whether they made
+        the honor roll.
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.5\linewidth}
+        \centering\small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}[t]{@{} l | c c | c @{}}
+         & \textbf{Honor roll} & \textbf{Not} & \textbf{Total} \\ \hline
+        \textbf{Job} & 30 & 50 & 80 \\
+        \textbf{No job} & 66 & 54 & 120 \\ \hline
+        \textbf{Total} & 96 & 104 & 200 \\
+        \end{tabular}
+        \end{minipage}
+
+        \vspace{12pt}
+        Of the students with a job, the percent on the honor roll: \blank{2.2cm}
+
+        \vspace{12pt}
+        Of the students with no job, the percent on the honor roll: \blank{2.2cm}
+
+        \vspace{12pt}
+        Are having a job and making the honor roll associated? Why?\\[16pt]
+        \writeline
+
+  \item A typing class fit a least-squares line to 14 students, where $x$ is weeks of practice
+        and $y$ is typing speed in words per minute: \quad $\hat{y} = 28.8 + 2.9x$
+
+        \vspace{12pt}
+        Interpret the slope in context.\\[16pt]
+        \writeline
+
+        \vspace{12pt}
+        A student with 6 weeks of practice types 51 words per minute.
+
+        \vspace{12pt}
+        Predicted speed: \blank{2.2cm} \qquad Residual: \blank{2.2cm}
+
+        \vspace{12pt}
+        Did the line predict too high or too low for this student? \blank{2.2cm}
+
+  \item \begin{minipage}[t]{0.5\linewidth}\raggedright
+        The same line has $r = 0.956$ and $r^2 = 0.914$. Its residual plot is shown.
+
+        \vspace{12pt}
+        A classmate says, ``$r$ is close to 1, so a line is a good model.'' Do you agree? Why?
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.46\linewidth}
+        \centering
+        \begin{tikzpicture}[x=0.46cm, y=0.2cm, baseline=(current bounding box.north)]
+          \draw[linegray] (0,0) -- (13,0);
+          \draw[thick] (0,-8) -- (0,8);
+          \foreach \y in {-6,0,6} {
+            \draw (-0.12,\y) -- (0.12,\y) node[left, font=\tiny, xshift=-2pt] {\y};}
+          \draw[thick] (0,-8) -- (13,-8);
+          \foreach \x in {2,4,...,12} {
+            \draw (\x,-8.3) -- (\x,-7.7) node[below, font=\tiny, yshift=-3pt] {\x};}
+          \foreach \x/\y in {1/-6.7, 2/-0.6, 2/-2.6, 3/1.5, 4/1.5, 5/3.6, 5/1.6, 6/4.7, 7/1.8,
+                             8/2.9, 9/0.0, 10/-1.0, 11/-2.9, 12/-3.8}
+            \fill[navy] (\x,\y) circle (1.9pt);
+          \node[font=\tiny] at (6.5,-11.2) {Weeks of practice};
+          \node[rotate=90, font=\tiny] at (-1.7,0) {Residual (wpm)};
+        \end{tikzpicture}
+        \end{minipage}
+
+        \vspace{10pt}
+        \writelines{2}
+
+\end{enumerate}
+
+\end{document}
