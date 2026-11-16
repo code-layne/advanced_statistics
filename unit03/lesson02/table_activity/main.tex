@@ -1,0 +1,370 @@
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Table Activity: Which Plan Fits? — STUDENT SHEETS
+% ONE-OFF, STANDALONE HANDOUT. Not a packet component: `table_activity` is deliberately NOT a
+% name in shared/lesson.mk's STUDENT_ORDER, so `make` never builds it and no packet ever
+% merges it. The teacher prints it only on a day it is used (see the optional box at the end
+% of ../main.tex). Build it by hand, out of tree:
+%   cd unit03/lesson02/table_activity && TEXINPUTS="$(git rev-parse --show-toplevel)/shared//:" \
+%     latexmk -xelatex -outdir=../../../target/unit03/lesson02/table_activity main.tex
+%
+% THREE TABLES, THREE CARDS, ONE BEST METHOD EACH — each sheet is exactly two pages
+% (print duplex, one sheet per student at that table):
+%   Table 1  Pine Ridge County smoke detectors  -> CLUSTER   (no list, in-person visits,
+%            map sections each a mix like the county)
+%   Table 2  StreamLine music app ratings       -> SRS       (full numbered list, free to reach
+%            anyone, nothing known to stratify on)
+%   Table 3  Northfield Foods commute distance  -> STRATIFIED by work site (commutes alike
+%            inside a site) — and THE CRUX: "pick one site as a cluster"
+% Contexts are new: not Lakeview / Riverside (notes), the hospital (homework), or farms /
+% textbooks / the airplane (AP Practice).
+%
+% PAGE LOCKSTEP with ../table_activity_key/: this file is the key with every \answerspace,
+% \cellans and \fillin second argument emptied (the key fills them) — nothing else differs but the style package
+% and the header line.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries\footnotesize #2\end{minipage}\par}
+\newcommand{\cellans}[2]{\begin{minipage}[t][#1][t]{\linewidth}\raggedright
+  \color{keyred}\bfseries\footnotesize #2\end{minipage}}
+\newcommand{\fillin}[2]{\underline{\makebox[#1][l]{\ \smash{\color{keyred}\bfseries #2}}}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+% ════════════════════════════════════════════════════════════════════════════
+% TABLE 1 — PINE RIDGE COUNTY — CLUSTER
+% ════════════════════════════════════════════════════════════════════════════
+\pageheader{Unit 3, Lesson 3.2}{Table Activity: Which Plan Fits? \quad --- \quad Table 1}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{Your table is the survey team.} Read your card, try all three sampling methods on it,
+and choose the one that fits. Be ready to defend your choice to the class in one minute ---
+\emph{in context}, using the words \emph{alike inside}, \emph{looks like the whole}, or
+\emph{cost}.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[Table 1 card: Smoke Detectors in Pine Ridge County]{navy}
+\small
+\textbf{Statistical question:} What proportion of homes in Pine Ridge County have a working
+smoke detector?
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=4pt]
+  \item About 9{,}000 homes are spread over 600 square miles of farmland, hills, and small
+        towns.
+  \item \textbf{There is no list of homes.} The county map does divide the county into 150
+        \emph{map sections} of about 60 homes each.
+  \item Every map section is a mix: old and new houses, owners and renters, families of every
+        income.
+  \item A fire inspector must visit each home \emph{in person} and press the detector's test
+        button. Driving from one map section to another can take an hour.
+  \item The fire department can afford to check about \textbf{300 homes}.
+\end{itemize}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{scenariobox}[1. Read the population]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item What are the individuals? What is the variable?
+        \answerspace{1.1cm}{}
+  \item Is there a list of every individual? What does it cost to reach one?
+        \answerspace{1.3cm}{}
+  \item Are there groups that are \emph{alike inside} on the response? Groups that each
+        \emph{look like the whole} population?
+        \answerspace{1.3cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\clearpage
+
+\boxguard[16]
+\begin{scenariobox}[2. Try all three methods on your card]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{2.1cm}|L{6.1cm}|L{6.1cm}@{}}
+\textbf{Method} & \textbf{How would it work here?} & \textbf{Does it fit? Why or why not?} \\
+\hline
+\textbf{Simple random sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\hline
+\textbf{Stratified random sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\hline
+\textbf{Cluster sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[3. Our choice]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item The best method for our card: \fillin{8.5cm}{}
+  \item Defend it \emph{in context}: why does this method fit \emph{this} population better than
+        the other two?
+        \answerspace{1.8cm}{}
+  \item Describe \emph{exactly} how to choose the sample, step by step.
+        \answerspace{1.8cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{scenariobox}[4. Listen to the other tables]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{1.3cm}|L{4.0cm}|L{2.9cm}|L{5.8cm}@{}}
+\textbf{Table} & \textbf{Their question} & \textbf{Best method} & \textbf{The reason, in one phrase} \\
+\hline
+\textbf{2} & \cellans{1.2cm}{} & \cellans{1.2cm}{} &
+\cellans{1.2cm}{} \\
+\hline
+\textbf{3} & \cellans{1.2cm}{} & \cellans{1.2cm}{} &
+\cellans{1.2cm}{} \\
+\end{tabular}
+
+\vspace{6pt}
+\centering\bfseries
+Strata are alike inside: sample from \fillin{1.4cm}{} one.\par
+Clusters each look like the whole: take \fillin{1.0cm}{} of \fillin{1.3cm}{} of them.
+\end{scenariobox}
+
+% ════════════════════════════════════════════════════════════════════════════
+% TABLE 2 — STREAMLINE — SIMPLE RANDOM SAMPLE
+% ════════════════════════════════════════════════════════════════════════════
+\clearpage
+\pageheader{Unit 3, Lesson 3.2}{Table Activity: Which Plan Fits? \quad --- \quad Table 2}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{Your table is the survey team.} Read your card, try all three sampling methods on it,
+and choose the one that fits. Be ready to defend your choice to the class in one minute ---
+\emph{in context}, using the words \emph{alike inside}, \emph{looks like the whole}, or
+\emph{cost}.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[Table 2 card: Rating a New Feature on StreamLine]{navy}
+\small
+\textbf{Statistical question:} What is the mean rating, on a scale of 1 to 10, that StreamLine
+subscribers give the app's new \emph{Daily Mix} feature?
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=4pt]
+  \item StreamLine, a music app, has 50{,}000 subscribers all over the country.
+  \item \textbf{The company has a list of every subscriber}, numbered 00001 to 50000. The list
+        records nothing else about them --- no age, no location, no listening habits.
+  \item A survey can be sent inside the app to any subscriber \emph{at no cost}, and it reaches
+        them wherever they live.
+  \item The company wants \textbf{200 ratings}.
+\end{itemize}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{scenariobox}[1. Read the population]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item What are the individuals? What is the variable?
+        \answerspace{1.1cm}{}
+  \item Is there a list of every individual? What does it cost to reach one?
+        \answerspace{1.3cm}{}
+  \item Are there groups that are \emph{alike inside} on the response? Groups that each
+        \emph{look like the whole} population?
+        \answerspace{1.3cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\clearpage
+
+\boxguard[16]
+\begin{scenariobox}[2. Try all three methods on your card]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{2.1cm}|L{6.1cm}|L{6.1cm}@{}}
+\textbf{Method} & \textbf{How would it work here?} & \textbf{Does it fit? Why or why not?} \\
+\hline
+\textbf{Simple random sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\hline
+\textbf{Stratified random sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\hline
+\textbf{Cluster sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[3. Our choice]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item The best method for our card: \fillin{8.5cm}{}
+  \item Defend it \emph{in context}: why does this method fit \emph{this} population better than
+        the other two?
+        \answerspace{1.8cm}{}
+  \item Describe \emph{exactly} how to choose the sample, step by step.
+        \answerspace{1.8cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{scenariobox}[4. Listen to the other tables]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{1.3cm}|L{4.0cm}|L{2.9cm}|L{5.8cm}@{}}
+\textbf{Table} & \textbf{Their question} & \textbf{Best method} & \textbf{The reason, in one phrase} \\
+\hline
+\textbf{1} & \cellans{1.2cm}{} & \cellans{1.2cm}{} &
+\cellans{1.2cm}{} \\
+\hline
+\textbf{3} & \cellans{1.2cm}{} & \cellans{1.2cm}{} &
+\cellans{1.2cm}{} \\
+\end{tabular}
+
+\vspace{6pt}
+\centering\bfseries
+Strata are alike inside: sample from \fillin{1.4cm}{} one.\par
+Clusters each look like the whole: take \fillin{1.0cm}{} of \fillin{1.3cm}{} of them.
+\end{scenariobox}
+
+% ════════════════════════════════════════════════════════════════════════════
+% TABLE 3 — NORTHFIELD FOODS — STRATIFIED (THE CRUX: a site is not a cluster)
+% ════════════════════════════════════════════════════════════════════════════
+\clearpage
+\pageheader{Unit 3, Lesson 3.2}{Table Activity: Which Plan Fits? \quad --- \quad Table 3}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{Your table is the survey team.} Read your card, try all three sampling methods on it,
+and choose the one that fits. Be ready to defend your choice to the class in one minute ---
+\emph{in context}, using the words \emph{alike inside}, \emph{looks like the whole}, or
+\emph{cost}.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[Table 3 card: Commuting to Northfield Foods]{navy}
+\small
+\textbf{Statistical question:} What is the mean one-way commute distance, in miles, for
+Northfield Foods employees?
+\par\vspace{4pt}
+{\centering\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}l c l@{}}
+\rowcolor{sky}
+\textbf{Work site} & \textbf{Employees} & \textbf{Where most of them live} \\
+\hline
+Downtown plant & 1{,}200 & in the city, close to the plant \\
+Riverbend farm, 40 miles out of the city & 400 & in the city --- they drive out \\
+Lakeside office, in the suburbs & 200 & in the nearby suburbs \\
+\end{tabular}\par}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=4pt]
+  \item \textbf{Human Resources has a list of all 1{,}800 employees} and the site where each
+        one works.
+  \item Any employee can be surveyed by company email \emph{at no cost}.
+  \item The company wants \textbf{90 responses}.
+\end{itemize}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{scenariobox}[1. Read the population]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item What are the individuals? What is the variable?
+        \answerspace{1.1cm}{}
+  \item Is there a list of every individual? What does it cost to reach one?
+        \answerspace{1.3cm}{}
+  \item Are there groups that are \emph{alike inside} on the response? Groups that each
+        \emph{look like the whole} population?
+        \answerspace{1.3cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\clearpage
+
+\boxguard[16]
+\begin{scenariobox}[2. Try all three methods on your card]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{2.1cm}|L{6.1cm}|L{6.1cm}@{}}
+\textbf{Method} & \textbf{How would it work here?} & \textbf{Does it fit? Why or why not?} \\
+\hline
+\textbf{Simple random sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\hline
+\textbf{Stratified random sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\hline
+\textbf{Cluster sample} &
+\cellans{2.0cm}{} &
+\cellans{2.0cm}{} \\
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[3. Our choice]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item The best method for our card: \fillin{8.5cm}{}
+  \item Defend it \emph{in context}: why does this method fit \emph{this} population better than
+        the other two?
+        \answerspace{1.8cm}{}
+  \item Describe \emph{exactly} how to choose the sample, step by step.
+        \answerspace{1.8cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{scenariobox}[4. Listen to the other tables]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{1.3cm}|L{4.0cm}|L{2.9cm}|L{5.8cm}@{}}
+\textbf{Table} & \textbf{Their question} & \textbf{Best method} & \textbf{The reason, in one phrase} \\
+\hline
+\textbf{1} & \cellans{1.2cm}{} & \cellans{1.2cm}{} &
+\cellans{1.2cm}{} \\
+\hline
+\textbf{2} & \cellans{1.2cm}{} & \cellans{1.2cm}{} &
+\cellans{1.2cm}{} \\
+\end{tabular}
+
+\vspace{6pt}
+\centering\bfseries
+Strata are alike inside: sample from \fillin{1.4cm}{} one.\par
+Clusters each look like the whole: take \fillin{1.0cm}{} of \fillin{1.3cm}{} of them.
+\end{scenariobox}
+
+\end{document}
