@@ -1,0 +1,412 @@
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Table Activity: Which Plan Fits? — KEY
+% ONE-OFF, STANDALONE HANDOUT. Not a packet component: `table_activity` is deliberately NOT a
+% name in shared/lesson.mk's STUDENT_ORDER, so `make` never builds it and no packet ever
+% merges it. The teacher prints it only on a day it is used (see the optional box at the end
+% of ../main.tex). Build it by hand, out of tree:
+%   cd unit03/lesson02/table_activity_key && TEXINPUTS="$(git rev-parse --show-toplevel)/shared//:" \
+%     latexmk -xelatex -outdir=../../../target/unit03/lesson02/table_activity_key main.tex
+%
+% THREE TABLES, THREE CARDS, ONE BEST METHOD EACH — each sheet is exactly two pages
+% (print duplex, one sheet per student at that table):
+%   Table 1  Pine Ridge County smoke detectors  -> CLUSTER   (no list, in-person visits,
+%            map sections each a mix like the county)
+%   Table 2  StreamLine music app ratings       -> SRS       (full numbered list, free to reach
+%            anyone, nothing known to stratify on)
+%   Table 3  Northfield Foods commute distance  -> STRATIFIED by work site (commutes alike
+%            inside a site) — and THE CRUX: "pick one site as a cluster"
+% Contexts are new: not Lakeview / Riverside (notes), the hospital (homework), or farms /
+% textbooks / the airplane (AP Practice).
+%
+% PAGE LOCKSTEP with ../table_activity/: the blank is this file with every \answerspace,
+% \cellans and \fillin second argument emptied — nothing else differs but the style package
+% and the header line.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries\footnotesize #2\end{minipage}\par}
+\newcommand{\cellans}[2]{\begin{minipage}[t][#1][t]{\linewidth}\raggedright
+  \color{keyred}\bfseries\footnotesize #2\end{minipage}}
+\newcommand{\fillin}[2]{\underline{\makebox[#1][l]{\ \smash{\color{keyred}\bfseries #2}}}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+% ════════════════════════════════════════════════════════════════════════════
+% TABLE 1 — PINE RIDGE COUNTY — CLUSTER
+% ════════════════════════════════════════════════════════════════════════════
+\pageheader{Unit 3, Lesson 3.2}{Table Activity: Which Plan Fits? \quad --- \quad Table 1 \quad --- \quad Key}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{Your table is the survey team.} Read your card, try all three sampling methods on it,
+and choose the one that fits. Be ready to defend your choice to the class in one minute ---
+\emph{in context}, using the words \emph{alike inside}, \emph{looks like the whole}, or
+\emph{cost}.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[Table 1 card: Smoke Detectors in Pine Ridge County]{navy}
+\small
+\textbf{Statistical question:} What proportion of homes in Pine Ridge County have a working
+smoke detector?
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=4pt]
+  \item About 9{,}000 homes are spread over 600 square miles of farmland, hills, and small
+        towns.
+  \item \textbf{There is no list of homes.} The county map does divide the county into 150
+        \emph{map sections} of about 60 homes each.
+  \item Every map section is a mix: old and new houses, owners and renters, families of every
+        income.
+  \item A fire inspector must visit each home \emph{in person} and press the detector's test
+        button. Driving from one map section to another can take an hour.
+  \item The fire department can afford to check about \textbf{300 homes}.
+\end{itemize}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{scenariobox}[1. Read the population]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item What are the individuals? What is the variable?
+        \answerspace{1.1cm}{Individuals: the homes in Pine Ridge County. Variable: whether the
+        home has a working smoke detector (categorical: yes or no).}
+  \item Is there a list of every individual? What does it cost to reach one?
+        \answerspace{1.3cm}{No --- there is no list of homes. Every home needs an in-person
+        visit, and the driving between map sections is the big cost.}
+  \item Are there groups that are \emph{alike inside} on the response? Groups that each
+        \emph{look like the whole} population?
+        \answerspace{1.3cm}{The map sections each look like the whole county --- every one is a
+        mix of old and new, owners and renters. Nothing tells us which homes are alike inside.}
+\end{enumerate}
+\end{scenariobox}
+
+\clearpage
+
+\boxguard[16]
+\begin{scenariobox}[2. Try all three methods on your card]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{2.1cm}|L{6.1cm}|L{6.1cm}@{}}
+\textbf{Method} & \textbf{How would it work here?} & \textbf{Does it fit? Why or why not?} \\
+\hline
+\textbf{Simple random sample} &
+\cellans{2.0cm}{Number every home 1 to 9{,}000 and use a random number generator to pick 300.} &
+\cellans{2.0cm}{Not practical: there is no list to number, and 300 homes scattered over 600
+square miles means hundreds of hours of driving.} \\
+\hline
+\textbf{Stratified random sample} &
+\cellans{2.0cm}{Split the homes into groups alike inside (say, old houses and new houses) and
+take an SRS from each group.} &
+\cellans{2.0cm}{No: nothing says which homes are old or new, so strata cannot be formed, and it still
+means driving everywhere.} \\
+\hline
+\textbf{Cluster sample} &
+\cellans{2.0cm}{Number the 150 map sections, randomly choose 5, and check every home in them
+(5 $\times$ 60 = 300 homes).} &
+\cellans{2.0cm}{Fits: each section is a mix, like a small copy of the county, and the inspector
+drives to only 5 places.} \\
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[3. Our choice]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item The best method for our card: \fillin{8.5cm}{a cluster sample (the map sections)}
+  \item Defend it \emph{in context}: why does this method fit \emph{this} population better than
+        the other two?
+        \answerspace{1.8cm}{Each map section mixes old and new homes, owners and renters, so
+        each one looks like the whole county. Checking every home in 5 sections gives about 300
+        homes with only 5 trips. An SRS needs a list we do not have and would send the inspector
+        all over 600 square miles.}
+  \item Describe \emph{exactly} how to choose the sample, step by step.
+        \answerspace{1.8cm}{Number the map sections 001 to 150. Use a random number generator to
+        pick 5 different numbers from 1 to 150, skipping repeats. The inspector visits every
+        home in those 5 sections and tests each smoke detector.}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{scenariobox}[4. Listen to the other tables]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{1.3cm}|L{4.0cm}|L{2.9cm}|L{5.8cm}@{}}
+\textbf{Table} & \textbf{Their question} & \textbf{Best method} & \textbf{The reason, in one phrase} \\
+\hline
+\textbf{2} & \cellans{1.2cm}{StreamLine: mean rating of Daily Mix} & \cellans{1.2cm}{Simple random sample} &
+\cellans{1.2cm}{Full list, free to reach anyone, nothing to stratify on.} \\
+\hline
+\textbf{3} & \cellans{1.2cm}{Northfield: mean commute distance} & \cellans{1.2cm}{Stratified, by work site} &
+\cellans{1.2cm}{Commutes alike inside a site, very different between sites.} \\
+\end{tabular}
+
+\vspace{6pt}
+\centering\bfseries
+Strata are alike inside: sample from \fillin{1.4cm}{every} one.\par
+Clusters each look like the whole: take \fillin{1.0cm}{all} of \fillin{1.3cm}{some} of them.
+\end{scenariobox}
+
+% ════════════════════════════════════════════════════════════════════════════
+% TABLE 2 — STREAMLINE — SIMPLE RANDOM SAMPLE
+% ════════════════════════════════════════════════════════════════════════════
+\clearpage
+\pageheader{Unit 3, Lesson 3.2}{Table Activity: Which Plan Fits? \quad --- \quad Table 2 \quad --- \quad Key}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{Your table is the survey team.} Read your card, try all three sampling methods on it,
+and choose the one that fits. Be ready to defend your choice to the class in one minute ---
+\emph{in context}, using the words \emph{alike inside}, \emph{looks like the whole}, or
+\emph{cost}.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[Table 2 card: Rating a New Feature on StreamLine]{navy}
+\small
+\textbf{Statistical question:} What is the mean rating, on a scale of 1 to 10, that StreamLine
+subscribers give the app's new \emph{Daily Mix} feature?
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=4pt]
+  \item StreamLine, a music app, has 50{,}000 subscribers all over the country.
+  \item \textbf{The company has a list of every subscriber}, numbered 00001 to 50000. The list
+        records nothing else about them --- no age, no location, no listening habits.
+  \item A survey can be sent inside the app to any subscriber \emph{at no cost}, and it reaches
+        them wherever they live.
+  \item The company wants \textbf{200 ratings}.
+\end{itemize}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{scenariobox}[1. Read the population]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item What are the individuals? What is the variable?
+        \answerspace{1.1cm}{Individuals: StreamLine's 50{,}000 subscribers. Variable: the
+        subscriber's rating of Daily Mix, 1 to 10 (quantitative).}
+  \item Is there a list of every individual? What does it cost to reach one?
+        \answerspace{1.3cm}{Yes --- a numbered list, 00001 to 50000. Reaching any subscriber
+        costs nothing, and it costs the same for everyone, near or far.}
+  \item Are there groups that are \emph{alike inside} on the response? Groups that each
+        \emph{look like the whole} population?
+        \answerspace{1.3cm}{None that we can use: the list records nothing that would split
+        subscribers into groups alike inside, and there are no natural groups to use as
+        clusters.}
+\end{enumerate}
+\end{scenariobox}
+
+\clearpage
+
+\boxguard[16]
+\begin{scenariobox}[2. Try all three methods on your card]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{2.1cm}|L{6.1cm}|L{6.1cm}@{}}
+\textbf{Method} & \textbf{How would it work here?} & \textbf{Does it fit? Why or why not?} \\
+\hline
+\textbf{Simple random sample} &
+\cellans{2.0cm}{Use a random number generator to pick 200 different account numbers from 00001
+to 50000 and send each the survey.} &
+\cellans{2.0cm}{Fits: the list exists, every subscriber is reached for free, and nothing is known
+that would let us do better.} \\
+\hline
+\textbf{Stratified random sample} &
+\cellans{2.0cm}{Split subscribers into groups alike in how they would rate it (say, heavy and
+light listeners) and take an SRS from each.} &
+\cellans{2.0cm}{Cannot be done: the list records no age, location, or habits, so there is no way
+to put subscribers into strata.} \\
+\hline
+\textbf{Cluster sample} &
+\cellans{2.0cm}{Split the list into blocks of account numbers, randomly pick a few blocks, and
+survey everyone in them.} &
+\cellans{2.0cm}{No advantage: reaching anyone is already free, so clusters save nothing --- and
+blocks of account numbers are not real groups.} \\
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[3. Our choice]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item The best method for our card: \fillin{8.5cm}{a simple random sample (SRS)}
+  \item Defend it \emph{in context}: why does this method fit \emph{this} population better than
+        the other two?
+        \answerspace{1.8cm}{StreamLine has a numbered list of all 50{,}000 subscribers and can
+        survey any of them for free, so a cluster sample saves nothing. With no information on
+        age or habits, there are no strata to form. An SRS gives every group of 200 subscribers
+        the same chance to be the sample.}
+  \item Describe \emph{exactly} how to choose the sample, step by step.
+        \answerspace{1.8cm}{Use a random number generator to choose integers from 1 to 50{,}000,
+        skipping repeats, until there are 200 different account numbers. Send the in-app survey
+        to those 200 subscribers and average their ratings.}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{scenariobox}[4. Listen to the other tables]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{1.3cm}|L{4.0cm}|L{2.9cm}|L{5.8cm}@{}}
+\textbf{Table} & \textbf{Their question} & \textbf{Best method} & \textbf{The reason, in one phrase} \\
+\hline
+\textbf{1} & \cellans{1.2cm}{Pine Ridge: homes with working smoke detectors} & \cellans{1.2cm}{Cluster, by map section} &
+\cellans{1.2cm}{Each section is a mix like the county; only 5 trips.} \\
+\hline
+\textbf{3} & \cellans{1.2cm}{Northfield: mean commute distance} & \cellans{1.2cm}{Stratified, by work site} &
+\cellans{1.2cm}{Commutes alike inside a site, very different between sites.} \\
+\end{tabular}
+
+\vspace{6pt}
+\centering\bfseries
+Strata are alike inside: sample from \fillin{1.4cm}{every} one.\par
+Clusters each look like the whole: take \fillin{1.0cm}{all} of \fillin{1.3cm}{some} of them.
+\end{scenariobox}
+
+% ════════════════════════════════════════════════════════════════════════════
+% TABLE 3 — NORTHFIELD FOODS — STRATIFIED (THE CRUX: a site is not a cluster)
+% ════════════════════════════════════════════════════════════════════════════
+\clearpage
+\pageheader{Unit 3, Lesson 3.2}{Table Activity: Which Plan Fits? \quad --- \quad Table 3 \quad --- \quad Key}
+
+\boxguard[10]
+\begin{headlinebox}{sky}
+\small
+\textbf{Your table is the survey team.} Read your card, try all three sampling methods on it,
+and choose the one that fits. Be ready to defend your choice to the class in one minute ---
+\emph{in context}, using the words \emph{alike inside}, \emph{looks like the whole}, or
+\emph{cost}.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[Table 3 card: Commuting to Northfield Foods]{navy}
+\small
+\textbf{Statistical question:} What is the mean one-way commute distance, in miles, for
+Northfield Foods employees?
+\par\vspace{4pt}
+{\centering\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}l c l@{}}
+\rowcolor{sky}
+\textbf{Work site} & \textbf{Employees} & \textbf{Where most of them live} \\
+\hline
+Downtown plant & 1{,}200 & in the city, close to the plant \\
+Riverbend farm, 40 miles out of the city & 400 & in the city --- they drive out \\
+Lakeside office, in the suburbs & 200 & in the nearby suburbs \\
+\end{tabular}\par}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, topsep=4pt]
+  \item \textbf{Human Resources has a list of all 1{,}800 employees} and the site where each
+        one works.
+  \item Any employee can be surveyed by company email \emph{at no cost}.
+  \item The company wants \textbf{90 responses}.
+\end{itemize}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{scenariobox}[1. Read the population]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item What are the individuals? What is the variable?
+        \answerspace{1.1cm}{Individuals: Northfield Foods' 1{,}800 employees. Variable: one-way
+        commute distance in miles (quantitative).}
+  \item Is there a list of every individual? What does it cost to reach one?
+        \answerspace{1.3cm}{Yes --- HR's list, with each employee's site. Email reaches anyone
+        for free.}
+  \item Are there groups that are \emph{alike inside} on the response? Groups that each
+        \emph{look like the whole} population?
+        \answerspace{1.3cm}{The sites are alike inside: Riverbend commutes are all long,
+        downtown commutes mostly short. No site looks like the whole company.}
+\end{enumerate}
+\end{scenariobox}
+
+\clearpage
+
+\boxguard[16]
+\begin{scenariobox}[2. Try all three methods on your card]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{2.1cm}|L{6.1cm}|L{6.1cm}@{}}
+\textbf{Method} & \textbf{How would it work here?} & \textbf{Does it fit? Why or why not?} \\
+\hline
+\textbf{Simple random sample} &
+\cellans{2.0cm}{Number all 1{,}800 employees, use a random number generator to pick 90, and
+email them.} &
+\cellans{2.0cm}{Works and is free, but by chance it could get too few Riverbend workers, and the mean
+comes out too low.} \\
+\hline
+\textbf{Stratified random sample} &
+\cellans{2.0cm}{Take an SRS from each site, in proportion: 60 downtown, 20 at Riverbend, 10 at
+Lakeside.} &
+\cellans{2.0cm}{Best: commutes are alike inside a site and differ between sites, so every site is in
+the sample and the estimate varies less.} \\
+\hline
+\textbf{Cluster sample} &
+\cellans{2.0cm}{Randomly pick one site and survey every employee there.} &
+\cellans{2.0cm}{Wrong groups: one site is not a copy of the company (all Riverbend: mean far too
+high), and email is free, so nothing is saved.} \\
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[12]
+\begin{scenariobox}[3. Our choice]{navy}
+\small
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.6em, itemsep=4pt]
+  \item The best method for our card: \fillin{8.5cm}{a stratified random sample, by work site}
+  \item Defend it \emph{in context}: why does this method fit \emph{this} population better than
+        the other two?
+        \answerspace{1.8cm}{Commute distance depends on the site: Riverbend workers drive about 40
+        miles, and downtown workers live nearby. Employees are alike inside a site, so sampling
+        from every site makes sure each one is represented and gives a less variable estimate
+        than an SRS of 90. A single site is not a copy of the company, so it is not a cluster.}
+  \item Describe \emph{exactly} how to choose the sample, step by step.
+        \answerspace{1.8cm}{From HR's list, number the downtown employees 1--1{,}200, Riverbend
+        1--400, and Lakeside 1--200. Use a random number generator to pick 60, 20, and 10
+        different numbers from those lists, skipping repeats. Email those 90 employees and
+        combine all 90 commute distances.}
+\end{enumerate}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{scenariobox}[4. Listen to the other tables]{navy}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}L{1.3cm}|L{4.0cm}|L{2.9cm}|L{5.8cm}@{}}
+\textbf{Table} & \textbf{Their question} & \textbf{Best method} & \textbf{The reason, in one phrase} \\
+\hline
+\textbf{1} & \cellans{1.2cm}{Pine Ridge: homes with working smoke detectors} & \cellans{1.2cm}{Cluster, by map section} &
+\cellans{1.2cm}{Each section is a mix like the county; only 5 trips.} \\
+\hline
+\textbf{2} & \cellans{1.2cm}{StreamLine: mean rating of Daily Mix} & \cellans{1.2cm}{Simple random sample} &
+\cellans{1.2cm}{Full list, free to reach anyone, nothing to stratify on.} \\
+\end{tabular}
+
+\vspace{6pt}
+\centering\bfseries
+Strata are alike inside: sample from \fillin{1.4cm}{every} one.\par
+Clusters each look like the whole: take \fillin{1.0cm}{all} of \fillin{1.3cm}{some} of them.
+\end{scenariobox}
+
+\end{document}

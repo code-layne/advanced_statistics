@@ -94,6 +94,12 @@ instruction frame per notes row → we-do → debrief → close & start the home
 **What this course does not have — do not re-add any of it:**
 
 - **No group activity.** Never scaffold, author, or restore `activity/`; the notes absorbed it.
+  *Exception — one-off handouts outside the packet (2026-11-16):* when the teacher asks for an
+  activity to use only now and then, it goes in a directory the build does not list
+  (`unit03/lesson02/table_activity/` + `table_activity_key/`; likewise the half-sheet day-2
+  warm-up `unit03/lesson02/warmup_day2/` + `warmup_day2_key/`), built by hand, never merged into
+  a packet, and described in an *Optional* box in the plan. Do not rename it to `activity/`,
+  and do not delete it as legacy.
 - **No exit ticket.** The formative read comes twice — circulating during Guided Practice, and
   again during the supervised homework start — and the plan says what to do with each of three
   piles of what the teacher sees.

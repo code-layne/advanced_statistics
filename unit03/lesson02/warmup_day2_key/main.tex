@@ -1,0 +1,52 @@
+%! Random Sampling Methods — Unit 3, Lesson 3.2 — Day 2 Warm-Up — KEY
+% ONE-OFF, STANDALONE HALF-PAGE. Not a packet component: `warmup_day2` is deliberately NOT a
+% name in shared/lesson.mk's STUDENT_ORDER, so `make` never builds it and no packet merges it.
+% Used on the second day of 3.2, when day 1 ended after notes row 2 ("Groups first / Strata &
+% clusters", problems 1-6). Build by hand, out of tree:
+%   cd unit03/lesson02/warmup_day2_key && TEXINPUTS="$(git rev-parse --show-toplevel)/shared//:" \
+%     xelatex -output-directory=../../../target/unit03/lesson02/warmup_day2_key main.tex
+%
+% The blank (../warmup_day2/) prints the SAME half-page twice on one sheet, with a cut line, so
+% one copy serves two students. Its only differences: -boxes for -key, the header, every
+% \pcell's 4th argument emptied, and the second copy.
+%
+% Four items, a NEW context (Camp Tall Pines — not Lakeview, Riverside, the hospital, or any
+% card from the table activity):
+%   1  SRS mechanics from a digit line: one out of range, one repeat   (row 1, problem 2)
+%   2  name it: whole cabins                -> cluster                 (row 2, problem 5)
+%   3  name it: 10 from each age group      -> stratified               (row 2, problem 4)
+%   4  THE TRAP again: one age group at random, 1-in-4 each, not an SRS (row 2, problem 6)
+%   Bridge: "older campers spend more" sets up row 3, "Which plan?", where day 2 resumes.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\newcommand{\warmupbody}{%
+\pageheader{Unit 3, Lesson 3.2 \quad Day 2}{Warm-Up --- Key}
+\par\vspace{-6pt}\small\noindent
+Camp Tall Pines has 400 campers: 100 in each of four age groups (8--9, 10--11, 12--13, 14--15).
+They sleep in 25 cabins, and \textbf{every cabin mixes all four age groups}. The director wants
+the mean amount campers spend at the camp store in a week.
+\par\vspace{4pt}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{The campers are numbered 001--400. Use these digits, three at a time, to pick the
+first three campers:\quad\texttt{382 017 455 382 096}}{1.6cm}{382, 017, 096 --- skip 455 (out of
+range) and the second 382 (a repeat).} &
+\pcell{2}{Randomly choose 3 of the 25 cabins and survey every camper in them. Name the
+method.}{1.6cm}{Cluster sample: each cabin is a mix, like the whole camp.} \\ \hline
+\pcell{3}{Randomly choose 10 campers from each of the four age groups. Name the
+method.}{1.6cm}{Stratified random sample: the age groups are the strata.} &
+\pcell{4}{Randomly choose one age group and survey all 100. Every camper has a 1-in-4 chance.
+Is it an SRS? Why?}{1.6cm}{No: a sample that mixes age groups can never be chosen, so not every
+group of 100 has an equal chance.} \\ \hline
+\end{probgrid}
+\par\vspace{2pt}
+{\footnotesize\textbf{Think ahead:} older campers spend more at the store. Which plan, 2 or 3,
+makes sure every age group is in the sample? \quad\ans{Plan 3, the stratified sample.}}
+}
+
+\begin{document}
+\noindent\begin{minipage}[t][0.47\textheight][t]{\linewidth}
+\warmupbody
+\end{minipage}
+\end{document}
