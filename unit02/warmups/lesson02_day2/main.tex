@@ -1,0 +1,95 @@
+%! Scatterplots and Correlation — Unit 2, Lesson 2.2 — Warm-Up, Day 2
+% STANDALONE re-entry warm-up for the second day of 2.2, when the class stopped after row 2
+% (Describing the Pattern, problem 6). Merged into no packet — see ../Makefile. ONE PAGE,
+% blank and key. Three items on FRESH contexts (hikes, typing, heating) that appear nowhere
+% else in the 2.2 packet, so students read the plot rather than recall the cars:
+%   1. Rows 1-2 back: explanatory/response, what one dot is, and a full DOFS description with
+%      the unusual point — the short, steep hike that took far longer than its distance says.
+%   2. Seeds row 3 (correlation): two POSITIVE plots, one tight and one loose. "Stronger" means
+%      closer to a line — the idea r will measure. Both are linear and positive; only the
+%      strength differs.
+%   3. The direction trap: colder outside, bigger bill. Both "change", but as x (temperature)
+%      goes UP, y goes DOWN — negative. Read direction left to right, not by "both move".
+% THE DATA
+%   Hikes (miles / hours), 12: 2/1.0 3/1.4 3.5/1.6 4/1.9 5/2.2 5.5/2.6 6/2.7 7/3.2 8/3.5
+%     9/4.0 10/4.4, and 4/3.6 (the steep climb — unusual). Roughly 0.4 h per mile.
+%   Typing, practice (min/day) / speed (wpm):
+%     Class A (tight): 5/24 10/29 12/31 15/33 20/38 25/41 28/44 30/47 35/51 38/54 40/55 45/60
+%     Class B (loose): 5/30 10/22 12/45 15/40 20/28 25/48 28/30 30/35 35/55 38/60 40/40 45/62
+% PAGE LOCKSTEP: the key differs only by apstats-key, the header, \blank -> \ans, and each
+% \writelines{n} -> n \ansline{}. No teacher notes in the key.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.2}{Warm-Up --- Day 2}
+% NAMESTRIP: no \namedateperiod — the 2.2 packet cover already carries the name.
+
+\vspace{0.1in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.26in]
+
+  \item A hiking club recorded the distance (miles) and the time (hours) of its last 12
+        hikes.\par\vspace{6pt}
+        \begin{minipage}[t]{0.50\linewidth}\vspace{0pt}\raggedright
+        Explanatory: \blank{3.6cm}\par\vspace{16pt}
+        Response: \blank{3.6cm}\par\vspace{16pt}
+        One dot stands for one \blank{2.6cm}.\par\vspace{16pt}
+        Which hike is unusual? \blank{3.2cm}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.46\linewidth}\vspace{0pt}\centering
+        \begin{tikzpicture}[x=0.6cm, y=0.62cm]
+          \foreach \y in {1,2,3,4} {
+            \draw[linegray, very thin] (1,\y) -- (10.5,\y);
+            \node[left, font=\tiny] at (1,\y) {\y};}
+          \draw[thick] (1,0.5) -- (10.6,0.5);
+          \draw[thick] (1,0.5) -- (1,4.7);
+          \foreach \x in {2,4,6,8,10} {
+            \draw (\x,0.42) -- (\x,0.58); \node[below, font=\tiny] at (\x,0.45) {\x};}
+          \foreach \d/\t in {2/1.0, 3/1.4, 3.5/1.6, 4/1.9, 5/2.2, 5.5/2.6, 6/2.7, 7/3.2,
+                             8/3.5, 9/4.0, 10/4.4, 4/3.6}
+            \fill[navy] (\d,\t) circle (2pt);
+          \node[font=\tiny] at (5.8,-0.3) {Distance (miles)};
+          \node[rotate=90, font=\tiny] at (0.2,2.6) {Time (hours)};
+        \end{tikzpicture}
+        \end{minipage}\par\vspace{12pt}
+        Describe the association with \textbf{DOFS}, in context.\par\vspace{6pt}
+        \writelines{3}
+
+  \item Two typing classes recorded each student's practice (minutes per day) and typing
+        speed (words per minute).\par\vspace{6pt}
+        \begin{center}
+        \begin{tikzpicture}[x=0.11cm, y=0.055cm]
+          \foreach \ox/\name/\pts in {
+              0/Class A/{5/24, 10/29, 12/31, 15/33, 20/38, 25/41, 28/44, 30/47, 35/51,
+                         38/54, 40/55, 45/60},
+              62/Class B/{5/30, 10/22, 12/45, 15/40, 20/28, 25/48, 28/30, 30/35, 35/55,
+                          38/60, 40/40, 45/62}} {
+            \begin{scope}[xshift=\ox*0.11cm]
+              \foreach \y in {20,40,60} {
+                \draw[linegray, very thin] (0,\y) -- (48,\y);
+                \node[left, font=\tiny] at (0,\y) {\y};}
+              \draw[thick] (0,15) -- (49,15);
+              \draw[thick] (0,15) -- (0,66);
+              \foreach \x in {10,20,30,40} {
+                \draw (\x,14) -- (\x,16); \node[below, font=\tiny] at (\x,14.5) {\x};}
+              \foreach \p/\w in \pts \fill[navy] (\p,\w) circle (1.7pt);
+              \node[font=\scriptsize\bfseries] at (24,72) {\name};
+              \node[font=\tiny] at (24,2) {Practice (min/day)};
+              \node[rotate=90, font=\tiny] at (-8,40) {Speed (wpm)};
+            \end{scope}}
+        \end{tikzpicture}
+        \end{center}\vspace{-4pt}
+        Both associations are positive. Which is \textbf{stronger}? \blank{2.4cm} How can
+        you tell?\par\vspace{6pt}
+        \writelines{2}
+
+  \item As the outside temperature drops, a family's heating bill tends to rise. Is the
+        association \textbf{positive} or \textbf{negative}? \blank{2.4cm} Explain.\par\vspace{6pt}
+        \writelines{2}
+
+\end{enumerate}
+
+\end{document}
