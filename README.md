@@ -98,9 +98,9 @@ outside the repository (see math-shared's README).
 ## Downloading Prebuilt PDFs
 
 Each unit is published on the [Releases](../../releases) page as `unitXX-vN`. A release carries
-`unitXX_student.pdf`, `unitXX_key.pdf`, and `advanced-statistics-unitXX-vN.zip`, the full teacher
-kit: both unit packets, every lesson's plan, slides (PDF and PPTX), student and key packets, plus
-the unit's tests, test keys, quizzes, quiz keys, warm-ups and extras.
+`unitXX_student.pdf`, `unitXX_key.pdf`, and a zip of the full teacher kit: both unit packets,
+every lesson's plan, slides (PDF and PPTX), student and key packets, the unit covers and sample
+test, plus every standalone document the unit builds (tests, keys, quizzes, warm-ups, extras).
 
 The repository is public, so releases are public too, answer keys and actual tests included.
 Roster packets (student names) are never packaged.
