@@ -13,8 +13,13 @@
 #
 #   unitXX_student.pdf, unitXX_key.pdf          the two bound unit packets
 #   lessons/lessonYY_{plan,slides,student,key}.pdf, lessonYY_slides.pptx
-#   tests/ test_keys/ quizzes/ quiz_keys/ warmups/ extras/   one PDF per document
-#   sample_test.pdf, sample_test_key.pdf, unitXX_slides.pptx  when the unit has them
+#   <dir>/<doc>.pdf     for every non-lesson unit folder with its own Makefile
+#                       (tests, test_keys, quizzes, quiz01, warmups, extras, review, …)
+#   covers, sample test(s), study guide — whatever else the unit build left in
+#                       target/compiled/unitXX/ — plus unitXX*.pptx from the unit folder
+#
+# Repo-agnostic: the same file lives in every curriculum repo (stats, saar,
+# algebra_2, precalculus); the GitHub repo comes from `origin`.
 #
 # Roster packets (lessonYY_roster.pdf, *_roster.pdf) carry student names and are
 # NEVER packaged: files are copied by explicit name, and a final guard refuses
@@ -38,7 +43,7 @@ if [[ ! "$UNIT" =~ ^unit[0-9]{2}$ ]] || [ ! -f "$UNIT/Makefile" ]; then
   exit 1
 fi
 
-REPO="code-layne/advanced_statistics"
+REPO="$(git remote get-url origin | sed -E 's#^.*github\.com[:/]##; s#\.git$##')"
 COMPILED="target/compiled"
 BUILT="target/$UNIT"
 STAGE_ROOT="target/release"
@@ -66,15 +71,20 @@ if [ "$PUBLISH" = 1 ]; then
 fi
 VERSION="${VERSION:-dev}"
 TAG="$UNIT-v$VERSION"
-ZIPNAME="advanced-statistics-$TAG"
+ZIPNAME="$(basename "$REPO" | tr _ -)-$TAG"
 
 # ── Build ────────────────────────────────────────────────────────────────────
-# Tests first: their `drop` rule writes sample_test/main.pdf, which the packets merge.
-EXTRA_DIRS="tests test_keys quizzes quiz_keys warmups extras"
+# Every non-lesson folder with its own Makefile builds standalone documents into
+# target/unitXX/<dir>/<doc>/main.pdf. They go first: the tests `drop` rule writes
+# sample_test/main.pdf, which the packets merge.
+EXTRA_DIRS=""
+for d in "$UNIT"/*/; do
+  d="$(basename "$d")"
+  case "$d" in lesson*) continue ;; esac
+  [ -f "$UNIT/$d/Makefile" ] && EXTRA_DIRS="$EXTRA_DIRS $d"
+done
 if [ "${NOBUILD:-0}" != 1 ]; then
-  for d in $EXTRA_DIRS; do
-    [ -f "$UNIT/$d/Makefile" ] && make -C "$UNIT/$d"
-  done
+  for d in $EXTRA_DIRS; do make -C "$UNIT/$d"; done
   make -C "$UNIT" all
   make -C "$UNIT" student key
 fi
@@ -87,9 +97,10 @@ copy() { [ -f "$1" ] && cp "$1" "$2"; return 0; }
 
 copy "$COMPILED/${UNIT}_student.pdf" "$STAGE/"
 copy "$COMPILED/${UNIT}_key.pdf"     "$STAGE/"
-copy "$COMPILED/$UNIT/sample_test.pdf"     "$STAGE/"
-copy "$COMPILED/$UNIT/sample_test_key.pdf" "$STAGE/"
-copy "$UNIT/${UNIT}_slides.pptx" "$STAGE/"
+for f in "$COMPILED/$UNIT"/*.pdf "$UNIT"/"$UNIT"*.pptx; do   # covers, sample tests, study guide, unit deck
+  case "$(basename "$f")" in lesson*) continue ;; esac
+  copy "$f" "$STAGE/"
+done
 
 for l in "$UNIT"/lesson*/; do
   l="$(basename "$l")"
