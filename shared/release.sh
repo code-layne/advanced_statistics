@@ -84,9 +84,19 @@ for d in "$UNIT"/*/; do
   [ -f "$UNIT/$d/Makefile" ] && EXTRA_DIRS="$EXTRA_DIRS $d"
 done
 if [ "${NOBUILD:-0}" != 1 ]; then
+  dirty_before="$(git diff --name-only -- "$UNIT")"
   for d in $EXTRA_DIRS; do make -C "$UNIT/$d"; done
   make -C "$UNIT" all
   make -C "$UNIT" student key
+  # Some repos commit sample_test*/main.pdf; the `drop` rule rewrites it with a
+  # fresh timestamp. The packets (and so the release) already carry the fresh
+  # build, so put any committed file the build touched back as it was — a
+  # release must never leave the working tree dirty.
+  for f in $(git diff --name-only -- "$UNIT"); do
+    if ! grep -qxF "$f" <<<"$dirty_before"; then
+      git checkout -q -- "$f" && echo "   restored committed $f (the release uses the fresh build)"
+    fi
+  done
 fi
 
 # ── Stage ────────────────────────────────────────────────────────────────────
