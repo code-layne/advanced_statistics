@@ -12,6 +12,8 @@
 #                 make roster-packets LESSON=unit03/lesson01 ROSTER=~/Mathematics/rosters/roster-map.csv [SECTION=…]
 #              or a test or quiz: COMP=unit02/tests/actual_test in place of LESSON
 #   manifest   make manifest COMP=unit03/lesson01/homework (or COMP=unit02/tests/actual_test)
+#   package    make package UNIT=unit02 → build the unit's teacher kit into target/release/ (zip)
+#   release    make release UNIT=unit02 → package + publish as GitHub Release unit02-vN (public)
 #
 # Only the student and key packets aggregate to this level. Each lesson's other
 # two products — lessonYY_plan.pdf and lessonYY_slides.pdf — stay in
@@ -22,7 +24,7 @@ COMPILED_DIR := target/compiled
 
 UNITS := $(patsubst %/Makefile,%,$(sort $(wildcard unit*/Makefile)))
 
-.PHONY: all student key full clean distclean check-names manifest roster-packets $(UNITS)
+.PHONY: all student key full clean distclean check-names manifest roster-packets package release $(UNITS)
 
 all: $(UNITS)
 
@@ -55,6 +57,10 @@ full:
 	@echo "     target/compiled/unitXX/lessonYY_plan.pdf" >&2
 	@echo "     target/compiled/unitXX/lessonYY_slides.pdf" >&2
 	@exit 1
+
+package release:
+	@test -n "$(UNIT)" || { echo "!  make $@ UNIT=unitXX"; exit 1; }
+	@shared/release.sh $(UNIT) $(if $(filter release,$@),--publish)
 
 check-names:
 	@python3 shared/check_namelines.py $(UNITS) && echo "✓  No name line on any graded document"
