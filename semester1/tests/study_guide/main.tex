@@ -1,0 +1,287 @@
+%! Semester 1, Units 1–3 — Final Exam Study Guide (reference sheet; no answer key by design)
+% This is a REFERENCE sheet, not a worksheet: every worked move and every trap is already
+% filled in, so there is nothing to answer and therefore no _key sibling. The practice a
+% student does before the final is ../practice_test/, which HAS a key.
+% NAMESTRIP: no \namedateperiod — the name row lives on a packet cover only.
+% NOT GRADED: a study guide carries no \gradedblank and does not load grading (LESSON_SHAPE §9).
+% It follows the final's blueprint move for move (see ../actual_test/main.tex): the 20
+% multiple-choice targets, the five short-answer computations, and the three free-response
+% questions. Vocabulary is NOT re-listed here — the unit study guides (unit01/quizzes,
+% unit02/tests, unit03/tests) carry it; this sheet is the moves, the sentences, and the traps.
+% Worked contexts (a bike-share program; piano practice and recital scores; a community
+% garden) are deliberately NOT used on either form of the final.
+%
+% THE DATA (every number checked)
+%  Move 3  12 15 18 20 21 24 26 27 30 33 41: median 24, Q1 18, Q3 30, IQR 12; fences 0 and 48.
+%  Move 6  N(50, 6): 44–56 is 68%; above 62 is 2.5%; 59 -> z = 1.5.
+%  Move 7  members 84/36 (120), casual 96/144 (240), totals 180/180/360:
+%          84/120 = 0.70 of members ride on weekdays; 84/180 = 0.467 of weekday riders are members.
+%  Move 9  yhat = 14.20 + 3.150(hours); R-Sq 81.0% -> r = +0.90; 8 hours -> 39.4; scored 42 ->
+%          residual 2.6.
+%  Move 15 100 reshuffles, step 1: -4:1 -3:2 -2:12 -1:21 0:28 1:21 2:12 3:2 4:1 (sum 100).
+%          Observed 3: 2 + 1 = 3 of 100 at or above -> significant.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+% Optional arg: the \boxguard size (lines kept with the strip).
+\newcommand{\sghead}[2][10]{%
+  \vspace{0.13in}
+  \boxguard[#1]
+  \begin{headlinebox}{navy}\color{white}\bfseries\small #2\end{headlinebox}
+  \vspace{0.09in}}
+
+\begin{document}
+
+\pageheader{Semester 1 \quad Units 1--3}{Final Exam Study Guide}
+
+\vspace{0.12in}
+
+\boxguard[9]
+\begin{remindbox}
+\small
+The final covers \textbf{Units 1, 2, and 3} --- describing data, relationships between two
+variables, and how data are collected. You have \textbf{up to 2 hours}. \textbf{Section I:} 20
+multiple-choice questions (40 points). \textbf{Section II:} 5 short answers --- a number in a
+box (15 points). \textbf{Section III:} 3 free-response questions, one per unit, five parts each
+(45 points). Every written answer must be \textbf{in context} --- name the people or things
+studied, the variable, and its units.
+\end{remindbox}
+
+\sghead{Unit 1 --- Exploring one-variable data}
+
+\small
+\textbf{Move 1 --- Categorical or quantitative? (1.1)} Ask whether the values are \emph{measured
+or counted amounts}. Digits do not decide it: a station number, a ZIP code, and a jersey number
+are labels, so they are \textbf{categorical}. Trip length in minutes is \textbf{quantitative}.
+
+\vspace{3pt}
+\textbf{Move 2 --- Compare groups with proportions, not counts (1.2).} \emph{Worked:} 45 of 150
+weekday riders and 40 of 100 weekend riders wear a helmet. Weekday has more helmets (45), but
+helmets are \textbf{more common on weekends}: 40\% compared with 30\%.
+
+\vspace{3pt}
+\textbf{Move 3 --- Median, quartiles, IQR, and the outlier rule (1.3, 1.5, 1.6).} \emph{Worked,}
+11 trip lengths in minutes: 12 \ 15 \ 18 \ 20 \ 21 \ 24 \ 26 \ 27 \ 30 \ 33 \ 41. The median is
+the 6th value, \textbf{24}. $Q_1$ is the median of the lower five, \textbf{18}; $Q_3$ is the
+median of the upper five, \textbf{30}. $\text{IQR} = 30 - 18 = 12$. Fences:
+$18 - 1.5(12) = 0$ and $30 + 1.5(12) = 48$. No trip is below 0 or above 48, so there are
+\textbf{no outliers}. From a stem plot, do exactly the same: count in to the middle.
+
+\vspace{3pt}
+\textbf{Move 4 --- Shape tells you where the mean is (1.4, 1.5).} The mean is pulled toward the
+tail. \textbf{Skewed right:} mean $>$ median. \textbf{Skewed left:} mean $<$ median.
+\textbf{Symmetric:} about equal. The median and the IQR are \textbf{resistant}; the mean, the
+standard deviation, and the range are not. Change one extreme value and the mean moves, while
+the median stays put as long as the value stays on the same side of the middle.
+
+\vspace{3pt}
+\textbf{Move 5 --- Read a boxplot (1.5, 1.6).} Each of the four sections holds about
+\textbf{a quarter of the data}, however long it is drawn: a long whisker means the values are
+spread out, not that there are more of them. A value at the \textbf{70th percentile} has 70\% of
+the data at or below it.
+
+\vspace{3pt}
+\boxguard[7]
+\textbf{Move 6 --- Parameter or statistic; $z$-scores; the empirical rule (1.7).} A
+\textbf{parameter} describes the whole population; a \textbf{statistic} describes a sample.
+\emph{Worked:} trip lengths are approximately normal with mean 50 and standard deviation 6
+minutes. About \textbf{68\%} of trips last 44 to 56 minutes (within 1 SD), \textbf{95\%} last 38
+to 62 (within 2), and 99.7\% last 32 to 68 (within 3). Longer than 62 minutes: half of the other
+5\%, about \textbf{2.5\%}. A 59-minute trip has $z = \dfrac{59 - 50}{6} = 1.5$: it is 1.5
+standard deviations above the mean. To compare values from two different distributions, compare
+their $z$-scores.
+
+\normalsize
+\sghead{Unit 2 --- Exploring two-variable data}
+
+\small
+\boxguard[9]
+\textbf{Move 7 --- ``Of the \ldots'' names the denominator (2.1).}
+
+\vspace{2pt}
+\noindent\begin{minipage}[c]{0.42\linewidth}\centering\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{} l c c c @{}}
+\rowcolor{sky}
+ & \textbf{Weekday} & \textbf{Weekend} & \textbf{Total} \\
+\midrule
+Member & 84 & 36  & 120 \\
+Casual & 96 & 144 & 240 \\
+\midrule
+Total  & 180 & 180 & 360 \\
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.55\linewidth}\raggedright
+\emph{Worked:} of the \textbf{members}, the proportion who rode on a weekday is $84/120 = 0.70$.
+Of the \textbf{weekday rides}, the proportion taken by members is $84/180 \approx 0.467$. Same
+84, different question. Rider type and day are \textbf{associated}: 70\% of members ride on
+weekdays, but only 40\% of casual riders do.
+\end{minipage}
+
+\vspace{5pt}
+\textbf{Move 8 --- Describe a scatterplot; know what $r$ is (2.2).} Give \textbf{direction, form,
+strength}, and any \textbf{unusual points}, in context. The correlation $r$ has no units, does
+not change when units change, measures only \emph{linear} association, and never shows cause.
+
+\vspace{3pt}
+\boxguard[11]
+\textbf{Move 9 --- Read computer output and use the line (2.3, 2.4).}
+
+\vspace{2pt}
+\noindent\begin{minipage}[c]{0.40\linewidth}\centering\scriptsize\ttfamily
+\begin{tabular}{@{} l r r @{}}
+Predictor & Coef & SE Coef \\ \hline
+Constant & 14.20 & 2.861 \\
+Hours & 3.150 & 0.3596 \\
+\end{tabular}\par
+\vspace{2pt}
+S = 4.11 \quad R-Sq = 81.0\%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.57\linewidth}\raggedright
+\emph{Worked,} recital score from weekly practice hours for 20 piano students:
+$\widehat{\text{score}} = 14.20 + 3.150(\text{hours})$. The slope is on the row named for the
+explanatory variable. Since the slope is positive, $r = +\sqrt{0.810} = 0.90$. A student who
+practices 8 hours is predicted to score $14.20 + 3.150(8) = 39.4$. She scored 42, so her
+\textbf{residual} is actual $-$ predicted $= 42 - 39.4 = 2.6$ points.
+\end{minipage}
+
+\vspace{5pt}
+\textbf{Move 10 --- Is the line appropriate, and where does it stop? (2.3, 2.5)} A residual plot
+with \textbf{random scatter} around 0 says a line fits; a \textbf{curve} says it does not, even
+when $r$ is high. Predicting far outside the $x$-values in the data is \textbf{extrapolation},
+and the answer may be nonsense. A point far from the others in the $x$-direction can be
+\textbf{influential}: remove it and the slope and $r$ change a lot.
+
+\normalsize
+\sghead{Unit 3 --- Collecting data}
+
+\small
+\textbf{Move 11 --- Observational study or experiment? (3.1)} One question: \emph{did the
+researchers assign a treatment?} Careful measuring, an app, or a random sample does not make a
+study an experiment.
+
+\vspace{3pt}
+\textbf{Move 12 --- Choose a sample, and name the method (3.2).} \emph{SRS:} label, randomize
+with a random number generator ignoring repeats, select. \textbf{Stratified:} an SRS from
+\emph{every} group. \textbf{Cluster:} \emph{all} of a few randomly chosen groups.
+
+\vspace{3pt}
+\textbf{Move 13 --- Name the bias, who, and which way (3.3).} \textbf{Voluntary response}
+(people choose to answer), \textbf{undercoverage} (some cannot be chosen), \textbf{nonresponse}
+(chosen people cannot be reached or refuse), \textbf{response bias} (the question pushes the
+answer). Say who is over- or under-represented and whether the estimate is too high or too low.
+\textbf{A larger sample does not fix bias.}
+
+\vspace{3pt}
+\boxguard[6]
+\textbf{Move 14 --- Lay out an experiment (3.4).} \emph{Worked:} a community garden tests 2
+kinds of mulch at 3 watering levels on 60 tomato plants. \textbf{Units:} the 60 plants.
+\textbf{Treatments:} every combination, $2 \times 3 = 6$. \textbf{Response:} kilograms of
+tomatoes per plant. \textbf{Random assignment} balances other variables, such as sunlight, so
+they are not \textbf{confounded} with the treatments. If sunlight matters, \textbf{block}: sort
+the plants into sunny and shady blocks, then randomly assign \emph{within} each block.
+
+\vspace{3pt}
+\boxguard[14]
+\textbf{Move 15 --- Read a reshuffle dotplot (3.5).} Each dot is one difference that chance alone
+produced.
+
+\vspace{2pt}
+\noindent\begin{minipage}[c]{0.44\linewidth}\raggedright
+\emph{Worked:} the mulched plants' mean yield was \textbf{3 kg higher}. Count the dots at 3 or
+more: $2 + 1 =$ \textbf{3 of 100}. Chance alone rarely gives a difference that large, so it
+is \textbf{statistically significant}. Count on the side the observed difference is on, and
+include the column it sits on. Had 30 of the 100 dots reached it, chance could easily explain
+it: \textbf{not} significant.
+\end{minipage}\hfill
+\begin{minipage}[c]{0.53\linewidth}\centering
+\begin{tikzpicture}[x=0.85cm, y=0.105cm]
+  \draw[thick] (-4.5,0) -- (4.5,0);
+  \foreach \x in {-4,...,4} {
+    \draw (\x,0) -- (\x,-1.6); \node[below, font=\tiny] at (\x,-1.4) {$\x$};}
+  \foreach \x/\n in {-4/1,-3/2,-2/12,-1/21,0/28,1/21,2/12,3/2,4/1}
+    \foreach \k in {1,...,\n} \fill[navy] (\x,\k) circle (1.1pt);
+  \draw[redacc, dashed, thick] (3,3.5) -- (3,14);
+  \node[font=\tiny\bfseries, redacc, above] at (3,14) {observed 3};
+  \node[font=\tiny] at (0,-7.5) {Simulated difference in mean yield (kg)};
+  \node[font=\scriptsize\bfseries] at (0,33) {100 random reshuffles};
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{5pt}
+\boxguard[10]
+\textbf{Move 16 --- Scope of inference: two separate questions (3.5).} Was the treatment
+\emph{assigned} at random? That gives \textbf{cause}. Were the individuals \emph{selected} at
+random? That lets you \textbf{generalize} to the population they came from.
+
+\vspace{3pt}
+{\centering\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|}
+\hline
+ & \cellcolor{sky}\textbf{Selected at random} & \cellcolor{sky}\textbf{Not selected at random} \\
+\hline
+\cellcolor{sky}\textbf{Assigned at random} & Cause: yes \quad Generalize: yes & Cause: yes \quad Generalize: no \\
+\hline
+\cellcolor{sky}\textbf{Not assigned} & Cause: no \quad Generalize: yes & Cause: no \quad Generalize: no \\
+\hline
+\end{tabular}\par}
+\normalsize
+
+\vspace{0.10in}
+\boxguard[22]
+\begin{scenariobox}[The sentences that earn full credit]{navy}
+\small
+\textbf{Compare two distributions:} ``Weekend trips are typically longer (median 31 minutes
+compared with 22) and more variable (IQR 14 minutes compared with 8). Weekday trips have one
+high outlier, at 70 minutes.'' Center, variability, unusual features --- with comparison words
+and numbers.\par\vspace{3pt}
+\textbf{Outlier rule:} ``$Q_3 + 1.5(\text{IQR}) = 30 + 18 = 48$. Since $70 > 48$, the 70-minute
+trip is an outlier.''\par\vspace{3pt}
+\textbf{Slope:} ``For each additional hour of weekly practice, the \emph{predicted} recital score
+increases by about 3.15 points.''\par\vspace{3pt}
+\textbf{Residual:} ``This student scored 2.6 points \emph{higher} than the line predicted for 8
+hours of practice.''\par\vspace{3pt}
+\textbf{R-Sq:} ``About 81\% of the variation in recital score is explained by the linear model
+with weekly practice hours.''\par\vspace{3pt}
+\textbf{Bias and direction:} ``Nonresponse bias. Riders who rarely use the program are less
+likely to answer, so they are under-represented, and the estimated proportion who ride weekly is
+likely too high.''\par\vspace{3pt}
+\textbf{Random assignment:} ``Label the plants 1 to 60. Randomly generate 30 different integers
+from 1 to 60; those plants get mulch and the other 30 do not. This balances other variables, so
+a difference in yield can be attributed to the mulch.''\par\vspace{3pt}
+\textbf{Cause and to whom:} ``The treatments were randomly assigned and the difference is
+significant, so the mulch caused the higher yield. The plants were not randomly selected, so the
+result applies only to plants like these.''
+\end{scenariobox}
+
+\sghead{Ten traps that cost points}
+
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Digits are not quantities.} A ZIP code is categorical.
+  \item \textbf{Counts mislead when groups differ in size.} Compare proportions.
+  \item \textbf{A longer whisker is not more data.} Every section of a boxplot holds a quarter.
+  \item \textbf{The mean follows the tail; the median does not.}
+  \item \textbf{The denominator is the group after ``of the.''} Read the question twice.
+  \item \textbf{Residual $=$ actual $-$ predicted.} Negative means the line predicted too high.
+  \item \textbf{$r$ takes the sign of the slope,} and a high $r$ does not prove a line fits.
+  \item \textbf{A bigger sample does not fix bias.}
+  \item \textbf{Blocking does not replace chance.} Randomize inside every block.
+  \item \textbf{A random sample is not a random assignment.} Selection lets you generalize; only
+        assignment lets you say cause.
+\end{enumerate}
+\normalsize
+
+\sghead[6]{Before you walk in}
+
+\small
+Work the \textbf{practice final} in one sitting, timed, without notes, then check it against its
+key. For anything you miss, go back to that unit's study guide and its sample test. A
+free-response answer shorter than the key's is usually missing the context.
+\normalsize
+
+\end{document}

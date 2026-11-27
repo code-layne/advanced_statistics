@@ -1,0 +1,25 @@
+# Semester 1 practice final, item 28b. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28b
+points: 3
+task: >-
+  Staff knock on the dorm-room doors of the 250 selected students on Saturday afternoons
+  and reach only 100. The dining service wants the proportion of students who leave
+  campus on most weekends. Name the bias, explain who is likely under-represented, and
+  say whether the estimate is likely too high or too low.
+criteria:
+  - id: name
+    points: 1
+    full: >-
+      E: Nonresponse bias.
+  - id: who
+    points: 1
+    full: >-
+      E: Students who leave campus on weekends are not in their rooms on Saturday
+      afternoons, so they are under-represented.
+  - id: direction
+    points: 1
+    full: >-
+      E: The estimated proportion who leave campus on most weekends is likely too low.
+      Must be consistent with the group named.

@@ -1,0 +1,25 @@
+# Semester 1 practice final, item 28e. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28e
+points: 3
+task: >-
+  The students who saw the calorie labels chose significantly fewer calories, on
+  average, than those who did not. What can the dining service conclude about cause and
+  effect, and to which students does the conclusion apply? Explain.
+criteria:
+  - id: cause
+    points: 1
+    full: >-
+      E: The calorie labels caused students to choose fewer calories, justified by the
+      random assignment of treatments (and the significant difference).
+  - id: scope
+    points: 1
+    full: >-
+      E: The conclusion applies only to students like the volunteers in the study, not
+      to all 7,500 students on the meal plan.
+  - id: reason
+    points: 1
+    full: >-
+      E: Because the subjects were volunteers, not randomly selected from the students
+      on the meal plan.

@@ -1,0 +1,26 @@
+# Semester 1 practice final, item 26a. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26a
+points: 3
+task: >-
+  Parallel boxplots and five-number summaries of battery life (hours): Brand A
+  4.0/5.2/6.0/6.8/8.1, Brand B 5.5/7.0/7.6/8.2/11.0 with 11.0 plotted as an outlier.
+  Compare the distributions of battery life for Brand A and Brand B earbuds.
+criteria:
+  - id: center
+    points: 1
+    full: >-
+      E: Compares center in context with comparative language: Brand B batteries
+      typically last longer (median 7.6 h vs 6.0 h).
+  - id: variability
+    points: 1
+    full: >-
+      E: Compares variability in context: Brand A battery lives vary more (IQR 1.6 h vs
+      1.2 h). Comparing ranges (5.5 h for B vs 4.1 h for A) earns the point only if the
+      student notes that Brand B's range is stretched by its outlier.
+  - id: unusual
+    points: 1
+    full: >-
+      E: Notes that Brand B has a high outlier (11.0 h) and Brand A has none. Two
+      separate descriptions with no comparison earn this point at most.

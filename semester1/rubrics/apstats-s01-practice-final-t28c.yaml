@@ -1,0 +1,22 @@
+# Semester 1 practice final, item 28c. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28c
+points: 3
+task: >-
+  120 student volunteers; for one lunch, 60 order from a menu with calorie labels and 60
+  from the same menu without labels; the calories in each order are recorded. Identify
+  the experimental units, the treatments, and the response variable.
+criteria:
+  - id: units
+    points: 1
+    full: >-
+      E: The 120 student volunteers.
+  - id: treatments
+    points: 1
+    full: >-
+      E: A menu with calorie labels, and the same menu without labels.
+  - id: response
+    points: 1
+    full: >-
+      E: The number of calories in each student's lunch order.

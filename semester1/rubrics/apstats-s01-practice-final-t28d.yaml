@@ -1,0 +1,26 @@
+# Semester 1 practice final, item 28d. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28d
+points: 3
+task: >-
+  Describe how to randomly assign the 120 volunteers to the two treatments (60 each),
+  and explain why random assignment matters in this experiment.
+criteria:
+  - id: method
+    points: 2
+    full: >-
+      E: A complete chance process that produces two groups of 60: for example, write
+      each name on one of 120 identical slips, mix them in a hat, draw 60 for the
+      labeled menu, and give the other 60 the menu without labels (or label the
+      volunteers 1 to 120 and randomly generate 60 different integers).
+    partial: >-
+      P (1 of 2): A chance process that is incomplete: slips not identical or not mixed,
+      repeats not handled, or the groups are not 60 and 60 (for example a coin flip for
+      each volunteer).
+  - id: purpose
+    points: 1
+    full: >-
+      E: Random assignment makes the two groups roughly alike on other variables (such
+      as appetite or diet habits), so a difference in calories chosen can be attributed
+      to the labels.

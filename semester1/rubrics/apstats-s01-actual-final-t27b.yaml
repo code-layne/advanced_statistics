@@ -1,0 +1,23 @@
+# Semester 1 actual final, item 27b. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t27b
+points: 3
+task: >-
+  Computer output: Constant -51.98, Temperature 1.774. Write the equation of the
+  least-squares regression line, using the variable names. Then interpret its slope in
+  context.
+criteria:
+  - id: equation
+    points: 1
+    full: >-
+      E: predicted coffees = -51.98 + 1.774(temperature), with a hat or the word
+      'predicted' on the response. x and y are accepted only if defined.
+  - id: slope
+    points: 2
+    full: >-
+      E: For each additional degree Fahrenheit, the predicted number of iced coffees
+      sold increases by about 1.774 coffees.
+    partial: >-
+      P (1 of 2): Correct value and direction but missing 'predicted' (or 'on average'),
+      or missing the units or context, or stated as a certainty for every day.

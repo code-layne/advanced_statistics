@@ -1,0 +1,22 @@
+# Semester 1 actual final, item 28c. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28c
+points: 3
+task: >-
+  200 volunteer subscribers; 100 will get a daily reminder notification for a month and
+  100 will get none; the app records the minutes each one practices that month. Identify
+  the experimental units, the treatments, and the response variable.
+criteria:
+  - id: units
+    points: 1
+    full: >-
+      E: The 200 volunteer subscribers.
+  - id: treatments
+    points: 1
+    full: >-
+      E: A daily reminder notification, and no reminder.
+  - id: response
+    points: 1
+    full: >-
+      E: The number of minutes each subscriber practices during the month.

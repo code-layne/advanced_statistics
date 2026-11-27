@@ -1,0 +1,29 @@
+# Semester 1 practice final, item 27e. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t27e
+points: 4
+task: >-
+  Residual plot for natural gas used vs outdoor temperature (random scatter);
+  temperatures in the data run from 12 to 57 degrees F. Decide whether a linear model is
+  appropriate. Then explain why the homeowner should not use the line to predict the gas
+  used on a 90-degree summer day.
+criteria:
+  - id: pattern
+    points: 1
+    full: >-
+      E: The residuals are scattered randomly above and below 0, with no curved pattern.
+  - id: decision
+    points: 1
+    full: >-
+      E: So a linear model is appropriate for these data.
+  - id: extrapolation
+    points: 1
+    full: >-
+      E: 90 degrees F is far outside the 12 to 57 degrees in the data: this is
+      extrapolation.
+  - id: consequence
+    points: 1
+    full: >-
+      E: The linear pattern may not continue there, so the prediction is unreliable (the
+      line gives about -2.7 therms, which is impossible).

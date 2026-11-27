@@ -1,0 +1,27 @@
+# Semester 1 actual final, item 26a. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26a
+points: 3
+task: >-
+  Parallel boxplots and five-number summaries of service time (seconds): drive-through
+  80/143/170/197/262, walk-in 60/90/110/130/240 with 240 plotted as an outlier. Compare
+  the distributions of service time for drive-through and walk-in customers.
+criteria:
+  - id: center
+    points: 1
+    full: >-
+      E: Compares center in context with comparative language: drive-through service
+      times are typically longer (median 170 s vs 110 s).
+  - id: variability
+    points: 1
+    full: >-
+      E: Compares variability in context: drive-through times vary more (IQR 54 s vs 40
+      s). Comparing ranges (182 s vs 180 s, about equal) earns the point only if the
+      student notes that the walk-in range is stretched by its outlier.
+  - id: unusual
+    points: 1
+    full: >-
+      E: Notes that the walk-in times have a high outlier (240 s) and the drive-through
+      times have none. Two separate descriptions with no comparison earn this point at
+      most.

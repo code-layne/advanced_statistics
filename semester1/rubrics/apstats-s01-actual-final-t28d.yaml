@@ -1,0 +1,25 @@
+# Semester 1 actual final, item 28d. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28d
+points: 3
+task: >-
+  Describe how to randomly assign the 200 volunteers to the two treatments (100 each),
+  and explain why random assignment matters in this experiment.
+criteria:
+  - id: method
+    points: 2
+    full: >-
+      E: A complete chance process that produces two groups of 100: for example, label
+      the volunteers 1 to 200, randomly generate 100 different integers from 1 to 200,
+      give those volunteers the reminder and the other 100 no reminder (or 200 identical
+      slips mixed in a hat, draw 100).
+    partial: >-
+      P (1 of 2): A chance process that is incomplete: no labels, repeats not handled,
+      or the groups are not 100 and 100 (for example a coin flip for each volunteer).
+  - id: purpose
+    points: 1
+    full: >-
+      E: Random assignment makes the two groups roughly alike on other variables (such
+      as motivation), so a difference in practice time can be attributed to the
+      reminders.

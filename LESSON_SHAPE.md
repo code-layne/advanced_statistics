@@ -207,7 +207,20 @@ test and its key are never merged into any packet.** The scaffolder creates all 
 time a unit is created. Build: `make -C unitXX/tests all && make -C unitXX/test_keys all`. The
 practice test and its key must be the same number of pages.
 
-There is no course-wide final in this repository.
+**The Semester 1 final (Units 1–3, 2026-11-27) lives in `semester1/`,** laid out like a unit's
+assessments and built by the same files: `semester1/tests/` (`practice_test/`, `actual_test/`,
+`study_guide/`; `include ../../shared/tests.mk`), `semester1/test_keys/`, `semester1/rubrics/`,
+and the `sample_test*` drop-in dirs the practice form publishes to. `semester1/Makefile` exists
+only so the root `make manifest` / `make roster-packets COMP=semester1/tests/actual_test` reach
+it; the root Makefile's `unit*` wildcard leaves it out of every packet and course build. Build:
+`make -C semester1/tests all && make -C semester1/test_keys all`. Shape: **20 multiple choice
+(2 points each), 5 short numeric answers (`type=short, check=numeric`, 3 points each), 3
+free-response questions (one per unit, five rubric parts, 15 points each) — 100 points, written
+for 60–120 minutes.** Sections I and II follow the AP exam's unit weights (11 / 5 / 9 items for
+Units 1 / 2 / 3). The practice form is the parallel form of the scored one, item for item; the
+study guide is a reference sheet with no key. Each key mirrors its blank line for line (the
+correct option in `\ans{}`, each `\writelines{8}` answered by eight `\ansline{}`), so an edit to
+one form is made in its blank and its key together. There is no Semester 2 final yet.
 
 ## 7. Legacy shapes and regeneration
 
@@ -310,10 +323,12 @@ guides and unit covers stay as they are.
 | lesson homework | `apstats-uNN-lNN-hw`, e.g. `apstats-u04-l03-hw` |
 | lesson AP Practice | `apstats-uNN-lNN-ap` |
 | unit quiz / test | `apstats-uNN-<name>`, e.g. `apstats-u01-sample-quiz`, `apstats-u02-actual-test` |
+| semester final | `apstats-sNN-<form>-final`: `apstats-s01-actual-final`, `apstats-s01-practice-final` |
 
 Item ids are the component code, item number and part: `hw2a`, `ap5c`, `q7b`, `t16a`. Rubric
 items point to `rubrics/<assignment>-<id>.yaml` in the lesson directory, or in `unitNN/rubrics/`
-for quizzes and tests (written `rubric=../rubrics/…`). Free response in AP Practice, quizzes and
+for quizzes and tests (written `rubric=../rubrics/…`); the semester final's are in
+`semester1/rubrics/`, with item ids `t1`–`t28`. Free response in AP Practice, quizzes and
 tests is scored College Board style (each component essentially / partially correct).
 
 **Authoring rule:** write each `\gradedblank` identically in the blank and the key, and put it in

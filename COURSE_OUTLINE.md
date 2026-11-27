@@ -75,6 +75,17 @@ assignment support causal claims. Condensed from seven CED Topics to five lesson
 | 3.4 | Designing Experiments | 3.5 + 3.6 | Principles of experiments; completely randomized, randomized block, matched-pairs designs |
 | 3.5 | Inference and Experiments | 3.7 | Statistical significance from a simulation; scope of inference; cause vs. association |
 
+## Semester 1 Final — Units 1–3
+
+`semester1/tests/` holds the cumulative final: `actual_test/` (the scored final),
+`practice_test/` (its parallel form, published to `semester1/sample_test/`), and `study_guide/`
+(a reference sheet); keys are in `semester1/test_keys/`, rubrics in `semester1/rubrics/`.
+20 multiple choice, 5 short numeric answers, 3 free-response questions (one per unit); 100
+points; written for 60–120 minutes. Build with
+`make -C semester1/tests all && make -C semester1/test_keys all`.
+
+---
+
 ## Unit 4 — Probability, Random Variables, and Probability Distributions (12 lessons)
 
 Develops the mathematical language of chance: simulation, probability rules, conditional
