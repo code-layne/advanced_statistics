@@ -222,6 +222,15 @@ study guide is a reference sheet with no key. Each key mirrors its blank line fo
 correct option in `\ans{}`, each `\writelines{8}` answered by eight `\ansline{}`), so an edit to
 one form is made in its blank and its key together. There is no Semester 2 final yet.
 
+**The final's built PDFs are committed, in `semester1/built/`** (2026-11-27; `.gitignore` makes
+the one exception): `final_exam.pdf`, `final_exam_key.pdf`, `practice_final.pdf`,
+`practice_final_key.pdf`, `final_study_guide.pdf`. They are generic reference copies to read
+and print. **The copies students write on are never these** — they are built per student, with
+her tracking id, by `make roster-packets COMP=semester1/tests/actual_test ROSTER=…`, and that
+roster PDF stays under `target/`. After editing any source in `semester1/`, rebuild and copy the
+five PDFs from `target/semester1/` again in the same commit, so the committed copies never lag
+the source.
+
 ## 7. Legacy shapes and regeneration
 
 Recognize the shape by the component directories:
