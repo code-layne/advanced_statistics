@@ -1,0 +1,24 @@
+# Semester 1 actual final, item 26c. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26c
+points: 3
+task: >-
+  The walk-in value 240 was a recording error; the true value is 140 seconds (the
+  walk-in median is 110). Without calculating, explain how correcting it changes the
+  mean and the median of the walk-in times.
+criteria:
+  - id: mean
+    points: 1
+    full: >-
+      E: The mean decreases (by 100/40 = 2.5 s; the amount is not required).
+  - id: median
+    points: 1
+    full: >-
+      E: The median does not change (stays 110 s). 'Stays about the same' is accepted.
+  - id: reason
+    points: 1
+    full: >-
+      E: Explains with resistance: the mean uses every value so an extreme value pulls
+      it, while the median depends only on the middle of the ordered data, and 140 s is
+      still above the median.

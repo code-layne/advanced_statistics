@@ -1,0 +1,22 @@
+# Semester 1 practice final, item 28a. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28a
+points: 3
+task: >-
+  A university dining service has 7,500 students on its meal plan. Describe how to use a
+  random number generator to choose a simple random sample of 250 of the students.
+criteria:
+  - id: label
+    points: 1
+    full: >-
+      E: Gives each student a different label, 1 to 7,500.
+  - id: randomize
+    points: 1
+    full: >-
+      E: Generates random integers from 1 to 7,500 until 250 different numbers are
+      chosen (ignores repeats, or samples without replacement).
+  - id: select
+    points: 1
+    full: >-
+      E: The students with those 250 labels are the sample.

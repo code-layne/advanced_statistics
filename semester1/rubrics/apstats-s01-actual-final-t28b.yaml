@@ -1,0 +1,25 @@
+# Semester 1 actual final, item 28b. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28b
+points: 3
+task: >-
+  The survey goes to the 300 selected subscribers as a notification inside the app, and
+  only 120 answer. The company wants the proportion of subscribers who use the app every
+  day. Name the bias, explain who is likely under-represented, and say whether the
+  estimate is likely too high or too low.
+criteria:
+  - id: name
+    points: 1
+    full: >-
+      E: Nonresponse bias.
+  - id: who
+    points: 1
+    full: >-
+      E: Subscribers who rarely open the app are unlikely to see or answer the in-app
+      survey, so they are under-represented.
+  - id: direction
+    points: 1
+    full: >-
+      E: The estimated proportion who use the app every day is likely too high. Must be
+      consistent with the group named.

@@ -1,0 +1,21 @@
+# Semester 1 actual final, item 26b. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26b
+points: 3
+task: >-
+  Walk-in service times: Q1 = 90, Q3 = 130. Use the 1.5 x IQR rule to show that the
+  walk-in time of 240 seconds is an outlier.
+criteria:
+  - id: iqr
+    points: 1
+    full: >-
+      E: IQR = 130 - 90 = 40 seconds.
+  - id: fence
+    points: 1
+    full: >-
+      E: Upper fence = Q3 + 1.5(IQR) = 130 + 60 = 190 seconds.
+  - id: conclusion
+    points: 1
+    full: >-
+      E: Compares explicitly: 240 > 190, so 240 seconds is an outlier.

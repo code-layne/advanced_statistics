@@ -1,0 +1,24 @@
+# Semester 1 practice final, item 26e. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26e
+points: 3
+task: >-
+  Brand A: mean 6.0 h, SD 1.2 h. Brand B: mean 7.6 h, SD 0.8 h. Which is more unusual
+  for its own brand: a Brand A battery life of 8.4 hours or a Brand B battery life of
+  8.8 hours? Justify with z-scores.
+criteria:
+  - id: z_a
+    points: 1
+    full: >-
+      E: z = (8.4 - 6.0)/1.2 = 2.0 for the Brand A battery life.
+  - id: z_b
+    points: 1
+    full: >-
+      E: z = (8.8 - 7.6)/0.8 = 1.5 for the Brand B battery life.
+  - id: conclusion
+    points: 1
+    full: >-
+      E: The Brand A battery life of 8.4 h is more unusual, because it is more standard
+      deviations above its own mean (2.0 vs 1.5), even though 8.8 h is the longer time.
+      Must follow from the student's z-scores.

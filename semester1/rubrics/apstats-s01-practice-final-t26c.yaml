@@ -1,0 +1,24 @@
+# Semester 1 practice final, item 26c. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26c
+points: 3
+task: >-
+  The Brand B value 11.0 was a recording error; the true value is 8.0 hours (the Brand B
+  median is 7.6). Without calculating, explain how correcting it changes the mean and
+  the median of the Brand B battery lives.
+criteria:
+  - id: mean
+    points: 1
+    full: >-
+      E: The mean decreases (by 3/40 = 0.075 h; the amount is not required).
+  - id: median
+    points: 1
+    full: >-
+      E: The median does not change (stays 7.6 h). 'Stays about the same' is accepted.
+  - id: reason
+    points: 1
+    full: >-
+      E: Explains with resistance: the mean uses every value so an extreme value pulls
+      it, while the median depends only on the middle of the ordered data, and 8.0 h is
+      still above the median.

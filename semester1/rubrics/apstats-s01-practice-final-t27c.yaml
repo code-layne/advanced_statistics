@@ -1,0 +1,24 @@
+# Semester 1 practice final, item 27c. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t27c
+points: 3
+task: >-
+  yhat = 11.69 - 0.1597(temperature). One day had a mean outdoor temperature of 36
+  degrees F and 6.5 therms of gas used. Find the residual for this day and interpret it
+  in context.
+criteria:
+  - id: prediction
+    points: 1
+    full: >-
+      E: Predicted gas = 11.69 - 0.1597(36) = 5.94 therms.
+  - id: residual
+    points: 1
+    full: >-
+      E: Residual = actual - predicted = 6.5 - 5.94 = 0.56 therms, with the correct
+      sign.
+  - id: interpretation
+    points: 1
+    full: >-
+      E: The house used about 0.56 therms more natural gas than the line predicted for a
+      36-degree day.

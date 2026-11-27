@@ -1,0 +1,24 @@
+# Semester 1 practice final, item 26d. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26d
+points: 3
+task: >-
+  Brand A battery lives are approximately normal with mean 6.0 hours and standard
+  deviation 1.2 hours. About what percent of Brand A earbuds last less than 3.6 hours?
+  Explain.
+criteria:
+  - id: position
+    points: 1
+    full: >-
+      E: Identifies 3.6 hours as 2 standard deviations below the mean (6.0 - 2(1.2), or
+      z = -2).
+  - id: rule
+    points: 1
+    full: >-
+      E: Uses the empirical rule: about 95% of battery lives are within 2 standard
+      deviations of the mean, so about 5% are outside.
+  - id: answer
+    points: 1
+    full: >-
+      E: About 2.5% (half of the 5%) of Brand A earbuds last less than 3.6 hours.

@@ -1,0 +1,24 @@
+# Semester 1 practice final, item 27a. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t27a
+points: 3
+task: >-
+  Scatterplot of mean outdoor temperature (degrees F) and natural gas used (therms) for
+  16 winter days; R-Sq = 98.3%. Describe the association between outdoor temperature and
+  the natural gas used.
+criteria:
+  - id: direction
+    points: 1
+    full: >-
+      E: Negative, stated in context: days with higher outdoor temperatures tend to have
+      less natural gas used.
+  - id: form
+    points: 1
+    full: >-
+      E: Linear.
+  - id: strength
+    points: 1
+    full: >-
+      E: Strong (r is about -0.99). A description with no context anywhere loses the
+      direction point.

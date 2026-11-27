@@ -1,0 +1,25 @@
+# Semester 1 actual final, item 26d. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26d
+points: 3
+task: >-
+  Drive-through service times are approximately normal with mean 170 seconds and
+  standard deviation 40 seconds. About what percent of drive-through customers are
+  served in more than 250 seconds? Explain.
+criteria:
+  - id: position
+    points: 1
+    full: >-
+      E: Identifies 250 seconds as 2 standard deviations above the mean (170 + 2(40), or
+      z = 2).
+  - id: rule
+    points: 1
+    full: >-
+      E: Uses the empirical rule: about 95% of times are within 2 standard deviations of
+      the mean, so about 5% are outside.
+  - id: answer
+    points: 1
+    full: >-
+      E: About 2.5% (half of the 5%) of drive-through customers are served in more than
+      250 seconds.

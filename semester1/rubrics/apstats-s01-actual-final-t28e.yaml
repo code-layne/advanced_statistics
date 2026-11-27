@@ -1,0 +1,25 @@
+# Semester 1 actual final, item 28e. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28e
+points: 3
+task: >-
+  The reminder group practiced significantly more minutes, on average, than the
+  no-reminder group. What can the company conclude about cause and effect, and to which
+  subscribers does the conclusion apply? Explain.
+criteria:
+  - id: cause
+    points: 1
+    full: >-
+      E: The reminders caused the increase in practice time, justified by the random
+      assignment of treatments (and the significant difference).
+  - id: scope
+    points: 1
+    full: >-
+      E: The conclusion applies only to subscribers like the volunteers in the study,
+      not to all 9,000 subscribers.
+  - id: reason
+    points: 1
+    full: >-
+      E: Because the subjects were volunteers, not randomly selected from the
+      subscribers.

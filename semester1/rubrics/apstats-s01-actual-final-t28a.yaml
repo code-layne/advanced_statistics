@@ -1,0 +1,22 @@
+# Semester 1 actual final, item 28a. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t28a
+points: 3
+task: >-
+  A language-learning app has 9,000 subscribers. Describe how to use a random number
+  generator to choose a simple random sample of 300 subscribers.
+criteria:
+  - id: label
+    points: 1
+    full: >-
+      E: Gives each subscriber a different label, 1 to 9,000.
+  - id: randomize
+    points: 1
+    full: >-
+      E: Generates random integers from 1 to 9,000 until 300 different numbers are
+      chosen (ignores repeats, or samples without replacement).
+  - id: select
+    points: 1
+    full: >-
+      E: The subscribers with those 300 labels are the sample.

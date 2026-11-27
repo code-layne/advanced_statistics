@@ -1,0 +1,18 @@
+# Semester 1 practice final, item 27d. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t27d
+points: 2
+task: >-
+  R-Sq = 98.3% for the regression of natural gas used on outdoor temperature. Interpret
+  the value of R-Sq in context.
+criteria:
+  - id: part
+    points: 2
+    full: >-
+      E: About 98.3% of the variation in daily natural gas use is explained by the
+      linear model (least-squares line) with outdoor temperature.
+    partial: >-
+      P (1 of 2): The right idea with one element missing: does not say the variation is
+      in natural gas used, omits the linear model or temperature, or has no context.
+      'Percent of the data' or 'of the points' earns at most P.

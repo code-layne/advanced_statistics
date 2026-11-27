@@ -1,0 +1,24 @@
+# Semester 1 actual final, item 27a. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t27a
+points: 3
+task: >-
+  Scatterplot of daily high temperature (degrees F) and number of iced coffees sold for
+  16 summer days; R-Sq = 96.9%. Describe the association between temperature and the
+  number of iced coffees sold.
+criteria:
+  - id: direction
+    points: 1
+    full: >-
+      E: Positive, stated in context: days with higher temperatures tend to have more
+      iced coffees sold.
+  - id: form
+    points: 1
+    full: >-
+      E: Linear.
+  - id: strength
+    points: 1
+    full: >-
+      E: Strong (r is about 0.98). A description with no context anywhere loses the
+      direction point.

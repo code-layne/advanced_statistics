@@ -11,6 +11,10 @@ target
 # draws them has no prerequisites, so a fresh clone must carry the reviewed
 # cover rather than redraw one. `make -C unitXX clean_unit_cover` redraws.
 !**/binder_cover/main.pdf
+# The semester final's built reference copies are committed too: the copies students
+# write on are built per student by `make roster-packets`, so the repo carries one
+# generic blank (and its key) to read and print. Refresh them after editing a source.
+!semester1/built/*.pdf
 **/*.fls
 **/*.fdb_latexmk
 **/__pycache__

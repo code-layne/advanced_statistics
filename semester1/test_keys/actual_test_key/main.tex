@@ -1,0 +1,867 @@
+%! Semester 1, Units 1–3 — ACTUAL Final Exam (Answer Key)
+% The scored cumulative final. Item for item it is the parallel form of ../practice_test/: the
+% same three sections, the same 20 multiple-choice targets in the same order, the same five
+% short-answer computations, and the same three free-response questions with the same parts and
+% point values — every context different, so a student who worked the practice final has
+% practised the moves and not memorised the answers. NEVER merged into any packet.
+% TIME: written for 60–120 minutes (about 2 min per MC, 2 min per short answer, 12–15 min per
+% free-response question: roughly 90 minutes for a typical student; 2 hours is the cap).
+% WEIGHTS: Sections I and II follow the AP exam's unit weights (Unit 1 ~45%, Unit 3 ~35%,
+% Unit 2 ~20%: 11 / 9 / 5 of the 25 items); Section III is one question per unit.
+% POINTS: MC 20 x 2 = 40, short answer 5 x 3 = 15, free response 3 x 15 = 45; total 100.
+%
+% BLUEPRINT
+%   MC 1 categorical vs quantitative (digits)      vet clinic records                    1.1
+%   MC 2 groups of unequal size                    two high schools, part-time jobs      1.2
+%   MC 3 IQR from a stem plot                      15 basketball games                   1.3, 1.5
+%   MC 4 shape, and mean vs median                 60 urgent-care wait times             1.4, 1.5
+%   MC 5 resistance                                shop salaries + the owner             1.5
+%   MC 6 percentile                                a reading-test score                  1.5
+%   MC 7 every section holds a quarter             80 days at a food truck               1.6
+%   MC 8 parameter vs statistic                    city commute times                    1.7
+%   MC 9 empirical rule                            bags of flour                         1.7
+%   MC10 conditional relative frequency            plan x renewed                        2.1
+%   MC11 what r says and does not say              distance from downtown vs rent        2.2
+%   MC12 r from R-Sq, sign from the slope          used-car age vs price                 2.4
+%   MC13 influential point                         employees vs electricity bill         2.5
+%   MC14 which study is an experiment              five studies                          3.1
+%   MC15 name the sampling method (cluster)        hotel chain                           3.2
+%   MC16 name the bias and its direction           home internet, e-mail list            3.3
+%   MC17 a larger sample does not fix bias         call-in vs SRS                        3.3
+%   MC18 confounding                               optional tutoring                     3.4
+%   MC19 randomized block design                   blood-pressure drug, two age groups   3.4
+%   MC20 scope of inference (assigned, volunteers) stretching routine                    3.5
+%   SA21 z-score                                   phone battery life                    1.7
+%   SA22 upper outlier fence                       text messages sent                    1.6
+%   SA23 residual                                  pizza delivery time                   2.3
+%   SA24 count the treatments (two factors)        bean plants, water x soil             3.4
+%   SA25 read a reshuffle dotplot                  100 reshuffles, observed 4            3.5
+%   FRQ26 compare, outlier rule, resistance, empirical rule, z   coffee-shop service times  1.4–1.7
+%   FRQ27 describe, equation + slope, residual, R-Sq, residual plot + extrapolation
+%                                                  temperature vs iced coffees sold      2.2–2.5
+%   FRQ28 SRS, nonresponse + direction, units/treatments/response, random assignment, scope
+%                                                  a language-learning app               3.2–3.5
+% ANSWERS (MC): 1C 2E 3A 4D 5B 6E 7C 8A 9D 10D 11B 12A 13E 14C 15B 16E 17D 18A 19C 20B
+%
+% THE DATA (every number checked)
+%  MC2  North 120/400 = 0.30; South 100/250 = 0.40.
+%  MC3  47 49 52 55 58 58 60 63 64 67 71 71 76 82 85: Q1 55, med 63, Q3 71, IQR 16, range 38.
+%  MC4  bins of 10 min from 0: 18 20 11 6 3 1 1 (60), skewed right.
+%  MC5  31 34 36 38 41: mean 36, median 36; with 120: mean 300/6 = 50, median 37.
+%  MC7  10/18/22/34/60, n = 80, so 20 days per section.
+%  MC9  N(5.00, 0.04): 4.92 = -2 SD, 5.04 = +1 SD -> 47.5% + 34% = 81.5%.
+%  MC10 Basic 96/144 (240), Premium 120/40 (160), totals 216/184/400 -> 120/216 = 0.556.
+%  MC12 n 25, xbar 6, s_x 2.5, ybar 14.5, s_y 4.2, r -0.80 -> b -1.344, a 22.56, S 2.574,
+%       SE(b) 0.2102, T -6.39; SE(a) 1.362, T 16.57; R-Sq 64.0%, adj 62.4%.
+%  MC13 x 2..12, y 15 14 19 18 23 22 27 25 31 30 34: b 1.94, r 0.970. With (24, 16): b 0.26, r 0.226.
+%  SA21 (10.3 - 11.5)/0.8 = -1.5.   SA22 4/22/35/46/110: IQR 24, 46 + 36 = 82.
+%  SA23 18.5 + 2.4(5) = 30.5; 27 - 30.5 = -3.5.   SA24 3 x 2 = 6.
+%  SA25 100 reshuffles, step 1: -6:1 -5:1 -4:3 -3:7 -2:12 -1:17 0:20 1:16 2:11 3:7 4:3 5:1 6:1
+%       (sum 100). At or above 4: 3 + 1 + 1 = 5.
+%  FRQ26 drive-through 80/143/170/197/262 (IQR 54, fences 62 and 278: no outliers), about
+%       N(170, 40). Walk-in 60/90/110/130, whisker to 185, outlier 240 (IQR 40, fence 190).
+%       (d) 250 = 170 + 2(40) -> 2.5%. (e) (230-170)/40 = 1.5; (166-112)/27 = 2.0.
+%  FRQ27 16 days, temperature x (F): 62 65 68 70 72 74 76 78 80 82 84 86 88 90 93 95
+%        iced coffees y:             59 67 65 72 74 84 82 80 93 90 99 100 108 105 112 119
+%        yhat = -51.98 + 1.774x, r 0.985, R-Sq 96.9%, adj 96.7%, S 3.267, SE(b) 0.08411,
+%        T 21.09, SE(a) 6.690, T -7.77. Residuals: .99 3.66 -3.66 -.21 -1.75 4.70 -.85 -6.40
+%        3.05 -3.50 1.96 -.59 3.86 -2.69 -1.01 2.44 (random scatter). (78, 80): yhat 86.39,
+%        residual -6.39 with the printed coefficients. At 20 F: -16.5 coffees.
+% NAMESTRIP: no name line — mirrors the blank (a graded page; the name is on the cover sheet only).
+% NO teachernote here — scoring guidance belongs in the rubrics, never in a key.
+% GENERATED FROM the blank.
+% PAGINATION: each item carries a \boxguard sized to its height so no stem, figure or option
+% list splits across a page; each section strip is guarded to travel with its first item.
+% NO SKETCH ITEMS: every display is pre-drawn in TikZ and read.
+% PAGE LOCKSTEP with ../../tests/actual_test/: every \writelines{n} here is answered by
+% exactly n \ansline{} there, each terse enough not to wrap; every work block is byte-identical.
+% Nothing else differs except the preamble, the header, and the \ans{} marks on the correct MC
+% options.
+\documentclass[12pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{apstats-s01-actual-final}
+\gradingcourse{advanced_statistics}
+
+\begin{document}
+
+\pageheader{Semester 1 \quad Units 1--3}{Final Exam --- Answer Key}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+
+\hfill\small Score:\;\blank{1.3cm}\;/\;100\normalsize
+\vspace{0.06in}
+
+\boxguard[8]
+\begin{headlinebox}{sky}
+\small
+\textbf{You have up to 2 hours.} \textbf{Section I:} 20 multiple-choice questions, 40 points.
+\textbf{Section II:} 5 short-answer questions, 15 points. \textbf{Section III:} 3 free-response
+questions, 45 points. The exam covers Units 1, 2, and 3.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\boxguard[10]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice} (2 points each). Write the letter of the single best answer in its Letter box. Read all
+five options --- several of them name a real idea from the course, but only one fits \emph{this}
+question.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.13in]
+
+  % ── MC 1 ── 1.1
+  \boxguard[8]
+  \item A veterinary clinic records five variables for each patient: \emph{species},
+        \emph{weight} (kilograms), the owner's \emph{ZIP code}, \emph{number of visits this
+        year}, and \emph{age} (years).
+
+        How many of these five variables are \textbf{quantitative}?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t1, type=choice, points=2, answer=C]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \par\vspace{3pt}\noindent
+        \hspace{1.2em}\textbf{(A)} 1 \hfill \textbf{(B)} 2 \hfill
+        \textbf{(C)} \ans{3} \hfill \textbf{(D)} 4 \hfill \textbf{(E)} 5
+
+  % ── MC 2 ── 1.2
+  \boxguard[11]
+  \item North High has 400 students, and 120 of them have a part-time job. South High has 250
+        students, and 100 of them have a part-time job. Which statement is best supported?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Jobs are more common at North, because 120 students is more than 100 students.
+          \item Jobs are equally common, because each school has at least 100 students with one.
+          \item No comparison is possible, because the schools are different sizes.
+          \item Most South students have a part-time job.
+          \item \ans{Jobs are more common at South: 40\% of its students have one, compared with}\\
+                \ans{30\% of North's.}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t2, type=choice, points=2, answer=E]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 3 ── 1.3, 1.5
+  \boxguard[13]
+  \item The stem plot shows the points a basketball team scored in each of its 15 games.
+
+        \vspace{3pt}
+        {\centering\small
+        \renewcommand{\arraystretch}{1.05}
+        \begin{tabular}{@{} r | l @{}}
+        4 & 7 \ 9 \\
+        5 & 2 \ 5 \ 8 \ 8 \\
+        6 & 0 \ 3 \ 4 \ 7 \\
+        7 & 1 \ 1 \ 6 \\
+        8 & 2 \ 5 \\
+        \end{tabular}\qquad
+        \raisebox{0.28in}{\footnotesize Key: $4 \mid 7$ means 47 points}\par}
+        \vspace{2pt}
+
+        What is the \textbf{interquartile range} of the points scored?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t3, type=choice, points=2, answer=A]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \par\vspace{3pt}\noindent
+        \hspace{1.2em}\textbf{(A)} \ans{16} \hfill \textbf{(B)} 19 \hfill
+        \textbf{(C)} 24 \hfill \textbf{(D)} 38 \hfill \textbf{(E)} 63
+
+  % ── MC 4 ── 1.4, 1.5
+  \boxguard[18]
+  \item The histogram shows how long each of 60 patients waited to be seen at an urgent-care
+        clinic.
+
+        \vspace{3pt}
+        {\centering
+        \begin{tikzpicture}[x=0.135cm, y=0.125cm]
+          \foreach \y in {0,5,10,15,20} {
+            \draw[linegray, very thin] (0,\y) -- (72,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \foreach \l/\c in {0/18, 10/20, 20/11, 30/6, 40/3, 50/1, 60/1}
+            \draw[fill=skymid] (\l,0) rectangle (\l+10,\c);
+          \draw[thick] (0,0) -- (72,0);
+          \draw[thick] (0,0) -- (0,22);
+          \foreach \x in {0,10,...,70} { \node[below, font=\tiny] at (\x,0) {\x}; }
+          \node[font=\tiny] at (36,-5.0) {Wait time (minutes)};
+          \node[rotate=90, font=\tiny] at (-6.5,11) {Patients};
+        \end{tikzpicture}\par}
+        \vspace{1pt}
+
+        Which statement is most likely true?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t4, type=choice, points=2, answer=D]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The distribution is skewed left, so the mean is likely less than the median.
+          \item The distribution is skewed left, so the mean is likely greater than the median.
+          \item The distribution is roughly symmetric, so the mean and median are about equal.
+          \item \ans{The distribution is skewed right, so the mean is likely greater than the median.}
+          \item The distribution is skewed right, so the mean is likely less than the median.
+        \end{enumerate}
+
+  % ── MC 5 ── 1.5
+  \boxguard[11]
+  \item The five employees of a small shop earn 31, 34, 36, 38, and 41 thousand dollars a
+        year. The owner's salary of 120 thousand dollars is then added to the data set. What
+        happens to the mean and the median?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Both increase by the same amount.
+          \item \ans{The mean increases from 36 to 50; the median increases only from 36 to 37.}
+          \item The median increases from 36 to 50; the mean increases only from 36 to 37.
+          \item Neither changes, because one value cannot move a summary of six values.
+          \item The mean increases and the median decreases.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t5, type=choice, points=2, answer=B]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 6 ── 1.5
+  \boxguard[10]
+  \item Mia's score on a statewide reading test is at the 85th percentile. Which statement is
+        correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Mia answered 85\% of the questions correctly.
+          \item Mia scored 85 points.
+          \item 85\% of the students who took the test scored higher than Mia.
+          \item Mia's score is 85\% of the highest score in the state.
+          \item \ans{85\% of the students scored at or below Mia's score.}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t6, type=choice, points=2, answer=E]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 7 ── 1.6
+  \boxguard[16]
+  \item The boxplot shows the number of customers a food truck served on each of 80 days.
+
+        \vspace{3pt}
+        {\centering
+        \begin{tikzpicture}[x=0.2cm, y=1cm]
+          \draw[thick] (5,0) -- (65,0);
+          \foreach \x in {10,20,...,60} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.05) {\x};}
+          \draw (10,0.45) -- (18,0.45);
+          \draw (34,0.45) -- (60,0.45);
+          \draw[fill=skymid] (18,0.25) rectangle (34,0.65);
+          \draw[thick] (22,0.25) -- (22,0.65);
+          \draw (10,0.33) -- (10,0.57);
+          \draw (60,0.33) -- (60,0.57);
+          \foreach \x in {10,18,22,34,60} \node[above, font=\tiny] at (\x,0.66) {\x};
+          \node[font=\tiny] at (35,-0.62) {Customers per day};
+        \end{tikzpicture}\par}
+        \vspace{1pt}
+
+        Which statement is true?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t7, type=choice, points=2, answer=C]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item More days had 34 to 60 customers than 18 to 22, because that whisker is longer.
+          \item On about half of the days, the truck served fewer than 18 customers.
+          \item \ans{About 20 days had 18 to 22 customers, and about 20 days had 34 to 60.}
+          \item The mean number of customers per day was 22.
+          \item The truck never served more than 34 customers in a day.
+        \end{enumerate}
+
+  % ── MC 8 ── 1.7
+  \boxguard[11]
+  \item A city wants to know the mean commute time of all 52{,}000 of its workers. It surveys
+        a random sample of 400 workers and finds a mean commute of 27.3 minutes. Which
+        statement is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{27.3 minutes is a statistic; the mean commute of all 52{,}000 workers is}\\
+                \ans{the parameter.}
+          \item 27.3 minutes is a parameter, because it is a mean.
+          \item 27.3 minutes is a parameter, because the sample was chosen at random.
+          \item 400 is the statistic and 52{,}000 is the parameter.
+          \item 27.3 minutes is both, because the sample is random.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t8, type=choice, points=2, answer=A]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 9 ── 1.7
+  \boxguard[8]
+  \item The weights of the bags of flour a machine fills are approximately normal, with mean
+        5.00 pounds and standard deviation 0.04 pounds.
+
+        About what percent of the bags weigh between 4.92 and 5.04 pounds?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t9, type=choice, points=2, answer=D]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \par\vspace{3pt}\noindent
+        \hspace{1.2em}\textbf{(A)} 34\% \hfill \textbf{(B)} 47.5\% \hfill
+        \textbf{(C)} 68\% \hfill \textbf{(D)} \ans{81.5\%} \hfill \textbf{(E)} 95\%
+
+  % ── MC 10 ── 2.1
+  \boxguard[13]
+  \item A streaming service classified 400 subscribers by their plan and by whether they
+        renewed at the end of the year.
+
+        \vspace{2pt}
+        {\centering\small
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{} l c c c @{}}
+        \rowcolor{sky}
+         & \textbf{Renewed} & \textbf{Did not renew} & \textbf{Total} \\
+        \midrule
+        Basic plan   & 96  & 144 & 240 \\
+        Premium plan & 120 & 40  & 160 \\
+        \midrule
+        Total        & 216 & 184 & 400 \\
+        \end{tabular}\par}
+        \vspace{4pt}
+
+        What proportion of the subscribers who \textbf{renewed} had the Premium plan?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t10, type=choice, points=2, answer=D]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \par\vspace{3pt}\noindent
+        \hspace{1.2em}\textbf{(A)} 0.30 \hfill \textbf{(B)} 0.40 \hfill
+        \textbf{(C)} 0.54 \hfill \textbf{(D)} \ans{0.556} \hfill \textbf{(E)} 0.75
+
+  % ── MC 11 ── 2.2
+  \boxguard[11]
+  \item For 30 apartments in one city, the correlation between distance from downtown (miles)
+        and monthly rent (dollars) is $r = -0.82$. Which statement is correct?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item 82\% of the apartments that are farther from downtown have lower rent.
+          \item \ans{There is a strong, negative linear association: apartments farther from
+                downtown tend to have lower rent.}
+          \item Moving an apartment farther from downtown causes its rent to fall.
+          \item If distance were measured in kilometers, $r$ would change.
+          \item Rent falls \$0.82 for each additional mile.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t11, type=choice, points=2, answer=B]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 12 ── 2.4
+  \boxguard[11]
+  \item A dealer regressed the price (thousands of dollars) of 25 used cars of one model on
+        their age (years).
+
+        \vspace{2pt}
+        {\centering\footnotesize\ttfamily
+        \begin{tabular}{@{} l r r r r @{}}
+        Predictor & Coef & SE Coef & T & P \\ \hline
+        Constant & 22.56 & 1.362 & 16.57 & 0.000 \\
+        Age & -1.344 & 0.2102 & -6.39 & 0.000 \\
+        \end{tabular}\par
+        S = 2.574 \quad R-Sq = 64.0\% \quad R-Sq(adj) = 62.4\%\par}
+        \vspace{2pt}
+
+        What is the correlation between age and price?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t12, type=choice, points=2, answer=A]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \par\vspace{3pt}\noindent
+        \hspace{1.2em}\textbf{(A)} \ans{$-0.80$} \hfill \textbf{(B)} $-0.64$ \hfill
+        \textbf{(C)} 0.41 \hfill \textbf{(D)} 0.64 \hfill \textbf{(E)} 0.80
+
+  % ── MC 13 ── 2.5
+  \boxguard[20]
+  \item The scatterplot shows the number of employees and the monthly electricity bill
+        (hundreds of dollars) for 12 small businesses. A least-squares line is fit to all 12.
+
+        \vspace{3pt}
+        {\centering
+        \begin{tikzpicture}[xscale=0.30, yscale=0.105]
+          \foreach \y in {10,20,30} {\draw[linegray, very thin] (0,\y) -- (26,\y);
+            \node[left, font=\tiny] at (0,\y) {\y};}
+          \draw[->, thick] (0,8) -- (27,8);
+          \draw[->, thick] (0,8) -- (0,38);
+          \foreach \x in {0,5,10,15,20,25} {\draw (\x,7.4) -- (\x,8.6);
+            \node[below, font=\tiny] at (\x,7.6) {\x};}
+          \foreach \x/\y in {2/15, 3/14, 4/19, 5/18, 6/23, 7/22, 8/27, 9/25, 10/31, 11/30,
+                             12/34, 24/16}
+            {\fill[navy] (\x,\y) circle[x radius=0.27, y radius=0.76];}
+          \node[font=\tiny] at (13.5,1.2) {Employees};
+          \node[rotate=90, font=\tiny] at (-3.4,23) {Bill (\$100s)};
+        \end{tikzpicture}\par}
+        \vspace{1pt}
+
+        If the business with 24 employees were removed, what would happen?\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t13, type=choice, points=2, answer=E]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Nothing: one point out of 12 cannot change a least-squares line.
+          \item The slope would decrease, and $r$ would move closer to 0.
+          \item The slope would stay the same, and $r$ would become negative.
+          \item The slope would decrease, and $r$ would move closer to 1.
+          \item \ans{The slope would increase, and $r$ would move closer to 1.}
+        \end{enumerate}
+
+  % ── MC 14 ── 3.1
+  \boxguard[14]
+  \item Which of these studies is an \textbf{experiment}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item A researcher surveys 200 students and compares the grades of those who eat
+                breakfast with the grades of those who do not.
+          \item A hospital uses its records to compare the recovery times of patients who chose
+                one of two surgeries.
+          \item \ans{A teacher flips a coin for each of 60 students to decide who studies with
+                flashcards and who studies with practice tests, then compares quiz scores.}
+          \item A sleep app tracks 5{,}000 users and compares coffee drinkers with non-drinkers.
+          \item A pollster asks 1{,}000 randomly chosen voters about a new tax.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t14, type=choice, points=2, answer=C]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 15 ── 3.2
+  \boxguard[13]
+  \item A hotel chain has 60 hotels. To learn about guest satisfaction, it randomly selects 6
+        of the hotels and surveys every guest staying in those 6 hotels tonight. What type of
+        sample is this?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item A simple random sample, because the hotels were chosen at random.
+          \item \ans{A cluster sample, because whole hotels were chosen at random and every guest
+                in them was surveyed.}
+          \item A stratified random sample, because the guests are divided into hotels.
+          \item A convenience sample, because the guests were already at the hotels.
+          \item A voluntary response sample, because guests can decline.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t15, type=choice, points=2, answer=B]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 16 ── 3.3
+  \boxguard[13]
+  \item To estimate the proportion of households in a county that have home internet service,
+        a researcher e-mails a survey to a random sample of addresses from the county's
+        e-mail newsletter list. Which is the main problem with this plan?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Voluntary response bias, so the estimate is likely too low.
+          \item Response bias, because the wording of the question is leading.
+          \item There is no problem, because the sample was chosen at random.
+          \item The sample is too small, so the estimate is likely too low.
+          \item \ans{Undercoverage: households without internet service cannot be on the list,}\\
+                \ans{so the estimate is likely too high.}\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t16, type=choice, points=2, answer=E]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 17 ── 3.3
+  \boxguard[14]
+  \item A radio show asks listeners to call in with their opinion of a proposed toll road;
+        12{,}000 call, and 74\% of them oppose it. A polling firm asks a simple random sample
+        of 500 adults in the same city; 46\% oppose it. Which result is the more trustworthy
+        estimate for the city's adults?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The call-in result, because 12{,}000 is a much larger sample than 500.
+          \item The call-in result, because callers care the most about the issue.
+          \item Neither result, because neither one is a census.
+          \item \ans{The SRS of 500: a larger sample does not remove the bias of a voluntary}\\
+                \ans{response sample.}
+          \item Both equally, because both come from the same city.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t17, type=choice, points=2, answer=D]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 18 ── 3.4
+  \boxguard[13]
+  \item A school offered optional after-school tutoring. Students who attended earned higher
+        final grades, on average, than students who did not. The principal concludes that the
+        tutoring raised grades. Which is the best criticism?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item \ans{Students chose whether to attend, so motivation is confounded with tutoring:
+                motivated students may both attend and earn higher grades anyway.}
+          \item The study had no placebo, so the grades cannot be compared.
+          \item The students should have been chosen by a stratified random sample.
+          \item The grades show response bias, because teachers assigned them.
+          \item None is needed: the tutored students did better.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t18, type=choice, points=2, answer=A]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 19 ── 3.4
+  \boxguard[13]
+  \item A company tests a new blood-pressure drug against a placebo with 120 volunteers: 60 are
+        under age 40, and 60 are age 40 or older. Age is known to affect blood pressure. Which
+        plan is a \textbf{randomized block design}?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item Give the drug to everyone under 40 and the placebo to everyone 40 or older.
+          \item Randomly assign 60 of the 120 volunteers to the drug and the rest to the placebo.
+          \item \ans{Within each age group separately, randomly assign 30 volunteers to the drug and
+                30 to the placebo.}
+          \item Let each volunteer choose the drug or the placebo.
+          \item Randomly select 60 volunteers and drop the rest.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t19, type=choice, points=2, answer=C]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+  % ── MC 20 ── 3.5
+  \boxguard[13]
+  \item A researcher recruits 80 volunteers at one gym and randomly assigns 40 to a new
+        stretching routine and 40 to their usual routine. After six months, the stretching
+        group has significantly fewer injuries. Which conclusion is justified?
+        \begin{enumerate}[label=\textbf{(\Alph*)}, leftmargin=2.2em, itemsep=2pt]
+          \item The routine causes fewer injuries for all adults, because the result is
+                significant.
+          \item \ans{The routine causes fewer injuries for people like these volunteers, but the
+                result cannot be generalized to all adults.}
+          \item No cause can be claimed, because the subjects were volunteers.
+          \item The result applies to all gym members, but no cause can be claimed.
+          \item Nothing, because 80 people is too few.\hfill\gradedright{\textit{Letter:}~\gradedblank[id=t20, type=choice, points=2, answer=B]{0.45in}{0.2in}}\rule[-0.2in]{0pt}{0.48in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[22]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Short Answer} (3 points each). Work each problem in the space under it.
+Write only the final number in its box. Only what is inside a box is graded.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  % ── SA 21 ── 1.7
+  \boxguard[11]
+  \item The battery life of one model of phone is approximately normal, with mean 11.5 hours
+        and standard deviation 0.8 hours. One phone's battery lasted 10.3 hours. Find the
+        $z$-score of this phone's battery life.\gradedbelow[r]{0.62in}{$z = $~\gradedblank[id=t21, type=short, points=3, answer=-1.5, check=numeric]{1.1in}{0.34in}}
+        \begin{work}
+          z &= \frac{10.3 - 11.5}{0.8} = \frac{-1.2}{0.8} = -1.5
+        \end{work}
+        \vspace{0.62in}
+
+  % ── SA 22 ── 1.6
+  \boxguard[11]
+  \item The five-number summary of the number of text messages 40 students sent yesterday is
+        4, 22, 35, 46, 110. By the $1.5 \times \text{IQR}$ rule, a value \emph{above} what
+        number is an outlier?\gradedbelow[r]{0.62in}{Above~\gradedblank[id=t22, type=short, points=3, answer=82, check=numeric]{1.1in}{0.34in}}
+        \begin{work}
+          \text{IQR} &= 46 - 22 = 24 \\
+          Q_3 + 1.5(\text{IQR}) &= 46 + 1.5(24) = 82
+        \end{work}
+        \vspace{0.50in}
+
+  % ── SA 23 ── 2.3
+  \boxguard[11]
+  \item The line $\hat{y} = 18.5 + 2.4x$ predicts a pizza's delivery time $\hat{y}$ (minutes)
+        from the distance $x$ (miles) to the customer. An order 5 miles away took 27 minutes.
+        Find the residual for this order.\gradedbelow[r]{0.62in}{Residual $=$~\gradedblank[id=t23, type=short, points=3, answer=-3.5, check=numeric]{1.1in}{0.34in}}
+        \begin{work}
+          \hat{y} &= 18.5 + 2.4(5) = 30.5 \\
+          \text{residual} &= y - \hat{y} = 27 - 30.5 = -3.5
+        \end{work}
+        \vspace{0.50in}
+
+  % ── SA 24 ── 3.4
+  \boxguard[10]
+  \item An experiment on bean plants uses two factors: the amount of water (low, medium, or
+        high) and the type of soil (sandy or clay). Every combination of water and soil is
+        used. How many treatments are there?\gradedbelow[r]{0.50in}{Treatments:~\gradedblank[id=t24, type=short, points=3, answer=6, check=numeric]{1.1in}{0.34in}}
+        \begin{work}
+          3 \text{ amounts of water} \times 2 \text{ types of soil} &= 6 \text{ treatments}
+        \end{work}
+        \vspace{0.60in}
+
+  % ── SA 25 ── 3.5
+  \boxguard[20]
+  \item In an experiment, the mean score of the treatment group was \textbf{4 points higher}
+        than the mean score of the control group. A computer reshuffled the scores into two new
+        groups 100 times, as if the treatment made no difference. The dotplot shows the 100
+        simulated differences. How many of the 100 reshuffles gave a difference of 4 points or
+        more?
+        \begin{center}
+        \begin{tikzpicture}[x=0.82cm, y=0.115cm]
+          \draw[thick] (-6.6,0) -- (6.6,0);
+          \foreach \x in {-6,...,6} {
+            \draw (\x,0) -- (\x,-1.3); \node[below, font=\tiny] at (\x,-1.1) {$\x$};}
+          \foreach \x/\n in {-6/1,-5/1,-4/3,-3/7,-2/12,-1/17,0/20,1/16,2/11,3/7,4/3,5/1,6/1}
+            \foreach \k in {1,...,\n} \fill[navy] (\x,\k) circle (1.3pt);
+          \node[font=\tiny] at (0,-6.6) {Simulated difference in mean score (points), treatment $-$ control};
+          \node[font=\scriptsize\bfseries] at (0,24.5) {100 random reshuffles};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{-6pt}
+        \begin{work}
+          3 + 1 + 1 &= 5
+        \end{work}
+        \hfill Reshuffles at 4 or more:~\gradedblank[id=t25, type=short, points=3, answer=5, check=numeric]{1.1in}{0.34in}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\boxguard[34]
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section III --- Free Response} (15 points each). Each part has its own box: write your
+final answer to the part inside it. Show calculations in the space above the box. Answer
+\emph{in context} --- name the people or things studied, the variables, and their units.
+\end{headlinebox}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=0.16in, resume]
+
+  % ── FRQ 26 ── Unit 1
+  \boxguard[32]
+  \item \textbf{(15 points)} The owner of a coffee shop recorded the service time (seconds)
+        for 40 drive-through customers and for 40 walk-in customers.
+
+        \vspace{4pt}
+        \noindent
+        \begin{minipage}[c]{0.55\linewidth}\centering
+        \begin{tikzpicture}[x=0.036cm, y=1.15cm]
+          \draw[thick] (40,0) -- (280,0);
+          \foreach \x in {50,100,...,250} {
+            \draw (\x,-0.07) -- (\x,0.07); \node[below, font=\tiny] at (\x,-0.05) {\x};}
+          % drive-through 80/143/170/197/262
+          \draw (80,1.15) -- (143,1.15); \draw (197,1.15) -- (262,1.15);
+          \draw[fill=skymid] (143,0.95) rectangle (197,1.35); \draw[thick] (170,0.95) -- (170,1.35);
+          \draw (80,1.03) -- (80,1.27); \draw (262,1.03) -- (262,1.27);
+          \node[font=\tiny, anchor=south west] at (40,1.38) {Drive-through};
+          % walk-in 60/90/110/130, whisker 185, outlier 240
+          \draw (60,0.45) -- (90,0.45); \draw (130,0.45) -- (185,0.45);
+          \draw[fill=goldbg] (90,0.25) rectangle (130,0.65); \draw[thick] (110,0.25) -- (110,0.65);
+          \draw (60,0.33) -- (60,0.57); \draw (185,0.33) -- (185,0.57);
+          \fill[navy] (240,0.45) circle (1.6pt);
+          \node[font=\tiny, anchor=south west] at (40,0.68) {Walk-in};
+          \node[font=\tiny] at (160,-0.55) {Service time (seconds)};
+        \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.42\linewidth}\centering\footnotesize
+        \renewcommand{\arraystretch}{1.15}
+        \setlength{\tabcolsep}{3.5pt}
+        \begin{tabular}{@{} l c c c c c @{}}
+        \rowcolor{sky}
+         & \textbf{Min} & $\boldsymbol{Q_1}$ & \textbf{Med} & $\boldsymbol{Q_3}$ & \textbf{Max} \\
+        \midrule
+        Drive-through & 80 & 143 & 170 & 197 & 262 \\
+        Walk-in       & 60 & 90  & 110 & 130 & 240 \\
+        \end{tabular}
+        \end{minipage}
+
+        \vspace{6pt}
+        \textbf{(a)} Compare the distributions of service time for drive-through and walk-in
+        customers.\\[4pt]
+        \gradedhere{\gradedblank[id=t26a, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t26a.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Drive-through times are typically longer: median 170 s vs.\ 110 s for walk-in.}\\
+        \ansline{Drive-through times also vary more: IQR 54 s vs.\ 40 s for walk-in.}\\
+        \ansline{Walk-in times have one high outlier (240 s); drive-through times have none.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[20]
+        \textbf{(b)} Use the $1.5 \times \text{IQR}$ rule to show that the walk-in time of 240
+        seconds is an outlier.
+        \begin{work}
+          \text{IQR} &= 130 - 90 = 40 \text{ seconds} \\
+          Q_3 + 1.5(\text{IQR}) &= 130 + 1.5(40) = 190 \text{ seconds}
+        \end{work}
+        \strut\gradedhere{\gradedblank[id=t26b, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t26b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{240 seconds is greater than the upper fence of 190 seconds, so the walk-in time}\\
+        \ansline{of 240 seconds is an outlier.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[16]
+        \textbf{(c)} The owner finds that the 240 was a recording error: that walk-in customer
+        really waited 140 seconds. Without calculating, explain how correcting it changes the
+        mean and the median of the walk-in times.\\[4pt]
+        \gradedhere{\gradedblank[id=t26c, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t26c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{The mean decreases (by $100/40 = 2.5$ s): it uses every value, so it is not resistant.}\\
+        \ansline{The median stays 110 s: 140 s is still above the median, so the middle of the}\\
+        \ansline{ordered walk-in times does not move. The median is resistant.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[16]
+        \textbf{(d)} Drive-through service times are approximately normal, with mean 170 seconds
+        and standard deviation 40 seconds. About what percent of drive-through customers are
+        served in \emph{more than} 250 seconds? Explain.\\[4pt]
+        \gradedhere{\gradedblank[id=t26d, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t26d.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{250 s $= 170 + 2(40)$, two standard deviations above the mean. About 95\% of}\\
+        \ansline{drive-through times are within 2 SDs of the mean, leaving 5\% outside, half on}\\
+        \ansline{each side: about 2.5\% of drive-through customers are served in more than 250 s.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[22]
+        \textbf{(e)} After the correction, walk-in times have mean 112 seconds and standard
+        deviation 27 seconds. Which is more unusual \emph{for its own kind of customer}: a
+        drive-through time of 230 seconds or a walk-in time of 166 seconds? Justify with
+        $z$-scores.
+        \begin{work}
+          z_{\text{drive-through}} &= \frac{230 - 170}{40} = 1.5 \\[3pt]
+          z_{\text{walk-in}} &= \frac{166 - 112}{27} = 2.0
+        \end{work}
+        \strut\gradedhere{\gradedblank[id=t26e, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t26e.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{The walk-in time of 166 s is more unusual: it is 2.0 standard deviations above}\\
+        \ansline{the walk-in mean, but 230 s is only 1.5 SDs above the drive-through mean.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+  % ── FRQ 27 ── Unit 2
+  \boxguard[36]
+  \item \textbf{(15 points)} A bakery owner recorded the daily high temperature (degrees
+        Fahrenheit) and the number of iced coffees sold on 16 summer days. The scatterplot,
+        computer output, and residual plot are below.
+
+        \vspace{4pt}
+        \noindent
+        \begin{minipage}[b]{0.49\linewidth}\centering
+        \begin{tikzpicture}[xscale=0.165, yscale=0.045]
+          \foreach \y in {60,80,100,120} {\draw[linegray, very thin] (58,\y) -- (98,\y);
+            \node[left, font=\tiny] at (58,\y) {\y};}
+          \draw[->, thick] (58,50) -- (99,50);
+          \draw[->, thick] (58,50) -- (58,127);
+          \foreach \x in {60,70,80,90} {\draw (\x,48.8) -- (\x,51.2);
+            \node[below, font=\tiny] at (\x,49.4) {\x};}
+          \foreach \x/\y in {62/59, 65/67, 68/65, 70/72, 72/74, 74/84, 76/82, 78/80, 80/93,
+                             82/90, 84/99, 86/100, 88/108, 90/105, 93/112, 95/119}
+            {\fill[navy] (\x,\y) circle[x radius=0.39, y radius=1.43];}
+          \node[font=\tiny] at (78,36) {Temperature ($^\circ$F)};
+          \node[rotate=90, font=\tiny] at (51.5,88) {Iced coffees sold};
+        \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.49\linewidth}\centering
+        \begin{tikzpicture}[xscale=0.165, yscale=0.215]
+          \draw[->, thick] (58,-8) -- (58,8);
+          \draw[thick] (58,-8) -- (99,-8);
+          \draw[dashed, slate] (58,0) -- (99,0);
+          \foreach \y in {-6,-3,0,3,6} {\draw (57.6,\y) -- (58.4,\y);
+            \node[left, font=\tiny] at (58,\y) {\y};}
+          \foreach \x in {60,70,80,90} {\draw (\x,-8.25) -- (\x,-7.75);
+            \node[below, font=\tiny] at (\x,-8.1) {\x};}
+          \foreach \x/\e in {62/0.99, 65/3.66, 68/-3.66, 70/-0.21, 72/-1.75, 74/4.70, 76/-0.85,
+                             78/-6.40, 80/3.05, 82/-3.50, 84/1.96, 86/-0.59, 88/3.86, 90/-2.69,
+                             93/-1.01, 95/2.44}
+            {\fill[navy] (\x,\e) circle[x radius=0.39, y radius=0.30];}
+          \node[font=\tiny] at (78,-11) {Temperature ($^\circ$F)};
+          \node[rotate=90, font=\tiny] at (51.8,0) {Residual (coffees)};
+        \end{tikzpicture}
+        \end{minipage}
+
+        \vspace{4pt}
+        {\centering\footnotesize\ttfamily
+        \begin{tabular}{@{} l r r r r @{}}
+        Predictor & Coef & SE Coef & T & P \\ \hline
+        Constant & -51.98 & 6.690 & -7.77 & 0.000 \\
+        Temperature & 1.774 & 0.08411 & 21.09 & 0.000 \\
+        \end{tabular}\par
+        S = 3.267 \quad R-Sq = 96.9\% \quad R-Sq(adj) = 96.7\%\par}
+
+        \vspace{6pt}
+        \textbf{(a)} Describe the association between temperature and the number of iced
+        coffees sold.\\[4pt]
+        \gradedhere{\gradedblank[id=t27a, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t27a.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Strong, positive, linear association: days with higher temperatures tend to}\\
+        \ansline{have more iced coffees sold. There are no clear outliers.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[16]
+        \textbf{(b)} Write the equation of the least-squares regression line, using the
+        variable names. Then interpret its slope in context.\\[4pt]
+        \gradedhere{\gradedblank[id=t27b, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t27b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{predicted coffees $= -51.98 + 1.774$(temperature)}\\
+        \ansline{For each additional degree Fahrenheit, the \emph{predicted} number of iced coffees}\\
+        \ansline{sold increases by about 1.774 coffees.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[21]
+        \textbf{(c)} On one day the high temperature was 78$^\circ$F and the bakery sold 80 iced
+        coffees. Find the residual for this day and interpret it in context.
+        \begin{work}
+          \widehat{\text{coffees}} &= -51.98 + 1.774(78) = 86.39 \text{ coffees} \\
+          \text{residual} &= y - \hat{y} = 80 - 86.39 = -6.39 \text{ coffees}
+        \end{work}
+        \strut\gradedhere{\gradedblank[id=t27c, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t27c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{On this 78$^\circ$F day the bakery sold about 6.4 \emph{fewer} iced coffees than the}\\
+        \ansline{line predicted.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[15]
+        \textbf{(d)} Interpret the value of R-Sq in context.\\[4pt]
+        \gradedhere{\gradedblank[id=t27d, type=rubric, points=2, rubric=../rubrics/apstats-s01-actual-final-t27d.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{About 96.9\% of the variation in the number of iced coffees sold is explained by}\\
+        \ansline{the linear model with daily high temperature.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[17]
+        \textbf{(e)} Use the residual plot to decide whether a linear model is appropriate for
+        these data. Then explain why the owner should not use this line to predict the number
+        of iced coffees sold on a 20$^\circ$F winter day.\\[4pt]
+        \gradedhere{\gradedblank[id=t27e, type=rubric, points=4, rubric=../rubrics/apstats-s01-actual-final-t27e.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Yes: the residuals are scattered randomly around 0 with no curved pattern, so a}\\
+        \ansline{linear model is appropriate. But 20$^\circ$F is far below the 62--95$^\circ$F in the}\\
+        \ansline{data. That is extrapolation, so the prediction is unreliable: the line gives}\\
+        \ansline{about $-16.5$ iced coffees, which is impossible.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+  % ── FRQ 28 ── Unit 3
+  \boxguard[26]
+  \item \textbf{(15 points)} A company that makes a language-learning app has 9{,}000
+        subscribers. It wants to estimate the proportion of its subscribers who use the app
+        every day.
+
+        \vspace{6pt}
+        \textbf{(a)} Describe how to use a random number generator to choose a simple random
+        sample of 300 subscribers.\\[4pt]
+        \gradedhere{\gradedblank[id=t28a, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t28a.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Label the subscribers 1 to 9{,}000. Use a random number generator to produce}\\
+        \ansline{integers from 1 to 9{,}000, ignoring repeats, until 300 different labels are}\\
+        \ansline{chosen. Survey the 300 subscribers with those labels.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[17]
+        \textbf{(b)} The company sends its survey to the 300 selected subscribers as a
+        notification inside the app, and only 120 of them answer. Name the bias this creates.
+        Explain who is likely to be under-represented, and whether the estimate is likely too
+        high or too low.\\[4pt]
+        \gradedhere{\gradedblank[id=t28b, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t28b.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Nonresponse bias. Subscribers who rarely open the app are unlikely to see or}\\
+        \ansline{answer an in-app survey, so they are under-represented. The estimated proportion}\\
+        \ansline{who use the app every day is likely too high.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[18]
+        \textbf{(c)} The company also wants to know whether a daily reminder notification
+        increases practice time. Two hundred subscribers volunteer; 100 will get a daily
+        reminder for a month and 100 will get none, and the app will record the minutes each
+        one practices that month. Identify the experimental units, the treatments, and the
+        response variable.\\[4pt]
+        \gradedhere{\gradedblank[id=t28c, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t28c.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Experimental units: the 200 volunteer subscribers. Treatments: a daily reminder}\\
+        \ansline{notification, or no reminder. Response variable: the minutes each subscriber}\\
+        \ansline{practices during the month.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[16]
+        \textbf{(d)} Describe how to randomly assign the 200 volunteers to the two treatments,
+        and explain why random assignment matters in this experiment.\\[4pt]
+        \gradedhere{\gradedblank[id=t28d, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t28d.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{Label the volunteers 1 to 200. Randomly generate 100 different integers from 1 to}\\
+        \ansline{200: those volunteers get the reminder, and the other 100 get none. Random}\\
+        \ansline{assignment balances other variables (such as motivation) between the groups, so}\\
+        \ansline{a difference in practice time can be attributed to the reminders.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+        \vspace{6pt}
+        \boxguard[17]
+        \textbf{(e)} The reminder group practiced for significantly more minutes, on average,
+        than the no-reminder group. What can the company conclude about cause and effect, and
+        to which subscribers does the conclusion apply? Explain.\\[4pt]
+        \gradedhere{\gradedblank[id=t28e, type=rubric, points=3, rubric=../rubrics/apstats-s01-actual-final-t28e.yaml]{\linewidth+6pt}{\gradedlinesheight{3}}}\ansline{The treatments were randomly assigned and the difference is significant, so the}\\
+        \ansline{company can conclude the reminders caused the extra practice time. But the}\\
+        \ansline{subjects were volunteers, not a random sample, so the conclusion applies only to}\\
+        \ansline{subscribers like these volunteers, not to all 9{,}000 subscribers.}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}\\
+        \ansline{}
+
+\end{enumerate}
+
+\end{document}

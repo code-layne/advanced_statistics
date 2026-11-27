@@ -1,0 +1,24 @@
+# Semester 1 actual final, item 26e. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26e
+points: 3
+task: >-
+  Drive-through times: mean 170 s, SD 40 s. Walk-in times: mean 112 s, SD 27 s. Which is
+  more unusual for its own kind of customer: a drive-through time of 230 seconds or a
+  walk-in time of 166 seconds? Justify with z-scores.
+criteria:
+  - id: z_drive
+    points: 1
+    full: >-
+      E: z = (230 - 170)/40 = 1.5 for the drive-through time.
+  - id: z_walk
+    points: 1
+    full: >-
+      E: z = (166 - 112)/27 = 2.0 for the walk-in time.
+  - id: conclusion
+    points: 1
+    full: >-
+      E: The walk-in time of 166 s is more unusual, because it is more standard
+      deviations above its own mean (2.0 vs 1.5). Must follow from the student's
+      z-scores.

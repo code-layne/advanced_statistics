@@ -1,0 +1,21 @@
+# Semester 1 practice final, item 26b. Path relative to semester1/tests/.
+# College Board style: each component is scored E (essentially correct, full
+# points), P (partially correct, the partial points given) or I (incorrect, 0).
+id: t26b
+points: 3
+task: >-
+  Brand B battery lives: Q1 = 7.0, Q3 = 8.2. Use the 1.5 x IQR rule to show that the
+  Brand B battery life of 11.0 hours is an outlier.
+criteria:
+  - id: iqr
+    points: 1
+    full: >-
+      E: IQR = 8.2 - 7.0 = 1.2 hours.
+  - id: fence
+    points: 1
+    full: >-
+      E: Upper fence = Q3 + 1.5(IQR) = 8.2 + 1.8 = 10.0 hours.
+  - id: conclusion
+    points: 1
+    full: >-
+      E: Compares explicitly: 11.0 > 10.0, so 11.0 hours is an outlier.
